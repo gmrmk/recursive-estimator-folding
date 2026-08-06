@@ -1,0 +1,89 @@
+{
+  "authority": "Proposals are non-evidentiary. The external premise/screen/validation ladder is authoritative.",
+  "champion": {
+    "artifact_hash": "1874f9cac4be962dbd4f919bffc38dedf23b428ea6cbd7847a813c87d7ba7333",
+    "bias_class": "Randomized unbiased spherical sampling with exact algebraic folds and frozen known-mean control terms.",
+    "ci_upper": -0.001955091685564126,
+    "failures": 0,
+    "holdout_used_for_generation": false,
+    "id": "h4_random32256",
+    "kill_condition": "Any candidate failure, Cmax >=258.4B, or paired official100 bootstrap CI reaching parity.",
+    "matched_units": 100,
+    "mechanism": "Reduce the recursive-frame parent to 32,256 base directions so activation-dependent tail cost stays below the failure cliff.",
+    "prediction": "Slightly worse raw variance but better adjusted score and zero budget failures.",
+    "primary_effect": -0.01825612230932166,
+    "sensitivity": "On 95 both-success networks adjusted score improved 6.44% while raw MSE worsened 14.71%; official CI includes five parent failure penalties.",
+    "status": "promoted"
+  },
+  "holdout_firewall": {
+    "development": "0..599",
+    "holdout_outcomes_in_packet": false,
+    "locked": "600..799",
+    "private": "untouched",
+    "prohibited": "800..999"
+  },
+  "invariants": {
+    "champion_hash": "submission_random32256_20260806.tar.gz sha256 1874f9cac4be962dbd4f919bffc38dedf23b428ea6cbd7847a813c87d7ba7333",
+    "champion_score": "official public0..99 raw 3.089512726e-7, adjusted 2.257079776e-7, mean C 202.281790B, max C 250.488783B, failures 0/100",
+    "development_split": "Public indices 0..599 for mechanism development; current generation has used only 0..99 for new premises.",
+    "evaluator_hash": "whest.exe sha256 888a44d9c886df88cf8933398c154e113f530f3dc2705282170820a101dd674a",
+    "holdout_split": "Indices 600..799 locked for one post-freeze read; indices 800..999 prohibited for this generation; private suite untouched.",
+    "legality_boundary": "All MLP-dependent arithmetic is instrumented; no public lookup, private-target reconstruction, counter mutation, hidden native arithmetic, API dependency, or evaluator exploit. Offline fitting is whole-MLP grouped and inference features are weight-derived.",
+    "objective": "Minimize WHestBench private-suite adjusted MSE for the fixed d=256,L=32 task with a legal universal estimator and zero resource failures.",
+    "randomization": "setup seed 0; candidate uses 126 seeded Haar frames and antipodal/folded propagation",
+    "resource_ceiling": "Hard C <= 272000000000; promotion safety gate Cmax < 258400000000 and zero failures.",
+    "score_formula": "MSE * max(0.1, (billed_FLOPs + 1e11 * residual_seconds) / 2.72e11) under installed WHestBench 0.14.0 and FlopScope 0.10.0."
+  },
+  "killed_mechanisms": [
+    {
+      "id": "h1_equivariant_residual",
+      "kill_condition": "OOF R2 <=0.965, bootstrap lower <=0.94, symmetry failure, or worst network ratio >2.",
+      "mechanism": "Predict deterministic full-covariance closure residual from 70 symmetry-quotiented Hermite, gauge-edge, cancellation, and dyadic-depth features.",
+      "result": "OOF R2 0.662672 [0.622890,0.697078]; scale-only 0.648801; all symmetries passed."
+    },
+    {
+      "id": "h3_rank5_k4",
+      "kill_condition": "Raw k4 error >30%, unstable downstream sign/cosine, or projected cost >50B.",
+      "mechanism": "Compress the connected fourth-cumulant vertex to pair rank 5 and transport it through depth.",
+      "result": "Optimal ceiling downstream cosine -1.000 and error 25.88x; CountSketch mean raw error 49.83%."
+    },
+    {
+      "id": "kerdock_design",
+      "kill_condition": "Official combined cost exceeds budget safety or adjusted score loses.",
+      "mechanism": "Use a maximal real MUB/Kerdock spherical design to annihilate low-degree harmonics.",
+      "result": "Exact construction passed; structured gate survival caused nonlinear cost excess and failures."
+    },
+    {
+      "id": "fullcov_gaussian",
+      "kill_condition": "Raw premise MSE above 1.4e-6 or no stable sampler-control correlation.",
+      "mechanism": "Propagate exact full covariance and reclose every ReLU layer as Gaussian.",
+      "result": "Raw 5.428e-5; numerically exact implementation but repeated Gaussian reclosure dominates bias."
+    },
+    {
+      "id": "cavity_dyson_tap",
+      "kill_condition": "No feed-forward self-reaction or required state exceeds O(Ln3).",
+      "mechanism": "Resum finite-width corrections through cavity, Dyson, TAP, or Onsager feedback.",
+      "result": "Feed-forward DAG has zero Onsager self-reaction; generic connected vertex is O(n4)/O(n5)."
+    },
+    {
+      "id": "h2_weighted_control",
+      "kill_condition": "Coefficient sign fails independent-scramble transfer.",
+      "mechanism": "Predict a network-specific analytic/sampler blend coefficient from weights.",
+      "result": "ICC 0.129 and all six cross-seed oracle-transfer tests failed."
+    }
+  ],
+  "mode": "offline_deterministic_no_api",
+  "next_mutation_request": {
+    "bias_class": "Biased finite-memory BASE K=3 cumulant closure.",
+    "id": "k3_finite_horizon",
+    "kill_condition": "Small-shape algebra mismatch, nonfinite output, Cmax unsafe, no raw improvement, or no plausible route to 2.257e-7 adjusted.",
+    "mechanism": "Transport a factorized third cumulant with a fixed recent-layer horizon H, preserving coordinatewise sign while bounding rank and cost.",
+    "one_mechanism_only": true,
+    "predicted_signature": "One horizon in H={2,4,8,12,16} is finite, safe, and materially improves analytic raw MSE with plausible adjusted-score headroom."
+  },
+  "schema_version": 1,
+  "survivor_error_covariance": {
+    "available": false,
+    "reason": "Only one promoted champion exists; proposed children must pass separately before an interaction or covariance test."
+  }
+}
