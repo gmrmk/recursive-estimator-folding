@@ -34,11 +34,11 @@ Passing an earlier link does not rescue a later failure.
 | Exact line conditioning | Exact first-layer integration | At least 496.96 forward equivalents; needs impossible >99.8% VR | A/B | Hard kill cost |
 | Active subspace | Pointwise Jacobian rank about 15 | Subspace tumbles across gates; high-degree residual near-isotropic | B/C | Hard kill global subspace |
 | Graphify local semantic pass | Local/no-key execution succeeded | Llama3.2 collapsed corpus to 5 nodes and mislabeled types | C | Reject as authority |
-| Audited Graphify evidence graph | 49 nodes, 64 typed edges, 8 communities; useful traversal | Centrality depends on encoded edges and is not independent evidence | B | Use for prioritization |
+| Audited Graphify evidence graph | 49 nodes, 65 typed edges, 10 communities; useful traversal | Centrality depends on encoded edges and is not independent evidence | B | Use for prioritization |
 | H1 equivariant residual | 70 finite symmetry-safe features; grouped residual R2 0.662672; scale-only R2 0.648801 | Misses the fixed R2>0.965 gate; graph features add only about 1.4 points over scale | B/C | Hard kill current information family |
 | Finite-horizon factorized k3 | Algebra/depth parity 5.19e-15; all H safe; correction cosine 0.8997 | Best H2 adjusted 1.3162e-4, 583.1x worse; correction overshoots ~4.68x | A/B | Hard kill |
 | Goal-oriented adjoint cumulants | Exact terminal k3/k4 projections, 3.111B cost, small-n correction cosines 0.951/0.762; restores mean absolute skew to 0.3867 | Public0..4 fullcov gain only 2.12%; full covariance adjoint goes rank1->rank8 and costs O(Ln4) | A/B | Hard kill promotion; preserve terminal operator |
-| Weight-identified latent-factor closure | Frozen one-mechanism packet and invariance/collapse kill gates | Premise still running | pending | Do not combine before result |
+| Weight-identified latent-factor closure q3,r2 | Synthetic summed-MSE ratio 0.04738 vs fullcov, wins 6/7; exact permutation/gauge; affine-rank2 means; bounded 27-to-3 recompression | Only seven small networks; 26.2B cost is unbilled arithmetic; legal eigensolver and width-256 behavior unknown | B | Survives premise; advance one rung only |
 
 ## Cross-branch hyperassociations
 
@@ -109,6 +109,20 @@ invariance, that architecture becomes a public-network coordinate memorizer.
 Applied mutation: H1 features and messages must live on the symmetry quotient;
 grouped whole-MLP CV and explicit transformation tests are mandatory.
 
+### 7. A finite mixture can preserve the missing nonlinearity without fitting a copula
+
+The latent q3,r2 branch is different from the killed scalar mixture and generic
+GMM/copula stories. Its components are forward-defined by weight-conditioned
+covariance eigenfactors, not inferred from insufficient low moments, and they
+remain distinct through the next ReLU before deterministic recompression. The
+synthetic 95.26% reduction is therefore a real premise pass, while still not
+proving that the approximation survives width 256 or legal FlopScope billing.
+
+Applied mutation: advance only q3,r2 to a counted target-shape smoke. Preserve
+the exact invariance fallback at repeated eigenspaces, store child residuals
+diagonally, and kill before any score screen if eigensolver accounting or Cmax
+headroom fails.
+
 ## Immediate decision tree
 
 1. Keep the validated random32,256 archive immutable; H1, H2, H3, finite-memory
@@ -116,8 +130,11 @@ grouped whole-MLP CV and explicit transformation tests are mandatory.
 2. Preserve the adjoint terminal source operator as a proved 3.111B component,
    but do not fold it into the champion without an independent estimator whose
    residual covariance makes the combined adjusted score favorable.
-3. Finish the weight-identified latent-factor premise. Kill it immediately if
-   it collapses to a scalar scale mixture, breaks equivariance, or cannot beat
-   full covariance on exact small networks.
-4. Do not combine dead branches merely because they share vocabulary; every
+3. Advance only latent q3,r2 to a legal FlopScope target-shape cost/stability
+   smoke, followed by one predeclared public0 no-scorer accuracy check only if
+   the resource gate passes.
+4. Independently audit the synthetic reference and closure implementation;
+   a 0.04738 ratio is strong enough that baseline or orientation bugs must be
+   excluded before trust increases.
+5. Do not combine dead branches merely because they share vocabulary; every
    hybrid must supply a new observable and pass an interaction test.

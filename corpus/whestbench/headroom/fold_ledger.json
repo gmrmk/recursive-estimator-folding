@@ -102,11 +102,12 @@
     },
     {
       "id": "weight_identified_latent_factor",
-      "status": "proposed",
+      "status": "screened",
       "mechanism": "Condition each Gaussian closure layer on one or two weight-identified leading covariance factors, rectify diagonal residuals analytically, and recompress the finite mixture after each layer.",
       "bias_class": "Biased low-rank latent-factor assumed-density closure.",
       "prediction": "A fixed q,r closure preserves coordinatewise non-Gaussian dependence missed by fullcov while remaining permutation/gauge invariant and below O(Ln3 q).",
-      "kill_condition": "Collapses to the killed scalar scale mixture, is not identified equivariantly, mixture growth/recompression exceeds budget, or exact small-n premise shows no material gain over fullcov."
+      "kill_condition": "Collapses to the killed scalar scale mixture, is not identified equivariantly, mixture growth/recompression exceeds budget, or exact small-n premise shows no material gain over fullcov.",
+      "result": "q=3,r=2 survived the exact synthetic premise: summed MSE ratio 0.04738 versus fullcov, wins 6/7, exact permutation/gauge tests, non-scalar affine rank 2, and bounded 27-to-3 recompression. Not validated: the estimated 26.2B target cost lacks a legal counted eigensolver and no width-256 accuracy/cost screen has run."
     }
   ]
 }

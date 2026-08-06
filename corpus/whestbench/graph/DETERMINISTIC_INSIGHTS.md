@@ -1,6 +1,6 @@
 # Deterministic graph analysis
 
-Nodes: 49; edges: 64; communities: 7.
+Nodes: 49; edges: 65; communities: 5.
 
 The metrics describe topology, not truth. Edge confidence and the original reports remain authoritative.
 
@@ -8,11 +8,11 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 
 | node | status | betweenness | degree centrality |
 |---|---|---:|---:|
-| Winning legal adjusted score | target | 0.4871 | 0.1875 |
-| H1 equivariant learned residual closure | rejected | 0.3960 | 0.2292 |
+| Winning legal adjusted score | target | 0.4864 | 0.1875 |
+| H1 equivariant learned residual closure | rejected | 0.3874 | 0.2292 |
 | Coordinatewise signed cumulant transport | derived | 0.2832 | 0.1250 |
 | H2 weight-conditioned blend coefficient | blocked | 0.2314 | 0.0833 |
-| Connected finite-width four-point vertex | proved+measured | 0.2284 | 0.1667 |
+| Connected finite-width four-point vertex | proved+measured | 0.2271 | 0.1667 |
 | H3 rank-5 k4 tensor sketch | rejected | 0.1859 | 0.1458 |
 | 272B combined-budget law | proved | 0.1454 | 0.0417 |
 | Dyadic depth-memory features | proposed | 0.1223 | 0.0833 |
@@ -31,8 +31,8 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 - Network-specific sign-changing control
 - Goal-oriented adjoint cumulant
 - Global sampler/analytic blend
-- Finite-horizon factorized k3
 - Weight-identified latent-factor closure
+- Finite-horizon factorized k3
 - Random 32,256 sampler
 - Even spherical residual degree >=6
 

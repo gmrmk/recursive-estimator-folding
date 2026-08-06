@@ -66,7 +66,7 @@ NODES = {
     "signed_transport": ("Coordinatewise signed cumulant transport", "requirement", "derived", "The surviving challenge is preserving correction direction through rotating ReLU gates."),
     "k3_horizon": ("Finite-horizon factorized k3", "candidate", "rejected", "Hard-killed: safe and algebraically correct, but the best horizon is 583.1x worse adjusted than champion."),
     "adjoint_cumulant": ("Goal-oriented adjoint cumulant", "candidate", "rejected_component_preserved", "Terminal source projections are exact and cheap, but full covariance adjoints become generic full rank and promotion is killed."),
-    "latent_factor": ("Weight-identified latent-factor closure", "candidate", "premise_running", "Condition on leading covariance factors and analytically rectify diagonal residuals before recompression."),
+    "latent_factor": ("Weight-identified latent-factor closure", "candidate", "screened_live", "q3,r2 passed the exact synthetic premise by carrying weight-derived covariance factors through a capped Gaussian mixture."),
     "k3_horizon_gate": ("Finite-horizon k3 premise gate", "falsifier", "predeclared", "Require algebraic parity, finite safe cost, material raw improvement, and a route to champion score."),
     "adjoint_gate": ("Adjoint contraction factorization gate", "falsifier", "predeclared", "Require exact small-n parity, stable sign, and O(Ln3) all-output cost."),
     "latent_gate": ("Latent-factor closure gate", "falsifier", "predeclared", "Reject scale collapse, broken invariance, mixture explosion, or no small-n improvement over fullcov."),
@@ -134,11 +134,12 @@ EDGES = [
     ("adjoint_cumulant", "target", "rejected_path_to", "MEASURED", 1.0, "terminal fold insufficient; full dual O(Ln4)"),
     ("terminal_analytic", "adjoint_cumulant", "generator_repaired_by", "MEASURED", 0.9, "mean absolute skew restored from 0.0317 to 0.3867"),
     ("dense_k4_cost", "adjoint_cumulant", "reappears_in", "PROVED", 1.0, "generic full-rank covariance adjoint slices"),
-    ("fullcov", "latent_factor", "extended_by", "HYPOTHESIS", 0.5, "weight-identified mixture"),
-    ("copula", "latent_factor", "underidentification_repaired_by", "HYPOTHESIS", 0.35, "covariance eigenmodes identify factors"),
+    ("fullcov", "latent_factor", "extended_by", "MEASURED", 0.85, "synthetic summed-MSE ratio 0.04738"),
+    ("copula", "latent_factor", "underidentification_avoided_by", "DERIVED+MEASURED", 0.75, "weight-derived factors define the ansatz without fitting a generic copula"),
     ("symmetry_quotient", "latent_factor", "required_by", "PROVED", 0.9, "equivariant factor selection"),
-    ("latent_gate", "latent_factor", "falsifies", "PREDECLARED", 1.0, "recursion packet"),
-    ("latent_factor", "target", "proposed_path_to", "HYPOTHESIS", 0.2, "premise pending"),
+    ("latent_gate", "latent_factor", "passed_by", "PREDECLARED+MEASURED", 1.0, "q3,r2 wins 6/7 with exact invariance and bounded growth"),
+    ("latent_factor", "target", "screened_path_to", "MEASURED+HYPOTHESIS", 0.45, "synthetic premise passed; legal target-shape cost/accuracy pending"),
+    ("strong_on_scale", "latent_factor", "refined_beyond_scalar_by", "MEASURED", 0.8, "component means affine-rank2; scalar-fit residuals 0.407-0.814"),
 ]
 
 

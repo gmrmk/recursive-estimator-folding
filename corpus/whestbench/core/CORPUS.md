@@ -324,6 +324,28 @@ pullback maps rank-one `ww^T` to `diag(w) K diag(w)`, generically full rank.
 Across all outputs this needs O(n3) state and O(Ln4) work. Source:
 `../adjoint_cumulant/REPORT.md`.
 
+### H7: weight-identified latent-factor mixture closure
+
+Retain q Gaussian components per layer. For each component, propagate its full
+covariance, take r leading simple covariance eigenfactors, integrate those
+factors with q-point Gauss-Hermite nodes while rectifying the diagonal residual
+analytically, then deterministically recompress q^(r+1) children to q
+equal-mass bins. The components are constructed forward from the weights and
+current explicit state, so this avoids fitting an underidentified generic GMM
+or copula. Exact fallbacks at repeated eigenspaces and score ties preserve the
+permutation/gauge rule.
+
+Result: SCREENED PREMISE PASS, NOT VALIDATED. On seven exact synthetic networks,
+q=3,r=2 achieved a summed-MSE ratio 0.04738 versus full covariance and won 6/7
+cases. Component means had affine rank 2, scalar-fit residuals 0.407-0.814,
+permutation discrepancy at most 2.22e-15, and steady growth 27 children to
+three retained components. The true fixed-q,r complexity is
+`Theta(L[(q+1)n3 + q^(r+1)n2 + q^(r+1)nr])`; rough target-shape arithmetic is
+26.2B, but this is not FlopScope billing. A legal counted eigensolver,
+diagonal-child implementation, width-256 stability/cost smoke, and adversarial
+reference audit are mandatory before any target score claim. Source:
+`../latent_factor_closure/REPORT.md`.
+
 ## Rejected attractive stories
 
 Literal quantum retinal pigment, generic memristor language, tau numerology,
