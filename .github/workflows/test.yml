@@ -3,6 +3,7 @@ name: tests
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,4 +17,3 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m unittest discover -s tests -v
-
