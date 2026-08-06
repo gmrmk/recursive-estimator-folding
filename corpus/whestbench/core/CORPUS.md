@@ -5,6 +5,11 @@ Graphify extraction. It distinguishes theorem, measurement, oracle experiment,
 hypothesis, metaphor translation, and rejected mechanism. A connection is not
 evidence merely because it is aesthetically appealing.
 
+In this corpus, `HARD KILL` is local to one specified implementation and gate.
+It preserves proved identities, useful operators, measurements, and unresolved
+families for causally different reimplementations. See
+`SALVAGE_MAP_20260806.md` for the living operator bank.
+
 ## Objective and constraints
 
 The target is the vector mean of the final ReLU activations of a fixed,
@@ -335,16 +340,41 @@ current explicit state, so this avoids fitting an underidentified generic GMM
 or copula. Exact fallbacks at repeated eigenspaces and score ties preserve the
 permutation/gauge rule.
 
-Result: SCREENED PREMISE PASS, NOT VALIDATED. On seven exact synthetic networks,
-q=3,r=2 achieved a summed-MSE ratio 0.04738 versus full covariance and won 6/7
-cases. Component means had affine rank 2, scalar-fit residuals 0.407-0.814,
-permutation discrepancy at most 2.22e-15, and steady growth 27 children to
-three retained components. The true fixed-q,r complexity is
-`Theta(L[(q+1)n3 + q^(r+1)n2 + q^(r+1)nr])`; rough target-shape arithmetic is
-26.2B, but this is not FlopScope billing. A legal counted eigensolver,
-diagonal-child implementation, width-256 stability/cost smoke, and adversarial
-reference audit are mandatory before any target score claim. Source:
-`../latent_factor_closure/REPORT.md`.
+Result: FIXED-r IMPLEMENTATION KILLED; MIXTURE COMPONENTS PRESERVED. On seven
+small synthetic networks, q=3,r=2 achieved a real summed-MSE ratio 0.04738 and
+won 6/7. An independent audit found no leakage or orientation error, but on
+fresh n=64 cases it lost 8/8, with ratios 2.928 at L16 and 1.596 at L32. The
+mechanism is explicit: the top-two trace share falls from 88.4% at n4 to 3.02%
+at n256, so fixed-r diagonalizes nearly all target-width dependence. The audit
+also found a near-|rho|=1 comparator defect and absolute tolerances that break
+scale homogeneity. A one-knob r=3 mutation scored ratio 0.0602767, 27.22% worse
+than r=2, because extra tensor resolution was aliased by the same three-bin
+compressor. Preserve forward weight-defined components, analytic diagonal
+rectification, deterministic recompression, and symmetry; replace the rank and
+quadrature law. Sources: `../latent_factor_closure/ADVERSARIAL_AUDIT.md` and
+`../latent_factor_rank3/REPORT.md`.
+
+### H8: adaptive fixed-trace spherical-radial latent closure
+
+Keep the preserved q=3 mixture machinery, but choose enough leading covariance
+factors to capture a fixed trace fraction and replace q^r tensor quadrature
+with the signed rule `+-sqrt(r)e_j`, 2r nodes. This matches the selected-factor
+covariance with O(r) children, so r can grow with width without exponential
+mixture growth. A relative eigengap rule replaces the scale-breaking absolute
+threshold. Premise gate: on the frozen fresh n64 audit cases, ratio <=0.8,
+at least 6/8 wins, exact scale/permutation invariance, and conservative target
+arithmetic below 80B. Status: premise running, no WHest data or scorer.
+
+### H9: full-covariance spherical-radial sigma mixture
+
+Keep q=3 deterministic recompression but remove factor truncation entirely.
+For each component use the unique symmetric PSD square root `L=V^(1/2)` and
+the 2n equal-weight nodes `mu +- sqrt(n)L e_j`. The rule matches the entire
+Gaussian covariance, grows linearly rather than exponentially, and its node
+set is permutation-equivariant. It directly tests whether fixed-r trace loss or
+three-component recompression is the binding failure. It uses the same frozen
+n64 ratio/win/invariance/<80B gate as H8. Status: premise running, no WHest data
+or scorer.
 
 ## Rejected attractive stories
 

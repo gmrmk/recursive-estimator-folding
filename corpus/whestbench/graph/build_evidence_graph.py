@@ -66,10 +66,14 @@ NODES = {
     "signed_transport": ("Coordinatewise signed cumulant transport", "requirement", "derived", "The surviving challenge is preserving correction direction through rotating ReLU gates."),
     "k3_horizon": ("Finite-horizon factorized k3", "candidate", "rejected", "Hard-killed: safe and algebraically correct, but the best horizon is 583.1x worse adjusted than champion."),
     "adjoint_cumulant": ("Goal-oriented adjoint cumulant", "candidate", "rejected_component_preserved", "Terminal source projections are exact and cheap, but full covariance adjoints become generic full rank and promotion is killed."),
-    "latent_factor": ("Weight-identified latent-factor closure", "candidate", "screened_live", "q3,r2 passed the exact synthetic premise by carrying weight-derived covariance factors through a capped Gaussian mixture."),
+    "latent_factor": ("Weight-identified latent-factor closure", "candidate", "rejected_fixed_rank_components_preserved", "q3,r2 is honest and strong at small width but fails n64 because fixed-r trace capture vanishes with width."),
+    "trace_collapse": ("Fixed-r covariance trace collapse", "failure_mechanism", "measured", "Top-two trace share falls from 88.4% at n4 to 3.02% at n256, reversing q3,r2 by n64."),
+    "latent_rank3": ("Latent q3,r3 mutation", "candidate", "rejected", "One-factor increase is 27.22% worse than r2 under unchanged tensor quadrature and compression."),
+    "latent_sparse": ("Adaptive fixed-trace radial latent closure", "candidate", "premise_running", "Use 2r signed cubature nodes over enough factors to capture a fixed trace fraction."),
+    "latent_full_sigma": ("Full-covariance sigma latent closure", "candidate", "premise_running", "Use 2n symmetric-square-root sigma points to match the entire covariance without rank truncation."),
     "k3_horizon_gate": ("Finite-horizon k3 premise gate", "falsifier", "predeclared", "Require algebraic parity, finite safe cost, material raw improvement, and a route to champion score."),
     "adjoint_gate": ("Adjoint contraction factorization gate", "falsifier", "predeclared", "Require exact small-n parity, stable sign, and O(Ln3) all-output cost."),
-    "latent_gate": ("Latent-factor closure gate", "falsifier", "predeclared", "Reject scale collapse, broken invariance, mixture explosion, or no small-n improvement over fullcov."),
+    "latent_gate": ("Latent-factor closure gate", "falsifier", "expanded", "Require n64 width-law accuracy, exact relative-tolerance invariance, and conservative target cost after the small-width gate."),
 }
 
 
@@ -134,12 +138,23 @@ EDGES = [
     ("adjoint_cumulant", "target", "rejected_path_to", "MEASURED", 1.0, "terminal fold insufficient; full dual O(Ln4)"),
     ("terminal_analytic", "adjoint_cumulant", "generator_repaired_by", "MEASURED", 0.9, "mean absolute skew restored from 0.0317 to 0.3867"),
     ("dense_k4_cost", "adjoint_cumulant", "reappears_in", "PROVED", 1.0, "generic full-rank covariance adjoint slices"),
-    ("fullcov", "latent_factor", "extended_by", "MEASURED", 0.85, "synthetic summed-MSE ratio 0.04738"),
+    ("fullcov", "latent_factor", "extended_by_at_small_width", "MEASURED", 0.75, "small-width summed-MSE ratio 0.04738"),
     ("copula", "latent_factor", "underidentification_avoided_by", "DERIVED+MEASURED", 0.75, "weight-derived factors define the ansatz without fitting a generic copula"),
     ("symmetry_quotient", "latent_factor", "required_by", "PROVED", 0.9, "equivariant factor selection"),
-    ("latent_gate", "latent_factor", "passed_by", "PREDECLARED+MEASURED", 1.0, "q3,r2 wins 6/7 with exact invariance and bounded growth"),
-    ("latent_factor", "target", "screened_path_to", "MEASURED+HYPOTHESIS", 0.45, "synthetic premise passed; legal target-shape cost/accuracy pending"),
+    ("latent_gate", "latent_factor", "falsifies_fixed_rank_form", "PREDECLARED+MEASURED", 1.0, "n64 loses 8/8 after original small-width pass"),
+    ("latent_factor", "target", "rejected_fixed_rank_path_to", "MEASURED", 1.0, "width law fails before target"),
     ("strong_on_scale", "latent_factor", "refined_beyond_scalar_by", "MEASURED", 0.8, "component means affine-rank2; scalar-fit residuals 0.407-0.814"),
+    ("latent_factor", "trace_collapse", "fails_due_to", "MEASURED", 1.0, "trace fractions and n64 sweep"),
+    ("trace_collapse", "latent_rank3", "not_repaired_by", "MEASURED", 1.0, "r3 ratio 0.0603 and unchanged compression"),
+    ("latent_factor", "latent_rank3", "one_knob_child", "MEASURED", 1.0, "r2 to r3 only"),
+    ("trace_collapse", "latent_sparse", "repaired_by_design_of", "HYPOTHESIS", 0.8, "fixed trace fraction with O(r) nodes"),
+    ("trace_collapse", "latent_full_sigma", "eliminated_by_design_of", "PROVED+HYPOTHESIS", 0.9, "full covariance matched by 2n sigma points"),
+    ("latent_factor", "latent_sparse", "preserved_components_reimplemented_in", "DERIVED", 0.9, "mixture and recompression retained"),
+    ("latent_factor", "latent_full_sigma", "preserved_components_reimplemented_in", "DERIVED", 0.9, "mixture and recompression retained"),
+    ("latent_gate", "latent_sparse", "falsifies", "PREDECLARED", 1.0, "n64 ratio/wins/invariance/cost gate"),
+    ("latent_gate", "latent_full_sigma", "falsifies", "PREDECLARED", 1.0, "n64 ratio/wins/invariance/cost gate"),
+    ("latent_sparse", "target", "proposed_path_to", "HYPOTHESIS", 0.25, "premise running"),
+    ("latent_full_sigma", "target", "proposed_path_to", "HYPOTHESIS", 0.25, "premise running"),
 ]
 
 

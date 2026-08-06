@@ -102,12 +102,37 @@
     },
     {
       "id": "weight_identified_latent_factor",
-      "status": "screened",
+      "status": "killed",
       "mechanism": "Condition each Gaussian closure layer on one or two weight-identified leading covariance factors, rectify diagonal residuals analytically, and recompress the finite mixture after each layer.",
       "bias_class": "Biased low-rank latent-factor assumed-density closure.",
       "prediction": "A fixed q,r closure preserves coordinatewise non-Gaussian dependence missed by fullcov while remaining permutation/gauge invariant and below O(Ln3 q).",
       "kill_condition": "Collapses to the killed scalar scale mixture, is not identified equivariantly, mixture growth/recompression exceeds budget, or exact small-n premise shows no material gain over fullcov.",
-      "result": "q=3,r=2 survived the exact synthetic premise: summed MSE ratio 0.04738 versus fullcov, wins 6/7, exact permutation/gauge tests, non-scalar affine rank 2, and bounded 27-to-3 recompression. Not validated: the estimated 26.2B target cost lacks a legal counted eigensolver and no width-256 accuracy/cost screen has run."
+      "result": "q=3,r=2 passed the original small-width premise but failed the adversarial width law: 0/8 wins at n=64 with ratios 2.928 and 1.596. Top-two trace capture collapses from 88.4% at n=4 to 3.02% at n=256. Kill this fixed-r tensor-quadrature implementation; preserve forward weight-defined components, analytic diagonal rectification, recompression, and symmetry."
+    },
+    {
+      "id": "latent_factor_rank3",
+      "status": "killed",
+      "mechanism": "Increase only the screened latent factor rank from r=2 to r=3 while freezing q=3, tensor quadrature, recompression, and references.",
+      "bias_class": "Biased fixed-rank latent-factor assumed-density closure.",
+      "prediction": "Rank three improves the frozen aggregate ratio below 0.035 while preserving invariance and conservative target arithmetic below 40B.",
+      "kill_condition": "Aggregate ratio at least 0.035, broken invariance, or conservative arithmetic at least 40B.",
+      "result": "The exact child scored ratio 0.0602767, 27.22% worse than r=2 and above the 0.035 gate; invariance and 33.075B conservative arithmetic passed. Kill the r=3 leaf; extra tensor resolution is aliased by unchanged three-component compression and still cannot fix width-scaled trace capture."
+    },
+    {
+      "id": "latent_sparse_radial_cubature",
+      "status": "proposed",
+      "mechanism": "Replace q^r tensor Gauss-Hermite nodes with signed spherical-radial nodes over an adaptive leading subspace capturing a fixed covariance-trace fraction.",
+      "bias_class": "Biased adaptive-rank cubature mixture closure.",
+      "prediction": "O(r) signed nodes preserve a nonvanishing trace fraction without exponential child growth and beat corrected fullcov at n=64.",
+      "kill_condition": "n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken scale/permutation invariance, or conservative target arithmetic at least 80B."
+    },
+    {
+      "id": "latent_full_sigma",
+      "status": "proposed",
+      "mechanism": "Replace selected-factor tensor quadrature with a full-covariance 2n-point spherical-radial rule built from the symmetric PSD square root.",
+      "bias_class": "Biased full-covariance sigma-point mixture closure.",
+      "prediction": "Exact covariance matching with O(n) children removes rank collapse while retaining deterministic q=3 recompression and permutation equivariance.",
+      "kill_condition": "n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken scale/permutation invariance, or conservative target arithmetic at least 80B."
     }
   ]
 }

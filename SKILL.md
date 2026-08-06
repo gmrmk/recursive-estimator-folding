@@ -5,7 +5,7 @@ description: Recursively generate, falsify, promote, combine, and document mathe
 
 # Recursive Estimator Folding
 
-Turn unconventional ideas into auditable operators. Preserve a stable champion, mutate one causal mechanism at a time, fold only validated improvements back into the champion, and keep every rejection as evidence rather than silently retuning it.
+Turn unconventional ideas into auditable operators. Preserve a stable champion, mutate one causal mechanism at a time, fold only validated improvements back into the champion, and keep every rejection as evidence and reusable mechanism material rather than silently retuning or discarding it.
 
 ## Non-Negotiable Invariants
 
@@ -37,7 +37,32 @@ At each generation:
 7. Before composing two winners, run a factorial interaction or residual-covariance test.
 8. Fold the winner into a new immutable champion; retain the previous champion for rollback.
 
-Do not mutate a failed candidate merely because it once had a favorable small-screen score. Mutate it only when a new operator addresses its diagnosed failure mode.
+Do not retune an unchanged failed candidate merely because it once had a favorable small-screen score. Reopen it only when a new operator addresses its diagnosed failure mode.
+
+## Failure Is Local, Not Final
+
+Treat `killed` as a disposition of one fully specified implementation at one
+gate, never as casual dismissal of an entire idea family.
+
+For every failed branch:
+
+1. Record the exact configuration, evaluation gate, evidence, and causal
+   failure boundary.
+2. Split the branch into passed components, the failed link, untested claims,
+   and reusable operators or measurements.
+3. Preserve passed components in a salvage bank and convert the failed link
+   into a constraint on the next mutation.
+4. Reimplement only by changing the failed mechanism or exposing a new
+   observable; parameter drift and post-hoc coefficient tuning do not count.
+5. When a theorem eliminates a mechanism class, retain the theorem as a design
+   constraint and move to a complementary class. Do not rerun a forbidden form.
+6. Revisit old leaves when new mathematics, measurements, or operators change
+   their premises, and rerun them through the full external ladder.
+
+Use status language precisely: `killed implementation`, `preserved component`,
+`unresolved family`, `screened survivor`, `validated child`, and `promoted
+champion`. Never report an empirical leaf failure as proof that no related
+mechanism can work.
 
 ## Promotion Ladder
 
@@ -83,6 +108,6 @@ Each recursion packet should contain:
 
 Never expose untouched holdout outcomes to subsequent mutation generation.
 
-## Completion Standard
+## Release and Continuation Standard
 
-A result is ready only when it includes executable code, locked dependencies, artifact hashes, a complete experiment ledger, legality rationale, matched per-unit results, uncertainty analysis, negative results, and a concise account of how each unusual analogy became a classical computation. Distinguish a locally best candidate from a demonstrated competition winner.
+A checkpoint is ready to release only when it includes executable code, locked dependencies, artifact hashes, a complete experiment ledger, legality rationale, matched per-unit results, uncertainty analysis, negative results, a salvage map, and a concise account of how each unusual analogy became a classical computation. Releasing a checkpoint does not terminate the recursion. Keep the objective active until it is achieved, the user stops it, or no legal next mutation exists. Distinguish a locally best candidate from a demonstrated competition winner.

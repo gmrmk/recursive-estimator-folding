@@ -7,6 +7,11 @@ contest fitness. A branch is promoted only if its entire causal chain passes:
 
 Passing an earlier link does not rescue a later failure.
 
+`Hard kill` in this ledger means the fully specified implementation failed its
+declared gate. It does not dismiss the broader idea family. Passed components
+and exact constraints are retained in `SALVAGE_MAP_20260806.md` and may be
+reopened only through a new causal mechanism.
+
 ## Evidence grades
 
 - **A**: exact theorem or official paired result with preregistered gate.
@@ -34,11 +39,14 @@ Passing an earlier link does not rescue a later failure.
 | Exact line conditioning | Exact first-layer integration | At least 496.96 forward equivalents; needs impossible >99.8% VR | A/B | Hard kill cost |
 | Active subspace | Pointwise Jacobian rank about 15 | Subspace tumbles across gates; high-degree residual near-isotropic | B/C | Hard kill global subspace |
 | Graphify local semantic pass | Local/no-key execution succeeded | Llama3.2 collapsed corpus to 5 nodes and mislabeled types | C | Reject as authority |
-| Audited Graphify evidence graph | 49 nodes, 65 typed edges, 10 communities; useful traversal | Centrality depends on encoded edges and is not independent evidence | B | Use for prioritization |
+| Audited Graphify evidence graph | 53 nodes, 76 typed edges, 9 communities; useful traversal | Centrality depends on encoded edges and is not independent evidence | B | Use for prioritization |
 | H1 equivariant residual | 70 finite symmetry-safe features; grouped residual R2 0.662672; scale-only R2 0.648801 | Misses the fixed R2>0.965 gate; graph features add only about 1.4 points over scale | B/C | Hard kill current information family |
 | Finite-horizon factorized k3 | Algebra/depth parity 5.19e-15; all H safe; correction cosine 0.8997 | Best H2 adjusted 1.3162e-4, 583.1x worse; correction overshoots ~4.68x | A/B | Hard kill |
 | Goal-oriented adjoint cumulants | Exact terminal k3/k4 projections, 3.111B cost, small-n correction cosines 0.951/0.762; restores mean absolute skew to 0.3867 | Public0..4 fullcov gain only 2.12%; full covariance adjoint goes rank1->rank8 and costs O(Ln4) | A/B | Hard kill promotion; preserve terminal operator |
-| Weight-identified latent-factor closure q3,r2 | Synthetic summed-MSE ratio 0.04738 vs fullcov, wins 6/7; exact permutation/gauge; affine-rank2 means; bounded 27-to-3 recompression | Only seven small networks; 26.2B cost is unbilled arithmetic; legal eigensolver and width-256 behavior unknown | B | Survives premise; advance one rung only |
+| Weight-identified latent-factor q3,r2 | Original small-width ratio 0.04738, wins 6/7; honest/invariant/non-scalar; forward components and recompression are reusable | Adversarial n64 loses 8/8, ratios 2.928/1.596; top-two trace share falls 88.4% n4 -> 3.02% n256; absolute thresholds break scale homogeneity | B | Kill fixed-r leaf; preserve mixture machinery |
+| Latent factor q3,r3 | Invariance passes; 33.075B conservative arithmetic; wins 7/7 vs fullcov on original seven | Ratio 0.0602767 misses <0.035 gate and is 27.22% worse than r2; wins only 2/7 vs parent | B | Kill r3 leaf; do not continue monotone r |
+| Adaptive sparse-radial latent closure | Directly targets fixed-r trace collapse with O(r) signed nodes at fixed trace fraction | n64 accuracy, invariance, and target cost pending | pending | Live causal reimplementation |
+| Full-covariance sigma latent closure | Matches entire covariance with 2n symmetric-square-root nodes; no rank collapse | n64 accuracy, recompression aliasing, invariance, and target cost pending | pending | Live causal reimplementation |
 
 ## Cross-branch hyperassociations
 
@@ -111,17 +119,17 @@ grouped whole-MLP CV and explicit transformation tests are mandatory.
 
 ### 7. A finite mixture can preserve the missing nonlinearity without fitting a copula
 
-The latent q3,r2 branch is different from the killed scalar mixture and generic
-GMM/copula stories. Its components are forward-defined by weight-conditioned
-covariance eigenfactors, not inferred from insufficient low moments, and they
-remain distinct through the next ReLU before deterministic recompression. The
-synthetic 95.26% reduction is therefore a real premise pass, while still not
-proving that the approximation survives width 256 or legal FlopScope billing.
+The latent q3,r2 branch is genuinely different from the killed scalar mixture
+and generic GMM/copula stories: its components are forward-defined by the
+weights and survive a later ReLU. Its 95.26% small-width reduction was real.
+The adversarial audit then found the missing width law: two factors explain
+88.4% of trace at n4 but only 3.02% at n256, and the method loses all eight
+fresh n64 cases. This kills fixed-r tensor quadrature, not the forward mixture.
 
-Applied mutation: advance only q3,r2 to a counted target-shape smoke. Preserve
-the exact invariance fallback at repeated eigenspaces, store child residuals
-diagonally, and kill before any score screen if eigensolver accounting or Cmax
-headroom fails.
+Applied mutations: retain the weight-defined components, analytic rectification,
+deterministic compression, and exact symmetry. Replace the failed factor rule
+with either adaptive fixed-trace spherical-radial cubature or a full-covariance
+2n sigma rule. Both change the causal failure while avoiding q^r child growth.
 
 ## Immediate decision tree
 
@@ -130,11 +138,10 @@ headroom fails.
 2. Preserve the adjoint terminal source operator as a proved 3.111B component,
    but do not fold it into the champion without an independent estimator whose
    residual covariance makes the combined adjusted score favorable.
-3. Advance only latent q3,r2 to a legal FlopScope target-shape cost/stability
-   smoke, followed by one predeclared public0 no-scorer accuracy check only if
-   the resource gate passes.
-4. Independently audit the synthetic reference and closure implementation;
-   a 0.04738 ratio is strong enough that baseline or orientation bugs must be
-   excluded before trust increases.
+3. Test adaptive sparse-radial and full-covariance sigma latent rules on the
+   frozen fresh n64 audit cases. Do not spend a public row unless one achieves
+   ratio <=0.8, at least 6/8 wins, exact invariance, and conservative cost <80B.
+4. Fix the comparator's near-|rho|=1 quadrature and replace absolute eigen/tie
+   tolerances with relative rules before trusting any successor evidence.
 5. Do not combine dead branches merely because they share vocabulary; every
    hybrid must supply a new observable and pass an interaction test.

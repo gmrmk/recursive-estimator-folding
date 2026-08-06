@@ -16,7 +16,8 @@ champion_g
   -> champion_(g+1)
 ```
 
-Failed candidates remain in the ledger as constraints. Headroom-style
+Failed implementations remain in the ledger as constraints and salvage banks;
+their passed components are retained for new mechanisms. Headroom-style
 recursion can propose mutations, but cannot promote them; experimental evidence
 remains authoritative.
 
@@ -68,6 +69,8 @@ and reproducible randomization.
 - Use whole independent instances as statistical units.
 - Inspect tails, failures, bias, and cost—not only aggregate score.
 - Combine winners only after residual-covariance or factorial interaction tests.
+- Treat failure as local to a specified implementation and gate; preserve every
+  passed component and revisit it only through a new causal mechanism.
 - Distinguish a locally best candidate from a demonstrated competition winner.
 
 ## License
@@ -77,4 +80,3 @@ MIT
 The skill implementation is MIT-licensed. The private research corpus retains
 the provenance and usage constraints of its individual source materials and is
 not intended for redistribution without review.
-

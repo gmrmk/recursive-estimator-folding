@@ -1,6 +1,6 @@
 # Deterministic graph analysis
 
-Nodes: 49; edges: 65; communities: 5.
+Nodes: 53; edges: 76; communities: 6.
 
 The metrics describe topology, not truth. Edge confidence and the original reports remain authoritative.
 
@@ -8,16 +8,16 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 
 | node | status | betweenness | degree centrality |
 |---|---|---:|---:|
-| Winning legal adjusted score | target | 0.4864 | 0.1875 |
-| H1 equivariant learned residual closure | rejected | 0.3874 | 0.2292 |
-| Coordinatewise signed cumulant transport | derived | 0.2832 | 0.1250 |
-| H2 weight-conditioned blend coefficient | blocked | 0.2314 | 0.0833 |
-| Connected finite-width four-point vertex | proved+measured | 0.2271 | 0.1667 |
-| H3 rank-5 k4 tensor sketch | rejected | 0.1859 | 0.1458 |
-| 272B combined-budget law | proved | 0.1454 | 0.0417 |
-| Dyadic depth-memory features | proposed | 0.1223 | 0.0833 |
-| Kerdock/MUB cubature | rejected | 0.1223 | 0.0833 |
-| Network-specific sign-changing control | measured | 0.1197 | 0.0417 |
+| Winning legal adjusted score | target | 0.5237 | 0.2115 |
+| H1 equivariant learned residual closure | rejected | 0.3576 | 0.2115 |
+| Coordinatewise signed cumulant transport | derived | 0.2627 | 0.1154 |
+| H2 weight-conditioned blend coefficient | blocked | 0.2149 | 0.0769 |
+| Connected finite-width four-point vertex | proved+measured | 0.2009 | 0.1538 |
+| H3 rank-5 k4 tensor sketch | rejected | 0.1773 | 0.1346 |
+| 272B combined-budget law | proved | 0.1357 | 0.0385 |
+| Dyadic depth-memory features | proposed | 0.1131 | 0.0769 |
+| Kerdock/MUB cubature | rejected | 0.1131 | 0.0769 |
+| Weight-identified latent-factor closure | rejected_fixed_rank_components_preserved | 0.1130 | 0.1923 |
 
 ## Articulation points
 
@@ -31,7 +31,6 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 - Network-specific sign-changing control
 - Goal-oriented adjoint cumulant
 - Global sampler/analytic blend
-- Weight-identified latent-factor closure
 - Finite-horizon factorized k3
 - Random 32,256 sampler
 - Even spherical residual degree >=6

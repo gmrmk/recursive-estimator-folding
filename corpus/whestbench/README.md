@@ -7,8 +7,9 @@ rules, and current champion without relying on conversation memory.
 
 ## Layout
 
-- `core/` — curated mathematical corpus, predeclared graph queries, and the
-  pass/fail hyperassociation ledger.
+- `core/` — curated mathematical corpus, predeclared graph queries, the
+  pass/fail hyperassociation ledger, and a living salvage map that turns every
+  failed implementation into constraints and reusable components.
 - `graph/` — typed NetworkX/Graphify graph, deterministic analysis, query
   audit, Graphify report, and local HTML visualization.
 - `experiments/` — concise reports for the major promoted or killed branches.
@@ -36,4 +37,3 @@ Each claim should be read according to its provenance:
 
 Graph centrality is a navigation aid, not evidence. A proposed connection is
 promoted only through the external ladder specified in the skill.
-
