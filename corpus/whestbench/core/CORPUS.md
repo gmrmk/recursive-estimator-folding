@@ -371,16 +371,487 @@ Keep q=3 deterministic recompression but remove factor truncation entirely.
 For each component use the unique symmetric PSD square root `L=V^(1/2)` and
 the 2n equal-weight nodes `mu +- sqrt(n)L e_j`. The rule matches the entire
 Gaussian covariance, grows linearly rather than exponentially, and its node
-set is permutation-equivariant. It directly tests whether fixed-r trace loss or
-three-component recompression is the binding failure. It uses the same frozen
-n64 ratio/win/invariance/<80B gate as H8. Status: premise running, no WHest data
-or scorer.
+set is permutation-equivariant. Result: IMPLEMENTATION KILLED, CONSTRAINT
+PRESERVED. Covariance relative error was 3.01e-15, scale/permutation passed,
+and conservative cost was 48.381B, but the frozen n64 ratio was 8.8716 with
+only 1/8 wins. Removing rank collapse and matching second moments is therefore
+insufficient: the low-degree axes severely alias ReLU angular gate crossings,
+with the three-bin compressor a possible secondary loss. Any descendant must
+change the angular observable, not tune these radii or axes from the same data.
+Source: `../latent_full_sigma/REPORT.md`.
 
-## Rejected attractive stories
+### H10: gate-aligned truncated projection mixture
+
+Keep the forward q=3 mixture and deterministic recompression, but replace
+variance-ranked quadrature by a projection chosen from ReLU boundary mass. For
+each Gaussian component define `b_i=sigma_i phi(mu_i/sigma_i)`, solve `C a=b`,
+standardize `T=a^T(Z-mu)`, and partition T into three equal-probability normal
+bins. The conditional mean and covariance of Z in each bin are closed form;
+each child then passes through the exact Gaussian ReLU moment map. Under a
+positive coordinate gauge D, b transforms as Db and a as D^-1 a, so T is
+invariant; neuron permutations commute as well. This attacks angular gate
+crossings without fixed-r trace loss or exponential nodes. It uses the frozen
+n64 ratio<=0.8, wins>=6/8, exact invariance, and <80B conservative-cost gate.
+Result: GENERIC-COMPRESSOR IMPLEMENTATION KILLED; DIRECTION PRESERVED. The
+operator passed seven structural tests, exact scale/permutation covariance, and
+a 68.640B conservative cost bound. It improved all 8/8 frozen n64 cases, unlike
+the variance-ranked and sigma-point leaves, but aggregate ratio was 0.997502:
+only a 0.2498% reduction versus the required 20%. The stable sign is mechanism
+evidence; the effect is about 80x too small. Exact moment recombination plus the
+generic three-bin compressor washes out almost all gate-conditional state.
+Source: `../latent_gate_split/REPORT.md`.
+
+### H11: gate-label path-memory recompression
+
+Keep H10's boundary direction, relative solve, equal-probability truncated
+moments, Gaussian ReLU map, q=3, and frozen n64 cases. Change only compression:
+aggregate children by inherited low/central/high split label across parent
+components, then moment-match one Gaussian per label. This is a memristic/path-
+memory translation with a precise operation: preserve the nonlinear state label
+that the generic leading-covariance compressor erased. Result: IMPLEMENTATION
+KILLED; MEMORY REQUIREMENT REFINED. Label aggregation passed exact moments,
+permutation/gauge errors below 5.2e-16, a 62.600B bound, and 6/8 wins, but ratio
+was 0.999602513. It was worse than H10's generic compressor on all 8/8 cases
+and erased about 84% of H10's already-small gain. The low/central/high label is
+redefined by a different local direction every layer, so its name is not a
+coherent transported physical state. Source: `../latent_gate_memory/REPORT.md`.
+
+### H12: Rao-Blackwellized conditional ReLU marginals
+
+Return to H10's better generic compressor and preserve the direction, bins,
+q=3, and fullcov correlation map. Change only the earliest lossy link: for each
+coordinate and truncation bin, integrate the exact conditional Gaussian
+`Z_i|T=t` to obtain `E[ReLU(Z_i)|bin]` and its second moment. Reconstruct a PSD
+child covariance from these exact marginal variances and the parent's
+Gaussianized correlation matrix. This preserves scalar-conditional skew before
+compression at O(q^2 K n) incremental work rather than carrying exponential
+components. Result: MARGINAL-ONLY IMPLEMENTATION KILLED; EXACT INTEGRALS
+PRESERVED. Six numerical, PSD, symmetry, and cost tests passed, all 8/8 cases
+improved, and the cost bound was 68.899B. But the aggregate ratio was
+0.997502361, only 6.08e-8 better than H10 and far above the <=0.8 materiality
+gate. The scalar statistic explains only about 1.0303e-4 of each neuron's
+variance, making the largest within-child marginal correction 1.12e-7. The
+unresolved signal is therefore moved from univariate conditional skew to
+cross-neuron conditional dependence. Source:
+`../latent_gate_rb_marginals/REPORT.md`.
+
+### H13: repeated-index cumulant premise
+
+The first cross-neuron mutation retains third- and fourth-cumulant entries with
+at most two distinct indices: k3(iii), k3(iij), k4(iiii), k4(iiij), and
+k4(iijj). This is O(n^2) state and admits O(n^3) terminal contractions, but a
+dense layerwise recurrence is not assumed. The oracle premise is tested first
+on fresh n=8/12/16 depth-2--4 networks. It survives only if it preserves at
+least 80% of squared next-layer contraction energy and 80% of material
+correction signs. Result: INDEX-OMISSION IMPLEMENTATION KILLED; ORIENTATION AND
+TERMINAL ALGEBRA PRESERVED. Material signs were 94/97, yet aggregate
+standardized k3/k4/combined fidelities were -248.9998/-3578.1022/-2803.7649
+and only 3/9 cases passed all energy gates. Sample doubling confirmed the
+depth-four failure. All-distinct entries provide essential cancellation, and
+the exact dense iijj recurrence remains O(n^4). Source:
+`../pair_repeated_cumulants/REPORT.md`.
+
+### H14: conditional-correlation spectrum
+
+The second cross-neuron mutation integrates exact bivariate ReLU covariances
+conditioned on H10's scalar truncation and subtracts the Gaussianized child
+covariance. It measures whether this missing matrix is low-rank rather than
+assuming it. Rank 1/2/4/8 approximations are tested on fresh n=12/16/24 cases;
+rank <=4 must retain 80% of Frobenius energy and 80% of material downstream
+signs. Result: COMPRESSION PREMISE SURVIVED; DENSE FORMATION LINK FAILED.
+Rank four retains 99.3533% of aggregate off-diagonal energy and 99.1170% of
+material downstream signs, with mean/minimum correction cosine 0.9847/0.8216.
+Known factors apply for about 0.212B with contingency, while the literal exact
+nested bivariate construction costs 1.855T. The tail bins carry essentially all
+the energy and effective participation rank has median 3.53. Source:
+`../conditional_corr_spectrum/REPORT.md`.
+
+### H15: conditional response-Gram factors
+
+Preserve H14's frozen exact correction cells, rank-four target, downstream
+probes, and gates. Change only dense factor discovery: construct coordinatewise
+univariate response vectors from `g_i(t)=E[ReLU(Z_i)|T=t]` and a predeclared
+centered low-order Hermite/derivative basis, then form a signed response Gram
+without enumerating bivariate conditional covariances. The child must recover
+at least 80% of H14's energy and material signs, pass symmetry, and remain
+below 80B conservative target arithmetic. Result: FORMATION PREMISE SURVIVED.
+The fixed degree-four rank-at-most-four proxy recovers 95.0349% of aggregate
+off-diagonal energy and 95.9161% of material downstream signs, with mean
+correction cosine 0.9336. PSD, permutation, scaling, inheritance, and numerical
+tests pass 6/6. Conservative incremental arithmetic, including the exact
+diagonal correction, is 0.5103B. About 4.97% remains in the conditional-
+covariance expectation. Source:
+`../conditional_corr_spectrum_response_gram/REPORT.md`.
+
+### H16: conditional law-of-total-cumulance factors
+
+Preserve H13's frozen exact contraction targets, material-sign definition, and
+convergence audit. Replace only deletion of all-distinct entries: express
+directional third/fourth cumulants using the law of total cumulance under a
+scalar-conditioned or small-rank conditional state. Conditional mean-response
+vectors and signed conditional-covariance factors retain all index sectors
+implicitly, and contractions are formed directly with each next-layer row
+without materializing n^3/n^4 tensors. The predeclared factor order must retain
+80% standardized k3/k4 energy and material signs with a sub-O(n^4) recurrence.
+Result: GAUSSIAN-WITHIN-CELL IMPLEMENTATION KILLED; EXACT IDENTITY AND
+COVARIANCE FACTORS PRESERVED. The exact binned identity reproduces targets
+within 3.21e-12; rank-four versus full conditional covariance has combined
+fidelity 0.9961. But dropping residual conditional cumulants yields
+k3/k4/combined fidelity 0.7560/0.7966/0.7872, below 0.8, despite 94/97 signs.
+The failed link is omitted within-cell c3/k4, not covariance rank. Source:
+`../conditional_total_cumulance/REPORT.md`.
+
+### H17: q3 response-Gram recursion
+
+Freeze H15's degree, quadrature, rank-four factors, exact diagonal correction,
+and zero fitted gain. Insert the correction at every appropriate child/layer of
+H10's q=3 gate-split recursion while retaining the generic compressor and the
+frozen n64 cases. Compare corrected fullcov, H10, H12, and this child. Survival
+requires aggregate ratio <=0.8, at least 6/8 wins, exact symmetry, and <80B
+conservative arithmetic. Pre/post-compressor factor norms separate intrinsically
+small source from compressor washout. Result: ONE-SCALAR RECURSIVE SOURCE
+KILLED; RESPONSE OPERATOR PRESERVED. The child wins 8/8 versus fullcov and
+passes PSD, n64 symmetry, and 71.494B cost, but ratio 0.997502340 misses the
+0.8 gate and is essentially identical to H12. Generic q3 reduction retains
+the global correction norm to 8.22e-16. The source is intrinsically tiny:
+median/max correction-to-covariance 9.64e-13/4.63e-7. Source:
+`../latent_gate_response_gram/REPORT.md`.
+
+### H18: conditional residual-cumulant spectrum
+
+Preserve H16's exact cells, total-cumulance identity, next-layer weights,
+material signs, and convergence bank. Change only the Gaussian residual: use a
+rank-r mode-1 unfolding for conditional k3, giving contractions
+`(u_s.w)(w^T V_s w)`, and a signed pair-unfolding for conditional k4, giving
+`lambda_s (w^T A_s w)^2`. These forms retain all-distinct entries with O(rn2)
+state and O(rn3) terminal work. Rank four must preserve 80% k3/k4/combined
+contraction fidelity and material signs. Result: REPRESENTATION SURVIVED;
+FORMATION/RECURRENCE WITHHELD. Rank-four k3/k4/combined fidelity is
+0.993974/0.984388/0.986618 with correction fidelity 0.995497 and 97/97 signs;
+rank one also passes. The downstream ReLU correction error is 0.058235x the
+Gaussian-cell error. But exact k4 pair formation costs 8.063GiB per cell,
+129.0GiB for B16, plus O(p^3) eigensolving. Source:
+`../conditional_residual_cumulant_spectrum/REPORT.md`.
+
+### H19: randomized two-radius sigma closure
+
+Preserve the failed full-covariance sigma rule's exact covariance, q=3
+compressor, frozen n64 cases, and cost model. Factorially change two local
+links: fixed covariance-square-root axes versus preseeded Haar frames, and the
+single radius `sqrt(n)` versus a positive two-node Gauss rule for the chi_n
+radius matching moments through degree three. The 2x2 ablation separates
+angular gate alias from radial homogeneity error. Rotation results are averaged,
+never best-picked; distributional permutation/gauge symmetry, peak memory,
+ratio<=0.8, wins>=6/8, and <80B are frozen gates. Primary grounding is Genz--
+Monahan stochastic spherical-radial integration. Result: N64 FACTORIAL
+SURVIVED. Fixed/sqrt(n) and fixed/chi2 ratios are 8.8716/9.1062; seeded Haar
+alone reaches 0.668802, and Haar+chi2 reaches 0.631599 with 7/8 wins. Every
+predeclared rotation is below 0.8. Structural error is 1.50e-14, peak working
+set 37.04MB, and conservative target cost 70.590B. No truth was generated.
+Sources: `../latent_randomized_radial/REPORT.md` and
+`../../sources/research_randomized_radial_cubature_20260806.md`.
+
+### H20: multi-direction gate response
+
+Preserve H15's exact degree-four response operator and change only the scalar
+conditioning source. Let `g_i=phi(mu_i/sigma_i)/sigma_i` and form the invariant
+boundary-susceptibility Gram `F=diag(g) C diag(g)`. Its eigenvectors define an
+orthogonal direction bank in standardized susceptibility coordinates. Add the
+per-direction signed factors for k=1/2/4/8 and, only if cost permits, 16; never
+form q^k Cartesian components or select directions from outcomes. Because H17
+is about 80x short, the truth-free premise requires a credible >=80x source
+amplification, symmetry, PSD, and <80B before n64 truth. Result: GAUSSIAN-
+PARENT FINITE-BANK IMPLEMENTATION KILLED; INVARIANT DIRECTIONS PRESERVED. The
+initial 25,741x factor-only amplification omitted its cancelling Gaussianized-
+split bias. Exact conditioning/recombination of a Gaussian is a no-op. In the
+complete source k1 has five PSD fallbacks in 24 states, while k2+ costs at least
+108.573B. No truth was read. Source:
+`../multidirection_gate_response/REPORT.md`.
+
+### H21: sparse-radial harness separation
+
+The frozen adaptive tau=0.5 candidate has no eight-case verdict. Two harness
+workers reached 24.6GB and 13.8GB because the last generic compression bin can
+enter a zero-progress loop with `remaining>eps`, `capacity=0`, and `take=0`,
+appending zero-weight components indefinitely. Streaming truth itself stayed
+near 42.5MB and reproduced the first three earlier ratios. This kills only the
+in-process measurement harness. A valid re-audit must freeze the reducer repair
+and run every case in an externally RSS/time-limited child. Source:
+`../latent_sparse_cubature/RESOURCE_POSTMORTEM.md`.
+
+### H22: residual covariance-algebra formation
+
+Preserve H18's exact residual targets and rank-four contraction gate. Constrain
+the k3 quadratic matrices and k4 pair factors to a fixed <=12-dimensional
+algebra generated by already-available rank-four conditional covariance
+factors, their symmetric products, diagonal response directions, and trace
+terms. This oracle premise asks whether the 129GiB dense factors can be
+identified inside existing state before inventing matrix-free probes. It must
+retain 80% actual next-row k3/k4/combined fidelity and signs with O(Br2n2)
+state/O(Br2n3) terminal work. Result: ALGEBRA REPRESENTATION SURVIVED;
+COEFFICIENT FORMATION/RECURRENCE WITHHELD. K3/k4/combined fidelity is
+0.983464/0.969492/0.972741 with 97/97 signs; doubled combined is 0.995556.
+Repeated probes are locally identifying for n12/n16 but not uniformly at n8,
+and conditioning can exceed 1e10. Source:
+`../conditional_residual_covariance_algebra/REPORT.md`.
+
+### H23: randomized-radial n128 scaling
+
+Freeze H19's combined operator, q=3 compressor, four rotation seeds, and
+arithmetic averaging. Generate four fresh iid-He n128/L32 synthetic networks
+and streamed 65,536-antithetic references under external RSS/time limits and a
+zero-progress reducer assertion. Survival requires aggregate ratio<=0.8,
+wins>=3/4, every rotation aggregate<=1.0, exact structure, <2GB peak, and the
+same <80B n256 cost. Passing authorizes a production FlopScope specification,
+not public scoring by itself. Result: WIDTH LAW SURVIVED. Aggregate ratio is
+0.634996973 with 4/4 wins. Per-rotation ratios are
+0.5633/0.2825/0.9291/0.7650; peak working set is 241.91MB, maximum wall 26.1s,
+and every structural/resource/reducer guard passes. Target arithmetic remains
+70.590B. Source: `../latent_randomized_radial_n128/REPORT.md`; the exact
+production contract is in `PRODUCTION_PORT_SPEC.md`.
+
+### H24: randomized-radial susceptibility compressor
+
+Reuse H20's invariant susceptibility coordinate only where it is meaningful:
+the genuinely non-Gaussian Haar+chi2 point cloud from H19. Clone the n64 parent
+and change only q3 recompression. Against the same uncompressed point cloud
+passed through one more weight/ReLU, the susceptibility-aware compressor must
+reduce aggregate mean+covariance observable error by 20% versus generic and
+win 75% of states, while preserving moments, symmetry, PSD, and <80B cost. The
+frozen n128 parent remains untouched. Result: SINGLE-SUSCEPTIBILITY COMPRESSOR
+KILLED; PULLBACK PRESERVED. It passes exact moments, PSD, symmetry, spectrum,
+and 71.953B cost, wins all 8 layer-zero states, but reaches only ratio 0.975251
+and 11/24 wins. Mid/late covariance worsens; covariance is 99.35% of generic
+observable-error energy. Source:
+`../randomized_radial_susceptibility_compressor/REPORT.md`.
+
+### H25: Physarum-attention mixture-of-experts router
+
+Translate slime-mold adaptation into a parameter-free graph algorithm. Demand
+nodes are invariant ReLU-boundary/covariance observables; expert nodes are
+whole moment-safe rules (fullcov, fixed sigma, Haar/sqrt, Haar/chi2). Edge
+length combines conservative cost and structural mismatch. Electrical flow
+`q=(D/ell) Delta p` obeys conservation, and conductance updates as
+`D<-(1-eta)D+eta|q|`; fixed scaled-dot attention initializes D and the entropy
+barrier attenuates collapse. P0/P1 freezes tau=1,gamma=1,eta=.25,32 steps and
+top1/top2 with no learned weights. On fresh n16/n24 one-step states, the hybrid
+must beat always-Haar+chi2 error by 20%, win 75%, remain compute-neutral, and
+pass symmetry/load gates. Mediant and rotation-selection certificates remain
+binding. Result: FIXED SPECIALIZATION LINK KILLED; ROUTER GRAPH PRESERVED. The
+primary top1 ratio is 0.866761 with 18/24 wins and compute below the parent, but
+all 24 states select fullcov. The frozen bank itself has hard best-pure and
+best-convex-top2 ratios 0.833818 and 0.829054, so routing alone cannot reach the
+0.80 gate. Add a genuinely complementary complete expert before rerouting.
+Source: `../physarum_moe_router/REPORT.md` and
+`../../sources/research_physarum_moe_relu_routing_20260806.md`.
+
+### H26: randomized-radial FlopScope production port
+
+Freeze H19/H23's Haar+chi2 operator, q=3 compressor, per-MLP deterministic
+rotation seed, and no coefficient tuning. Hoist square-root/rotation buffers
+and reshapes to setup, use exact charged shapes, and compare every ported stage
+to the NumPy reference. The development gate requires finite outputs, numerical
+parity, zero failures, and safe maximum combined cost—not merely 70.590B
+abstract arithmetic. Only allowed development rows may be touched; locked and
+prohibited rows remain untouched. The FP32 port survives its synthetic target
+gate: six test groups and 200 internal-stage comparisons pass, maximum absolute
+parity error is 6.44e-6, billed work is 59.276B, residual-adjusted compute is
+71.423B, and peak working set is 210.6MB. Exact declared call counts, finite
+nonnegative output, PSD tolerance, and zero-progress guards pass. Preserve this
+hash-frozen implementation as the production reference; official-row and
+mixed-precision decisions remain separate. Sources:
+`../latent_randomized_radial_n128/PRODUCTION_PORT_SPEC.md` and
+`../latent_randomized_radial_fp32_port/REPORT.md`.
+
+### H27: randomized-radial dual-observable compressor
+
+Preserve H24's exact q3 contract and non-Gaussian point cloud. Change only the
+direction geometry to the parameter-free normalized sum
+`F_gate/tr(F_gate)+F_active/tr(F_active)`, where
+`F_active=diag(Phi(alpha)) R diag(Phi(alpha))`. The first term retains gate/mean
+susceptibility; the second targets the active linear pair-covariance response
+that dominates H24's error. The top fixed direction/bank must reach ratio<=0.8
+and >=18/24 wins with the same structure and <80B gates. The s^2 tail partition
+remains a separate future link. Result: SCALAR FUSION KILLED; BOTH LANES
+PRESERVED. It reaches ratio 0.965944 and 17/24 wins while passing all structural
+and 71.964B gates. Gate/active channel cosine falls from about 0.72-0.75 early
+to 0.15-0.25 late, so scalar averaging is the diagnosed failure. Preserve a
+rank-two response subspace and test the T^2 tail separately. Source:
+`../randomized_radial_dual_observable_compressor/REPORT.md`.
+
+### H28: flatworm-ladder attenuation
+
+Translate only documented flatworm organization: paired longitudinal cords,
+transverse commissures, and measured habituation/dishabituation. For invariant
+expert or response evidence `u_l`, use dyadic longitudinal memory
+`m_l=.5m_(l-1)+.5u_l`; couple predeclared pairs by the nonexpansive block
+`[[.75,.25],[.25,.75]]`; and attenuate conductance with leaky flow fatigue and
+bounded novelty relief. The biology motivates the topology, not the equations.
+The router P2 balances all four experts but worsens loss to 1.101064, selected
+expert cost to 4.684x, and proxy-inclusive cost to 1.52484x; leak and
+commissural cells are exactly neutral. Kill router attenuation, preserve the
+two-lane response translation. That translation maps H27's gate and active
+Grams to separate longitudinal lanes, smooths shared early signal, and retains
+late contrast. Source: `../flatworm_ladder_attenuator/REPORT.md` and
+`../../sources/research_flatworm_ladder_attenuation_20260806.md`.
+
+### H29: ECN-Jacobian MaxEnt constrained compression
+
+Borrow only the defensible ECN pattern `psi -> tau -> phi`: extract invariant
+gate/active response features, transform them in a cheap observable-Jacobian
+pullback metric with a maximum-entropy optimization prior, then remap into a
+q=3 mixture that exactly preserves mass, mean, raw second moment, and PSD.
+Literal finite-field elliptic curves are excluded because modular quantization
+does not preserve the continuous Gaussian identities. Following Mlynarski et
+al., the route prior is `q(theta) exp(beta U(theta;W))/Z`; beta measures trust
+in a target-free variance-minus-cost utility and is frozen on disjoint
+cleanroom networks. A flatworm two-lane recurrence is an ablation, not a
+truth-fitted depth schedule. The no-ladder cell reproducibly reaches ratio
+0.911472 with 32/32 wins; the fixed flatworm cell is 0.933606. Independent
+audit rejects the deployable claim. The feature metric is an SPD surrogate,
+not the claimed analytic observable Jacobian; the optimizer is balanced
+entropic soft k-medoids, not a Mlynarski prior; the decoder is hardcoded to
+K48/d6; and the target cloud K=4qn=3072 projects to 89.925B plus a 38.65GB
+dense delta tensor. Preserve balanced transport and the exact total-moment
+decoder algebra. The next legal rung replaces only psi by the exact ReLU
+Jacobian in (alpha,log sigma), makes phi shape-generic, fixes 64 transport
+steps, and resolves streaming target cost before accuracy. Sources:
+`../ecn_jacobian_maxent_compressor/REPORT.md`,
+`../ecn_jacobian_maxent_compressor/JUDGE_MATH_STAT.md`,
+`../../sources/research_ecn_jacobian_maxent_routing_20260806.md`, and
+`../../sources/research_mlynarski_optimization_priors_20260806.md`.
+
+### H30: Fourier/Gegenbauer exact-mean weight distillation
+
+Distill each disclosed teacher network into a small analytic-mean control
+student. A pilot fits shallow ReLU ridges, Gaussian sine/cosine features, or
+spherical zonal harmonics aligned by a frozen weight/Jacobian rule; an
+independent residual set estimates `f-g`. The Fourier systems-biology paper
+motivates spectral enrichment but its time-grid FFT is not copied: neuron-index
+FFT would break permutation symmetry. The strongest cell starts at even
+spherical degrees >=6, directly targeting the broad residual not annihilated
+by the antipodal 5-design. Feature means are exact, and all pilot/fit/teacher
+costs count. The frozen student dictionaries fail. A layer-one ReLU control
+improves iid pointwise variance to 0.656x but worsens design-surviving raw and
+cost-adjusted variance to 1.145x and 1.981x. The degree-{6,8} Gegenbauer student
+scores 91.141x raw and 174.995x cost-adjusted with 0/16 wins and control-error
+correlation -0.0367. Reject these directions; preserve exact-mean, cross-fit,
+MUB, and cost-ledger machinery for a response-aligned dictionary. Sources:
+`../weight_distilled_multifidelity/REPORT.md` and
+`../../sources/research_fourier_enhanced_distillation_20260806.md`.
+
+### H31: JSpace fused-Jacobian response lens
+
+Audit JSpace at commit `54089367f887dde0b076d99bba71d053b67d70ac` under
+its MIT license. Its transferable mechanism is a fused Hutchinson VJP: one
+reverse traversal for an output probe yields downstream response vectors at
+every layer. The transformer-specific vocabulary, token positions, unembedding,
+and sparse nonnegative semantic cone do not exist in WHestBench. The cleanroom
+translation compares the signed lens `E[D_l]` against the energy lens
+`E[D_l^T D_l]`, because input-dependent ReLU gates can cancel the former while
+preserving the latter. Nonnegative pursuit is only an ablation; signed pursuit
+is the symmetry-compatible comparator. A passing lens may define a frozen
+layer band and Jacobian-response atoms for H30's exact-mean cross-fit harness.
+It may not select depths or directions using official truth. The cleanroom
+geometry premise survives: `E[J]` retains median 0.102787 of Jacobian energy,
+while `E[J^T J]` has effective rank 5.587 and top-eight energy 0.930047.
+K=4 Hutchinson reaches exploratory median Gram error 0.08566 and top-eight
+overlap 0.99574 for input-only projected target cost 2.813B. Signed pursuit
+improves residual only 8.66% and success 1.91 points, below its gate. Independent
+audit confirms the exact VJP identity but rejects layerwise/gauge/capacity
+claims. The exactly-once error link then fails decisively: energy-lens controls
+score 4.75763x raw and 21.0923x cost-adjusted, 0/16 wins, correlation .05057;
+signed-J is 9.1184x and isotropic 4.28796x. Preserve G0 only as an offline
+diagnostic. Sources:
+`../jspace_workspace_adapter/REPORT.md`,
+`../jspace_workspace_adapter/JUDGE_MATH_STAT.md`,
+`../jspace_gram_aligned_control/REPORT.md`,
+`../../sources/research_jspace_adaptation_20260806.md`, and
+`../../sources/research_jspace_source_audit_20260806.md`.
+
+### H32: production closure external falsifier
+
+The hash-frozen randomized-radial FP32 port passes engineering: six tests,
+200 internal-stage parity cells, exact call counts,59.276B billed,71.423B
+residual-adjusted, and210.6MB peak. Under a gate frozen before access, it was
+run exactly once on the lowest untouched permitted development row, index100.
+Accuracy is raw8.38117e-5 and adjusted2.16946e-5, or96.1178x worse than the
+deployed sampler champion. Kill the direct replacement claim; preserve the
+Haar angular de-aliasing, chi radial nodes, guarded q3 compressor, and FP32
+implementation only as components. At the same multiplier, the one-row versus
+aggregate 96.1178x comparison corresponds to MSE retention .0104039, RMSE
+.101999, or R2 .989596. This is a severity threshold, not a population theorem
+because the units are unmatched; a real child must pass paired residual
+variance per total cost. Sources:
+`../latent_randomized_radial_fp32_port/REPORT.md`,
+`../latent_randomized_radial_fp32_port/JUDGE_COST_LEGALITY.md`, and
+`../latent_randomized_radial_fp32_port/DEVELOPMENT_INDEX100_REPORT.md`.
+
+### H33: failure inversion, not sign reversal
+
+For an exact-mean fitted control `HB`, replacing H by -H replaces B by -B and
+does not change the estimator. Likewise `a+mean(f-a)=mean(f)`, so sampling a
+constant analytic residual is exactly the pure sampler. Two causal inversions
+remain admissible on fresh cleanroom seeds: use bottom or top-orthogonal-
+complement G0 directions instead of top sensitivity modes; or supply a new
+per-sample analytic surrogate with an exact mean and matched residual-cost
+advantage. The structural inversion is now closed. Bottom-G0 and top-orthogonal
+controls improve 29.87% and 24.64% versus top-G0, proving the subspace change
+is real, but remain4.246x/4.563x raw,18.825x/20.247x cost-adjusted,0/16 wins,
+and near-zero correlation. Terminate JSpace controls. The analytic-residual
+collapse/cost audit remains the only inversion calculation in flight. Sources:
+`../FAILURE_INVERSION_CALCULUS_20260806.md` and
+`../jspace_inverse_complement_control/REPORT.md`.
+
+### H34: compression is cost-times-variance, not fewer bits
+
+Above the 0.1 multiplier floor, a compressed child wins exactly when
+`r_cost*r_MSE<1`. Reducing only the number of Monte Carlo paths is first-order
+neutral because cost falls as N while variance rises as 1/N. The promoted
+random32,256 breakdown is 184.822B matmul work out of185.407B billed,99.684%
+across about215 calls; exact matrix-product geometry is therefore the only
+immediate engineering compression target. FP16/int8 alone are not cheaper
+under FlopScope. The signed higher-cumulant representation remains genuinely
+compressible: an oracle-fed <=12D/rank4 inverse retains .926273 combined and
+.983525 correction fidelity with94/94 signs. Its first formation mechanism is
+locally killed. Constant-modulus Rademacher/Hadamard probes are exactly blind
+to the trace-free diagonal algebra direction, recover minimum k3/k4 core-rank
+fractions only .3611/.2051, and antipodal pairing adds zero rank. The deeper
+obstruction is observability: probabilities, means, diagonal covariance, and
+four covariance factors determine only order<=2 and supply no directional
+k3/k4 right-hand side. If those responses were free the full route costs only
+12.340B; sampling them under80B permits about10719 paths,670/cell, with ideal
+skew/kurtosis errors .095/.189. Kill constant-modulus coefficient formation;
+preserve the <=12D contraction. Reopen only with nonconstant-amplitude probes
+and a weights-only Price/Hermite higher-moment response recurrence. Sources:
+`../COMPRESSION_SCORE_CALCULUS_20260806.md`,
+`../randomized_radial_inverse_residual/REPORT.md`, and
+`../compressed_residual_cumulant_transport/REPORT.md`.
+
+### H35: exact sampler compression reaches the allocation wall
+
+The deployed sampler spends99.684% of billed work in matrix products, so a
+fresh whole-row rectangular Strassen child changed only that link. Its
+shape-only dispatcher is never worse in billed arithmetic over all65536
+`k,n<=256` pairs. At the full `(64512x256)@(256x256)` product, L2 hybrid bills
+6.713B versus8.439B direct, ratio.795427. Sixteen synthetic products reach
+maximum absolute/relative error5.25e-6/6.38e-7; a fresh depth32 ReLU chain has
+relative error4.10e-6 and only5/4194304 gate changes. Algebra and precision
+therefore pass. The implementation fails the scorer's actual cost. Direct
+effective proxy is8.444B, while L1 sequential/fused and L2 hybrid reach
+9.144B/9.602B/12.205B with wall ratios5.28x/6.20x/14.51x. Fully fused L2 needs
+496.125MiB before reconstruction. Kill this allocation graph; preserve the
+whole-row/ragged formulas. The next causal child must use preallocated `out=`
+buffers or a different Winograd reconstruction and cut L1 residual below
+about.00987s merely for parity. Source:
+`../exact_sampler_compression/REPORT.md`.
+
+## Current non-working translations
 
 Literal quantum retinal pigment, generic memristor language, tau numerology,
 reaction-diffusion without an equivariant update, generic active subspaces,
 generic copulas, generic TAP/AMP, fixed scalar resummation, fixed kernel
-reweighting, direct parity folds, and public-set memorization are not viable
-solutions under current evidence. They may be cited only through the concrete
-computational translations above.
+reweighting, direct parity folds, and public-set memorization do not currently
+supply a working legal mechanism. Their tested implementations remain evidence
+and mutation prompts; a descendant must name the changed causal link and pass
+the same external gates rather than relying on the metaphor alone.

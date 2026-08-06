@@ -37,3 +37,19 @@ Each claim should be read according to its provenance:
 
 Graph centrality is a navigation aid, not evidence. A proposed connection is
 promoted only through the external ladder specified in the skill.
+
+## Current snapshot (2026-08-06)
+
+- Deployable champion: random32,256 fold3 sampler, public-100 adjusted score
+  `2.257079776e-7`, zero failures, maximum effective compute `250.488783B`.
+- Exact compression result: whole-row rectangular Strassen reaches billed
+  ratio `0.795427` with depth-32 parity, but the present allocation graph is
+  killed because residual charging makes effective compute worse.
+- Analytic compression result: the `<=12D` signed residual-cumulant algebra is
+  preserved, while constant-modulus coefficient formation is killed by an
+  exact nullspace and missing weights-only k3/k4 responses.
+- Next admissible engineering mutation: preallocated/Winograd reconstruction
+  with L1 residual below about `0.00987s`.
+- Next admissible mathematical mutation: derive a weights-only Price/Hermite
+  higher-moment response recurrence before testing nonconstant-amplitude
+  probes.

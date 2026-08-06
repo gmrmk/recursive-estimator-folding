@@ -1,6 +1,6 @@
 # Deterministic graph analysis
 
-Nodes: 53; edges: 76; communities: 6.
+Nodes: 90; edges: 192; communities: 7.
 
 The metrics describe topology, not truth. Edge confidence and the original reports remain authoritative.
 
@@ -8,32 +8,29 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 
 | node | status | betweenness | degree centrality |
 |---|---|---:|---:|
-| Winning legal adjusted score | target | 0.5237 | 0.2115 |
-| H1 equivariant learned residual closure | rejected | 0.3576 | 0.2115 |
-| Coordinatewise signed cumulant transport | derived | 0.2627 | 0.1154 |
-| H2 weight-conditioned blend coefficient | blocked | 0.2149 | 0.0769 |
-| Connected finite-width four-point vertex | proved+measured | 0.2009 | 0.1538 |
-| H3 rank-5 k4 tensor sketch | rejected | 0.1773 | 0.1346 |
-| 272B combined-budget law | proved | 0.1357 | 0.0385 |
-| Dyadic depth-memory features | proposed | 0.1131 | 0.0769 |
-| Kerdock/MUB cubature | rejected | 0.1131 | 0.0769 |
-| Weight-identified latent-factor closure | rejected_fixed_rank_components_preserved | 0.1130 | 0.1923 |
+| Winning legal adjusted score | target | 0.5255 | 0.3596 |
+| H1 equivariant learned residual closure | rejected | 0.1642 | 0.1236 |
+| Latent-factor closure gate | expanded | 0.1434 | 0.2809 |
+| Physarum-attention MoE router | rejected_graph_preserved | 0.1264 | 0.1011 |
+| Connected finite-width four-point vertex | proved+measured | 0.1127 | 0.1573 |
+| H3 rank-5 k4 tensor sketch | rejected | 0.0844 | 0.0787 |
+| Weight-identified latent-factor closure | rejected_fixed_rank_components_preserved | 0.0639 | 0.1236 |
+| Coordinatewise signed cumulant transport | derived | 0.0571 | 0.0674 |
+| Goal-oriented adjoint cumulant | rejected_component_preserved | 0.0501 | 0.0674 |
+| Random 32,256 sampler | promoted | 0.0493 | 0.0562 |
 
 ## Articulation points
 
-- Winning legal adjusted score
 - H1 equivariant learned residual closure
-- Coordinatewise signed cumulant transport
-- H2 weight-conditioned blend coefficient
 - H3 rank-5 k4 tensor sketch
-- Dyadic depth-memory features
-- Kerdock/MUB cubature
-- Network-specific sign-changing control
 - Goal-oriented adjoint cumulant
-- Global sampler/analytic blend
-- Finite-horizon factorized k3
 - Random 32,256 sampler
-- Even spherical residual degree >=6
+- H2 weight-conditioned blend coefficient
+- Dyadic depth-memory features
+- Compressed residual-cumulant transport
+- Whole-row rectangular Strassen
+- Finite-horizon factorized k3
+- Global sampler/analytic blend
 
 ## Audited shortest paths to the target
 
@@ -49,4 +46,10 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 3. H1 and H3 were complementary attacks on that bottleneck, but both are now hard-killed: H3 loses downstream sign stability and H1 reaches only OOF R2 0.6627 versus 0.965.
 4. H2 is not a live sign-prediction method because sampler-scramble noise is not weight-identifiable. A seed-averaged magnitude model is a different, narrower hypothesis.
 5. The useful cross-domain translations converge on one architecture: multiscale residual sources, depth memory, invariant contractions, and shared local-to-global message passing.
-6. Both graph-prioritized mechanisms failed their cheap gates. The deployable frontier remains random32,256 while new coordinatewise signed-transport mechanisms are derived.
+6. Fixed-r latent mixtures are real small-width mechanisms but fail the width law because captured trace vanishes; increasing r from two to three does not repair the unchanged compressor.
+7. Matching the entire covariance with a 2n sigma rule still fails badly, proving that ReLU angular gate crossings are not determined by second moments.
+8. The deployed frontier remains random32,256. The randomized Haar plus chi-radial q3 closure passed internal scaling and engineering, then failed its one permitted development row by96.118x; retain its components, not its direct-estimator claim.
+9. JSpace terminal sensitivity is now exhausted as an integration control: top, bottom, and complement subspaces all have near-zero error correlation and lose every fresh case. Preserve G0 only as an offline diagnostic.
+10. Compression is now localized to two surviving components, not a deployable child: exact whole-row rectangular multiplication and a <=12D signed cumulant contraction. Their failed links are respectively allocation residual and weights-only higher-moment observability.
+11. Constant-modulus orthogonal probes cannot form the cumulant core: they are exactly blind to trace-free diagonal state, and the second-order conditional state contains no directional k3/k4 right-hand side.
+12. The next exact sampler mutation must preallocate reconstruction or change the Winograd schedule; the next analytic mutation must derive a Price/Hermite response recurrence before choosing nonconstant-amplitude probes.
