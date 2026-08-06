@@ -40,16 +40,19 @@ promoted only through the external ladder specified in the skill.
 
 ## Current snapshot (2026-08-06)
 
-- Deployable champion: random32,256 fold3 sampler, public-100 adjusted score
-  `2.257079776e-7`, zero failures, maximum effective compute `250.488783B`.
-- Exact compression result: whole-row rectangular Strassen reaches billed
-  ratio `0.795427` with depth-32 parity, but the present allocation graph is
-  killed because residual charging makes effective compute worse.
-- Analytic compression result: the `<=12D` signed residual-cumulant algebra is
-  preserved, while constant-modulus coefficient formation is killed by an
-  exact nullspace and missing weights-only k3/k4 responses.
-- Next admissible engineering mutation: preallocated/Winograd reconstruction
-  with L1 residual below about `0.00987s`.
-- Next admissible mathematical mutation: derive a weights-only Price/Hermite
-  higher-moment response recurrence before testing nonconstant-amplitude
-  probes.
+- Validated local champion: immutable random32,256 fold3 plus fixed8192-row
+  streaming Winograd, public-100 adjusted score `2.121762464e-7`, zero
+  failures, maximum effective compute `222.405357B`, and100/100 paired wins.
+  Its tar is validated and intentionally excluded/unsubmitted.
+- Exact compression result: public paired score ratio `0.940047616`, raw-MSE
+  ratio `0.999982962`, and bootstrap ratio95% CI `[0.936501,0.943476]`.
+  Exact compute compression, not estimator pruning, creates the improvement.
+- Analytic compression result: amplitude probes and the exact64D/58D physical
+  quotient preserve the compressed signed-cumulant geometry. Q2, Q4, and
+  exact latent conditional resummation remain insufficient response priors.
+- Canonical latent-factor gauge removes the arbitrary-rotation defect, but
+  isolated combined fidelity remains `0.66364`; missing signed higher-order
+  state, not quadrature orientation, is now the localized analytic failure.
+- The clean-room PLE-style sidecar factors the static response atlas31.9x into
+  a66,632-byte package. It is a storage/locality survivor only until fused
+  whole-estimator accounting beats the native-float32 alternative.

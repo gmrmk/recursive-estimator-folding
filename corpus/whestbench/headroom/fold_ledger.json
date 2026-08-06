@@ -7,9 +7,9 @@
     "resource_ceiling": "Hard C <= 272000000000; promotion safety gate Cmax < 258400000000 and zero failures.",
     "development_split": "Public indices 0..599 for mechanism development; current generation has used only 0..99 for new premises.",
     "holdout_split": "Indices 600..799 locked for one post-freeze read; indices 800..999 prohibited for this generation; private suite untouched.",
-    "champion_hash": "submission_random32256_20260806.tar.gz sha256 1874f9cac4be962dbd4f919bffc38dedf23b428ea6cbd7847a813c87d7ba7333",
+    "champion_hash": "submission_random32256_rowwinograd8192_20260806.tar.gz sha256 bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36",
     "evaluator_hash": "whest.exe sha256 888a44d9c886df88cf8933398c154e113f530f3dc2705282170820a101dd674a",
-    "champion_score": "official public0..99 raw 3.089512726e-7, adjusted 2.257079776e-7, mean C 202.281790B, max C 250.488783B, failures 0/100",
+    "champion_score": "official public0..99 raw 3.089460087e-7, adjusted 2.121762464e-7, mean C 189.852556B, max C 222.405357B, failures 0/100",
     "randomization": "setup seed 0; candidate uses 126 seeded Haar frames and antipodal/folded propagation"
   },
   "candidates": [
@@ -402,6 +402,112 @@
       "prediction": "Whole-row L1/L2 geometry reduces the full-product bill by at least10%, remains numerically equivalent through a fresh depth32 chain, and keeps residual/allocation cost low enough that effective compute improves.",
       "kill_condition": "Any billed shape is worse than direct, full-shape savings below10%, numerical/gate mismatch exceeds the frozen tolerance, peak temporary storage exceeds512MiB, wall ratio exceeds1.5, or billed savings are erased by the exact residual charge.",
       "result": "The algebra passes: exhaustive65536 shape pairs are never worse billed, full L2-hybrid ratio is .795427, 16-trial max absolute/relative error is5.25e-6/6.38e-7, and depth32 relative error is4.10e-6 with5/4194304 gate mismatches. Engineering fails. Direct effective proxy is8.444B; L1 sequential9.144B, L1 fused9.602B, and L2 hybrid12.205B because allocations/reconstruction create wall ratios5.28x/6.20x/14.51x. Fully fused L2 already needs496.125MiB before reconstruction. Kill this allocation graph; preserve the rectangular/ragged formulas and reopen only with preallocated out= buffers or a changed Winograd reconstruction schedule whose L1 residual is below about.00987s."
+    },
+    {
+      "id": "amplitude_coded_cumulant_probes",
+      "status": "killed",
+      "mechanism": "Replace only constant-modulus coefficient probes by P=128 normalized-Gaussian sphere lines, retaining the fixed <=7x<=12 algebra, rank-four contraction, seeds, and pseudoinverse threshold.",
+      "bias_class": "Oracle-fed probe-geometry audit for nonconstant-amplitude cubic/quartic polynomial measurements; no deployable response claim.",
+      "prediction": "Amplitude variation exposes the trace-free diagonal and makes the literal84/78 core systems full rank, conditioned below1e6, while preserving at least80% contraction fidelity/signs below80B.",
+      "kill_condition": "Any literal active core is rank-deficient, condition exceeds1e6, fidelity/sign/symmetry/cost gates fail, or the result is mislabeled as weights-only response formation.",
+      "result": "The literal full-coordinate rank gate fails at64/84 and58/78, so the frozen parameterization is killed. The changed mechanism succeeds: formerly blind diagonal RMS is .06967-.18121, conditions stay below30.35/52.54, exact physical cores recover below5.66e-15, combined/correction fidelity is .980382/.991939, signs97/98, and covariance defects below4.09e-15 for12.342916B if responses are free. The 20D nullspaces are intrinsic cubic/quartic symmetrization gauges, not lost physical content. Preserve uniform-sphere amplitudes; next quotient the deterministic64D/58D polynomial image without changing probes. RHS observability remains independently unresolved."
+    },
+    {
+      "id": "cumulant_polynomial_quotient",
+      "status": "screened",
+      "mechanism": "Replace the redundant literal cubic and quartic covariance-algebra core coordinates by deterministic response-free SVD bases for their homogeneous-polynomial images, with complete monomial coefficient maps as an independent certificate.",
+      "bias_class": "Exact coordinate quotient of oracle-fed directional higher-cumulant geometry; no response-formation or deployment claim.",
+      "prediction": "The frozen amplitude design spans exactly the complete symmetrized polynomial image in every cell, reduced inverses are stable and equivariant, and downstream contractions are unchanged below80B.",
+      "kill_condition": "Any design/symmetrization rank mismatch, quotient rank defect, condition above1e6, recovery/equivariance error above1e-10, fidelity/sign failure, cost above80B, or claim that quotienting creates a weights-only right-hand side.",
+      "result": "All144 cells pass:141 nontrivial profiles reduce cubic84->64 and quartic78->58, with three trivial1->1 profiles. Maximum conditions are30.3514/52.5370; response, physical-core, and equivariance defects stay below9.82e-15; combined/correction fidelity remains.980382/.991939 with97/98 signs. The prospective coefficient savings are23.81%/25.64%, but the current12.343391296B audit still charges the response-free SVD and no dominant-runtime win is claimed. Preserve the quotient geometry; the independent weights/current-state RHS remains blocked."
+    },
+    {
+      "id": "price_hermite_q2_response",
+      "status": "killed",
+      "mechanism": "Infer rectified-Gaussian Hermite coefficients through degree two from conditional mean and diagonal-plus-rank-four covariance, then compute exact linear-plus-quadratic Gaussian-chaos k3/k4 with matrix-free connected Wick trace identities.",
+      "bias_class": "Weights/state-only maximum-entropy response prior inside exact total-cumulance transport.",
+      "prediction": "The Q2 Price response reproduces direct isolated conditional k3/k4 and transported totals with at least.8 standardized fidelity/sign accuracy, exact symmetry, and conservative total below80B.",
+      "kill_condition": "Any direct conditional k3, k4, or combined fidelity below.8, nonfinite instability after a mechanism-preserving numerical repair, symmetry/identity failure, dense cumulant formation, or cost at least80B.",
+      "result": "Exact fast/dense identities agree to2.42e-16/2.14e-16, permutation/gauge errors stay below6.3e-16, and the61.285597B envelope passes. Transported totals improve the zero-conditional baseline to.95428 k3,.88725 k4,.90194 combined,.96478 correction and60/61 signs. The direct conditional RHS fails at.67069 k3,.16234 k4,.28234 combined, while481/1152 factor rows clip. Kill Q2 as faithful conditional formation; preserve its Price coefficients, trace operator, and transported-total signal. Next change only the Hermite response order from2 to4 in the certified polynomial quotient."
+    },
+    {
+      "id": "preallocated_strassen_winograd",
+      "status": "killed",
+      "mechanism": "Repair the exact whole-row Winograd allocation graph with legal setup-preallocated out= buffers, then separately test sequential scratch, a single batched seven-product matmul, and contiguous packing.",
+      "bias_class": "Exact structural sampler arithmetic modulo float32 reassociation; no estimator or sample change.",
+      "prediction": "A preallocated implementation keeps at least10% billed savings, parity and memory safety, residual below.00987s, effective proxy at least2% below direct, and median total wall at most1.5x direct.",
+      "kill_condition": "Any billed/parity/depth32/memory/residual/effective gate fails, median total wall exceeds1.5x, dispatcher can bill worse than direct, or an official estimator row is touched before the synthetic gate.",
+      "result": "Allocation is repaired: A/B/C residuals are.000263/.000440/.000527s and effective ratios.882057/.885099/.886148. Mutation B bills7.427768320B versus8.439201792B direct, has6.04e-7 relative error,2/4194304 depth32 gate flips, and480.94MiB conservative peak; its scorer proxy tolerates raw-MSE ratio below1.129817. But A/B/C wall ratios1.55874/1.54559/1.70148 all fail the frozen1.5 gate, and packing worsens throughput. Kill the present implementation; preserve B's score-side operator. The failed link is one-core half-width BLAS plus Winograd memory traffic, not allocation. Champion unchanged and no WHest row/scorer was touched."
+    },
+    {
+      "id": "price_hermite_q4_response",
+      "status": "killed",
+      "mechanism": "Hold the Q2 marginal/factor/total-cumulance state fixed, add exact ReLU Hermite coefficients through order four, and fold connected Wick multigraphs with symmetric-power rank-four correlation features.",
+      "bias_class": "Finite-order rectified-Gaussian chaos response in the certified cubic/quartic physical quotient.",
+      "prediction": "Q4 repairs isolated conditional k3/k4/combined fidelity above.8, preserves transported correction and symmetry, and fits below80B without dense cumulant tensors.",
+      "kill_condition": "Any isolated energy fidelity below.8, material signs below.8, structural defect above1e-10, nonfinite output, dense n3/n4 tensor formation, or conservative total at least80B.",
+      "result": "Structural defects stay below2.075e-14 and six tests pass. Q4 improves isolated k3/k4/combined from.670685/.162341/.282335 to.732135/.655277/.673419, reducing quartic/combined residual energy2.430x/2.198x, while transported combined/correction reaches.931300/.979659 with60/61 signs. It still misses every.8 isolated-energy gate, and literal connected-feature work is35.115T=438.94x the80B ceiling. Kill finite Q4 deployment; preserve exact coefficients, connected-graph folding, Q2 reduction, symmetry, and transported signal. Next replace finite truncation by exact response conditional on the rank4 common factor and integrate that low-dimensional latent law."
+    },
+    {
+      "id": "integrated_batched_winograd",
+      "status": "killed",
+      "mechanism": "Wire the preserved single-batched seven-product Winograd operator into the immutable random32,256 fold3 hooks and measure an actual full n_base32256 synthetic prediction under competition-aligned absolute wall, cost, parity, dispatcher, and liveness gates.",
+      "bias_class": "Exact structural sampler arithmetic modulo float32 reassociation, integrated end to end without benchmark data.",
+      "prediction": "The complete child runs under absolute limits, achieves effective-compute ratio at most.98, preserves predictions/depth gates, never bills worse by shape, and stays below512MiB measured peak working set.",
+      "kill_condition": "Any setup/predict timeout, C ratio above.98, parity/gate failure, worse dispatch, nonfinite output, or peak working set at least512MiB.",
+      "result": "The actual full geometry passes7/8 gates:16/29 hooks representing57.416% of direct hook bill compress; analytical work falls170.531B->159.493B and effective compute186.485B->175.521B, ratio.941206. Prediction relative error is4.56e-8, depth error2.49e-6 with1/4194304 gate mismatch, setup.646s and predict4.427s. Peak working set667.328MiB fails512MiB, while end set478.883MiB localizes transient workspace/activation overlap. Kill this liveness layout; preserve the measured score operator. Next row-block m at fixed8192 height, pack right operands once, and write directly into final output; analytical bill is row-linear."
+    },
+    {
+      "id": "latent_copula_resummation",
+      "status": "killed",
+      "mechanism": "Condition the clipped rank-four rectified-Gaussian copula on its common factor, compute exact independent coordinate moments through four, and integrate total-cumulance raw moments with a fixed49-node four-dimensional Gaussian Smolyak rule.",
+      "bias_class": "Infinite-Hermite resummation under the same moments-through-two Gaussian copula prior; no dense cumulant tensor.",
+      "prediction": "The49-node rule is structurally valid, rotation-stable, converged against201 nodes, restores isolated k3/k4/combined above.8, preserves transported correction, and fits below80B.",
+      "kill_condition": "Any isolated fidelity below.8, sign/transport failure,49-vs201 combined discrepancy above.10, factor-rotation defect above.10, structural failure, or cost at least80B.",
+      "result": "Compression passes: the envelope falls35.115T->74.427B (~472x) and transported combined/correction is.935843/.979747. Direct response fails:49-node isolated k3/k4/combined is.72739/.52036/.56923;201-node reference is.72658/.69626/.70341, still below.8. Convergence discrepancy.12403 and factor-rotation defect.19931 also fail. Preserve exact conditional resummation and transport; kill the literal rule/prior as a response source. Canonicalize B^T B to repair arbitrary factor gauge, but a new signed non-Gaussian per-layer observable is required to repair the prior state."
+    },
+    {
+      "id": "row_blocked_winograd",
+      "status": "screened",
+      "mechanism": "Replace only full-height seven-product liveness by fixed8192-row streaming while packing the right operands once and preserving the integrated Winograd dispatcher and arithmetic.",
+      "bias_class": "Exact structural sampler arithmetic modulo float32 reassociation; no sample, estimator, target, or truth change.",
+      "prediction": "Row-linear billing is identical to the integrated operator, full-entry effective compute remains at least2% below direct, peak working set falls below512MiB, and complete prediction/depth parity remains inside the frozen gates.",
+      "kill_condition": "Any dispatcher/bill mismatch, C ratio above.98, peak at least512MiB, prediction or depth relative error above2e-5, gate mismatch above2e-4, timeout, nonfinite output, or competition data access before the synthetic screen.",
+      "result": "All synthetic engineering gates pass. Fixed8192-row streaming reduces operator workspace283.9375MiB->91.4375MiB and measured peak667.328MiB->474.301MiB. Analytical work is170.531B->159.493B; effective compute188.819B->175.926B, ratio.931714, with exact11.037909953B FLOPs saved. Whole-prediction relative error is4.282e-8; depth error2.486e-6 with1/4194304 gate mismatch; static and ragged billing identities have zero mismatches; five tests pass. Preserve as an engineering survivor. Next make an immutable production port and only then run a separately frozen permitted-development paired score; champion remains unchanged."
+    },
+    {
+      "id": "canonical_latent_copula",
+      "status": "killed",
+      "mechanism": "Canonicalize the rank-four Gaussian factor through the eigenspaces and projectors of B^T B before applying the same49/201-node conditional moment rules.",
+      "bias_class": "Permutation-equivariant factor-gauge normalization under the unchanged moments-through-two Gaussian copula prior.",
+      "prediction": "Canonicalization removes arbitrary right-orthogonal grid orientation, repairs49/201 convergence below.10, preserves transport and cost, and raises isolated k3/k4/combined fidelity above.80 without a projector fallback.",
+      "kill_condition": "Any isolated fidelity below.80, convergence or rotation defect above.10, forbidden fallback, structural failure, transport failure, or cost at least80B.",
+      "result": "The changed gauge mechanism succeeds but the prior fails. Factor-rotation defect falls.19931->1.68e-26 and49/201 discrepancy falls.12403->.07386; transported combined fidelity is.93083 and cost74.5661B. Isolated k3/k4/combined remains.72568/.64447/.66364 and the canonical201-node combined is.67573, all below.80; one of96 cells uses the forbidden projector fallback. Kill this implementation as a response source; preserve the canonical factor-gauge operator. Another grid orientation cannot add the missing signed higher-order state."
+    },
+    {
+      "id": "ple_flash_sidecar",
+      "status": "screened",
+      "mechanism": "Translate the static per-layer-embedding storage pattern into a clean-room analytic response sidecar: factor an exactly layer-invariant Phi/phi atlas from layer descriptors and preload the small immutable atlas from flash during setup.",
+      "bias_class": "Deterministic closed-form rectified-Gaussian response lookup; no Gemma weights, outputs, API, competition data, or learned coefficients.",
+      "prediction": "Exact layer gauge factorization compresses storage by at least16x, keeps expanded-response error below2e-6, beats the known float64-promoted direct path in conservative lookup accounting and fresh warm latency, and remains stable across subprocesses.",
+      "kill_condition": "Storage compression below16x, response error above2e-6, descriptor/schedule defect, lookup proxy at least56 operations, fresh latency instability, or claim that flash performs arithmetic or beats an unmeasured native-f32 implementation.",
+      "result": "The screened premise passes: the shared atlas is65,672 bytes versus2,097,536 bytes duplicated (31.9x smaller), the complete package is66,632 bytes, maximum response error is1.994e-7, factorized/parent warm latency has.763 median and.798 worst fresh ratio, and factorized/direct median is.281 across five fresh subprocesses; eight tests pass. The proxy is41 operations/query versus56 for the known float64-promoted path but loses to a hypothetical28-operation native-f32 lower bound. Flash stores cold immutable tables; setup preloads65.5KiB and CPU/RAM computes. Preserve the sidecar; whole-estimator billed benefit remains unproved."
+    },
+    {
+      "id": "row_blocked_winograd_production",
+      "status": "promoted",
+      "mechanism": "Port the exact fixed8192-row Winograd survivor into an immutable descendant of random32,256 fold3, validate the seven-module package, then run one frozen paired public-100 score on already-touched rows0..99.",
+      "bias_class": "Exact compute compression modulo float32 reassociation; sample geometry, seeds, estimator mathematics, and split are unchanged.",
+      "prediction": "The package passes no-truth shape, bill, parity, memory, and timeout gates; paired public score ratio is at most.98 with zero failures and max C below258.4B; source hashes stay frozen.",
+      "kill_condition": "Any package, hash, shape, bill, parity, memory, timeout, failure, max-C, score-ratio, or paired-bootstrap gate fails; any locked/private data or submission is accessed.",
+      "result": "Promote locally. Every Gate A/B condition passes. Public0..99 adjusted score falls2.257079776e-7->2.121762464e-7, ratio.940047616 (-5.99524%); raw MSE ratio is.999982962; mean C ratio.938554853; max child C222.405357B; zero failures; child wins100/100. A one-million paired network bootstrap gives score-ratio95% CI[.936501313,.943475999] and difference CI[-1.562576754e-8,-1.166233571e-8]. Validated unsubmitted tar SHA256 bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36 contains exactly seven Python modules plus manifest. No locked/private/API/submission access.",
+      "artifact_hash": "bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36",
+      "matched_units": 100,
+      "primary_effect": -1.3531731261266995e-08,
+      "ci_upper": -1.1662335706834744e-08,
+      "failures": 0,
+      "holdout_used_for_generation": false,
+      "sensitivity": "Public0..99 paired score ratio.940047616; bootstrap ratio95% CI[.936501313,.943475999]; raw MSE ratio.999982962; mean C ratio.938554853; child wins100/100."
     }
   ]
 }
