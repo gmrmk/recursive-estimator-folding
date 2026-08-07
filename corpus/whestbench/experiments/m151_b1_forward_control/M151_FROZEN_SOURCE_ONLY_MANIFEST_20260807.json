@@ -1,0 +1,101 @@
+{
+  "candidate_id": "M151",
+  "date": "2026-08-07",
+  "status": "FROZEN_REPAIR_NO_EXECUTION_SOURCE_PREMISE_CLOSED",
+  "mechanism": "B=1, exactly 49-node signed canonical C_211 control emitted into the existing forward M125b source carrier; fixed-q exact residual Hansen-Hurwitz at K=128",
+  "scope": "response-free local algebra and static accounting only",
+  "firewall": {
+    "contest_model_accessed": false,
+    "truth_or_label_accessed": false,
+    "scorer_or_leaderboard_accessed": false,
+    "response_or_outcome_run": false,
+    "submission_or_champion_mutated": false,
+    "generated_residual_variance_premise_opened": false
+  },
+  "exactness": {
+    "target": "T_211=(1/2) sum_ordered_distinct Delta_e F_e",
+    "control": "C_211=(1/2) sum_ordered_distinct dtilde_e F_e",
+    "residual": "Rhat=K^-1 sum_t (Delta_e-dtilde_e)F_e/[2 q0(e)]",
+    "unbiasedness": "E[C_211+Rhat]=T_211 for every fixed finite B=1 state and full-support frozen q0",
+    "ordered_singleton_owner": 0.5,
+    "singleton_symmetry": "dtilde(i,j,k)=dtilde(i,k,j)",
+    "repeated_labels": "zero in M151 and owned by existing non-M151 collision classes",
+    "prohibited_duplicate_owners": [
+      "second tree subtraction",
+      "second M121/M125b source carrier",
+      "M128 k3^2 insertion",
+      "full canonical transported correction"
+    ]
+  },
+  "forward_only_boundary": {
+    "uses_existing_carrier_once": "M125b_forward(C_211+Rhat)",
+    "does_not_construct": [
+      "all-output response dual",
+      "output-by-source-by-source tensor",
+      "reverse covariance-adjoint state",
+      "M150 direct-adjoint contraction"
+    ],
+    "small_width_oracle": "m151_b1_forward_control.py uses exhaustive labels for parity only and is prohibited at target width"
+  },
+  "frozen_cost_gate": {
+    "contest_limit_billions": 100.0,
+    "M148_k128_endpoint_residual_subtotal_billions": 85.9808788,
+    "known_B1_forward_core_billions": 3.72775744,
+    "known_total_endpoint_billions": 89.70863624,
+    "inclusive_untraced_new_cost_cap_billions": 10.29136376,
+    "required_trace": "hash-bound native target-shaped FlopScope trace pricing state construction, tables, canonicalization, allocations, carrier calls, coefficient glue, and residual wall time",
+    "pass_condition": "all new non-overlapped protected arithmetic plus residual wall price <= 10.291363760 B and total <= 100 B",
+    "fail_closed": true
+  },
+  "resource_gate": {
+    "blocks_must_equal": 1,
+    "nodes_must_equal": 49,
+    "max_state_provider_calls": 31,
+    "known_control_map_and_emission_calls": 93,
+    "residual_coefficient_calls": 3968,
+    "residual_five_product_batches": 155,
+    "additional_local_f64_payload_mib_before_allocator_copies": 2.076171875,
+    "integrated_peak_memory_limit_mib": 512.0,
+    "requirements": [
+      "no B>1 stacking",
+      "no unproved M125b sharing credit",
+      "no uncounted allocation/copy or residual wall time",
+      "no n^3 response-dual allocation or reverse pullback"
+    ]
+  },
+  "source_only_premise_gate": {
+    "state_provider": "not implemented; must be deterministic before residual draws, finite, exactly B=1/49-node, nonnegative conditional variances, signed-weight sum within 3e-13, positive-ReLU-gauge covariant, and hidden-label permutation covariant",
+    "parity": "independent generated Philox small-width exhaustive source equality <=4e-11, j/k symmetry, repeated-label zero, covariance star, and half owner",
+    "residual_provider": "M147-compatible exact certified Delta provider; its unpriced failures or wall time are disqualifying",
+    "next_action_if_all_static_conditions_pass": "open only the already prespecified M148 source-level residual-variance gate; do not run a response outcome",
+    "kill_conditions": [
+      "missing state-provider trace",
+      "inclusive cost above 10.291363760 B",
+      "peak allocation above 512 MiB",
+      "any B>1 or 49-node-contract violation",
+      "any second source owner or M150-style dual"
+    ]
+  },
+  "local_test": {
+    "command": "work/headroom-recursion/.venv/Scripts/python.exe -m unittest -v test_m151_b1_forward_control.py",
+    "result": "5 passed",
+    "response_free": true
+  },
+  "sha256": {
+    "m151_b1_forward_control.py": "520431079e63b4bb82c6fe3db997d875ce31fc4037538eb64ce7fea24bf55cd5",
+    "test_m151_b1_forward_control.py": "07a691dcaa857eed3cbb682ea3f6493ad1c6ccc03c566fab4d73de817ccb90b0",
+    "M151_FORWARD_CONTROL_AUDIT_20260807.md": "2fd0723b9f385f04f8b3456d09d094d4ae3233c30c3ceeb95a4a63506bb25bde",
+    "M151_COST_WORKSHEET_20260807.json": "ddcc4d61b5bcf0e054f5771a2df566acfabd62b0d471fddfc16f613ebb11be1c",
+    "M148_STATIC_PREMISE_AUDIT_20260807.md": "be1cdd685907633090ac3418455c17bc27312c4e4cf75fa4a1a7308e61a4e2d9",
+    "M148_STATIC_WORKSHEET_20260807.json": "2b58a9c41495397070c4afa8185dc622ddb5bc0c7d8d7992855e3b48da7164fb",
+    "direct_adjoint_control.py": "a2bf0c98a3ea3ba83f7535f6370f849531feaf15b051c933cfb4e5a872b60ba9",
+    "M150_DIRECT_ADJOINT_STATIC_AUDIT_20260807.md": "7bcfa8bd14527cb8013bb80dfdc52a9281073c9a0c59762f579355c5cd9797c4",
+    "M146_COST_CROSSWALK_20260807.json": "031c04b128c2a98b14e8f9edfebd331ca90251770257e32498bd08b0b6113ca4",
+    "M147_STATIC_AUDIT_20260807.json": "de545e4fdce92c93140cdf2f6db1192149f3e040a9637fcb0873f4ea307229e6",
+    "formal_candidate_source/estimator.py": "d32de9fb7fa8f953fc873eec91a39e66778215f8607fb03bebbbe1292ca5d432",
+    "formal_candidate_source/orthogonal_fold3.py": "24f2eebb1adf37f6be1392de57611c52cbaac7b04e319ff771533da54257796a",
+    "formal_candidate_source/fold3_estimator.py": "6952abc0a617e1fb32c64a4483f1539b79933c049f9190984460266bf357e116",
+    "formal_candidate_source/row_blocked_winograd.py": "876ac0f042239c88bb48205585d7175da1f956ed0c4b96d8d6f95f5be5ea74b5",
+    "formal_candidate_source/cost_model.py": "21b077a7bcdf244b9480e891a8b63ecee05427d2725ea30ef5d2fc016bc03023"
+  }
+}

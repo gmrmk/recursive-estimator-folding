@@ -1,0 +1,70 @@
+{
+  "candidate_id": "M151",
+  "date": "2026-08-07",
+  "mechanism": "one B=1 (49-node) canonical C_211 control emitted forward into the existing M125b source carrier, plus fixed-q exact residual Hansen-Hurwitz",
+  "scope": "source-only algebra and static accounting; no response, truth, scorer, label, leaderboard, submission, or champion access",
+  "execution_authorized": false,
+  "dimensions": {
+    "width": 256,
+    "source_layers": 31,
+    "canonical_blocks": 1,
+    "nodes_per_block": 49,
+    "residual_draws_per_layer": 128,
+    "dtype_for_canonical_control": "float64",
+    "protection": 1.25
+  },
+  "inherited_k128_endpoint_residual_subtotal_billions": 85.9808788,
+  "known_b1_forward_control_billions": {
+    "49x256_forward_map": 0.49677376,
+    "256x49_reverse_map": 0.49742848,
+    "one_dense_256_square_source_emission": 2.59538944,
+    "49_node_pointwise_allowance": 0.13816576,
+    "total": 3.72775744
+  },
+  "branch_budget_billions": {
+    "contest_limit": 100.0,
+    "known_total_k128_endpoint": 89.70863624,
+    "remaining_for_all_untraced_b1_state_calls_allocations_and_residual_wall": 10.29136376,
+    "known_core_below_limit": true
+  },
+  "required_native_trace_limits": {
+    "inclusive_new_b1_cost_max_billions": 10.29136376,
+    "inclusive_scope": [
+      "canonical B=1 state construction",
+      "fixed tables and canonicalization",
+      "all additional allocations and copies",
+      "all additional source-carrier calls not already billed in the known core",
+      "coefficient-provider glue",
+      "residual Python/control-flow wall time priced at 1e11 FLOPs per second"
+    ],
+    "fail_on_missing_or_non_native_trace": true,
+    "fail_on_any_B_greater_than_1": true,
+    "fail_on_unproved_M125b_sharing_credit": true
+  },
+  "call_count_risks": {
+    "control_map_and_emission_calls_assumed": "31 layers * (one 49x256 forward map + one 256x49 reverse map + one 256-square forward source emission) = 93",
+    "residual_exact_coefficient_calls": 3968,
+    "residual_five_product_batches": 155,
+    "state_provider_calls_max": 31,
+    "prohibited": [
+      "all-output response-dual construction",
+      "reverse covariance-adjoint propagation",
+      "pilot routing or adaptive proposal scans",
+      "B>1 canonical stacking"
+    ]
+  },
+  "memory_risks": {
+    "additional_local_f64_payload_mib_before_allocator_copies": 2.076171875,
+    "payload_components": {
+      "conditional_mean_and_variance": 0.19140625,
+      "centered_and_temporary_second_moment": 0.19140625,
+      "two_49x256_rectangular_workspaces": 0.19140625,
+      "one_256x256_covariance": 0.5,
+      "three_C211_source_slots": 1.001953125
+    },
+    "formal_l1_reference_peak_mib_not_a_credit": 474.859,
+    "formal_l1_reference_remaining_to_512_mib": 37.141,
+    "required_gate": "measure integrated high-water allocation under the hash-bound formal target; theoretical payload is not a peak-memory proof"
+  },
+  "disposition": "REPAIR_CONDITIONAL_STATIC_SURVIVOR_SOURCE_PREMISE_CLOSED_PENDING_B1_PROVIDER_AND_NATIVE_TRACE"
+}

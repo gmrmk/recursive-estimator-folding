@@ -1,0 +1,85 @@
+{
+  "candidate": "M172 selective physical [2,2] owner fusion into M163 ijj rows",
+  "date": "2026-08-07",
+  "status": "STATIC_OWNER_ALGEBRA_PASS__DEVELOPMENT_BLOCKED_M174_UNLAWFUL_CALLER_ABI",
+  "one_changed_mechanism": "transfer only physical K22 into M163 complete-domain ordered ijj rows, retire exactly the old separate [2,2] owner/probe contribution, retain separate [4]/[3,1] owners, and use residual K22/2-cE",
+  "ownership_contract": {
+    "physical_22_mapping": "T[i,j,j]=T[j,i,i]=K22[i,j]/2 for i!=j",
+    "m163_control": "cE[i,j,j]=-2 A[i,j]^2, A=V o (1-R^2)",
+    "residual": "K22[i,j]/2-cE[i,j,j]",
+    "retired": ["old separate [2,2] source", "old separate [2,2] probe contribution"],
+    "retained_separate": ["[4]", "[3,1]"],
+    "mandatory_residual_interface": "M167 complete_residual_table; M156 residual_table collision re-zeroing is forbidden"
+  },
+  "static_gate": {
+    "widths": [2, 3, 4, 5, 6, 7],
+    "tolerance": 3e-10,
+    "required": [
+      "independent symmetric fourth-tensor parity",
+      "complete-domain M163 conservation",
+      "permutation covariance",
+      "positive ReLU-gauge covariance",
+      "retained-owner double-count detector",
+      "collision re-zero detector",
+      "inclusive per-event cost/call delta"
+    ],
+    "result_file": "M172_STATIC_RESULTS_20260807.json"
+  },
+  "proposal": {
+    "eta": 0.011688232421875,
+    "support": "nonzero ordered ijj representatives only in this arm",
+    "zero_rows_receive_mass": false,
+    "distinct_support": "unchanged",
+    "retuning": false
+  },
+  "development": {
+    "executed": false,
+    "execution_count": 0,
+    "cells": [
+      ["iso_w5", 5, 1720501, 0.22], ["factor_w5", 5, 1720502, 0.50],
+      ["iso_w6", 6, 1720601, 0.22], ["factor_w6", 6, 1720602, 0.50],
+      ["iso_w7", 7, 1720701, 0.22], ["factor_w7", 7, 1720702, 0.50]
+    ],
+    "gates": {
+      "paired_bootstrap_upper90_residual_raw_lt": 0.25,
+      "max_normalized_p99_lte": 1.25,
+      "22_p99_lte": 1.25,
+      "mean_ratio_width_slope_nonpositive": true
+    },
+    "closed_reason": "M174 hash-verified that the actual caller has no lawful labelled all-31 W/V/source-carrier ABI. M169's generated-stack pass is conditional and cannot open development."
+  },
+  "confirmation": {
+    "executed": false,
+    "execution_count": 0,
+    "sealed_until": "every development gate passes",
+    "cells": [
+      ["iso_w5c", 5, 1721501, 0.22], ["factor_w5c", 5, 1721502, 0.50],
+      ["iso_w6c", 6, 1721601, 0.22], ["factor_w6c", 6, 1721602, 0.50],
+      ["iso_w7c", 7, 1721701, 0.22], ["factor_w7c", 7, 1721702, 0.50]
+    ]
+  },
+  "m169_dependency": {
+    "closeout_manifest": "../m169_m163_call_fusion/M169_FROZEN_CLOSEOUT_MANIFEST_20260807.json",
+    "closeout_manifest_sha256": "b35dc134c073a901b20de6c3e5dda27584c8bfae3be4ee0b149c15b818424320",
+    "verified_artifact_hashes": true,
+    "required_caller_precondition": "all 31 labelled W_l,V_l arrays already owned before compiler invocation; no reordered sequential state transition"
+  },
+  "m174_actual_caller_audit": {
+    "verdict": "REPAIR_NOT_A_LAWFUL_ACTUAL_CALLER_PRECONDITION",
+    "report": "../m174_m169_staging_interface/M174_STAGING_INTERFACE_AUDIT_20260807.md",
+    "report_sha256": "d92fbedb151bf822c3dd7481a3ed2d024cab3f443d6deb933d1a13a59ff3bc5a",
+    "manifest": "../m174_m169_staging_interface/M174_FROZEN_MANIFEST_20260807.json",
+    "manifest_sha256": "0d9c23c8c0d468fffc048d6ff054b1c4e0dc546f4bf8391730ec62aacee26f8e",
+    "blocking_facts": [
+      "no labelled full-covariance V_l archive from the actual base provider",
+      "no labelled M163 source-slot to M125b TangentState conversion",
+      "no integrated archive/staging/source/Jacobian/carrier liveness trace"
+    ]
+  },
+  "forbidden": [
+    "source variance before the staging ABI precondition passes",
+    "retuning eta/support/provider/order/K/seeds",
+    "truth, response, scorer, leaderboard, submission, or champion access",
+    "claiming a K22 transport or dense-call credit"
+  ]
+}

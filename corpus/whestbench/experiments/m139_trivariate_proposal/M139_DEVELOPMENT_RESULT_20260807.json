@@ -1,0 +1,41 @@
+{
+  "scope": "generated-only; no contest model, truth, scorer, leaderboard, submission, or champion access",
+  "status": "KILLED_IMPLEMENTATION_DEVELOPMENT_GATE",
+  "configuration": {
+    "depth": 3,
+    "k_per_layer": "2 * width",
+    "repetitions": 48,
+    "development_widths": [5, 6],
+    "development_seeds": [139701, 139702],
+    "confirmation_widths_unopened": [7, 8],
+    "confirmation_seed_unopened": 139811,
+    "rank": 4,
+    "uniform_rescue": 0.05,
+    "partial_ridge": 0.000244140625,
+    "partial_cap": 8.0,
+    "latent_strength": 0.70
+  },
+  "metric": "per-output squared error of the exact-[2,1,1] local component after complete M121 one-delay conversion and M125b coalescing",
+  "oracle": "M131 independent conditional 32/48-node one-dimensional boundary rule for every local distinct triple",
+  "cells": [
+    {"width": 5, "seed": 139701, "m133_mse": 1.0822714677854807e-14, "m139_mse": 9.073915164309171e-15, "ratio": 0.8384139686206467, "upper90": 0.9961052330739059},
+    {"width": 5, "seed": 139702, "m133_mse": 2.6833181079069e-15, "m139_mse": 2.5997161775114754e-15, "ratio": 0.9688438243124899, "upper90": 1.091057372565792},
+    {"width": 6, "seed": 139701, "m133_mse": 2.5521146446419132e-14, "m139_mse": 2.543808642079911e-14, "ratio": 0.9967454430076484, "upper90": 1.106416269650373},
+    {"width": 6, "seed": 139702, "m133_mse": 1.3717333035837747e-14, "m139_mse": 1.782649635364369e-14, "ratio": 1.299559929548287, "upper90": 1.4108729114222256}
+  ],
+  "pooled_ratio": 1.0415910917347702,
+  "bootstrap_upper90_ratio": 1.1146686223194164,
+  "mean_ratio_by_width": {"5": 0.9036288964665683, "6": 1.1481526862779676},
+  "promotion_contract": {"ratio_max": 0.75, "upper90_max": 0.9, "non_adverse_width_required": true},
+  "contract_result": {"ratio_pass": false, "upper90_pass": false, "width_trend_pass": false, "confirmation_authorized": false},
+  "static_cost": {"m133_kappa2_complete_protected": 94940940240, "protected_incremental": 846850560, "nonoverlapping_complete_protected": 95787790800, "complete_billions": 95.7877908, "under_100_billion": true, "under_five_billion_incremental": true, "native_trace_completed": false},
+  "preserved_components": [
+    "exact three-root positive-mixture normalization and sampler",
+    "rank-zero equality to M133's law",
+    "uniform-rescue support and Hansen--Hurwitz unbiasedness",
+    "permutation and positive-gauge covariance through scale*row-norm",
+    "bounded partial-correlation coordinate and strict-tie fallback",
+    "frozen-proposal pathwise tangent"
+  ],
+  "failure_boundary": "The frozen rank-4 latent Nyström/partial-envelope allocation changes the sampling law but does not reduce complete response variance at K=2n. Do not retune its strength, ridge, cap, rank, seeds, or split after this result."
+}

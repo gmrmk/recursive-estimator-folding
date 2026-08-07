@@ -1,0 +1,32 @@
+{
+  "candidate": "M163 exterior collision-null covariance-star control",
+  "date": "2026-08-07",
+  "scope": "response-free algebra, old-cell collision diagnosis, and static compiler audit only",
+  "one_changed_mechanism": "replace V_ij V_ik by A_ij A_ik where A=V o (1-R^2), R is the canonical correlation of already-present V",
+  "collision_contract": {
+    "exact_zero_by_construction": ["iii", "iik", "iji"],
+    "retained_for_future_measurement": ["ijj"],
+    "no_explicit_kronecker_mask": true,
+    "no_khatri_rao_action": true
+  },
+  "invariance_contract": {
+    "permutation": "covariant",
+    "positive_relu_gauge": "covariant",
+    "isotropic_or_tied_fallback": "A=0 for diagonal/isotropic V; no selected invariant, ridge, clipping, or retry"
+  },
+  "static_compiler_gate": {
+    "cap": 14019121200,
+    "five_product_protected_bill": 12976947200,
+    "normalization_exterior_copy_allowance": 100000000,
+    "required": "five-product algebra, source parity, and inclusive native trace before any fresh variance screen"
+  },
+  "diagnostic_firewall": {
+    "m161_cells": "collision-tail localization only; never promotion/development evidence",
+    "fresh_variance_protocol": "must be independently sealed with fresh development and confirmation cells after static/invariance gates pass"
+  },
+  "forbidden": [
+    "eta/q/K/cell retuning",
+    "truth, scorer, public/private contest model, leaderboard, submission, champion access",
+    "any efficacy or deployment claim"
+  ]
+}

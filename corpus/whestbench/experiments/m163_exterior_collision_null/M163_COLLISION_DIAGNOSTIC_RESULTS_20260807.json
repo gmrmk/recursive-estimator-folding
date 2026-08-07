@@ -1,0 +1,57 @@
+{
+  "candidate": "M163 diagnostic decomposition of already-open M161 collision residual",
+  "scope": "diagnostic only; M161 cells are not a promotion/development set; no new target/provider/outcome was opened",
+  "proposal": "M161 frozen target-mass two-stratum q0",
+  "summary": {
+    "binding_pattern": "iii",
+    "iii_second_fraction_range": [0.8617867560994776, 0.9897319021651428],
+    "iik_second_fraction_range": [0.0051102457067805146, 0.07017585567418136],
+    "iji_second_fraction_range": [0.00512719518190364, 0.06334964998916473],
+    "ijj_second_fraction_range": [0.00003023534459686297, 0.00466409244952939],
+    "conclusion": "iii, iik, and iji are binding; ijj is the only collision stratum left by M163 and was nonbinding in this diagnostic."
+  },
+  "cells": [
+    {
+      "name": "isotropic_w4",
+      "iii": {"second_fraction": 0.9836795617124565, "global_p99_ratio": 5742152.498468208},
+      "iik": {"second_fraction": 0.007998708647166406, "global_p99_ratio": 60644.285276427036},
+      "iji": {"second_fraction": 0.008205154909321595, "global_p99_ratio": 66282.74873864633},
+      "ijj": {"second_fraction": 0.00011649937914582762, "global_p99_ratio": 772.2827650445231}
+    },
+    {
+      "name": "factor_w4",
+      "iii": {"second_fraction": 0.8617867560994776, "global_p99_ratio": 78929.15650588706},
+      "iik": {"second_fraction": 0.07017585567418136, "global_p99_ratio": 2458.637165390257},
+      "iji": {"second_fraction": 0.06334964998916473, "global_p99_ratio": 2156.802610950063},
+      "ijj": {"second_fraction": 0.00466409244952939, "global_p99_ratio": 93.78660081487632}
+    },
+    {
+      "name": "isotropic_w5",
+      "iii": {"second_fraction": 0.9640050834745549, "global_p99_ratio": 4112723.9464981207},
+      "iik": {"second_fraction": 0.01891282827773789, "global_p99_ratio": 63715.468628125884},
+      "iji": {"second_fraction": 0.016847915567591517, "global_p99_ratio": 63877.45787447899},
+      "ijj": {"second_fraction": 0.00023228162333904524, "global_p99_ratio": 1039.6315405551204}
+    },
+    {
+      "name": "factor_w5",
+      "iii": {"second_fraction": 0.966212325180135, "global_p99_ratio": 51326384.18127825},
+      "iik": {"second_fraction": 0.014971634017211605, "global_p99_ratio": 284760.24352061993},
+      "iji": {"second_fraction": 0.018408823525228706, "global_p99_ratio": 333696.55704716465},
+      "ijj": {"second_fraction": 0.0004050022679811144, "global_p99_ratio": 5665.172293058755}
+    },
+    {
+      "name": "isotropic_w6",
+      "iii": {"second_fraction": 0.9897319021651428, "global_p99_ratio": 7874789.630831448},
+      "iik": {"second_fraction": 0.0051102457067805146, "global_p99_ratio": 20747.191602378283},
+      "iji": {"second_fraction": 0.00512719518190364, "global_p99_ratio": 19381.270127508124},
+      "ijj": {"second_fraction": 0.00003023534459686297, "global_p99_ratio": 116.71119612957388}
+    },
+    {
+      "name": "factor_w6",
+      "iii": {"second_fraction": 0.9592062201381882, "global_p99_ratio": 357787.26290320576},
+      "iik": {"second_fraction": 0.01902574466636661, "global_p99_ratio": 2348.920732232675},
+      "iji": {"second_fraction": 0.021374326015235458, "global_p99_ratio": 3118.8589823610846},
+      "ijj": {"second_fraction": 0.0003870098586965683, "global_p99_ratio": 31.259684426413862}
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "status": "FROZEN_M166_EXACT_F64_COST_KILLED_F32_UNRESOLVED_NO_EFFICACY",
+  "date": "2026-08-07",
+  "mechanism": {
+    "one_change": "all-collision-null oriented covariance-star control",
+    "score": "s_i = max_{ell != i} R_iell^2",
+    "tie_rule": "equal working-representation scores set A_ij=B_ij=0; no index tie-break",
+    "coefficient": "c_ijk=-(A_ij B_ik+B_ij A_ik)",
+    "collision_claim": "iii, iik, iji, and ijj vanish by zero diagonal plus A_ij B_ij=0",
+    "compiler": "exact real-arithmetic seven dense product full-domain aaaa/aaab/aabb compiler"
+  },
+  "scope": {
+    "inputs": "generated finite covariance and weight matrices only",
+    "forbidden": [
+      "response",
+      "source variance outcome",
+      "truth",
+      "reference output",
+      "score or scorer",
+      "competition data",
+      "leaderboard",
+      "submission",
+      "champion mutation",
+      "M145 mutation"
+    ]
+  },
+  "immutable_dependency_sha256": {
+    "m156_extended_domain_star_control.py": "f5d92c4eb6a32477a93b3b22c08ea79e3a10dd531d80d9ab4fea7186a7493a1b"
+  },
+  "artifacts_sha256": {
+    "m166_oriented_collision_null.py": "243a4401bad76cbde490ae045ba29eef579f4708b856ac042d96e004e7ffe7ab",
+    "test_m166_oriented_collision_null.py": "b043d14152859f45268e89a4c369f618a77a0d706c21962faef9b5f97989028b",
+    "run_m166_static.py": "32f2406526c3e7d75c85f5d0b82e1f4d410cc755dfc0a1be75884b27fae17a5d",
+    "M166_STATIC_TRACE_20260807.json": "1ce9b15317df51067eb43a5c173073732915848ad0cf2bc6d3dc6d2d73c20251",
+    "M166_ORIENTED_COLLISION_REPORT_20260807.md": "33832832e2aee22f6253b8042f73f428ad7c7e459f680b0b967ce9f19f1e10f7"
+  },
+  "static_results": {
+    "generated_seed": 166000001,
+    "collision_max_abs": 0.0,
+    "exhaustive_compiler_max_abs_difference": 4.547473508864641e-13,
+    "permutation_source_max_abs_difference": 2.2737367544323206e-13,
+    "positive_gauge_source_max_abs_difference": 3.410605131648481e-13,
+    "exact_f64_static_total": 18492784640,
+    "exact_f64_margin_to_14019121200": -4473663440,
+    "f32_static_total": 9246392320,
+    "f32_static_margin_to_14019121200": 4772728880,
+    "f32_coefficient_reconstruction_max_abs": 9.238719940185547e-07,
+    "f32_bitwise_coefficient_reconstruction": false
+  },
+  "disposition": {
+    "exact_f64": "killed at static target compiler cap; preserve the theorem and compiler formula",
+    "f32": "unresolved shared-control numerical candidate only; no exact, native, or source-variance credit",
+    "promotion": "none"
+  }
+}

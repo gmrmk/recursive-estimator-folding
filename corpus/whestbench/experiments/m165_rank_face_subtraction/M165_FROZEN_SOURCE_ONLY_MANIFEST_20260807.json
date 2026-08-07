@@ -1,0 +1,66 @@
+{
+  "candidate_id": "M165",
+  "date": "2026-08-07",
+  "scope": "response-free rank-face-subtracted Plackett/Tallis [2,1,1] defect prototype",
+  "mutation_from_m162": {
+    "preserved": [
+      "Tallis 12-raw-moment reduction",
+      "Plackett/Price derivative identities",
+      "M159 scale-carried ABI",
+      "M154 exact rank-one endpoint"
+    ],
+    "replaced_failed_link": "opaque differentiation of a fixed-rule P3 probability",
+    "new_mechanism": "combine raw moments, connected cumulant, and tree before subtracting the M154 rank-one value and cone-direction linear term"
+  },
+  "derived_rank_one_path": {
+    "state": "Sigma_epsilon=(1-epsilon) 11^T + epsilon I, 0<epsilon<1",
+    "rank_one_limit": "-0.9303111372675952035464968645...",
+    "m154_directional_linear_coefficient": "3.983346315428913...",
+    "observed_leading_remainder": "A epsilon^(3/2) + O(epsilon^2), A approximately -1.4681",
+    "subtracted_integral": "D(epsilon)=D0+epsilon DB+2 epsilon integral_0^1 v [G_B(epsilon v^2)-DB] dv"
+  },
+  "all_psd_status": {
+    "rank_one_centered_common_factor": "screened prototype survivor",
+    "rank_two_positive_marginals": "explicit refusal: M154 lacks rank-two anchor and tangent",
+    "zero_marginal": "explicit M159 deterministic/one-sided dispatch required",
+    "generic_spd": "unresolved: symbolic cancellation, interval envelope, and native trace absent"
+  },
+  "budget": {
+    "per_coefficient_ceiling": 606720,
+    "within_ceiling_proven": false,
+    "reason": "no interval constants, parameter-aware rank-two branch, generic jet, or native billed-operation trace"
+  },
+  "verification": {
+    "red_tests": [
+      "ModuleNotFoundError before prototype implementation",
+      "ImportError for new rank/zero dispatch before its implementation"
+    ],
+    "green_test_command": "work/headroom-recursion/.venv/Scripts/python.exe -m unittest -v work/scorefloor_generation/m165_rank_face_subtraction/test_m165_rank_face_subtraction.py",
+    "tests": 4,
+    "tests_passed": 4,
+    "high_precision_reference": "mpmath 60-70 decimal digit conditional common-factor integral",
+    "independent_interior_crosscheck": "M147 paired-order endpoint reference at epsilon=1e-3, tolerance 4e-9",
+    "runtime_static_scan": {
+      "endpoint_provider_installed": false,
+      "quadrature_is_high_precision_reference_only": true,
+      "ridge_or_clip": false,
+      "retry": false,
+      "response_or_truth_access": false
+    }
+  },
+  "disposition": "SCREENED_RANK1_RANK_FACE_SUBTRACTION_SURVIVOR_GENERIC_RANK2_ZERO_FACE_AND_606720_CERTIFICATE_UNRESOLVED",
+  "firewall": {
+    "response_cells": false,
+    "network_truth": false,
+    "efficacy_oracle": false,
+    "leaderboard": false,
+    "scorer": false,
+    "submission": false,
+    "champion_change": false
+  },
+  "artifact_sha256": {
+    "m165_rank_face_subtraction.py": "78ebe1a0bb810c69c461abce83763e708f3527e1f0dcd0e9f55affb4ed82b913",
+    "test_m165_rank_face_subtraction.py": "9c9108048be18184b3e3a8d68a4d4122c93f3ba5db6f49f1f088ce5dfd10aba3",
+    "M165_RANK_FACE_SUBTRACTION_REPORT_20260807.md": "ccee38ad746753086866c22757e0e52540517d335700506b61234a79ba611eb0"
+  }
+}

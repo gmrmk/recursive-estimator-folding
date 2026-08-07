@@ -1,0 +1,51 @@
+{
+  "status": "STRUCTURAL_NATIVE_TRACE_ONLY_NO_EFFICACY",
+  "flopscope_version": "0.10.0+np2.4.6",
+  "dtype": "float32",
+  "billed_flops": 357099678,
+  "residual_wall_time_seconds": 0.022555597592145205,
+  "effective_compute_at_1e11_per_second": 2612659437.2145205,
+  "sidecar_wall_seconds": 0.13176020001992583,
+  "setup_seconds_qr_bank": 1.3141004999633878,
+  "frame_bank_bytes": 33030144,
+  "process_peak_working_set_bytes": 300863488,
+  "restored_frame_max_abs_defect": 8.940696716308594e-8,
+  "rank_realized": 16,
+  "fallback": null,
+  "lambda_min": 1.0280416011810303,
+  "lambda_max": 1.038727045059204,
+  "weight_min": 0.9419268369674683,
+  "weight_max": 1.033163070678711,
+  "weight_zero_count": 0,
+  "weight_nonfinite_count": 0,
+  "path_coefficient_shape": [64512],
+  "operation_totals": {
+    "matmul_calls": 248,
+    "matmul_flops": 169034432,
+    "eigh_calls": 1,
+    "eigh_flops": 150994944,
+    "rng_calls": 3,
+    "rng_flops": 999546,
+    "multiply_calls": 505,
+    "multiply_flops": 17332710,
+    "subtract_calls": 251,
+    "subtract_flops": 16022309
+  },
+  "seed_tree": {
+    "protocol_tag": 1295070261,
+    "setup_seed": 0,
+    "mlp_seed": 1450001,
+    "children": {
+      "pilot_qr": {"seed": 6200927170190955116, "spawn_key": [0]},
+      "main_qr": {"seed": 17345913056948678195, "spawn_key": [1]},
+      "mixture_labels": {"seed": 449477817451593370, "spawn_key": [0]},
+      "uniform_anchors": {"seed": 5594471460886244560, "spawn_key": [1]},
+      "acg_latents": {"seed": 12703773799734467984, "spawn_key": [2]}
+    }
+  },
+  "notes": [
+    "Setup and predict children have distinct SeedSequence roots even when their local spawn_key indices coincide.",
+    "The native trace generated no target estimate, truth, MSE, or score.",
+    "The process peak includes setup QR temporaries; integration uses one in-place frame bank and fixed dxd scratch."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "candidate": "M156 extended-domain covariance-star exact control",
+  "date": "2026-08-07",
+  "scope": "response-free algebra, parity, and native compiler resource audit",
+  "disposition": "COMPILER_RESOURCE_PASS_FULL_BRANCH_CLOSED",
+  "execution_authorized": false,
+  "outcome_accessed": false,
+  "champion_changed": false,
+  "tests": {
+    "passed": 7,
+    "failed": 0,
+    "small_widths": [3, 4, 5],
+    "mechanisms": [
+      "five_gemm_complete_domain_parity",
+      "control_residual_conservation",
+      "collision_partition",
+      "full_support_probability",
+      "permutation_covariance",
+      "positive_gauge_covariance",
+      "static_cost_ledger"
+    ]
+  },
+  "native_trace": {
+    "fresh_processes": 5,
+    "flopscope": "0.10.0+np2.4.6",
+    "matmul_calls_each": 155,
+    "billed_flops_each": 10426269184,
+    "residual_s_min": 0.005618797615170479,
+    "residual_s_max": 0.006383699364960194,
+    "combined_actual_effective_min": 96969027745.51704,
+    "combined_actual_effective_max": 97045517920.49602,
+    "hostile_residual_multiplier": 5.0,
+    "hostile_combined_max": 99598997666.4801,
+    "hostile_margin_min": 401002333.519903,
+    "failures": 0
+  },
+  "open_gates": [
+    "covariance_provenance_or_inclusive_provider_trace",
+    "complete_domain_sampler_integration",
+    "generic_exact_distinct_endpoint_provider",
+    "frozen_source_variance_and_p99_gate",
+    "end_to_end_resource_trace"
+  ],
+  "forbidden_claims": [
+    "efficacy",
+    "score_improvement",
+    "estimator_promotion",
+    "winner",
+    "submission_readiness"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "status": "FROZEN_RESPONSE_FREE_STATIC_TENSOR_RANK_OBSTRUCTION",
+  "date": "2026-08-07",
+  "mechanism": {
+    "candidate": "exact <=5 dense-product-family compiler for M166 c_ijk=-(A_ij B_ik+B_ij A_ik), B=A.T",
+    "prediction": "a lawful compiler must beat the 2+3+2 projection/terminal flattening ranks",
+    "kill_condition": "an admissible M166 tied-score SPD orientation realizes nonzero exact minors for all rank channels",
+    "result": "lower bound seven dense product families in the audited normal form; <=5 obstructed"
+  },
+  "invariants_preserved": {
+    "orientation": "M166 max-correlation score, strict comparison, tie-to-zero, B=A.T",
+    "control": "M166 all-collision-null full-domain coefficient",
+    "dtype": "no dtype implementation or change was proposed",
+    "estimator": "no add/subtract, residual, proposal, response, or outcome change",
+    "ownership": "M167 physical collision owners are not retired or relabelled"
+  },
+  "scope": {
+    "allowed": ["symbolic monomials", "exact integer rank minors", "generated covariance and weights", "small-width exhaustive source parity", "static scalar-work accounting"],
+    "forbidden_and_not_accessed": ["response", "source variance", "truth", "scorer", "competition data", "leaderboard", "submission", "champion", "native trace", "estimator mutation"]
+  },
+  "accounting": {
+    "block_rectangular_rule": "bill actual scalar products; fewer calls alone is not a rank reduction",
+    "pointwise_copy_f64_allowance": 325058560,
+    "six_f64_families_before_allowance": 15572336640,
+    "cap": 14019121200,
+    "six_family_margin_before_allowance": -1553215440
+  },
+  "separate_salvage": {
+    "status": "UNTESTED_SEPARATE_STRUCTURED_KERNEL_DESCENDANT",
+    "observation": "score sorting gives opposite strict triangles A and A.T; their two initial maps have one dense off-diagonal action's nonzero scalar multiply count",
+    "no_current_credit": "not a tensor-rank reduction and no exactness, dispatch, copy, allocation, or cost certification exists",
+    "future_gate": "independently validate exact triangular implementation and native accounting before any factorial experiment with independently validated L2 Strassen or cross-layer batching"
+  },
+  "dependency_sha256": {
+    "m166_oriented_collision_null.py": "243a4401bad76cbde490ae045ba29eef579f4708b856ac042d96e004e7ffe7ab",
+    "m167_collision_owner_unification.py": "fb7bc7cdd177004c8c4c506788ced6af5e090d41ef8a84cdd6cfad3b03ac81f0"
+  },
+  "artifact_sha256": {
+    "m170_oriented_tensor_rank.py": "5ee87df9d2f51f41c8195314869022e379c4ebe3ec18e41778f723c9a67b4796",
+    "test_m170_oriented_tensor_rank.py": "3f893d2d3762aeb3af1888dc99f9a15131ff30d79efc31d173746cb1724bb07e",
+    "run_m170_static.py": "d70921c2167c078e43d850fb322514ae12be75750c14f769e15fad70ec825344",
+    "M170_ORIENTED_TENSOR_RANK_REPORT_20260807.md": "b041465b56014bd99316993277a848a5fe573bc1c0c5aa73b5007c1acad3accc",
+    "M170_STATIC_RESULTS_20260807.json": "e6bcacdb32392d78be245e44043569b50202fcf82fe684aa4cdfcf9c059afb97"
+  },
+  "tests": "C:\\Python314\\python.exe -m unittest discover -s work\\scorefloor_generation\\m170_oriented_tensor_rank -p test_*.py -v; 7 passed",
+  "disposition": "KILLED_STATIC_NO_LEQ5_DENSE_PRODUCT_FAMILY_COMPILER_IN_AUDITED_M166_NORMAL_FORM"
+}

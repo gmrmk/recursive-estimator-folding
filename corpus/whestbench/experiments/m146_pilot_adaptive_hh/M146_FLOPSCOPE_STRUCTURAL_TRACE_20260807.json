@@ -1,0 +1,162 @@
+{
+  "blocked_until_m147": [
+    "generated-state construction",
+    "endpoint-safe exact coefficient certification",
+    "integrated coefficient-call residual and certificate failure behavior"
+  ],
+  "candidate": "M146 target-shaped proposal structural delta",
+  "crosswalk": {
+    "arithmetic_pass": false,
+    "baseline_replaced_billed": 164045379,
+    "branch_ceiling": 100000000000,
+    "ceiling_pass": false,
+    "complete_nonoverlap_protected": 121620612118.20157,
+    "deployment_survives_structural_gate": false,
+    "disposition": "KILL_M146_DEPLOYMENT_CONFIGURATION_PRESERVE_ADAPTIVE_HH_THEOREM",
+    "incremental_billed": 369162631,
+    "incremental_billed_gate": 251412480,
+    "incremental_residual_gate_s": 0.025,
+    "m133_complete_protected": 94940940240,
+    "m146_replacement_billed": 533208010,
+    "max_incremental_residual_s": 0.2621821858920157,
+    "paired_nonnegative_residual_deltas_s": [
+      0.2423621106427163,
+      0.2621821858920157,
+      0.2476497027091682
+    ],
+    "protected_incremental_arithmetic_1_25": 461453289,
+    "protected_incremental_residual_bill": 26218218589.20157,
+    "residual_pass": false
+  },
+  "dtype": "float32",
+  "excluded_unchanged": [
+    "the same 512 M131 coefficient evaluations already reserved by M133",
+    "the same five rectangular source products",
+    "M125b carrier/background and hard path/[2,2] samplers"
+  ],
+  "firewall": "fresh synthetic arrays only; no generated Gaussian state/M131 coefficient call/response/contest data/truth/scorer/submission",
+  "flopscope": "0.10.0+np2.4.6",
+  "integrated_endpoint_trace": false,
+  "memory": {
+    "paired_measurements": [
+      {
+        "baseline": {
+          "peak_working_set": 73424896,
+          "python_tracemalloc_peak": 8602141,
+          "working_set_after": 65040384,
+          "working_set_before": 63594496
+        },
+        "candidate": {
+          "peak_working_set": 95416320,
+          "python_tracemalloc_peak": 17510564,
+          "working_set_after": 77131776,
+          "working_set_before": 63389696
+        }
+      },
+      {
+        "baseline": {
+          "peak_working_set": 95416320,
+          "python_tracemalloc_peak": 8514328,
+          "working_set_after": 71925760,
+          "working_set_before": 70639616
+        },
+        "candidate": {
+          "peak_working_set": 102010880,
+          "python_tracemalloc_peak": 17517919,
+          "working_set_after": 83087360,
+          "working_set_before": 71925760
+        }
+      },
+      {
+        "baseline": {
+          "peak_working_set": 102010880,
+          "python_tracemalloc_peak": 8513721,
+          "working_set_after": 80699392,
+          "working_set_before": 78077952
+        },
+        "candidate": {
+          "peak_working_set": 109195264,
+          "python_tracemalloc_peak": 17513256,
+          "working_set_after": 90390528,
+          "working_set_before": 78901248
+        }
+      }
+    ],
+    "peak_python_tracemalloc_bytes": 17517919,
+    "peak_working_set_bytes": 109195264,
+    "synthetic_input_bytes": 17363968
+  },
+  "native_structural_trace": true,
+  "numpy": "2.4.6",
+  "pairs": [
+    {
+      "baseline": {
+        "backend_s": 0.10625470196828246,
+        "billed_flops": 164045379,
+        "outer_wall_s": 0.8695029998198152,
+        "overhead_s": 0.667503299890086,
+        "residual_s": 0.09576039807870984
+      },
+      "candidate": {
+        "backend_s": 0.31175518152303994,
+        "billed_flops": 533208010,
+        "outer_wall_s": 2.857623899821192,
+        "overhead_s": 2.207747409818694,
+        "residual_s": 0.33812250872142613
+      }
+    },
+    {
+      "baseline": {
+        "backend_s": 0.10775329312309623,
+        "billed_flops": 164045379,
+        "outer_wall_s": 0.8801937999669462,
+        "overhead_s": 0.6749771039467305,
+        "residual_s": 0.09746550279669464
+      },
+      "candidate": {
+        "backend_s": 0.3233260929118842,
+        "billed_flops": 533208010,
+        "outer_wall_s": 3.1222326001152396,
+        "overhead_s": 2.43926091841422,
+        "residual_s": 0.35964768868871033
+      }
+    },
+    {
+      "baseline": {
+        "backend_s": 0.07825760496780276,
+        "billed_flops": 164045379,
+        "outer_wall_s": 0.7067276001907885,
+        "overhead_s": 0.5533010915387422,
+        "residual_s": 0.07517310348339379
+      },
+      "candidate": {
+        "backend_s": 0.2662205952219665,
+        "billed_flops": 533208010,
+        "outer_wall_s": 2.817293900065124,
+        "overhead_s": 2.228251998545602,
+        "residual_s": 0.322822806192562
+      }
+    }
+  ],
+  "repeats": 3,
+  "response_outcome_run": false,
+  "scope_included": [
+    "M133 replacement baseline proposal banks, target-sized categorical scans, and sampled-q gathers",
+    "M146 physical q0 and pilot categorical scans",
+    "O(n) batched pilot F31/F22 Gram norm with all rank-one pair reductions",
+    "fixed t=1..P fading log scores and node/edge bincount states",
+    "role-aware q_ad banks and exact normalizer",
+    "25/75 defensive main-component categorical scans",
+    "q0/q_ad sampled mass, q1 mixture evaluation, and heterogeneous scale concatenation",
+    "serial pilot-before-main Python/call/allocation barrier"
+  ],
+  "shape": {
+    "layers": 31,
+    "main_adaptive_component": 336,
+    "main_base_component": 112,
+    "main_per_layer": 448,
+    "pilot_per_layer": 64,
+    "total_per_layer": 512,
+    "width": 256
+  }
+}

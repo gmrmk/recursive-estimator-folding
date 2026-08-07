@@ -1,0 +1,55 @@
+{
+  "conditional_endpoint_adversary": {
+    "angular_integrand_evaluations": 60672,
+    "conditional_singleton_correlation": 0.999,
+    "local_scalar_wall_seconds_nonportable": 0.06639579986222088,
+    "paired_tangent_disagreement": 5.502039188837182e-11,
+    "paired_value_disagreement": 9.167415160327153e-10
+  },
+  "disposition": {
+    "central_211_oracle": "correctness survivor; literal target implementation cost-killed",
+    "generated_response_authorized": false,
+    "pair_bridge": "static survivor",
+    "target_or_contest_execution_authorized": false
+  },
+  "frozen_target_cost_boundary": {
+    "coefficient_count": 15872,
+    "conditional_endpoint_lower_bound_per_coefficient": 606720,
+    "exact_coefficient_reserve": 1625292800,
+    "favorable_minimum_billed_ops_per_angle_evaluation": 10,
+    "high_correlation_lower_bound_per_coefficient": 108480,
+    "layers": 31,
+    "literal_48_64_x_16_32_rule_passes_reserve": false,
+    "reserve_per_coefficient": 102400,
+    "sampled_coefficients_per_layer": 512
+  },
+  "high_correlation_static": {
+    "angular_integrand_evaluations": 10848,
+    "local_scalar_wall_seconds_nonportable": 0.024996699998155236,
+    "maximum_input_correlation": 0.93
+  },
+  "legacy_pair_grid": {
+    "max_absolute_tangent_defect": 1.0408340855860843e-17,
+    "max_absolute_value_defect": 9.71445146547012e-17,
+    "rho": [
+      -0.75,
+      -0.35,
+      0.0,
+      0.35,
+      0.75
+    ]
+  },
+  "moderate_211_partition_agreement": {
+    "absolute_cumulant_defect": 2.984418268070499e-14,
+    "absolute_tangent_defect": 2.918650564287528e-14,
+    "paired_tangent_disagreement": 3.7549187283797414e-11,
+    "paired_value_disagreement": 2.2584286177296242e-10
+  },
+  "repair_guards": {
+    "conditional_support": "strictly positive Schur diagonal for both singleton variables",
+    "degenerate_conditional_refusals": 2,
+    "extreme_finite_refusals": 2,
+    "nonfinite_output_refused": true
+  },
+  "scope": "response-free generated mathematics only"
+}

@@ -1,0 +1,99 @@
+{
+  "candidate_id": "M147",
+  "date": "2026-08-07",
+  "scope": "response-free generated mathematics and static cost audit only",
+  "reproducibility": {
+    "interpreter": "work/headroom-recursion/.venv/Scripts/python.exe",
+    "numpy_version": "2.5.1",
+    "system_python_note": "The system Python lacks NumPy; use the declared bundled environment."
+  },
+  "mechanism": {
+    "pair": "Rosenbaum positive-part moment with angular Plackett quadrant, exact rank-one limits, Price remainder enclosure, and cancellation-triggered nonnegative endpoint integral",
+    "pair_tangent": "interior Price/Bonnet Frechet; exact PSD boundary one-sided feasible directional derivative only",
+    "collision211": "direct central conditional 1D rule for kappa(i,i,j,k), followed by exact M129 tree subtraction",
+    "width_contract": "collision211_local_state_dot gathers one 3x3 minor and is independent of ambient width; the n<=16 full-state guard is reference-only; the local conditional rule requires strictly positive Schur marginal variances for both singleton variables"
+  },
+  "bias_class": {
+    "pair_value": "analytic exact subject to paired-order numerical certificate",
+    "pair_tangent": "analytic interior Frechet or explicitly one-sided PSD-boundary directional",
+    "collision211": "deterministic quadrature with frozen absolute coarse/fine gates"
+  },
+  "frozen_numerical_contract": {
+    "quadrant_coarse_order": 16,
+    "quadrant_fine_order": 32,
+    "quadrant_disagreement_tolerance": 2e-13,
+    "quadrant_max_subdivisions": 128,
+    "collision211_coarse_order": 48,
+    "collision211_fine_order": 64,
+    "collision211_absolute_value_disagreement_max": 2e-8,
+    "collision211_absolute_tangent_disagreement_max": 2e-7,
+    "correlation_clipping": false,
+    "covariance_ridge": false,
+    "silent_endpoint_replacement": false
+  },
+  "static_evidence": {
+    "tests_passed": 12,
+    "tests_failed": 0,
+    "legacy_pair_max_absolute_value_defect": 9.71445146547012e-17,
+    "legacy_pair_max_absolute_tangent_defect": 1.0408340855860843e-17,
+    "moderate_211_absolute_cumulant_defect": 2.984418268070499e-14,
+    "moderate_211_absolute_tangent_defect": 2.918650564287528e-14,
+    "exact_conditional_endpoint_tested": true,
+    "positive_gauge_tested": true,
+    "permutation_and_singleton_symmetry_tested": true,
+    "outward_PSD_tangent_refused": true,
+    "degenerate_conditional_singleton_refused": true,
+    "extreme_finite_overflow_refused": true
+  },
+  "target_cost_boundary": {
+    "frozen_exact_coefficient_reserve_total": 1625292800,
+    "coefficient_count": 15872,
+    "reserve_per_coefficient": 102400,
+    "ordinary_high_correlation_angular_evaluations": 10848,
+    "ordinary_favorable_lower_bound_billed_ops": 108480,
+    "conditional_rho_0_999_angular_evaluations": 60672,
+    "conditional_rho_0_999_favorable_lower_bound_billed_ops": 606720,
+    "literal_target_cost_gate": "fail"
+  },
+  "repair_map_not_implemented": {
+    "inner_nested_rule": "Gauss-Kronrod 15/31, 31 unique nodes",
+    "outer_nested_rule": "Gauss-Kronrod 31/63, 63 unique nodes per split tail",
+    "fixed_angular_evaluations": 3906,
+    "one_inner_bisection_angular_evaluations": 7812,
+    "hard_preflight_cap_angular_evaluations": 8000,
+    "endpoint_aggregate_value_error_budget": 1e-8,
+    "endpoint_aggregate_tangent_error_budget": 1e-7,
+    "status": "unresolved; requires new implementation, hostile tests, and complete native trace"
+  },
+  "independent_reaudit_repair": {
+    "rank_deficient_contract": "rank-one conditional singleton pairs with positive conditional diagonals are supported; zero conditional singleton variances are refused explicitly because their ReLU-kink tangent is not certified",
+    "finite_arithmetic": "all public bivariate values, tangents, enclosures, univariate conditional means, endpoint state arrays, and final collision outputs are checked finite; overflow raises EndpointCertificationFailure",
+    "static_guard_counts": {
+      "degenerate_conditional_refusals": 2,
+      "extreme_finite_refusals": 2
+    }
+  },
+  "disposition": {
+    "endpoint_pair_bridge": "static survivor",
+    "literal_central_211_target_kernel": "cost-killed implementation",
+    "nested_endpoint_repair": "unresolved family",
+    "generated_response": "not authorized",
+    "contest_execution": "not authorized",
+    "champion_change": "not authorized"
+  },
+  "artifact_hashes_sha256": {
+    "m147_endpoint_safe_bridge.py": "b042e3fe5fc7af518e2ae57a0e43ba6417b22e1c12dfaef458164cf33629a0c0",
+    "test_m147_endpoint_safe_bridge.py": "931cbc37895fdb5f6ffaf37e85eda9793436503d9cebe5072f12a9657649739e",
+    "run_m147_static_audit.py": "dd955f3cf19eb24921848093b669598d3f99e0767c379c1b36380028ad68865c",
+    "M147_STATIC_AUDIT_20260807.json": "de545e4fdce92c93140cdf2f6db1192149f3e040a9637fcb0873f4ea307229e6",
+    "M147_ENDPOINT_SAFE_BRIDGE_THEORY_AUDIT_20260807.md": "d9b8dcbab6a3bcc827c32091d9aea4f9849e0f8247c6163eea0077e98b82e8df",
+    "M147_REPAIR_ADDENDUM_20260807.md": "bfb8f55bed3a2c4c9ccd76f7d3d5b31b7e3bcb8cf188075d279e6edc7b941cef"
+  },
+  "firewall": {
+    "M143_changed": false,
+    "M143_token_rerun": false,
+    "response_cells_built": false,
+    "truth_or_scorer_accessed": false,
+    "champions_or_submissions_touched": false
+  }
+}

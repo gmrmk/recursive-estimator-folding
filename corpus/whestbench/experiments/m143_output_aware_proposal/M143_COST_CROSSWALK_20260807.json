@@ -1,0 +1,36 @@
+{
+  "scope": "target-shaped float32 proposal structure only; no response outcome, scorer, model, or submission",
+  "native_trace": "M143_FLOPSCOPE_STRUCTURAL_TRACE_20260807.json",
+  "flopscope": "0.10.0+np2.4.6",
+  "dtype": "float32",
+  "shape": {"width": 256, "layers": 31, "samples_per_layer": 512},
+  "m133_complete_k512_protected": 94940940240,
+  "m133_old_proposal_setup_protected_to_replace": 121896960,
+  "m143_native_full_proposal_billed": 67900646,
+  "m143_native_full_proposal_protected_1_25": 84875808,
+  "complete_nonoverlap_protected": 94903919088,
+  "formula": "94940940240 - 121896960 + ceil(1.25*67900646)",
+  "native_residual_seconds": 0.013532000128179789,
+  "native_residual_effective_compute": 1353200012.8179789,
+  "wall_rule": "the standalone residual is below M133's retained 0.100 s / 10B whole-estimator reserve and is not added a second time",
+  "replaced_scope": [
+    "abs/copy residual bridge tables",
+    "source-strength weighted endpoint tables",
+    "three bank normalizers",
+    "fixed-count categorical centre and endpoint scan shapes",
+    "sampled exact-q gathers"
+  ],
+  "new_scope": [
+    "p^2-gated sign-scrambled row-energy recurrence",
+    "physical source-scale multiplication"
+  ],
+  "unchanged_nonoverlapping_scope": [
+    "M126 P0 plus exact M125b carrier/background",
+    "M133 hard path and [2,2] edge products",
+    "M133 five [2,1,1] rectangular products",
+    "M131 exact sampled coefficient reserve",
+    "M133 1B gather/symmetry/allocation reserve outside its proposal-setup line",
+    "M133 100 ms whole-estimator residual reserve"
+  ],
+  "qualification": "native trace is a structural scan/gather implementation, not a complete target estimator trace; the complete total remains a protected crosswalk rather than a measured integrated run"
+}

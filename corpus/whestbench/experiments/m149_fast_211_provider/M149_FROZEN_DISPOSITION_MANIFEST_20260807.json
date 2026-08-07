@@ -1,0 +1,54 @@
+{
+  "candidate_id": "M149",
+  "scope": "response-free local [2,1,1] provider repair only",
+  "parent_component": "M147 endpoint-safe bridge",
+  "mechanism": "fixed nested QUADPACK Gauss-Kronrod-Patterson 43/87 outer rule with M147 endpoint-safe bivariate primitive",
+  "frozen_contract": {
+    "value_certificate_max": 2e-08,
+    "tangent_certificate_max": 2e-07,
+    "angular_evaluation_cap": 8000,
+    "no_ridge": true,
+    "no_clipping": true,
+    "no_retry": true,
+    "zero_schur": "explicit independent-block unbiased fallback contract only; not executed"
+  },
+  "static_cost": {
+    "outer_fine_nodes": 87,
+    "outer_coarse_nodes": 43,
+    "conservative_billed_ops": 47296,
+    "per_coefficient_reserve": 102400,
+    "worksheet_pass": true
+  },
+  "oracle_falsification": {
+    "moderate_abs_cumulant_defect_approx": 6.4802600146032785e-06,
+    "moderate_abs_tangent_defect_approx": 0.0015409749087364566,
+    "relative_to_frozen_value_certificate": "fails",
+    "relative_to_frozen_tangent_certificate": "fails",
+    "conditional_rho_0_999": "resource-or-accuracy fail closed"
+  },
+  "test_status": {
+    "tests": 6,
+    "passed": 6,
+    "meaning": "tests prove rejection and salvage invariants; they do not prove provider efficacy"
+  },
+  "disposition": "KILLED_IMPLEMENTATION_FIXED_OUTER_QUADRATURE",
+  "salvage": [
+    "width-independent 3x3 local gathering",
+    "M147 endpoint/PSD bivariate primitive",
+    "explicit zero-Schur unbiased fallback contract",
+    "hard resource cap and fail-closed behavior"
+  ],
+  "next_distinct_mechanism": "piecewise moving-kink tangent derivation or separately certified Rosenbaum/Owen-T endpoint partition; no order increase or tolerance relaxation",
+  "artifact_sha256": {
+    "m149_fast_211_provider.py": "33c0dfa4487cf2c2a3cabc181e6b451797080708f66722f611a977ed3c584c79",
+    "test_m149_fast_211_provider.py": "df16dfa15181df8dd9ee6dba72c1e2208b11d8d7c18e05feeece623f30939b0c",
+    "M149_DISPOSITION_20260807.md": "e095fb04ab13fb545cbed6b0a8a529de4fc1ace36a5e6e336df6e0a494eb3482"
+  },
+  "firewall": {
+    "generated_response_cells": false,
+    "truth_or_scorer_access": false,
+    "public_rows": false,
+    "submissions": false,
+    "champion_change": false
+  }
+}

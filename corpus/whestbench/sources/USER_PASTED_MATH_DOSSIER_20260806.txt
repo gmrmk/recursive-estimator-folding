@@ -1,0 +1,194 @@
+=============================================================================
+PURE MATHEMATICS BRICK -- deep ReLU spherical integration -- ASCII, self-contained
+Notation: d=256, L=32, n=d. S^{d-1} = unit sphere. u,v on the sphere; x ~ N(0,I_d).
+Phi, phi = standard normal CDF/PDF. P_l = Gegenbauer/Legendre polynomial normalized
+P_l(1)=1 on S^{d-1}. H_l = space of degree-l spherical harmonics, dim H_l =
+C(d-1+l,l) - C(d-3+l,l-2). f: R^d -> R^256, f = W_L o relu o ... o relu o W_1,
+weights iid N(0, 2/n), no biases. Estimand: I[f] = E_x[relu(f_pre_L(x))] per output.
+=============================================================================
+
+SEC 1. EXACT IDENTITIES
+1.1 Homogeneity. relu(cz) = c relu(z) for c>0 => f(cx) = c f(x) => with x = R u,
+    R ~ chi_d indep of u ~ Unif(S^{d-1}):  I[f] = rho_d E_u[f(u)],
+    rho_d = E[chi_d] = sqrt(2) Gamma((d+1)/2)/Gamma(d/2).
+    rho_256 = 15.98438266660852747... (exact via 255!! = 256!/(2^128 128!)).
+1.2 Euler. f 1-homogeneous, piecewise linear => f(x) = <grad f(x), x> a.e., and
+    grad f is piecewise CONSTANT (gates fixed within each cell of the hyperplane
+    arrangement {w_i^(l) . a^(l-1) = 0}).
+1.3 Rectified Gaussian moments. z ~ N(mu, s^2):
+    E[relu z]   = mu Phi(mu/s) + s phi(mu/s)
+    E[relu^2 z] = (mu^2+s^2) Phi(mu/s) + mu s phi(mu/s)
+1.4 Bivariate (Rosenbaum-type). (u,v) ~ BVN(mu_u, mu_v, s_u, s_v, rho),
+    h = -mu_u/s_u, k = -mu_v/s_v, q = sqrt(1-rho^2):
+    E[relu(u) relu(v)] = mu_u mu_v Lb + mu_u s_v Ey + mu_v s_u Ex + s_u s_v Exy
+    where A = Phi((rho h - k)/q), Bq = Phi((rho k - h)/q),
+    Lb = 1 - Phi(h) - Phi(k) + Phi2(h,k;rho),
+    Ex = phi(h) A + rho phi(k) Bq,  Ey = phi(k) Bq + rho phi(h) A,
+    Exy = rho Lb + rho h phi(h) A + rho k phi(k) Bq + (1-rho^2) phi2(h,k;rho),
+    phi2(h,k;rho) = exp(-(h^2 - 2 rho h k + k^2)/(2 q^2)) / (2 pi q).
+    Owen decomposition: Phi2(h,k;rho) = (Phi(h)+Phi(k))/2 - T(h,(k-rho h)/(h q))
+    - T(k,(h-rho k)/(k q)) - beta, beta = 1/2 iff hk<0 or (hk=0 and h+k<0);
+    limits T(0,a) = arctan(a)/(2 pi), Phi2(0,0;rho) = 1/4 + arcsin(rho)/(2 pi).
+1.5 Zero-mean case (Cho-Saul): E[relu(u) relu(v)] = (s_u s_v / 2 pi)
+    (sqrt(1-rho^2) + rho (pi - arccos rho)).
+1.6 Arc-cosine correlation map. kappa(c) = (sqrt(1-c^2) + c(pi - arccos c))/pi.
+    Fixed point c*=1, kappa'(1)=1 (marginally attracting): iterates approach 1
+    like O(1/step); at composition depth 32 from generic c0, c_32 ~ 0.975.
+1.7 Exact finite-width kernel facts (He gain 2): E_W[f_j(u)^2] = |u|^2/n exactly;
+    E_W[f_j(u)] = |u|/sqrt(pi n) exactly, depth-independent;
+    E_W[f_j(u) f_j(v)] = (|u||v|/n) kappa^{oL}(u.v) in the mean-field limit
+    (finite-width directional variance inflated: measured 1-a0 = 0.0501 vs
+    mean-field 0.0253 at L/n = 1/8).
+
+SEC 2. HARMONIC ANALYSIS AND CUBATURE
+2.1 Variance of an equal-weight antipodal rule X = {+-x_a}, |X| = N, applied to a
+    random field with rotation-invariant covariance k(u.v) = sum_l a_l P_l(u.v):
+    E[error^2] = sum_l a_l M_l,  M_l = (1/N^2) sum_{a,b} P_l(x_a . x_b) - [l=0].
+    Define amplification A_l = N M_l ; A_l = 1 for iid points; A_l = 0 iff the
+    rule integrates H_l exactly.
+2.2 Two-distance closed form. If X has inner products only in a small set S with
+    multiplicities m_s per point, A_l = sum_{s in S} m_s P_l(s) (per point),
+    computable by a stable Gegenbauer recurrence.
+2.3 THE LEDGER (Kerdock union, d=256): inner products {+-1, 0, +-1/16};
+    per point multiplicities {1, 1, 510, 32000, 32000} (after antipodal closure --
+    representatives alone are NOT profile-identical; closure repairs it).
+    A_2 = A_4 = 0 (and all odd l = 0 by antipodality); A_6 = 2.0620;
+    A_l = 2.0000 exactly for all even l >= 8 -- the generic antipodal value.
+    Hence per-evaluation variance is within 1.4% of the minimum over ALL antipodal
+    N-point sets, and exact integration of H_6 (a 7-design) would gain only
+    1.315x while requiring >= 2 C(258,3) points (approx 87x more).
+2.4 Design-strength rank bound. Any degree-4-exact antipodal weighted cubature on
+    S^{d-1} needs >= d(d+1)/2 lines (rank of the evaluation map into Sym^2).
+    At d=256: >= 32896 lines. The maximal real MUB union has 33024 = 1.00389x.
+2.5 Uniqueness. The Gram matrix of the 129 per-basis 4th-moment tensors
+    M_a = (1/d) sum_i b_{ai}^{(x)4} is exactly ((d-1)/d^2) I + (1/d^2) J.
+    Consequences: the M_a are linearly independent; the isotropic 4th-moment
+    tensor has a UNIQUE convex representation (uniform); for any basis-uniform
+    weights the entire weight-dependence of the variance is the scalar
+    Q = sum W_a^2, minimized by equal weights on maximal support. Partial bases
+    violate degree-2 exactness: M_2 = 0 iff sum n_a^2 = n d iff every n_a in
+    {0, d} (Cauchy-Schwarz equality case).
+2.6 Construction. Maximal real MUB family in R^{2^{2m}}: 2^{2m-1}+1 orthonormal
+    bases with pairwise |<b,c>| = 2^{-m} from the Z4-linear Kerdock code over the
+    Galois ring GR(4, 2m-1) (Hensel lift of a degree-(2m-1) primitive polynomial;
+    Gray map; entries +-2^{-m}). d=256: m=4, GR(4,7), 129 bases, 33024 lines,
+    degree-2/4 moment defects ~1e-14 numerically.
+2.7 Rotation necessity. A FIXED orientation of a structured design is biased
+    against integrands aligned with its structural directions (measured degree-6
+    structural overshoot 34.7x vs random probes); a Haar rotation restores
+    zero-mean error, and the choice-of-rotation-from-estimates is a fair coin:
+    with two rotations only D = e_1 - e_2 is observable while S = e_1 + e_2 is
+    independent of D, and |e_1|<|e_2| iff sign(S) != sign(D) => P = 1/2 exactly.
+
+SEC 3. IMPOSSIBILITY THEOREMS
+3.1 Frame annihilation. An orthonormal frame {q_i} satisfies sum_i q_i q_i^T = I,
+    so the frame average of every quadratic form equals its exact spherical mean:
+    all degree-<=2 harmonics are integrated exactly; quadratic control variates
+    have identically zero sample mean on such a rule. Extends through degree 4
+    (and 5 with antipodes) for a 5-design.
+3.2 Euler-Stein degeneracy. Spherical Stein identity: for smooth vector fields,
+    E_u[div F - u^T DF u - (d-1) u.F] = 0. For F = grad f_j of a ReLU network,
+    DF = 0 a.e., and the functional degenerates POINTWISE to -(d-1) f_j(u) --
+    Euler's identity in disguise. The zero-mean mass is the singular measure on
+    gate hyperplanes: div grad relu(w.x) = |w|^2 delta(w.x), with
+    E_u[|w|^2 delta(w.u)] = (d-1) E_u[relu(w.u)] exactly (reduces to
+    ((d-1)/2) Gamma((d-1)/2) = Gamma((d+1)/2)). Consequence: control variates
+    built from the network's own gradient are impossible; smooth polynomial Stein
+    fields reduce to polynomial CVs, annihilated by design exactness (3.1).
+3.3 Approximate-mean theorem. A control variate h with estimated mean mhat,
+    error delta = mhat - E[h], used with coefficient beta, changes MSE by
+    beta^2 (Var-term) + (beta delta)^2 bias: it helps only if
+    |delta| < sigma_h / sqrt(N) -- i.e. any external mean accurate enough to help
+    is already a better estimator of its own mean than the rule provides.
+3.4 Collapse theorem (scale conditioning). For any mixture representation
+    x = rho * y with rho >= 0 scalar and relu positively homogeneous, every
+    moment-propagation functional of the layer laws depends on the mixture only
+    through E[rho] and E[rho^2]; if the linear map is treated exactly, E[rho^2]
+    is pinned, so an entire nonparametric scale-mixture family collapses to ONE
+    scalar degree of freedom.
+3.5 Cramer restriction. If x = y + z with y,z independent and x Gaussian, then
+    y,z are Gaussian (Cramer's decomposition theorem): additive conditioning
+    kernels for Gaussian inputs admit no non-Gaussian members.
+3.6 Mediant dilution. For two families with per-point cost c_i and per-point
+    variance v_i, the budget-normalized score of any mixture is a mediant of the
+    pure scores: strictly between them. Adding a strictly less efficient family
+    to a rule is always dilutive; an equally efficient one is exactly neutral.
+3.7 Near-orthogonality of cumulant truncations. Successive truncation errors
+    e_k of the cumulant-propagation hierarchy are near-orthogonal functionals of
+    the weights: measured corr(e_2, e_3) = -0.061 (and corr(e_3, e_4) = 0.223 at
+    a matched smaller shape). Sequence acceleration (Shanks/Aitken/Richardson)
+    requires a shared geometric error mode (corr -> 1); absent it, Shanks
+    denominators E_3 - 2 E_2 + E_1 have median ~ 0 and the transform diverges.
+    The span {1, E_1, E_2, E_3} bounds every fixed-coefficient acceleration.
+3.8 Second-moment closure cap. With EXACT per-output (mu, sigma) of the final
+    pre-activation and a Gaussian closure, the residual error is governed by the
+    3rd/4th cumulants suppressed by phi(mu/sigma) He_{k-2}(mu/sigma) factors;
+    measured cap 8.76e-7 MSE at (d,L) = (256,32) -- above the sampling floor.
+    With exact (mu, sigma, k3, k4) via Gram-Charlier: 4.7e-8. The map
+    sigma -> E[relu] error is the binding term in analytic propagation (a 12.2%
+    relative sigma error accounts for ~99% of the Gaussian-closure plateau).
+3.9 L/n hierarchy. Finite-width corrections to deep-network moment propagation
+    organize as a series in L/n: 1/n^k terms carry L^k coefficients (Hanin).
+    Measured per-order error contraction ~7x at L/n = 1/8, stall at L/n >= 1/4,
+    divergence at L/n = 1/2. No reorganization with parameter 1/n exists.
+3.10 Surrogate cancellation law. For depth-truncated observables d_k (sampled
+    layer-k mean minus its model), the usable correlation with the final error
+    obeys rho_oracle(k) x dilution(k) ~ const (0.11-0.23 at every k in [1,31]):
+    observability and probe noise trade exactly. The mean-field Jacobian map
+    from layer k to L attains the L2-optimal linear map (rho^2 0.139 vs 0.134).
+3.11 Fixed-reweighting certificate. On any point set whose (antipodally closed)
+    kernel Gram has constant row sums -- true for the MUB union: every point sees
+    inner products {+1 x1, -1 x1, 0 x510, +1/16 x32000, -1/16 x32000} -- the
+    Bayesian-quadrature weights w* = G^{-1} z are exactly uniform for EVERY
+    zonal kernel; the optimal shrinkage is t* = a_0/(a_0 + R) and the ceiling
+    over all fixed reweightings is 1 + R/a_0 (numerically 1 + 3.0e-7 here).
+3.12 Subspace tumbling. The pointwise Jacobian of a deep ReLU net has effective
+    rank ~15 (Oseledets contraction), but the top singular subspaces at
+    independent inputs overlap at only ~2.4x the chance value (gate-pattern
+    mixing): E[J^T J] is near-isotropic; conditioning on any J-dim linear
+    projection explains only ~9% (J=16) to ~35% (J=64) of Var f, and 90% needs
+    J ~ 224 of 256. On a 5-design the residual is even-degree >= 6 only, whose
+    capture by a J-dim subspace scales like (J/d)^6.
+
+SEC 4. THE AVERAGE-CASE FLOOR
+4.1 Setup. Score is an ensemble average => average-case information-based
+    complexity with the matched Gaussian prior (covariance = composed arc-cosine
+    kernel). For Gaussian priors, linear non-adaptive rules are optimal (TWW).
+4.2 Spectrum computation. kappa is positive definite on S^infinity (Schoenberg)
+    with nonnegative Taylor coefficients; compositions are absolutely monotone;
+    the monomial-to-Gegenbauer conversion has positive coefficients. Hence all
+    Gegenbauer coefficients b_l of kappa^{o32} are sums of NONNEGATIVE terms --
+    computable in float64 with no cancellation. Results (d=256, L=32):
+    b_0 = 0.9747300 ; Var_u = 2.52700e-2 ; B_{>5} = 1.54035e-2 (= 61% of Var_u);
+    b_l ~ l^{-1..-1.5} (flat); median residual degree 18.
+4.3 Lower bound. For any N-point weighted rule, MSE >= (1 - mu_6)(rho_d^2/d)
+    B_{>5} / N with mu_6 = Gershgorin coherence of the degree->=6 Gram = 0.053.
+    (mu_4 = 2.80 > 1 while mu_6 < 1 reproduces the design-strength threshold
+    from an independent argument.) At N = 64512: floor = 2.42-2.55e-7.
+4.4 Worst-case is vacuous. On H^s(S^255), optimal rates N^{-s/d} require
+    s ~ 159 derivatives for three digits at N = 65536: the curse of
+    dimensionality (Novak-Wozniakowski, Hinrichs et al., Hesse, Brauchart et
+    al.) -- no worst-case statement binds at this shape; only average-case does.
+4.5 Zero-parameter validation. The same spectrum predicts, unfitted, five
+    measured quantities within 5-25%: two absolute MSEs, their ratio, the
+    degree-4 residual share, and the smoothing-derived residual degree l_eff.
+
+SEC 5. CONSTANTS
+rho_256 = 15.98438266660852747        E|u_1| on S^255: sqrt(2/pi)/sqrt(d) scale
+kappa(0) = 1/pi ;  kappa'(1) = 1      dim H_2 = 32895 ; dim H_4 = 1.83e8
+dim H_6 = 4.14e11 ; dim H_10 = 3.96e17 ; dim H_20 = 1.23e30
+MUB: 129 bases, |<b,c>| = 1/16 ; lines 33024 ; rank floor 32896 ; ratio 1.00389
+A_6 = 2.0620 ; A_{>=8} = 2.0000 ; 7-design cost factor 87.25
+b_0 = 0.9747300 ; Var_u = 2.52700e-2 ; B_{>5} = 1.54035e-2 ; mu_6 = 0.053
+Gaussian-closure cap 8.76e-7 ; +k3,k4 cap 4.7e-8 ; per-order L/n gain ~7 at 1/8
+corr(e2,e3) = -0.061 ; surrogate rho x dilution in [0.11, 0.23] for all k
+=============================================================================
+OPEN PROBLEMS: (i) compute final-layer (k3, k4) of a FIXED deep ReLU network to
+O(30%) accuracy in o(n^3 L^2) operations -- would beat the sampling floor 5x;
+(ii) the finite-width kernel correction (measured 2x directional-variance
+inflation at L/n = 1/8 vs +7-11% mean-field adjustment -- unreconciled);
+(iii) tight average-case lower bounds for NONLINEAR rules over non-Gaussian
+process priors; (iv) does any weight-analytic algorithm evade the L/n hierarchy?
+=============================================================================
+END
+=============================================================================

@@ -1,0 +1,80 @@
+{
+  "schema": 2,
+  "release_id": "M120C-EXTERNAL-EXECUTION-RESEAL-v2-20260807",
+  "state": "AUTHORIZED_FOR_SECOND_INDEPENDENT_MANIFEST_AUDIT_NOT_EXECUTION",
+  "protocol_id": "M120C-EXACT-PREEXEC-v1",
+  "sealed_manifest": {
+    "path": "work/scorefloor_generation/m120_price_normal_ordered_adjoint/m120c_protocol_manifest.json",
+    "sha256": "a501fe1bf03d80b430eaa852be980d27822e1945f913b60f151ce1cd88cd1645",
+    "status": "OPERATIONAL_SEALED",
+    "reseal_delta": "only the test_m120c_protocol.py source hash changed from sealed v1"
+  },
+  "prior_release": {
+    "path_replaced_by_this_reseal": "work/scorefloor_generation/research_excursions/M120C_EXTERNAL_EXECUTION_RELEASE_20260807.json",
+    "sha256": "c8ff95deaf0c293b29590cf2f50566e19c8fe9f9e1620d7af6ad39883ad0ee1d",
+    "state": "AUTHORIZED_FOR_INDEPENDENT_MANIFEST_AUDIT_NOT_EXECUTION"
+  },
+  "prior_sealed_manifest": {
+    "path": "work/scorefloor_generation/m120_price_normal_ordered_adjoint/m120c_protocol_manifest_sealed_v1_a46e838dc13b3d3d.json",
+    "sha256": "a46e838dc13b3d3a9c9aa2ccc4ad6c80ab3c2e0b9362afb02e71e42231f681e0"
+  },
+  "preserved_preexecution_manifest": {
+    "path": "work/scorefloor_generation/m120_price_normal_ordered_adjoint/m120c_protocol_manifest_preexec_61968d9818b398dd.json",
+    "sha256": "61968d9818b398ddafa2f27b122ceae77e7968a1a6473d3e66d060950f38a3fe"
+  },
+  "final_harness_audit": {
+    "path": "work/scorefloor_generation/research_excursions/M120C_OPERATIONAL_HARNESS_FINAL_INDEPENDENT_AUDIT_20260807.md",
+    "sha256": "ec9b7f8463bda5e8a7780c9c9ac2e20c1c2f282b42c5ce83138ea8eb23fdf3c2",
+    "verdict": "PASS_TO_EXTERNAL_FREEZE"
+  },
+  "installed_manifest_judge_repair": {
+    "path": "work/scorefloor_generation/research_excursions/M120C_INSTALLED_MANIFEST_INDEPENDENT_JUDGE_20260807.md",
+    "sha256": "26ddc50af7097a41a860498bb865e4a5ac560e256cd3911703cda9ea1cf50486",
+    "verdict": "REPAIR",
+    "repair_scope": "stale installed-manifest test contract only"
+  },
+  "test_contract_repair": {
+    "path": "work/scorefloor_generation/m120_price_normal_ordered_adjoint/test_m120c_protocol.py",
+    "sha256": "fdc1c5c88a19ec0a3a4a180fe3d95579d2da1a4e928edb9b113ef9402bd43e02"
+  },
+  "runtime_identity": {
+    "python_executable": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Scripts\\python.exe",
+    "python_sha256": "4b8c3912806b3c1591ba3cb403bff77ad309c3fe5756f87c20b7a6f8f0174262",
+    "python_version": "3.14.4",
+    "numpy_path": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Lib\\site-packages\\numpy\\__init__.py",
+    "numpy_sha256": "65d5e777b6d662ba19cb80800bef3eb999eda7aee51eea62c308feabf679dba4",
+    "numpy_version": "2.4.6"
+  },
+  "canonical_root": {
+    "path": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\scorefloor_generation\\m120_price_normal_ordered_adjoint\\out\\M120C_EXACT_GENERATED_OUTCOME",
+    "absent_at_reseal": true,
+    "claim_absent": true,
+    "outcome_absent": true,
+    "terminal_absent": true
+  },
+  "execution_contract": {
+    "atomic": true,
+    "one_shot": true,
+    "retry_allowed": false,
+    "execution_authorized_by_this_release": false,
+    "second_independent_manifest_audit_required_before_execution_authorization": true
+  },
+  "validation": {
+    "pinned_closed_manifest_errors": [],
+    "pinned_unittest_tests_passed": 41,
+    "headroom_pytest_tests_passed": 41,
+    "headroom_runtime_only_mismatch_handled_by_test_contract": true,
+    "real_dispatcher_called": false,
+    "canonical_state_created": false
+  },
+  "firewall": [
+    "generated networks only",
+    "no correction oracle",
+    "no source construction",
+    "no public or contest outcomes",
+    "no targets",
+    "no scorer",
+    "no champion access",
+    "no target-shape efficacy execution"
+  ]
+}

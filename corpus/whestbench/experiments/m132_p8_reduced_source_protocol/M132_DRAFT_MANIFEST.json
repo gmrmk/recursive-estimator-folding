@@ -1,0 +1,43 @@
+{
+  "candidate": "M132_P8_REDUCED_ONE_TWO_LABEL_SOURCE",
+  "status": "DRAFT_INERT_KILLED_BY_211_OMISSION_GATE",
+  "execution_authorized": false,
+  "outcome_file": null,
+  "contest_data_access": false,
+  "scorer_access": false,
+  "submission_access": false,
+  "probe_counts_compared": [2, 4, 6, 8],
+  "preferred_probe_count_only_if_all_gates_pass": 8,
+  "selection_rule": "argmin(response_variance * effective_flops), ties lower probes, only among rows passing every predeclared gate",
+  "fixed_mixed_precision": {
+    "dense_probe_dtype": "float32",
+    "analytic_easy_source_and_accumulation": "float64",
+    "shared_probe_seed": 1320080,
+    "inside_sample_symmetrization": true
+  },
+  "cost_effective_flops": {
+    "p2": 63345578320,
+    "p4": 73727136080,
+    "p6": 84108693840,
+    "p8": 94490251600,
+    "includes": ["M126 reduced source f32 worksheet", "M125b protected carrier"],
+    "excludes": ["exact 211 source repair", "M130 quadratic-jet extension", "runtime residual", "contest execution"]
+  },
+  "fail_closed_gates": [
+    "same-probe f32/f64 full repeated-table parity",
+    "one-delay response parity and variance",
+    "exact M122 small-width 211 omission bias",
+    "output symmetry, positive gauge, hidden permutation",
+    "deterministic replay",
+    "static cost and source-ownership closure",
+    "independent audit before any generated protocol execution"
+  ],
+  "bound_sources": {
+    "m132_protocol": "065e741b46d891dcc7379bbf7637e005e0f9c0db9209a5ce909d4642fccd90a3",
+    "m132_tests": "584003ec118791f29602979483088227a224929b6f469b951a13eedd83be81c8",
+    "m126_reduced_source": "f0462b96e7f898812d39b7a39f458f965835523f2a4c7a509c43f62dc7c1011c",
+    "m125b_carrier": "fbc9fe32357801b22f0313d4043022e81e2764ff3bf4be94f0dfe3ddb3d1ed32",
+    "m122_small_reference": "c765fe24818f4ec8928a879e217a530077edff98f729555739202c1f7286f927"
+  },
+  "blocker": "The reduced convention omits M122 exact [2,1,1]; M130 is only a quadratic-jet repair with uncertified full vertex remainder and probe variance. Therefore this manifest cannot be activated."
+}

@@ -1,0 +1,61 @@
+{
+  "communities": {
+    "0": [
+      "stem_document",
+      "stem_residual",
+      "stem_sampler"
+    ],
+    "1": [
+      "stem_k3",
+      "stem_k4"
+    ]
+  },
+  "cohesion": {
+    "0": 0.67,
+    "1": 1.0
+  },
+  "gods": [
+    {
+      "id": "stem_sampler",
+      "label": "Sampler",
+      "degree": 2
+    },
+    {
+      "id": "stem_residual",
+      "label": "Residual",
+      "degree": 2
+    },
+    {
+      "id": "stem_k3",
+      "label": "k3",
+      "degree": 2
+    },
+    {
+      "id": "stem_document",
+      "label": "WHestBench hyperconnection corpus",
+      "degree": 1
+    },
+    {
+      "id": "stem_k4",
+      "label": "k4",
+      "degree": 1
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Residual",
+      "target": "k3",
+      "source_files": [
+        "CORPUS.md",
+        "CORPUS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "cites",
+      "note": "Bridges community 0 \u2192 community 1"
+    }
+  ],
+  "tokens": {
+    "input": 4126,
+    "output": 401
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "candidate": "M175 fixed B=8 labelled zero-order background/source ABI repair audit",
+  "date": "2026-08-07",
+  "scope": "static/source-only no-go certificate; no response, truth, scorer, leaderboard, submission, champion, efficacy, or network access",
+  "mechanism": "fixed blocks [8,8,8,7] with immutable zero-order background states, never feeding a source carrier back into V",
+  "disposition": "NO_GO_CURRENT_CODE_EXACT_LABELLED_PRODUCER_ABSENT",
+  "first_broken_link": "no exact, labelled, FlopScope-metered BackgroundArchive producer retaining W_l, mu_l, V_l, and complete J_(l+1)",
+  "second_broken_link": "no explicit Source211-to-M125b-TangentState source ownership/conversion formula",
+  "fixed_blocks": [8, 8, 8, 7],
+  "outcome_firewall": true,
+  "resource_certificate": false,
+  "integration_runner_created": false,
+  "frozen_source_sha256": {
+    "base_estimator.py": "8428026e01224f9e48f2fd72c303100909e529370183e67f376e4623113425d8",
+    "fullcov_gaussian_mm/estimator.py": "4ad95e6cb5af482331a6a849f9d4d8299d0f06f741514b8204a194b7cabee951",
+    "m125_source_batched_forward_tangent/m125_forward_tangent.py": "fbc9fe32357801b22f0313d4043022e81e2764ff3bf4be94f0dfe3ddb3d1ed32",
+    "m156_extended_domain_star_control/m156_extended_domain_star_control.py": "f5d92c4eb6a32477a93b3b22c08ea79e3a10dd531d80d9ab4fea7186a7493a1b",
+    "m163_exterior_collision_null/m163_exterior_collision_null.py": "9215b06b749cd0a572605f3494d2b698e6cc8c8a29beca1e687ef004631db809",
+    "m169_m163_call_fusion/m169_fused_compiler.py": "3c236d809e3aa0374bc0989ea8d287e18c923b61ebc38cc2c85b7e9ec529a8b4",
+    "m172_selective_22_owner_fusion/m172_selective_22_owner_fusion.py": "fe826fde6e7f275cc9493d6a509bce5b3da42d5b3cbbde6c94f1fd7ec9409c31"
+  }
+}

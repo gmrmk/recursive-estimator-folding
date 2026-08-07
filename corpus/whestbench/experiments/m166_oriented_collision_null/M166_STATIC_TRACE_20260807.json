@@ -1,0 +1,72 @@
+{
+  "assertions": {
+    "all_collision_patterns_exactly_zero_by_equality": true,
+    "compiler_matches_exhaustive_small_width": true,
+    "exact_f64_cost_killed": true,
+    "f32_static_cost_only_fits": true,
+    "f32_uses_one_stored_control": true,
+    "permutation_covariant_f64_reference": true,
+    "positive_gauge_covariant_f64_reference": true,
+    "supports_disjoint": true
+  },
+  "compiler": {
+    "dense_product_count": 7,
+    "exhaustive_max_abs_difference": 4.547473508864641e-13,
+    "permutation_max_abs_difference": 2.2737367544323206e-13,
+    "positive_gauge_max_abs_difference": 3.410605131648481e-13
+  },
+  "control": {
+    "a_sha256": "4042ed4fac220a0220d0def20c49472742b458a48e2ed1e1e088694904597dc3",
+    "b_sha256": "95b0113444bbeebbaa328ae2703695e607886967948a770b32181dbd1b3d1c67",
+    "collision_max_abs": 0.0,
+    "score": [
+      0.42996674903366916,
+      0.27806760029497923,
+      0.21427247253409681,
+      0.19212089730398982,
+      0.42996674903366916,
+      0.16035745576582738
+    ],
+    "support_disjoint": true,
+    "tied_pair_count": 1
+  },
+  "cost": {
+    "candidate": "M166 oriented all-collision-null covariance-star compiler",
+    "cap": 14019121200,
+    "exact_f64_dense_products": 7,
+    "exact_f64_fits_cap": false,
+    "exact_f64_margin": -4473663440,
+    "exact_f64_orientation_correlation_copy_allowance": 325058560,
+    "exact_f64_seven_product_bill": 18167726080,
+    "exact_f64_static_total": 18492784640,
+    "f32_dense_products": 7,
+    "f32_one_square_product_all_layers_protected": 1297694720,
+    "f32_orientation_correlation_copy_allowance": 162529280,
+    "f32_requires_shared_control_and_numerical_conservation_gate": true,
+    "f32_seven_product_bill": 9083863040,
+    "f32_static_fits_cap": true,
+    "f32_static_margin": 4772728880,
+    "f32_static_total": 9246392320,
+    "f64_one_square_product_all_layers_protected": 2595389440,
+    "layers": 31,
+    "no_cubic_table_or_khatri_in_compiler": true,
+    "protection": 1.25,
+    "width": 256
+  },
+  "disposition": "preserve f64 orientation/compiler theorem; exact f64 static cost is killed. The f32 ledger is a numerical, shared-control candidate only and receives no native or source-variance authorization.",
+  "f32_shared_control_numerics": {
+    "bitwise_coefficient_reconstruction": false,
+    "coefficient_reconstruction_max_abs": 9.238719940185547e-07,
+    "control_dtype": "float32",
+    "f32_gauge_is_bitwise_certified": false,
+    "same_control_object_used_by_both_arms": true,
+    "tie_semantics": "equal computed float32 scores assign A_ij=B_ij=0"
+  },
+  "firewall": "generated covariance/weights only; no response, source variance, truth, score, scorer, competition row, leaderboard, submission, or champion mutation",
+  "seed": 166000001,
+  "shape": {
+    "labels": 6,
+    "outputs": 4
+  },
+  "status": "M166_STATIC_ORIENTATION_COMPILER_PASS_F64_COST_KILLED_NO_EFFICACY"
+}

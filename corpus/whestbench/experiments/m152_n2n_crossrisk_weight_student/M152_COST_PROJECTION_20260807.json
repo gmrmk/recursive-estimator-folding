@@ -1,0 +1,60 @@
+{
+  "status": "SOURCE_ONLY_PREEXECUTION_KILL_NO_WORKLOAD_AUTHORIZED",
+  "reference_design": {
+    "width": 256,
+    "depth": 32,
+    "kerdock_lines": 32256,
+    "antipodal_paths_per_reference": 64512,
+    "direct_forward": "32 f32 dense matmul/ReLU layers; stream one 256-line basis plus antipodes"
+  },
+  "split": {
+    "whole_generated_mlps": 32,
+    "train": 16,
+    "development": 8,
+    "test": 8,
+    "independent_reference_pairs_per_mlp": 4,
+    "reference_vectors_per_mlp": 8,
+    "campaign_reference_vectors": 256
+  },
+  "direct_reference_lower_bound_operations": {
+    "dense_matmul_per_path": 130816,
+    "dense_matmul_per_reference": 270054457344,
+    "relu_elementwise_per_reference": 528482304,
+    "dense_plus_relu_per_reference": 270582939648,
+    "campaign_dense_plus_relu": 69269232549888,
+    "campaign_teraoperations": 69.269232549888
+  },
+  "storage_and_ram": {
+    "f32_weight_bytes_per_mlp": 8388608,
+    "all_32_weight_bank_mib": 256,
+    "one_full_reference_input_mib": 63,
+    "two_full_reference_activation_buffers_mib": 126,
+    "streamed_512_row_input_block_mib": 0.5,
+    "two_streamed_512_row_activation_buffers_mib": 1.0,
+    "all_256_f32_reference_vectors_mib": 0.25,
+    "comment": "The direct reference is RAM-feasible only when streamed; never materialize layer-by-path tensors."
+  },
+  "local_hardware_snapshot": {
+    "source": ".compute_resources_20260807.json",
+    "cpu": "AMD Ryzen 7 7730U, 8 physical / 16 logical cores",
+    "available_ram_gib": 26.49,
+    "available_disk_gib": 246.64,
+    "gpu_backend": "none"
+  },
+  "arithmetic_only_wall_projection_hours": {
+    "at_10_gigaoperations_per_second": 1.924,
+    "at_25_gigaoperations_per_second": 0.77,
+    "at_50_gigaoperations_per_second": 0.385,
+    "qualification": "Arithmetic lower bound only. FlopScope dispatch, allocation, QR, f32 reduction, thermal throttling, and reproducibility constraints can increase wall time materially; only the discarded-output throughput fixture could certify feasibility."
+  },
+  "inference_cost_of_killed_mechanism": {
+    "analytic_anchor_flops": 6189000000,
+    "message_bank_increment_flops": 492625664,
+    "total_projected_flops": 6681625664,
+    "ridge_readout_and_normalization": "less than 1 million operations; included conservatively inside the message-bank envelope",
+    "parameters": 50,
+    "parameter_bytes_float32": 200
+  },
+  "decision": "RAM is adequate and arithmetic cost is plausible but unmeasured; capacity and semantics fail before any campaign is justified."
+}
+

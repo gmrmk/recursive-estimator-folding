@@ -1,0 +1,76 @@
+{
+  "candidate_id": "M162",
+  "date": "2026-08-07",
+  "scope": "response-free Plackett-Tallis derivation and fixed-rule falsifier for a dimensionless generic [2,1,1] endpoint",
+  "inherits": {
+    "m159_abi": "scale-carried output; M158 physical-float64 failure is localized",
+    "m154_rank_one": "exact moving-kink partition remains the dedicated rank-one route",
+    "m147_bivariate": "symbolic endpoint cancellation is required before a bivariate boundary primitive can certify a rank limit"
+  },
+  "derivation": {
+    "truncated_mgf": "T(u)=exp(mu^T u + 0.5 u^T Sigma u) P(mu+Sigma u,Sigma)",
+    "raw_moment_cache": "12 multiindices p0 in {0,1,2}, p1,p2 in {0,1}",
+    "connected_term": "kappa_211=C_211-V_00 V_12-2 V_01 V_02",
+    "minimum_probability_inventory": {
+      "P3": 1,
+      "P2_facets": 3,
+      "P1_edges": 3,
+      "vertex_density": 1
+    },
+    "plackett_representation": "single SPD correlation-homotopy integral with three phi_2*Phi conditional summands"
+  },
+  "fixed_rule_counterexamples": [
+    {
+      "state": "centered correlation (.999,0,0)",
+      "rule": "87-node straight Gauss-Legendre Plackett line",
+      "exact_reference": "1/8 + sum asin(rho_ij)/(4*pi)",
+      "absolute_error": "4.1205795886511964e-8"
+    },
+    {
+      "state": "centered correlation (.999999,0,0)",
+      "rule": "87-node Gauss-Legendre after t=1-u^2",
+      "exact_reference": "1/8 + sum asin(rho_ij)/(4*pi)",
+      "absolute_error": "3.931942285650969e-8"
+    }
+  ],
+  "rank_face_obstruction": {
+    "identity": "d Phi_2(0,0;rho)/d rho = 1/(2*pi*sqrt(1-rho^2))",
+    "at_nextafter_1_0": "10680707.430881744",
+    "consequence": "opaque numerical probability differentiation cannot certify the analytic cancellations required for finite positive-part moment limits"
+  },
+  "budget_decision": {
+    "ceiling_per_coefficient": 606720,
+    "fixed_common_node_rule": "not certifiable; no credit",
+    "all_parameter_aware_rank_specific_interval_methods": "unresolved; no upper/lower cost proof supplied"
+  },
+  "verification": {
+    "red_test_observed_before_implementation": "ModuleNotFoundError for m162_plackett_tallis_falsifier",
+    "green_test_command": "python -m unittest -v work/scorefloor_generation/m162_plackett_tallis_falsifier/test_m162_plackett_tallis_falsifier.py",
+    "tests": 4,
+    "tests_passed": 4,
+    "py_compile": "passed",
+    "runtime_static_scan": {
+      "standard_library_only": true,
+      "quadrature_is_test_falsifier_only": true,
+      "endpoint_provider_installed": false,
+      "ridge_or_clip": false,
+      "retry": false,
+      "response_or_truth_access": false
+    }
+  },
+  "disposition": "KILL_FIXED_COMMON_NODE_PLACKETT_LINE_RULE_KEEP_M159_GENERIC_FAMILY_OPEN",
+  "firewall": {
+    "response_cells": false,
+    "network_truth": false,
+    "efficacy_oracle": false,
+    "leaderboard": false,
+    "scorer": false,
+    "submission": false,
+    "champion_change": false
+  },
+  "artifact_sha256": {
+    "m162_plackett_tallis_falsifier.py": "711149438604c08bfdabae7bf337139efc5e80f3cae0ca23c7902e9deadc6002",
+    "test_m162_plackett_tallis_falsifier.py": "65ad594dc47c6c3ea09f8a84853b163140ddf1704019053f00d655023961db42",
+    "M162_PLACKETT_TALLIS_ENDPOINT_RESEARCH_20260807.md": "9885986b1611c8d62514911894156edc8ddaac3062370ff51e398e0b6414d3b5"
+  }
+}

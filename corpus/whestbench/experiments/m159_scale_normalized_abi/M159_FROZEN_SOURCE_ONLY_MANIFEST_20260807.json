@@ -1,0 +1,59 @@
+{
+  "candidate_id": "M159",
+  "date": "2026-08-07",
+  "scope": "response-free scale-normalized/homogeneity-factored [2,1,1] endpoint ABI and float64 certificate falsifier",
+  "inherits": {
+    "m158_interpretation": "localized physical-float64 ABI failure; not a generic trivariate endpoint-family failure",
+    "m158_common_factor_probe": "mean=0, covariance=1024^2 * 11^T, exact C_211 defect"
+  },
+  "abi": {
+    "primary": "Delta=2^(4e)*d and Delta_dot=2^(4e)*d_dot, with e primal-only exact dyadic metadata",
+    "optional_positive_marginal_chart": "Delta=sigma_0^2*sigma_1*sigma_2*delta(alpha,R)",
+    "output": "ScaledFloat64(mantissa, exponent, absolute_radius_in_mantissa_units)",
+    "direct_physical_float64": "allowed only after the state-specific absolute certificate including final half-ULP",
+    "zero_variance": "preserved by primary ABI; explicit deterministic/one-sided tangent dispatch for correlation chart",
+    "low_rank_positive_marginals": "retained with singular correlation; no inverse, ridge, or clipping"
+  },
+  "literal_contract_falsification": {
+    "requested_physical_value_tolerance": "2e-8",
+    "gauge": 1024,
+    "dyadic_output_exponent": 44,
+    "nearest_float64_error": "0.00002758595881562476133207633379",
+    "float64_ulp": "0.0001220703125",
+    "conclusion": "exact exponent scaling does not recover an all-PSD physical-float64 2e-8 contract"
+  },
+  "replacement_source_gate": {
+    "variance": "for each bootstrap replicate U_V=((sqrt(V(H_hat))+b_H)/(sqrt(V(D_hat))-b_D))^2; require q_0.90(U_V)<0.25",
+    "p99": "U_99=(Q_0.99(|H_hat|)+c_H)/(Q_0.99(|D_hat|)-c_D); require U_99<=1.25",
+    "normalization": "permitted only as a common nonzero source-population factor, with endpoint carriers preserved through accumulation"
+  },
+  "verification": {
+    "red_test_observed_before_dependency_removal": "ModuleNotFoundError: numpy is unavailable in C:\\Python314",
+    "green_test_command": "python -m unittest -v work/scorefloor_generation/m159_scale_normalized_abi/test_m159_scale_normalized_abi.py",
+    "tests": 5,
+    "tests_passed": 5,
+    "runtime_static_scan": {
+      "endpoint_quadrature": false,
+      "ridge_or_clip": false,
+      "retry": false,
+      "response_or_truth_access": false,
+      "m149_outer_rule": false,
+      "higher_fixed_order": false
+    }
+  },
+  "disposition": "REPAIR_ABI_ONLY_KEEP_GENERIC_ENDPOINT_FAMILY_OPEN_KILL_LITERAL_ALL_PSD_PHYSICAL_FLOAT64_2E-8_CONTRACT",
+  "firewall": {
+    "response_cells": false,
+    "network_truth": false,
+    "efficacy_oracle": false,
+    "leaderboard": false,
+    "scorer": false,
+    "submission": false,
+    "champion_change": false
+  },
+  "artifact_sha256": {
+    "m159_scale_normalized_abi.py": "6158231892576785701c23fc894732ae8940eded5d6c46a1402d1e176a3b8193",
+    "test_m159_scale_normalized_abi.py": "357bbca3283fecbb1b7d1df16741932634dcbb229e875fadfea386b3064b9165",
+    "M159_SCALE_NORMALIZED_ABI_REPORT_20260807.md": "d19404ef54f60d3b2f86bfd66a5b2f6cb54ccddff41b4039db354acd42abf152"
+  }
+}

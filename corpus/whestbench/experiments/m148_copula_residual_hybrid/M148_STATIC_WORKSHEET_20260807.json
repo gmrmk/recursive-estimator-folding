@@ -1,0 +1,71 @@
+{
+  "candidate": "M148 canonical latent-copula [2,1,1] control plus exact residual Hansen-Hurwitz",
+  "date": "2026-08-07",
+  "scope": "response-free static algebra and cost audit only",
+  "disposition": "REPAIR_LITERAL_16_CELL_CONTROL_STATIC_COST_KILLED",
+  "execution_authorized": false,
+  "generated_response_outcomes": false,
+  "contest_data_accessed": false,
+  "champion_changed": false,
+  "dimensions": {
+    "width": 256,
+    "source_layers": 31,
+    "canonical_cells": 16,
+    "canonical_nodes_per_cell": 49,
+    "stacked_nodes": 784,
+    "dtype_for_copula": "float64",
+    "protection": 1.25
+  },
+  "literal_16_cell_control_leading_floor_billions": {
+    "stacked_node_forward_map": 7.94838016,
+    "stacked_node_reverse_map": 7.95885568,
+    "dense_source_emission": 2.59538944,
+    "preserved_node_pointwise_allowance": 2.21065216,
+    "total": 20.71327744,
+    "excludes": [
+      "covariance-star terms",
+      "collision exclusion",
+      "state formation",
+      "canonicalization",
+      "exact residual coefficients",
+      "residual products",
+      "wall time"
+    ]
+  },
+  "residual_worksheets_billions": {
+    "common_fixed_m133": 80.32600264,
+    "K32": {
+      "five_products": 0.8118528,
+      "exact_coefficient_ordinary_lower_bound": 0.10761216,
+      "exact_coefficient_endpoint_lower_bound": 0.60186624,
+      "subtotal_ordinary": 81.2454676,
+      "subtotal_endpoint": 81.73972168,
+      "headroom_ordinary": 18.7545324,
+      "headroom_endpoint": 18.26027832
+    },
+    "K64": {
+      "five_products": 1.6237056,
+      "exact_coefficient_ordinary_lower_bound": 0.21522432,
+      "exact_coefficient_endpoint_lower_bound": 1.20373248,
+      "subtotal_ordinary": 82.16493256,
+      "subtotal_endpoint": 83.15344072,
+      "headroom_ordinary": 17.83506744,
+      "headroom_endpoint": 16.84655928
+    },
+    "K128": {
+      "five_products": 3.2474112,
+      "exact_coefficient_ordinary_lower_bound": 0.43044864,
+      "exact_coefficient_endpoint_lower_bound": 2.40746496,
+      "subtotal_ordinary": 84.00386248,
+      "subtotal_endpoint": 85.9808788,
+      "headroom_ordinary": 15.99613752,
+      "headroom_endpoint": 14.0191212
+    }
+  },
+  "conclusion": {
+    "literal_16_cell_passes_any_K": false,
+    "coarse_global_control_is_static_possible": true,
+    "coarse_global_control_is_efficacy_supported": false,
+    "next_gate": "audited symbolic aggregation plus source-level finite-population residual variance protocol"
+  }
+}

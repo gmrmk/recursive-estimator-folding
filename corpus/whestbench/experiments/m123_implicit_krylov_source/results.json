@@ -1,0 +1,53 @@
+{
+  "already_audited_additional_source_lower_bounds": {
+    "excluded_positive_costs": [
+      "nonzero-mean star-tree orbit actions",
+      "exact one/two-coordinate collision cores",
+      "bivariate normal response scalar work",
+      "buffer operations and CP concatenation",
+      "residual wall-time charge"
+    ],
+    "m121_31_source_transports_charged": 40632320,
+    "m121_31_tree_core_queries_charged": 14018150400,
+    "m121_dense_deltaV_CP_pairing_shape_sum": 16641000000
+  },
+  "decision": "KILL_M123_FIXED_BLOCK_KRYLOV: the minimal nontrivial degree-1 block-Lanczos factor plus a fail-closed residual needs two Gram block applications; the zero-mean path subset alone costs 167.810B even granting the uncertified 0.779 Strassen credit, above 152B before every source/core/response cost. Preserve the exact 16-orbit/3-hard-orbit operator for a different static Tucker or reduced-layer mutation.",
+  "firewall": "generated algebra and static cost only; no contest/public/private weights, scorer, labels, outcomes, champion, or submission",
+  "fixed_schedule": {
+    "block_size": 4,
+    "conditional_strassen_credit": 0.779,
+    "easy_setup_square_gemms_per_layer": 19,
+    "hard_square_gemms_per_vector_per_apply": 8,
+    "incremental_headroom": 152000000000,
+    "minimal_nontrivial_krylov_plus_residual_two_apply_charged": 215417323520.0,
+    "nontrivial_two_apply_best_case_strassen": 167810095022.08002,
+    "one_block_apply_calls_all_layers": 992,
+    "safety_factor_once": 1.25,
+    "setup_calls_all_layers": 589,
+    "source_layers": 31,
+    "square_f32_shape_bill": 33488896,
+    "square_float64_shape_bill": 66977792,
+    "static_one_apply_best_case_strassen": 103112227061.76001,
+    "static_start_plus_one_certificate_apply_charged": 132364861440.0,
+    "width": 256
+  },
+  "identity_defects": {
+    "identity_bridge_rank_tie_fails_closed": true,
+    "max_16_representative_orbits_n2_to_n8": 4.440892098500626e-15,
+    "max_full_fused_gram_n2_to_n8": 3.979039320256561e-13,
+    "max_full_fused_matvec_n2_to_n8": 3.979039320256561e-13,
+    "permutation_operator": 1.1368683772161603e-13,
+    "permutation_start_projector": 1.8596235662471372e-15,
+    "positive_gauge_restoration": 2.220446049250313e-16
+  },
+  "orbit_partition": {
+    "fused_orbits": 16,
+    "hard_orbits": [
+      8,
+      14,
+      15
+    ],
+    "original_ordered_path_pairs": 144
+  },
+  "schema": 1
+}

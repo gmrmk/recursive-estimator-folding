@@ -1,0 +1,85 @@
+{
+  "candidate_id": "M154",
+  "date": "2026-08-07",
+  "scope": "response-free local nonzero-mean [2,1,1] endpoint mathematics only",
+  "parent_components_read": [
+    "M122 nonzero bridge theory",
+    "M131 trivariate boundary stream",
+    "M147 endpoint-safe bridge",
+    "M149 fixed-quadrature provider",
+    "M151 B=1 forward control",
+    "M129 source Frechet tangent"
+  ],
+  "attempted_mechanism": "analytic moving-ReLU-kink interval partition plus Price/delta Frechet tangent",
+  "implemented_supported_stratum": {
+    "covariance_rank": 1,
+    "positive_marginal_variances": true,
+    "value": "finite exact normal interval moments after sorted moving-kink partition",
+    "tangent": "ordinary stratum tangent and one-sided PSD-feasible rank-boundary directional tangent",
+    "quadrature_calls": 0,
+    "special_function_calls": 0,
+    "ridge": false,
+    "clipping": false,
+    "retry": false
+  },
+  "refused_strata": {
+    "rank_2": "generic three-line Gaussian triangle/wedge requires a new certified primitive",
+    "rank_3": "generic noncentral trivariate orthant probability remains after Tallis tilt",
+    "outward_rank_1_tangent": "refused by null-space PSD tangent-cone check",
+    "nonfinite_non_psd_zero_variance": "refused"
+  },
+  "cost_bound": {
+    "coefficient_calls": 3968,
+    "analytic_intervals_per_coefficient_upper": 480,
+    "delta_boundaries_per_coefficient_upper": 36,
+    "conservative_ops_per_coefficient": 250000,
+    "total_ops": 992000000,
+    "m151_inclusive_allowance_ops": 10291363760,
+    "arithmetic_fits": true,
+    "credit_scope": "rank-one branch only; no generic-M151 credit"
+  },
+  "verification": {
+    "red_test_observed_before_implementation": "ModuleNotFoundError for the new M154 provider",
+    "green_test_command": "work/headroom-recursion/.venv/Scripts/python.exe -m unittest work/scorefloor_generation/m154_analytic_endpoint_partition/test_m154_analytic_endpoint_partition.py -v",
+    "tests": 7,
+    "tests_passed": 7,
+    "py_compile": "passed",
+    "runtime_static_scan": {
+      "forbidden_runtime_identifiers": [],
+      "uses_m149": false,
+      "uses_outer_conditional_rule": false
+    },
+    "properties": [
+      "exact common-factor rank-one moment/cumulant",
+      "rank-preserving finite-difference tangent",
+      "rank-opening one-sided M147 oracle parity",
+      "singleton permutation symmetry",
+      "positive ReLU gauge covariance",
+      "rank-two and rank-three refusal",
+      "outward PSD tangent and nonfinite refusal",
+      "hard 3968-call cost bound"
+    ]
+  },
+  "disposition": "KILL_AS_GENERIC_M149_REPLACEMENT_AND_M151_PROVIDER",
+  "preserved": [
+    "exact rank-one moving-kink partition",
+    "Price/delta rank-one tangent",
+    "tree continuation built from exact raw moments without correlation clipping",
+    "rank-two/rank-three obstruction classification",
+    "rank-one cost bound below M151 allowance"
+  ],
+  "firewall": {
+    "response_cells": false,
+    "network_truth": false,
+    "efficacy_oracle": false,
+    "leaderboard": false,
+    "scorer": false,
+    "submission": false,
+    "champion_change": false
+  },
+  "artifact_sha256": {
+    "m154_analytic_endpoint_partition.py": "5718c243af9857f9b83fd4fb86a71ae0628ebf5470f0596d2e2c3ef01a5d656b",
+    "test_m154_analytic_endpoint_partition.py": "413ad6bc751f9052d3f534e306c5a8183de9d3bac36b0c00bd8a95a6d307499c",
+    "M154_ANALYTIC_ENDPOINT_REPORT_20260807.md": "f3baec3d93f4cdf81d53fe929fdf652e06773417dc500468e9e730a446fe63dc"
+  }
+}

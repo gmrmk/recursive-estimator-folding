@@ -1,0 +1,79 @@
+{
+  "candidate": "M145 deployable sign-correct-Haar descendant",
+  "date": "2026-08-07",
+  "status": "STRUCTURAL_EXECUTION_PASS_REMOTE_RESOURCE_PROJECTION_FAIL_EFFICACY_LOCKED",
+  "execution_authorized": false,
+  "outcome_opened": false,
+  "efficacy_run_count": 0,
+  "submission_authorized": false,
+  "champion_mutation_authorized": false,
+  "formal_l1_champion_touched": false,
+  "parent": {
+    "artifact": "M145_INTEGRATED_PREEXECUTION_MANIFEST_20260807.json",
+    "sha256": "8b35ae221f4565f340c803daf37884d94acfa0cdfc214aa41fc49eacf211d88f",
+    "relationship": "immutable historical parent; no file was edited"
+  },
+  "repairs": {
+    "setup_runtime": "removed an invalid deletion of QR locals owned by signed_haar_radius_bank; those temporaries already leave scope before setup receives the bank",
+    "restricted_import": "production closure contains no direct ordinary NumPy import; it uses standard library plus flopscope/whestbench and sealed Formal-L1 sources",
+    "haar_law": "for iid Gaussian G=QR, Q is replaced by QD where D=diag(sign(diag R)), sign(0)=+1. Then DR has nonnegative diagonal and QD is Haar on O(256).",
+    "conditional_completion": "given Haar Q and selected anchor a, right Householder H(Q_0-rho*a) maps the radius-scaled first row to rho*a. Stabilizer invariance of Haar gives uniform conditional completion in a-perp; the inverse reflection restores the provisional bank.",
+    "same_bank_comparator": "candidate and MatchedComparator call the identical signed_haar_radius_bank setup construction with identical setup seed. The comparator disables only transport.",
+    "target_semantics": "a new direct f32 FlopScope reference primitive and a predeclared local-official semantics equivalence gate supersede the float64 reference target for any future campaign."
+  },
+  "frozen_cell": {
+    "dimension": 256,
+    "depth": 32,
+    "pilot_frames": 4,
+    "main_frames": 122,
+    "rank": 16,
+    "epsilon": 0.8,
+    "lambda_box": [0.25, 1.75],
+    "selection_grid": false
+  },
+  "verification": {
+    "py_compile": "PASS on all eight listed source/audit files under local Python 3.14",
+    "static_import_deny": "PASS: AST closure scan and guarded import with FlopScope/WhestBench stubs; 4/4 static checks passed",
+    "native_flopscope_trace": "PASS for execution semantics: real FlopScope 0.10.0+np2.4.6 under CPython 3.11; 5/5 generated candidate processes finite, exception-free, exactly restored and bitwise replayable; one matched comparator also passed",
+    "resource_gate": "FAIL under the frozen hostile 5x-local-residual projection: 2/5 candidate processes exceed the 272B effective-compute budget; efficacy remains locked"
+  },
+  "trace_summary": {
+    "candidate_processes": 5,
+    "candidate_failures": 0,
+    "candidate_billed_flops_range": [161124559109, 190302812480],
+    "candidate_local_residual_s_range": [0.14851619256660342, 0.37443630234338343],
+    "candidate_local_effective_compute_range": [175976178365.66034, 219652884734.33835],
+    "candidate_operational_peak_mib_range": [346.53515625, 376.6796875],
+    "candidate_replay_bitwise_passes": 5,
+    "candidate_exact_restoration_passes": 5,
+    "hostile_5x_residual_projected_budget_failures": 2,
+    "matched_comparator_billed_flops": 174394190116,
+    "matched_comparator_local_residual_s": 0.14762279274873435,
+    "matched_comparator_local_effective_compute": 189156469390.87344,
+    "shared_bank_sha256": "03fc693be4a6f6a609ba8d7e26c95fbb1389add936addd5068bc36ef481a206d"
+  },
+  "future_trace_requirements": [
+    "a distinct response-free descendant must reduce call/residual exposure",
+    "repeat fresh-process candidate/comparator traces and require zero hostile projected resource failures",
+    "do not open truth, MSE, scorer, rank, or submission access until the resource firewall passes"
+  ],
+  "bound_new_artifacts": {
+    "m145_deployable_core.py": "c9360fbc962ad637939c207628603e1825746864cd4a136b440315d3d1e08830",
+    "m145_deployable_sidecar.py": "5c14771521bebd5b86e7268145475ce09d76e3b9dcb8eddaf0eec8f5544b2e3d",
+    "m145_deployable_estimator.py": "7fff3bf959093acbac1232e97c5b8a95a6df03276cc201c0ca2f1514ab7caedf",
+    "m145_direct_f32_reference.py": "8902eff1e83095f6a346da52bca0d389905264d522cb73749f6b78b9e83a3144",
+    "run_m145_deployable_structural_trace.py": "7d1c32715c8c1390f49b6197b9c287086d023d9e08c4f8542741242159721663",
+    "run_m145_cp311_bridge.py": "588ac7738c5815ec1c1cf7101bcf367d1a4e1f58819fef0d482c2bc4c82a6241",
+    "audit_m145_deployable_imports.py": "221ef3d375f3aac1fa416faec74e56dcd93af2608a459440ed1ccee1d2aff6a9",
+    "test_m145_deployable_static.py": "337dbf2fdda79a06c40b4b759613369579f9900bd2113c0cf0c358542f9b950a",
+    "M145_F32_CROSS_REFERENCE_DESCENDANT_20260807.md": "07839abcac7d5bffb3fccbb14e6f82cac07c8de0921638c3b2ef1278d07b8b81",
+    "M145_DEPLOYABLE_STRUCTURAL_AUDIT_20260807.md": "8354fd26f9949fdb9f681e7a859a3ae65eb6f7d9b4a733a5ac775c6373172aae",
+    "M145_DEPLOYABLE_CANDIDATE_STRUCTURAL_TRACE_20260807.json": "6ab454717f0c7cdcf8485ee80d7f6bbeedcbf194e5e7a1e9b42c6af7d19587da",
+    "M145_DEPLOYABLE_COMPARATOR_STRUCTURAL_TRACE_20260807.json": "7bf2ed4d1f2e9888a837508d19b11e86606d9e3a05174cd063312a10daf10ea8",
+    "M145_DEPLOYABLE_CANDIDATE_TAIL_1.json": "a7d90fed8e935945b38b8d2a6e55f0a907af347259cd79a46a80e23679b6248e",
+    "M145_DEPLOYABLE_CANDIDATE_TAIL_2.json": "d0875fde46dcf2c28d9bf6f0dbe3eb626f4e09132afe01a7ce8463c0b3ba7b1b",
+    "M145_DEPLOYABLE_CANDIDATE_TAIL_3.json": "0961c5f66c9deea9ef40364555ae3ec9cf336ca93f391888539cf214010a4ac4",
+    "M145_DEPLOYABLE_CANDIDATE_TAIL_4.json": "fb2b822a9a12ddfaadc585991b5ae4563d632c076113be8b9cefa6067541aa66"
+  },
+  "firewall": "No truth/reference vector/MSE/risk/adjusted score/rank/contest row/submission/designation/champion change was opened or produced."
+}

@@ -1,0 +1,128 @@
+{
+  "heldout": {
+    "anchor_mse": 0.018980497263739793,
+    "full_mse": 0.012960971149164953,
+    "full_over_anchor_ratio": 0.6828573018434823,
+    "full_over_anchor_ratio_ci95": [
+      0.42319812808249274,
+      0.9948474186127865
+    ],
+    "low_order_mse": 0.009587583841959707,
+    "low_over_anchor_ratio": 0.5051281696542145,
+    "low_over_anchor_ratio_ci95": [
+      0.3401338923955569,
+      0.664957423487664
+    ],
+    "max_teacher_stream_z": 2.7730349361617623,
+    "mean_teacher_se": 0.0017772938900543686,
+    "pass_gate": false,
+    "shuffled_label_mse": 0.017522652823787208,
+    "shuffled_label_null_rejected": true,
+    "shuffled_label_over_anchor_ratio": 0.9231925054599259,
+    "shuffled_label_over_anchor_ratio_ci95": [
+      0.6032124657414659,
+      1.50599099276481
+    ],
+    "teacher_independence_pass": true
+  },
+  "model": {
+    "causal_depth_basis": 3,
+    "channels": [
+      "star_k3",
+      "abab_k4",
+      "abba_k4",
+      "collision_211",
+      "delayed",
+      "edge_attention"
+    ],
+    "low_order_parameters": 4,
+    "trained_parameters": 19
+  },
+  "protocol": {
+    "cleanroom_only": true,
+    "depth": 4,
+    "holdout_network_seeds": [
+      137000,
+      137001,
+      137002,
+      137003,
+      137004,
+      137005,
+      137006,
+      137007,
+      137008,
+      137009,
+      137010,
+      137011,
+      137012,
+      137013,
+      137014,
+      137015
+    ],
+    "promotion_gate": "held_network_bootstrap_upper95_ratio_lt_0.5_and_independent_teacher",
+    "ridge": 0.001,
+    "samples_per_independent_stream": 32768,
+    "teacher_streams": 2,
+    "train_network_seeds": [
+      136000,
+      136001,
+      136002,
+      136003,
+      136004,
+      136005,
+      136006,
+      136007,
+      136008,
+      136009,
+      136010,
+      136011,
+      136012,
+      136013,
+      136014,
+      136015,
+      136016,
+      136017,
+      136018,
+      136019,
+      136020,
+      136021,
+      136022,
+      136023
+    ],
+    "width": 8
+  },
+  "target_envelope_fp32": {
+    "below_80B": true,
+    "depth": 32,
+    "preconditions": [
+      "all 24 calls must be realized without hidden dense pair tensors",
+      "float32 parity must be independently demonstrated before using dtype_multiplier=1",
+      "no teacher, synthetic corpus, or contest artefact is packaged at inference",
+      "runtime wall/allocation audit must be charged separately"
+    ],
+    "protected_billed_flops_including_2B_nonmatmul_reserve": 33144673280.0,
+    "raw_billed_flops": 24915738624.0,
+    "source_layers": 31,
+    "square_equivalent_calls_per_source_layer": 24,
+    "square_matmul_bill": 33488896.0,
+    "trained_parameter_count": 19,
+    "width": 256
+  },
+  "target_envelope_fp64": {
+    "below_80B": true,
+    "depth": 32,
+    "preconditions": [
+      "all 24 calls must be realized without hidden dense pair tensors",
+      "float32 parity must be independently demonstrated before using dtype_multiplier=1",
+      "no teacher, synthetic corpus, or contest artefact is packaged at inference",
+      "runtime wall/allocation audit must be charged separately"
+    ],
+    "protected_billed_flops_including_2B_nonmatmul_reserve": 66289346560.0,
+    "raw_billed_flops": 49831477248.0,
+    "source_layers": 31,
+    "square_equivalent_calls_per_source_layer": 24,
+    "square_matmul_bill": 66977792.0,
+    "trained_parameter_count": 19,
+    "width": 256
+  }
+}

@@ -5,8 +5,8 @@
     "score_formula": "MSE * max(0.1, (billed_FLOPs + 1e11 * residual_seconds) / 2.72e11) under installed WHestBench 0.14.0 and FlopScope 0.10.0.",
     "legality_boundary": "All MLP-dependent arithmetic is instrumented; no public lookup, private-target reconstruction, counter mutation, hidden native arithmetic, API dependency, or evaluator exploit. Offline fitting is whole-MLP grouped and inference features are weight-derived.",
     "resource_ceiling": "Hard C <= 272000000000; promotion safety gate Cmax < 258400000000 and zero failures.",
-    "development_split": "Public indices 0..599 for mechanism development; current generation has used only 0..99 for new premises.",
-    "holdout_split": "Indices 600..799 locked for one post-freeze read; indices 800..999 prohibited for this generation; private suite untouched.",
+    "development_split": "All public indices 0..799 are historically burned by score-bearing development or validation analyses; any further local public read is descriptive only.",
+    "holdout_split": "No currently authorized independent local public holdout: 0..799 are burned; 800..999 were historically designated as an internal lockbox, but their actual access status requires a separate audit and they are not authorized for this generation; the organizer private suite remains untouched.",
     "champion_hash": "submission_random32256_rowwinograd8192_20260806.tar.gz sha256 bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36",
     "evaluator_hash": "whest.exe sha256 888a44d9c886df88cf8933398c154e113f530f3dc2705282170820a101dd674a",
     "champion_score": "official public0..99 raw 3.089460087e-7, adjusted 2.121762464e-7, mean C 189.852556B, max C 222.405357B, failures 0/100",
@@ -508,6 +508,1111 @@
       "failures": 0,
       "holdout_used_for_generation": false,
       "sensitivity": "Public0..99 paired score ratio.940047616; bootstrap ratio95% CI[.936501313,.943475999]; raw MSE ratio.999982962; mean C ratio.938554853; child wins100/100."
+    },
+    {
+      "id": "quadratic_chaos_fourier_resummation",
+      "status": "killed",
+      "mechanism": "Replace the finite four-cumulant terminal Q2 Edgeworth map by the exact characteristic-function positive-part expectation of the same linear-plus-quadratic Gaussian chaos.",
+      "bias_class": "Exact scalar response under the unchanged terminal Q2 state; no new upstream information.",
+      "prediction": "Exact Fourier resummation improves the frozen native-Q2 public0..4 MSE by at least10%, passes scalar Monte Carlo/invariance tests, and fits below80B.",
+      "kill_condition": "MSE ratio above.90, structural/cost failure, result-selected quadrature, or any new/locked/private row access.",
+      "result": "Four structural tests and six quadratic-chaos Monte Carlo cases pass; the conservative all-output envelope is54.924B. On the predeclared reused public0..4 gate, exact Fourier MSE is5.389991258e-5 versus5.388358479e-5 for native Q2 Edgeworth, ratio1.000303; variance rescaling is1.002602. Kill terminal-Q2 exact resummation as a response source; preserve the scalar characteristic-function operator. The upstream signed state, not scalar truncation, is binding."
+    },
+    {
+      "id": "tensor_train_gaussian_cross",
+      "status": "killed",
+      "mechanism": "Approximate the full vector-valued network on a three-node standard-normal tensor-product grid with TT cross, sharing each selected full-network query across all outputs.",
+      "bias_class": "Adaptive deterministic product-grid quadrature whose accuracy depends on low coordinate-product TT rank.",
+      "prediction": "Every frozen depth4 synthetic output has balanced weighted rank at most8 at5e-4 relative L2, giving fewer than49152 nominal target queries per sweep.",
+      "kill_condition": "Any nondegenerate deep rank above8, nominal one-sweep target queries at least49152, or competition-data access.",
+      "result": "Three tests pass, but the rank premise fails before target shape. A single dense ridge ReLU needs ranks21-52 across frozen dimensions/orders; the nondegenerate d10/L4 output needs197-207, with rank8 tail.364-.382. The maximum nominal target one-sweep count is32,908,032 queries. Kill standard full-function TT-cross/PCE quadrature; preserve the product-weighted unfolding rank falsifier and all-output sharing observation."
+    },
+    {
+      "id": "signed_gate_innovation",
+      "status": "killed",
+      "mechanism": "Propagate weights-only signed marginal k3/k4 through exact gate-boundary Gram-Charlier raw moments, invert each post-ReLU marginal to a signed H1+H2 Gaussian-chaos carrier, and retain a rank-four-plus-diagonal driver.",
+      "bias_class": "Deterministic signed q2 innovation recurrence with metric-free moment-validity rescue.",
+      "prediction": "Signed innovations improve final means and retain terminal k3/k4 fidelity while clipping fewer than10% of skews under a44.25B envelope.",
+      "kill_condition": "Any terminal cumulant fidelity failure, skew clipping above10%, symmetry/validity/cost failure, or competition-data access.",
+      "result": "The causal mean premise is strong: final mean SSE is.231176x erased/Gaussian with6/6 wins, while sign stripping is much worse; seven tests and the44.248B cost gate pass. State fidelity fails: terminal k3/k4/combined is.61225/-1.32430/-.84622 and18.06% of q2 skews clip. Kill the literal q2 carrier; preserve exact gate-boundary integrals, signed inversion, weights-only symmetry, and the strong mean direction."
+    },
+    {
+      "id": "diagonal_vertex_innovation",
+      "status": "killed",
+      "mechanism": "Keep the signed q2 correlated sector and add exact residual marginal vertices eta3/eta4 transported as eta_p dot W^p.",
+      "bias_class": "Deterministic diagonal connected-vertex repair of the signed q2 state.",
+      "prediction": "Exact marginal reconstruction repairs q2 terminal k4 without worsening mean SSE by more than5%, preserving symmetry and cost below80B.",
+      "kill_condition": "k4/combined fidelity fails to improve, mean SSE exceeds1.05x q2 parent, structural/cost failure, or competition-data access.",
+      "result": "Six tests and the44.289B envelope pass; signed mean SSE is.710670x erased with7/9 wins and sign stripping is much worse. The repair fails: mean SSE is1.14035x q2 parent and terminal k4/combined worsens to-8.90676/-6.74770. The residual is not diagonal; cross-coordinate signed cancellation is the sharply localized missing object. Preserve exact eta transport and gate-mean evidence."
+    },
+    {
+      "id": "two_axis_fused_winograd",
+      "status": "screened",
+      "mechanism": "Compose the champion's fixed8192-row L1 fallback with a fixed6144-row fully fused two-level Winograd operator using one49-leaf batched matmul and overwrite-safe shared buffers.",
+      "bias_class": "Exact structural arithmetic modulo float32 reassociation; no estimator/sample change and no competition data in the premise.",
+      "prediction": "The frozen dispatcher never worsens billed shapes, whole-entry effective compute falls materially, memory remains below512MiB, and full/depth parity passes.",
+      "kill_condition": "Any dispatch/bill regression, effective ratio above.98, peak at least512MiB, parity/gate/timeout failure, or competition-data access before immutable production freeze.",
+      "result": "All synthetic gates pass: analytical ratio.962950, effective ratio.943797, wall ratio.926760, peak492.441MiB, workspace111.453MiB, prediction relative error4.732e-8, depth relative error4.709e-6 with7/4194304 gate flips, 131072 shape and96768 row-partition checks with zero regressions, and5/5 tests. Preserve frozen block sizes/dispatcher; immutable production/paired score gate completed in the production child."
+    },
+    {
+      "id": "two_axis_fused_winograd_production",
+      "status": "screened",
+      "mechanism": "Port the frozen6144-row fused L2 operator into the promoted8192-row L1 package, validate the exact seven-file surface, and run the one predeclared paired public0..99 gate against the cached promoted L1 artifact.",
+      "bias_class": "Exact compute compression modulo float32 reassociation; sample paths, estimator mathematics, seed, and comparison rows are unchanged.",
+      "prediction": "All package/resource gates pass and paired adjusted-score ratio is at most.99 with zero failures, stable hashes, and a strictly favorable bootstrap interval.",
+      "kill_condition": "Any package/hash/parity/resource failure, nonzero scorer failure, max C above258.4B, bootstrap interval reaching parity, or mean score ratio above.99.",
+      "result": "Package, parity, bill, liveness, hash, and scorer gates pass; tar SHA256 68259f644353ac0be2f840d8e48c02083c9f1b21c88f0a795d651f3d936a83a4. The child improves score2.121762464e-7->2.101976249e-7, ratio.990674633, raw MSE ratio1.000032691, mean C ratio.989312617, max C216.671B,88/100 wins, zero failures, and bootstrap ratio CI[.987802,.994007]. It misses the frozen minimum-effect ratio<=.99 by.000674633. Preserve as a non-promoted scored survivor; do not edit the threshold retrospectively; L1 remains formal champion.",
+      "artifact_hash": "68259f644353ac0be2f840d8e48c02083c9f1b21c88f0a795d651f3d936a83a4",
+      "matched_units": 100,
+      "primary_effect": -1.9786215e-09,
+      "ci_upper": -1.29382e-09,
+      "failures": 0,
+      "holdout_used_for_generation": false,
+      "sensitivity": "Measured score is0.93254% lower with a favorable interval, but the frozen gate required at least1.0%; residual wall inflation erased most of the3.4555% analytical bill cut."
+    },
+    {
+      "id": "coherent_root_vertex_innovation",
+      "status": "killed",
+      "mechanism": "Replace the failed diagonal eta transport by canonical rank-one cubic and signed rank-two quartic root tensors whose diagonals exactly equal eta3/eta4, contracted matrix-free through the next weight.",
+      "bias_class": "Deterministic maximally coherent cross-coordinate connected-vertex lift of signed marginal residual cumulants.",
+      "prediction": "Cross-coordinate coherence repairs diagonal-child k4/combined fidelity by at least.20, lowers mean SSE, preserves sign/gauge/symmetry, and fits below80B.",
+      "kill_condition": "Changed-link fidelity/mean screen, absolute cumulant fidelity, validity/symmetry, sign utility, or cost gate fails on the frozen nine-case synthetic bank.",
+      "result": "Six unit gates and44.311B envelope pass. Signed mean SSE is.474616x erased, .667844x diagonal, and.761575x q2 in aggregate, with strong sign utility, but only1/9 cases beats each parent. Terminal k3/k4/combined fidelity is.408626/-76.442131/-57.474295 and rescue fraction.185185. Kill maximum global coherence: marginal eta does not identify off-diagonal phase and root lifting massively overcouples k4. Preserve matrix-free CP algebra and exact-zero canonicalization; M1 must form multiple weights/covariance-defined signed factors and M2 must transport them stably."
+    },
+    {
+      "id": "direction_only_facet_raoblackwell",
+      "status": "killed",
+      "mechanism": "Use the exact distributional-Laplacian facet identity for a fixed homogeneous CPWL network; sample a gate and reached prefix cone, project to its local hyperplane, and integrate the radial and gate-normal wedge analytically with the exact Student-t interval probability B and 1/B likelihood correction.",
+      "bias_class": "Attempted actual-law surface estimator; the global distributional-Laplacian identity is exact, but the realized-prefix-cone 1/B proposal is not a verified Radon--Nikodym representation for deep networks.",
+      "prediction": "Small-network exhaustive facet sums and one-layer means agree, all-output tangent reuse is real, narrow-wedge tails remain finite on held-out He networks, and equal-cost MSE is at most.5 of direct sampling inside an added-C safety envelope of roughly35B on L1.",
+      "kill_condition": "Any identity/normalization/facet-ownership failure, output-row backprop loop, nonfinite or tail-dominated second moment, cost-normalized MSE ratio above.5 or upper95% above.75, or integrated max C at least258.4B.",
+      "result": "Cleanroom kill on two independent edges. The global distributional-Laplacian identity is preserved and all 15 one-layer exact checks pass, but the per-gate realized-prefix-cone proposal is not exact for deep networks: only1/30 joint truth checks pass and its direct companion encounters8211 invalid local-cell events. The missing term is the cross-cell pushforward normalization; a fixed-cone Student-t B is not the full Radon--Nikodym derivative after a cell-dependent hyperplane projection. Even ignoring this bias, held-out equal-cost MSE ratio is556.305 with one-sided95% upper1126.452; narrow wedges reach1/B=3.14e6 at epsilon1e-6. A35B proxy buys2384 facet samples versus8344 raw antithetic pairs. Preserve only the global identity, one-layer oracle, and stress harness; kill this proposal and any clipping/self-normalized repair. No competition data was touched."
+    },
+    {
+      "id": "crossfitted_inpath_quotient_sensor",
+      "status": "killed",
+      "mechanism": "Read a predeclared subset of already-paid hidden paths at selected late layers, estimate actual directional cumulant responses, invert only the certified64/58 physical quotient, shrink in the screened signed rank1..4 spectrum, and fuse the resulting terminal mean with L1 under grouped cleanroom calibration.",
+      "bias_class": "Actual-law sample-sourced analytic sidecar; quotient responses can use unbiased U-statistics but finite Edgeworth and frozen fusion remain empirically certified approximations.",
+      "prediction": "Reusing32768 paths over the last8 layers supplies enough shared source information to halve raw MSE, while projection plus response/sketch work stays around35B and preserves the Cmax safety gate.",
+      "kill_condition": "Equal-path or equal-FLOP MSE ratio above.5, upper95% ratio at least.75, source fidelity below.8, unstable cross-fit factors, k>=5 terminal remainder RMS upper bound above1.50e-4, public-label dependence, or added max C above the frozen safety envelope.",
+      "result": "Cleanroom kill. Across widths4/6 and depths2/3, equal-path PSQV/direct MSE ratios are2167.8,1559.5,757.1,699.7 with upper95% bounds3008,2187,1120,941.7; equal-FLOP ratios are2.06e4--1.27e5. Width6/depth3 also has quotient condition7.61e9 above1e6. Cross-fitting removes same-row reuse but not eighth-moment RHS noise, inverse amplification, antithetic-cluster and nonlinear plug-in bias. Preserve the64/58 quotient, actual-path ownership ledger, cost correction, and source-before-compression rule; kill sampled k3/k4 RHS plus LLQ as a target-mean estimator. Next source mutation must use bounded observables such as a bona-fide characteristic function or exact facet amplitudes, not retune ranks/ridge/cells. No competition data was touched."
+    },
+    {
+      "id": "bounded_characteristic_function_mixture",
+      "status": "killed",
+      "mechanism": "Replace unbounded sampled k3/k4 quotient responses by bounded empirical characteristic-function values, then fit a fixed nonnegative shared Gaussian mixture and evaluate its ReLU mean exactly.",
+      "bias_class": "Bona-fide finite-mixture proxy with exact proxy mean but no exact or uniformly certified true-law positive-part mean from a finite CF grid.",
+      "prediction": "Bounded observations plus cross-cell/output sharing retain all higher-order law information needed for a certified twofold reduction while fitting below the35B sidecar cap.",
+      "kill_condition": "Any moment/CF-matched law pair with different positive-part means, exact nonparametric collapse to direct MC, inability to certify true-law RMS remainder below1.50e-4, or equal-path risk above.5.",
+      "result": "Theorem-level kill before production recursion. Exact inversion of the empirical CF satisfies (2/pi)int(1-Re phihat(t))/t^2 dt=mean|Z|, so adding the sample mean gives exactly mean ReLU(Z): direct MC in Fourier notation. Any finite grid is nonidentifying even with moments0..4. A six-support construction uses q_i=1/6 and p_i=q_i+(-1,5,-10,10,-5,1)_i/120 on16sqrt(2)*(-2,-1,0,1,2,3); the laws agree at all frozen frequencies and moments0..4 but their positive-part means differ by0.4sqrt(2). A nonnegative Gaussian mixture remains useful only as a biased diagnostic/shared learned prior and has no exact remainder certificate. Preserve bounded CF features and bona-fide-law discipline; kill it as an honest successor."
+    },
+    {
+      "id": "output_projected_all_order_2pi_resolvent",
+      "status": "killed",
+      "mechanism": "Represent the fixed-network output law by a 2PI effective action and solve a rank-at-most12 output-projected Bethe--Salpeter fixed point with an a-posteriori contraction certificate.",
+      "bias_class": "Formal all-order generating-functional identity followed by an unclosed low-rank projection whose source and complement residual are not weights-computable.",
+      "prediction": "Infinite connected-vertex resummation avoids finite cumulant closure, fits in about27B sidecar work, and certifies a twofold error reduction.",
+      "kill_condition": "The 2PI bare action/vertices require the unknown push-forward law, the full residual or contraction constant is uncomputable, generic output state is not rank12, source formation exceeds35.995B, or the claimed certificate is circular.",
+      "result": "Theory kill. A genuine 2PI construction needs a bilinear source K and the push-forward action S_W(y)=-log int gamma(dx)delta(y-f_W(x)); that integral is the target law and is singular for ReLU, with atoms/facet mass already at n1,L1. Projected algebra reproduces the advertised25.77B contraction cost but omits formation of all-order vertices, the P/Q complement, and the full residual. A contraction bound based only on projected residual is circular. Generic four-point transport is about35.184T and projection helps only after an exact low-rank source has been supplied. Preserve fixed-point/implicit-solve libraries as numerical tools; kill the claimed weights-only information source."
+    },
+    {
+      "id": "cross_output_centroid_body_tomography",
+      "status": "killed",
+      "mechanism": "Use the256 independent final rows as simultaneous query directions for the common one-sided-zonoid support function and denoise targets by leave-one-row-out kernel or empirical-Bayes tomography.",
+      "bias_class": "Cross-output learned/shrunk prior; no exact symmetry for realized random final rows.",
+      "prediction": "A shared low-dimensional support-function residual pools the256 outputs and halves per-row direct-sampling MSE at negligible arithmetic cost.",
+      "kill_condition": "Arbitrary target vectors are realizable on the queried rows, the centered kernel is effectively diagonal, cross-row prior error exceeds direct noise, or row/path dependence invalidates the risk estimate.",
+      "result": "Distribution-free kill. For full-row-rank final W, hidden laws can realize an arbitrary nonnegative vector m(w_j), so the256 query values have no universal shared low-rank structure. Random high-dimensional rows have correlations O(d^-1/2); after the constant mode, the spherical absolute-value kernel is nearly diagonal and LOO KRR collapses to a global prior. Preserve the exact rowwise identity E Z+=(E Z+E|Z|)/2 and the distinct known-moment control: if EZ and EZ^2 are independently known it has large Gaussian oracle gains, but same-path anchors collapse to direct MC."
+    },
+    {
+      "id": "compact_group_laplacian_control",
+      "status": "killed",
+      "mechanism": "Apply a Haar-rotation Poisson/Laplace--Beltrami control to the MUB cubature error, using either the native ReLU network, a smooth surrogate, or correlated heat/relative rotations.",
+      "bias_class": "Exact-zero-mean compact-group control only for a distributional native Laplacian or a genuinely smooth surrogate; a.e. ReLU autodiff omits singular facet mass.",
+      "prediction": "The group spectrum selectively damps surviving even degrees6+ and halves variance inside a35B derivative sidecar.",
+      "kill_condition": "Native autodiff misses facet mass, full smooth Hessian-trace cost exceeds35.995B, subset controls cannot reach aggregate R2, heat pairs fail variance-cost, or relative rotations remain below the point-placement ceiling.",
+      "result": "Kill the production route. Distributionally Delta_S f=-(d-1)f+facet jumps, so a.e. AD returns only-255f and is not zero mean. Smooth h_epsilon restores exact mean zero but primal/first/second tangent sweeps cannot cover64512 nodes under35B; a subset of M nodes has aggregate R2 at most M/N even under perfect per-node correlation. Heat-coupled pairs have nonnegative harmonic covariance and variance-cost no better than the parent. Fixed relative rotations are merely point placement and stay under the known~1.315x ceiling. Preserve compact-group eigenvalue formulas and smooth HVP tooling as cleanroom diagnostics; boundary-aligned analytic-mean ridgelets remain a separate cheaper premise."
+    },
+    {
+      "id": "terminal_exact_moment_anchor",
+      "status": "killed",
+      "mechanism": "Use the exact identity E[Z+]=(E[Z]+E|Z|)/2 and exact-zero-mean terminal controls Z-EZ and Z^2-EZ^2, acquiring the unknown moments from independent deep pilot paths or same-path cross-fitting.",
+      "bias_class": "Unbiased only when the fixed-network control mean is exact or independently estimated; same-path anchoring algebraically reuses the target samples.",
+      "prediction": "The known-moment Gaussian oracle gain of3.75x to30.25x survives anchor acquisition and yields a full variance-cost ratio at most.5 inside the35.995B sidecar.",
+      "kill_condition": "Same-path algebra collapses to direct MC, the exact independent-pilot risk has no positive optimum, required pilot relative cost a is at least R2, no exact fixed-network anchor exists, or full ratio exceeds.5.",
+      "result": "Hard kill for every existing sampled-anchor route. For t=p/n, exact split risk relative to equal-cost direct MC is(1+a t)(1+(1-R2)t)/(1+t), so any positive pilot helps iff R2>a. At depth32 even a generously free final-layer mean pilot has a>=31/32=.96875, above the centered-Gaussian(Z,Z2) oracle R2=.96694; second-moment pilots cost more. Same-path and common-coefficient K-fold anchors collapse exactly to direct MC. A generated width8/depth32 falsifier grants population-optimal controls yet obtains R2=.96297, best ratio1.00000 at zero pilot, equal-split ratio1.02083, and cancellation defect3.39e-21. Preserve the identity and reopening theorem; kill sampled terminal anchors and cross-row pooling."
+    },
+    {
+      "id": "strict_band_boundary_ridgelet_control",
+      "status": "killed",
+      "mechanism": "Use exact-zero-mean normalized Gegenbauer atoms with strict even degree support10..40, aligned to fixed first-layer or independently pilot-derived true gate normals, and fit a shared sparse support with output-specific coefficients across complete Haar-frame blocks.",
+      "bias_class": "Conditionally unbiased only under whole-frame exclusion of every learned normal, support, frequency, and coefficient; in-sample OMP and node-level bootstraps are invalid.",
+      "prediction": "A generated-network whole-frame oracle has lower95 R2 at least.60, charged upper95 ratio below.50, and a legal cross-fit upper95 ratio below.75 within a5B target sidecar.",
+      "kill_condition": "Any analytic-mean/parity failure, shuffled null equivalence, unstable support, oracle lower95 R2 below.60, oracle upper95 ratio at least.50, cross-fit upper95 at least.75, or target cost/safety failure.",
+      "result": "Production kill. The strict-band recurrence and exact mean pass, but a synthetic-only d16/L3/w32 audit over48 independent Haar-QR antipodal frames gives combined oracle upper95 cost ratio11.974, oracle R2 lower95.217, and legal block-cross-fit upper95134.806. Shuffled normals are comparable, fresh networks fail, and mean support Jaccard is.510. The formal L1 geometry is126 independent Haar frames with degree2 exactness, not a Kerdock MUB; 64512 nodes are not independent regression rows. Preserve the analytic band operator and cluster-bootstrap guards; do not retune the bank on this screen. No competition data was touched."
+    },
+    {
+      "id": "residual_aware_l2_dispatch_ladder",
+      "status": "killed",
+      "mechanism": "Retain the exact fused L2 formulas but choose direct, L1, or L2 by a frozen shape-only analytical-bill plus100M-per-wrapper-call proxy, then recurse through larger-block and alias-liveness variants.",
+      "bias_class": "Exact compute-only substitution modulo float32 reassociation; no estimator, samples, labels, or score rows in the premise.",
+      "prediction": "A changed dispatcher reduces mean analytical work to at most.975 of L1, mean effective C to at most.980, residual to at most.170s, core calls on every generated target, and stays below512MiB with exact billing/parity.",
+      "kill_condition": "Any billing/parity/hash/memory failure, effective ratio above.980, residual above.170s, or failure to reduce calls on every frozen generated target.",
+      "result": "Kill the ladder and do not replicate. The final6144 call-penalized child passes exact bills, static safety, micro/depth/full parity, hashes, and memory, but analytical ratio.965263 becomes effective ratio.989874; mean residual is.194269s, peaks503.324/510.926MiB, and core calls are150/150 then191/194. Exact8192 and7168 variants reach effective.977468/.971401 but fail residual and memory; alias-liveness changes FlopScope billing. Preserve exact L2 as the old non-promoted scored survivor and the call/memory traces; kill proxy and block-height retunes. No new score row was read."
+    },
+    {
+      "id": "kerdock126_formal_l1_transplant",
+      "status": "killed",
+      "mechanism": "Transplant the frozen Kerdock phase subset s=2..127 and seeded Haar absorption into the current row-blocked L1 backend, leaving fold3, pilots, samples, and exact arithmetic hooks unchanged.",
+      "bias_class": "Changed deterministic point geometry plus exact arithmetic backend; historical two-row geometry evidence is insufficient for promotion and no new truth is used.",
+      "prediction": "Generated target networks pass geometry/parity/cost/liveness, analytical FLOPs stay below188.794B, conservative C below258.4B, and peak working set below512MiB.",
+      "kill_condition": "Any invariant/parity/cost/failure/hash issue or fresh-process peak at least512MiB.",
+      "result": "Kill this byte surface but preserve the composition. Geometry, arithmetic, dense parity, and cost all pass: generated analytical FLOPs175.392..177.804B, effective C191.341..196.183B, relative parity3.984e-7..5.483e-7, and conservative C201.183B. Fresh-process peak is536.898MiB, failing the512MiB contract. This proves the old319.939B dense Kerdock cost is not a geometry lower bound; no package or score replication is justified."
+    },
+    {
+      "id": "kerdock_structured_wht_memory_folds",
+      "status": "killed",
+      "mechanism": "Remove the persistent32256x256 direction matrix by exact phase-ordered WHT first propagation, then test a512-row workspace and a separate ping-pong/batched-WHT activation ownership rung.",
+      "bias_class": "Exact arithmetic/lifetime mutation with frozen Kerdock geometry, phase order, Haar absorption, fold3, pilots, and generated-only gates.",
+      "prediction": "Every fresh generated target has peak below480MiB, residual at most.30s, parity at most1e-5, analytical FLOPs at most188.794B, and conservative C below258.4B.",
+      "kill_condition": "Any peak at least480MiB, residual above.30s, parity/structure/bill/hash failure, or score-data access.",
+      "result": "Kill both byte surfaces, preserve exact phased WHT and stage tracing. The512-row rung has peak525.633MiB and residual.564209s with active-path floor491.984MiB. The ping-pong/batched-WHT rung has peak601.543MiB and residual.437650s with active floor501.316MiB. Both pass parity (maximum5.114e-8), finite/structural/static/hash gates, maximum analytical FLOPs174.338B, and conservative C223.103B. Block scratch was not binding; future work must change active-path buffer ownership or prove a point-count/variance trade before code. No competition data was touched."
+    },
+    {
+      "id": "m71_kerdock126_one_buffer_owned_l1",
+      "status": "screened_survivor",
+      "mechanism": "Use Kerdock phases s=2..127 with Haar absorption and phased WHT first propagation, while one caller-owned activation backing and 4096-row Winograd overwrite the active output path in place.",
+      "bias_class": "Randomized structured spherical cubature with exact arithmetic reassociation only.",
+      "prediction": "Remove the former geometry-memory obstruction while retaining generated parity and a conservative compute margin.",
+      "kill_condition": "Any generated finite/structure/bill/hash failure, peak at least480MiB, residual above.30s, relative parity above1e-5, or conservative C at least258.4B.",
+      "result": "Generated-only pass on seeds271/619/911: peak478.555MiB, residual at most.143071s, analytical FLOPs at most174.486B, conservative C at most193.793B, and relative output parity at most4.301e-8. This is an engineering survivor only, not a statistical winner; no competition data was read. Preserve active-path ownership, phase-ordered WHT, and exact row-local Winograd transfer."
+    },
+    {
+      "id": "m76_validator_fallback_v3",
+      "status": "package_validated",
+      "mechanism": "Add a width-not-256 direct fallback solely so the sealed M71 package satisfies the official validator while preserving the width256 WHT/one-buffer code path bitwise.",
+      "bias_class": "Target-neutral validator compatibility wrapper; no target-shape estimator mutation.",
+      "prediction": "The archive validates on official auxiliary shapes and leaves target-shape predictions and billed work unchanged.",
+      "kill_condition": "Validator failure, package traversal or hash failure, or any width256 prediction/bill drift from frozen M71 source.",
+      "result": "Sealed archive b55a1d8d5bcab8fb1dcfc68ee76c0ddfc2680b42e57778ab69ad866ba1c030af passes validate-package and WHest validation. Width4 emits finite [2,4] output; generated width256 source/v3 predictions are bitwise identical and both bill182,810,307,436 FLOPs. Preserve this package surface; it has no candidate-score evidence."
+    },
+    {
+      "id": "m77_m71_descriptive_launcher",
+      "status": "killed_harness",
+      "mechanism": "Run the sealed M76 package once through a frozen descriptive launcher on already-burned public0..99 and compare it with the formal L1 cache.",
+      "bias_class": "Descriptive-only operational gate; no independent holdout exists locally.",
+      "prediction": "Exactly100 aligned rows would allow a prespecified descriptive paired comparison without source or package drift.",
+      "kill_condition": "Launcher failure, no complete100-row result, source/package drift, any access outside the declared descriptive scope, or any rerun after the single attempt.",
+      "result": "Killed launcher implementation before benchmark start: PowerShell Start-Process raised duplicate environment key Path/PATH, produced zero-byte redirected files, returned no PID, and left zero WHest processes. No dataset row or scorer subprocess access is evidenced. The sealed source/package hashes remain stable; do not retry this frozen launch and do not infer a candidate win or loss."
+    },
+    {
+      "id": "m73_signed_hosvd_cp_source",
+      "status": "killed",
+      "mechanism": "Construct the Gaussian first-gate signed cubic/quartic source and compress it as a fixed-rank signed HOSVD-CP state before deep transport.",
+      "bias_class": "Biased fixed-rank higher-cumulant recurrence with exact linear transport of the compressed state.",
+      "prediction": "A rank in {1,2,4,8} preserves combined source fidelity at least.8 under the analytic sidecar ceiling.",
+      "kill_condition": "Combined fidelity below.8 on frozen generated cases or exact source formation above35.995B charged work.",
+      "result": "Killed fixed-rank source: the width8 depth2 best combined fidelity is.318, and exact target source formation is348.966B charged versus35.995B ceiling. Preserve exact signed CP dense-linear transport, positive-gauge invariance, all-distinct contractions, and the rank/arity obstruction; a future child must change source formation or state, not merely rank."
+    },
+    {
+      "id": "m74_finite_chaos_tt_recurrence",
+      "status": "killed",
+      "mechanism": "Represent connected k3/k4 by tensor trains and propagate a finite Hermite connected-diagram alphabet through deep ReLU layers.",
+      "bias_class": "Biased finite-chaos higher-cumulant recurrence with exact TT dense-linear transport.",
+      "prediction": "Non-diagonal TT cores repair CP source loss and the finite Gaussian gate alphabet closes accurately enough at bounded rank/cost.",
+      "kill_condition": "First-gate finite-alphabet error, non-Gaussian next-preactivation invalidating closure, or symmetry-saturating exact TT exceeding compute/memory ceilings.",
+      "result": "Killed finite-chaos recurrence. Rank8 TT has depth2 source/transport combined fidelity.984247, proving linear compression is real, but the degree8 first-gate k4 relative error is.769328 and next-preactivation standardized k4 is1.17--2.24. Exact target TT costs88.653T charged and32.252GiB state. Preserve exact TT dense-linear transport and the diagram/rank obstruction; the failed link is ReLU source/closure, not linear transport."
+    },
+    {
+      "id": "m78_homogeneous_huber_haar_mlmc",
+      "status": "killed",
+      "mechanism": "Use a radial-covariant Huber ladder, common outer-Haar frame, shared antipodes, and an exact final residual to telescope the angular ReLU endpoint through a finite MLMC unit cell.",
+      "bias_class": "Exact finite common-frame angular telescope; an infinite roulette extension is unbiased only after an independently predeclared survival sequence and charged sampled levels.",
+      "prediction": "Smoothing lowers the coarse Haar-frame variance and coupled correction decay repays the paired Huber evaluations, yielding variance-times-work ratio at most.75 in mean and below1 on every generated unit.",
+      "kill_condition": "Any finite-telescope or endpoint failure, literal frozen exponent-gate failure, rho at least1 on any generated unit or mean rho above.75, or an unimplemented roulette claim.",
+      "result": "Kill the registered d16,L4 Huber/Haar unit cell. The exact common-frame finite telescope, outer-Haar marginal-unbiased block, radial covariance h_(a epsilon)(a z)=a h_epsilon(z), base variance reduction on4/4 units, and observed correction decay beta=2.5925 all pass as components. The frozen literal log2-variance slope gate is false because the measured slope is -2.592495, and the decisive fully charged rho is3.0985..3.2836 (mean3.1576), so early coupled corrections plus two full Huber paths swamp the base gain. Roulette was not implemented. Preserve the endpoint identity and conditional roulette theorem; kill this cost/coupling cell, its slope reinterpretation, and any base-only promotion."
+    },
+    {
+      "id": "m79_common_axis_output_shrinkage",
+      "status": "killed",
+      "mechanism": "Apply a frozen common-axis positive-part contrast James--Stein shrinker to a streamed 256-output ReLU sample mean, using within-run contrast-variance statistics and a cost-matched direct comparator.",
+      "bias_class": "Deliberately biased fixed-network nonlinear shrinkage because lambda is sample-random; its streamed contrast-variance statistic is unbiased but is not an unbiased target-mean correction.",
+      "prediction": "Common-mode noise across final outputs is large enough that shrinkage beats a fully charged direct sampler by at least2x under the frozen scalar-operation ledger.",
+      "kill_condition": "Any nonfinite statistic, direct comparator above M79 cost, primary M79/direct cost ratio above.75, bootstrap lower bound above.50, or any universal James--Stein/unbiasedness claim outside its declared spherical-Gaussian theorem.",
+      "result": "Kill the registered generated 32->64->256 common-axis rule. The direct-stream, Vhat contrast identity, arbitrary-target excess-risk bookkeeping, LOO equivalence, and corrected direct-only cost comparator pass; the numerical clamp was inactive but must be predeclared by any child. On all four whole-network units M79/cost-matched-direct is1.026241..1.075922, mean1.049986 with90% bootstrap[1.035346,1.071690]. Truth contrast energy is328..401 times estimated contrast noise, lambda is only.002476..003069, and charged statistics displace21 direct paths. Preserve the diagnostics and the narrow known-variance spherical-Gaussian theorem; kill common-axis same-run shrinkage, post-hoc unit selection, and any claimed M71/official-score improvement."
+    },
+    {
+      "id": "m80_kerdock_tangent_factorial",
+      "status": "screened/uncertain",
+      "mechanism": "Hold M71's inherited diagonal tangent T_lambda=T0-lambda Delta at frozen lambda=.9807112198896164, then compare lambda=0 against the frozen retained recurrence under Haar-rotated Kerdock geometry with matched tangent work.",
+      "bias_class": "Truth-free population comparison of conditional rotation variance for a fixed network and fixed coefficient; it is neither an MSE/bias measurement nor a score claim.",
+      "prediction": "The inherited frozen tangent has a stable variance benefit under the Kerdock geometry: every frozen network and leave-one-network-out pool has frozen/zero variance ratio below1, with the pooled ratio below.97.",
+      "kill_condition": "Any exact-replay/hash/cost failure, any network or LONO ratio at least1, pooled ratio at least.97, or a claim that finite rotations establish MSE, score, or tangent redundancy.",
+      "result": "Screened uncertain; do not mutate M71. The factorial harness is matched-cost, frozen replay and hashes pass, and the population-Haar variance identity is valid because E_Q Delta=0. The pooled frozen/zero variance ratio is.9793799245, with LONO ratios.970237523,.988616832,.979330408, but seed271 is adverse at1.0044348946 while seeds619/911 are.9546510334/.9794378863. The all-network and <.97 survivor gates fail, but the prescribed removal kill is also not established. Preserve the matched harness and fixed-coefficient population criterion; no coefficient retune or deletion follows. The unresolved edge is whether a Kerdock-specific coefficient or removal stabilizes at fixed network and hosted conditions, including the unmeasured cost of deleting the recurrence."
+    },
+    {
+      "id": "m81_full129_pareto",
+      "status": "killed",
+      "mechanism": "Restore the full 129-point real-MUB antipodal union, including coordinate basis, in place of the 126-point trimmed Kerdock subset.",
+      "bias_class": "Static design/exactness and resource audit only; no fresh score, pilot, residual, parity, RSS, or MSE experiment was run.",
+      "prediction": "Degree-four exactness of the full129 union supplies enough nonincremental variance value to repay the 43/42 path factor and fit the frozen hosted memory margin.",
+      "kill_condition": "Persistent memory increment exceeds the frozen hosted margin, proportional path increase lacks a measured compensating reduction, or no changed path/terminal ownership is supplied before promotion.",
+      "result": "Killed static Pareto proposal. Full129 is an exact antipodal spherical5-design with A2=A4=0, whereas trim126 has A4=.047422179, but it increases antipodal paths64512->66048 (43/42). Its minimum persistent increment is1.75195MiB against M71's1.44531MiB margin, crossing the480MiB safety gate; terminal arrays can add further pressure. The proportional C envelope198.408B is not an implementation bill, and the raw MSE reduction must exceed2.3256% merely to improve adjusted score. Degree6 is slightly worse and degree8 neutral in the stated proportional accounting. Preserve the full family, coordinate-basis handling, degree-four proof, and break-even algebra; the failed edges are memory margin and absence of measured nonincremental variance-cost value. Reopen only as a new implementation with changed path/terminal ownership or measured subproportional cost, followed by memory, exact-bill, parity, residual-tail, and fresh hosted evidence."
+    },
+    {
+      "id": "m82_kerdock_vs_haar_variance",
+      "status": "screened/unresolved",
+      "mechanism": "Compare frozen M71 Kerdock-126 outputs with formal L1 independent QR-Haar-frame outputs under their lawful seed mappings, using conditional output covariance trace across six geometry seeds for each of four fixed generated networks.",
+      "bias_class": "Conditional-variance comparison of two frozen implementations. The cells use different numerical backends and randomizations, so it is not a causal geometry swap, a parity result, an MSE/bias result, or a score result.",
+      "prediction": "Kerdock geometry has lower conditional trace variance than the formal Haar-frame cell on every frozen network and under a whole-network bootstrap.",
+      "kill_condition": "Any determinism/hash/resource/randomization failure, bootstrap upper bound at least1, or any inference of MSE, adjusted score, or a geometry-only effect without a shared numerical path and separate bias observable.",
+      "result": "Screened unresolved. Determinism, lawful seed mapping, resource, and hash gates pass. Kerdock/Haar trace-variance ratios are1.387596,.614354,.590830,1.228402; aggregate.9025561669, but the whole-network bootstrap95% interval is[.60132681,1.35006446], so its upper bound crosses1 and two networks favor Haar. Crucially M71's owned-buffer/WHT source and formal L1's row-blocked backend differ in floating-point evaluation and operation schedule; this measures variance of two frozen implementations, not the causal effect of geometry. The QR frames also share no common random numbers with Kerdock. Since MSE=trace Var_R+||E_R[T|W]-target(W)||^2 and neither target nor conditional means was evaluated, no MSE, bias, score, or winning-entry inference is available. Preserve the lawful seed map, deterministic covariance-trace statistic, whole-network bootstrap, and possible heterogeneity. Reopen only with a preregistered common numerical path/parity-controlled geometry test plus a separate bias/MSE observable; no selected-seed retune or coordinate bootstrap."
+    },
+    {
+      "id": "m84_exchangeable_output_residual_ridge",
+      "status": "killed",
+      "mechanism": "Use leave-one-output-row-out ridge to predict the residual of a weights-computable Gaussian/second-moment support-function anchor from a frozen low-dimensional final-row feature map, with an independent path fold for row labels.",
+      "bias_class": "Deliberately biased conditional-on-network cross-fitted empirical-Bayes residual predictor; the premise oracle is an offline near-exact-label ceiling, not a deployable estimator.",
+      "prediction": "Other iid final rows carry enough information about the feature-conditioned residual law to give median LOO residual R2 at least.50 and at least6/8 networks R2 at least.30, a deliberately generous necessary condition for a 2x equal-cost gain.",
+      "kill_condition": "Feature leakage, held-row label inclusion, median validation R2 below.50, fewer than6/8 R2 at least.30, or a fully charged two-fold accounting obstruction.",
+      "result": "Killed the preregistered width64/depth12/output64 low-dimensional ridge implementation. Development-only lambda selection chose10.0. On eight disjoint generated validation networks with32768 Gaussian paths each, near-exact-label LOO residual R2 has median-.2298483, range[-.2764882,.2051211], and0/8 above.30. Median independent-half label-noise variance is only2.01e-5 of residual variance, so this is not a Monte Carlo-label artifact. The two-fold sampler would already spend the same2m paths as a direct2m-path mean before feature/ridge work; it has no plausible factor-two route after the oracle-signal failure. Preserve the exact conditional exchangeability/identifiability theorem, independent-fold requirement, residual-function ceiling R2_phi, and weights-only feature firewall. The failed link is this 14-feature linear ridge approximation with 63 other rows, not the possibility of a new observable or a separately justified conditional model."
+    },
+    {
+      "id": "m86_boundary_laplace_coarea",
+      "status": "phase_a_pass_phase_b_unresolved",
+      "mechanism": "Replace smooth-cell Hessian reasoning with the distributional spherical Laplacian/coarea identity, then seek an activation-region boundary graph estimator that samples signed ReLU gate facets.",
+      "bias_class": "The identity is exact for continuous one-homogeneous piecewise-linear outputs under a distributional spherical trace. No Phase-B estimator or bias claim exists because no exact or unbiased facet-inclusion law was supplied.",
+      "prediction": "A d2 fan oracle will establish the exact 1/(d-1) constant and signed jump measure; a target-shape graph can be considered only if coverage and a conservative resource lower bound leave a legal route.",
+      "kill_condition": "Phase-A normalization/sign/double-count failure, a Phase-B traversal lacking exact or computably unbiased coverage, any generated variance-work gate failure, or a target lower bound above budget.",
+      "result": "Phase A passes: across24 generated d2 networks (width2/3/4, depth1/2/3), exact sector integration and independently summed signed output-gradient jumps disagree by at most3.3306691e-16 relative, while dense 1048576-point angular quadrature disagrees by at most1.9285002e-12; one-ReLU and signed two-layer hand checks are exact. The derivation exposed a necessary correction: raw all-layer zero labels can cascade on a single codimension-one upstream facet (up to5 observed labels/ray), so raw gate summation double-counts. Preserve the identity only with globally regular earliest-gate ownership or output-fan gradient jumps once per facet. Phase B remains unresolved/nonpromotable: iid continuous target first-layer rows yield2^256 regions and2^263 first-layer facet cells; even an optimistic scalar forward-plus-adjoint first-layer enumeration lower bound is1.2408797549e86 FLOPs, far beyond272B. Coarea alone gives no computable unbiased inclusion law for a partial traversal. Preserve the exact identity, signed adjoint-normal factorization, and d2 oracle; kill raw gate sums, exact target graph enumeration, and unweighted reached-facet traversal as an estimator."
+    },
+    {
+      "id": "m83_common_backend_geometry",
+      "status": "killed_protocol",
+      "mechanism": "Compare Kerdock and Haar point families through one common numerical forward backend so geometry is the only intended causal change.",
+      "bias_class": "Conditional rotation-variance premise only; no truth, MSE, or score claim.",
+      "prediction": "The paired common-backend whole-network trace-variance ratio has geometric mean below parity with a whole-network bootstrap upper bound below one.",
+      "kill_condition": "Any mismatch to the frozen explicit64512-point antipodal array, failure to retain all raw6x256 replicate vectors, parity/accounting defect, or bootstrap upper bound at least one.",
+      "result": "Killed at causal-isolation protocol. The harness supplied32256 line representatives and constructed antipodes internally although the preregistration required an explicit64512x256 array, and it did not retain the raw6x256 replicate vectors. Descriptive ratios .729675,.795997,1.626053,1.005618 (geometric mean.987193; bootstrap95 [.762115,1.360125]) are not decision evidence and cannot update M82. Preserve the common-backend concept; require exact point-array and raw-replicate parity in a fresh fold."
+    },
+    {
+      "id": "m85_deterministic_signed_source",
+      "status": "killed",
+      "mechanism": "Build deterministic signed k3/k4 source loadings from exact rectified pair bridges and leading weak-correlation tree terms, then compress and transport them through a motif closure.",
+      "bias_class": "Biased finite-rank fixed-network cumulant source with exact bivariate pieces and approximate novel multiplicity strata.",
+      "prediction": "The constructed source remains faithful on genuinely novel 3-/4-unique entries and can be formed within the analytic sidecar budget.",
+      "kill_condition": "Negative or subthreshold novel-stratum fidelity, source/factor formation above budget or memory, depth truncation, or any supplied-factor accounting.",
+      "result": "Killed the complete source implementation. Apparent aggregate fidelity was dominated by 1-/2-unique bivariate entries; novel k4 3-unique fidelity is -.095 at n6 and -1.140 at n8, while all-distinct n8 is only.531. The target ledger omitted dense source/HOSVD construction, roughly32GiB and multi-teraflop work, and depth3/4 tests used only the first two weights. Preserve the exact bivariate ReLU bridge, leading weak-correlation tree coefficients, and exact linear transport; the failed link is cheap faithful novel fixed-network source formation."
+    },
+    {
+      "id": "m87_equivariant_motif_attenuator",
+      "status": "killed_static",
+      "mechanism": "Feed exact bridge path/star/triangle/cycle motif responses and transported rank-8 source loadings into a tiny shared permutation-equivariant attenuation cell.",
+      "bias_class": "Deliberately biased learned closure with exact supplied-motif algebra but unresolved source construction.",
+      "prediction": "A complete target implementation, including source/loadings and all motifs, fits35.995B/1MiB and can then enter generated-only training.",
+      "kill_condition": "Static all-in cost or liveness failure, unbilled source factor, missing motif, or equivariance defect.",
+      "result": "Killed before training. The literal64-transfer-pair cycle costs171.463B. An independent exact shared-middle identity reduces the cycle to24.772B and cycle+path to30.382B, but covariance/rank transport raises the subtotal to35.824B, leaving only.171B before bridge formation, attention, other motifs, copies, and residual time. More fundamentally, the M85 rank/source factor still costs roughly5.5T/32GiB and was treated as supplied. Preserve the1291-parameter equivariant cell and exact shared-middle cycle/path identities; kill the explicit complete carrier."
+    },
+    {
+      "id": "m88_random_great_circle_rb",
+      "status": "killed_calibration",
+      "mechanism": "Rao-Blackwellize spherical sampling by exactly integrating a deep ReLU network around a random great circle using its piecewise-linear fan.",
+      "bias_class": "Exact Haar/Fubini identity with an exact finite circle integrator; the attempted finite calibration was only a coverage diagnostic.",
+      "prediction": "The circle engine is exact and a frozen small calibration establishes reliable coverage before an equal-work efficiency test.",
+      "kill_condition": "Circle parity failure or a calibration whose confidence statement is not simultaneous across networks/components.",
+      "result": "Preserve the exact Haar/Fubini identity and circle-fan integrator, but kill the registered calibration: 3/24 componentwise nominal99% intervals missed, the intervals were not simultaneous, only16 planes were used, and nominal joint family coverage was about.99^24=.786. The misses neither prove bias nor establish efficiency. M89 therefore tested the economics directly rather than promoting M88."
+    },
+    {
+      "id": "m89_great_circle_efficiency",
+      "status": "killed",
+      "mechanism": "Compare exact random-great-circle fan integration with matched direct antipodal evaluation under an equal dense-forward work law.",
+      "bias_class": "Unbiased Haar/Fubini estimator with exact conditional circle integration.",
+      "prediction": "Rao-Blackwellization repays fan enumeration, giving whole-network variance-times-work ratio below one and a strong aggregate gain.",
+      "kill_condition": "Any exactness failure or any generated whole-network work-normalized ratio above parity.",
+      "result": "Decisively killed at equal work. All256 block exactness defects are at most8.24e-10, but eight generated n16/L4 ratios are55.522 to878.220, geometric mean248.336 with bootstrap upper about418--421. Roughly90.05% of the circle charge is actual forward plus two-Jacobian work; deleting zero-ray bookkeeping saves only about10%, far from the two-order gap. Preserve the exact theorem and fan engine; exact circle enumeration is not a scorer."
+    },
+    {
+      "id": "m90_bridge_factor",
+      "status": "killed",
+      "mechanism": "Apply a signed fixed-rank eigenfactor with exact diagonal repair to the complete centered ReLU pair bridge before motif contraction.",
+      "bias_class": "Biased fixed-rank bridge approximation; resource claim was formula-only.",
+      "prediction": "Rank at most32 retains at least.90 bridge norm fidelity with spectral residual at most.35 and a complete cheap contraction.",
+      "kill_condition": "Any fidelity/spectral gate failure, orientation error, omitted multiplicity/cross stratum, or incomplete source/contraction bill.",
+      "result": "Killed robustly. Under the correct x@W orientation, rank32 has minimum repaired fidelity.352827 and maximum spectral residual.592538; the signed eigensolver itself is correct. The reported derivative was factor-two wrong and the6.926B/0.0647MiB claim omitted complete construction and liveness. Preserve the exact bridge/diagonal split and the new decomposition h(R)=a1 R_off+G: keeping the full linear term and compressing only G gives minimum total fidelity.977763 and maximum spectral residual.015778, but no cheap full-rank contraction was supplied."
+    },
+    {
+      "id": "m91_two_sided_cycle_sketch",
+      "status": "killed",
+      "mechanism": "Estimate the full rank-8 fourth-order cycle core with independent two-sided Rademacher trace probes using E[(x^T P_ab y)(y^T P_cd x)]=tr(P_ab P_cd).",
+      "bias_class": "Exactly unbiased supplied-Q/U stochastic trace sketch; upstream bridge/source construction excluded.",
+      "prediction": "Sixteen probes give median relative core MSE at most.20 and p90 at most.50 below5B and1MiB.",
+      "kill_condition": "Identity/index parity failure, primary variance gate failure, required probe bill above5B, or hidden upstream construction.",
+      "result": "Killed at variance. Exhaustive expectation defect is6.66e-16 and the fast contraction is correct, but rank8/s16 median errors are1.457--3.309 and p90 errors1.932--4.189. Observed near-1/s scaling requires about265--300 probes; that costs52.0--58.7B while the5B ceiling permits25. The s16 sketch itself costs3.131B and.583MiB, but upstream construction adds unresolved work. Preserve the exact identity and fast block implementation; sixteen-probe full-cycle estimation is not viable."
+    },
+    {
+      "id": "m92_equivariant_learned_closure",
+      "status": "killed_protocol",
+      "mechanism": "Use a generated-only, dimension-free shared graph learner with batched W^T H, |W|^T H, and W^2^T H messages to correct a Gaussian anchor.",
+      "bias_class": "Deliberately biased amortized closure; no empirical result is admissible because the frozen protocol was not implemented faithfully.",
+      "prediction": "The exact frozen two-head, correction-aware, permutation-equivariant cell passes stringent held-network, extrapolation, edge-intervention, reference-precision, and resource gates.",
+      "kill_condition": "Any frozen architecture/control mismatch, missing equivariance or reference-SE enforcement, invalid edge intervention, serialization/evidence failure, or empirical/resource gate failure.",
+      "result": "Killed this implementation at protocol fidelity with no persisted or disclosed metrics and no learned asset retained. A false static kill was first retracted: exact v0.14 operand-shape billing shows96 rectangular message matmuls cost150,700,032 FLOPs and the isolated carrier about155.2M, not38.58B. The draft then omitted actual two-head attention and the previous-correction token, lacked the1e-8 hidden-permutation test, evaluated edge shuffle as a new network rather than a message-only intervention, did not enforce reference precision, and failed JSON serialization. Preserve the cheap carrier and correction trail; M96 must use new seeds and an explicit pretarget protocol."
+    },
+    {
+      "id": "m93_wishart_linear_motif",
+      "status": "killed",
+      "mechanism": "Split centered standardized ReLU into first Hermite chaos plus an orthogonal residual and delete a claimed pure-linear Wishart four-cycle from a connected k3/k4 source.",
+      "bias_class": "Proposed exact connected-cumulant cancellation followed by unresolved mixed-term closure.",
+      "prediction": "The expensive full-rank linear bridge cycle is an all-first-chaos Gaussian cumulant and can be removed exactly, freeing24.772B for the retained source.",
+      "kill_condition": "Any Hermite-diagram misidentification, inaccurate quadrature, omitted scale/nonzero-mean state, absent retained-source parity, or uncertified cost subtraction.",
+      "result": "Killed by the independent judge. The lemma g=c1 Z+H, E[HZ]=0 and the zero pure-first-chaos k3/k4 cumulant is exact, but a four-cycle has Hermite vertex degrees(2,2,2,2), coefficient gamma2^4=1/(pi-1)^2=.218035, and is nonzero; certified subtraction from M87 is therefore zero. The known retained subtotal is36.034129920B, already.039129920B above the35.995B ceiling before mixed source. Order9 quadrature misses exact repeated-index k3 by.02591, k4 by.00847 and pair bridges by up to.03259; depth propagation omits activation scales and nonzero means, with correlation error up to.5736. Preserve only the first-chaos lemma and vertex-degree diagram rule."
+    },
+    {
+      "id": "m96_equivariant_attention_closure",
+      "status": "killed_pretarget",
+      "mechanism": "Repair M92 with explicit shared two-head attention, a previous-correction token, message-only edge intervention, enforced reference precision, and a pretarget hidden-permutation test.",
+      "bias_class": "Deliberately biased generated-only learned closure; no targets or training were reached.",
+      "prediction": "The frozen recurrence commutes with independently permuted hidden neurons below1e-8 before any target generation.",
+      "kill_condition": "Any pretarget parameter, finiteness, intervention-isolation, or adjacent-layer permutation commutation failure.",
+      "result": "Killed before references: anchor commutation is1.11e-16 but full prediction error is.05906986. The recurrence concatenates prior-layer H and predicted means directly into current-layer token rows and also uses a cross-layer residual skip, even though adjacent hidden layers carry independent permutations. These tensors must be transported through W before entering current coordinates. No target, training, metric, score, or learned artifact exists. Preserve the exact permutation harness and message-only intervention; M97 changes the carrier to transport-only state."
+    },
+    {
+      "id": "m95_palm_coarea_sampler",
+      "status": "killed_literal_intended_law_unresolved_disfavored",
+      "mechanism": "Sample the first forward output-fan facet from a uniform angular start, recover its preceding-sector inclusion probability locally, and Horvitz--Thompson weight the signed output-gradient jump.",
+      "bias_class": "Potentially exact d2 Palm/HT boundary estimator under a proved event law; the literal code instead samples an augmented activation-event law including zero output jumps.",
+      "prediction": "Local q and one-owner parity hold, and the first-crossing proposal beats direct antipodal sampling with variance-times-work ratio at most.50.",
+      "kill_condition": "Mismatch to the preregistered nonzero output-event law, HT/ownership bias, undefined eventless handling, or any whole-network equal-work ratio above parity.",
+      "result": "Kill the literal implementation. Its local activation-event q=preceding gap/(2pi) is exact and the zero-inclusive HT estimator is unbiased, but it is not the preregistered first nonzero output-fan proposal; zero-jump samples reach2073/4096 on one network and output-dead depth3 networks still traverse hidden roots. Literal depth2 efficiency ratios are39.503,39.817,556.709. An independent oracle-merged output-only law with a stronger exact-sector direct comparator still loses36.715,36.177,111.878, so the intended law is nonpromotable and strongly disfavored though not locally work-certified. Preserve M86 coarea, local gap recovery, augmented HT identity, and cascade total-jump handling."
+    },
+    {
+      "id": "m97_transport_only_attention_closure",
+      "status": "killed_protocol",
+      "mechanism": "Place every prior hidden/scalar state in a source tensor and transport it through W before forming current-node tokens, eliminating M96's cross-coordinate rows and residual skip.",
+      "bias_class": "Deliberately biased learned closure; symmetry passed but the frozen control protocol failed after launch, so no metric is evidence.",
+      "prediction": "Transport-only two-head attention is exactly hidden-permutation equivariant and the node-only equal-capacity control is trained and evaluated with messages zeroed.",
+      "kill_condition": "Any symmetry failure, message/anchor leakage, node-control train/eval mismatch, target-before-freeze event, or statistical/resource gate failure.",
+      "result": "Protocol-killed without persisted metrics. The carrier itself passes:2441 parameters, maximum permutation defect4.44e-16, and message intervention leaves the anchor bitwise fixed. The runner trained the node control with edge messages enabled and zeroed them only at evaluation, invalidating the causal comparison after the run began. Preserve the transport-only recurrence and pretarget harness; M98 changes exactly the node-control training flag on entirely fresh seeds."
+    },
+    {
+      "id": "m98_transport_attention_controlled",
+      "status": "killed",
+      "mechanism": "Train a generated-only transport-equivariant two-head closure against a Gaussian anchor with a correctly trained node-only control and a message-only edge intervention.",
+      "bias_class": "Deliberately biased amortized learned correction; target deployment cost remained formula-only because no end-to-end FlopScope, residual-time, or peak-live-set trace was executed.",
+      "prediction": "The corrected carrier supplies a nonincremental closure: validation geometric MSE ratio at most.02, extrapolation at most.05, at least90 percent whole-network coverage at the declared thresholds, and at least half of the gain causally attributable to transported messages.",
+      "kill_condition": "Any held-network or extrapolation gate failure, weak edge intervention, full model failing to halve node-control mean MSE, reference firewall/precision defect, or unresolved target resource trace.",
+      "result": "Killed after a clean generated-only experiment and independent audit. Validation geometric ratio is.420166 with bootstrap95 upper.813476 and5/128 networks at ratio<=.05; extrapolation geometric ratio is.423724 with bootstrap95 upper.792011 and2/32 at ratio<=.10. Full/node mean-MSE ratio is.840735 and edge-gain removal is.366967, both below the preregistered causal requirement. All256 rebuilt development precision checks pass and no learned artifact was retained. Preserve the transport-equivariant carrier, split firewall, control harness, and evidence that weight arrangement contains modest signal; no width, epoch, or parameter retune is justified. Target cost/memory remain unresolved without a real trace."
+    },
+    {
+      "id": "m99_hermite_conditioned_attention",
+      "status": "killed_pretarget",
+      "mechanism": "Augment the transport-only closure with node-specific first-through-fourth Hermite response coefficients of centered standardized ReLU sources and compare against the prior raw-message control.",
+      "bias_class": "Prospective generated-only learned correction; no targets, training, metrics, or learned asset were produced.",
+      "prediction": "Node-specific Hermite conditioning, rather than added capacity, isolates the missing low-order non-Gaussian closure state while preserving symmetry, anchor invariance, and the target resource ceiling.",
+      "kill_condition": "Any incorrect layer-boundary chaos convention, unequal-capacity causal control, ineffective message intervention, pretarget symmetry/hash failure, or target generation before root approval.",
+      "result": "Rejected before targets despite passing its literal numerical prechecks. At layer1 it applies ReLU gamma(0) to the Gaussian identity input, injecting spurious degree2 and degree4 source responses; the correct identity-source convention is gamma1=1 and gamma2=gamma3=gamma4=0. Its Hermite model has188 inputs and4601 parameters while its raw control has53 inputs and2441 parameters, so observable value is confounded with capacity. Preserve the exact quadrature, transport architecture, and node-specific gamma observable. M100 must use the identity input boundary, a same188-input/4601-parameter raw45-plus135-zero control, identical initialization where meaningful, and a pretarget nontrivial gamma-shuffle effect with bitwise fixed anchor."
+    },
+    {
+      "id": "m100_identity_hermite_capacity_control",
+      "status": "killed_preexecution_protocol",
+      "mechanism": "Correct M99's input boundary with identity-Gaussian chaos at layer zero and compare node-specific Hermite transport against a raw45-plus135-zero control in the same188-input,4601-parameter carrier.",
+      "bias_class": "Prospective generated-only learned correction; no reference, training, benchmark metric, learned asset, or submission was produced.",
+      "prediction": "A hash-frozen generated experiment will isolate Hermite node association under identical architecture, initialization, optimizer order, target precision, and whole-network evidence retention.",
+      "kill_condition": "Any stale post-escalation precision threshold, omission of development-label precision/evidence, control-order mismatch, target execution before approval, or empirical/resource gate failure.",
+      "result": "Mechanism-level checks pass and are preserved: exact gamma quadrature, identity response(1,0,0,0), equal4601-parameter carriers, hidden-permutation error at most1.33e-15, bitwise anchor isolation, and nontrivial shuffle effects. The frozen runner is nevertheless rejected before execution. If a reference escalates it replaces the target but compares final SE with the old target-derived threshold; development references then influence training without being gated or retained in raw evidence. An independent judge initially missed both defects and then formally corrected its verdict. No targets or training ran. M101 changes only final-reference recomputation and every-split evidence/order certification on fresh seeds."
+    },
+    {
+      "id": "m101_identity_hermite_reference_complete",
+      "status": "killed_preexecution_protocol",
+      "mechanism": "Preserve M100's identity-correct, capacity-matched Hermite carrier while recomputing final precision after escalation, gating every split, and using one hashed identical training schedule.",
+      "bias_class": "Prospective generated-only learned correction; no reference, training, metric, learned asset, or submission was produced.",
+      "prediction": "Every target-bearing precision decision and training-order condition is both correct and durably retained before training, allowing one forensically complete generated experiment.",
+      "kill_condition": "Any incorrect final threshold, missing development gate, loss of failure-path evidence, control-order mismatch, target execution before approval, or empirical/resource failure.",
+      "result": "Final escalation arithmetic, all-split precision predicate, common initialization hash, and common forty-epoch order schedule are correctly implemented and preserved. The packet is still rejected before execution because all references are built and then a failed precision condition raises before the only metadata/results writes. A precision failure would erase every target-bearing initial/final SE, threshold, pair count, escalation flag, and failed network identity. Manifest hashes and target-free tests pass; no result artifact exists. M102 must persist provenance and reference metadata before branching, emit a normal killed-precision record, and retain evidence across later runtime failures."
+    },
+    {
+      "id": "m102_identity_hermite_durable_reference",
+      "status": "killed_preexecution_protocol",
+      "mechanism": "Nest an exact centered Hermite source-node/edge/state association residual beside the raw transport, repair negative-tail evaluation, and durably record reference evidence before training.",
+      "bias_class": "Prospective generated-only learned correction; no reference, training, metric, learned asset, or submission was produced.",
+      "prediction": "The raw-plus-centered carrier is a stable nested feature test whose separately trained raw control and centered-zero ablation causally identify the new association while all failure evidence survives.",
+      "kill_condition": "Any unstable gamma tail, algebra/decomposition defect, lost mid-split evidence, non-equivariant/unverified carrier, non-isolated binding ablation, target execution before approval, or empirical/resource failure.",
+      "result": "Preserve the exact theorem H=mean(gamma)R+C, the raw45-plus-centered180 nested carrier, identity-layer C=0, stable erfcx/float64 gamma implementation,5321-parameter common architecture, and durable completed-split precision records. Reject the frozen execution packet: current-split records are written only after the entire loop, so a mid-split exception loses completed target-bearing evidence; hidden-permutation and message-gradient controls regressed out; and recursive centered_zero changes h/pred/c, then later source state and raw K^T S. A target-free hook measures later raw-slot difference.008375, contradicting the claimed raw-fixed causal ablation. M103 restores carrier audits and per-network persistence and makes the separately trained nested raw control the sole binding mechanism gate; centered-zero/shuffle become descriptive."
+    },
+    {
+      "id": "m103_nested_hermite_audited",
+      "status": "killed_pretarget",
+      "mechanism": "Restore hidden-permutation and gradient-block audits around M102's stable nested raw-plus-centered carrier and persist each completed reference record.",
+      "bias_class": "Prospective generated-only learned correction; no reference, training, metric, learned asset, or submission was produced.",
+      "prediction": "The repaired carrier passes strict symmetry/control audits and its complete runner freezes the separately trained nested raw-control decision before any target draw.",
+      "kill_condition": "Any permutation/control assertion failure, incomplete binding decision path, absent reference law, target execution before complete freeze, or later empirical/resource failure.",
+      "result": "Killed by its own pretarget tests. The full and raw carriers are mathematically permutation-equivariant, but the test demanded bitwise equality for the permuted Gaussian anchor; independent localization shows anchor and prediction defects are both only8.881784197e-16, well below the intended1e-10 tolerance. Separately the frozen runner intentionally omitted the full training/assessment/control path and depended on a missing future reference module, so it was not executable evidence. Preserve stable nested math and the new carrier audits; M104 changes bitwise permutation equality to a numerical tolerance and freezes the complete self-contained runner."
+    },
+    {
+      "id": "m104_nested_hermite_final_preexec",
+      "status": "killed_preexecution_protocol",
+      "mechanism": "Freeze a complete self-contained nested Hermite experiment with tolerant permutation assertions, per-network reference persistence, and a separately trained raw control.",
+      "bias_class": "Prospective generated-only learned correction; no reference, training, benchmark metric, learned asset, or submission was produced.",
+      "prediction": "A manifest-complete runner will preserve M102's stable centered-Hermite mathematics while making initialization, optimizer behavior, evidence retention, and every causal gate reproducible before target exposure.",
+      "kill_condition": "Any ambient initialization, declared-versus-executed optimizer mismatch, dropped numerical regression, lost evidence, target execution before approval, or later empirical/resource failure.",
+      "result": "Rejected before target exposure by independent audit. Treatment and raw models are cloned within a run but torch.manual_seed is not set before construction, so the frozen experiment is not reproducible across invocations. The config declares clip_norm=1.0 while the training loop never clips gradients; lr and weight decay happen to match but the documented optimizer does not. M102's high-precision tail, exact decomposition, and l0-centered-zero regressions were also omitted from the manifest, the promised coherent shuffle was not evaluated, and numeric score summaries were discarded. Preserve the complete runner, tolerant symmetry tests, and per-network checkpoints; M105 restores seeded construction, config-driven clipping, stable-tail/decomposition tests, explicit score summaries, and the shuffle measurement."
+    },
+    {
+      "id": "m105_nested_hermite_final_audited",
+      "status": "killed_preexecution_protocol",
+      "mechanism": "Repair M104's seeding, clipping, tail/decomposition regressions, score retention, and descriptive shuffle while making the separately trained raw arm the sole binding mechanism control.",
+      "bias_class": "Prospective generated-only learned correction; no reference, training, benchmark metric, learned asset, resource trace, or submission was produced.",
+      "prediction": "The frozen generated-only experiment will isolate correct node-specific centered Hermite association under identical active capacity, initialization, schedule, optimizer, reference precision, and durable failure evidence.",
+      "kill_condition": "Any inactive control capacity, association-versus-capacity confound, overwritten failure evidence, pretarget numerical or symmetry defect, target execution before approval, or later empirical/resource failure.",
+      "result": "Rejected before target exposure by both root and independent audits despite eight verified manifest hashes and passing target-free tail, decomposition, l0, symmetry, gradient, and runner-static tests. In raw mode the 180 centered inputs are literal zeros, so all 180x16=2880 corresponding first-layer weights have exactly zero gradient; the raw arm's effective trainable upper bound is2441 parameters versus5321 live parameters in the treatment. The binding comparison therefore confounds Hermite association with active hypothesis-class capacity. Separately, build writes a detailed failed-network result and rethrows, after which main overwrites it with generic phase=build context. Preserve the stable H=mean(gamma)R+C construction, generated-data firewall, seeded/clipped common protocol, reference checks, and absolute quality gates. M106 replaces only the binding arm with a separately trained active coherent whole-row shuffled-association null and gives one owner responsibility for failure records."
+    },
+    {
+      "id": "m106_active_null_hermite_controlled",
+      "status": "killed",
+      "mechanism": "Compare the correctly associated centered-Hermite recurrent transformer with a separately trained active null that preserves all233 input slots, all5321 live parameters, gamma row marginals, initialization, optimizer, schedule, and anchor normalization while coherently shuffling source-node association.",
+      "bias_class": "Deliberately biased generated-only learned terminal correction. The one frozen experiment ran on generated networks only; no model artifact, target-shape resource trace, package, upload, submission, or contest-data evaluation exists.",
+      "prediction": "Treatment validation and width12/depth6 extrapolation each achieve geometric anchor-MSE ratio at most.10, arithmetic network-bootstrap95 below.10, at least90 percent coverage at ratio at most.10, and treatment validation mean MSE at most.25 of the active null.",
+      "kill_condition": "Any reference-precision, absolute validation, extrapolation, active-null attribution, tail, runtime, or later resource gate failure; no retry by seed, epoch, width, checkpoint, or threshold drift.",
+      "result": "Killed after one hash-frozen generated-only run and independent raw-array recomputation. All416 references pass final precision with no escalation, but validation treatment geometric ratio is.476268, arithmetic mean1.098756, bootstrap95 1.396287, and coverage.085938. Extrapolation geometric ratio is.483090, arithmetic.620992, bootstrap95.734339, and coverage.0625. The binding validation treatment/null aggregate mean-MSE ratio is.948938 with bootstrap interval[.771820,1.195607]; treatment wins46.09 percent and its paired geometric ratio is1.066918. The learned association therefore does not causally improve validation. Preserve a post-hoc depth interaction only: on width12/depth6 treatment/null aggregate ratio is.632981[.476066,.847632], geometric.573731[.439064,.747783], with71.875 percent wins, while absolute quality still fails badly. Preserve stable gamma/decomposition math, active-null control, evidence harness, and the clue that association may route depth-sensitive exact computation. No learned model was written. The next legal mutation must change bias class: association-selected exact-zero spherical degree6/8 controls with a generous oracle variance-times-cost falsifier, not another terminal-transformer retune."
+    },
+    {
+      "id": "m107_spherical_gegenbauer_exact_zero_controls",
+      "status": "killed",
+      "mechanism": "Use six weights-only exact-zero spherical controls formed from normalized Gegenbauer degrees4,6,8 over W1-column gate axes, with uniform and normalized squared downstream-path-energy mixtures. Reuse each Haar frame's first preactivation, fit centered standardized ridge slopes on16 independent training frames, and apply raw controls to16 held frames.",
+      "bias_class": "Conditionally unbiased generated-only control-variate information screen. No target, truth, contest/public data, scorer, submission, champion, or M71 artifact entered the frozen run.",
+      "prediction": "Promote only if geometric and pooled held information ratios are at most.35, every network is at most.75 and below1, and the exact four-network bootstrap90 is at most.50; a pass authorizes only a separately frozen next stage.",
+      "kill_condition": "Any exact-law, invariant, rank, numerical, provenance, resource, independence, or evidence-chain failure; or geometric/pooled information ratio at least.50. No post-result ridge, degree, split, mixture, or seed rescue.",
+      "result": "Killed after one manifest-frozen target-shape generated-only run and independent raw-only recomputation. All24 preexecution tests, source hashes,128 provenance rows, rank6 designs, condition caps, finiteness, QR, cosine, fallback, and wall guards passed. Held adjusted/base ratios were[1.2349683,1.2533812,1.3637836,1.1312104]; geometric1.2431025, pooled1.2561862, exact bootstrap q05/q90[1.1819513,1.3025892], static charged proxy2.5181387. Training ratios.6885-.7616 reversed on every held network, localizing unstable association/coefficient overfit rather than an exact-zero or implementation failure. Preserve radialization, W1 orientation, first-pre reuse, one-fold recurrence, cross-fit theorem, and evidence harness."
+    },
+    {
+      "id": "m108_heat_difference_scaled_harmonic_band",
+      "status": "killed_preexecution_theory",
+      "mechanism": "Fold orthonormal-scaled spherical zonals q_l=sqrt(dim H_l)P_l through even degrees8..32 and combine them with a fixed difference-of-heat-kernels multiplier centered at degree18; aggregate over Haar-frame points and256 W1 axes.",
+      "bias_class": "Prospective exact-zero angular control; no network, forward, target, test, freeze, or submission occurred.",
+      "prediction": "A fixed degree18 band should compress broad residual harmonics into one zero-mean frame observable without target-tuned degrees or coefficients.",
+      "kill_condition": "Any recurrence/mean law failure or geometry-only frame/axis tail instability incompatible with finite-frame variance estimation; heat, Poisson, and Helmholtz cannot be swapped after failure.",
+      "result": "Killed before network execution. Exact Gauss-Jacobi analysis gives the unit-variance single-axis band fourth moment about2.04695309854e23. Haar-frame averaging and uniform aggregation over256 random W1 axes still leave standardized kurtosis about3.1234e18, independent of arbitrary rescaling. Heat and Poisson coefficient vectors have cosine.999941, so physics naming supplies no distinct rescue. Preserve the stable scaled recurrence only as a numerical reference; do not run the linear band."
+    },
+    {
+      "id": "m108_centered_cymatic_band_energy",
+      "status": "killed_preexecution_theory",
+      "mechanism": "Square the frozen unit-variance degree18 heat band and subtract its exact mean, E_a(u)=B_a(u)^2-1, then aggregate over W1 axes as a Chladni-like antinode-energy control.",
+      "bias_class": "Prospective exact-zero nonlinear angular control; algebra only, with no model or network execution.",
+      "prediction": "Band energy could retain magnitude association when signed harmonic amplitudes cancel, at only a square-and-reduction sidecar after the linear band.",
+      "kill_condition": "Any exact-law failure or band-energy excess kurtosis above the preregistered cap50; no absolute-value, power, threshold, selected-axis, or spectral retune after failure.",
+      "result": "Killed before drafting a runnable experiment. The zero-mean identity is correct, but Var(B^2-1)=E[B^4]-1 is about2.04695309854e23 by stable65..256-point exact Gauss-Jacobi quadrature, catastrophically above50. The failure is needle-like high-dimensional zonal concentration and broad spectral self-convolution, not the mean identity. Preserve the identity as a nonworking puzzle atom; the next causal mutation must bound nodal amplitude before centering with an independently certified mean."
+    },
+    {
+      "id": "m109_uncorrected_nodal_occupancy",
+      "status": "killed_preexecution_static",
+      "mechanism": "Center the bounded ReLU gate-tube indicator 1{|a.u|<=1/16} by an embedded spherical occupancy probability, then mix normalized W1 gate axes uniformly and by raw squared downstream sensitivity.",
+      "bias_class": "Prospective conditionally exact-zero spherical control. No network, ReLU forward, target, scorer, contest instance, package, or submission was executed.",
+      "prediction": "A fixed one-standard-coordinate tube around actual first-layer ReLU nodal great spheres avoids M108's needle tails while retaining even harmonics left by antipodal Haar frames.",
+      "kill_condition": "Any incorrect spherical mean, representation/gauge defect, unbounded or unstable frame law, target-free test failure, or independent static rejection; no silent constant or path-weight repair under the same candidate identity.",
+      "result": "Killed by an independent static judge before execution. The draft integrated (1-t^2)^126, but a coordinate on S^255 has density exponent126.5. It embedded p=.6821303412444036 instead of I_(1/256)(1/2,255/2)=.6817415182413444, giving every purported zero-mean mixture fixed conditional mean -3.88823003059e-4. Its raw squared-path mixture also changes under the function-preserving gauge W1[:,j]->gamma W1[:,j], W2[j,:]->W2[j,:]/gamma. Preserve bounded nodal occupancy, normalized axes, first-pre reuse, and the fixed c=1/16 hypothesis only as inputs to a separately named child with a new constant, gauge proof, seeds, tests, and freeze."
+    },
+    {
+      "id": "m110_corrected_nodal_occupancy",
+      "status": "killed",
+      "mechanism": "Correct the spherical nodal-tube mean to I_(1/256)(1/2,255/2), repair positive-ReLU gauge invariance with ||W1[:,j]||^2 times squared downstream path energy, and cross-fit uniform and repaired mixtures on independent antipodal Haar frames while reusing first_pre.",
+      "bias_class": "Conditionally unbiased generated-only two-control information screen. No contest/public/private instance, truth, scorer, package, champion, or submission entered the manifest-frozen one-shot.",
+      "prediction": "Promote only if every held ratio is below.45 and both the geometric and conditionally pooled two-path cost-adjusted ratios are below.90; kill if any held ratio reaches1 or either adjusted aggregate reaches.90.",
+      "kill_condition": "Any probability, symmetry, gauge, bound, rank, provenance, manifest, independence, resource, or evidence-chain failure; or failure of the frozen efficiency gate. No post-result threshold, ridge, mixture, split, or seed rescue.",
+      "result": "Killed after one manifest-frozen generated-only run and independent raw-array recomputation. All27 target-free tests,16/16 source hashes,128 unique provenance rows, probability audit, rank2/condition, tail, cosine, QR, wall, and resource guards passed. Held adjusted/base ratios were[1.0645698,1.1531567,1.0583245,1.0255615]; geometric1.0743870, conditional pooled1.0676882, exact whole-network bootstrap q05/q90[1.0418142,1.1063497]. With frozen cost factor1.01, charged geometric2.1702618 and pooled2.1567301. All four networks worsened despite apparent training ratios.9266-.9724, localizing unstable axiswise nodal-phase association rather than a mean, symmetry, or implementation defect. Preserve the corrected spherical probability, bounded gate-tube atom, gauge repair, first-pre reuse, and evidence harness; the child must change from independent-axis amplitude to cross-neuron phase interference. Raw NPZ sha256 25cb5e5137055549ba8247f462c8a981f4d7a8b4482cdccf6014406596fb22be; independent result judge sha256 28f04118d24e9ef6ccd725e1c958d19f272cbdc4dc2682b7e0c8e52f09bf20fb."
+    },
+    {
+      "id": "m111_coherent_gate_interferometer",
+      "status": "killed",
+      "mechanism": "Normal-order all off-diagonal first-gate sign pairs with the exact arcsine covariance and route them to each output through the positive-gauge-invariant signed ungated transport T=diag(||W1 columns||)W2...WL; fit one raw exact-zero control per output by fixed five-fold independent-Haar cross-fitting.",
+      "bias_class": "Conditionally exact-zero generated-only control-variate premise. The single manifest-frozen run used four fresh generated target-shape networks, no contest/public/private instance, truth, scorer, package, champion, or submission.",
+      "prediction": "Survive only if every raw held ratio is below85/104, charged geometric and pooled ratios are below.85, and charged exact four-network bootstrap q90 is below.90; kill if any network reaches parity or either charged aggregate reaches.90.",
+      "kill_condition": "Any theorem, parity, gauge, transport, numerical, tail, provenance, all-network control-first barrier, source-hash, cost, or evidence failure; or the frozen efficiency gate. No retry by feature, ridge, seed, fold, output, threshold, or transport normalization.",
+      "result": "Killed after exactly one manifest-frozen generated-only run and independent raw-array recomputation. All39 target-free tests,10/10 source hashes, four control-only prechecks,213 ordered barrier events,200 frame evaluations, float32/float64, pre64 sign, PSD, gauge, tail, rank, timing, provenance, and cost guards passed. Held ratios were[1.0186842,1.0341301,1.0229116,1.0372215]; geometric1.0282083, pooled1.0304809, charged geometric1.0693366, charged pooled1.0717002, and charged bootstrap q90 1.0741685. Thus the exact implementation worsened all four networks, matching the prior that ungated T omits the downstream-gate tensor B. Preserve the exact arcsine pair field, reverse normalized transport algebra, all-network barrier, manifest lifecycle, and independent judge; reject ungated transport as a sufficient output-phase label. Raw sha256 4f82e547901ecba643ee648c74656818c429ca38a9d9290fa907c8db26fd752e; manifest sha256 ccbdb0a2a8bef9b81d7093abd79550ec903e0a246e5a8ec5996717dac7ef9ab9; independent judge sha256 52b9dd282c46d87c5f9891e8cfe283f9e8778e97b6a86f4de10905395e7143f2."
+    },
+    {
+      "id": "m112_connected_gate_kernel",
+      "status": "killed",
+      "mechanism": "For each independent Haar frame form the centered first-gate pair matrix C=V^T V/d-Sigma, then use the raw Frobenius Gram K_rs=<C_r,C_s> and training-response-centered kernel ridge to predict a held exact-zero correction without any held-row normalization or intercept.",
+      "bias_class": "Prospective conditionally exact-zero cross-fitted L1 control. It is a factorization-aware empirical frame-visible projection of the missing downstream-gate tensor, not recovery of the full tensor and not a champion mutation.",
+      "prediction": "On one frozen four-network generated-only screen, every held ratio is below1, geometric ratio is at most.90, and measured equal-cost ratio after granting the base extra frames is below1; any pass authorizes only repeated fresh outer superblocks.",
+      "kill_condition": "Any loss of independent-frame conditional zero, held norm/cosine or usual kernel centering, shared-rotation MUB holdout, invariance/numerical/resource defect, or any whole-network/equal-cost ratio at parity. No kernel, ridge, rank, fold, or normalization retry.",
+      "result": "Killed after the sole manifest-frozen deterministic association diagnostic and independent raw recomputation. The invariant-hoist repair passed39 tests and an independent1.1248928095 cost audit under the frozen1.15 charge. Raw held ratios were[1.0105227060,1.0106924292,1.0052902241,1.0023887755], geometric1.0072173212 and pooled1.0064916803; charged geometric1.1582999194 and pooled1.1574654324. All four raw risks worsened, so the exact connected pair field has no stable frame-visible downstream phase in this forty-row projection. The permanent sentinel blocks retry and no fresh M112b is authorized. Preserve C, its independent-frame exact-zero law, raw Frobenius kernel, call-graph audit, and manifest harness only as nonworking puzzle components. Manifest sha256 00cdfe590f9f7af40f972ce94ad29bca1bf14df1f88637d2ab51d4f87d1f808c; NPZ sha256 eaa2a34d543d33fbeb7c694eab8a12ac389a433ceb34b5b67c7c27c0106bdad1; result sha256 66580ef8348e8c0ab226fbc6f61fd8f2359ec6a5e99bf5db712bb9a0bf23886a; independent judge sha256 20d1249dd937fdcaff213c00636c0de406997270d1b98bc9e4fea591c06970ab."
+    },
+    {
+      "id": "m113_connected_hermite_vertex_engine",
+      "status": "killed",
+      "mechanism": "Apply connected Hermite source vertices through independently sketched low-rank pair operators, with labeled graph orbits and unbiased symmetrized self-swap actions, avoiding explicit n^4 tensors.",
+      "bias_class": "Target-free generated analytic source-component falsifier; it was not a competition estimator and never touched contest/public/private truths.",
+      "prediction": "A frozen d=12 source test must show degree16-to-degree18 Hermite reference relative drift at most.05 before any deep-recurrence or deployment claim.",
+      "kill_condition": "Any algebra, orbit, self-swap, expectation, cost, runtime, one-shot, or Hermite-tail gate failure. No retry or post-outcome truncation-degree change.",
+      "result": "Killed by the single frozen generated-only run. After three independent preexecution audits,33 target-free tests, repaired independent edge-slot self-swap sketches, and a corrected236.251146240B known subtotal, the binding degree16-to-degree18 Hermite source drift was3.7176320441102146 versus the frozen.05 maximum, a74.352640882204292x threshold miss. The permanent claim blocks retry; no result JSON or array artifact exists because the failure preceded serialization. An independent result judge verified all manifest/source hashes and the failure path without rerunning. Preserve only the graph-orbit enumeration, independent-sketch symmetrization, cost accounting, and one-shot harness; reject this finite Hermite source representation. Manifest sha256 c977018f050fbad98f9b60a929bc690d9e3b4800d3b39004d24c2760f0b6d62b; claim sha256 a4cc3105546ef672aabd0e8a4f6d30cbc528c1d3f2815ed245572ac6935ecd75; failure sha256 e941c554acc25c0c8f3b934e7211d6a71cd6324e4e134aac82a1a62b00d9a222."
+    },
+    {
+      "id": "m117_collision_resummed_hermite_source",
+      "status": "killed_preexecution_cost",
+      "mechanism": "Partition local Gaussian k3/k4 by external-label equality, evaluate every repeated-label stratum exactly with at-most-trivariate truncated-normal moments, and apply the Hermite/TensorSketch graph expansion only to an exactly masked all-distinct weak-correlation bulk.",
+      "bias_class": "Prospective weights-only analytic source repair; no network outcome, target, contest/public data, scorer, manifest, or submission was executed.",
+      "prediction": "Exact collision resummation removes R_ii=1 boundary correlations from M113's Hermite tail while the complete rank4 two-sided source and collision action remain below272B with a certified all-distinct tail.",
+      "kill_condition": "Any collision double count, unimplemented all-distinct mask, near-collinear tail without a bound, symmetry/gauge defect, propagation nonclosure, rank-capture failure, or complete arithmetic above272B. No q/rank/degree/sketch retune after the arithmetic gate.",
+      "result": "Killed deterministically at the first arithmetic gate. The equality-partition decomposition is exact and retained, but k4 aabc contains99,486,720 ordered entries and the full k4 collision support99,943,936. Even granting free exact masking and zero moment-construction cost, two-sided depth32 sparse collision actions add153.815089152B to M113's corrected236.251146240B known subtotal, totaling390.066235392B and overflowing by118.066235392B before Price responses, transport feedback, masking, tail certification, QR, memory, or residual wall. Collision sparsity also densifies under W^tensor4 and does not prove rank4 capture or final k3/k4 closure. Preserve exact equality ownership, Tallis/Price low-dimensional moment specification, and the identification of aabc as the cost god node. A legal child must compress the universal trivariate collision vertex before action. Theory report sha256 cf85161bd190183d266593e44399b399daa07b986c14255cf89414ff89d240a7."
+    },
+    {
+      "id": "m118_separated_collision_vertex",
+      "status": "killed_preexecution_cost_and_mask",
+      "mechanism": "Represent the exact aabc collision cumulant as a certified separated approximation of its universal three-correlation function, turning explicit n3 sparse actions into structured n2-by-feature contractions while preserving all slot placements.",
+      "bias_class": "Prospective weights-only local analytic source compression; no network outcome, target, contest/public data, scorer, manifest, or submission was executed.",
+      "prediction": "The exact weak-coherence collision vertex has a very low separated rank, admits an exactly collision-masked bulk, retains the full source range, and leaves material budget for Price response and covariance feedback.",
+      "kill_condition": "Any separated-rank lower bound above the cost allowance, missing exact all-distinct bulk mask, uncertified PSD/tail/sketch error, full-source rank failure, affine densification without closure, or favorable subtotal above272B. No post-gate change to degree, rank, m, q, or tau.",
+      "result": "Killed deterministically. The first nonzero aabc jet is(xy+xz+yz)/(4pi) and has real separated rank3, so three banks are unavoidable. Their favorable two-sided actions, features, remaining collisions, QR, and inherited corrected subtotal total283.763288064B,11.763288064B over budget while exact masking, Price response/feedback, certification, and residual are still set to zero. The sketched bulk cannot be made collision-free by subtracting a different unsketched approximation; the only explicit15-term equality-inclusion schedule is about2968.443B before responses. The cross-pair quadratic blocks are generically full rank and affine transport densifies them, so fast local action is not rank4 closure. Preserve the exact quadratic jet, separated action identities, and masked-ownership warning; reject this frozen family. Theory report sha256 7ebbf13df6a6ddac017168239d54a35f8e8dbf73a4b8621977279536054ebb7d."
+    },
+    {
+      "id": "m119_schur_nystrom_adjoint_braid",
+      "status": "killed_preexecution_theory_and_cost",
+      "mechanism": "Approximate each Price/orthant Schur kernel by a shared low-rank PSD Nyström factor, braid that factor through output-specific covariance-adjoint columns, and deterministically recompress after every affine pull.",
+      "bias_class": "Prospective weights-only covariance-adjoint compression on a frozen Gaussian background; no contest outcome, target, scorer, correction oracle, package, or submission was executed.",
+      "prediction": "A rank at most8 Price-kernel factor controls the Schur action on every output adjoint, survives nonnormal affine transport with signed gauge-covariant recompression, and leaves a complete full-adjoint cost below80B.",
+      "kill_condition": "Any Schur-multiplier counterexample, diagonal residual requiring rank n, output-specific rank explosion, tied-eigenspace symmetry obstruction, missing mean/covariance source block, nonnormal error without a bound, or complete cost above80B.",
+      "result": "Killed before implementation. At the exact independent-coordinate background R=I, K=(11^T+I)/4. Although its leading spectrum looks rank one in Frobenius energy, every rank-r PSD truncation leaves maximum diagonal residual at least(n-r)/(4n); for n=256,r=8 an admissible rank-one adjoint loses at least48.4 percent under the Schur action. Preserving that diagonal exactly recreates rank n, and the complete provisional r=8 route is already84.963B before supplying the missing full coupled mean/covariance source. Preserve the exact Schur-factor braid, signed gauge-aware recompression specification, and the diagonal obstruction. M120 changes the representation rather than the rank cap: it keeps the separable and diagonal-reset pieces exactly and isolates only the zero-diagonal connected gate kernel. Theory report sha256 5cd6c7cb8e84efdc7ff769a12f5ddb5bcc02a6c861b8a4e8cb422b07ffa4806a."
+    },
+    {
+      "id": "m120_normal_ordered_price_adjoint",
+      "status": "killed_one_shot_connected_e_omission",
+      "mechanism": "Normal-order each Price gate kernel as pp^T plus an exact diagonal reset plus a zero-diagonal connected residual, and carry all output covariance adjoints in a shared symmetric CP state whose base rank grows additively by n per layer.",
+      "bias_class": "Prospective weights-only approximate covariance-feedback adjoint on a Gaussian background. Exploratory work is generated-only and contains no source correction, contest outcome, scorer, package, or submission.",
+      "prediction": "Exact separable and diagonal-reset transport repairs M119's R=I obstruction, caps the all-output factor bank at8192 atoms, and preserves the signed complete central-covariance Jacobian cheaply enough that omitting connected E remains accurate after nonnormal depth32 transport.",
+      "kill_condition": "Any raw-versus-central covariance derivative error, mean/covariance cross-block omission, multiplicative connected-E rank, source-ownership duplication, signed contraction instability, symmetry/gauge defect, or complete cost beyond the resource envelope.",
+      "result": "Killed after the sole hash-bound generated-only 648-record run and an independent exact recomputation. The corrected dense reference, central-covariance derivative, exact separable CP base, diagonal reset, lineage, and all 2592 directional contractions were valid; no corruption or lifecycle defect was found. However the complete-state omission error was .0840113671 globally versus the frozen .05 gate, and every width/depth cell failed its .10 complete-error gate (worst .13954 through .62999). Two directional cells also failed. This falsifies omission of the zero-diagonal connected Price residual E under repeated nonnormal transport, even though random directional probes often looked good. No retry is authorized. Preserve the exact local Price/Jacobian algebra and the lesson that directional tests do not certify the full covariance state. Claim sha256 d67328757378463dd22fb63fc747567b939d9781139790c70241e68a93b54d31; outcome c77185f28de498aff3111b6916c5f5888e838c8008462089e6b59c3dea84ad93; terminal 45ba65b2657222d0dccedcea36fea49e2383af0bd9595ba03ebef7363ce36e7c; independent judge 69088e1397c295780151884d21cc7260dc2d61c4c3819fa2bd212ebd4da028b7."
+    },
+    {
+      "id": "m116b_inplace_streamed_l3_b2048",
+      "status": "killed_one_shot_residual",
+      "mechanism": "Replace each 256-square layer multiply by an exact three-level Winograd/Strassen leaf bank, streamed over 2048-row blocks and reconstructed in place into dead caller-owned rows, so billed arithmetic falls without changing the estimator.",
+      "bias_class": "Exact arithmetic-preserving generated-only engineering mutation. It changes floating-point association but not the mathematical estimator; no contest/public/private instances, targets, scorer, upload, submission, or champion replacement were used.",
+      "prediction": "The 189.738221568B full depth-32 trace, numerical parity, whole-process peak, wall, and residual all pass fixed gates; the saved billed FLOPs then improve adjusted score without changing raw variance.",
+      "kill_condition": "Any source/runtime/trace drift, nonfinite value, depth relative error above2e-5, ReLU mismatch above2e-4, peak above464MiB, predict wall at least20s, residual above.170s, or lifecycle failure. One permanent run, no retry.",
+      "result": "Killed by its only failed gate in the consumed one-shot. Exact trace189,738,221,568 and1024 matmul calls passed; depth32 relative Frobenius6.329318763e-6, ReLU mismatch1.430511475e-6, peak186.58203125MiB, predict wall17.7161278s, finiteness and micro/shallow gates all passed. Residual was.6105131132s versus.170s, adding61.051311321B flop-equivalents and exceeding the residual allowance by44.051311321B. Preserve the exact in-place L3 operator, numerical certificate, real peak measurement, and call-overhead localization. This run identity/root is permanently consumed. Only a separately named B4096 research mutation with a fresh freeze and peak proof may proceed. Manifest sha256 8464f4e6d6a6a47ba5af7f3ee599c9e8aae0866a8d4ce88bdc9333abba829019; claim dc28bcccd71822e8760bb2168aac9340bcf4b04bceea48071232077e9c5436b1; failure a299f73e8880ae5b52d71d5403b97618aedaed76a988416b4bd4c5e7dc858e3b; terminal e7fa2cbc9d5b74a4cae1d748c87ddc7ea4857a8cd1095ad8046e10b1f1267fb1; independent result judge f07e50bf18190e7a864993a67ddbedf821576d86817d40f5fb9143c558a238d9."
+    },
+    {
+      "id": "m116c_inplace_streamed_l3_b4096",
+      "status": "killed_one_shot_residual_family_closed",
+      "mechanism": "A separately named B4096 child of M116b that doubles row-block height, halves full depth-32 L3 matmul calls from1024 to512, preserves the exact189.738221568B bill and in-place estimator, and uses a hash-bound external execution release.",
+      "bias_class": "Exact arithmetic-preserving generated-only engineering mutation with no contest/public/private instance, target, scorer, upload, submission, or champion access.",
+      "prediction": "If M116b residual was primarily call-bound, halving calls materially lowers residual while unchanged parity, trace, peak, and wall gates pass. The predeclared proportional forecast was adverse at.3052566s, so the unchanged.170s gate remained decisive.",
+      "kill_condition": "Any source/release/runtime/trace drift, nonfinite value, depth relative error above2e-5, ReLU mismatch above2e-4, peak above464MiB, wall at least20s, residual above.170s, or lifecycle failure. One permanent run; no descendants or B8192 tuning authorized.",
+      "result": "Killed by residual alone in its consumed one-shot. Exact bill189,738,221,568 and512 matmul calls passed; depth32 relative Frobenius6.917165706e-6, ReLU mismatch1.668930054e-6, peak205.109375MiB, predict wall17.2983878s, finiteness and micro/shallow gates all passed. Residual.3284645767s was1.9321x the.170s gate, close to the adverse proportional forecast. Together with M116b(.610513s at1024 calls), this is evidence that residual is approximately call-count dominated but is not causal permission for a larger block. Both identities are consumed; close the L3 family and preserve the exact operator, low measured peak, parity certificate, and two-point call/residual law. Release ec1431ac6669c9ede19486a13eec139bd9598e1535dbca4f9dc5c83b5c584a6d; claim4dd867f7bd339d2a360f60c2afd94c287cb1568d78df2c6b0a203517d8c5f1e9; failure5cb46ff45e9f4c28576261f1c76419385c88b054e444c742e1f48f224eca40f8; terminale7fa2cbc9d5b74a4cae1d748c87ddc7ea4857a8cd1095ad8046e10b1f1267fb1; independent result judge5480d97f004f91cf739534c833882ea86020904844dd864635480a5256c3e474."
+    },
+    {
+      "id": "m115_projective_arc_nystrom_control",
+      "status": "killed_one_shot_variance_and_cost_no_retry",
+      "mechanism": "Normalize the first-layer weight axes, form the exact rectified-Gaussian arc kernel M, and use the projective quadratic control phi(u)=(h(u)^T c)^2/(c^T M c)-1 with an antipodal closure and a frozen rank-128 Nystrom coefficient bank.",
+      "bias_class": "Conditionally exact-zero generated-only control-variate screen. The one-shot used four fresh generated width256/depth32 networks, fixed frame-level five-fold splits, and no contest/public/private instances, truths, scorer, package, champion, upload, or submission.",
+      "prediction": "The exact projective centering and learned first-layer arc geometry reduce every held network variance enough to beat an equal-wall baseline after the frozen measured cost charge.",
+      "kill_condition": "Any theorem, source/hash, lifecycle, independence, numerical, wall-proxy, equal-cost, per-network, pooled, or bootstrap failure. One permanent generated-only run; no feature, rank, split, coefficient, seed, or cost-model retry.",
+      "result": "Killed decisively after the sole manifest-frozen generated-only run and independent NPZ recomputation. The exact-zero identity and all preexecution gates remain valid, but the finite carrier worsened every raw network: ratios[1.4612050,1.5311785,1.4556799,1.8570633]. The frozen maximum cost multiplier2.9944382 gave charged ratios[4.3754881,4.5850195,4.3589436,5.5608614], geometric4.6959423, pooled4.6759236, and deterministic bootstrap q90 4.9768227. Preserve the exact projective mean theorem, arc-kernel construction, calibration/lifecycle harness, and independent evidence chain; reject this first-layer projective observable and forbid retry. Evidence NPZ sha256 4f643a115216cb53cef7bfeaa409db42ed68f0ca0e85091dcef4d0a36e7849bd; claim a6bb8a5d51455144caf82f3705656d4d43f5b3701f901883d77c18383d87ee45; result 8680a76dd696761c3fb008be439408da89fafa34a26250046bcd0b080b6ba6a2; terminal39efe564277a6b5a20fc67bd36ba43e6fb307ae5dcb5d9aae463e07c4f703918; independent result judge9cc4e58ba79c7255375d86e6ad7c96b218c400549062def2fb61fe23d112c90f."
+    },
+    {
+      "id": "m121_bridge_source_normal_adjoint",
+      "status": "repair_source_interface_carrier_blocked",
+      "mechanism": "Insert a signed non-Gaussian k3/k4 source at one hidden layer, transport it through exactly one affine map, convert it immediately into a mean/covariance Edgeworth defect, and propagate only that Gaussian tangent to the terminal mean.",
+      "bias_class": "Prospective deterministic first-Born one-delay cumulant correction around the Gaussian background; generated theory only.",
+      "prediction": "Joining the missing M85 source interface to a complete response carrier recovers downstream mean/covariance feedback without propagating a higher-order tensor through multiple ReLUs.",
+      "kill_condition": "Any diagram double count, nonzero-mean source omission, unresolved generic n4 source contraction, incomplete response carrier, or protected total above258.4B.",
+      "result": "Theory repair only. Exact delay-one Edgeworth source-to-(delta mean,delta covariance) formulas and a non-overlap ownership partition are available, but the original M120 reverse carrier is now killed and the all-output repeated-index k4 source contraction remains unresolved. Preserve the source/response interface for a different carrier; no efficacy outcome was run. Theory audit sha256 0754c6ed2c4a47d6b961df93e29d8480b66843fc5dfee15980ea9f370212828f."
+    },
+    {
+      "id": "m122_nonzero_mean_bridge_source",
+      "status": "preserved_source_algebra",
+      "mechanism": "Define signed nonzero-mean central k3/k4 ReLU bridge-tree sources using exact Hermite coefficients, exact pair resummation, exact collision strata, and distinct-node star/path diagrams.",
+      "bias_class": "Exact local algebra plus an explicitly approximate tree truncation; generated small-width reference only.",
+      "prediction": "A gauge-covariant source with correct nonzero-mean stars and collision ownership can feed a separately certified low-rank or direct response contraction.",
+      "kill_condition": "Any Hermite/collision/reference mismatch, gauge or permutation defect, or claim that the source itself resolves generic full-output k4 contraction.",
+      "result": "Preserved as a verified component. Six target-free generated tests validate signed pair/tripartite moments, central collision cumulants, projected tree contractions, and permutation/positive-gauge covariance. It does not solve the generic n4 iijj table or certify deep efficacy. Theory sha256 5086c2108c84adb25c73555cbffd73177e1932efb3d6bfd4b42ce61dd8c4904f."
+    },
+    {
+      "id": "m122_bridge_tree_factor",
+      "status": "repair_implicit_operator_not_factor",
+      "mechanism": "Construct the k3 mode Gram exactly in O(n3), project k4 path/star cores once a factor is supplied, and expose an exact O(n3) matvec for the generic k4 Khatri-Rao Gram obstruction.",
+      "bias_class": "Generated algebra and static target-cost audit; no estimator outcome.",
+      "prediction": "A cheap exact k3 projector or a certified implicit k4 spectral operator may avoid materializing n4 tensors.",
+      "kill_condition": "Treating an O(n3) matvec as a free top-four factor, omitting gap/residual certification, or exceeding the source-layer cost envelope.",
+      "result": "REPAIR. The exact k3 Gram and projected k4 core survive, but a target-valid rank-four k4 HOSVD does not: its full Gram contains a generic Khatri-Rao quadratic subnetwork. Preserve the exact matvec and factor/core identities. Report sha256 e5a7f41a58efe72481e70e0bcc3c192f38394bc47890f7e8f8335fb9b84db03f."
+    },
+    {
+      "id": "m123_implicit_krylov_source_factor",
+      "status": "killed_preexecution_static_cost",
+      "mechanism": "Use the exact 16-orbit k4 path-pair reduction in a deterministic block-Lanczos schedule to obtain a certified rank-four source projector at every source layer.",
+      "bias_class": "Prospective deterministic generated-only spectral source construction.",
+      "prediction": "Two exact block Gram actions plus a residual/gap certificate recover the projector inside the152B incremental source envelope.",
+      "kill_condition": "Minimal certified schedule above152B, missing complement-gap proof, equivariant start degeneracy, or incomplete nonzero-mean/collision source.",
+      "result": "Killed before outcome. The 144 path pairs reduce exactly to16 orbits, but the minimal nontrivial K2 factor plus residual costs215.417B charged; even an optimistic .779 Strassen credit is167.810B before stars, collisions, cores, response, and wall. Preserve orbit fusion and fail-closed spectral rules. Theory sha256 112e392df792716ba3474d38b0b60d2139fedba3c5e62e38299f98ba8d9607c2."
+    },
+    {
+      "id": "m124_shared_k3_source_projector",
+      "status": "preserved_blocked_shared_reference_211_omission",
+      "mechanism": "Choose one standardised rank-four projector from the exact collision-corrected k3 mode Gram, reuse it for k3 and k4, form exact projected nonzero-mean path/star/collision cores, and transport the resulting one-delay source without constructing G4.",
+      "bias_class": "Deterministic approximate bridge-tree source compression; generated algebra only and execution-inert.",
+      "prediction": "A shared k3-selected subspace preserves at least .80 of each source order and no more than .50 relative error in the transported repeated-output k4 response while leaving room for a complete forward carrier.",
+      "kill_condition": "Any separate or joint source fidelity below.80, repeated-output k4 error above.50, rank-boundary tie, symmetry defect, source cost at least99B, carrier cost at least53.1657024B, or use with an unpassed carrier.",
+      "result": "Preserved source component, blocked. Ten target-free algebra tests pass and M125b now satisfies the mathematical carrier interface, but a new hostile audit found that M124 and its dense reference share an omitted three-label [2,1,1]/aabc collision: _replace_collisions handles only one or two unique labels. On the pre-existing generated width8 seed1240801, the tree continuation has.69718 relative error within that stratum; the exact stratum has.13172 of the base-source norm and changes transported repeated k4 by.07395 and one-delay mean/cov responses by.01318/.02102. Thus the unopened grid could not independently detect the omission. Keep DRAFT_NOT_FROZEN, execution_authorized=false, outcome UNOPENED. Preserve the exact k3 Gram/projector and one/two-label collision algebra, but require a separately referenced and charged aabc mutation before any freeze. Protected98.8342976B was a reserve worksheet, not a complete source trace. Original hostile audit M124_SHARED_K3_PROJECTOR_THEORY_20260807.md; shared-reference audit sha256892be927a688afb9fb2ce94d91a13173773db8cd654d80eef571debcca387fe3; audit script58c5e4c890320c37667577935d3e8eb7105e0310f110276c898aa40ee8553c2c."
+    },
+    {
+      "id": "m125b_source_batched_forward_tangent",
+      "status": "passed_carrier_component_independently_judged_cost_repaired",
+      "mechanism": "Exploit exact first-Born superposition on one frozen Gaussian background: add each layer's already-constructed post-ReLU mean/covariance defect into a single inhomogeneous forward tangent, then apply the complete affine-plus-ReLU Gaussian Jacobian only once per remaining layer.",
+      "bias_class": "Exact source-agnostic linear response carrier. It introduces no approximation beyond the separately supplied source model and contains the full connected Price kernel, mean/covariance cross blocks, and direct diagonal limits.",
+      "prediction": "The 31 explicit source suffixes requiring465 tangent stages coalesce exactly to30 stages plus31 source additions, preserving every final mean/covariance entry while reducing the protected carrier-plus-background bill to12.819347280B.",
+      "kill_condition": "Any finite-difference, explicit-superposition, diagonal-limit, row-orientation, symmetry, source-indexing, terminal-ownership, installed-float64-cost, or independent-audit failure; no source efficacy is claimed by the carrier alone.",
+      "result": "Primary and independent audits pass the source-agnostic carrier mathematics. Finite differences show second-order convergence; forward/M120-adjoint duality agrees at7.77e-16; 465 explicit suffix stages equal one30-stage recurrence; row orientation, symmetry, diagonal limits, and terminal-source ownership pass. The independent native carrier trace is4.065961472B and reproduces the6.189400128B background anchor, giving12.819202000B after one25% planning reserve. Repair the earlier12.819347280B wording: it conservatively overcharged a nonexistent31st source add while omitting30 billed diagonal writes, so it was not an exact installed call trace. Exact endpoint-aware K/Hmu/Hv construction, labelled layer contracts, integrated source construction, allocations, residual wall, and the ABAB/iijj source remain blockers; terminal Born still cannot be added without exact subtraction. No outcome grid is authorized by this component pass alone. Code sha256 fbc9fe32357801b22f0313d4043022e81e2764ff3bf4be94f0dfe3ddb3d1ed32; tests1fea02791adb9e29e6913ec3a1e4a4a46ac765c999725c3f128a729a1516643b; pretheory5a6b5b96c74093b5fd90bdd475e86d5aaac68df4770ca807fae41bce33b7ad9c; theory99dea1651ecb6c73f6368b461dfc2bb23864d45b15f06c32f35c83dea393c69e; component report4854ec5aa6c3d0b903612534a8555e7b1dbea04e21b47de4b8086808a8e2a6df; independent judge f975c4c115ac1b331ddfa47267f840f5d1fa797ebbac752de5aebad922856020."
+    },
+    {
+      "id": "m128_second_order_cumulant_response",
+      "status": "repair_exact_response_missing_source_frechet",
+      "mechanism": "Extend the frozen-background first-Born recurrence to classical Edgeworth order two: add the linear connected k4 response and the disconnected k3-squared term with coefficient1/72, then coalesce all unordered source meetings in a second inhomogeneous mean/covariance tangent.",
+      "bias_class": "Deterministic signed second-order Edgeworth/Gram-Charlier response. Exact combinatorics and Gaussian response derivatives are separated from the still-approximate cumulant source model; positivity is not assumed.",
+      "prediction": "Repeated-output iii/iij/iiii/iiij/iijj tables suffice without a k6 tensor, and the second tangent remains O(Ln3) with an extra dense float64 affine lower bound4.019B to4.153B.",
+      "kill_condition": "Any coefficient or source-pair ownership error, explicit-pair parity failure, inability to differentiate the state-dependent source Dkappa[a] below100B protected, biased probe-product ownership, unstable order-two/order-one ratio, nonfinite output, or frozen generated width-law deterioration.",
+      "result": "REPAIR. The exact order-two response closes on existing repeated-output k3/k4 tables; b'=Jb+0.5H[a,a]+DS[a]+T coalesces all earlier-source meetings without O(L2) propagation. For M126 hard probes plus both tangents, the optimistic dense lower bound is(P+2)*4.153B, making P<=22 necessary below100B and leaving about25.25B at P=16 before easy source work. The binding missing operator is the Frechet derivative of the state-dependent source, especially differentiated Hutchinson ABAB contractions and their unbiased product ownership. Celli arXiv:2605.24072 supports combinatorics and warns of finite-width oscillation but does not certify fixed-weight accuracy; Voigtlaender arXiv:1710.03576 supports distributional Gaussian derivatives. No outcome run is authorized. Theory sha2560f80ad6b129118c7b68a36d65b295b85541305aa3fcf6e306f9e21c7a79601b9."
+    },
+    {
+      "id": "m126_repeated_output_source_contraction",
+      "status": "repair_blocked_independent_component_pass",
+      "mechanism": "Compute only the repeated iii/iij/iiii/iiij/iijj cumulant slices consumed by the one-delay Edgeworth response. Collapse all k3, k4 stars, AAAB paths, AABB block paths, diagonal values, identity bridge pieces, and one/two-label collisions to exact O(n3) matrix identities; estimate the remaining pair-feature quadratic forms with outcome-independent probes.",
+      "bias_class": "Exact deterministic easy source plus unbiased stochastic ABBA/ABAB and [2,2] residuals on the reduced M124 collision convention. A float32 child adds deterministic roundoff bias controlled only by explicit parity gates. Exact M122 [2,1,1]/aabc is absent.",
+      "prediction": "Eight float32 probes plus the passed M125b carrier fit a conservative planning worksheet at94.490251600B, leaving5.509748400B below a100B child envelope while preserving probe expectation and output symmetry.",
+      "kill_condition": "Any orbit/dense-reference, Rademacher expectation/variance, cancellation, float32 backward-error, symmetry/gauge/permutation, response-variance, complete-cost, wall, or independent-audit failure; calling the reduced collision convention an exact M122 source is forbidden.",
+      "result": "REPAIR/BLOCKED with independent PASS_COMPONENT. Eight generated tests pass under both authors. The judge confirms orbit algebra, the hard aggregate2(B_ab+B_ba)^T E(B_ab+B_ba), unbiased Rademacher variance, [2,2], and the twelve-slot [2,1,1] oracle. It also confirms a feasible but unimplemented24-call fusion and the94.490251600B P8 worksheet arithmetic; this is not an integrated trace. Exact-M122 and cost-only promotion remain killed because [2,1,1] is absent. New hostile findings: collision tables need explicit bit symmetrization; three collision inputs accept illegal nonzero diagonals; naive entrywise/output variance ratios range.209 to5.415; one exact-zero entry has one-probe variance4/3. True f32 prototypes pass57 backward-error bounds but gates are unlocked. Distinct signed Hadamard P8 gives exact variance factor248/255. Fixed-count weights-only importance edges give generated n64 matched-cost source-table MSE ratios.169-.364, median.216, but omit output response, full cost, and aabc. Preserve these as mutations, not promotion. Theory sha2560695954233060b8aa452781d8960a7f9662cbee9643bb94a400f88a9a7235846; independent judge add86c000ab206c11f1ba1e8b14ab646255463a727f450c90644c8119f1369e4; code f0462b96e7f898812d39b7a39f458f965835523f2a4c7a509c43f62dc7c1011c; tests7c78c5b61bb17ffe19f36bf40c6e72b0cf559b33a4b62eaeea818b7120f620fc."
+    },
+    {
+      "id": "m129_source_frechet_tangent",
+      "status": "repair_p2_mixed_f32_higher_counts_killed",
+      "mechanism": "Differentiate the entire state-dependent M122/M126 source, including normalized background coordinates, local Hermite vertices, bridge, every collision stratum, tree/path contractions, and stochastic source tables. Contract the full three-label [2,1,1] defect and its tangent with a new hollow-quadratic Rademacher estimator rather than materializing an n4 output tensor.",
+      "bias_class": "Exact generated source Frechet algebra plus conditionally unbiased pathwise stochastic contractions. Current deployment cost assumes a future constant-work trivariate coefficient builder and mixed-f32 dense calls; the executable Hermite series is reference-only.",
+      "prediction": "The second-order DS[a] blocker closes in O(Pn3) with fresh current-layer probes. A complete mixed-f32 P2 implementation may fit below100B if call fusion reaches the lower schedule and non-GEMM source construction stays within8.277B.",
+      "kill_condition": "Any full-source/tangent finite-difference, collision ownership, diagonal hollowness, fresh-probe conditional independence, explicit-probe average, cost, parity, or complete protected trace failure. Mixed-f32 P>=4 and all-f64 P>=2 are statically killed.",
+      "result": "REPAIR at mixed-f32 P2; eight generated tests pass. For packed hollow A_(i;jk), the estimator uses t_i=2sum_(j<k)A_(i;jk)z_jz_k, u=W^Tz, M=W^Tdiag(t)W and explicit aaaa/aaab/aabb formulas; reusing z for A and Adot gives an exact pathwise unbiased tangent, while layers require fresh probe keys after probe-dependent feedback. The new contraction removes n4, but direct 24-term trivariate Hermite construction costs at least945.273B term visits. Mixed-f32 P2 is91.723B optimistic lower and147.344B protected upper; P>=4 lower exceeds100B. Preserve the algebra and attack constant-work trivariate boundary evaluation plus tree-call fusion. Report sha256de38f0f7fe473a77215db1d9c2ac756c515807be6bed13de2d95fcad763a812d; code b7b9d4b0228331972f7fd7b5bd2fb6081ba3053d25daf64f3f8dd0f84e31a6bf; tests539787960221759664777211b709cdb05dfe870c8312f3c67c12842990c32000."
+    },
+    {
+      "id": "m130_direct_aabc_quadratic_collision",
+      "status": "repair_preserved_quadratic_component",
+      "mechanism": "Replace the silently omitted three-label collision by the universal quadratic vertex (xy+xz+yz)/(4pi), contract its complete twelve-slot aaab slice and repeated-pair aabb slice exactly in O(n3), and estimate only the remaining split-pair aabb term with a direct Rademacher identity.",
+      "bias_class": "Exact algebra for the quadratic weak-correlation jet, not for the full nonzero-mean trivariate ReLU cumulant. Probe expectation is exact for that jet; the cubic-and-higher vertex remainder remains deterministic source bias.",
+      "prediction": "Output alignment avoids M118's global pair-range action: f32 P2 component cost is40.305B protected before carrier, full-vertex coefficients, response, and residual, with exact slot/gauge/permutation ownership.",
+      "kill_condition": "Any twelve-slot, dense-oracle, exhaustive-probe, collision replacement, gauge/permutation, full-vertex remainder, probe-variance, or complete-cost failure; adding the component atop an existing collision source instead of replacing it is forbidden.",
+      "result": "REPAIR/preserved. Six generated tests pass. The aaab and repeated-pair aabb quadratic-jet contractions are exact cubic; the full split-pair aabb estimator averages exactly to the dense twelve-slot oracle. At31 layers the component costs39.007B f64 without complete aabb,80.533B f64 P2, or40.305B f32 P2, excluding carrier and all missing full-vertex work. This moves the omission to a falsifiable remainder-and-variance problem but does not fit beside the current P8 M126 child. Report sha25676f9c9af63377d71b66738bfde2d3aaff986499be606f58f18eb87a7f40dd4d2; code d360bd80f0054d0996b932d7b12445c7d8e2c972d3e1a8dfd5cd0cad05f71c0b; tests78800edd736fdb984ee477fa2eae5574edf1e35e40e24cb1a709e6a1236463be."
+    },
+    {
+      "id": "m132_p8_reduced_source_protocol",
+      "status": "killed_preexecution_by_211_omission_gate",
+      "mechanism": "Freeze a target-free generated-only protocol around the M125b carrier and M126 mixed-f32 P in {2,4,6,8} reduced source, with same-probe tables, exact easy contractions, an independent M122 [2,1,1] oracle, and an inert hash-bound manifest.",
+      "bias_class": "Prospective weights-only analytic/stochastic source estimator. No contest truth, model outcome, scorer, package, or submission was executed; the manifest explicitly denies execution authorization.",
+      "prediction": "P8 would have a94.490251600B worksheet cost only if the omitted three-label collision, its response, full source assembly, and residual charges were zero or separately repaired.",
+      "kill_condition": "Any nonzero independent [2,1,1] source mass or delayed response not represented by the candidate, f32/f64 parity failure, response mismatch, symmetry/gauge failure, hidden outcome dependence, incomplete cost, or manifest activation without independent audit.",
+      "result": "KILLED BEFORE EXECUTION. Six target-free tests pass, but the independent M122 small-width oracle exposes nonzero omitted [2,1,1] source mass and one-delay response. M130 supplies only the quadratic jet, without a certified full trivariate vertex, remainder bound, or matched-cost variance law. Therefore the P8 worksheet is not a complete estimator and no efficacy run is authorized. Preserve the shared-sign mixed-precision probe protocol, exact easy contractions, M125b interface, and independent omission gate. Report sha2567d905ad9d53d12a5644ea319db2b473dea47fac260d0e2f3159f94f717889b96; manifest51827b2bac6eb4e5b0f70b5ec284f02f3ae0280136586f4c07e68085c4245063; code065e741b46d891dcc7379bbf7637e005e0f9c0db9209a5ce909d4642fccd90a3; tests584003ec118791f29602979483088227a224929b6f469b951a13eedd83be81c8."
+    },
+    {
+      "id": "m131_trivariate_boundary_and_sampled_source",
+      "status": "killed_complete_candidate_components_preserved",
+      "mechanism": "Evaluate the exact nonzero-mean [2,1,1] boundary coefficient and its Frechet tangent, or bypass coefficient enumeration by sampling complete affine-projected normal-ordered k3/k4 ReLU sources from independent Gaussian banks and propagating them through M125b/M128. Two distinct banks give an unbiased ordered k3-squared U-statistic; Haar/simplex directions times independent chi radii preserve exact Gaussian marginals.",
+      "bias_class": "The direct boundary evaluator is deterministic and exact but unaffordable. The sampled-source arm is unbiased for the Gaussian-closure source at fixed background, while the complete Edgeworth estimator retains analytic truncation bias. The only efficacy audit used fresh generated n32/L4 networks and an independent 800000-path reference.",
+      "prediction": "A complete second-order sampled source might fit below100B at 256--512 samples per bank if antithetic/structured geometry or exact low-chaos controls reduce final response variance enough to beat matched-leading-work direct sampling.",
+      "kill_condition": "Any surviving Q3 term, boundary stream above budget, loss of marginal Gaussianity or cross-bank independence, unequal-work variance reversal, analytic bias floor above direct risk, target-shape protected cost at least100B, or generated final-mean MSE not materially below matched direct sampling.",
+      "result": "Killed as a complete candidate after 11 independently rerun tests and a generated response audit. The trivariate Q3 term generically survives cumulant/tree subtraction, so direct target streaming needs at least1,973,816,524,800 density evaluations. First-chaos control reduces same-S variance to.823x but its extra products halve the affordable S and make equal-work variance1.587x worse. Gaussianized Haar/simplex banks are unbiased; the best full-budget antithetic Haar variance is.930x iid, but best analytic MSE5.688e-4 is3.287x matched-leading-work direct MSE1.730e-4 and the estimated analytic bias floor2.277e-4 already exceeds direct MSE. Preserve the exact boundary oracle, projected normal-order/Cholesky tangent, ordered-distinct-bank M128 k3 convolution U-statistic, and Gaussianized geometry. Report sha2564938b89da1a0a502166541a55cf471d02c2750ca39eb851dc8a4aa236ee045df; code1bb1912b82f8d7b7a204bc19d0d260a9050f02e83b8e87d322188632882ecac3; tests60be4a4c7481a2bb40f28d8a89a7f99bdce738b4ac573cdd93276c9bb4d0e207; response7d1fb8231eb3558e433a1e5623edc52d0328921d90b18090b7cd9d0f471251cf."
+    },
+    {
+      "id": "m133_factored_hidden_edge_sampler",
+      "status": "killed_complete_allocations_components_preserved",
+      "mechanism": "Sample exact [2,1,1] collision triples from an O(n2) factored three-bank conductance law with a fixed uniform rescue, contract each sample into all repeated output slices using five batched products, and combine it with fixed-count conductance-weighted path/[2,2] edge sampling. Freeze proposal probabilities at the Gaussian background so the Frechet tangent differentiates only the sampled contribution.",
+      "bias_class": "Unbiased Hansen-Hurwitz/Horvitz-Thompson source estimator on generated analytic coefficient tables; no contest outcome, target, scorer, package, or submission was accessed. Width scaling and target cost are screens, not performance claims.",
+      "prediction": "A balanced first-order allocation could fit below100B and beat P8 source MSE if the strong width12--24 conductance concentration persists at width256; a complete second-order child additionally needs primal and tangent edge/triple work.",
+      "kill_condition": "Any ownership, proposal normalization, direct-scatter, frozen-q tangent, output-response variance, widening trend, exact coefficient, gather/allocation/wall, or protected cost failure. Promotion requires one allocation to pass cost and variance simultaneously.",
+      "result": "Killed fail-closed after root reran all13 tests. Exact O(n2) proposal, canonical collision ownership, five-product batching, fixed-q tangent, and edge sampler pass. At k_edge=640, kappa2 costs94.94094024B but projected width32 MSE is1.2226x P8; kappa3 reaches.8151x but costs102.25475784B; kappa4 reaches.6113x but costs109.56857544B. Complete second order is over budget after a29.232B edge-tangent increment plus repeated triple products and coefficient derivatives. Preserve the proposal/batching/tangent/operators; reject only these cost-variance allocations. Report sha2560e634a01d1c46244ac011dace3e4f41bf1698d32ecd734e346a68ab590a12bbf; codec296c95ede532c1451e0444b9d56b51e96287ef251b11de9cacee0df7d1ea6b1; testsde245651f539239be79462b6b5e5c1e4a198cd1a2a68d2424258e6db2a26e107; results7f35e18750430b097ef527cfa3ff3a06e3ee68296317bfb73368f1ccc8a7bf18; manifest8dabdeb6a8a68384b34357a788b61ab2f8d2c6e404015ed1d1fa7c7ebf115195."
+    },
+    {
+      "id": "m134_hermite_graph_degree_sampler",
+      "status": "killed_raw_degree_sampling_components_preserved",
+      "mechanism": "Represent exact central [2,1,1] incidence as a finite signed population of hidden Hermite graph factors, sample degree/sign/configuration jointly, contract each fixed configuration through one masked triangle GEMM and one output Gram, and propagate a frozen-probability Frechet tangent.",
+      "bias_class": "Unbiased randomized Hermite graph/configuration estimator only when the infinite degree series is integrable and roulette conditions hold. The generated audit evaluated finite exact response populations and static target cost without contest data.",
+      "prediction": "Graph-degree importance sampling could bypass the explicit trivariate coefficient builder if high-correlation Hermite tails converge uniformly and one/few joint probes match or beat M129 P2 variance within the remaining budget.",
+      "kill_condition": "Any ownership/tree-subtraction error, nonintegrable or exploding high-correlation tail, joint response variance above the P2 comparator, missing roulette certificate, unpriced coefficient builder, or complete protected total above100B.",
+      "result": "Killed as raw degree sampling; root independently executed all8 tests. The exact masked-triangle and nine signed tree-factor identities survive, and primal/Frechet contractions close in three hidden plus two output GEMMs per sample. At equicorrelation rho=.975 the partial sums at horizons12..32 grow3.099,3.151,4.098,22.29,382.96,7667.42, so no global convergence/RR integrability certificate exists. Exact width4 response enumeration gives joint variance22.34--93.40x the hidden estimator and44.68--186.81x M129 P2, requiring45--187 samples. First-order K1/K2 already reach97.086B/99.681B before the unpriced builder; second-order protected uppers are145.681B/152.169B. Preserve the incidence, signed tree control, masked triangle contraction, and tangent as residual machinery after a future analytic resummation. Report sha256a205cfcb18d0d61c9db14f33c3b6107c6c2db235ba15a2f62cecceddaf0e0ab3; code3afa4be388a787b0d9e28e5d373cd25199315b7dfcdbe2b7fc8f10a583096e72; tests0c6fd1cd853880cbfcf54cb55a57543476bf4f7c35c13f235bb033693851b3dd; results5c2c15adfa09ce57bb8b55088689e87517e2eb1e7d1627d46afe02e15dc0ba16."
+    },
+    {
+      "id": "m135_conditional_lowrank_source",
+      "status": "killed_generic_deployment_true_lowrank_operator_preserved",
+      "mechanism": "For an exactly typed Gaussian state C=diag(d)+UU^T and matching Frechet tangent, condition on the r common factors, integrate every independent residual-coordinate ReLU moment through order four analytically, assemble complete repeated k3/k4 sources, and sample only the common factor. For an approximate factor, use an explicit Gaussian density-ratio or Price-series residual correction rather than silently changing the law.",
+      "bias_class": "Exact/unbiased conditional Rao--Blackwell source and tangent only when the displayed factor value/tangent identities hold. Density-ratio correction is unbiased when integrable. All audits were generated-only and used the complete M121 output functional.",
+      "prediction": "A genuinely low-rank typed local law can cut complete output-functional variance by an order of magnitude; generic deployment requires a small exact rank or a finite-variance residual correction and enough common-factor rows within100B.",
+      "kill_condition": "Approximate factor accepted as exact, generic dimension rank above the budget, nonpositive density-ratio L2 matrix 2C^-1-C0^-1, divergent Price roulette, complete output variance failure, unvalidated float32, or protected total at least100B.",
+      "result": "Killed for generic deployment after root reran7 tests. On a true generated rank2 state, three common-factor rows reduce complete output-functional variance to.07140x M131 iid, a real14.0x Rao--Blackwell win. Generic width256 covariance needs r>=234 even to cover an open SPD set. A generated dense width256/depth4 diagnostic leaves residual Frobenius fractions.875 at r2,.106 at r64,.0214 at r128,8.39e-5 at r234; the exact density-ratio correction has infinite second moment for every r<=234 and only r255 is finite. Exact f64 totals are75.707B for one row/bank and117.240B for two; a hypothetical unvalidated f32 three-row schedule is96.483B. Preserve exact conditional formulas/tangent, strict factor gate, density-ratio L2 certificate, Price-RR identity, and output-influence audit. Report sha25671a068e5c6e09b4db6406b71b0cba89ce335d0a8e71e516106882bbc211583b3; codeddb2a9b29b241ad6052eb1cf843b544ee0d7866b056297b3b2e4d54e86b3802c; tests5a913c536a1affbb151cdcd56d5c054063be9266646ce90da4d963ce0e09d497; audit4776ce2d5ca59aaebe50147cb7422a1433d8600545490b1c70a3f8bdddb29b6d; spectrumb494acf9984e38a932719dd2d3c6ad785557fa91a6563a9e3a197a8fbce2524e."
+    },
+    {
+      "id": "m136_equivariant_diagram_transformer",
+      "status": "killed_generated_implementation_components_preserved",
+      "mechanism": "Canonicalize positive ReLU gauge, compile signed star/ABAB/ABBA/[2,1,1]/delayed-response graph motifs, add one actual signed edge-attention channel, and fit a frozen 19-parameter causal lag head on fresh synthetic networks with active shuffled-network-label control.",
+      "bias_class": "Deliberately learned generated-only analytic-residual model. It is permutation/gauge equivariant and package-shaped but biased; no contest/public/private labels, scorer, champion, or submission entered training or evaluation.",
+      "prediction": "Explicit hard motifs plus signed attention should halve held-network analytic-anchor MSE with bootstrap95 upper below.5, outperform a low-order star-only head and an active shuffled-label null, and admit an honestly billed target inference below80B.",
+      "kill_condition": "Any symmetry, exact motif representability, active-null, independent-teacher, grouped holdout, attribution, absolute ratio, resource, mixed-precision, or package gate failure. No retry by data, epoch, width, capacity, or post-outcome feature selection.",
+      "result": "Killed after a corrected spec-complete generated run and root reran6 tests. Permutation/gauge tests and exact synthetic motif representability pass; the active shuffled-label null is rejected and independent teacher disagreement is bounded. The full attention-fed child reaches held ratio.682857 with bootstrap95[.423198,.994847] versus the required upper<.5; star-only is.505128, so hard motifs do not add reliable held signal. Its33.145B f32/66.289B f64 figures are conditional arithmetic worksheets, not accounting certificates. Preserve gauge canonicalization, signed edge attention, [2,1,1] compiler, motif capability tests, and grouped validation; reopen only around a new observable or exact resummation identity. Report sha2568e512d10023db50a361c6dae365112bcbfa5c0f385afc34796b4f3769af73052; code6fd1ec64767a53e5182f451f17b92d66fe078de90173d298f867312f49cd367e; tests9666b731827da3ccd4bd40e074b704aaa08ead9ae12d62d4fc0a7ee407c6ea29; resultsef3cc874adad9de654b91ce5c7916a70e7c76a90a8ab9caf12790c47cbffd675."
+    },
+    {
+      "id": "m137_terminal_law_resummation",
+      "status": "killed_closures_theorem_preserved_numerics_unverified",
+      "mechanism": "Grant exact terminal mean, variance, third cumulant, and fourth cumulant for free, then map those four moments to the ReLU expectation using second-order Edgeworth, quartic maximum entropy, a moment-matched two-Gaussian mixture, or a certified moment interval.",
+      "bias_class": "Terminal closure study only; upstream moment acquisition is explicitly excluded. Edgeworth is a signed asymptotic density correction, MaxEnt and mixture are parametric selectors, and the interval is distribution-free. The generated numerical run used an uncaptured SciPy-capable environment and is not reproducible in the configured runtime.",
+      "prediction": "If a nonlinear four-moment law improved Edgeworth MSE by at least tenfold on fresh generated depth-32 networks, exact k3/k4 could plausibly bridge from the Gaussian-closure cap toward the visible frontier.",
+      "kill_condition": "Four-moment non-identification, nonnormalizable saddlepoint law, infeasible or negative density, generated closure MSE not at least tenfold below Edgeworth, uncaptured dependencies, or any claim that closure cost includes source acquisition.",
+      "result": "Killed. A standard normal and the symmetric three-atom law with masses 2/3 at zero and 1/6 at each of plus/minus sqrt(3) share the first four moments but have ReLU means .398942 and .288675; the symmetric feasible interval has width .211325 and supremum .5. In the frozen generated table, Edgeworth MSE is4.062e-7 while MaxEnt is1.984e-6, the two-Gaussian selector3.744e-6, and the interval midpoint6.214e-6. Root audit found the original 7-test claim false in the captured runtime because an optional-SciPy guard preceded a dependency-free analytic branch. The source was minimally repaired and all7 tests now pass, but the frozen JSON was not overwritten and remains numerically unverified here. Preserve the non-identification witness, feasibility/normalizability gates, and moment interval; reject four-moment resummation as a route to number-one accuracy. Original report sha256bde252a4a6121066c6458d2a1b385cb88af062b812965093ffea39b9b97d0800; frozen result608d056b1d2a16f8e9a4feaf17ca4367923531541ef122500bf02c63e7923486; original sourcef20e28d3b6aecb66bed977293fdf186cece8c6fbc20e27c8bc122824789b24f9; repaired source2b0b9e83a1a59fc85c91bc0fd582bf19fcfa126c8a540ea933d9f5045a4452cc; reproducibility auditf1260b412ee66137ed4d1a25b0c34a5d4d095b89af93d4b41e4b3c9c5e282633; testsb0edb2755b6d13e5091c254e1ee38379469538cb5bf8a4f051ec8abf98f4affe."
+    },
+    {
+      "id": "m138_balanced_triple_sampler",
+      "status": "killed_output_variance_operator_preserved",
+      "mechanism": "Keep M133's exact factored proposal, five repeated-output products, 5 percent uniform rescue, canonical Hansen-Hurwitz weight, and frozen-proposal tangent, but replace independent triple draws by randomized balanced center incidence and Latin/orthogonal-array neighbor coupling with the same labelled-row marginal.",
+      "bias_class": "Exactly unbiased dependent-sample estimator because every labelled row retains the parent q marginal; dependence changes only variance. The premise audit is generated-only and evaluates the complete M121 mean/covariance source through the M125b final-output response.",
+      "prediction": "Negative dependence would remove at least25 percent of M133 kappa2 output MSE, keep the 90th-percentile ratio below.9 with no adverse width trend, and preserve a complete protected total below100B.",
+      "kill_condition": "Any marginal, ownership, collision, tangent, symmetry, output-functional, width-trend, upper-tail, or cost failure. The disjoint confirmation set must remain unopened if the development premise fails.",
+      "result": "Killed after root independently reran all6 tests. Marginals, collision ownership, permutation/gauge behavior, frozen-q tangent, complete response recurrence, and95.226636240B protected cost pass with no extra dense products. Development balanced/iid output-MSE ratios at widths12,16,24,32 are.68694,1.08694,.92815,1.00248; the trend is nonmonotone/adverse and seedwise p90 gates fail. Antithetic OA at width32 is1.0989. No full128 or confirmation run was opened. Preserve the exact balanced finite-population sampler as a reusable operator; reject its variance premise for this influence field. Report sha2562c33fcb769a4ef1e9daaa655f48342f4f7928748e8653f8a7b473d787b15deab; resultse4383a27fd05394ff211f82833c09b1558569221a3c3dce37ca2a47c72c6b857; codeba80ab62d86bb0f135854573ce11d5416eb8911e7e01fce79cba436a8232f142; testsf4f903299e3e8f144508af383efd55fe2a0ded9611baa94de9f7f1e791e560d4; runner202ef0da61a74e409238630c1602e3314f8af9122d158a0719f34931f036279d; manifest88322ab17a177ff4ce8acf70e52a76fccf397aef347dfbc0a0fd7c6b7cd10196."
+    },
+    {
+      "id": "m139_positive_partial_trivariate_proposal",
+      "status": "killed_static_proposal_components_preserved",
+      "mechanism": "Use a singularity-subtracted low-rank approximation to the exact nonzero-mean trivariate [2,1,1] boundary only as a positive sampling envelope, retain the exact sampled coefficient and M133 Hansen-Hurwitz weight, freeze the proposal in the Frechet tangent, and fall back covariantly when latent pivots are tied.",
+      "bias_class": "The estimator remains exactly unbiased for the sampled source; only proposal variance changes. The generated development screen uses the full M121 one-delay source and M125b coalesced output response. No confirmation data were accessed after failure.",
+      "prediction": "A rank-four partial-correlation envelope would reduce pooled output MSE to at most.75 of M133, place the bootstrap upper90 below.9, avoid adverse widening, and add less than5B protected cost.",
+      "kill_condition": "Any support, normalization, exhaustive ownership, symmetry/gauge, partial-boundary, frozen-tangent, cost, pooled-MSE, upper-tail, or width-trend failure; no confirmation run after a failed development gate.",
+      "result": "Killed after root independently reran all8 tests. Rank-zero equivalence, support, normalization, exhaustive HH ownership, permutation and positive-gauge covariance, finite near-singular partial correlation, frozen-q tangent, and the.846850560B incremental worksheet pass. Complete static cost is95.787790800B but lacks a native trace. Development M139/M133 pooled output-MSE ratio is1.041591, upper90 is1.114669, and width means worsen from.903629 at width5 to1.148153 at width6. The disjoint confirmation set remained unopened. Preserve the exact positive envelope and invariance machinery; reject this rank-four static latent law, not every future control-variate use of the boundary. Report sha2561aa1532fada1ccafa156913a323ef50bc8689f38d6437f1a71bd4735aad1ca03; results1e33f933f04cb5e39b9b88a184a40627d21d3a3b90a66dbe825985178e09a389; code291e72eac67526da1dfc48bb22f278b4a2f29830f188cf0a93b1a7524dba3832; testsa050706e69c252f23ef8db494947527bd2f884e4c12188bc74ee082ce20407d5; runnercbc663f1a23ccd665b533ffc406080eccfa22edb3c3143775fe9f2d9f9dbe540."
+    },
+    {
+      "id": "m140_quadratic_residual_control",
+      "status": "killed_preexecution_cost_completeness_and_variance",
+      "mechanism": "Partition the exact standardized nonzero-mean [2,1,1] coefficient into the universal quadratic jet J=(QijQik+QijQjk+QikQjk)/(4pi) plus an exact residual, contract J deterministically, and Hansen-Hurwitz sample only the residual with a frozen proposal and exact scale/tangent correction.",
+      "bias_class": "The partition, physical-unit standardization, canonical support, and frozen-proposal derivative are exact. A complete estimator would be unbiased only if every deterministic J output slice, including the masked split-pair aabb action, were actually contracted; the generated diagnostic is source-only and never entered M121/M125b.",
+      "prediction": "Removing the leading quadratic component analytically would fit within5B incremental protected arithmetic and reduce fixed-proposal residual influence variance enough to move M133 kappa2 across its output gate.",
+      "kill_condition": "Any missing collision slice, unresolved masked Khatri-Rao action, protected lower bound above5B, residual influence not at most.75 of the full coefficient, units/gauge/tangent failure, or outcome execution before these gates pass.",
+      "result": "Killed before an outcome screen after root reran all7 tests. The standardized partition, s_i^2 s_j s_k physical scaling, support ownership, permutation/positive-gauge covariance, aaab/aaaa identities, and frozen-q tangent pass. The complete deterministic jet still contains the masked aabb split-pair Khatri-Rao action; no exact cubic contraction is installed. Even an unrealistically favorable four-new-f32-GEMM lower worksheet is5.190778880B, already over the5B cap before split pair, residual samples, buffers, or wall; the verified partial is19.541606400B. Worse, predeclared width5/6 source cells give residual/full HH influence-variance ratios1.2216 and1.2662 because the zero-mean jet is anticorrelated with the nonzero-mean vertex. Preserve unit standardization, exact residual/tangent identity, and the Khatri-Rao obstruction; reject this control. Report sha2566f3ee638a70d8dc151da26a9e92938745ac7d23a279fd822e7903c6e5669c334; code97eecf32b3472cc272eefdf2cf2b7c5e2e60e1b1ab57430b8b3d06780d4cb27c; testsf7c520ce84f2aefc8d0f67186e6f639331b220cd6461cfed2a94b8ea9763b09a; diagnosticb977c1c372f40cfa58cd1a522ad89c0f3a6e657c91ea4319ce08fbc632b42f9e; manifest93d7262172b156123c73aed2cf555738b961282b05242546872e992529644112."
+    },
+    {
+      "id": "m141_local_factor_boundary_cubature",
+      "status": "repair_local_identity_killed_deployable_engine",
+      "mechanism": "For each sampled three-coordinate Gaussian block, factor C=lambda I+UU^T with rank(U)<=2, condition on the local factors, evaluate independent residual ReLU moments analytically, and estimate the remaining two-dimensional factor integral using a fixed 3-by-3 jittered stratification; use Price derivatives and deterministic delta conditioning for a frozen-proposal tangent.",
+      "bias_class": "For a fixed factor gauge in ideal real arithmetic, the local raw-moment jitter rule is unbiased. A deployable fixed-seed estimator additionally needs exact lower primitives, a correct K-draw HH sum, pathwise permutation/positive-gauge covariance, boundary-safe tangents, and a native cost trace; those properties do not hold together in the current artifact.",
+      "prediction": "Local rank two would bypass the global-rank obstruction and replace the 80-node M131 coefficient reserve with nine cells, keeping a complete K512 source worksheet near93.748B with finite near-singular coefficient variance.",
+      "kill_condition": "Factor-gauge or ReLU-gauge dependence at fixed seed, missing HH factor/sum, rejected degenerate primitive, unproved uniform boundary variance, incomplete tangent, native accounting gap, or symmetry repair reaching the100B cliff.",
+      "result": "Independent hostile audit repairs the mathematical identity and kills the engine. Every PSD3 block does admit C=lambda I+UU^T, and independently jittered stratification is unbiased for a fixed U. But a valid eigenvector sign flip changes the same-seed estimate from.3722537754 to.2734919388; positive diagonal ReLU gauge also fails pathwise. The displayed HH identity omits the sum over K draws, current M131 bivariate code rejects rho=1-1e-11 and degenerate blocks, and93.74849288B is only an untraced reserve with coefficient/residual flags previously uncharged. Full three-factor Cholesky plus all six coordinate orders repairs the principal symmetry using162 cells, but costs96.8569B optimistically or101.1069B when the unexplained reserve scales, before native wall evidence. Preserve only the local factor law and ideal raw-moment estimator. Theory sha25662f6f69f2f8feb6b5419460036302829c6c41c64e331fb0985da06906b344cf4; independent audit04d2e813b73c501b33123117827d8e74cb8531c29fc98df4749aec5219833671."
+    },
+    {
+      "id": "m144_gate_aligned_split_merge",
+      "status": "killed_cost_and_recursive_novelty_components_preserved",
+      "mechanism": "Split each Gaussian surrogate component along a gauge-covariant gate-boundary direction using exact half-space conditional first two moments, Gaussianize each truncated child, propagate the noncentral full-covariance ReLU map, and merge siblings with exact surrogate-mixture moment preservation under a hard K in {4,8} component cap.",
+      "bias_class": "Deterministic biased Gaussian-mixture assumed-density propagation. Conditional splitting is exact only through second moments; each half-space law is immediately Gaussianized and capped sibling merge discards activation-history information. No contest or generated efficacy outcome was run.",
+      "prediction": "A gate-seeded bounded mixture would retain non-Gaussian information beyond the second-moment cap at roughly8--17B arithmetic, with a material generated-width improvement and safe residual wall.",
+      "kill_condition": "Broken split/merge algebra or symmetry, fixed-K history collapse without a new premise, literal combined cost over budget, unsafe official-tail margin, or a capacity-only retry of the previously killed q3 gate split.",
+      "result": "Killed after root reran all8 structural tests. Exact conditional first/second moments, permutation and positive-gauge covariance, sibling merge, and the non-Gaussian fourth-moment witness3-8/pi^2 pass. The rough literature worksheet was radically incomplete. A literal target-shaped float64 FlopScope kernel gives K8 F=70.494032832B plus2.968418s residual, C=367.335882219B or1.3505x budget. K4 gives F=35.249121728B plus1.254979s, C=160.747071457B locally, but lacks the observed about5x official residual-tail margin. More importantly K4 is only a one-component capacity mutation of the already falsified q3 conditional Gaussianization/merge branch, whose fresh-n64 effect was.2498 percent versus a20 percent gate; no new outcome run is authorized. Preserve the gate direction and exact conditional/merge identities. Report sha256878bae4fb70c77527b21fecbeafe96cb3847da5e1489ca27a0aacfd5103227f1; code34b7800412f8109affd75a811b48d1b793d51bc24f085f24b7901732136bd8c6; testsed2db94ed6d5b2b967efe4103320af8ee12438218181f939fc46237b14c3df7d; probed78c3269645220629c026576c1cfbe1a9ec4d205769f77d17a41ce9b97679aa94; resultsbd9cb2997e276a1a0f97b6a4bc5d7308901a98a39b76834f269f8482f2dbbbf2."
+    },
+    {
+      "id": "m143_output_aware_suffix_proposal",
+      "status": "killed_implementation_endpoint_link_preserved",
+      "mechanism": "Use a cheap sign-scrambled suffix-energy response sketch only to steer an exact full-support HH hidden-edge proposal, retaining exact sampled amplitudes and a one-shot authorization firewall.",
+      "bias_class": "Proposal-only change; exact HH amplitudes preserve the parent's bias class if the state and proposal certify. The frozen development token was consumed before response construction.",
+      "prediction": "Downstream phase information would outperform source-amplitude proposals within5B without a full covariance adjoint.",
+      "kill_condition": "Any endpoint certificate refusal, complete influence failure, cost excess, or retry after the one-shot token.",
+      "result": "The frozen run stopped after49.2s before producing a response because an admissible generated Gaussian pair reached the existing endpoint fail-closed path. This is not an efficacy result. Preserve suffix-energy recurrence, causal attribution arm, family gates, cost crosswalk, and authorization receipt; the endpoint-safe state provider is the localized failed link."
+    },
+    {
+      "id": "m145_defensive_acg_transport",
+      "status": "killed_deployable_tail_components_preserved",
+      "mechanism": "Fit a low-rank angular-central-Gaussian proposal on an independent pilot, mix it with20 percent uniform mass so weights are bounded by5, and transport main Formal frames through exact Householder maps.",
+      "bias_class": "Defensive importance proposal with exact likelihood ratio inside the existing Formal estimator bias class; structural runs use generated weights only.",
+      "prediction": "Pilot anisotropy would improve variance while preserving zero failures and hostile official wall margin.",
+      "kill_condition": "Any sign/radius/restoration defect, nonfinite weight, replay mismatch, memory excess, or 5x residual projection over budget.",
+      "result": "Repaired sign-Haar implementation is finite, bitwise replayable, and restores frames in5/5 fresh runs. Bills range161.125--190.303B, but the5x residual projection exceeds272B in2/5. Preserve the bounded proposal, full scatter/eigh implementation, exact radius Householders, and trace harness; reject this deployment configuration."
+    },
+    {
+      "id": "m146_pilot_adaptive_hidden_edge_hh",
+      "status": "killed_cost_wall_theorem_preserved",
+      "mechanism": "Use pilot edge responses to form a causally frozen adaptive full-support HH proposal for remaining hidden triples.",
+      "bias_class": "Conditionally unbiased pilot/main HH identity when pilot samples retain q0 and main samples use the frozen q1.",
+      "prediction": "Adaptive influence routing would fit inside M133's branch headroom and overcome static proposal failures.",
+      "kill_condition": "Incremental arithmetic above251.412M, residual above.025s, or complete protected total above100B.",
+      "result": "Structural delta is369.163M billed and up to.262182s residual; complete nonoverlap projection is121.621B. Preserve the conditional q0/q1 HH theorem and role-aware proposal algebra, not this call-heavy implementation."
+    },
+    {
+      "id": "m147_endpoint_safe_pair_bridge",
+      "status": "pair_component_pass_generic_nested_endpoint_open",
+      "mechanism": "Use exact endpoint limits, Price-remainder enclosures, and a cancellation-safe nonnegative integral for bivariate noncentral ReLU moments and Frechet tangents.",
+      "bias_class": "Certified analytic pair primitive; the generic nested three-label coefficient remains unresolved and fails closed.",
+      "prediction": "Endpoint-safe pair semantics would unblock M143 and support a generic [2,1,1] coefficient provider.",
+      "kill_condition": "Incorrect PSD/tangent cone behavior, endpoint cancellation, or target coefficient cost beyond the residual allowance.",
+      "result": "Pair endpoint algebra and tests pass. The literal nested endpoint route can require606,720 angular evaluations per coefficient, so the pair bridge survives only as a component."
+    },
+    {
+      "id": "m148_exact_control_residual_law",
+      "status": "proved_operator_literal_copula_killed",
+      "mechanism": "Add a deterministic [2,1,1] source control and an exact full-support HH estimate of target minus control, preserving the ordered-singleton half owner.",
+      "bias_class": "Exactly conservative for any frozen deterministic control; control error changes residual variance, not source bias.",
+      "prediction": "A coarse control with residual variance ratio below.25 could replace512 raw draws by128 residual draws.",
+      "kill_condition": "Ownership/support error, p99 inflation above1.25, upper90 variance ratio at least.25, adverse width trend, or total cost above100B.",
+      "result": "The control law is proved and preserved. The literal16-cell49-node control is statically killed at20.713B before missing work. The K128 endpoint subtotal85.980878800B becomes the baseline for coarse descendants."
+    },
+    {
+      "id": "m149_fixed_43_87_endpoint_provider",
+      "status": "killed_accuracy_api_preserved",
+      "mechanism": "Replace recursive endpoint integration by a fixed nested43/87 compactified outer rule with87 pair calls and fail-closed certificates.",
+      "bias_class": "Deterministic coefficient approximation emitted only when frozen value and tangent certificates pass.",
+      "prediction": "A47,296-operation fixed provider would meet2e-8 value and2e-7 tangent tolerances.",
+      "kill_condition": "Either numerical certificate fails or the8,000 angular-evaluation cap is reached.",
+      "result": "Killed: moderate-state cumulant defect6.48e-6 and tangent defect1.54e-3; the rho=.999 adversary also reaches guards. Preserve width-independent gather, pair primitive, and zero-Schur fallback contract."
+    },
+    {
+      "id": "m150_direct_all_output_adjoint_control",
+      "status": "killed_generic_rank_cost_local_identity_preserved",
+      "mechanism": "Associate the exact C_211 sum directly with a supplied response dual so dense source matrices need not be emitted.",
+      "bias_class": "Exact local contraction including all source slots and half ownership when a full exact response dual is supplied.",
+      "prediction": "Direct association would avoid the dense forward source compiler within M148's14.019B slot.",
+      "kill_condition": "Generic dual rank growth, missing source slot, or reverse cost above the slot.",
+      "result": "Small-width parity passes, but the all-output dual is a generic256x256x256 tensor. Two f64 square GEMMs per output per layer cost1.028779T over30 reverse layers. Preserve only the source/dual associativity formulas."
+    },
+    {
+      "id": "m151_b1_forward_control",
+      "status": "killed_masked_compiler_control_identity_preserved",
+      "mechanism": "Use one signed49-node canonical block to emit a deterministic C_211 control into the existing one-carrier forward source and sample its exact residual.",
+      "bias_class": "Exact-control identity if every distinct-label source slot is emitted and residual ownership is complete.",
+      "prediction": "Known total89.708636240B would leave10.291363760B for a native B1 compiler and provider.",
+      "kill_condition": "Any omitted collision mask action, source mismatch, provider/call excess, or resource failure.",
+      "result": "M155 proves the distinct-label covariance-star term forces a masked symmetric Khatri action far beyond the allowance. Preserve the B1 control/residual architecture; reject the masked compiler premise."
+    },
+    {
+      "id": "m152_crossrisk_weight_student",
+      "status": "killed_preexecution_capacity_and_cost",
+      "mechanism": "Train the existing50-column gauge-equivariant weight student using independent cross-risk/noise2noise sampler labels.",
+      "bias_class": "Generated-only learned biased residual model under independent label noise.",
+      "prediction": "More independent labels would teach the weight representation enough residual signal to reach5 percent of anchor error.",
+      "kill_condition": "A stronger oracle on the same features misses5 percent, semantic fixture is absent, or reference generation cost is excessive.",
+      "result": "Killed without a campaign: the per-MLP oracle MSE1.12668e-5 is72.9x the1.54473e-7 reference and retains17.8 percent of anchor error; the minimum label campaign is69.269T. Preserve cross-risk mathematics, not this representation."
+    },
+    {
+      "id": "m153_exact_formal_prefix_reuse",
+      "status": "killed_resource_descendant_memoization_preserved",
+      "mechanism": "Memoize proposal-pilot states only while every preceding Formal active set remains full width, then fail the sharing guard at the first pruned layer.",
+      "bias_class": "Bitwise exact memoization; proposal and prediction remain unchanged.",
+      "prediction": "Removing overlapping Formal pilot products would repair M145's hostile resource tail.",
+      "kill_condition": "Reuse after pruning, replay/restoration mismatch, memory excess, or any hostile run remaining over budget.",
+      "result": "The target trace removes3 calls and589.578M billed operations with bitwise parity. The repaired fresh M145 descendant still exceeds its5x budget in2/5 runs, albeit by only2.394B and1.008B. Preserve the guarded prefix cache."
+    },
+    {
+      "id": "m154_rankone_analytic_endpoint_partition",
+      "status": "rankone_pass_generic_provider_killed",
+      "mechanism": "Partition the moving ReLU kink analytically on rank-one conditional Gaussian states using Price/delta identities, with no quadrature or retries.",
+      "bias_class": "Exact on the certified rank-one stratum only.",
+      "prediction": "Analytic kink partition would replace M149's inaccurate fixed rule at low cost.",
+      "kill_condition": "Failure on rank-one parity or inability to extend to generic noncentral rank2/3 PSD states.",
+      "result": "Seven tests pass and projected rank-one cost is.992B for3968 calls. Generic rank2/3 reduces to a noncentral Gaussian wedge/trivariate orthant not covered by the partition, so it is not a generic provider."
+    },
+    {
+      "id": "m155_masked_star_khatri_obstruction",
+      "status": "proved_no_go_domain_lift_open",
+      "mechanism": "Expose the exact split-pair action induced by zeroing covariance-star coefficients on repeated labels.",
+      "bias_class": "Exact algebraic lower mechanism, response-free.",
+      "prediction": "The M151 control compiler would fit inside10.291B if the star term reduced to ordinary square products.",
+      "kill_condition": "An admissible state leaves a nonzero masked Khatri term whose generic target action exceeds the allowance.",
+      "result": "Five tests pass. The symmetric Khatri matrix has32896 columns; one f64 G@K costs8.606646272B per layer and266.806034432B across31. An admissible two-node B1 state isolates the noncancelling star. Preserve the obstruction and seek an unmasked domain lift."
+    },
+    {
+      "id": "m156_extended_domain_star_control",
+      "status": "compiler_resource_pass_source_variance_open",
+      "mechanism": "Extend the target by zero to collision triples, define c=-2VijVik on all triples, sample target-minus-control on a complete-domain law, and compile the unmasked control with five dense products per layer.",
+      "bias_class": "Exactly conservative under any full-support complete-domain proposal; artificial collision control cancels through sampled negative residual.",
+      "prediction": "The domain lift removes M155's mask while fitting the K128 endpoint branch and potentially reducing residual variance.",
+      "kill_condition": "Parity/ownership failure, complete-domain sampler error, hostile resource excess, residual upper90 ratio at least.25, p99 ratio above1.25, or adverse width trend.",
+      "result": "Seven tests and13 artifact hashes pass. Five fresh native traces make155 GEMMs, bill10.426269184B, and project to99.2165--99.5990B under5x new-wall, with no failures. Promote only the domain-lift/compiler mechanism; covariance provenance and source-variance gates remain closed."
+    },
+    {
+      "id": "m157_selfhosted_formal_pilot",
+      "status": "killed_hostile_resource_mechanism_preserved",
+      "mechanism": "Replace the separate32-layer dense proposal pilot by the already-required Formal q0 pilot response, freeze q1, then reuse cached q0 state for the Formal estimator.",
+      "bias_class": "New pilot-only proposal law; conditional importance identity survives, but the statistic and therefore estimator branch differ from M145.",
+      "prediction": "Removing all32 redundant products would create enough resource margin without changing main-frame semantics.",
+      "kill_condition": "Proposal timing leak, replay/restoration mismatch, early-pruning cache error, peak memory above512MiB, or hostile effective budget failure.",
+      "result": "Structural trace removes32 calls and7.439248181B, reducing701 to669 dispatches. M160 then ran five fresh CPython3.11 workers: every prediction was finite and bitwise replayable, proposal freeze preceded main transport, frame restoration was exact, early pruning selected exactly32 layer2 columns, and peak RSS was387.152MiB. The locked5x hostile projection nevertheless reaches278.273B and exceeds the258.4B safety gate in2/5. Preserve the self-hosted pilot statistic and ordering proof; reject this deployment configuration without an efficacy run."
+    },
+    {
+      "id": "m158_physical_absolute_endpoint_abi",
+      "status": "killed_literal_contract_endpoint_family_preserved",
+      "mechanism": "Require every admissible PSD state to materialize a physical binary64 [2,1,1] coefficient within2e-8 absolute error.",
+      "bias_class": "Numerical output contract, independent of the chosen trivariate-normal algorithm.",
+      "prediction": "A sufficiently accurate Plackett/Genz/Owen provider could meet the universal physical tolerance.",
+      "kill_condition": "Nearest representable float already lies farther than2e-8 from an exact admissible coefficient.",
+      "result": "A rank-one covariance1024^2 11^T has nearest-float error2.7586e-5, so no algorithm can satisfy the literal ABI. Preserve the generic endpoint family and mutate representation scale."
+    },
+    {
+      "id": "m159_scale_normalized_endpoint_abi",
+      "status": "abi_repaired_generic_evaluator_open",
+      "mechanism": "Carry Delta as2^(4e)d with exact dyadic exponent metadata, evaluate a dimensionless state, preserve PSD rank/zero faces, and certify mantissa error plus final materialization half-ULP.",
+      "bias_class": "Representation/certificate repair only; supplies no coefficient evaluator, operation credit, or variance credit.",
+      "prediction": "Homogeneity normalization would remove M158's false universal absolute blocker while preserving downstream numerical variance gates.",
+      "kill_condition": "Gauge/tangent/PSD-face failure, per-event normalization that changes sampling, or inability to propagate certified source error into robust variance/p99 gates.",
+      "result": "Five response-free tests and hashes pass. The old physical2e-8 contract remains impossible, but the scale carrier and robust L2/Linf gate are valid under one common source normalization. The generic noncentral trivariate evaluator remains open."
+    },
+    {
+      "id": "m160_hostile_selfhosted_pilot_audit",
+      "status": "killed_resource_audit_complete",
+      "mechanism": "Run M157 in five independent CPython3.11 target-shaped workers plus a forced early-pruning worker, measuring complete call, wall, memory, replay, ordering, and restoration behavior.",
+      "bias_class": "Response-free deployment falsifier; no efficacy or estimator-bias claim.",
+      "prediction": "M157's7.439B arithmetic saving would place every5x residual projection below the locked258.4B ceiling while keeping RSS below512MiB.",
+      "kill_condition": "Any structural invariant failure or any target worker above258.4B hostile effective compute.",
+      "result": "All structural invariants and RSS pass, but two of five hostile projections exceed258.4B; maximum278.273084846B. Peak RSS387.152MiB and private commit837.449MiB are recorded separately. No outcome gate opens."
+    },
+    {
+      "id": "m161_complete_domain_star_variance",
+      "status": "killed_source_variance_domain_lift_preserved",
+      "mechanism": "Evaluate M156's exact complete-domain covariance-star control on six frozen generated Gaussian backgrounds with certified M147 distinct coefficients and a complete aaaa/aaab/aabb source proxy.",
+      "bias_class": "Exactly conservative source control; generated source-only variance falsifier, not a network outcome.",
+      "prediction": "The complete-domain residual would have upper90 residual/raw variance below.25, p99 at most1.25, and no adverse width trend.",
+      "kill_condition": "Any exact-provider/ownership/symmetry failure, upper90 at least.25, p99 above1.25, or adverse width trend.",
+      "result": "All six M147 cells certify, source conservation is within1.43e-14, and permutation/gauge/ownership pass. The control is decisively killed: collision rows consume99.9978--99.99999 percent of residual second moment; pooled residual/raw is3.201e8, upper90 is7.397e8, max source p99 is6.536e5, and collision p99/raw is3.753e12. Preserve M156 conservation and five-GEMM compiler; mutate the collision support mechanism."
+    },
+    {
+      "id": "m162_plackett_tallis_fixed_line",
+      "status": "killed_fixed_rule_generic_family_open",
+      "mechanism": "Use Tallis's tilted truncated-normal MGF to reduce the twelve [2,1,1] raw moments to one trivariate orthant probability plus boundary derivatives, and compute the SPD P3 term with one fixed87-node Plackett correlation-homotopy integral.",
+      "bias_class": "Deterministic dimensionless analytic coefficient proposal under M159's scale carrier; response-free falsifier only.",
+      "prediction": "One fixed common-node1D rule would satisfy the normalized value/tangent certificate across SPD and rank limits within606,720 operations per coefficient.",
+      "kill_condition": "Closed-form centered probability error above2e-8, opaque divergent rank-face derivative, missing PSD stratum, or absent native cost certificate.",
+      "result": "Tallis gives an exact compact inventory of1 P3,3 P2 facets,3 P1 edges, and one vertex density. The fixed implementation is killed:87-node errors are4.12e-8 at rho=.999 and3.93e-8 at rho=.999999 even after the endpoint-square map; the exact correlation derivative reaches1.068e7 at nextafter(1,0), so numerical differentiation cannot certify positive-part cancellations. Preserve the reduction and generic M159 family; require symbolic rank-face cancellation plus a rank-aware interval certificate."
+    },
+    {
+      "id": "m163_exterior_collision_null_control",
+      "status": "resource_killed_identity_preserved",
+      "mechanism": "Replace M156's covariance star by A=V o (1-R^2), the two-vector exterior Gram determinant factor, and use c_ijk=-2 A_ij A_ik on the complete domain with the same five-product compiler.",
+      "bias_class": "Exactly conservative deterministic control plus full-support residual. The exterior factor is permutation-covariant, positive-gauge-covariant, and zero without retry on isotropic/tied states.",
+      "prediction": "Algebraic A_ii=0 removes the binding iii/iik/iji collision tails without an explicit mask or Khatri action, leaving a bounded ijj residual and total compiler below14.0191212B.",
+      "kill_condition": "Any collision-null/parity/invariance failure, inclusive native compiler above14.0191212B, residual upper90 at least.25, p99 above1.25, ijj tail above1.25, or adverse width trend.",
+      "result": "M161 diagnostic decomposition assigns86.18--98.97 percent of collision second moment to iii, almost all remainder to iik/iji, and at most.4664 percent to ijj. Five M163 tests pass. M164's inclusive native trace confirms exact155 GEMMs and10.444656904B billed, but all five hostile projections exceed100B because residual wall is9.456--10.639ms versus7.149ms permitted. Preserve the exterior collision-null identity; close this deployment before efficacy."
+    },
+    {
+      "id": "m164_exterior_native_audit",
+      "status": "killed_hostile_resource_no_efficacy_run",
+      "mechanism": "Run the frozen M163 exterior collision-null source and M156 five-product compiler in five fresh target-shaped FlopScope workers, then open the presealed source-variance screen only if every resource and invariance gate passes.",
+      "bias_class": "Generated response-free deployment falsifier; no estimator efficacy or contest outcome is read.",
+      "prediction": "Inclusive compiler bill and hostile five-times residual projection would fit the100B branch envelope while preserving permutation and positive-diagonal-gauge covariance.",
+      "kill_condition": "Any nonfinite run, wrong call count, bill above14.0191212B, RSS above512MiB, invariance error above2e-8, or any hostile combined projection above100B.",
+      "result": "All five runs are finite with155 GEMMs, constant10.444656904B bill, peak RSS81.34MiB, and permutation/gauge errors2.22e-16/1.67e-16. Residual wall is9.456--10.639ms against7.149ms permitted; every projection fails at101.153--101.745B. The sealed efficacy screen was correctly not run."
+    },
+    {
+      "id": "m165_rank_face_subtraction",
+      "status": "rankone_survivor_generic_provider_open",
+      "mechanism": "Assemble the complete connected [2,1,1] defect before differentiation, subtract the M154 rank-one value and cone tangent, and map the remaining Plackett endpoint by u=epsilon*v^2.",
+      "bias_class": "Response-free analytic endpoint component on a certified positive-marginal rank-one opening only; no generic provider or operation credit.",
+      "prediction": "Symbolic value-and-tangent subtraction would cancel M162's opaque rank-face divergence and leave a regular integrand on rank-one PSD openings.",
+      "kill_condition": "Failure to match M154/M147 references, a remaining singular endpoint after subtraction, or unsupported extension to rank-two/zero-marginal faces.",
+      "result": "Four tests pass. On the centered equicorrelation opening, Delta(epsilon)=Delta0+3.983346315428913 epsilon-1.4681 epsilon^(3/2)+O(epsilon^2); subtracting value and tangent regularizes the v-mapped integrand. Rank-two needs a distinct anchor/tangent, zero marginals require M159 dispatch, and no interval/native certificate proves the606720-op cap."
+    },
+    {
+      "id": "m166_oriented_collision_null_control",
+      "status": "exact_f64_cost_killed_orientation_preserved",
+      "mechanism": "Orient covariance edges by the permutation-covariant row score s_i=max_{ell!=i} R_iell^2, split them into disjoint A/B supports, and use c_ijk=-(A_ij B_ik+B_ij A_ik) so every collision pattern vanishes without a mask.",
+      "bias_class": "Exact real-arithmetic complete-domain control and seven-product compiler; shared f32 version is only a numerical descendant without conservation credit.",
+      "prediction": "Disjoint oriented supports would remove iii/iik/iji/ijj simultaneously while retaining an unmasked dense compiler inside14.0191212B.",
+      "kill_condition": "Any collision/invariance/parity failure or exact compiler cost above14.0191212B.",
+      "result": "Collision nulling is proved; exhaustive parity error is4.55e-13 and permutation/gauge checks pass. Exact f64 needs seven product families and18.492784640B, exceeding the slot by4.473663440B. The9.246B f32 worksheet has9.24e-7 reconstruction error and receives no native, conservation, or variance credit."
+    },
+    {
+      "id": "m167_collision_owner_unification",
+      "status": "owner_algebra_pass_relabelling_rejected",
+      "mechanism": "Move complete-domain collision triples into their true fourth-cumulant owners with exact orbit multiplicities: iii to[4], iik/iji to[3,1], and ijj to[2,2], retiring the former separate owners.",
+      "bias_class": "Exact source ownership/interface repair only; adds no dense products or calls and supplies no efficacy or resource credit.",
+      "prediction": "Physical collision-owner transfer would remove artificial zero-target rows and might absorb M163's remaining ijj control into the real[2,2] source.",
+      "kill_condition": "Dense symmetric-tensor parity, conservation, permutation/gauge failure, double ownership, or mismatch between M163 ijj and physical K22/2.",
+      "result": "Exact mappings Tiii=K4/6, Tiij=Tiji=K31/3, and Tijj=Tjii=K22/2 pass widths2--6 with dense-tensor error at most7.11e-14; old owners must be retired and complete_residual_table must not re-zero collisions. M163 ijj is not physical K22/2: generated mismatches are.240--.751, so it remains a control inside the[2,2] owner. Generic K22 transport and the Khatri-class obstruction remain."
+    },
+    {
+      "id": "m168_transverse_rank2_anchor",
+      "status": "rank2_face_survivor_generic_provider_killed",
+      "mechanism": "Represent a positive-marginal transverse rank-two Gaussian state on its canonical 2D support plane, compute the connected[2,1,1] wedge anchor, and derive its one-sided Price/coarea PSD cone tangent before M165 subtraction.",
+      "bias_class": "High-precision response-free anchor/tangent reference on the transverse rank-two stratum only; no all-PSD, interval-error, native-bill, or provider credit.",
+      "prediction": "A connected-first planar wedge calculation with all ReLU indicators retained would give a finite rank-two value and one-sided tangent matching rank-preserving and rank-opening finite differences.",
+      "kill_condition": "Finite-difference, permutation/gauge, domain-refusal failure, or any generic-provider/cost claim without a uniform certificate and native trace.",
+      "result": "Four tests pass. The corrected tangent needs20 indicator-weighted planar terms and16 coarea kink-line terms; rank-preserving disagreement is below2.8e-13 and a rank-three opening cross-check is1.33e-6. Nontransverse, zero-marginal, and outward-cone cases refuse. The49-primitive source-only model is571904 ops at10 nodes and627456 at11, but no accuracy or native certificate exists, so generic606720 credit is killed."
+    },
+    {
+      "id": "m169_m163_two_axis_call_fusion",
+      "status": "resource_survivor_conditional_staging_interface",
+      "mechanism": "Stage all31 already-owned M163 layer pairs, batch the31 Z products once and the124 post-Z products once through legal FlopScope batch axes, with preallocated instrumented packing and no reshape.",
+      "bias_class": "Bitwise-exact scheduling change to frozen M163 coefficients, conditional on the caller already owning every labelled W,V pair before compilation.",
+      "prediction": "Reducing155 dense dispatches to2 would lower hostile residual below7.08391688ms while retaining exact bill, parity, invariance, and RSS.",
+      "kill_condition": "Any parity mismatch, unowned sequential state, bill above14.0191212B, RSS above512MiB, p99 residual above7.08391688ms, or any hostile total above100B.",
+      "result": "Small and width256x31 outputs are bitwise equal. Five fresh runs use2 matmuls, bill10.477162760B, peak RSS404.238MiB, residual p995.322ms, and all hostile totals pass at98.213--99.140B. Preserve as a resource survivor only; M174 audits the all-layer ownership ABI before any efficacy precondition opens."
+    },
+    {
+      "id": "m170_m166_dense_tensor_rank",
+      "status": "killed_dense_product_reduction_triangular_edge_preserved",
+      "mechanism": "Attempt an exact at-most-five-family compiler for M166 using polarization, common subexpressions, B=A^T, symmetric outputs, and unchanged physical ownership.",
+      "bias_class": "Response-free exact algebra audit in the declared dense-product normal form.",
+      "prediction": "The seven-product oriented control might admit two exact product eliminations and fit14.0191212B.",
+      "kill_condition": "An admissible orientation specialization proves independent rank2 projections, rank3 ordered aaab, and rank2 symmetric aabb, or six families already exceed the slot.",
+      "result": "Exact admissible integer minors prove lower bound2+3+2=7; exhaustive widths2--7 parity is within1.055e-15. Six f64 families alone bill15.572336640B before overhead. Preserve the score-sorted opposite-triangle structured-kernel edge as a separate uncredited arithmetic class."
+    },
+    {
+      "id": "m171_fixed10_rank_stratified_provider",
+      "status": "killed_uniform_certificate_rank_face_algebra_preserved",
+      "mechanism": "Combine M154/M165 rank-one and M168 rank-two connected-first anchors with one ungraded fixed10-node Gauss-Legendre interior panel under M159 scaling.",
+      "bias_class": "Response-free deterministic endpoint proposal requiring a uniform normalized value/tangent certificate; no provider or cost credit without it.",
+      "prediction": "Rank-face subtraction would make a fixed10-node all-PSD provider certify2e-8 within571904 operations.",
+      "kill_condition": "Any PSD stratum refusal, uniform remainder above tolerance, or missing native bill.",
+      "result": "A lawful transverse rank-two family contains Phi(u/eta); at eta=.1 the rigorous GL10 twentieth-derivative envelope floor is.0020887305, over104436x the2e-8 tolerance and diverges as eta->0. Preserve M154/M165/M168; require symbolic near-parallel cancellation or parameter-scaled intervals."
+    },
+    {
+      "id": "m172_selective_22_owner_fusion",
+      "status": "static_owner_algebra_pass_development_blocked_m174_unlawful_caller_abi",
+      "mechanism": "Move only physical[2,2] ownership into M163's ijj rows, retire the old[2,2] source/probe, and sample residual K22/2-cE while leaving[4]/[3,1] owners unchanged.",
+      "bias_class": "Exact selective owner transfer plus add/subtract residual if ownership, M169 staging, resource, and provider gates pass.",
+      "prediction": "Aligning cE with its physical K22 support removes the remaining artificial zero-target tail and may retire hard[2,2] transport at zero dense-product cost.",
+      "kill_condition": "Ownership/double-count failure, unproved M169 all-layer staging interface, resource regression, source upper90 at least.25, p99 above1.25, or adverse width trend.",
+      "result": "The static ownership suite passes 8/8. Widths2--7 reproduce the independent tensor, retired-owner, and M163 conservation identities with maximum errors4.26e-14,4.26e-14, and1.07e-11 below3e-10; permutation/gauge, double-count, re-zero, frozen-seed, and per-event call-delta checks pass. M174 found no lawful all-31 actual-caller W,V ABI, so development and confirmation remain0 and the variance gate stays sealed."
+    },
+    {
+      "id": "m173_parameter_scaled_boundary_layer",
+      "status": "screened_hostile_transverse_rank2_layer_certificate_only",
+      "mechanism": "Replace only M171's near-parallel physical-coordinate GL10 panel by the exact split Phi((u-u*)/eta)=1{u>u*}+g((u-u*)/eta), scale u=u*+eta t, and evaluate a fixed degree-nine connected-first analytic boundary-layer correction.",
+      "bias_class": "Response-free certified repair of the transverse positive-marginal rank-two singular channel, conditional on frozen symbolic amplitude and tangent envelopes; no all-PSD provider or native bill credit.",
+      "prediction": "Scaling out eta would remove the eta^-20 derivative blow-up and uniformly certify value below2e-8 and tangent below2e-7 for every0<eta<=.1 within606720 static operations.",
+      "kill_condition": "Any envelope failure, bound above tolerance, eta outside the declared transverse chart, SPD/nontransverse/zero-marginal extrapolation, or native cost claim without a trace.",
+      "result": "Seven tests and the static audit pass. Worst-case value is76063/8316000000000=9.14658489658e-9; the corrected moving-u* tangent is12253/129937500000=9.42991822992e-8. Static cost561152 fits606720 and the singular layer uses zero quadrature nodes. Preserve M154/M165/M168; SPD, nontransverse, zero-face, symbolic-envelope, and native-provider links remain open."
+    },
+    {
+      "id": "m174_m169_staging_interface_audit",
+      "status": "repair_missing_actual_caller_abi",
+      "mechanism": "Audit whether an actual estimator lawfully owns the31 labelled full-covariance W,V states and M163-slot-to-M125b carrier conversion assumed by M169's two-batch generated-input compiler trace.",
+      "bias_class": "Response-free provenance, lifetime, memory, and metering audit; no source efficacy, outcome, or compiler-math mutation.",
+      "prediction": "An existing exact caller would expose immutable W_l,mu_l,V_l,J_l and source ownership while keeping M169's inclusive memory and operation envelope legal.",
+      "kill_condition": "Missing V archive, semantic mismatch, unlabelled source conversion, unmetered carrier, or uncertified integrated memory/cost.",
+      "result": "Repair required. Production base_estimator propagates only diagonal variance; the closest fullcov prototype retains only the current clipped/floored state and is not an exact M125b/Jacobian provider. No labelled M163 slot to TangentState conversion exists. M169-only workspace327.0664MiB is not an integrated peak. A fixed B=8 [8,8,8,7] fallback reduces compiler workspace to85.5215MiB and eight dispatches but has no resource certificate."
+    },
+    {
+      "id": "m175_b8_labelled_background_abi",
+      "status": "no_go_current_code_exact_labelled_producer_absent",
+      "mechanism": "Instantiate M174's only frozen fallback as fixed B=8 blocks [8,8,8,7] with immutable zero-order background labels, bounded liveness, and an explicit M163-source to M125b-carrier interface precondition.",
+      "bias_class": "Response-free actual-caller interface construction/audit only; no source conversion, variance, efficacy, outcome, or resource credit when producer semantics are absent.",
+      "prediction": "A lawful existing producer plus explicit slot conversion would make the B=8 schedule executable while preserving M169 call fusion and bounded memory.",
+      "kill_condition": "No exact metered W,mu,V,J producer, no mathematical Source211-to-TangentState ownership, semantic reuse of clipped/floored prototypes, or any unaccounted operation.",
+      "result": "Static schedule and liveness verification pass conditionally, but current code has no exact labelled FlopScope-metered BackgroundArchive producer: base_estimator is diagonal-only and fullcov overwrites current V with different clipped/floored GL10 semantics. Independently, M163 (aaaa,aaab,aabb) slots have no lawful layer-labelled conversion into M125b mean/covariance tangent state. B=8 remains a conditional85.5215MiB compiler-workspace schedule with8 dispatches; no RSS, C, wall, or efficacy gate opens."
+    },
+    {
+      "id": "m176_exact_background_archive_producer",
+      "status": "no_go_endpoint_complete_bivariate_primitive_absent",
+      "mechanism": "Pin and implement only the exact labelled FlopScope-metered zero-order mu,V,J recurrence required before M175's B=8 archive, leaving Source211 conversion frozen.",
+      "bias_class": "Response-free mathematical/interface audit of the zero-order Gaussian background producer; no source transport, variance, efficacy, or outcome credit.",
+      "prediction": "If the exact M125b recurrence and Jacobian already had an endpoint-safe metered bivariate ReLU primitive, a B=8 archive producer could be constructed and resource-tested independently.",
+      "kill_condition": "Missing or approximate value/Jacobian primitive, clipping/flooring, adaptive or unmetered provider, absent endpoint certificate, or recurrence ambiguity.",
+      "result": "The recurrence and Jacobian contract are pinned, but no existing implementation is simultaneously endpoint-complete, exact or certified, FlopScope-metered, and archive-labelled. The production-style fullcov uses GL10 plus variance floors and correlation clipping with no V/J archive; M120 has ordinary-NumPy adaptive Plackett formulas/refusal but no metered certified remainder. The first broken link is the bivariate noncentral ReLU value-and-derivative primitive, not B=8 scheduling or storage."
+    },
+    {
+      "id": "m177_bivariate_relu_value_jacobian_primitive",
+      "status": "formal_runtime_no_go_phi2_owent_certificate_absent",
+      "mechanism": "Bundle an endpoint-complete scale-normalized noncentral bivariate Gaussian ReLU value-and-Jacobian dispatcher for the exact M176 recurrence, with deterministic PSD-stratum policy and installed FlopScope accounting.",
+      "bias_class": "Response-free primitive/interface audit; no BackgroundArchive, source conversion, variance, efficacy, or outcome credit.",
+      "prediction": "Closed-form Rosenbaum/Owen reductions plus exact rank-stratum limits might provide a certified bounded-cost primitive for every admissible value and feasible one-sided tangent.",
+      "kill_condition": "Missing metered Phi2/Owen-T evaluator or remainder certificate, uncharged opaque arithmetic, path-underdetermined zero-face JVP accepted generically, non-PSD acceptance, or endpoint/scale failure.",
+      "result": "The deterministic classifier covers SPD, exact plus/minus rank-one, zero-variance reductions/refusals, and non-PSD refusal; six tests including90-decimal hostile endpoints pass. Installed FlopScope bills Phi at48 and phi at27 per element but exposes no certified Phi2/Owen-T primitive or public remainder. Known lower floor is556 FLOPs per unordered positive pair before the unavailable bivariate-CDF work; charging it as zero would be illegal. Preserve the stratum algebra. The first remaining link is a certified fixed/bounded-cost metered Phi+Phi2/Owen-T value-and-derivative evaluator on the normalized domain."
     }
   ]
 }

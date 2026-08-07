@@ -1,0 +1,28 @@
+{
+  "both_finite": true,
+  "firewall": "same generated MLP and provisional bank; no truth, MSE, score, competition row, API, submission, or champion mutation",
+  "formal_prediction_sha256": "398330f1597acaa5bcd0ba54be5a25782797b1518955881e545f088de55b72ee",
+  "formal_trace": {
+    "billed_flops": 176384062586,
+    "matmul_calls": 317,
+    "residual_s": 0.19842950883321464
+  },
+  "max_abs_difference": 1.2474600539214009e-05,
+  "max_relative_to_output_scale": 2.5947432254874144e-06,
+  "mlp_seed": 145310002,
+  "provisional_bank_sha256": "51fab7609ace1dc1d0475094cc3255e4a4869c0ae389c3b75b0e9ab5cb8e1dd1",
+  "rms_difference": 4.282708093218796e-07,
+  "setup_seed": 145310001,
+  "split_event_log": [
+    "matched_comparator_transport_disabled",
+    "split_formal_path_entered",
+    "split_formal_path_complete"
+  ],
+  "split_prediction_sha256": "d5cecfd9b851ca2e895c908e7429230096fd4102095bbef6a61086f94f73714d",
+  "split_trace": {
+    "billed_flops": 176455830878,
+    "matmul_calls": 798,
+    "residual_s": 0.10957101359963417
+  },
+  "status": "TRUTH_FREE_FORMAL_L1_PARITY_ONLY"
+}

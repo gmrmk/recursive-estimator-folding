@@ -1,0 +1,41 @@
+{
+  "protocol": "M152 generated-only noise2noise cross-risk analytic weight student",
+  "date": "2026-08-07",
+  "status": "KILLED_PREEXECUTION_SOURCE_ONLY",
+  "execution_authorized": false,
+  "reference_generation_authorized": false,
+  "target_or_label_generated": false,
+  "fit_authorized": false,
+  "public_data_read": false,
+  "scorer_or_api_called": false,
+  "submission_authorized": false,
+  "champion_mutation_authorized": false,
+  "mechanism": "exact existing 50-column analytic message bank with one universal grouped ridge readout",
+  "frozen_target": "f32 fixed-radius spherical direct-forward functional only",
+  "reference_pairs_per_mlp_if_unlocked": 4,
+  "whole_generated_mlp_split_if_unlocked": {"train": [0, 15], "development": [16, 23], "test": [24, 31]},
+  "canonical_reference_seed_table": {
+    "encoding": "UTF-8 lines i|split|k|r1_seed|r2_seed with final newline",
+    "formula": "r1=152100000+100*i+2*k; r2=r1+1; i=0..31; k=0..3",
+    "bytes": 3832,
+    "sha256": "e481000cc0d500d34186f0e489d59c12270c55a137fc4d0afe233e324a53a215"
+  },
+  "source_artifacts": {
+    "M152_FROZEN_SOURCE_ONLY_PROTOCOL_20260807.md": "3da818e26ea5391f0357e10dc54918e66632ca47bbf7aca12d9292099e96e684",
+    "M152_THREAT_MODEL_20260807.md": "56d29e3c89072d3058b62be2df5df10a11a69d0719d6064e2846d8606b0cb364",
+    "M152_COST_PROJECTION_20260807.json": "fd23c981d23389d09cd36945b965d61c11d7dcc3276d6dd5feb9687a8fa25f3e",
+    "M152_DISPOSITION_20260807.md": "5b32ad3bf2fe72b54fa766a0bb238faf84a3f34a738e021372cc5955b13e7434"
+  },
+  "consulted_inputs": {
+    "equivariant_weight_student/model_core.py": "715a01fb20fd3fa01080427442e99d84743fe7ee7283494dcc86b762976ce630",
+    "equivariant_weight_student/run_cleanroom.py": "dbf5b2c9303dccd7c3bd51dfff37a6ebfa455b562bef40e2ee8a88741567427c",
+    "equivariant_weight_student/cleanroom_results.json": "40f0c5c38c509b73d61d4197e4886bc6bdcd755863c3dacebfbb363dcff3891c",
+    "equivariant_weight_student/REPORT.md": "d7f8e84326ef001d8911c50ee79583e4dd62daa1d69388e1ce839a814a62102a",
+    "m145_defensive_acg/m145_direct_f32_reference.py": "8902eff1e83095f6a346da52bca0d389905264d522cb73749f6b78b9e83a3144",
+    "m145_defensive_acg/M145_F32_CROSS_REFERENCE_DESCENDANT_20260807.md": "07839abcac7d5bffb3fccbb14e6f82cac07c8de0921638c3b2ef1278d07b8b81",
+    "m145_defensive_acg/M145_CROSS_REFERENCE_RISK_DERIVATION_20260807.md": "bfae8a2a31c5e65b1f4380e4d864ddf55d3b4494abeb8a5c6271a752ecf257f3",
+    ".compute_resources_20260807.json": "a0930bdbf2c43ae1f090922466ff22da81bd20c152147b47ac852a48d149769f"
+  },
+  "disposition": "KILL: no capacity rationale for the already-disproved 50-feature ridge, and f32 semantic fixture remains a prerequisite."
+}
+

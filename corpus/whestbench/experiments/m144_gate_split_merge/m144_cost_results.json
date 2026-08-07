@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "scope": "synthetic target-shaped structural billing only; no contest MLP or outcome comparison",
+  "runtime": {
+    "whest_v014_flopscope": "0.10.0+np2.4.6",
+    "width": 256,
+    "depth": 32,
+    "dtype": "float64",
+    "relu_map": "noncentral full-covariance GL10 Gaussian ReLU map",
+    "split": "binary exact truncated-normal first-two-moment split",
+    "merge": "exact sibling first-two-moment merge of Gaussian surrogates"
+  },
+  "k4": {
+    "retained_components": 4,
+    "rectified_children": 8,
+    "flops_used": 35249121728,
+    "residual_wall_seconds": 1.2549794972874224,
+    "combined_effective_compute": 160747071456.74225,
+    "combined_over_budget_ratio": 0.59098188035567,
+    "peak_live_dense_covariance_lower_bound_bytes": 4194304,
+    "status": "literal local C below B but without the mandatory multi-run official-tail margin"
+  },
+  "k8": {
+    "retained_components": 8,
+    "rectified_children": 16,
+    "flops_used": 70494032832,
+    "residual_wall_seconds": 2.9684184938669205,
+    "combined_effective_compute": 367335882218.692,
+    "combined_over_budget_ratio": 1.350499567127544,
+    "peak_live_dense_covariance_lower_bound_bytes": 8388608,
+    "status": "C/B exceeds one before any real-weight conditioning or official-tail safety factor"
+  },
+  "operation_accounting_k8": {
+    "matmul": 34426585088,
+    "linalg_solve": 5793731584,
+    "exp": 11821645824,
+    "stats_norm_cdf": 3233808384,
+    "elementwise_and_merge_remainder": 15218261952,
+    "total": 70494032832
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "candidate": "M153 isolated exact pilot-state reuse prototype over frozen M145",
+  "date": "2026-08-07",
+  "status": "CONDITIONALLY_EXACT_STRUCTURAL_ONLY_NOT_DEPLOYED",
+  "execution_authorized": false,
+  "outcome_opened": false,
+  "efficacy_run_count": 0,
+  "submission_authorized": false,
+  "champion_mutation_authorized": false,
+  "formal_l1_champion_touched": false,
+  "firewall": "One generated weights-only structural MLP only. No truth, labels, reference, MSE, score, leaderboard, or submission was opened, and the champion was not changed.",
+  "bound_m145_inputs": {
+    "m145_integrated_estimator.py": "83e38cab70d4a63f273458bd808f38f01d7805d0fb600c7785c707feb5a24367",
+    "M145_INTEGRATED_STRUCTURAL_TRACE_20260807.json": "b39ef320a21fc4116c727aed59828f5d26b359a90d421f12ecb0d2efc2c9cf60",
+    "M145_INTEGRATED_PREEXECUTION_MANIFEST_20260807.json": "8b35ae221f4565f340c803daf37884d94acfa0cdfc214aa41fc49eacf211d88f"
+  },
+  "frozen_geometry": {
+    "width": 256,
+    "depth": 32,
+    "pilot_frames": 4,
+    "pilot_lines": 1024,
+    "pilot_paths": 2048,
+    "main_frames": 122
+  },
+  "exact_reuse_contract": {
+    "proposal_dense_pilot_preserved": true,
+    "full_pilot_matmul_dispatches_preserved": 32,
+    "unconditional_reuse": ["formal:first:pilot"],
+    "conditional_reuse_guard": "Formal left and right shapes must be [2048,256] and [256,256], respectively; otherwise dispatch M145 unchanged and release unusable cache.",
+    "target_shaped_prefix": [
+      "formal:first:pilot",
+      "formal:layer2:pilot",
+      "formal:layer3:pilot"
+    ],
+    "target_shaped_stop": "formal:layer4:pilot has shape [2048,256,253] and is never reused",
+    "proposal_law_changed": false,
+    "main_transport_changed": false,
+    "comparator_changed": false,
+    "rounding_policy": "Reuse only same-geometry full-width states; reject dense-column slicing after pruning."
+  },
+  "locked_structural_result": {
+    "baseline_billed_flops": 184270895262,
+    "reuse_billed_flops": 183681317022,
+    "net_billed_flop_delta": 589578240,
+    "baseline_dispatch_calls": 701,
+    "reuse_dispatch_calls": 698,
+    "removed_shape_bill": 589840384,
+    "first_preactivation_copy_bill": 262144,
+    "prediction_bitwise_equal": true,
+    "proposal_bitwise_equal": true,
+    "restored_bank_bitwise_equal": true,
+    "full_pilot_stage_list_equal": true,
+    "formal_layer4_dispatched_normally": true
+  },
+  "static_memory_bytes": {
+    "retained_before_formal_entry": 5242880,
+    "maximum_additional_bytes_vs_m145": 5242880,
+    "fresh_process_memory_trace_required": true
+  },
+  "bound_m153_artifacts": {
+    "m153_pilot_prefix_reuse.py": "203cab5695d27497c63f3fb2740284e095093924adff96122a510ea66b7ecfc0",
+    "run_m153_pilot_prefix_reuse_structural.py": "157f66aa51befb9a93cd923e99c344a86cae562de887755b51787f1babee6a36",
+    "test_m153_pilot_prefix_reuse.py": "08a58b8e6c547c7a9c0c016a5ea444a022966bbdd0c2c2f6a6bcf81706f18cb7",
+    "M153_PILOT_PREFIX_REUSE_STRUCTURAL_TRACE_20260807.json": "857051e7a729dffa3256a4e8114cbf0bca94111e2225ad13de05c02e7d2f4f78",
+    "M153_PILOT_STATE_REUSE_AUDIT_20260807.md": "447cf2302eb895c50822901ffcf3a084d01b4072834261419882132465339855"
+  },
+  "next_gate": "Fresh-worker target-shaped FlopScope/RSS trace, adversarial early-pruning replay, and independent hostile audit; no deployment or outcome execution before all pass."
+}

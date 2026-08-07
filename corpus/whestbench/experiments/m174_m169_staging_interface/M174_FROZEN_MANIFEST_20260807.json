@@ -1,0 +1,73 @@
+{
+  "candidate": "M174 independent all-layer staging-interface audit of M169",
+  "date": "2026-08-07",
+  "scope": "static/source-only M169 material-precondition audit; no response, efficacy, scorer, leaderboard, submission, champion, or network access",
+  "verdict": "REPAIR_NOT_A_LAWFUL_ACTUAL_CALLER_PRECONDITION",
+  "first_broken_dependency": "the actual base estimator owns only diagonal variances, not a labelled full-covariance V_l archive",
+  "secondary_blockers": [
+    "no labelled M163 source-slot to M125b TangentState conversion",
+    "M125b is an unmetered list-only NumPy carrier",
+    "M122/M129 is an n<=8 reference oracle rather than a width-256 state producer",
+    "no integrated setup/predict memory trace includes archive, staging, source conversion, Jacobians, and carrier"
+  ],
+  "static_liveness": {
+    "width": 256,
+    "layers": 31,
+    "dtype": "float64",
+    "m169_persistent_elements": 42869252,
+    "m169_persistent_mib": 327.0664367675781,
+    "m169_explicit_packing_bill": 32505856,
+    "minimum_array_only_fullstack_mib_with_f32_model_weights": 350.3164367675781,
+    "minimum_array_only_fullstack_mib_with_separate_f64_weight_archive": 358.0664367675781,
+    "not_included": [
+      "Python/BLAS allocator overhead",
+      "labelled exact M125 Jacobians",
+      "M163-slot to TangentState conversion",
+      "M129/reference state",
+      "integrated carrier liveness"
+    ]
+  },
+  "fixed_response_free_fallback": {
+    "block_size": 8,
+    "blocks": [8, 8, 8, 7],
+    "largest_m169_workspace_mib": 85.52151489257812,
+    "retained_block_covariance_archive_mib": 4.0,
+    "batch_matmul_dispatches": 8,
+    "static_packing_bill": 32505856,
+    "resource_certificate": false,
+    "requires_future_exact_labelled_producer": true
+  },
+  "installed_cost_semantics": {
+    "flopscope_package": "work/whest-v014/Lib/site-packages/flopscope-0.10.0.dist-info",
+    "empty": "0 billed FLOPs but real allocation",
+    "stack": "one billed operation per written element at resolved dtype rate",
+    "copyto": "one billed operation per destination element",
+    "float64_rate": 2.0,
+    "swapaxes": "0 billed FLOPs",
+    "reshape": "bills numel(input); absent from M169"
+  },
+  "frozen_source_sha256": {
+    "base_estimator.py": "8428026e01224f9e48f2fd72c303100909e529370183e67f376e4623113425d8",
+    "fullcov_gaussian_mm/estimator.py": "4ad95e6cb5af482331a6a849f9d4d8299d0f06f741514b8204a194b7cabee951",
+    "m125_source_batched_forward_tangent/m125_forward_tangent.py": "fbc9fe32357801b22f0313d4043022e81e2764ff3bf4be94f0dfe3ddb3d1ed32",
+    "m122_nonzero_bridge_theory/m122_nonzero_bridge.py": "c765fe24818f4ec8928a879e217a530077edff98f729555739202c1f7286f927",
+    "m129_source_frechet_tangent/m129_source_frechet.py": "b7b9d4b0228331972f7fd7b5bd2fb6081ba3053d25daf64f3f8dd0f84e31a6bf",
+    "m156_extended_domain_star_control/m156_extended_domain_star_control.py": "f5d92c4eb6a32477a93b3b22c08ea79e3a10dd531d80d9ab4fea7186a7493a1b",
+    "m163_exterior_collision_null/m163_exterior_collision_null.py": "9215b06b749cd0a572605f3494d2b698e6cc8c8a29beca1e687ef004631db809",
+    "m164_staged_audit/m164_flopscope_sidecar.py": "1a5141e680b2aef8f76b8686fd7278cedbe19df4de77fada2750a7d683e04208",
+    "m169_m163_call_fusion/m169_fused_compiler.py": "3c236d809e3aa0374bc0989ea8d287e18c923b61ebc38cc2c85b7e9ec529a8b4",
+    "m169_m163_call_fusion/run_m169_native_trace.py": "2f1581e07e6dbb81aaecbdeb2449e6cdc191ef415b82118a43c602f90b8c787e"
+  },
+  "frozen_installed_cost_source_sha256": {
+    "flopscope/_array_ops.py": "de4ca10c572a1bb40733d84249e1d908ce4a4cdc2d82bebeb9278a0407aceb58",
+    "flopscope/_pointwise.py": "568414bbdb5a5eccb4091c074dde1efd47c823b53e7b3a9253b997617a0a43f9",
+    "flopscope/_dtype_billing.py": "a73a31f495010b462b2053ef4a9881376fcde1d29a2cd488c8adcf9719d46572",
+    "flopscope/data/default_weights.json": "9ff1647a0048d2bd23a7a3d76ee0c60bfd3670d03b15ad8bf2b911c2ae19539f"
+  },
+  "audit_artifact_sha256": {
+    "README.md": "35df82e7348b6fd8efc18431f4ed7c3c3ec869a36ed6c4b38a5eb51877dc40ca",
+    "verify_m174_static.py": "b927409e0144c29089b48091106e0b9c7100774b6100622598d00ff9f43acd0b",
+    "test_m174_static.py": "18fabc20d7a298578550d35b69c3cc4adadcbb82823c720754b56e5b6b234159",
+    "M174_STAGING_INTERFACE_AUDIT_20260807.md": "d92fbedb151bf822c3dd7481a3ed2d024cab3f443d6deb933d1a13a59ff3bc5a"
+  }
+}

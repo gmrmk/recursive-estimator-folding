@@ -1,0 +1,13 @@
+{
+  "id": "M177",
+  "date": "2026-08-07",
+  "mechanism": "endpoint-complete bivariate noncentral Gaussian ReLU value/JVP primitive contract",
+  "scope_exclusions": ["BackgroundArchive", "Source211 conversion", "efficacy", "truth", "scorer", "leaderboard", "submission", "champion"],
+  "status": "FORMAL_RUNTIME_NO_GO",
+  "reason": "Pinned FlopScope API lacks certified Phi/Phi2/Owen-T numerical remainder and bivariate primitive; assigning unprovided special-function work zero cost is illegal.",
+  "preserved": ["all-PSD stratum dispatch", "rank-one one-sided tangent policy", "zero-variance pathwise obstruction", "Rosenbaum K/Hmu/Hv identities", "known 556 FLOP pre-Phi2 lower bound"],
+  "first_remaining_link": "certified bounded-cost Phi plus Phi2/Owen-T evaluator",
+  "randomness": "none",
+  "response_firewall": true,
+  "runtime_estimator": false
+}

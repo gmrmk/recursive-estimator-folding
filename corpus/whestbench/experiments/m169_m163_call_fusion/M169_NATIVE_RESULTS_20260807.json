@@ -1,0 +1,197 @@
+{
+  "aggregate": {
+    "bill_constant": true,
+    "peak_private_mib": 577.07421875,
+    "peak_rss_mib": 404.23828125,
+    "residual_max_ms": 5.3633032366633415,
+    "residual_mean_ms": 4.179660137742758,
+    "residual_p99_ms_linear": 5.322182988747954,
+    "resource_gate": {
+      "all_pack_copy_and_no_reshape_match": true,
+      "compiler_slot": true,
+      "every_hostile_5x_projection_within_100b": true,
+      "exact_predeclared_bill": true,
+      "exact_two_matmuls": true,
+      "finite": true,
+      "five_fresh_expected_seeds": true,
+      "p99_residual_within_predeclared_ms": true,
+      "rss_within_512_mib": true
+    }
+  },
+  "candidate": "M169 frozen M163 two-axis batched call fusion",
+  "development_screen": {
+    "executed": false,
+    "reason": "This was a compiler/resource mutation only. No source efficacy, variance, p99, response, truth, or contest evaluation was opened."
+  },
+  "exactness": {
+    "small": {
+      "baseline_billed_flops": 23982,
+      "baseline_matmul_calls": 15,
+      "bitwise_equal": true,
+      "fused_billed_flops": 26342,
+      "fused_matmul_calls": 2,
+      "layers": 3,
+      "locked_tolerance": 0.0,
+      "max_abs_difference": 0.0,
+      "mismatch_elements": 0,
+      "reference": "frozen M164 sidecar / frozen M163 coefficients",
+      "seed": 169001,
+      "width": 7
+    },
+    "target": {
+      "baseline_billed_flops": 10444656896,
+      "baseline_matmul_calls": 155,
+      "bitwise_equal": true,
+      "fused_billed_flops": 10477162760,
+      "fused_matmul_calls": 2,
+      "layers": 31,
+      "locked_tolerance": 0.0,
+      "max_abs_difference": 0.0,
+      "mismatch_elements": 0,
+      "reference": "frozen M164 sidecar / frozen M163 coefficients",
+      "seed": 169002,
+      "width": 256
+    }
+  },
+  "firewall": "only generated matrices were used; no response, source efficacy, network, truth, scorer, leaderboard, submission, or champion artifact was read or changed",
+  "layers": 31,
+  "native_resource_runs": [
+    {
+      "billed_flops": 10477162760,
+      "finite": true,
+      "five_x_combined_effective": 98429839926.867,
+      "matmul_calls": 2,
+      "peak_working_set_mib": 404.0234375,
+      "persistent_allocation": {
+        "persistent_array_count": 21,
+        "persistent_bytes": 342954016,
+        "persistent_elements": 42869252,
+        "persistent_mib": 327.0664367675781
+      },
+      "prediction_match": {
+        "bill": true,
+        "matmul_calls": true,
+        "no_reshape": true
+      },
+      "private_mib": 577.07421875,
+      "residual_s": 0.003943596733734012,
+      "seed": 169700001
+    },
+    {
+      "billed_flops": 10477162760,
+      "finite": true,
+      "five_x_combined_effective": 99139693178.33167,
+      "matmul_calls": 2,
+      "peak_working_set_mib": 404.23828125,
+      "persistent_allocation": {
+        "persistent_array_count": 21,
+        "persistent_bytes": 342954016,
+        "persistent_elements": 42869252,
+        "persistent_mib": 327.0664367675781
+      },
+      "prediction_match": {
+        "bill": true,
+        "matmul_calls": true,
+        "no_reshape": true
+      },
+      "private_mib": 575.171875,
+      "residual_s": 0.0053633032366633415,
+      "seed": 169700002
+    },
+    {
+      "billed_flops": 10477162760,
+      "finite": true,
+      "five_x_combined_effective": 98212942699.06563,
+      "matmul_calls": 2,
+      "peak_working_set_mib": 403.9921875,
+      "persistent_allocation": {
+        "persistent_array_count": 21,
+        "persistent_bytes": 342954016,
+        "persistent_elements": 42869252,
+        "persistent_mib": 327.0664367675781
+      },
+      "prediction_match": {
+        "bill": true,
+        "matmul_calls": true,
+        "no_reshape": true
+      },
+      "private_mib": 574.71875,
+      "residual_s": 0.0035098022781312466,
+      "seed": 169700003
+    },
+    {
+      "billed_flops": 10477162760,
+      "finite": true,
+      "five_x_combined_effective": 98331192260.70326,
+      "matmul_calls": 2,
+      "peak_working_set_mib": 404.12890625,
+      "persistent_allocation": {
+        "persistent_array_count": 21,
+        "persistent_bytes": 342954016,
+        "persistent_elements": 42869252,
+        "persistent_mib": 327.0664367675781
+      },
+      "prediction_match": {
+        "bill": true,
+        "matmul_calls": true,
+        "no_reshape": true
+      },
+      "private_mib": 576.953125,
+      "residual_s": 0.0037463014014065266,
+      "seed": 169700004
+    },
+    {
+      "billed_flops": 10477162760,
+      "finite": true,
+      "five_x_combined_effective": 98625690079.38933,
+      "matmul_calls": 2,
+      "peak_working_set_mib": 403.984375,
+      "persistent_allocation": {
+        "persistent_array_count": 21,
+        "persistent_bytes": 342954016,
+        "persistent_elements": 42869252,
+        "persistent_mib": 327.0664367675781
+      },
+      "prediction_match": {
+        "bill": true,
+        "matmul_calls": true,
+        "no_reshape": true
+      },
+      "private_mib": 577.01171875,
+      "residual_s": 0.004335297038778663,
+      "seed": 169700005
+    }
+  ],
+  "predeclared_prediction": {
+    "all_layer_staging_required": true,
+    "baseline_m164_bill": 10444656904,
+    "baseline_m164_matmul_calls": 155,
+    "candidate": "M169 frozen M163 two-axis batched call fusion",
+    "combined_cap": 100000000000,
+    "compiler_slot": 14019121200,
+    "inherited_endpoint_subtotal": 85980878800,
+    "layers": 31,
+    "max_residual_ms_each_for_hostile_5x": 7.08391688,
+    "max_residual_s_each_for_hostile_5x": 0.00708391688,
+    "no_block_cross_terms": true,
+    "predicted_bill_fits_slot": true,
+    "predicted_call_reduction": 153,
+    "predicted_dense_matmul_bill": 10381557760,
+    "predicted_extra_packing_bill": 32505856,
+    "predicted_post_z_matmul_calls": 1,
+    "predicted_reshape_bill": 0,
+    "predicted_rhs_stack_bill": 16252928,
+    "predicted_staging_stack_bill": 8126464,
+    "predicted_total_bill": 10477162760,
+    "predicted_total_matmul_calls": 2,
+    "predicted_transpose_copy_bill": 8126464,
+    "width": 256
+  },
+  "runtime": {
+    "flopscope": "0.10.0+np2.4.6",
+    "numpy": "2.4.6"
+  },
+  "staging_disposition": "The fused compiler is valid only at an interface that already owns all 31 W/V arrays. It does not authorize a sequential covariance/source provider to reorder its state transitions. No external provider was inspected in this response-free pass.",
+  "status": "RESOURCE_CLOSED_NO_SOURCE_EFFICACY_RUN",
+  "width": 256
+}

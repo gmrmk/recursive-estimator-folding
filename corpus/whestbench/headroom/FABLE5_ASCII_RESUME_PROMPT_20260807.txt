@@ -1,0 +1,528 @@
+FABLE 5 RESUME PROMPT - WHestBench RECURSIVE ESTIMATOR FOLDING
+Snapshot date: 2026-08-07. ASCII only. Self-contained. Resume at M177; do not
+assume conversation memory, an API, hidden data, or authority to submit.
+
+0. GOVERNING INVARIANT AND AUTHORIZATION
+
+Standing goal: find the strongest honest, legal WHestBench candidate capable of
+taking both prizes. Use deep uncertainty analysis, god nodes, unexpected edges,
+adversarial judges, What-If branching, and recursive-estimator-folding
+discipline. Preserve failures as localized components and constraints; never
+discard an entire mathematical family because one implementation failed.
+
+You are authorized to inspect the included lawful source, build isolated
+response-free code, run included static/unit/resource tests, and write a new
+M178 folder and reports. You are NOT authorized to:
+
+* read or reconstruct private targets, hidden truth, raw challenge weights,
+  scorer/evaluator internals or binaries, credentials, environments/caches, or
+  leaderboard data;
+* exploit public rows, seed IDs, source-page artifacts, evaluator quirks,
+  unbilled native work, challenge-instance/target lookup tables, or
+  undisclosed data; universal mathematical coefficient tables still require
+  an explicit legality and inclusive-cost certificate;
+* make a submission/upload, replace the immutable champion, or claim a score,
+  rank, win, efficacy result, or private generalization result;
+* open any sealed efficacy/outcome cell. Opening requires all predecessor gates
+  plus separate explicit operational authorization;
+* call an API or use adaptive retries, seed selection, post-hoc thresholds,
+  parameter tuning, or hidden fallbacks.
+
+Use one causal mutation at a time. Treat a killed item as a killed
+implementation at a stated gate. Preserve passing tissue; resurrect only by
+changing the named broken mechanism and rerunning the full applicable ladder.
+
+1. COMPETITION, SCORE, AND DEADLINE CONTEXT
+
+Task: estimate the 256 final-layer ReLU means of a bias-free width d=256,
+depth L=32, He-Gaussian ReLU MLP under standard-normal inputs. Intermediate
+states are estimator machinery, not additional scored outputs. The formal
+working objective is:
+
+  minimize private-suite adjusted MSE with a legal universal estimator and
+  zero resource failures.
+
+For each network, the installed score law is:
+
+  S = MSE * max(0.1, C / B)
+  C = billed_FLOPs + 1.0e11 * residual_seconds
+  B = 2.72e11
+
+under WHestBench 0.14.0 and FlopScope 0.10.0. Exact inclusive accounting,
+including residual wall time, is mandatory. A reduced arithmetic worksheet is
+not a resource pass. The supplied Phase-I dossier records a deadline of
+2026-08-10 23:59 UTC. Other schedule and prize notes in the corpus may
+describe later or historical phases. Eligibility, award overlap, current
+rules, and every live deadline must be confirmed with organizers before
+operational action. Do not infer a win from local work.
+
+2. GET THE PRIVATE REPOSITORY AND VERIFY IDENTITY FIRST
+
+Repository: https://github.com/gmrmk/recursive-estimator-folding.git
+Known pre-handoff base branch: agent/compression-survivor-corpus
+Known pre-handoff base commit: efcad0c302147e2a8c2e0acb7561bc2d9c9d879e
+Known base subject: corpus: promote row-blocked compression survivor
+
+The M155-M177 handoff may be on a newer pushed commit. Fetch the named branch,
+then use the repository's handoff README/manifest to identify the newest
+immutable handoff commit. Record both the fetched commit and its SHA256
+manifest verification in M178; do not guess a commit hash.
+
+Windows PowerShell (GitHub authentication must already be configured):
+
+  $Repo = Join-Path $HOME 'src\recursive-estimator-folding'
+  git clone https://github.com/gmrmk/recursive-estimator-folding.git $Repo
+  Set-Location $Repo
+  git fetch origin --prune
+  git switch agent/compression-survivor-corpus
+  git pull --ff-only origin agent/compression-survivor-corpus
+  git remote -v
+  git status --short
+  git rev-parse HEAD
+  git log -1 --format='%H%n%ad%n%s' --date=iso-strict
+  git ls-remote --heads origin agent/compression-survivor-corpus
+
+POSIX shell:
+
+  REPO="$HOME/src/recursive-estimator-folding"
+  git clone https://github.com/gmrmk/recursive-estimator-folding.git "$REPO"
+  cd "$REPO"
+  git fetch origin --prune
+  git switch agent/compression-survivor-corpus
+  git pull --ff-only origin agent/compression-survivor-corpus
+  git remote -v
+  git status --short
+  git rev-parse HEAD
+  git log -1 --format='%H%n%ad%n%s' --date=iso-strict
+  git ls-remote --heads origin agent/compression-survivor-corpus
+
+Abort mutation if the remote is not gmrmk/recursive-estimator-folding, the
+tree is unexpectedly dirty, or the current handoff bundle/checksums are absent.
+Do not reset, overwrite, or discard unrelated user changes.
+
+3. INSTALL THE SKILL IN A CLAUDE/FABLE-COMPATIBLE LOCATION
+
+The repository root is the skill directory because it contains SKILL.md.
+Read SKILL.md fully before work. It requires invariant-first, single-mechanism
+folding, external authoritative evidence, and no promotion from Headroom.
+
+Windows PowerShell:
+
+  $SkillRoot = Join-Path $HOME '.claude\skills'
+  New-Item -ItemType Directory -Force -Path $SkillRoot | Out-Null
+  New-Item -ItemType Junction -Path (Join-Path $SkillRoot 'recursive-estimator-folding') -Target $Repo
+  Get-Content -Raw (Join-Path $Repo 'SKILL.md')
+  python (Join-Path $Repo 'tests\test_fold_ledger.py')
+
+If Junction is prohibited, copy the repository to that exact skill directory,
+then record that it is a copy and its commit. Do not install packages globally.
+M165 and M168 use optional mpmath 1.3.0 only for high-precision reference
+tests. If rerunning them, install handoff/requirements-repro.txt into an
+isolated target or disposable environment. Never mutate the pinned competition
+environment in place.
+
+POSIX shell:
+
+  mkdir -p "$HOME/.claude/skills"
+  ln -sfn "$REPO" "$HOME/.claude/skills/recursive-estimator-folding"
+  sed -n '1,$p' "$REPO/SKILL.md"
+  python "$REPO/tests/test_fold_ledger.py"
+
+For an environment using a Fable-specific skill path, create the same symlink
+or copy under its configured skills directory, retaining directory name
+recursive-estimator-folding and the root SKILL.md. Restart/reload the agent's
+skill discovery if it was already running. Never use a web/API fallback for
+the Headroom adapter: it is local and deterministic only.
+
+4. BUNDLE MAP, LAWFUL INVENTORY, AND EXCLUSIONS
+
+Read these in this order before proposing M178:
+
+  SKILL.md
+  corpus/whestbench/handoff/GOAL.md
+  corpus/whestbench/handoff/README.md
+  corpus/whestbench/handoff/BUNDLE_SHA256SUMS.txt
+  corpus/whestbench/handoff/RESOURCE_PROVENANCE.md
+  corpus/whestbench/handoff/TEST_MATRIX.md
+  corpus/whestbench/handoff/TEST_SWEEP_20260807.md
+  corpus/whestbench/handoff/requirements-repro.txt
+  corpus/whestbench/headroom/fold_ledger.json
+  corpus/whestbench/headroom/FAILURE_AUTOPSY_MATH_20260807.md
+  corpus/whestbench/headroom/FAILURE_AUTOPSY_SYSTEMS_20260807.md
+  corpus/whestbench/headroom/FAILURE_AUTOPSY_SYNTHESIS_20260807.md
+  corpus/whestbench/headroom/FAILURE_CURVE_INFERENCE_20260807.md
+  corpus/whestbench/headroom/WHAT_IF_ORACLE_M169_20260807.md
+  corpus/whestbench/core/SALVAGE_MAP_20260806.md
+  corpus/whestbench/graph/GRAPH_REPORT.md
+  corpus/whestbench/graph/M169_M177_GRAPH_ADDENDUM_20260807.md
+
+Shared prerequisite evidence:
+
+  corpus/whestbench/experiments/ for M125b carrier, M147 endpoint bridge,
+  M154/M165/M168 rank-face tools, and M159 scale-normalized ABI;
+  corpus/whestbench/experiments/row_blocked_production/candidate_source/ for
+  the seven frozen source-only Formal parent dependencies used by M145/M157;
+  corpus/whestbench/headroom/ for the immutable ledger, deterministic offline
+  adapter, and no-API recursion packets;
+  corpus/whestbench/graph/ for build_evidence_graph.py, graph.json, graph.html,
+  GRAPH_REPORT.md, query audit, and deterministic insights.
+
+M155-M177 inventory. Each numbered experiment directory supplies its lawful
+source, unit/static tests, runner/verifier, frozen manifest, checksum file,
+static/resource result JSON, and report where applicable. Exact contents vary
+by experiment; enumerate them with git ls-files before testing, never assume a
+synthetic output is a production state:
+
+  M155 masked Khatri obstruction; M156 extended-domain star control;
+  M158 generic orthant/absolute ABI falsifier; M159 scale-normalized ABI;
+  M161 response-free source-variance; M162 Plackett-Tallis falsifier;
+  M163 exterior collision null; M164 staged native audit;
+  M165 rank-face subtraction; M166 oriented collision null;
+  M167 collision-owner unification; M168 transverse rank-2 anchor;
+  M169 two-axis call fusion; M170 oriented tensor rank lower bound;
+  M171 fixed rank-stratified provider; M172 selective [2,2] owner fusion;
+  M173 parameter-scaled boundary layer; M174 staging-interface audit;
+  M175 B=8 labelled-background ABI audit; M176 exact-background no-go;
+  M177 bivariate ReLU primitive contract/no-go.
+
+For M169-M177 the exact directories are respectively:
+
+  experiments/m169_m163_call_fusion
+  experiments/m170_oriented_tensor_rank
+  experiments/m171_rank_stratified_provider
+  experiments/m172_selective_22_owner_fusion
+  experiments/m173_parameter_scaled_boundary_layer
+  experiments/m174_m169_staging_interface
+  experiments/m175_b8_labelled_background_abi
+  experiments/m176_background_archive_producer
+  experiments/m177_bivariate_relu_primitive
+
+If a newer bundle preserves the historical work/scorefloor_generation layout,
+the same paths are under that root. Use the repository's actual mapped path,
+not an invented copy. The included corpus deliberately EXCLUDES truth arrays,
+raw weights, scorer/evaluator binaries, credentials, environments/caches, raw
+bulky numerical traces, and submission archives. Exclusion is a firewall, not
+a missing-data task. Do not seek or recreate excluded material.
+
+5. REQUIRED PREFLIGHT AND TEST INDEX
+
+First list, hash, and test only included lawful artifacts:
+
+Windows PowerShell:
+
+  python scripts\verify_whestbench_handoff.py
+  git ls-files | Select-String 'M1(5[5-9]|6[0-9]|7[0-7])|m1(5[5-9]|6[0-9]|7[0-7])'
+  Get-ChildItem corpus\whestbench\experiments -Recurse -File -Include '*SHA256*','*HASH*','*MANIFEST*' | ForEach-Object { $_.FullName }
+  Get-ChildItem corpus\whestbench\experiments -Recurse -File -Include '*SHA256SUMS*','*HASHES.sha256' | ForEach-Object { Get-Content $_.FullName }
+  python tests\test_fold_ledger.py
+  python corpus\whestbench\experiments\m177_bivariate_relu_primitive\verify_m177_static.py
+  python corpus\whestbench\experiments\m177_bivariate_relu_primitive\test_m177_bivariate_relu_primitive.py
+
+POSIX shell:
+
+  python scripts/verify_whestbench_handoff.py
+  git ls-files | grep -E 'M1(5[5-9]|6[0-9]|7[0-7])|m1(5[5-9]|6[0-9]|7[0-7])'
+  find corpus/whestbench/experiments -type f \( -name '*SHA256*' -o -name '*HASH*' -o -name '*MANIFEST*' \) -print
+  find corpus/whestbench/experiments -type f \( -name '*SHA256SUMS*' -o -name '*HASHES.sha256' \) -exec sh -c 'cat "$1"' _ {} \;
+  python tests/test_fold_ledger.py
+  python corpus/whestbench/experiments/m177_bivariate_relu_primitive/verify_m177_static.py
+  python corpus/whestbench/experiments/m177_bivariate_relu_primitive/test_m177_bivariate_relu_primitive.py
+
+For every checksum manifest, run the repository-provided verifier or compare
+SHA256 values in its owning directory. Record the command, interpreter/version,
+commit, result, and SHA256 output in M178. Do not run an included test whose
+manifest marks it outcome-bearing or sealed. The response-free M177 tests are
+allowed. Stop if hashes disagree or a required test fails; write a fail report,
+do not repair the old mutation silently.
+
+The recorded 2026-08-07 response-free sweep is 24/24 in the frozen/source-
+equivalent layout. Read TEST_SWEEP_20260807.md before rerunning: M165/M168 need
+the isolated mpmath pin, and M174 intentionally hashes an organizer-authorized
+FlopScope source tree at its historical adjacent path. These are declared
+environment dependencies, not permission to vendor that environment or weaken
+the historical verifier.
+
+Known M177 hashes from this snapshot (uppercase/lowercase differences are not
+semantic):
+
+  m177_bivariate_relu_primitive.py  A725136D6B7CAF59550606A0A00A762403322AC7E5CDC17219BDA42161C313E7
+  test_m177_bivariate_relu_primitive.py 4F5D807796CC87A205D4E8BD8D6E459A03B0460674131BED04C73C3A7B577FA5
+  verify_m177_static.py EA770FF8A882FD1E4EC6CCA632D237D019318EC76C22DE4227877EA3829546C3
+  M177_BIVARIATE_RELU_PRIMITIVE_REPORT_20260807.md 94EF5706104B4367FC802816112B02368CC4F35DC89E087447783D89C2ED4316
+  M177_FROZEN_MANIFEST_20260807.json AC12B334FBCCEF2E072DE0E6035331EA7D3E045FE9C0E0AB14A4791388D7AA90
+
+6. IMMUTABLE CHAMPION AND SPLIT FIREWALL
+
+Formal champion identity (immutable, unsubmitted, unchanged):
+
+  artifact: submission_formal_local_champion_l1_20260806.tar.gz
+  SHA256:   bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36
+  raw MSE:  3.089460087e-7
+  adjusted: 2.121762464e-7
+  public record: 100/100 paired wins, mean C 189.852556B,
+                 max C 222.405357B, zero failures
+
+The archive itself is deliberately excluded. No M155-M177 component has
+champion, submission, efficacy, or winning credit. Public indices 0..799 are
+historically burned for score-bearing development/validation; any local public
+read is descriptive only and cannot choose/tune M178. Do not open untouched
+or sealed cells. The M178 mutation is response-free and must not touch a
+challenge instance, target, scorer, or model loop.
+
+7. CURRENT DEPENDENCY CYCLE AND THE EXACT NEXT MUTATION
+
+The active branch is a dependency chain, not a composed estimator:
+
+  M169 155-to-2 batching (conditional resource survivor)
+    -> M174 actual labelled caller/staging ABI missing
+    -> M175 fixed B=8 schedule conditionally coherent
+    -> M176 exact labelled BackgroundArchive producer blocked
+    -> M177 all-PSD bivariate ReLU dispatcher passes algebra but runtime no-go
+    -> M178 certified fixed/bounded-cost normalized Phi2/Owen-T
+       value-and-derivative evaluator
+    -> endpoint-aware Rosenbaum K/Hmu/Hv arrays
+    -> M176 labelled B=8 BackgroundArchive[ell,W,mu,V,J,source]
+    -> separately proved Source211 -> TangentState ownership conversion
+    -> M172 sealed source-variance gate
+    -> M125b one-background carrier
+    -> M169 final compiler lowering
+
+This is a cycle because valid staging values require endpoint calculus, while
+the background/staging interface reveals endpoint calculus as its first hidden
+precondition. A pass at M178 opens only M176's response-free producer work. It
+does NOT open source conversion, variance, efficacy, score, champion, or
+submission work.
+
+M178 is exactly one mutation: implement or formally falsify a certified,
+fixed- or statically bounded-cost, scale-normalized evaluator for Phi2/Owen-T
+and needed derivatives. It must be metered, deterministic, fail-closed, and
+valid on a predeclared normalized domain with explicit PSD strata. Do not add
+the archive, carrier, ownership conversion, sampler, model, or score work.
+
+Required math contract:
+
+  sigma_i = sqrt(C_ii), alpha_i = mu_i/sigma_i,
+  rho = C_01/(sigma_0*sigma_1), det(C) = C_00*C_11 - C_01^2.
+
+Dispatch every finite symmetric 2x2 input without clipping or covariance
+ridge:
+
+  non-PSD: refuse;
+  C_00=C_11=0: deterministic ReLU(mu_0)*ReLU(mu_1), one-sided kink policy;
+  exactly one zero variance: PSD forces its covariance row zero; generic JVP
+    is path-underdetermined, so accept only declared feasible one-sided paths;
+  det(C)=0, rho=+/-1: rank-one truncated normal moments with feasible
+    one-sided PSD JVP only;
+  det(C)>0 and -1<rho<1: SPD Rosenbaum algebra using Phi, phi, and
+    Phi2(alpha_0,alpha_1;rho), equivalently a documented Owen-T representation.
+
+For SPD ReLU pair moments, use the exact Rosenbaum reduction for K/Hmu/Hv:
+
+  K = P(X_0>0, X_1>0)
+  Hmu_ij = E[1_i ReLU(X_j)] - p_i*m_j
+  Hv_ij = 0.5*f_i(0)*E[ReLU(X_j)|X_i=0] - r_i*m_j
+
+The M177 known pre-special-function lower bound is per unordered positive-
+variance pair:
+
+  6*48 + 4*27 + 160 = 556 billed FLOPs + Phi2/Owen-T certificate cost.
+
+Never charge the unknown special-function work as zero. The evaluator needs a
+predeclared inclusive operation count F_M178, including polynomial/rational
+work, all interval/remainder logic, derivative logic, and every fallback.
+Cost must be either a fixed count or a static worst-case bound independent of
+input data. No adaptive subdivision, tolerance-driven loop, retry, native
+black box, scipy/NumPy opaque CDF, cache with data-dependent miss count,
+clipping rho to endpoints, variance floor, or unmetered special function.
+
+8. PREDECLARE M178 BEFORE WRITING CODE
+
+Create M178_PREDECLARED_PROTOCOL_YYYYMMDD.md and frozen manifest before code.
+The prediction is deliberately narrow:
+
+  A scale-normalized, finite-stratum Phi2/Owen-T evaluator can return value
+  and first derivative enclosures that contain high-precision references over
+  the declared hostile grid, including near-rank SPD points, with one fixed or
+  statically bounded inclusive FLOP count and deterministic fail-closed
+  behavior. It will establish only a numerical-provider component; it predicts
+  no estimator MSE, score, rank, prize, or runtime win.
+
+Predeclare all of the following:
+
+  a. exact formula or derivation and all domain reductions;
+  b. normalized domain and scale reconstruction, with an ulp-aware
+     absolute-plus-relative output contract rather than impossible universal
+     absolute error;
+  c. fixed polynomial/table/series order, static finite branch count, and
+     fixed F_M178 inclusive FLOP bound;
+  d. a rigorous uniform value remainder and derivative remainder, separately,
+     for every SPD chart; rank-one/zero charts use their declared one-sided
+     policy and are not silently evaluated as SPD;
+  e. reference construction, precision, hostile grid, and all test points
+     before execution; references are internal mathematical constants only,
+     not challenge data;
+  f. exact package versions, Python/platform, source/test hashes, and no API;
+  g. bias class: deterministic numerical primitive, not an estimator;
+  h. failure disposition: pass, formal no-go, or killed implementation.
+
+M178 kill gates. Any one kills this implementation:
+
+  1. Nonfinite, non-deterministic, non-PSD acceptance, clipping/ridge/floor,
+     or a generic zero-face/rank-face JVP without declared feasible path.
+  2. No line-by-line remainder proof for value OR derivative on every claimed
+     SPD chart, or any high-precision reference outside the claimed enclosure.
+  3. Input-dependent/adaptive operation count, retry, opaque numerical CDF,
+     unmetered work, or missing inclusive F_M178 accounting.
+  4. Failure of positive scale homogeneity, symmetry/permutation identities,
+     endpoint classification, or near-endpoint SPD not being kept distinct
+     from exact rank one.
+  5. Hash/test/manifest failure, resource failure, or any scope violation.
+
+If M178 fails, preserve its valid chart algebra/remainder pieces, state the
+first broken link, update the ledger/autopsy, and stop. Do not try a different
+order/constant/chart in the same mutation. A new specification is M179 only.
+
+9. POSTMORTEM: LESIONS, PRESERVED TISSUE, AND RESURRECTION CONDITIONS
+
+Use this as a constraint table, not as a menu for parameter retuning.
+
+  1. Collision support mismatch (M156/M161). Exact complete-domain control
+     placed nearly all residual energy on artificial collision rows. Preserve
+     complete-domain compiler and null identities. Reopen only with physical
+     owner support cancelled before sampling/transport.
+
+  2. Collision cost god node (M117/M118 and M155). aabc has 99,486,720 ordered
+     entries; full k4 collision support 99,943,936. Even free masks gave
+     390.066235392B, 118.066235392B over budget. Preserve ownership and
+     Tallis/Price specification. Reopen only with a universal trivariate
+     collision-vertex compression before action, not lower rank/term tuning.
+
+  3. Dense circuit rank (M166/M170). Oriented all-collision-null algebra is
+     exact, but dense normal form has certified rank 2+3+2=7; six f64 product
+     families cost 15.572336640B before overhead. Preserve orientation and
+     triangular-kernel edge. Reopen only in a different exact arithmetic
+     class, not dense polarization.
+
+  4. Dispatch/allocation wall (M163/M164). 155 GEMMs billed 10.445B but fresh
+     residual wall 9.456-10.639 ms exceeded 7.149 ms, giving 101.153-101.745B
+     hostile totals. Preserve exterior null and source algebra. Reopen only
+     after actual caller call-count/allocation reduction and fresh tail audit.
+
+  5. Conditional compiler survivor (M169). Bitwise parity and 155->2 batched
+     calls; 10.477162760B, p99 5.322 ms, hostile 98.213-99.140B. Preserve
+     two-axis compiler. It is not deployable because its all-layer states were
+     synthetic, not owned production state.
+
+  6. Ownership is semantic, not shape (M167/M172). Physical maps iii->K4/6,
+     iik/iji->K31/3, ijj->K22/2 pass; M163 ijj differs from K22/2 by
+     0.240-0.751. M172 static algebra passes. Reopen only with every physical
+     owner carried and retired exactly plus a separately proved source carrier.
+
+  7. Fixed endpoint quadrature (M149/M162/M171). Fixed global panels fail near
+     legal rank faces; GL10 floor 0.00208873 is >104436x tolerance and a
+     derivative reached 1.068e7. Preserve endpoint inventory and anchors.
+     Never reuse fixed-node global panels; require stratified scaled charts
+     and certified remainder.
+
+  8. Boundary chart repair is partial (M173). Hostile transverse layer passed
+     value 9.1466e-9 and tangent 9.4299e-8 in 561152 static ops. Preserve the
+     scaled wedge/coarea method. Reopen generic provider only with all SPD,
+     nontransverse, zero-marginal, rank, and metering coverage.
+
+  9. ABI/liveness gap (M174/M175). M174 has no M163-slot-to-TangentState
+     producer; M175 B=8 schedule is conditional only. Preserve labelled ABI
+     and 85.522 MiB bounded-liveness schedule. Reopen only after exact labelled
+     BackgroundArchive and independent Source211 conversion exist.
+
+  10. M176/M177 numerical-runtime gap. Exact recurrence requires endpoint-
+      complete ReLU value/Jacobian. M177 PSD dispatcher is correct, but pinned
+      FlopScope has billed Phi/phi (48/27) with no certified remainder and no
+      Phi2/Owen-T. Preserve dispatch, rank-one policy, zero-face obstruction,
+      Rosenbaum identities, and 556 known floor. M178 is the sole admissible
+      immediate resurrection: fixed/bounded-cost certified normalized value
+      plus derivative evaluator.
+
+10. GRAPHIFY INSIGHTS (NAVIGATION, NOT EVIDENCE)
+
+The recorded Graphify run has 279 nodes, 576 edges, and 12 Graphify
+communities (10 shown; 2 thin omitted); deterministic NetworkX finds 13.
+Extraction is 94 percent extracted, 6 percent inferred, 0 percent ambiguous;
+34 inferred edges, average confidence 0.67.
+Do not promote an inferred edge without an independent test.
+
+Top graph god nodes:
+
+  Winning legal adjusted score (77 edges)
+  Latent-factor closure gate (28)
+  Connected finite-width four-point vertex (25)
+  Permutation + gauge + O(256) quotient (13)
+  H1 equivariant learned residual closure (11)
+  Weight-identified latent-factor closure (11)
+  M107 degree-4/6/8 exact-zero spherical controls (11)
+  Physarum-attention MoE router (10)
+  Complete-source influence-function variance wall (10)
+  Goal-oriented adjoint cumulant (9)
+
+Current active graph edge is:
+
+  dispatch fusion -> staging ABI -> exact background producer
+                -> bivariate endpoint calculus -> valid labelled staging
+
+The unexpected finding is that a schedule/memory problem exposed an endpoint
+calculus/certification problem. Treat Graphify centrality as a way to choose
+what to read, never as proof of a mechanism. The graph also says the relevant
+global missing residual is locally noncentral three-label ReLU geometry,
+output/weight-specific and high-degree; coefficient resemblance is not enough.
+Any eventual control must reduce downstream influence variance with support
+alignment, not merely conserve expectation.
+
+11. M178 ARTIFACTS, REPORTING, AND FOLLOW-ON ARROWS
+
+Make a new isolated directory named m178_certified_phi2_owent (or the exact
+repository convention) containing only:
+
+  m178_certified_phi2_owent.py
+  test_m178_certified_phi2_owent.py
+  run_m178_static_audit.py
+  verify_m178_static.py
+  M178_PREDECLARED_PROTOCOL_YYYYMMDD.md
+  M178_RESULTS_YYYYMMDD.json
+  M178_REPORT_YYYYMMDD.md
+  M178_FROZEN_MANIFEST_YYYYMMDD.json
+  M178_SHA256SUMS_YYYYMMDD.txt
+
+The manifest must state commit, branch, all inputs, random seed policy
+(none unless a predeclared deterministic test generator is used), package
+versions, no-API condition, response-free firewall, exact scope exclusions,
+predicted result, numerical/cost contract, and kill gates. Hash every produced
+source, test, runner, report, manifest, and JSON result. Update the fold ledger
+with the one new M178 record; do not modify historical records. Write a concise
+autopsy addition even on pass, distinguishing theorem, static test, numerical
+certificate, resource accounting, and untested efficacy.
+
+Required report sections:
+
+  STATUS and scope; commit and hash verification; predeclared prediction;
+  formulas/strata and derivative definitions; certified remainder proof;
+  inclusive fixed/bounded FLOP count; hostile response-free test table;
+  deterministic/reproducibility results; all kill-gate results; failure tissue
+  or preserved components; exact dependency update; firewall statement;
+  separate follow-on arrows.
+
+Follow-on arrows are strictly separate:
+
+  M178 pass -> M176 response-free BackgroundArchive producer only.
+  M176 pass -> separately specify Source211 -> TangentState conversion.
+  Both pass -> M175 B=8 ABI/resource trace.
+  M175 pass -> only then request authority for frozen M172 variance gate.
+  Any later efficacy/score/champion/submission action requires separate
+  operational authorization. No arrow grants a rank or winning claim.
+
+12. FINAL RESPONSE FORMAT TO THE HUMAN
+
+Return: current commit/branch; exact files created; test and checksum summary;
+M178 disposition; proven versus unproven statements; inclusive F_M178 or the
+precise accounting no-go; first broken link if killed; immutable champion
+unchanged; sealed cells not opened; and the one next allowed arrow. Do not say
+or imply that this wins, ranks, improves MSE, improves score, or is ready to
+submit.

@@ -1,0 +1,41 @@
+{
+  "candidate": "M164 staged native audit of frozen M163 exterior collision-null control",
+  "status": "RESOURCE_CLOSED_NO_DEVELOPMENT_EFFICACY_RUN",
+  "firewall": "All resource and invariance inputs were generated target-shaped Gaussian matrices. No target truth, scorer, contest row, leaderboard, submission, or champion artifact was read or changed.",
+  "native_resource_runs": [
+    {"seed": 164700001, "finite": true, "matmul_calls": 155, "billed_flops": 10444656904, "residual_s": 0.010638599749654531, "five_x_combined_effective": 101744835578.82727, "peak_working_set_mib": 80.99609375, "private_mib": 573.5625},
+    {"seed": 164700002, "finite": true, "matmul_calls": 155, "billed_flops": 10444656904, "residual_s": 0.010092695243656635, "five_x_combined_effective": 101471883325.82832, "peak_working_set_mib": 80.97265625, "private_mib": 573.484375},
+    {"seed": 164700003, "finite": true, "matmul_calls": 155, "billed_flops": 10444656904, "residual_s": 0.00945560191757977, "five_x_combined_effective": 101153336662.78989, "peak_working_set_mib": 81.0859375, "private_mib": 573.47265625},
+    {"seed": 164700004, "finite": true, "matmul_calls": 155, "billed_flops": 10444656904, "residual_s": 0.010288394521921873, "five_x_combined_effective": 101569732964.96094, "peak_working_set_mib": 80.97265625, "private_mib": 572.8984375},
+    {"seed": 164700005, "finite": true, "matmul_calls": 155, "billed_flops": 10444656904, "residual_s": 0.009711905382573605, "five_x_combined_effective": 101281488395.2868, "peak_working_set_mib": 81.34375, "private_mib": 572.7734375}
+  ],
+  "aggregate": {
+    "bill_constant": true,
+    "residual_mean_ms": 10.037439363077283,
+    "residual_p99_ms_linear": 10.624591540545225,
+    "residual_max_ms": 10.638599749654531,
+    "maximum_residual_ms_for_5x_cap": 7.148928592,
+    "p99_five_x_combined_effective": 101737831474.27261,
+    "peak_rss_mib": 81.34375,
+    "resource_gate": {
+      "finite": "PASS (5/5)",
+      "exact_155_matmuls": "PASS (5/5)",
+      "bill_within_14019121200_slot": "PASS (5/5)",
+      "peak_working_set_within_512_mib": "PASS (5/5)",
+      "five_x_combined_within_100000000000": "FAIL (5/5)"
+    }
+  },
+  "invariance_audit": {
+    "seed": 164700001,
+    "permutation_max_abs": 2.220446049250313e-16,
+    "gauge_max_abs": 1.6653345369377348e-16,
+    "tolerance": 2e-08,
+    "pass": true
+  },
+  "development_screen": {
+    "executed": false,
+    "reason": "The precondition requiring all native resource gates to pass is false. No source-variance, full-source ratio, p99, width-trend, or ijj-only collision efficacy measurement was run.",
+    "m159_robust_envelope": "not reached; no valid provider L2/Linf certificate was asserted"
+  },
+  "closure": "M163 remains an exact exterior collision-null mathematical control, but this inclusive target-shaped FlopScope implementation is closed at the hostile residual wall-time gate. Its exterior identity and prior diagnostics remain available as non-deployable evidence."
+}

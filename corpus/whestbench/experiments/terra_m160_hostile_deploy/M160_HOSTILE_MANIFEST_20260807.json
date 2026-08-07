@@ -1,0 +1,65 @@
+{
+  "status": "FROZEN_M160_HOSTILE_AUDIT_FAIL_CLOSED_NO_EFFICACY",
+  "date": "2026-08-07",
+  "scope": {
+    "candidate": "isolated M157 self-hosted Formal-q0 pilot prototype",
+    "allowed_input": "fresh generated float32 256x256, depth-32 weights only",
+    "forbidden": [
+      "truth",
+      "reference output",
+      "labels",
+      "MSE or score",
+      "competition data",
+      "leaderboard",
+      "submission",
+      "champion mutation",
+      "M145 mutation"
+    ]
+  },
+  "runtime": {
+    "python": "CPython 3.11.15",
+    "numpy": "2.4.6 installed only at C:\\tmp\\m160-cp311-deps",
+    "flopscope": "0.10.0+np2.4.6 read from work/whest-v014/Lib/site-packages",
+    "worker_model": "six fresh local processes: five target-shaped + one early-pruning adversary"
+  },
+  "immutable_inputs_sha256": {
+    "m157_selfhosted_formal_pilot.py": "47d9c46afce023d79f1d7429f00d1faceae50151e5f6f6e6644fef827aa9c752",
+    "m145_integrated_estimator.py": "83e38cab70d4a63f273458bd808f38f01d7805d0fb600c7785c707feb5a24367",
+    "m145_flopscope_sidecar.py": "6384b87dbf14b5a37108611a3b97b05edbabd43d432f3fb69c1872c33f5beeeb"
+  },
+  "artifacts_sha256": {
+    "m160_cp311_worker.py": "2a1d8c918f2d2006e759d93f4500737691765fba1ef77396716d0f3a7f256a3a",
+    "run_m160_hostile_audit.py": "5d0d09da59fd14c9bcec1eff039a0c4208b777be0874958d338cff026da3dd09",
+    "test_m160_hostile_audit.py": "df8a84354ba825501f4cd2d29ff27b2609000f0ff9ba5f1927f7ed9b7ffd18b8",
+    "M160_HOSTILE_AUDIT_20260807.json": "e94670ca94e950d447ea6270337e455d8ec97438938e061a7d1e7a9a0f796bf4",
+    "M160_HOSTILE_DEPLOYMENT_AUDIT_20260807.md": "9687c15c697ea57ae0b9710ab54ff0789b4a8113ef0685ecf347ea62b1829658",
+    "raw_workers/target_1.json": "99de6b42cdcb5aa70489778a0e66faf16ee9df946ddfb1584092086b733e0b66",
+    "raw_workers/target_2.json": "61bddb25c189baed49b0f450e0059f1961c188b89ddc8fa419b855908c90ce01",
+    "raw_workers/target_3.json": "f9a26143df60130b7e0d9e7b00ab98a711ed02180c391ddf2f66a0db5e5a855a",
+    "raw_workers/target_4.json": "83e19d8631e5cd9bde37e7527f52e249030644654a9cab82f81ba4cd985f7470",
+    "raw_workers/target_5.json": "13962bd8b918bf4c8770639867bf27df8eca5be2e68c808df2e289c4ec068746",
+    "raw_workers/adversarial_early_pruning.json": "a346905a8bb2093db880b66cda27b4b0d46e679aaa413df3e211987498c6a5fa"
+  },
+  "measurements": {
+    "target_fresh_processes": 5,
+    "total_fresh_processes": 6,
+    "target_bill_range": [165308703820, 193371731851],
+    "target_dispatch_call_range": [664, 667],
+    "target_flopscope_matmul_call_range": [1041, 1044],
+    "target_peak_rss_mib_max": 387.15234375,
+    "target_peak_private_mib_max": 837.44921875,
+    "target_max_effective_compute": 210352002450.01505,
+    "target_max_hostile_effective_compute_5x_residual": 278273084846.0753,
+    "adversarial_layer2_width": 32
+  },
+  "gates": {
+    "five_fresh_target_processes_completed": true,
+    "all_target_structural_invariants": true,
+    "adversarial_early_pruning_structural_invariants": true,
+    "historical_512MiB_peak_rss": true,
+    "historical_setup_under_4s": true,
+    "historical_predict_under_20s": true,
+    "historical_258_4B_hostile_5x_residual": false
+  },
+  "disposition": "Fail closed: M157 receives no deployment, efficacy, ranking, submission, or champion authorization from this audit."
+}
