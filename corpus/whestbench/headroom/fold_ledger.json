@@ -1670,6 +1670,21 @@
       "primary_effect": 0.0,
       "ci_upper": 0.0,
       "failures": 0
+    },
+    {
+      "id": "dac_prize_report_extension_v2",
+      "mechanism": "Extend the frozen tangent-lineage Algorithmic-Contribution report (builder extracted from the frozen source-release tar, tar untouched) with exactly three additions: Section 6b (certified provider + exact full-cov recurrence + the T2 measured non-Gaussianity wall, closing on the pays-when-subtracted / fails-when-predicted design principle), a Claude disclosure paragraph in Section 9, and DOI-verified references Owen 1956 + Tallis 1961.",
+      "prediction": "The existing reportlab builder renders the extension in the original style; the chapter unifies the tangent control (+19.8% when subtracted) with the closure kill (46x when predicted) into one evidenced thesis.",
+      "kill_condition": "Render failure; any Section 6b number diverging from T2_REPORT.md/t2_results.json; an unverifiable reference DOI left in the artifact.",
+      "bias_class": "Writeup artifact; no new measurements; all cited numbers carry their evidence class (T2 observed, M178/M179 frozen certificates, tangent numbers inherited from the frozen original, DOIs resolved via doi.org this session).",
+      "result": "COMPLETE. WHestBench-Algorithmic-Prize-Report-DRAFT-v2.pdf rendered (6 pages, reportlab 5.0.0 scratch venv) and visually verified page-by-page: 6b after the negative-results ledger, measured-wall table (7.175e-4 diagonal / 9.606e-5 full-cov / ~3.09e-7 sampling, MC floor 1-2e-7), Section 9 disclosure, references [11]/[12]. The first Tallis DOI guess (tb00390.x) resolved to a road-traffic paper and was CORRECTED to tb00408.x (JRSS-B 23(1) 223-229) after doi.org verification -- caught before commit by the verify-before-cite rule. Filing mechanics inherited (--submission-id at user-return; tangent archive is the natural ID and passed pinned v0.14 validate-package 2026-08-08). Artifacts: build_phase2_report_v2.py, the v2 PDF, README.md.",
+      "status": "screened",
+      "status_note": "writeup deliverable; screened = rendered and verified, filing user-gated",
+      "artifact_hash": "corpus/whestbench/experiments/dac_prize_report_extension/ (hashed by the repo commit)",
+      "matched_units": 0,
+      "primary_effect": 0.0,
+      "ci_upper": 0.0,
+      "failures": 0
     }
   ]
 }
