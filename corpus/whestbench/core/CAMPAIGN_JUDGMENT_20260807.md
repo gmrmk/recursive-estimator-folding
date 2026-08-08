@@ -69,3 +69,56 @@ The two-arm compounding OBSERVATION remains true arithmetic (multiplier and
 MSE multiply); what died is the claimed reachability of each arm's endpoint.
 The organizer questions, the A2 port design, the M179 producer, and the
 judgment evidence above are all retained assets.
+
+## Deepened synthesis (Fable direct, ultrathink redo, 2026-08-07)
+
+I re-derived the panel's FATAL independently rather than adopt it, and it holds
+— but the deeper reading sharpens both the one binding constraint and the one
+genuinely creative move the panel underpriced.
+
+**The unavoidable constraint, stated exactly.** The board leaders already sit
+at or near the multiplier floor: joe_wanza is adjusted 7.39e-9 at raw MSE
+5.21e-8 (multiplier 0.142), SKIBIDI is 9.2e-9 at raw 9.24e-8 (multiplier
+0.0996). So the multiplier arm, driven to its own 0.1 floor, can at best MATCH
+their compute efficiency; it cannot pass them. Passing them requires lower raw
+MSE. To beat joe_wanza at the 0.1 floor needs MSE < 7.39e-8; the champion is
+3.089e-7, a **4.18x cut**; beating at his own 0.142 needs a 5.85x cut. This is
+independent of the multiplier and independent of native pricing. **#1 = a
+4-to-6x raw-MSE reduction, full stop** — the multiplier only decides whether
+you arrive at the leaders' altitude or below it, never whether you clear them.
+
+**The creative move the plan gestured at but never sharpened — the floor
+frees compute.** Below C/B = 0.1 (C <= 27.2B) the multiplier is clamped, so
+every FLOP under that line is SCORE-FREE. If native re-pricing (Rules 5.2,
+wall-time-billed) runs the champion's 184.8B matmul fast enough to sit under
+the floor, the slack between the sampling wall-cost and 27.2B is a FREE
+analytic budget for an expensive control variate that cuts MSE. This is the
+real compounding: the accounting arm does not merely multiply the MSE arm, it
+FUNDS it. That reframes the whole campaign — the corpus killed cheap analytic
+controls on cost, but a control that is free under the floor changes the
+cost side of every one of those kills.
+
+**Why it is still a long shot, quantified honestly.** The free budget depends
+on native throughput, and the only demonstrated number is itsjustmarsel's
+4.44x (one CPU, one 4096-matmul). At 4.44x the champion sampling costs
+184.8B/4.44 = 41.6B wall-equivalent — still ABOVE the 27.2B floor, so there is
+no free budget and the floor is not even reached. The frame needs native
+throughput ~7x+ (unmeasured; ~1 TFLOP/s sustained on 16 AVX cores makes it
+plausible but unproven), at which sampling costs ~18B and ~9-70B is freed for
+a control. And the corpus has not found a control that delivers 4-6x MSE in
+any budget: the exact k3/k4 SIMPLE recurrence is 290B, terminal k3/k4 gave
+0.493%, and M137 caps a four-moment control's irreducible residual at the
+0.211-wide identifiability interval. So the binding open problem is precise:
+**a control variate that cuts raw MSE 4-6x within a ~10-70B native budget** —
+neither found nor proven impossible.
+
+**Revised probability and objective — my number, not the panel's.** P(#1)
+~3-8%, gated on that one control-variate breakthrough times a favorable floor
+ruling times native throughput above the demonstrated point. That is a real
+long shot, not a plan. The reachable, high-probability targets are unchanged:
+best honest top-tier Phase-II score, and the $20k Algorithmic Contribution
+prize (the M178/M179 certified-provider line is the paper). **The single most
+decision-relevant unknown is native throughput on the grading hardware** — it
+sets whether the floor and the free budget exist at all — and it is empirically
+answerable the moment a graded baseline submission runs. That, not more local
+gates, is the highest-information next step; it is user-gated (submission).
