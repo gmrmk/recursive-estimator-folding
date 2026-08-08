@@ -1,0 +1,225 @@
+{
+  "constants": {
+    "kill_g0a_reduction": 0.1,
+    "kill_g0b_reduction": 0.15,
+    "n_base": 32256,
+    "net_seeds": [
+      101,
+      202,
+      303
+    ],
+    "replicates": 16,
+    "rotation_seed_formula": "900000 + net_seed*1000 + r",
+    "tangent_lambda": 0.9807112198896164
+  },
+  "date": "2026-08-08",
+  "deviations": [
+    "FINDING (contradicts the predeclaration's premise, verdict unaffected in direction): the frozen v3 source (candidate_source_validator_v3/estimator.py) inherits fold3_estimator.Estimator -- the three-terminal-layer dead/on/kink fold -- so v3's current pipeline ALREADY IS the L3-folded structure ('v3 already folds at L1' is false; N8c artifacts call v3 'the frozen v3 fold3 pipeline').  G0-b is executed as predeclared and its billed reduction is structurally 0.",
+    "analytic pass and tangent recursion computed in float64 numpy instead of float32 flopscope arrays; per-net f32/f64 cross-check reported (tangent_f32_vs_f64_max_rel_diff)",
+    "G0-a arm (i) is the sampling-stage-isolating plain antipodal downstream (N8a arm (a) / N8c plain arm), not the full fold3 pipeline -- same deviation as N8a/N8c; its per-net variances are anchored against n8c_g0_results.json plain_downstream.variance_ddof1"
+  ],
+  "firewall": "synthetic He nets only; frozen v3 read-only (only shipped kerdock_phases.npz loaded); tangent tar: estimator.py member only, extracted to scratch; no dataset/truth/scorer/submission; single process, foreground",
+  "gates": {
+    "g0a": {
+      "bootstrap_ci_95": [
+        -0.030263764434602044,
+        0.0622078601418011
+      ],
+      "kill_threshold_reduction": 0.1,
+      "lambda": 0.9807112198896164,
+      "mean_paired_variance_reduction": 0.021433210603613622,
+      "n_base": 32256,
+      "net_rows": [
+        {
+          "cov_arm_i_correction": 5.539588287825617e-09,
+          "net_seed": 101,
+          "paired_variance_reduction": 0.03414861098659905,
+          "tangent_f32_vs_f64_max_rel_diff": 3.9227308316459874e-07,
+          "var_arm_i_kerdock": 2.0348826775419162e-07,
+          "var_arm_ii_tangent_corrected": 1.965394260583168e-07,
+          "var_correction_term": 4.130334879776111e-09,
+          "wall_s": 36.0
+        },
+        {
+          "cov_arm_i_correction": 8.889464551967257e-09,
+          "net_seed": 202,
+          "paired_variance_reduction": 0.018226226580608573,
+          "tangent_f32_vs_f64_max_rel_diff": 6.827944877597936e-07,
+          "var_arm_i_kerdock": 5.690115914331209e-07,
+          "var_arm_ii_tangent_corrected": 5.586406572406681e-07,
+          "var_correction_term": 7.40799491148109e-09,
+          "wall_s": 36.4
+        },
+        {
+          "cov_arm_i_correction": 7.1235887844739045e-09,
+          "net_seed": 303,
+          "paired_variance_reduction": 0.011924794243633241,
+          "tangent_f32_vs_f64_max_rel_diff": 2.1051277047235966e-06,
+          "var_arm_i_kerdock": 2.1781183151096933e-07,
+          "var_arm_ii_tangent_corrected": 2.152144702363721e-07,
+          "var_correction_term": 1.1649816294349601e-08,
+          "wall_s": 36.1
+        }
+      ],
+      "pass": false,
+      "per_net_reductions": [
+        0.03414861098659905,
+        0.018226226580608573,
+        0.011924794243633241
+      ],
+      "radial_covariance": 0.9980487860647466,
+      "replicates": 16
+    },
+    "g0a_positive_control": {
+      "mean_paired_variance_reduction": 0.3444985098803702,
+      "n_base": 14000,
+      "net_rows": [
+        {
+          "net_seed": 101,
+          "paired_variance_reduction": 0.26017567349820603,
+          "var_arm_i_iid": 1.5826628743886053e-06,
+          "var_arm_ii_iid_tangent": 1.1708924951239432e-06,
+          "wall_s": 15.6
+        },
+        {
+          "net_seed": 202,
+          "paired_variance_reduction": 0.41248929643470944,
+          "var_arm_i_iid": 2.9807892499523926e-06,
+          "var_arm_ii_iid_tangent": 1.7512455894193848e-06,
+          "wall_s": 15.8
+        },
+        {
+          "net_seed": 303,
+          "paired_variance_reduction": 0.3608305597081951,
+          "var_arm_i_iid": 1.6680994836211628e-06,
+          "var_arm_ii_iid_tangent": 1.0661982132971875e-06,
+          "wall_s": 15.7
+        }
+      ],
+      "note": "diagnostic implementation control, NOT a gate: frozen response map on antipodal iid Gaussian sampling at the tangent lineage's native n=14,000 with _radial_covariance=1.0 (no Sobol, no quartic radial weights -- mechanism check only)"
+    },
+    "g0b": {
+      "counting_convention": "t3 cost-model per-op bills (capped_fold3.predict_main_bill), direct-matmul convention; WHT first product and Winograd backend not modeled (identical in both compared structures, ratio-invariant); analytic diagonal pass excluded (identical additive ~1e7 term)",
+      "kill_threshold_reduction": 0.15,
+      "mean_billed_reduction": 0.0,
+      "metered_anchor": "n8c_g0_results.json full_estimator.billed_flops_mean on the same nets: 1.8166e11 (101), 1.6984e11 (202), 1.6478e11 (303) -- sits ~8-10% ABOVE this static count because the deployed run's pilot rescues enlarge the active sets beyond the analytic structural sets and its Winograd/WHT backends bill their own overheads; same order, per-net ordering preserved",
+      "n_base": 32256,
+      "net_rows": [
+        {
+          "bill_l3_variant": 167337699229,
+          "bill_v3_current": 167337699229,
+          "billed_reduction": 0.0,
+          "diagnostic_bill_unfolded_variant": 168667013091,
+          "diagnostic_existing_fold_value": 0.007881291294835502,
+          "fold_partition_counts": {
+            "a28": 177,
+            "d30_init": 92,
+            "d31_init": 97,
+            "d32": 108,
+            "d32_init": 108,
+            "dm30": 0,
+            "dm31": 0,
+            "dm32": 0,
+            "k30": 88,
+            "k30_init": 88,
+            "k31": 85,
+            "k31_init": 85,
+            "k32": 74,
+            "k32_init": 74,
+            "o30": 76,
+            "o30_init": 76,
+            "o31": 74,
+            "o31_init": 74,
+            "o32": 74,
+            "o32_init": 74,
+            "r30": 0,
+            "r31": 0,
+            "r32": 0
+          },
+          "middle_loop_active_max": 256,
+          "middle_loop_active_min": 163,
+          "net_seed": 101
+        },
+        {
+          "bill_l3_variant": 155203124066,
+          "bill_v3_current": 155203124066,
+          "billed_reduction": 0.0,
+          "diagnostic_bill_unfolded_variant": 156882675440,
+          "diagnostic_existing_fold_value": 0.010705779776444158,
+          "fold_partition_counts": {
+            "a28": 166,
+            "d30_init": 87,
+            "d31_init": 96,
+            "d32": 83,
+            "d32_init": 83,
+            "dm30": 0,
+            "dm31": 0,
+            "dm32": 0,
+            "k30": 97,
+            "k30_init": 97,
+            "k31": 79,
+            "k31_init": 79,
+            "k32": 84,
+            "k32_init": 84,
+            "o30": 72,
+            "o30_init": 72,
+            "o31": 81,
+            "o31_init": 81,
+            "o32": 89,
+            "o32_init": 89,
+            "r30": 0,
+            "r31": 0,
+            "r32": 0
+          },
+          "middle_loop_active_max": 256,
+          "middle_loop_active_min": 162,
+          "net_seed": 202
+        },
+        {
+          "bill_l3_variant": 150302644064,
+          "bill_v3_current": 150302644064,
+          "billed_reduction": 0.0,
+          "diagnostic_bill_unfolded_variant": 152108237923,
+          "diagnostic_existing_fold_value": 0.011870454116456375,
+          "fold_partition_counts": {
+            "a28": 168,
+            "d30_init": 103,
+            "d31_init": 85,
+            "d32": 92,
+            "d32_init": 92,
+            "dm30": 0,
+            "dm31": 0,
+            "dm32": 0,
+            "k30": 81,
+            "k30_init": 81,
+            "k31": 85,
+            "k31_init": 85,
+            "k32": 81,
+            "k32_init": 81,
+            "o30": 72,
+            "o30_init": 72,
+            "o31": 86,
+            "o31_init": 86,
+            "o32": 83,
+            "o32_init": 83,
+            "r30": 0,
+            "r31": 0,
+            "r32": 0
+          },
+          "middle_loop_active_max": 255,
+          "middle_loop_active_min": 158,
+          "net_seed": 303
+        }
+      ],
+      "partition_source": "realized dead/on/kink counts from the analytic pass (predeclared); pilot refinements billed but move zero units (rescued/demoted = 0) because refinement outcomes are sample-dependent -- NOTE: the reduction is 0 for EVERY partition input because both structures evaluate the same bill function",
+      "pass": false,
+      "per_net_reductions": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "predeclaration": "N9_PREDECLARATION.md",
+  "verdict": "G0-a KILL: tangent component dead on Kerdock frames (mean paired variance reduction +0.0214 < 0.1; the frames already absorb the first-layer residual the control subtracts); G0-b KILL: fold increment is empty -- the frozen v3 already IS the L3-folded structure, so the predeclared comparison yields billed reduction 0.0000 < 0.15; BOTH components dead: N9 KILLED -- per the predeclaration, the honest local program is exhausted with the composition explicitly measured, not assumed"
+}

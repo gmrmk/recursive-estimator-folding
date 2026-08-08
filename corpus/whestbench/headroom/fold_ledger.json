@@ -1766,6 +1766,15 @@
       "bias_class": "Descriptive decomposition; synthetic nets; frozen v3 read-only; no score credit.",
       "result": "KILLED at G0: mean bias share of the FULL v3 pipeline = -0.034 (per-net -0.060/-0.065/+0.025; bootstrap CI [-0.031, 0.097], entirely below the 0.25 line; plain-downstream anchor -0.053, consistent with the homogeneity argument that the spherical estimate is exactly unbiased over the rotation). Kerdock v3s error is ~100% sampling variance -- the corrector has nothing to learn; ceiling ~1.0x. VALUABLE SIDE-FINDING: v3 is unbiased-in-practice at the scored layer (pilot-rescue bias negligible there), strengthening its private-rerun robustness case in the dossier. This closes the N-series: N6, N7, N8a, N8b, N8c all killed at predeclared gates -- the local honest program is EXHAUSTED. Artifacts: run_n8c_g0.py, n8c_g0_results.json.",
       "status": "killed"
+    },
+    {
+      "id": "n9_kerdock_composition_interaction",
+      "mechanism": "G0 interaction gates for the last unbuilt composition: (a) moment-tangent control (frozen lambda 0.9807112198896164, response map transcribed verbatim) applied on the Kerdock spherical frames; (b) L3-fold billing increment over the frozen v3 structure (static count). Predeclared 1cfc0e4 before code; delegated with a no-watcher work rule.",
+      "prediction": "Full success ~1.75x (adjusted ~9e-8, rank ~10-14) — explicitly NOT a #1 route (honesty bound stated in the predeclaration).",
+      "kill_condition": "G0-a: mean paired variance reduction < 10%. G0-b: static billed reduction < 15%.",
+      "bias_class": "Interaction premise measurement; synthetic nets; frozen sources read-only; no score credit.",
+      "result": "KILLED, both components. G0-a: +2.14% mean (per-net +3.41/+1.82/+1.19; CI [-3.0%, +6.2%]) vs the 10% bar — verified real by (1) arm-(i) variances reproducing n8c independent runs to 5 sig figs and (2) a POSITIVE CONTROL: the identical tangent code on iid sampling at the lineage native n=14000 gives +34.5% — the Kerdock frames absorb the first-layer residual; a derived cov^2/(var_i var_corr) ceiling (1.9-3.7%) proves no lambda clears 10%. G0-b: 0.00% — the predeclarations premise (v3 folds at L1) is CONTRADICTED by the frozen source: candidate_source_validator_v3 inherits fold3_estimator.Estimator, so v3 already IS the L3 fold (the L1 in its name = layer-1 WHT memory fold); the predeclared comparison is between identical structures, and even a free terminal-3 fold caps ~10% < 15%. CLOSES THE HONEST LOCAL PROGRAM WITH A MEASURED ENUMERATION: N4, N5, N6, N7, N8a, N8b, N8c, N9 all killed at predeclared gates; T-series shipped 5 packaged candidates; the composition space around the local best is measured, not assumed, exhausted. Artifacts: run_n9_g0.py (deterministic), n9_g0_results.json, N9_G0_NOTES.md.",
+      "status": "killed"
     }
   ]
 }

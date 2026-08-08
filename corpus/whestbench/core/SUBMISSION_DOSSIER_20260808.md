@@ -195,3 +195,16 @@ or killed with predeclared evidence. Surpassing the displayed #1 requires
 which point the honest ranking (where Kerdock v3 is designate-apparent,
 now with a measured unbiasedness argument) is what remains. The runbook
 above is the complete playbook for that day.
+
+### N9 (final entry): the composition is measured-dead too
+The last unbuilt idea — Kerdock frames + the tangent lineage's moment
+control + deeper folding — was predeclared and killed at both interaction
+gates (commit trail 1cfc0e4 -> this one): the tangent control buys +2.1%
+on the frames (CI [-3.0%, +6.2%]; a positive control shows the identical
+code buys +34.5% on iid — the frames already absorb the residual), and v3
+already IS the L3 fold (its "L1" names a layer-1 WHT memory fold), so the
+fold increment is structurally 0%. With N4-N9 all killed at predeclared
+gates, the local exhaustion is a measured enumeration, not a judgment call.
+Kerdock v3 stands as the honest local optimum of this corpus: structured
+frames (2-3.2x over conditioned MC), zero measured final-layer bias, 23%
+compute headroom, validator-passed, packaged.
