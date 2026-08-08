@@ -1,0 +1,80 @@
+﻿python.exe : C:\Users\strid\Documents\Codex\2026-08-02\https-chatgpt-com-share-6a5556ed-2e1c\publish\recursive-estimato
+r-folding\corpus\whestbench\experiments\pb1_premise_battery\premise_battery.py:83: ConfigureNoOpWarning: 
+flops.configure() configures the in-process flopscope backend only; it is a no-op on flopscope-client and the 
+evaluation servers, so these settings will not affect a graded submission.
+At line:1 char:476
++ ... HREADS='4'; & ".\work\whest-v014\Scripts\python.exe" "publish\recursi ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\strid\...ded submission.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  flops.configure(symmetry_warnings=False)
+== PB-1 Premise Battery ==
+loading cached truths (primary 3.5M + wide checkpoint)...
+primary truth cached (avoided wall ~397s); wide baseline cached for 80 nets (mse_raw cross-checked ok)
+
+[baseline v3] primary panel (amortized once)...
+    net 101: 16 reps done, mse=1.9887e-07, billed_max_fracB=0.6782
+    net 202: 16 reps done, mse=5.6770e-07, billed_max_fracB=0.6401
+    net 303: 16 reps done, mse=2.3885e-07, billed_max_fracB=0.6223
+[baseline v3] wall=279.0s panel_mse=3.3514e-07 billed_worst_fracB=0.6782
+
+[M188_on3.5] dials={'on_alpha': 3.5} ...
+    net 101: 16 reps done, mse=1.9892e-07, billed_max_fracB=0.6812
+    net 202: 16 reps done, mse=5.6760e-07, billed_max_fracB=0.6440
+    net 303: 16 reps done, mse=2.3883e-07, billed_max_fracB=0.6243
+    wide 20/80 done
+    wide 40/80 done
+    wide 60/80 done
+    wide 80/80 done
+[M188_on3.5] VERDICT=KILL :: panel-MSE reduction 0.000 < 0.1
+    reduction=0.000 CI=[-0.000,0.000] worst_net=-0.000 billed_worst_fracB=0.6812
+
+[M188_on4.0] dials={'on_alpha': 4.0} ...
+    net 101: 16 reps done, mse=1.9881e-07, billed_max_fracB=0.6847
+    net 202: 16 reps done, mse=5.6753e-07, billed_max_fracB=0.6484
+    net 303: 16 reps done, mse=2.3885e-07, billed_max_fracB=0.6269
+    wide 20/80 done
+    wide 40/80 done
+    wide 60/80 done
+    wide 80/80 done
+[M188_on4.0] VERDICT=KILL :: panel-MSE reduction 0.000 < 0.1
+    reduction=0.000 CI=[-0.000,0.001] worst_net=0.000 billed_worst_fracB=0.6847
+
+[M188_on5.0] dials={'on_alpha': 5.0} ...
+    net 101: 16 reps done, mse=1.9879e-07, billed_max_fracB=0.6922
+    net 202: 16 reps done, mse=5.6747e-07, billed_max_fracB=0.6592
+    net 303: 16 reps done, mse=2.3883e-07, billed_max_fracB=0.6379
+    wide 20/80 done
+    wide 40/80 done
+    wide 60/80 done
+    wide 80/80 done
+[M188_on5.0] VERDICT=KILL :: panel-MSE reduction 0.000 < 0.1
+    reduction=0.000 CI=[-0.000,0.001] worst_net=0.000 billed_worst_fracB=0.6922
+
+[M189_dead-2.5] dials={'dead_alpha': -2.5} ...
+    net 101: 16 reps done, mse=1.9894e-07, billed_max_fracB=0.6823
+    net 202: 16 reps done, mse=5.7332e-07, billed_max_fracB=0.6440
+    net 303: 16 reps done, mse=2.3933e-07, billed_max_fracB=0.6236
+    wide 20/80 done
+    wide 40/80 done
+    wide 60/80 done
+    wide 80/80 done
+[M189_dead-2.5] VERDICT=KILL :: panel-MSE reduction -0.006 < 0.1
+    reduction=-0.006 CI=[-0.028,0.016] worst_net=-0.010 billed_worst_fracB=0.6823
+
+[M189_dead-3.0] dials={'dead_alpha': -3.0} ...
+    net 101: 16 reps done, mse=1.9638e-07, billed_max_fracB=0.7013
+    net 202: 16 reps done, mse=5.7552e-07, billed_max_fracB=0.6665
+    net 303: 16 reps done, mse=2.4449e-07, billed_max_fracB=0.6366
+    wide 20/80 done
+    wide 40/80 done
+    wide 60/80 done
+    wide 80/80 done
+[M189_dead-3.0] VERDICT=KILL :: panel-MSE reduction -0.011 < 0.1
+    reduction=-0.011 CI=[-0.046,0.025] worst_net=-0.024 billed_worst_fracB=0.7013
+
+M190 SKIPPED: interaction gate closed (M188 promoted alone=False, M189 promoted alone=False); the spec requires >=1 promotion from EACH family.
+
+== DONE == arms=5 promotions=0 acceleration~3.2x
+results -> C:\Users\strid\Documents\Codex\2026-08-02\https-chatgpt-com-share-6a5556ed-2e1c\publish\recursive-estimator-folding\corpus\whestbench\experiments\pb1_premise_battery\pb1_results.json

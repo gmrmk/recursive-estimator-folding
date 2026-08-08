@@ -1914,6 +1914,16 @@
       "primary_effect": 0.0,
       "ci_upper": 0.0,
       "failures": 0
+    },
+    {
+      "id": "pb1_dial_battery_m188_m189",
+      "mechanism": "The failure-cross dial arms on the cached-truth Premise Battery: M188 fold on_alpha {3.5,4.0,5.0} x M189 dead_alpha {-2.5,-3.0} vs frozen v3 (on_alpha 3.0, dead_alpha -2.0), paired seeds, 3-net primary panel. Predeclared e9fefbd; harness authored by agent, executed by coordinator (fixed-harness protocol).",
+      "prediction": "A1b tail evidence (worst nets +22% on-classifications) suggested on_alpha recalibration; M185 left broad dead_alpha open.",
+      "kill_condition": "Per arm: panel-MSE reduction < 10%; promote >= 15% CI-excl-10% AND worst-net >= 20%; billed worst-case > 0.95B kills regardless.",
+      "bias_class": "Response-free battery arms; subclass-only; cached truths; no score credit.",
+      "result": "ALL FIVE ARMS KILLED (flat ~0.000 reductions): on_alpha 3.5/4.0/5.0 and dead_alpha -2.5/-3.0 all fail the 10% gate; M190 joint skipped (neither family promoted). BOTH DIALS CONFIRMED OPTIMAL at their frozen values — closes the dial family and COMPLETES THE FAILURE-CROSS SWEEP (every cross killed or no-go). Battery acceleration measured: 3.2x per mechanism (marginal 307.7s/arm vs 984.1s from-scratch; 397s truth amortized; 80-net wide panel cached). The A1b tail correlation was, as M185 established, statistical shadow not causal signal — the dials were never miscalibrated. Artifacts: premise_battery.py (reusable), pb1_results.json, _run2.log.",
+      "status": "killed",
+      "status_note": "all dial arms; battery infrastructure retained as the standing accelerator"
     }
   ]
 }

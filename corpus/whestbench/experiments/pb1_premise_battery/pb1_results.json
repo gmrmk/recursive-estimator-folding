@@ -1,0 +1,337 @@
+{
+  "acceleration": {
+    "acceleration_factor": 3.2,
+    "baseline_primary_wall_s": 279.0,
+    "battery_marginal_per_arm_wall_s": 307.7,
+    "from_scratch_one_mechanism_wall_s": 984.1,
+    "note": "from-scratch mechanism = recompute 3x3.5M truth + replicate baseline + run arm; battery marginal = arm predicts only (truth & baseline amortized).",
+    "primary_truth_cached_wall_s": 397.467773700002,
+    "wide_nets_cached": 80
+  },
+  "arms": {
+    "M188_on3.5": {
+      "dials": {
+        "on_alpha": 3.5
+      },
+      "primary": {
+        "billed_mean_frac_B": 0.6357073861868873,
+        "billed_worstcase_flops": 185285385549,
+        "billed_worstcase_frac_B": 0.6811962704007353,
+        "mse_ratio": 0.9999174076253977,
+        "panel_mse_arm": 3.3511368556418484e-07,
+        "panel_mse_baseline": 3.3514136568540423e-07,
+        "per_net_mse_arm": {
+          "101": 1.9891649055948195e-07,
+          "202": 5.675966866886509e-07,
+          "303": 2.388278794444216e-07
+        },
+        "per_net_mse_baseline": {
+          "101": 1.9887152477401392e-07,
+          "202": 5.676992359165897e-07,
+          "303": 2.388533363656091e-07
+        },
+        "per_net_reduction": {
+          "101": -0.0002261046950744472,
+          "202": 0.00018064006687124046,
+          "303": 0.0001065797178086969
+        },
+        "reduction": 8.259237460228608e-05,
+        "reduction_ci95": [
+          -0.00026128373111900525,
+          0.0004890357760248653
+        ],
+        "reduction_true_mse_diag": 8.687123052142365e-05,
+        "worst_net_reduction": -0.0002261046950744472
+      },
+      "primary_wall_s": 328.0,
+      "verdict": "KILL",
+      "verdict_reason": "panel-MSE reduction 0.000 < 0.1",
+      "wide": {
+        "billed_worstcase_flops": 200171588462,
+        "billed_worstcase_frac_B": 0.7359249575808824,
+        "caveat": "300k-600k-sample truth floor ~6e-8; single rotation seed r=0; secondary to the primary gate",
+        "mse_ratio": 1.000048115009277,
+        "n_nets": 80,
+        "panel_mse_arm": 3.3697245573573514e-07,
+        "panel_mse_baseline": 3.3695624308297323e-07,
+        "reduction": -4.811500927703882e-05,
+        "reduction_ci95": [
+          -0.00034492747214183716,
+          0.00023229473377940073
+        ],
+        "verdict_reason": "panel-MSE reduction -0.000 < 0.1",
+        "verdict_secondary": "KILL",
+        "worst_decile_reduction": -0.00313558983309839
+      },
+      "wide_wall_s": 852.2
+    },
+    "M188_on4.0": {
+      "dials": {
+        "on_alpha": 4.0
+      },
+      "primary": {
+        "billed_mean_frac_B": 0.6392527761926318,
+        "billed_worstcase_flops": 186249143424,
+        "billed_worstcase_frac_B": 0.6847394978823529,
+        "mse_ratio": 0.9997695463982833,
+        "panel_mse_arm": 3.350641311505978e-07,
+        "panel_mse_baseline": 3.3514136568540423e-07,
+        "per_net_mse_arm": {
+          "101": 1.988116289407554e-07,
+          "202": 5.675281091612867e-07,
+          "303": 2.3885265534975123e-07
+        },
+        "per_net_mse_baseline": {
+          "101": 1.9887152477401392e-07,
+          "202": 5.676992359165897e-07,
+          "303": 2.388533363656091e-07
+        },
+        "per_net_reduction": {
+          "101": 0.0003011785288346003,
+          "202": 0.00030143911507418686,
+          "303": 2.8511883829462903e-06
+        },
+        "reduction": 0.00023045360171669582,
+        "reduction_ci95": [
+          -0.0003055553630601504,
+          0.0008911914386298465
+        ],
+        "reduction_true_mse_diag": 0.00024239269128245589,
+        "worst_net_reduction": 2.8511883829462903e-06
+      },
+      "primary_wall_s": 507.8,
+      "verdict": "KILL",
+      "verdict_reason": "panel-MSE reduction 0.000 < 0.1",
+      "wide": {
+        "billed_worstcase_flops": 201583426607,
+        "billed_worstcase_frac_B": 0.7411155389963235,
+        "caveat": "300k-600k-sample truth floor ~6e-8; single rotation seed r=0; secondary to the primary gate",
+        "mse_ratio": 1.0000076315793807,
+        "n_nets": 80,
+        "panel_mse_arm": 3.369588145912901e-07,
+        "panel_mse_baseline": 3.3695624308297323e-07,
+        "reduction": -7.631579380662501e-06,
+        "reduction_ci95": [
+          -0.0004177499482318825,
+          0.00038610196256316245
+        ],
+        "verdict_reason": "panel-MSE reduction -0.000 < 0.1",
+        "verdict_secondary": "KILL",
+        "worst_decile_reduction": -0.0037121897678701055
+      },
+      "wide_wall_s": 864.4
+    },
+    "M188_on5.0": {
+      "dials": {
+        "on_alpha": 5.0
+      },
+      "primary": {
+        "billed_mean_frac_B": 0.6487730764541207,
+        "billed_worstcase_flops": 188266348620,
+        "billed_worstcase_frac_B": 0.6921556934558823,
+        "mse_ratio": 0.9996659182366048,
+        "panel_mse_arm": 3.350294010669694e-07,
+        "panel_mse_baseline": 3.3514136568540423e-07,
+        "per_net_mse_arm": {
+          "101": 1.9879046955572667e-07,
+          "202": 5.674670671733676e-07,
+          "303": 2.388306664718139e-07
+        },
+        "per_net_mse_baseline": {
+          "101": 1.9887152477401392e-07,
+          "202": 5.676992359165897e-07,
+          "303": 2.388533363656091e-07
+        },
+        "per_net_reduction": {
+          "101": 0.0004075757873297503,
+          "202": 0.00040896433980086577,
+          "303": 9.491135497696757e-05
+        },
+        "reduction": 0.000334081763395222,
+        "reduction_ci95": [
+          -0.000249240177555049,
+          0.001012168133231559
+        ],
+        "reduction_true_mse_diag": 0.0003513895080594631,
+        "worst_net_reduction": 9.491135497696757e-05
+      },
+      "primary_wall_s": 419.3,
+      "verdict": "KILL",
+      "verdict_reason": "panel-MSE reduction 0.000 < 0.1",
+      "wide": {
+        "billed_worstcase_flops": 204576892055,
+        "billed_worstcase_frac_B": 0.7521209266727941,
+        "caveat": "300k-600k-sample truth floor ~6e-8; single rotation seed r=0; secondary to the primary gate",
+        "mse_ratio": 0.9999663584945335,
+        "n_nets": 80,
+        "panel_mse_arm": 3.369449073676796e-07,
+        "panel_mse_baseline": 3.3695624308297323e-07,
+        "reduction": 3.364150546647515e-05,
+        "reduction_ci95": [
+          -0.00042208707408983857,
+          0.00046609467275341164
+        ],
+        "verdict_reason": "panel-MSE reduction 0.000 < 0.1",
+        "verdict_secondary": "KILL",
+        "worst_decile_reduction": -0.0038881907927005577
+      },
+      "wide_wall_s": 341.4
+    },
+    "M189_dead-2.5": {
+      "dials": {
+        "dead_alpha": -2.5
+      },
+      "primary": {
+        "billed_mean_frac_B": 0.6381681333504136,
+        "billed_worstcase_flops": 185585164242,
+        "billed_worstcase_frac_B": 0.6822983979485294,
+        "mse_ratio": 1.006128523572447,
+        "panel_mse_arm": 3.3719528744510933e-07,
+        "panel_mse_baseline": 3.3514136568540423e-07,
+        "per_net_mse_arm": {
+          "101": 1.9893552786905414e-07,
+          "202": 5.733232126344827e-07,
+          "303": 2.3932712183179117e-07
+        },
+        "per_net_mse_baseline": {
+          "101": 1.9887152477401392e-07,
+          "202": 5.676992359165897e-07,
+          "303": 2.388533363656091e-07
+        },
+        "per_net_reduction": {
+          "101": -0.0003218313688344576,
+          "202": -0.009906613153728872,
+          "303": -0.00198358320378178
+        },
+        "reduction": -0.0061285235724470866,
+        "reduction_ci95": [
+          -0.028339849075355507,
+          0.016413523723179918
+        ],
+        "reduction_true_mse_diag": -0.006446023456555983,
+        "worst_net_reduction": -0.009906613153728872
+      },
+      "primary_wall_s": 137.6,
+      "verdict": "KILL",
+      "verdict_reason": "panel-MSE reduction -0.006 < 0.1",
+      "wide": {
+        "billed_worstcase_flops": 201483901768,
+        "billed_worstcase_frac_B": 0.7407496388529412,
+        "caveat": "300k-600k-sample truth floor ~6e-8; single rotation seed r=0; secondary to the primary gate",
+        "mse_ratio": 0.9911133640516655,
+        "n_nets": 80,
+        "panel_mse_arm": 3.3396183562017634e-07,
+        "panel_mse_baseline": 3.3695624308297323e-07,
+        "reduction": 0.008886635948334498,
+        "reduction_ci95": [
+          -0.004584052975150249,
+          0.022871814608982816
+        ],
+        "verdict_reason": "panel-MSE reduction 0.009 < 0.1",
+        "verdict_secondary": "KILL",
+        "worst_decile_reduction": -0.08372668413186177
+      },
+      "wide_wall_s": 244.9
+    },
+    "M189_dead-3.0": {
+      "dials": {
+        "dead_alpha": -3.0
+      },
+      "primary": {
+        "billed_mean_frac_B": 0.6581495658208487,
+        "billed_worstcase_flops": 190767058037,
+        "billed_worstcase_frac_B": 0.7013494780772059,
+        "mse_ratio": 1.0108999967676313,
+        "panel_mse_arm": 3.387944054880747e-07,
+        "panel_mse_baseline": 3.3514136568540423e-07,
+        "per_net_mse_arm": {
+          "101": 1.9637709264137428e-07,
+          "202": 5.755164903643739e-07,
+          "303": 2.4448963345847594e-07
+        },
+        "per_net_mse_baseline": {
+          "101": 1.9887152477401392e-07,
+          "202": 5.676992359165897e-07,
+          "303": 2.388533363656091e-07
+        },
+        "per_net_reduction": {
+          "101": 0.012542932606737778,
+          "202": -0.013770063359628715,
+          "303": -0.02359731364287687
+        },
+        "reduction": -0.010899996767631315,
+        "reduction_ci95": [
+          -0.04563176153202296,
+          0.02503323267448692
+        ],
+        "reduction_true_mse_diag": -0.011464691945777039,
+        "worst_net_reduction": -0.02359731364287687
+      },
+      "primary_wall_s": 145.8,
+      "verdict": "KILL",
+      "verdict_reason": "panel-MSE reduction -0.011 < 0.1",
+      "wide": {
+        "billed_worstcase_flops": 210649458580,
+        "billed_worstcase_frac_B": 0.7744465388970588,
+        "caveat": "300k-600k-sample truth floor ~6e-8; single rotation seed r=0; secondary to the primary gate",
+        "mse_ratio": 0.9841108509232639,
+        "n_nets": 80,
+        "panel_mse_arm": 3.316022951042909e-07,
+        "panel_mse_baseline": 3.3695624308297323e-07,
+        "reduction": 0.01588914907673611,
+        "reduction_ci95": [
+          -0.007861698030536551,
+          0.03976869119304065
+        ],
+        "verdict_reason": "panel-MSE reduction 0.016 < 0.1",
+        "verdict_secondary": "KILL",
+        "worst_decile_reduction": -0.1684719998696828
+      },
+      "wide_wall_s": 254.7
+    },
+    "baseline_v3": {
+      "dials": {
+        "dead_alpha": -2.0,
+        "on_alpha": 3.0
+      },
+      "primary": {
+        "billed_worstcase_frac_B": 0.6781824127205882,
+        "panel_mse": 3.3514136568540423e-07,
+        "per_net_mse": {
+          "101": 1.9887152477401392e-07,
+          "202": 5.676992359165897e-07,
+          "303": 2.388533363656091e-07
+        }
+      },
+      "verdict": "BASELINE"
+    }
+  },
+  "baseline": {
+    "dead_alpha": -2.0,
+    "estimator": "frozen v3",
+    "on_alpha": 3.0
+  },
+  "constants": {
+    "B": 272000000000,
+    "bootstrap_draws": 4000,
+    "cap_frac": 0.95,
+    "governing_metric": "raw measured panel-MSE reduction (primary 3-net)",
+    "kill_reduction": 0.1,
+    "primary_seeds": [
+      101,
+      202,
+      303
+    ],
+    "promote_reduction": 0.15,
+    "promote_tail": 0.2,
+    "replicates": 16,
+    "rotation_seed_formula": "900000+net*1000+r",
+    "wide_seeds": "1000..1079"
+  },
+  "date": "2026-08-08",
+  "firewall": "synthetic He nets; frozen v3 read-only; cached truths & m185 checkpoint read-only; no dataset/scorer/submission; writes in pb1 dir",
+  "notes": [
+    "M190 SKIPPED: interaction gate closed (M188 promoted alone=False, M189 promoted alone=False); the spec requires >=1 promotion from EACH family."
+  ],
+  "predeclaration": "PB1_SPEC_AND_CROSSES.md"
+}
