@@ -1739,6 +1739,15 @@
       "bias_class": "Response-free descriptive slope measurement on synthetic He nets; no score credit.",
       "result": "KILLED: beta_RQMC = -0.97 (seed 11) and -1.23 (seed 22), both above the -1.25 kill line; MC controls -1.01 / -0.78 (second marginally outside the sanity band, replicate noise at R=6 noted — does not rescue the verdict since both RQMC slopes independently fail). RQMC delivers a CONSTANT factor 1.5-2.7x at N=262k (matching community 1.40x reports), no rate change; ReLU-kink variance dominates. Consequence: the arbitrage tiers raw 3.6e-9 is NOT honestly reachable by sampling rate; the honest-max program is constant-factor stacking: RQMC ~1.5x raw + disclosed-native ~2x multiplier (Rules 5.2, fully charged+disclosed — distinct from the unmetered arbitrage) + offline-trained corrector (organizer-sanctioned), projecting adjusted ~3-8e-8 from the Kerdock base — top-tier of the honest frontier, #1 only if the organizer review reprices the arbitrage tier. Artifacts: n7_results.json, run_n7.py, N7_PREDECLARATION.md.",
       "status": "killed"
+    },
+    {
+      "id": "n8a_rqmc_kerdock_draw_stage",
+      "mechanism": "Swap the Kerdock v3 draw stage for antithetic Kronecker+Cranley-Patterson RQMC, gated on the G0 premise that v3 is not already an equivalent structured set. Predeclared 8eae23a before build; executed by a delegated agent.",
+      "prediction": "If v3 samples iid, the lattice buys ~1.5x raw; if v3 is already structured, G0 kills before any build.",
+      "kill_condition": "G0: lattice-vs-existing matched-n variance ratio > 0.83. G2: paired ratio > 0.83 or CI crossing 1 or billed >+2% or ANY memory regression.",
+      "bias_class": "Same deliberately-biased family; draw-stage-only mutation; synthetic nets; no score credit.",
+      "result": "KILLED at G0, decisively inverted: v3 is a structured phased-Hadamard (Kerdock-code) spherical design — kerdock_phases.npz packs 126 orthonormal frames x 256 directions at exact chi-mean radius 15.98438, antipodally doubled to 64512, Haar-rotated per net — already 2.0-3.2x better than radially-conditioned MC. The Kronecker lattice measured 2.106x WORSE (geomean, paired bootstrap CI [1.645, 2.645] entirely above 1; needed <=0.83) on 3 He nets x 16 paired replicates. Diagnostic: N7s lattice gain (vs unconditioned iid) shrinks to 1.07-1.42x once radial conditioning is applied; the Kerdock frames dominate it. Retro-explains v3s local-best standing. No build, no retuning; frozen sources verified untouched. Deviations recorded loudly in N8A_BUILD_NOTES.md (plain antipodal downstream for G0, R=16, Haar-seed pairing). Artifacts: run_n8a_gates.py, n8a_results.json, N8A_BUILD_NOTES.md.",
+      "status": "killed"
     }
   ]
 }
