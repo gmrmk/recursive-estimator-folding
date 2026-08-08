@@ -1,0 +1,35 @@
+{
+ "truth_samples": 3000000,
+ "truth_wall_s": 82.7,
+ "n_eff": 64512,
+ "reps": 40,
+ "constant_v_per_S": 8.739e-06,
+ "stages": {
+  "plain": {
+   "kind": "plain",
+   "v": 0.046972428153821966,
+   "v_sem": 0.007581759987636774,
+   "n_eff": 64512,
+   "reps": 40
+  },
+  "antipodal": {
+   "kind": "antipodal",
+   "v": 0.03793304861865181,
+   "v_sem": 0.005546096882939426,
+   "n_eff": 64512,
+   "reps": 40
+  },
+  "radial": {
+   "kind": "radial",
+   "v": 0.03914668962606811,
+   "v_sem": 0.0049521771063151905,
+   "n_eff": 64512,
+   "reps": 40
+  },
+  "rqmc": {
+   "kind": "rqmc",
+   "skipped": "scipy.qmc unavailable"
+  }
+ },
+ "note": "v = MSE*N, unbiased stages so v is a clean variance; lower is better. S_needed at joe_wanza = v*8.739e-6/7.39e-9. RQMC needs scipy.qmc; if absent the stage is skipped and reported as such."
+}
