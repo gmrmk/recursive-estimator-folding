@@ -1884,6 +1884,21 @@
       "bias_class": "Response-free synthetic G0; subclass-only; cached-truth reuse; no score credit.",
       "result": "KILLED both legs, decisively. Stage 1: tail reproduces (floor-corrected spread 35.3x) but NO diagnostic correlates (pruned +0.243, diag_proxy +0.264, fold_on +0.285, all < 0.3; borderline_frac -0.424 runs ANTI-mechanism). Stage 2 causal: worst-group +7.1% relaxed / +10.1% unpruned; median +3.7%/+4.8%; every upper CI 3-4x below the +30% gate. THE TAIL IS STATISTICAL (rotation-draw variance): worst/median separation collapses 3.79x (single draw) -> 1.12x at R=6; within-net rep MSE spreads 2.3-8.7x; a median net was the R=6 worst. A2 STRUCTURAL-vs-STATISTICAL resolves STATISTICAL, consistent with A1 constant per-net MC difficulty. WINNER CONFIRMED (adjusted-score arithmetic): unpruning bills +41% for a ~6% MSE cut = adjusted x1.33 WORSE -> PRUNING IMPROVES adjusted ~21% (sheds C faster than it adds MSE); the flagged mean-score play is a raw-MSE trap. CONSEQUENCE: Gen3-P1 DEAD both forms; the tail is irreducible single-draw variance at the (optimal) budget allocation; P2 rotation-SELECTION elevated (M185s 2.3-8.7x within-net variance = real oracle headroom IF a weight-derived proxy tracks it). Artifacts: run_m185_g0.py, m185_g0_results.json, M185_G0_NOTES.md, stage1/stage2 checkpoints.",
       "status": "killed"
+    },
+    {
+      "id": "m191_harmonic_spectrum_g0a",
+      "mechanism": "Padgett trigonometric-model bolt steelmanned: measure the Kerdock designs quadrature-error spectrum on zero-mean spherical harmonics degree 1..6 (deterministic, traceless-tensor / power polynomials, 3 rotations) to locate the first non-exact degree where an unbiased harmonic control variate has room.",
+      "prediction": "Odd degrees annihilated by antipodal pairing; first non-exact even degree ~4; CV escapes the M181 bias trap (zero-mean by trig identity, not Gaussian surrogacy).",
+      "kill_condition": "G0-a kill if degree 4 is also ~0 (a 4-design; CV ceiling moves to degree>=6, measure first).",
+      "bias_class": "Deterministic design-property measurement; no estimator change; no score credit.",
+      "result": "G0-a PASS with a genuine structural result. Odd degrees 1/3/5 EXACTLY zero (design RMS 0.000, antipodal). Degree 2 exact to 8.6e-9 => the design IS a spherical 2-design (the harmonic explanation for M180 local optimality: degree-2 exactness = the mutual-unbiasedness structure). Degree 4 ratio 0.098-0.107 (suppressed to ~11% of iid, NOT exact -> not a 4-design). Degree 6 ratio 0.35-0.43 (the LARGER residual leak now). Reproducible across 3 rotations. Consequence: harmonic CV room exists at degrees 4 AND 6, unbiased by trig identity (immune to the M181 closure bias trap). CAVEAT for G0-b: the design already removes 89% of degree-4 on its own (caps the deg-4 CV value) and a deg-6 CV carries ~40%-of-iid own-noise, so the net gain depends on the estimator functions actual harmonic energy above degree 2 vs the CVs sampling noise -> G0-b measures it. Artifacts: run_m191_g0a.py, m191_g0a_results.json.",
+      "status": "screened",
+      "status_note": "G0-a passed; proceed to G0-b harmonic-CV battery arm",
+      "artifact_hash": "pb1_premise_battery/m191_g0a_results.json",
+      "matched_units": 3,
+      "primary_effect": 0.107,
+      "ci_upper": 0.0,
+      "failures": 0
     }
   ]
 }
