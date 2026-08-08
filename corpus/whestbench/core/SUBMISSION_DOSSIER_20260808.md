@@ -196,6 +196,33 @@ which point the honest ranking (where Kerdock v3 is designate-apparent,
 now with a measured unbiasedness argument) is what remains. The runbook
 above is the complete playbook for that day.
 
+### ADDENDUM 2 (browser session): the runbook is now URGENT, and our
+### candidates are better than the local numbers said
+
+See HOSTED_INTEL_20260808.md and c1_local_mc_calibration/C1_REPORT.md.
+
+1. **PHASE 1 IS LIVE** ($50K pool; Phase 2 is UPCOMING, $100K, closes
+   Sep 19). The binding deadline is the Aug-10 Phase-1 extension — the
+   "Sep 12 latest-safe" line above was computed for the wrong phase.
+2. **#318609 is graded: 5.47e-7** (jonah_butterbaugh, 50/50, 0 failures,
+   30.3% budget) — only 1.2x better than the hosted MC reference. That is our
+   team's live position, and every candidate below beats it.
+3. **Local scores understate hosted by ~1.65x** (C1: local budget-matched MC
+   1.069e-6 vs the grader's 6.47e-7 reference). Hosted expectations:
+   **Kerdock v3 ~9.8e-8 (rank ~13-14)**, L2 ~1.27e-7, L1 ~1.28e-7.
+   Kerdock projects to parity with the best honest hosted entry seen
+   (oabuod 9.45e-8) on the MSE x C invariant (2.70e4 vs 2.58e4).
+4. **Feedback is rich and fast** (~6 min; per-MLP FLOPs, wall, budget %,
+   per-layer MSE). The degraded-mode branch in §3 is unnecessary; the
+   L1-vs-L2 residual-scale question is directly measurable from two graded
+   runs.
+5. **Two designation slots per phase** (official facts panel) — the one-vs-two
+   conflict is resolved in our favour. Grader memory is 64 GB, so the
+   Kerdock memory worry is moot.
+6. Upload = drag-and-drop the tar on /submissions/new (<=50 MB). Files staged
+   at `%USERPROFILE%\Desktop\whest-submit\` in submit order. The agent is
+   permission-blocked from uploading; the user performs it.
+
 ### N9 (final entry): the composition is measured-dead too
 The last unbuilt idea — Kerdock frames + the tangent lineage's moment
 control + deeper folding — was predeclared and killed at both interaction
