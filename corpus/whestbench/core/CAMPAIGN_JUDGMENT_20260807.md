@@ -122,3 +122,56 @@ decision-relevant unknown is native throughput on the grading hardware** — it
 sets whether the floor and the free budget exist at all — and it is empirically
 answerable the moment a graded baseline submission runs. That, not more local
 gates, is the highest-information next step; it is user-gated (submission).
+
+## Ultrathink 2 (after the N1-N4 measurements): #1 is engineering; retire Track A
+
+Three measured/derived facts turn the model into an actionable plan.
+
+1. **Under wall pricing, FLOP count is irrelevant — only wall-clock time is.**
+   Strassen/Winograd (Track A) trades multiplications for additions; both cost
+   CPU cycles, so it does NOTHING for wall time. It optimized the INSTRUMENTED
+   regime (its 5.99% is already banked in the champion) and is the WRONG
+   optimization for the wall-priced regime any #1 run must use. **Retire Track A
+   (A1/A3): the resource lever is a fast wall-clock kernel, not fewer FLOPs.**
+
+2. **v is effectively pinned at the champion's ~0.0199.** N4 measured the cheap
+   geometric levers and killed them (radial NULL, confirming the champion's
+   disabled setting; antipodal already in the champion). The champion's 2x over
+   plain is Sobol-Owen QMC + the q3 weight polynomial; the corpus says the exact
+   controls beyond that give only marginal further v reduction (M137
+   non-identifiability; terminal k3 0.493%; RB marginals ~6e-8). So the #1 win
+   does NOT come from the variance lever; v ~ 0.0199 is the working constant.
+
+3. **Therefore #1 is an engineering problem: S ~= 24x.** With v pinned,
+   adjusted 7.39e-9 = 0.0199 * 8.74e-6 / S -> S ~= 24x this laptop's numpy.
+   S = grading-hardware (16 vCPU AVX-512 ~ 8x this ~4-core AVX2 laptop) times a
+   native fused-forward kernel avoiding numpy's 32-sequential-call and
+   intermediate-allocation overhead (~1.5-3x) ~= 12-24x. Top-6 (S ~ 9x) is
+   comfortable; #1 (24x) is the optimistic end. **The grading box is the SAME
+   for every competitor** — the leaders' edge over our numpy baseline is their
+   native KERNEL, not exotic hardware or math; sitting at 7.39e-9 they prove
+   ~24x is achievable there. The win is: bundle a fast native fused-forward
+   kernel (Rules 5.2-legal precompiled artifact) and run the champion-family
+   sampler through it at ~382k samples under the floor budget.
+
+Consequences:
+- PRIMARY #1 effort = the native fused-forward kernel (S-lever): standard MLP
+  inference engineering (fused 32-layer f32 forward, ~8 MB cache-blocked
+  weights, threaded over 16 vCPU), bundled precompiled per 5.2.
+- M178/M179 exact-control chain DEMOTED from "the #1 v-lever" to "marginal v +
+  the $20k Algorithmic Contribution paper" — completed for the paper, not
+  relied on for #1.
+- Track A (Winograd) RETIRED.
+- **Organizer Q2 (native-pricing legality + regrade intent, Rules 5.3) is now
+  BLOCKING**: the entire #1 strategy is the native wall-priced kernel, and if
+  the organizer patches that channel (the <0.1%-instrumented-share gap they
+  flagged "under clarification") it dies. Do not build the kernel before that
+  answer. Q1 (floor 0.1 vs 0.5) still sets the ceiling.
+- The graded baseline submission remains the highest-information action — now
+  doubly, since it also reveals whether native wall-pricing is honored.
+
+Bottom line, sharper in mechanism: **top-tier is an engineering deliverable
+(the native kernel), #1 is that same deliverable at the optimistic end of
+grading-hardware throughput, and the whole strategy is contingent on the
+organizer honoring Rules 5.2 wall-pricing — the one answer to get before
+building.**
