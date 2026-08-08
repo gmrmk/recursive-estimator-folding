@@ -70,3 +70,40 @@ unchanged in order but now URGENT and cheap (6-minute feedback, 50/day).
 Blocked: the agent cannot execute the upload (the permission classifier gates
 every submission-adjacent action, and credentials are out of scope in any
 case). The user performs the upload; everything else is prepared.
+
+## 6. OUR CURRENT RANK: #192 — and the wall-time profile of the field
+
+The leaderboard's "Jump to your row" reports **"You are ranked #192"**
+(team position from #318609's 5.47e-7). Submitting Kerdock v3 at its
+C1-rescaled hosted expectation (~9.8e-8) projects to roughly **rank 13-14**:
+a ~180-place move that costs one upload.
+
+Wall-time survey of the entries above us (per-MLP ledger, observed):
+
+| entry | adjusted | billed FLOPs/MLP | wall/MLP | billed throughput |
+|---|---:|---:|---:|---:|
+| ely2sh #326033 (rank 2) | 4.96e-10 | 2.0-2.5e10 | **36-47 s** | ~6e8 FLOP/s |
+| ednacob #325177 (rank 5) | 4.62e-8 | 1.29e11 | **43.8 s** | ~2.9e9 FLOP/s |
+| oabuod #326058 | 9.45e-8 | 1.13-1.30e11 | **22-27 s** | ~5e9 FLOP/s |
+| il.miscusi #326065 | 1.92e-7 | 1.55-1.67e11 | **23-26 s** | ~6.7e9 FLOP/s |
+| **our #318609** | 5.47e-7 | 8.06e10 | **~1.0 s** | **~8e10 FLOP/s** |
+
+Two honest readings, and the corpus should hold both:
+
+- Our estimators are ~12-130x FASTER per billed FLOP than everyone above us.
+  Some of that gap is legitimate: flopscope's per-op interpreter overhead
+  varies enormously by op mix, and a slow-but-instrumented estimator is
+  perfectly legal. Mid-board entries (il.miscusi) show billed ~ effective
+  compute, consistent with genuinely instrumented (just slow) work.
+- The TOP tier is not explainable that way: ely2sh bills 2.4e10 while
+  burning 40 s, i.e. ~6e8 FLOP/s. Flopscope's own 7-core backend would bill
+  orders of magnitude more in that time, so those 40 s are neither backend
+  compute nor charged residual — they are landing in an unbilled bucket.
+  That matches the community's independent measurement (instrumented share
+  ~1e-5 for top entries) and the organizers' open review.
+
+Consequence: wall time alone does NOT cleanly separate honest from
+arbitrage; the discriminator is billed-FLOPs-vs-physically-possible-work.
+We do not use the channel either way. What this table DOES establish is that
+our compute profile is the cleanest on the board — a strength if the
+organizers reprice, and a fact worth stating in the Phase-1 writeup.
