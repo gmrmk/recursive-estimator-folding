@@ -72,3 +72,26 @@ L2: recommended slot-1 designate, pending user + graded confirmation.
 L1: rollback + graded baseline. Frozen candidate dirs untouched (verified:
 run_metadata hashes_before == hashes_after; this memo lives in the corpus, not
 in the candidate tree).
+
+## Addendum (2026-08-08, after the fact-pin workflow): the register's stance
+
+UNCERTAINTY_REGISTER_20260806.md (R3) and SALVAGE_MAP_20260806.md hold that L2
+is a non-promoted survivor whose disposition may be revisited only by "an
+independently valid predeclared replication," and instruct: "Do not make a
+competition-current score claim or rely on sub-0.5 utilization until the
+organizer identifies the deployed Phase-2 configuration" (hosted audit). Two
+further measured fragilities from the register: E4 memory — L2 peaks at
+495.4-496.3 MiB, 15.75 MiB under the 512-MiB gate, hosted cap unknown; E5
+wall — L2's whole-wall ratio is 1.7405x vs L1 (residual ratio 1.2476x, below
+this memo's k*=1.42 break-even, but the register notes local settings do not
+prove evaluator affinity/BLAS/tails and names a 30-process synthetic audit as
+a precondition once the hosted image is known.
+
+This memo's recommendation therefore stands ONLY in this form: the paired
+graded submission of both tars (the user-return runbook's settling check) IS
+the independently valid replication the register demands — it is predeclared
+here, run by the organizer's evaluator, and burns no local gate. No
+designation before both grader-reported scores are in hand; if the graded
+comparison inverts (k >= 1.42 territory, memory, or tails), L1 is designated
+and this recommendation is void. The register's framing wins until then: L1
+remains the formal champion.
