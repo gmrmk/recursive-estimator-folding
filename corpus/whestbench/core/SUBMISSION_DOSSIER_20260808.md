@@ -142,3 +142,56 @@ the user makes the final call.
 
 ($SHARE = C:\Users\strid\Documents\Codex\2026-08-02\
 https-chatgpt-com-share-6a5556ed-2e1c)
+
+---
+
+## ADDENDUM (2026-08-08, post-#1-pursuit): intel + N-series, and what they change
+
+The user set the goal "surpass #1." Everything learnable locally was learned;
+this addendum supersedes the sections above where they conflict.
+
+### Intel (RESEARCH_INTEL_20260808.md; observed unless labeled)
+1. **Floor = 0.1, OBSERVED** (top-3 adjusted/raw = 0.111/0.104/0.100 —
+   impossible under max(0.5,·)). The tangent entry is now PRIZE-VEHICLE ONLY
+   (its floor-probe role is obsolete). Runbook step 6 simplifies accordingly.
+2. **The board's top-4 (adjusted 4e-10..1e-9) are an unmetered-compute
+   arbitrage under active organizer review** (instrumented share ~1e-5,
+   38-65s wall vs the 0.27s a floor multiplier allows; organizer dipam
+   confirms the channel and announces reviews). We did not and will not
+   chase it (ledger legality invariant). Prizes come EXCLUSIVELY from the
+   private re-execution on fresh MLPs — the displayed board does not decide
+   money.
+3. **Honest frontiers**: unbiased ~4.1e-7 adjusted (Lean-verified class
+   bound ~3.7e-7); best documented mechanistic/hybrid pipelines raw
+   2.2e-7..6e-6. **Kerdock v3 (raw 2.49e-7 / adjusted 1.62e-7 local
+   descriptive) is at the documented honest frontier.**
+4. Designation slots: live challenge page says ONE, the Aug-3 organizer
+   thread says two — check the live page on designation day; plan for ONE.
+5. Phase-2 Algorithmic writeup deadline: **Sep 26**. Organizers explicitly
+   prize mechanistic work — the extended report (dac_prize_report_extension)
+   matches their stated taste.
+
+### The N-series (all five killed at predeclared gates; commits 7aa2b77,
+235191d, 951f3d5, 21ffa00 + this one)
+- N6 great-circle Rao-Blackwellization: FoM 0.006x (circle worth ~6 iid
+  samples, costs ~1000). Dead.
+- N7 RQMC superconvergence: absent (slopes -0.97/-1.23 vs kill -1.25);
+  constant 1.5-2.7x only, and only vs unconditioned iid.
+- N8a lattice-vs-Kerdock-frames: the v3 sampler is a phased-Hadamard
+  spherical design ALREADY 2-3.2x over conditioned MC; the lattice is 2.1x
+  WORSE. (Retro-explains v3's standing.)
+- N8b disclosed-native backend: one-core-pinned kernel = 0.94e11 FLOP/s <
+  lambda — a 0.94x regression on measurable hardware. Dead.
+- N8c offline corrector: v3's final-layer bias share is statistically ZERO
+  (CI [-0.031, 0.097]) — pure sampling variance; nothing to correct. Dead —
+  and a gift: **v3 is unbiased-in-practice at the scored layer**, the best
+  possible private-rerun robustness property.
+
+### Consequence for the goal
+Every honest local lever is now either shipped (5 packaged candidates, §1)
+or killed with predeclared evidence. Surpassing the displayed #1 requires
+(a) the user's login to run the graded queue and designation, and
+(b) realistically, the organizer review repricing the arbitrage tier — at
+which point the honest ranking (where Kerdock v3 is designate-apparent,
+now with a measured unbiasedness argument) is what remains. The runbook
+above is the complete playbook for that day.
