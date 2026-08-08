@@ -112,6 +112,7 @@ was retuned after seeing results. All are reproducible from the corpus.
 | M180 | stronger spherical designs (MUB mix / coset rotations / remix) | all arms +20-49% variance | killed |
 | M181 | terminal rectified-Gaussian smoothing (3 arms incl. unbiased CV) | bias 4-6x baseline MSE; var identical; lambda -> 0 | killed |
 | M183 | float32 hot-path recast (the "free 2x") | 0.00% f64-lane billing — already clean | killed |
+| M184 | mid-layer exact on-composition + sparsity | 0.00% billed reduction (certain-on absent where wide; 2.3x under break-even at depth) | killed |
 
 M180's kill carries a structural result: the phased-Hadamard design is
 LOCALLY OPTIMAL — its strength is the mutual unbiasedness of all 126 frames

@@ -223,6 +223,22 @@ See HOSTED_INTEL_20260808.md and c1_local_mc_calibration/C1_REPORT.md.
    at `%USERPROFILE%\Desktop\whest-submit\` in submit order. The agent is
    permission-blocked from uploading; the user performs it.
 
+### ADDENDUM 3 (post-sweep): the recursion has closed the mechanism space
+
+After the live grading (#326094, 1.83e-7, rank #58) the user mandated a full
+hybridization sweep. Result: M180 (design axis — locally optimal, the shared-
+rotation mutual-unbiasedness structure is the strength), M181 (closure-as-
+smoother — terminal law too non-Gaussian; closure now dead at all four
+insertion points), M183 (f32 recast — already clean, 0.00% f64 lanes), M184
+(mid-layer exact composition — 0.00%, structural). With N4-N9 that is twelve
+consecutive predeclared kills spanning the corpus salvage bank AND every
+mechanism mined from the community frontier. **Kerdock v3 is evidence-optimal
+within known mechanism space.** New mechanisms can only come from new
+external information (band writeups due before Aug 17 are the named settling
+check). Phase-1 defaults are safe: the auto-nominated top-2 public are
+#326094 + #318609. The writeup (PHASE1_WRITEUP_DRAFT, ID #326094) files by
+Aug 17. The wall tier faces dipam's stated DQ standard at private re-eval.
+
 ### N9 (final entry): the composition is measured-dead too
 The last unbuilt idea — Kerdock frames + the tangent lineage's moment
 control + deeper folding — was predeclared and killed at both interaction
