@@ -1875,6 +1875,15 @@
       "result": "NO RELIABLE A-PRIORI FLAG. Single diagnostics correlate only weakly with per-net MSE: borderline_frac rho -0.563, fold_on_total +0.459 (worst nets +22% on-classifications, -25% kink -> on/kink misclassification bias, matching the A1 hosted analytic-accuracy finding), pruned_frac +0.351. Best single-flag top-quartile precision/recall = 0.50/0.50 (coin flip); a 3-diagnostic multivariate rank-sum is WORSE under 5-fold CV (0.43/0.44, overfits). CONSEQUENCE: the TARGETED P1 guard (flag-then-intervene) is NOT viable; P1 must be the BROAD form (relax pruning on all nets) carrying the A4 95.5%-billing T3 cap, and only if the M185 stage-2 causal test shows relaxation helps. Artifacts: a1b_tail_diagnostics.py, a1b_tail_diagnostics.json.",
       "status": "killed",
       "status_note": "targeted-flag form of P1 killed; broad form still pending M185 stage-2"
+    },
+    {
+      "id": "m185_tail_pruning_mechanism",
+      "mechanism": "Gen3-P1: is the hosted 11x per-net tail a fixable pruning/fold misclassification? Stage 1: reproduce + correlate weight-derived diagnostics; Stage 2: causal worst-vs-median pruning-relaxation intervention (default/relaxed/unpruned at R=6 paired rotations vs 1M truth).",
+      "prediction": "If structural, worst nets improve >=30% under relaxed pruning while medians hold; if statistical, no correlation and no differential fix.",
+      "kill_condition": "Stage-1 |spearman| < 0.3 for all diagnostics (a-priori flag dead) OR stage-2 worst-improvement < 30% / median-change > 10%.",
+      "bias_class": "Response-free synthetic G0; subclass-only; cached-truth reuse; no score credit.",
+      "result": "KILLED both legs, decisively. Stage 1: tail reproduces (floor-corrected spread 35.3x) but NO diagnostic correlates (pruned +0.243, diag_proxy +0.264, fold_on +0.285, all < 0.3; borderline_frac -0.424 runs ANTI-mechanism). Stage 2 causal: worst-group +7.1% relaxed / +10.1% unpruned; median +3.7%/+4.8%; every upper CI 3-4x below the +30% gate. THE TAIL IS STATISTICAL (rotation-draw variance): worst/median separation collapses 3.79x (single draw) -> 1.12x at R=6; within-net rep MSE spreads 2.3-8.7x; a median net was the R=6 worst. A2 STRUCTURAL-vs-STATISTICAL resolves STATISTICAL, consistent with A1 constant per-net MC difficulty. WINNER CONFIRMED (adjusted-score arithmetic): unpruning bills +41% for a ~6% MSE cut = adjusted x1.33 WORSE -> PRUNING IMPROVES adjusted ~21% (sheds C faster than it adds MSE); the flagged mean-score play is a raw-MSE trap. CONSEQUENCE: Gen3-P1 DEAD both forms; the tail is irreducible single-draw variance at the (optimal) budget allocation; P2 rotation-SELECTION elevated (M185s 2.3-8.7x within-net variance = real oracle headroom IF a weight-derived proxy tracks it). Artifacts: run_m185_g0.py, m185_g0_results.json, M185_G0_NOTES.md, stage1/stage2 checkpoints.",
+      "status": "killed"
     }
   ]
 }

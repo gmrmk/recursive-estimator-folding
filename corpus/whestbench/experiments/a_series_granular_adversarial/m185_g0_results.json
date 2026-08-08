@@ -1,0 +1,3536 @@
+{
+ "date": "2026-08-08",
+ "experiment": "M185 G0 tail-mechanism hunt (A2)",
+ "predeclaration": "A_SERIES_PREDECLARATION.md (A2) + run_m185_g0.py docstring",
+ "firewall": "synthetic He nets only; frozen v3 imported read-only (subclassed, never edited); only kerdock_phases.npz loaded on the width-256 path; no datasets/truth/scorer/submissions; writes only in the a_series experiment dir",
+ "constants": {
+  "width": 256,
+  "depth": 32,
+  "stage1_seeds": "1000..1079",
+  "n_truth_stage1": 600000,
+  "n_truth_stage2": 1000000,
+  "stage2_replicates": 6,
+  "rotation_seed_formula": "900000 + net_seed*1000 + r",
+  "spread_kill": 4.0,
+  "rho_kill": 0.3,
+  "worst_improve_bar": 0.3,
+  "median_change_bar": 0.1,
+  "governing_diagnostics": [
+   "pruned_frac_overall",
+   "diag_proxy_l28",
+   "fold_dead_total",
+   "fold_on_total"
+  ]
+ },
+ "trim_events": [],
+ "stage1": {
+  "analysis": {
+   "n_nets": 80,
+   "clamped_nonpositive_mse_corr": 0,
+   "spread_corr": 35.341683459037824,
+   "spread_raw": 15.531671197493653,
+   "spearman_vs_mse_corr": {
+    "pruned_frac_overall": 0.2431,
+    "diag_proxy_l28": 0.2637,
+    "fold_dead_total": 0.1674,
+    "fold_on_total": 0.2845,
+    "fold_kink_total": -0.2568,
+    "borderline_frac_overall": -0.4243,
+    "relax_moves_total": -0.2617,
+    "all_layer_mse": 0.2514,
+    "billed_flops": -0.2898
+   },
+   "governing": {
+    "pruned_frac_overall": 0.2431,
+    "diag_proxy_l28": 0.2637,
+    "fold_dead_total": 0.1674,
+    "fold_on_total": 0.2845
+   },
+   "spread_gate_pass": true,
+   "correlation_gate_pass": false,
+   "stage1_pass": false
+  },
+  "nets": [
+   {
+    "net_seed": 1000,
+    "rot_seed": 1900000,
+    "mse_raw": 3.8322692132036763e-07,
+    "mse_corr": 1.935603770741531e-07,
+    "floor31": 1.8966654424621454e-07,
+    "diag_proxy_l28": 0.0017974762074240932,
+    "floor28": 2.0214283084696326e-07,
+    "all_layer_mse": 0.0010400308278990145,
+    "billed_flops": 166887069132,
+    "truth_wall_s": 37.6,
+    "predict_wall_s": 6.9,
+    "pruned_frac_overall": 0.23939732142857142,
+    "borderline_frac_overall": 0.08328683035714286,
+    "relax_moves_total": 523,
+    "fold": {
+     "29": {
+      "dead": 97,
+      "on": 73,
+      "kink": 86
+     },
+     "30": {
+      "dead": 109,
+      "on": 69,
+      "kink": 78
+     },
+     "31": {
+      "dead": 94,
+      "on": 89,
+      "kink": 73
+     }
+    },
+    "fold_dead_total": 300,
+    "fold_on_total": 231,
+    "fold_kink_total": 237
+   },
+   {
+    "net_seed": 1001,
+    "rot_seed": 1901000,
+    "mse_raw": 7.677473629759161e-07,
+    "mse_corr": 6.54723508090043e-07,
+    "floor31": 1.1302385488587312e-07,
+    "diag_proxy_l28": 0.0008138370180161495,
+    "floor28": 1.1824402173987268e-07,
+    "all_layer_mse": 0.0008877053152117713,
+    "billed_flops": 160985434353,
+    "truth_wall_s": 36.9,
+    "predict_wall_s": 7.67,
+    "pruned_frac_overall": 0.2515345982142857,
+    "borderline_frac_overall": 0.08775111607142858,
+    "relax_moves_total": 554,
+    "fold": {
+     "29": {
+      "dead": 104,
+      "on": 76,
+      "kink": 76
+     },
+     "30": {
+      "dead": 82,
+      "on": 85,
+      "kink": 89
+     },
+     "31": {
+      "dead": 95,
+      "on": 77,
+      "kink": 84
+     }
+    },
+    "fold_dead_total": 281,
+    "fold_on_total": 238,
+    "fold_kink_total": 249
+   },
+   {
+    "net_seed": 1002,
+    "rot_seed": 1902000,
+    "mse_raw": 4.015782720604529e-07,
+    "mse_corr": 2.723702443688124e-07,
+    "floor31": 1.292080276916405e-07,
+    "diag_proxy_l28": 0.0012198633667567082,
+    "floor28": 1.28129123376634e-07,
+    "all_layer_mse": 0.000796738612027917,
+    "billed_flops": 172423814497,
+    "truth_wall_s": 38.0,
+    "predict_wall_s": 5.97,
+    "pruned_frac_overall": 0.23590959821428573,
+    "borderline_frac_overall": 0.09402901785714286,
+    "relax_moves_total": 557,
+    "fold": {
+     "29": {
+      "dead": 88,
+      "on": 80,
+      "kink": 88
+     },
+     "30": {
+      "dead": 99,
+      "on": 73,
+      "kink": 84
+     },
+     "31": {
+      "dead": 102,
+      "on": 73,
+      "kink": 81
+     }
+    },
+    "fold_dead_total": 289,
+    "fold_on_total": 226,
+    "fold_kink_total": 253
+   },
+   {
+    "net_seed": 1003,
+    "rot_seed": 1903000,
+    "mse_raw": 3.946597720929161e-07,
+    "mse_corr": 2.745315039991771e-07,
+    "floor31": 1.2012826809373896e-07,
+    "diag_proxy_l28": 0.0007287424047311688,
+    "floor28": 1.0195778853756005e-07,
+    "all_layer_mse": 0.0007839192555516852,
+    "billed_flops": 166974758741,
+    "truth_wall_s": 28.9,
+    "predict_wall_s": 3.83,
+    "pruned_frac_overall": 0.23563058035714285,
+    "borderline_frac_overall": 0.0908203125,
+    "relax_moves_total": 554,
+    "fold": {
+     "29": {
+      "dead": 80,
+      "on": 95,
+      "kink": 81
+     },
+     "30": {
+      "dead": 95,
+      "on": 80,
+      "kink": 81
+     },
+     "31": {
+      "dead": 102,
+      "on": 89,
+      "kink": 65
+     }
+    },
+    "fold_dead_total": 277,
+    "fold_on_total": 264,
+    "fold_kink_total": 227
+   },
+   {
+    "net_seed": 1004,
+    "rot_seed": 1904000,
+    "mse_raw": 6.15529512615264e-07,
+    "mse_corr": 4.3329670772064416e-07,
+    "floor31": 1.822328048946198e-07,
+    "diag_proxy_l28": 0.0019228992733956092,
+    "floor28": 1.1806738113734676e-07,
+    "all_layer_mse": 0.0010422546212985628,
+    "billed_flops": 168802922472,
+    "truth_wall_s": 23.0,
+    "predict_wall_s": 3.5,
+    "pruned_frac_overall": 0.23507254464285715,
+    "borderline_frac_overall": 0.08844866071428571,
+    "relax_moves_total": 502,
+    "fold": {
+     "29": {
+      "dead": 87,
+      "on": 97,
+      "kink": 72
+     },
+     "30": {
+      "dead": 77,
+      "on": 100,
+      "kink": 79
+     },
+     "31": {
+      "dead": 114,
+      "on": 82,
+      "kink": 60
+     }
+    },
+    "fold_dead_total": 278,
+    "fold_on_total": 279,
+    "fold_kink_total": 211
+   },
+   {
+    "net_seed": 1005,
+    "rot_seed": 1905000,
+    "mse_raw": 3.041767976762422e-07,
+    "mse_corr": 2.2418068457318715e-07,
+    "floor31": 7.999611310305504e-08,
+    "diag_proxy_l28": 0.0013369534208700303,
+    "floor28": 7.310729974863404e-08,
+    "all_layer_mse": 0.0012766319190295906,
+    "billed_flops": 170118232646,
+    "truth_wall_s": 24.0,
+    "predict_wall_s": 2.96,
+    "pruned_frac_overall": 0.23814174107142858,
+    "borderline_frac_overall": 0.08900669642857142,
+    "relax_moves_total": 539,
+    "fold": {
+     "29": {
+      "dead": 65,
+      "on": 80,
+      "kink": 111
+     },
+     "30": {
+      "dead": 100,
+      "on": 63,
+      "kink": 93
+     },
+     "31": {
+      "dead": 80,
+      "on": 85,
+      "kink": 91
+     }
+    },
+    "fold_dead_total": 245,
+    "fold_on_total": 228,
+    "fold_kink_total": 295
+   },
+   {
+    "net_seed": 1006,
+    "rot_seed": 1906000,
+    "mse_raw": 3.1670038212171586e-07,
+    "mse_corr": 1.2854710271138472e-07,
+    "floor31": 1.8815327941033115e-07,
+    "diag_proxy_l28": 0.0016131319123812782,
+    "floor28": 1.3000631397590867e-07,
+    "all_layer_mse": 0.0012024905409911539,
+    "billed_flops": 162743779723,
+    "truth_wall_s": 23.4,
+    "predict_wall_s": 2.59,
+    "pruned_frac_overall": 0.25209263392857145,
+    "borderline_frac_overall": 0.08231026785714286,
+    "relax_moves_total": 483,
+    "fold": {
+     "29": {
+      "dead": 90,
+      "on": 110,
+      "kink": 56
+     },
+     "30": {
+      "dead": 96,
+      "on": 94,
+      "kink": 66
+     },
+     "31": {
+      "dead": 103,
+      "on": 94,
+      "kink": 59
+     }
+    },
+    "fold_dead_total": 289,
+    "fold_on_total": 298,
+    "fold_kink_total": 181
+   },
+   {
+    "net_seed": 1007,
+    "rot_seed": 1907000,
+    "mse_raw": 1.2747187049453592e-07,
+    "mse_corr": 8.278984236089192e-08,
+    "floor31": 4.4682028133643997e-08,
+    "diag_proxy_l28": 0.00045191169917526916,
+    "floor28": 5.0150715979721594e-08,
+    "all_layer_mse": 0.0005579955095546447,
+    "billed_flops": 174972288992,
+    "truth_wall_s": 24.4,
+    "predict_wall_s": 2.83,
+    "pruned_frac_overall": 0.23311941964285715,
+    "borderline_frac_overall": 0.09612165178571429,
+    "relax_moves_total": 580,
+    "fold": {
+     "29": {
+      "dead": 83,
+      "on": 80,
+      "kink": 93
+     },
+     "30": {
+      "dead": 89,
+      "on": 83,
+      "kink": 84
+     },
+     "31": {
+      "dead": 99,
+      "on": 62,
+      "kink": 95
+     }
+    },
+    "fold_dead_total": 271,
+    "fold_on_total": 225,
+    "fold_kink_total": 272
+   },
+   {
+    "net_seed": 1008,
+    "rot_seed": 1908000,
+    "mse_raw": 6.525775523305982e-07,
+    "mse_corr": 5.687177998931346e-07,
+    "floor31": 8.385975243746369e-08,
+    "diag_proxy_l28": 0.0006221223119997288,
+    "floor28": 1.1787576766233009e-07,
+    "all_layer_mse": 0.0006743754304627796,
+    "billed_flops": 152487102174,
+    "truth_wall_s": 24.4,
+    "predict_wall_s": 2.96,
+    "pruned_frac_overall": 0.2681361607142857,
+    "borderline_frac_overall": 0.08482142857142858,
+    "relax_moves_total": 544,
+    "fold": {
+     "29": {
+      "dead": 97,
+      "on": 87,
+      "kink": 72
+     },
+     "30": {
+      "dead": 102,
+      "on": 82,
+      "kink": 72
+     },
+     "31": {
+      "dead": 108,
+      "on": 78,
+      "kink": 70
+     }
+    },
+    "fold_dead_total": 307,
+    "fold_on_total": 247,
+    "fold_kink_total": 214
+   },
+   {
+    "net_seed": 1009,
+    "rot_seed": 1909000,
+    "mse_raw": 2.2554593293845291e-07,
+    "mse_corr": 1.2893089564124798e-07,
+    "floor31": 9.661503729720495e-08,
+    "diag_proxy_l28": 0.0016272681207993292,
+    "floor28": 9.094944904635694e-08,
+    "all_layer_mse": 0.0010200885822934638,
+    "billed_flops": 177415628280,
+    "truth_wall_s": 25.5,
+    "predict_wall_s": 3.01,
+    "pruned_frac_overall": 0.22321428571428573,
+    "borderline_frac_overall": 0.09542410714285714,
+    "relax_moves_total": 522,
+    "fold": {
+     "29": {
+      "dead": 89,
+      "on": 61,
+      "kink": 106
+     },
+     "30": {
+      "dead": 84,
+      "on": 81,
+      "kink": 91
+     },
+     "31": {
+      "dead": 85,
+      "on": 78,
+      "kink": 93
+     }
+    },
+    "fold_dead_total": 258,
+    "fold_on_total": 220,
+    "fold_kink_total": 290
+   },
+   {
+    "net_seed": 1010,
+    "rot_seed": 1910000,
+    "mse_raw": 1.6431456747025844e-07,
+    "mse_corr": 6.085664373717237e-08,
+    "floor31": 1.0345792373308608e-07,
+    "diag_proxy_l28": 0.0004714887310313926,
+    "floor28": 8.795227976200344e-08,
+    "all_layer_mse": 0.0006059054629264901,
+    "billed_flops": 172637933760,
+    "truth_wall_s": 26.1,
+    "predict_wall_s": 3.01,
+    "pruned_frac_overall": 0.22865513392857142,
+    "borderline_frac_overall": 0.091796875,
+    "relax_moves_total": 531,
+    "fold": {
+     "29": {
+      "dead": 84,
+      "on": 90,
+      "kink": 82
+     },
+     "30": {
+      "dead": 89,
+      "on": 97,
+      "kink": 70
+     },
+     "31": {
+      "dead": 89,
+      "on": 82,
+      "kink": 85
+     }
+    },
+    "fold_dead_total": 262,
+    "fold_on_total": 269,
+    "fold_kink_total": 237
+   },
+   {
+    "net_seed": 1011,
+    "rot_seed": 1911000,
+    "mse_raw": 5.852914660009775e-07,
+    "mse_corr": 4.4743706852050433e-07,
+    "floor31": 1.3785439748047316e-07,
+    "diag_proxy_l28": 0.0008039066898948692,
+    "floor28": 1.066995633639565e-07,
+    "all_layer_mse": 0.0007748419055298245,
+    "billed_flops": 165679954825,
+    "truth_wall_s": 25.2,
+    "predict_wall_s": 2.73,
+    "pruned_frac_overall": 0.24623325892857142,
+    "borderline_frac_overall": 0.08537946428571429,
+    "relax_moves_total": 501,
+    "fold": {
+     "29": {
+      "dead": 96,
+      "on": 80,
+      "kink": 80
+     },
+     "30": {
+      "dead": 83,
+      "on": 100,
+      "kink": 73
+     },
+     "31": {
+      "dead": 118,
+      "on": 82,
+      "kink": 56
+     }
+    },
+    "fold_dead_total": 297,
+    "fold_on_total": 262,
+    "fold_kink_total": 209
+   },
+   {
+    "net_seed": 1012,
+    "rot_seed": 1912000,
+    "mse_raw": 1.3960038939160664e-07,
+    "mse_corr": 7.713357408938233e-08,
+    "floor31": 6.246681530222431e-08,
+    "diag_proxy_l28": 0.001924930869748037,
+    "floor28": 5.323195118752303e-08,
+    "all_layer_mse": 0.0010785845731511852,
+    "billed_flops": 169236284357,
+    "truth_wall_s": 25.1,
+    "predict_wall_s": 3.25,
+    "pruned_frac_overall": 0.21791294642857142,
+    "borderline_frac_overall": 0.095703125,
+    "relax_moves_total": 553,
+    "fold": {
+     "29": {
+      "dead": 93,
+      "on": 76,
+      "kink": 87
+     },
+     "30": {
+      "dead": 103,
+      "on": 89,
+      "kink": 64
+     },
+     "31": {
+      "dead": 103,
+      "on": 88,
+      "kink": 65
+     }
+    },
+    "fold_dead_total": 299,
+    "fold_on_total": 253,
+    "fold_kink_total": 216
+   },
+   {
+    "net_seed": 1013,
+    "rot_seed": 1913000,
+    "mse_raw": 4.116377250567703e-07,
+    "mse_corr": 3.318684130745899e-07,
+    "floor31": 7.976931198218041e-08,
+    "diag_proxy_l28": 0.0005361081893255406,
+    "floor28": 7.337068216549569e-08,
+    "all_layer_mse": 0.0008010575054086083,
+    "billed_flops": 176100773768,
+    "truth_wall_s": 24.9,
+    "predict_wall_s": 2.99,
+    "pruned_frac_overall": 0.22181919642857142,
+    "borderline_frac_overall": 0.09626116071428571,
+    "relax_moves_total": 567,
+    "fold": {
+     "29": {
+      "dead": 94,
+      "on": 86,
+      "kink": 76
+     },
+     "30": {
+      "dead": 89,
+      "on": 85,
+      "kink": 82
+     },
+     "31": {
+      "dead": 99,
+      "on": 86,
+      "kink": 71
+     }
+    },
+    "fold_dead_total": 282,
+    "fold_on_total": 257,
+    "fold_kink_total": 229
+   },
+   {
+    "net_seed": 1014,
+    "rot_seed": 1914000,
+    "mse_raw": 2.1543487624824034e-07,
+    "mse_corr": 6.679484727864386e-08,
+    "floor31": 1.4864002896959648e-07,
+    "diag_proxy_l28": 0.00107926187060074,
+    "floor28": 1.5999119800420578e-07,
+    "all_layer_mse": 0.0011614984558242034,
+    "billed_flops": 151874155866,
+    "truth_wall_s": 25.6,
+    "predict_wall_s": 3.01,
+    "pruned_frac_overall": 0.271484375,
+    "borderline_frac_overall": 0.08217075892857142,
+    "relax_moves_total": 500,
+    "fold": {
+     "29": {
+      "dead": 93,
+      "on": 81,
+      "kink": 82
+     },
+     "30": {
+      "dead": 103,
+      "on": 99,
+      "kink": 54
+     },
+     "31": {
+      "dead": 102,
+      "on": 93,
+      "kink": 61
+     }
+    },
+    "fold_dead_total": 298,
+    "fold_on_total": 273,
+    "fold_kink_total": 197
+   },
+   {
+    "net_seed": 1015,
+    "rot_seed": 1915000,
+    "mse_raw": 1.1269209831502689e-07,
+    "mse_corr": 8.302097488107889e-08,
+    "floor31": 2.9671123433947996e-08,
+    "diag_proxy_l28": 0.0007917350293550392,
+    "floor28": 3.632049854250216e-08,
+    "all_layer_mse": 0.000831175876046726,
+    "billed_flops": 168776520056,
+    "truth_wall_s": 25.2,
+    "predict_wall_s": 3.45,
+    "pruned_frac_overall": 0.24135044642857142,
+    "borderline_frac_overall": 0.09709821428571429,
+    "relax_moves_total": 570,
+    "fold": {
+     "29": {
+      "dead": 86,
+      "on": 77,
+      "kink": 93
+     },
+     "30": {
+      "dead": 88,
+      "on": 77,
+      "kink": 91
+     },
+     "31": {
+      "dead": 88,
+      "on": 66,
+      "kink": 102
+     }
+    },
+    "fold_dead_total": 262,
+    "fold_on_total": 220,
+    "fold_kink_total": 286
+   },
+   {
+    "net_seed": 1016,
+    "rot_seed": 1916000,
+    "mse_raw": 2.4550385465472346e-07,
+    "mse_corr": 2.0150962742670296e-07,
+    "floor31": 4.3994227228020495e-08,
+    "diag_proxy_l28": 0.00033454228034746417,
+    "floor28": 4.936328099987021e-08,
+    "all_layer_mse": 0.000517519415530559,
+    "billed_flops": 179553111846,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 2.85,
+    "pruned_frac_overall": 0.23186383928571427,
+    "borderline_frac_overall": 0.09681919642857142,
+    "relax_moves_total": 545,
+    "fold": {
+     "29": {
+      "dead": 89,
+      "on": 57,
+      "kink": 110
+     },
+     "30": {
+      "dead": 80,
+      "on": 73,
+      "kink": 103
+     },
+     "31": {
+      "dead": 81,
+      "on": 79,
+      "kink": 96
+     }
+    },
+    "fold_dead_total": 250,
+    "fold_on_total": 209,
+    "fold_kink_total": 309
+   },
+   {
+    "net_seed": 1017,
+    "rot_seed": 1917000,
+    "mse_raw": 3.5809238066076585e-07,
+    "mse_corr": 1.6148977297418783e-07,
+    "floor31": 1.9660260768657802e-07,
+    "diag_proxy_l28": 0.0011637294533371077,
+    "floor28": 1.4790249657499103e-07,
+    "all_layer_mse": 0.001139978428409232,
+    "billed_flops": 153348438276,
+    "truth_wall_s": 24.0,
+    "predict_wall_s": 3.33,
+    "pruned_frac_overall": 0.255859375,
+    "borderline_frac_overall": 0.08328683035714286,
+    "relax_moves_total": 503,
+    "fold": {
+     "29": {
+      "dead": 101,
+      "on": 94,
+      "kink": 61
+     },
+     "30": {
+      "dead": 108,
+      "on": 91,
+      "kink": 57
+     },
+     "31": {
+      "dead": 104,
+      "on": 90,
+      "kink": 62
+     }
+    },
+    "fold_dead_total": 313,
+    "fold_on_total": 275,
+    "fold_kink_total": 180
+   },
+   {
+    "net_seed": 1018,
+    "rot_seed": 1918000,
+    "mse_raw": 1.0599630246265873e-07,
+    "mse_corr": 5.9372513368349124e-08,
+    "floor31": 4.6623789094309605e-08,
+    "diag_proxy_l28": 0.00039256422941757107,
+    "floor28": 4.7999182614367056e-08,
+    "all_layer_mse": 0.0005074145902178174,
+    "billed_flops": 162500417846,
+    "truth_wall_s": 23.5,
+    "predict_wall_s": 2.9,
+    "pruned_frac_overall": 0.25962611607142855,
+    "borderline_frac_overall": 0.09263392857142858,
+    "relax_moves_total": 575,
+    "fold": {
+     "29": {
+      "dead": 95,
+      "on": 87,
+      "kink": 74
+     },
+     "30": {
+      "dead": 92,
+      "on": 88,
+      "kink": 76
+     },
+     "31": {
+      "dead": 99,
+      "on": 72,
+      "kink": 85
+     }
+    },
+    "fold_dead_total": 286,
+    "fold_on_total": 247,
+    "fold_kink_total": 235
+   },
+   {
+    "net_seed": 1019,
+    "rot_seed": 1919000,
+    "mse_raw": 4.164437172479003e-07,
+    "mse_corr": 3.590009861256139e-07,
+    "floor31": 5.744273112228644e-08,
+    "diag_proxy_l28": 0.0011347785510585839,
+    "floor28": 5.553050924157663e-08,
+    "all_layer_mse": 0.0008897240302090726,
+    "billed_flops": 170680307502,
+    "truth_wall_s": 23.7,
+    "predict_wall_s": 3.02,
+    "pruned_frac_overall": 0.23256138392857142,
+    "borderline_frac_overall": 0.10281808035714286,
+    "relax_moves_total": 634,
+    "fold": {
+     "29": {
+      "dead": 93,
+      "on": 68,
+      "kink": 95
+     },
+     "30": {
+      "dead": 95,
+      "on": 72,
+      "kink": 89
+     },
+     "31": {
+      "dead": 98,
+      "on": 81,
+      "kink": 77
+     }
+    },
+    "fold_dead_total": 286,
+    "fold_on_total": 221,
+    "fold_kink_total": 261
+   },
+   {
+    "net_seed": 1020,
+    "rot_seed": 1920000,
+    "mse_raw": 2.5919469026442156e-07,
+    "mse_corr": 2.1324990360801952e-07,
+    "floor31": 4.594478665640204e-08,
+    "diag_proxy_l28": 0.0008106895712869798,
+    "floor28": 5.9383815661028563e-08,
+    "all_layer_mse": 0.0007832914613071683,
+    "billed_flops": 170669797776,
+    "truth_wall_s": 23.8,
+    "predict_wall_s": 3.17,
+    "pruned_frac_overall": 0.24888392857142858,
+    "borderline_frac_overall": 0.09291294642857142,
+    "relax_moves_total": 597,
+    "fold": {
+     "29": {
+      "dead": 85,
+      "on": 49,
+      "kink": 122
+     },
+     "30": {
+      "dead": 75,
+      "on": 60,
+      "kink": 121
+     },
+     "31": {
+      "dead": 90,
+      "on": 62,
+      "kink": 104
+     }
+    },
+    "fold_dead_total": 250,
+    "fold_on_total": 171,
+    "fold_kink_total": 347
+   },
+   {
+    "net_seed": 1021,
+    "rot_seed": 1921000,
+    "mse_raw": 3.1769216587082155e-07,
+    "mse_corr": 2.674199707821673e-07,
+    "floor31": 5.027219508865423e-08,
+    "diag_proxy_l28": 0.00048328291800220905,
+    "floor28": 6.29345013311115e-08,
+    "all_layer_mse": 0.0008210382542914827,
+    "billed_flops": 198745836482,
+    "truth_wall_s": 23.8,
+    "predict_wall_s": 3.41,
+    "pruned_frac_overall": 0.18973214285714285,
+    "borderline_frac_overall": 0.11021205357142858,
+    "relax_moves_total": 594,
+    "fold": {
+     "29": {
+      "dead": 73,
+      "on": 49,
+      "kink": 134
+     },
+     "30": {
+      "dead": 75,
+      "on": 41,
+      "kink": 140
+     },
+     "31": {
+      "dead": 71,
+      "on": 58,
+      "kink": 127
+     }
+    },
+    "fold_dead_total": 219,
+    "fold_on_total": 148,
+    "fold_kink_total": 401
+   },
+   {
+    "net_seed": 1022,
+    "rot_seed": 1922000,
+    "mse_raw": 6.424274569463811e-07,
+    "mse_corr": 4.524948701861263e-07,
+    "floor31": 1.8993258676025476e-07,
+    "diag_proxy_l28": 0.002316740500645462,
+    "floor28": 2.0500833678499743e-07,
+    "all_layer_mse": 0.0012030280674826357,
+    "billed_flops": 152814410252,
+    "truth_wall_s": 23.3,
+    "predict_wall_s": 2.92,
+    "pruned_frac_overall": 0.27427455357142855,
+    "borderline_frac_overall": 0.0859375,
+    "relax_moves_total": 519,
+    "fold": {
+     "29": {
+      "dead": 93,
+      "on": 93,
+      "kink": 70
+     },
+     "30": {
+      "dead": 98,
+      "on": 90,
+      "kink": 68
+     },
+     "31": {
+      "dead": 106,
+      "on": 77,
+      "kink": 73
+     }
+    },
+    "fold_dead_total": 297,
+    "fold_on_total": 260,
+    "fold_kink_total": 211
+   },
+   {
+    "net_seed": 1023,
+    "rot_seed": 1923000,
+    "mse_raw": 1.393191297934756e-07,
+    "mse_corr": 8.017475552523822e-08,
+    "floor31": 5.9144374268237385e-08,
+    "diag_proxy_l28": 0.0010836989733411704,
+    "floor28": 8.008801009047235e-08,
+    "all_layer_mse": 0.0008089763224745705,
+    "billed_flops": 158924242243,
+    "truth_wall_s": 24.0,
+    "predict_wall_s": 3.15,
+    "pruned_frac_overall": 0.2513950892857143,
+    "borderline_frac_overall": 0.09137834821428571,
+    "relax_moves_total": 524,
+    "fold": {
+     "29": {
+      "dead": 109,
+      "on": 62,
+      "kink": 85
+     },
+     "30": {
+      "dead": 81,
+      "on": 70,
+      "kink": 105
+     },
+     "31": {
+      "dead": 85,
+      "on": 93,
+      "kink": 78
+     }
+    },
+    "fold_dead_total": 275,
+    "fold_on_total": 225,
+    "fold_kink_total": 268
+   },
+   {
+    "net_seed": 1024,
+    "rot_seed": 1924000,
+    "mse_raw": 2.4618911459953423e-07,
+    "mse_corr": 1.433106436498642e-07,
+    "floor31": 1.0287847094967002e-07,
+    "diag_proxy_l28": 0.0006769701172329311,
+    "floor28": 9.119381698799852e-08,
+    "all_layer_mse": 0.0006358577036091411,
+    "billed_flops": 175189121279,
+    "truth_wall_s": 23.6,
+    "predict_wall_s": 2.7,
+    "pruned_frac_overall": 0.22893415178571427,
+    "borderline_frac_overall": 0.09905133928571429,
+    "relax_moves_total": 581,
+    "fold": {
+     "29": {
+      "dead": 85,
+      "on": 85,
+      "kink": 86
+     },
+     "30": {
+      "dead": 97,
+      "on": 85,
+      "kink": 74
+     },
+     "31": {
+      "dead": 90,
+      "on": 87,
+      "kink": 79
+     }
+    },
+    "fold_dead_total": 272,
+    "fold_on_total": 257,
+    "fold_kink_total": 239
+   },
+   {
+    "net_seed": 1025,
+    "rot_seed": 1925000,
+    "mse_raw": 1.456327231636875e-07,
+    "mse_corr": 1.0030668576441155e-07,
+    "floor31": 4.532603739927594e-08,
+    "diag_proxy_l28": 0.0008820382406619156,
+    "floor28": 6.039487305828224e-08,
+    "all_layer_mse": 0.0007765263237940393,
+    "billed_flops": 176369947881,
+    "truth_wall_s": 23.6,
+    "predict_wall_s": 2.98,
+    "pruned_frac_overall": 0.22098214285714285,
+    "borderline_frac_overall": 0.09723772321428571,
+    "relax_moves_total": 540,
+    "fold": {
+     "29": {
+      "dead": 105,
+      "on": 60,
+      "kink": 91
+     },
+     "30": {
+      "dead": 108,
+      "on": 68,
+      "kink": 80
+     },
+     "31": {
+      "dead": 107,
+      "on": 71,
+      "kink": 78
+     }
+    },
+    "fold_dead_total": 320,
+    "fold_on_total": 199,
+    "fold_kink_total": 249
+   },
+   {
+    "net_seed": 1026,
+    "rot_seed": 1926000,
+    "mse_raw": 5.789953250204561e-08,
+    "mse_corr": 2.307553259091483e-08,
+    "floor31": 3.482399991113078e-08,
+    "diag_proxy_l28": 0.0006518022459361971,
+    "floor28": 4.261808907726681e-08,
+    "all_layer_mse": 0.0005760743849889422,
+    "billed_flops": 176647907921,
+    "truth_wall_s": 23.5,
+    "predict_wall_s": 3.23,
+    "pruned_frac_overall": 0.22391183035714285,
+    "borderline_frac_overall": 0.10226004464285714,
+    "relax_moves_total": 582,
+    "fold": {
+     "29": {
+      "dead": 103,
+      "on": 54,
+      "kink": 99
+     },
+     "30": {
+      "dead": 91,
+      "on": 64,
+      "kink": 101
+     },
+     "31": {
+      "dead": 76,
+      "on": 73,
+      "kink": 107
+     }
+    },
+    "fold_dead_total": 270,
+    "fold_on_total": 191,
+    "fold_kink_total": 307
+   },
+   {
+    "net_seed": 1027,
+    "rot_seed": 1927000,
+    "mse_raw": 2.1291690288771495e-07,
+    "mse_corr": 1.7090298425390326e-07,
+    "floor31": 4.2013918633811675e-08,
+    "diag_proxy_l28": 0.0005180276311549638,
+    "floor28": 6.17391322294711e-08,
+    "all_layer_mse": 0.0006666997437264005,
+    "billed_flops": 185866467983,
+    "truth_wall_s": 23.4,
+    "predict_wall_s": 3.34,
+    "pruned_frac_overall": 0.21149553571428573,
+    "borderline_frac_overall": 0.10226004464285714,
+    "relax_moves_total": 598,
+    "fold": {
+     "29": {
+      "dead": 103,
+      "on": 60,
+      "kink": 93
+     },
+     "30": {
+      "dead": 80,
+      "on": 55,
+      "kink": 121
+     },
+     "31": {
+      "dead": 83,
+      "on": 60,
+      "kink": 113
+     }
+    },
+    "fold_dead_total": 266,
+    "fold_on_total": 175,
+    "fold_kink_total": 327
+   },
+   {
+    "net_seed": 1028,
+    "rot_seed": 1928000,
+    "mse_raw": 1.1025425473707785e-07,
+    "mse_corr": 9.306061874529384e-08,
+    "floor31": 1.7193635991784017e-08,
+    "diag_proxy_l28": 0.00029578828453423386,
+    "floor28": 2.4211138032617593e-08,
+    "all_layer_mse": 0.00048267380760944403,
+    "billed_flops": 183416445780,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 3.18,
+    "pruned_frac_overall": 0.22977120535714285,
+    "borderline_frac_overall": 0.09933035714285714,
+    "relax_moves_total": 588,
+    "fold": {
+     "29": {
+      "dead": 71,
+      "on": 42,
+      "kink": 143
+     },
+     "30": {
+      "dead": 68,
+      "on": 59,
+      "kink": 129
+     },
+     "31": {
+      "dead": 80,
+      "on": 43,
+      "kink": 133
+     }
+    },
+    "fold_dead_total": 219,
+    "fold_on_total": 144,
+    "fold_kink_total": 405
+   },
+   {
+    "net_seed": 1029,
+    "rot_seed": 1929000,
+    "mse_raw": 3.7506892309409815e-07,
+    "mse_corr": 2.809259500053227e-07,
+    "floor31": 9.414297308877549e-08,
+    "diag_proxy_l28": 0.0006625952656225178,
+    "floor28": 1.0285119009365016e-07,
+    "all_layer_mse": 0.0006802401918761866,
+    "billed_flops": 179778782443,
+    "truth_wall_s": 23.9,
+    "predict_wall_s": 3.17,
+    "pruned_frac_overall": 0.216796875,
+    "borderline_frac_overall": 0.08998325892857142,
+    "relax_moves_total": 505,
+    "fold": {
+     "29": {
+      "dead": 84,
+      "on": 74,
+      "kink": 98
+     },
+     "30": {
+      "dead": 92,
+      "on": 76,
+      "kink": 88
+     },
+     "31": {
+      "dead": 83,
+      "on": 62,
+      "kink": 111
+     }
+    },
+    "fold_dead_total": 259,
+    "fold_on_total": 212,
+    "fold_kink_total": 297
+   },
+   {
+    "net_seed": 1030,
+    "rot_seed": 1930000,
+    "mse_raw": 3.3852420805511755e-07,
+    "mse_corr": 2.2618620402337513e-07,
+    "floor31": 1.1233800403174244e-07,
+    "diag_proxy_l28": 0.0006661737958282808,
+    "floor28": 8.695323680702997e-08,
+    "all_layer_mse": 0.0008279178407847962,
+    "billed_flops": 172051759861,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 2.98,
+    "pruned_frac_overall": 0.23590959821428573,
+    "borderline_frac_overall": 0.08816964285714286,
+    "relax_moves_total": 541,
+    "fold": {
+     "29": {
+      "dead": 85,
+      "on": 86,
+      "kink": 85
+     },
+     "30": {
+      "dead": 93,
+      "on": 80,
+      "kink": 83
+     },
+     "31": {
+      "dead": 91,
+      "on": 85,
+      "kink": 80
+     }
+    },
+    "fold_dead_total": 269,
+    "fold_on_total": 251,
+    "fold_kink_total": 248
+   },
+   {
+    "net_seed": 1031,
+    "rot_seed": 1931000,
+    "mse_raw": 3.0388969950094743e-07,
+    "mse_corr": 1.967407163291531e-07,
+    "floor31": 1.0714898317179434e-07,
+    "diag_proxy_l28": 0.0011164278955912118,
+    "floor28": 1.3275206517646247e-07,
+    "all_layer_mse": 0.0006931874175375343,
+    "billed_flops": 166258863614,
+    "truth_wall_s": 23.5,
+    "predict_wall_s": 2.88,
+    "pruned_frac_overall": 0.24441964285714285,
+    "borderline_frac_overall": 0.083984375,
+    "relax_moves_total": 504,
+    "fold": {
+     "29": {
+      "dead": 93,
+      "on": 80,
+      "kink": 83
+     },
+     "30": {
+      "dead": 94,
+      "on": 65,
+      "kink": 97
+     },
+     "31": {
+      "dead": 98,
+      "on": 82,
+      "kink": 76
+     }
+    },
+    "fold_dead_total": 285,
+    "fold_on_total": 227,
+    "fold_kink_total": 256
+   },
+   {
+    "net_seed": 1032,
+    "rot_seed": 1932000,
+    "mse_raw": 3.206627692900322e-07,
+    "mse_corr": 2.481772369830545e-07,
+    "floor31": 7.248553230697768e-08,
+    "diag_proxy_l28": 0.0005035468345805967,
+    "floor28": 5.839413023873414e-08,
+    "all_layer_mse": 0.0005634066026895502,
+    "billed_flops": 179903015016,
+    "truth_wall_s": 23.7,
+    "predict_wall_s": 3.13,
+    "pruned_frac_overall": 0.2158203125,
+    "borderline_frac_overall": 0.09751674107142858,
+    "relax_moves_total": 562,
+    "fold": {
+     "29": {
+      "dead": 86,
+      "on": 77,
+      "kink": 93
+     },
+     "30": {
+      "dead": 86,
+      "on": 75,
+      "kink": 95
+     },
+     "31": {
+      "dead": 84,
+      "on": 74,
+      "kink": 98
+     }
+    },
+    "fold_dead_total": 256,
+    "fold_on_total": 226,
+    "fold_kink_total": 286
+   },
+   {
+    "net_seed": 1033,
+    "rot_seed": 1933000,
+    "mse_raw": 1.5398201060751037e-07,
+    "mse_corr": 1.1250505132356187e-07,
+    "floor31": 4.147695928394849e-08,
+    "diag_proxy_l28": 0.0005309916193621262,
+    "floor28": 4.572545483292606e-08,
+    "all_layer_mse": 0.0006082140988540061,
+    "billed_flops": 175522397198,
+    "truth_wall_s": 23.7,
+    "predict_wall_s": 2.95,
+    "pruned_frac_overall": 0.23563058035714285,
+    "borderline_frac_overall": 0.09556361607142858,
+    "relax_moves_total": 612,
+    "fold": {
+     "29": {
+      "dead": 85,
+      "on": 67,
+      "kink": 104
+     },
+     "30": {
+      "dead": 89,
+      "on": 69,
+      "kink": 98
+     },
+     "31": {
+      "dead": 102,
+      "on": 73,
+      "kink": 81
+     }
+    },
+    "fold_dead_total": 276,
+    "fold_on_total": 209,
+    "fold_kink_total": 283
+   },
+   {
+    "net_seed": 1034,
+    "rot_seed": 1934000,
+    "mse_raw": 4.012998383634376e-07,
+    "mse_corr": 3.381904184197878e-07,
+    "floor31": 6.310941994364982e-08,
+    "diag_proxy_l28": 0.0009035774789038372,
+    "floor28": 6.234661691835903e-08,
+    "all_layer_mse": 0.000848624712711114,
+    "billed_flops": 179587390439,
+    "truth_wall_s": 23.4,
+    "predict_wall_s": 3.16,
+    "pruned_frac_overall": 0.20814732142857142,
+    "borderline_frac_overall": 0.09598214285714286,
+    "relax_moves_total": 520,
+    "fold": {
+     "29": {
+      "dead": 76,
+      "on": 89,
+      "kink": 91
+     },
+     "30": {
+      "dead": 80,
+      "on": 79,
+      "kink": 97
+     },
+     "31": {
+      "dead": 109,
+      "on": 61,
+      "kink": 86
+     }
+    },
+    "fold_dead_total": 265,
+    "fold_on_total": 229,
+    "fold_kink_total": 274
+   },
+   {
+    "net_seed": 1035,
+    "rot_seed": 1935000,
+    "mse_raw": 5.664685433704284e-07,
+    "mse_corr": 5.111756555345422e-07,
+    "floor31": 5.529288783588611e-08,
+    "diag_proxy_l28": 0.0005609746106863887,
+    "floor28": 6.66300553330095e-08,
+    "all_layer_mse": 0.0006110135479525263,
+    "billed_flops": 159516534787,
+    "truth_wall_s": 23.9,
+    "predict_wall_s": 3.03,
+    "pruned_frac_overall": 0.25404575892857145,
+    "borderline_frac_overall": 0.08998325892857142,
+    "relax_moves_total": 551,
+    "fold": {
+     "29": {
+      "dead": 94,
+      "on": 87,
+      "kink": 75
+     },
+     "30": {
+      "dead": 105,
+      "on": 71,
+      "kink": 80
+     },
+     "31": {
+      "dead": 79,
+      "on": 80,
+      "kink": 97
+     }
+    },
+    "fold_dead_total": 278,
+    "fold_on_total": 238,
+    "fold_kink_total": 252
+   },
+   {
+    "net_seed": 1036,
+    "rot_seed": 1936000,
+    "mse_raw": 1.636511824737365e-07,
+    "mse_corr": 1.2097740688928076e-07,
+    "floor31": 4.267377558445574e-08,
+    "diag_proxy_l28": 0.0009618723307376583,
+    "floor28": 5.5079967410880635e-08,
+    "all_layer_mse": 0.0009081459053992401,
+    "billed_flops": 187368294708,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 3.08,
+    "pruned_frac_overall": 0.21205357142857142,
+    "borderline_frac_overall": 0.09305245535714286,
+    "relax_moves_total": 577,
+    "fold": {
+     "29": {
+      "dead": 97,
+      "on": 49,
+      "kink": 110
+     },
+     "30": {
+      "dead": 95,
+      "on": 61,
+      "kink": 100
+     },
+     "31": {
+      "dead": 97,
+      "on": 67,
+      "kink": 92
+     }
+    },
+    "fold_dead_total": 289,
+    "fold_on_total": 177,
+    "fold_kink_total": 302
+   },
+   {
+    "net_seed": 1037,
+    "rot_seed": 1937000,
+    "mse_raw": 1.5408365602399834e-07,
+    "mse_corr": 1.0324419471169914e-07,
+    "floor31": 5.08394613122992e-08,
+    "diag_proxy_l28": 0.0007270074848636062,
+    "floor28": 6.50455066581449e-08,
+    "all_layer_mse": 0.0007511092446085954,
+    "billed_flops": 168727669258,
+    "truth_wall_s": 23.2,
+    "predict_wall_s": 2.9,
+    "pruned_frac_overall": 0.24232700892857142,
+    "borderline_frac_overall": 0.08872767857142858,
+    "relax_moves_total": 519,
+    "fold": {
+     "29": {
+      "dead": 91,
+      "on": 78,
+      "kink": 87
+     },
+     "30": {
+      "dead": 92,
+      "on": 61,
+      "kink": 103
+     },
+     "31": {
+      "dead": 90,
+      "on": 69,
+      "kink": 97
+     }
+    },
+    "fold_dead_total": 273,
+    "fold_on_total": 208,
+    "fold_kink_total": 287
+   },
+   {
+    "net_seed": 1038,
+    "rot_seed": 1938000,
+    "mse_raw": 2.4733492753056705e-07,
+    "mse_corr": 1.5524521141611431e-07,
+    "floor31": 9.208971611445272e-08,
+    "diag_proxy_l28": 0.0020322261923697836,
+    "floor28": 7.50744004554092e-08,
+    "all_layer_mse": 0.0010423297724167998,
+    "billed_flops": 153197940989,
+    "truth_wall_s": 23.9,
+    "predict_wall_s": 3.06,
+    "pruned_frac_overall": 0.2601841517857143,
+    "borderline_frac_overall": 0.08928571428571429,
+    "relax_moves_total": 502,
+    "fold": {
+     "29": {
+      "dead": 119,
+      "on": 81,
+      "kink": 56
+     },
+     "30": {
+      "dead": 92,
+      "on": 87,
+      "kink": 77
+     },
+     "31": {
+      "dead": 99,
+      "on": 95,
+      "kink": 62
+     }
+    },
+    "fold_dead_total": 310,
+    "fold_on_total": 263,
+    "fold_kink_total": 195
+   },
+   {
+    "net_seed": 1039,
+    "rot_seed": 1939000,
+    "mse_raw": 3.058026478754759e-07,
+    "mse_corr": 2.6100637172073297e-07,
+    "floor31": 4.4796276154742955e-08,
+    "diag_proxy_l28": 0.001150525671562679,
+    "floor28": 5.883907007066087e-08,
+    "all_layer_mse": 0.0005984781864986032,
+    "billed_flops": 190579838921,
+    "truth_wall_s": 23.8,
+    "predict_wall_s": 3.1,
+    "pruned_frac_overall": 0.19545200892857142,
+    "borderline_frac_overall": 0.10491071428571429,
+    "relax_moves_total": 584,
+    "fold": {
+     "29": {
+      "dead": 86,
+      "on": 60,
+      "kink": 110
+     },
+     "30": {
+      "dead": 91,
+      "on": 55,
+      "kink": 110
+     },
+     "31": {
+      "dead": 81,
+      "on": 71,
+      "kink": 104
+     }
+    },
+    "fold_dead_total": 258,
+    "fold_on_total": 186,
+    "fold_kink_total": 324
+   },
+   {
+    "net_seed": 1040,
+    "rot_seed": 1940000,
+    "mse_raw": 4.6005163167381787e-07,
+    "mse_corr": 3.948916809025908e-07,
+    "floor31": 6.515995077122708e-08,
+    "diag_proxy_l28": 0.0006148476814100662,
+    "floor28": 6.993889307050031e-08,
+    "all_layer_mse": 0.0005721481047679606,
+    "billed_flops": 155537992507,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 3.07,
+    "pruned_frac_overall": 0.2621372767857143,
+    "borderline_frac_overall": 0.09054129464285714,
+    "relax_moves_total": 571,
+    "fold": {
+     "29": {
+      "dead": 86,
+      "on": 84,
+      "kink": 86
+     },
+     "30": {
+      "dead": 101,
+      "on": 80,
+      "kink": 75
+     },
+     "31": {
+      "dead": 113,
+      "on": 65,
+      "kink": 78
+     }
+    },
+    "fold_dead_total": 300,
+    "fold_on_total": 229,
+    "fold_kink_total": 239
+   },
+   {
+    "net_seed": 1041,
+    "rot_seed": 1941000,
+    "mse_raw": 2.1076952158114116e-07,
+    "mse_corr": 1.0811759118387014e-07,
+    "floor31": 1.0265193039727102e-07,
+    "diag_proxy_l28": 0.0010292673122757822,
+    "floor28": 1.315739528726323e-07,
+    "all_layer_mse": 0.0009458281354510564,
+    "billed_flops": 173101845667,
+    "truth_wall_s": 24.0,
+    "predict_wall_s": 2.75,
+    "pruned_frac_overall": 0.24204799107142858,
+    "borderline_frac_overall": 0.0908203125,
+    "relax_moves_total": 552,
+    "fold": {
+     "29": {
+      "dead": 86,
+      "on": 80,
+      "kink": 90
+     },
+     "30": {
+      "dead": 102,
+      "on": 77,
+      "kink": 77
+     },
+     "31": {
+      "dead": 96,
+      "on": 79,
+      "kink": 81
+     }
+    },
+    "fold_dead_total": 284,
+    "fold_on_total": 236,
+    "fold_kink_total": 248
+   },
+   {
+    "net_seed": 1042,
+    "rot_seed": 1942000,
+    "mse_raw": 6.890340170445541e-07,
+    "mse_corr": 5.74107678268746e-07,
+    "floor31": 1.14926338775808e-07,
+    "diag_proxy_l28": 0.000959777176530316,
+    "floor28": 1.0293289999807327e-07,
+    "all_layer_mse": 0.0007802024468875322,
+    "billed_flops": 169741475961,
+    "truth_wall_s": 24.0,
+    "predict_wall_s": 2.91,
+    "pruned_frac_overall": 0.23130580357142858,
+    "borderline_frac_overall": 0.08900669642857142,
+    "relax_moves_total": 543,
+    "fold": {
+     "29": {
+      "dead": 98,
+      "on": 96,
+      "kink": 62
+     },
+     "30": {
+      "dead": 90,
+      "on": 90,
+      "kink": 76
+     },
+     "31": {
+      "dead": 116,
+      "on": 82,
+      "kink": 58
+     }
+    },
+    "fold_dead_total": 304,
+    "fold_on_total": 268,
+    "fold_kink_total": 196
+   },
+   {
+    "net_seed": 1043,
+    "rot_seed": 1943000,
+    "mse_raw": 2.1159139455973926e-07,
+    "mse_corr": 1.3808623376762825e-07,
+    "floor31": 7.350516079211101e-08,
+    "diag_proxy_l28": 0.0006590022670091278,
+    "floor28": 6.619845783916361e-08,
+    "all_layer_mse": 0.0008163556081821777,
+    "billed_flops": 172758802429,
+    "truth_wall_s": 24.2,
+    "predict_wall_s": 3.26,
+    "pruned_frac_overall": 0.22698102678571427,
+    "borderline_frac_overall": 0.09612165178571429,
+    "relax_moves_total": 583,
+    "fold": {
+     "29": {
+      "dead": 90,
+      "on": 67,
+      "kink": 99
+     },
+     "30": {
+      "dead": 84,
+      "on": 79,
+      "kink": 93
+     },
+     "31": {
+      "dead": 85,
+      "on": 84,
+      "kink": 87
+     }
+    },
+    "fold_dead_total": 259,
+    "fold_on_total": 230,
+    "fold_kink_total": 279
+   },
+   {
+    "net_seed": 1044,
+    "rot_seed": 1944000,
+    "mse_raw": 8.469496597574101e-07,
+    "mse_corr": 7.696914816577442e-07,
+    "floor31": 7.725817809966588e-08,
+    "diag_proxy_l28": 0.0006412407790974759,
+    "floor28": 7.799264251237214e-08,
+    "all_layer_mse": 0.0006493407025484493,
+    "billed_flops": 174403163618,
+    "truth_wall_s": 23.7,
+    "predict_wall_s": 3.12,
+    "pruned_frac_overall": 0.21595982142857142,
+    "borderline_frac_overall": 0.08984375,
+    "relax_moves_total": 546,
+    "fold": {
+     "29": {
+      "dead": 88,
+      "on": 76,
+      "kink": 92
+     },
+     "30": {
+      "dead": 87,
+      "on": 85,
+      "kink": 84
+     },
+     "31": {
+      "dead": 95,
+      "on": 67,
+      "kink": 94
+     }
+    },
+    "fold_dead_total": 270,
+    "fold_on_total": 228,
+    "fold_kink_total": 270
+   },
+   {
+    "net_seed": 1045,
+    "rot_seed": 1945000,
+    "mse_raw": 2.7313657460059875e-07,
+    "mse_corr": 1.949120420070596e-07,
+    "floor31": 7.822453259353914e-08,
+    "diag_proxy_l28": 0.0008414067823559407,
+    "floor28": 7.672414702900255e-08,
+    "all_layer_mse": 0.000566833178906265,
+    "billed_flops": 164527650882,
+    "truth_wall_s": 24.2,
+    "predict_wall_s": 3.0,
+    "pruned_frac_overall": 0.24469866071428573,
+    "borderline_frac_overall": 0.09654017857142858,
+    "relax_moves_total": 585,
+    "fold": {
+     "29": {
+      "dead": 89,
+      "on": 73,
+      "kink": 94
+     },
+     "30": {
+      "dead": 97,
+      "on": 79,
+      "kink": 80
+     },
+     "31": {
+      "dead": 86,
+      "on": 81,
+      "kink": 89
+     }
+    },
+    "fold_dead_total": 272,
+    "fold_on_total": 233,
+    "fold_kink_total": 263
+   },
+   {
+    "net_seed": 1046,
+    "rot_seed": 1946000,
+    "mse_raw": 2.3505673870094958e-07,
+    "mse_corr": 1.837951360232361e-07,
+    "floor31": 5.126160267771347e-08,
+    "diag_proxy_l28": 0.0003431682235556871,
+    "floor28": 5.284893268227521e-08,
+    "all_layer_mse": 0.0005266417680521777,
+    "billed_flops": 177846527985,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 3.15,
+    "pruned_frac_overall": 0.22419084821428573,
+    "borderline_frac_overall": 0.09375,
+    "relax_moves_total": 524,
+    "fold": {
+     "29": {
+      "dead": 75,
+      "on": 64,
+      "kink": 117
+     },
+     "30": {
+      "dead": 86,
+      "on": 69,
+      "kink": 101
+     },
+     "31": {
+      "dead": 85,
+      "on": 84,
+      "kink": 87
+     }
+    },
+    "fold_dead_total": 246,
+    "fold_on_total": 217,
+    "fold_kink_total": 305
+   },
+   {
+    "net_seed": 1047,
+    "rot_seed": 1947000,
+    "mse_raw": 4.750604833121301e-07,
+    "mse_corr": 3.759154015277524e-07,
+    "floor31": 9.914508178437772e-08,
+    "diag_proxy_l28": 0.002104503967029936,
+    "floor28": 7.920646011583953e-08,
+    "all_layer_mse": 0.0015298388032945122,
+    "billed_flops": 164367170741,
+    "truth_wall_s": 23.8,
+    "predict_wall_s": 3.13,
+    "pruned_frac_overall": 0.24553571428571427,
+    "borderline_frac_overall": 0.08523995535714286,
+    "relax_moves_total": 538,
+    "fold": {
+     "29": {
+      "dead": 74,
+      "on": 84,
+      "kink": 98
+     },
+     "30": {
+      "dead": 90,
+      "on": 80,
+      "kink": 86
+     },
+     "31": {
+      "dead": 94,
+      "on": 86,
+      "kink": 76
+     }
+    },
+    "fold_dead_total": 258,
+    "fold_on_total": 250,
+    "fold_kink_total": 260
+   },
+   {
+    "net_seed": 1048,
+    "rot_seed": 1948000,
+    "mse_raw": 5.384649260647489e-07,
+    "mse_corr": 4.372328351928004e-07,
+    "floor31": 1.0123209087194853e-07,
+    "diag_proxy_l28": 0.0009627806215088956,
+    "floor28": 9.836948515107989e-08,
+    "all_layer_mse": 0.0007661905626810211,
+    "billed_flops": 172713715403,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 2.74,
+    "pruned_frac_overall": 0.24232700892857142,
+    "borderline_frac_overall": 0.08914620535714286,
+    "relax_moves_total": 523,
+    "fold": {
+     "29": {
+      "dead": 87,
+      "on": 66,
+      "kink": 103
+     },
+     "30": {
+      "dead": 86,
+      "on": 72,
+      "kink": 98
+     },
+     "31": {
+      "dead": 83,
+      "on": 76,
+      "kink": 97
+     }
+    },
+    "fold_dead_total": 256,
+    "fold_on_total": 214,
+    "fold_kink_total": 298
+   },
+   {
+    "net_seed": 1049,
+    "rot_seed": 1949000,
+    "mse_raw": 6.577932004008388e-07,
+    "mse_corr": 5.529297777482745e-07,
+    "floor31": 1.0486342265256437e-07,
+    "diag_proxy_l28": 0.0016884673845920868,
+    "floor28": 7.706904059847941e-08,
+    "all_layer_mse": 0.0010614447309804974,
+    "billed_flops": 163140498006,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 2.96,
+    "pruned_frac_overall": 0.24065290178571427,
+    "borderline_frac_overall": 0.08830915178571429,
+    "relax_moves_total": 522,
+    "fold": {
+     "29": {
+      "dead": 103,
+      "on": 78,
+      "kink": 75
+     },
+     "30": {
+      "dead": 86,
+      "on": 94,
+      "kink": 76
+     },
+     "31": {
+      "dead": 92,
+      "on": 101,
+      "kink": 63
+     }
+    },
+    "fold_dead_total": 281,
+    "fold_on_total": 273,
+    "fold_kink_total": 214
+   },
+   {
+    "net_seed": 1050,
+    "rot_seed": 1950000,
+    "mse_raw": 1.6441641483156883e-07,
+    "mse_corr": 7.519534088951187e-08,
+    "floor31": 8.922107394205696e-08,
+    "diag_proxy_l28": 0.0008471809023878089,
+    "floor28": 7.570818536992319e-08,
+    "all_layer_mse": 0.0006726079865902606,
+    "billed_flops": 187403140687,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 2.82,
+    "pruned_frac_overall": 0.21568080357142858,
+    "borderline_frac_overall": 0.10002790178571429,
+    "relax_moves_total": 539,
+    "fold": {
+     "29": {
+      "dead": 76,
+      "on": 75,
+      "kink": 105
+     },
+     "30": {
+      "dead": 78,
+      "on": 75,
+      "kink": 103
+     },
+     "31": {
+      "dead": 93,
+      "on": 69,
+      "kink": 94
+     }
+    },
+    "fold_dead_total": 247,
+    "fold_on_total": 219,
+    "fold_kink_total": 302
+   },
+   {
+    "net_seed": 1051,
+    "rot_seed": 1951000,
+    "mse_raw": 1.429381890620436e-07,
+    "mse_corr": 9.991656044859513e-08,
+    "floor31": 4.302162861344848e-08,
+    "diag_proxy_l28": 0.0004811708226456939,
+    "floor28": 4.619518991840812e-08,
+    "all_layer_mse": 0.0007089964311579198,
+    "billed_flops": 177951858038,
+    "truth_wall_s": 24.9,
+    "predict_wall_s": 5.19,
+    "pruned_frac_overall": 0.22586495535714285,
+    "borderline_frac_overall": 0.10295758928571429,
+    "relax_moves_total": 590,
+    "fold": {
+     "29": {
+      "dead": 89,
+      "on": 71,
+      "kink": 96
+     },
+     "30": {
+      "dead": 90,
+      "on": 61,
+      "kink": 105
+     },
+     "31": {
+      "dead": 96,
+      "on": 80,
+      "kink": 80
+     }
+    },
+    "fold_dead_total": 275,
+    "fold_on_total": 212,
+    "fold_kink_total": 281
+   },
+   {
+    "net_seed": 1052,
+    "rot_seed": 1952000,
+    "mse_raw": 9.319449316657665e-08,
+    "mse_corr": 3.616242131593019e-08,
+    "floor31": 5.703207185064646e-08,
+    "diag_proxy_l28": 0.000859908222692657,
+    "floor28": 5.2026995871608935e-08,
+    "all_layer_mse": 0.0006470609379785228,
+    "billed_flops": 167672143597,
+    "truth_wall_s": 27.4,
+    "predict_wall_s": 5.05,
+    "pruned_frac_overall": 0.24372209821428573,
+    "borderline_frac_overall": 0.09737723214285714,
+    "relax_moves_total": 556,
+    "fold": {
+     "29": {
+      "dead": 79,
+      "on": 81,
+      "kink": 96
+     },
+     "30": {
+      "dead": 94,
+      "on": 81,
+      "kink": 81
+     },
+     "31": {
+      "dead": 102,
+      "on": 88,
+      "kink": 66
+     }
+    },
+    "fold_dead_total": 275,
+    "fold_on_total": 250,
+    "fold_kink_total": 243
+   },
+   {
+    "net_seed": 1053,
+    "rot_seed": 1953000,
+    "mse_raw": 6.35247925267737e-07,
+    "mse_corr": 5.308950284812554e-07,
+    "floor31": 1.0435289678648163e-07,
+    "diag_proxy_l28": 0.0005587306482911661,
+    "floor28": 1.0855974352345999e-07,
+    "all_layer_mse": 0.0006341284349846597,
+    "billed_flops": 168209040711,
+    "truth_wall_s": 27.2,
+    "predict_wall_s": 3.28,
+    "pruned_frac_overall": 0.23981584821428573,
+    "borderline_frac_overall": 0.09165736607142858,
+    "relax_moves_total": 507,
+    "fold": {
+     "29": {
+      "dead": 77,
+      "on": 90,
+      "kink": 89
+     },
+     "30": {
+      "dead": 88,
+      "on": 81,
+      "kink": 87
+     },
+     "31": {
+      "dead": 93,
+      "on": 81,
+      "kink": 82
+     }
+    },
+    "fold_dead_total": 258,
+    "fold_on_total": 252,
+    "fold_kink_total": 258
+   },
+   {
+    "net_seed": 1054,
+    "rot_seed": 1954000,
+    "mse_raw": 8.992765013103694e-07,
+    "mse_corr": 8.155281684768229e-07,
+    "floor31": 8.374833283354656e-08,
+    "diag_proxy_l28": 0.0012041382249681851,
+    "floor28": 7.442483358283142e-08,
+    "all_layer_mse": 0.0007798919535118747,
+    "billed_flops": 162567738610,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 3.0,
+    "pruned_frac_overall": 0.25111607142857145,
+    "borderline_frac_overall": 0.09123883928571429,
+    "relax_moves_total": 565,
+    "fold": {
+     "29": {
+      "dead": 88,
+      "on": 90,
+      "kink": 78
+     },
+     "30": {
+      "dead": 102,
+      "on": 84,
+      "kink": 70
+     },
+     "31": {
+      "dead": 100,
+      "on": 84,
+      "kink": 72
+     }
+    },
+    "fold_dead_total": 290,
+    "fold_on_total": 258,
+    "fold_kink_total": 220
+   },
+   {
+    "net_seed": 1055,
+    "rot_seed": 1955000,
+    "mse_raw": 2.1999638488275984e-07,
+    "mse_corr": 1.0789376730460016e-07,
+    "floor31": 1.1210261757815968e-07,
+    "diag_proxy_l28": 0.0011201645896800185,
+    "floor28": 1.0252387411287781e-07,
+    "all_layer_mse": 0.0007627225012477737,
+    "billed_flops": 162251060647,
+    "truth_wall_s": 24.5,
+    "predict_wall_s": 3.01,
+    "pruned_frac_overall": 0.24818638392857142,
+    "borderline_frac_overall": 0.09137834821428571,
+    "relax_moves_total": 543,
+    "fold": {
+     "29": {
+      "dead": 97,
+      "on": 87,
+      "kink": 72
+     },
+     "30": {
+      "dead": 91,
+      "on": 85,
+      "kink": 80
+     },
+     "31": {
+      "dead": 100,
+      "on": 84,
+      "kink": 72
+     }
+    },
+    "fold_dead_total": 288,
+    "fold_on_total": 256,
+    "fold_kink_total": 224
+   },
+   {
+    "net_seed": 1056,
+    "rot_seed": 1956000,
+    "mse_raw": 2.835134563935674e-07,
+    "mse_corr": 2.2963602716429715e-07,
+    "floor31": 5.3877429229270254e-08,
+    "diag_proxy_l28": 0.0009521287261029821,
+    "floor28": 7.641646762280877e-08,
+    "all_layer_mse": 0.0007924992561176992,
+    "billed_flops": 174107876183,
+    "truth_wall_s": 24.2,
+    "predict_wall_s": 3.23,
+    "pruned_frac_overall": 0.22614397321428573,
+    "borderline_frac_overall": 0.09654017857142858,
+    "relax_moves_total": 600,
+    "fold": {
+     "29": {
+      "dead": 107,
+      "on": 64,
+      "kink": 85
+     },
+     "30": {
+      "dead": 90,
+      "on": 79,
+      "kink": 87
+     },
+     "31": {
+      "dead": 109,
+      "on": 64,
+      "kink": 83
+     }
+    },
+    "fold_dead_total": 306,
+    "fold_on_total": 207,
+    "fold_kink_total": 255
+   },
+   {
+    "net_seed": 1057,
+    "rot_seed": 1957000,
+    "mse_raw": 1.616934045726277e-07,
+    "mse_corr": 1.009927408958203e-07,
+    "floor31": 6.07006636768074e-08,
+    "diag_proxy_l28": 0.0012712795749773682,
+    "floor28": 7.700710477886829e-08,
+    "all_layer_mse": 0.0009438179386339601,
+    "billed_flops": 176403211157,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 3.21,
+    "pruned_frac_overall": 0.2314453125,
+    "borderline_frac_overall": 0.09612165178571429,
+    "relax_moves_total": 563,
+    "fold": {
+     "29": {
+      "dead": 85,
+      "on": 62,
+      "kink": 109
+     },
+     "30": {
+      "dead": 85,
+      "on": 77,
+      "kink": 94
+     },
+     "31": {
+      "dead": 92,
+      "on": 58,
+      "kink": 106
+     }
+    },
+    "fold_dead_total": 262,
+    "fold_on_total": 197,
+    "fold_kink_total": 309
+   },
+   {
+    "net_seed": 1058,
+    "rot_seed": 1958000,
+    "mse_raw": 2.777697480479984e-07,
+    "mse_corr": 1.9814335294501998e-07,
+    "floor31": 7.962639510297845e-08,
+    "diag_proxy_l28": 0.0007201084045311639,
+    "floor28": 7.1576917623445e-08,
+    "all_layer_mse": 0.0006929840711205485,
+    "billed_flops": 174838862588,
+    "truth_wall_s": 24.0,
+    "predict_wall_s": 2.76,
+    "pruned_frac_overall": 0.22614397321428573,
+    "borderline_frac_overall": 0.09528459821428571,
+    "relax_moves_total": 531,
+    "fold": {
+     "29": {
+      "dead": 88,
+      "on": 71,
+      "kink": 97
+     },
+     "30": {
+      "dead": 85,
+      "on": 77,
+      "kink": 94
+     },
+     "31": {
+      "dead": 101,
+      "on": 89,
+      "kink": 66
+     }
+    },
+    "fold_dead_total": 274,
+    "fold_on_total": 237,
+    "fold_kink_total": 257
+   },
+   {
+    "net_seed": 1059,
+    "rot_seed": 1959000,
+    "mse_raw": 1.0493716107252923e-07,
+    "mse_corr": 4.865950445722431e-08,
+    "floor31": 5.627765661530492e-08,
+    "diag_proxy_l28": 0.0004056795524516987,
+    "floor28": 5.0935718658297135e-08,
+    "all_layer_mse": 0.0004829101135145953,
+    "billed_flops": 175824481330,
+    "truth_wall_s": 24.2,
+    "predict_wall_s": 3.09,
+    "pruned_frac_overall": 0.22474888392857142,
+    "borderline_frac_overall": 0.1005859375,
+    "relax_moves_total": 596,
+    "fold": {
+     "29": {
+      "dead": 76,
+      "on": 67,
+      "kink": 113
+     },
+     "30": {
+      "dead": 75,
+      "on": 76,
+      "kink": 105
+     },
+     "31": {
+      "dead": 90,
+      "on": 68,
+      "kink": 98
+     }
+    },
+    "fold_dead_total": 241,
+    "fold_on_total": 211,
+    "fold_kink_total": 316
+   },
+   {
+    "net_seed": 1060,
+    "rot_seed": 1960000,
+    "mse_raw": 8.460606976715927e-08,
+    "mse_corr": 6.218930687493363e-08,
+    "floor31": 2.2416762892225644e-08,
+    "diag_proxy_l28": 0.00018747194092621442,
+    "floor28": 2.1105187088254027e-08,
+    "all_layer_mse": 0.00041751824676112095,
+    "billed_flops": 186106763024,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 3.16,
+    "pruned_frac_overall": 0.20633370535714285,
+    "borderline_frac_overall": 0.10560825892857142,
+    "relax_moves_total": 613,
+    "fold": {
+     "29": {
+      "dead": 75,
+      "on": 62,
+      "kink": 119
+     },
+     "30": {
+      "dead": 97,
+      "on": 61,
+      "kink": 98
+     },
+     "31": {
+      "dead": 85,
+      "on": 72,
+      "kink": 99
+     }
+    },
+    "fold_dead_total": 257,
+    "fold_on_total": 195,
+    "fold_kink_total": 316
+   },
+   {
+    "net_seed": 1061,
+    "rot_seed": 1961000,
+    "mse_raw": 3.471505243194541e-07,
+    "mse_corr": 1.769742457720468e-07,
+    "floor31": 1.701762785474073e-07,
+    "diag_proxy_l28": 0.0009219615109910602,
+    "floor28": 1.5571270390195008e-07,
+    "all_layer_mse": 0.001031045314788443,
+    "billed_flops": 168270677878,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 2.83,
+    "pruned_frac_overall": 0.24288504464285715,
+    "borderline_frac_overall": 0.087890625,
+    "relax_moves_total": 561,
+    "fold": {
+     "29": {
+      "dead": 96,
+      "on": 87,
+      "kink": 73
+     },
+     "30": {
+      "dead": 88,
+      "on": 88,
+      "kink": 80
+     },
+     "31": {
+      "dead": 105,
+      "on": 92,
+      "kink": 59
+     }
+    },
+    "fold_dead_total": 289,
+    "fold_on_total": 267,
+    "fold_kink_total": 212
+   },
+   {
+    "net_seed": 1062,
+    "rot_seed": 1962000,
+    "mse_raw": 3.452902369911233e-07,
+    "mse_corr": 2.834113720579834e-07,
+    "floor31": 6.18788649331399e-08,
+    "diag_proxy_l28": 0.00037765091230823714,
+    "floor28": 5.6923011706690473e-08,
+    "all_layer_mse": 0.0004728949687426511,
+    "billed_flops": 174116416956,
+    "truth_wall_s": 24.0,
+    "predict_wall_s": 2.78,
+    "pruned_frac_overall": 0.23883928571428573,
+    "borderline_frac_overall": 0.09151785714285714,
+    "relax_moves_total": 534,
+    "fold": {
+     "29": {
+      "dead": 96,
+      "on": 66,
+      "kink": 94
+     },
+     "30": {
+      "dead": 74,
+      "on": 76,
+      "kink": 106
+     },
+     "31": {
+      "dead": 76,
+      "on": 82,
+      "kink": 98
+     }
+    },
+    "fold_dead_total": 246,
+    "fold_on_total": 224,
+    "fold_kink_total": 298
+   },
+   {
+    "net_seed": 1063,
+    "rot_seed": 1963000,
+    "mse_raw": 8.155559136707249e-07,
+    "mse_corr": 6.644698118647154e-07,
+    "floor31": 1.5108610180600942e-07,
+    "diag_proxy_l28": 0.0014131853691084144,
+    "floor28": 1.4322032560573668e-07,
+    "all_layer_mse": 0.0010900633454120003,
+    "billed_flops": 169699638922,
+    "truth_wall_s": 24.2,
+    "predict_wall_s": 2.79,
+    "pruned_frac_overall": 0.2392578125,
+    "borderline_frac_overall": 0.09375,
+    "relax_moves_total": 556,
+    "fold": {
+     "29": {
+      "dead": 87,
+      "on": 100,
+      "kink": 69
+     },
+     "30": {
+      "dead": 100,
+      "on": 93,
+      "kink": 63
+     },
+     "31": {
+      "dead": 98,
+      "on": 85,
+      "kink": 73
+     }
+    },
+    "fold_dead_total": 285,
+    "fold_on_total": 278,
+    "fold_kink_total": 205
+   },
+   {
+    "net_seed": 1064,
+    "rot_seed": 1964000,
+    "mse_raw": 1.0317446959864618e-07,
+    "mse_corr": 6.750523323272754e-08,
+    "floor31": 3.566923636591864e-08,
+    "diag_proxy_l28": 0.0002749275923111632,
+    "floor28": 3.569237449359531e-08,
+    "all_layer_mse": 0.0004651606021024655,
+    "billed_flops": 186451569427,
+    "truth_wall_s": 23.8,
+    "predict_wall_s": 2.91,
+    "pruned_frac_overall": 0.20424107142857142,
+    "borderline_frac_overall": 0.10239955357142858,
+    "relax_moves_total": 598,
+    "fold": {
+     "29": {
+      "dead": 83,
+      "on": 66,
+      "kink": 107
+     },
+     "30": {
+      "dead": 96,
+      "on": 65,
+      "kink": 95
+     },
+     "31": {
+      "dead": 87,
+      "on": 88,
+      "kink": 81
+     }
+    },
+    "fold_dead_total": 266,
+    "fold_on_total": 219,
+    "fold_kink_total": 283
+   },
+   {
+    "net_seed": 1065,
+    "rot_seed": 1965000,
+    "mse_raw": 1.4917240521402463e-07,
+    "mse_corr": 1.2089214979775586e-07,
+    "floor31": 2.8280255416268778e-08,
+    "diag_proxy_l28": 0.0007362562321749827,
+    "floor28": 3.670366672443434e-08,
+    "all_layer_mse": 0.0006355633516570759,
+    "billed_flops": 184565383107,
+    "truth_wall_s": 23.9,
+    "predict_wall_s": 3.08,
+    "pruned_frac_overall": 0.21540178571428573,
+    "borderline_frac_overall": 0.09988839285714286,
+    "relax_moves_total": 584,
+    "fold": {
+     "29": {
+      "dead": 84,
+      "on": 57,
+      "kink": 115
+     },
+     "30": {
+      "dead": 82,
+      "on": 64,
+      "kink": 110
+     },
+     "31": {
+      "dead": 88,
+      "on": 61,
+      "kink": 107
+     }
+    },
+    "fold_dead_total": 254,
+    "fold_on_total": 182,
+    "fold_kink_total": 332
+   },
+   {
+    "net_seed": 1066,
+    "rot_seed": 1966000,
+    "mse_raw": 1.8200064847077587e-07,
+    "mse_corr": 1.5759555035342292e-07,
+    "floor31": 2.4405098117352955e-08,
+    "diag_proxy_l28": 0.0005605751012537172,
+    "floor28": 3.174352337505939e-08,
+    "all_layer_mse": 0.0006233736260528751,
+    "billed_flops": 182834054281,
+    "truth_wall_s": 24.0,
+    "predict_wall_s": 3.1,
+    "pruned_frac_overall": 0.21902901785714285,
+    "borderline_frac_overall": 0.09319196428571429,
+    "relax_moves_total": 556,
+    "fold": {
+     "29": {
+      "dead": 70,
+      "on": 62,
+      "kink": 124
+     },
+     "30": {
+      "dead": 71,
+      "on": 54,
+      "kink": 131
+     },
+     "31": {
+      "dead": 88,
+      "on": 48,
+      "kink": 120
+     }
+    },
+    "fold_dead_total": 229,
+    "fold_on_total": 164,
+    "fold_kink_total": 375
+   },
+   {
+    "net_seed": 1067,
+    "rot_seed": 1967000,
+    "mse_raw": 4.781079858775795e-07,
+    "mse_corr": 3.8890802032640226e-07,
+    "floor31": 8.919996555117723e-08,
+    "diag_proxy_l28": 0.0008693159008976901,
+    "floor28": 1.0114371808094664e-07,
+    "all_layer_mse": 0.0006416907139047487,
+    "billed_flops": 169019261907,
+    "truth_wall_s": 24.2,
+    "predict_wall_s": 2.8,
+    "pruned_frac_overall": 0.24665178571428573,
+    "borderline_frac_overall": 0.08579799107142858,
+    "relax_moves_total": 547,
+    "fold": {
+     "29": {
+      "dead": 90,
+      "on": 70,
+      "kink": 96
+     },
+     "30": {
+      "dead": 77,
+      "on": 67,
+      "kink": 112
+     },
+     "31": {
+      "dead": 98,
+      "on": 76,
+      "kink": 82
+     }
+    },
+    "fold_dead_total": 265,
+    "fold_on_total": 213,
+    "fold_kink_total": 290
+   },
+   {
+    "net_seed": 1068,
+    "rot_seed": 1968000,
+    "mse_raw": 1.5154677127726468e-07,
+    "mse_corr": 1.1237717572867579e-07,
+    "floor31": 3.916959554858889e-08,
+    "diag_proxy_l28": 0.0003698809830495055,
+    "floor28": 3.515221463608614e-08,
+    "all_layer_mse": 0.0005975236993643017,
+    "billed_flops": 170211802817,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 2.95,
+    "pruned_frac_overall": 0.24204799107142858,
+    "borderline_frac_overall": 0.09500558035714286,
+    "relax_moves_total": 580,
+    "fold": {
+     "29": {
+      "dead": 101,
+      "on": 65,
+      "kink": 90
+     },
+     "30": {
+      "dead": 87,
+      "on": 78,
+      "kink": 91
+     },
+     "31": {
+      "dead": 84,
+      "on": 89,
+      "kink": 83
+     }
+    },
+    "fold_dead_total": 272,
+    "fold_on_total": 232,
+    "fold_kink_total": 264
+   },
+   {
+    "net_seed": 1069,
+    "rot_seed": 1969000,
+    "mse_raw": 8.924469512099858e-07,
+    "mse_corr": 8.012152209649269e-07,
+    "floor31": 9.123173024505888e-08,
+    "diag_proxy_l28": 0.0006154232929608653,
+    "floor28": 1.0390190481412367e-07,
+    "all_layer_mse": 0.0006939421635222332,
+    "billed_flops": 172661512153,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 2.98,
+    "pruned_frac_overall": 0.23214285714285715,
+    "borderline_frac_overall": 0.09598214285714286,
+    "relax_moves_total": 573,
+    "fold": {
+     "29": {
+      "dead": 99,
+      "on": 72,
+      "kink": 85
+     },
+     "30": {
+      "dead": 91,
+      "on": 90,
+      "kink": 75
+     },
+     "31": {
+      "dead": 95,
+      "on": 87,
+      "kink": 74
+     }
+    },
+    "fold_dead_total": 285,
+    "fold_on_total": 249,
+    "fold_kink_total": 234
+   },
+   {
+    "net_seed": 1070,
+    "rot_seed": 1970000,
+    "mse_raw": 4.7123786325673564e-07,
+    "mse_corr": 3.712930637925851e-07,
+    "floor31": 9.994479946415051e-08,
+    "diag_proxy_l28": 0.0015539509147769952,
+    "floor28": 1.0587182017505997e-07,
+    "all_layer_mse": 0.0011347955151949907,
+    "billed_flops": 174365438404,
+    "truth_wall_s": 24.2,
+    "predict_wall_s": 2.95,
+    "pruned_frac_overall": 0.23953683035714285,
+    "borderline_frac_overall": 0.09319196428571429,
+    "relax_moves_total": 548,
+    "fold": {
+     "29": {
+      "dead": 92,
+      "on": 59,
+      "kink": 105
+     },
+     "30": {
+      "dead": 75,
+      "on": 73,
+      "kink": 108
+     },
+     "31": {
+      "dead": 85,
+      "on": 62,
+      "kink": 109
+     }
+    },
+    "fold_dead_total": 252,
+    "fold_on_total": 194,
+    "fold_kink_total": 322
+   },
+   {
+    "net_seed": 1071,
+    "rot_seed": 1971000,
+    "mse_raw": 2.892488574602923e-07,
+    "mse_corr": 1.9027460501741028e-07,
+    "floor31": 9.897425244288203e-08,
+    "diag_proxy_l28": 0.001255673946279979,
+    "floor28": 1.1474047702470867e-07,
+    "all_layer_mse": 0.0007756266934743579,
+    "billed_flops": 172452207295,
+    "truth_wall_s": 24.4,
+    "predict_wall_s": 3.19,
+    "pruned_frac_overall": 0.24135044642857142,
+    "borderline_frac_overall": 0.09933035714285714,
+    "relax_moves_total": 630,
+    "fold": {
+     "29": {
+      "dead": 91,
+      "on": 86,
+      "kink": 79
+     },
+     "30": {
+      "dead": 88,
+      "on": 76,
+      "kink": 92
+     },
+     "31": {
+      "dead": 90,
+      "on": 78,
+      "kink": 88
+     }
+    },
+    "fold_dead_total": 269,
+    "fold_on_total": 240,
+    "fold_kink_total": 259
+   },
+   {
+    "net_seed": 1072,
+    "rot_seed": 1972000,
+    "mse_raw": 1.877017382465877e-07,
+    "mse_corr": 1.4211596149657398e-07,
+    "floor31": 4.5585776750013704e-08,
+    "diag_proxy_l28": 0.0006934144707511624,
+    "floor28": 4.433222231426653e-08,
+    "all_layer_mse": 0.0009143973041802401,
+    "billed_flops": 193842568914,
+    "truth_wall_s": 24.7,
+    "predict_wall_s": 3.34,
+    "pruned_frac_overall": 0.20772879464285715,
+    "borderline_frac_overall": 0.09416852678571429,
+    "relax_moves_total": 618,
+    "fold": {
+     "29": {
+      "dead": 65,
+      "on": 48,
+      "kink": 143
+     },
+     "30": {
+      "dead": 78,
+      "on": 57,
+      "kink": 121
+     },
+     "31": {
+      "dead": 67,
+      "on": 55,
+      "kink": 134
+     }
+    },
+    "fold_dead_total": 210,
+    "fold_on_total": 160,
+    "fold_kink_total": 398
+   },
+   {
+    "net_seed": 1073,
+    "rot_seed": 1973000,
+    "mse_raw": 1.3192421817558864e-07,
+    "mse_corr": 1.0093674984221403e-07,
+    "floor31": 3.098746833337461e-08,
+    "diag_proxy_l28": 0.0004515110430709937,
+    "floor28": 3.565803631122613e-08,
+    "all_layer_mse": 0.0006105650981224688,
+    "billed_flops": 193545145148,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 3.2,
+    "pruned_frac_overall": 0.20396205357142858,
+    "borderline_frac_overall": 0.1025390625,
+    "relax_moves_total": 572,
+    "fold": {
+     "29": {
+      "dead": 81,
+      "on": 40,
+      "kink": 135
+     },
+     "30": {
+      "dead": 72,
+      "on": 58,
+      "kink": 126
+     },
+     "31": {
+      "dead": 81,
+      "on": 58,
+      "kink": 117
+     }
+    },
+    "fold_dead_total": 234,
+    "fold_on_total": 156,
+    "fold_kink_total": 378
+   },
+   {
+    "net_seed": 1074,
+    "rot_seed": 1974000,
+    "mse_raw": 2.1507895187342305e-07,
+    "mse_corr": 1.7070572151734429e-07,
+    "floor31": 4.437323035607877e-08,
+    "diag_proxy_l28": 0.0009728135603940414,
+    "floor28": 5.552242713908149e-08,
+    "all_layer_mse": 0.0006929580847399563,
+    "billed_flops": 171611604037,
+    "truth_wall_s": 24.2,
+    "predict_wall_s": 2.94,
+    "pruned_frac_overall": 0.2509765625,
+    "borderline_frac_overall": 0.10184151785714286,
+    "relax_moves_total": 600,
+    "fold": {
+     "29": {
+      "dead": 90,
+      "on": 66,
+      "kink": 100
+     },
+     "30": {
+      "dead": 91,
+      "on": 78,
+      "kink": 87
+     },
+     "31": {
+      "dead": 96,
+      "on": 66,
+      "kink": 94
+     }
+    },
+    "fold_dead_total": 277,
+    "fold_on_total": 210,
+    "fold_kink_total": 281
+   },
+   {
+    "net_seed": 1075,
+    "rot_seed": 1975000,
+    "mse_raw": 3.040020187032407e-07,
+    "mse_corr": 1.9425366629875688e-07,
+    "floor31": 1.0974835240448386e-07,
+    "diag_proxy_l28": 0.0015068748550040399,
+    "floor28": 1.3678216982440993e-07,
+    "all_layer_mse": 0.0010060241356249651,
+    "billed_flops": 171887604072,
+    "truth_wall_s": 24.5,
+    "predict_wall_s": 3.25,
+    "pruned_frac_overall": 0.23590959821428573,
+    "borderline_frac_overall": 0.08942522321428571,
+    "relax_moves_total": 523,
+    "fold": {
+     "29": {
+      "dead": 86,
+      "on": 76,
+      "kink": 94
+     },
+     "30": {
+      "dead": 99,
+      "on": 64,
+      "kink": 93
+     },
+     "31": {
+      "dead": 88,
+      "on": 66,
+      "kink": 102
+     }
+    },
+    "fold_dead_total": 273,
+    "fold_on_total": 206,
+    "fold_kink_total": 289
+   },
+   {
+    "net_seed": 1076,
+    "rot_seed": 1976000,
+    "mse_raw": 4.7228470577640476e-07,
+    "mse_corr": 3.710224461858578e-07,
+    "floor31": 1.0126225959054695e-07,
+    "diag_proxy_l28": 0.0017237086980353856,
+    "floor28": 1.2428993716099893e-07,
+    "all_layer_mse": 0.001321473192375494,
+    "billed_flops": 173990016954,
+    "truth_wall_s": 24.6,
+    "predict_wall_s": 2.95,
+    "pruned_frac_overall": 0.24051339285714285,
+    "borderline_frac_overall": 0.0859375,
+    "relax_moves_total": 519,
+    "fold": {
+     "29": {
+      "dead": 89,
+      "on": 64,
+      "kink": 103
+     },
+     "30": {
+      "dead": 95,
+      "on": 56,
+      "kink": 105
+     },
+     "31": {
+      "dead": 69,
+      "on": 79,
+      "kink": 108
+     }
+    },
+    "fold_dead_total": 253,
+    "fold_on_total": 199,
+    "fold_kink_total": 316
+   },
+   {
+    "net_seed": 1077,
+    "rot_seed": 1977000,
+    "mse_raw": 6.414421953182067e-07,
+    "mse_corr": 4.5465494396979666e-07,
+    "floor31": 1.867872513484101e-07,
+    "diag_proxy_l28": 0.0013594992060973446,
+    "floor28": 2.3233365529819704e-07,
+    "all_layer_mse": 0.0008062971788349062,
+    "billed_flops": 158032740872,
+    "truth_wall_s": 24.1,
+    "predict_wall_s": 2.93,
+    "pruned_frac_overall": 0.26171875,
+    "borderline_frac_overall": 0.08482142857142858,
+    "relax_moves_total": 522,
+    "fold": {
+     "29": {
+      "dead": 111,
+      "on": 78,
+      "kink": 67
+     },
+     "30": {
+      "dead": 99,
+      "on": 75,
+      "kink": 82
+     },
+     "31": {
+      "dead": 87,
+      "on": 86,
+      "kink": 83
+     }
+    },
+    "fold_dead_total": 297,
+    "fold_on_total": 239,
+    "fold_kink_total": 232
+   },
+   {
+    "net_seed": 1078,
+    "rot_seed": 1978000,
+    "mse_raw": 3.048959249287201e-07,
+    "mse_corr": 2.2337959178656605e-07,
+    "floor31": 8.151633314215405e-08,
+    "diag_proxy_l28": 0.0009392342112547674,
+    "floor28": 7.918654202049722e-08,
+    "all_layer_mse": 0.0008358328399320672,
+    "billed_flops": 169488286584,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 2.91,
+    "pruned_frac_overall": 0.23716517857142858,
+    "borderline_frac_overall": 0.08844866071428571,
+    "relax_moves_total": 517,
+    "fold": {
+     "29": {
+      "dead": 74,
+      "on": 64,
+      "kink": 118
+     },
+     "30": {
+      "dead": 86,
+      "on": 82,
+      "kink": 88
+     },
+     "31": {
+      "dead": 97,
+      "on": 78,
+      "kink": 81
+     }
+    },
+    "fold_dead_total": 257,
+    "fold_on_total": 224,
+    "fold_kink_total": 287
+   },
+   {
+    "net_seed": 1079,
+    "rot_seed": 1979000,
+    "mse_raw": 4.0222303911231453e-07,
+    "mse_corr": 2.41454031128385e-07,
+    "floor31": 1.6076900798392954e-07,
+    "diag_proxy_l28": 0.002028435190947595,
+    "floor28": 1.660534721072042e-07,
+    "all_layer_mse": 0.0012543977515941745,
+    "billed_flops": 158283531093,
+    "truth_wall_s": 24.3,
+    "predict_wall_s": 3.05,
+    "pruned_frac_overall": 0.259765625,
+    "borderline_frac_overall": 0.08119419642857142,
+    "relax_moves_total": 503,
+    "fold": {
+     "29": {
+      "dead": 99,
+      "on": 79,
+      "kink": 78
+     },
+     "30": {
+      "dead": 86,
+      "on": 76,
+      "kink": 94
+     },
+     "31": {
+      "dead": 92,
+      "on": 90,
+      "kink": 74
+     }
+    },
+    "fold_dead_total": 277,
+    "fold_on_total": 245,
+    "fold_kink_total": 246
+   }
+  ]
+ },
+ "claim1_tail_flag": "KILLED: no governing diagnostic reached |rho| >= 0.3 (governing: {'pruned_frac_overall': 0.2431, 'diag_proxy_l28': 0.2637, 'fold_dead_total': 0.1674, 'fold_on_total': 0.2845}); no a-priori weight-derived tail flag is available",
+ "stage2": {
+  "selection": {
+   "worst": [
+    1001,
+    1063,
+    1044,
+    1069,
+    1054
+   ],
+   "median": [
+    1000,
+    1075,
+    1045,
+    1031,
+    1058
+   ]
+  },
+  "analysis": {
+   "per_net": {
+    "1001": {
+     "mse_default": 3.555957989799342e-07,
+     "mse_relaxed": 3.256562782129217e-07,
+     "improvement_relaxed": 0.08419537253504494,
+     "mse_unpruned": 3.138720507527865e-07,
+     "improvement_unpruned": 0.11733476139717303
+    },
+    "1063": {
+     "mse_default": 5.315548170156629e-07,
+     "mse_relaxed": 4.799083365409241e-07,
+     "improvement_relaxed": 0.09716115595509123,
+     "mse_unpruned": 4.4912549310693014e-07,
+     "improvement_unpruned": 0.1550721040804789
+    },
+    "1044": {
+     "mse_default": 4.426588840805806e-07,
+     "mse_relaxed": 4.2771147063950844e-07,
+     "improvement_relaxed": 0.03376734089979583,
+     "mse_unpruned": 4.307756091985421e-07,
+     "improvement_unpruned": 0.02684521944413376
+    },
+    "1069": {
+     "mse_default": 4.4066163436844147e-07,
+     "mse_relaxed": 4.1035042244099353e-07,
+     "improvement_relaxed": 0.0687856839883284,
+     "mse_unpruned": 3.8731808969693903e-07,
+     "improvement_unpruned": 0.12105329920076813
+    },
+    "1054": {
+     "mse_default": 3.4372652141605014e-07,
+     "mse_relaxed": 3.1932142711347856e-07,
+     "improvement_relaxed": 0.07100148746750734,
+     "mse_unpruned": 3.1418928021756154e-07,
+     "improvement_unpruned": 0.08593238914705803
+    },
+    "1000": {
+     "mse_default": 6.534353907901185e-07,
+     "mse_relaxed": 6.482403629852772e-07,
+     "improvement_relaxed": 0.00795033124630673,
+     "mse_unpruned": 6.46178898025941e-07,
+     "improvement_unpruned": 0.011105141941276098
+    },
+    "1075": {
+     "mse_default": 3.8218050278461363e-07,
+     "mse_relaxed": 3.8062757516061013e-07,
+     "improvement_relaxed": 0.004063335551365621,
+     "mse_unpruned": 3.8514968843459996e-07,
+     "improvement_unpruned": -0.007769066261498203
+    },
+    "1045": {
+     "mse_default": 2.2056367014762184e-07,
+     "mse_relaxed": 2.098069029385838e-07,
+     "improvement_relaxed": 0.048769442410160346,
+     "mse_unpruned": 2.1051393619434163e-07,
+     "improvement_unpruned": 0.04556386800488943
+    },
+    "1031": {
+     "mse_default": 4.093696804655385e-07,
+     "mse_relaxed": 3.737346855699518e-07,
+     "improvement_relaxed": 0.08704844690760272,
+     "mse_unpruned": 3.593216272930788e-07,
+     "improvement_unpruned": 0.12225637500936726
+    },
+    "1058": {
+     "mse_default": 2.1781578147157566e-07,
+     "mse_relaxed": 2.2638596089437464e-07,
+     "improvement_relaxed": -0.03934599855390819,
+     "mse_unpruned": 2.2985527389713624e-07,
+     "improvement_unpruned": -0.055273737945988444
+    }
+   },
+   "arm_gates": {
+    "relaxed": {
+     "worst_mean_improvement": 0.07098220816915354,
+     "median_mean_abs_change": 0.037435510933868724,
+     "confirms": false
+    },
+    "unpruned": {
+     "worst_mean_improvement": 0.10124755465392236,
+     "median_mean_abs_change": 0.048393637832603885,
+     "confirms": false
+    }
+   },
+   "confirmed_arms": [],
+   "mechanism_confirmed": false
+  },
+  "nets": {
+   "1001": {
+    "floor31": 6.790014243836751e-08,
+    "truth_wall_s": 40.1,
+    "arms": {
+     "default": {
+      "mse_raw": 4.234959414183017e-07,
+      "mse_corr": 3.555957989799342e-07,
+      "rep_mses": [
+       2.985397355847907e-07,
+       6.818171154062596e-07,
+       1.0407121470861603e-07,
+       1.662493328944602e-07,
+       4.335913251336398e-07,
+       8.567069247820437e-07
+      ],
+      "billed_flops_mean": 163346230582.16666,
+      "wall_s": 18.4
+     },
+     "relaxed": {
+      "mse_raw": 3.935564206512892e-07,
+      "mse_corr": 3.256562782129217e-07,
+      "rep_mses": [
+       2.898717609265793e-07,
+       6.175761935684203e-07,
+       1.023047779669084e-07,
+       1.5726879188964936e-07,
+       4.566214587277864e-07,
+       7.376955408283913e-07
+      ],
+      "billed_flops_mean": 173721091162.5,
+      "wall_s": 17.8
+     },
+     "unpruned": {
+      "mse_raw": 3.81772193191154e-07,
+      "mse_corr": 3.138720507527865e-07,
+      "rep_mses": [
+       2.5664821400447164e-07,
+       5.651876000803669e-07,
+       9.151817328348786e-08,
+       1.6434880871616522e-07,
+       4.7473272814101406e-07,
+       7.381976349214182e-07
+      ],
+      "billed_flops_mean": 239798791173.0,
+      "wall_s": 23.3
+     }
+    },
+    "done": true
+   },
+   "1063": {
+    "floor31": 9.070997749526149e-08,
+    "truth_wall_s": 41.7,
+    "arms": {
+     "default": {
+      "mse_raw": 6.222647945109244e-07,
+      "mse_corr": 5.315548170156629e-07,
+      "rep_mses": [
+       3.5327825744026854e-07,
+       3.157916654669891e-07,
+       1.1356399693250504e-06,
+       8.785658755527533e-07,
+       3.234413954881718e-07,
+       7.268716037923133e-07
+      ],
+      "billed_flops_mean": 169467394802.16666,
+      "wall_s": 17.7
+     },
+     "relaxed": {
+      "mse_raw": 5.706183140361856e-07,
+      "mse_corr": 4.799083365409241e-07,
+      "rep_mses": [
+       3.6124621544261534e-07,
+       3.263214957995907e-07,
+       9.233567952861055e-07,
+       7.711516134463103e-07,
+       3.2901259538423945e-07,
+       7.126211688582526e-07
+      ],
+      "billed_flops_mean": 175740226737.83334,
+      "wall_s": 18.7
+     },
+     "unpruned": {
+      "mse_raw": 5.398354706021916e-07,
+      "mse_corr": 4.4912549310693014e-07,
+      "rep_mses": [
+       3.5238216901008257e-07,
+       2.863027345753848e-07,
+       8.920130741028499e-07,
+       6.880066140781275e-07,
+       3.2487326810886016e-07,
+       6.954349637378446e-07
+      ],
+      "billed_flops_mean": 236740619534.5,
+      "wall_s": 23.3
+     }
+    },
+    "done": true
+   },
+   "1044": {
+    "floor31": 4.644732898116213e-08,
+    "truth_wall_s": 42.0,
+    "arms": {
+     "default": {
+      "mse_raw": 4.891062130617428e-07,
+      "mse_corr": 4.426588840805806e-07,
+      "rep_mses": [
+       4.1019499870518835e-07,
+       4.851727045602211e-07,
+       2.914955181518816e-07,
+       4.3622652470746873e-07,
+       3.2078579836535343e-07,
+       9.907617338803433e-07
+      ],
+      "billed_flops_mean": 176032256973.33334,
+      "wall_s": 19.0
+     },
+     "relaxed": {
+      "mse_raw": 4.741587996206706e-07,
+      "mse_corr": 4.2771147063950844e-07,
+      "rep_mses": [
+       3.990721973397328e-07,
+       4.833682234510767e-07,
+       3.081556325922188e-07,
+       3.737711589203987e-07,
+       3.530313074366944e-07,
+       9.275542779839023e-07
+      ],
+      "billed_flops_mean": 188279422672.5,
+      "wall_s": 18.5
+     },
+     "unpruned": {
+      "mse_raw": 4.772229381797042e-07,
+      "mse_corr": 4.307756091985421e-07,
+      "rep_mses": [
+       3.68450839743021e-07,
+       5.08351158505934e-07,
+       3.075004831731809e-07,
+       3.736282525157227e-07,
+       3.663522366759418e-07,
+       9.390546584644251e-07
+      ],
+      "billed_flops_mean": 240795959731.5,
+      "wall_s": 23.4
+     }
+    },
+    "done": true
+   },
+   "1069": {
+    "floor31": 5.473178082682123e-08,
+    "truth_wall_s": 42.1,
+    "arms": {
+     "default": {
+      "mse_raw": 4.953934151952627e-07,
+      "mse_corr": 4.4066163436844147e-07,
+      "rep_mses": [
+       7.788850336291057e-07,
+       7.97769325252437e-07,
+       3.97594792451612e-07,
+       2.974902150484572e-07,
+       4.3557608234261134e-07,
+       2.6504504244735274e-07
+      ],
+      "billed_flops_mean": 173510710264.16666,
+      "wall_s": 19.6
+     },
+     "relaxed": {
+      "mse_raw": 4.6508220326781475e-07,
+      "mse_corr": 4.1035042244099353e-07,
+      "rep_mses": [
+       6.762807764111533e-07,
+       7.672263851959681e-07,
+       3.75448656457981e-07,
+       2.562993466328402e-07,
+       4.5534224191618686e-07,
+       2.598958129927591e-07
+      ],
+      "billed_flops_mean": 180135727192.0,
+      "wall_s": 20.6
+     },
+     "unpruned": {
+      "mse_raw": 4.4204987052376025e-07,
+      "mse_corr": 3.8731808969693903e-07,
+      "rep_mses": [
+       6.58441595843002e-07,
+       7.269857759367261e-07,
+       3.299709624775645e-07,
+       2.277660241524438e-07,
+       4.485946083139028e-07,
+       2.605402564189218e-07
+      ],
+      "billed_flops_mean": 239256737072.33334,
+      "wall_s": 23.8
+     }
+    },
+    "done": true
+   },
+   "1054": {
+    "floor31": 5.032086248234791e-08,
+    "truth_wall_s": 41.3,
+    "arms": {
+     "default": {
+      "mse_raw": 3.940473838983981e-07,
+      "mse_corr": 3.4372652141605014e-07,
+      "rep_mses": [
+       1.0601414282030623e-06,
+       1.224235043920517e-07,
+       1.2562786279488737e-07,
+       2.041381640576668e-07,
+       2.0881766144173615e-07,
+       6.431356825009838e-07
+      ],
+      "billed_flops_mean": 162243091278.16666,
+      "wall_s": 19.1
+     },
+     "relaxed": {
+      "mse_raw": 3.696422895958265e-07,
+      "mse_corr": 3.1932142711347856e-07,
+      "rep_mses": [
+       9.106211102888011e-07,
+       1.4067920396345808e-07,
+       9.422690237184995e-08,
+       2.1264985528671048e-07,
+       2.1105931442107425e-07,
+       6.48617351243065e-07
+      ],
+      "billed_flops_mean": 171444161608.33334,
+      "wall_s": 19.0
+     },
+     "unpruned": {
+      "mse_raw": 3.645101426999095e-07,
+      "mse_corr": 3.1418928021756154e-07,
+      "rep_mses": [
+       9.014985241919402e-07,
+       1.4130457301237859e-07,
+       9.72416802704686e-08,
+       2.0294024059205394e-07,
+       2.0763000619785174e-07,
+       6.364458319347636e-07
+      ],
+      "billed_flops_mean": 238741927402.0,
+      "wall_s": 23.2
+     }
+    },
+    "done": true
+   },
+   "1000": {
+    "floor31": 1.1394940845286233e-07,
+    "truth_wall_s": 39.9,
+    "arms": {
+     "default": {
+      "mse_raw": 7.673847992429808e-07,
+      "mse_corr": 6.534353907901185e-07,
+      "rep_mses": [
+       3.949999210579102e-07,
+       6.500849221219681e-07,
+       1.4372225145460291e-06,
+       8.760390404407004e-07,
+       6.368473292947662e-07,
+       6.091150679965109e-07
+      ],
+      "billed_flops_mean": 169327259812.66666,
+      "wall_s": 18.8
+     },
+     "relaxed": {
+      "mse_raw": 7.621897714381395e-07,
+      "mse_corr": 6.482403629852772e-07,
+      "rep_mses": [
+       4.094672518365517e-07,
+       6.623089420684111e-07,
+       1.4663783013153123e-06,
+       9.089769809977981e-07,
+       5.670175298822805e-07,
+       5.58989622528483e-07
+      ],
+      "billed_flops_mean": 176672020608.33334,
+      "wall_s": 18.7
+     },
+     "unpruned": {
+      "mse_raw": 7.601283064788033e-07,
+      "mse_corr": 6.46178898025941e-07,
+      "rep_mses": [
+       4.0881051965086525e-07,
+       6.041774904465534e-07,
+       1.472343661570627e-06,
+       9.178722881525468e-07,
+       6.066563758508432e-07,
+       5.509095032013839e-07
+      ],
+      "billed_flops_mean": 241871497403.66666,
+      "wall_s": 22.7
+     }
+    },
+    "done": true
+   },
+   "1075": {
+    "floor31": 6.584640240864989e-08,
+    "truth_wall_s": 42.0,
+    "arms": {
+     "default": {
+      "mse_raw": 4.480269051932635e-07,
+      "mse_corr": 3.8218050278461363e-07,
+      "rep_mses": [
+       2.853993727812201e-07,
+       4.763134432945865e-07,
+       2.556008148824812e-07,
+       3.4722165757342467e-07,
+       4.3329361563897537e-07,
+       8.90332526988893e-07
+      ],
+      "billed_flops_mean": 172936778812.16666,
+      "wall_s": 19.5
+     },
+     "relaxed": {
+      "mse_raw": 4.4647397756926e-07,
+      "mse_corr": 3.8062757516061013e-07,
+      "rep_mses": [
+       2.781974014234206e-07,
+       4.915682760801122e-07,
+       2.571228859293054e-07,
+       3.5515240517124903e-07,
+       4.26756977424232e-07,
+       8.700459193872414e-07
+      ],
+      "billed_flops_mean": 181475817569.5,
+      "wall_s": 19.1
+     },
+     "unpruned": {
+      "mse_raw": 4.5099609084324984e-07,
+      "mse_corr": 3.8514968843459996e-07,
+      "rep_mses": [
+       2.7143460929655564e-07,
+       5.137658023240748e-07,
+       2.729547084701921e-07,
+       3.5999422942390015e-07,
+       4.170110507787286e-07,
+       8.708161447660476e-07
+      ],
+      "billed_flops_mean": 243079013564.5,
+      "wall_s": 23.4
+     }
+    },
+    "done": true
+   },
+   "1045": {
+    "floor31": 4.671147242955207e-08,
+    "truth_wall_s": 42.1,
+    "arms": {
+     "default": {
+      "mse_raw": 2.672751425771739e-07,
+      "mse_corr": 2.2056367014762184e-07,
+      "rep_mses": [
+       2.822631355901551e-07,
+       2.5466458914203456e-07,
+       2.544812210805472e-07,
+       1.7961100303058587e-07,
+       4.4690746933769684e-07,
+       1.857234372820239e-07
+      ],
+      "billed_flops_mean": 165059052881.0,
+      "wall_s": 20.2
+     },
+     "relaxed": {
+      "mse_raw": 2.565183753681359e-07,
+      "mse_corr": 2.098069029385838e-07,
+      "rep_mses": [
+       2.8052192041318363e-07,
+       2.5556187797331934e-07,
+       2.298204056872816e-07,
+       2.287974677929735e-07,
+       3.9168216823176786e-07,
+       1.5272641211028949e-07
+      ],
+      "billed_flops_mean": 175904227675.83334,
+      "wall_s": 21.2
+     },
+     "unpruned": {
+      "mse_raw": 2.572254086238937e-07,
+      "mse_corr": 2.1051393619434163e-07,
+      "rep_mses": [
+       2.926960842131386e-07,
+       2.5731441132622117e-07,
+       2.3940147572038505e-07,
+       2.4956270325398895e-07,
+       3.747753874163525e-07,
+       1.2960238981327618e-07
+      ],
+      "billed_flops_mean": 239969795223.83334,
+      "wall_s": 26.0
+     }
+    },
+    "done": true
+   },
+   "1031": {
+    "floor31": 6.441513050186806e-08,
+    "truth_wall_s": 42.7,
+    "arms": {
+     "default": {
+      "mse_raw": 4.737848109674065e-07,
+      "mse_corr": 4.093696804655385e-07,
+      "rep_mses": [
+       2.0819653542965545e-07,
+       2.80303938315052e-07,
+       3.9418002865292327e-07,
+       6.228821611135049e-07,
+       6.89569574723837e-07,
+       6.475766275694668e-07
+      ],
+      "billed_flops_mean": 164730185524.66666,
+      "wall_s": 21.0
+     },
+     "relaxed": {
+      "mse_raw": 4.381498160718199e-07,
+      "mse_corr": 3.737346855699518e-07,
+      "rep_mses": [
+       1.967937851471559e-07,
+       2.843739701359707e-07,
+       3.626291848504727e-07,
+       5.137069473385147e-07,
+       6.782268158309032e-07,
+       5.931681931279016e-07
+      ],
+      "billed_flops_mean": 173233452212.66666,
+      "wall_s": 22.2
+     },
+     "unpruned": {
+      "mse_raw": 4.237367577949469e-07,
+      "mse_corr": 3.593216272930788e-07,
+      "rep_mses": [
+       1.9076289838332907e-07,
+       2.893901780926671e-07,
+       3.413064264992131e-07,
+       4.895104749284682e-07,
+       6.612726350121751e-07,
+       5.701779338538286e-07
+      ],
+      "billed_flops_mean": 240584100274.5,
+      "wall_s": 25.9
+     }
+    },
+    "done": true
+   },
+   "1058": {
+    "floor31": 4.7747590291521814e-08,
+    "truth_wall_s": 46.2,
+    "arms": {
+     "default": {
+      "mse_raw": 2.655633717630975e-07,
+      "mse_corr": 2.1781578147157566e-07,
+      "rep_mses": [
+       3.314055121480161e-07,
+       1.6261109596695412e-07,
+       3.362486658857089e-07,
+       3.667506406198092e-07,
+       1.736629555924582e-07,
+       2.2270136036563825e-07
+      ],
+      "billed_flops_mean": 172671743107.66666,
+      "wall_s": 22.1
+     },
+     "relaxed": {
+      "mse_raw": 2.7413355118589647e-07,
+      "mse_corr": 2.2638596089437464e-07,
+      "rep_mses": [
+       3.7350044063763127e-07,
+       1.4964379679389483e-07,
+       3.6086607346230224e-07,
+       3.784984207647504e-07,
+       1.9235560641477393e-07,
+       1.8993696904202584e-07
+      ],
+      "billed_flops_mean": 180731961322.33334,
+      "wall_s": 20.7
+     },
+     "unpruned": {
+      "mse_raw": 2.7760286418865807e-07,
+      "mse_corr": 2.2985527389713624e-07,
+      "rep_mses": [
+       3.8671261092643587e-07,
+       1.45019678184874e-07,
+       3.512290553273047e-07,
+       3.8929416278431135e-07,
+       1.960625609423108e-07,
+       1.9729911696671142e-07
+      ],
+      "billed_flops_mean": 240266707705.66666,
+      "wall_s": 25.9
+     }
+    },
+    "done": true
+   }
+  }
+ },
+ "verdict": "M185 KILLED: the tail is real (35.3x local spread) but (a) no weight-derived diagnostic correlates at |rho| >= 0.3 (stage 1), and (b) relaxing/removing dead-pruning does not repair the worst nets under the predeclared interventional gate (stage 2) -- the tail is design-net interaction variance, not threshold-pruning error"
+}

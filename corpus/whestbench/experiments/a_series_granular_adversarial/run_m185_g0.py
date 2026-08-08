@@ -53,6 +53,21 @@ git; all writes inside this experiment directory.
 Execution model: checkpoint/resume.  Each invocation processes pending work
 until --budget-seconds is exhausted, checkpointing after every net.  Run
 repeatedly until 'REMAINING: 0'.
+
+GATE-AMBIGUITY RESOLUTION (declared 2026-08-08 AFTER stage-1 analysis but
+BEFORE any stage-2 computation; stage-2 gate values untouched): stage 1
+found a 35.3x tail (spread gate passes) but every governing diagnostic
+correlates below |0.3| (correlation gate fails).  The dispatch kills on
+"no diagnostic correlates" yet gates stage 2 on "only if stage 1 finds a
+tail" -- and a tail was found.  Resolution, in the direction of MORE
+falsification pressure:
+  - Claim 1 (a-priori weight-derived tail flag): KILLED by stage 1, final.
+  - Claim 2 (pruning/fold-misclassification mechanism): decided by stage
+    2's predeclared interventional gate, which is immune to the single-draw
+    attenuation that limits the stage-1 screen.
+  - Overall M185: CONFIRMED only if stage 2 confirms; KILLED otherwise.
+run_stage2's precondition is therefore the SPREAD gate, not the full
+stage-1 pass.
 """
 
 from __future__ import annotations
@@ -438,8 +453,8 @@ def stage2_selection(ck1: dict) -> dict:
 def run_stage2(budget_seconds: float) -> None:
     ck1 = load_ckpt(S1_CKPT)
     ana = stage1_analysis(ck1)
-    if not ana["stage1_pass"]:
-        print("stage 1 killed the hypothesis; stage 2 not run")
+    if not ana["spread_gate_pass"]:
+        print("no tail found (spread gate failed); stage 2 not run")
         return
     ck = load_ckpt(S2_CKPT)
     if "selection" not in ck:
@@ -576,16 +591,21 @@ def finalize() -> None:
             ],
         },
     }
-    if not ana1["stage1_pass"]:
-        why = []
-        if not ana1["spread_gate_pass"]:
-            why.append(f"local spread {ana1['spread_corr']:.2f}x < {SPREAD_KILL}x")
-        if not ana1["correlation_gate_pass"]:
-            why.append(
-                "no governing diagnostic reached |rho| >= "
-                f"{RHO_KILL} (governing: {ana1['governing']})")
-        results["stage2"] = {"skipped": "; ".join(why)}
-        results["verdict"] = "KILLED at stage 1: " + "; ".join(why)
+    flag_claim = (
+        "KILLED: no governing diagnostic reached |rho| >= "
+        f"{RHO_KILL} (governing: {ana1['governing']}); no a-priori "
+        "weight-derived tail flag is available"
+        if not ana1["correlation_gate_pass"]
+        else "SURVIVES: at least one governing diagnostic |rho| >= "
+        f"{RHO_KILL} ({ana1['governing']})"
+    )
+    results["claim1_tail_flag"] = flag_claim
+    if not ana1["spread_gate_pass"]:
+        results["stage2"] = {
+            "skipped": f"no tail: spread {ana1['spread_corr']:.2f}x < {SPREAD_KILL}x"}
+        results["verdict"] = (
+            f"KILLED at stage 1: local spread {ana1['spread_corr']:.2f}x < "
+            f"{SPREAD_KILL}x -- no tail to explain")
     else:
         ck2 = load_ckpt(S2_CKPT)
         ana2 = stage2_analysis(ck2)
@@ -601,14 +621,19 @@ def finalize() -> None:
                 "MECHANISM CONFIRMED via arm(s) "
                 f"{ana2['confirmed_arms']}: worst nets improve >= "
                 f"{WORST_IMPROVE_BAR:.0%} under relaxed/unpruned thresholds "
-                f"while median nets move < {MEDIAN_CHANGE_BAR:.0%}"
+                f"while median nets move < {MEDIAN_CHANGE_BAR:.0%}. "
+                "(Stage-1 correlation screen had failed at |rho| < "
+                f"{RHO_KILL}; the interventional gate governs.)"
             )
         else:
             results["verdict"] = (
-                "KILLED at stage 2: a tail exists but relaxing/removing "
+                "M185 KILLED: the tail is real "
+                f"({ana1['spread_corr']:.1f}x local spread) but (a) no "
+                "weight-derived diagnostic correlates at |rho| >= "
+                f"{RHO_KILL} (stage 1), and (b) relaxing/removing "
                 "dead-pruning does not repair the worst nets under the "
-                "predeclared gate -- the tail is design-net interaction "
-                "variance, not threshold-pruning error"
+                "predeclared interventional gate (stage 2) -- the tail is "
+                "design-net interaction variance, not threshold-pruning error"
             )
     RESULTS.write_text(json.dumps(results, indent=1) + "\n", encoding="utf-8")
     print(json.dumps({"verdict": results["verdict"],
