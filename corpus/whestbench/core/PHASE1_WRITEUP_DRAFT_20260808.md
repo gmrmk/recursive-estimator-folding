@@ -139,6 +139,44 @@ is **statistically pure variance** (bias share indistinguishable from zero),
 which is the strongest robustness property available going into a fresh-seed
 re-evaluation: there is no fitted component to overfit.
 
+### 3b. The design is an exact spherical 2-design, and its error spectrum is
+### measured (new)
+
+A deterministic quadrature audit of the 126-frame phased-Hadamard design
+(64,512 antipodal directions, three independent rotations): odd-degree
+harmonics are annihilated exactly; degree-2 quadrature error is 8.6e-9 —
+the design is an exact spherical 2-design, which is the harmonic-analysis
+explanation for its measured local optimality (every perturbation of the
+family or its shared rotation destroys degree-2 exactness and loses 20-49%
+variance). The residual angular error lives at degree 4 (11% of the iid
+level) and degree 6 (40%). We then tested the natural exploitation — an
+unbiased degree-4/6 harmonic control variate with a weight-derived basis —
+and report its honest failure: the estimator functions' energy at those
+degrees disperses across ~1.8e8-dimensional harmonic spaces at d=256, so a
+tractable basis explains only 0.2-0.3% of per-neuron variance (measured),
+and the CV nets +0.83% [CI -0.6%, +2.4%]. The leak is real, characterized,
+and — by these measurements — unscoopable by finite projection. We believe
+this pair (the exactness theorem + the dispersion no-go) is the sharpest
+available characterization of why structured spherical designs plateau on
+this task.
+
+### 3c. The marginal-value map (new)
+
+Single-component ablations of the submitted estimator on a cached-truth
+panel (paired seeds, CIs): exact radial conditioning 2.14x [1.51, 3.04],
+the spherical design 2.02x [1.45, 2.83], antipodal pairing 1.91x [1.41,
+2.56] — three multiplicative variance pillars, each exact arithmetic or
+proven locally optimal. Terminal folding is exactly MSE-neutral (ratio
+1.00003) while saving 4.8% of billed budget; structural pruning is
+MSE-neutral (1.014 [0.98, 1.05]) while saving 25.1% — and the adjusted-score
+arithmetic makes pruning strictly optimal (removing it is 1.33x worse
+adjusted). The first-layer moment-tangent control measures neutral on this
+design (1.019 [0.97, 1.06]), consistent with three independent tests. The
+hosted per-network score spread (11x) is measured to be rotation-draw
+sampling variance, not network difficulty (per-network Monte-Carlo
+difficulty varies only 1.1x) — irreducible at fixed randomization, and
+relevant to anyone comparing per-network scores across submissions.
+
 ### 4. Methodological note: calibrate your suite before you trust your numbers
 
 Local development suites are not the grader's suite. We measured ours by
