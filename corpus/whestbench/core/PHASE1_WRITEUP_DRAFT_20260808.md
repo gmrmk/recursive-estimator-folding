@@ -1,9 +1,8 @@
-# Phase-1 Algorithmic Contribution writeup — draft
+# Phase-1 Algorithmic Contribution writeup — draft v2
 
-Status: DRAFT. Needs one graded Phase-1 submission ID before filing
-(deadline Aug 17 per the Algorithmic Contribution guidelines). Render with
-`dac_prize_report_extension/build_phase2_report_v2.py --submission-id <ID>`
-after retargeting the title block; the content below is the Phase-1 payload.
+Status: DRAFT v2. **Graded submission ID: #326094** (adjusted 1.832e-7,
+50/50 public MLPs, 0 failures, rank #58 at grading time). Filing deadline
+Aug 17, 23:59 UTC per the Algorithmic Contribution guidelines thread.
 
 ---
 
@@ -110,6 +109,26 @@ was retuned after seeing results. All are reproducible from the corpus.
 | N8b | disclosed native backend | 0.94e11 FLOP/s < λ = 1e11 | killed |
 | N8c | offline-trained corrector | bias share -0.034 (CI [-0.031,0.097]) | killed |
 | N9 | frames + tangent + deeper fold | +2.1% (positive control +34.5% on iid) | killed |
+| M180 | stronger spherical designs (MUB mix / coset rotations / remix) | all arms +20-49% variance | killed |
+| M181 | terminal rectified-Gaussian smoothing (3 arms incl. unbiased CV) | bias 4-6x baseline MSE; var identical; lambda -> 0 | killed |
+| M183 | float32 hot-path recast (the "free 2x") | 0.00% f64-lane billing — already clean | killed |
+
+M180's kill carries a structural result: the phased-Hadamard design is
+LOCALLY OPTIMAL — its strength is the mutual unbiasedness of all 126 frames
+under one shared rotation, and every perturbation (family displacement,
+rotation fragmentation, per-frame remixing) destroys that negative-covariance
+structure monotonically. M181's kill closes the Gaussian-closure family at
+every insertion point (predictor / control-variate / corrector / smoother),
+each with an independent measured mechanism of failure — and its adversarial
+check (the bias field reproduced on fresh iid samples, cosine 0.97-0.98)
+pins the failure on the terminal law's non-Gaussianity itself.
+
+**Hosted validation of the submission**: #326094 graded adjusted 1.832e-7
+(final-layer MSE 2.818e-7) on 50/50 public MLPs with zero failures, 3.5x
+better than the grader's Monte-Carlo reference, at ~1-3 s wall per MLP with
+~5% residual exposure — the compute profile is essentially fully
+instrumented, which we note in the context of the accounting discussions
+elsewhere on this forum.
 
 Two of these are results in their own right. **N8a** established that our
 spherical design already dominates a randomized lattice — the lattice's
