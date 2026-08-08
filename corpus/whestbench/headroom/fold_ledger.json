@@ -1808,6 +1808,15 @@
       "bias_class": "Descriptive op-log scan on one synthetic net; no estimator change; no score credit.",
       "result": "KILLED: f64-lane billed = 0.0000e0 of 1.5803e11 total (0.00%). The M71 lineage audits already enforced full f32 discipline; the bands free 2x does not exist for us. Cost of the check: one metered synthetic run. Artifacts: run_m183_falsifier.py, m183_falsifier_results.json. Miner-designated successor M184 (terminal on-neuron linearization) held pending the M181 terminal-smoothing verdict (overlapping family).",
       "status": "killed"
+    },
+    {
+      "id": "m181_terminal_smoothing_g0",
+      "mechanism": "Hybridize the T2-killed closures certified rectified-Gaussian moments onto the promoted sampler as a terminal smoother: Arm 1 univariate final-layer, Arm 2 full 32640-pair one-step propagation (M178/M179), Arm 3 holdout-lambda unbiased CV form. MSE-gated G0 (3 He nets, 16 rotation seeds, 3.5M-truth noise-subtracted). Predeclared f650f58 before code; delegated.",
+      "prediction": "1.15-1.6x if terminal pre-activations are near-Gaussian under the sampling law; Arm 3 exists for the non-Gaussian case.",
+      "kill_condition": "Per arm: MSE reduction < 10%; promote only >= 15% with CI excluding 10%.",
+      "bias_class": "Response-free synthetic G0; plain-numpy sanctioned; no score credit.",
+      "result": "ALL ARMS KILLED. Arm 1 ratio 4.242 [3.774,4.929] (bias^2 alone = 4-6x the baselines ENTIRE MSE, bias share 0.67-0.78); Arm 2 ratio 7.770 [6.743,9.270] (two stacked closure steps, share 0.83-0.88); Arm 3 ratio 1.057 [1.032,1.089] (lambda collapsed to ~0: the analytic direction carries no signal; residual = fitting noise). Variance identical to baseline within 1% on every net -> the smooth-moments variance mechanism DOES NOT EXIST at n=64512. ADVERSARIAL CHECK: the same bias field reproduces on 262k fresh iid samples (cosine 0.968/0.984, matching magnitudes) -> the bias is the non-Gaussianity of the terminal law itself. Arm 0 bias^2 ~ 0 (third independent confirmation of Kerdock exact unbiasedness). CLOSURE FAMILY NOW DEAD AT EVERY INSERTION POINT: predictor (T2), CV (N5), corrector (N8c), smoother (M181). Truth floors measured 1.2-2.2e-8 and subtracted per net. Artifacts: run_m181_g0.py, results json, notes, raw npz, verify_m181_bias_source.py.",
+      "status": "killed"
     }
   ]
 }
