@@ -1775,6 +1775,21 @@
       "bias_class": "Interaction premise measurement; synthetic nets; frozen sources read-only; no score credit.",
       "result": "KILLED, both components. G0-a: +2.14% mean (per-net +3.41/+1.82/+1.19; CI [-3.0%, +6.2%]) vs the 10% bar — verified real by (1) arm-(i) variances reproducing n8c independent runs to 5 sig figs and (2) a POSITIVE CONTROL: the identical tangent code on iid sampling at the lineage native n=14000 gives +34.5% — the Kerdock frames absorb the first-layer residual; a derived cov^2/(var_i var_corr) ceiling (1.9-3.7%) proves no lambda clears 10%. G0-b: 0.00% — the predeclarations premise (v3 folds at L1) is CONTRADICTED by the frozen source: candidate_source_validator_v3 inherits fold3_estimator.Estimator, so v3 already IS the L3 fold (the L1 in its name = layer-1 WHT memory fold); the predeclared comparison is between identical structures, and even a free terminal-3 fold caps ~10% < 15%. CLOSES THE HONEST LOCAL PROGRAM WITH A MEASURED ENUMERATION: N4, N5, N6, N7, N8a, N8b, N8c, N9 all killed at predeclared gates; T-series shipped 5 packaged candidates; the composition space around the local best is measured, not assumed, exhausted. Artifacts: run_n9_g0.py (deterministic), n9_g0_results.json, N9_G0_NOTES.md.",
       "status": "killed"
+    },
+    {
+      "id": "c1_local_vs_hosted_calibration",
+      "mechanism": "Measure our local suites budget-matched Monte-Carlo baseline (plain antithetic MC, 57344 samples, final layer only) under the pinned v0.14 runner on local public 0..24, and compare it to the hosted graders printed MC reference (6.47e-7 adjusted on its 50-MLP public split, observed on every submission page this session).",
+      "prediction": "R = local/hosted in [0.8,1.25] => suites comparable; R<0.8 => local easier and our scores overstate hosted; R>1.25 => local harder and our candidates are better than they look.",
+      "kill_condition": "Not a candidate; the measurement is invalid only if the reference run fails to complete on a usable majority of networks.",
+      "bias_class": "Descriptive calibration on burned public rows; changes reporting only; no candidate modified, promoted, or scored.",
+      "result": "R = 1.652 (local MC adjusted 1.0686e-6 on 22 completed nets at 97.4% budget, v=0.0630, vs hosted reference 6.470e-7) -> OUR LOCAL SUITE IS 1.65x HARDER. Every local adjusted score DIVIDES by ~1.65 for a hosted expectation: Kerdock v3 1.619e-7 -> ~9.8e-8 (rank ~13-14, at parity with the best honest hosted entry oabuod 9.45e-8; MSE x C invariant 2.70e4 vs their 2.58e4 = 1.05x, not the 1.7x the uncalibrated numbers implied); L2 -> ~1.27e-7; L1 -> ~1.28e-7; live entry #318609 measured 5.47e-7. Conservative in direction (our reference is antithetic, already variance-reduced; a plain-iid grader reference would make R larger). Deviation recorded: 3/25 nets tripped combined_budget_exhausted at 57344 samples (97.4% of B); excluded, raw 25-net figure 0.0978 is a zero-prediction artifact. Artifacts: estimator.py, c1_local_mc25.json, C1_REPORT.md.",
+      "status": "screened",
+      "status_note": "calibration measurement; rescales all local expectations by 1/1.652",
+      "artifact_hash": "corpus/whestbench/experiments/c1_local_mc_calibration/ (hashed by the repo commit)",
+      "matched_units": 22,
+      "primary_effect": -0.395,
+      "ci_upper": -0.001,
+      "failures": 3
     }
   ]
 }
