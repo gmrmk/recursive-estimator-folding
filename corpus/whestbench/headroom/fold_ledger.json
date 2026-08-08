@@ -1730,6 +1730,15 @@
       "primary_effect": 0.0,
       "ci_upper": 0.0,
       "failures": 0
+    },
+    {
+      "id": "n7_rqmc_scaling_law_probe",
+      "mechanism": "Premise probe: does RQMC (antithetic Kronecker lattice + Cranley-Patterson) exhibit superconvergent MSE-vs-N slope on the depth-32 final-layer integrand, as the 128->5.2 participation-ratio collapse suggests? Predeclared verdicts before run (commit fbaae81).",
+      "prediction": "If beta_RQMC <= -1.7, the leaders band is honestly reachable by sampling rate; KILL if beta > -1.25.",
+      "kill_condition": "beta_RQMC > -1.25 on the uncensored points (KILL); MC control outside [-1.2,-0.8] invalidates the harness.",
+      "bias_class": "Response-free descriptive slope measurement on synthetic He nets; no score credit.",
+      "result": "KILLED: beta_RQMC = -0.97 (seed 11) and -1.23 (seed 22), both above the -1.25 kill line; MC controls -1.01 / -0.78 (second marginally outside the sanity band, replicate noise at R=6 noted — does not rescue the verdict since both RQMC slopes independently fail). RQMC delivers a CONSTANT factor 1.5-2.7x at N=262k (matching community 1.40x reports), no rate change; ReLU-kink variance dominates. Consequence: the arbitrage tiers raw 3.6e-9 is NOT honestly reachable by sampling rate; the honest-max program is constant-factor stacking: RQMC ~1.5x raw + disclosed-native ~2x multiplier (Rules 5.2, fully charged+disclosed — distinct from the unmetered arbitrage) + offline-trained corrector (organizer-sanctioned), projecting adjusted ~3-8e-8 from the Kerdock base — top-tier of the honest frontier, #1 only if the organizer review reprices the arbitrage tier. Artifacts: n7_results.json, run_n7.py, N7_PREDECLARATION.md.",
+      "status": "killed"
     }
   ]
 }
