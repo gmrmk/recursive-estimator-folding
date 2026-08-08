@@ -1,0 +1,126 @@
+{
+  "arm_b_construction": "63 frozen Kerdock frames (first 63 of the trimmed set) + identity frame + 31 Haar-MUB pairs (Q_j, H_norm @ Q_j) drawn once from seed 424242; all 126 frames x 256 rows at exact radius mean_chi(256); randomized by the shared per-replicate global Haar rotation. mub2_orthogonal_fold3 disposition: performance-killed (premise5.json: mub2 2.42e-7 vs baseline 1.59e-7 mean raw MSE), NOT correctness-killed; construction reimplemented in plain numpy, no mub2 asset loaded.",
+  "config": {
+    "bootstrap_draws": 4000,
+    "depth": 32,
+    "kill_reduction": 0.1,
+    "mub_construction_seed": 424242,
+    "n_base": 32256,
+    "n_total_antipodal": 64512,
+    "net_seeds": [
+      101,
+      202,
+      303
+    ],
+    "promote_reduction": 0.15,
+    "replicates": 16,
+    "width": 256
+  },
+  "date": "2026-08-08",
+  "firewall": "synthetic He nets only; only kerdock_phases.npz loaded (the estimator's own sampling asset); mub2 premise5.npz NOT loaded; no dataset/truth/scorer/submission; writes confined to the m180 experiment directory; plain numpy (sanctioned N8a-style deviation, no flopscope metering in G0)",
+  "g0": {
+    "arm_summary": {
+      "B_mub_mix": {
+        "aggregate_ratio_geomean": 1.3134516036538142,
+        "bootstrap_ci_95_ratio": [
+          1.033075242874562,
+          1.6613029950342826
+        ],
+        "killed": true,
+        "promote_eligible": false,
+        "reduction_vs_A": -0.3134516036538142
+      },
+      "C_coset_k2": {
+        "aggregate_ratio_geomean": 1.2800912942303067,
+        "bootstrap_ci_95_ratio": [
+          0.9665727532442434,
+          1.6524226513447389
+        ],
+        "killed": true,
+        "promote_eligible": false,
+        "reduction_vs_A": -0.28009129423030665
+      },
+      "C_coset_k4": {
+        "aggregate_ratio_geomean": 1.196200002382886,
+        "bootstrap_ci_95_ratio": [
+          0.9326781165698428,
+          1.5181277799873547
+        ],
+        "killed": true,
+        "promote_eligible": false,
+        "reduction_vs_A": -0.19620000238288604
+      },
+      "C_coset_k8": {
+        "aggregate_ratio_geomean": 1.4878571457105294,
+        "bootstrap_ci_95_ratio": [
+          1.1250073720564187,
+          1.9189851763529842
+        ],
+        "killed": true,
+        "promote_eligible": false,
+        "reduction_vs_A": -0.4878571457105294
+      },
+      "D_perframe_remix": {
+        "aggregate_ratio_geomean": 1.4194404114191301,
+        "bootstrap_ci_95_ratio": [
+          1.0885586367667035,
+          1.8774674504159015
+        ],
+        "killed": true,
+        "promote_eligible": false,
+        "reduction_vs_A": -0.41944041141913013
+      }
+    },
+    "net_rows": [
+      {
+        "net_seed": 101,
+        "ratio_B_mub_mix_over_A": 1.461011627889777,
+        "ratio_C_coset_k2_over_A": 1.3631821927104328,
+        "ratio_C_coset_k4_over_A": 1.206588022391275,
+        "ratio_C_coset_k8_over_A": 1.8111423539845555,
+        "ratio_D_perframe_remix_over_A": 1.4876788881236074,
+        "var_A_kerdock": 2.0348872107139897e-07,
+        "var_B_mub_mix": 2.9729938762973336e-07,
+        "var_C_coset_k2": 2.7739220098195133e-07,
+        "var_C_coset_k4": 2.4552705353646906e-07,
+        "var_C_coset_k8": 3.6854704129056016e-07,
+        "var_D_perframe_remix": 3.027258743091937e-07,
+        "wall_s": 226.0
+      },
+      {
+        "net_seed": 202,
+        "ratio_B_mub_mix_over_A": 1.1222757073692038,
+        "ratio_C_coset_k2_over_A": 1.0896497564986365,
+        "ratio_C_coset_k4_over_A": 0.8937062959193836,
+        "ratio_C_coset_k8_over_A": 0.9460651715805999,
+        "ratio_D_perframe_remix_over_A": 1.0628959851138333,
+        "var_A_kerdock": 5.690122294620992e-07,
+        "var_B_mub_mix": 6.385886023213051e-07,
+        "var_C_coset_k2": 6.200240372781227e-07,
+        "var_C_coset_k4": 5.08529811925403e-07,
+        "var_C_coset_k8": 5.383226524975206e-07,
+        "var_D_perframe_remix": 6.048008141759365e-07,
+        "wall_s": 254.1
+      },
+      {
+        "net_seed": 303,
+        "ratio_B_mub_mix_over_A": 1.3819393730528649,
+        "ratio_C_coset_k2_over_A": 1.41215380836553,
+        "ratio_C_coset_k4_over_A": 1.587294712511662,
+        "ratio_C_coset_k8_over_A": 1.9222508599590427,
+        "ratio_D_perframe_remix_over_A": 1.8086374939818957,
+        "var_A_kerdock": 2.1781244227857324e-07,
+        "var_B_mub_mix": 3.010035899255648e-07,
+        "var_C_coset_k2": 3.075846698730844e-07,
+        "var_C_coset_k4": 3.457325379480309e-07,
+        "var_C_coset_k8": 4.1869015447976674e-07,
+        "var_D_perframe_remix": 3.93943749760795e-07,
+        "wall_s": 241.2
+      }
+    ],
+    "promoted_arm": null
+  },
+  "gate": "G0",
+  "predeclaration": "M180_PREDECLARATION.md",
+  "verdict": "NO ARM PROMOTED at G0: B_mub_mix=KILL(1.3135); C_coset_k2=KILL(1.2801); C_coset_k4=KILL(1.1962); C_coset_k8=KILL(1.4879); D_perframe_remix=KILL(1.4194)"
+}

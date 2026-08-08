@@ -1790,6 +1790,15 @@
       "primary_effect": -0.395,
       "ci_upper": -0.001,
       "failures": 3
+    },
+    {
+      "id": "m180_design_strength_g0",
+      "mechanism": "Mutate the angular design itself (the axis the corpus never touched): Arm B MUB-family mix, Arm C coset-stratified rotations k=2/4/8, Arm D per-frame orthogonal remix; paired variance vs the frozen Kerdock 126-frame design at matched n=64512, 3 He nets x 16 rotation seeds. Predeclared 07d9dde before code; delegated build.",
+      "prediction": "A stronger spherical design exists near the Kerdock family (1.2-2x hoped).",
+      "kill_condition": "Per arm: variance reduction < 10%; promote only >= 15% with CI excluding 10%.",
+      "bias_class": "Variance-only G0 on synthetic nets, plain-numpy sanctioned deviation; no estimator build, no score credit.",
+      "result": "TOTAL KILL, all arms INCREASED variance: B 1.3135 [1.033,1.661]; C k=2 1.2801, k=4 1.1962, k=8 1.4879 [1.125,1.919]; D 1.4194 [1.089,1.877]. Two-signal verification: arm means within 0.5 SEM of A; Arm A reproduces N8a per-net variances to 6 sig figs. STRUCTURAL INSIGHT: the designs strength is the mutual unbiasedness of all 126 frames under ONE shared rotation (inter-frame negative covariance); fragmenting the rotation or displacing family members destroys it monotonically with fragmentation. The Kerdock design is locally optimal; the design axis is CLOSED at G0. mub2 disposition read first (performance-killed, reuse permitted); premise npz never loaded. Artifacts: run_m180_g0.py, m180_g0_results.json, M180_G0_NOTES.md, raw per-replicate npz evidence.",
+      "status": "killed"
     }
   ]
 }
