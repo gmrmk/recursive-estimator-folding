@@ -1700,6 +1700,21 @@
       "primary_effect": 0.0,
       "ci_upper": 0.0,
       "failures": 0
+    },
+    {
+      "id": "t4_kerdock_v3_descriptive_rescore",
+      "mechanism": "NEW predeclared descriptive protocol (old single-use gate stays burned): execute the frozen Kerdock M71 v3 entrypoint exactly once under the pinned v0.14 subprocess runner on public 0..99 via direct shell invocation (the burned gates Start-Process env-map failure mechanism structurally absent). Predeclared + committed 448b717 before launch; frozen estimator sha 076D0A5D... verified.",
+      "prediction": "Unknown score (first ever for this candidate); run expected to complete given its 2026-08-06 package/contract passes.",
+      "kill_condition": "All outcomes final, none retried: completion -> record numbers as DESCRIPTIVE; failures -> record breakdown; launcher/runner failure -> first-broken-link.",
+      "bias_class": "Descriptive-only read of burned public 0..99; confers no validation, no promotion, no winner representation; informs the graded-submission portfolio order only.",
+      "result": "COMPLETED, 0/100 failures. Adjusted 1.6190837992e-7 (raw 2.4938875569e-7, mean mult 0.6561, mean C 178.463e9, MAX C 209.575e9 = 23% under B, best/worst per-net 4.36e-8/6.25e-7). Paired same-100 descriptive: vs L2 ratio 0.770267 (65/100 wins, CI [0.6508, 0.9082], P=0.9992); vs L1 ratio 0.763084 (CI [0.6451, 0.8990], P=0.9995). New same-basis descriptive local best by 23-24% at the largest compute margin of any candidate. Portfolio: the packaged validator-passed v3 tar (b55a1d8d..., 33,344,900 B) moves to the front of the graded queue; its known hosted risk is the 1.445 MiB memory-gate margin (tightest on record) -- its graded run doubles as its OOM test. Lottery-ticket framing retired. Artifacts: kerdock_v3_official100.json (+empty-of-errors stderr), T4_REPORT.md, t4_paired.py output.",
+      "status": "screened",
+      "status_note": "descriptive scored survivor; graded evidence + designation at user-return only",
+      "artifact_hash": "b55a1d8d5bcab8fb1dcfc68ee76c0ddfc2680b42e57778ab69ad866ba1c030af",
+      "matched_units": 100,
+      "primary_effect": -0.229733,
+      "ci_upper": -0.091848,
+      "failures": 0
     }
   ]
 }
