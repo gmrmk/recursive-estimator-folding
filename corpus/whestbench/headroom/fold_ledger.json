@@ -1899,6 +1899,21 @@
       "primary_effect": 0.107,
       "ci_upper": 0.0,
       "failures": 0
+    },
+    {
+      "id": "wc1_winner_ablation_map",
+      "mechanism": "Winner catalog by ablation: disable each promoted component of the frozen v3 one at a time (frames/radial/prune/fold/tangent/antipodal) on the cached-truth panel, paired seeds, to produce the marginal-value map that seeds future ladders. Predeclared 1ecd8fc; harness authored by agent, executed by coordinator (post-harness-fix protocol).",
+      "prediction": "Identifies load-bearing vs removable components and where the 34% headroom buys most.",
+      "kill_condition": "Audit semantics: LOAD-BEARING >=20% worse when disabled; REMOVABLE <3% and bills >2%; TAIL-DRIVER worst-net delta >=1.5x mean.",
+      "bias_class": "Ablation audit on synthetic cached-truth panel; no promotion; subclass-only.",
+      "result": "MAP COMPLETE — the champion fully characterized. LOAD-BEARING VARIANCE TRIO (each ~2x MSE if removed, CIs excluding 1, all TAIL-DRIVERS worst-net ~3.1-3.2): radial conditioning 2.141 [1.509,3.042]; Kerdock frames 2.016 [1.447,2.831]; antipodal pairing 1.908 [1.408,2.559]. BILLING PAIR confirmed pure multiplier-savers: fold EXACTLY MSE-neutral (1.00003 [0.9992,1.0010], saves 4.8% B); prune MSE-neutral (1.014 [0.979,1.051], saves 25.1% B — reconfirms the M185 adjusted-arithmetic winner). TANGENT NEUTRAL: 1.019 [0.973,1.062] — third independent confirmation (N9 +2.1%, M181 lambda->0, now ablation) => U15 RESOLVED NEGATIVE, the tangent family stays closed (kept in the package: bills zero, harmless). NOTHING REMOVABLE. Every pillar is exact arithmetic (radial/antipodal/fold) or proven locally optimal (frames, M180). Consequence: no winner is upgradeable; the remaining honest levers are the M191 harmonic CV (attacks the residual ABOVE the trio) and the PB-1 dial arms. Derived: antithetic-isolated-over-frames 0.946. Artifacts: wc1_ablation.py, wc1_results.json, wc1_run2.log.",
+      "status": "screened",
+      "status_note": "audit map complete; seeds all future ladders",
+      "artifact_hash": "wc1_winner_ablation/wc1_results.json",
+      "matched_units": 3,
+      "primary_effect": 0.0,
+      "ci_upper": 0.0,
+      "failures": 0
     }
   ]
 }

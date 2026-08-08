@@ -1,0 +1,54 @@
+C:\Users\strid\Documents\Codex\2026-08-02\https-chatgpt-com-share-6a5556ed-2e1c\publish\recursive-estimator-folding\corpus\whestbench\experiments\wc1_winner_ablation\wc1_ablation.py:83: ConfigureNoOpWarning: flops.configure() configures the in-process flopscope backend only; it is a no-op on flopscope-client and the evaluation servers, so these settings will not affect a graded submission.
+  flops.configure(symmetry_warnings=False)
+WC-1 winner ablation: loading truths + nets
+
+== baseline (frozen Kerdock v3) ==
+  [baseline] net 101: mean_mse=2.0950e-07 billed=1.8145e+11 (66.7% B) 95s
+  [baseline] net 202: mean_mse=6.4393e-07 billed=1.7030e+11 (62.6% B) 107s
+  [baseline] net 303: mean_mse=2.3523e-07 billed=1.6450e+11 (60.5% B) 117s
+
+== arm A_frames ==
+  [A_frames] net 101: mean_mse=6.4319e-07 billed=1.8892e+11 (69.5% B) 117s
+  [A_frames] net 202: mean_mse=1.0599e-06 billed=1.7787e+11 (65.4% B) 116s
+  [A_frames] net 303: mean_mse=4.9218e-07 billed=1.7290e+11 (63.6% B) 112s
+  -> ratio=2.0165 CI[1.4475,2.8312] worst_net_ratio=3.0701 billed_delta=7.813e+09 flags=['LOAD-BEARING', 'TAIL-DRIVER']
+
+== arm A_radial ==
+  [A_radial] net 101: mean_mse=6.5553e-07 billed=1.8897e+11 (69.5% B) 118s
+  [A_radial] net 202: mean_mse=1.1746e-06 billed=1.7792e+11 (65.4% B) 120s
+  [A_radial] net 303: mean_mse=5.0086e-07 billed=1.7295e+11 (63.6% B) 114s
+  -> ratio=2.1411 CI[1.5095,3.0422] worst_net_ratio=3.1290 billed_delta=7.862e+09 flags=['LOAD-BEARING', 'TAIL-DRIVER']
+
+== arm A_prune ==
+  [A_prune] net 101: mean_mse=2.0573e-07 billed=2.4143e+11 (88.8% B) 158s
+  [A_prune] net 202: mean_mse=6.6038e-07 billed=2.4008e+11 (88.3% B) 158s
+  [A_prune] net 303: mean_mse=2.3802e-07 billed=2.3963e+11 (88.1% B) 155s
+  -> ratio=1.0142 CI[0.9786,1.0514] worst_net_ratio=1.0255 billed_delta=6.830e+10 flags=['TAIL-DRIVER']
+
+== arm A_fold ==
+  [A_fold] net 101: mean_mse=2.0953e-07 billed=1.9378e+11 (71.2% B) 118s
+  [A_fold] net 202: mean_mse=6.4396e-07 billed=1.8367e+11 (67.5% B) 112s
+  [A_fold] net 303: mean_mse=2.3524e-07 billed=1.7819e+11 (65.5% B) 115s
+  -> ratio=1.0001 CI[0.9992,1.0010] worst_net_ratio=1.0001 billed_delta=1.313e+10 flags=['TAIL-DRIVER']
+
+== arm A_tangent ==
+  [A_tangent] net 101: mean_mse=2.1523e-07 billed=1.8145e+11 (66.7% B) 120s
+  [A_tangent] net 202: mean_mse=6.5674e-07 billed=1.7030e+11 (62.6% B) 117s
+  [A_tangent] net 303: mean_mse=2.3780e-07 billed=1.6450e+11 (60.5% B) 118s
+  -> ratio=1.0194 CI[0.9735,1.0623] worst_net_ratio=1.0274 billed_delta=0.000e+00 flags=['NEUTRAL']
+
+== arm A_antithetic ==
+  [A_antithetic] net 101: mean_mse=6.7992e-07 billed=1.9939e+11 (73.3% B) 113s
+  [A_antithetic] net 202: mean_mse=8.2150e-07 billed=1.8620e+11 (68.5% B) 119s
+  [A_antithetic] net 303: mean_mse=5.7556e-07 billed=1.8069e+11 (66.4% B) 120s
+  -> ratio=1.9078 CI[1.4084,2.5593] worst_net_ratio=3.2454 billed_delta=1.668e+10 flags=['LOAD-BEARING', 'TAIL-DRIVER']
+
+DONE in 2542.2s -> C:\Users\strid\Documents\Codex\2026-08-02\https-chatgpt-com-share-6a5556ed-2e1c\publish\recursive-estimator-folding\corpus\whestbench\experiments\wc1_winner_ablation\wc1_results.json
+
+MARGINAL-VALUE MAP (sorted by |MSE delta|):
+  A_radial      ratio=2.1411 CI[1.5095,3.0422] billed_dfrac=+2.9%B worst=3.129 ['LOAD-BEARING', 'TAIL-DRIVER']
+  A_frames      ratio=2.0165 CI[1.4475,2.8312] billed_dfrac=+2.9%B worst=3.070 ['LOAD-BEARING', 'TAIL-DRIVER']
+  A_antithetic  ratio=1.9078 CI[1.4084,2.5593] billed_dfrac=+6.1%B worst=3.245 ['LOAD-BEARING', 'TAIL-DRIVER']
+  A_tangent     ratio=1.0194 CI[0.9735,1.0623] billed_dfrac=+0.0%B worst=1.027 ['NEUTRAL']
+  A_prune       ratio=1.0142 CI[0.9786,1.0514] billed_dfrac=+25.1%B worst=1.026 ['TAIL-DRIVER']
+  A_fold        ratio=1.0001 CI[0.9992,1.0010] billed_dfrac=+4.8%B worst=1.000 ['TAIL-DRIVER']
