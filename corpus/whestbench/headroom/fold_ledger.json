@@ -1835,6 +1835,36 @@
       "bias_class": "Orchestration artifact; validation stays external; holdout firewall stated in the packet (hosted public 50 = graders iteration set; phase adds withheld 50; prize adds fresh seeds).",
       "result": "PACKET WRITTEN: corpus/whestbench/core/GEN3_RECURSION_PACKET_20260808.md. Proposal ranking: P1 per-net pruning guard (= M185, premise in flight), P2 per-net rotation SELECTION (kill-respecting: M180 killed fragmentation, not selection; connects A3 suspicion 1), P3 tail-targeted budget reallocation (F0-leverage ~3-6% unless composed with P1), P4/P5 contingent on A3/A4. Output contract: one rung per iteration, failures constrain Generation 4, first hosted final-gate pass triggers designation review.",
       "status": "proposed"
+    },
+    {
+      "id": "a3_kill_heterogeneity_reaudit",
+      "mechanism": "Skeptic pass on our own 12 kills: 4 pre-registered heterogeneity suspicions adjudicated STANDS/WEAKENS/FLIPS from raw per-seed artifacts (1 of 2 permitted reruns used).",
+      "prediction": "Aggregate gates may have hidden per-regime signal.",
+      "kill_condition": "Adjudication rules per the A-series predeclaration.",
+      "bias_class": "Artifact re-analysis; labeled assumptions in a3_results.json.",
+      "result": "ALL FOUR STAND. M180 C-k4 net-202 0.894: CI [0.669,1.228] contains 1, coin flip (and the only significant per-net effect, net 303 [1.024,2.387], runs HARMFUL). M181 Arm-3: per-NEURON ORACLE lambda (fit vs the 3.5M truth itself) = +9.2% in-sample, -4.1% leave-one-out -> no averaged-away signal EXISTS (per-neuron lambda sd 460-15391). N8a heterogeneity real (z~2.3) but harmless (best net 1.43 = 72% above the kill bar; net 202 = the smallest-Kerdock-edge net consistently). N7 control slope -0.842 inside sanity after dropping n=4096; beta_RQMC -1.10 above -1.25 under every LOO variant. The 12-kill sweep is adversarially hardened. Artifacts: run_a3_reaudit.py, a3_results.json.",
+      "status": "screened",
+      "status_note": "skeptic audit; all verdicts upheld",
+      "artifact_hash": "a_series_granular_adversarial/a3_results.json",
+      "matched_units": 0,
+      "primary_effect": 0.0,
+      "ci_upper": 0.0,
+      "failures": 0
+    },
+    {
+      "id": "a4_hostile_inputs_battery",
+      "mechanism": "Hostile-inputs battery on the frozen v3 at the real 2.72e11 budget: scale extremes, heavy tails, rank deficiency, correlated columns, all-negative shift, denormals, cross-process determinism.",
+      "prediction": "Any failure with a plausible hosted analogue -> guard mutation; all-robust -> robustness certificate.",
+      "kill_condition": "Per-input OK/DEGRADED/FAILURE per the predeclaration.",
+      "bias_class": "Synthetic hostile nets; frozen candidate untouched; evidence only.",
+      "result": "TWO FAILURES + ONE CONSTRAINT + CERTIFICATE MATERIAL. (f) HARD CRASH on fully-dead layer 1: empty active set -> zero-width Winograd bill (ValueError, fold3_estimator:143 -> row_blocked_winograd:88 -> cost_model:133) => M186 empty-regime guard (emit analytic means; bitwise on healthy nets). (b) SILENT NaN/inf on He x1e3 => M187 finite-output guard. CONSTRAINT: pruning-hostile nets bill up to 95.5% of B (4.5% worst-case headroom) -> ANY mutation adding billed work (incl. the M185 pruning guard) MUST carry the T3 deterministic cap. Robustness: bitwise-equal cold subprocesses w/ identical billed FLOPs; t3 heavy-tails IMPROVE us (6.1e-8 vs MC 2.1e-7); denormals exact-0; no budget breach anywhere. Both failure inputs are outside the He generative distribution (hosted analogue probability ~0) but the guards are near-free and close entire failure classes for the private re-run. Artifacts: run_a4_hostile.py, a4_results.json, determinism npz pair, A3_A4_NOTES.md.",
+      "status": "screened",
+      "status_note": "hostile battery; 2 guard mutations proposed (M186/M187)",
+      "artifact_hash": "a_series_granular_adversarial/a4_results.json",
+      "matched_units": 0,
+      "primary_effect": 0.0,
+      "ci_upper": 0.0,
+      "failures": 2
     }
   ]
 }

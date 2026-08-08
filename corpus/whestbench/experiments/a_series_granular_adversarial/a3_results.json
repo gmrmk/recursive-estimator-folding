@@ -1,0 +1,263 @@
+{
+  "a3_1_m180": {
+    "adjudication": {
+      "deciding_number": "net-202 k=4 ratio 0.894, bootstrap 95% CI [0.669, 1.228]",
+      "verdict": "STANDS"
+    },
+    "declared_compute": "targeted rerun #1 (light): analytic diagonal-Gaussian pass over the 3 deterministic He nets, seconds; everything else artifact-only",
+    "net_characterization_diagnostic": {
+      "101": {
+        "dead_neuron_layer_count_total": 1773,
+        "final_analytic_mean_l2": 13.57097699556045,
+        "final_analytic_mean_max": 4.3038360637110715,
+        "final_layer_dead": 108,
+        "final_layer_on": 74,
+        "on_neuron_layer_count_total": 1215,
+        "participation_ratio_truth_means": 28.371335138008615,
+        "truth_final_mean_max": 4.2045071229806625,
+        "truth_final_mean_sq_mean": 0.687145321385402,
+        "truth_noise_final": 1.2294702964889415e-08
+      },
+      "202": {
+        "dead_neuron_layer_count_total": 1980,
+        "final_analytic_mean_l2": 18.761550253404952,
+        "final_analytic_mean_max": 3.9582359078012117,
+        "final_layer_dead": 83,
+        "final_layer_on": 89,
+        "on_neuron_layer_count_total": 1412,
+        "participation_ratio_truth_means": 51.510150849679974,
+        "truth_final_mean_max": 3.924052325757129,
+        "truth_final_mean_sq_mean": 1.3169787199080716,
+        "truth_noise_final": 2.2185069847537503e-08
+      },
+      "303": {
+        "dead_neuron_layer_count_total": 2093,
+        "final_analytic_mean_l2": 14.558104370800525,
+        "final_analytic_mean_max": 3.018182469868247,
+        "final_layer_dead": 92,
+        "final_layer_on": 83,
+        "on_neuron_layer_count_total": 1498,
+        "participation_ratio_truth_means": 51.961742089587744,
+        "truth_final_mean_max": 3.006097615911518,
+        "truth_final_mean_sq_mean": 0.8126951676661781,
+        "truth_noise_final": 1.5042546869963802e-08
+      }
+    },
+    "per_net": {
+      "101": {
+        "bootstrap_ci_95": [
+          0.7407363942585244,
+          1.9902982856503366
+        ],
+        "point_ratio": 1.206588022391275,
+        "prob_ratio_below_0p90": 0.14275,
+        "prob_ratio_below_1": 0.2555
+      },
+      "202": {
+        "bootstrap_ci_95": [
+          0.6686702730126813,
+          1.2284097844561914
+        ],
+        "point_ratio": 0.8937062959193836,
+        "prob_ratio_below_0p90": 0.52625,
+        "prob_ratio_below_1": 0.776
+      },
+      "303": {
+        "bootstrap_ci_95": [
+          1.0239154042030771,
+          2.3867718876266224
+        ],
+        "point_ratio": 1.587294712511662,
+        "prob_ratio_below_0p90": 0.005,
+        "prob_ratio_below_1": 0.02075
+      }
+    },
+    "suspicion": "M180 C_coset_k4 ratio 0.894 on net 202 (sub-unity) vs aggregate 1.196"
+  },
+  "a3_2_m181": {
+    "adjudication": {
+      "deciding_number": "leave-one-out ORACLE per-neuron-lambda MSE reduction -4.1% (in-sample oracle +9.2%) vs the 10% kill bar; any implementable fit is strictly worse",
+      "verdict": "STANDS"
+    },
+    "honesty": "ORACLE ceilings: lambdas fitted against the 3.5M truth itself. Any implementable holdout-fitted per-neuron lambda is strictly worse. In-sample oracle overfits ~1/R per neuron; LOO removes that. Truth noise (~1.2-2.2e-8) slightly inflates the oracle fit; labeled, not corrected.",
+    "mean_reduction_oracle_perneuron_insample": 0.09231880707609035,
+    "mean_reduction_oracle_perneuron_loo": -0.041409652852489875,
+    "per_net": {
+      "101": {
+        "fitted_lambda_mean_from_artifact": -0.03483429022983364,
+        "mse0_noise_subtracted": 1.8742528104140555e-07,
+        "mse_oracle_net_lambda": 1.8730903959766627e-07,
+        "mse_oracle_perneuron_insample": 1.7833653935283122e-07,
+        "mse_oracle_perneuron_loo": 2.049184289633933e-07,
+        "oracle_net_lambda": 0.011991318534965498,
+        "oracle_perneuron_lambda_frac_abs_gt_0p5": 0.3125,
+        "oracle_perneuron_lambda_mean": 40.3190216939749,
+        "oracle_perneuron_lambda_sd": 460.78406290126304,
+        "reduction_oracle_net": 0.0006202015176042242,
+        "reduction_oracle_perneuron_insample": 0.04849261336610444,
+        "reduction_oracle_perneuron_loo": -0.09333398261317383,
+        "replicates_excluded_tiny_lambda": 0,
+        "replicates_used": 16
+      },
+      "202": {
+        "fitted_lambda_mean_from_artifact": 0.005110472859055595,
+        "mse0_noise_subtracted": 5.650243546943567e-07,
+        "mse_oracle_net_lambda": 5.649766841648029e-07,
+        "mse_oracle_perneuron_insample": 5.175193776439656e-07,
+        "mse_oracle_perneuron_loo": 5.915778092731479e-07,
+        "oracle_net_lambda": -0.006321075476650241,
+        "oracle_perneuron_lambda_frac_abs_gt_0p5": 0.421875,
+        "oracle_perneuron_lambda_mean": -3222.6657991694483,
+        "oracle_perneuron_lambda_sd": 15391.15343597351,
+        "reduction_oracle_net": 8.43689818991189e-05,
+        "reduction_oracle_perneuron_insample": 0.08407598124878768,
+        "reduction_oracle_perneuron_loo": -0.046995238980724885,
+        "replicates_excluded_tiny_lambda": 0,
+        "replicates_used": 16
+      },
+      "303": {
+        "fitted_lambda_mean_from_artifact": 0.039541682318999634,
+        "mse0_noise_subtracted": 2.218829616330691e-07,
+        "mse_oracle_net_lambda": 2.21871259014481e-07,
+        "mse_oracle_perneuron_insample": 1.8984576304033053e-07,
+        "mse_oracle_perneuron_loo": 2.183105875874748e-07,
+        "oracle_net_lambda": 0.0037647253733376273,
+        "oracle_perneuron_lambda_frac_abs_gt_0p5": 0.3828125,
+        "oracle_perneuron_lambda_mean": 27.495467623558092,
+        "oracle_perneuron_lambda_sd": 1038.432071143931,
+        "reduction_oracle_net": 5.274230387930512e-05,
+        "reduction_oracle_perneuron_insample": 0.1443878266133789,
+        "reduction_oracle_perneuron_loo": 0.016100263036429086,
+        "replicates_excluded_tiny_lambda": 0,
+        "replicates_used": 16
+      }
+    },
+    "suspicion": "M181 arm3 per-net lambdas -0.035/0.005/0.040 (sign flips): per-NEURON signal averaged away?"
+  },
+  "a3_3_n8a": {
+    "adjudication": {
+      "deciding_number": "best per-net ratio 1.430 vs kill bar 0.83 (72% margin); heterogeneity z(202 vs 303) = 2.3 (real, but on the harmless side of the gate)",
+      "verdict": "STANDS"
+    },
+    "assumption": "lattice-arm variance estimate assumed to have the same relative sampling noise as the kerdock arm (same R=16, same downstream); arms treated as independent, which overstates ratio noise (they share the per-replicate Haar rotation), so z is a LOWER bound on the true significance of the spread.",
+    "kill_margin_note": "kill bar is ratio > 0.83 (lattice must be >=1.2x BETTER to survive); the BEST net ratio 1.43 is 72% above the bar, so no per-net split can flip the kill regardless of heterogeneity.",
+    "log_ratio_spread_202_vs_303": 0.7368541642008244,
+    "per_net_point_ratios": {
+      "101": 2.1849745710583472,
+      "202": 1.4304991891955612,
+      "303": 2.988816922210218
+    },
+    "sd_log_ratio_independent_assumption": {
+      "101": 0.18532844966861517,
+      "202": 0.26286797976787935,
+      "303": 0.18555382694756703
+    },
+    "sd_log_var_kerdock_bootstrap": {
+      "101": 0.13104700350746754,
+      "202": 0.18587573105067565,
+      "303": 0.13120636930973978
+    },
+    "suspicion": "N8a per-net ratios 1.43/2.18/2.99 -- real heterogeneity or 16-replicate noise?",
+    "var_cross_check_m180_vs_n8a": {
+      "101": {
+        "m180_var_A": 2.0348872107139897e-07,
+        "n8a_var_kerdock": 2.0348826775419162e-07
+      },
+      "202": {
+        "m180_var_A": 5.690122294620992e-07,
+        "n8a_var_kerdock": 5.690115914331209e-07
+      },
+      "303": {
+        "m180_var_A": 2.1781244227857324e-07,
+        "n8a_var_kerdock": 2.1781183151096933e-07
+      }
+    },
+    "z_extreme_pair_conservative": 2.290070540223367
+  },
+  "a3_4_n7": {
+    "adjudication": {
+      "deciding_number": "MC-22 slope full -0.783 -> drop-n4096 -0.842 (inside [-1.2,-0.8]); mean beta_rqmc -1.099 (full) / -1.097 (drop-4096), both > -1.25 kill bar",
+      "verdict": "STANDS"
+    },
+    "censoring_note": "no stored per-net truth noise in n7_results.json; using the predeclared range's worst case 7e-9 -> censor bar 3.5e-8. No point in either net/kind is below it, so the censoring-rule refit is IDENTICAL to the original fit. Labeled assumption.",
+    "kill_bar_beta_rqmc": -1.25,
+    "mean_beta_rqmc_drop_n4096": -1.0970939077365436,
+    "mean_beta_rqmc_full": -1.0990924559273916,
+    "per_net": {
+      "11": {
+        "mc": {
+          "any_point_censored_at_worst_case_bar": false,
+          "mses": [
+            1.0863744436605807e-05,
+            1.3029956532823195e-06,
+            6.551066165923418e-07,
+            1.2640249471969275e-07
+          ],
+          "slopes": {
+            "drop_n16384": -1.06260923972763,
+            "drop_n262144": -1.0129119790850476,
+            "drop_n4096": -0.8414338571930522,
+            "drop_n65536": -1.0381123651716295,
+            "full": -1.0134044371564541
+          }
+        },
+        "rqmc": {
+          "any_point_censored_at_worst_case_bar": false,
+          "mses": [
+            4.755273887732928e-06,
+            1.2866286688203126e-06,
+            3.055377740991283e-07,
+            8.569091025206904e-08
+          ],
+          "slopes": {
+            "drop_n16384": -0.9691812707484196,
+            "drop_n262144": -0.9900264447708632,
+            "drop_n4096": -0.9770774382720172,
+            "drop_n65536": -0.9673314126771537,
+            "full": -0.9728450216553832
+          }
+        }
+      },
+      "22": {
+        "mc": {
+          "any_point_censored_at_worst_case_bar": false,
+          "mses": [
+            6.1255459842493716e-06,
+            2.534653969420153e-06,
+            7.603635209349242e-07,
+            2.4543032155221397e-07
+          ],
+          "slopes": {
+            "drop_n16384": -0.7705674775201747,
+            "drop_n262144": -0.7525193040882778,
+            "drop_n4096": -0.8421008505205498,
+            "drop_n65536": -0.7833648412962131,
+            "full": -0.7830693347770592
+          }
+        },
+        "rqmc": {
+          "any_point_censored_at_worst_case_bar": false,
+          "mses": [
+            1.2762658241980426e-05,
+            2.6169870986071216e-06,
+            3.1738017738291687e-07,
+            8.958899306057367e-08
+          ],
+          "slopes": {
+            "drop_n16384": -1.2123978420079016,
+            "drop_n262144": -1.3323932535365413,
+            "drop_n4096": -1.2171103772010698,
+            "drop_n65536": -1.1959288596742625,
+            "full": -1.2253398901993997
+          }
+        }
+      }
+    },
+    "suspicion": "N7 MC control slope -0.78 on seed 22, marginally outside the [-1.2,-0.8] sanity band"
+  },
+  "date": "2026-08-08",
+  "firewall": "artifacts read-only; synthetic-net data only; writes confined to a_series_granular_adversarial",
+  "predeclaration": "A_SERIES_PREDECLARATION.md section A3",
+  "targeted_rerun_1": "light analytic diagonal-Gaussian net characterization inside A3.1 (seconds)",
+  "targeted_reruns_used": 1
+}
