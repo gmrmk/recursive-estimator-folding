@@ -1924,6 +1924,16 @@
       "result": "ALL FIVE ARMS KILLED (flat ~0.000 reductions): on_alpha 3.5/4.0/5.0 and dead_alpha -2.5/-3.0 all fail the 10% gate; M190 joint skipped (neither family promoted). BOTH DIALS CONFIRMED OPTIMAL at their frozen values — closes the dial family and COMPLETES THE FAILURE-CROSS SWEEP (every cross killed or no-go). Battery acceleration measured: 3.2x per mechanism (marginal 307.7s/arm vs 984.1s from-scratch; 397s truth amortized; 80-net wide panel cached). The A1b tail correlation was, as M185 established, statistical shadow not causal signal — the dials were never miscalibrated. Artifacts: premise_battery.py (reusable), pb1_results.json, _run2.log.",
       "status": "killed",
       "status_note": "all dial arms; battery infrastructure retained as the standing accelerator"
+    },
+    {
+      "id": "m191_harmonic_cv_g0b",
+      "mechanism": "The harmonic control variate at the designs first non-exact degrees: 24 weight-derived deg-4/6 basis functions (top-8 right SVs of W_1 + 4 controls), split-sample beta fitting for unbiasedness, on the cached-truth battery panel.",
+      "prediction": "If the estimator functions deg-4/6 harmonic energy aligns with a tractable basis, the CV nets >=10-15%; the predeclarations honesty bound named the dispersion branch.",
+      "kill_condition": "Panel-MSE reduction < 10%.",
+      "bias_class": "Unbiased-by-construction CV (split-sample); plain-numpy G0; no score credit.",
+      "result": "KILLED at +0.83% [CI -0.63%,+2.36%] vs the 10% bar (deg4-only +0.42%, deg6-only +0.58%). MECHANISM AUTOPSY: the basis saw the design error at exactly the G0-a spectrum (deg4 0.104-0.116, deg6 0.396-0.422 of iid per net) but the estimator functions harmonic energy at those degrees is DISPERSED across ~1.8e8-dimensional spaces at d=256 — R^2 of the 24-function basis = 0.23-0.29%. The leak is real and unscoopable by any tractable projection. Deg-6 recovers more per unit R^2 (13x more removable error), matching theory. No bias introduced (split and no-split both ~0 within noise). VERIFICATION: baseline stacks bitwise-equal to cached m181 arm0 (max diff 0.0); independent re-derivation agrees to 6 decimals. OPERATIONAL: first compute-runner mission — ran to completion, zero watcher behavior; the harness fix HELD. Closes Generation 3; GEN4_CLOSING written. Artifacts: run_m191_g0b.py, m191_g0b_results.json, M191_G0B_NOTES.md, per-net npz.",
+      "status": "killed",
+      "status_note": "Generation 3 closed at full measure; Gen-4 constraint set written"
     }
   ]
 }
