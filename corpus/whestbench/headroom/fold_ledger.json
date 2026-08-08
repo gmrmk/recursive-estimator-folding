@@ -1826,6 +1826,15 @@
       "bias_class": "Static count on synthetic nets; no build; no score credit.",
       "result": "KILLED at 0.00% on all three nets — structural: certain-on neurons are ZERO at layers 1-9 (where matmuls are widest) and peak at 39/~185 active at layer 28, 2.3x short of composition break-even (~85-95); the DP chose collapse-every-layer everywhere; certain-dead increment exactly 0 (v3s pruning is a strict superset, asserted on all 84 layer instances). ADVERSARIAL: reduction stays 0.00% under illegally lax thresholds (alpha>5/4/3, max on-count 83, still under break-even). One modeling defect caught by the built-in cross-check and fixed BEFORE any verdict (independently-written v3 bill and DP agree to exact integer equality). COMPLETES THE MINED-MECHANISM SWEEP: N4-N9, M180, M181, M183, M184 = twelve consecutive predeclared kills; salvage bank AND community frontier exhausted; Kerdock v3 is evidence-optimal within known mechanism space. Artifacts: run_m184_g0.py (0.5s), m184_g0_results.json, M184_G0_NOTES.md.",
       "status": "killed"
+    },
+    {
+      "id": "gen3_recursion_packet",
+      "mechanism": "Headroom-Recursion Generation 3: recursion packet built per the skill spec from the LIVE hosted champion (Kerdock v3 #326094, real per-MLP score distribution) + the 195-record ledger (promoted winners as components, 12 kills as constraints, M185/A3/A4 unresolved) + the A1 residual-correlation structure (net-specific advantage collapse = the dominant unexplained error). Generation 2 was the tangent lineages offline run.",
+      "prediction": "The packet yields a ranked proposal set attacking the residual structure; proposals climb the external ladder one rung per iteration.",
+      "kill_condition": "Not a candidate: the packet is orchestration. Its proposals each carry predeclared premise gates (P1 worst>=30%/median<10%; P2 oracle-rotation headroom >=20% on tail nets; P3 projected mean gain >=5%).",
+      "bias_class": "Orchestration artifact; validation stays external; holdout firewall stated in the packet (hosted public 50 = graders iteration set; phase adds withheld 50; prize adds fresh seeds).",
+      "result": "PACKET WRITTEN: corpus/whestbench/core/GEN3_RECURSION_PACKET_20260808.md. Proposal ranking: P1 per-net pruning guard (= M185, premise in flight), P2 per-net rotation SELECTION (kill-respecting: M180 killed fragmentation, not selection; connects A3 suspicion 1), P3 tail-targeted budget reallocation (F0-leverage ~3-6% unless composed with P1), P4/P5 contingent on A3/A4. Output contract: one rung per iteration, failures constrain Generation 4, first hosted final-gate pass triggers designation review.",
+      "status": "proposed"
     }
   ]
 }
