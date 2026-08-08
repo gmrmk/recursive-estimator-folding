@@ -1799,6 +1799,15 @@
       "bias_class": "Variance-only G0 on synthetic nets, plain-numpy sanctioned deviation; no estimator build, no score credit.",
       "result": "TOTAL KILL, all arms INCREASED variance: B 1.3135 [1.033,1.661]; C k=2 1.2801, k=4 1.1962, k=8 1.4879 [1.125,1.919]; D 1.4194 [1.089,1.877]. Two-signal verification: arm means within 0.5 SEM of A; Arm A reproduces N8a per-net variances to 6 sig figs. STRUCTURAL INSIGHT: the designs strength is the mutual unbiasedness of all 126 frames under ONE shared rotation (inter-frame negative covariance); fragmenting the rotation or displacing family members destroys it monotonically with fragmentation. The Kerdock design is locally optimal; the design axis is CLOSED at G0. mub2 disposition read first (performance-killed, reuse permitted); premise npz never loaded. Artifacts: run_m180_g0.py, m180_g0_results.json, M180_G0_NOTES.md, raw per-replicate npz evidence.",
       "status": "killed"
+    },
+    {
+      "id": "m183_f32_hotpath_falsifier",
+      "mechanism": "M182-mined top mechanism: flopscope stats functions silently return float64 (billed 2x) and one promoted array reprices the downstream chain; falsifier = scan budget.op_log of a full v3 predict for float64-lane billed FLOPs.",
+      "prediction": "If any hot-path lane bills f64, recast+refill is a free ~2x (organizer-endorsed); if the pipeline is already f32-clean, M183 dies in ~10 minutes.",
+      "kill_condition": "f64-lane share of billed FLOPs < 5%.",
+      "bias_class": "Descriptive op-log scan on one synthetic net; no estimator change; no score credit.",
+      "result": "KILLED: f64-lane billed = 0.0000e0 of 1.5803e11 total (0.00%). The M71 lineage audits already enforced full f32 discipline; the bands free 2x does not exist for us. Cost of the check: one metered synthetic run. Artifacts: run_m183_falsifier.py, m183_falsifier_results.json. Miner-designated successor M184 (terminal on-neuron linearization) held pending the M181 terminal-smoothing verdict (overlapping family).",
+      "status": "killed"
     }
   ]
 }
