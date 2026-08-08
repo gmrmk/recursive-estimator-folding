@@ -1,0 +1,237 @@
+{
+ "mutation": "m178_certified_phi2_owent",
+ "grid_points_audited": 12890,
+ "grid_subset_stride": 1,
+ "reference_dps": 50,
+ "max_reference_gap_R1_R2": 9.548051336855664e-28,
+ "worst_value_err": 1.0277147345378747e-09,
+ "worst_da_err": 4.5113962858871924e-11,
+ "worst_db_err": 4.5113962858871924e-11,
+ "worst_drho_err": 6.954086909344934e-09,
+ "all_contained": true,
+ "not_contained_points": [],
+ "count_class_census": {
+  "n_count_classes": 84,
+  "totals_sorted": [
+   400,
+   410,
+   420,
+   464,
+   486,
+   508,
+   530,
+   540,
+   550,
+   552,
+   594,
+   596,
+   640,
+   662,
+   672,
+   684,
+   726,
+   728,
+   772,
+   794,
+   808,
+   818,
+   820,
+   860,
+   864,
+   904,
+   924,
+   1036,
+   1094,
+   1452,
+   1518,
+   1562,
+   1584,
+   1590,
+   1612,
+   1648,
+   1670,
+   1678,
+   1694,
+   1722,
+   1744,
+   1782,
+   1794,
+   1808,
+   1814,
+   1838,
+   1846,
+   1852,
+   1860,
+   1920,
+   1924,
+   1926,
+   1958,
+   1970,
+   2058,
+   2084,
+   2102,
+   2122,
+   2128,
+   2234,
+   2528,
+   2536,
+   2542,
+   2616,
+   2666,
+   2704,
+   2782,
+   2804,
+   2842,
+   2880,
+   2892,
+   2920,
+   2980,
+   3080,
+   3118,
+   3156,
+   3168,
+   3256,
+   3394,
+   3432,
+   3532,
+   3708,
+   3984
+  ],
+  "worst_example": [
+   -3.5000001,
+   -3.5000001,
+   -0.1
+  ]
+ },
+ "worst_static_charged_flops": 3984,
+ "F_EPILOGUE_surcharge": 64,
+ "F_M178_worst_case_inclusive": 4048,
+ "F_M178_ceiling": 20000,
+ "ceiling_respected": true,
+ "flopscope_billed_sample": [
+  {
+   "example": [
+    1e+301,
+    1e+301,
+    -0.9999999999999998
+   ],
+   "static": 400,
+   "billed": 400,
+   "match": true
+  },
+  {
+   "example": [
+    -3.5000001,
+    -3.5000001,
+    -0.1
+   ],
+   "static": 3984,
+   "billed": 3984,
+   "match": true
+  },
+  {
+   "example": [
+    0.0,
+    1e+301,
+    0.5
+   ],
+   "static": 550,
+   "billed": 550,
+   "match": true
+  },
+  {
+   "example": [
+    -10.0,
+    0.0,
+    -0.9999999999999998
+   ],
+   "static": 726,
+   "billed": 726,
+   "match": true
+  },
+  {
+   "example": [
+    -10.0,
+    -8.48,
+    -0.1
+   ],
+   "static": 860,
+   "billed": 860,
+   "match": true
+  },
+  {
+   "example": [
+    4.9526402791775475,
+    115.40162572836516,
+    -0.7023503753746427
+   ],
+   "static": 1562,
+   "billed": 1562,
+   "match": true
+  },
+  {
+   "example": [
+    18.694852157200447,
+    45.20010857505742,
+    0.4995835930804333
+   ],
+   "static": 1722,
+   "billed": 1722,
+   "match": true
+  },
+  {
+   "example": [
+    -10.0,
+    -5.0,
+    0.5
+   ],
+   "static": 1852,
+   "billed": 1852,
+   "match": true
+  },
+  {
+   "example": [
+    -3.5000001,
+    0.0,
+    -0.5
+   ],
+   "static": 2084,
+   "billed": 2084,
+   "match": true
+  },
+  {
+   "example": [
+    -5.0,
+    -5.0,
+    -0.9999999999999998
+   ],
+   "static": 2616,
+   "billed": 2616,
+   "match": true
+  },
+  {
+   "example": [
+    52.04776371311647,
+    -0.8928719721435052,
+    -0.09276720371664471
+   ],
+   "static": 2920,
+   "billed": 2920,
+   "match": true
+  },
+  {
+   "example": [
+    -3.5000001,
+    -3.5000001,
+    -0.9
+   ],
+   "static": 3432,
+   "billed": 3432,
+   "match": true
+  }
+ ],
+ "billed_matches_static": true,
+ "determinism_hash_run1": "82279a7e1451cc3ed1566c2de028125caa4ad0e11166d1ee2e195ed5f5c56f47",
+ "determinism_hash_run2": "82279a7e1451cc3ed1566c2de028125caa4ad0e11166d1ee2e195ed5f5c56f47",
+ "deterministic_across_processes": true
+}
