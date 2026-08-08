@@ -1748,6 +1748,15 @@
       "bias_class": "Same deliberately-biased family; draw-stage-only mutation; synthetic nets; no score credit.",
       "result": "KILLED at G0, decisively inverted: v3 is a structured phased-Hadamard (Kerdock-code) spherical design — kerdock_phases.npz packs 126 orthonormal frames x 256 directions at exact chi-mean radius 15.98438, antipodally doubled to 64512, Haar-rotated per net — already 2.0-3.2x better than radially-conditioned MC. The Kronecker lattice measured 2.106x WORSE (geomean, paired bootstrap CI [1.645, 2.645] entirely above 1; needed <=0.83) on 3 He nets x 16 paired replicates. Diagnostic: N7s lattice gain (vs unconditioned iid) shrinks to 1.07-1.42x once radial conditioning is applied; the Kerdock frames dominate it. Retro-explains v3s local-best standing. No build, no retuning; frozen sources verified untouched. Deviations recorded loudly in N8A_BUILD_NOTES.md (plain antipodal downstream for G0, R=16, Haar-seed pairing). Artifacts: run_n8a_gates.py, n8a_results.json, N8A_BUILD_NOTES.md.",
       "status": "killed"
+    },
+    {
+      "id": "n8b_disclosed_native_backend",
+      "mechanism": "Route sampler forwards through the verified K1 fused kernel as a Rules-5.2 disclosed off-flopscope backend priced by residual wall at lambda=1e11/s; discount = sustained one-core FLOP/s / 1e11. Predeclared before measurement.",
+      "prediction": "One-core f32 GEMM at 1.2-2e11 FLOP/s would yield a 1.2-2x honest multiplier improvement.",
+      "kill_condition": "G0: one-core-pinned sustained throughput < 1.2e11 FLOP/s.",
+      "bias_class": "Backend-only (bitwise gate); all wall honestly charged; categorically distinct from the unmetered arbitrage.",
+      "result": "KILLED at G0: one-core-pinned (OMP/MKL/OPENBLAS=1) K1 fused kernel sustains 81.6-93.9 GFLOP/s (best 0.94e11) on batch-16384 depth-32 width-256 f32 -- BELOW lambda; the native path is a 0.94x regression on this hardware. K1s earlier 239 GFLOP/s was multithreaded. Labeled: grader hardware unknown; we do not ship a lever our own box refutes. Closes the intel-suggested ~2x native lever for this campaign. Artifact: n8b_g0_throughput.py output (5 reps).",
+      "status": "killed"
     }
   ]
 }
