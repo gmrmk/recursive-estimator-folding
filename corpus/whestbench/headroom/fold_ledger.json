@@ -1865,6 +1865,16 @@
       "primary_effect": 0.0,
       "ci_upper": 0.0,
       "failures": 2
+    },
+    {
+      "id": "a1b_tail_apriori_flag",
+      "mechanism": "Independent mining of the M185 stage-1 checkpoint (80 nets, 15.5x MSE spread reproducing the hosted tail): can any weight-derived diagnostic flag tail nets a priori, to enable a TARGETED P1 pruning guard?",
+      "prediction": "A fold-classification diagnostic predicts the tail well enough for a targeted flag.",
+      "kill_condition": "Targeted-flag form of P1 dies if no flag reaches usable precision/recall.",
+      "bias_class": "Descriptive correlation mining on synthetic-net diagnostics; no estimator change.",
+      "result": "NO RELIABLE A-PRIORI FLAG. Single diagnostics correlate only weakly with per-net MSE: borderline_frac rho -0.563, fold_on_total +0.459 (worst nets +22% on-classifications, -25% kink -> on/kink misclassification bias, matching the A1 hosted analytic-accuracy finding), pruned_frac +0.351. Best single-flag top-quartile precision/recall = 0.50/0.50 (coin flip); a 3-diagnostic multivariate rank-sum is WORSE under 5-fold CV (0.43/0.44, overfits). CONSEQUENCE: the TARGETED P1 guard (flag-then-intervene) is NOT viable; P1 must be the BROAD form (relax pruning on all nets) carrying the A4 95.5%-billing T3 cap, and only if the M185 stage-2 causal test shows relaxation helps. Artifacts: a1b_tail_diagnostics.py, a1b_tail_diagnostics.json.",
+      "status": "killed",
+      "status_note": "targeted-flag form of P1 killed; broad form still pending M185 stage-2"
     }
   ]
 }
