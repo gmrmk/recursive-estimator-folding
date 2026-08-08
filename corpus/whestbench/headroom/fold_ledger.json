@@ -1817,6 +1817,15 @@
       "bias_class": "Response-free synthetic G0; plain-numpy sanctioned; no score credit.",
       "result": "ALL ARMS KILLED. Arm 1 ratio 4.242 [3.774,4.929] (bias^2 alone = 4-6x the baselines ENTIRE MSE, bias share 0.67-0.78); Arm 2 ratio 7.770 [6.743,9.270] (two stacked closure steps, share 0.83-0.88); Arm 3 ratio 1.057 [1.032,1.089] (lambda collapsed to ~0: the analytic direction carries no signal; residual = fitting noise). Variance identical to baseline within 1% on every net -> the smooth-moments variance mechanism DOES NOT EXIST at n=64512. ADVERSARIAL CHECK: the same bias field reproduces on 262k fresh iid samples (cosine 0.968/0.984, matching magnitudes) -> the bias is the non-Gaussianity of the terminal law itself. Arm 0 bias^2 ~ 0 (third independent confirmation of Kerdock exact unbiasedness). CLOSURE FAMILY NOW DEAD AT EVERY INSERTION POINT: predictor (T2), CV (N5), corrector (N8c), smoother (M181). Truth floors measured 1.2-2.2e-8 and subtracted per net. Artifacts: run_m181_g0.py, results json, notes, raw npz, verify_m181_bias_source.py.",
       "status": "killed"
+    },
+    {
+      "id": "m184_trichotomy_upward_g0",
+      "mechanism": "Extend the terminal dead/on/kink trichotomy to middle layers: exact on-run linear composition + firing-sorted sparsity, static billed-FLOP falsifier (diagonal pass + 512-path Kerdock pilot, alpha>6.7 for <1e-6 misclassification, DP over composition schedules with v3s schedule always feasible so M184<=v3 by construction). Predeclared bb3aeb6 before code; delegated.",
+      "prediction": "1.15-1.5x billed reduction if the bands structure claims transfer; the predeclarations honesty bound warned mid-layer certain-on fractions may be small at width 256.",
+      "kill_condition": "Projected net billed reduction < 15%; promote >= 20%.",
+      "bias_class": "Static count on synthetic nets; no build; no score credit.",
+      "result": "KILLED at 0.00% on all three nets — structural: certain-on neurons are ZERO at layers 1-9 (where matmuls are widest) and peak at 39/~185 active at layer 28, 2.3x short of composition break-even (~85-95); the DP chose collapse-every-layer everywhere; certain-dead increment exactly 0 (v3s pruning is a strict superset, asserted on all 84 layer instances). ADVERSARIAL: reduction stays 0.00% under illegally lax thresholds (alpha>5/4/3, max on-count 83, still under break-even). One modeling defect caught by the built-in cross-check and fixed BEFORE any verdict (independently-written v3 bill and DP agree to exact integer equality). COMPLETES THE MINED-MECHANISM SWEEP: N4-N9, M180, M181, M183, M184 = twelve consecutive predeclared kills; salvage bank AND community frontier exhausted; Kerdock v3 is evidence-optimal within known mechanism space. Artifacts: run_m184_g0.py (0.5s), m184_g0_results.json, M184_G0_NOTES.md.",
+      "status": "killed"
     }
   ]
 }
