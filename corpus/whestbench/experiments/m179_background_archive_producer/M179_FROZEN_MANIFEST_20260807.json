@@ -1,0 +1,29 @@
+{
+ "mutation": "m179_exact_background_archive_producer",
+ "frozen": "2026-08-07",
+ "commit_at_freeze": "f884265",
+ "branch": "agent/compression-survivor-corpus",
+ "predeclaration_commit": "18f0113",
+ "base_provider": "m178_certified_phi2_owent @ 3b590c6",
+ "consumer_abi": "m125_source_batched_forward_tangent/m125_forward_tangent.py (LocalReluJacobian, TangentState)",
+ "inputs": "generated He-Gaussian d=256/L=32 weights (fresh np.random.default_rng seeds); no challenge weights, target, or truth",
+ "random_seed_policy": "none in the producer; fixed seeds in tests only (generated weights + MC references)",
+ "packages": {"python": "3.14.4", "numpy": "2.4.6", "whestbench": "0.14.0", "flopscope": "0.10.0", "mpmath": "1.3.0"},
+ "no_api_condition": "no network, no API; references are locally computed mpmath dps-30/50 and Monte Carlo on generated nets",
+ "response_free_firewall": "no challenge instance, target, truth, scorer, evaluator internals, leaderboard, public row, model loop, submission, or champion artifact read or written",
+ "scope_exclusions": "no Source211->TangentState conversion, no B=8 resource trace beyond the static liveness arithmetic, no variance/efficacy/score/champion/submission work; exact rank-one limit deferred",
+ "predicted_result": "component pass: exact metered labelled producer; opens only M176 producer work (now done)",
+ "cost_contract": {"total_producer_flops": 8304492288, "fraction_of_budget_B": 0.0305, "fixed_bounded": true, "no_accounting_bypass": true, "special_function_charge": "frozen F_M178 = 4048 per pair"},
+ "liveness": {"blocks": [8, 8, 8, 7], "workspace_mib": 85.52151489257812, "matches_m175": true},
+ "deliverables": [
+  "M179_PREDECLARED_PROTOCOL_20260807.md",
+  "M179_G0_INDEX_ABI_RECONCILIATION_20260807.md",
+  "m179_relu_pair_assembly.py", "test_m179_premise_assembly.py",
+  "m179_background_producer.py", "test_m179_recurrence.py",
+  "m179_jacobian_archive.py", "test_m179_jacobian_archive.py",
+  "m179_metering.py", "test_m179_metering.py",
+  "M179_RESULTS_20260807.json", "M179_REPORT_20260807.md",
+  "M179_FROZEN_MANIFEST_20260807.json", "M179_SHA256SUMS_20260807.txt"
+ ],
+ "failure_disposition": "COMPONENT PASS; deferred exact rank-one limit is M180-class; the definitive variance test is the future M172 gate (user-gated)"
+}

@@ -1,0 +1,41 @@
+{
+ "mutation": "m179_exact_background_archive_producer",
+ "frozen": "2026-08-07",
+ "branch": "agent/compression-survivor-corpus",
+ "disposition": "COMPONENT_PASS: exact, certified, FlopScope-metered, labelled zero-order BackgroundArchive producer; response-free; no efficacy/score/champion credit",
+ "governing_contract": "corpus/whestbench/experiments/m176_background_archive_producer/M176_EXACT_BACKGROUND_ARCHIVE_NO_GO_20260807.md",
+ "consumes": "M178 certified Phi2/Owen-T provider (commit 3b590c6)",
+ "sub_gates": {
+  "G0_index_abi_reconciliation": "PASS (commit 2fc33f6): scored row=mu_32; archive=(mu_l,V_l) l=1..31 + J_2..J_31; contradiction-free",
+  "G1_assembly_premise": "PASS (commit 393f923): E[ReLU_i ReLU_j], K, Hmu, Hv assembled from M178's 4 outputs via Tallis; worst error 2.144e-9 vs 2e-7 contract; verified vs dps-30 mpmath + arc-whitebox backbone + m86 |x|",
+  "G2_full_covariance_recurrence": "PASS (commit 0c8ecb2): recurrence matches independent mpmath closure to ~2e-16 on generated MLPs; matches true-network MC at layer 1; V bitwise symmetric",
+  "G3_jacobian_bundle_abi": "PASS (commit f2cc2d9): valid m125 LocalReluJacobian (bitwise-symmetric price_kernel); diagonal + off-diagonal K match dps-30; zero-variance exact; non-PSD + rank-one FAIL CLOSED (exact rank-one limit deferred as a separately-gated follow-up)",
+  "G4_metering_liveness": "PASS (commit f884265): inclusive ledger metered, fixed/bounded, under budget; B=8 liveness matches M175 static facts"
+ },
+ "inclusive_flop_ledger": {
+  "pairs_per_layer": 32640,
+  "per_pair_flops": 4090,
+  "matmul_flops_per_layer_metered": 134217216,
+  "diag_flops_per_layer": 172032,
+  "per_layer_flops": 267886848,
+  "total_producer_flops": 8304492288,
+  "fraction_of_budget_B": 0.030531221647058824,
+  "budget_B": 272000000000,
+  "note": "fixed/bounded, no accounting bypass; special-function work charged at frozen F_M178=4048; ~42 Tallis scalar ops/pair counted but plain-Python (production routes through a charged backend; dominant ~99.9% metered/frozen)"
+ },
+ "b8_liveness": {
+  "blocks": [8, 8, 8, 7],
+  "workspace_mib": 85.52151489257812,
+  "block_covariance_archive_mib": 4.0,
+  "model_weight_mib": 7.75,
+  "matches_m175_static_facts": true
+ },
+ "environment": {
+  "python": "3.14.4", "numpy": "2.4.6", "whestbench": "0.14.0",
+  "flopscope": "0.10.0", "mpmath": "1.3.0 (references only)",
+  "venv": "isolated frozen (never mutated the pinned competition env)"
+ },
+ "firewall": "no challenge instance, target, truth, scorer, evaluator internals, leaderboard, public row, model loop, submission, or champion artifact read or written; generated He-Gaussian weights only",
+ "opens": "M176 response-free labelled BackgroundArchive producer work is now DONE; the next arrow is the separately-proved Source211 -> TangentState conversion (NOT this mutation); no source/variance/efficacy/score/champion/submission credit",
+ "deferred": "exact rank-one (|rho|>1-2^-52) limit (fail-closed here; unreachable for generic weights; a separately-gated follow-up, M180-class)"
+}
