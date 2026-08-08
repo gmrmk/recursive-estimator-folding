@@ -1685,6 +1685,21 @@
       "primary_effect": 0.0,
       "ci_upper": 0.0,
       "failures": 0
+    },
+    {
+      "id": "t3_fold3_deterministic_cap",
+      "mechanism": "fold3-39936 with a deterministic per-network billed-FLOP cap: a billed pilot-identical simulation of the parents active-set evolution feeds an op-exact cost model C_pred(n); n_eff = max multiple of 256 with C_pred <= 0.9B; frame-prefix slice + instance-shadowed n_base + verbatim super().predict(). Predeclared before code (commit 6493f28). Build delegated to a subagent; packaging (folder mode) done by the orchestrator.",
+      "prediction": "The cap converts the familys measured 5/100 budget-breach mode into valid reduced-n estimates while being a bitwise no-op off the tail.",
+      "kill_condition": "G1 cost model underestimates billed FLOPs >2%; G2 adversarial net fails to complete under 0.9B+2% or n_eff not reduced; G3 capped output differs bitwise on non-breaching nets; G4 package/contract validation fails.",
+      "bias_class": "Same deliberately-biased sampler family as the frozen parent; the cap adds no estimator bias off the tail (bitwise identity) and strictly dominates a strict failure on the tail. Engineering-gated, SCORE-UNKNOWN: no local score gate predeclared (R9); may not be represented as a numerical winner until graded.",
+      "result": "ALL GATES PASS. G1: C_pred(39936)/metered ratios 1.0287/1.0287/1.0293 on 3 He nets (window [0.98,1.06], never under; modeled main run alone -0.0035%). G2: adversarial zero-cold net (active=256 at all 28 layers): uncapped bills 2.9949e11 > B (the exact historical failure), capped chooses n_eff=31232 and bills 2.4303e11 <= 0.9B. G3: bitwise-identical on the two full-n nets, non-vacuous (seed 22 trimmed 3 frames, billed 2.4445e11 <= CAP); C_pred/metered on capped runs 0.99996. G4: folder-mode package submission_fold3cap_n39936_20260808.tar.gz sha256 D3F5AEFA...4E21A6C, 6 modules + manifest, validate-package ok, whest validate (contract, loads+runs) ok shape [2,4]. NEAR-MISS RECORDED: single-file package mode produced a VALIDATING tar with no sibling modules (would die at grader import) — caught by member listing; runbook rule: always tar -tzf before upload. Deviation (declared): n_eff floors at 1024=fold_pilot_base (pilot-identity premise), unreachable in practice. Artifacts: capped_fold3.py, run_t3_gates.py, t3_gate_results.json, T3_BUILD_NOTES.md, package_source/, the tar.",
+      "status": "screened",
+      "status_note": "screened survivor, engineering-gated; score evidence only via graded submission at user-return",
+      "artifact_hash": "d3f5aefafc1cd91b77e92f060e143a4b56510a26c092840668680d7354e21a6c",
+      "matched_units": 0,
+      "primary_effect": 0.0,
+      "ci_upper": 0.0,
+      "failures": 0
     }
   ]
 }
