@@ -1,0 +1,64 @@
+{
+ "blas": {
+  "blas": "scipy-openblas",
+  "lapack": "scipy-openblas"
+ },
+ "throughput": {
+  "batch": 131072,
+  "best_wall_s": 3.1156115000012505,
+  "samples_per_s": 42069.430030010924,
+  "gflops": 176.45197865259493,
+  "us_per_sample": 23.770229339609152
+ },
+ "v_plain_20rep": {
+  "mse_mean": 6.294068982772925e-07,
+  "mse_sd": 4.384832454535023e-07,
+  "v": 0.0406042978216647,
+  "rel_sd": 0.6966610099978972
+ },
+ "champion_v_ref": 0.0199,
+ "budget_s": 2.72,
+ "projections": {
+  "skibidi_9.24e-8|plain": {
+   "N": 439440,
+   "wall_local_s": 10.45,
+   "speedup_needed_vs_budget": 3.84
+  },
+  "skibidi_9.24e-8|champion_0.0199": {
+   "N": 215367,
+   "wall_local_s": 5.12,
+   "speedup_needed_vs_budget": 1.88
+  },
+  "joewanza_5.21e-8|plain": {
+   "N": 779353,
+   "wall_local_s": 18.53,
+   "speedup_needed_vs_budget": 6.81
+  },
+  "joewanza_5.21e-8|champion_0.0199": {
+   "N": 381957,
+   "wall_local_s": 9.08,
+   "speedup_needed_vs_budget": 3.34
+  },
+  "beat_top12_4.09e-8|plain": {
+   "N": 992770,
+   "wall_local_s": 23.6,
+   "speedup_needed_vs_budget": 8.68
+  },
+  "beat_top12_4.09e-8|champion_0.0199": {
+   "N": 486552,
+   "wall_local_s": 11.57,
+   "speedup_needed_vs_budget": 4.25
+  },
+  "stretch_2.0e-8|plain": {
+   "N": 2030214,
+   "wall_local_s": 48.26,
+   "speedup_needed_vs_budget": 17.74
+  },
+  "stretch_2.0e-8|champion_0.0199": {
+   "N": 995000,
+   "wall_local_s": 23.65,
+   "speedup_needed_vs_budget": 8.7
+  }
+ },
+ "reading": "wall_local is on THIS machine; speedup_needed is the factor the grading hardware + native kernel must beat this numpy forward to fit the budget. A graded baseline submission is the only measure of grading throughput."
+}
