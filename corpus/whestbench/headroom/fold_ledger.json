@@ -1646,6 +1646,15 @@
       "primary_effect": -0.009325367,
       "ci_upper": -1.293822477e-09,
       "failures": 0
+    },
+    {
+      "id": "t2_fullcov_closure_standalone_estimator",
+      "mechanism": "Score the certified M179 exact zero-order full-covariance Gaussian closure as a standalone submission-style estimator: predict the depth-32 final-layer post-ReLU mean as mu_32 of the propagated (mu,V) recurrence, no sampling. Predeclared in T2_PREDECLARATION.md before code.",
+      "prediction": "Depth-32 bias-MSE lands between the reported oracle ceiling 8.76e-7 and the observed diagonal 7.175e-4; win boundary vs the L2 sampler is bias<2.102e-6 at floor 0.1 (analytically unreachable at floor 0.5).",
+      "kill_condition": "K1: bias_MSE >= 2.102e-6. K2: multiplier > 0.24 with adjusted >= 2.1020e-7. K3: MC noise floor not 5x below signal (verdict invalid).",
+      "bias_class": "Deliberately biased closure; descriptive response-free measurement on self-generated He-init networks; no public rows, no submission credit.",
+      "result": "KILLED at K1. Bias-MSE per seed 7.2600e-5 / 1.7860e-4 / 3.6968e-5 (mean 9.6055e-5), MC floor 1.1-2.0e-7 (200-1000x below signal, K3 clear) — 46x over the kill boundary at ANY floor, so wall time and vectorization are moot (T2b cancelled unbuilt). Contradicts the reported-level 8.76e-7 oracle-ceiling carry at the observed level; downstream ceilings built on it (incl. the 4.7e-8 k3/k4 arm) inherit the doubt. Preserved components: the M178/M179 exactness certificates (untouched), the MC-truth harness, and the papers sharpest honest figure (non-Gaussianity wall: 9.6e-5 full-cov vs 7.2e-4 diagonal vs 3.1e-7 sampling). Slot-2 hierarchy collapses to fold3-n100 then Kerdock. Artifacts: T2_REPORT.md, t2_results.json, run_t2_measurement.py.",
+      "status": "killed"
     }
   ]
 }
