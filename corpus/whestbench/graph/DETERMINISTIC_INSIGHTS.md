@@ -1,6 +1,6 @@
 # Deterministic graph analysis
 
-Nodes: 291; edges: 593; communities: 13.
+Nodes: 578; edges: 3461; communities: 10.
 
 The metrics describe topology, not truth. Edge confidence and the original reports remain authoritative. The community count on this page uses NetworkX greedy modularity; Graphify's separate cluster-only pass may legitimately return a different partition and count for the same nodes and edges.
 
@@ -8,103 +8,99 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 
 | node | status | betweenness | degree centrality |
 |---|---|---:|---:|
-| Winning legal adjusted score | target | 0.6194 | 0.2724 |
-| L-shaped failure frontier | derived_from_ledger | 0.1358 | 0.0310 |
-| Connected finite-width four-point vertex | proved+measured | 0.1192 | 0.0897 |
-| Even spherical residual degree >=6 | measured | 0.1045 | 0.0276 |
-| Trivariate rectified coefficient builder | reference_exact_deployment_killed | 0.0765 | 0.0310 |
-| M129 complete source Frechet tangent | repair_p2_only | 0.0729 | 0.0138 |
-| H1 equivariant learned residual closure | rejected | 0.0666 | 0.0379 |
-| Full-covariance Gaussian closure | rejected_parent | 0.0661 | 0.0207 |
-| M126 direct repeated-output source slices | repair_blocked_independent_component_pass | 0.0630 | 0.0241 |
-| M125b coalesced forward Gaussian tangent | passed_independent_math_cost_repaired | 0.0532 | 0.0276 |
+| Winning legal adjusted score | target | 0.3627 | 0.1421 |
+| approximation or materiality | descriptive_index | 0.0852 | 0.3640 |
+| arithmetic cost | descriptive_index | 0.0640 | 0.2929 |
+| Full-covariance sigma latent closure | rejected_component_preserved | 0.0564 | 0.0121 |
+| latent_full_sigma | killed | 0.0555 | 0.0243 |
+| Connected finite-width four-point vertex | proved+measured | 0.0545 | 0.0433 |
+| killed or closed | descriptive_index | 0.0495 | 0.2790 |
+| M118 separated trivariate collision vertex | killed_preexecution_cost_and_mask | 0.0455 | 0.0104 |
+| compression and low rank | descriptive_index | 0.0419 | 0.2392 |
+| Rank-four latent copula resummation | rejected_integrator_preserved | 0.0392 | 0.0121 |
 
 ## Highest-degree God nodes
 
 | node | status | degree | community |
 |---|---|---:|---:|
-| Winning legal adjusted score | target | 79 | 0 |
-| Latent-factor closure gate | expanded | 28 | 0 |
-| Connected finite-width four-point vertex | proved+measured | 26 | 1 |
-| Permutation + gauge + O(256) quotient | proved | 13 | 0 |
-| H1 equivariant learned residual closure | rejected | 11 | 1 |
-| Weight-identified latent-factor closure | rejected_fixed_rank_components_preserved | 11 | 0 |
-| M107 degree-4/6/8 exact-zero spherical controls | killed_empirically_all_four | 11 | 2 |
-| Physarum-attention MoE router | rejected_graph_preserved | 10 | 0 |
-| Complete-source influence-function variance wall | measured_generated_three_families | 10 | 4 |
-| Goal-oriented adjoint cumulant | rejected_component_preserved | 9 | 1 |
+| approximation or materiality | descriptive_index | 210 | 0 |
+| arithmetic cost | descriptive_index | 169 | 0 |
+| killed or closed | descriptive_index | 161 | 0 |
+| control and multifidelity | descriptive_index | 147 | 0 |
+| variance or signal to noise | descriptive_index | 145 | 0 |
+| compression and low rank | descriptive_index | 138 | 0 |
+| robustness and protocol | descriptive_index | 135 | 0 |
+| numerical or endpoint coverage | descriptive_index | 119 | 0 |
+| sampled network paths | descriptive_index | 116 | 0 |
+| harmonic and symmetry | descriptive_index | 113 | 0 |
 
 ## M107-M112 local mutation nodes
 
 | node | status | degree | community |
 |---|---|---:|---:|
-| M107 degree-4/6/8 exact-zero spherical controls | killed_empirically_all_four | 11 | 2 |
-| Spherical Gegenbauer exact-zero law | proved_preserved | 2 | 2 |
-| M107 held-covariance reversal | measured_all_four | 4 | 6 |
-| M108 scaled cymatic heat band | killed_preexecution_fourth_moment | 4 | 6 |
-| M108 centered cymatic band energy | killed_preexecution_fourth_moment | 3 | 6 |
-| Scaled-zonal fourth-moment wall | proved_no_network | 4 | 6 |
-| M109 fixed spherical nodal occupancy | killed_preexecution_static_math | 7 | 6 |
-| Corrected spherical nodal beta-law identity | proved_and_executed_in_m110 | 3 | 6 |
-| M109 centering and gauge failure | proved_static_preexecution | 3 | 6 |
-| M110 corrected bounded nodal occupancy | killed_empirically_all_four | 6 | 6 |
-| Broad even ReLU-nodal spectrum | proved_plus_computed | 3 | 6 |
-| M110 held nodal-phase reversal | measured_all_four | 4 | 6 |
-| Exact arcsine gate covariance | proved_candidate_atom | 3 | 2 |
+| M107 degree-4/6/8 exact-zero spherical controls | killed_empirically_all_four | 11 | 1 |
+| Spherical Gegenbauer exact-zero law | proved_preserved | 2 | 1 |
+| M107 held-covariance reversal | measured_all_four | 4 | 1 |
+| M108 scaled cymatic heat band | killed_preexecution_fourth_moment | 4 | 1 |
+| M108 centered cymatic band energy | killed_preexecution_fourth_moment | 3 | 1 |
+| Scaled-zonal fourth-moment wall | proved_no_network | 4 | 1 |
+| M109 fixed spherical nodal occupancy | killed_preexecution_static_math | 7 | 1 |
+| Corrected spherical nodal beta-law identity | proved_and_executed_in_m110 | 3 | 1 |
+| M109 centering and gauge failure | proved_static_preexecution | 3 | 1 |
+| M110 corrected bounded nodal occupancy | killed_empirically_all_four | 6 | 1 |
+| Broad even ReLU-nodal spectrum | proved_plus_computed | 3 | 7 |
+| M110 held nodal-phase reversal | measured_all_four | 4 | 1 |
+| Exact arcsine gate covariance | proved_candidate_atom | 3 | 1 |
 | Pairwise gate-phase interference | prospective_single_edge | 5 | 1 |
 | M111 coherent gate interferometer | killed_empirically_all_four | 9 | 1 |
 | M111 held gate-phase reversal | measured_all_four_independently_audited | 4 | 1 |
 | Connected output--two-gate tensor B | exactly_identified | 4 | 1 |
 | Hidden orthogonal-factorization fibre | proved_ensemble_preserving | 4 | 1 |
-| Deep missing-gate overlap suppression | derived_annealed_reference | 2 | 2 |
+| Deep missing-gate overlap suppression | derived_annealed_reference | 2 | 1 |
 | Factorization-aware layer-local gate energy | partially_realized_by_m112 | 2 | 1 |
-| Frame-connected gate-pair matrix C | proved_theory_screened | 3 | 2 |
-| Frame-visible projection of connected tensor B | measured_unstable_all_four | 3 | 6 |
-| M112 connected gate kernel | killed_empirically_all_four | 5 | 6 |
+| Frame-connected gate-pair matrix C | proved_theory_screened | 3 | 1 |
+| Frame-visible projection of connected tensor B | measured_unstable_all_four | 3 | 1 |
+| M112 connected gate kernel | killed_empirically_all_four | 6 | 1 |
 
 ## Articulation points
 
 - Winning legal adjusted score
-- Even spherical residual degree >=6
-- H1 equivariant learned residual closure
+- M118 separated trivariate collision vertex
+- 272B combined-budget law
 - M125b coalesced forward Gaussian tangent
-- M71 owned-buffer Kerdock challenger
-- Frame common/contrast error block
+- H1 equivariant learned residual closure
 - M110 corrected bounded nodal occupancy
 - Goal-oriented adjoint cumulant
 - H3 rank-5 k4 tensor sketch
-- Exact-control inference architecture
 - Broad even ReLU-nodal spectrum
-- M118 separated trivariate collision vertex
+- M198 Source211 delay-one semantic adapter
 - M159 homogeneity-normalized endpoint ABI
-- M192 cross-output frame GLS oracle
-- Symmetric pair-feature diagonal probe
-- M116b in-place streamed level-3 multiplication
-- Random 32,256 sampler
-- Labelled bounded-lifetime background/source ABI
-- Dyadic depth-memory features
-- Three-node Gaussian TT cross
+- M71 owned-buffer Kerdock challenger
 - Clean-room PLE flash sidecar
-- M142 primary-literature escape-hatch audit
+- Unnormalized signed-facet Feynman--Kac SMC
+- Symmetric pair-feature diagonal probe
+- Exact-control inference architecture
+- Three-node Gaussian TT cross
+- Final-row cumulant quotient regression
+- Random 32,256 sampler
+- M116b in-place streamed level-3 multiplication
+- Dyadic depth-memory features
 - M115 projective arc-cosine Nyström control
 - Herglotz cosine structure factor
 - H2 weight-conditioned blend coefficient
-- M170 dense oriented tensor-rank lower bound
 - Source-before-compression rule
-- M113 matrix-free connected Hermite vertex
-- Finite-horizon factorized k3
 - Phase-2 transformer legality
-- M119 Schur-Nystrom covariance adjoint
+- Finite-horizon factorized k3
+- M113 matrix-free connected Hermite vertex
 - M145 defensive angular-central-Gaussian transport
+- M119 Schur-Nystrom covariance adjoint
 - M121 bridge-source response interface
 - Effective trainable capacity
-- M165 connected-defect rank-face subtraction
 - Conditional rotation variance is not MSE
+- Even 1-to-2 harmonic coherence
 - M104 nested-Hermite final packet
 - M158 absolute endpoint ABI falsifier
-- M196 native B=1 provider gate
 - Shared-CP all-output covariance adjoint
-- Even 1-to-2 harmonic coherence
 - Terminal-Born incidence overlap
 
 ## Audited shortest paths to the target
@@ -224,5 +220,25 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 106. M192 exposes the largest cached oracle basin in the campaign: output-fold frame GLS reduces panel MSE by87.38 percent. The same result proves where the missing information lives, not how to obtain it legally at deployment.
 107. The one-matrix location-shift theorem makes the common/contrast cross block non-identifiable. M193, M194, M195, and M197 then close the tested truth-free anchor, independent-pilot, two-way, and three-way fixed-budget recoveries through anchor correlation, pilot SNR, and Kerdock fragmentation.
 108. M151 remains the highest-prior exact analytic branch because its forward B=1 carrier avoids the all-output adjoint, but M196 correctly remains blocked until a lawful noncubic provider and inclusive trace exist; no conditional moments may be fabricated.
-109. The second live moonshot changes sigma-algebra rather than weights: use final output rows as random projections of the shared penultimate cumulants, regress only in the certified physical quotient, and kill it unless it beats same-cost direct Monte Carlo on whole-network holdout.
+109. Final-row quotient regression is now closed: a pilot-estimated quotient RHS loses by700--2168x at equal paths, finite final rows do not identify the hidden directional mean, and held-output residual learning has negative median OOF R2.
 110. Padgett-style nested geometry contributes a disciplined phase/harmonic search language, not mystical evidence. The current late-phase surrogate is killed; only exact centering and predeclared spherical-harmonic operators survive as reusable atoms.
+111. The automatic ledger layer now covers all223 entries, but its category edges are a descriptive search index. Mathematical closure still comes only from the hand-audited reports and exact falsifiers.
+112. M203 closes the standard M170 escape: the best exact two-rectangle depth5 Winograd fusion still costs10.543779520B including idealized projection. Only an explicit nonstandard simultaneous bilinear decomposition could reopen it.
+113. A mere union of M154/M168/M173/M178/M179 is not an all-PSD atlas. The first uncovered interior theorem is a full-rank trivariate Source211Jet; nontransverse and zero-marginal boundary charts remain separate work.
+114. M198 resolves the old Source211 shape-cast objection: the labelled pre-ReLU Gaussian context plus the delay-one fourth-order response now maps into an independently checked M125b TangentState. This is semantic closure only, not coefficient production.
+115. M202 closes the current coarea-SMC hedge: signed/absolute mass can approach zero, nested raw gates double-count output facets, and zero plateaux violate a naive Palm density. The exact signed identity survives without a particle law.
+116. DPReLU, SignReLU, data-dependent initialization, and ReLU distillation change the fixed target or require labels. The precision-neuron theorem likewise blocks uncharged high-precision packing; none supplies a new estimator observable.
+117. M178 and M179 close the historical M176/M177 bivariate-runtime and BackgroundArchive dependencies: the pair primitive is certified at4048 charged FLOPs and the full archive at8.30B. The failure frontier has moved downstream into physical fourth-order source production.
+118. M198 passes11 semantic tests and an independent100-dps directional fourth-derivative oracle to9.23e-15, but a same-process Python receipt is not hostile authority. Hash registries are integrity conventions, and the physical source must still be bound to the same archived layer.
+119. The strongest surviving analytic chain is now M178 -> M179 -> M205 physical owners -> M198 -> M125b. M205 proves only a structured control algebra; its first unearned edge is a live K4,K31,K22,C211 provider and complete caller-replacement trace.
+120. M199 rejects both naive cost stories: adding standalone M125b double-counts work already inside M151, while replacing the full legacy background by M179 lacks a32-to31-layer call/lifetime proof. The strict partial is98.013128528B; the path is blocked on one streaming native overlap trace before source or efficacy work.
+121. M200 passes that streaming semantic/liveness child on48 of48 generated cells with3.55e-15 strict parity and zero impulse error. It closes fixture-layer laundering and archive-retention hazards, but it deliberately leaves physical Source211 production, normalized native cost, variance, and MSE unearned.
+122. Exact-control structure does not unlock the M192 oracle cross block. Without an exact whole-target mean, it only supplies another anchor a(W), retaining the M193 E[Pe(mu-a)] contamination; an independent sensor reduces to the M194 pilot SNR/cost boundary.
+123. The Terra unresolved-cross audit plus post-M200 folds map all58 current open, preserved, blocked, and screened atlas nodes exactly once. No independent harmonic, biological-routing, attention, quotient, endpoint, or sampling hybrid survives; M205's physical collision provider remains the first god edge.
+124. M201 kills generic exact contraction-before-enumeration by repeated-label collapse: a width3 legal aaab action has determinant116640, so every repeated label retains an independent conditional channel.
+125. M204 is real but narrower: a rank-one two-node Rademacher control turns the complete-domain source into one square contraction. It is a synthetic add-subtract control built from diag(V), not a recovery of M179's full covariance.
+126. M206 kills M204's apparent free reuse. The lifted source and strict M151 differ on collision rows, equal B can require different collision statistics, and raw B plus u-transpose-W already exceeds strict headroom before omitted work.
+127. M205 repairs the owner boundary rather than the loading: K4,K31,K22,C211 physical cells reconstruct exactly to5.26e-13, but their live coefficients and native cost are absent. No variance gate is authorized.
+128. M207 repairs only the all-zero-covariance face with the exact zero control and bitwise interior delegation. Boundary totality does not repair M204's killed replacement premise or M205's provider gap.
+129. M202's smallest signed-facet witness and M203's strongest standard terminal fusion turn two speculative moonshots into scoped no-gos while preserving the coarea identity and the exact two-rectangle algebra as reusable tissue.
+130. After all pass/fail/uncertain folds, the live choice is binary: ship guarded Kerdock v3.1, or first prove a physical M205 provider plus complete native caller replacement under1.986871472B before touching source variance. There is no honest intermediate score claim.
