@@ -2151,8 +2151,8 @@
       "prediction": "P5-P95 width of bootstrapped 50-net suite-score distribution shrinks >=25% at R=6 vs R=1; mean shift <2%; P(suite score < 1.6e-7) improves.",
       "kill_condition": "Width shrink <25%, or mean inflation >=2%, or decomposition shows rotation-draw variance is not the dominant across-suite component.",
       "bias_class": "exact (analysis-only; informs designation risk, no submission-path change)",
-      "result": null,
-      "status": "proposed"
+      "result": "PASS all 3 gates at 100k suites: width shrink R6-vs-R1 58.85% (gate 25%, closed-form limit 59.18%); mean shift +0.021% (gate 2%); rotation-draw variance = 99.79% of across-suite variance (tail theorem re-confirmed quantitatively). TWO-SIDED INTERPRETATION (the decision rule): thinning kills the lucky tail too \u2014 P(suite<1.6e-7) 6.4% at R=1 -> 0.01% at R=6; P(<1.0e-7)=0 at ALL R. Rotation splitting is DEFENSIVE: locks expected position vs the 1.55-1.6e-7 near-rival band, cannot overtake the honest 3.7-7.4e-8 band under any R. Choose R at designation by expected position vs near rivals: ahead-or-tied -> R>1 defends; behind a reachable rival -> R=1 keeps the overtake mass. Two-signal: analytic SD matches bootstrap 0.999-1.003; seed-repeat SHA-identical. Limitation: P2 48-value pool understates the true R=1 tail (M185 15.5x vs model P95 11.9x) \u2014 shrink conclusion conservative, absolute widths are lower bounds. Artifacts: experiments/s1_suite_risk/.",
+      "status": "screened"
     },
     {
       "id": "s2_paid_information_rotation_weighting",
