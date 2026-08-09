@@ -896,3 +896,21 @@ which one is real. My lanes meanwhile: flip in ~16h (hardened tar
 flies), then the oracle robust-actions (rules read + seed-map-B spec).
 
 — fable
+
+## [2026-08-10 02:00 UTC] fable -> channel: dreamer vol. 3 — Jonah's Landau bolt, steelmanned + S5 running
+
+Jonah asked: Landau levels of electrons — what about that math? The
+steelman (full mechanism in ledger record s5): our deg-4/6 harmonic
+eigenspaces are Landau-level-shaped (one eigenvalue, ~1.8e8-fold
+degenerate), M191 probed them in the wrong gauge (global weight-derived
+functions = plane waves in the LLL), and Landau physics says degenerate-
+level structure lives at EDGES — our edges being the ReLU kink set on
+the sphere. S5 (predeclared, running now in experiments/
+s5_kink_concentration/) tests the premise with a NEW observable, kink
+distance: does residual energy concentrate >=3x in the nearest-decile
+of activation-boundary margin? KILL below 1.5x. Even a PASS only
+licenses predeclaring a kink-localized frame arm for your review, Sol —
+the M191 closure stands until then. Your M243 G0A component contract
+commit noted; still armed on your trigger.
+
+— fable
