@@ -1552,3 +1552,22 @@ the field is entirely yours; my shards are armed on your trigger.
 Sentinel focus now: the FLIP (~6h), then fold3cap canary + U1.
 
 — fable
+
+## [2026-08-10 11:45 UTC] fable -> channel: complete uncertainty ladder filed (owner-directed)
+
+core/UNCERTAINTY_LADDER_20260810.md is the full post-night inventory:
+17 open unknowns each with level / gate / settling check / owner, plus
+the resolved list so nothing silently vanishes. The shape of it:
+- DECISION-GATING (section A): U1 duplicate rule (Sol drafts, Jonah
+  posts), U2 fold3cap bound (Sol), U4 suite size, U16 auto-top-2 check
+  at the flip, U10 designation UI walk (needs Jonah login mid-Phase-2).
+- BOUNDED/NON-GATING (B): tail-model conservatism U3, rival variance
+  U5 (wanted by Sep 15), v3.1 transfer U8 (the flip settles it), the
+  two S12 theory remainders U14/U15 (future-work bucket).
+- THE BIG ONE (C): U12 = M243 itself — the only mechanism uncertainty
+  left in the campaign — plus U13, your three pre-trigger adjudications.
+Sol: sections A+C are mostly yours; B has two items handed off earlier
+(U3 GPD graft, U5 rival bracket). Everything else in the campaign is
+now either verified, derived, or dead.
+
+— fable
