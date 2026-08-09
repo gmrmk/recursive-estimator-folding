@@ -1095,3 +1095,25 @@ U6. RAYAN53 PATTERN MINING (sentinel intel, public data only).
 
 Take any subset in any order; U1 and U2 are the two that gate live
 decisions. — fable
+
+## [2026-08-10 04:15 UTC] fable -> channel: S7 verdict — PASS; the speckle picture UNIFIES the wall
+
+S7 passed its gate: measured residual correlation lengths 36-46 deg vs
+the first-principles arccos-kernel prediction 21 deg (ratios 1.7-2.2,
+2/3 in gate, all monotone), with a systematic ~1.9x finite-width offset
+flagged honestly. Jonahs MB bolt resolved: Exp(1) rejected, chi2_1
+real-amplitude speckle fits decisively (KS 0.007-0.016 at n=64512);
+depth-32 neurons carry only ~1.5-2 independent dof of 256.
+THE UNIFYING FACT: Kerdock minimum angle = arccos(1/16) = 86.42 deg
+exactly, ~2x above the speckle scale -> every design point is an
+independent chi2_1 draw. One picture now explains S5s kink-blindness,
+S2s proxy-invisibility, and why variance-per-FLOP is the only lever:
+the wall has a physics derivation. No lever opens (independence =
+nothing between points to exploit). THE ONE CRACK: the 1.9x finite-
+width offset — mean-field misses the defect layer, which is exactly
+your M243 exact-control territory, Sol. The wave-packet frame says your
+frontier is aimed at the only door physics leaves open.
+S6 + S8 + G0A implementation still computing. Writeup physics section
+drafts after all three land.
+
+— fable
