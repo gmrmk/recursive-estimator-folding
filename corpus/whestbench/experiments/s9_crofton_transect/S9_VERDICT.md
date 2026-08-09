@@ -165,4 +165,84 @@ Produced by this runner:
 - `s9_results.json` — all numbers cited above.
 - `S9_VERDICT.md` — this document.
 
-Not produced by this runner (see Deviation 5; left untouched): `s9_core.py`, `s9_crosscheck.py`, `s9_crosscheck.json`, `_prof.py`, `_prof2.py`, `_test_analytic.py`.
+Not produced by this runner (see Deviation 5; left untouched): `s9_core.py`, `s9_crosscheck.py`, `s9_crosscheck.json`.
+
+---
+
+## 7. Independent verification addendum (second-signal runner)
+
+Sections 1–6 were authored by a concurrent runner from `run_s9.py`/`s9_results.json`. This
+addendum is written by the independent verification runner that produced `s9_core.py`,
+`s9_crosscheck.py`, `s9_crosscheck.json`, `s9_stageA20.py`, `s9_stageA20.json`. It uses a
+**different** unbiased transect estimator and exact per-sample gradients (mask products), so
+every agreement below is a genuine second signal, not a re-run of the same code. It also
+supplies the two things the task asked for that §1–6 do not cover: a **20+ net** Stage-A leg
+and the **first-layer-only vs deeper-layer** decomposition. All conclusions match §1–6.
+
+**Two estimators, same target.** The neuron-average output f = w̄·z^{(L−1)} equals a scalar
+bias-free ReLU net with W_L = w̄, so the independent scalar-output engine evaluates the identical
+f on the identical nets. The independent estimator is the **slope-jump / factor-d** form
+(derived from 1D-Stein along the transect):
+
+  E[f] = d · E_{u, x_⊥} [ Σ_k Δβ_k · φ₁(t_k) ],  Δβ_k = jump in df/dt at crossing k = c_k (a_k·u),
+
+whereas §1.5 uses the Crofton **κ_d⁻¹ · Σ_k φ₁(t_k) c_k‖a_k‖** form. Both are unbiased; agreement of
+the two structurally distinct weightings with high-precision MC is the strong check.
+
+### 7.1 Euler leg, machine-exact, on 20+ nets (task "20+ random nets")
+Independent exact gradient ∇f = W₁ᵀD₁…W_{L−1}ᵀD_{L−1}W_Lᵀ. Per-sample Euler residual
+max|x·∇f − f|:
+- depth-1 closed form and the 3 predeclared seeds: **1.1e-15**;
+- **20 fresh random nets** (width 16, depth 4): **8.88e-15**.
+So the per-sample identity x·∇f = f (hence E[f] = E[x·∇f]) holds to float64 on 20+ nets.
+
+### 7.2 Surface form on 20 fresh nets (identity, three ways)
+For each of 20 fresh nets: high-precision MC vs the independent transect. Pooled standardized
+gap z = (transect − MC)/SE_diff: **mean −0.25, sd 0.92, max|z| 2.75, 20/20 within 3σ** — the
+z-distribution is consistent with N(0,1), i.e. the surface estimator is unbiased for E[f] across
+20 random nets (`s9_stageA20.json`). On the 3 predeclared seeds (101/202/303) the independent
+transect agrees with MC at z = +0.47 / +0.29 / −1.84, and its MC means match the §3.3 MC means at
+z = 1.24 / 0.02 / 0.23. Depth-1 closed form ‖w‖/√(2π) matched at z = 0.56 (0.3%).
+
+### 7.3 What closed vs what did NOT — first-layer-only vs deeper layers
+This is the task's explicit "report which" question and is answered by decomposing the transect
+sum by the layer of the flipping neuron (each crossing tagged; per-layer sums add to the total).
+
+- **FULL multi-layer surface integral CLOSES the identity** — VERIFIED. Both harnesses enumerate
+  crossings at every layer l = 1…L−1; the transect≈MC agreement above holds only because all layers
+  are summed.
+- **First-layer-only does NOT close** — deeper-layer kink surfaces are required, and they dominate.
+  Per-net fraction of E[f] carried by layer-1 (first hidden) kinks alone:
+  - predeclared seeds 202 / 303: layer fractions [L1,L2,L3] = [0.49, 0.13, 0.38] / [0.17, 0.29, 0.54]
+    (sum = 1); first-layer share 0.17–0.49.
+  - 20-fresh-net mean over non-degenerate nets (|E[f]|>0.05): [L1,L2,L3] = [−0.54, 0.45, 1.09]
+    (sum = 1). Individual layer contributions carry either sign and are high-variance net-to-net
+    (layer-1 share ranges ≈ [−5, +1.6]); the robust, harness-independent conclusion is that the
+    **layer-1 sub-sum is nowhere near E[f]** and the deeper layers carry the majority.
+
+  Consistency with theory: for a single ReLU unit c·σ(w·x) the first-layer surface term is exactly
+  c‖w‖/√(2π) and there are no deeper layers, so first-layer-only closes at depth 1 (verified at
+  machine precision, §3.1 and 7.2). At depth ≥ 2 the deeper facets {h⁽ˡ⁾_j = 0}, l ≥ 2, are
+  piecewise-hyperplanar surfaces carrying their own jumps J = c‖a‖; omitting them breaks the
+  identity, as measured.
+
+### 7.4 Stage B, independent variance-per-FLOP
+Independent slope-jump transect vs plain MC and radial-antipodal MC (width 64, depth 8, predeclared
+seeds 404/505/606), FLOP model 3·(#kinks)·F_fwd per line:
+- ratio transect / plain-MC ≈ **3.4e4–4.2e4×**; ratio transect / radial-antipodal-MC ≈ **4.0e4–4.9e4×**.
+These sit ~3.7× below §4's 1.77e5× (a cost-accounting difference: leaner per-kink FLOP model here vs
+the §2 madd meter), on the **same side of the 100× KILL gate by ≥ 340×**. Independent verdict: **KILL**,
+matching §4.
+
+### 7.5 Addendum verdict
+Stage A **IDENTITY VERIFIED** (Euler machine-exact on 20+ nets; surface/transect form unbiased,
+confirmed by two structurally distinct estimators against MC on 20 fresh + 3 predeclared nets;
+enumeration + jump algebra machine-exact per §3.2). Full multi-layer surface closes; first-layer-only
+does not (deeper layers required and dominant). Stage B **KILL** (variance-per-FLOP 4e4–1.8e5× worse
+than MC, ≥ 340× beyond the 100× kill line by both accountings). No gate softened; no retuning past the
+failed Stage-B gate.
+
+Independent files: `s9_core.py` (net + exact gradient + slope-jump transect engine),
+`s9_crosscheck.py` / `s9_crosscheck.json` (reproduction on predeclared nets),
+`s9_stageA20.py` / `s9_stageA20.json` (20-net Stage-A leg + per-layer decomposition). Scratch
+profiling files noted in Deviation 5 were removed.
