@@ -2243,6 +2243,15 @@
       "bias_class": "exact (arithmetic on committed measurements; no estimator run)",
       "result": null,
       "status": "proposed"
+    },
+    {
+      "id": "s12_finite_width_kernel_capstone",
+      "mechanism": "Writeup capstone (NON-CANDIDATE, per the joint verdict; owner-triggered: refine our kernel): derive the FINITE-WIDTH-corrected correlation kernel and test it against the S7/S8 measurements. Two derivations: (a) the Jakub-Nica finite-width angle flow (arXiv:2302.09712: ln sin^2 theta evolves with a -(2/(3pi))theta drift + rho(n)=2/n term) iterated 32 layers -> predicted angular correlation curve + the implied per-layer perturbation transmission; (b) the D/n kernel-fluctuation route (Yaida/Hanin: leading 1/n cumulant corrections to the ReLU NNGP recursion) -> predicted correlation-length inflation factor. Numerical check against committed data: S7 measured C_r(theta) tables + xi 36-46 deg (infinite-width predicts 21) and S8 transmission 0.869-0.879.",
+      "prediction": "(a) the finite-width flow lands the correlation curve within the S7 bootstrap CIs at >=5 of 7 measured angles on >=2/3 nets and implies a transmission in [0.83, 0.91]; (b) the D/n route predicts xi inflation in [1.5, 2.4].",
+      "kill_condition": "Both routes miss (curve outside CIs at most angles AND inflation outside [1.3, 3]) -> the finite-width theory does not explain our laws; they stay empirical in the writeup (stated honestly). Analysis-only either way; no estimator implication.",
+      "bias_class": "exact (derivation + comparison to committed measurements)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
