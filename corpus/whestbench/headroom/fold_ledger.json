@@ -2241,8 +2241,8 @@
       "prediction": "UNCERTAIN, likely re-kill: deg-6 (40% of iid) dominates deg-4 (11%), so removing deg-4 removes the smaller structured component; the MSE reduction may not clear 2.33%. If it DOES clear (measured), the memory-margin question (M81 ground a) returns as an implementation gate for Sol.",
       "kill_condition": "Measured fractional MSE reduction from deg-4->0 < 2.33% -> S11 re-KILLED on the M81 break-even, now WITH measurement (the design-strength gain is real but adjusted-negative). Only a measured reduction > ~3% (margin over break-even) advances to the memory/parity/hosted gates M81 named.",
       "bias_class": "exact (arithmetic on committed measurements; no estimator run)",
-      "result": null,
-      "status": "proposed"
+      "result": "RE-KILLED on the M81 break-even, NOW MEASURED \u2014 with the methodological catch of the night: raw completion-vs-126 MSE reduction = +3.42% (naively BEATS the 2.326% break-even), but a matched-point random-frame CONTROL (+1536 generic points, deg-4 not zeroed) = +3.25% \u2014 the raw gain is almost entirely generic more-samples averaging, exactly what the point-count cost offsets. Degree-4 exactness ISOLATED (completion vs control at equal 66,048 points): +0.176%, CI [0.970, 1.028], P(ratio<1)=0.54 \u2014 indistinguishable from zero, 13x under break-even. Committed proxies corroborate (m191 cv_deg4 +0.42%, R2 ~0.2%). Design math verified exactly: the 129-completion IS an exact 5-design (every line 4th-moment sum = 1.5 = Welch bound with equality; 126-set at 1.48828). Regime confirmed metered (C/B=0.650). M81 memory ground (1.752 vs 1.445 MiB) STILL APPLIES unchanged \u2014 dead on both edges; the MLA/latent-compression contingency note dies with it. Two-signal: bitwise m181-arm0 reproduction; two rotation families; closed-form-vs-numerical Welch certificate. Nothing flagged to build. Artifacts: experiments/s11_full129_breakeven/.",
+      "status": "killed"
     },
     {
       "id": "s12_finite_width_kernel_capstone",

@@ -1,0 +1,167 @@
+{
+  "ledger_id": "s11_full129_reopen_measured_breakeven",
+  "date": "2026-08-09",
+  "reopen_of": "m81_full129_pareto",
+  "one_line_verdict": "RE-KILLED on the M81 break-even (now MEASURED): the degree-4-exactness-attributable champion-MSE reduction is <= 0.18% (completion vs point-count-matched control, UPPER bound), an order of magnitude below the 2.326% break-even; corroborated by committed m191 cv_deg4 (+0.42%) and R^2_deg4 (~0.2%). The raw completion-vs-126 reduction (+3.42%) is dominated by generic more-samples averaging (control +3.25%), not degree-4.",
+  "break_even": {
+    "adjusted_score": "S = MSE * max(0.1, C/B); C proportional to point count",
+    "cost_ratio_C129_over_C126": 1.0238095238095237,
+    "mse_ratio_breakeven_bar": 0.9767441860465116,
+    "required_mse_drop_pct": 2.3255813953488413,
+    "regime_check": {
+      "hosted_326094_adjusted": 1.832e-07,
+      "hosted_326094_mse": 2.818e-07,
+      "cb_implied": 0.6501064584811923,
+      "conclusion": "C/B = 0.6501 > 0.1 floor => METERED regime => the proportional break-even 2.32558% applies (NOT the floored 0.1 regime)."
+    }
+  },
+  "design_verification": {
+    "method": "verify_design.py exact 4th-moment (Welch) identity, unit dirs",
+    "frame129_per_line_sum4": 1.5,
+    "welch_target_3_over_d_d2": 4.5421511627906976e-05,
+    "frame129_phi4_over_welch": 1.0,
+    "frame126_per_line_sum4": 1.48828125,
+    "frame126_phi4_over_welch": 1.015811,
+    "control_union_phi4_over_welch": 1.55362,
+    "conclusion": "129-frame completion (phased-Hadamard idx 0,1 + standard basis) is an EXACT spherical 5-design: deg-4 error == 0. 126-frame and the random-control union are NOT 5-designs."
+  },
+  "committed_data": {
+    "sufficiency": "INSUFFICIENT to pin the deg-4 SHARE from arithmetic alone: S6 gives the design's per-degree ERROR operator and m191-g0a the per-degree error LEVELS (deg4 rms/iid=0.107, deg6=0.40), but neither pins the champion ESTIMAND's per-degree ENERGY E_l required for share = E_4 D_4 / sum_l E_l D_l. Hence the direct measurement.",
+    "proxy_m191_cv_deg4_reduction": 0.0042,
+    "proxy_m191_r2_deg4": [
+      0.0018,
+      0.00232
+    ],
+    "proxy_note": "m191 cv_deg4 removed 0.42% of champion MSE by a direct degree-4 control variate on the 126 design (aligned/removable share, 12-dir basis); R^2_deg4 0.18-0.23%. Both independent of S11's direct measurement and both << 2.33%."
+  },
+  "direct_measurement": {
+    "config": {
+      "nets": [
+        101,
+        202,
+        303
+      ],
+      "reps_per_net": 64,
+      "families": [
+        "matched 900000+net*1000+rep",
+        "reseed 314159+net*1000+rep"
+      ],
+      "estimator": "champion plain final-layer antipodal ReLU mean",
+      "truth": "m181_truth 3.5M iid MC, noise subtracted",
+      "bootstrap_draws": 20000
+    },
+    "signal1_bitwise_fhat126_vs_m181_arm0": {
+      "note": "all nets max|diff|=0.0 on the matched-seed reps (from run_s11.py)"
+    },
+    "raw_completion_vs_126": {
+      "panel_ratio": 0.9658071388257757,
+      "reduction_pct": 3.4192861174224265,
+      "bootstrap_ci95_ratio": [
+        0.9443161734403289,
+        0.9867497543838649
+      ],
+      "prob_ratio_below_1": 0.99935,
+      "adjusted_score_ratio": 0.988802546893056,
+      "per_net": [
+        {
+          "net_seed": 101,
+          "mse_f126": 2.231997430813662e-07,
+          "mse_f129": 2.1428698073516578e-07,
+          "ratio": 0.9600682230940054,
+          "reduction_pct": 3.9931776905994587
+        },
+        {
+          "net_seed": 202,
+          "mse_f126": 5.081422772655948e-07,
+          "mse_f129": 4.933583293163772e-07,
+          "ratio": 0.9709058887428681,
+          "reduction_pct": 2.9094111257131905
+        },
+        {
+          "net_seed": 303,
+          "mse_f126": 2.7397940386552106e-07,
+          "mse_f129": 2.647950848223922e-07,
+          "ratio": 0.9664780676446876,
+          "reduction_pct": 3.3521932355312423
+        }
+      ],
+      "caveat": "CONFOUNDED: includes the more-samples averaging benefit; CI includes the 2.326% break-even. NOT the degree-4 share."
+    },
+    "control_random3frames_vs_126": {
+      "panel_ratio": 0.9675098153969259,
+      "reduction_pct": 3.249018460307407,
+      "bootstrap_ci95_ratio": [
+        0.9465353586756167,
+        0.9891496280504182
+      ],
+      "adjusted_score_ratio": 0.990545763382567,
+      "per_net": [
+        {
+          "net_seed": 101,
+          "mse_f126": 2.231997430813662e-07,
+          "mse_fctrl": 2.1566376221632578e-07,
+          "ratio": 0.9662366060058895,
+          "reduction_pct": 3.3763393994110547
+        },
+        {
+          "net_seed": 202,
+          "mse_f126": 5.081422772655948e-07,
+          "mse_fctrl": 4.841890148852145e-07,
+          "ratio": 0.9528611110469352,
+          "reduction_pct": 4.713888895306484
+        },
+        {
+          "net_seed": 303,
+          "mse_f126": 2.7397940386552106e-07,
+          "mse_fctrl": 2.695075685871457e-07,
+          "ratio": 0.9836782064079157,
+          "reduction_pct": 1.63217935920843
+        }
+      ],
+      "interpretation": "pure more-samples benefit of +1536 generic points (deg-4 NOT zeroed, in fact inflated). ~equals the completion's raw reduction => the raw reduction is not from degree-4."
+    },
+    "degree4_isolated_completion_vs_control": {
+      "panel_ratio": 0.9982401454289622,
+      "reduction_pct": 0.17598545710377778,
+      "bootstrap_ci95_ratio": [
+        0.9694766007615826,
+        1.0280108941215083
+      ],
+      "prob_ratio_below_1": 0.5442,
+      "per_net": [
+        {
+          "net_seed": 101,
+          "mse_fctrl": 2.1566376221632578e-07,
+          "mse_f129": 2.1428698073516578e-07,
+          "ratio": 0.9936160740821214,
+          "reduction_pct": 0.6383925917878619
+        },
+        {
+          "net_seed": 202,
+          "mse_fctrl": 4.841890148852145e-07,
+          "mse_f129": 4.933583293163772e-07,
+          "ratio": 1.0189374689414143,
+          "reduction_pct": -1.8937468941414348
+        },
+        {
+          "net_seed": 303,
+          "mse_fctrl": 2.695075685871457e-07,
+          "mse_f129": 2.647950848223922e-07,
+          "ratio": 0.9825144659593124,
+          "reduction_pct": 1.7485534040687645
+        }
+      ],
+      "interpretation": "point-count-matched (both 66048): the ONLY difference is degree-4 exactness. This is the measured degree-4 share (an UPPER bound, since the control's own deg-4 error is inflated vs the 126 set). This is the S11 gate quantity."
+    },
+    "per_family_completion_ratio": {
+      "primary": 0.9497850768433372,
+      "reseed": 0.9827615926423092,
+      "note": "signal-2 independent-reseed agreement on the raw comparison"
+    }
+  },
+  "gate_quantity_degree4_isolated_reduction_pct": 0.17598545710377778,
+  "gate": "RE-KILLED (below 2.33% break-even)",
+  "two_signal_verification": "Signal A: direct point-count-matched completion-vs-control measurement => degree-4 reduction 0.18% (<= this; upper bound). Signal B (independent, committed): m191 cv_deg4 direct degree-4 control variate on the 126 design => 0.42%; R^2_deg4 ~0.2%. Both << 2.33%. Additional: fhat_126 reproduces cached m181 arm0 bitwise; two independent rotation families agree on the raw comparison.",
+  "memory_ground_status": "M81's memory-margin kill STILL APPLIES and is UNTOUCHED by S11. M81 had two kill edges: (1) unmeasured variance value -- now measured here and it FAILS the break-even; (2) min persistent increment 1.75195 MiB vs M71 frozen margin 1.44531 MiB, crossing the 480 MiB safety gate. Even had the variance value passed, edge (2) remained a separate blocker for Sol.",
+  "firewall": "synthetic He nets only; kerdock_phases.npz + m181 caches read-only; frozen sources imported unmodified; writes confined to s11_full129_breakeven; plain numpy; no dataset/scorer/submission; no git"
+}
