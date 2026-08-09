@@ -2169,6 +2169,15 @@
       "prediction": "G0a: our package derives rotation seeds internally (as the v3 source suggests) -> coupling is implementable. G0b: coupled ensembles reduce suite-mean variance measurably (>=10%) vs independent draws.",
       "kill_condition": "G0a: grader forces per-net independent seeding outside our control -> dead at predeclaration. G0b: variance reduction <10% or any per-net marginal distortion detected.",
       "bias_class": "exact per-net marginals (coupling only touches the joint law)",
+      "result": "G0a legality PASS (durable, reusable): rotation derived entirely in participant code (kerdock_v3_estimator.py:149 rotation = self._haar_rotation(int(mlp.seed), mlp.width); grader passes only (mlp, budget); run-level ctx.seed rooting permitted per pinned SDK) \u2014 any rotation-count/seeding variant is implementable in-package, with constraints recorded (mlp.seed-keyed slots for replay safety). G0b effect KILL: block-orthogonal coupling suite-mean-error variance ratio 0.9557 (95% CI [0.876, 1.043] \u2014 spans null) = 4.4% vs the 10% gate; antithetic (R,-R) ratio 1.0028 (pure null). 12 nets w64/d8, 200k-sample truth, 2000 ensembles/arm, exact Haar marginals verified 12/12. Reinforcement: hosted suite aggregates per-MLP SQUARED losses \u2014 the tested signed-mean coupling channel is an upper bound, real-metric gain smaller still. Cross-checks: cov-decomposition matches direct to 6.8e-21; bitwise seed-replay; second MC truth stream. One harness bugfix logged pre-verdict, no statistic changed. Artifacts: experiments/s3_coupled_rotations/.",
+      "status": "killed"
+    },
+    {
+      "id": "s4_designation_portfolio_bootstrap",
+      "mechanism": "Seed-4 falsifier (portfolio theory -> designation): TWO nomination slots = a portfolio; P(at least one designated entry beats a rival threshold) depends on the correlation between the two entries suite-score distributions, not only their means. Same-family pairs (v3.1 + L2: both single-rotation Kerdock-lineage samplers) share rotation-draw randomness structure (high score correlation); cross-family pairs (v3.1 + fold3cap-style capped-bill profile, or v3.1-R1 + v3.1-R6 variant) decorrelate. Extend the S1 bootstrap to JOINT two-candidate 50-net suites with a correlation dial rho_pair in {0.0, 0.3, 0.6, 0.9, 1.0} and candidate mean offsets reflecting the measured candidates (v3.1 1.83e-7; L2 2.10e-7 local-basis; fold3cap 1.41e-7 5-net evidence used ONLY as a sensitivity arm, labeled).",
+      "prediction": "P(at least one suite score < T) for T in {1.55e-7, 1.6e-7, 1.7e-7} improves by >=2 percentage points absolute for low-rho pairs vs rho=1 pairs at equal means; the gain grows when the second candidate has higher variance.",
+      "kill_condition": "Diversification gain < 2 points absolute at EVERY threshold and every mean-offset arm -> designate on pure means, portfolio frame dead.",
+      "bias_class": "exact (analysis-only decision input; no estimator or submission-path change)",
       "result": null,
       "status": "proposed"
     }
