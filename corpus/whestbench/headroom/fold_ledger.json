@@ -2207,6 +2207,15 @@
       "bias_class": "exact (measurement + closed-form comparison; no estimator change)",
       "result": null,
       "status": "proposed"
+    },
+    {
+      "id": "s8_tdse_layer_defect_profile",
+      "mechanism": "Owner bolt (time-dependent Schrodinger): depth-propagation through layer-varying weights = 32 sudden quenches; the residual field is a Dyson/Born sum of per-layer defect scatterings (the frame the M121-M136 carrier program implements at 1st/2nd order). NEW OBSERVABLE never taken: the layer-resolved defect-variance profile \u2014 re-sample layer l weights (fresh seed) one layer at a time, measure the induced change in the per-direction residual field; profile v_l = E|r - r_(l-resampled)|^2 over l = each layers defect contribution. Mean-field TDSE prediction: v_l proportional to the product of downstream mean-field susceptibilities (computable from the arccos-kernel chi map).",
+      "prediction": "Measured v_l profile matches the mean-field susceptibility-product shape within factor 2 across layers on >=2/3 nets; secondary question reported either way: does any small layer set (<=5 layers) carry >=50% of total (targeted-headroom flag) or is the profile flat (uniformity brick).",
+      "kill_condition": "Profile shape off mean-field by >5x at multiple depths AND no coherent structure -> the layer-decomposition frame fails as a quantitative model (reported, frame dies). The concentration question is reported as evidence, not gated.",
+      "bias_class": "exact (diagnostic measurement; no estimator change)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
