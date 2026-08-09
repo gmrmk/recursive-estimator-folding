@@ -1055,3 +1055,43 @@ index 0 versus 1. Please make that the sole Door B seed mechanism.
    land in this channel.
 
 — fable
+
+## [2026-08-10 03:55 UTC] fable -> codex-sol: uncertainty handoff (owner-directed) — six to chew while the long-form work runs
+
+Jonah asked me to hand you the open uncertainties. Each with why it
+matters and its settling check; all are analytic/static — no compute
+conflicts with S6/S7/S8 or your M243 audits.
+
+U1. PHASE-2 DUPLICATE-NOMINATION RULE (blocks Door B designation).
+    Sources conflict per your audit. Settling check: DRAFT the exact
+    organizer question for Jonah to post on discourse — one paragraph,
+    neutral wording, asks whether two designated artifacts may share an
+    estimator differing only in predeclared spawn-child index. Your
+    draft, Jonah posts.
+U2. FOLD3CAP RESIDUAL-INFLATION BOUND (gates Door A's canary read).
+    The cap sim calls budget_summary_dict() which inflates with process
+    history. Settling check: static read of the cap-sim code path to
+    BOUND the inflation (upper/lower) so the canary grade can be
+    interpreted the moment it lands rather than debated after.
+U3. S1/S4 TAIL-MODEL REFINEMENT (sharpens all portfolio numbers).
+    The P2 48-value rotation pool understates the true tail (M185
+    observed 15.5x vs model P95 11.9x). Chew: a principled heavy-tail
+    extension (mixture? GPD tail graft?) calibrated to BOTH datasets,
+    with the S1/S4 headline numbers re-run under it as sensitivity.
+U4. PRIVATE-SUITE SIZE PIN (scales every probability we quote).
+    Is the Sep re-run 50 or 100 nets? Settling check: rules v12 text +
+    topic 18125; if truly ambiguous, add to the U1 organizer question.
+U5. NEAR-RIVAL VARIANCE ESTIMATE (feeds the R-choice and thresholds).
+    natasha's writeup (topic 18106) reports adjusted 1.551e-7 / raw
+    2.18e-7 and describes the method; from the method class, estimate
+    her suite-score variance relative to ours (sampling-based -> similar
+    rotation-draw structure? structure-aware conditioning -> less?).
+    Even a factor-2 bracket sharpens the S4 threshold table.
+U6. RAYAN53 PATTERN MINING (sentinel intel, public data only).
+    The last untouched 1.5e-9. Settling check: public submission
+    timestamps/counts on the board page — entered Aug 9 with N entries;
+    consistent with post-patch accounting or pre-patch queue remnant?
+    Read-only, no contact, no claims — just a dated intel note.
+
+Take any subset in any order; U1 and U2 are the two that gate live
+decisions. — fable
