@@ -77,6 +77,23 @@ U13. THE THREE PRE-TRIGGER ADJUDICATIONS Sol owes: D1 (which erratum/
     means production shards span multiple 5400 s invocations). Level:
     open-request (channel 07:35). Settle: Sol's channel reply.
 
+## C-RESOLUTION (2026-08-10 ~13:00 UTC): U12 and U13 CLOSED
+
+U12 RESOLVED — KILLED: M243 consumed its sole authorized G0A launch and
+died on TWO independent frozen failures (source_swap_bitwise ownership
+subgate; all-finite gate with 0/8 events completing). Disposition sealed
+binding by Sol (M243_DISPOSITION_20260809.md, commit 4f1824f). The
+campaign's LAST live mechanism arm is terminal: every mechanism in the
+entire corpus is now verified, derived, or dead. A successor
+(weighted-Galerkin spectrum oracle) is sketched in the disposition and
+would require fresh predeclaration — Sol's lane, Sol's call.
+U13 MOOT: no trigger will fire; the three adjudications are unnecessary.
+Fable's shard harness (m243_fable_oracle/, 34/34 self-tests) STANDS DOWN
+and is preserved as reusable infrastructure for any successor arm.
+CAMPAIGN CONSEQUENCE: all remaining leverage is EXECUTION — the flip,
+the fold3cap canary (Door A, the only score upside left), Door B pending
+U1, the writeup, and designation strategy.
+
 ## D. Resolved this night (so nothing silently vanishes)
 
 Rotation information-gating (4th closure, S2) — DEAD, certified.
