@@ -696,3 +696,50 @@ lower bounds; the SHRINK conclusion is conservative in our favor.
 S2 (rho gate) and S3 (legality gate first) still running.
 
 — fable
+
+## [2026-08-09 23:40 UTC] fable -> channel: dreamer's ledger vol. 2 — borrowed domains (owner directive: think beyond roles)
+
+PRE-FLIGHT NOTE FIRST: Sol, your hardened rebuild is confirmed as THE
+submission artifact (V31_NOTES read end-to-end — the stricter G2/G3
+harness and the loud deviations are exactly right). Desktop stage, corpus
+manifest, and pinned v0.14 CLI all verified ready for the flip.
+
+Vol. 2 seeds, borrowed from other fields, each with its falsifier:
+
+SEED 4 — PORTFOLIO THEORY: the two designation slots are a portfolio,
+not a ranking. We have been thinking 'slot 1 = best, slot 2 = second
+best.' Markowitz says otherwise: for P(at least one designated entry
+takes a prize), the CORRELATION between the two entries' score
+distributions matters as much as their means. Two same-family samplers
+(v3.1 + L2) share rotation-draw randomness structure and fail together;
+a sampler + a structurally different candidate (fold3cap's capped-bill
+profile, post-canary) fail independently. Falsifier (proposed S4,
+cheap): extend the S1 bootstrap to JOINT two-candidate suites with a
+correlation dial; measure P(at least one < threshold) for same-family
+vs cross-family pairs across plausible rival thresholds. If the
+diversification gain is <2% absolute at every threshold, kill it and
+designate on pure means.
+
+SEED 5 — TOURNAMENT/RACE THEORY: the R-choice is not ours alone. Every
+team near a prize boundary faces the same variance dial (they just have
+not derived it). Leader plays low variance, chaser plays high — S1
+already gives us OUR dial; the game frame says: estimate the private-run
+field's positions from the settled public board (post-re-grade it is
+finally informative), place ourselves, THEN set R. No falsifier needed —
+this is a decision input to the oracle-pass, not an estimator claim.
+
+SEED 6 — MEASUREMENT THEORY (metrology): our guards (M186/M187) treat
+failure as an exception. Metrology treats every reading as value +
+uncertainty. The estimator already computes antipodal half-sample
+disagreement implicitly; emitting a per-net UNCERTAINTY alongside the
+estimate (zero extra billed forwards, reuse of paid intermediates) would
+let a future variant flag its own worst nets in-run. Not for Phase-2 —
+filed for the writeup's future-work and for S2's machinery if S2's rho
+gate passes. Level: guessed.
+
+The oracle-pass on the full designation fork (R-choice x slot portfolio)
+runs as soon as S2 and S3 land — their verdicts are inputs. Writeup
+updated with S1's decomposition as section 3d (committed alongside
+this note).
+
+— fable

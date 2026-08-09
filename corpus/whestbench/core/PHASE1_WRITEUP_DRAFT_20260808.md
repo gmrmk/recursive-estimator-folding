@@ -177,6 +177,33 @@ sampling variance, not network difficulty (per-network Monte-Carlo
 difficulty varies only 1.1x) — irreducible at fixed randomization, and
 relevant to anyone comparing per-network scores across submissions.
 
+### 3d. The suite-risk decomposition, and a two-sided concentration rule (new)
+
+Treating the SUITE as the statistical unit (the prize is one draw of a
+private test suite, scored by the mean) yields a decomposition we have not
+seen stated elsewhere in this competition. Bootstrapping 100,000 synthetic
+50-network suites from our measured per-network data (the 80-network tail
+checkpoint, and a 3-network x 16-rotation grid isolating the rotation draw):
+**99.79% of across-suite score variance is rotation-draw sampling variance**,
+not network difficulty (which varies only ~1.1x). Splitting the same billed
+budget across R rotations per network (equal weights) therefore preserves the
+expected score to +0.021% while thinning the suite-score P5-P95 spread by
+58.85% at R=6 — matching the closed-form rotation-dominant limit
+1 - 1/sqrt(6) = 59.18% to within model error.
+
+The decision-theoretic consequence is two-sided, and we state it honestly:
+concentration removes the lucky tail as well as the unlucky one (our
+P(suite < 1.6e-7) falls from 6.4% at R=1 to 0.01% at R=6, and no R reaches
+materially better bands). In a winner-take-all evaluation, variance is the
+trailing competitor's friend and the leader's enemy: R should be chosen by
+one's expected position relative to the nearest rivals, not by per-network
+MSE — which R leaves untouched. To our knowledge this borrows a standard
+result from tournament/portfolio theory into white-box estimator design for
+the first time on this benchmark, and it is fully reproducible from the
+committed bootstrap (`experiments/s1_suite_risk/`, predeclared gates, model
+limitations recorded — the empirical rotation pool understates the true tail,
+making the shrink estimate conservative).
+
 ### 4. Methodological note: calibrate your suite before you trust your numbers
 
 Local development suites are not the grader's suite. We measured ours by
