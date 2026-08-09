@@ -7,7 +7,16 @@ evidence: `a_series_granular_adversarial/a4_results.json` + `A3_A4_NOTES.md`
 
 **VERDICT: PASS — G1, G2, G3 all pass.** Candidate archive
 `submission_kerdock_v31_guards_20260808.tar.gz`, sha256
-`48664830e8709aff01aaad3d5dc9bb4de0ffac00f09b64adc4ea06401d2b8615`.
+`8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06`.
+
+The current hash is the hardened-gate rebuild. The earlier package hash
+`48664830...b8615` had byte-identical estimator/assets but was replaced when
+the archive was regenerated after two fail-closed harness repairs: G2 now
+requires the frozen v3 hostile failure and exact bill anchors, and G3 rejects
+unexpected tar members. A pure predicate regression suite covers every G2
+condition plus missing/unexpected/`__pycache__` G3 cases. The hardened full
+rerun passed all gates. Tar metadata makes archive SHA-256 build-dependent, so
+only the current `.sha256` file names the shippable binary.
 
 ## Deviations (loud, before anything else)
 

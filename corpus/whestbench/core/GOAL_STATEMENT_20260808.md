@@ -49,10 +49,11 @@ constraint set), SUBMISSION_DOSSIER (the playbook), and the fold ledger
 - **Score prizes**: decided at the private re-run. Our position: Kerdock v3
   live (#326094, 1.83e-7, rank #58 public), v3.1 GUARDS validated as its
   strictly-safer successor (bitwise-identical, crash/NaN classes closed,
-  tar 48664830…b615). The wall tier above us is already slipping under
+  hardened rebuild tar 8382e269…ea06). The wall tier above us is already slipping under
   silent re-grades (observed Aug 8 evening) and faces manual validation.
   Inevitability = being the strongest artifact left standing when the
-  accounting tide goes out; that artifact exists and is staged.
+  accounting tide goes out; the best validated local artifact is staged, but
+  no prize outcome is guaranteed.
 - **Algorithmic Contribution prize**: judged on rigor and novelty, not rank.
   The filing (PHASE1_WRITEUP_DRAFT, ID #326094, due Aug 17) carries: the
   exact-2-design theorem + dispersion no-go, the marginal-value map, the
@@ -70,9 +71,11 @@ constraint set), SUBMISSION_DOSSIER (the playbook), and the fold ledger
 ## Standing dates and duties (any successor must keep these)
 
 - Aug 10 23:59 UTC: Phase 1 closes; auto-top-2 (#326094 + #318609) stands.
-- At Phase-2 open: resubmit v3.1 GUARDS (staged at Desktop\whest-submit\
-  0_kerdock_v31_GUARDS_BEST.tar.gz; blind .env key-load pattern only — the
-  key value is never read or displayed).
+- At Phase-2 open: consider v3.1 GUARDS only after an explicitly authorized
+  canary. The current staged file is `Desktop\whest-submit\
+  0_kerdock_v31_GUARDS_HARDENED_8382e269.tar.gz`; the older `...BEST` copy is
+  stale. Use the blind .env key-load pattern only — the
+  key value is never read or displayed.
 - Aug 17 23:59 UTC: file the Phase-1 algorithmic writeup with ID #326094.
 - Sep 19: designation locks (v3.1 pending its graded canary; ONE designated
   submission per the Rules — verify the slot count on the live page).

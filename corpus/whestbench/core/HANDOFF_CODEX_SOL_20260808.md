@@ -8,10 +8,10 @@ we have worked on, include everything, do not forget anything."
 
 This document is that delivery. The goals themselves live in
 GOAL_STATEMENT_20260808.md (read it first). Appendix A at the bottom is the
-complete, mechanically dumped 207-record fold ledger — every mutation this
-corpus has ever attempted, in order, with status. Nothing in this campaign
-exists outside that ledger; if you remember something that is not in it, your
-memory is wrong.
+mechanically dumped 207-record ledger snapshot. The live
+`headroom/fold_ledger.json` now has 213 records after M192--M197 and is the
+authoritative continuation; Appendix A is historical, not complete. Nothing
+in this campaign exists outside the live ledger.
 
 ---
 
@@ -24,9 +24,10 @@ memory is wrong.
   + 1e11 x residual_seconds. Floor 0.1 confirmed from leaderboard arithmetic.
   Adjusted score is scale-invariant along the sampling curve, so the ONLY
   lever is variance-per-billed-FLOP.
-- **Live standing**: submission #326094 (Kerdock v3) graded adjusted
+- **Last recorded grading snapshot**: submission #326094 (Kerdock v3) graded adjusted
   1.832e-7, final-layer MSE 2.818e-7, 50/50 public MLPs, zero failures,
-  team rank #192 -> **#58**. Second real graded artifact on the account:
+  team rank #192 -> **#58**. This is historical evidence, not a confirmed
+  current rank. Second real graded artifact on the account:
   #318609 (July T5C1 lineage).
 - **The board is a fiction above ~4.6e-8**: the top tier (5e-10 .. 4.4e-9)
   bills 6e8-7e9 FLOP/s while running 22-47 s/MLP — unmetered-compute
@@ -38,10 +39,27 @@ memory is wrong.
   bitwise-identical to v3 on every healthy network (+24,575 FLOPs for an
   isfinite scan), plus M186 (empty-regime crash guard) and M187 (NaN/Inf
   analytic-mean degradation). Tar sha256
-  48664830e8709aff01aaad3d5dc9bb4de0ffac00f09b64adc4ea06401d2b8615
-  (33,347,023 bytes), staged at Desktop\whest-submit\
-  0_kerdock_v31_GUARDS_BEST.tar.gz. Phase-2 resubmission candidate and
-  designation-apparent for Sep 19, pending its own graded canary.
+  8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06
+  (33,347,024 bytes), repository artifact at
+  `experiments/v31_guards/submission_kerdock_v31_guards_20260808.tar.gz`;
+  refresh any Desktop staging copy before an authorized canary. It remains an
+  ungraded Phase-2 candidate pending its own explicitly authorized canary.
+
+### Generation-5 delta (added after the original handoff snapshot)
+
+- M192 truth-oracle cross-output frame GLS: panel ratio 0.126193, but cached
+  truth noise is 39--44% of its observed residual and no deployment claim is
+  lawful without independent truth streams and fresh networks.
+- Exact no-go: one frame matrix identifies `P C P` but not `P C u`; changing
+  the unknown target can arbitrarily change the missing cross block while
+  leaving the observed frame matrix fixed.
+- M193 analytic anchor, M194 independent pilot, M195 two-way split, and M197
+  three-way crossed split are killed at correlated-anchor, pilot-SNR/cost, and
+  split-Kerdock-geometry links respectively. Do not retune them.
+- M196 freezes M151's exact B=1 `[2,1,1]` variance gate and blocks correctly:
+  native 49-node provider, non-cubic compiler, coefficient batch binding, and
+  inclusive trace are absent. No synthetic substitute is authorized.
+- `core/GEN5_MUTANT_RECURSION_20260808.md` is the current attack plan.
 
 ## Part II — The champion, fully characterized
 
@@ -217,8 +235,11 @@ re-spend a week rediscovering it.
   `whest.exe submit <tar> --challenge arc-white-box-estimation-challenge-2026`
   from the pinned v014 env with PYTHONIOENCODING=utf-8. Four permission-
   classifier denials were honored before the user authorized this pattern.
-- Staged queue at Desktop\whest-submit\ (with SUBMIT_kerdock.cmd
-  one-click): 0_kerdock_v31_GUARDS_BEST (sha256 48664830…b615),
+- Staged queue at Desktop\whest-submit\: the current guarded artifact is
+  `0_kerdock_v31_GUARDS_HARDENED_8382e269.tar.gz` (sha256 8382e269…ea06).
+  The older `0_kerdock_v31_GUARDS_BEST.tar.gz` is stale, and the existing
+  `SUBMIT_kerdock.cmd` still targets v3; neither should be mistaken for an
+  authorized v3.1 canary. Other historical files are
   1_kerdock_v3_BEST, 2_L1_champion, 3_L2_twoaxis (sha256 68259f64…),
   4_fold3cap (QUARANTINED — graded canary first), 5_tangent_prizevehicle.
 

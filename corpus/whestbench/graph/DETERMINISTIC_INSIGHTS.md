@@ -1,6 +1,6 @@
 # Deterministic graph analysis
 
-Nodes: 279; edges: 576; communities: 13.
+Nodes: 291; edges: 593; communities: 13.
 
 The metrics describe topology, not truth. Edge confidence and the original reports remain authoritative. The community count on this page uses NetworkX greedy modularity; Graphify's separate cluster-only pass may legitimately return a different partition and count for the same nodes and edges.
 
@@ -8,38 +8,38 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 
 | node | status | betweenness | degree centrality |
 |---|---|---:|---:|
-| Winning legal adjusted score | target | 0.6310 | 0.2770 |
-| L-shaped failure frontier | derived_from_ledger | 0.1239 | 0.0324 |
-| Connected finite-width four-point vertex | proved+measured | 0.1229 | 0.0899 |
-| Trivariate rectified coefficient builder | reference_exact_deployment_killed | 0.0817 | 0.0324 |
-| M129 complete source Frechet tangent | repair_p2_only | 0.0777 | 0.0144 |
-| H1 equivariant learned residual closure | rejected | 0.0688 | 0.0396 |
-| M126 direct repeated-output source slices | repair_blocked_independent_component_pass | 0.0657 | 0.0252 |
-| Full-covariance Gaussian closure | rejected_parent | 0.0633 | 0.0216 |
-| Even spherical residual degree >=6 | measured | 0.0573 | 0.0252 |
-| M125b coalesced forward Gaussian tangent | passed_independent_math_cost_repaired | 0.0554 | 0.0288 |
+| Winning legal adjusted score | target | 0.6194 | 0.2724 |
+| L-shaped failure frontier | derived_from_ledger | 0.1358 | 0.0310 |
+| Connected finite-width four-point vertex | proved+measured | 0.1192 | 0.0897 |
+| Even spherical residual degree >=6 | measured | 0.1045 | 0.0276 |
+| Trivariate rectified coefficient builder | reference_exact_deployment_killed | 0.0765 | 0.0310 |
+| M129 complete source Frechet tangent | repair_p2_only | 0.0729 | 0.0138 |
+| H1 equivariant learned residual closure | rejected | 0.0666 | 0.0379 |
+| Full-covariance Gaussian closure | rejected_parent | 0.0661 | 0.0207 |
+| M126 direct repeated-output source slices | repair_blocked_independent_component_pass | 0.0630 | 0.0241 |
+| M125b coalesced forward Gaussian tangent | passed_independent_math_cost_repaired | 0.0532 | 0.0276 |
 
 ## Highest-degree God nodes
 
 | node | status | degree | community |
 |---|---|---:|---:|
-| Winning legal adjusted score | target | 77 | 0 |
+| Winning legal adjusted score | target | 79 | 0 |
 | Latent-factor closure gate | expanded | 28 | 0 |
-| Connected finite-width four-point vertex | proved+measured | 25 | 2 |
+| Connected finite-width four-point vertex | proved+measured | 26 | 1 |
 | Permutation + gauge + O(256) quotient | proved | 13 | 0 |
-| H1 equivariant learned residual closure | rejected | 11 | 2 |
+| H1 equivariant learned residual closure | rejected | 11 | 1 |
 | Weight-identified latent-factor closure | rejected_fixed_rank_components_preserved | 11 | 0 |
-| M107 degree-4/6/8 exact-zero spherical controls | killed_empirically_all_four | 11 | 1 |
+| M107 degree-4/6/8 exact-zero spherical controls | killed_empirically_all_four | 11 | 2 |
 | Physarum-attention MoE router | rejected_graph_preserved | 10 | 0 |
 | Complete-source influence-function variance wall | measured_generated_three_families | 10 | 4 |
-| Goal-oriented adjoint cumulant | rejected_component_preserved | 9 | 2 |
+| Goal-oriented adjoint cumulant | rejected_component_preserved | 9 | 1 |
 
 ## M107-M112 local mutation nodes
 
 | node | status | degree | community |
 |---|---|---:|---:|
-| M107 degree-4/6/8 exact-zero spherical controls | killed_empirically_all_four | 11 | 1 |
-| Spherical Gegenbauer exact-zero law | proved_preserved | 2 | 1 |
+| M107 degree-4/6/8 exact-zero spherical controls | killed_empirically_all_four | 11 | 2 |
+| Spherical Gegenbauer exact-zero law | proved_preserved | 2 | 2 |
 | M107 held-covariance reversal | measured_all_four | 4 | 6 |
 | M108 scaled cymatic heat band | killed_preexecution_fourth_moment | 4 | 6 |
 | M108 centered cymatic band energy | killed_preexecution_fourth_moment | 3 | 6 |
@@ -50,39 +50,44 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 | M110 corrected bounded nodal occupancy | killed_empirically_all_four | 6 | 6 |
 | Broad even ReLU-nodal spectrum | proved_plus_computed | 3 | 6 |
 | M110 held nodal-phase reversal | measured_all_four | 4 | 6 |
-| Exact arcsine gate covariance | proved_candidate_atom | 3 | 1 |
-| Pairwise gate-phase interference | prospective_single_edge | 5 | 2 |
-| M111 coherent gate interferometer | killed_empirically_all_four | 9 | 8 |
-| M111 held gate-phase reversal | measured_all_four_independently_audited | 4 | 8 |
-| Connected output--two-gate tensor B | exactly_identified | 4 | 2 |
-| Hidden orthogonal-factorization fibre | proved_ensemble_preserving | 4 | 8 |
-| Deep missing-gate overlap suppression | derived_annealed_reference | 2 | 1 |
-| Factorization-aware layer-local gate energy | partially_realized_by_m112 | 2 | 8 |
-| Frame-connected gate-pair matrix C | proved_theory_screened | 3 | 1 |
-| Frame-visible projection of connected tensor B | measured_unstable_all_four | 3 | 8 |
-| M112 connected gate kernel | killed_empirically_all_four | 5 | 8 |
+| Exact arcsine gate covariance | proved_candidate_atom | 3 | 2 |
+| Pairwise gate-phase interference | prospective_single_edge | 5 | 1 |
+| M111 coherent gate interferometer | killed_empirically_all_four | 9 | 1 |
+| M111 held gate-phase reversal | measured_all_four_independently_audited | 4 | 1 |
+| Connected output--two-gate tensor B | exactly_identified | 4 | 1 |
+| Hidden orthogonal-factorization fibre | proved_ensemble_preserving | 4 | 1 |
+| Deep missing-gate overlap suppression | derived_annealed_reference | 2 | 2 |
+| Factorization-aware layer-local gate energy | partially_realized_by_m112 | 2 | 1 |
+| Frame-connected gate-pair matrix C | proved_theory_screened | 3 | 2 |
+| Frame-visible projection of connected tensor B | measured_unstable_all_four | 3 | 6 |
+| M112 connected gate kernel | killed_empirically_all_four | 5 | 6 |
 
 ## Articulation points
 
 - Winning legal adjusted score
+- Even spherical residual degree >=6
 - H1 equivariant learned residual closure
 - M125b coalesced forward Gaussian tangent
 - M71 owned-buffer Kerdock challenger
+- Frame common/contrast error block
+- M110 corrected bounded nodal occupancy
 - Goal-oriented adjoint cumulant
 - H3 rank-5 k4 tensor sketch
-- M110 corrected bounded nodal occupancy
-- M118 separated trivariate collision vertex
-- M159 homogeneity-normalized endpoint ABI
 - Exact-control inference architecture
 - Broad even ReLU-nodal spectrum
+- M118 separated trivariate collision vertex
+- M159 homogeneity-normalized endpoint ABI
+- M192 cross-output frame GLS oracle
 - Symmetric pair-feature diagonal probe
-- Random 32,256 sampler
 - M116b in-place streamed level-3 multiplication
+- Random 32,256 sampler
+- Labelled bounded-lifetime background/source ABI
 - Dyadic depth-memory features
 - Three-node Gaussian TT cross
-- M142 primary-literature escape-hatch audit
 - Clean-room PLE flash sidecar
+- M142 primary-literature escape-hatch audit
 - M115 projective arc-cosine Nyström control
+- Herglotz cosine structure factor
 - H2 weight-conditioned blend coefficient
 - M170 dense oriented tensor-rank lower bound
 - Source-before-compression rule
@@ -94,11 +99,12 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 - M121 bridge-source response interface
 - Effective trainable capacity
 - M165 connected-defect rank-face subtraction
-- Shared-CP all-output covariance adjoint
 - Conditional rotation variance is not MSE
-- Herglotz cosine structure factor
 - M104 nested-Hermite final packet
 - M158 absolute endpoint ABI falsifier
+- M196 native B=1 provider gate
+- Shared-CP all-output covariance adjoint
+- Even 1-to-2 harmonic coherence
 - Terminal-Born incidence overlap
 
 ## Audited shortest paths to the target
@@ -214,3 +220,9 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 102. M176 pins the exact recurrence and local Jacobian, then closes the attempted archive construction at its true first dependency: an endpoint-complete metered bivariate ReLU value-and-Jacobian primitive is absent. The failure graph therefore loops from staging ABI back into endpoint calculus.
 103. M177 completes the PSD-stratum dispatcher but proves a formal runtime no-go under installed FlopScope: billed Phi/phi do not supply certified rounding/remainders, Phi2/Owen-T is absent, and556 FLOPs per pair is only a strict pre-special-function floor. Endpoint algebra survives; M176 remains blocked.
 104. The master postmortem rekeys the source by SourceAtom(owner, PSD chart, feasible tangent). This is topological rather than spectral compression: ownership prevents collision double count, chart selection prevents hidden endpoint extrapolation, and tangent feasibility prevents path-underdetermined Jacobians. It is a representation coordinate, not an affordability or efficacy pass.
+105. V3.1 is the current defensible artifact, not a claimed winner: its hardened harness now requires frozen-parent reproduction, exact bill agreement, finite in-budget hostile output, and an exact tar-member set.
+106. M192 exposes the largest cached oracle basin in the campaign: output-fold frame GLS reduces panel MSE by87.38 percent. The same result proves where the missing information lives, not how to obtain it legally at deployment.
+107. The one-matrix location-shift theorem makes the common/contrast cross block non-identifiable. M193, M194, M195, and M197 then close the tested truth-free anchor, independent-pilot, two-way, and three-way fixed-budget recoveries through anchor correlation, pilot SNR, and Kerdock fragmentation.
+108. M151 remains the highest-prior exact analytic branch because its forward B=1 carrier avoids the all-output adjoint, but M196 correctly remains blocked until a lawful noncubic provider and inclusive trace exist; no conditional moments may be fabricated.
+109. The second live moonshot changes sigma-algebra rather than weights: use final output rows as random projections of the shared penultimate cumulants, regress only in the certified physical quotient, and kill it unless it beats same-cost direct Monte Carlo on whole-network holdout.
+110. Padgett-style nested geometry contributes a disciplined phase/harmonic search language, not mystical evidence. The current late-phase surrogate is killed; only exact centering and predeclared spherical-harmonic operators survive as reusable atoms.

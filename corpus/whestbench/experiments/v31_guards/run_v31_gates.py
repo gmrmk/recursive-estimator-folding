@@ -99,6 +99,25 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
+def hostile_gate_pass(*, v3_reproduced: bool, v3_billed_match: bool,
+                      completes: bool, finite_all: bool,
+                      within_budget: bool, fired_expected: bool) -> bool:
+    """Pure fail-closed G2 predicate, kept separately regression-testable."""
+    return all((v3_reproduced, v3_billed_match, completes, finite_all,
+                within_budget, fired_expected))
+
+
+def tar_members_gate_pass(*, returncode: int, missing: list[str],
+                          unexpected: list[str], members: list[str]) -> bool:
+    """Pure fail-closed G3 member predicate."""
+    return (
+        returncode == 0
+        and not missing
+        and not unexpected
+        and not any("__pycache__" in member for member in members)
+    )
+
+
 # ----------------------------------------------------------- net builders
 def he_weights(seed: int) -> list[np.ndarray]:
     """n8c / A4 'normal' He construction (identical bitwise)."""
@@ -400,7 +419,18 @@ def main() -> None:
             {"m186": "m186_empty_regime_fired",
              "m187": "m187_finite_output_fired"}[exp["guard"]]
         ))
-        net_pass = completes and finite_all and fired_expected
+        within_budget = r31["billed"] <= BUDGET
+        # Fail closed on the frozen hostile anchor as well as the child.  If
+        # v3 no longer reproduces the exact A4 failure/bill, this comparison
+        # rig is stale and cannot validate either guard.
+        net_pass = hostile_gate_pass(
+            v3_reproduced=v3_reproduced,
+            v3_billed_match=v3_billed_match,
+            completes=completes,
+            finite_all=finite_all,
+            within_budget=within_budget,
+            fired_expected=fired_expected,
+        )
         g2["nets"].append({
             "net": kind,
             "mlp_seed": HOSTILE_SPECS[kind][1],
@@ -411,7 +441,7 @@ def main() -> None:
             "v31_prediction_finite_all": finite_all,
             "v31_billed": r31["billed"],
             "v31_wall_s": round(r31["wall_s"], 2),
-            "v31_within_budget": r31["billed"] <= BUDGET,
+            "v31_within_budget": within_budget,
             "expected_guard": exp["guard"],
             "expected_guard_fired": fired_expected,
             "v31_guard_report": guard,
@@ -423,6 +453,7 @@ def main() -> None:
         print(f"  {kind}: v3 reproduces A4 failure={v3_reproduced} "
               f"(billed match={v3_billed_match}); "
               f"v3.1 completes={completes} finite={finite_all} "
+              f"within_budget={within_budget} "
               f"{exp['guard']}_fired={fired_expected} "
               f"billed={r31['billed']} "
               f"[{'PASS' if net_pass else 'KILL'}]")
@@ -430,8 +461,9 @@ def main() -> None:
             print(f"    guard report: {guard}")
     results["gates"]["g2"] = g2
     if not g2["pass"]:
-        finish("KILL at G2: v3.1 does not complete finite on a hostile net "
-               "or the expected guard did not fire (first broken link)")
+        finish("KILL at G2: hostile v3 anchor is stale, or v3.1 does not "
+               "complete finite within budget with the expected guard "
+               "firing (first broken link)")
         return
     print("G2: PASS")
 
@@ -515,8 +547,12 @@ def main() -> None:
     member_set = set(members)
     missing = sorted(EXPECTED_TAR_MEMBERS - member_set)
     unexpected = sorted(member_set - EXPECTED_TAR_MEMBERS)
-    members_ok = (tar_list.returncode == 0 and not missing
-                  and not any("__pycache__" in m for m in members))
+    members_ok = tar_members_gate_pass(
+        returncode=tar_list.returncode,
+        missing=missing,
+        unexpected=unexpected,
+        members=members,
+    )
     g3["tar_members"] = {
         "rc": tar_list.returncode,
         "members": members,
@@ -529,8 +565,9 @@ def main() -> None:
     if not members_ok:
         g3["pass"] = False
         results["gates"]["g3"] = g3
-        finish("KILL at G3: tar member listing incomplete -- the T3 "
-               "near-miss rule (first broken link)")
+        finish("KILL at G3: tar member listing is incomplete or contains "
+               "unexpected members -- the T3 near-miss rule "
+               "(first broken link)")
         return
 
     g3["tar_sha256"] = sha256_file(TAR_PATH)

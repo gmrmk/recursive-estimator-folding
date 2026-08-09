@@ -18,11 +18,20 @@ PROMPT = HANDOFF / "FABLE5_ASCII_RESUME_PROMPT_20260807.txt"
 PROMPT_COPY = CORPUS / "headroom" / PROMPT.name
 LEDGER = CORPUS / "headroom" / "fold_ledger.json"
 GRAPH = CORPUS / "graph" / "graph.json"
-EXPECTED_LEDGER_COUNT = 176
-EXPECTED_GRAPH_NODES = 279
-EXPECTED_GRAPH_EDGES = 576
+EXPECTED_LEDGER_COUNT = 213
+EXPECTED_GRAPH_NODES = 291
+EXPECTED_GRAPH_EDGES = 593
 EXPECTED_CHAMPION_HASH = (
     "bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36"
+)
+V31_ARCHIVE = (
+    CORPUS
+    / "experiments"
+    / "v31_guards"
+    / "submission_kerdock_v31_guards_20260808.tar.gz"
+)
+EXPECTED_V31_HASH = (
+    "8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06"
 )
 FORBIDDEN_SUFFIXES = {
     ".dll",
@@ -43,6 +52,29 @@ FORBIDDEN_SUFFIXES = {
     ".zip",
 }
 FORBIDDEN_PARTS = {"__pycache__", ".pytest_cache", ".venv", "node_modules"}
+ALLOWED_BINARY_PATHS = {
+    "corpus/whestbench/experiments/a_series_granular_adversarial/a4_det_run1.npz",
+    "corpus/whestbench/experiments/a_series_granular_adversarial/a4_det_run2.npz",
+    "corpus/whestbench/experiments/m180_design_strength/m180_g0_partial_net101.npz",
+    "corpus/whestbench/experiments/m180_design_strength/m180_g0_partial_net202.npz",
+    "corpus/whestbench/experiments/m180_design_strength/m180_g0_partial_net303.npz",
+    "corpus/whestbench/experiments/m181_terminal_smoothing/m181_g0_partial_net101.npz",
+    "corpus/whestbench/experiments/m181_terminal_smoothing/m181_g0_partial_net202.npz",
+    "corpus/whestbench/experiments/m181_terminal_smoothing/m181_g0_partial_net303.npz",
+    "corpus/whestbench/experiments/m181_terminal_smoothing/m181_truth_net101.npz",
+    "corpus/whestbench/experiments/m181_terminal_smoothing/m181_truth_net202.npz",
+    "corpus/whestbench/experiments/m181_terminal_smoothing/m181_truth_net303.npz",
+    "corpus/whestbench/experiments/pb1_premise_battery/m191_g0b_partial_net101.npz",
+    "corpus/whestbench/experiments/pb1_premise_battery/m191_g0b_partial_net202.npz",
+    "corpus/whestbench/experiments/pb1_premise_battery/m191_g0b_partial_net303.npz",
+    "corpus/whestbench/experiments/pb1_premise_battery/p2_partial_net101.npz",
+    "corpus/whestbench/experiments/pb1_premise_battery/p2_partial_net202.npz",
+    "corpus/whestbench/experiments/pb1_premise_battery/p2_partial_net303.npz",
+    "corpus/whestbench/experiments/t3_fold3_deterministic_cap/submission_fold3cap_n39936_20260808.tar.gz",
+    "corpus/whestbench/experiments/v31_guards/package_source/kerdock_phases.npz",
+    "corpus/whestbench/experiments/v31_guards/package_source/sobol_owen_u32.npz",
+    "corpus/whestbench/experiments/v31_guards/submission_kerdock_v31_guards_20260808.tar.gz",
+}
 
 
 def digest(path: Path) -> str:
@@ -102,10 +134,12 @@ def verify_firewall() -> None:
     for path in CORPUS.rglob("*"):
         if not path.is_file():
             continue
+        relative = path.relative_to(REPO).as_posix()
         if path.suffix.lower() in FORBIDDEN_SUFFIXES:
-            offenders.append(path.relative_to(REPO).as_posix())
+            if relative not in ALLOWED_BINARY_PATHS:
+                offenders.append(relative)
         elif FORBIDDEN_PARTS.intersection(path.parts):
-            offenders.append(path.relative_to(REPO).as_posix())
+            offenders.append(relative)
     if offenders:
         fail(f"forbidden cache/binary artifact(s), first={sorted(offenders)[0]}")
 
@@ -122,7 +156,7 @@ def verify_prompt() -> None:
         b"M178 is exactly one mutation",
         b"BUNDLE_SHA256SUMS.txt",
         b"immutable champion",
-        b"279 nodes, 576 edges",
+        b"291 nodes, 593 edges",
     ]
     for marker in required:
         if marker not in data:
@@ -157,6 +191,13 @@ def verify_graph() -> None:
         fail("graph has duplicate node IDs")
 
 
+def verify_guard_archive() -> None:
+    if not V31_ARCHIVE.is_file():
+        fail("missing v3.1 guard archive")
+    if digest(V31_ARCHIVE) != EXPECTED_V31_HASH:
+        fail("v3.1 guard archive hash changed")
+
+
 def main() -> int:
     try:
         entries = parse_manifest()
@@ -165,6 +206,7 @@ def main() -> int:
         verify_prompt()
         verify_ledger()
         verify_graph()
+        verify_guard_archive()
     except (OSError, ValueError, RuntimeError, json.JSONDecodeError) as exc:
         print(f"HANDOFF VERIFY: FAIL: {exc}", file=sys.stderr)
         return 1

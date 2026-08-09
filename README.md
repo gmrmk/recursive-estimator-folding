@@ -36,8 +36,8 @@ remains authoritative.
 The current private continuation packet is at
 `corpus/whestbench/handoff/README.md`. It includes the standing goal, a strict
 ASCII resume prompt, resource and test provenance, a bundle checksum manifest,
-the M120-M177 reproducibility bank, four failure postmortems, and the updated
-Graphify graph. Verify it before use:
+the M120-M197 reproducibility bank, the Generation-5 oracle/no-go autopsy, and
+the updated audited graph. Verify it before use:
 
 ```bash
 python scripts/verify_whestbench_handoff.py

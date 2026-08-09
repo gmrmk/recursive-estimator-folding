@@ -63,10 +63,11 @@ resource test.
 ## Non-vendored categories
 
 No API token, hosted model, paper PDF, challenge weight/truth file, scorer,
-submission archive, Python environment, Ollama model blob, or third-party
-repository is included. URLs, commits, notes, and hashes are sufficient for
-lawful provenance; acquiring anything else requires its own authorization and
-license/rules check.
+Python environment, Ollama model blob, or third-party repository is included.
+The private corpus now retains narrowly allowlisted synthetic premise arrays,
+package assets, the quarantined T3 archive, and the hash-bound v3.1 GUARDS
+archive; none conveys authorization to submit. URLs, commits, notes, and hashes
+remain the provenance boundary for external resources.
 
 `mpmath==1.3.0` is recorded only as an optional high-precision test dependency;
 its package files are not committed. The sweep used an isolated temporary

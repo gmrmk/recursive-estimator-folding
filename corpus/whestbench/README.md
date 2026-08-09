@@ -23,11 +23,12 @@ rules, and current champion without relying on conversation memory.
 
 ## Deliberate exclusions
 
-The repository does not contain raw challenge datasets, truth arrays, MLP
-weight files, credentials, API keys, caches, Python environments, scorer
-binaries, bulky numerical traces, or the submission archive. Reports contain
-the hashes and measurements necessary to locate and audit those local artifacts
-without publishing them.
+The repository does not contain raw challenge datasets, private truth arrays,
+MLP weight files, credentials, API keys, Python environments, or scorer
+binaries. It now retains the hash-bound v3.1 GUARDS submission archive and
+synthetic-only premise caches/results needed to audit the current campaign;
+these private artifacts are not intended for redistribution. Reports identify
+the provenance and allowed use of each retained artifact.
 
 ## Evidence discipline
 
@@ -42,12 +43,14 @@ Each claim should be read according to its provenance:
 Graph centrality is a navigation aid, not evidence. A proposed connection is
 promoted only through the external ladder specified in the skill.
 
-## Current snapshot (2026-08-07)
+## Current snapshot (2026-08-08)
 
-- Validated local champion: immutable random32,256 fold3 plus fixed8192-row
-  streaming Winograd, public-100 adjusted score `2.121762464e-7`, zero
-  failures, maximum effective compute `222.405357B`, and100/100 paired wins.
-  Its tar is validated and intentionally excluded/unsubmitted.
+- Validated robustness champion: Kerdock v3.1 GUARDS, current hardened tar
+  SHA-256 `8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06`.
+  It is bitwise-compatible with v3 on three healthy nets, closes the tested
+  crash/NaN classes, passes exact-member packaging, and remains ungraded.
+  Hosted v3 #326094 measured adjusted `1.832e-7`, zero failures, and rank #58
+  at that grading snapshot; this is not a current-rank or prize claim.
 - Exact compression result: public paired score ratio `0.940047616`, raw-MSE
   ratio `0.999982962`, and bootstrap ratio95% CI `[0.936501,0.943476]`.
   Exact compute compression, not estimator pruning, creates the improvement.
@@ -60,10 +63,13 @@ promoted only through the external ladder specified in the skill.
 - The clean-room PLE-style sidecar factors the static response atlas31.9x into
   a66,632-byte package. It is a storage/locality survivor only until fused
   whole-estimator accounting beats the native-float32 alternative.
-- The ledger now contains 176 typed records through M177. The latest exact-
-  control branch is blocked on a certified, bounded-cost, metered bivariate
-  Gaussian `Phi2`/Owen-`T` value-and-derivative primitive.
-- The updated Graphify snapshot contains 279 nodes and 576 edges. Its central
+- The ledger now contains 213 typed records and passes the local
+  audit. M192 preserves an 87.38% truth-oracle frame-covariance ceiling, while
+  M193--M195 localize its truth-free identifiability/cost failure. M196 freezes
+  the exact B=1 source-control variance gate but correctly blocks before
+  execution on missing native provider/compiler/trace interfaces; M197 closes
+  the last tested fixed-budget crossed-pilot topology.
+- The updated Graphify snapshot contains 291 nodes and 593 edges. Its central
   postmortem coordinate is `SourceAtom(owner, PSD chart, feasible tangent,
   coefficient, remainder)`; this is a representation proposal, not an
   estimator or efficacy pass.

@@ -1961,14 +1961,79 @@
       "prediction": "Identical score behavior on healthy nets; completes finite on the two A4 failure classes; validates as a package.",
       "kill_condition": "G1 any bitwise mismatch or billed >+0.1%; G2 either hostile net fails; G3 any package/contract/member failure.",
       "bias_class": "Guard-only mutation: zero statistical change on healthy nets (bitwise gate); failure classes closed for the private re-run.",
-      "result": "ALL GATES PASS FIRST RUN. G1: bitwise-equal on 3 nets, billed delta +24,575 FLOPs constant (1.4-1.5e-7 of bill, the honest isfinite scan); harness anchored to a4_det_run1 bitwise. G2: v3 failures reproduced TO THE FLOP (crash 5,159,851,464; NaN 154,722,710,745); v3.1 finite on both — M186 fired (analytic degradation), M187 replaced 164 NaNs with analytic means, 0 clamps. G3: folder-mode package rc=0, validate-package ok, contract validate ok, 10/10 members verified + sha-equal to frozen sources. Tar sha256 48664830e8709aff01aaad3d5dc9bb4de0ffac00f09b64adc4ea06401d2b8615 (33,347,023 B). DISPOSITION: the campaigns first validated successor — identical score, strictly fewer failure modes; PHASE-2 RESUBMISSION CANDIDATE ahead of v3 (Phase 2 opens at the Aug-10 close); designation-apparent for Sep 19 pending its own graded canary. Deviations recorded (sobol fallback asset included as the frozen package did; specific-catch over pre-check with reasoning). Artifacts: package_source/, run_v31_gates.py, v31_results.json, V31_NOTES.md, the tar + .sha256.",
+      "result": "ALL GATES PASS, including hardened fail-closed rerun. G1: bitwise-equal on 3 nets, billed delta +24,575 FLOPs constant (1.4-1.5e-7 of bill, the honest isfinite scan); harness anchored to a4_det_run1 bitwise. G2: frozen v3 failures and exact A4 bills are mandatory gate conditions; both reproduce TO THE FLOP (crash 5,159,851,464; NaN 154,722,710,745), while v3.1 is finite and within budget on both — M186 fired (analytic degradation), M187 replaced 164 NaNs with analytic means, 0 clamps. G3: folder-mode package rc=0, validate-package ok, contract validate ok, exactly 10 allowed members with no extras, sha-equal sources. Hardened rebuild tar sha256 8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06 (33,347,024 B); prior 48664830 build had identical source content but was replaced on repack. DISPOSITION: validated robustness successor — identical healthy score, strictly fewer failure modes; official canary still pending. Artifacts: package_source/, run_v31_gates.py, test_v31_gate_predicates.py, v31_results.json, V31_NOTES.md, tar + .sha256.",
       "status": "validated",
       "status_note": "guards candidate validated G1-G3; graded canary pending at Phase-2 open",
-      "artifact_hash": "48664830e8709aff01aaad3d5dc9bb4de0ffac00f09b64adc4ea06401d2b8615",
+      "artifact_hash": "8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06",
       "matched_units": 3,
       "primary_effect": 0.0,
       "ci_upper": 0.0,
       "failures": 0
+    },
+    {
+      "id": "m192_cross_output_frame_gls_oracle",
+      "mechanism": "Output-cross-fitted sum-one GLS over the 126 cached Kerdock frame estimates. Error covariance is learned from truth on training output neurons and assessed only on held output neurons. This is an oracle premise for realized-network nonstationary frame covariance, not a deployable estimator.",
+      "prediction": "Shared hidden activations create reusable frame-error covariance across exchangeable final rows; oracle GLS reduces panel MSE at least 15 percent.",
+      "kill_condition": "Reduction below 10 percent, any nonfinite output, or any network worsens by more than 5 percent.",
+      "bias_class": "Oracle cached-synthetic premise; truth confined to training-output covariance and held-output scoring; no score credit.",
+      "result": "SCREEN SURVIVOR: per-network ratios 0.146840, 0.095677, 0.143037; panel geomean ratio 0.126193 (87.38% reduction), bootstrap ratio [0.107641,0.151650], 48/48 rotations improve. All 384 folds chose alpha 0.25; weights stable (median L1 1, median max abs about 0.0155). A separate agent's unarchived independent recomputation reproduced the ratios. The fixed-reweighting certificate is not contradicted because these weights depend on other realized outputs. The deployable link remains estimation of the common/contrast error block without truth. Artifacts: experiments/m192_cross_output_gls/M192_PREDECLARATION.md, run_m192_g0.py, m192_g0_results.json, M192_M195_NOTES.md.",
+      "status": "screened",
+      "status_note": "large oracle observable preserved; deployable identifiability unresolved",
+      "artifact_hash": "m192_cross_output_gls/m192_g0_results.json",
+      "matched_units": 3,
+      "primary_effect": 0.873807,
+      "ci_upper": 0.15165,
+      "failures": 0
+    },
+    {
+      "id": "m193_analytic_anchor_frame_gls",
+      "mechanism": "Truth-free mutation of M192 using the already-computed diagonal-Gaussian final mean as the output anchor, output cross-fitting, and alpha 0.25 frozen from M192.",
+      "prediction": "Anchor error enters primarily in the all-ones frame mode and leaves useful relative frame covariance recoverable.",
+      "kill_condition": "Reduction below 10 percent, any network worsens, nonfinite output, or unstable fit.",
+      "bias_class": "Truth-free cross-fit biased candidate on cached synthetic frames; truth used only for scoring.",
+      "result": "KILLED decisively: panel ratio 1057.899; per-network ratios 1530.06, 1108.71, 697.92. Exact autopsy: C_anchor=C_error+q1^T+1q^T+s11^T; s11 is harmless to an unshrunk sum-one rule, but Pq is not. The analytic error is 6.09e-4 to 1.88e-3 and correlates with frame contrasts, inflating median weight L1 to 5.76 and producing dominant bias. Artifacts: M193_ANCHOR_PREDECLARATION.md, run_m193_g0.py, m193_g0_results.json.",
+      "status": "killed",
+      "status_note": "analytic anchor cross term overwhelms common/contrast signal"
+    },
+    {
+      "id": "m194_independent_pilot_block_gls",
+      "mechanism": "Independent eight-frame Haar pilot plus projected-block GLS. Projection removes pilot noise from the contrast covariance exactly and makes the needed common/contrast cross block unbiased in expectation; lambda 1/3 frozen from M192.",
+      "prediction": "Changing M193's correlated-anchor link to independent Haar noise preserves at least 20 percent raw reduction and 15 percent after conservative pilot cost.",
+      "kill_condition": "Raw reduction below 10 percent, any network worsens, any fallback, or nonfinite output.",
+      "bias_class": "Truth-free output-cross-fitted candidate; cached synthetic G0; truth only scores and supplies a frozen solver diagnostic.",
+      "result": "KILLED at finite-output SNR, not algebra: panel raw ratio 15.8306, cost ratio 16.8357; per-network raw ratios 20.3235, 9.67330, 20.1799. The truth-anchor projected solver still gives ratios 0.124538, 0.082539, 0.139294. Frozen pilot-prefix autopsy is monotone: k=1/8/64/126 raw ratios 97.600/15.831/1.525/0.671, but even k=126 costs ratio 1.343. Pilot cross-noise is about 5x the true cross signal at the median. Artifacts: M194_PILOT_BLOCK_PREDECLARATION.md, run_m194_g0.py, m194_g0_results.json, M194_PILOT_SCALING_AUTOPSY.md, m194_pilot_scaling_results.json.",
+      "status": "killed",
+      "status_note": "expectation identity passes; affordable pilot precision fails"
+    },
+    {
+      "id": "m195_symmetric_half_design_attenuation",
+      "mechanism": "Equal-budget salvage of M194: two independent 63-frame half-designs serve simultaneously as estimator and pilot, with separate projected contrast corrections and total frame count fixed at 126.",
+      "prediction": "Mutual piloting identifies the cross block without additional points and reduces every network by at least 20 percent.",
+      "kill_condition": "Panel reduction below 10 percent, any network worsens, any fallback, or nonfinite output.",
+      "bias_class": "Truth-free cross-fit biased mechanism test on the already-burned three-network cache; no promotion credit.",
+      "result": "KILLED: panel ratio 1.15748, bootstrap [0.88427,1.54798]; per-network ratios 1.34781, 0.886838, 1.29738. Before attenuation, the equal two-half means already ratio 1.29790, 0.865509, 1.23066 versus the full Kerdock comparator, exposing loss of the shared degree-4 structure; attenuation worsens each half baseline slightly. Artifacts: M195_SYMMETRIC_HALF_PREDECLARATION.md, run_m195_g0.py, m195_g0_results.json.",
+      "status": "killed",
+      "status_note": "equal-cost independent split loses Kerdock structure and cross-block SNR"
+    },
+    {
+      "id": "m196_m151_b1_native_provider_gate",
+      "mechanism": "Freeze M151's exact one-block 49-node [2,1,1] deterministic control plus full-support residual, then require a deterministic B=1 state provider, non-cubic native source compiler, bound M147 coefficient provider, and inclusive target FlopScope trace before opening a 24-cell generated variance screen.",
+      "prediction": "If the missing native interfaces exist within the 10.291363760B remainder, M151 can test residual/source variance below 0.25 without the reverse-adjoint arithmetic that killed M150.",
+      "kill_condition": "Any missing provider/compiler/binding/trace, inclusive new cost above 10.291363760B, peak above 512 MiB, prohibited cubic/output-dual operation, or later variance gate failure.",
+      "bias_class": "Exact unbiased source-control identity; static generated-only feasibility gate; no truth, response, scorer, or score credit.",
+      "result": "BLOCKED FAIL-CLOSED before variance execution. M179 supplies only (mu,V); M151 supplies B1CanonicalState validation plus a prohibited exhaustive parity oracle; M147 supplies a cost-killed per-triple reference. No deterministic 49-node state builder, non-cubic target compiler, fixed batch delta211 provider, or inclusive native trace exists. The checker reports BLOCKED_MISSING_NATIVE_PROVIDER_OR_TRACE; 3/3 M196 contract tests and 5/5 inherited M151 algebra tests pass. Preserve the exact identity, but do not fabricate conditional moments or run the 24-cell gate. Artifacts: experiments/m196_m151_b1_gate/.",
+      "status": "blocked",
+      "status_note": "named native provider/compiler/coefficient/trace interfaces absent; variance gate unopened"
+    },
+    {
+      "id": "m197_crossed_three_rotation_u_statistic",
+      "mechanism": "Fixed-budget R=3 crossed U-statistic: three independent Haar rotations times 42 complete frames, each group corrected from two independent group-mean pilots, output-cross-fitted, lambda 1/3, total 126 frames.",
+      "prediction": "Two independent crossed pilots identify the common/contrast block more reliably than M195 while keeping the point budget fixed; require at least 20 percent reduction on every network.",
+      "kill_condition": "Panel reduction below 10 percent, any network worsens, fallback, nonfinite output, failed unknown-mean cancellation, or failed combined sum-one constraint.",
+      "bias_class": "Truth-free cross-fit biased mechanism test on the burned synthetic P2 cache; truth only scores; no promotion credit.",
+      "result": "KILLED: per-network ratios 1.917651, 1.008849, 1.325648; panel ratio 1.368804, bootstrap [1.072507,1.824979]. The uncorrected three-by-42 mean was already 1.783449, 0.976651, 1.242740 versus full Kerdock; correction worsened every network. All 360 fits had zero fallbacks, max arbitrary-mu cancellation discrepancy 9.93e-19, and max combined sum-one error 2.22e-16. Failure is split-design geometry plus cross-block noise, not algebra. Artifacts: experiments/m197_crossed_three_rotation/.",
+      "status": "killed",
+      "status_note": "last fixed-budget crossed-pilot topology loses full Kerdock geometry"
     }
   ]
 }

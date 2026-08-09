@@ -15,8 +15,7 @@ import networkx as nx
 
 
 HERE = Path(__file__).resolve().parent
-OUT = HERE / "graphify-out"
-GRAPH_PATH = OUT / "graph.json"
+GRAPH_PATH = HERE / "graph.json"
 INSIGHTS_PATH = HERE / "DETERMINISTIC_INSIGHTS.md"
 
 
@@ -299,6 +298,18 @@ NODES = {
     "herglotz_structure_factor": ("Herglotz cosine structure factor", "candidate", "theory_backup_unrun", "A bounded exact-mean plane-wave intensity over gate axes; fixed kappa=sqrt(d), but scalar and less output-phased than M111."),
     "nematic_triple_coherence": ("Nematic trace-free triple coherence", "candidate", "theory_backup_unrun", "The centered cube of u^T(A-I/d)u has an exact sixth-moment mean and isolates a degree-six survivor, but near-isotropy may collapse its frame variance."),
     "harmonic_phase_12": ("Even 1-to-2 harmonic coherence", "candidate", "theory_backup_unrun", "A bounded Bessel-centered product of fixed-frequency cosine fields; higher cost and weaker causal prior keep it behind the Herglotz structure factor."),
+    "v31_guards": ("V3.1 fail-closed production guards", "estimator", "validated_robust_candidate", "The immutable row-blocked estimator is wrapped by hardened hostile-budget, finite-output, and exact-tar-member guards; every frozen local gate passes."),
+    "frame_common_contrast": ("Frame common/contrast error block", "phenomenon", "oracle_measured", "Across outputs, frame errors contain a large common-to-contrast cross block that an output-trained oracle can exploit, but one frame matrix exposes only its projected contrast covariance."),
+    "m192_frame_gls_oracle": ("M192 cross-output frame GLS oracle", "oracle", "screened_not_deployable", "Eight-fold output holdout reduces cached panel MSE to .126193 of uniform, but its labels use truth and the required cross block is not identifiable from one estimator matrix."),
+    "single_matrix_crossblock_no_go": ("Single-matrix cross-block non-identifiability", "no_go", "proved", "For X_j=mu_j 1+e_j, shifts mu_j by v^T P e_j leave X fixed while changing P C u by -P C P v; a full-rank contrast block permits any GLS correction."),
+    "m193_analytic_anchor": ("M193 analytic-anchor mutation", "candidate", "killed", "The analytic anchor injects a contrast-correlated error term and worsens panel MSE by 1057.899x."),
+    "m194_independent_pilot": ("M194 independent-pilot block GLS", "candidate", "killed_information_snr", "An independent pilot identifies the cross block in expectation, but an affordable eight-frame pilot is too noisy and worsens panel MSE by 15.831x."),
+    "m195_two_rotation_split": ("M195 two-rotation crossed GLS", "candidate", "killed_geometry_and_noise", "Two 63-frame halves cancel the unknown output mean without truth but lose complete Kerdock geometry and worsen the panel by 1.157x."),
+    "m197_three_rotation_cross": ("M197 three-rotation crossed U-statistic", "candidate", "killed_geometry_and_noise", "Three independent 42-frame rotations preserve the 126-frame total and algebraically cancel output means, yet worsen the panel by 1.369x with a bootstrap lower bound above one."),
+    "m151_b1_forward_control": ("M151 B=1 forward exact-residual control", "candidate_component", "algebra_pass_provider_absent", "A forward coalesced [2,1,1] source control avoids the generic all-output adjoint and leaves 10.291B protected headroom, conditional on an exact target-shape source provider."),
+    "m196_b1_provider_gate": ("M196 native B=1 provider gate", "implementation_gate", "blocked_fail_closed", "The frozen 24-cell variance and trace gate cannot run because no deterministic noncubic B1 state provider, bound batch provider, or native inclusive FlopScope trace exists."),
+    "final_row_quotient": ("Final-row cumulant quotient regression", "candidate", "proposed_unvalidated", "Use the 256 independent final weight rows as simultaneous random projections of the penultimate law, fit only the existing physical cumulant quotient across output folds, and compare against equal-cost direct Monte Carlo."),
+    "late_phase_centering": ("Late-layer phase-centered control", "candidate_component", "identity_survived_surrogate_killed", "Exact centering remains reusable, but the tested Padgett-inspired phase surrogate gains only 1.26 percent raw before cost and does not transfer on every network."),
     "launch_wrapper_precheck": ("M106 redundant launch-precheck defect", "orchestration_defect", "localized_nonfatal", "Relative-path rechecks failed after root had verified all hashes and artifact absence; the frozen runner still executed exactly once and outputs recomputed exactly."),
 }
 
@@ -886,6 +897,23 @@ EDGES = [
     ("herglotz_structure_factor", "harmonic_phase_12", "frequency_coupled_backup_to", "THEORY", 0.6, "fixed one-to-two cosine coupling is exact-mean but costs more and has a weaker mechanism prior"),
     ("launch_wrapper_precheck", "m106_hermite", "localized_outside", "AUDIT", 1.0, "redundant relative-path lookups fail nonterminally after successful root verification"),
     ("failure_evidence_owner", "launch_wrapper_precheck", "keeps_evidence_valid_despite", "AUDIT", 1.0, "one runner execution and mutually consistent artifacts localize the defect without authorizing retry"),
+    ("row_blocked_production", "v31_guards", "hardened_without_estimator_change_by", "VALIDATED", 1.0, "byte identity on healthy cases plus hostile finite-output and package-member gates"),
+    ("failure_gate", "v31_guards", "passed_fail_closed_by", "VALIDATED", 1.0, "frozen v3 anchors reproduce and the guarded child stays finite and within budget"),
+    ("v31_guards", "target", "current_defensible_path_to", "VALIDATED_LOCAL", 0.95, "strongest locally validated legal artifact; private-suite rank remains unknown"),
+    ("high_degree_residual", "frame_common_contrast", "manifests_as_correlated_frame_error_in", "MEASURED", 0.8, "cached P2 frame matrices across three networks and sixteen rotations"),
+    ("frame_common_contrast", "m192_frame_gls_oracle", "exploited_with_truth_by", "ORACLE+MEASURED", 1.0, "output-fold truth labels give panel ratio .126193"),
+    ("single_matrix_crossblock_no_go", "frame_common_contrast", "prevents_truth_free_recovery_of", "PROVED", 1.0, "location shift leaves observed frame matrix invariant while changing the common/contrast cross block"),
+    ("m192_frame_gls_oracle", "m193_analytic_anchor", "mutated_to_truth_free_anchor_as", "PREDECLARED+MEASURED", 1.0, "anchor-error contrast correlation causes 1057.899x loss"),
+    ("m192_frame_gls_oracle", "m194_independent_pilot", "mutated_to_independent_anchor_as", "PREDECLARED+MEASURED", 1.0, "expectation-level identification is dominated by finite-output pilot noise"),
+    ("m192_frame_gls_oracle", "m195_two_rotation_split", "mutated_to_crossed_halves_as", "PREDECLARED+MEASURED", 1.0, "mean cancellation costs design strength and still worsens risk"),
+    ("m195_two_rotation_split", "m197_three_rotation_cross", "mutated_to_three_way_u_statistic_as", "PREDECLARED+MEASURED", 1.0, "two independent pilot rotations per correction do not repay the 42-frame geometry split"),
+    ("m197_three_rotation_cross", "single_matrix_crossblock_no_go", "closes_tested_fixed_budget_escape_from", "POSTMORTEM", 0.95, "algebra and sum constraints pass; noise and design fragmentation remain binding"),
+    ("m151_b1_forward_control", "m196_b1_provider_gate", "requires_native_provider_certification_by", "PREDECLARED", 1.0, "24 generated cells and inclusive 10.291B trace are frozen before efficacy"),
+    ("labelled_state_abi", "m196_b1_provider_gate", "blocks", "AUDIT", 0.95, "no lawful target-shape B1 state provider exists"),
+    ("cumulant_polynomial_quotient", "final_row_quotient", "supplies_fixed_physical_feature_space_for", "HYPOTHESIS", 0.75, "only the already-certified quotient may be used; M179 does not invent a basis"),
+    ("finite_width_vertex", "final_row_quotient", "is_probed_across_outputs_by", "HYPOTHESIS", 0.6, "independent final rows are simultaneous projections of one shared penultimate law"),
+    ("final_row_quotient", "target", "prospective_equal_cost_test_path_to", "HYPOTHESIS", 0.35, "must reach held-output cumulant R2 at least .5 and beat equal-cost direct pilot Monte Carlo on whole-network holdout"),
+    ("harmonic_phase_12", "late_phase_centering", "inspired_mechanized_descendant", "PREDECLARED+MEASURED", 0.8, "phase-centering identity is exact but the tested surrogate fails the cost-adjusted transfer gate"),
 ]
 
 
@@ -927,7 +955,6 @@ def build() -> nx.Graph:
 
 
 def save_graph(graph: nx.Graph) -> None:
-    OUT.mkdir(parents=True, exist_ok=True)
     payload = nx.node_link_data(graph, edges="links")
     GRAPH_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
@@ -1139,6 +1166,12 @@ def write_insights(graph: nx.Graph) -> None:
             "102. M176 pins the exact recurrence and local Jacobian, then closes the attempted archive construction at its true first dependency: an endpoint-complete metered bivariate ReLU value-and-Jacobian primitive is absent. The failure graph therefore loops from staging ABI back into endpoint calculus.",
             "103. M177 completes the PSD-stratum dispatcher but proves a formal runtime no-go under installed FlopScope: billed Phi/phi do not supply certified rounding/remainders, Phi2/Owen-T is absent, and556 FLOPs per pair is only a strict pre-special-function floor. Endpoint algebra survives; M176 remains blocked.",
             "104. The master postmortem rekeys the source by SourceAtom(owner, PSD chart, feasible tangent). This is topological rather than spectral compression: ownership prevents collision double count, chart selection prevents hidden endpoint extrapolation, and tangent feasibility prevents path-underdetermined Jacobians. It is a representation coordinate, not an affordability or efficacy pass.",
+            "105. V3.1 is the current defensible artifact, not a claimed winner: its hardened harness now requires frozen-parent reproduction, exact bill agreement, finite in-budget hostile output, and an exact tar-member set.",
+            "106. M192 exposes the largest cached oracle basin in the campaign: output-fold frame GLS reduces panel MSE by87.38 percent. The same result proves where the missing information lives, not how to obtain it legally at deployment.",
+            "107. The one-matrix location-shift theorem makes the common/contrast cross block non-identifiable. M193, M194, M195, and M197 then close the tested truth-free anchor, independent-pilot, two-way, and three-way fixed-budget recoveries through anchor correlation, pilot SNR, and Kerdock fragmentation.",
+            "108. M151 remains the highest-prior exact analytic branch because its forward B=1 carrier avoids the all-output adjoint, but M196 correctly remains blocked until a lawful noncubic provider and inclusive trace exist; no conditional moments may be fabricated.",
+            "109. The second live moonshot changes sigma-algebra rather than weights: use final output rows as random projections of the shared penultimate cumulants, regress only in the certified physical quotient, and kill it unless it beats same-cost direct Monte Carlo on whole-network holdout.",
+            "110. Padgett-style nested geometry contributes a disciplined phase/harmonic search language, not mystical evidence. The current late-phase surrogate is killed; only exact centering and predeclared spherical-harmonic operators survive as reusable atoms.",
         ]
     )
     INSIGHTS_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
