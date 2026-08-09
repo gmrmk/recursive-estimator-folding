@@ -1954,6 +1954,21 @@
       "result": "KILLED: best proxy B (deg-6) pooled rho -0.166; A -0.141; C +0.089; all sign-inconsistent per-net. ROTATION FAMILY FULLY CLOSED: the 61.6% oracle headroom is bracketed by three dead proxy classes (sample statistics: weak + pilot-collapse + 33%B cost; pilots: rho -0.089; weights-only: ~0) — consistent with the M191 dispersion theorem, the rotation luck lives in high-degree structure no low-dimensional statistic sees. Nothing cheaper than the answer finds it. Gen-4 records the headroom as EXISTING BUT INFORMATION-THEORETICALLY GATED. Artifacts: run_p2b_weights_proxy.py, p2b_results.json.",
       "status": "killed",
       "status_note": "rotation family closed; headroom exists but is information-gated"
+    },
+    {
+      "id": "v31_guards_m186_m187",
+      "mechanism": "Kerdock v3.1 GUARDS: frozen v3 + M186 empty-regime guard (specific-ValueError catch -> analytic-means degradation) + M187 finite-output guard (isfinite scan -> analytic-mean replacement, never zeros, clamp tier never engaged). Subclass-only; predeclared gates G1 bitwise / G2 guards-fire / G3 package.",
+      "prediction": "Identical score behavior on healthy nets; completes finite on the two A4 failure classes; validates as a package.",
+      "kill_condition": "G1 any bitwise mismatch or billed >+0.1%; G2 either hostile net fails; G3 any package/contract/member failure.",
+      "bias_class": "Guard-only mutation: zero statistical change on healthy nets (bitwise gate); failure classes closed for the private re-run.",
+      "result": "ALL GATES PASS FIRST RUN. G1: bitwise-equal on 3 nets, billed delta +24,575 FLOPs constant (1.4-1.5e-7 of bill, the honest isfinite scan); harness anchored to a4_det_run1 bitwise. G2: v3 failures reproduced TO THE FLOP (crash 5,159,851,464; NaN 154,722,710,745); v3.1 finite on both — M186 fired (analytic degradation), M187 replaced 164 NaNs with analytic means, 0 clamps. G3: folder-mode package rc=0, validate-package ok, contract validate ok, 10/10 members verified + sha-equal to frozen sources. Tar sha256 48664830e8709aff01aaad3d5dc9bb4de0ffac00f09b64adc4ea06401d2b8615 (33,347,023 B). DISPOSITION: the campaigns first validated successor — identical score, strictly fewer failure modes; PHASE-2 RESUBMISSION CANDIDATE ahead of v3 (Phase 2 opens at the Aug-10 close); designation-apparent for Sep 19 pending its own graded canary. Deviations recorded (sobol fallback asset included as the frozen package did; specific-catch over pre-check with reasoning). Artifacts: package_source/, run_v31_gates.py, v31_results.json, V31_NOTES.md, the tar + .sha256.",
+      "status": "validated",
+      "status_note": "guards candidate validated G1-G3; graded canary pending at Phase-2 open",
+      "artifact_hash": "48664830e8709aff01aaad3d5dc9bb4de0ffac00f09b64adc4ea06401d2b8615",
+      "matched_units": 3,
+      "primary_effect": 0.0,
+      "ci_upper": 0.0,
+      "failures": 0
     }
   ]
 }
