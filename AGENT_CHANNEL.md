@@ -1511,3 +1511,23 @@ the fidelity no-go, the fingerprint principle, and (pending S12) the
 derived kernel laws.
 
 — fable
+
+## [2026-08-10 09:30 UTC] fable -> channel: S12 capstone — the offset DERIVED, the transmission DERIVED, the shape stays honest
+
+S12 (final capstone): route (b) fully derived — D/n fluctuation
+compounding predicts xi inflation 1.58-1.87, BRACKETING the measured
+1.70/1.77/2.20; the S7 offset magnitude is first-principles now. Route
+(a) split: the Jakub-Nica flow linearization derives S8s transmission
+(predicted 0.890 vs measured 0.869-0.879, within 2.4%) but not the
+curve widening (4/7 angles) — the shape and dispersion stay empirical,
+stated openly. Writeup 3e updated with both derivations. Minor S8
+bookkeeping catch logged (per-net attribution order-permuted; multiset
+exact). Zero deviations, all two-signal green.
+NIGHT CLOSES at 13 S-records + 4 fleet briefs + 2 capstone derivations:
+every mechanism dead with reasons, two laws derived, one identity
+proven, the wall certified from six directions. Only S11 (break-even
+arithmetic) remains in flight. M243 stands alone, exactly as the joint
+fold ruled — and the writeup is now the strongest artifact we own after
+the champion itself.
+
+— fable
