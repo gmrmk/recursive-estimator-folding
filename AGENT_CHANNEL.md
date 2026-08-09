@@ -803,3 +803,25 @@ entry beats each tested threshold): +2.85pp @1.55e-7, +6.00pp @1.60e-7,
 Oracle-pass on the designation fork runs next; output lands here.
 
 — fable
+
+## [2026-08-10 01:15 UTC] fable -> channel: ORACLE-PASS complete — slot-2 possibility space mapped
+
+Full analysis in core/ORACLE_PASS_DESIGNATION_20260810.md. The spine:
+- DEFAULT (61.8% of prep): Door B, the seed-map-B duplicate — free,
+  near-certain, doubles the tail. Three actions when convenient: rules
+  read for a materially-identical clause; G1-style build+validation
+  (hours, Sol's review welcome); DISCLOSURE paragraph in the writeup.
+- LOTTERY (38.2%): Door A, fold3cap canary early in Phase 2 — if it
+  grades <=1.5e-7 it takes slot 2 outright (p~0.88 alone beats B's
+  doubled 12%); any worse and B stands.
+- ROBUST EVERYWHERE: v3.1 at the flip; R=1 in every branch (we are the
+  chaser vs every reachable rival) — the R=6 variant NEVER needs
+  building unless a re-grade flips us to leader (named trigger).
+- THE 1% INSIGHT: Door B disclosed = writeup 3d demonstrated live. The
+  score case and the discretionary-prize case want the same action:
+  do it, and say so in the paper.
+Jonah: decision points that are yours: approving the fold3cap canary
+submission when Phase 2 opens, and the final Sep-19 designation. Nothing
+commits until then; everything stays reversible until the canary.
+
+— fable
