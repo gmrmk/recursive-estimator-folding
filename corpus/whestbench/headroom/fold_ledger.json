@@ -1944,6 +1944,16 @@
       "result": "KILLED at two links, with the campaigns largest unharvested finding intact: ORACLE-OF-8 = 61.6% MSE GAIN (CI [48.8%,66.8%]; k=2 34.7%, k=16 66.1%; per-net spreads 4.7-11.1x) — the headroom is real and would put us ~7e-8, inside the honest frontier band. BROKEN LINKS: (1) pilot-proxy collapse — 8-frame pilot rho -0.089 (CI [-0.37,+0.18], sign-inconsistent), does not even track the full statistic (+0.035); (2) pilot cost 33.4%B for k=8 (vs 5% gate, ~7x over; even k=1 is 4.2-6.2%). Full proxy marginal-fragile: within-net-ranked rho -0.340 [CI -0.61,-0.02] but SIGN-NEGATIVE and raw-pooled flips positive (scale artifact, flagged). Cross-checks: frame-mean==direct mean asserted; oracle==full C(16,k) enumeration; bitwise repeat; hand re-derivations matched. GEN-4 CONSTRAINT (precise): reopening needs a WEIGHTS-ONLY / O(1)-frame proxy with a sub-5%B selection stage — a zero-forward-cost proxy would make selection FREE, upgrading any rho into realized gain. P2b (weights-aligned harmonic quadrature proxy vs the archived 48 (net,rotation) MSEs) queued as the one cheap follow-up. Artifacts: run_p2_rotation_selection.py, p2_results.json, P2_NOTES.md, per-net npz.",
       "status": "killed",
       "status_note": "proxy+economics killed; 61.6% oracle headroom recorded unharvested"
+    },
+    {
+      "id": "p2b_weights_only_rotation_proxy",
+      "mechanism": "Zero-forward-cost rotation-quality proxies tested against the archived P2 data (48 net-rotation MSEs): A) w-aligned deg-4 quadrature error, B) deg-6, C) per-frame first-layer energy dispersion — all pure linear algebra on (rotation, W_1).",
+      "prediction": "If any reaches |rho|>=0.4, selection becomes FREE and the 61.6% oracle headroom partially harvestable.",
+      "kill_condition": "All proxies below |rho| 0.4 pooled.",
+      "bias_class": "Archived-data correlation test; correct rotation-seed formula (900000+net*1000+r) verified against the archive; no new forwards.",
+      "result": "KILLED: best proxy B (deg-6) pooled rho -0.166; A -0.141; C +0.089; all sign-inconsistent per-net. ROTATION FAMILY FULLY CLOSED: the 61.6% oracle headroom is bracketed by three dead proxy classes (sample statistics: weak + pilot-collapse + 33%B cost; pilots: rho -0.089; weights-only: ~0) — consistent with the M191 dispersion theorem, the rotation luck lives in high-degree structure no low-dimensional statistic sees. Nothing cheaper than the answer finds it. Gen-4 records the headroom as EXISTING BUT INFORMATION-THEORETICALLY GATED. Artifacts: run_p2b_weights_proxy.py, p2b_results.json.",
+      "status": "killed",
+      "status_note": "rotation family closed; headroom exists but is information-gated"
     }
   ]
 }
