@@ -1,0 +1,62 @@
+{
+  "candidate": "M243",
+  "status": "PREDECLARED_G0_ONLY_FINAL_REAUDIT_REQUIRED",
+  "authority_order": [
+    "M243_PREDECLARATION_20260809.md",
+    "M243_FROZEN_MANIFEST_20260809.json",
+    "M243_PREIMPLEMENTATION_ERRATUM_20260809.md",
+    "M243_FROZEN_MANIFEST_V2_20260809.json",
+    "M243_PREIMPLEMENTATION_ERRATUM2_20260809.md",
+    "M243_FROZEN_MANIFEST_V3_20260809.json",
+    "M243_SHA256SUMS_20260809.txt"
+  ],
+  "no_code_or_evidence_before_this_manifest": true,
+  "reference": {
+    "interpreter": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+    "scipy_allowed": false,
+    "float_ingestion": "mp.mpf(repr(float(value)))",
+    "m129_sha256": "b7b9d4b0228331972f7fd7b5bd2fb6081ba3053d25daf64f3f8dd0f84e31a6bf"
+  },
+  "g0a": {
+    "event_count": 8,
+    "ownership_fixture": "generated_width5_seed243700005_then_W_normal_0_1_over_sqrt6_shape5x6",
+    "candidate_abi": [
+      "M243DomainRefusal",
+      "Q4Packet",
+      "q4_packet",
+      "conditional_centered_pair",
+      "folded_distinct_event"
+    ],
+    "candidate_forbidden_imports": ["mpmath", "scipy", "M213_event_values", "M216_event_values"]
+  },
+  "g0b": {
+    "precision_agreement": "2e-9*(1+abs(reference))",
+    "even_integral": "2*integral_0_inf phi(g)*integrand(g)_dg",
+    "positive_panels": [0, 0.25, 1, 2.5, 5, 8, 10, 16, "+inf", "plus_abs_alpha_i"],
+    "shards": [
+      {"id": 0, "cell": "P0", "start": 0, "stop": 64},
+      {"id": 1, "cell": "P0", "start": 64, "stop": 128},
+      {"id": 2, "cell": "P1", "start": 0, "stop": 64},
+      {"id": 3, "cell": "P1", "start": 64, "stop": 128}
+    ],
+    "per_shard_launches": 1,
+    "per_shard_wall_seconds": 5400,
+    "per_shard_rss_bytes": 2147483648,
+    "cross_shard_cache": false,
+    "aggregation_launches": 1,
+    "aggregation_wall_seconds": 300,
+    "aggregation_owner": "Codex",
+    "shard_owner": "Fable_after_G0A_pass",
+    "durable_publication": "M237_writeahead_helper",
+    "partial_or_second_intent": "failure"
+  },
+  "execution_order": [
+    "authority_hash_and_commit",
+    "second_no_code_audit",
+    "missing_module_RED",
+    "G0A_candidate_and_independent_oracle",
+    "G0A_adjudication",
+    "four_Fable_G0B_shards_only_if_G0A_passes",
+    "Codex_G0B_aggregation_and_adjudication"
+  ]
+}

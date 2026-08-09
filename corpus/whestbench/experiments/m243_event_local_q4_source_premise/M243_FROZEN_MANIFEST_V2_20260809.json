@@ -1,0 +1,108 @@
+{
+  "candidate": "M243",
+  "authority_order": [
+    "M243_PREDECLARATION_20260809.md",
+    "M243_FROZEN_MANIFEST_20260809.json",
+    "M243_PREIMPLEMENTATION_ERRATUM_20260809.md",
+    "M243_FROZEN_MANIFEST_V2_20260809.json"
+  ],
+  "status": "PREDECLARED_G0_ONLY_REAUDIT_REQUIRED",
+  "score_law": {
+    "S": "MSE*max(0.1,C/B)",
+    "B": 272000000000,
+    "C": "billed_FlopScope_FLOPs+1e11*residual_seconds",
+    "candidate_ceiling": 100000000000,
+    "strict_unallocated_headroom_warning": 1986871472
+  },
+  "champion_guard_sha256": "8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06",
+  "environment": {
+    "interpreter": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+    "python": "3.14.4",
+    "numpy": "2.4.6",
+    "mpmath": "1.3.0",
+    "whestbench": "0.14.0",
+    "flopscope": "0.10.0+np2.4.6",
+    "install_during_experiment": false
+  },
+  "bias": {
+    "mathematical_identity": "exact_unbiased_for_exact_b_and_any_deterministic_c_in_real_arithmetic",
+    "runtime_m178": "deterministic_certified_numerical_approximation_not_exact_unbiased",
+    "beta_claim": "ordinary_L2_projection_of_b_and_G0B_variance_efficiency_premise_not_r_weighted_optimum"
+  },
+  "lifted_center_function": "Htilde(s,t)=Raw(a+s,b+t;rho)-L(a)L(b+t)-L(b)L(a+s)+L(a)L(b)",
+  "g0a": {
+    "event_count": 8,
+    "events": [
+      ["A0", 0, 1, 2], ["A1", 0, 1, 2],
+      ["w3", 0, 1, 2], ["w3", 2, 0, 1],
+      ["w5", 0, 1, 2], ["w5", 4, 0, 1],
+      ["w7", 0, 1, 2], ["w7", 6, 0, 1]
+    ],
+    "permutation": "perm[a]=(a+1)%n with co-permuted mu,C,event",
+    "gauge": "lambda[a]=2**(((a%5)-2)/4); mu'=lambda*mu; C'=outer(lambda,lambda)*C",
+    "scaled_defect": "abs(lhs-scale*rhs)/(1+abs(scale*rhs))",
+    "oracle": {
+      "dps": [80, 100],
+      "rho_panels": 16,
+      "outer_panels": ["-inf", -16, -10, -8, -5, -2.5, -1, -0.25, 0, 0.25, 1, 2.5, 5, 8, 10, 16, "+inf", "plus_repeated_kink"],
+      "method": "mpmath_tanh_sinh",
+      "maxdegree": 12,
+      "wall_seconds": 2700,
+      "rss_bytes": 2147483648,
+      "launches": 1
+    },
+    "actual_m178_interval": "absolute_linear_radius_sum+64eps_guard+nextafter_outward"
+  },
+  "g0b": {
+    "binding_path": "actual_M178_backed_beta_and_conditional_b",
+    "ideal_path_role": "oracle_only",
+    "cells": ["P0", "P1"],
+    "units_per_cell": 128,
+    "duplicate_policy": "evaluate_unique_cell_i_j_k_once_then_map_to_occurrences",
+    "unconditional_jet_cache": "once_per_unique_cell_j_k_with_reverse_orientation_receipt",
+    "bridge": "M147_build_endpoint_state_frechet_zero_tangents_width12",
+    "proposal": "M133_collision211_factored_proposal_post_relu_bridge_uniform_mixture_0.05",
+    "feature": "M151_source_feature_211_flatten_aaaa_aaab_aabb",
+    "conditional_variance": "direct_integral_of_(Z-mu)^2_no_E2_minus_mean2",
+    "cell_N": "mean_h_Q",
+    "cell_VDelta": "sum_norm2(x-xbar)/(K-1)",
+    "pooled": "equal_weight_average_of_two_cellwise_numerators_and_denominators",
+    "bootstrap": {
+      "generator": "Generator(Philox(2430002))",
+      "replicates": 20000,
+      "unit": "paired_event_index_within_cell",
+      "pooled_resampling": "stratified_128_plus_128",
+      "upper90": "np.quantile(ratios,0.90,method=linear)",
+      "p99": "np.quantile(h_Q,0.99,method=linear)",
+      "zero_or_nonfinite_denominator": "fail"
+    },
+    "gates_apply_to": ["P0", "P1", "pooled"],
+    "event_bias": "abs(mu_Q4-Delta)<=2e-7*(1+abs(Delta))",
+    "source_vector_bias_ratio": "norm2(mean(bias*f/(2q)))/VDelta<=1e-8",
+    "wall_seconds": 14400,
+    "rss_bytes": 2147483648,
+    "launches": 1
+  },
+  "comparators": {
+    "RAW1": "Zraw(G)",
+    "RAW2": "mean_of_two_independent_Zraw",
+    "ANTI": "0.5*(Zraw(G)+Zraw(-G))",
+    "Q2": "universal_addback_beta0_to_beta2_at_plus_minus_G",
+    "Q4": "universal_addback_beta0_to_beta4_at_plus_minus_G",
+    "STRAT2": "one_independent_draw_from_each_normal_half_then_equal_average",
+    "GH2": "0.5*(Zraw(-1)+Zraw(+1))_biased_diagnostic",
+    "EXACT": "adaptive_high_precision_outer_integral_reference"
+  },
+  "m196_forbidden_in_g0": [
+    "B1CanonicalState", "dtilde", "H", "V_H", "M196_24_cells_or_seeds",
+    "(V_H+N_Q4)/V_Delta_claim"
+  ],
+  "m196_allowed_in_g0": "generated_raw_VDelta_as_provider_noise_scale_only",
+  "stop_rules": {
+    "g0a_failure": "no_g0b",
+    "g0b_failure": "no_atlas_or_native",
+    "partial_completion": "failure",
+    "repair_after_hash": "new_erratum_hash_and_reaudit_required"
+  },
+  "evidence_executed_at_creation": false
+}
