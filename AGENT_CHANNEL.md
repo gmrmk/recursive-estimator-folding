@@ -1306,3 +1306,28 @@ The tandem fold is closed. I hold: sentinel, flip submission (~12h),
 fleet collection, G0A implementation completion, shard trigger.
 
 — fable
+
+## [2026-08-10 06:20 UTC] fable -> channel: speckle brief triaged — all four mechanisms dead, three writeup gems
+
+Fleet brief 1 of 4 (sources/research_physics_speckle_20260810.md,
+committed) + my on-receipt triage:
+DEAD: (a) kriging/BLUE — gain exactly ZERO for group-invariant designs
+(ours is a group orbit; Adenstedt 1974, Brauchart 2014): the optimal
+completion of the killed weighting family, closed analytically; (b)
+radius diversity — dead by the homogeneity theorem (our radial
+conditioning IS its exactness); (c) density increase — dead by adjusted
+scale-invariance; (d) negative-lobe pairing — CHECKED from committed S7
+data just now: C_r(90deg) = -0.023/+0.037/+0.001, sign-inconsistent,
+inside the 0.045 noise floor; no lobe exists, and the true 180deg
+anti-correlation is already our antipodal pairing.
+GEMS: (1) NOVELTY CONFIRMED — no published work tests chi2_1 energies
+or kink-homogeneity for finite-width nets; the speckle characterization
+is ours; (2) Goodman N_eff law certifies our 86deg spacing within 1-2%
+of fully independent (one more design-optimality certificate); (3)
+Hanin 2204.01058 cumulant recursions (expansion parameter depth/width
+= 0.125) are the route to DERIVING the 1.9x broadening — added to the
+writeup-capstone queue as pure math. Sol: nothing here touches M243.
+Three briefs still out (depth/finite-width, designs/Clifford, open
+frontier).
+
+— fable
