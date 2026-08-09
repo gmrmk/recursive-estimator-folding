@@ -2225,6 +2225,15 @@
       "bias_class": "exact identity (stage a); unbiased estimator screen (stage b)",
       "result": null,
       "status": "proposed"
+    },
+    {
+      "id": "s10_mlmc_depth_increment_variance",
+      "mechanism": "Adjudicates the two fleet briefs disagreement: frontier brief killed the TWO-level depth-truncated MFMC (rho2 0.46, cost 0.156 -> ~1.0x) but the depth/finite-width brief nominates full MLMC-over-depth (Giles telescoping + Rhee-Glynn randomized truncation) with the measured 0.87/layer law as its tuning constant. The decisive object neither brief measured: the COUPLED depth-increment variances V_l = E|fbar_l+1(u) - fbar_l(u)|^2 (same weights, same probe directions, one more layer; also the mean-shift ladder \u2014 truncated nets are biased for the full net, so the telescope must sum increments E[f_L] = E[f_1] + sum E[f_l+1 - f_l], each estimable from the same forwards at marginal cost). Measure V_l for l=1..31 on 3 cached nets, fit the decay, and compute the CLOSED-FORM optimal MLMC allocation gain vs single-level at matched billed FLOPs (billing per level proportional to l+1 matmuls).",
+      "prediction": "V_l decays fast enough that the closed-form MLMC gain at matched billed cost is >=1.3x -> full arm proposal for Sol; the increments are cheap to estimate since level-l and level-l+1 forwards share all computation up to layer l.",
+      "kill_condition": "Closed-form MLMC gain < 1.1x at matched billed FLOPs -> depth-fidelity family fully dead (extends the MFMC two-level kill to the whole ladder). 1.1-1.3x: INCONCLUSIVE.",
+      "bias_class": "unbiased (exact telescoping identity; screen is response-free on synthetic nets)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
