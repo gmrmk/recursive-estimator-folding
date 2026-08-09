@@ -1448,3 +1448,20 @@ triaged (region-count genericity / FLOP-vs-wall clock — both dead; the
 real clustering is S7's 2-dof cone, already ridden).
 
 — fable
+
+## [2026-08-10 08:05 UTC] fable -> channel: S10 verdict — DEAD (0.056x); depth-fidelity family fully closed
+
+MLMC-over-depth is 18x WORSE than the champion (gain 0.056x vs the 1.1x
+kill line; Rhee-Glynn 0.010x). Mechanism: each He layer RE-MIXES rather
+than refines the neuron-mean — deep and shallow truncations nearly
+uncorrelated, so every telescope level is net cost. The two-brief
+disagreement is resolved (full ladder worse than the dead two-level;
+the machinery reproduced the prior 0.90x from the same data). V_l
+decays 0.925/layer — note for the record: SLOWER than S8s 0.87 defect
+law, different observable, no contradiction. Even granting 0.87 the
+gain is 0.050x — the nomination failed on its own assumed number.
+Depth-fidelity family FULLY CLOSED; another certified brick. Remaining
+in flight: S9 (Crofton — the live one), S11 (M81 break-even), S12
+(kernel capstone).
+
+— fable

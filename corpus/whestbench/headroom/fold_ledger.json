@@ -2232,8 +2232,8 @@
       "prediction": "V_l decays fast enough that the closed-form MLMC gain at matched billed cost is >=1.3x -> full arm proposal for Sol; the increments are cheap to estimate since level-l and level-l+1 forwards share all computation up to layer l.",
       "kill_condition": "Closed-form MLMC gain < 1.1x at matched billed FLOPs -> depth-fidelity family fully dead (extends the MFMC two-level kill to the whole ladder). 1.1-1.3x: INCONCLUSIVE.",
       "bias_class": "unbiased (exact telescoping identity; screen is response-free on synthetic nets)",
-      "result": null,
-      "status": "proposed"
+      "result": "DEAD far below the kill line: closed-form MLMC-over-depth gain 0.056x geomean (0.043/0.069/0.059 per net) = ~18x WORSE than single-level; Rhee-Glynn single-term 0.010x. MECHANISM: coupled increments do not decouple \u2014 deep and shallow neuron-means are nearly uncorrelated (V_full 8.0e-3, Var[g_32-g_1] 7.76e-3): each He ReLU layer RE-MIXES rather than refines the neuron-mean, so every telescope level is net cost. V_l decay 0.925/layer (slower than the 0.87 defect law \u2014 different observable); increment MEANS do not decay (persistent truncation bias). Sensitivity: even at exact 0.87 decay, gain 0.050x; break-even needs rho~0.53/layer. RESOLVES the two-brief disagreement: full ladder worse than the dead two-level MFMC (0.90x reproduced from the same data \u2014 machinery validated). Two-signal: iid-Gaussian resample agrees within 1.3% (population property, not design artifact). Target fidelity: E_u[g_32] = champion target exactly, no telescope gap. Depth-fidelity family FULLY CLOSED. Artifacts: experiments/s10_mlmc_depth/.",
+      "status": "killed"
     },
     {
       "id": "s11_full129_reopen_measured_breakeven",
