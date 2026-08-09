@@ -2198,6 +2198,15 @@
       "bias_class": "exact (pure spectral measurement of the fixed unrotated design; no estimator change)",
       "result": null,
       "status": "proposed"
+    },
+    {
+      "id": "s7_wavepacket_speckle_correlation",
+      "mechanism": "Owner reframe of the Bloch bolt: treat the probe direction as a quantum wave packet propagating through the weight crystal; the mean-field medium has a known dispersion relation (the ReLU arccos-kernel angle recursion, depth-iterated), realized weights = crystal + defects, estimator variance = defect scattering, and the residual field on the sphere is then a SPECKLE pattern whose angular correlation function C_r(theta) is PREDICTED by the depth-32 iterated angle map. Test: measure C_r(theta) of the per-direction residual on 3 cached He nets (fresh forwards, independent of the S5 run) and compare its correlation length xi_measured against xi_meanfield from the closed-form recursion; also compare xi to the design frame spacing (90 deg) to adjudicate redundancy.",
+      "prediction": "xi_measured within a factor of 2 of the mean-field prediction on >=2/3 nets, with a coherent monotone C_r(theta); the comparison to design spacing states whether independent-speckle count or redundancy governs.",
+      "kill_condition": "xi off by >5x from mean-field, or no coherent decay structure in C_r(theta) -> the speckle/wave-packet model is quantitatively wrong for this observable; frame dies here. Factor 2-5: INCONCLUSIVE, held unresolved. A PASS licenses only: (a) a first-principles variance formula for the writeup, (b) a design-spacing adjudication note; no estimator arm without Sol review.",
+      "bias_class": "exact (measurement + closed-form comparison; no estimator change)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
