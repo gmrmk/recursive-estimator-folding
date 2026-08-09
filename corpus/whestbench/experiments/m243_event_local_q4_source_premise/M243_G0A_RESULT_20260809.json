@@ -1,0 +1,950 @@
+{
+  "adjudication_status": "PROVISIONAL_PENDING_POSTPUBLICATION_RECEIPT",
+  "all_provisional_gates_pass": false,
+  "authority_head": "899a92b6a42110ebfaa24c2799539b0c526ad5b8",
+  "canonical_nonfinite_findings": [],
+  "completed_event_count": 0,
+  "component_verdict": false,
+  "credit": {
+    "formula_component": false,
+    "native_cost": false,
+    "provider": false,
+    "response": false,
+    "score": false,
+    "source_variance": false,
+    "total_support": false
+  },
+  "environment": {
+    "expected_interpreter": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+    "expected_versions": {
+      "flopscope": "0.10.0+np2.4.6",
+      "flopscope_distribution": "0.10.0",
+      "mpmath": "1.3.0",
+      "numpy": "2.4.6",
+      "python": "3.14.4",
+      "whestbench": "0.14.0"
+    },
+    "interpreter": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+    "interpreter_match": true,
+    "os_name": "nt",
+    "pass": true,
+    "scipy_absent": true,
+    "versions": {
+      "flopscope": "0.10.0+np2.4.6",
+      "flopscope_distribution": "0.10.0",
+      "mpmath": "1.3.0",
+      "numpy": "2.4.6",
+      "python": "3.14.4",
+      "whestbench": "0.14.0"
+    },
+    "versions_match": true
+  },
+  "execution_exceptions": [
+    {
+      "exception_message": "non-finite certified interval",
+      "exception_type": "M243DomainRefusal",
+      "phase": "scientific_execution",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 2115, in _main\n    run_g0a(watchdog, gates, work)\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1772, in run_g0a\n    actual_by_dps[dps] = evaluate_candidate_integrals(fixture, event, state, dps, watchdog)\n                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1243, in evaluate_candidate_integrals\n    local_radius, radius_error = audit.integrate(\n                                 ~~~~~~~~~~~~~~~^\n        lambda g, chosen=mode: mp_float(cache.evaluate(chosen, g)[1]) * normal_pdf(g),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        panels,\n        ^^^^^^^\n        f\"actual:{fixture.name}:{event}:{dps}:{mode}:radius\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\m243_g0a_reference.py\", line 117, in integrate\n    observed = mp.quad(\n        function,\n    ...<3 lines>...\n        error=True,\n    )\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\calculus\\quadrature.py\", line 746, in quad\n    v, err = rule.summation(f, points[0], prec, epsilon, m, verbose)\n             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\calculus\\quadrature.py\", line 233, in summation\n    result = self.sum_next(f, nodes, degree, prec, results, verbose)\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\calculus\\quadrature.py\", line 308, in sum_next\n    S += self.ctx.fdot((w,f(x)) for (x,w) in nodes)\n         ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\ctx_mp_python.py\", line 938, in fdot\n    for a, b in A:\n                ^\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\calculus\\quadrature.py\", line 308, in <genexpr>\n    S += self.ctx.fdot((w,f(x)) for (x,w) in nodes)\n                          ~^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1244, in <lambda>\n    lambda g, chosen=mode: mp_float(cache.evaluate(chosen, g)[1]) * normal_pdf(g),\n                                    ~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1219, in evaluate\n    observed = self._folded(degree, g_float)\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1198, in _folded\n    self.values[key] = candidate.folded_distinct_event(\n                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        self.state,\n        ^^^^^^^^^^^\n    ...<2 lines>...\n        degree=degree,\n        ^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\m243_event_local_q4_source_premise.py\", line 542, in folded_distinct_event\n    lower, upper, radius = _outward(center, radius)\n                           ~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\m243_event_local_q4_source_premise.py\", line 163, in _outward\n    raise M243DomainRefusal(\"non-finite certified interval\")\nm243_event_local_q4_source_premise.M243DomainRefusal: non-finite certified interval\n"
+    }
+  ],
+  "expected_event_count": 8,
+  "expected_gate_ids": [
+    "G0A-FROZEN-ENVIRONMENT",
+    "G0A-STATIC-FIREWALL",
+    "G0A-CENSUS-EXACT",
+    "G0A-COLLISION-TYPED-POISON-REFUSAL",
+    "G0A-SOURCE-HALF-OWNERSHIP",
+    "G0A-MPMATH-MAXDEGREE12-ERROR",
+    "G0A-80-100-PRECISION-AGREEMENT",
+    "G0A-REPEATED-R-DIRECT",
+    "G0A-BETA-ANALYTIC-VS-DIRECT",
+    "G0A-ACTUAL-M178-BETA-INTERVAL",
+    "G0A-RAW-ANTI-Q2-Q4-EXPECTATIONS",
+    "G0A-INTEGRATED-M178-ENCLOSURE",
+    "G0A-TAIL-FINITE-AND-ENCLOSED",
+    "G0A-SINGLETON-SWAP",
+    "G0A-CYCLIC-CO-PERMUTATION",
+    "G0A-POSITIVE-DIAGONAL-GAUGE",
+    "G0A-M147-M122-M126-TREE",
+    "G0A-EIGHT-EVENT-COMPLETION",
+    "G0A-RESOURCE-CAPS",
+    "G0A-NO-UNCAUGHT-EXCEPTION",
+    "G0A-ARTIFACT-STABILITY"
+  ],
+  "firewall_boundaries": {
+    "b1_state_constructed": false,
+    "challenge_weights_accessed": false,
+    "dtilde_constructed": false,
+    "g0b_run": false,
+    "g0b_shards_run": false,
+    "integration_run": false,
+    "leaderboard_accessed": false,
+    "m196_cells_accessed": false,
+    "m196_residual_imported": false,
+    "provider_accessed": false,
+    "response_run": false,
+    "sampled_manifest_created": false,
+    "scorer_run": false,
+    "submission_run": false,
+    "truth_accessed": false,
+    "v_h_computed": false
+  },
+  "frozen_hashes_after": {
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m122_nonzero_bridge_theory\\m122_nonzero_bridge.py": "c765fe24818f4ec8928a879e217a530077edff98f729555739202c1f7286f927",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m129_source_frechet_tangent\\m129_source_frechet.py": "b7b9d4b0228331972f7fd7b5bd2fb6081ba3053d25daf64f3f8dd0f84e31a6bf",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m133_ht_hidden_edge\\m133_ht_hidden_edge.py": "c296c95ede532c1451e0444b9d56b51e96287ef251b11de9cacee0df7d1ea6b1",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m147_endpoint_safe_bridge\\m147_endpoint_safe_bridge.py": "b042e3fe5fc7af518e2ae57a0e43ba6417b22e1c12dfaef458164cf33629a0c0",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m151_b1_forward_control\\m151_b1_forward_control.py": "520431079e63b4bb82c6fe3db997d875ce31fc4037538eb64ce7fea24bf55cd5",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m178_certified_phi2_owent\\m178_certified_phi2_owent.py": "fa3614a22c2250f69f4d891834cc1e7ca6bd8874d67575b87c7d3fa8598f1c5c",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m179_background_archive_producer\\m179_background_producer.py": "a74a6b0b2807c2b1bc0e38777ba542e3fda196d45f7f436ce12e44fd5cfa4012",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m196_m151_b1_gate\\M196_BLOCKER_AND_MINIMAL_INTERFACE_20260808.md": "cf1f563c7afcb2781de2415c17d55a6f32366e3a155ca398497e18d432cb0685",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m196_m151_b1_gate\\M196_PREDECLARATION_20260808.md": "6eedf4199729973bb275745aa037ca21fc2e83f700c461865b481012601a5b60",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m213_event_local_randomized_source211\\m213_event_local_randomized_source211.py": "ed20bb8e1f28ea4a9f114ce06c4d3979dfa6c10e82c7ae4dd5e74d35e9adee59",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m216_antithetic_distinct_provider\\m216_antithetic_distinct_provider.py": "74d7574b6dd07e290c5b70a062b3324c169b9da9c215d0019c5fbb003e8742d7",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m224_gauge_invariant_rho08_chart\\m224_gauge_invariant_rho08_chart.py": "6aba2d0ab618ff5d678977cc07fc89962c09092b537aaffc282e069c10dfda7b",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m226_preallocated_fused_rho08\\m226_preallocated_fused_rho08.py": "a52ce3b016cbe23b15c1061354d64cd78e405a37461ea727fce119f7ebce3571",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m237_writeahead_native_receipt\\m237_durable_native_receipt.py": "774cef483c33b149524121144a4c5ede9141f094aa6fe5037414e31bddac873c",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_20260809.json": "2f788fdc8d91abb8cd43b9ce82140c12cc5707b49b9f815c56abae105b906895",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_V2_20260809.json": "b8517dc722b0ac09331d18721b48d76316c85234b427e1864fba2dd370c1350e",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_V3_20260809.json": "6f24dfd5f49a3cb12aa4cc3b12afab331d794975aa586c0d04305055c90aafdb",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_V4_20260809.json": "3f91ff3851d5e5867c6660c90dbf89a1dc8105222fcdda8c6ae21193b421dee0",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_V5_20260809.json": "b472f009fc8f88ff725886043a72ff5eb1c379b8314ca13f8127de2f16c01859",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_G0A_STATIC_VALIDATION_20260809.json": "361f47c55e99a234d6421e41177f7560716fe047c9cf90f31f0579b97e9f4815",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PREDECLARATION_20260809.md": "a53e3cbf58b9bdc290e6abbf3323a1b7e5162a370774dcd918ddb2193340a9c3",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PREIMPLEMENTATION_ERRATUM2_20260809.md": "34027dd527a3443f08b63d410856388069eae1a07575a3110523cd760b57654a",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PREIMPLEMENTATION_ERRATUM3_20260809.md": "1625b0d5dd29e2d7ed5a763b47e3d3d9ddbb992606355f1fde778e9fd93b5a66",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PREIMPLEMENTATION_ERRATUM_20260809.md": "d7d68c59f5a7389a409f7fd6312145347e4597d45b4161ca9919a53837f60d9d",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PRELAUNCH_ERRATUM4_20260809.md": "b5960d598870208056fa4c4f5e8213ce13816905e16d7e54c47cdeb281a1d9db",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_SHA256SUMS_V2_20260809.txt": "de2fbcff97353cfc5f4cb0015b509827909cc57c5b1c41c8cf8fdff76d270d8c",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_SHA256SUMS_V3_20260809.txt": "02f310f54776618e5dd96959ec4f13c121a3fc89b7d8204a5da90d4521611a40",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_TDD_RECEIPT_20260809.md": "5e3d4fcc5b15770f7c9495620a49360a3af4c8b7aea5836e4d8dd09122b1b7a0",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\m243_event_local_q4_source_premise.py": "b9fe9a79b4e0f5273cbaf6a5b38e6399c9ffba5bd6bea2df1c5e04bd01393152",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\test_m243_event_local_q4_source_premise.py": "f801e9fe0776686f047a0d21de121ded5ff6fae7104d735ecd7c831d6789d1e4"
+  },
+  "frozen_hashes_before": {
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m122_nonzero_bridge_theory\\m122_nonzero_bridge.py": "c765fe24818f4ec8928a879e217a530077edff98f729555739202c1f7286f927",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m129_source_frechet_tangent\\m129_source_frechet.py": "b7b9d4b0228331972f7fd7b5bd2fb6081ba3053d25daf64f3f8dd0f84e31a6bf",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m133_ht_hidden_edge\\m133_ht_hidden_edge.py": "c296c95ede532c1451e0444b9d56b51e96287ef251b11de9cacee0df7d1ea6b1",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m147_endpoint_safe_bridge\\m147_endpoint_safe_bridge.py": "b042e3fe5fc7af518e2ae57a0e43ba6417b22e1c12dfaef458164cf33629a0c0",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m151_b1_forward_control\\m151_b1_forward_control.py": "520431079e63b4bb82c6fe3db997d875ce31fc4037538eb64ce7fea24bf55cd5",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m178_certified_phi2_owent\\m178_certified_phi2_owent.py": "fa3614a22c2250f69f4d891834cc1e7ca6bd8874d67575b87c7d3fa8598f1c5c",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m179_background_archive_producer\\m179_background_producer.py": "a74a6b0b2807c2b1bc0e38777ba542e3fda196d45f7f436ce12e44fd5cfa4012",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m196_m151_b1_gate\\M196_BLOCKER_AND_MINIMAL_INTERFACE_20260808.md": "cf1f563c7afcb2781de2415c17d55a6f32366e3a155ca398497e18d432cb0685",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m196_m151_b1_gate\\M196_PREDECLARATION_20260808.md": "6eedf4199729973bb275745aa037ca21fc2e83f700c461865b481012601a5b60",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m213_event_local_randomized_source211\\m213_event_local_randomized_source211.py": "ed20bb8e1f28ea4a9f114ce06c4d3979dfa6c10e82c7ae4dd5e74d35e9adee59",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m216_antithetic_distinct_provider\\m216_antithetic_distinct_provider.py": "74d7574b6dd07e290c5b70a062b3324c169b9da9c215d0019c5fbb003e8742d7",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m224_gauge_invariant_rho08_chart\\m224_gauge_invariant_rho08_chart.py": "6aba2d0ab618ff5d678977cc07fc89962c09092b537aaffc282e069c10dfda7b",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m226_preallocated_fused_rho08\\m226_preallocated_fused_rho08.py": "a52ce3b016cbe23b15c1061354d64cd78e405a37461ea727fce119f7ebce3571",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m237_writeahead_native_receipt\\m237_durable_native_receipt.py": "774cef483c33b149524121144a4c5ede9141f094aa6fe5037414e31bddac873c",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_20260809.json": "2f788fdc8d91abb8cd43b9ce82140c12cc5707b49b9f815c56abae105b906895",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_V2_20260809.json": "b8517dc722b0ac09331d18721b48d76316c85234b427e1864fba2dd370c1350e",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_V3_20260809.json": "6f24dfd5f49a3cb12aa4cc3b12afab331d794975aa586c0d04305055c90aafdb",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_V4_20260809.json": "3f91ff3851d5e5867c6660c90dbf89a1dc8105222fcdda8c6ae21193b421dee0",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_FROZEN_MANIFEST_V5_20260809.json": "b472f009fc8f88ff725886043a72ff5eb1c379b8314ca13f8127de2f16c01859",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_G0A_STATIC_VALIDATION_20260809.json": "361f47c55e99a234d6421e41177f7560716fe047c9cf90f31f0579b97e9f4815",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PREDECLARATION_20260809.md": "a53e3cbf58b9bdc290e6abbf3323a1b7e5162a370774dcd918ddb2193340a9c3",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PREIMPLEMENTATION_ERRATUM2_20260809.md": "34027dd527a3443f08b63d410856388069eae1a07575a3110523cd760b57654a",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PREIMPLEMENTATION_ERRATUM3_20260809.md": "1625b0d5dd29e2d7ed5a763b47e3d3d9ddbb992606355f1fde778e9fd93b5a66",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PREIMPLEMENTATION_ERRATUM_20260809.md": "d7d68c59f5a7389a409f7fd6312145347e4597d45b4161ca9919a53837f60d9d",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_PRELAUNCH_ERRATUM4_20260809.md": "b5960d598870208056fa4c4f5e8213ce13816905e16d7e54c47cdeb281a1d9db",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_SHA256SUMS_V2_20260809.txt": "de2fbcff97353cfc5f4cb0015b509827909cc57c5b1c41c8cf8fdff76d270d8c",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_SHA256SUMS_V3_20260809.txt": "02f310f54776618e5dd96959ec4f13c121a3fc89b7d8204a5da90d4521611a40",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_TDD_RECEIPT_20260809.md": "5e3d4fcc5b15770f7c9495620a49360a3af4c8b7aea5836e4d8dd09122b1b7a0",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\m243_event_local_q4_source_premise.py": "b9fe9a79b4e0f5273cbaf6a5b38e6399c9ffba5bd6bea2df1c5e04bd01393152",
+    "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\test_m243_event_local_q4_source_premise.py": "f801e9fe0776686f047a0d21de121ded5ff6fae7104d735ecd7c831d6789d1e4"
+  },
+  "g0a_complete": false,
+  "g0a_pass": null,
+  "g0b_sample_manifest_authorized": false,
+  "g0b_shards_authorized": false,
+  "gate_count": 8,
+  "gate_ids_exact": false,
+  "gates": [
+    {
+      "details": {
+        "expected_interpreter": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+        "expected_versions": {
+          "flopscope": "0.10.0+np2.4.6",
+          "flopscope_distribution": "0.10.0",
+          "mpmath": "1.3.0",
+          "numpy": "2.4.6",
+          "python": "3.14.4",
+          "whestbench": "0.14.0"
+        },
+        "interpreter": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+        "interpreter_match": true,
+        "os_name": "nt",
+        "pass": true,
+        "scipy_absent": true,
+        "versions": {
+          "flopscope": "0.10.0+np2.4.6",
+          "flopscope_distribution": "0.10.0",
+          "mpmath": "1.3.0",
+          "numpy": "2.4.6",
+          "python": "3.14.4",
+          "whestbench": "0.14.0"
+        },
+        "versions_match": true
+      },
+      "gate_id": "G0A-FROZEN-ENVIRONMENT",
+      "passed": true
+    },
+    {
+      "details": {
+        "candidate_clean": true,
+        "candidate_forbidden_prefixes": [
+          "mpmath",
+          "scipy",
+          "m213",
+          "m216"
+        ],
+        "candidate_imports": [
+          "__future__",
+          "collections",
+          "dataclasses",
+          "itertools",
+          "m147_endpoint_safe_bridge",
+          "m178_certified_phi2_owent",
+          "math",
+          "numpy",
+          "operator",
+          "pathlib",
+          "sys",
+          "typing"
+        ],
+        "pass": true,
+        "reference_clean": true,
+        "reference_forbidden_prefixes": [
+          "numpy",
+          "scipy",
+          "m243_event_local_q4_source_premise",
+          "m147",
+          "m178",
+          "m151",
+          "m133"
+        ],
+        "reference_imports": [
+          "__future__",
+          "collections",
+          "dataclasses",
+          "itertools",
+          "math",
+          "mpmath",
+          "typing"
+        ]
+      },
+      "gate_id": "G0A-STATIC-FIREWALL",
+      "passed": true
+    },
+    {
+      "details": {
+        "expected": [
+          [
+            "A0",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "A1",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "w3",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "w3",
+            [
+              2,
+              0,
+              1
+            ]
+          ],
+          [
+            "w5",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "w5",
+            [
+              4,
+              0,
+              1
+            ]
+          ],
+          [
+            "w7",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "w7",
+            [
+              6,
+              0,
+              1
+            ]
+          ]
+        ],
+        "observed": [
+          [
+            "A0",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "A1",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "w3",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "w3",
+            [
+              2,
+              0,
+              1
+            ]
+          ],
+          [
+            "w5",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "w5",
+            [
+              4,
+              0,
+              1
+            ]
+          ],
+          [
+            "w7",
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          [
+            "w7",
+            [
+              6,
+              0,
+              1
+            ]
+          ]
+        ]
+      },
+      "gate_id": "G0A-CENSUS-EXACT",
+      "passed": true
+    },
+    {
+      "details": {
+        "pair_jet_calls": 0,
+        "pass": true,
+        "rows": [
+          {
+            "exception_type": "M243DomainRefusal",
+            "labels": [
+              0,
+              0,
+              0
+            ],
+            "refused": true,
+            "surface": "q4_packet"
+          },
+          {
+            "exception_type": "M243DomainRefusal",
+            "labels": [
+              0,
+              0,
+              1
+            ],
+            "refused": true,
+            "surface": "q4_packet"
+          },
+          {
+            "exception_type": "M243DomainRefusal",
+            "labels": [
+              0,
+              1,
+              1
+            ],
+            "refused": true,
+            "surface": "q4_packet"
+          },
+          {
+            "exception_type": "M243DomainRefusal",
+            "labels": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "refused": true,
+            "surface": "folded_distinct_event"
+          },
+          {
+            "exception_type": "M243DomainRefusal",
+            "labels": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "refused": true,
+            "surface": "folded_distinct_event"
+          },
+          {
+            "exception_type": "M243DomainRefusal",
+            "labels": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "refused": true,
+            "surface": "folded_distinct_event"
+          },
+          {
+            "exception_type": "M243DomainRefusal",
+            "labels": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "refused": true,
+            "surface": "folded_distinct_event"
+          }
+        ]
+      },
+      "gate_id": "G0A-COLLISION-TYPED-POISON-REFUSAL",
+      "passed": true
+    },
+    {
+      "details": {
+        "declared_owner": 0.5,
+        "fixture": "w5",
+        "ordered_population": 60,
+        "pass": false,
+        "proposal_mass": 0.9999999999999998,
+        "rows": [
+          {
+            "all_three_slots_nonempty": true,
+            "direct_differs_from_double_owner": true,
+            "direct_equals_one_owner_bitwise": true,
+            "event": [
+              0,
+              1,
+              2
+            ],
+            "flattened_length": 78,
+            "owner_factor": 0.5,
+            "q": 0.008973129089496866,
+            "source_swap_bitwise": false
+          },
+          {
+            "all_three_slots_nonempty": true,
+            "direct_differs_from_double_owner": true,
+            "direct_equals_one_owner_bitwise": true,
+            "event": [
+              4,
+              0,
+              1
+            ],
+            "flattened_length": 78,
+            "owner_factor": 0.5,
+            "q": 0.004827166897626511,
+            "source_swap_bitwise": false
+          }
+        ],
+        "support_minimum": 0.0036205318007805475,
+        "uniform_mixture": 0.05
+      },
+      "gate_id": "G0A-SOURCE-HALF-OWNERSHIP",
+      "passed": false
+    },
+    {
+      "details": {
+        "frozen_stable": true,
+        "head_after": "acbe65f4c9656f7103a6b85e83c6fc04138cf093",
+        "head_before": "acbe65f4c9656f7103a6b85e83c6fc04138cf093",
+        "reference_after": "b03e9b2ddda22d8ea147c0720ca8644c91bff2d22c8f82bd057b91a55bdc2c25",
+        "reference_before": "b03e9b2ddda22d8ea147c0720ca8644c91bff2d22c8f82bd057b91a55bdc2c25",
+        "runner_after": "e825142d83f2772a7b439bf12a22838a44c1e768eda6f107c33864a9ffd6265e",
+        "runner_before": "e825142d83f2772a7b439bf12a22838a44c1e768eda6f107c33864a9ffd6265e",
+        "static_runner_receipt_after": "9bb56565c38b5eed6b8938d9e9da20316000ca71db6094545744e9d370236b8e",
+        "static_runner_receipt_before": "9bb56565c38b5eed6b8938d9e9da20316000ca71db6094545744e9d370236b8e"
+      },
+      "gate_id": "G0A-ARTIFACT-STABILITY",
+      "passed": true
+    },
+    {
+      "details": {
+        "breach": null,
+        "elapsed_seconds": 193.57310360000702,
+        "lifetime_peak_working_set_bytes": 644034560,
+        "pass_so_far": true,
+        "peak_rss_bytes": 644034560,
+        "peak_working_set_bytes": 633544704,
+        "pending_postpublication_sample": true,
+        "polls": 14584,
+        "thread_alive": true,
+        "thread_started": true,
+        "working_set_bytes": 494112768
+      },
+      "gate_id": "G0A-RESOURCE-CAPS",
+      "passed": true
+    },
+    {
+      "details": {
+        "execution_exceptions": [
+          {
+            "exception_message": "non-finite certified interval",
+            "exception_type": "M243DomainRefusal",
+            "phase": "scientific_execution",
+            "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 2115, in _main\n    run_g0a(watchdog, gates, work)\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1772, in run_g0a\n    actual_by_dps[dps] = evaluate_candidate_integrals(fixture, event, state, dps, watchdog)\n                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1243, in evaluate_candidate_integrals\n    local_radius, radius_error = audit.integrate(\n                                 ~~~~~~~~~~~~~~~^\n        lambda g, chosen=mode: mp_float(cache.evaluate(chosen, g)[1]) * normal_pdf(g),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        panels,\n        ^^^^^^^\n        f\"actual:{fixture.name}:{event}:{dps}:{mode}:radius\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\m243_g0a_reference.py\", line 117, in integrate\n    observed = mp.quad(\n        function,\n    ...<3 lines>...\n        error=True,\n    )\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\calculus\\quadrature.py\", line 746, in quad\n    v, err = rule.summation(f, points[0], prec, epsilon, m, verbose)\n             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\calculus\\quadrature.py\", line 233, in summation\n    result = self.sum_next(f, nodes, degree, prec, results, verbose)\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\calculus\\quadrature.py\", line 308, in sum_next\n    S += self.ctx.fdot((w,f(x)) for (x,w) in nodes)\n         ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\ctx_mp_python.py\", line 938, in fdot\n    for a, b in A:\n                ^\n  File \"C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Lib\\site-packages\\mpmath\\calculus\\quadrature.py\", line 308, in <genexpr>\n    S += self.ctx.fdot((w,f(x)) for (x,w) in nodes)\n                          ~^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1244, in <lambda>\n    lambda g, chosen=mode: mp_float(cache.evaluate(chosen, g)[1]) * normal_pdf(g),\n                                    ~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1219, in evaluate\n    observed = self._folded(degree, g_float)\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\run_m243_g0a.py\", line 1198, in _folded\n    self.values[key] = candidate.folded_distinct_event(\n                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        self.state,\n        ^^^^^^^^^^^\n    ...<2 lines>...\n        degree=degree,\n        ^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\m243_event_local_q4_source_premise.py\", line 542, in folded_distinct_event\n    lower, upper, radius = _outward(center, radius)\n                           ~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\m243_event_local_q4_source_premise.py\", line 163, in _outward\n    raise M243DomainRefusal(\"non-finite certified interval\")\nm243_event_local_q4_source_premise.M243DomainRefusal: non-finite certified interval\n"
+          }
+        ],
+        "nonfinite_findings": []
+      },
+      "gate_id": "G0A-NO-UNCAUGHT-EXCEPTION",
+      "passed": false
+    }
+  ],
+  "head_after": "acbe65f4c9656f7103a6b85e83c6fc04138cf093",
+  "head_before": "acbe65f4c9656f7103a6b85e83c6fc04138cf093",
+  "intent_bytes": 17440,
+  "intent_sha256": "7ab4044a2b2048f0b138beb807ff1eb53163ef43664463f377aa9ccf9872a976",
+  "missing_gate_ids": [
+    "G0A-80-100-PRECISION-AGREEMENT",
+    "G0A-ACTUAL-M178-BETA-INTERVAL",
+    "G0A-BETA-ANALYTIC-VS-DIRECT",
+    "G0A-CYCLIC-CO-PERMUTATION",
+    "G0A-EIGHT-EVENT-COMPLETION",
+    "G0A-INTEGRATED-M178-ENCLOSURE",
+    "G0A-M147-M122-M126-TREE",
+    "G0A-MPMATH-MAXDEGREE12-ERROR",
+    "G0A-POSITIVE-DIAGONAL-GAUGE",
+    "G0A-RAW-ANTI-Q2-Q4-EXPECTATIONS",
+    "G0A-REPEATED-R-DIRECT",
+    "G0A-SINGLETON-SWAP",
+    "G0A-TAIL-FINITE-AND-ENCLOSED"
+  ],
+  "mutation": "m243_event_local_q4_source_premise",
+  "phase": "G0A_ONE_SHOT_FORMULA_COMPONENT_GATE",
+  "postpublication_receipt_path": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m243_event_local_q4_source_premise\\M243_G0A_POSTPUBLICATION_RECEIPT_20260809.json",
+  "postpublication_receipt_required": true,
+  "process_topology": {
+    "launcher_pid": 45432,
+    "process_count": 1,
+    "scientific_worker_pid": 45432,
+    "scientific_worker_start_count": 1,
+    "subprocess_count": 0
+  },
+  "process_topology_pass": true,
+  "reference_sha256_after": "b03e9b2ddda22d8ea147c0720ca8644c91bff2d22c8f82bd057b91a55bdc2c25",
+  "reference_sha256_before": "b03e9b2ddda22d8ea147c0720ca8644c91bff2d22c8f82bd057b91a55bdc2c25",
+  "relaunch_authorized": false,
+  "resource": {
+    "adjudication": "PENDING",
+    "prepublication_snapshot": {
+      "breach": null,
+      "elapsed_seconds": 193.57310360000702,
+      "lifetime_peak_working_set_bytes": 644034560,
+      "pass_so_far": true,
+      "peak_rss_bytes": 644034560,
+      "peak_working_set_bytes": 633544704,
+      "pending_postpublication_sample": true,
+      "polls": 14584,
+      "thread_alive": true,
+      "thread_started": true,
+      "working_set_bytes": 494112768
+    }
+  },
+  "resource_adjudication": "PENDING",
+  "runner_sha256_after": "e825142d83f2772a7b439bf12a22838a44c1e768eda6f107c33864a9ffd6265e",
+  "runner_sha256_before": "e825142d83f2772a7b439bf12a22838a44c1e768eda6f107c33864a9ffd6265e",
+  "scientific_runtime": {
+    "load_count": 1,
+    "module_names": [
+      "mpmath",
+      "numpy",
+      "flopscope",
+      "m122_nonzero_bridge",
+      "m129_source_frechet",
+      "m178_certified_phi2_owent",
+      "m147_endpoint_safe_bridge",
+      "m151_b1_forward_control",
+      "m133_ht_hidden_edge",
+      "m243_event_local_q4_source_premise",
+      "m243_g0a_reference"
+    ],
+    "pass": true,
+    "scientific_worker_start_count": 1
+  },
+  "static_firewall": {
+    "candidate_clean": true,
+    "candidate_forbidden_prefixes": [
+      "mpmath",
+      "scipy",
+      "m213",
+      "m216"
+    ],
+    "candidate_imports": [
+      "__future__",
+      "collections",
+      "dataclasses",
+      "itertools",
+      "m147_endpoint_safe_bridge",
+      "m178_certified_phi2_owent",
+      "math",
+      "numpy",
+      "operator",
+      "pathlib",
+      "sys",
+      "typing"
+    ],
+    "pass": true,
+    "reference_clean": true,
+    "reference_forbidden_prefixes": [
+      "numpy",
+      "scipy",
+      "m243_event_local_q4_source_premise",
+      "m147",
+      "m178",
+      "m151",
+      "m133"
+    ],
+    "reference_imports": [
+      "__future__",
+      "collections",
+      "dataclasses",
+      "itertools",
+      "math",
+      "mpmath",
+      "typing"
+    ]
+  },
+  "transport_status": "DURABLE_PROVISIONAL_RESULT_CAPTURED",
+  "unexpected_gate_ids": [],
+  "work": {
+    "collision_refusal": {
+      "pair_jet_calls": 0,
+      "pass": true,
+      "rows": [
+        {
+          "exception_type": "M243DomainRefusal",
+          "labels": [
+            0,
+            0,
+            0
+          ],
+          "refused": true,
+          "surface": "q4_packet"
+        },
+        {
+          "exception_type": "M243DomainRefusal",
+          "labels": [
+            0,
+            0,
+            1
+          ],
+          "refused": true,
+          "surface": "q4_packet"
+        },
+        {
+          "exception_type": "M243DomainRefusal",
+          "labels": [
+            0,
+            1,
+            1
+          ],
+          "refused": true,
+          "surface": "q4_packet"
+        },
+        {
+          "exception_type": "M243DomainRefusal",
+          "labels": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "refused": true,
+          "surface": "folded_distinct_event"
+        },
+        {
+          "exception_type": "M243DomainRefusal",
+          "labels": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "refused": true,
+          "surface": "folded_distinct_event"
+        },
+        {
+          "exception_type": "M243DomainRefusal",
+          "labels": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "refused": true,
+          "surface": "folded_distinct_event"
+        },
+        {
+          "exception_type": "M243DomainRefusal",
+          "labels": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "refused": true,
+          "surface": "folded_distinct_event"
+        }
+      ]
+    },
+    "completed_event_count": 0,
+    "events": [],
+    "fixtures": {
+      "A0": {
+        "covariance": {
+          "dtype": "<f8",
+          "sha256": "d713d1a0f661521a7b13aed28c1a98febfa5323dffc779ea1192335416c0967a",
+          "shape": [
+            3,
+            3
+          ]
+        },
+        "events": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "mean": {
+          "dtype": "<f8",
+          "sha256": "b7b79ae2d4e6a97adb00a44ac28c2ad139f7d214c85f2d2dfa4fccbbf218fa55",
+          "shape": [
+            3
+          ]
+        },
+        "seed": null,
+        "weight": null,
+        "width": 3
+      },
+      "A1": {
+        "covariance": {
+          "dtype": "<f8",
+          "sha256": "30747f0869d40ef158810e9aa29787db13ea9af789d992ea92475816eb721486",
+          "shape": [
+            3,
+            3
+          ]
+        },
+        "events": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "mean": {
+          "dtype": "<f8",
+          "sha256": "3d3859019fdc0bdb8f8628d717ed6b3a6f19723daf2dc9ada017a195734944aa",
+          "shape": [
+            3
+          ]
+        },
+        "seed": null,
+        "weight": null,
+        "width": 3
+      },
+      "w3": {
+        "covariance": {
+          "dtype": "<f8",
+          "sha256": "573174d18e1c19d40ed4079b7fa94957a7ae22db334797778b79fd4a7d5a8f4c",
+          "shape": [
+            3,
+            3
+          ]
+        },
+        "events": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "mean": {
+          "dtype": "<f8",
+          "sha256": "4f75987b03d043b283f80635e99a0634c30f349780e3af7847e2fbbde075a90b",
+          "shape": [
+            3
+          ]
+        },
+        "seed": 243700003,
+        "weight": null,
+        "width": 3
+      },
+      "w5": {
+        "covariance": {
+          "dtype": "<f8",
+          "sha256": "50d640230213828db5ce0470f70a3fb23672de6288769d7067f509b9a940e838",
+          "shape": [
+            5,
+            5
+          ]
+        },
+        "events": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            4,
+            0,
+            1
+          ]
+        ],
+        "mean": {
+          "dtype": "<f8",
+          "sha256": "cb1a5b6d916e8be2f19c565739a66e81cdfc59582b77eab9be842a59b8bba51a",
+          "shape": [
+            5
+          ]
+        },
+        "seed": 243700005,
+        "weight": {
+          "dtype": "<f8",
+          "sha256": "c3bf89a6ca261eb612d17a1abc241db14689fdb7ea383c5694cd9ac27129c23c",
+          "shape": [
+            5,
+            6
+          ]
+        },
+        "width": 5
+      },
+      "w7": {
+        "covariance": {
+          "dtype": "<f8",
+          "sha256": "023354f109edff2b8afab6f12fd471407c20162799ac254167c8bf33e8fdd5e9",
+          "shape": [
+            7,
+            7
+          ]
+        },
+        "events": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            6,
+            0,
+            1
+          ]
+        ],
+        "mean": {
+          "dtype": "<f8",
+          "sha256": "5280824390baa0d3f8aceee2058b34a4b3f190b632c21c37e6fae1d1cb6269c9",
+          "shape": [
+            7
+          ]
+        },
+        "seed": 243700007,
+        "weight": null,
+        "width": 7
+      }
+    },
+    "source_ownership": {
+      "declared_owner": 0.5,
+      "fixture": "w5",
+      "ordered_population": 60,
+      "pass": false,
+      "proposal_mass": 0.9999999999999998,
+      "rows": [
+        {
+          "all_three_slots_nonempty": true,
+          "direct_differs_from_double_owner": true,
+          "direct_equals_one_owner_bitwise": true,
+          "event": [
+            0,
+            1,
+            2
+          ],
+          "flattened_length": 78,
+          "owner_factor": 0.5,
+          "q": 0.008973129089496866,
+          "source_swap_bitwise": false
+        },
+        {
+          "all_three_slots_nonempty": true,
+          "direct_differs_from_double_owner": true,
+          "direct_equals_one_owner_bitwise": true,
+          "event": [
+            4,
+            0,
+            1
+          ],
+          "flattened_length": 78,
+          "owner_factor": 0.5,
+          "q": 0.004827166897626511,
+          "source_swap_bitwise": false
+        }
+      ],
+      "support_minimum": 0.0036205318007805475,
+      "uniform_mixture": 0.05
+    }
+  }
+}
