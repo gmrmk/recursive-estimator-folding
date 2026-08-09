@@ -1934,6 +1934,16 @@
       "result": "KILLED at +0.83% [CI -0.63%,+2.36%] vs the 10% bar (deg4-only +0.42%, deg6-only +0.58%). MECHANISM AUTOPSY: the basis saw the design error at exactly the G0-a spectrum (deg4 0.104-0.116, deg6 0.396-0.422 of iid per net) but the estimator functions harmonic energy at those degrees is DISPERSED across ~1.8e8-dimensional spaces at d=256 — R^2 of the 24-function basis = 0.23-0.29%. The leak is real and unscoopable by any tractable projection. Deg-6 recovers more per unit R^2 (13x more removable error), matching theory. No bias introduced (split and no-split both ~0 within noise). VERIFICATION: baseline stacks bitwise-equal to cached m181 arm0 (max diff 0.0); independent re-derivation agrees to 6 decimals. OPERATIONAL: first compute-runner mission — ran to completion, zero watcher behavior; the harness fix HELD. Closes Generation 3; GEN4_CLOSING written. Artifacts: run_m191_g0b.py, m191_g0b_results.json, M191_G0B_NOTES.md, per-net npz.",
       "status": "killed",
       "status_note": "Generation 3 closed at full measure; Gen-4 constraint set written"
+    },
+    {
+      "id": "gen3_p2_rotation_selection",
+      "mechanism": "Rotation SELECTION (not fragmentation): oracle-of-k headroom across 16 full-n rotations x 3 nets vs cached truths; truth-free frame-dispersion proxy; 8-frame pilot estimability; pilot cost accounting. The last predeclared Gen-3 arm.",
+      "prediction": "M185s 2.3-8.7x within-net rotation spread implies real oracle headroom; harvesting needs proxy rho>=0.3, pilot-proxy>=0.25, pilot cost<5%B (conjunctive).",
+      "kill_condition": "Any conjunctive gate fails.",
+      "bias_class": "Premise measurement on cached-truth panel; plain numpy; no score credit.",
+      "result": "KILLED at two links, with the campaigns largest unharvested finding intact: ORACLE-OF-8 = 61.6% MSE GAIN (CI [48.8%,66.8%]; k=2 34.7%, k=16 66.1%; per-net spreads 4.7-11.1x) — the headroom is real and would put us ~7e-8, inside the honest frontier band. BROKEN LINKS: (1) pilot-proxy collapse — 8-frame pilot rho -0.089 (CI [-0.37,+0.18], sign-inconsistent), does not even track the full statistic (+0.035); (2) pilot cost 33.4%B for k=8 (vs 5% gate, ~7x over; even k=1 is 4.2-6.2%). Full proxy marginal-fragile: within-net-ranked rho -0.340 [CI -0.61,-0.02] but SIGN-NEGATIVE and raw-pooled flips positive (scale artifact, flagged). Cross-checks: frame-mean==direct mean asserted; oracle==full C(16,k) enumeration; bitwise repeat; hand re-derivations matched. GEN-4 CONSTRAINT (precise): reopening needs a WEIGHTS-ONLY / O(1)-frame proxy with a sub-5%B selection stage — a zero-forward-cost proxy would make selection FREE, upgrading any rho into realized gain. P2b (weights-aligned harmonic quadrature proxy vs the archived 48 (net,rotation) MSEs) queued as the one cheap follow-up. Artifacts: run_p2_rotation_selection.py, p2_results.json, P2_NOTES.md, per-net npz.",
+      "status": "killed",
+      "status_note": "proxy+economics killed; 61.6% oracle headroom recorded unharvested"
     }
   ]
 }
