@@ -1,0 +1,50 @@
+{
+  "artifact": "M206 post-hoc response-free adversarial audit",
+  "scope": "generated algebra and static pinned-cost arithmetic only",
+  "not_a_predeclared_candidate_outcome": true,
+  "disposition": "KILLED_M204_ARITHMETIC_IDENTICAL_M151_REPLACEMENT_CLAIM",
+  "preserved_component": "LIFTED_RANKONE_ALGEBRA_PRESERVED_DISTINCT_ESTIMATOR_COMPONENT",
+  "first_mismatch": {
+    "scope": "collision rows i=j or i=k or j=k",
+    "m151_requirement": "strict C_211 has zero repeated-label coefficients",
+    "rankone_lift": "full-domain coefficient -2*u_i^2*u_j*u_k is generally nonzero on collisions",
+    "distinct_coefficients_match": true,
+    "arithmetic_identical_source_call": false
+  },
+  "B_equal_D_different_witness": {
+    "left_weight": "I_2",
+    "right_weight": "[[1,-1],[1,1]]/sqrt(2)",
+    "B_left": "I_2",
+    "B_right": "I_2",
+    "D_left": "I_2",
+    "D_right": "0.5*ones(2,2)",
+    "conclusion": "one B alone does not determine this collision statistic",
+    "not_a_universal_circuit_lower_bound": true
+  },
+  "costs_flops": {
+    "m151_m179_no_credit_partial": 98013128528,
+    "strict_headroom": 1986871472,
+    "rankone_B_raw_31_layers": 2076311552,
+    "rankone_a_raw_31_layers": 8110592,
+    "rankone_raw_minimum": 2084422144,
+    "rankone_raw_excess_over_headroom": 97550672,
+    "rankone_B_protected_31_layers": 2595389440,
+    "rankone_protected_minimum": 2605527680,
+    "rankone_protected_excess_over_headroom": 618656208,
+    "terminal_background_matmul_floor": 134217216,
+    "native_replacement_credit": 0
+  },
+  "tested_modules": [
+    "m151_b1_forward_control.forward_b1_control_source",
+    "m156_extended_domain_star_control.compiled_extended_star_control",
+    "m206_m204_native_replacement_audit.compile_complete_rank_one_lift"
+  ],
+  "integration_status": {
+    "M179_B_overlap": "not established; operands differ",
+    "M172_M198_owner_bridge": "absent",
+    "M198_native_cost_and_wall": "untraced",
+    "terminal_mu32_response": "untraced",
+    "complete_DAG_residual_cost_proof": "required for any new lifted estimator"
+  },
+  "firewall": "No contest network, truth, scorer, private data, leaderboard, submission, source variance, MSE, or response execution."
+}

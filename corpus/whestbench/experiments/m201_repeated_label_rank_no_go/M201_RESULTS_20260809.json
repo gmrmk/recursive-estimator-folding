@@ -1,0 +1,20 @@
+{
+  "candidate": "M201 repeated-label contraction no-go",
+  "status": "KILLED_EXACT_COMMUTE_THEN_COLLAPSE_REPEATED_LABEL_AXIS",
+  "weight": [[1, 2, 1], [2, 1, 3], [3, 4, 2]],
+  "weight_determinant": 5,
+  "decoder": [[72, 144, 216], [105, 156, 279], [75, 168, 207]],
+  "decoder_determinant": 116640,
+  "interpretation": "The downstream aaab action retains all three repeated-label coefficients at width 3, so an exact generic contraction cannot collapse the repeated-label axis before evaluating its i-dependent conditional law.",
+  "preserved": [
+    "Fubini contraction inside each fixed repeated-label integrand",
+    "exact conditional one-dimensional representation",
+    "future circuits that exploit a genuinely new structured approximate control"
+  ],
+  "not_claimed": [
+    "unconditional lower bound for every arithmetic circuit",
+    "provider or native-cost result",
+    "variance, MSE, score, rank, or winning-entry result"
+  ],
+  "firewall": "Exact integer/Fraction witness only; no contest row, truth, scorer, leaderboard, submission, or private artifact accessed."
+}

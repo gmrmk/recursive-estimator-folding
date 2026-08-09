@@ -8,7 +8,9 @@ for topology; Graphify consumes the resulting node-link JSON.
 
 from __future__ import annotations
 
+import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 import networkx as nx
@@ -17,6 +19,8 @@ import networkx as nx
 HERE = Path(__file__).resolve().parent
 GRAPH_PATH = HERE / "graph.json"
 INSIGHTS_PATH = HERE / "DETERMINISTIC_INSIGHTS.md"
+LEDGER_PATH = HERE.parent / "headroom" / "fold_ledger.json"
+ATLAS_PATH = HERE.parent / "headroom" / "GEN6_FAILURE_SALVAGE_ATLAS_20260809.json"
 
 
 NODES = {
@@ -280,20 +284,40 @@ NODES = {
     "m172_selective_22_owner_fusion": ("M172 selective physical [2,2] owner fusion", "ownership_candidate", "interface_blocked_static_algebra_pass", "Transfers only the physical K22/2 ijj owner into the exterior-control residual and retires its old owner; static algebra passes, while development is sealed pending a lawful caller ABI."),
     "m173_scaled_boundary_layer": ("M173 parameter-scaled boundary-layer repair", "analytic_component", "screened_hostile_channel_only", "The exact u=u_star+eta t matched layer removes M171's physical-coordinate singularity and bounds the hostile transverse channel, conditional on symbolic envelopes; no all-PSD provider or native credit."),
     "m174_missing_caller_abi": ("M174 labelled caller/staging ABI audit", "interface_audit", "repair_required_not_actual_caller", "M169 is a pure compiler transform, but no production path currently produces retained labelled V_l, J_l, and source-slot-to-carrier ownership within an integrated liveness/accounting trace."),
-    "m175_b8_labelled_abi": ("M175 fixed-B=8 labelled staging audit", "interface_candidate", "conditionally_coherent_current_code_no_go", "The four-block [8,8,8,7] dependency schedule preserves zero-order/source separation and reduces workspace conditionally, but no exact labelled producer or Source211-to-TangentState semantics exists."),
-    "m176_exact_background_no_go": ("M176 exact BackgroundArchive producer no-go", "dependency_audit", "formal_recurrence_pinned_primitive_absent", "The exact Gaussian recurrence and five-block local Jacobian are pinned, but no installed endpoint-complete, FlopScope-metered bivariate ReLU value-and-Jacobian primitive can produce the labelled archive."),
-    "m177_bivariate_runtime_no_go": ("M177 bivariate ReLU primitive runtime no-go", "numerical_runtime_audit", "dispatcher_pass_provider_absent", "The complete PSD-stratum dispatcher and endpoint identities pass, but installed FlopScope supplies no certified Phi2/Owen-T value, derivative remainder, or inclusive bounded cost; 556 FLOPs/pair is only the pre-Phi2 floor."),
-    "labelled_state_abi": ("Labelled bounded-lifetime background/source ABI", "implementation_requirement", "derived_next_repair", "An exact zero-order archive must carry immutable W_l, mu_l, V_l, J_l, and explicit M163-to-carrier source ownership while retaining background/source separation."),
-    "bivariate_relu_value_jacobian": ("Metered endpoint-complete bivariate ReLU value+Jacobian", "analytic_implementation_requirement", "absent_first_dependency", "A bundled primitive must emit bivariate ReLU moments and p,r,K,Hmu,Hv under one declared open/endpoint policy with certified or fail-closed error and complete metering."),
-    "certified_phi2_provider": ("Certified bounded-cost Phi2/Owen-T provider", "missing_numerical_primitive", "first_remaining_link_after_m177", "A fixed or deterministically bounded billed kernel must carry value and derivative remainder bounds on a scale-normalized endpoint-stratified domain."),
-    "source211_tangent_conversion": ("Layer-labelled Source211-to-TangentState conversion", "semantic_interface_requirement", "absent_independent_second_dependency", "An independently proved ownership formula must map aaaa,aaab,aabb source slots into post-ReLU mean/covariance tangents; shape compatibility is not semantics."),
+    "m175_b8_labelled_abi": ("M175 fixed-B=8 labelled staging audit", "interface_candidate", "partially_instantiated_by_m179_m198", "The four-block [8,8,8,7] dependency schedule preserves zero-order/source separation. M179 now supplies the exact background and M198 supplies delay-one semantics; the layer-bound physical Source211 producer/compiler and integrated liveness trace remain absent."),
+    "m176_exact_background_no_go": ("M176 historical BackgroundArchive dependency no-go", "dependency_audit", "closed_by_m178_m179", "M176 correctly localized the missing pair primitive. M178 and M179 subsequently supplied the certified pair evaluator and exact metered labelled archive, closing this historical dependency rather than erasing its evidence."),
+    "m177_bivariate_runtime_no_go": ("M177 historical bivariate runtime no-go", "numerical_runtime_audit", "closed_by_m178", "M177's pre-provider runtime objection was repaired by M178's self-contained certified Phi2/Owen-T evaluator at a worst-case inclusive 4048 charged FLOPs per call."),
+    "labelled_state_abi": ("Labelled bounded-lifetime background/source ABI", "implementation_requirement", "background_and_delay_semantics_pass_source_binding_open", "M179 carries immutable mu,V,J background state and M198 carries owner-labelled delay-one semantics. The physical source weight/covariance/owners must still be bound to the same archived layer in one integrated compiler and trace."),
+    "bivariate_relu_value_jacobian": ("Metered endpoint-complete bivariate ReLU value+Jacobian", "analytic_component", "provided_by_m178_m179", "M178 supplies the certified SPD Phi2/Owen-T primitive and M179 assembles bivariate moments plus p,r,K,Hmu,Hv with exact/fail-closed stratum policy and complete metering."),
+    "certified_phi2_provider": ("Certified bounded-cost Phi2/Owen-T provider", "numerical_component", "passed_as_m178", "M178 contains all 12890 hostile references, is bitwise deterministic, and has a fixed worst-case inclusive bill of 4048 charged FLOPs; it earns no source or efficacy credit."),
+    "m178_certified_phi2_owent_provider": ("M178 certified Phi2/Owen-T provider", "numerical_component", "component_pass", "A self-contained endpoint-aware SPD evaluator contains 12890/12890 dual references and has a census-certified worst-case inclusive cost of 4048 charged FLOPs."),
+    "m179_exact_background_archive_producer": ("M179 exact metered BackgroundArchive", "analytic_component", "component_pass", "The exact Gaussian-closure full-covariance recurrence and complete M125b local Jacobian archive pass at 8.30B FLOPs, 3.05 percent of budget; no physical source or efficacy credit."),
+    "source211_tangent_conversion": ("Layer-labelled Source211-to-TangentState conversion", "semantic_component", "screened_as_m198", "M198 now maps aaaa,aaab,aabb into the delay-one post-ReLU mean/covariance tangent under the same labelled Gaussian context and survives an independent fourth-derivative oracle. Affordable physical coefficient production remains absent."),
+    "m198_source211_delay_one_adapter": ("M198 Source211 delay-one semantic adapter", "semantic_component", "screened_semantic_pass_provider_absent", "Eleven tests, generated M172 owner transfer, and an independent 100-dps oracle pass. Same-process receipts are integrity conventions rather than hostile authority; source-layer binding, provider, compiler, cost, variance, and MSE gates remain open."),
+    "m199_composed_cost_reconciliation": ("M199 composed exact-control cost reconciliation", "cost_audit", "blocked_overlap", "M151 already embeds M125b. The strict M151+M179 partial is98.013128528B before provider/M172/M198/terminal/runtime unknowns; cheaper background replacement is unproved, so one streaming native trace is mandatory."),
+    "m200_streaming_overlap_fixture": ("M200 streamed M179-M198-M125b fixture", "semantic_component", "component_pass_native_cost_blocked", "All48 frozen generated cells pass strict source/terminal parity to3.55e-15 with zero impulse error, exact H/H/H/H/H-1/1 counts, no archive rebuild, and hostile source/layer/lifetime checks. The physical provider, native target cost, variance, and MSE remain unopened."),
+    "m201_repeated_label_rank_no_go": ("M201 repeated-label contraction-collapse no-go", "no_go", "killed_exact_rank_obstruction", "A legal width3 M151 aaab action has repeated-label determinant116640, so generic contraction cannot be commuted through the conditional integral and then collapsed over the repeated-label axis."),
+    "m202_signed_facet_smc_no_go": ("M202 signed-facet SMC no-go", "no_go", "killed_sign_ess_and_ownership", "The exact d2 width2 depth2 witness has signed/absolute mass epsilon/(2-epsilon) tending to zero, raw gate labels double-count owned facets, and zero plateaux violate naive Kac-Rice regularity."),
+    "m203_terminal_contraction_circuit_no_go": ("M203 standard terminal-fusion no-go", "cost_no_go", "killed_standard_exact_fusion", "The strongest two-rectangle exact packing with depth5 recursive Winograd costs10.543779520B including idealized projection, above even isolated M151 headroom before omitted work; generic channel ranks remain3 and2."),
+    "m204_lowrank_b1_lifted_control": ("M204 rank-one lifted B1 control", "exact_component", "algebra_pass_replacement_killed", "A two-node rank-one Rademacher control compiles the M156 complete-domain lift with one square contraction and passes7 algebra tests, but its collision rows differ from strict M151 and its same-call replacement premise is killed."),
+    "m205_rankone_complete_physical_owner": ("M205 rank-one complete physical-owner control", "candidate_component", "component_pass_provider_cost_blocked", "Six tests prove exact K4, directed K31, symmetric K22, and C211 owner reconstruction for the fixed rank-one control. A live physical collision provider and complete native caller-replacement trace are absent."),
+    "m206_m204_native_replacement_audit": ("M206 M204-to-M151 replacement no-go", "cost_no_go", "killed_arithmetic_identity_claim", "The full lift and strict C211 differ on collisions; equal B can require different collision corrections. Raw B plus u-transpose-W is2.084422144B, already above strict composed headroom before omitted work."),
+    "m207_zero_variance_rank_one_guard": ("M207 zero-variance rank-one guard", "boundary_component", "component_pass_no_efficacy", "An isolated all-zero-covariance guard returns the exact zero control and delegates all interior states bitwise to M204;7 tests pass with no cost or efficacy credit."),
+    "in_process_issuer_authority_no_go": ("Same-process Python issuer-authority no-go", "no_go", "proved_by_adversarial_forgery", "Callable private issuers and mutable registries let arbitrary in-process code mint self-consistent receipts. Hashes detect mutation but cannot create a capability or cryptographic trust boundary."),
+    "source_layer_binding_gap": ("M172 source-to-M179 layer binding gap", "implementation_requirement", "fixture_closed_physical_provider_open", "M200 closes causal W_k,V_(k-1),a_k,C_k,mu_k binding for a generated nonzero fixture and rejects wrapper laundering. No physical target Source211 producer is yet bound or costed."),
+    "physical_source211_provider_gap": ("Physical layer-bound Source211 producer/compiler gap", "implementation_requirement", "first_unresolved_god_edge", "M205 closes one structured physical-owner control algebra, but no current artifact emits live K4, directed K31, symmetric K22, and distinct C211 coefficients from the M179 layer with noncubic cost and an inclusive native trace."),
+    "m192_exact_control_cross_no_go": ("M192 x exact-control common-error no-go", "no_go", "subsumed_by_anchor_or_pilot_boundary", "M179/M198/M125b can only supply another analytic anchor until the exact full target residual is observable. Its common/contrast cross block therefore retains M193 anchor contamination or reduces to the M194 independent-pilot SNR/cost failure."),
+    "gen6_unresolved_cross_audit": ("Generation6 unresolved-cross audit", "coverage_audit", "complete_58_record_map", "The Terra pass plus post-M200 folds map all58 current open, preserved, blocked, and screened records. M205 is the only new blocked physical-owner component and M207 is a boundary guard; every reusable or unresolved node maps once."),
     "source_atom_topological_key": ("SourceAtom(owner, PSD chart, feasible tangent)", "postmortem_inference", "master_representation_coordinate", "Physical owner prevents double count, PSD chart selects the valid endpoint formula, and feasible one-sided tangent prevents path-underdetermined derivatives; coefficient and certified remainder travel with the key."),
-    "structured_triangular_kernel": ("Exact structured triangular-kernel compiler", "unresolved_compiler_class", "separate_from_dense_rank_no_go", "Opposite strict triangular supports may escape M170's dense normal form, but require an exact f64 kernel, complete accounting, and a native trace before any credit."),
+    "structured_triangular_kernel": ("Triangular-projection-only compiler", "candidate", "killed_static_cost", "Even ideal opposite-triangular AW/A^TW kernels plus the five rank-forced terminal contractions cost at least15.557139200B, above the14.019121200B slot before omitted work."),
+    "terminal_output_contraction_circuit": ("Nonstandard simultaneous terminal-contraction circuit", "unresolved_compiler_class", "standard_class_killed_by_m203", "M203 closes packing, polarization, phase coding, and standard block-Winograd fusion. Only an explicit nonstandard direct-sum bilinear decomposition with a complete f64 bill could reopen the class."),
     "m158_absolute_abi_falsifier": ("M158 absolute endpoint ABI falsifier", "numerical_no_go", "proved_float_spacing_obstruction", "At an admissible large-scale rank-one PSD state, nearest float64 output misses a universal2e-8 absolute contract by2.76e-5. Algorithm choice cannot repair output spacing."),
     "m159_scale_normalized_endpoint": ("M159 homogeneity-normalized endpoint ABI", "analytic_component", "abi_repaired_generic_evaluator_open", "Carry the coefficient as Delta=2^(4e)d with exact dyadic metadata, preserve PSD strata, and propagate an ulp-aware mantissa enclosure into robust variance/p99 gates; no generic evaluator credit yet."),
     "failure_curve_l": ("L-shaped failure frontier", "inference", "derived_from_ledger", "Sampling geometry reaches a variance floor; cheap closures hit structural bias; exact higher-order methods hit endpoint, rank, aggregation, or wall-time cliffs."),
     "exact_control_architecture": ("Exact-control inference architecture", "inference", "strongest_live_class", "Approximate a deterministic high-order source cheaply, sample its exact residual, and carry the combined source through exactly one coalesced forward response."),
-    "global_kac_rice_smc": ("Globally normalized Kac--Rice facet SMC", "theory_backup", "unrun_low_prior", "Replace the killed local facet normalization with a full Feynman--Kac normalizing-constant estimator; exact small-fan ownership and noncollapsing ESS are prerequisites."),
+    "global_kac_rice_smc": ("Unnormalized signed-facet Feynman--Kac SMC", "theory_backup", "killed_current_class_by_m202", "M202 proves the sign ratio can collapse, raw gates are not output-facet owners, and zero plateaux break naive Kac-Rice/Palm regularity. Only a new analytically normalized owned-facet generator could reopen the identity."),
+    "signed_facet_identity": ("Distributional signed output-facet identity", "proved_identity", "preserved", "For bias-free CPWL f, (Delta_S+d-1)f is the signed sum of output-gradient jumps over maximal spherical facets; integrating it recovers the spherical mean exactly."),
+    "signed_facet_normalization_no_go": ("Signed-facet normalization obstruction", "no_go", "proved", "The signed facet mass is proportional to the unknown target and may be zero, so it cannot itself define a proposal probability. An absolute envelope introduces a separate global partition function."),
     "m85_signed_source": ("M85 bridge-resummed signed source", "validated_component", "screened_one_map_only", "Exact pair-bridge resummation with rank4 preserves.89028 combined one-map k3/k4 contraction fidelity at.580B target proxy, but has no lawful update after another non-Gaussian ReLU."),
     "herglotz_structure_factor": ("Herglotz cosine structure factor", "candidate", "theory_backup_unrun", "A bounded exact-mean plane-wave intensity over gate axes; fixed kappa=sqrt(d), but scalar and less output-phased than M111."),
     "nematic_triple_coherence": ("Nematic trace-free triple coherence", "candidate", "theory_backup_unrun", "The centered cube of u^T(A-I/d)u has an exact sixth-moment mean and isolates a degree-six survivor, but near-isotropy may collapse its frame variance."),
@@ -308,7 +332,13 @@ NODES = {
     "m197_three_rotation_cross": ("M197 three-rotation crossed U-statistic", "candidate", "killed_geometry_and_noise", "Three independent 42-frame rotations preserve the 126-frame total and algebraically cancel output means, yet worsen the panel by 1.369x with a bootstrap lower bound above one."),
     "m151_b1_forward_control": ("M151 B=1 forward exact-residual control", "candidate_component", "algebra_pass_provider_absent", "A forward coalesced [2,1,1] source control avoids the generic all-output adjoint and leaves 10.291B protected headroom, conditional on an exact target-shape source provider."),
     "m196_b1_provider_gate": ("M196 native B=1 provider gate", "implementation_gate", "blocked_fail_closed", "The frozen 24-cell variance and trace gate cannot run because no deterministic noncubic B1 state provider, bound batch provider, or native inclusive FlopScope trace exists."),
-    "final_row_quotient": ("Final-row cumulant quotient regression", "candidate", "proposed_unvalidated", "Use the 256 independent final weight rows as simultaneous random projections of the penultimate law, fit only the existing physical cumulant quotient across output folds, and compare against equal-cost direct Monte Carlo."),
+    "final_row_quotient": ("Final-row cumulant quotient regression", "candidate", "killed_subsumed", "Path-estimated k3/k4 quotient RHS is already700--2168x worse at equal paths; finite final rows do not identify the directional mean, and held-output residual learning has negative median OOF R2."),
+    "pilot_quotient_variance_wall": ("Pilot-sourced quotient variance wall", "failure_mechanism", "measured", "The clean-room physical-quotient sensor loses by700--2168x at equal paths and2.06e4--1.27e5x at equal FLOPs, so a sampled RHS does not beat direct Monte Carlo."),
+    "finite_row_tomography_no_go": ("Finite output-row tomography non-identifiability", "no_go", "proved", "A full-row-rank final matrix admits hidden laws with arbitrary nonnegative mean values at its finitely queried directions; final rows alone do not identify the penultimate directional mean."),
+    "rank3_source211_provider": ("Full-rank trivariate Source211Jet provider", "analytic_candidate", "first_non_subsumed_missing_theorem", "For every finite mean and SPD3 covariance/tangent, emit the connected [2,1,1] value and feasible tangent with permutation/gauge covariance, certified enclosure, and fixed inclusive cost."),
+    "all_psd_chart_atlas_gap": ("All-PSD Source211 chart-atlas gap", "implementation_requirement", "open_multiple_strata", "Current pieces omit full-rank trivariate SPD, nontransverse rank-two, zero-marginal openings, rank-one bivariate adaptation, seam gluing, and a unified costed provider ABI."),
+    "activation_retraining_boundary": ("Fixed-target activation/retraining boundary", "no_go", "rule_plus_source_audit", "DPReLU, SignReLU, data-dependent initialization, and inference distillation alter the fixed network or require labels; they provide no target expectation observable."),
+    "precision_packing_boundary": ("Precision-packing resource boundary", "no_go", "source_audited", "High precision can hide exponential preprocessing, but polynomial construction supplies no free neuron reduction; any compressed circuit must charge construction, precision, and primitive operations."),
     "late_phase_centering": ("Late-layer phase-centered control", "candidate_component", "identity_survived_surrogate_killed", "Exact centering remains reusable, but the tested Padgett-inspired phase surrogate gains only 1.26 percent raw before cost and does not transfer on every network."),
     "launch_wrapper_precheck": ("M106 redundant launch-precheck defect", "orchestration_defect", "localized_nonfatal", "Relative-path rechecks failed after root had verified all hashes and artifact absence; the frozen runner still executed exactly once and outputs recomputed exactly."),
 }
@@ -854,7 +884,9 @@ EDGES = [
     ("m174_missing_caller_abi", "labelled_state_abi", "requires_repair_by", "DERIVED+AUDIT", 1.0, "the first absent dependency is retained labelled full covariance V_l; J_l and source-slot conversion are independent required links"),
     ("labelled_state_abi", "exact_control_architecture", "makes_executable_under", "DERIVED", 0.9, "a bounded-lifetime archive/carrier is required to apply the resource-surviving compiler without reordering the zero-order background"),
     ("m166_oriented_collision_null", "m170_dense_tensor_rank_no_go", "dense_normal_form_lower_bounded_by", "PROVED", 1.0, "exact integer rank certificates force 2+3+2=7 dense product families for the oriented all-collision-null source"),
-    ("m170_dense_tensor_rank_no_go", "structured_triangular_kernel", "leaves_separate_escape_class_for", "PROVED+UNRESOLVED", 0.85, "the lower bound excludes dense polarizations, not a genuinely different exact triangular arithmetic circuit"),
+    ("m170_dense_tensor_rank_no_go", "structured_triangular_kernel", "falsifies_after_optimistic_sparse_projection_bill", "PROVED+COST", 1.0, "five terminal contractions cost12.976947200B and ideal paired triangular projections add2.580192000B, already1.538018000B over the slot"),
+    ("m170_dense_tensor_rank_no_go", "terminal_output_contraction_circuit", "leaves_only_new_arithmetic_class_for", "PROVED+UNRESOLVED", 0.8, "a future escape must replace or fuse the exact rank3 plus rank2 terminal contractions rather than sparsify only AW and A-transpose-W"),
+    ("structured_triangular_kernel", "terminal_output_contraction_circuit", "cannot_supply", "PROVED+COST", 1.0, "triangular support changes the projection work but not either terminal flattening rank"),
     ("m170_dense_tensor_rank_no_go", "failure_curve_l", "forms_structural_product_rank_arm_of", "PROVED+COST", 1.0, "six f64 dense families already bill 15.572B above the 14.019B compiler slot"),
     ("m171_fixed_panel_failure", "m173_scaled_boundary_layer", "coordinate_singularity_repaired_by", "RECURSIVE_FOLD+SCREENED", 1.0, "the scaled matched layer removes eta^-20 differentiation from the hostile transverse Phi(u/eta) channel"),
     ("m173_scaled_boundary_layer", "m168_transverse_rank2_anchor", "preserves_anchor_while_repairing_chart_for", "SCREENED", 0.95, "the repair changes only the near-parallel continuation coordinate; the connected-first wedge/coarea anchor remains frozen"),
@@ -866,20 +898,20 @@ EDGES = [
     ("m174_missing_caller_abi", "failure_curve_l", "forms_state_provenance_arm_of", "AUDIT", 1.0, "after dispatch fusion, the binding obstruction is not arithmetic but production, labels, lifetime, and accounting of the transported state"),
     ("m174_missing_caller_abi", "m175_b8_labelled_abi", "all_stack_precondition_replaced_by_fixed_blocks_in", "RECURSIVE_FOLD+AUDIT", 1.0, "four fixed blocks preserve dependency order conditionally but cannot manufacture the absent semantic producers"),
     ("labelled_state_abi", "m175_b8_labelled_abi", "schedule_instantiated_conditionally_by", "AUDIT", 0.95, "B=8 specifies ownership and release order while withholding memory, wall, and resource credit"),
-    ("m175_b8_labelled_abi", "m176_exact_background_no_go", "first_missing_producer_isolated_by", "FORMAL_AUDIT", 1.0, "the first admissible repair is an exact labelled BackgroundArchive/Jacobian producer, separate from source conversion"),
-    ("m175_b8_labelled_abi", "source211_tangent_conversion", "independently_blocked_by", "SEMANTIC_AUDIT", 1.0, "M163 source-slot shapes cannot be reinterpreted as an M125b TangentState without a layer-labelled ownership formula"),
+    ("m175_b8_labelled_abi", "m176_exact_background_no_go", "historically_isolated_missing_producer_in", "FORMAL_AUDIT+CLOSED", 1.0, "M178/M179 later supplied the exact labelled BackgroundArchive/Jacobian producer; the historical dependency localization remains valid"),
+    ("m175_b8_labelled_abi", "source211_tangent_conversion", "historically_isolated_semantic_gap_in", "SEMANTIC_AUDIT+CLOSED", 1.0, "M198 later supplied the layer-labelled delay-one ownership formula; physical source production remains separate"),
     ("m167_collision_owner_unification", "source211_tangent_conversion", "constrains_owner_subtraction_in", "PROVED+OWNERSHIP", 0.95, "any conversion must retire exactly the physical owners transferred under M167/M172 and reject double counting"),
-    ("m176_exact_background_no_go", "bivariate_relu_value_jacobian", "first_broken_link_is", "FORMAL+IMPLEMENTATION_AUDIT", 1.0, "the recurrence cannot emit mu,V,p,r,K,Hmu,Hv without one endpoint-complete metered bivariate kernel-and-derivative primitive"),
+    ("m176_exact_background_no_go", "bivariate_relu_value_jacobian", "historical_first_broken_link_was", "FORMAL+IMPLEMENTATION_AUDIT+CLOSED", 1.0, "M178/M179 now emit mu,V,p,r,K,Hmu,Hv from the endpoint-aware metered bivariate primitive"),
     ("m159_scale_normalized_endpoint", "bivariate_relu_value_jacobian", "requires_scale_and_endpoint_policy_for", "PROVED_COMPONENT+MISSING_IMPLEMENTATION", 0.95, "an exact ABI needs scale-aware endpoint handling rather than clipping, floors, or an impossible universal physical absolute tolerance"),
     ("m147_endpoint_pair_bridge", "bivariate_relu_value_jacobian", "supplies_exact_pair_limits_to", "PROVED_COMPONENT", 0.9, "the installed primitive must preserve exact bivariate Rosenbaum/Price values and direct diagonal limits"),
-    ("bivariate_relu_value_jacobian", "labelled_state_abi", "must_exist_before_values_can_populate", "DEPENDENCY", 1.0, "archive labels are semantically valid only after their value-and-Jacobian producer is defined and metered"),
+    ("bivariate_relu_value_jacobian", "labelled_state_abi", "populates_background_portion_of", "IMPLEMENTED+METERED", 1.0, "M179 instantiates the archive background; source-layer binding and integrated lifetime remain open"),
     ("m176_exact_background_no_go", "failure_curve_l", "closes_interface_loop_back_to_endpoint_calculus", "DERIVED+AUDIT", 1.0, "staging optimization exposes the same endpoint calculus as an upstream prerequisite rather than eliminating it"),
-    ("bivariate_relu_value_jacobian", "m177_bivariate_runtime_no_go", "formal_runtime_attempt_closed_by", "FORMAL+STATIC_AUDIT", 1.0, "M177 completes PSD dispatch but refuses to claim a runtime evaluator without certified special-function values and remainders"),
-    ("m177_bivariate_runtime_no_go", "m176_exact_background_no_go", "blocks_archive_producer_in", "DEPENDENCY+FORMAL_NO_GO", 1.0, "the exact recurrence remains unpopulatable until the bivariate value/Jacobian arrays can be evaluated honestly"),
-    ("m177_bivariate_runtime_no_go", "certified_phi2_provider", "first_remaining_link_is", "FORMAL_REQUIREMENT", 1.0, "the known 556-FLOP pair floor excludes all Phi2/Owen-T work and cannot certify a target-width bill"),
+    ("bivariate_relu_value_jacobian", "m177_bivariate_runtime_no_go", "historical_runtime_attempt_was_closed_by", "FORMAL+STATIC_AUDIT+CLOSED", 1.0, "M178 repaired the missing certified special-function values and remainders"),
+    ("m177_bivariate_runtime_no_go", "m176_exact_background_no_go", "historically_blocked_archive_producer_in", "DEPENDENCY+FORMAL_NO_GO+CLOSED", 1.0, "M178/M179 subsequently populated the recurrence honestly; the no-go applies only to the pre-provider state"),
+    ("m177_bivariate_runtime_no_go", "certified_phi2_provider", "requirement_fulfilled_by", "FORMAL_REQUIREMENT+IMPLEMENTED", 1.0, "M178 replaces the 556-FLOP pre-special-function floor with a certified fixed 4048-FLOP inclusive provider"),
     ("m159_scale_normalized_endpoint", "m177_bivariate_runtime_no_go", "supplies_scale_abi_and_face_discipline_to", "PROVED_COMPONENT", 0.95, "M177 preserves scale homogeneity, exact rank-one endpoints, zero-variance dispatch, and fail-closed tangent policy"),
     ("m162_plackett_tallis_line", "certified_phi2_provider", "falsifies_uncertified_fixed_line_substitute_for", "PROVED+FALSIFIED", 1.0, "a common-node Plackett panel misses the required certificate near rank faces and paired-order disagreement is not a remainder bound"),
-    ("certified_phi2_provider", "bivariate_relu_value_jacobian", "would_supply_missing_special_function_to", "HYPOTHESIS+PREDECLARED_REQUIREMENT", 0.9, "a provider pass would open only the endpoint-aware K/Hmu/Hv primitive, not archive, source, variance, or efficacy credit"),
+    ("certified_phi2_provider", "bivariate_relu_value_jacobian", "supplies_special_function_to", "CERTIFIED+IMPLEMENTED", 1.0, "M178 feeds M179's endpoint-aware K/Hmu/Hv primitive; source, variance, and efficacy remain separate"),
     ("m167_collision_owner_unification", "source_atom_topological_key", "supplies_physical_owner_coordinate_to", "POSTMORTEM+PROVED", 1.0, "owner is the equality orbit and must be fixed before control subtraction or importance weighting"),
     ("m159_scale_normalized_endpoint", "source_atom_topological_key", "supplies_psd_chart_coordinate_to", "POSTMORTEM+PROVED", 0.95, "interior, rank-one, transverse rank-two, nontransverse, and zero-marginal strata cannot share one smooth chart"),
     ("m177_bivariate_runtime_no_go", "source_atom_topological_key", "supplies_feasible_tangent_coordinate_to", "POSTMORTEM+FORMAL", 1.0, "rank and zero-variance faces admit only declared one-sided conic paths; a generic JVP is underdetermined"),
@@ -910,11 +942,197 @@ EDGES = [
     ("m197_three_rotation_cross", "single_matrix_crossblock_no_go", "closes_tested_fixed_budget_escape_from", "POSTMORTEM", 0.95, "algebra and sum constraints pass; noise and design fragmentation remain binding"),
     ("m151_b1_forward_control", "m196_b1_provider_gate", "requires_native_provider_certification_by", "PREDECLARED", 1.0, "24 generated cells and inclusive 10.291B trace are frozen before efficacy"),
     ("labelled_state_abi", "m196_b1_provider_gate", "blocks", "AUDIT", 0.95, "no lawful target-shape B1 state provider exists"),
-    ("cumulant_polynomial_quotient", "final_row_quotient", "supplies_fixed_physical_feature_space_for", "HYPOTHESIS", 0.75, "only the already-certified quotient may be used; M179 does not invent a basis"),
-    ("finite_width_vertex", "final_row_quotient", "is_probed_across_outputs_by", "HYPOTHESIS", 0.6, "independent final rows are simultaneous projections of one shared penultimate law"),
-    ("final_row_quotient", "target", "prospective_equal_cost_test_path_to", "HYPOTHESIS", 0.35, "must reach held-output cumulant R2 at least .5 and beat equal-cost direct pilot Monte Carlo on whole-network holdout"),
+    ("cumulant_polynomial_quotient", "final_row_quotient", "cannot_supply_rhs_for", "PROVED+AUDIT", 1.0, "the64D/58D quotient preserves response geometry but contains no observable coefficient right-hand side"),
+    ("pilot_quotient_variance_wall", "final_row_quotient", "kills_sampled_rhs_form_of", "MEASURED+AUDIT", 1.0, "same-pilot quotient regression loses by700--2168x at equal paths and by at least2.06e4x at equal FLOPs"),
+    ("finite_row_tomography_no_go", "final_row_quotient", "kills_finite_row_inference_form_of", "PROVED", 1.0, "finite final rows do not constrain the directional mean of an arbitrary hidden law"),
+    ("final_row_quotient", "target", "rejected_path_to", "PROVED+MEASURED", 1.0, "both possible information channels are closed unless an exact deterministic conditional-state observable is added, which would define a different branch"),
+    ("m154_rankone_analytic_endpoint_partition", "all_psd_chart_atlas_gap", "covers_only_rankone_slice_of", "PROVED_COMPONENT", 1.0, "its trivariate collision kernel is not the bivariate PairMomentJet ABI and refuses rank2/rank3 states"),
+    ("m168_transverse_rank2_anchor", "all_psd_chart_atlas_gap", "covers_only_transverse_ranktwo_slice_of", "SCREENED+LIMITED", 1.0, "nontransverse and zero-marginal faces remain fail-closed"),
+    ("all_psd_chart_atlas_gap", "rank3_source211_provider", "localizes_first_interior_theorem_to", "DERIVED+AUDIT", 1.0, "Sigma=I3 with generic mean and feasible tangent has no eligible existing provider"),
+    ("rank3_source211_provider", "source211_tangent_conversion", "could_supply_coefficient_to", "HYPOTHESIS+INTERFACE_REQUIREMENT", 0.75, "the conditional-integral representation supplies correct local mathematics but its certified 255k-per-triple reference is not a deployable all-triple provider"),
+    ("m178_certified_phi2_owent_provider", "m179_exact_background_archive_producer", "supplies_certified_pair_primitive_to", "CERTIFIED+IMPLEMENTED", 1.0, "M179 consumes the fixed-cost M178 value/derivative kernel and closes the historical M176 dependency"),
+    ("m179_exact_background_archive_producer", "m198_source211_delay_one_adapter", "supplies_labelled_gaussian_context_to", "IMPLEMENTED+TESTED", 1.0, "the delay-one response is evaluated under the exact archived pre-ReLU mean/covariance and post-ReLU mean"),
+    ("m172_selective_22_owner_fusion", "m198_source211_delay_one_adapter", "supplies_generated_owned_source_to", "IMPLEMENTED+TESTED", 0.9, "M198 recomputes M167/M172 owner conservation on generated widths2--7; target-shape source construction is not credited"),
+    ("m198_source211_delay_one_adapter", "m125b_forward_tangent", "supplies_delay_one_tangent_semantics_to", "IMPLEMENTED+INDEPENDENT_ORACLE", 0.9, "the carrier rederives the labelled tangent and then applies the frozen M125b recurrence"),
+    ("in_process_issuer_authority_no_go", "m198_source211_delay_one_adapter", "limits_provenance_claim_of", "ADVERSARIAL+PROVED", 1.0, "private issuer calls and registry mutation forge receipts inside one hostile Python process; cooperative integrity remains useful"),
+    ("source_layer_binding_gap", "m198_source211_delay_one_adapter", "blocks_integrated_production_use_of", "ADVERSARIAL+INTERFACE", 1.0, "source inputs are not yet structurally derived from the same M179 archive entry"),
+    ("m151_b1_forward_control", "m199_composed_cost_reconciliation", "frozen_endpoint_audited_by", "PREDECLARED+COST_AUDIT", 1.0, "M151's89.708636240B protected subtotal is the composed branch base and already includes M125b"),
+    ("m179_exact_background_archive_producer", "m199_composed_cost_reconciliation", "creates_unresolved_overlap_in", "METERED+AUDIT", 1.0, "M179 adds8.304492288B standalone; no trace proves replacement of the legacy32-layer background by its31-layer archive"),
+    ("m199_composed_cost_reconciliation", "source_layer_binding_gap", "requires_streaming_trace_to_resolve", "BLOCKED+INTERFACE", 1.0, "the next child must pass one archive layer object directly through source issuance, M198, and M125b while retaining provider cost as unknown"),
+    ("m199_composed_cost_reconciliation", "budget", "leaves_only_strict_partial_margin_under", "COST_AUDIT", 1.0, "strict no-replacement partial98.013128528B leaves1.986871472B before every untraced term"),
+    ("m199_composed_cost_reconciliation", "m200_streaming_overlap_fixture", "predeclares_only_lawful_child_as", "PREDECLARED+EXECUTED", 1.0, "M200 executes the required response-free stream while keeping provider and native target cost explicitly unknown"),
+    ("m179_exact_background_archive_producer", "m200_streaming_overlap_fixture", "streams_live_layer_state_into", "IMPLEMENTED+TESTED", 1.0, "each generated layer causally binds W_k,V_(k-1),a_k,C_k,mu_k and the exact current Jacobian without rebuilding a full archive"),
+    ("m198_source211_delay_one_adapter", "m200_streaming_overlap_fixture", "converts_bound_fixture_source_inside", "IMPLEMENTED+TESTED", 1.0, "delay-one conversion uses the exact copied M179 context and passes manual suffix parity"),
+    ("m125b_forward_tangent", "m200_streaming_overlap_fixture", "carries_streamed_sources_inside", "IMPLEMENTED+TESTED", 1.0, "H sources use H-1 internal transports and one separate terminal W_(H+1),J_(H+1) response"),
+    ("source_layer_binding_gap", "m200_streaming_overlap_fixture", "closed_for_generated_fixture_by", "HOSTILE+SEMANTIC", 1.0, "equal-valued copies, alternate W/V source laundering, cross-layer reuse, mutation, reorder, duplicate, and terminal injection fail closed"),
+    ("m200_streaming_overlap_fixture", "physical_source211_provider_gap", "localizes_remaining_information_edge_to", "DERIVED+INTERFACE", 1.0, "the nonzero fixture has explicitly unknown physical production cost and carries no target-source credit"),
+    ("m200_streaming_overlap_fixture", "budget", "does_not_yet_resolve_native_overlap_with", "SEMANTIC_ONLY", 1.0, "structural liveness is not a normalized FlopScope, RSS, allocation, terminal, or wall-time trace"),
+    ("m201_repeated_label_rank_no_go", "rank3_source211_provider", "kills_generic_contraction_collapse_for", "PROVED", 1.0, "width3 repeated-label action has determinant116640 and retains all repeated-label channels"),
+    ("m201_repeated_label_rank_no_go", "m204_lowrank_b1_lifted_control", "forces_structured_control_child_as", "RECURSIVE_FOLD", 0.95, "generic full-rank collapse fails, so M204 deliberately changes the source law to a rank-one synthetic control plus exact residual"),
+    ("m156_extended_domain_control", "m204_lowrank_b1_lifted_control", "supplies_complete_domain_add_subtract_law_to", "PROVED+REUSED", 1.0, "M204 reuses M156 conservation but freezes a new rank-one Rademacher control and one-square compiler"),
+    ("m161_collision_tail_bomb", "m204_lowrank_b1_lifted_control", "warns_collision_tail_risk_for", "MEASURED+UNOPENED", 0.9, "M204 also zeroes physical collision targets, so the prior collision-tail failure remains a mandatory risk gate"),
+    ("m204_lowrank_b1_lifted_control", "m205_rankone_complete_physical_owner", "mutates_collision_boundary_into", "PREDECLARED+PROVED_COMPONENT", 1.0, "M205 keeps the fixed loading and replaces artificial zero collisions by physical K4,K31,K22,C211 ownership"),
+    ("m167_collision_owner_unification", "m205_rankone_complete_physical_owner", "supplies_physical_owner_table_to", "PROVED+IMPLEMENTED", 1.0, "K4,K31,K22 and C211 owner factors reconstruct the complete source exactly at widths3--5"),
+    ("m172_selective_22_owner_fusion", "m205_rankone_complete_physical_owner", "leaves_physical_collision_provider_cost_open_for", "ALGEBRA_PASS+COST_OPEN", 0.95, "owner transfer is exact but live K22 formation and the other collision coefficients remain unpriced"),
+    ("m205_rankone_complete_physical_owner", "physical_source211_provider_gap", "localizes_missing_provider_to", "COMPONENT_PASS+BLOCKED", 1.0, "the control/owner algebra passes but no layer-bound K4,directed K31,symmetric K22,C211 provider exists"),
+    ("m205_rankone_complete_physical_owner", "source211_tangent_conversion", "could_supply_structured_control_slots_to", "HYPOTHESIS+INTERFACE", 0.7, "only after physical coefficient issuance and caller binding; current tests are small-width response-free algebra"),
+    ("m206_m204_native_replacement_audit", "m204_lowrank_b1_lifted_control", "kills_same_call_replacement_premise_of", "PROVED+COST", 1.0, "complete lift and strict M151 disagree on collision rows; equal B does not determine the correction"),
+    ("m206_m204_native_replacement_audit", "budget", "proves_no_credit_raw_minimum_exceeds", "PROVED+COST", 1.0, "B plus u-transpose-W is2.084422144B versus1.986871472B strict headroom before omitted work"),
+    ("m207_zero_variance_rank_one_guard", "m204_lowrank_b1_lifted_control", "repairs_only_zero_covariance_face_of", "PREDECLARED+TESTED", 1.0, "zero state returns u=d=control=0 and all interior cases delegate bitwise; replacement and efficacy remain dead"),
+    ("m203_terminal_contraction_circuit_no_go", "terminal_output_contraction_circuit", "kills_standard_packed_winograd_form_of", "PROVED+COST", 1.0, "best depth5 exact two-rectangle circuit is10.543779520B before omitted work"),
+    ("m202_signed_facet_smc_no_go", "global_kac_rice_smc", "kills_current_unnormalized_particle_form_of", "PROVED", 1.0, "sign ratio tends to zero, raw gate ownership double-counts, and zero plateaux defeat naive Palm regularity"),
+    ("m192_frame_gls_oracle", "m192_exact_control_cross_no_go", "remains_nonidentifiable_under", "PROVED+AUDIT", 1.0, "the exact-control pieces do not observe the common error c=u^T e; they only define another anchor a(W)"),
+    ("m193_analytic_anchor", "m192_exact_control_cross_no_go", "exhibits_anchor_cross_term_of", "MEASURED+ALGEBRA", 1.0, "E[Pe(mu-a)] contaminates the desired PCu cross block"),
+    ("m194_independent_pilot", "m192_exact_control_cross_no_go", "exhibits_independent_sensor_cost_of", "MEASURED+SNR", 1.0, "an unbiased independent sensor identifies the block only at main-estimator-scale cost"),
+    ("m192_exact_control_cross_no_go", "target", "blocks_current_exact_control_shortcut_to", "INFORMATION_NO_GO", 1.0, "reopening requires an exact full-target mean or a proved orthogonal independent sensor not present in current artifacts"),
+    ("gen6_unresolved_cross_audit", "exact_control_architecture", "confirms_as_only_nonincremental_live_class", "EXHAUSTIVE+ADVERSARIAL", 1.0, "all58 current unresolved or reusable atlas nodes are represented or subsumed; M205's physical collision provider is the first unearned god edge"),
+    ("source211_tangent_conversion", "target", "opens_semantic_link_but_not_complete_path_to", "SCREENED_COMPONENT", 0.65, "M198 closes the response map; physical Source211 construction, layer binding, noncubic compilation, native trace, variance, and MSE remain required"),
+    ("signed_facet_identity", "global_kac_rice_smc", "supplies_unnormalized_measure_to", "PROVED", 1.0, "the exact integral is the signed sum of output-gradient jumps times spherical facet area"),
+    ("signed_facet_normalization_no_go", "global_kac_rice_smc", "forbids_self_normalized_form_of", "PROVED", 1.0, "signed total mass may vanish and equals the unknown target; only an unnormalized Feynman--Kac estimator with a separate absolute envelope remains"),
+    ("budget", "global_kac_rice_smc", "blocks_exact_fan_enumeration_for", "PROVED+COST", 1.0, "optimistic exact output-fan enumeration is about1.24e86 FLOPs"),
+    ("activation_retraining_boundary", "target", "forbids_model_replacement_shortcut_to", "RULE+SOURCE_AUDIT", 1.0, "the challenge asks for the expectation of the supplied fixed ReLU weights"),
+    ("precision_packing_boundary", "budget", "requires_complete_accounting_under", "SOURCE_AUDIT", 0.9, "precision and preprocessing cannot be treated as free storage or computation"),
     ("harmonic_phase_12", "late_phase_centering", "inspired_mechanized_descendant", "PREDECLARED+MEASURED", 0.8, "phase-centering identity is exact but the tested surrogate fails the cost-adjusted transfer gate"),
 ]
+
+
+def _current_commit() -> str:
+    result = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=HERE,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return result.stdout.strip()
+
+
+def _category_node(
+    graph: nx.Graph,
+    namespace: str,
+    value: str,
+    description: str,
+) -> str:
+    node_id = f"{namespace}::{value}"
+    if node_id not in graph:
+        label = value.replace("_", " ")
+        graph.add_node(
+            node_id,
+            label=label,
+            norm_label=label.lower(),
+            type=f"ledger_{namespace}",
+            status="descriptive_index",
+            description=description,
+            file_type="concept",
+            index_kind="derived_ledger_index",
+            source_file=str(ATLAS_PATH.relative_to(HERE.parent)),
+            source_location=None,
+            source_url=None,
+            captured_at="2026-08-09",
+            author="WHestBench campaign",
+            contributor="Codex + user",
+        )
+    return node_id
+
+
+def _add_exhaustive_ledger_layer(graph: nx.Graph) -> None:
+    """Add a deterministic navigation layer covering every ledger record.
+
+    The hand-audited nodes and edges above retain their evidentiary role.  This
+    layer is explicitly descriptive: it prevents graph omissions without
+    pretending that keyword-derived categories prove a mathematical claim.
+    """
+
+    atlas = json.loads(ATLAS_PATH.read_text(encoding="utf-8"))
+    ledger_bytes = LEDGER_PATH.read_bytes()
+    expected_hash = hashlib.sha256(ledger_bytes).hexdigest()
+    if atlas["ledger_sha256"] != expected_hash:
+        raise ValueError("failure-salvage atlas is stale; rebuild it first")
+
+    records = atlas["records"]
+    graph.graph.update(
+        built_at_commit=_current_commit(),
+        exhaustive_ledger_count=len(records),
+        exhaustive_ledger_sha256=expected_hash,
+        exhaustive_layer_evidence="DESCRIPTIVE_INDEX_NOT_PROOF",
+    )
+
+    relation_fields = (
+        ("operator_families", "family", "classified_in"),
+        ("information_sources", "information", "observes_via"),
+        ("failure_boundaries", "boundary", "bounded_by"),
+    )
+    for record in records:
+        candidate_id = f"candidate::{record['id']}"
+        description = (
+            f"Prediction: {record['prediction']} Kill condition: "
+            f"{record['kill_condition']}"
+        )
+        graph.add_node(
+            candidate_id,
+            label=record["id"],
+            norm_label=record["id"].lower(),
+            type="ledger_candidate",
+            status=record["raw_status"],
+            canonical_status=record["canonical_status"],
+            description=description,
+            file_type="document",
+            index_kind="append_only_ledger_record",
+            source_file=str(LEDGER_PATH.relative_to(HERE.parent)),
+            source_location=record["index"],
+            source_url=None,
+            captured_at="2026-08-09",
+            author="WHestBench campaign",
+            contributor="Codex + user",
+        )
+
+        disposition = _category_node(
+            graph,
+            "disposition",
+            record["canonical_status"],
+            "Canonicalized ledger disposition; descriptive only.",
+        )
+        graph.add_edge(
+            candidate_id,
+            disposition,
+            relation="has_disposition",
+            confidence="EXTRACTED",
+            confidence_score=1.0,
+            evidence_class="LEDGER_DERIVED",
+            evidence=f"raw status {record['raw_status']}",
+            source_file=str(ATLAS_PATH.relative_to(HERE.parent)),
+        )
+
+        for field, namespace, relation in relation_fields:
+            for value in record[field]:
+                category = _category_node(
+                    graph,
+                    namespace,
+                    value,
+                    f"Keyword-derived {namespace} index; use the underlying report as evidence.",
+                )
+                graph.add_edge(
+                    candidate_id,
+                    category,
+                    relation=relation,
+                    confidence="INFERRED",
+                    confidence_score=0.5,
+                    evidence_class="DESCRIPTIVE_INDEX",
+                    evidence="Generation-6 exhaustive failure-salvage atlas",
+                    source_file=str(ATLAS_PATH.relative_to(HERE.parent)),
+                )
+
+        if record["id"] in graph:
+            graph.add_edge(
+                candidate_id,
+                record["id"],
+                relation="same_campaign_record_as",
+                confidence="EXTRACTED",
+                confidence_score=1.0,
+                evidence_class="IDENTITY_LINK",
+                evidence="Exact ledger id matches a hand-audited graph node.",
+                source_file=str(LEDGER_PATH.relative_to(HERE.parent)),
+            )
 
 
 def build() -> nx.Graph:
@@ -951,6 +1169,7 @@ def build() -> nx.Graph:
             evidence=evidence,
             source_file="CORPUS.md",
         )
+    _add_exhaustive_ledger_layer(graph)
     return graph
 
 
@@ -1170,8 +1389,28 @@ def write_insights(graph: nx.Graph) -> None:
             "106. M192 exposes the largest cached oracle basin in the campaign: output-fold frame GLS reduces panel MSE by87.38 percent. The same result proves where the missing information lives, not how to obtain it legally at deployment.",
             "107. The one-matrix location-shift theorem makes the common/contrast cross block non-identifiable. M193, M194, M195, and M197 then close the tested truth-free anchor, independent-pilot, two-way, and three-way fixed-budget recoveries through anchor correlation, pilot SNR, and Kerdock fragmentation.",
             "108. M151 remains the highest-prior exact analytic branch because its forward B=1 carrier avoids the all-output adjoint, but M196 correctly remains blocked until a lawful noncubic provider and inclusive trace exist; no conditional moments may be fabricated.",
-            "109. The second live moonshot changes sigma-algebra rather than weights: use final output rows as random projections of the shared penultimate cumulants, regress only in the certified physical quotient, and kill it unless it beats same-cost direct Monte Carlo on whole-network holdout.",
+            "109. Final-row quotient regression is now closed: a pilot-estimated quotient RHS loses by700--2168x at equal paths, finite final rows do not identify the hidden directional mean, and held-output residual learning has negative median OOF R2.",
             "110. Padgett-style nested geometry contributes a disciplined phase/harmonic search language, not mystical evidence. The current late-phase surrogate is killed; only exact centering and predeclared spherical-harmonic operators survive as reusable atoms.",
+            "111. The automatic ledger layer now covers all223 entries, but its category edges are a descriptive search index. Mathematical closure still comes only from the hand-audited reports and exact falsifiers.",
+            "112. M203 closes the standard M170 escape: the best exact two-rectangle depth5 Winograd fusion still costs10.543779520B including idealized projection. Only an explicit nonstandard simultaneous bilinear decomposition could reopen it.",
+            "113. A mere union of M154/M168/M173/M178/M179 is not an all-PSD atlas. The first uncovered interior theorem is a full-rank trivariate Source211Jet; nontransverse and zero-marginal boundary charts remain separate work.",
+            "114. M198 resolves the old Source211 shape-cast objection: the labelled pre-ReLU Gaussian context plus the delay-one fourth-order response now maps into an independently checked M125b TangentState. This is semantic closure only, not coefficient production.",
+            "115. M202 closes the current coarea-SMC hedge: signed/absolute mass can approach zero, nested raw gates double-count output facets, and zero plateaux violate a naive Palm density. The exact signed identity survives without a particle law.",
+            "116. DPReLU, SignReLU, data-dependent initialization, and ReLU distillation change the fixed target or require labels. The precision-neuron theorem likewise blocks uncharged high-precision packing; none supplies a new estimator observable.",
+            "117. M178 and M179 close the historical M176/M177 bivariate-runtime and BackgroundArchive dependencies: the pair primitive is certified at4048 charged FLOPs and the full archive at8.30B. The failure frontier has moved downstream into physical fourth-order source production.",
+            "118. M198 passes11 semantic tests and an independent100-dps directional fourth-derivative oracle to9.23e-15, but a same-process Python receipt is not hostile authority. Hash registries are integrity conventions, and the physical source must still be bound to the same archived layer.",
+            "119. The strongest surviving analytic chain is now M178 -> M179 -> M205 physical owners -> M198 -> M125b. M205 proves only a structured control algebra; its first unearned edge is a live K4,K31,K22,C211 provider and complete caller-replacement trace.",
+            "120. M199 rejects both naive cost stories: adding standalone M125b double-counts work already inside M151, while replacing the full legacy background by M179 lacks a32-to31-layer call/lifetime proof. The strict partial is98.013128528B; the path is blocked on one streaming native overlap trace before source or efficacy work.",
+            "121. M200 passes that streaming semantic/liveness child on48 of48 generated cells with3.55e-15 strict parity and zero impulse error. It closes fixture-layer laundering and archive-retention hazards, but it deliberately leaves physical Source211 production, normalized native cost, variance, and MSE unearned.",
+            "122. Exact-control structure does not unlock the M192 oracle cross block. Without an exact whole-target mean, it only supplies another anchor a(W), retaining the M193 E[Pe(mu-a)] contamination; an independent sensor reduces to the M194 pilot SNR/cost boundary.",
+            "123. The Terra unresolved-cross audit plus post-M200 folds map all58 current open, preserved, blocked, and screened atlas nodes exactly once. No independent harmonic, biological-routing, attention, quotient, endpoint, or sampling hybrid survives; M205's physical collision provider remains the first god edge.",
+            "124. M201 kills generic exact contraction-before-enumeration by repeated-label collapse: a width3 legal aaab action has determinant116640, so every repeated label retains an independent conditional channel.",
+            "125. M204 is real but narrower: a rank-one two-node Rademacher control turns the complete-domain source into one square contraction. It is a synthetic add-subtract control built from diag(V), not a recovery of M179's full covariance.",
+            "126. M206 kills M204's apparent free reuse. The lifted source and strict M151 differ on collision rows, equal B can require different collision statistics, and raw B plus u-transpose-W already exceeds strict headroom before omitted work.",
+            "127. M205 repairs the owner boundary rather than the loading: K4,K31,K22,C211 physical cells reconstruct exactly to5.26e-13, but their live coefficients and native cost are absent. No variance gate is authorized.",
+            "128. M207 repairs only the all-zero-covariance face with the exact zero control and bitwise interior delegation. Boundary totality does not repair M204's killed replacement premise or M205's provider gap.",
+            "129. M202's smallest signed-facet witness and M203's strongest standard terminal fusion turn two speculative moonshots into scoped no-gos while preserving the coarea identity and the exact two-rectangle algebra as reusable tissue.",
+            "130. After all pass/fail/uncertain folds, the live choice is binary: ship guarded Kerdock v3.1, or first prove a physical M205 provider plus complete native caller replacement under1.986871472B before touching source variance. There is no honest intermediate score claim.",
         ]
     )
     INSIGHTS_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -1,0 +1,656 @@
+                                    The Effect of Weight Precision
+                            on the Neuron Count in Deep ReLU Networks
+
+
+                                      Songhua He * 1 Periklis A. Papakonstantinou * 2
+
+
+                          Abstract                                      count. If instead of our exponential time prepro-
+                                                                        cessing algorithm one uses any polynomial time
+      Deep neural networks (DNNs) have become piv-                      algorithm, then it is impossible to non-trivially
+      otal in machine learning, but the impact of weight                reduce the neuron count, regardless of the high
+      precision, such as in networks with rectified linear              weight precision.
+      units (ReLU), remains underexplored. We analyti-
+      cally investigate the interplay of three key factors:
+      the precision of ReLU network weights, the num-
+      ber of neurons, and the time of the preprocessing            1. Introduction
+      algorithm that generates the network description.
+      Our study, which, to the best of our knowledge, is           Deep Neural Networks (DNNs) have been intensively stud-
+      the first formal work on weight precision, yields            ied and, in the last decade, have become widely popular.
+      three main results.                                          In this work, we revisit the resources a DNN is using. We
+                                                                   show that the standard notion of network size, which is the
+      (1) We present an exponential time preprocessing             number of neurons in a ReLU network, allows networks to
+      algorithm that showcases the possibility of trading          have unreasonably high computational power using only a
+      ReLU nodes for weight precision. Specifically,               small number of neurons and high weight precision. This
+      our method achieves an exponential reduction in              means that in addition to the number of neurons, one should
+      neuron count when computing any function of                  take into account the numerical precision of the weights of
+      high complexity with boolean input encoding.                 the network.
+      What is the implication of the above result in               A ReLU network is an edge-weighted graph whose nodes
+      theoretical and practical works?                             (neurons) are ReLU functions (σ(x) = x, x > 0 and
+      (2) In theory of computing, in general, there is             σ(x) = 0, x ≤ 0) evaluated over the weighted sum of their
+      no free lunch. In our case, if you significantly             inputs. If we view it as a circuit, a ReLU network encodes
+      reduce the number of neurons then you should                 a real-valued function. To compare with boolean models,
+      pay the cost in weight precision. To address this,           we study ReLU networks on boolean inputs, which is not
+      we introduce a notion of network size that consid-           an actual restriction in a world of finite precision. In the
+      ers weight precision in addition to the network’s            real world, all real-valued problems are compiled in binary.
+      number of neurons. We establish that under this              This means that for every ReLU network with real-weights
+      redefined notion of network size, it is generally            there exists an equivalent ReLU network with boolean in-
+      impossible to exchange neurons for weight pre-               puts. Thus, it formally suffices to study the computational
+      cision in ReLU networks of the same (redefined)              capabilities of neural networks on boolean problems.
+      size.                                                        Prior to our work, there were many excellent works that
+      (3) In practice, we show that high weight preci-             studied the computational power of various neural networks
+      sion alone cannot help in reducing the neuron                architectures both theoretically, e.g. (Siegelmann & Sontag,
+                                                                   1992; 1994; Siegelmann, 1999; Chen et al., 2018; Pérez
+  *
+   Equal contribution 1 Department of Computer Science, Rut-       et al., 2019) and empirically in finite precision settings,
+gers University, New Brunswick, NJ, USA 2 Department of Man-       e.g. (Weiss et al., 2018). To the best of our knowledge, our
+agement Science and Information Systems, Rutgers University,
+New Brunswick, NJ, USA. Correspondence to: Songhua He              work is the first to consider formally and in a comprehensive
+<songhua0110@gmail.com>.                                           fashion the computational power of neural networks in terms
+                                                                   of the precision of their weights.
+Proceedings of the 41 st International Conference on Machine
+Learning, Vienna, Austria. PMLR 235, 2024. Copyright 2024 by       Allowing high precision or equivalently large-number arith-
+the author(s).                                                     metic often makes a computational model unreasonably
+
+                                                               1
+                           The Effect of Weight Precision on the Neuron Count in Deep ReLU Networks
+
+strong. Such unreasonably powerful models charge a sin-                     show√ that every boolean function can be computed in size
+gle step per operation; for example, integer addition on                    O( 2n ) = o(2n /n) with bounded fan-in. Going exponen-
+large numbers. In particular, the unit-cost RAM model                       tially below the lower bound encapsulates the meaning of
+(Random Access Machine) can solve NP-hard and even                          the phrase ”the model has unreasonable computing power.”
+PSPACE-hard problems in polynomial time (Schönhage,                        Our proof leverages a somewhat similar idea to the construc-
+1979); see also (Hartmanis & Simon, 1974; Bertoni et al.,                   tion in (Dančı́k, 1996). However, unlike (Dančı́k, 1996), we
+1985; van Emde Boas, 1990). Similarly, for the notoriously                  do not blow up exponentially the fan-in, which is a critical
+difficult open question of solving a semidefinite program                   step in (Dančı́k, 1996). We also note that our construction
+(SDP) exactly. Although SDPs are known to be solvable                       of √ReLU networks are as deep as its size (i.e., of depth
+in polynomial time, for a tolerance parameter ε > 0, the                    O( 2n )). We do not know if there is an algorithm that
+exact version of the same problem is conjectured to be NP-                  can trade precision for a similar neuron count in a shallow
+hard (Tarasov & Vyalyi, 2008; Allender et al., 2009). The                   network.
+same thing holds for the “sum of square roots” problem.
+                                                                            This discussion does not mean that NNs are super-powerful
+In this problem, the input consists of two lists of positive
+                                                                            in practice. The reason is that the algorithm that generates
+integers Pa1 , . . . , an andPb1 , . .√. , bn and one wants to decide
+             n √               n                                            the network description runs in time exponential in the input
+whether i=1 ai > i=1 bi . The “sum of square roots”
+                                                                            size of the network. However, this result shows that in a
+problem has an obvious linear time algorithm in the real-
+                                                                            NN it is possible to trade the number of nodes (or edges)
+RAM model. However, its complexity is a long-standing
+                                                                            for the precision of weights. Therefore, the number of the
+open question in a practical model of computation such as a
+                                                                            ReLU nodes/edges alone is insufficient in describing the
+polynomial-time Turing Machine (O’Rourke, 1981). As of
+                                                                            complexity of the NN. To that end, we introduce a natural
+now, this problem is not even known to be in NP.
+                                                                            definition of size, which takes into account the precision
+In the standard Neural Networks model, ReLU nodes can                       and the magnitude of NN weights. Under this new “weight-
+possess any real-number weights. We investigate the conse-                  sensitive ReLU size” definition we show the following.
+quences when these weights have high but finite precision
+                                                                            Theorem 2 (informal). The model of ReLU networks under
+or can be large integers. Theorem 1 (below) suggests that
+                                                                            our “weight-sensitive ReLU size” has the same computing
+this adaptation confers unreasonable power to the model.
+                                                                            power as standard combinatorial circuits of the same size.
+Interestingly, this holds true even for inputs consisting of
+small numbers, such as binary input vectors. Compared to                    We formalize the above result by showing a variant of Shan-
+theorems about unit-cost RAM models, Theorem 1 has a                        non’s lower bound for ReLU networks where “size” is our
+significantly different statement and proof but conveys a                   “precision-sensitive size”. In the variant of Shannon’s theo-
+narrative of similar flavor.                                                rem, we obtain asymptotically the same result as for combi-
+                                                                            natorial circuits (but, in our case “size” is something differ-
+Theorem 1 (informal). Every hard boolean function can be
+                                                                            ent).
+computed in the standard model of ReLU networks (i.e. with
+unbounded weights) using a number of nodes (or edges),                      Theorem 3 (informal). The set of all problems computable
+which is exponentially smaller than the size of the small-                  in polynomial time is the set of problems computable by
+est combinatorial circuit (or ReLU network with bounded                     ReLU networks (with unbounded weights) whose description
+weights) for this function. Note that this exponentially                    is generated by an algorithm that runs in polynomial time.
+smaller ReLU network is generated by an algorithm that
+                                                                            Theorem 3 complements Theorem 1. Theorem 1 tells us
+runs in exponential time.
+                                                                            that the weight precision matters. Theorem 3 tells us that
+To put this result in the proper context, we recall that Shan-              the weight precision does not matter if one invests only
+non showed (Shannon, 1949) that almost every boolean                        polynomial time to output the network description. In other
+function requires a boolean circuit of size Ω(2n /n) (also                  words, if the algorithm that outputs the network description
+see (Riordan & Shannon, 1942)). The 2n /n bound holds                       does not use too much time, then there is no advantage in
+for circuits of constant fan-in. To provide a meaningful                    utilizing high-precision weights.
+comparison between ReLU networks and combinatorial
+                                                                            We note that an analogous phenomenon to Theorem 3 is
+circuits, we will also consider ReLU networks with con-
+                                                                            not true for other high-precision models of computation.
+stant fan-in. Shannon’s lower bound is asymptotically tight,
+                                                                            For example, consider circuits with real-valued gates doing
+as Lupanov (Rus, 1958) showed that every boolean func-
+                                                                            the arithmetic of the unit-cost RAM model. The algorithm
+tion can be computed in size O(2n /n). Later, when we
+                                                                            that outputs the circuit description is efficient (polynomial
+formally restate Theorem 1, we will see that we can com-
+                                                                            time), but the circuit it outputs is computationally extremely
+pute every boolean function using a number of network
+                                                                            powerful; it can compute the entire PSPACE with only a
+edges smaller than Shannon’s bound. Specifically, we
+                                                                            polynomial number of gates.
+
+                                                                        2
+                         The Effect of Weight Precision on the Neuron Count in Deep ReLU Networks
+
+We conclude the introduction with two remarks regarding               val(x) of a neuron x is given by ReLU functions:
+our results in the context of machine learning.                                                    X
+                                                                                   val(x) =def σ(        w(y,x) · vy )
+First, we do not know how a training algorithm (learning                                           (y,x)∈E
+algorithm) could utilize high-precision weights to give more-
+than-usual power to a learned ReLU model. For example,                where E is the edge set of the ReLU network, w(y,x) ∈ R
+we do not know how one can devise a training algorithm for            is the weight of edge (y, x), and σ is the ReLU function
+neural networks, which for a fixed number of ReLU nodes               defined as σ(x) =def max(x, 0). Besides, the sinks (i.e. ver-
+the more it trains the more it can take advantage of high             tices with out-degree 0) are the outputs of the ReLU net-
+precision weights. Exploring different ways to update the             work.
+weights (other than this, using the same training algorithm)
+                                                                      In this work, the inputs are either 0 or 1. We shall omit the
+could lead to new insights in the practice of machine learn-
+                                                                      activation function σ(x) if it is clear that x is non-negative.
+ing. This seems to be an interesting question that can be
+studied both theoretically and, importantly, empirically.             Other usual computational models, such as Turing machines,
+                                                                      the RAM model, boolean circuits, and so on, have the same
+Second, our study highlights the importance of considering
+                                                                      power in the sense that each one of them can simulate other
+weight precision in theoretical works on ReLU networks,
+                                                                      models with an at most polynomial loss. In this work, we
+particularly in works proving lower bounds. This considera-
+                                                                      will mainly compare ReLU networks to boolean circuits. We
+tion should extend to both the statements of such theorems
+                                                                      note that a boolean circuit and a ReLU network where the
+and their proofs to ensure sound arguments.
+                                                                      weights are of at most polynomial precision or magnitude
+The rest of the paper is organized as follows. First, we intro-       are polynomially equivalent. That is, when we say that
+duce the necessary notation and the new NN size definition            “we compare boolean circuits and ReLU networks”, this is
+in Section 2. We also define gadgets useful for constructing          the same as saying that “we compare ReLU networks of
+ReLU networks in Section 3. In the last three sections, we            reasonable weight-precision and ReLU networks of arbitrary
+introduce and prove our three main results: we prove that             precision”.
+ReLU networks are strictly more powerful than standard
+                                                                      To show that ReLU networks can simulate boolean circuits
+circuit models with the same number of gates (by using
+                                                                      efficiently, we shall first define boolean circuits. A boolean
+an exponential time algorithm that generates the network
+                                                                      circuit is a directed acyclic graph, whose inputs are bits, and
+description); we show that ReLU networks under our new
+                                                                      nodes are boolean operators. Boolean circuits with bounded
+definition of size match Shannon’s circuit lower-bound; and
+                                                                      fan-in (i.e., in-degree) only use binary and unary operators
+finally, we show that ReLU networks that are generated by a
+                                                                      ∧, ∨, ¬ as gates (nodes). Boolean circuits with unbounded
+polynomial time algorithm compute exactly the polynomial-
+                                                                      fan-in use ∧n , ∨n , ¬ for any n.
+time computable problems.
+                                                                      2.2. Network Size
+2. Definitions and Notation
+                                                                      Prior to this work, in neural networks, the size is defined as
+In this section, we provide definitions and notations.                the number of neurons (or the number of edges/connections
+For any predicate P , define the Iverson bracket [P ] to be           between neurons). The number of neurons is at most the
+1 iff P is true, and [P ] = 0 otherwise. LCM(x1 , ..., xk )           product of the network’s depth and width. As for boolean
+is the least common multiple of the integer xi s, and                 circuits, the size of circuits is either defined as the number
+GCD(x1 , ..., xk ) is their greatest common divisor. All loga-        of nodes or the number of edges, where for notational con-
+rithms are of base 2. For any two natural numbers p, q, p|q           venience we choose the latter one as the definition of circuit
+indicates that p divides q.                                           size. For the size of boolean circuits with unbounded fan-in
+                                                                      and ReLU networks, we make the same choice to apply
+                                                                      Shannon’s circuit lower-bound on these models.
+2.1. ReLU Networks and Other Models
+                                                                      To address the issue of limited precision in the weights we
+The formal definition of ReLU networks is as follows:
+                                                                      introduce the following definition.
+                                                                      Definition 2.2. For a ReLU network C whose weights
+                                                                      {wx,y } are all rational numbers, we define the precision
+Definition 2.1 (see (Arora et al., 2019)). A ReLU network             size of C to be the sum of bits to describe each weight:
+C is an edge-weighted acyclic directed graph G = (V, E).
+                                                                                          p-SIZE(C)
+The sources (i.e. vertices with in-degree 0) of the graph are                  X                                     
+either inputs or constants 0, 1. To differentiate with sources,
+                                                                                                    
+                                                                          =        log(|px,y | + 1) + log(|qx,y | + 1)
+non-source vertices are called neurons (nodes). The value                     (x,y)∈E
+
+
+                                                                  3
+                          The Effect of Weight Precision on the Neuron Count in Deep ReLU Networks
+
+where E is the edge set of C, and px,y /qx,y = wx,y , where            Then, we can compute them by comparing s to particular
+px,y and qx,y form an irreducible fraction wx,y .                      numbers:
+                                                                                          ∧n = [s = n]
+The above definition quantifies the number of bits we need
+to describe the weights of a network. It is equal to the                                        ∨n = [s ≥ 1]
+number of binary bits we need to write all the integers
+(|px,y |), (|qx,y |) for (x, y) ∈ E.
+
+3. Gadgets for ReLU Networks                                           4. ReLU Networks Are Strictly Stronger than
+                                                                          Boolean Circuits with the Same Number of
+In this section, we give gadgets for building ReLU networks.
+These gadgets are used throughout our paper.                              Nodes (and the Same Fan-in)
+Lemma 3.1. For input x ∈ S where S ⊂ R is a finite set,                Lemma 3.3 says that ReLU networks are at least as powerful
+there is a ReLU network of constant size computing [x ≥ c].            as boolean circuits, while boolean circuits are composed
+                                                                       of AND, OR, and NOT gates (nodes). In this section, we
+Proof. Since S is a finite set, there exists a c′ < c ∈ R              show that ReLU networks are strictly stronger than boolean
+such that if x < c then x < c′ . We first compute: y :=                circuits, by showing that ReLU networks can compute par-
+    1         c′                                       ′               ticular functions with asymptotically less number of neurons
+σ( c−c ′ x − c−c′ ). y is non-zero if and only if x > c , and is
+
+greater than or equal to 1 if and only if x ≥ c. We have               and wires. Let us formally restate our first result.
+                                                                       Theorem 4.1 (restatement of Theorem 1). For any boolean
+                 [x ≥ c] = σ(y − σ(y − 1))                             function f : {0, 1}n → {0, 1}, there exists a ReLU network
+                                                                       of size O(2n/2 ) that computes f . Furthermore, the network
+                                                                       description is computed in time 2O(n) .
+
+To put things in context, here is an example of constructing           This upper-bound is exponentially smaller than the
+[x ≤ c] and [x = c] by [x ≥ c]:                                        Ω(2n /n) lower-bound given by Shannon for the number
+                                                                       of gates/wires in a constant fan-in combinatorial circuit.
+                  [x ≤ c] = [(−x) ≥ (−c)]
+                                                                       Overview of the algorithm that beats Shannon’s bound.
+             [x = c] = [[x ≥ c] + [x ≤ c] ≥ 2]                         Denote by the inputs of the network x1 , x2 , ..., xn ∈ {0, 1}.
+Other relations between x and c can be obtained similarly              The algorithm consists of two parts. First, we print the
+from the gadget above.                                                 truth table of the function f (x1 , x2 , ..., x⌊n/2⌋ ) by fixing
+                                                                       the first ⌊n/2⌋ inputs. Then we “lookup” and output the
+Fact 3.2. For input x, y ∈ R≥0 bounded by a sufficiently               (x⌊n/2⌋+1 ...xn )2 -th item of the truth table.
+big constant C, and a switch z ∈ {0, 1}, there exists a ReLU
+network computing the formula below in constant size                   Here are the details of our argument.
+                                                                      We construct the network by encoding the whole truth table
+                                 x, if z = 0
+              (z ? x : y) =def                                         Tf of a boolean function f into the weights. Formally, Tf
+                                 y, if z = 1
+                                                                       is a big constant whose binary representation encodes the
+                                                                       function f :
+Proof. We construct it directly:
+                                                                                          Tf = (t0 t1 ...t2n −1 )2
+     (z ? x : y) = σ(x − z · C) + σ(y − (1 − z) · C)                   where for all x1 , ..., xn ∈ {0, 1},
+
+                                                                                        t(x1 ...xn )2 = f (x1 , ..., xn )
+
+We can construct “if switches” the same way as above.
+                                                                       To formalize this argument, we first need the ability to
+Lemma 3.3. The boolean functions ¬ and ∧n , ∨n for any n               “lookup” whether a specific entry in the truth table is 0
+can be implemented by ReLU networks of constant neurons.               or 1. However, we note that it is hard to do so by a small
+                                                                       number of neurons.
+Proof. Negation function ¬x is 1 − x.
+                                                                       Lemma 4.2. Given x1 , ..., xn ∈ {0, 1} and Tf ∈
+                                                                                     n
+For the remaining functions, we first use a single
+                                                PnReLU                 {0, 1, ..., 22 − 1} as inputs, there exists a ReLU network of
+                                                                                  n
+neuron to get the sum of the n input bits s = σ( i=1 xi ).             size O(2 ) whose output is the (x1 ...xn )2 -th bit of Tf .
+
+                                                                   4
+                          The Effect of Weight Precision on the Neuron Count in Deep ReLU Networks
+
+Algorithm 1 2n -sized network for looking up the truth table                Once more, we give the construction as pseudocode in Al-
+Input: x1 , ..., xn , Tf                                                    gorithm 2.
+Output: The (x1 ...xn )2 -th bit of Tf                                      In the construction, we first iteratively search the truth table
+                                                                            of Tf (x1 ,...,x⌊n/2⌋ ) in O(2n/2 ) size, then lookup the truth
+ 1: Sum := 0                                                                table using Lemma 4.2. The total size of the network is still
+ 2: for k := 2n − 1 to 0 do                                                 O(2n/2 ).
+ 3:   Sum := Sum + ([Tf ≥ 2k ] ∧ [(x1 ...xn )2 = k])
+ 4:   // [Tf ≥ 2k ] decides whether the k-th bit is on or off.              Remark. Previously it was shown (Dančı́k, 1996) that
+ 5:   Tf := ([Tf ≥ 2k ] ? Tf − 2k : Tf )                                    computing any boolean function in unbounded fan-in
+ 6:   // Remove the k-th bit.                                               boolean circuits can be done in O(2n/2 ) nodes as well,
+ 7: end for                                                                 which is proved by a similar construction as ours. Impor-
+ 8: Output := Sum                                                           tantly, the construction in (Dančı́k, 1996) uses O(2n ) many
+                                                                            wires, whereas ours uses O(2n/2 ). And our construction
+Algorithm 2 2n/2 -sized network for computing f                             above consists of neurons of only constant fan-in. This still
+Input: x1 , ..., xn                                                         implies a huge gap between ReLU networks and unbounded
+Output: f (x1 , ..., xn )                                                   fan-in boolean circuits.
+                                                                            Theorem 4.1 shows that ReLU networks are strictly stronger
+ 1: T := 0                                                                  than boolean circuits. In contrast, Shannon’s Theorem
+ 2: for k := 0 to 2⌊n/2⌋ − 1 do                                             (Shannon, 1949) staets that almost every n-ary boolean func-
+ 3:   T := T + ([(x1 ...x⌊n/2⌋ )2 = k] ? Tf (k1 ,...,k⌊n/2⌋ ) :             tion requires boolean circuits of size 2n /n, for sufficiently
+       0)                                                                   big n.
+ 4:    // Assign the (x1 ...x⌊n/2⌋ )2 -th truth table to T .
+                                                                            We will discuss open questions related to Theorem 4.1 in
+ 5: end for
+                                                                            Section 7.
+ 6: Output := the (x⌊n/2⌋+1 ...xn )-th bit of T
+ 7: // This is done using Algorithm 1.
+                                                                            5. A ReLU Lower Bound that Matches
+                                                                               Shannon: The New ReLU Size Definition
+Proof. We give the construction as pseudocode in Algo-
+                                                                            In this section, we show in a combinatorial way that under
+rithm 1.
+                                                                            Definition 2.2, ReLU networks have the same computational
+The procedure slices Tf bit-by-bit and determines whether                   power as regular models, i.e., boolean circuits. We know
+or not the highest bit of Tf is 1.                                          from Lemma 3.3 that functions computed by boolean cir-
+                                                                            cuits can efficiently translate to ReLU networks. Combined
+The for-loop can be simply implemented sequentially in the
+                                                                            with Lupanov’s construction (Rus, 1958), every function
+network. The operators involved can all be implemented
+                                                                            can be computed by ReLU networks of p-SIZE O(2n /n).
+in constant size by LemmasP3.1, 3.2 and 3.3. By pre-
+                                n          n−i                              To show the other direction, we prove a matching lower
+computing (x1 x2 ...xn )2 =     i=1 xi · 2     , the formula
+                                                                            bound in Theorem 5.1.
+[(x1 x2 ...xn )2 = k] also costs constant size as stated in
+Lemma 3.1. The total size of the construction above is                      Let Sf denote the minimal p-SIZE of a ReLU network com-
+O(2n ).                                                                     puting a boolean function f . We obtain that
+                                                                            Theorem 5.1 (restatement of Theorem 2). For any suffi-
+It is worth noting that Tf is not necessarily an input in                   ciently large n,
+the lemma above, as the truth table Tf is a constant not
+depending on the input. We will come to this in the proof of                                      max           Sf > 2n /n
+                                                                                             f :{0,1}n →{0,1}
+Theorem 4.1, when Tf will be a variable.
+We will not use the above lemma directly on the given                       In fact, we prove a stronger proposition: for any sufficiently
+function. Note that this size is worse than the 2n /n size in               large n, almost every boolean function requires ReLU net-
+Lupanov’s construction for boolean circuits. However, we                    works of size greater than 2n /n.
+will use Lemma 4.2 after we partition the truth table using a
+different algorithmic idea.                                                 Proof. We proceed with a counting argument.
+                                                              n−i
+Proof of Theorem 4.1. Let Tf (x1 ,...,xi ) ∈ {0, 1, ..., 22         −          • Count the number of different ReLU networks over n
+1} be the truth table of f fixing the first i bits.                              variables and of p-SIZE at most 2n /n.
+
+                                                                        5
+                          The Effect of Weight Precision on the Neuron Count in Deep ReLU Networks
+                                            n                                 m
+                                                                                      n
+                                                                     m! ≥ m                   en k
+                                                                                        
+   • Compare it with the total number 22 of boolean func-                    em and k ≤ ( k ) , the third inequality comes
+                                                                                1 x
+     tions on n variables.                                           from (1 + x ) ≤ e, and the fifth and sixth inequality comes
+                                                                     from the observation that m2i−m i−i takes its maximum at
+As we saw in Definition 2.2, the p-SIZE of a network is the          i = t and m somewhere in the range (2t/ ln t, 4t/ ln t).
+total number of bits to store numerators and denominators
+                                                                     As t = 2n /n, we have
+of the rational-valued weights. Let t = 2n /n. To fully
+characterize a ReLU network we need the following: the
+number of neurons m, the edge set E, how many bits we
+allocate to each numerator and denominator, whether or not            Ct ≤ tt · (t−2t/ ln t+2 · (ln t)2t/ ln t−2t · 28t−2t/ ln t · e5t )
+                                                                               n                              n
+each weight is positive, and the 2t possible values of the t              = 22 (1−log n/n) · o(1) = o(22 )
+bits. Together, all the conditions above determine a unique
+ReLU network.                                                        which implies that there exist n-ary boolean functions that
+                                                                     can not be computed by ReLU networks of p-SIZE at most
+Denote by Ct the number of different ReLU networks within
+                                                                     2n /n when n is large enough.
+p-SIZE t, Ct is at most
+
+                 t X
+                   t          m+n                               Therefore, the lower bound under our new size definition
+                 X                        t + 2i
+          2t ·           2i ·     2     ·                            matches Shannon’s 2n /n boolean circuit lower bound.
+               m=1 i=m
+                                  i          2i
+
+where i is the size of the edge set, and t+2i                        6. ReLU Networks whose Description is
+                                              
+                                          2i    is the number
+of different ways to allocate t bits to i numerators and i              Computed in Polynomial Time Decide
+denominators. Here i is bounded by t because each edge                  Exactly Problems in Polynomial Time
+at least costs 1 bit (the lowest p-SIZE of an edge is 1, cor-
+responds to the weight 0/1). The number of neurons m is              We formally state and prove Theorem 3. We will show that
+no more than t as well because otherwise the network is not          when the description of the networks can be printed in poly-
+connected.                                                           nomial time, then these ReLU networks can exactly compute
+                                                                     problems in P (the set of polynomial-time computable prob-
+Besides, we can assume that no two neurons in the ReLU
+                                                                     lems). This is done by showing that we can simulate the
+network compute the same function, or there will be another
+                                                                     arithmetic in executing the ReLU networks efficiently, in
+network of smaller size computing the same function, by
+                                                                     which the intermediate values could be exponentially large.
+eliminating repeated neurons. Thus, permuting the labels
+of the t neurons gives us a different description of a ReLU          A family of networks {Cn : n ∈ N} is polynomial time
+network computing the same boolean function. Therefore,              printable1 if there is a polynomial-time Turing machine that
+we can update and bound the number of different ReLU                 outputs the description of Cn giving 1n as input.
+networks:
+                                                                     We consider only rational-valued ReLU networks, which
+                                                                     have finite input descriptions. In this case, we encode all the
+          t X
+            t           m+n                                      information (e.g., the connection of the network, the weights
+              2i
+                                          
+      t
+          X
+                            2       t + 2i                           in binary) of a ReLU network in binary strings. We let the
+Ct ≤2 ·              ·            ·
+        m=1 i=m
+                m!          i         2i                             description of the ReLU network be the concatenation of
+         t X  t
+                                        !i            2i           the binary strings.
+     t
+        X       2i · em       e(m + n)2      e(t + 2i)
+   ≤2 ·                  ·                 ·                         Theorem 6.1 (restatement of Theorem 3). For every lan-
+                 mm               i              2i
+        m=1 i=m                                                      guage L ⊆ {0, 1}n , L is decided by a family of ReLU net-
+         t    t
+        X X 2i · em+3i · (m + n)2i        
+                                               t
+                                                  2i                works {Cn } whose description is computable in polynomial
+     t
+   =2 ·                                  · 1+                        time if and only if L ∈ P.
+        m=1 i=m
+                         ii · mm               2i
+               t X
+                 t                                                   The easy direction is that polynomial time printable ReLU
+               X   2i · em+3i · (m + n)2i
+   ≤(2e)t ·                                                          networks contain P. This follows by the Cook-Levin
+                                ii · mm
+               m=1 i=m                                               Theorem (Cook, 1971), where every function in P that
+      2   4t
+   ≤t · 2 · e ·  5t
+                       max      m2i−m i−i                            can be decided in time t(n) has a boolean circuit of size
+                      1≤m≤i≤t
+                                                                     O(t(n)2 ), and the fact that ReLU nodes can simulate the
+   ≤t2 · 24t · e5t · max m2t−m t−t                                   AND/OR/NOT boolean operators with a constant-size con-
+                      1≤m≤t
+                                                                     struction.
+   ≤t · 2 · e · 24t−2t/ ln t · (ln t)2t/ ln t−2t · tt−2t/ ln t
+      2   4t     5t
+                                                                         1
+                                                                           In classical computational complexity theory we say that “the
+where the second inequality comes from the inequalities              circuit is P-uniform”.
+
+                                                                 6
+                           The Effect of Weight Precision on the Neuron Count in Deep ReLU Networks
+
+To show the other direction, we first bound the magnitude
+of all the weights and intermediate values. Fix an arbitrary
+network Cn with an underlying graph G = (V, E). Let
+                                                                    Lemma 6.2 implies that the length of qx′ (denominators) will
+pe /qe = we the weight of an edge e ∈ E, and p′x /qx′ =
+                                                                    not be longer than the description of the ReLU network, as
+val(x) to be the value of vertex x, where all the fractions
+                                                                    qe s are all included in the description.
+are irreducible.
+                                                                    To bound the length of p′x (numerators), it suffices to bound
+We first bound the length of the intermediate variables p′x s
+                                                                    the magnitude of val(x), while p′x = qx′ · val(x).
+(numerators) and qx′ s (denominators).
+                                                                    Lemma 6.3. For a ReLU network Cn whose length of de-
+Lemma 6.2. For every    Q ReLU network Cn , the value of            scription is T , the value of any neuron x has
+every vertex x has qx′    e∈E qe .
+
+
+Proof. Define                                                                         |val(x)| ≤ T T · (2T )T
+
+ conn(x) =def {e|∃path begins from edge e to vertex x}
+                                                                    Proof. We still prove it by induction on depth, that is, for
+  prev(x) =def {y|(y, x) ∈ E}
+                                                                    any vertex x at depth i we have |val(x)| ≤ T i · (2T )i .
+We prove a stronger proposition:                                    For the base case where x is a source, obviously, we have
+                           Y
+                     qx′         qe                                                  val(x) ≤ 1 = T 0 · (2T )0
+                            e∈conn(x)
+
+by induction on the depth of x.                                     By the inductive hypothesis, all the depth-(i − 1) vertices y
+This is to say that the denominator of the value of a vertex        have |val(y)| ≤ T i−1 · (2T )i−1 . Since all the weights have
+x can divide the product of denominators of the weights of          |we | ≤ 2T , and the size of edge set |E| ≤ T , we have
+edges above x (recall that Cn is a directed acyclic graph).
+                                                                                                                         
+For the base case, x is a source and qx′ = 1 1.                                                  X
+                                                                             val(x) = σ                    w(y,x) · val(y)
+    Q for all the vertices y of depth less than i it holds:
+Suppose                                                                                        y∈prev(x)
+qy′  e∈conn(y) qe . For any vertex x at depth i, we know that                               X
+                                                                                   ≤                2T · T i−1 · (2T )i−1
+                    ′                                                                     y∈prev(x)
+                  p            X
+      val(x) = x′ = σ                 w(y,x) · val(y)                              ≤ T i · (2T )i
+                  qx
+                             y∈prev(x)
+                                                   
+                               X p(y,x) · p′y
+                      = σ                          
+                                       q(y,x) · qy′
+                               y∈prev(x)                            As a result, we get
+
+Now we show that qx′ divides the product of qe .
+                                                                                                             
+                                                                                                       Y                 T
+                                                                      p′x = qx′ · val(x) ≤               qe  · T T · 2T    (1)
+  qx′ LCMy∈prev(x) q(y,x) · qy′                                                                       e∈E
+
+                                               
+                                     Y                              Now, we are ready to prove Theorem 6.1.
+      LCMy∈prev(x) q(y,x) ·                  qe 
+                                  e∈conn(y)
+                                                                  Proof of Theorem 6.1. For any boolean language L decided
+                                           Y                        by a polynomial time printable family of ReLU circuits
+      LCMy∈prev(x) q(y,x) ·                            qe 
+                                                                    {Cn }, there exists a polynomial-time Turing machine M
+                                  e∈conn(x)∧e∈{(z,x)}
+                                             /
+                                                                  printing {Cn }. Suppose the running time of M is T (n)
+                  Y                                               polynomial in n, then we know that the length of the de-
+                              qe  · LCMy∈prev(x) q(y,x)           scription is bounded by T (n). We have the length of all the
+         e∈conn(x)∧e∈{(z,x)}
+                    /                                               parameters
+          Y                                                                X
+                  qe
+                                                                                                                
+                                                                                 log(|pe | + 1) + log(|qe | + 1) ≤ T (n)
+      e∈conn(x)                                                            e∈E
+
+
+                                                                7
+                             The Effect of Weight Precision on the Neuron Count in Deep ReLU Networks
+
+which means that                                                                    7. Open Questions
+       Y
+           qe = 2Σe∈E log2 qe                                                       This work explores the computational capabilities of very
+         e∈E                                                                        high weight precision deep ReLU networks, as well as their
+                                                                       (2)          limits given restrictions in the precision and/or the running
+                   ≤ 2Σe∈E (log2 (|pe |+1)+log2 (|qe |+1))                          time of the pre-processing algorithm. There are still impor-
+                   ≤ 2T (n)                                                         tant questions we have not answered.
+
+Here we give the polynomial-time simulator of Cn , it goes                            1. Perhaps the most important open question is whether
+by executing the network in topological order. For each ver-                             there is a training algorithm (maybe one that takes a
+                             p′                                                          lot of time to train), which takes advantage of higher
+tex x, we compute val(x) = qx′ in the following procedure:
+                                     x                                                   weight precision.
+
+  • For each y ∈ prev(x), respectively multiply p′y and                               2. If one focuses only on the number of neurons we do
+                                                              p′y ·p(y,x)                not know of any non-trivial lower bound on the neuron
+     p(y,x) , qy′ and q(y,x) , then val(y) · w(y,x) =                       .            count when the ReLU network is of unrestricted
+                                                              qy′ ·q(y,x)                                                             √ pre-
+                                                                                         cision. The upper bound we obtained is O( 2n ). It
+                                     p′ ·p
+                                    (y,x)             p′′
+  • Amplify each fraction qy′ ·q(y,x)     to Q (y,x)qe , where                           is interesting to close the gap. Can we obtain a better
+                                 y             e∈E
+               p′ ·p(y,x) Q                                                              upper bound? Can we obtain any lower bound?
+    p′′(y,x) = qy′ ·q(y,x) · e∈E qe is an integer.
+                  y
+                                                                                      3. Our construction in Theorem 4.1 involves networks
+                                                                                                                                       √
+  • Add all the p′′(y,x) s together, we get val(x) =                                     depth similar to the neuron count (of order O( 2n )).
+      P ′′ 
+          p                                                                              Is there a construction of smaller depth?
+    σ Qy (y,x)
+            qe  .
+            e∈E
+                                                                                      4. This work focuses on neural networks with ReLU acti-
+                                                                                         vation, a standard activation function. It remains open
+  • Run Euclid’s algorithm on val(x) to its irreducible
+                  p′                                                                     if a similar result can be obtained for neural networks
+    form val(x) = qx′ .                                                                  with other activation functions. We note that our result
+                         x
+
+                                                                                         takes advantage of the magnitude of the weights. It is
+Notice that we amplify the fractions in step two for the                                 not clear if the same idea can be applied to networks
+convenience of summing them up.                                                          with softmax or sigmoid activation.
+It remains to show that the running time of the above pro-
+cedure is polynomial in T (n). Equivalently, we bound the                           Impact Statement
+length of the numbers involved instead, since integer multi-                        This paper aims to advance the field of Machine Learning.
+plication, division, addition, and Euclid’s algorithm are all                       While there are numerous potential societal implications of
+running in time polynomial to the length of the numbers:                            our work, we do not believe any specific impact needs to be
+                          Q                                                         highlighted at this time.
+  • For the length of         e∈E qe , by (2),
+                                Y                                                   Acknowledgements
+                         log(        qe ) ≤ T (n)
+                               e∈E                                                  We would like to thank Ryan Williams for the useful sugges-
+                                                                                    tions. We would also like to thank Chengyuan Deng for the
+  • For qx′ , by Lemma 6.2,                                                         suggestions on the write-up of the paper. Finally, we also
+                                         Y                                          want to thank the anonymous reviewers for their comments,
+                  log2 (|qx′ |) ≤ log(         qe ) ≤ T (n)                         which helped in improving the exposition.
+                                         e∈E
+
+                                                                                    References
+  • For p′x , by (1),
+                                                                                    Allender, E., Bürgisser, P., Kjeldgaard-Pedersen, J., and
+     log(|p′x | + 1) ≤ T (n) log(T (n)) + T (n)2 + T (n) + 1                          Miltersen, P. B. On the complexity of numerical analysis.
+                                                                                      SIAM Journal on Computing, 38(5):1987–2006, 2009.
+  • For p(y,x) and q(y,x) , they are included in the descrip-                       Arora, S., Du, S. S., Hu, W., Li, Z., Salakhutdinov, R. R.,
+    tion and of course have length no more than T (n).                                and Wang, R. On exact computation with an infinitely
+                                                                                      wide neural net. Advances in Neural Information Pro-
+                                                                                      cessing Systems, 32, 2019.
+
+                                                                                8
+                         The Effect of Weight Precision on the Neuron Count in Deep ReLU Networks
+
+Bertoni, A., Mauri, G., and Sabadini, N. Simulations                   USA, July 27-29, 1992, pp. 440–449. ACM, 1992. doi:
+  among classes of random access machines and equiv-                   10.1145/130385.130432. URL https://doi.org/
+  alence among numbers succinctly represented. Ann. Dis-               10.1145/130385.130432.
+  crete Math., 25:65–90, 1985.
+                                                                     Siegelmann, H. T. and Sontag, E. D. Analog com-
+Chen, Y., Gilroy, S., Maletti, A., May, J., and Knight, K.             putation via neural networks. Theor. Comput. Sci.,
+  Recurrent neural networks as weighted language recog-                131(2):331–360, 1994. doi: 10.1016/0304-3975(94)
+  nizers. In Walker, M. A., Ji, H., and Stent, A. (eds.), Pro-         90178-3.     URL https://doi.org/10.1016/
+  ceedings of the 2018 Conference of the North American                0304-3975(94)90178-3.
+  Chapter of the Association for Computational Linguistics:
+  Human Language Technologies, NAACL-HLT 2018, New                   Tarasov, S. P. and Vyalyi, M. N. Semidefinite program-
+  Orleans, Louisiana, USA, June 1-6, 2018, Volume 1 (Long              ming and arithmetic circuit evaluation. Discrete Applied
+  Papers), pp. 2261–2271. Association for Computational                Mathematics, 156(11):2070–2078, 2008.
+  Linguistics, 2018. doi: 10.18653/v1/n18-1205. URL                  van Emde Boas, P. Machine models and simulation. In van
+  https://doi.org/10.18653/v1/n18-1205.                                Leeuwen, J. (ed.), Handbook of Theoretical Computer
+Cook, S. A. The complexity of theorem-proving procedures.              Science, volume A, pp. 1–66. Elsevier, Amsterdam, 1990.
+  In Proceedings of the third annual ACM symposium on
+                                                                     Weiss, G., Goldberg, Y., and Yahav, E. On the practical
+  Theory of computing, pp. 151–158, 1971.
+                                                                      computational power of finite precision rnns for language
+Dančı́k, V. Complexity of boolean functions over bases with          recognition. In Proceedings of the 56th Annual Meeting
+  unbounded fan-in gates. Information processing letters,             of the Association for Computational Linguistics (Volume
+  57(1):31–34, 1996.                                                  2: Short Papers), pp. 740–745, 2018.
+
+Hartmanis, J. and Simon, J. On the power of multiplciation
+  in random-access machines. In Proc. 15th Annu. IEEE
+  Sympos. Switching Automata Theory, pp. 13–23, 1974.
+O’Rourke, J. Advanced problem 6369.             Amer. Math.
+  Monthly, 88(10):769, 1981.
+Pérez, J., Marinković, J., and Barceló, P. On the turing
+   completeness of modern neural network architectures. In
+   ICLR, 2019.
+Riordan, J. and Shannon, C. E. The number of two-terminal
+  series-parallel networks. Journal of Mathematics and
+  Physics, 21(1-4):83–93, 1942.
+The synthesis of contact circuits, volume 119, 1958. Russian
+  Academy of Sciences.
+Schönhage, A. On the power of random access machines.
+  In Proc. 6th Internat. Colloq. Automata Lang. Program.,
+  volume 71 of Lecture Notes Comput. Sci., pp. 520–529.
+  Springer-Verlag, 1979.
+Shannon, C. E. The synthesis of two-terminal switching
+  circuits. The Bell System Technical Journal, 28(1):59–98,
+  1949.
+Siegelmann, H. T. Neural networks and analog computation
+  - beyond the Turing limit. Progress in theoretical computer
+   science. Birkhäuser, 1999. ISBN 978-0-8176-3949-5.
+Siegelmann, H. T. and Sontag, E. D. On the computational
+  power of neural nets. In Haussler, D. (ed.), Proceed-
+  ings of the Fifth Annual ACM Conference on Compu-
+  tational Learning Theory, COLT 1992, Pittsburgh, PA,
+
+                                                                 9
+

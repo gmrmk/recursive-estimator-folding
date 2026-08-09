@@ -1,0 +1,830 @@
+International Journal of Computational Intelligence Systems   (2023) 16:11
+https://doi.org/10.1007/s44196-023-00186-w
+
+    RESEARCH ARTICLE
+
+
+
+DPReLU: Dynamic Parametric Rectified Linear Unit and Its Proper
+Weight Initialization Method
+Donghun Yang1,2          · Kien Mai Ngoc1,2 · Iksoo Shin3,4 · Myunggwon Hwang1,2
+
+Received: 5 August 2021 / Accepted: 16 January 2023
+© The Author(s) 2023
+
+
+Abstract
+Activation functions are essential in deep learning, and the rectified linear unit (ReLU) is the most widely used activation
+function to solve the vanishing gradient problem. However, owing to the dying ReLU problem and bias shift effect, deep
+learning models using ReLU cannot exploit the potential benefits of negative values. Numerous ReLU variants have been
+proposed to address this issue. In this study, we propose Dynamic Parametric ReLU (DPReLU), which can dynamically
+control the overall functional shape of ReLU with four learnable parameters. The parameters of DPReLU are determined
+by training rather than by humans, thereby making the formulation more suitable and flexible for each model and dataset.
+Furthermore, we propose an appropriate and robust weight initialization method for DPReLU. To evaluate DPReLU and
+its weight initialization method, we performed two experiments on various image datasets: one using an autoencoder for
+image generation and the other using the ResNet50 for image classification. The results show that DPReLU and our weight
+initialization method provide faster convergence and better accuracy than the original ReLU and the previous ReLU variants.
+
+Keywords Activation function · Deep learning · Deep neural network · ReLU · Weight initialization
+
+Abbreviations                                                                FReLU	Flexible ReLU
+(DP)ReLU	(Dynamic parametric) rectified linear unit                         DBN	Deep belief network
+LReLU	Leaky ReLU                                                            MSE	Mean square error
+PReLU	Parametric ReLU                                                       FC	Fully connected layer
+                                                                             Conv	Convolutional layer
+                                                                             F	The number of filters
+Donghun Yang and Kien Mai Ngoc have contributed equally to this              KS	Kernel size
+work.                                                                        S	Stride
+                                                                             PSNR	Peak signal-to-noise ratio
+* Myunggwon Hwang
+  mgh@kisti.re.kr                                                            SSIM	Structural SIMilarity
+                                                                             BN	Batch normalization layer
+     Donghun Yang
+     yangdonghun3@kisti.re.kr                                                ACT​	ACTivation layer
+                                                                             Init.	Initialization
+     Kien Mai Ngoc
+     kienmn97@gmail.com                                                      s	Seconds
+                                                                             GPU	Graphics processing unit
+     Iksoo Shin
+     sis@etri.re.kr                                                          𝛼	Alpha
+                                                                             𝛽 	Beta
+1
+     Department of Applied AI, University of Science                         bi	Bias
+     and Technology, Daejeon, South Korea                                    th	Threshold
+2
+     AI Technology Research Center, Korea Institute of Science
+     and Technology Information, Daejeon, South Korea
+3
+     Department of ICT, University of Science and Technology,
+     Daejeon, South Korea
+4
+     Next Generation System SW Research Section, Electronics
+     and Telecommunications Research Institute, Daejeon,
+     South Korea
+
+
+                                                                                                                     13
+                                                                                                                Vol.:(0123456789)
+ 11     Page 2 of 15                               International Journal of Computational Intelligence Systems   (2023) 16:11
+
+
+1 Introduction                                                    the activation function is linear [7]. This method worked
+                                                                  well in most cases with the existing activation functions,
+Deep learning has yielded state-of-the-art results in             such as hyperbolic tangent and sigmoid, but was not appli-
+various fields, such as computer vision [33, 35], natural         cable to ReLU. Hence, He initialization was extended from
+language processing [2, 25], public health [14, 32], biol-        Xavier initialization [9], exhibiting excellent performance
+ogy [1, 12], and recommendation [6, 8]. These revolu-             in training deep networks using ReLU as the activation
+tionary advancements are primarily the results of several         function.
+important factors, including high-level computing power,             The motivations for this study are: (i) the formulation of
+efficient artificial intelligence models, and big data tech-      ReLU can be more suitably adapted to each model and data-
+nology. Among these crucial advancements, this study              set; (ii) the convergence speed and accuracy of the model
+focused on the activation function and weight initializa-         can be improved if its activation formulation is learned by
+tion in deep learning.                                            training rather than determined by a person. Thus, we pro-
+   Activation function is an essential part of deep learn-        pose a novel activation function, Dynamic Parametric ReLU
+ing, enabling faster convergence and sparse activation            (DPReLU), and its proper weight initialization method, as
+by determining the depth and non-linear properties of a           an extended version of our previous work [19]. DPReLU can
+network [23]. The hyperbolic tangent and sigmoid have             dynamically control the overall functional shape of ReLU
+been traditionally used as activation functions [26]. The         by incorporating four trainable parameters, including 𝛼 of
+most well-known and popular activation function is the            PReLU and bias of FReLU. The following are the proposed
+rectified linear unit (ReLU) [21], and its effectiveness has      parameters of DPReLU:
+been verified in the previous studies [5, 13, 34]. ReLU
+mitigates the gradient vanishing problem by allowing              •   alpha (𝛼): Determines the slope of the negative part in ReLU.
+equal propagation of all positive inputs, enabling to train       •   beta (𝛽): Determines the slope of the positive part in ReLU.
+deeper networks. Furthermore, ReLU has high compu-                •   bias: Determines the overall bias of the ReLU formulation.
+tational efficiency as it outputs zero for negative input.        •   threshold: Determines the overall threshold of the ReLU
+However, ReLU has the disadvantages that the bias shift               formulation.
+effect and dying ReLU problem occur owing to zero out-
+put for negative values during training [18]. To alleviate        This design makes DPReLU more flexible than previous
+these problems, numerous ReLU variants have been pro-             activation functions, with only 4L additional parameters,
+posed. Leaky ReLU (LReLU) [18] was proposed to solve              where L is the number of activation layers. In addition,
+the dying ReLU problem by replacing the negative part of          ReLU, LReLU, PReLU, and FReLU can be considered as
+ReLU with a linear function having a fixed negative slope,        special cases of DPReLU. Furthermore, we present a robust
+such as 0.01, to preserve a small negative signal. Paramet-       weight initialization method. This method is suitably derived
+ric ReLU (PReLU) [9] is an extension of the LReLU that            for deep neural networks using DPReLU, based on the cur-
+uses a learnable parameter, alpha ( 𝛼 ), to determine the         rent theory. It allows training to converge faster, and prevents
+negative slope by training, resulting in improved perfor-         the gradient vanishing and accuracy saturation problems,
+mance with small risk of overfitting. In addition, Flexible       even in deeper networks.
+ReLU (FReLU) [24] was proposed to solve the bias shift               To evaluate DPReLU and the proposed weight initialization
+effect of ReLU by determining the overall bias through            method, we performed two experiments on various image data-
+training using a learnable parameter, bias.                       sets (two 1-channel image datasets and three 3-channel image
+   Weight initialization is another important aspect of           datasets): one using an autoencoder for image generation and the
+deep learning. It is well known that improper initialization      other using the ResNet50 for image classification. The perfor-
+can hamper the training of deep learning models and slow          mance was verified by comparing the experimental results with
+down the convergence speed, especially in deep networks           those of the original ReLU, PReLU, and FReLU.
+[20]. Since the time that the method of weight initiali-             The major contributions of this study are as follows:
+zation based on unsupervised pre-training was proposed
+[11], various studies have been conducted to initialize           • We propose a novel activation function, DPReLU, which
+weights properly [3, 4]. With the emergence of sophisti-            dynamically makes the overall functional shape of ReLU
+cated deep learning models in recent years, the Xavier ini-         more flexible and suitable with four learnable parameters
+tialization method was introduced. This method considers            for each dataset and model.
+the number of nodes in a layer, under the assumption that         • We present an appropriate and robust weight initializa-
+                                                                    tion method for DPReLU, which enables faster conver-
+
+
+
+
+13
+International Journal of Computational Intelligence Systems   (2023) 16:11                                              Page 3 of 15   11
+
+                                                                                  Rectified Linear Unit (ReLU) [21] is an essential ele-
+                                                                             ment of deep neural networks. As shown in Eq. (1), ReLU
+                                                                             bypasses positive inputs to keep their values unchanged and
+                                                                             outputs zero for all negative inputs. Therefore, it can allevi-
+                                                                             ate the gradient vanishing problem, enabling the training
+                                                                             of deeper neural networks, whereas the traditional sigmoid
+                                                                             activation function cannot. Although ReLU is an efficient
+                                                                             activation function, it has the disadvantages of the dying
+                                                                             ReLU problem and bias shift effect. The dying ReLU effect
+                                                                             is where the negative signal always dies, because it outputs
+                                                                             zero for all negative values, and bias shift can lead to oscil-
+                                                                             lations and impede learning
+                                                                                      {
+                                                                                          x if x ≥ 0
+                                                                              f (x) =
+                                                                                          0 if x < 0.                                    (1)
+
+
+Fig. 1  Illustration of the original ReLU and its variants
+                                                                             Leaky ReLU (LReLU) [18] was proposed as an extension of
+                                                                             ReLU to solve the dying ReLU problem. The positive part
+                                                                             of LReLU is the same as that in ReLU, and the negative
+                                                                             part is replaced by the product of the input and a fixed slope
+  gence and prevents gradient vanishing and performance
+                                                                             parameter, such as 0.01, to preserve small negative signals,
+  degradation.
+                                                                             as shown in Eq. (2). LReLU provides comparable perfor-
+• Through experiments on various image datasets, we show
+                                                                             mance to ReLU, but the results are sensitive to slope values
+  that DPReLU and its weight initialization method out-
+  perform the original ReLU and its variants in terms of
+                                                                                      {
+                                                                                        x      if x ≥ 0
+  convergence speed and accuracy.                                            f (x) =
+                                                                                        0.01x if x < 0.                                  (2)
+
+The remainder of this paper is organized as follows. Sec-                    Parametric ReLU (PReLU) [9] is a variant of LReLU. As
+tion 2 introduces the related work. Section 3 presents the                   shown in Eq. (3), the fixed parameter that sets the slope
+proposed DPReLU and its proper weight initialization                         of the negative part in LReLU is replaced by a learnable
+method. Section 4 presents the details of our experiments,                   parameter, 𝛼 , that is determined by training. This learnable
+and the paper is concluded in Sect. 5.                                       parameter can be shared by all channels, or assigned inde-
+                                                                             pendently to each channel in the hidden layer of a neural
+                                                                             network. This activation function has been shown to improve
+2 Related Work                                                              the performance of convolutional neural networks in Ima-
+                                                                             geNet classification with small risk of overfitting
+In this section, we review several studies related to the pro-                       {
+posed DPReLU and its weight initialization method.                                     x if x ≥ 0
+                                                                             f (x) =
+                                                                                       𝛼x if x < 0                                     (3)
+
+2.1 Activation Functions                                                    Flexible ReLU (FReLU) [24] is a modification of ReLU pro-
+                                                                             posed to mitigate the bias shift effect. In FReLU, a learnable
+The activation function is one of the major components
+                                                                             parameter, bias, is introduced to control the bias of the over-
+in deep learning that allows faster convergence and sparse
+                                                                             all function shape through training, as shown in Equation
+activation by determining the depth and non-linear proper-
+                                                                             (4). FReLU showed better performance and faster conver-
+ties of networks. The hyperbolic tangent and sigmoid have
+                                                                             gence than ReLU with weak assumptions and self-adaption.
+been traditionally used as activation functions. Recently,
+various studies on activation function have been con-
+                                                                                     {
+                                                                                        x + bias if x ≥ 0
+ducted. Among the various activation functions, in this
+                                                                             f (x) =
+                                                                                        bias      if x < 0.                              (4)
+subsection, we review the original ReLU and several
+ReLU variants that motivated to the proposed DPReLU,
+as shown in Fig. 1.
+
+
+
+
+                                                                                                                                 13
+ 11     Page 4 of 15                                   International Journal of Computational Intelligence Systems   (2023) 16:11
+
+
+2.2 Weight Initialization
+
+Weight initialization is another crucial part of deep learning.
+Weight initialization by random sampling from a Gaussian dis-
+tribution with a fixed standard deviation has been traditionally
+used in deep learning [17]. However, this method can reduce
+the convergence speed and disturb the training of deep learn-
+ing models, especially in deep networks [27]. This problem
+arises, because random initialization causes the input signal
+to propagate into deeper layers with a small variance, slow-          Fig. 2  Illustration of the DPReLU
+ing down back propagation and disrupting the entire training
+process. Weight initialization has been studied extensively, and
+various methods have been proposed to deal with the problem                            4
+of variance reduction in deeper layers.
+                                                                     Var(W) =
+                                                                                   nin + nout
+                                                                                              .                                     (6)
+    Deep Belief Network (DBN) [11] is the first study of weight
+initialization in deep networks. Before this research, there was
+no suitable weight initialization method for deep networks.
+In DBN, all weights are initialized sequentially from the first       3 Methodology
+layer using a layer-wise unsupervised pre-training algorithm
+[29]. This method performed better than neural networks with-         3.1 Dynamic Parametric ReLU (DPReLU)
+out weight initialization, but showed drawbacks that it required
+more training time, and may lead to poorer local optimal in          In this section, we present our novel activation function,
+deep networks. Since then, with the advent of deeper networks,       DPReLU, which can dynamically make the ReLU function
+several studies have shown that deep networks still face the         more flexible and learnable during training, rather than using
+weight initialization problem [27, 28].                              a fixed parameters function. The shape of DPReLU is shown
+    Xavier Initialization [7] allows fast convergence without        in Fig. 2.
+the variance reduction problem in deep networks, under the                There are four additional learnable parameters compared
+assumption of linearity. In this method, weights are initial-        to the vanilla ReLU. 𝛼 and 𝛽 are the slopes of the negative
+ized by randomly sampling from a normal or a uniform dis-            and positive parts in the function, respectively. Here, a nega-
+tribution with variance of weights determined by consid-             tive or positive case is determined when comparing input
+ering the number of input and output nodes in each layer.            x to the threshold. The threshold makes DPReLU shift on
+Equation (5) shows the variance of the initialized weights           the x-axis in comparison to the original ReLU. The bias
+by the Xavier method using the normal distribution, where            determines the alignment of the function with respect to the
+W is the weights, nin is the number of input nodes, and nout         y-axis. These four parameters are all learnable and interact
+is the number of output nodes. The initialized weights in            with each other during the training phase. In addition, ReLU,
+this manner can have the same distribution across all lay-           LReLU, PReLU, and FReLU can be considered as special
+ers, even in deeper layers. This method performed well in            cases of DPReLU. When 𝛼 = 0 , 𝛽 = 1, threshold = 0 , and
+most cases with the existing activation functions such as            bias = 0, the DPReLU becomes the vanilla ReLU. DPReLU
+hyperbolic tangent and sigmoid, but was not applicable to            has more learnable parameters than the PReLU, which only
+ReLU activation function                                             has 𝛼 , and the FReLU, which only has bias. The overall
+                                                                     formula of DPReLU is shown in Eq. (7)
+               2
+Var(W) =              .                                      (5)
+                                                                              {
+           nin + nout                                                            𝛽 ∗ (x − threshold) + bias if x ≥ threshold
+                                                                                 𝛼 ∗ (x − threshold) + bias if x < threshold. (7)
+                                                                      f (x) =
+He Initialization [9] is the most widely used weight initiali-
+zation method in recent years. This method was extended
+from Xavier initialization for ReLU and PReLU. In this
+method, the variance of the weights is obtained by simply             3.2 Weight Initialization
+dividing the denominator of Eq. (5) by 2, taking into account
+the negative part of the ReLU, as shown in Eq. (6). This              In this section, we present the derivation of our weight ini-
+method has shown good performance for training very deep              tialization method for DPReLU. In our method, weights are
+networks with ReLU                                                    initialized by randomly sampling from a normal distribution
+
+
+
+
+13
+International Journal of Computational Intelligence Systems   (2023) 16:11                                                  Page 5 of 15      11
+
+with appropriate variance across all layers. Our derivation                  Table 1  Autoencoder architecture for 1-channel image datasets
+mainly follows the Xavier and He initialization methods [7,                  Encoder                                           Decoder
+9].
+    In forward propagation, a layer in a neural network is                   Input [size=(28, 28, 1)]                          Input [size=(30)]
+commonly computed by: yl = Wl xl + bl , where yl is the                      Flatten                                           FC (units=250)
+output vector of dimension m-by-1, xl is an input vector of                  FC (units=1000)                                   Activation
+dimension n-by-1, Wl is a weight matrix of dimension n-by-                   Activation                                        FC (units=500)
+m, and bl is a bias vector. We assume that the initialized                   FC (units = 500)                                  Activation
+elements in Wl are independent of each other and share the                   Activation                                        FC (units=1000)
+same distribution. Similarly, we assume that the elements                    FC (units=250)                                    Activation
+in xl are also independent of each other and share the same                  Activation                                        FC (units=784)
+distribution, and xl and Wl are independent of each other.                   FC (units=30)                                     Reshape [target
+                                                                                                                                 shape=(28, 28,
+Then, we can obtain Var[yl ] = nVar[Wl ]E[xl2 ] from the above
+                                                                                                                                 1)]
+equation. If we let Wl and xl follow a normal distribution that
+                                                                             No activation                                     Sigmoid activation
+is symmetric around zero and has zero mean, this leads to
+            2               2
+E[xl2 ] = 𝛼2 Var[yl−1 ] + 𝛽2 Var[yl−1 ] when the activation func-            FC fully connected layer
+tion is DPReLU. In this, we set the threshold and bias to
+0 for convenience of derivation. Substituting this into the
+above equation, we have Var[yl ] = 𝛼 +𝛽
+                                          2   2
+                                                nVar[Wl ]Var[yl−1 ].         4.1 Autoencoder for Image Reconstruction
+                                            2
+This equation is the key of initialization method. For proper
+                                                                             In this experiment, we employed an autoencoder model
+weight initialization, Var[yl ] and Var[yl−1 ] should be equal
+                                                                             and applied different activation functions and weight ini-
+to avoid variance reduction problems. Thus, a sufficient ini-
+                                                                             tialization methods to compress and reconstruct images.
+tialization condition is obtained, as shown in Eq. (8), where
+                                                                             An autoencoder is composed of two parts: an encoder and
+nin is the number of input nodes
+                                                                             a decoder. The goal of autoencoders is to represent the
+                    2                                                        input in a latent space (by the encoder) and reconstruct
+Var[Wl ] =
+             nin ∗ (𝛼 2 + 𝛽 2 )
+                                .                                (8)         the original input from that latent representation (by the
+                                                                             decoder). The loss function used in this experiment is the
+For backward propagation, the weight initialization condi-                   mean square error (MSE) between the input and recon-
+tion can be simply derived in the same manner as in the                      structed images.
+forward propagation case, as shown in Eq. (9), where nout is                    For this experiment, we selected two 1-channel image
+the number of output nodes                                                   datasets and three 3-channel datasets. The 1-channel image
+                     2                                                       datasets are MNIST [16] and FashionMNIST [31]. Each
+Var[Wl ] =
+             nout ∗ (𝛼 2 + 𝛽 2 )
+                                 .                               (9)         dataset contains 60,000 28×28 gray-scaled images, 50,000
+                                                                             for training and 10,000 for testing. For these datasets, we
+In conclusion, to consider both forward and backward propa-                  applied a fully connected layer-based autoencoder. The
+gation cases, the average of Eqs. (8) and (9) is used as the                 encoder comprises four fully connected layers with 1000,
+weight initialization condition in all experiments, as shown                 500, 250, and 30 units, respectively (the latent representa-
+in Eq. (10)                                                                  tion dimension is 30). The decoder is symmetrical to the
+                                                                             encoder in reconstructing the input image. Apart from the
+                          4
+Var[Wl ] =                                                      (10)         last layer of the encoder and decoder, each layer is followed
+             (nin + nout ) ∗ (𝛼 2 + 𝛽 2 ).                                   by a ReLU variant activation. The activation for the last layer
+                                                                             of the decoder is the sigmoid function, because we aim to
+                                                                             reconstruct the image pixels with values ranging from 0 to
+4 Experiments                                                               1, similar to the input images. The detailed architecture is
+                                                                             shown in Table 1.
+In this section, we explain the details of our experimental                     For 3-channel image datasets, we used the CIFAR-10,
+setup and the results for the autoencoder and image clas-                    CIFAR-100, and SVHNcropped datasets [15, 22]. The
+sification experiments on various datasets.                                  CIFAR datasets contain 50,000 and 10,000 32x32 color
+                                                                             images for training and testing, respectively. SVHNcropped
+                                                                             dataset contains 73,257 and 26,032 32×32 color images for
+                                                                             training and testing, respectively. These datasets contain
+                                                                             3-channel images; hence, we adopted convolutional layers
+
+
+                                                                                                                                      13
+ 11       Page 6 of 15                                      International Journal of Computational Intelligence Systems   (2023) 16:11
+
+Table 2  Autoencoder architecture for 3-channel image datasets             	  (The value of 𝛼 is 0 for ReLU and FReLU)
+Encoder                           Decoder                                  • Our approach: Var(w) =         4
+                                                                                                                          .
+                                                                                                      (n +n )∗(𝛼 2 +𝛽 2 )
+                                                                                                               in   out
+
+
+Input [size=(32, 32, 3)]          Input [size=(30)]                        The models were trained with the Adam optimizer, a learn-
+Conv [F=64, KS=3, S=(2,2)]        FC (units=1024)                          ing rate of 1e − 5, and a batch size of 128. All experiments
+Activation                        Activation                               were conducted on a machine using two NVIDIA TITAN
+Conv [F=128, KS=3, S=(2,2)]       FC (units=8*8*128)                       RTX 24GB graphic cards. To evaluate the quality of the
+Activation                        Reshape (target shape=(8, 8, 128))       reconstruction, the following metrics were used: Mean
+Flatten                           Activation                               Square Error (MSE), Peak Signal-to-Noise Ratio (PSNR),
+FC (units=1024)                   Conv transpose [F=64, KS=3,              and Structural SIMilarity (SSIM). These metrics were
+                                    S=(2,2)]
+                                                                           mainly used to evaluate the quality of the generated images
+Activation                        Activation
+                                                                           [30]. We selected well-performed results by grid-search, and
+FC (units=30)                     Conv transpose [F=3, KS=3,
+                                    S=(2,2)]
+                                                                           the results are reported in Table 3 and Fig. 3.
+No activation                     Sigmoid activation
+                                                                               Figure 3 shows the training MSE, testing MSE, testing
+                                                                           PSNR, and testing SSIM between the input and recon-
+Conv convolutional layer, FC fully connected layer, F the number of        structed images, when training the autoencoder model using
+filters, KS kernel size, S stride
+                                                                           different activation functions with corresponding weight ini-
+                                                                           tialization, on various datasets. We reported from 5th to 50th
+in the model rather than just fully connected layers. Unlike               epoch for readable visualization.
+the autoencoder for 1-channel image datasets, the encoder                      Overall, the same downward pattern of the MSE and the
+comprises two convolutional layers with 64 and 128 filters,                same upward pattern of PSNR and SSIM can be observed
+kernel size of 3, and stride of 2. Subsequently, there are two             in the figures for all activation functions on all datasets. In
+fully connected layers with 1024 and 30 units (the latent                  the case of 1-channel datasets, all models using different
+representation dimension is 30). The decoder is symmetric                  activation functions tended to converge to similar values,
+to the encoder and contains convolutional transpose layers to              especially in the SSIM of MNIST and all metrics of Fash-
+reconstruct the original shape of the image. Except for these,             ionMNIST [Fig. 3(A)(B)]. Nevertheless, the model using
+the rest of the structures are the same as the autoencoder                 DPReLU with our initialization method decreased MSE
+for 1-channel image datasets, and the details are shown in                 and increased PSNR and SSIM faster than the models with
+Table 2.                                                                   other activation functions on both datasets. Moreover, the
+    The activations applied in this experiment (the ‘Acti-                 DPReLU exhibited the lowest MSE and the highest PSNR
+vation‘ term in Tables 1 and 2) were the vanilla ReLU,                     on both datasets, as shown in Table 3. In the case of SSIM,
+PReLU, FReLU, and DPReLU (our approach). In the cases                      the model using ReLU with He initialization was slightly
+of PReLU, FReLU, and DPReLU, each filter in a convolu-                     higher than other models on MNIST (approximately a dif-
+tional layer (channel-wise) and each unit in a fully connected             ference of 0.0008 from the model using DPReLU), and the
+layer (element-wise) had its own activation parameters. The                model using FReLU with He initialization was slightly better
+initial bias of FReLU was the same as ReLU, while PReLU                    than other models on FashionMNIST (approximately a dif-
+was initialized with 𝛼 ∈ {0, 0.1, 0.25, 0.5}. DPReLU was ini-              ference of 0.0003 from the model using DPReLU).
+tialized with 𝛼 ∈ {0, 0.1, 0.25, 0.5} and 𝛽 ∈ {0.5, 0.75, 0.9, 1}              For results of the 3-channel image datasets, there was a
+(16 experiments). For bias and threshold of DPReLU, both                   clear gap between our model and others across all metrics in
+initial values were set to 0. Hereafter, if not specified, 𝛼 =0            all datasets over the entire training time [Fig. 3(C)(D)(E)].
+means that 𝛼 was initialized as 0.                                         The model using DPReLU with our initialization approach
+    In addition, we applied different weight initialization                was able to reduce the MSE and increase the PSNR and
+approaches for the autoencoder models. For the models                      SSIM faster than the other models, resulting in the best
+using ReLU, PReLU, and FReLU, we used He initializa-                       scores in all metrics for all datasets, as shown in Table 3.
+tion was as originally proposed [9, 24]. For the model using                   Through these results, it is indicated that the shape of
+DPReLU, our approach proposed in 3.2 was used. The two                     DPReLU was trained more suitably for each dataset than
+methods obtained weights following normal distribution                     others in both the fully connected layer-based as well as the
+with the same 𝜇=0. The difference lies in the variance (𝜎 2 )              convolutional layer-based autoencoders, resulting in better
+of the weights in each layer, as follows:                                  performance including convergence speed.
+
+• He initialization: Var(w) =                4
+                                    (nin +nout )∗(1+𝛼 2 )
+
+
+
+
+13
+International Journal of Computational Intelligence Systems            (2023) 16:11                                                         Page 7 of 15     11
+
+Table 3  Best performance                 Dataset              Activation                     Training_  Testing_   Testing_PSNR ↑ Testing_SSIM ↑
+of the autoencoder models                                                                     Loss(MSE)↓ Loss(MSE)↓
+using each activation with
+corresponding weight                      MNIST                ReLU                           0.0124         0.0120         20.0779              0.8637
+initialization on various image
+                                                               PReLU(𝛼=0.5)                   0.0112         0.0108         20.4557              0.8606
+datasets
+                                                               FReLU                          0.0128         0.0123         19.9522              0.8619
+                                                               DPReLU(𝛼=0.5, 𝛽=0.9)           0.0109         0.0106         20.5500              0.8629
+                                          FashionMNIST         ReLU                           0.0119         0.0121         20.0639              0.6613
+                                                               PReLU(𝛼=0.5)                   0.0117         0.0118         20.0934              0.6615
+                                                               FReLU                          0.0117         0.0119         20.1408              0.6653
+                                                               DPReLU(𝛼=0.5, 𝛽=0.9)           0.0115         0.0116         20.1740              0.6650
+                                          CIFAR-10             ReLU                           0.0137         0.0137         19.1924              0.4762
+                                                               PReLU(𝛼=0.5)                   0.0135         0.0135         19.2603              0.4811
+                                                               FReLU                          0.0139         0.0140         19.1093              0.4794
+                                                               DPReLU(𝛼=0.5, 𝛽=0.9)           0.0133         0.0134         19.3063              0.4843
+                                          CIFAR-100            ReLU                           0.0136         0.0139         19.2334              0.4612
+                                                               PReLU(𝛼=0.5)                   0.0132         0.0134         19.3873              0.4671
+                                                               FReLU                          0.0136         0.0139         19.2254              0.4632
+                                                               DPReLU(𝛼=0.5, 𝛽=0.9)           0.0130         0.0133         19.4545              0.4720
+                                          SVHNcropped          ReLU                           0.0040         0.0039         25.7165              0.7825
+                                                               PReLU(𝛼=0.5)                   0.0039         0.0038         25.8414              0.7924
+                                                               FReLU                          0.0039         0.0039         25.7932              0.7849
+                                                               DPReLU(𝛼=0.5, 𝛽=0.9)           0.0037         0.0037         26.0217              0.7956
+
+                                          𝛼 and 𝛽 represent the initial values that performed the best in each model, which changed dynamically dur-
+                                          ing the training
+                                          Bold means the highest value in each column for each data
+
+
+
+4.2 ResNet for Image Classification                                                  =0. The difference lies in the variance (𝜎 2 ) of the weights
+                                                                                      in each layer, as follows:
+Image classification is a popular task in the field of computer
+vision. We performed image classification with the same                               • Xavier initialization: Var(w) =         2
+                                                                                                                                     .
+                                                                                                                           nin +nout
+datasets as above. The CIFAR-100 dataset consists of images                           •   He initialization: Var(w) = (n +n )∗(1+𝛼2 )
+                                                                                                                               4
+of 100 classes, while the other datasets consist of images                                                              in  out
+      (The value of 𝛼 is 0 for ReLU and FReLU).
+of ten classes. These five datasets have exactly the same
+                                                                                      • Our approach: Var(w) =         4
+distribution of each class in both the training and test sets.                                                   (n +n )∗(𝛼 2 +𝛽 2 )
+                                                                                                                             in   out
+
+   We utilized the ResNet50 model [10] using the Ten-                                 	  (The value of 𝛼 is 0 for ReLU and FReLU, and the
+sorflow framework.1 The residual block of the model is                                  value of 𝛽 is 1 for ReLU, PReLU, and FReLU.)
+illustrated in Fig. 4. We removed all batch normalization
+layers (BN), and used different functions for the activation                          We trained the model with the Adam optimizer, categori-
+layers (ACT). The output layer can be interpreted as the                              cal cross-entropy loss function, and a batch size of 128, for
+unnormalized probability that an input image belongs to a                             all datasets. The learning rate was initialized at 1e − 4 and
+particular class. The weights of each model were initial-                             1e − 3 for the 1-channel datasets and the 3-channel datasets,
+ized using various strategies, including Xavier [7], He [9],                          respectively, and decreased by 10 times after first 10 and
+and our approach, and the performance of each strategy was                            20 epochs. In particular, in the case of 1-channel datasets,
+compared. We did not consider batch normalization and                                 the original images were duplicated into 3-channels to train
+data augmentation to assess the effect of the activation and                          with the same model architecture. Furthermore, it should be
+weight initialization.                                                                noted that we ignored softmax activation when computing
+   Regarding weight initialization, all methods sampled                               the output of the last layer and only used it when computing
+weights following the normal distribution with the same 𝜇                             the loss for numerical stability.2
+
+1                                                                                     2
+  https://​www.​tenso​rflow.​org/​api_​docs/​python/​tf/​keras/​appli​catio​ns/​        https://​www.​tenso​rflow.​org/​api_​docs/​python/​tf/​keras/​losses/​Spars​
+ResNe​t50.                                                                            eCate​goric​alCro​ssent​ropy.
+
+
+                                                                                                                                                      13
+ 11      Page 8 of 15                                      International Journal of Computational Intelligence Systems   (2023) 16:11
+
+
+
+
+Fig. 3  Performance of the autoencoder models using each activation with corresponding weight initialization from 5th to 50th epoch on various
+image datasets. (𝛼 and 𝛽 represent the initial values that performed the best in each model, which changed dynamically during training.)
+
+
+
+
+13
+International Journal of Computational Intelligence Systems    (2023) 16:11                                              Page 9 of 15   11
+
+                                                                              accuracy of all models converged at similar level, the
+                                                                              model using DPReLU with our initialization method
+                                                                              showed faster convergence. Moreover, the DPReLU
+                                                                              exhibited the highest score in terms of testing accuracy
+                                                                              [Fig. 5(A)]. In the case of FashionMNIST dataset, the
+                                                                              models using PReLU and DPReLR presented a similar
+                                                                              trend and faster convergence than the models using ReLU
+                                                                              and FReLU with He initialization in training loss and
+                                                                              training accuracy. In contrast, in the testing accuracy, a
+                                                                              clear gap in performance of each model can be observed,
+                                                                              and the model with DPReLU outperformed the others
+                                                                              [Fig. 5(B)].
+                                                                                 Moving to the 3-channel image datasets, the model
+                                                                              using DPReLU showed the fastest convergence, and the
+                                                                              model using PReLU was the second fastest with a slightly
+                                                                              slower speed, in terms of training loss and training accu-
+                                                                              racy of all three datasets [Fig. 5(C)(D)(E)]. In the testing
+                                                                              accuracy, each model using different activation function
+                                                                              showed a clear performance gap, and the model using
+                                                                              DPReLU consistently showed the highest scores after 10th
+Fig. 4  Residual block in ResNet50. (Conv: convolutional layer, BN:           epoch on all three datasets.
+batch normalization layer, and ACT: ACTivation layer)                            Regarding the best testing accuracy of all activations with
+                                                                              different initializations, the model using DPReLU with our
+                                                                              initialization achieved the highest accuracy on all datasets,
+   The activations used for this experiment were ReLU,                        as shown in Table 4. In the CIFAR-100, the highest accu-
+PReLU, FReLU, and DPReLU (our approach). For                                  racy on the test set was achieved by the model that used
+PReLU, FReLU, and DPReLU, the activation parameters                           DPReLU activation and our initialization strategy with 𝛼
+were shared for each layer of activation (layer-wise). In                     and 𝛽 initialized to 0.5 and 0.75, respectively. The accuracy
+other words, an activation layer used the same param-                         was approximately 3% higher than that of the model using
+eters of the activation function for all width, height,                       PReLU and He initialization with the 𝛼 initialized to 0.5,
+and channel dimensions. The initial bias of FReLU                             and approximately 10% higher than FReLU and ReLU. For
+was same as ReLU; meanwhile, PReLU was initialized                            other datasets, the models using DPReLU activation with 𝛼
+with 𝛼 ∈ {0, 0.1, 0.25, 0.5}. DPReLU was initialized with                     and 𝛽 initialized to 0.5 and 0.9, respectively, exhibited the
+𝛼 ∈ {0, 0.1, 0.25, 0.5} and 𝛽 ∈ {0.5, 0.75, 0.9, 1} (16 experi-               best testing accuracy. The accuracies were slightly higher
+ments). In the case of bias and threshold of DPReLU,                          than that of the models using PReLU, and approximately
+both initial values were set to 0. We selected well-per-                      0.1%∼7% higher than FReLU and ReLU.
+formed results by grid-search and are reported it in Fig. 5
+and Table 4. The experiment was run on a machine using                        4.3 Ablation Study
+two NVIDIA TITAN RTX 24GB graphic cards. The
+source code is available on Github.3                                          We now compare the performance of our initialization,
+   The results of the image classification experiment are                     Xavier, and He for the model using DPReLU activation with
+presented in Fig. 5 and Table 4. Figure 5 shows the train-                    different initial values of 𝛼 and 𝛽 on the CIFAR-10. The
+ing loss, training accuracy, and testing accuracy during                      results are shown in Table 5.
+training of the ResNet50 model using different activation                         Overall, our approach yielded stable results for most
+functions with the best-performing weight initialization                      combinations of initial values of 𝛼 and 𝛽 , even when either
+from 5th to 50th epoch. In addition, Table 4 illustrates the                  Xavier or He (or both) initialization exhibited poor perfor-
+best testing accuracy of those models in numbers.                             mance. For He initialization, the overall performance was
+   According to Fig. 5, the same downward pattern of                          lower than that of our initialization method. However, when
+the loss and the same upward pattern of accuracy can be                       the positive slope of the DPReLU was initialized close to 1
+observed for all activation functions on all datasets. On                     ( 𝛽 =1), it showed relatively stable performance. Note that
+the MNIST dataset, although training loss and training                        with 𝛽 = 1, our initialization is same as He initialization. In
+                                                                              other words, He initialization considers only the negative
+3
+    https://​github.​com/​KienMN/​Activ​ation-​Exper​iments.                  slope of DPReLU when initializing the model’s weights,
+
+
+                                                                                                                                  13
+ 11       Page 10 of 15                                      International Journal of Computational Intelligence Systems     (2023) 16:11
+
+
+
+
+Fig. 5  Performance of the ResNet50 models using each activation              values that performed the best in each model, which changed dynami-
+with the weight initialization that performed the best on various             cally during training.)
+image datasets. (5th epoch ∼ 50th epoch) (𝛼 and 𝛽 represent the initial
+
+
+
+
+Table 4  Best testing accuracy        Activation        MNIST             FashionMNIST         CIFAR-10          CIFAR-100          SVHNcropped
+of the ResNet50 models using
+each activation with the weight       ReLU              0.9941            0.9165               0.6960            0.3478             0.9203
+initialization that performed the
+                                      PReLU             0.9947            0.9184               0.7524            0.4212             0.9301
+best on various image datasets
+                                      FReLU             0.9935            0.9145               0.7151            0.3489             0.9211
+                                      DPReLU            0.9951            0.9206               0.7646            0.4500             0.9331
+
+                                     𝛼 and 𝛽 were initialized to the same values as in Fig. 5 and were dynamically changed during training. The
+                                     same initialization method as in Fig. 5 was applied for each model
+                                      Bold means the highest value in each column for each data
+
+
+13
+International Journal of Computational Intelligence Systems   (2023) 16:11                                             Page 11 of 15   11
+
+Table 5  Testing accuracy of the ResNet50 models with DPReLU                 Table 6  Ablation study result for each learnable parameter of
+activation and different weight initialization on CIFAR-10                   DPReLU on CIFAR-10
+Activation                           Xavier       He          Our Init       DPReLU Ablation                               Testing_accuracy
+
+DPReLU (𝛼 = 0.00, 𝛽 = 0.50)          0.1000       0.3119      0.5655         DPReLU∖𝛼&𝛽&th&bi (same as ReLU)               0.6960
+DPReLU (𝛼 = 0.00, 𝛽 = 0.75)          0.4975       0.6710      0.6933         DPReLU∖𝛽&th&bi (same as PReLU)                0.7524
+DPReLU (𝛼 = 0.00, 𝛽 = 0.90)          0.6489       0.6947      0.7046         DPReLU∖𝛼&𝛽&th (same as FReLU)                 0.7151
+DPReLU (𝛼 = 0.00, 𝛽 = 1.00)          0.6706       0.6896      0.6944         DPReLU∖bi                                     0.7604
+DPReLU (𝛼 = 0.10, 𝛽 = 0.50)          0.3908       0.3171      0.5698         DPReLU∖th                                     0.7616
+DPReLU (𝛼 = 0.10, 𝛽 = 0.75)          0.4660       0.2805      0.7182         DPReLU∖𝛽                                      0.7577
+DPReLU (𝛼 = 0.10, 𝛽 = 0.90)          0.6931       0.7144      0.7176         DPReLU∖𝛼                                      0.7563
+DPReLU (𝛼 = 0.10, 𝛽 = 1.00)          0.6700       0.7198      0.7130         DPReLU                                        0.7646
+DPReLU (𝛼 = 0.25, 𝛽 = 0.50)          0.4209       0.1839      0.7328
+                                                                             th threshold, bi bias
+DPReLU (𝛼 = 0.25, 𝛽 = 0.75)          0.7148       0.6411      0.7385
+DPReLU (𝛼 = 0.25, 𝛽 = 0.90)          0.7079       0.7409      0.7410
+DPReLU (𝛼 = 0.25, 𝛽 = 1.00)          0.7313       0.7416      0.7346
+                                                                                Additionally, we present training process of DPReLU’s
+DPReLU (𝛼 = 0.50, 𝛽 = 0.50)          0.6163       0.6689      0.7522
+                                                                             four learnable parameters in Table 7 and Fig. 6. Figure 6
+DPReLU (𝛼 = 0.50, 𝛽 = 0.75)          0.5393       0.7294      0.7630
+                                                                             shows training process of DPReLU’s four learnable param-
+DPReLU (𝛼 = 0.50, 𝛽 = 0.90)          0.6768       0.7612      0.7646
+                                                                             eters for each layer of ResNet50 trained on CIFAR-10, and
+DPReLU (𝛼 = 0.50, 𝛽 = 1.00)          0.6876       0.7524      0.7622
+                                                                             Table. 7 shows the values of learnable parameters for each
+𝛼 and 𝛽 represent the initial values, which changed dynamically dur-         layer at epoch point showing the best test accuracy. All
+ing training                                                                 parameters of each layer started from their respective initial
+Bold means the highest value in each column for each data                    values (𝛼:0.5, 𝛽:0.9, bias:0, and threshold:0) and converged
+                                                                             to different values. The 𝛼 in the shallow layers and deep
+                                                                             layers converged to values close to the initial value, while
+whereas our method considers both the positive slope and                     the 𝛼 in the middle layers converged to values similar to the
+negative slope that change dynamically during training.                      negative slope of the original ReLU. In the case of 𝛽 , they
+Therefore, the model using our method can perform better                     converged to different values ranging from 0.6691 to 0.9540
+than the model using He initialization. In addition, the model               for each layer. The bias and threshold converged to values
+using Xavier initialization, which considers only the number                 similar to those of the original ReLU, showing a relatively
+of input and output nodes, consistently performed lower than                 small difference for each layer. Through these, it can be
+He and our method for most combinations of initial values                    considered that each layer requires different values for each
+of 𝛼 and 𝛽 .                                                                 parameter of DPReLU to obtain better performance.
+   For the models using other activation functions, it should                   Our findings support the assumption that the parameters
+be noted from the results that the performance of He ini-                    of ReLU can be learned via training. With the correspond-
+tialization is better for ReLU activation than Xavier initiali-              ing initial values of 𝛼 and 𝛽 , our empirical results suggest
+zation. Models using He initialization outperformed those                    that the DPReLU activation function with our initialization
+using Xavier initialization in cases of ReLU, FReLU, and                     strategy can further improve the performance of the model
+PReLU on all datasets. This result is consistent with the                    through the dynamic interaction of learnable parameters.
+explanation and experiments reported previously [9, 24].
+   Furthermore, we performed additional ablation study                       4.4 Running Time
+to analyze the contribution of each learnable parameter of
+DPReLU. Table 6 presents the testing accuracy of abla-                       Table 8 lists the number of parameters and the elapsed time
+tions performed by removing each learnable parameter of                      for each ResNet50 model using different activation func-
+DPReLU on CIFAR-10 dataset. Removing 𝛼 from DPReLU                           tions on the CIFAR-100 dataset. There are four additional
+resulted in the most significant drop of 0.83%, from 76.46 to                learnable parameters for each activation layer in the case of
+75.63%. When we removed 𝛽 , there was a 0.69% drop, from                     DPReLU, and it required approximately 19 s for the model
+76.46 to 75.77%. In addition, when bias or threshold was                     to finish an epoch. In other cases, the models ran an epoch
+removed, a relatively low-performance degradation of 0.42%                   approximately 4–7 s faster. Note that the running time may
+and 0.30% was observed, respectively. These ablations show                   vary depending on the deep learning framework and GPU
+that the 𝛼 plays the most significant role in DPReLU, fol-                   machine.
+lowed by 𝛽 , and that bias and threshold have relatively row                    Figure 7 shows the accuracy of the ResNet50 model using
+contributions.                                                               ReLU, PReLU, FReLU, and DPReLU on the CIFAR-100
+
+
+                                                                                                                                 13
+11   Page 12 of 15   International Journal of Computational Intelligence Systems   (2023) 16:11
+
+
+
+
+13
+ International Journal of Computational Intelligence Systems         (2023) 16:11                                                  Page 13 of 15      11
+
+◂Fig. 6  Training process of DPReLU’s four learnable parameters for                 Table 8  Number of parameters and elapsed time for each activation
+ each layer of ResNet50 trained on CIFAR-10 from 0th to 50th epoch.                 function, where N is the number of parameters of the model using
+ (𝛼 , 𝛽 , bias, and threshold were initialized to 0.5, 0.9, 0, and 0, respec-       vanilla ReLU, and L is the number of activation layers in the model
+ tively.)
+                                                                                    Activation          Number of parameters                 Elapsed time
+                                                                                                                                             (s) for an
+                                                                                                                                             epoch
+ training and test sets from 0th epoch to 50th epoch. Although
+ the running time for each epoch of the model using DPReLU                          ReLU                N = 23, 501, 962                     12
+ is higher, its accuracy increased faster in terms of epoch                         PReLU               N + L = 23, 502, 011                 15
+ and reached the highest point. For instance, it took about 7                       FReLU               N + L = 23, 502, 011                 13
+ epochs for DPReLU’s model to surpass 40% on the test set,                          DPReLU              N + 4 ∗ L = 23, 502, 158             19
+ but it took more epochs for the others. Hence, the total run-
+                                                                                    In this case, N = 23, 501, 962 and L = 49
+ ning time can be unchanged or reduced compared to other
+ activations. Note that there was an increase in the accuracy
+ of all models around the 10th epoch due to the change in                           novel activation function, DPReLU, which dynamically makes
+ the learning rate.                                                                 the overall functional shape of ReLU more flexible and suit-
+                                                                                    able for each dataset and model with four learnable param-
+                                                                                    eters. In addition to the activation function, we presented a
+ 5 Conclusion and Future Work                                                      weight initialization strategy that worked for our DPReLU.
+                                                                                    We applied the DPReLU activation function and our weight
+ Activation function is an indispensable part of deep learning                      initialization method to autoencoder and image classification
+ models. Several studies have been conducted to improve the                         tasks on various datasets. The proposed method outperformed
+ performance of the ReLU activation. This paper proposed a                          ReLU and ReLU variants in terms of loss, convergence speed,
+
+ Table 7  The values of DPReLU’s four learnable parameters for each layer of ResNet50 trained on CIFAR-10, at epoch point showing the best
+ test accuracy
+ Layer                 𝛼              𝛽            Bias           Threshold         Layer                𝛼            𝛽            Bias            Thresh-
+                                                                                                                                                   old
+
+ Conv1                 0.5141         0.9427       −0.0376        −0.010            Block9_Conv1         0.0688       0.8112       −0.0164        0.1960
+ Block1_Conv1          0.3938         0.7987       −0.0236        −0.028            Block9_Conv2         0.0936       0.8233       0.0073         0.1576
+ Block1_Conv2          0.3307         0.8113       −0.0285        0.0031            Block9_out           0.1214       0.9290       −0.0254        0.0699
+ Block1_out            0.3433         0.9540       −0.0360        −0.022            Block10_Conv1        0.1586       0.8247       0.0155         0.1446
+ Block2_Conv1          0.2366         0.7381       −0.0071        0.0287            Block10_Conv2        0.1249       0.8254       0.0141         0.1632
+ Block2_Conv2          0.2061         0.7297       −0.0099        0.0460            Block10_out          0.1044       0.9202       −0.0231        0.0532
+ Block2_out            0.2700         0.9393       −0.0407        0.0031            Block11_Conv1        0.1650       0.8398       0.0231         0.1460
+ Block3_Conv1          0.1925         0.7448       −0.0097        0.0424            Block11_Conv2        0.2848       0.8467       0.0504         0.1711
+ Block3_Conv2          0.2522         0.7329       0.0011         0.0912            Block11_out          0.1789       0.9107       −0.0184        0.0291
+ Block3_out            0.2612         0.9398       −0.0572        0.0060            Block12_Conv1        0.2245       0.8418       0.0329         0.1373
+ Block4_Conv1          0.1887         0.8103       −0.0381        0.0568            Block12_Conv2        0.2418       0.8480       0.0439         0.1648
+ Block4_Conv2          0.1588         0.8057       −0.0563        0.0794            Block12_out          0.2402       0.8981       −0.0200        0.0225
+ Block4_out            0.0956         0.9257       −0.0839        0.0613            Block13_Conv1        0.2157       0.8579       0.0313         0.1151
+ Block5_Conv1          0.0579         0.6691       −0.0658        0.1809            Block13_Conv2        0.2569       0.8631       0.0515         0.1642
+ Block5_Conv2          0.1331         0.6829       −0.0236        0.1835            Block13_out          0.3343       0.8799       −0.0388        0.0170
+ Block5_out            −0.0278        0.9257       −0.0897        0.0895            Block14_Conv1        0.3216       0.8601       0.0327         0.1181
+ Block6_Conv1          0.0892         0.7340       −0.0434        0.1203            Block14_Conv2        0.2930       0.8742       0.0229         0.0737
+ Block6_Conv2          0.1119         0.7377       −0.0271        0.1447            Block14_out          0.4374       0.8657       0.0039         −0.0289
+ Block6_out            −0.0301        0.9403       −0.0553        0.0781            Block15_Conv1        0.2333       0.8720       0.0861         0.0985
+ Block7_Conv1          0.1025         0.7795       −0.0264        0.1044            Block15_Conv2        0.3224       0.8761       0.0275         0.0785
+ Block7_Conv2          0.0778         0.7773       −0.0157        0.1452            Block15_out          0.4362       0.8597       −0.0141        −0.0243
+ Block7_out            0.1576         0.9457       −0.0361        0.0393            Block16_Conv1        0.3647       0.8338       0.0779         0.0629
+ Block8_Conv1          0.1359         0.8192       −0.0234        0.1078            Block16_Conv2        0.2267       0.8677       0.0181         0.0748
+ Block8_Conv2          0.0982         0.8094       −0.0259        0.1505            Block16_out          0.4035       0.8564       −0.0097        −0.0242
+ Block8_out            −0.0256        0.9264       −0.0750        0.1037
+
+
+
+                                                                                                                                                  13
+ 11      Page 14 of 15                                     International Journal of Computational Intelligence Systems          (2023) 16:11
+
+
+
+
+Fig. 7  Training and testing accuracies of the ResNet50 models            initial values that performed the best in each model, which changed
+using each activation with corresponding weight initialization on the     dynamically during training.)
+CIFAR-100 dataset. (0th epoch ∼ 50th epoch) (𝛼 and 𝛽 represent the
+
+
+
+and accuracy. Specifically, in the autoencoder task, the recon-           Data Availability Not applicable.
+struction error of the model using our method was lower and
+                                                                          Code Availability The source code is available on Github (https://​
+decreased faster. In the image classification task, our DPReLU            github.​com/​KienMN/​Activ​ation-​Exper​iments.).
+and weight initialization showed stable performances, and were
+able to achieve the highest accuracy on various image datasets.           Declarations
+Although the elapsed time for each epoch of the model using
+DPReLU is longer, the total running time is not a big concern             Conflict of interest The authors declare that they have no conflict of
+                                                                          interest.
+if the number of epochs is small. However, the performances of
+the models using DPReLU were sensitive to the initial values              Open Access This article is licensed under a Creative Commons Attri-
+of 𝛼 and 𝛽 . Therefore, further research is required to properly          bution 4.0 International License, which permits use, sharing, adapta-
+set the initial values for DPReLU. Through these results, we              tion, distribution and reproduction in any medium or format, as long
+                                                                          as you give appropriate credit to the original author(s) and the source,
+are able to elucidate our assumption that a learnable activation          provide a link to the Creative Commons licence, and indicate if changes
+and appropriate initialization method with suitable initial values        were made. The images or other third party material in this article are
+can further improve the performance of the model, especially              included in the article's Creative Commons licence, unless indicated
+in deep networks. Furthermore, the superiority of the proposed            otherwise in a credit line to the material. If material is not included in
+                                                                          the article's Creative Commons licence and your intended use is not
+DPReLU has already been verified by achieving the state-of-               permitted by statutory regulation or exceeds the permitted use, you will
+the-art performance in light-weight model task (Zhang et al.              need to obtain permission directly from the copyright holder. To view a
+[35]). In addition, we plan to perform further verification for           copy of this licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/.
+a variety of applications, including natural language process-
+ing, public health, and biology in future. We believe that the
+proposed method has the potential to be applied to many other             References
+deep learning tasks that require deeper networks.
+                                                                           1. Baek, M., DiMaio, F., Anishchenko, I., Dauparas, J., Ovchinnikov,
+Acknowledgements This research was supported by Korea Institute of            S., Lee, G.R., Wang, J., Cong, Q., Kinch, L.N., Schaeffer, R.D.,
+Science and Technology Information (KISTI).                                   et al.: Accurate prediction of protein structures and interactions
+                                                                              using a three-track neural network. Science 373(6557), 871–876
+Author Contributions DY (Equal contribution): conceptualization,              (2021)
+experiment, validation, and writing manuscript; KMN (Equal contri-         2. Barba, E., Procopio, L., Navigli, R.: ConSec: Word sense disam-
+bution): implementation, experiment, and writing manuscript; IS: con-         biguation as continuous sense comprehension. In: Proceedings of
+ceptualization and validation; MH (Corresponding author): supervision         the 2021 Conference on Empirical Methods in Natural Language
+and conceptualization.                                                        Processing, pp. 1492–1503 (2021)
+                                                                           3. Bengio, Y., Lamblin, P., Popovici, D., Larochelle, H.: Greedy
+Funding This research was funded by Korea Institute of Science and            layer-wise training of deep networks. In: Advances in neural
+Technology Information (KISTI).                                               information processing systems, pp. 153–160 (2007)
+
+
+
+13
+International Journal of Computational Intelligence Systems       (2023) 16:11                                                    Page 15 of 15     11
+
+ 4. Erhan, D., Manzagol, P.A., Bengio, Y., Bengio, S., Vincent, P.:              20. Mishkin, D., Matas, J.: All you need is a good init. arXiv preprint
+    The difficulty of training deep architectures and the effect of unsu-            arXiv:​1511.​06422 (2015)
+    pervised pre-training. In: Artificial Intelligence and Statistics, pp.       21. Nair, V., Hinton, G.E.: Rectified linear units improve restricted
+    153–160 (2009)                                                                   boltzmann machines. In: ICML’10: Proceedings of the 27th Inter-
+ 5. Foret, P., Kleiner, A., Mobahi, H., Neyshabur, B.: Sharpness-                    national Conference on International Conference on Machine
+    aware minimization for efficiently improving generalization. In:                 Learning, pp. 807–814 (2010)
+    International Conference on Learning Representations (2020)                  22. Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., Ng, A.Y.:
+ 6. Fu, B., Zhang, W., Hu, G., Dai, X., Huang, S., Chen, J.: Dual side               Reading digits in natural images with unsupervised feature learn-
+    deep context-aware modulation for social recommendation. In:                     ing. In: NIPS Workshop on Deep Learning and Unsupervised
+    Proceedings of the Web Conference 2021, pp. 2524–2534 (2021)                     Feature Learning (2011)
+ 7. Glorot, X., Bengio, Y.: Understanding the difficulty of training             23. Nwankpa, C., Ijomah, W., Gachagan, A., Marshall, S.: Activation
+    deep feedforward neural networks. In: Proceedings of the thir-                   functions: Comparison of trends in practice and research for deep
+    teenth international conference on artificial intelligence and sta-              learning. arXiv preprint arXiv:​1811.​03378 (2018)
+    tistics, pp. 249–256 (2010)                                                  24. Qiu, S., Xu, X., Cai, B.: FReLU: Flexible rectified linear units for
+ 8. Han, S.C., Lim, T., Long, S., Burgstaller, B., Poon, J.: Glocal-K:               improving convolutional neural networks. In: 2018 24th Interna-
+    Global and local kernels for recommender systems. In: Proceed-                   tional Conference on Pattern Recognition (ICPR), pp. 1223–1228.
+    ings of the 30th ACM International Conference on Information                     IEEE (2018)
+    & Knowledge Management, pp. 3063–3067 (2021)                                 25. Ronran, C., Lee, S., Jang, H.J.: Delayed combination of feature
+ 9. He, K., Zhang, X., Ren, S., Sun, J.: Delving deep into rectifiers:               embedding in bidirectional lstm crf for ner. Appl. Sci. 10(21),
+    Surpassing human-level performance on imagenet classification.                   7557 (2020)
+    In: Proceedings of the IEEE International Conference on Com-                 26. Sharma, S.: Activation functions in neural networks. Towards
+    puter Vision, pp. 1026–1034 (2015)                                               Data Science 6(12), 310–316 (2017)
+10. He, K., Zhang, X., Ren, S., Sun, J.: Deep residual learning for              27. Simonyan, K., Zisserman, A.: Very deep convolutional networks
+    image recognition. In: Proceedings of the IEEE Conference on                     for large-scale image recognition. arXiv preprint arXiv:1​ 409.1​ 556
+    Computer Vision and Pattern Recognition, pp. 770–778 (2016)                      (2014)
+11. Hinton, G.E., Osindero, S., Teh, Y.W.: A fast learning algorithm             28. Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov,
+    for deep belief nets. Neural Comput. 18(7), 1527–1554 (2006)                     D., Erhan, D., Vanhoucke, V., Rabinovich, A.: Going deeper with
+12. Jumper, J., Evans, R., Pritzel, A., Green, T., Figurnov, M., Ron-                convolutions. In: Proceedings of the IEEE conference on com-
+    neberger, O., Tunyasuvunakool, K., Bates, R., Žídek, A., Potap-                  puter vision and pattern recognition, pp. 1–9 (2015)
+    enko, A., et al.: Highly accurate protein structure prediction with          29. Teh, Y.W., Hinton, G.E.: Rate-coded restricted Boltzmann
+    alphafold. Nature 596(7873), 583–589 (2021)                                      machines for face recognition. Adv. Neural Inform. Process. Syst.
+13. Khosla, P., Teterwak, P., Wang, C., Sarna, A., Tian, Y., Isola,                  13, 908–914 (2000)
+    P., Maschinot, A., Liu, C., Krishnan, D.: Supervised contrastive             30. Wang, X., Yu, K., Wu, S., Gu, J., Liu, Y., Dong, C., Qiao, Y.,
+    learning. Adv. Neural Inform. Process. Syst. 33, 18661–18673                     Change Loy, C.: Esrgan: Enhanced super-resolution generative
+    (2020)                                                                           adversarial networks. In: Proceedings of the European conference
+14. Kim, J.K., Bae, M.N., Lee, K., Kim, J.C., Hong, S.G.: Explain-                   on computer vision (ECCV) workshops (2018)
+    able artificial intelligence and wearable sensor-based gait analysis         31. Xiao, H., Rasul, K., Vollgraf, R.: Fashion-mnist: a novel image
+    to identify patients with osteopenia and sarcopenia in daily life.               dataset for benchmarking machine learning algorithms. arXiv
+    Biosensors 12(3), 167 (2022)                                                     preprint arXiv:​1708.​07747 (2017)
+15. Krizhevsky, A., Hinton, G., et al.: Learning multiple layers of fea-         32. Yang, D., Hwang, M.: ADADL: Automatic dementia identification
+    tures from tiny images. Master’s thesis, Department of Computer                  model based on activities of daily living using smart home sensor
+    Science, University of Toronto (2009)                                            data. In: The Thirty-Sixth AAAI Conference on Artificial Intel-
+16. LeCun, Y.: The mnist database of handwritten digits. https://w ​ ww.​            ligence (AAAI-2022), Workshop: Trustworthy AI for Healthcare
+    tenso​rflow.​org/​datas​ets/​catal​og/​mnist (1998)                              (2022)
+17. LeCun, Y.A., Bottou, L., Orr, G.B., Müller, K.R.: Efficient back-            33. Yang, D., Mai Ngoc, K., Shin, I., Lee, K.H., Hwang, M.: Ensem-
+    prop. In: Neural networks: tricks of the trade, pp. 9–48. Springer               ble-based out-of-distribution detection. Electronics 10(5), 567
+    (2012)                                                                           (2021)
+18. Maas, A.L., Hannun, A.Y., Ng, A.Y.: Rectifier nonlinearities                 34. Yang, D., Shin, I., Kien, M.N., Kim, H., Yu, C., Hwang, M.: Out-
+    improve neural network acoustic models. In: Proc. ICML, vol.                     of-distribution detection based on distance metric learning. In:
+    30, p. 3 (2013)                                                                  The 9th International Conference on Smart Media and Applica-
+19. Mai Ngoc, K., Yang, D., Shin, I., Kim, H., Hwang, M.: Dprelu:                    tions, pp. 214–218 (2020)
+    Dynamic parametric rectified linear unit. In: The 9th Interna-               35. Zhang, Y., Zhang, Z., Lew, L.: PokeBNN: A binary pursuit of
+    tional Conference on Smart Media and Applications, pp. 121–125                   lightweight accuracy. In: Proceedings of the IEEE/CVF Confer-
+    (2020)                                                                           ence on Computer Vision and Pattern Recognition (2022)
+
+                                                                                 Publisher's Note Springer Nature remains neutral with regard to
+                                                                                 jurisdictional claims in published maps and institutional affiliations.
+
+
+
+
+                                                                                                                                             13
+

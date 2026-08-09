@@ -1,8 +1,11 @@
 # Local Graphify run
 
 This directory is a compact, auditable corpus for the user-requested local
-Graphify/LightRAG-style analysis. The current audited graph has 291 nodes,
-593 edges, and 15 local Graphify communities.
+Graphify/LightRAG-style analysis. The builder combines hand-audited causal
+edges with an exhaustive descriptive navigation layer generated from all 223
+append-only ledger records. The latter prevents omissions but is explicitly
+not mathematical evidence. The current rebuilt graph has 578 nodes, 3,461
+edges, and 25 local Graphify communities.
 
 The semantic Graphify/Ollama pass is retained only as a proposal source. The
 canonical graph is rebuilt deterministically from typed nodes and edges in
@@ -15,6 +18,10 @@ Deterministic rebuild and local reclustering:
 python build_evidence_graph.py
 graphify cluster-only . --graph graph.json
 ```
+
+Before rebuilding the graph, run
+`python ../../../scripts/build_failure_salvage_atlas.py --check`; the graph
+refuses to ingest a stale atlas.
 
 `cluster-only` writes its refreshed visualization/report under `graphify-out/`;
 promote `graph.json`, `graph.html`, `GRAPH_REPORT.md`, and

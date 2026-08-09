@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "candidate": "M199 composed M151/M179/M198/M125b cost reconciliation",
+  "date": "2026-08-09",
+  "disposition": "BLOCKED_OVERLAP",
+  "units": "billions of protected or billed FLOPs as explicitly labelled",
+  "frozen_predeclaration_sha256": "1c93ea9a2937c7a46a0433db7d42a77e612a68a8f1bb06d743444d808491f1f1",
+  "audits": [
+    {
+      "name": "static_workbook_provenance",
+      "result": "M125b is already included inside the M151 inherited common subtotal; adding a standalone carrier is a double count",
+      "evidence": [
+        "m148_copula_residual_hybrid/M148_STATIC_PREMISE_AUDIT_20260807.md:94-102",
+        "m151_b1_forward_control/M151_FORWARD_CONTROL_AUDIT_20260807.md:65-82",
+        "m151_b1_forward_control/M151_FROZEN_SOURCE_ONLY_MANIFEST_20260807.json:30-48"
+      ]
+    },
+    {
+      "name": "executable_abi_and_lifetime",
+      "result": "M179 output is M125b-ABI-compatible, but no call-level trace proves identical operands, result, dtype, lifetime, terminal readout, or replacement",
+      "evidence": [
+        "m125_source_batched_forward_tangent/m125_forward_tangent.py:94-158",
+        "m179_background_archive_producer/M179_G0_INDEX_ABI_RECONCILIATION_20260807.md:41-96",
+        "m179_background_archive_producer/test_m179_jacobian_archive.py:118-138"
+      ]
+    }
+  ],
+  "operation_ledger": [
+    {
+      "id": "m151_common_fixed",
+      "amount_billions": 80.32600264,
+      "convention": "protected worksheet",
+      "overlap_class": "included",
+      "evidence": "m148_copula_residual_hybrid/M148_STATIC_PREMISE_AUDIT_20260807.md:94-102",
+      "note": "Includes M126/M125b, path/[2,2], proposal setup, allocation reserve, and the existing 100 ms wall reserve."
+    },
+    {
+      "id": "m151_k128_residual_products",
+      "amount_billions": 3.2474112,
+      "convention": "protected worksheet",
+      "overlap_class": "included",
+      "evidence": "m148_copula_residual_hybrid/M148_STATIC_WORKSHEET_20260807.json:35-61",
+      "note": "Five-product K=128 residual subtotal."
+    },
+    {
+      "id": "m151_endpoint_coefficient_lower_bound",
+      "amount_billions": 2.40746496,
+      "convention": "protected operation lower bound",
+      "overlap_class": "included",
+      "evidence": "m148_copula_residual_hybrid/M148_STATIC_WORKSHEET_20260807.json:53-61",
+      "note": "Does not waive certification, refusal, glue, or wall costs."
+    },
+    {
+      "id": "m151_b1_known_core",
+      "amount_billions": 3.72775744,
+      "convention": "protected worksheet",
+      "overlap_class": "included",
+      "evidence": "m151_b1_forward_control/M151_COST_WORKSHEET_20260807.json:16-28",
+      "note": "49x256 forward map, 256x49 reverse map, one dense source emission, and pointwise allowance."
+    },
+    {
+      "id": "m151_frozen_known_total",
+      "amount_billions": 89.70863624,
+      "convention": "protected worksheet",
+      "overlap_class": "proved_current_subtotal",
+      "evidence": "m151_b1_forward_control/M151_FORWARD_CONTROL_AUDIT_20260807.md:65-82",
+      "note": "Sum of the preceding four included rows; not a complete implementation trace."
+    },
+    {
+      "id": "m125b_corrected_standalone_total",
+      "amount_billions": 12.819202,
+      "convention": "actual native carrier/background trace times 1.25 planning reserve",
+      "overlap_class": "embedded_do_not_add",
+      "evidence": "headroom/fold_ledger.json:m125b_source_batched_forward_tangent result",
+      "note": "The earlier 12.819347280B worksheet was repaired; M151's common subtotal already embeds the corrected M125b work."
+    },
+    {
+      "id": "m125b_legacy_background_replacement_ceiling",
+      "amount_billions": 7.73675016,
+      "convention": "legacy raw background 6.189400128B times 1.25",
+      "overlap_class": "unproved_replacement_candidate",
+      "evidence": "m125_source_batched_forward_tangent/PRETHEORY.md:139-145",
+      "note": "M125b books 32 layers; M179 archives layers 1-31 and omits terminal mu_32, so the full row cannot currently be removed."
+    },
+    {
+      "id": "m125b_corrected_carrier_only_raw",
+      "amount_billions": 4.065961472,
+      "convention": "actual native unprotected trace",
+      "overlap_class": "embedded_do_not_add",
+      "evidence": "headroom/fold_ledger.json:m125b_source_batched_forward_tangent result",
+      "note": "Tangent operands differ from M179 background operands and the carrier is already present once in M151."
+    },
+    {
+      "id": "m179_pair_provider",
+      "amount_billions": 4.09592832,
+      "convention": "fixed billed component ledger",
+      "overlap_class": "additive_unless_named_call_removed",
+      "evidence": "m179_background_archive_producer/m179_metering.py:55-72",
+      "note": "31 * 32640 * 4048 charged FLOPs."
+    },
+    {
+      "id": "m179_tallis_assembly",
+      "amount_billions": 0.04249728,
+      "convention": "fixed component ledger; host wall remains separate",
+      "overlap_class": "additive",
+      "evidence": "m179_background_archive_producer/m179_metering.py:55-72",
+      "note": "31 * 32640 * 42 scalar operations."
+    },
+    {
+      "id": "m179_diagonal",
+      "amount_billions": 0.005332992,
+      "convention": "fixed component ledger",
+      "overlap_class": "additive_unless_named_call_removed",
+      "evidence": "m179_background_archive_producer/m179_metering.py:55-72",
+      "note": "Univariate moments and derivative terms."
+    },
+    {
+      "id": "m179_background_matmuls",
+      "amount_billions": 4.160733696,
+      "convention": "metered component ledger",
+      "overlap_class": "additive_to_tangent_transport",
+      "evidence": "m179_background_archive_producer/m179_metering.py:38-62",
+      "note": "Uses background mu,V operands; M125b tangent transport uses distinct signed u,U operands."
+    },
+    {
+      "id": "m179_standalone_total",
+      "amount_billions": 8.304492288,
+      "convention": "fixed billed component ledger without a common 1.25 reserve",
+      "overlap_class": "unknown_against_legacy_background",
+      "evidence": "m179_background_archive_producer/M179_RESULTS_20260807.json:15-25",
+      "note": "ABI compatibility is proved; call/result/lifetime-identical replacement is not."
+    },
+    {
+      "id": "m172_owner_transfer",
+      "amount_billions": null,
+      "convention": "untraced nonnegative unknown",
+      "overlap_class": "unknown",
+      "symbol": "U_M172",
+      "evidence": "m172_selective_22_owner_fusion/M172_STATIC_REPORT_20260807.md:58-70",
+      "note": "No target resource credit; scalar delta includes 5 times accepted ordered ijj events plus one."
+    },
+    {
+      "id": "m198_delay_one_and_provenance",
+      "amount_billions": null,
+      "convention": "untraced nonnegative unknown",
+      "overlap_class": "unknown",
+      "symbol": "U_M198",
+      "evidence": "m198_source211_delay_one_adapter/M198_G1_RESULTS_20260809.json",
+      "note": "The generated helper reruns M179 and must not be called by an integrated cost-clean path."
+    },
+    {
+      "id": "layer_bound_source211_provider_compiler",
+      "amount_billions": null,
+      "convention": "missing nonnegative unknown",
+      "overlap_class": "unknown",
+      "symbol": "U_PROVIDER",
+      "evidence": "m196_m151_b1_gate/M196_BLOCKER_AND_MINIMAL_INTERFACE_20260808.md:5-23",
+      "note": "No 49-node state provider, noncubic compiler, or target batch coefficient provider exists."
+    },
+    {
+      "id": "terminal_mu32",
+      "amount_billions": null,
+      "convention": "untraced nonnegative unknown",
+      "overlap_class": "unknown",
+      "symbol": "U_TERMINAL",
+      "evidence": "m179_background_archive_producer/M179_G0_INDEX_ABI_RECONCILIATION_20260807.md:41-59",
+      "note": "M179's 31-layer archive excludes the terminal readout present in the legacy 32-layer background trace."
+    },
+    {
+      "id": "copies_allocations_and_integrated_wall",
+      "amount_billions": null,
+      "convention": "untraced nonnegative unknown",
+      "overlap_class": "unknown",
+      "symbol": "U_RUNTIME",
+      "evidence": "m151_b1_forward_control/M151_FORWARD_CONTROL_AUDIT_20260807.md:78-93",
+      "note": "Includes lambda times residual seconds and actual high-water allocations."
+    }
+  ],
+  "arithmetic_scenarios": {
+    "proved_current_m151_subtotal": 89.70863624,
+    "strict_no_replacement_partial": 98.013128528,
+    "strict_no_replacement_headroom_before_unknowns": 1.986871472,
+    "conditional_full_legacy_background_replacement": 90.276378368,
+    "conditional_replacement_headroom_before_unknowns": 9.723621632,
+    "conditional_protected_m179_replacement_sensitivity": 92.35250144,
+    "strict_protected_m179_additive_sensitivity": 100.0892516
+  },
+  "scenario_warnings": [
+    "The strict no-replacement partial is not a complete lower bound because provider, M172, M198, terminal, allocation, and wall terms are absent.",
+    "The full replacement scenario is not legal credit: 32-layer versus 31-layer scope, different numerical policies, no identical call trace, and mixed reserve conventions.",
+    "Applying 1.25 to M179 is sensitivity only; no frozen evidence licenses that second reserve, so the 100.089251600B value cannot trigger KILL_COST."
+  ],
+  "symbolic_total_no_credit": "98.013128528 + U_PROVIDER + U_M172 + U_M198 + U_TERMINAL + U_RUNTIME",
+  "symbolic_total_if_replacement_later_proved": "90.276378368 + U_PROVIDER + U_M172 + U_M198 + U_TERMINAL + U_RUNTIME",
+  "gate_results": {
+    "KILL_COST": false,
+    "BLOCKED_OVERLAP": true,
+    "COST_COHERENT_COMPONENT": false
+  }
+}

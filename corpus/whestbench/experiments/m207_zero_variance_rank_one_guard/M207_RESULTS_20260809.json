@@ -1,0 +1,30 @@
+{
+  "candidate": "M207 zero-variance totality guard for M204 rank-one B=1 control",
+  "scope": "generated response-free boundary algebra only",
+  "parent_unchanged": "m204_lowrank_b1_lifted_control",
+  "trigger": "M204 raises ValueError on an all-zero covariance diagonal",
+  "all_zero_state": {
+    "nodes": 49,
+    "nonzero_weights": 2,
+    "weight_values": [0.5, 0.5],
+    "conditional_mean": "original deterministic mu at every node",
+    "conditional_variance": 0,
+    "rank_factor": 0,
+    "diagonal_residual": 0,
+    "control": 0
+  },
+  "test_status": "PASS_7_OF_7_GENERATED_RESPONSE_FREE",
+  "checks": [
+    "unwrapped M204 rejection is reproduced",
+    "all-zero guard state and source are exact",
+    "mixed-zero rows exactly delegate to M204",
+    "positive-diagonal M204 nonregression is bitwise",
+    "permutation and positive-gauge covariance",
+    "complete-domain source parity",
+    "invalid zero-diagonal nonzero-offdiagonal matrix rejects"
+  ],
+  "source_variance_status": "NOT_CREATED_OR_EXECUTED",
+  "cost_credit": "NONE",
+  "efficacy_credit": "NONE",
+  "firewall": "No contest model, truth, scorer, leaderboard, submission, response, MSE, or source-variance execution."
+}
