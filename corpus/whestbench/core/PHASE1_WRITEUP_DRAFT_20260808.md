@@ -204,6 +204,51 @@ committed bootstrap (`experiments/s1_suite_risk/`, predeclared gates, model
 limitations recorded — the empirical rotation pool understates the true tail,
 making the shrink estimate conservative). A companion falsification closes the tempting corollary from a third independent direction: rotation-quality selection/weighting is dead not only before spending (pilot rho -0.089, weights-only rho 0.17) but also AFTER spending — variance statistics of the paid design sample itself correlate with realized rotation error at only rho 0.12, because the design's deterministic equidistribution error is invisible to iid-style sample statistics. The rotation axis is information-gated at every observation point we could construct.
 
+### 3e. A physics derivation of the wall (new)
+
+Four physics-framed measurements, each predeclared with kill gates, now
+DERIVE the empirical wall rather than merely measure it:
+
+1. **The design's exact anatomy** (Bloch/Bragg frame). The 64,512-point
+   phased-Hadamard design's inner-product multiset is exactly
+   {0, ±1/16}; its degree-4 quadrature-error operator has exactly three
+   eigenvalue shells, and the design's entire degree-4 advantage is the
+   42x suppression of a SINGLE constant mode — with the ±1/16 cancellation
+   tuned to degree 4 only, which derives, from pure code structure, the
+   measured 11%-vs-40% degree-4/degree-6 error split. The remaining error
+   operator is maximally flat (participation rank ≈ N): no Bragg modes
+   exist for any design-side control variate to target.
+2. **The residual is real-amplitude speckle** (wave-packet frame). Its
+   angular correlation length is 36-46° against a first-principles
+   mean-field (arccos-kernel) prediction of 21°, monotone everywhere,
+   with per-direction energies fitting chi²₁ decisively (KS 0.007-0.016
+   at n = 64,512). The design's minimum angle — arccos(1/16) = 86.4°,
+   fixed by the same MUB structure as (1) — sits 2x above the speckle
+   scale: every design point is an independent draw, so no inter-point
+   structure exists to exploit.
+3. **The field is statistically homogeneous**: residual energy shows no
+   concentration near the ReLU kink set (near/far decile ratios ≈ 1.00
+   against a method sensitivity of ~850x), as speckle requires.
+4. **A geometric depth law**: layer-defect influence on the output field
+   decays at a measured ~0.87 per layer (95x across depth 32; the first
+   five layers carry ~46% of field variance, the last three 0.5%),
+   consistent with the network contracting onto a coherence-0.975 output
+   cone (~2 effective output degrees of freedom of 256) that forgets
+   late-layer randomness. The flat mean-field prediction is rejected at
+   21-31x; the transmission law is measured, not yet derived — we state
+   it as an open theoretical question.
+
+Together: the estimator's error consists of independent chi²₁ speckle
+draws whose generating structure is set by the earliest layers, sampled
+by a design whose single exploitable mode is already optimally
+suppressed. Within this model, variance-per-billed-FLOP is not merely
+the observed best lever — it is the only lever the physics admits, and
+the finite-width offset in (2) locates the sole remaining crack at the
+exact-finite-width frontier. All four measurements are reproducible from
+committed artifacts (`experiments/s5_kink_concentration/`,
+`s6_bragg_spectrum/`, `s7_speckle/`, `s8_layer_profile/`), each with
+predeclared gates, two-signal verification, and recorded deviations.
+
 ### 4. Methodological note: calibrate your suite before you trust your numbers
 
 Local development suites are not the grader's suite. We measured ours by
