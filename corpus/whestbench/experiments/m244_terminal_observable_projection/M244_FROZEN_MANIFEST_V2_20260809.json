@@ -1,0 +1,67 @@
+{
+  "candidate": "m244_terminal_observable_projection",
+  "date": "2026-08-09",
+  "authority_version": 2,
+  "execution_authorized": false,
+  "candidate_or_test_creation_authorized": false,
+  "precedence": [
+    "M244_PREIMPLEMENTATION_ERRATUM1_20260809.md",
+    "M244_FROZEN_MANIFEST_V2_20260809.json",
+    "M244_PREDECLARATION_20260809.md",
+    "M244_FROZEN_MANIFEST_20260809.json"
+  ],
+  "path_roots": {
+    "parent_sha256": "repository root publish/recursive-estimator-folding",
+    "runtime_sha256": "shared workspace root containing publish and work"
+  },
+  "production_univariate": {
+    "source_policy": "vectorized predicated M178 _Phi_cert/_phi_cert charts through flopscope.numpy",
+    "m179_math_helpers": "reference_only",
+    "central_erf_terms": 52,
+    "central_cut": 3.5,
+    "erf_saturation_cut": 27.0,
+    "phi_safe_cut": 40.0,
+    "unmetered_scalar_math_allowed": false,
+    "manual_or_dummy_surcharge_allowed": false,
+    "all_operations_and_allocations_traced": true
+  },
+  "generic_constructor": {
+    "rng": "numpy.random.Generator(numpy.random.Philox(seed))",
+    "numpy_version": "2.4.6",
+    "qr_sign": "negative diagonal R maps to -1, nonnegative to +1, applied to Q columns",
+    "weight_scale": [0.65, 1.35],
+    "v_offdiag_normal_sd": 0.08,
+    "v_base_diagonal_uniform": [0.65, 1.25],
+    "u_eigenvalue_range": [-0.9, 0.9],
+    "mu_uniform": [-0.9, 0.9],
+    "tangent_mean_normal_sd": 0.35,
+    "retry_or_redraw": false
+  },
+  "ill_conditioned_constructor": {
+    "v_exponent_range_base2": [0.0, -24.0],
+    "weight_diagonal_uniform": [0.8, 1.2],
+    "alpha_pattern": [-35.0, -8.0, 0.0, 8.0, 35.0],
+    "tangent_mean_normal_sd": 0.35,
+    "tangent_covariance_normal_sd": 0.2,
+    "retry_or_redraw": false
+  },
+  "boundary_constructors": [
+    "zero_variance_nonzero_mean",
+    "structural_zero_kink",
+    "offdiagonal_visibility",
+    "terminal_kernel",
+    "tracefree_visible"
+  ],
+  "target_seeds_independent_pass_required": [
+    244256001,
+    244256002,
+    244256003,
+    244256004,
+    244256005
+  ],
+  "runtime_sha256_additions": {
+    "work/whest-v014/Lib/site-packages/flopscope/data/default_weights.json": "9ff1647a0048d2bd23a7a3d76ee0c60bfd3670d03b15ad8bf2b911c2ae19539f",
+    "work/whest-v014/Lib/site-packages/flopscope/_weights.py": "4fbfe5bf50eb7e86e73372e9d314f86de179aad49bcffd689143570918794f35"
+  },
+  "next_authorized_action_after_audit_pass": "write and audit the authority-only E7 fixture materializer; do not create candidate or tests"
+}
