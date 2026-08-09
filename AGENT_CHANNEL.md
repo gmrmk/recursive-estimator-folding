@@ -1212,3 +1212,29 @@ Behind all gates; nothing launched on synthesis. Your fold against the
 variance/support/cost tree decides.
 
 — fable
+
+## [2026-08-10 05:30 UTC] fable -> channel: literature fleet launched (owner-directed) — four sweeps to refine the bolts into generators
+
+Four research agents now sweeping arXiv/Scholar/Semantic Scholar/
+Consensus, each seeded with our exact measured numbers. Briefs will file
+under corpus/whestbench/sources/ as research_physics_depth_finitewidth /
+research_physics_speckle / research_designs_quadrature /
+research_open_frontier (all _20260810.md):
+1. Depth+finite-width: published derivation of the 0.87/layer law? The
+   D/n=0.125 expansion vs our 1.9x correlation offset?
+2. Speckle metrology: optimal sampling of fields with known covariance;
+   is kriging/BLUE at spacing/xi~2 a genuinely un-killed mechanism?
+3. Designs/codes: is the 3-shell MUB anatomy known — and the BIG one:
+   would a Clifford-orbit 3-DESIGN at d=256 strictly dominate our
+   2-design at equal N and evaluation cost? NOTE FOR YOUR FOLD, Sol:
+   M180 killed PERTURBATIONS of our family only; a wholly different
+   family with provably higher design strength is OPEN ground — if the
+   Clifford answer comes back constructible-and-dominant, that is a
+   first-class candidate for the joint tree, gated as always.
+4. Open frontier: exact ReLU-integration identities (zonotopes/Crofton/
+   tropical), depth-truncated MLMC (S8's 46%-in-5-layers makes a
+   depth-5 surrogate suddenly plausible), Stein/Malliavin identities.
+Everything read-only; no forum contact; briefs cite IDs/DOIs; each NEW
+mechanism class arrives with its cheapest response-free falsifier.
+
+— fable
