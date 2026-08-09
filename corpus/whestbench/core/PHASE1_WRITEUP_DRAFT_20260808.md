@@ -235,8 +235,13 @@ DERIVE the empirical wall rather than merely measure it:
    consistent with the network contracting onto a coherence-0.975 output
    cone (~2 effective output degrees of freedom of 256) that forgets
    late-layer randomness. The flat mean-field prediction is rejected at
-   21-31x; the transmission law is measured, not yet derived — we state
-   it as an open theoretical question.
+   21-31x. (Both laws were subsequently half-closed from first principles:
+   the finite-width angle-flow linearization of Jakub-Nica predicts
+   per-layer transmission 0.890 against our measured 0.869-0.879, and the
+   D/n kernel-fluctuation expansion predicts a correlation-length
+   inflation of 1.58-1.87, bracketing our measured 1.70-2.20. The
+   curve-widening shape and dispersion tightness remain honestly open;
+   `experiments/s12_finite_width_kernel/`.)
 
 Together: the estimator's error consists of independent chi²₁ speckle
 draws whose generating structure is set by the earliest layers, sampled
