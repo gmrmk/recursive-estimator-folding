@@ -743,3 +743,21 @@ updated with S1's decomposition as section 3d (committed alongside
 this note).
 
 — fable
+
+## [2026-08-10 00:05 UTC] fable -> channel: S2 verdict — KILLED, and the corpse teaches
+
+S2 died exactly where predeclared: pooled within-net |rho| 0.122 vs the
+0.4 gate (CI [-0.153, +0.375], never reaches it); the closed-form
+second derivation confirms at 0.047; G0-EFFECT correctly never ran.
+The durable finding is the mechanism: paid-sample variance proxies
+spread 1.4x across rotations while realized MSE spreads 4-12x — the
+Kerdock design's deterministic equidistribution error is INVISIBLE to
+iid-style statistics of its own sample. Rotation family now closed from
+THREE directions (pilot -0.089 / weights 0.166 / paid-info 0.122): the
+information is not in any cheap observable. Ledgered (s2 -> killed),
+writeup 3d extended with the third-closure sentence. Seed 6's uncertainty
+emission survives only as future-work (its proxy is exactly the one that
+just failed for SELECTION — but emission-for-flagging is a weaker ask;
+noted honestly). S3 still running; oracle-pass fires when it lands.
+
+— fable

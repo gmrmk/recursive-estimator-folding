@@ -2160,8 +2160,8 @@
       "prediction": "Split-sample inverse-variance weighting at matched billed FLOPs beats equal weights iff the in-sample variance estimate correlates with realized conditional MSE with |rho| >= 0.4 (the P2b bar its weights-only proxies failed at 0.17).",
       "kill_condition": "|rho(in-sample variance estimate, realized per-rotation MSE)| < 0.4 on the P2 grid, OR weighted-vs-equal MSE ratio >= 0.98, OR any detectable bias in the split-sample combined estimator.",
       "bias_class": "unbiased (split-sample construction; bias check is part of the gate)",
-      "result": null,
-      "status": "proposed"
+      "result": "KILL at G0-CORRELATION: pooled within-net |rho| = 0.122 (bootstrap 95% CI [-0.153, +0.375], never reaches the 0.4 gate); per-net +0.106/-0.297/+0.556 sign-inconsistent; closed-form infinite-split proxy confirms at rho +0.047 (second derivation). G0-EFFECT not run per predeclared stop. MECHANISM OF DEATH (the durable finding): paid-sample variance proxies spread only 1.40-1.48x across rotations while realized MSE spreads 3.9-12.0x \u2014 the deterministic Kerdock equidistribution error is INVISIBLE to iid-style variance statistics of the design sample itself. Third independent closure of the rotation family (gen3_p2 pilot -0.089; p2b weights 0.166; s2 paid-info 0.122): the rotation-quality information is not present in any cheap observable. Loud flag handled: raw-pooled rho +0.44 is the documented across-net scale artifact; gate applied within-net as predeclared. Cross-checks: bitwise archive repeat; frame-mean match 4.3e-7; deviations none. Artifacts: experiments/s2_paid_weighting/.",
+      "status": "killed"
     },
     {
       "id": "s3_cross_net_coupled_rotations",

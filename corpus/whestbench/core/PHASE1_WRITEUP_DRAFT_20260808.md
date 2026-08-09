@@ -202,7 +202,7 @@ result from tournament/portfolio theory into white-box estimator design for
 the first time on this benchmark, and it is fully reproducible from the
 committed bootstrap (`experiments/s1_suite_risk/`, predeclared gates, model
 limitations recorded — the empirical rotation pool understates the true tail,
-making the shrink estimate conservative).
+making the shrink estimate conservative). A companion falsification closes the tempting corollary from a third independent direction: rotation-quality selection/weighting is dead not only before spending (pilot rho -0.089, weights-only rho 0.17) but also AFTER spending — variance statistics of the paid design sample itself correlate with realized rotation error at only rho 0.12, because the design's deterministic equidistribution error is invisible to iid-style sample statistics. The rotation axis is information-gated at every observation point we could construct.
 
 ### 4. Methodological note: calibrate your suite before you trust your numbers
 
