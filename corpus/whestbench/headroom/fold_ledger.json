@@ -2234,6 +2234,15 @@
       "bias_class": "unbiased (exact telescoping identity; screen is response-free on synthetic nets)",
       "result": null,
       "status": "proposed"
+    },
+    {
+      "id": "s11_full129_reopen_measured_breakeven",
+      "mechanism": "EXPLICIT REOPEN of m81_full129_pareto (killed) \u2014 designs fleet brief re-derived its exact-5-design math (deg-4 error 11%->0 by completing 126 Kerdock frames to the full 129-frame real-MUB spread, +1536 points to 66,048). M81 died on (a) memory margin (1.75MiB vs 1.44MiB) and (b) ABSENCE OF MEASURED variance-cost value (static Pareto, never measured MSE reduction vs the +2.33% break-even). REOPEN JUSTIFICATION per the M81 kill text (reopen only with measured value): tonight S6 gives the EXACT deg-4 error operator spectrum and M191 gives the degree-resolved function energies \u2014 so the MSE reduction from deg-4->0 is now COMPUTABLE from committed data, addressing the diagnosed unmeasured-value failure. Falsifier = pure arithmetic (no new run): fractional champion-MSE reduction from setting the deg-4 design error to 0, using S6 spectrum x M191 degree energies, vs the 64512/66048=0.9767 adjusted break-even.",
+      "prediction": "UNCERTAIN, likely re-kill: deg-6 (40% of iid) dominates deg-4 (11%), so removing deg-4 removes the smaller structured component; the MSE reduction may not clear 2.33%. If it DOES clear (measured), the memory-margin question (M81 ground a) returns as an implementation gate for Sol.",
+      "kill_condition": "Measured fractional MSE reduction from deg-4->0 < 2.33% -> S11 re-KILLED on the M81 break-even, now WITH measurement (the design-strength gain is real but adjusted-negative). Only a measured reduction > ~3% (margin over break-even) advances to the memory/parity/hosted gates M81 named.",
+      "bias_class": "exact (arithmetic on committed measurements; no estimator run)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
