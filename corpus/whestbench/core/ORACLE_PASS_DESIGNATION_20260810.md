@@ -29,6 +29,16 @@ what does each future look like at the Sep 20-30 private re-run?
 
 ## DOOR B — seed-map-B duplicate (the S3-G0a x S4 construction)
 
+> **SUPERSEDED MECHANISM (Sol's 03:24 UTC correction, adopted 03:45):** no
+> literal/XOR/hash seed salt anywhere — starter-kit HEAD 5b7a347 warns
+> participant-chosen/custom seeds risk disqualification. The SOLE Door B
+> mechanism is grader-rooted spawning: `master = default_rng(mlp.seed)`;
+> `children = master.bit_generator.spawn(2)`; artifact A uses predeclared
+> child index 0, artifact B index 1; never search indices; `ctx.seed` is
+> setup-only. LEGALITY SPLIT: Phase 1 has an organizer post allowing two
+> nominations with no duplicate ban; PHASE 2 SOURCES CONFLICT — no
+> designation reliance on Door B without written organizer confirmation.
+
 - **Ω Best (p≈0.55):** rules contain no materially-identical clause (to
   verify — one read); G1-style validation is trivially green (same code,
   one constant differs); designation = two ~zero-correlation draws of the
