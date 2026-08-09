@@ -77,8 +77,12 @@ constraint set), SUBMISSION_DOSSIER (the playbook), and the fold ledger
   stale. Use the blind .env key-load pattern only — the
   key value is never read or displayed.
 - Aug 17 23:59 UTC: file the Phase-1 algorithmic writeup with ID #326094.
-- Sep 19: designation locks (v3.1 pending its graded canary; ONE designated
-  submission per the Rules — verify the slot count on the live page).
+- Sep 19: designation locks (v3.1 pending its graded canary). Slot count
+  SETTLED at TWO nominations per team — confirmed twice: the dossier's rules
+  read and the Aug 5 Discourse answer ("each team may nominate up to two
+  submissions for the Phase 1 private re-evaluation"). Portfolio rule: slot 1
+  = best validated sampler (v3.1 GUARDS, canary permitting), slot 2 = best
+  step-change candidate (fold3cap ONLY after its own graded canary, else L2).
 - Sep 20-30: private re-evaluation decides prizes.
 - Always: fold discipline, the firewall, kills are final, measured sizes
   only, no wall-tier claims, no accounting bypass EVER.
