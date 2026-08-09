@@ -2252,6 +2252,15 @@
       "bias_class": "exact (derivation + comparison to committed measurements)",
       "result": null,
       "status": "proposed"
+    },
+    {
+      "id": "s13_width_pooled_mfmc_premise",
+      "mechanism": "Owner bolt (CNN pooling), steelmanned onto the ONE live fidelity axis (frontier brief Q2: width-sketch surrogates as MFMC levels \u2014 explicitly unpublished and not closed; S10 killed DEPTH fidelity only, and the old m36 distillation kill was TRAINED/pilot-fitted \u2014 this is deterministic structural pooling, a different operator). Construct a width-64 surrogate by 4x4 block-averaging each 256x256 weight matrix (rescaled to preserve He variance; document the exact pooling/rescale so the surrogate is a fixed deterministic function of the weights), forward at 1/16 per-layer cost, and use it as an MFMC control: measure rho = corr over directions of (full neuron-mean, pooled neuron-mean) on 3 cached nets, then the closed-form MFMC efficiency at cost ratio ~1/16.",
+      "prediction": "UNCERTAIN: S7 coherence physics (cone set by early layers; pooled early layers inherit orientation statistics) gives nonzero rho; the S10 lesson (re-mixing) cuts against it. The number decides.",
+      "kill_condition": "Closed-form MFMC gain < 1.1x at matched billed FLOPs -> width-fidelity closed too (joins depth in a fully-dead fidelity family). >= 1.3x -> arm proposal for Sol review (never composes with M243). 1.1-1.3x INCONCLUSIVE.",
+      "bias_class": "unbiased (standard two-level MFMC/control-variate construction; surrogate mean estimated from extra cheap samples)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
