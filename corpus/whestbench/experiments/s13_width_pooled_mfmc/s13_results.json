@@ -1,0 +1,280 @@
+{
+  "ledger_id": "s13_width_pooled_mfmc_premise",
+  "date": "2026-08-09",
+  "firewall": "synthetic He nets only; frozen n8a sources imported read-only (sys.dont_write_bytecode set); only n8a's shipped sampling asset read; no dataset/truth/scorer/submission; no git; writes confined to s13_width_pooled_mfmc/",
+  "design": {
+    "n_directions_doubled": 64512,
+    "n_sub": 8192,
+    "subsample_seed": 1320260809,
+    "resample_disjoint": true,
+    "rotation_seed_formula": "900000 + net*1000 + 0"
+  },
+  "cost_model": {
+    "macs_per_direction_full": 2097152,
+    "macs_per_direction_pooled64": 143360,
+    "macs_per_direction_pooled128": 540672,
+    "w64": 0.068359375,
+    "w64_exact": "35/512",
+    "w128": 0.2578125,
+    "w128_exact": "33/128"
+  },
+  "mfmc_formula": "two-model Peherstorfer, optimal alpha=rho*sig_g/sig_h and optimal allocation: variance ratio vs single-model MC at matched budget = (sqrt(1-rho^2) + sqrt(w)*|rho|)^2; gain = 1/ratio; feasibility n2>=n1 iff rho^2 >= w/(1+w); gain>1 iff |rho| > 2*sqrt(w)/(1+w)",
+  "rho_thresholds": {
+    "k4": {
+      "any_gain": 0.4894537632374848,
+      "gain_1.1": 0.6068868874727992,
+      "gain_1.3": 0.7265708850041307
+    },
+    "k2": {
+      "any_gain": 0.8073578538768656,
+      "gain_1.1": 0.8543796911563513,
+      "gain_1.3": 0.909765589810678
+    }
+  },
+  "construction_checks": {
+    "101": [
+      {
+        "k": 4,
+        "pooled_width": 64,
+        "hidden_var_mean_empirical": 0.03131135607198361,
+        "hidden_var_he_target": 0.03125,
+        "hidden_var_ratio": 1.0019633943034756,
+        "input_var_empirical": 0.007936914451420307,
+        "input_var_he_target": 0.0078125,
+        "input_var_ratio": 1.0159250497817993
+      },
+      {
+        "k": 2,
+        "pooled_width": 128,
+        "hidden_var_mean_empirical": 0.015624347383216504,
+        "hidden_var_he_target": 0.015625,
+        "hidden_var_ratio": 0.9999582325258562,
+        "input_var_empirical": 0.007948821410536766,
+        "input_var_he_target": 0.0078125,
+        "input_var_ratio": 1.017449140548706
+      }
+    ],
+    "202": [
+      {
+        "k": 4,
+        "pooled_width": 64,
+        "hidden_var_mean_empirical": 0.03124461124741262,
+        "hidden_var_he_target": 0.03125,
+        "hidden_var_ratio": 0.9998275599172038,
+        "input_var_empirical": 0.00801948644220829,
+        "input_var_he_target": 0.0078125,
+        "input_var_ratio": 1.0264942646026611
+      },
+      {
+        "k": 2,
+        "pooled_width": 128,
+        "hidden_var_mean_empirical": 0.015589387756922552,
+        "hidden_var_he_target": 0.015625,
+        "hidden_var_ratio": 0.9977208164430433,
+        "input_var_empirical": 0.007941137067973614,
+        "input_var_he_target": 0.0078125,
+        "input_var_ratio": 1.0164655447006226
+      }
+    ],
+    "303": [
+      {
+        "k": 4,
+        "pooled_width": 64,
+        "hidden_var_mean_empirical": 0.03125569951390066,
+        "hidden_var_he_target": 0.03125,
+        "hidden_var_ratio": 1.0001823844448212,
+        "input_var_empirical": 0.007725618779659271,
+        "input_var_he_target": 0.0078125,
+        "input_var_ratio": 0.9888792037963867
+      },
+      {
+        "k": 2,
+        "pooled_width": 128,
+        "hidden_var_mean_empirical": 0.015655349729762923,
+        "hidden_var_he_target": 0.015625,
+        "hidden_var_ratio": 1.001942382704827,
+        "input_var_empirical": 0.007740575820207596,
+        "input_var_he_target": 0.0078125,
+        "input_var_ratio": 0.9907937049865723
+      }
+    ]
+  },
+  "per_net": {
+    "101": {
+      "sigma_g_primary": 0.08968132545536149,
+      "mean_g_primary": 0.4315808930964344,
+      "variants": {
+        "pooled64": {
+          "k": 4,
+          "w": 0.068359375,
+          "sigma_h_primary": 0.11011586414866512,
+          "mean_h_primary": 0.25657090001316546,
+          "rho_pearson_primary": 0.11222151117741717,
+          "rho_pearson_resample": 0.13295506197572524,
+          "rho_bootstrap_ci95": [
+            0.09030833802271551,
+            0.13370420462341998
+          ],
+          "cosine_raw_primary": 0.9087363234528243,
+          "feasible_n2_ge_n1": false,
+          "mfmc_gain_primary": 0.9554944275767034,
+          "mfmc_gain_resample": 0.9501747540159712,
+          "mfmc_gain_bootstrap_ci95": [
+            0.9499986423920945,
+            0.9620636058268149
+          ]
+        },
+        "pooled128": {
+          "k": 2,
+          "w": 0.2578125,
+          "sigma_h_primary": 0.056085018405505414,
+          "mean_h_primary": 0.21882734304920348,
+          "rho_pearson_primary": 0.27088436696743995,
+          "rho_pearson_resample": 0.27462810987254443,
+          "rho_bootstrap_ci95": [
+            0.2497978682733465,
+            0.29177240497111384
+          ],
+          "cosine_raw_primary": 0.9621171073000554,
+          "feasible_n2_ge_n1": false,
+          "mfmc_gain_primary": 0.826214801178194,
+          "mfmc_gain_resample": 0.824955286692729,
+          "mfmc_gain_bootstrap_ci95": [
+            0.8195240118324276,
+            0.8338076863467954
+          ]
+        }
+      }
+    },
+    "202": {
+      "sigma_g_primary": 0.12501134037976266,
+      "mean_g_primary": 0.7069819743828747,
+      "variants": {
+        "pooled64": {
+          "k": 4,
+          "w": 0.068359375,
+          "sigma_h_primary": 0.19789137287085976,
+          "mean_h_primary": 0.6463827728241003,
+          "rho_pearson_primary": 0.17605156782685458,
+          "rho_pearson_resample": 0.17184669404135772,
+          "rho_bootstrap_ci95": [
+            0.15513046678819545,
+            0.19879104844158318
+          ],
+          "cosine_raw_primary": 0.9505646748675732,
+          "feasible_n2_ge_n1": false,
+          "mfmc_gain_primary": 0.9418446072235526,
+          "mfmc_gain_resample": 0.9424969015022249,
+          "mfmc_gain_bootstrap_ci95": [
+            0.9389149336521129,
+            0.9454322373438032
+          ]
+        },
+        "pooled128": {
+          "k": 2,
+          "w": 0.2578125,
+          "sigma_h_primary": 0.24801696646876772,
+          "mean_h_primary": 1.0009507523397276,
+          "rho_pearson_primary": 0.2079637928236507,
+          "rho_pearson_resample": 0.20308214719820777,
+          "rho_bootstrap_ci95": [
+            0.1862167029064076,
+            0.22823353896782628
+          ],
+          "cosine_raw_primary": 0.9645326625031823,
+          "feasible_n2_ge_n1": false,
+          "mfmc_gain_primary": 0.8514463652231833,
+          "mfmc_gain_resample": 0.8537348705671866,
+          "mfmc_gain_bootstrap_ci95": [
+            0.8424642448352745,
+            0.8620246037625162
+          ]
+        }
+      }
+    },
+    "303": {
+      "sigma_g_primary": 0.10449606481064533,
+      "mean_g_primary": 0.5322804309270551,
+      "variants": {
+        "pooled64": {
+          "k": 4,
+          "w": 0.068359375,
+          "sigma_h_primary": 0.06645564119479767,
+          "mean_h_primary": 0.12686510774821577,
+          "rho_pearson_primary": 0.07144799580833103,
+          "rho_pearson_resample": 0.0696486481455001,
+          "rho_bootstrap_ci95": [
+            0.04854243716999985,
+            0.09381622400166233
+          ],
+          "cosine_raw_primary": 0.8756317512490849,
+          "feasible_n2_ge_n1": false,
+          "mfmc_gain_primary": 0.9685138898856713,
+          "mfmc_gain_resample": 0.9691684458384119,
+          "mfmc_gain_bootstrap_ci95": [
+            0.9609457331869247,
+            0.9773659295647052
+          ]
+        },
+        "pooled128": {
+          "k": 2,
+          "w": 0.2578125,
+          "sigma_h_primary": 0.10607326462698087,
+          "mean_h_primary": 0.37336643675313963,
+          "rho_pearson_primary": 0.2174920137361873,
+          "rho_pearson_resample": 0.17088296768966993,
+          "rho_bootstrap_ci95": [
+            0.1965419526788523,
+            0.2377407909994537
+          ],
+          "cosine_raw_primary": 0.9553707112366159,
+          "feasible_n2_ge_n1": false,
+          "mfmc_gain_primary": 0.84712048013359,
+          "mfmc_gain_resample": 0.8700892124038541,
+          "mfmc_gain_bootstrap_ci95": [
+            0.8385350947440058,
+            0.8568784811173997
+          ]
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "pooled64": {
+      "geomean_gain_primary": 0.9552222337103361,
+      "geomean_gain_resample": 0.9538810653058782,
+      "geomean_gain_bootstrap_ci95": [
+        0.9519713888040034,
+        0.9588859737585173
+      ],
+      "per_net_gains_primary": [
+        0.9554944275767034,
+        0.9418446072235526,
+        0.9685138898856713
+      ]
+    },
+    "pooled128": {
+      "geomean_gain_primary": 0.8415213704771947,
+      "geomean_gain_resample": 0.8493872512362892,
+      "geomean_gain_bootstrap_ci95": [
+        0.8365675770614153,
+        0.8469880913696611
+      ],
+      "per_net_gains_primary": [
+        0.826214801178194,
+        0.8514463652231833,
+        0.84712048013359
+      ]
+    }
+  },
+  "gate": {
+    "thresholds": {
+      "arm": 1.3,
+      "closed_below": 1.1
+    },
+    "metric": "geomean over nets of closed-form MFMC gain, width-64 pooled surrogate, matched billed FLOPs",
+    "value": 0.9552222337103361,
+    "outcome": "WIDTH_FIDELITY_CLOSED"
+  },
+  "wall_s": 12.9
+}

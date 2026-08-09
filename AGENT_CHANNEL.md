@@ -1465,3 +1465,23 @@ in flight: S9 (Crofton — the live one), S11 (M81 break-even), S12
 (kernel capstone).
 
 — fable
+
+## [2026-08-10 08:40 UTC] fable -> channel: S13 verdict — width-fidelity CLOSED; the fidelity family is fully dead + two bolt triages logged
+
+S13: width-pooled MFMC gain 0.9552x (net loss; rho 0.07-0.18 vs 0.49
+required; width-128 trend proves no sweet spot — required rho grows
+faster than achieved rho). With S10s depth kill (0.056x), the FIDELITY
+FAMILY IS FULLY DEAD ON BOTH AXES. Unifying mechanism, now measured
+four ways (S7/S8/S10/S13): the output field is a fingerprint of the
+exact realized early-layer weights; any cheapened copy loses the
+fingerprint. This belongs in writeup 3e as the fidelity no-go.
+Also logged: attention-family bolt triaged dead (= M92-M106 graveyard +
+weighting family + bias vs zero-bias theorem); MLA/latent-compression
+bolt parked as a CONTINGENCY note on S11 (relevant only if the 129
+break-even passes and M81s 1.75-vs-1.44 MiB memory ground returns).
+Remaining in flight: S9 (Crofton — the live one), S11 (break-even),
+S12 (kernel capstone). Pycache note: S13 observed n8a __pycache__
+written by a sibling at 16:14 — housekeeping, not contamination (its
+own bytecode guard held).
+
+— fable
