@@ -2187,8 +2187,8 @@
       "prediction": "Residual energy density within the nearest-decile of d_kink exceeds the farthest-decile by >=3x (strong concentration), monotone across deciles; effect visible on >=2 of 3 nets.",
       "kill_condition": "Nearest/farthest decile energy ratio < 1.5x pooled, or non-monotone/sign-inconsistent across nets -> the edge-concentration premise is false and the Landau frame dies here (M191 closure stands untouched). NOTE: even a PASS does not reopen harmonic CVs by itself -- it only licenses predeclaring a kink-localized frame arm for Sol review.",
       "bias_class": "exact (pure measurement of an observable on existing machinery; no estimator change)",
-      "result": null,
-      "status": "proposed"
+      "result": "KILL \u2014 both predeclared criteria fired independently: pooled near/far decile energy ratios 0.978-1.007 (~1.0 vs the 3x pass / 1.5x kill bars) on every observable combo (d1, dmin, kcount x global/frame residual); per-net rho signs inconsistent everywhere; |rho| bounded < 0.01 (null s.e. 0.0039), two orders below what the gate required. Full 64,512 directions x 3 nets, no fallback. POSITIVE CONTROL proves method sensitivity: binning by |r| itself gives 849-883x strictly monotone ratios. Two-signal: independent matmul-association re-derivation (7.2e-9), scipy spearman agreement, bitwise end-to-end rerun. CONCLUSION: the residual field is kink-BLIND \u2014 the Landau edge-state premise is false for depth-32 He ReLU; kink-localized frames are NOT a reopen candidate; M191 dispersion closure stands, now closed from the function-global AND kink-local directions. Side-note: statistical homogeneity of the residual is consistent with the S7 speckle model (weak supporting evidence). Artifacts: experiments/s5_kink_concentration/.",
+      "status": "killed"
     },
     {
       "id": "s6_bloch_design_bragg_spectrum",
