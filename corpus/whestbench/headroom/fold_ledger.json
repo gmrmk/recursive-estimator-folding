@@ -2189,6 +2189,15 @@
       "bias_class": "exact (pure measurement of an observable on existing machinery; no estimator change)",
       "result": null,
       "status": "proposed"
+    },
+    {
+      "id": "s6_bloch_design_bragg_spectrum",
+      "mechanism": "Owner bolt (Bloch functions in crystals), steelmanned: the Kerdock design is a group-orbit crystal on the sphere; Delsarte duality says a designs quadrature failure is confined to its aliasing (Bragg) modes, determined by the codes dual structure \u2014 not spread uniformly. M191 measured the FUNCTION side (f energy disperses across the 1.8e8-dim deg-4 space); S6 measures the DESIGN side: the spectrum of the degree-4 (and 6) quadrature-error operator D = A - I/dim, where A = (1/N) sum_j phi_l(x_j) phi_l(x_j)^T, computable entirely from pairwise Gegenbauer kernel values on design points (tr(D^2) exact via pairwise sums; top eigenvalues via Lanczos on the N x N kernel Gram restricted to the design-evaluation span).",
+      "prediction": "The deg-4 error operator is massively concentrated: top-100 eigenvalues carry >=50% of tr(D^2) (vs ambient dim 1.8e8) \u2014 the design fails on few, algebraically structured modes (its reciprocal lattice), making a design-side CV subspace tractable regardless of f dispersion.",
+      "kill_condition": "Top-100 eigenvalues carry <5% of tr(D^2) (error operator spread \u2014 crystal frame dead, M191 closure extends to the design side). 5-50%: INCONCLUSIVE, held unresolved. NOTE: a PASS only licenses predeclaring a design-side aliased-mode CV arm for Sol review; nothing reopens by itself.",
+      "bias_class": "exact (pure spectral measurement of the fixed unrotated design; no estimator change)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
