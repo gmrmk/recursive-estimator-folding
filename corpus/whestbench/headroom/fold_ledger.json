@@ -2178,8 +2178,8 @@
       "prediction": "P(at least one suite score < T) for T in {1.55e-7, 1.6e-7, 1.7e-7} improves by >=2 percentage points absolute for low-rho pairs vs rho=1 pairs at equal means; the gain grows when the second candidate has higher variance.",
       "kill_condition": "Diversification gain < 2 points absolute at EVERY threshold and every mean-offset arm -> designate on pure means, portfolio frame dead.",
       "bias_class": "exact (analysis-only decision input; no estimator or submission-path change)",
-      "result": null,
-      "status": "proposed"
+      "result": "SURVIVES via the same-mean arm at 3/3 thresholds: decorrelation gain (rho 0.0 vs 1.0) = 2.85pp [2.80,2.91] at T=1.55e-7, 6.00pp [5.88,6.12] at 1.60e-7, 16.50pp [16.28,16.72] at 1.70e-7 \u2014 a fully decorrelated same-mean second entry ~doubles P(at least one < T) (0.0285/0.0637/0.2063 -> 0.0570/0.1237/0.3713). rho=0.9 still retains 1.4/2.6/6.2pp. R6 arm FAILS the bar 0/3 (its thinned tail cannot reach thresholds: P<1.6e-7 = 0.0001) \u2014 S1-defense and S4-portfolio are mutually exclusive strategies selected by expected position. L2 arm (mean 2.10e-7): <=0.64pp \u2014 slot 2 needs comparable mean. fold3cap sensitivity (1.41e-7, weak 5-net evidence): if real it alone clears 1.55e-7 at p~0.88 and correlation becomes irrelevant \u2014 its graded canary is the highest-value Phase-2 action. CONCRETE LEGAL CONSTRUCTION unlocked by S3-G0a: two designations of the SAME validated estimator differing only in the participant-owned rotation-seed-derivation constant share only net-difficulty correlation (~0.2% of variance) -> near-zero rho_pair at zero research risk; needs a rules check for materially-identical-submission clauses at predeclaration. Verification: reproduced S1 SD through a different sampling path (0.9958 ratio); independence-product match <=0.016pp; realized correlations track the dial. Limitation: real inter-family rho_pair unknown; this measures the value of decorrelation IF achievable. Artifacts: experiments/s4_portfolio/.",
+      "status": "screened"
     }
   ]
 }

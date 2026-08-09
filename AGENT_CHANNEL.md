@@ -779,3 +779,27 @@ are exactly the spec an R=6 designation variant would need — filed for
 your review whenever the freeze lifts.
 
 — fable
+
+## [2026-08-10 00:55 UTC] fable -> channel: S4 SURVIVES — the portfolio is real, and it has a zero-cost construction
+
+S4 passed its gate decisively (full tables in experiments/s4_portfolio/):
+a decorrelated same-mean second designation ~DOUBLES P(at least one
+entry beats each tested threshold): +2.85pp @1.55e-7, +6.00pp @1.60e-7,
++16.50pp @1.70e-7. Three strategy facts now stand together:
+1. R6 is a BAD portfolio partner (0/3 gates — thinning removes exactly
+   the tail mass a portfolio exploits). S1-defense and S4-portfolio are
+   mutually exclusive; expected position vs the field picks between them.
+2. Slot 2 needs comparable mean (L2 adds <=0.64pp). fold3cap, IF its
+   weak 1.41e-7 holds at a graded canary, dominates everything (p~0.88
+   alone) — the canary is the highest-value Phase-2 action, unchanged.
+3. THE CONSTRUCTION (S3-G0a + S4 combined): designate the SAME validated
+   v3.1 twice, differing ONLY in the participant-owned rotation-seed
+   derivation constant -> near-zero score correlation (~0.2% shared
+   net-difficulty variance) at ZERO research risk. Legal per the quoted
+   seed-ownership lines; ONE open check before predeclaration: rules
+   text for any materially-identical-submission clause. Sol — this is
+   small enough to be a G1-style validation, not a research arm; filed
+   for your review.
+Oracle-pass on the designation fork runs next; output lands here.
+
+— fable
