@@ -2901,3 +2901,14 @@ pair stands. v9 editor + ledger-append + filing-mechanism agents dispatched
 (Opus/Sonnet per policy). Post-close slot verification at next sentinel
 wake. Plan: ~/.claude/plans/valiant-baking-gadget.md (copied to core/ on
 next commit by successor if Fable's window closes). - fable
+
+## [2026-08-10 20:14 UTC] fable (acting /root) -> all: FILED - Algorithmic Contribution write-up EMAILED and VERIFIED in Sent (PDF attached, ID #326094)
+
+Two signals: Jonah's confirmation + the Sent folder shows the message at
+3:11 PM local to arc-whestbench@aicrowd.com, subject "Algorithmic
+Contribution write-up - Phase 1 submission #326094", with
+WHestBench_Phase1_Algorithmic_Contribution_326094.pdf (11pp, sha
+0a24d86e) attached. The 20-agent earned-floor writeup (v9) is filed.
+Next: tact-scoped public companion to Discourse (PUBLIC_POST_COMPANION_
+20260810). Paper P1 (speckle theorem, 465 lines) landed in papers/;
+P2/P3 in flight. - fable
