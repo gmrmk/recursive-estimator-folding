@@ -1,0 +1,95 @@
+{
+  "artifact": "M244_E7_FIXTURE_MATERIALIZER_STATIC_AUDIT_CONTRACT",
+  "audit_mode": "read_only_source_inspection_only",
+  "audit_status": "PENDING_INDEPENDENT_READ_ONLY_AUDIT",
+  "authority_commit": "75c87485d3b55fddc50859d29e73e5f293a4bbad",
+  "candidate_or_test_creation_authorized": false,
+  "execution_authorized": false,
+  "expected_absent_execution_paths": [
+    ".M244_E7_POSTPUBLICATION_BINDING_RECEIPT_20260809.json.tmp",
+    ".M244_E7_FIXTURE_AUTHORITY_20260809.json.tmp",
+    "M244_E7_FIXTURE_AUTHORITY_20260809.json",
+    "M244_E7_FIXTURE_MATERIALIZATION_INTENT_20260809.json",
+    "M244_E7_POSTPUBLICATION_BINDING_RECEIPT_20260809.json"
+  ],
+  "forbidden_audit_actions": [
+    "compile source",
+    "execute source",
+    "import source",
+    "invoke Python on source",
+    "materialize fixtures",
+    "create candidate code",
+    "create G0A tests",
+    "create native gate code"
+  ],
+  "frozen_resource_contract": {
+    "binding_receipt_must_cover_through_result_publication": true,
+    "no_retry": true,
+    "process_peak_cap_bytes": 268435456,
+    "wall_cap_seconds": 30.0
+  },
+  "prelaunch_static_validation_receipt": {
+    "artifact": "M244_E7_STATIC_VALIDATION_RECEIPT",
+    "canonical_json_required": true,
+    "committed_before_launch_required": true,
+    "currently_absent_until_independent_reviews_complete": true,
+    "exact_path": "M244_E7_STATIC_VALIDATION_RECEIPT_20260809.json",
+    "minimum_distinct_reviewers": 2,
+    "required_top_level_fields": {
+      "authority_commit": "75c87485d3b55fddc50859d29e73e5f293a4bbad",
+      "committed_before_launch": true,
+      "freeze_status": "PASS_STATIC_E7_MATERIALIZER_ONLY",
+      "no_execution_performed": true
+    },
+    "reviewer_record_required_fields": [
+      "reviewer_id",
+      "verdict",
+      "source_sha256",
+      "static_contract_sha256"
+    ],
+    "runner_must_bind": [
+      "current source SHA-256",
+      "current static contract SHA-256",
+      "canonical receipt SHA-256",
+      "two or more distinct reviewer identities",
+      "PASS_STATIC_E7_MATERIALIZER_ONLY from every reviewer"
+    ]
+  },
+  "required_static_findings": [
+    "source SHA-256 and byte count exactly match this contract",
+    "only stdlib imports occur before the durable exclusive intent",
+    "all common BLAS and OpenMP environment controls are frozen and asserted one-thread before NumPy import",
+    "the sole NumPy import is inside main and textually follows thread freezing, the two-reviewer static-validation check, and intent fsync/reopen verification",
+    "there are no experiment, candidate, M125, M178, M179, FlopScope, SciPy, mpmath, subprocess, dynamic import, compile, exec, or eval dependencies",
+    "authority commit and all six committed authority document hashes are exact",
+    "the E1 repository/workspace roots are checked exactly and all fifteen parent_sha256 plus all six runtime_sha256 artifacts are present and hash-bound before NumPy import",
+    "reviewer identities are canonical lowercase ASCII slugs before uniqueness is evaluated, so whitespace, case, or Unicode aliases cannot satisfy the two-reviewer gate",
+    "E3 uses every frozen width, seed, Philox draw, QR sign, scale, covariance, eig_u, mu, and u operation in the declared order",
+    "E4 uses every frozen seed and the literal exponent, diagonal weight, alpha, tangent mean, and symmetric U constructor",
+    "E5 contains all twelve seed-free boundary and structural fixtures with exact-zero and sign-bit diagnostics",
+    "E6 applies cyclic P and dyadic D hidden transforms plus reverse output columns to all twenty generic fixtures and constructs five independent width-256 targets",
+    "all small arrays are serialized as C-order repr-roundtrippable decimal strings with dtype, shape, byte hash, and diagnostics",
+    "all width-256 arrays omit decimals while retaining dtype, shape, byte hash, and diagnostics",
+    "canonical JSON is allow_nan false, ensure_ascii true, indent 2, sort_keys true, and newline terminated",
+    "Win64 GetCurrentProcess and GetProcessMemoryInfo have explicit HANDLE, pointer, DWORD, and BOOL ctypes signatures",
+    "intent creation is exclusive, flushed, fsynced, reopened, parsed, and byte verified before NumPy import",
+    "result publication is provisional and uses same-directory exclusive temp, fsync, hard-link create-if-absent, reopen/byte verify, and temp unlink",
+    "after result publication the runner resamples elapsed time and process peak, then exclusively publishes a tiny receipt binding the result hash; only a passing receipt makes the fixture authority valid",
+    "post-intent computation or diagnostic failures are captured when transport remains available, while termination or publication failure may leave only intent or provisional result and is always permanent failure with no retry",
+    "the runner accepts no arguments, binds the pinned interpreter and NumPy 2.4.6, requires a canonical committed two-reviewer PASS receipt, and gates wall/process peak through result publication"
+  ],
+  "required_verdict": {
+    "allowed_values": [
+      "PASS_STATIC_E7_MATERIALIZER_ONLY",
+      "REPAIR_BEFORE_MATERIALIZATION",
+      "BLOCKED_PARENT_DRIFT"
+    ],
+    "independent_reviewer_required": true,
+    "pass_authorizes": "creation and commit of the matching static-validation receipt only; one E7 invocation still requires separate launch authorization, and no candidate, test, native, G0A, or integrated execution is authorized"
+  },
+  "source": {
+    "bytes": 51439,
+    "path": "run_m244_e7_fixture_materializer.py",
+    "sha256": "2736ed5761c81f174e06282f1aa1222ec294f2c481a20e606a4b91929c99152f"
+  }
+}
