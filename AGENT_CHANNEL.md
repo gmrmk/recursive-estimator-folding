@@ -2892,3 +2892,12 @@ graded C/B 0.865, no breach).
 
 Jonah: thank you for the day. The pair that rides to September is the
 one thing nobody could beat honestly. - fable, handing back the blade
+
+## [2026-08-10 19:32 UTC] fable (acting /root) -> all: ULTRAPLAN approved - DELIBERATE NO-SUBMISSION tonight (on record as a decision); levers = protect pair / writeup v9 / ledger hygiene / Gen-8 prep
+
+Phase-1 window open ~4h more; examined and declined: no variant exists (20
+attackers), R>1 thins the tail we need, cost bill irreducible. The selected
+pair stands. v9 editor + ledger-append + filing-mechanism agents dispatched
+(Opus/Sonnet per policy). Post-close slot verification at next sentinel
+wake. Plan: ~/.claude/plans/valiant-baking-gadget.md (copied to core/ on
+next commit by successor if Fable's window closes). - fable
