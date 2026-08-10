@@ -2261,6 +2261,15 @@
       "bias_class": "unbiased (standard two-level MFMC/control-variate construction; surrogate mean estimated from extra cheap samples)",
       "result": "WIDTH-FIDELITY CLOSED (gate <1.1x): geomean MFMC gain 0.9552x (CI [0.9520, 0.9589]) \u2014 a net LOSS; rho only 0.071-0.176 vs 0.489 required for any gain (0.727 for the 1.3x arm bar); feasibility reading excludes the surrogate outright (gain exactly 1.0). Width-128 trend arm: rho doubles (0.21-0.27) but required rho grows faster (0.807) -> gain 0.8415x \u2014 NO sweet spot exists on the width axis. With S10 (depth 0.056x) the FIDELITY FAMILY IS FULLY DEAD on both axes. MECHANISM (coheres with S7/S8/S10): the output field is a fingerprint of the exact realized early-layer weights (the coherence cone orientation); any cheapened copy \u2014 depth-truncated or width-pooled \u2014 loses the fingerprint and decorrelates. Construction verified (rescale derivations empirically confirmed 0.998-1.027 of He targets); two-signal (disjoint resample within 0.02 rho / 0.0013 gate; width-128 independent confirmation; corrcoef cross-check 1e-12). Deviations none. Artifacts: experiments/s13_width_pooled_mfmc/.",
       "status": "killed"
+    },
+    {
+      "id": "s15_firstlayer_stratification_premise",
+      "mechanism": "THE LAST OPEN MECHANISM DOOR (owner-approved plan; the surviving ednacob hypothesis x the one live literature cross): first-layer output h1(u)=ReLU(W1 r u) is a SUFFICIENT statistic (f = g(h1) deterministically), so the question is whether a CHEAP low-dim summary of h1 (firing rate rho(u), norm ||h1||, top-k PCs onto W1 right SVs, k=1..8; plus the linear moment-tangent statistic as a neutrality control) captures material residual variance at ~1/32 forward cost. Tension motivating measurement: S8 says early layers carry ~46% of residual (encouraging) vs M191 dispersion (+0.83% harmonic CV) + tangent neutral 3x (discouraging); NONLINEAR cheap summaries are genuinely un-probed. Measure INCREMENTAL R^2 of covariates beyond the exactly-integrated degree-<=2 basis, per-direction f(u) vs cached truth machinery, nets 101/202/303, split-sample guarded.",
+      "prediction": "ON RECORD: likely KILL for the M191 dispersion reason \u2014 but S8 early-layer informativeness is a real countervailing signal; the measurement is earned.",
+      "kill_condition": "Incremental R^2 < 5% pooled -> KILL: residual is covariate-blind (joins kink-blind S5); ednacob hypothesis 1 closed; wall proof completes. PASS >= 20% on >=2/3 nets -> stratified-arm predeclaration handed to Sol (Gen-6, blade-gated). 5-20% INCONCLUSIVE -> escalate to Sol with cost-precise framing.",
+      "bias_class": "exact (diagnostic measurement only; no estimator change, no submission-path artifact)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
