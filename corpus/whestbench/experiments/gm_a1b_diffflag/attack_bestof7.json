@@ -1,0 +1,47 @@
+{
+ "null_best_of_7_zero_signal": {
+  "reps": 200000,
+  "precision_mean": 0.33367199999999997,
+  "precision_se": 0.00017606962282733617,
+  "precision_p5": 0.2,
+  "precision_p50": 0.35,
+  "precision_p95": 0.45,
+  "p_precision_ge_0p50": 0.035565,
+  "abs_rho_mean": 0.19353952531645569,
+  "abs_rho_p95": 0.29929793717768377,
+  "p_abs_rho_ge_0p5627": 0.0
+ },
+ "single_flag_zero_signal_precision_expectation": 0.25,
+ "a1b_measured": {
+  "best_abs_rho": 0.5627285513361463,
+  "precision": 0.5,
+  "recall": 0.5
+ },
+ "oracle_vs_a1b_rho": {
+  "old_control": {
+   "vD": 0.0007568879454111777,
+   "oracle_rho_mean": 0.07562226945616503,
+   "oracle_rho_p95": 0.25895452414439757,
+   "a1b_0p5627_below_oracle_p95": false
+  },
+  "s17_low": {
+   "vD": 0.08135950765383865,
+   "oracle_rho_mean": 0.46202500925925927,
+   "oracle_rho_p95": 0.6058134083450539,
+   "a1b_0p5627_below_oracle_p95": true
+  },
+  "s17_high": {
+   "vD": 0.12203926148075797,
+   "oracle_rho_mean": 0.5394136258790435,
+   "oracle_rho_p95": 0.6679324894514768,
+   "a1b_0p5627_below_oracle_p95": true
+  }
+ },
+ "measured_chance_precision_from_results_json": {
+  "old_control": 0.2492425,
+  "s17_low": 0.2491025,
+  "s17_high": 0.2491975
+ },
+ "attack_verdict": "DOES NOT LAND",
+ "wall_s": 16.737207651138306
+}

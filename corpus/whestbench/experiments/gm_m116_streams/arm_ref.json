@@ -1,0 +1,113 @@
+{
+ "tag": "ref",
+ "group": 1,
+ "block_rows": 4096,
+ "dispatch_plan_per_layer": [
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   3072
+  ]
+ ],
+ "dispatches_per_layer": 16,
+ "full_prediction_matmul_calls": 208,
+ "billed_flops": 78948022272,
+ "expected_bill_frozen": 189738221568,
+ "independently_expanded_bill": 189738221568,
+ "bill_matches_frozen": false,
+ "bill_matches_independent_expansion": false,
+ "hook_billed_flops": 5912804352,
+ "hook_core_calls_b4096": 16,
+ "setup_s": 0.39204840001184493,
+ "predict_wall_s": 20.006367699999828,
+ "residual_s": 0.46536520041991025,
+ "flopscope_backend_time_s": 17.1964748002938,
+ "flopscope_overhead_time_s": 2.3444715992663987,
+ "wall_time_s": 20.00631159998011,
+ "workspace_bytes": 67809280,
+ "workspace_mib": 64.66796875,
+ "peak_working_set_mib_after_prediction": 180.87109375,
+ "peak_working_set_mib_at_exit": 243.8828125,
+ "finite": false,
+ "failure": "TimeExhaustedError: matmul: wall-clock time 20.006s exceeds limit 20.000s. See: https://aicrowd.github.io/flopscope/docs/guides/budget-planning",
+ "state_sha256": "4386990a8f2b66102fb514392603752c4d16f92169270fa2e598b43e6033eca4",
+ "state_dump": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\gm_m116_streams\\state_ref.npy",
+ "gates": {
+  "residual_le_0.170": false,
+  "peak_le_464_mib": true,
+  "wall_lt_20": false,
+  "bill_exact": false,
+  "finite": false
+ },
+ "runtime_identity": {
+  "python": "3.14.4",
+  "executable": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Scripts\\python.exe",
+  "numpy": "2.4.6",
+  "flopscope": "0.10.0+np2.4.6",
+  "threads": {
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "NUMEXPR_NUM_THREADS": "1"
+  }
+ }
+}

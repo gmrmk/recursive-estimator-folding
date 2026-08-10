@@ -1,0 +1,184 @@
+{
+ "experiment": "gm_s1s4_vd_step0",
+ "predeclaration": "PREDECLARATION.md sections 2,4,5 (G0,G1,G5)",
+ "panel": {
+  "n_nets": 80,
+  "distinct_net_seeds": 80,
+  "distinct_rot_seeds": 80,
+  "identity_raw_minus_corr_minus_floor_max_abs": 5.293955920339377e-23,
+  "identity_max_rel": 8.177349800812915e-17,
+  "sha256_mse_raw": "517da6e3552b952465cc924a964c2c6f7712d5e7367e1eb723897e96ad51f601",
+  "spread_raw_max_over_min": 15.531671197493653,
+  "spread_corr_max_over_min": 35.341683459037824,
+  "floor_share_of_raw": {
+   "mean": 0.2955400180575758,
+   "min": 0.09121932715787945,
+   "max": 0.6899534168196714
+  },
+  "relvar_floor31_ddof0": 0.27775894163703296,
+  "relvar_floor31_ddof1": 0.28127487760712194,
+  "E_floor_over_E_raw": 0.2515038850285186
+ },
+ "rotation_pool": {
+  "n": 48,
+  "vF": 0.3641995628656461,
+  "max_over_min": 11.07319421676679,
+  "construction": "identical to run_s1.py: per-net mean-normalized, pooled, mean forced to 1"
+ },
+ "moment_identity": {
+  "raw": {
+   "ddof0": {
+    "relvar_obs": 0.37704314456075505,
+    "vD_moment": 0.009414738169340603,
+    "share_D": 0.02496992268698723,
+    "share_rotation": 0.9750300773130127,
+    "implied_D_max_over_min_loguniform": null
+   },
+   "ddof1": {
+    "relvar_obs": 0.3818158425931697,
+    "vD_moment": 0.012913271787390653,
+    "share_D": 0.03382068093269228,
+    "share_rotation": 0.9661793190673077,
+    "implied_D_max_over_min_loguniform": null
+   }
+  },
+  "corr_floor_subtracted": {
+   "ddof0": {
+    "relvar_obs": 0.5544903553816888,
+    "vD_moment": 0.13948897045261963,
+    "share_D": 0.2515624827353418,
+    "share_rotation": 0.7484375172646582,
+    "implied_D_max_over_min_loguniform": null
+   },
+   "ddof1": {
+    "relvar_obs": 0.5615092206396849,
+    "vD_moment": 0.14463401334007828,
+    "share_D": 0.2575808339804424,
+    "share_rotation": 0.7424191660195576,
+    "implied_D_max_over_min_loguniform": null
+   }
+  }
+ },
+ "bootstrap_vD": {
+  "n_boot": 20000,
+  "seed": 20260810,
+  "arms": {
+   "raw_ddof0": {
+    "vD_boot_mean": 0.00545453012892012,
+    "vD_ci95_lo": -0.06084142184225409,
+    "vD_ci95_hi": 0.07820684097000924,
+    "p_vD_ge_0.08": 0.0223
+   },
+   "raw_ddof1": {
+    "vD_boot_mean": 0.008902934531268628,
+    "vD_ci95_lo": -0.0582322067053635,
+    "vD_ci95_hi": 0.08257616069946012,
+    "p_vD_ge_0.08": 0.02895
+   },
+   "corr_floor_subtracted_ddof0": {
+    "vD_boot_mean": 0.13307892912929548,
+    "vD_ci95_lo": 0.030644903993566768,
+    "vD_ci95_hi": 0.2475099945331006,
+    "p_vD_ge_0.08": 0.8318
+   },
+   "corr_floor_subtracted_ddof1": {
+    "vD_boot_mean": 0.1381428322531677,
+    "vD_ci95_lo": 0.034412173887872766,
+    "vD_ci95_hi": 0.2540223921557551,
+    "p_vD_ge_0.08": 0.8538
+   }
+  }
+ },
+ "G0_step0_kill_gate": {
+  "rule": "KILL (S1b stands, candidate dead) iff vD_moment >= 0.08 under BOTH floor treatments (ddof=1)",
+  "vD_raw_ddof1": 0.012913271787390653,
+  "vD_corr_ddof1": 0.14463401334007828,
+  "threshold": 0.08,
+  "raw_ge_0.08": false,
+  "corr_ge_0.08": true,
+  "FIRES_KILL": false
+ },
+ "G1_identification": {
+  "rule": "PASS iff vD_moment(raw,ddof1) < 0.08 AND bootstrap 95% upper bound < 0.08",
+  "vD_raw_ddof1": 0.012913271787390653,
+  "boot_ci95_hi": 0.08257616069946012,
+  "pass": false
+ },
+ "G5_floor_correlation_ceiling": {
+  "why_floor31_is_rotation_free": "run_m185_g0.py lines 185-191: floor31 = mean(var31)/n_samples from the 600k-sample TRUTH pass; a function of the net and the truth sampler only, no rot_seed dependence",
+  "corr_floor31_vs_mse_raw_pearson": 0.5157924971295733,
+  "corr_floor31_vs_mse_raw_spearman": 0.6669010782934834,
+  "corr_floor31_vs_mse_corr_pearson": 0.330426266963636,
+  "corr_floor31_vs_mse_corr_spearman": 0.4650961087669949,
+  "a1b_weightsonly_spearman": {
+   "diag_proxy_l28": 0.3883028598218472,
+   "all_layer_mse": 0.3815518049695265,
+   "borderline_frac": -0.5627285513361463,
+   "pruned_frac": 0.3507735583684951,
+   "fold_on_total": 0.4591186122831693,
+   "fold_kink_total": -0.4277074542897328,
+   "billed_flops": -0.4218002812939522
+  },
+  "a1b_max_abs_spearman": 0.5627285513361463,
+  "a1b_multivariate_spearman": 0.5542897327707454,
+  "readings": {
+   "old_committed_S1": {
+    "vD": 0.000757,
+    "share_D": 0.0020726537025780897,
+    "ceiling_sqrt_share_D": 0.04552640665128415,
+    "excluded_by_floor31_pearson": true,
+    "excluded_by_floor31_spearman": true,
+    "excluded_by_a1b_best_spearman": true
+   },
+   "vD_moment_raw_ddof1": {
+    "vD": 0.012913271787390653,
+    "share_D": 0.03382068093269229,
+    "ceiling_sqrt_share_D": 0.1839039992297402,
+    "excluded_by_floor31_pearson": true,
+    "excluded_by_floor31_spearman": true,
+    "excluded_by_a1b_best_spearman": true
+   },
+   "vD_moment_corr_ddof1": {
+    "vD": 0.14463401334007828,
+    "share_D": 0.2575808339804424,
+    "ceiling_sqrt_share_D": 0.5075242200924429,
+    "excluded_by_floor31_pearson": true,
+    "excluded_by_floor31_spearman": true,
+    "excluded_by_a1b_best_spearman": true
+   },
+   "s1b_s17_low_0.0814": {
+    "vD": 0.0814,
+    "share_D": 0.17127992980591447,
+    "ceiling_sqrt_share_D": 0.41385979486525926,
+    "excluded_by_floor31_pearson": true,
+    "excluded_by_floor31_spearman": true,
+    "excluded_by_a1b_best_spearman": true
+   },
+   "s1b_s17_high_0.1220": {
+    "vD": 0.122,
+    "share_D": 0.22991455622571147,
+    "ceiling_sqrt_share_D": 0.4794940627637755,
+    "excluded_by_floor31_pearson": true,
+    "excluded_by_floor31_spearman": true,
+    "excluded_by_a1b_best_spearman": true
+   },
+   "s1b_p2_low_0.2335": {
+    "vD": 0.2335,
+    "share_D": 0.3420041963375698,
+    "ceiling_sqrt_share_D": 0.5848112484704528,
+    "excluded_by_floor31_pearson": false,
+    "excluded_by_floor31_spearman": true,
+    "excluded_by_a1b_best_spearman": false
+   },
+   "s1b_p2_high_0.3614": {
+    "vD": 0.3614,
+    "share_D": 0.4215947578207428,
+    "ceiling_sqrt_share_D": 0.6493032864699999,
+    "excluded_by_floor31_pearson": false,
+    "excluded_by_floor31_spearman": true,
+    "excluded_by_a1b_best_spearman": false
+   }
+  },
+  "minimum_vD_implied_by_floor31_pearson_raw": 0.10145064481621006
+ }
+}

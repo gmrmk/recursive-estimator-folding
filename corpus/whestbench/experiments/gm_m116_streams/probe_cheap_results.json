@@ -1,0 +1,27 @@
+{
+ "rows": 19456,
+ "block_rows": 4096,
+ "frozen_calls": 5,
+ "ref_group1_calls": 5,
+ "fused_group4_calls": 2,
+ "fused_plan": [
+  [
+   4,
+   4096
+  ],
+  [
+   1,
+   3072
+  ]
+ ],
+ "expected_bill": 1783692288,
+ "dispatch_total": 1783692288,
+ "ref_billed": 1783692288,
+ "fused_billed": 1783692288,
+ "bill_ref_ok": true,
+ "bill_fused_ok": true,
+ "bitwise_frozen_vs_ref_group1": true,
+ "bitwise_frozen_vs_fused_group4": true,
+ "differing_words_frozen_vs_fused": 0,
+ "max_abs_frozen_vs_fused": 0.0
+}

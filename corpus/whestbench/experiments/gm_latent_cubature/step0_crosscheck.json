@@ -1,0 +1,51 @@
+{
+  "step": "0-crosscheck",
+  "purpose": "independent recomputation of gate 4 with observed structure",
+  "observations": [
+    {
+      "width": 64,
+      "depth": 32,
+      "seed": 18720,
+      "rank_max": 12,
+      "rank_mean": 2.4680851063829787,
+      "rank_max_over_n": 0.1875,
+      "children_max_per_layer": 38,
+      "children_max_over_2qn": 0.09895833333333333
+    },
+    {
+      "width": 128,
+      "depth": 32,
+      "seed": 24960,
+      "rank_max": 24,
+      "rank_mean": 5.095744680851064,
+      "rank_max_over_n": 0.1875,
+      "children_max_per_layer": 72,
+      "children_max_over_2qn": 0.09375
+    }
+  ],
+  "extrapolation": {
+    "rank_fraction_of_n_used": 0.1875,
+    "children_fraction_of_2qn_used": 0.09895833333333333,
+    "rank_at_n256": 48.0,
+    "children_at_n256": 152.0,
+    "worst_case_rank": 256,
+    "worst_case_children": 1536
+  },
+  "arithmetic_raw_ops_total": 42949672960,
+  "data_movement_worst_case_total": 248676672.30734178,
+  "data_movement_observed_structure_total": 48661975.677701555,
+  "data_movement_share_of_raw_worst_case": 0.005756624371625544,
+  "data_movement_share_of_raw_observed": 0.0011317176758238717,
+  "raw_total_worst_case": 43198349632.30734,
+  "raw_total_observed_structure": 42998334935.677704,
+  "billed_float64_worst_case": 86396699264.61469,
+  "billed_float64_observed": 85996669871.35541,
+  "billed_float32_worst_case_with_25pct": 53997937040.38418,
+  "billed_float32_observed_with_25pct": 53747918669.59713,
+  "gate_threshold": 80000000000,
+  "gather_heavy_hypothesis": "FALSIFIED: gathers and other data movement are O(q n^2) and O(M n) elements against O(n^3) arithmetic; even at the worst-case bound they are a sub-1% share, and with observed structure they shrink further. The repricing lever that actually moves gate 4 is the float64 dtype rate of 2.0, not data movement.",
+  "same_side_of_threshold_as_static": {
+    "float64": true,
+    "float32": true
+  }
+}

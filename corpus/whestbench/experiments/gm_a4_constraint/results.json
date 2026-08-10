@@ -1,0 +1,85 @@
+{
+  "experiment": "gm_a4_constraint",
+  "stage": "a (step 0)",
+  "signals": {
+    "s1_arithmetic_from_primary_json": {
+      "B_from_u2_findings": 272000000000.0,
+      "B_from_ledger_invariant": 272000000000.0,
+      "B_sources_agree": true,
+      "lambda_flops_per_s": 100000000000.0,
+      "worst_hostile_net": "a_gain_1e-3",
+      "worst_hostile_mlp_seed": 555001,
+      "F_worst_billed_flops": 259700796917,
+      "F_worst_over_B": 0.9547823416066177,
+      "a4_recorded_budget_breach": false,
+      "a4_recorded_headroom_flops": 12299203083,
+      "a4_recorded_headroom_frac": 0.045217658393382355,
+      "u2_residual_upper_flop_equiv": 30000000000.0,
+      "u2_residual_upper_band": [
+        22000000000.0,
+        37000000000.0
+      ],
+      "u2_residual_lower_flop_equiv": 95000000.0,
+      "u2_residual_upper_seconds": 0.3,
+      "SUM_S": 289700796917.0,
+      "SUM_S_over_B": 1.0650764592536766,
+      "a4_rows_record_residual_seconds": false,
+      "a4_regime_walls_s_cold_subprocess": [
+        12.0,
+        11.2
+      ]
+    },
+    "s2_source_reachability": {
+      "frozen_v3_dir": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\scorefloor_generation\\kerdock_l1_owned_buffer\\candidate_source_validator_v3",
+      "frozen_v3_py_files": [
+        "base_estimator.py",
+        "cost_model.py",
+        "estimator.py",
+        "fold3_estimator.py",
+        "fold_estimator.py",
+        "row_blocked_winograd.py"
+      ],
+      "frozen_v3_token_counts": {
+        "budget_summary_dict": 0,
+        "_tally": 0,
+        "summary_dict": 0,
+        "get_data(": 0
+      },
+      "capped_fold3_token_counts": {
+        "budget_summary_dict": 1,
+        "_tally": 4,
+        "summary_dict": 1,
+        "get_data(": 0,
+        "get_active_budget": 2
+      },
+      "CAP_from_source": 244800000000.0,
+      "CAP_over_B": 0.9,
+      "u2_one_line_fix_already_on_disk": true
+    }
+  },
+  "gates": {
+    "G0A_arithmetic": {
+      "computed_sum": 289700796917.0,
+      "B": 272000000000.0,
+      "sum_over_B": 1.0650764592536766,
+      "alive": true,
+      "note": "sum > B, so the arithmetic alone does not kill; it is not the discriminator"
+    },
+    "G0B_co_occurrence": {
+      "B1_residual_source_reachable_from_frozen_v3": false,
+      "B1_evidence_count_budget_summary_dict_in_frozen_v3": 0,
+      "B2_F_worst_reachable_under_cap": false,
+      "B2_evidence": "F_worst 259700796917 vs CAP 244800000000; excess 14900796917",
+      "alive": false
+    },
+    "G0C_novelty": {
+      "only_coherent_variant_CAP_plus_residual": 274800000000.0,
+      "coherent_variant_over_B": 1.0102941176470588,
+      "already_committed_in_U2_section4": "near-CAP net (F/B~0.89) at suite position K>=92 breaches C>B -> budget failure -> multiplier 1.0, zero-prediction (mse ~1e-6..1e-5 into the mean); reintroduces the exact 5/100-breach mode the cap removes",
+      "u2_fix_already_on_disk": true,
+      "alive": false
+    }
+  },
+  "step0_verdict": "KILLED_AT_STEP0",
+  "stage_b_run": false
+}

@@ -1,0 +1,1551 @@
+{
+  "revival_id": "gm_m179_m199",
+  "mining_key": "m179_exact_background_archive_producer",
+  "predeclaration": "PREDECLARATION.md",
+  "status": "MEASURED",
+  "verdict": "KILL_CONFIRMED",
+  "one_line": "The mined cost clause (b) passes decisively and the identity/lifetime clause (a) is clean in every cell where the trace can be built, but the trace CANNOT be built at the real composition width 256: the pre-ReLU covariance loses positive semidefiniteness by layer 12-13 of 32 and M198's delay-one SPD precondition fail-closes. M199's BLOCKED_OVERLAP stands.",
+  "STEP_0_cost_gate_mined_clause_b": {
+    "step": "STEP 0 metering / arithmetic gate",
+    "metered": {
+      "matmul_flops_per_layer_METERED_live": 134217216,
+      "matmul_flops_per_layer_frozen_2026_08_07": 134217216,
+      "matmul_reproduces_frozen": true,
+      "pairs_per_layer": 32640,
+      "per_pair_flops": 4090,
+      "pair_flops_per_layer": 133497600,
+      "diag_flops_per_layer": 172032,
+      "per_layer_flops": 267886848,
+      "frozen_per_layer_flops": 267886848,
+      "per_layer_reproduces_frozen": true,
+      "frozen_module_inclusive_ledger_31": {
+        "pairs_per_layer": 32640,
+        "per_pair_flops": 4090,
+        "pair_flops_per_layer": 133497600,
+        "diag_flops_per_layer": 172032,
+        "matmul_flops_per_layer_METERED": 134217216,
+        "per_layer_flops": 267886848,
+        "total_producer_flops": 8304492288,
+        "fraction_of_budget_B": 0.030531221647058824
+      }
+    },
+    "bills": {
+      "B31_31_layer_inclusive": 8304492288,
+      "B31_frozen_total_producer_flops": 8304492288,
+      "B31_reproduces_frozen": true,
+      "marginal_layer_32_flops": 267886848,
+      "B32_32_layer_inclusive": 8572379136,
+      "B32_billions": 8.572379136
+    },
+    "ledger_identities": {
+      "legacy_row + strict_headroom == cond_repl_headroom": true,
+      "100 - cond_repl_total == cond_repl_headroom": true,
+      "strict_partial - legacy_row == cond_repl_total": true,
+      "m151_subtotal + m179_31 == strict_partial": true,
+      "metered_B31 == ledger m179_standalone_total": true
+    },
+    "GATE_0": {
+      "quantity": "B32 (32-layer inclusive metered bill), FLOPs",
+      "value": 8572379136,
+      "value_billions": 8.572379136,
+      "threshold_billions": 9.723621632,
+      "margin_billions": 1.151242496,
+      "verdict": "PASS"
+    },
+    "GATE_0X_convention_crosscheck": {
+      "T_A_post_replacement_total_convA_billions": 90.544265216,
+      "T_A_headroom_billions": 9.455734784,
+      "T_A_matches_mined_expected_90_544": true,
+      "T_B_post_replacement_total_convB_1p25_billions": 92.68736,
+      "T_B_headroom_billions": 7.31264,
+      "strict_no_replacement_convB_billions": 100.0892516,
+      "strict_no_replacement_convB_matches_ledger_100_0892516": true,
+      "verdict": "PASS"
+    }
+  },
+  "ARM_B_identity_trace_depth32": {
+    "definition": "L = 32 weight matrices = 31 archived M179 source layers + terminal mu_32",
+    "cells_attempted": 18,
+    "cells_completed": 10,
+    "cells_failclosed_before_trace": 8,
+    "failclosed_cells": [
+      {
+        "width": 2,
+        "replicate": 0,
+        "exception_type": "ValueError",
+        "exception": "pre-ReLU covariance is not safely SPD"
+      },
+      {
+        "width": 2,
+        "replicate": 1,
+        "exception_type": "ValueError",
+        "exception": "pre-ReLU covariance is not safely SPD"
+      },
+      {
+        "width": 3,
+        "replicate": 0,
+        "exception_type": "ValueError",
+        "exception": "pre-ReLU covariance is not safely SPD"
+      },
+      {
+        "width": 3,
+        "replicate": 1,
+        "exception_type": "ValueError",
+        "exception": "pre-ReLU covariance is not safely SPD"
+      },
+      {
+        "width": 4,
+        "replicate": 0,
+        "exception_type": "ValueError",
+        "exception": "pre-ReLU covariance is not safely SPD"
+      },
+      {
+        "width": 4,
+        "replicate": 1,
+        "exception_type": "ValueError",
+        "exception": "pre-ReLU covariance is not safely SPD"
+      },
+      {
+        "width": 6,
+        "replicate": 0,
+        "exception_type": "ValueError",
+        "exception": "pre-ReLU covariance is not safely SPD"
+      },
+      {
+        "width": 7,
+        "replicate": 1,
+        "exception_type": "ValueError",
+        "exception": "pre-ReLU covariance is not safely SPD"
+      }
+    ],
+    "mined_clause_a_result": {
+      "legacy_calls_during_measured_stream_all_cells": {
+        "build_extended_background": [
+          0
+        ],
+        "build_labelled_carrier_maps": [
+          0
+        ],
+        "labelled_inhomogeneous_source_recurrence": [
+          0
+        ]
+      },
+      "unexpected_ledger_operations_any_cell": [],
+      "legacy_named_ledger_operations_any_cell": [],
+      "buffers_with_surviving_lifetime_any_cell": [],
+      "non_float64_buffers_any_cell": [],
+      "m179_exact_step_post_mean_count_per_cell": [
+        32
+      ],
+      "mu32_bitwise_identical_all_cells": true,
+      "counts_gate_all_cells": true,
+      "liveness_gate_all_cells": true,
+      "impulse_exactly_zero_all_cells": true,
+      "VERDICT": "PASS - no legacy background call survives in any completed cell"
+    },
+    "G3_absolute_parity_gate_2e-12": {
+      "cells_failing": [
+        {
+          "width": 5,
+          "replicate": 0,
+          "parity_max_abs": 1.862645149230957e-09,
+          "reference_state_max_abs_scale": 23000750.623054728,
+          "relative_parity": 8.098192879687764e-17
+        },
+        {
+          "width": 5,
+          "replicate": 1,
+          "parity_max_abs": 4.470348358154297e-08,
+          "reference_state_max_abs_scale": 114640480.18978474,
+          "relative_parity": 3.899450133804164e-16
+        },
+        {
+          "width": 6,
+          "replicate": 1,
+          "parity_max_abs": 5.4569682106375694e-12,
+          "reference_state_max_abs_scale": 11828.237906724475,
+          "relative_parity": 4.613509005880941e-16
+        }
+      ],
+      "cells_passing": [
+        {
+          "width": 7,
+          "replicate": 0,
+          "parity_max_abs": 1.8189894035458565e-12,
+          "reference_state_max_abs_scale": 9469.667925850754,
+          "relative_parity": 1.9208587014759958e-16
+        },
+        {
+          "width": 10,
+          "replicate": 0,
+          "parity_max_abs": 8.526512829121202e-14,
+          "reference_state_max_abs_scale": 224.93244637358478,
+          "relative_parity": 3.7906993706722625e-16
+        },
+        {
+          "width": 10,
+          "replicate": 1,
+          "parity_max_abs": 1.4210854715202004e-14,
+          "reference_state_max_abs_scale": 58.77700679026343,
+          "relative_parity": 2.4177574686494704e-16
+        },
+        {
+          "width": 14,
+          "replicate": 0,
+          "parity_max_abs": 4.085620730620576e-13,
+          "reference_state_max_abs_scale": 1375.5286751501772,
+          "relative_parity": 2.97021850902128e-16
+        },
+        {
+          "width": 14,
+          "replicate": 1,
+          "parity_max_abs": 5.684341886080802e-14,
+          "reference_state_max_abs_scale": 350.2366387219175,
+          "relative_parity": 1.623000353939007e-16
+        },
+        {
+          "width": 24,
+          "replicate": 0,
+          "parity_max_abs": 3.197442310920451e-14,
+          "reference_state_max_abs_scale": 72.58439203025449,
+          "relative_parity": 4.405137552971028e-16
+        },
+        {
+          "width": 32,
+          "replicate": 0,
+          "parity_max_abs": 8.526512829121202e-14,
+          "reference_state_max_abs_scale": 133.57465718748492,
+          "relative_parity": 6.383331246101137e-16
+        }
+      ],
+      "relative_parity_range_all_completed_cells": [
+        8.098192879687764e-17,
+        6.383331246101137e-16
+      ],
+      "interpretation": "Relative parity is 8.098e-17..6.383e-16 in EVERY completed cell, i.e. float64 round-off (eps = 2.220446049250313e-16). The absolute 2e-12 gate was frozen for M200's depth 3..6 grid where terminal magnitudes are O(1); at depth 32 those magnitudes reach 1.1e8, so the absolute gate is no longer scale-appropriate. Reported as a literal predeclared gate failure, NOT retuned."
+    },
+    "cells": [
+      {
+        "cell": {
+          "width": 5,
+          "replicate": 0,
+          "seed": 200053100,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 1.862645149230957e-09,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 23000750.623054728,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 8.098192879687764e-17,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "1b366a70392b25d85937144978a21acf88329915db051f80e132ae96143f516c",
+          "terminal_l32_post_mean_shape": [
+            5
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "1b366a70392b25d85937144978a21acf88329915db051f80e132ae96143f516c",
+        "mu32_max_abs": 0.000848168635581204,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": false,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": false,
+        "timing_s": {
+          "stream": 2.662095899984706,
+          "reference": 2.7729771999875084,
+          "independent_recurrence": 0.12622119998559356,
+          "total": 5.562634599977173
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 5,
+          "replicate": 1,
+          "seed": 200053101,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 4.470348358154297e-08,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 114640480.18978474,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 3.899450133804164e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "2affc507c3b7f0e3887d5148b0a702f02ca913071fa7ce1dec515f152cf4b325",
+          "terminal_l32_post_mean_shape": [
+            5
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "2affc507c3b7f0e3887d5148b0a702f02ca913071fa7ce1dec515f152cf4b325",
+        "mu32_max_abs": 1.4047289707968044e-05,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": false,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": false,
+        "timing_s": {
+          "stream": 2.585269699979108,
+          "reference": 2.8210873999923933,
+          "independent_recurrence": 0.14338429999770597,
+          "total": 5.5510532000043895
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 6,
+          "replicate": 1,
+          "seed": 200063101,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 5.4569682106375694e-12,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 11828.237906724475,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 4.613509005880941e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "88c548a39e33e0ede21663b71543257bd8d287ad5a2262b596bff59677c7ba8b",
+          "terminal_l32_post_mean_shape": [
+            6
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "88c548a39e33e0ede21663b71543257bd8d287ad5a2262b596bff59677c7ba8b",
+        "mu32_max_abs": 0.0430334194615139,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": false,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": false,
+        "timing_s": {
+          "stream": 3.8915219000191428,
+          "reference": 3.429488099995069,
+          "independent_recurrence": 0.22001470002578571,
+          "total": 7.542268700024579
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 7,
+          "replicate": 0,
+          "seed": 200073100,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 1.8189894035458565e-12,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 9469.667925850754,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 1.9208587014759958e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "e132a86ffc4626c23820171748495708c9fe47657f06a9a5ac536b6efba9e8dd",
+          "terminal_l32_post_mean_shape": [
+            7
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "e132a86ffc4626c23820171748495708c9fe47657f06a9a5ac536b6efba9e8dd",
+        "mu32_max_abs": 0.024194684841862494,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": true,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": true,
+        "timing_s": {
+          "stream": 5.408347500022501,
+          "reference": 5.4987389000016265,
+          "independent_recurrence": 0.2311721000005491,
+          "total": 11.139635100000305
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 10,
+          "replicate": 0,
+          "seed": 200103100,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 8.526512829121202e-14,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 224.93244637358478,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 3.7906993706722625e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "dd922cb3f246d0ce3947930fd6065daedcb8fa8c6251bb7f5a7b88d7bced4d62",
+          "terminal_l32_post_mean_shape": [
+            10
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "dd922cb3f246d0ce3947930fd6065daedcb8fa8c6251bb7f5a7b88d7bced4d62",
+        "mu32_max_abs": 0.43605676965613416,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": true,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": true,
+        "timing_s": {
+          "stream": 11.902322300011292,
+          "reference": 11.453162899997551,
+          "independent_recurrence": 0.4788894999946933,
+          "total": 23.83537700001034
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 10,
+          "replicate": 1,
+          "seed": 200103101,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 1.4210854715202004e-14,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 58.77700679026343,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 2.4177574686494704e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "77eb4e9425ea49387005079b5697cd2ea7fc860a1e3508538fdca4b6809f8a32",
+          "terminal_l32_post_mean_shape": [
+            10
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "77eb4e9425ea49387005079b5697cd2ea7fc860a1e3508538fdca4b6809f8a32",
+        "mu32_max_abs": 0.098160644485047,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": true,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": true,
+        "timing_s": {
+          "stream": 8.224381699983496,
+          "reference": 11.160684500006028,
+          "independent_recurrence": 0.4332959000021219,
+          "total": 19.819481399987126
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 14,
+          "replicate": 0,
+          "seed": 200143100,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 4.085620730620576e-13,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 1375.5286751501772,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 2.97021850902128e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "7cf3ba2d028da3df6ccbfc8f8a97e326c76206a4e11802cf7a5ebcb8d14c52cd",
+          "terminal_l32_post_mean_shape": [
+            14
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "7cf3ba2d028da3df6ccbfc8f8a97e326c76206a4e11802cf7a5ebcb8d14c52cd",
+        "mu32_max_abs": 2.8404301351902137,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": true,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": true,
+        "timing_s": {
+          "stream": 27.393095799983712,
+          "reference": 29.805664400017122,
+          "independent_recurrence": 0.769979400007287,
+          "total": 57.96983079999336
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 14,
+          "replicate": 1,
+          "seed": 200143101,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 5.684341886080802e-14,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 350.2366387219175,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 1.623000353939007e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "3446b5e83cf022f403dd7b65aa6f991081cb3bed547fdac013218ee4823ec4e7",
+          "terminal_l32_post_mean_shape": [
+            14
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "3446b5e83cf022f403dd7b65aa6f991081cb3bed547fdac013218ee4823ec4e7",
+        "mu32_max_abs": 1.0491135189449796,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": true,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": true,
+        "timing_s": {
+          "stream": 27.042767900013132,
+          "reference": 26.857459299993934,
+          "independent_recurrence": 1.0869072999921627,
+          "total": 54.98848749999888
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 24,
+          "replicate": 0,
+          "seed": 200243100,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 3.197442310920451e-14,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 72.58439203025449,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 4.405137552971028e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "e028acd927b884c06cdbf0f3b90fb4c3b426d55e7a15f1703c2a4637e6dec1be",
+          "terminal_l32_post_mean_shape": [
+            24
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "e028acd927b884c06cdbf0f3b90fb4c3b426d55e7a15f1703c2a4637e6dec1be",
+        "mu32_max_abs": 0.30744628043352484,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": true,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": true,
+        "timing_s": {
+          "stream": 132.58773610001663,
+          "reference": 93.02944360001129,
+          "independent_recurrence": 2.1214789999939967,
+          "total": 227.7396768000035
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      },
+      {
+        "cell": {
+          "width": 32,
+          "replicate": 0,
+          "seed": 200323100,
+          "total_weights_L": 32,
+          "source_layers_H": 31
+        },
+        "counts": {
+          "background_steps": 31,
+          "source_packets": 31,
+          "conversions": 31,
+          "injections": 31,
+          "transports": 30,
+          "terminal_responses": 1,
+          "background_rebuilds_inside_stream": 0
+        },
+        "liveness": {
+          "retained_previous_background": 0,
+          "retained_current_background": 0,
+          "retained_tangent": 0,
+          "retained_fixture_packet": 0,
+          "retained_scratch": 0,
+          "retained_full_archive": 0,
+          "retained_dense_rank3": 0,
+          "retained_suffix_states": 0,
+          "max_live_named_objects": 5
+        },
+        "parity_max_abs": 8.526512829121202e-14,
+        "parity_gate": 2e-12,
+        "reference_state_max_abs_scale": 133.57465718748492,
+        "relative_parity_DIAGNOSTIC_NOT_A_GATE": 6.383331246101137e-16,
+        "per_layer_impulse_max_abs": 0.0,
+        "legacy_calls_during_measured_stream": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "legacy_calls_after_reference_construction": {
+          "build_extended_background": 0,
+          "build_labelled_carrier_maps": 0,
+          "labelled_inhomogeneous_source_recurrence": 0
+        },
+        "event_count": 694,
+        "ledger_audit": {
+          "operation_histogram": {
+            "fixture_source_bound_to": 93,
+            "m125b.accumulator_after_source_injection": 62,
+            "m125b.transport.current_m179_jacobian": 60,
+            "m179.exact_step.jacobian.h_mu": 32,
+            "m179.exact_step.jacobian.h_variance": 32,
+            "m179.exact_step.jacobian.mean_variance_derivative": 32,
+            "m179.exact_step.jacobian.price_kernel": 32,
+            "m179.exact_step.jacobian.probability": 32,
+            "m179.exact_step.post_covariance": 32,
+            "m179.exact_step.post_mean": 32,
+            "m179.exact_step.pre_covariance": 32,
+            "m179.exact_step.pre_mean": 32,
+            "m198.context_copy.post_mean": 31,
+            "m198.context_copy.pre_covariance": 31,
+            "m198.context_copy.pre_mean": 31,
+            "m198.delay_one.convert_exact_m179_context_copy": 62,
+            "m200.borrowed_terminal_weight_w_h_plus_1": 1,
+            "m200.borrowed_weight_w_k": 31,
+            "m200.initial_background.covariance": 1,
+            "m200.initial_background.mean": 1,
+            "m200.terminal_w_h_plus_1_response": 2
+          },
+          "distinct_operations": 21,
+          "unexpected_operations": [],
+          "legacy_named_operations": [],
+          "buffers_with_surviving_lifetime": [],
+          "non_float64_buffers": [],
+          "m179_exact_step_post_mean_count": 32,
+          "terminal_l32_post_mean_present": true,
+          "terminal_l32_post_mean_digest": "52bcccaa02faff8d42226ba2c29f1be334d87f023db9107f62ccf784a45b025a",
+          "terminal_l32_post_mean_shape": [
+            32
+          ],
+          "terminal_l32_post_mean_dtype": "float64",
+          "terminal_l32_post_mean_birth_death": [
+            1364,
+            1375
+          ]
+        },
+        "mu32_independent_digest": "52bcccaa02faff8d42226ba2c29f1be334d87f023db9107f62ccf784a45b025a",
+        "mu32_max_abs": 0.277233398763477,
+        "mu32_bitwise_identical_to_streamed_terminal": true,
+        "gates": {
+          "G1_counts": true,
+          "G2_liveness": true,
+          "G3_parity": true,
+          "G4_impulse_zero": true,
+          "G5_no_legacy_call": true,
+          "G6_ledger_clean": true,
+          "G7_terminal_mu32": true,
+          "G8_mu32_identity_bitwise": true
+        },
+        "cell_pass": true,
+        "timing_s": {
+          "stream": 259.4755456999992,
+          "reference": 285.164334400004,
+          "independent_recurrence": 2.305230500001926,
+          "total": 546.9456833000004
+        },
+        "_source_file": "arm_b_scaled.jsonl"
+      }
+    ]
+  },
+  "ARM_C_real_width_256": {
+    "predeclared": "width 256, depth 32, through the M200 fixture harness",
+    "executed": "BLOCKED - two independent obstructions, both measured",
+    "obstruction_1_computational": {
+      "cause": "m167_collision_owner_unification.complete_source_reference is an O(n^3)-iteration Python triple loop with O(n^2) work per iteration, called 3x per layer through m198.issue_m172_source inside m200._fixture_source. It is the M200 fixture's reference SOURCE algebra - exactly the provider M199/M200 already record as physically missing/unpriced.",
+      "measured_stream_seconds_at_L4": {
+        "6": 0.347,
+        "8": 0.605,
+        "10": 1.29,
+        "12": 2.162,
+        "16": 4.756,
+        "20": 10.121,
+        "24": 16.594,
+        "28": 27.16
+      },
+      "empirical_exponent_range": [
+        2.71,
+        3.42
+      ],
+      "extrapolated_seconds_one_width256_depth32_cell": ">1e5 (lower bound at the measured exponent; the code's asymptote is O(n^5))"
+    },
+    "obstruction_2_fail_closed_math": {
+      "guard": "m198.DelayOneContext.__post_init__: min eigvalsh(pre_covariance) <= VARIANCE_FLOOR => 'pre-ReLU covariance is not safely SPD'",
+      "VARIANCE_FLOOR": 1e-12,
+      "RHO_MAX": 0.9999999999999998,
+      "width_256_replicate_0": {
+        "first_layer_min_eig_le_floor": 12,
+        "first_layer_rho_gt_rhomax": null,
+        "min_eig_layer_12": 2.6559548209342455e-13,
+        "min_eig_layer_13": -7.229362470210365e-16,
+        "min_eig_layer_32": -1.0684710560593422e-11,
+        "max_abs_rho_layer_32": 0.9420270498267452
+      },
+      "width_256_replicate_1": {
+        "first_layer_min_eig_le_floor": 10,
+        "first_layer_rho_gt_rhomax": null,
+        "min_eig_layer_10": 4.217127555632114e-13,
+        "min_eig_layer_12": -7.942601956909222e-13,
+        "min_eig_layer_32": -2.3038566535468575e-09,
+        "max_abs_rho_layer_32": 0.970721387932908
+      },
+      "m179_producer_reachability": "The 32-layer M179 background recurrence ITSELF completes all 32 layers at width 256 on both seeds with no RHO_MAX violation (max|rho| reaches only 0.942027049827 and 0.970721387933). M179.relu_moments checks per-pair rho and diagonal variance, not the spectrum, so it ACCEPTS a numerically non-PSD C from layer 13 (rep 0) / layer 12 (rep 1) onward. The guard that catches it is M198's, in the composed path."
+    },
+    "consequence": "The operand/result/dtype/lifetime identity trace that M199 demanded cannot be produced at the composition width. M199's fourth denial ground - 'no identical call/result/lifetime trace exists' - therefore STANDS at width 256."
+  },
+  "spd_depth_census": [
+    {
+      "width": 2,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": 29,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 2,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 20,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 3,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": 17,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 3,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 14,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 4,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": 29,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 4,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 22,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 5,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 5,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 32,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 6,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": 28,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 6,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 7,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 7,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 28,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 10,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 10,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 14,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 14,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 16,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": 30,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 16,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 24,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 20,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": 24,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 20,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 31,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 24,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 24,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 19,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 32,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 32,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 48,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 48,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": null,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": true
+    },
+    {
+      "width": 256,
+      "replicate": 0,
+      "first_layer_min_eig_le_floor": 12,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    },
+    {
+      "width": 256,
+      "replicate": 1,
+      "first_layer_min_eig_le_floor": 10,
+      "first_layer_rho_gt_rhomax": null,
+      "reaches_layer_32_spd_safe": false
+    }
+  ],
+  "two_signal_verification": {
+    "1_metering_reproduction": "Live flopscope 0.10.0 re-metering reproduces the frozen 2026-08-07 M179 ledger bit for bit: matmul 134217216, per_layer 267886848, B31 8304492288 == fold_ledger m179_standalone_total 8.304492288B.",
+    "2_exact_fraction_identities": "All five M199 ledger identities hold in exact Fraction arithmetic; the 9.723621632B threshold is derived two independent ways (7.73675016 + 1.986871472, and 100 - 90.276378368).",
+    "3_independent_recomputation": "mu_32 from the M200 streamed terminal buffer is BITWISE identical (sha256 array digest) to mu_32 from an independent m179_background_producer.zero_order_recurrence call, in all 10 completed cells.",
+    "4_bit_repeat": "Cell (width 5, replicate 0) parity reproduced identically across two separate process invocations: 1.862645149230957e-09 both times; mu_32 digest identical.",
+    "5_seed_replication": "The width-256 SPD fail-close reproduces on two independent Philox seeds (layer 12 and layer 10 of 32).",
+    "6_code_plus_measurement": "ARM C infeasibility established both by reading complete_source_reference (O(n^3) iterations x O(n^2) inner) and by measuring the width-scaling curve from width 6 to width 28."
+  }
+}

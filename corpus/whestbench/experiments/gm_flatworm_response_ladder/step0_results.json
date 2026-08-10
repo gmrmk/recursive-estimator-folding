@@ -1,0 +1,4980 @@
+{
+  "step0_lane_collapse": {
+    "layers_scored": 184,
+    "minimum_leak_lane_weight": 0.31929213312482974,
+    "minimum_commissural_lane_weight": 0.4096460665624148,
+    "lane_collapse_floor": 0.01,
+    "max_abs_evidence_difference": 0.0006337612408954252,
+    "gate_g2_no_lane_collapse": true
+  },
+  "ladder_trace": [
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 0,
+      "gate_evidence": 0.08358928747363421,
+      "active_evidence": 0.09682112207924425,
+      "gate_evidence_exact": 0.0835892890637148,
+      "active_evidence_exact": 0.0968211221226712,
+      "memory": [
+        0.08358928747363421,
+        0.09682112207924425
+      ],
+      "diffused": [
+        0.08689724612503671,
+        0.09351316342784173
+      ],
+      "leak_lane_weights": [
+        0.46332851680121107,
+        0.536671483198789
+      ],
+      "commissural_lane_weights": [
+        0.4816642584006055,
+        0.5183357415993944
+      ],
+      "channel_gram_cosine": 0.7881370864020748,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 1,
+      "gate_evidence": 0.12160311236047124,
+      "active_evidence": 0.12328632871060191,
+      "gate_evidence_exact": 0.12160341505520451,
+      "active_evidence_exact": 0.1232864625904389,
+      "memory": [
+        0.10259619991705272,
+        0.11005372539492309
+      ],
+      "diffused": [
+        0.10446058128652032,
+        0.10818934402545549
+      ],
+      "leak_lane_weights": [
+        0.48246525253434835,
+        0.5175347474656516
+      ],
+      "commissural_lane_weights": [
+        0.49123262626717423,
+        0.5087673737328259
+      ],
+      "channel_gram_cosine": 0.6828925120322112,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 2,
+      "gate_evidence": 0.15189929064109278,
+      "active_evidence": 0.14450536783234139,
+      "gate_evidence_exact": 0.15189929064109273,
+      "active_evidence_exact": 0.14450536862953917,
+      "memory": [
+        0.12724774527907276,
+        0.12727954661363222
+      ],
+      "diffused": [
+        0.12725569561271263,
+        0.12727159627999235
+      ],
+      "leak_lane_weights": [
+        0.499937528635293,
+        0.5000624713647072
+      ],
+      "commissural_lane_weights": [
+        0.49996876431764653,
+        0.5000312356823535
+      ],
+      "channel_gram_cosine": 0.6488530937944773,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 3,
+      "gate_evidence": 0.17325874519473625,
+      "active_evidence": 0.19141558431107678,
+      "gate_evidence_exact": 0.17325874519473627,
+      "active_evidence_exact": 0.1914155843110772,
+      "memory": [
+        0.1502532452369045,
+        0.1593475654623545
+      ],
+      "diffused": [
+        0.152526825293267,
+        0.15707398540599202
+      ],
+      "leak_lane_weights": [
+        0.48531282879248644,
+        0.5146871712075135
+      ],
+      "commissural_lane_weights": [
+        0.4926564143962432,
+        0.5073435856037567
+      ],
+      "channel_gram_cosine": 0.5294316599338039,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 4,
+      "gate_evidence": 0.22410085002930516,
+      "active_evidence": 0.23943170112222312,
+      "gate_evidence_exact": 0.22410085002930524,
+      "active_evidence_exact": 0.23943170112222323,
+      "memory": [
+        0.18717704763310483,
+        0.19938963329228881
+      ],
+      "diffused": [
+        0.1902301940479008,
+        0.1963364868774928
+      ],
+      "leak_lane_weights": [
+        0.4842037787246064,
+        0.5157962212753936
+      ],
+      "commissural_lane_weights": [
+        0.49210188936230326,
+        0.5078981106376969
+      ],
+      "channel_gram_cosine": 0.4081362064740632,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 5,
+      "gate_evidence": 0.2368372976634839,
+      "active_evidence": 0.2548205871889978,
+      "gate_evidence_exact": 0.2368372976634839,
+      "active_evidence_exact": 0.25482058718899764,
+      "memory": [
+        0.21200717264829438,
+        0.2271051102406433
+      ],
+      "diffused": [
+        0.2157816570463816,
+        0.22333062584255609
+      ],
+      "leak_lane_weights": [
+        0.4828085683540677,
+        0.5171914316459323
+      ],
+      "commissural_lane_weights": [
+        0.49140428417703386,
+        0.5085957158229663
+      ],
+      "channel_gram_cosine": 0.389777614947578,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 6,
+      "gate_evidence": 0.22812138945089028,
+      "active_evidence": 0.31609686385808244,
+      "gate_evidence_exact": 0.22812138945127802,
+      "active_evidence_exact": 0.3160968638580823,
+      "memory": [
+        0.22006428104959233,
+        0.27160098704936286
+      ],
+      "diffused": [
+        0.23294845754953497,
+        0.25871681054942025
+      ],
+      "leak_lane_weights": [
+        0.4475896414251108,
+        0.5524103585748892
+      ],
+      "commissural_lane_weights": [
+        0.4737948207125554,
+        0.5262051792874446
+      ],
+      "channel_gram_cosine": 0.4145451770350994,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 7,
+      "gate_evidence": 0.28814378330929635,
+      "active_evidence": 0.3959536097772484,
+      "gate_evidence_exact": 0.2881437833092965,
+      "active_evidence_exact": 0.3959536097772484,
+      "memory": [
+        0.25410403217944433,
+        0.3337772984133056
+      ],
+      "diffused": [
+        0.27402234873790965,
+        0.3138589818548403
+      ],
+      "leak_lane_weights": [
+        0.43223694809841284,
+        0.5677630519015872
+      ],
+      "commissural_lane_weights": [
+        0.4661184740492064,
+        0.5338815259507936
+      ],
+      "channel_gram_cosine": 0.37262744666151354,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 8,
+      "gate_evidence": 0.364449162921717,
+      "active_evidence": 0.3779463203457797,
+      "gate_evidence_exact": 0.3644491629217167,
+      "active_evidence_exact": 0.3779463203457798,
+      "memory": [
+        0.3092765975505807,
+        0.35586180937954265
+      ],
+      "diffused": [
+        0.3209229005078212,
+        0.34421550642230214
+      ],
+      "leak_lane_weights": [
+        0.4649808135091979,
+        0.535019186490802
+      ],
+      "commissural_lane_weights": [
+        0.4824904067545989,
+        0.517509593245401
+      ],
+      "channel_gram_cosine": 0.4611377037333558,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 9,
+      "gate_evidence": 0.34926681806302956,
+      "active_evidence": 0.523839953081922,
+      "gate_evidence_exact": 0.3492668180630297,
+      "active_evidence_exact": 0.5238399530819221,
+      "memory": [
+        0.32927170780680515,
+        0.43985088123073235
+      ],
+      "diffused": [
+        0.35691650116278695,
+        0.41220608787475055
+      ],
+      "leak_lane_weights": [
+        0.4281134275601608,
+        0.5718865724398392
+      ],
+      "commissural_lane_weights": [
+        0.4640567137800804,
+        0.5359432862199196
+      ],
+      "channel_gram_cosine": 0.2546426215232574,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 10,
+      "gate_evidence": 0.27469109878470277,
+      "active_evidence": 0.5238703261174376,
+      "gate_evidence_exact": 0.2746910987847028,
+      "active_evidence_exact": 0.5238703261174374,
+      "memory": [
+        0.30198140329575396,
+        0.48186060367408495
+      ],
+      "diffused": [
+        0.3469512033903367,
+        0.4368908035795022
+      ],
+      "leak_lane_weights": [
+        0.385257999202094,
+        0.6147420007979061
+      ],
+      "commissural_lane_weights": [
+        0.442628999601047,
+        0.557371000398953
+      ],
+      "channel_gram_cosine": 0.2813269008961579,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 11,
+      "gate_evidence": 0.26350620465133634,
+      "active_evidence": 0.5211537755826251,
+      "gate_evidence_exact": 0.26350620465135594,
+      "active_evidence_exact": 0.5211537755826252,
+      "memory": [
+        0.28274380397354515,
+        0.501507189628355
+      ],
+      "diffused": [
+        0.3374346503872476,
+        0.4468163432146526
+      ],
+      "leak_lane_weights": [
+        0.3605271861690123,
+        0.6394728138309878
+      ],
+      "commissural_lane_weights": [
+        0.4302635930845061,
+        0.5697364069154939
+      ],
+      "channel_gram_cosine": 0.3382712779192225,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 12,
+      "gate_evidence": 0.28248718089389835,
+      "active_evidence": 0.48581214814477386,
+      "gate_evidence_exact": 0.28248718089389846,
+      "active_evidence_exact": 0.4858121481447742,
+      "memory": [
+        0.28261549243372175,
+        0.49365966888656443
+      ],
+      "diffused": [
+        0.33537653654693245,
+        0.44089862477335373
+      ],
+      "leak_lane_weights": [
+        0.3640661282438179,
+        0.6359338717561821
+      ],
+      "commissural_lane_weights": [
+        0.432033064121909,
+        0.567966935878091
+      ],
+      "channel_gram_cosine": 0.32604694549211743,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 13,
+      "gate_evidence": 0.392783633593671,
+      "active_evidence": 0.6213919739407,
+      "gate_evidence_exact": 0.392783633593671,
+      "active_evidence_exact": 0.6213919739407,
+      "memory": [
+        0.3376995630136964,
+        0.5575258214136323
+      ],
+      "diffused": [
+        0.3926561276136804,
+        0.5025692568136483
+      ],
+      "leak_lane_weights": [
+        0.37722295288769225,
+        0.6227770471123077
+      ],
+      "commissural_lane_weights": [
+        0.4386114764438462,
+        0.5613885235561539
+      ],
+      "channel_gram_cosine": 0.2661393011426828,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18560,
+      "layer": 14,
+      "gate_evidence": 0.3259013165394106,
+      "active_evidence": 0.6557124129832876,
+      "gate_evidence_exact": 0.32590131653941073,
+      "active_evidence_exact": 0.6557124129832876,
+      "memory": [
+        0.3318004397765535,
+        0.60661911719846
+      ],
+      "diffused": [
+        0.4005051091320301,
+        0.5379144478429834
+      ],
+      "leak_lane_weights": [
+        0.3535736625588975,
+        0.6464263374411024
+      ],
+      "commissural_lane_weights": [
+        0.4267868312794487,
+        0.5732131687205513
+      ],
+      "channel_gram_cosine": 0.16672251989167622,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 0,
+      "gate_evidence": 0.07767331400905415,
+      "active_evidence": 0.10403670755847218,
+      "gate_evidence_exact": 0.07768852967670875,
+      "active_evidence_exact": 0.10403670836103888,
+      "memory": [
+        0.07767331400905415,
+        0.10403670755847218
+      ],
+      "diffused": [
+        0.08426416239640866,
+        0.09744585917111767
+      ],
+      "leak_lane_weights": [
+        0.4274575135647624,
+        0.5725424864352376
+      ],
+      "commissural_lane_weights": [
+        0.4637287567823812,
+        0.5362712432176188
+      ],
+      "channel_gram_cosine": 0.7407577664559998,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 1,
+      "gate_evidence": 0.10812076314787639,
+      "active_evidence": 0.13326095211261907,
+      "gate_evidence_exact": 0.10812076875714018,
+      "active_evidence_exact": 0.133260952112619,
+      "memory": [
+        0.09289703857846526,
+        0.11864882983554562
+      ],
+      "diffused": [
+        0.09933498639273536,
+        0.11221088202127553
+      ],
+      "leak_lane_weights": [
+        0.43913426092850416,
+        0.5608657390714958
+      ],
+      "commissural_lane_weights": [
+        0.4695671304642521,
+        0.5304328695357479
+      ],
+      "channel_gram_cosine": 0.5812332172752427,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 2,
+      "gate_evidence": 0.12981379019506228,
+      "active_evidence": 0.18454339762110716,
+      "gate_evidence_exact": 0.1298141366968523,
+      "active_evidence_exact": 0.18454339762110716,
+      "memory": [
+        0.11135541438676377,
+        0.15159611372832638
+      ],
+      "diffused": [
+        0.12141558922215442,
+        0.14153593889293573
+      ],
+      "leak_lane_weights": [
+        0.4234826668815748,
+        0.5765173331184252
+      ],
+      "commissural_lane_weights": [
+        0.4617413334407874,
+        0.5382586665592126
+      ],
+      "channel_gram_cosine": 0.5187513862718144,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 3,
+      "gate_evidence": 0.18774967082408775,
+      "active_evidence": 0.13897484447039243,
+      "gate_evidence_exact": 0.18774967082408775,
+      "active_evidence_exact": 0.13897534823532062,
+      "memory": [
+        0.14955254260542578,
+        0.1452854790993594
+      ],
+      "diffused": [
+        0.14848577672890917,
+        0.146352244975876
+      ],
+      "leak_lane_weights": [
+        0.5072362843187486,
+        0.49276371568125144
+      ],
+      "commissural_lane_weights": [
+        0.5036181421593743,
+        0.4963818578406258
+      ],
+      "channel_gram_cosine": 0.5355650317431608,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 4,
+      "gate_evidence": 0.1605360915519906,
+      "active_evidence": 0.2052523241082788,
+      "gate_evidence_exact": 0.16053807937226733,
+      "active_evidence_exact": 0.20525232410827904,
+      "memory": [
+        0.1550443170787082,
+        0.17526890160381908
+      ],
+      "diffused": [
+        0.16010046320998592,
+        0.17021275547254133
+      ],
+      "leak_lane_weights": [
+        0.46938574755533885,
+        0.5306142524446611
+      ],
+      "commissural_lane_weights": [
+        0.48469287377766945,
+        0.5153071262223304
+      ],
+      "channel_gram_cosine": 0.46445801498894207,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 5,
+      "gate_evidence": 0.17087231832666144,
+      "active_evidence": 0.22607248939792213,
+      "gate_evidence_exact": 0.17087231909139627,
+      "active_evidence_exact": 0.22607248939792227,
+      "memory": [
+        0.16295831770268482,
+        0.2006706955008706
+      ],
+      "diffused": [
+        0.17238641215223127,
+        0.19124260105132418
+      ],
+      "leak_lane_weights": [
+        0.4481444323351134,
+        0.5518555676648865
+      ],
+      "commissural_lane_weights": [
+        0.4740722161675567,
+        0.5259277838324433
+      ],
+      "channel_gram_cosine": 0.49848014060550766,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 6,
+      "gate_evidence": 0.25813906284054383,
+      "active_evidence": 0.3105348969122974,
+      "gate_evidence_exact": 0.25813906284054366,
+      "active_evidence_exact": 0.31053489691229763,
+      "memory": [
+        0.21054869027161432,
+        0.255602796206584
+      ],
+      "diffused": [
+        0.22181221675535673,
+        0.2443392697228416
+      ],
+      "leak_lane_weights": [
+        0.4516743942239077,
+        0.5483256057760924
+      ],
+      "commissural_lane_weights": [
+        0.4758371971119538,
+        0.5241628028880462
+      ],
+      "channel_gram_cosine": 0.37071383444803135,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 7,
+      "gate_evidence": 0.379334925082886,
+      "active_evidence": 0.2734953360739007,
+      "gate_evidence_exact": 0.379334925082886,
+      "active_evidence_exact": 0.27349533607390075,
+      "memory": [
+        0.2949418076772502,
+        0.2645490661402423
+      ],
+      "diffused": [
+        0.28734362229299826,
+        0.27214725152449426
+      ],
+      "leak_lane_weights": [
+        0.5271610699649428,
+        0.4728389300350571
+      ],
+      "commissural_lane_weights": [
+        0.5135805349824715,
+        0.48641946501752853
+      ],
+      "channel_gram_cosine": 0.3876957544890488,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 8,
+      "gate_evidence": 0.2452089116806093,
+      "active_evidence": 0.2447422852879219,
+      "gate_evidence_exact": 0.24520891168655,
+      "active_evidence_exact": 0.24474228528792194,
+      "memory": [
+        0.27007535967892976,
+        0.25464567571408214
+      ],
+      "diffused": [
+        0.26621793868771787,
+        0.25850309670529403
+      ],
+      "leak_lane_weights": [
+        0.5147027495793941,
+        0.485297250420606
+      ],
+      "commissural_lane_weights": [
+        0.507351374789697,
+        0.492648625210303
+      ],
+      "channel_gram_cosine": 0.42495642216558926,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 9,
+      "gate_evidence": 0.2605528929722483,
+      "active_evidence": 0.2809661571492597,
+      "gate_evidence_exact": 0.2605528929722482,
+      "active_evidence_exact": 0.2809661571492596,
+      "memory": [
+        0.26531412632558904,
+        0.26780591643167095
+      ],
+      "diffused": [
+        0.2659370738521095,
+        0.2671829689051505
+      ],
+      "leak_lane_weights": [
+        0.4976630121677713,
+        0.5023369878322287
+      ],
+      "commissural_lane_weights": [
+        0.49883150608388566,
+        0.5011684939161144
+      ],
+      "channel_gram_cosine": 0.3920659042622902,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 10,
+      "gate_evidence": 0.30662814859237886,
+      "active_evidence": 0.32587048928013584,
+      "gate_evidence_exact": 0.30662814859238935,
+      "active_evidence_exact": 0.3258704892801358,
+      "memory": [
+        0.28597113745898395,
+        0.2968382028559034
+      ],
+      "diffused": [
+        0.2886879038082138,
+        0.29412143650667355
+      ],
+      "leak_lane_weights": [
+        0.4906769979089148,
+        0.5093230020910853
+      ],
+      "commissural_lane_weights": [
+        0.49533849895445736,
+        0.5046615010455427
+      ],
+      "channel_gram_cosine": 0.34519481392788487,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 11,
+      "gate_evidence": 0.2740636250061963,
+      "active_evidence": 0.2696400090251534,
+      "gate_evidence_exact": 0.2740636250141206,
+      "active_evidence_exact": 0.26964000902515317,
+      "memory": [
+        0.2800173812325901,
+        0.28323910594052837
+      ],
+      "diffused": [
+        0.2808228124095747,
+        0.2824336747635438
+      ],
+      "leak_lane_weights": [
+        0.49714009089881284,
+        0.5028599091011872
+      ],
+      "commissural_lane_weights": [
+        0.4985700454494064,
+        0.5014299545505936
+      ],
+      "channel_gram_cosine": 0.40697853323386096,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 12,
+      "gate_evidence": 0.3140124365216319,
+      "active_evidence": 0.33612966938249234,
+      "gate_evidence_exact": 0.3140124365216319,
+      "active_evidence_exact": 0.3361296693824925,
+      "memory": [
+        0.297014908877111,
+        0.30968438766151035
+      ],
+      "diffused": [
+        0.30018227857321084,
+        0.30651701796541053
+      ],
+      "leak_lane_weights": [
+        0.48955868347245335,
+        0.5104413165275468
+      ],
+      "commissural_lane_weights": [
+        0.4947793417362267,
+        0.5052206582637734
+      ],
+      "channel_gram_cosine": 0.2762788274487175,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 13,
+      "gate_evidence": 0.3075210947563815,
+      "active_evidence": 0.39568506306375006,
+      "gate_evidence_exact": 0.30752109475638156,
+      "active_evidence_exact": 0.3956850630637501,
+      "memory": [
+        0.3022680018167463,
+        0.3526847253626302
+      ],
+      "diffused": [
+        0.31487218270321726,
+        0.3400805444761592
+      ],
+      "leak_lane_weights": [
+        0.46151117366667904,
+        0.538488826333321
+      ],
+      "commissural_lane_weights": [
+        0.4807555868333395,
+        0.5192444131666605
+      ],
+      "channel_gram_cosine": 0.20806398872502294,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "layer": 14,
+      "gate_evidence": 0.2474280071336982,
+      "active_evidence": 0.4468337420593128,
+      "gate_evidence_exact": 0.24742800713369834,
+      "active_evidence_exact": 0.44683374205931303,
+      "memory": [
+        0.27484800447522223,
+        0.3997592337109715
+      ],
+      "diffused": [
+        0.30607581178415955,
+        0.3685314264020342
+      ],
+      "leak_lane_weights": [
+        0.4074192936532995,
+        0.5925807063467005
+      ],
+      "commissural_lane_weights": [
+        0.45370964682664977,
+        0.5462903531733503
+      ],
+      "channel_gram_cosine": 0.18769195999514002,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 0,
+      "gate_evidence": 0.08859825111044549,
+      "active_evidence": 0.0992907939196126,
+      "gate_evidence_exact": 0.0885984529619554,
+      "active_evidence_exact": 0.09929079466986217,
+      "memory": [
+        0.08859825111044549,
+        0.0992907939196126
+      ],
+      "diffused": [
+        0.09127138681273726,
+        0.09661765821732082
+      ],
+      "leak_lane_weights": [
+        0.4715455927527426,
+        0.5284544072472573
+      ],
+      "commissural_lane_weights": [
+        0.4857727963763713,
+        0.5142272036236287
+      ],
+      "channel_gram_cosine": 0.6671212068227279,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 1,
+      "gate_evidence": 0.11402619111584462,
+      "active_evidence": 0.13120478935112387,
+      "gate_evidence_exact": 0.11402619111677151,
+      "active_evidence_exact": 0.1312047937276778,
+      "memory": [
+        0.10131222111314506,
+        0.11524779163536823
+      ],
+      "diffused": [
+        0.10479611374370085,
+        0.11176389900481243
+      ],
+      "leak_lane_weights": [
+        0.4678251530710652,
+        0.5321748469289348
+      ],
+      "commissural_lane_weights": [
+        0.4839125765355326,
+        0.5160874234644673
+      ],
+      "channel_gram_cosine": 0.5680725388121994,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 2,
+      "gate_evidence": 0.12601700453133347,
+      "active_evidence": 0.14100189930267157,
+      "gate_evidence_exact": 0.12601713406042958,
+      "active_evidence_exact": 0.14100189930267182,
+      "memory": [
+        0.11366461282223926,
+        0.1281248454690199
+      ],
+      "diffused": [
+        0.11727967098393442,
+        0.12450978730732473
+      ],
+      "leak_lane_weights": [
+        0.4700974708554873,
+        0.5299025291445127
+      ],
+      "commissural_lane_weights": [
+        0.4850487354277437,
+        0.5149512645722564
+      ],
+      "channel_gram_cosine": 0.5426160991891675,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 3,
+      "gate_evidence": 0.1609560913492905,
+      "active_evidence": 0.1908289498750822,
+      "gate_evidence_exact": 0.16095609139478637,
+      "active_evidence_exact": 0.1908289498750822,
+      "memory": [
+        0.1373103520857649,
+        0.15947689767205103
+      ],
+      "diffused": [
+        0.14285198848233643,
+        0.1539352612754795
+      ],
+      "leak_lane_weights": [
+        0.46265583241130737,
+        0.5373441675886927
+      ],
+      "commissural_lane_weights": [
+        0.48132791620565374,
+        0.5186720837943464
+      ],
+      "channel_gram_cosine": 0.3830617996394016,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 4,
+      "gate_evidence": 0.21887678620986423,
+      "active_evidence": 0.20433030103242336,
+      "gate_evidence_exact": 0.21887678620986423,
+      "active_evidence_exact": 0.20433030103242336,
+      "memory": [
+        0.17809356914781455,
+        0.1819035993522372
+      ],
+      "diffused": [
+        0.1790460766989202,
+        0.18095109180113156
+      ],
+      "leak_lane_weights": [
+        0.4947082497616615,
+        0.5052917502383385
+      ],
+      "commissural_lane_weights": [
+        0.4973541248808307,
+        0.5026458751191692
+      ],
+      "channel_gram_cosine": 0.3616107266138836,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 5,
+      "gate_evidence": 0.21221129911526088,
+      "active_evidence": 0.2953275584115718,
+      "gate_evidence_exact": 0.21221129911695052,
+      "active_evidence_exact": 0.29532755841157193,
+      "memory": [
+        0.1951524341315377,
+        0.23861557888190452
+      ],
+      "diffused": [
+        0.20601822031912942,
+        0.2277497926943128
+      ],
+      "leak_lane_weights": [
+        0.4499004727798821,
+        0.5500995272201179
+      ],
+      "commissural_lane_weights": [
+        0.47495023638994105,
+        0.525049763610059
+      ],
+      "channel_gram_cosine": 0.318770584182916,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 6,
+      "gate_evidence": 0.24080526858305198,
+      "active_evidence": 0.2965135552839886,
+      "gate_evidence_exact": 0.24080526858305198,
+      "active_evidence_exact": 0.29651355528398843,
+      "memory": [
+        0.21797885135729483,
+        0.26756456708294657
+      ],
+      "diffused": [
+        0.23037528028870777,
+        0.25516813815153366
+      ],
+      "leak_lane_weights": [
+        0.4489379179673151,
+        0.5510620820326849
+      ],
+      "commissural_lane_weights": [
+        0.47446895898365754,
+        0.5255310410163425
+      ],
+      "channel_gram_cosine": 0.22925615040718564,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 7,
+      "gate_evidence": 0.28114407008059517,
+      "active_evidence": 0.372131797810785,
+      "gate_evidence_exact": 0.28114407008059517,
+      "active_evidence_exact": 0.37213179781078526,
+      "memory": [
+        0.249561460718945,
+        0.31984818244686575
+      ],
+      "diffused": [
+        0.2671331411509252,
+        0.30227650201488554
+      ],
+      "leak_lane_weights": [
+        0.43828105778369,
+        0.56171894221631
+      ],
+      "commissural_lane_weights": [
+        0.46914052889184504,
+        0.530859471108155
+      ],
+      "channel_gram_cosine": 0.18181770759565044,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 8,
+      "gate_evidence": 0.29216198281415623,
+      "active_evidence": 0.37825000943525766,
+      "gate_evidence_exact": 0.29216198281415606,
+      "active_evidence_exact": 0.37825000943525783,
+      "memory": [
+        0.2708617217665506,
+        0.3490490959410617
+      ],
+      "diffused": [
+        0.2904085653101784,
+        0.3295022523974339
+      ],
+      "leak_lane_weights": [
+        0.43693659479629454,
+        0.5630634052037056
+      ],
+      "commissural_lane_weights": [
+        0.4684682973981473,
+        0.5315317026018528
+      ],
+      "channel_gram_cosine": 0.2000738758182193,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 9,
+      "gate_evidence": 0.297836968732208,
+      "active_evidence": 0.3656362502964976,
+      "gate_evidence_exact": 0.2978369687322077,
+      "active_evidence_exact": 0.36563625029649777,
+      "memory": [
+        0.28434934524937927,
+        0.35734267311877965
+      ],
+      "diffused": [
+        0.30259767721672937,
+        0.33909434115142956
+      ],
+      "leak_lane_weights": [
+        0.4431243292888195,
+        0.5568756707111805
+      ],
+      "commissural_lane_weights": [
+        0.47156216464440975,
+        0.5284378353555902
+      ],
+      "channel_gram_cosine": 0.1862541728610376,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 10,
+      "gate_evidence": 0.2842825537533964,
+      "active_evidence": 0.40753556135948477,
+      "gate_evidence_exact": 0.28428255375339645,
+      "active_evidence_exact": 0.40753556135948477,
+      "memory": [
+        0.28431594950138783,
+        0.3824391172391322
+      ],
+      "diffused": [
+        0.3088467414358239,
+        0.35790832530469613
+      ],
+      "leak_lane_weights": [
+        0.42641738126008816,
+        0.5735826187399119
+      ],
+      "commissural_lane_weights": [
+        0.46320869063004405,
+        0.536791309369956
+      ],
+      "channel_gram_cosine": 0.19949525380228011,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 11,
+      "gate_evidence": 0.2826211154359489,
+      "active_evidence": 0.3243744772979754,
+      "gate_evidence_exact": 0.28262111543594903,
+      "active_evidence_exact": 0.3243744772979753,
+      "memory": [
+        0.2834685324686684,
+        0.35340679726855384
+      ],
+      "diffused": [
+        0.30095309866863973,
+        0.33592223106858243
+      ],
+      "leak_lane_weights": [
+        0.44509265665170106,
+        0.5549073433482988
+      ],
+      "commissural_lane_weights": [
+        0.4725463283258506,
+        0.5274536716741495
+      ],
+      "channel_gram_cosine": 0.32562180519346595,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 12,
+      "gate_evidence": 0.29078234025725086,
+      "active_evidence": 0.39324131025925274,
+      "gate_evidence_exact": 0.29078234025725097,
+      "active_evidence_exact": 0.3932413102592526,
+      "memory": [
+        0.2871254363629596,
+        0.3733240537639033
+      ],
+      "diffused": [
+        0.30867509071319554,
+        0.3517743994136674
+      ],
+      "leak_lane_weights": [
+        0.4347424604837032,
+        0.5652575395162969
+      ],
+      "commissural_lane_weights": [
+        0.46737123024185157,
+        0.5326287697581484
+      ],
+      "channel_gram_cosine": 0.29773640708353805,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 13,
+      "gate_evidence": 0.29163885374110105,
+      "active_evidence": 0.3767982187753686,
+      "gate_evidence_exact": 0.2916388550742205,
+      "active_evidence_exact": 0.37679821877536857,
+      "memory": [
+        0.2893821450520303,
+        0.375061136269636
+      ],
+      "diffused": [
+        0.3108018928564317,
+        0.3536413884652345
+      ],
+      "leak_lane_weights": [
+        0.4355257298657767,
+        0.5644742701342234
+      ],
+      "commissural_lane_weights": [
+        0.4677628649328883,
+        0.5322371350671116
+      ],
+      "channel_gram_cosine": 0.27731314481524855,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "layer": 14,
+      "gate_evidence": 0.3053356790806651,
+      "active_evidence": 0.42537714521443765,
+      "gate_evidence_exact": 0.3053356790806648,
+      "active_evidence_exact": 0.42537714521443754,
+      "memory": [
+        0.2973589120663477,
+        0.4002191407420368
+      ],
+      "diffused": [
+        0.32307396923527,
+        0.3745040835731145
+      ],
+      "leak_lane_weights": [
+        0.4262733193356762,
+        0.5737266806643238
+      ],
+      "commissural_lane_weights": [
+        0.4631366596678381,
+        0.5368633403321619
+      ],
+      "channel_gram_cosine": 0.22955093245973718,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 0,
+      "gate_evidence": 0.09341485034903006,
+      "active_evidence": 0.102336204338519,
+      "gate_evidence_exact": 0.0934148503490308,
+      "active_evidence_exact": 0.10233620433851888,
+      "memory": [
+        0.09341485034903006,
+        0.102336204338519
+      ],
+      "diffused": [
+        0.0956451888464023,
+        0.10010586584114678
+      ],
+      "leak_lane_weights": [
+        0.47721250083753347,
+        0.5227874991624666
+      ],
+      "commissural_lane_weights": [
+        0.4886062504187667,
+        0.5113937495812333
+      ],
+      "channel_gram_cosine": 0.8068079691614779,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 1,
+      "gate_evidence": 0.11351705277092028,
+      "active_evidence": 0.1292555919690717,
+      "gate_evidence_exact": 0.1136279151845182,
+      "active_evidence_exact": 0.1292555920864258,
+      "memory": [
+        0.10346595155997518,
+        0.11579589815379535
+      ],
+      "diffused": [
+        0.10654843820843021,
+        0.11271341150534031
+      ],
+      "leak_lane_weights": [
+        0.47188305532878616,
+        0.5281169446712138
+      ],
+      "commissural_lane_weights": [
+        0.4859415276643931,
+        0.514058472335607
+      ],
+      "channel_gram_cosine": 0.6557693718366996,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 2,
+      "gate_evidence": 0.1324977137189778,
+      "active_evidence": 0.14408719227197217,
+      "gate_evidence_exact": 0.13249771371907035,
+      "active_evidence_exact": 0.14408719227198663,
+      "memory": [
+        0.1179818326394765,
+        0.12994154521288376
+      ],
+      "diffused": [
+        0.12097176078282831,
+        0.12695161706953195
+      ],
+      "leak_lane_weights": [
+        0.4758802242107856,
+        0.5241197757892145
+      ],
+      "commissural_lane_weights": [
+        0.48794011210539273,
+        0.5120598878946072
+      ],
+      "channel_gram_cosine": 0.5727288872248799,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 3,
+      "gate_evidence": 0.16080165421507958,
+      "active_evidence": 0.18587215918541197,
+      "gate_evidence_exact": 0.161435415455975,
+      "active_evidence_exact": 0.18587215918541203,
+      "memory": [
+        0.13939174342727803,
+        0.15790685219914785
+      ],
+      "diffused": [
+        0.14402052062024548,
+        0.1532780750061804
+      ],
+      "leak_lane_weights": [
+        0.4688610894160845,
+        0.5311389105839154
+      ],
+      "commissural_lane_weights": [
+        0.4844305447080422,
+        0.5155694552919577
+      ],
+      "channel_gram_cosine": 0.4541602524527416,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 4,
+      "gate_evidence": 0.1998524996297741,
+      "active_evidence": 0.19803588725858304,
+      "gate_evidence_exact": 0.1998524996297741,
+      "active_evidence_exact": 0.19803589104029495,
+      "memory": [
+        0.16962212152852607,
+        0.17797136972886546
+      ],
+      "diffused": [
+        0.1717094335786109,
+        0.17588405767878063
+      ],
+      "leak_lane_weights": [
+        0.4879899244227263,
+        0.5120100755772737
+      ],
+      "commissural_lane_weights": [
+        0.49399496221136313,
+        0.5060050377886369
+      ],
+      "channel_gram_cosine": 0.38062979998143975,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 5,
+      "gate_evidence": 0.27355443519388406,
+      "active_evidence": 0.23003100651609062,
+      "gate_evidence_exact": 0.27355443519388384,
+      "active_evidence_exact": 0.23003100651609026,
+      "memory": [
+        0.22158827836120507,
+        0.20400118812247803
+      ],
+      "diffused": [
+        0.2171915058015233,
+        0.2083979606821598
+      ],
+      "leak_lane_weights": [
+        0.5206620365678168,
+        0.47933796343218316
+      ],
+      "commissural_lane_weights": [
+        0.5103310182839084,
+        0.4896689817160916
+      ],
+      "channel_gram_cosine": 0.40203205948719395,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 6,
+      "gate_evidence": 0.22285110737192146,
+      "active_evidence": 0.2846501584173598,
+      "gate_evidence_exact": 0.22285110737192118,
+      "active_evidence_exact": 0.2846501584173597,
+      "memory": [
+        0.22221969286656326,
+        0.2443256732699189
+      ],
+      "diffused": [
+        0.22774618796740217,
+        0.23879917816908
+      ],
+      "leak_lane_weights": [
+        0.4763088629660842,
+        0.5236911370339158
+      ],
+      "commissural_lane_weights": [
+        0.4881544314830421,
+        0.511845568516958
+      ],
+      "channel_gram_cosine": 0.2880327521719715,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 7,
+      "gate_evidence": 0.26241726540384896,
+      "active_evidence": 0.2805384634024182,
+      "gate_evidence_exact": 0.26241726540384913,
+      "active_evidence_exact": 0.28053846340241817,
+      "memory": [
+        0.2423184791352061,
+        0.26243206833616856
+      ],
+      "diffused": [
+        0.24734687643544673,
+        0.257403671035928
+      ],
+      "leak_lane_weights": [
+        0.4800757133382771,
+        0.5199242866617229
+      ],
+      "commissural_lane_weights": [
+        0.4900378566691385,
+        0.5099621433308614
+      ],
+      "channel_gram_cosine": 0.31730559314050466,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 8,
+      "gate_evidence": 0.22177200214511827,
+      "active_evidence": 0.3451729069741129,
+      "gate_evidence_exact": 0.22177200214513784,
+      "active_evidence_exact": 0.3451729069741129,
+      "memory": [
+        0.2320452406401622,
+        0.30380248765514073
+      ],
+      "diffused": [
+        0.24998455239390682,
+        0.2858631759013961
+      ],
+      "leak_lane_weights": [
+        0.43304324789874493,
+        0.5669567521012551
+      ],
+      "commissural_lane_weights": [
+        0.46652162394937247,
+        0.5334783760506275
+      ],
+      "channel_gram_cosine": 0.26636509267697517,
+      "snapshot": true
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 9,
+      "gate_evidence": 0.27391914914358284,
+      "active_evidence": 0.35815126510795936,
+      "gate_evidence_exact": 0.27391914914358295,
+      "active_evidence_exact": 0.35815126510795925,
+      "memory": [
+        0.2529821948918725,
+        0.33097687638155004
+      ],
+      "diffused": [
+        0.2724808652642919,
+        0.3114782060091307
+      ],
+      "leak_lane_weights": [
+        0.43321905136296895,
+        0.566780948637031
+      ],
+      "commissural_lane_weights": [
+        0.46660952568148445,
+        0.5333904743185155
+      ],
+      "channel_gram_cosine": 0.2342804088510511,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 10,
+      "gate_evidence": 0.25797428498380187,
+      "active_evidence": 0.33868964876113633,
+      "gate_evidence_exact": 0.2579742849838021,
+      "active_evidence_exact": 0.3386896487611362,
+      "memory": [
+        0.2554782399378372,
+        0.33483326257134316
+      ],
+      "diffused": [
+        0.2753169955962137,
+        0.3149945069129667
+      ],
+      "leak_lane_weights": [
+        0.43278546809930085,
+        0.5672145319006993
+      ],
+      "commissural_lane_weights": [
+        0.46639273404965037,
+        0.5336072659503496
+      ],
+      "channel_gram_cosine": 0.22853598428647817,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 11,
+      "gate_evidence": 0.26977618112606455,
+      "active_evidence": 0.38663309308444455,
+      "gate_evidence_exact": 0.2697761811260647,
+      "active_evidence_exact": 0.3866330930844443,
+      "memory": [
+        0.26262721053195087,
+        0.3607331778278938
+      ],
+      "diffused": [
+        0.2871537023559366,
+        0.3362066860039081
+      ],
+      "leak_lane_weights": [
+        0.42130878932324,
+        0.5786912106767601
+      ],
+      "commissural_lane_weights": [
+        0.46065439466162006,
+        0.53934560533838
+      ],
+      "channel_gram_cosine": 0.19594838098688303,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 12,
+      "gate_evidence": 0.34514043285288093,
+      "active_evidence": 0.3248321008662223,
+      "gate_evidence_exact": 0.34514043285288093,
+      "active_evidence_exact": 0.32483210086622205,
+      "memory": [
+        0.3038838216924159,
+        0.34278263934705805
+      ],
+      "diffused": [
+        0.3136085261060764,
+        0.3330579349333975
+      ],
+      "leak_lane_weights": [
+        0.4699235850332219,
+        0.5300764149667782
+      ],
+      "commissural_lane_weights": [
+        0.484961792516611,
+        0.5150382074833891
+      ],
+      "channel_gram_cosine": 0.2626856551720924,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 13,
+      "gate_evidence": 0.37616100257558216,
+      "active_evidence": 0.2878914885788561,
+      "gate_evidence_exact": 0.376161002575582,
+      "active_evidence_exact": 0.287891488578856,
+      "memory": [
+        0.34002241213399903,
+        0.3153370639629571
+      ],
+      "diffused": [
+        0.33385107509123857,
+        0.32150840100571754
+      ],
+      "leak_lane_weights": [
+        0.5188334410895051,
+        0.48116655891049487
+      ],
+      "commissural_lane_weights": [
+        0.5094167205447526,
+        0.4905832794552474
+      ],
+      "channel_gram_cosine": 0.3449747691002017,
+      "snapshot": false
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "layer": 14,
+      "gate_evidence": 0.3673572358556459,
+      "active_evidence": 0.3462967673255716,
+      "gate_evidence_exact": 0.3673572358556458,
+      "active_evidence_exact": 0.3462967673255717,
+      "memory": [
+        0.35368982399482246,
+        0.3308169156442643
+      ],
+      "diffused": [
+        0.34797159690718293,
+        0.3365351427319038
+      ],
+      "leak_lane_weights": [
+        0.5167075844736154,
+        0.4832924155263847
+      ],
+      "commissural_lane_weights": [
+        0.5083537922368078,
+        0.49164620776319234
+      ],
+      "channel_gram_cosine": 0.39897482607175916,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 0,
+      "gate_evidence": 0.09306212142524205,
+      "active_evidence": 0.12361547776917858,
+      "gate_evidence_exact": 0.09306212142532823,
+      "active_evidence_exact": 0.12361547776917858,
+      "memory": [
+        0.09306212142524205,
+        0.12361547776917858
+      ],
+      "diffused": [
+        0.10070046051122618,
+        0.11597713868319445
+      ],
+      "leak_lane_weights": [
+        0.42949581207856746,
+        0.5705041879214325
+      ],
+      "commissural_lane_weights": [
+        0.4647479060392837,
+        0.5352520939607163
+      ],
+      "channel_gram_cosine": 0.6572260154227189,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 1,
+      "gate_evidence": 0.12163153970212276,
+      "active_evidence": 0.14425576688783462,
+      "gate_evidence_exact": 0.1216315397021278,
+      "active_evidence_exact": 0.1442557668878346,
+      "memory": [
+        0.10734683056368241,
+        0.1339356223285066
+      ],
+      "diffused": [
+        0.11399402850488846,
+        0.12728842438730054
+      ],
+      "leak_lane_weights": [
+        0.4449011077139855,
+        0.5550988922860145
+      ],
+      "commissural_lane_weights": [
+        0.4724505538569928,
+        0.5275494461430073
+      ],
+      "channel_gram_cosine": 0.6051104212771301,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 2,
+      "gate_evidence": 0.13782968959208197,
+      "active_evidence": 0.1699730298536362,
+      "gate_evidence_exact": 0.13782968959208197,
+      "active_evidence_exact": 0.16997302985363835,
+      "memory": [
+        0.12258826007788219,
+        0.1519543260910714
+      ],
+      "diffused": [
+        0.1299297765811795,
+        0.1446128095877741
+      ],
+      "leak_lane_weights": [
+        0.44651819518608793,
+        0.5534818048139121
+      ],
+      "commissural_lane_weights": [
+        0.473259097593044,
+        0.526740902406956
+      ],
+      "channel_gram_cosine": 0.5108512382399779,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 3,
+      "gate_evidence": 0.1722227801645345,
+      "active_evidence": 0.1836185806355648,
+      "gate_evidence_exact": 0.17222278016453452,
+      "active_evidence_exact": 0.1836185806355648,
+      "memory": [
+        0.14740552012120833,
+        0.1677864533633181
+      ],
+      "diffused": [
+        0.15250075343173577,
+        0.16269122005279066
+      ],
+      "leak_lane_weights": [
+        0.4676690160970893,
+        0.5323309839029107
+      ],
+      "commissural_lane_weights": [
+        0.48383450804854466,
+        0.5161654919514553
+      ],
+      "channel_gram_cosine": 0.3957077637649543,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 4,
+      "gate_evidence": 0.19814607632058703,
+      "active_evidence": 0.22361088238076848,
+      "gate_evidence_exact": 0.19816409211680147,
+      "active_evidence_exact": 0.2236108823807684,
+      "memory": [
+        0.17277579822089767,
+        0.1956986678720433
+      ],
+      "diffused": [
+        0.17850651563368408,
+        0.1899679504592569
+      ],
+      "leak_lane_weights": [
+        0.4688949007862002,
+        0.5311050992137997
+      ],
+      "commissural_lane_weights": [
+        0.4844474503931001,
+        0.5155525496068999
+      ],
+      "channel_gram_cosine": 0.40375847142161253,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 5,
+      "gate_evidence": 0.20613766738178668,
+      "active_evidence": 0.2565199624909083,
+      "gate_evidence_exact": 0.20613766738178693,
+      "active_evidence_exact": 0.25651996249090836,
+      "memory": [
+        0.18945673280134218,
+        0.2261093151814758
+      ],
+      "diffused": [
+        0.19861987839637557,
+        0.21694616958644242
+      ],
+      "leak_lane_weights": [
+        0.4559004127526209,
+        0.5440995872473792
+      ],
+      "commissural_lane_weights": [
+        0.4779502063763104,
+        0.5220497936236896
+      ],
+      "channel_gram_cosine": 0.28897132965871897,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 6,
+      "gate_evidence": 0.33701202146672254,
+      "active_evidence": 0.3379485515189578,
+      "gate_evidence_exact": 0.33701202146672266,
+      "active_evidence_exact": 0.33794855151895775,
+      "memory": [
+        0.26323437713403236,
+        0.28202893335021684
+      ],
+      "diffused": [
+        0.26793301618807847,
+        0.27733029429617073
+      ],
+      "leak_lane_weights": [
+        0.48276561447028865,
+        0.5172343855297112
+      ],
+      "commissural_lane_weights": [
+        0.49138280723514427,
+        0.5086171927648556
+      ],
+      "channel_gram_cosine": 0.2414884701257877,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 7,
+      "gate_evidence": 0.3223800403909249,
+      "active_evidence": 0.4584474006728914,
+      "gate_evidence_exact": 0.3223800403909245,
+      "active_evidence_exact": 0.4584474006728915,
+      "memory": [
+        0.2928072087624786,
+        0.3702381670115541
+      ],
+      "diffused": [
+        0.3121649483247475,
+        0.35088042744928527
+      ],
+      "leak_lane_weights": [
+        0.4416096084233426,
+        0.5583903915766575
+      ],
+      "commissural_lane_weights": [
+        0.47080480421167126,
+        0.5291951957883287
+      ],
+      "channel_gram_cosine": 0.16672655800348266,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 8,
+      "gate_evidence": 0.33894504871466336,
+      "active_evidence": 0.42631181460094086,
+      "gate_evidence_exact": 0.3389450487147801,
+      "active_evidence_exact": 0.42631181460094086,
+      "memory": [
+        0.31587612873857096,
+        0.3982749908062475
+      ],
+      "diffused": [
+        0.3364758442554901,
+        0.37767527528932837
+      ],
+      "leak_lane_weights": [
+        0.44230992585981277,
+        0.5576900741401872
+      ],
+      "commissural_lane_weights": [
+        0.4711549629299064,
+        0.5288450370700936
+      ],
+      "channel_gram_cosine": 0.12381842547222253,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 9,
+      "gate_evidence": 0.4143550458545055,
+      "active_evidence": 0.40607037304170124,
+      "gate_evidence_exact": 0.4143550458545054,
+      "active_evidence_exact": 0.4060703730417012,
+      "memory": [
+        0.36511558729653826,
+        0.4021726819239744
+      ],
+      "diffused": [
+        0.37437986095339726,
+        0.39290840826711537
+      ],
+      "leak_lane_weights": [
+        0.4758519085238444,
+        0.5241480914761556
+      ],
+      "commissural_lane_weights": [
+        0.48792595426192215,
+        0.5120740457380778
+      ],
+      "channel_gram_cosine": 0.16115635759053615,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 10,
+      "gate_evidence": 0.3289223489221773,
+      "active_evidence": 0.4329028404746745,
+      "gate_evidence_exact": 0.32892234892217687,
+      "active_evidence_exact": 0.43290284047467453,
+      "memory": [
+        0.3470189681093578,
+        0.4175377611993244
+      ],
+      "diffused": [
+        0.36464866638184945,
+        0.3999080629268328
+      ],
+      "leak_lane_weights": [
+        0.45388256332938814,
+        0.546117436670612
+      ],
+      "commissural_lane_weights": [
+        0.476941281664694,
+        0.5230587183353059
+      ],
+      "channel_gram_cosine": 0.16358863025587606,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 11,
+      "gate_evidence": 0.3412024204848202,
+      "active_evidence": 0.46426598203966063,
+      "gate_evidence_exact": 0.34120242048482025,
+      "active_evidence_exact": 0.46426598203966063,
+      "memory": [
+        0.34411069429708896,
+        0.4409018716194925
+      ],
+      "diffused": [
+        0.36830848862768983,
+        0.4167040772888916
+      ],
+      "leak_lane_weights": [
+        0.43835055544022405,
+        0.5616494445597761
+      ],
+      "commissural_lane_weights": [
+        0.469175277720112,
+        0.530824722279888
+      ],
+      "channel_gram_cosine": 0.18513403188858552,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 12,
+      "gate_evidence": 0.4207306720068377,
+      "active_evidence": 0.43689748916703236,
+      "gate_evidence_exact": 0.4207306720068377,
+      "active_evidence_exact": 0.4368974891670321,
+      "memory": [
+        0.3824206831519633,
+        0.43889968039326244
+      ],
+      "diffused": [
+        0.3965404324622881,
+        0.42477993108293766
+      ],
+      "leak_lane_weights": [
+        0.46561695061503905,
+        0.534383049384961
+      ],
+      "commissural_lane_weights": [
+        0.4828084753075195,
+        0.5171915246924804
+      ],
+      "channel_gram_cosine": 0.19918666020856254,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 13,
+      "gate_evidence": 0.41865733578799813,
+      "active_evidence": 0.454408187920406,
+      "gate_evidence_exact": 0.4186573357879984,
+      "active_evidence_exact": 0.4544081879204059,
+      "memory": [
+        0.4005390094699807,
+        0.4466539341568342
+      ],
+      "diffused": [
+        0.4120677406416941,
+        0.43512520298512086
+      ],
+      "leak_lane_weights": [
+        0.4727836940606254,
+        0.5272163059393746
+      ],
+      "commissural_lane_weights": [
+        0.4863918470303127,
+        0.5136081529696873
+      ],
+      "channel_gram_cosine": 0.1557508717590434,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 14,
+      "gate_evidence": 0.27610815149557383,
+      "active_evidence": 0.5684590994542037,
+      "gate_evidence_exact": 0.2761081514955864,
+      "active_evidence_exact": 0.5684590994542036,
+      "memory": [
+        0.3383235804827773,
+        0.5075565168055189
+      ],
+      "diffused": [
+        0.3806318145634627,
+        0.46524828272483354
+      ],
+      "leak_lane_weights": [
+        0.3999663564225799,
+        0.6000336435774201
+      ],
+      "commissural_lane_weights": [
+        0.4499831782112899,
+        0.55001682178871
+      ],
+      "channel_gram_cosine": 0.10738421808736605,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 15,
+      "gate_evidence": 0.32598933605097236,
+      "active_evidence": 0.6417766365354785,
+      "gate_evidence_exact": 0.32598933605097236,
+      "active_evidence_exact": 0.6417766365354785,
+      "memory": [
+        0.3321564582668748,
+        0.5746665766704987
+      ],
+      "diffused": [
+        0.3927839878677808,
+        0.5140390470695928
+      ],
+      "leak_lane_weights": [
+        0.36628586336011415,
+        0.6337141366398858
+      ],
+      "commissural_lane_weights": [
+        0.433142931680057,
+        0.566857068319943
+      ],
+      "channel_gram_cosine": 0.06455485471068662,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 16,
+      "gate_evidence": 0.5926914779134634,
+      "active_evidence": 0.7645640982362825,
+      "gate_evidence_exact": 0.5926914779134633,
+      "active_evidence_exact": 0.7645640982362826,
+      "memory": [
+        0.4624239680901691,
+        0.6696153374533906
+      ],
+      "diffused": [
+        0.5142218104309745,
+        0.6178174951125852
+      ],
+      "leak_lane_weights": [
+        0.4084875550042246,
+        0.5915124449957754
+      ],
+      "commissural_lane_weights": [
+        0.45424377750211237,
+        0.5457562224978877
+      ],
+      "channel_gram_cosine": 0.06900506912180863,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 17,
+      "gate_evidence": 0.3240187069507217,
+      "active_evidence": 0.741705143573367,
+      "gate_evidence_exact": 0.3240187069507571,
+      "active_evidence_exact": 0.7417051435733673,
+      "memory": [
+        0.3932213375204454,
+        0.7056602405133788
+      ],
+      "diffused": [
+        0.4713310632686788,
+        0.6275505147651455
+      ],
+      "leak_lane_weights": [
+        0.357837773769961,
+        0.6421622262300388
+      ],
+      "commissural_lane_weights": [
+        0.42891888688498053,
+        0.5710811131150194
+      ],
+      "channel_gram_cosine": 0.07027735523489607,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 18,
+      "gate_evidence": 0.427554578500773,
+      "active_evidence": 0.6993517020378295,
+      "gate_evidence_exact": 0.42755457850077305,
+      "active_evidence_exact": 0.699351702037829,
+      "memory": [
+        0.41038795801060923,
+        0.7025059712756041
+      ],
+      "diffused": [
+        0.4834174613268579,
+        0.6294764679593553
+      ],
+      "leak_lane_weights": [
+        0.36875747742987813,
+        0.6312425225701218
+      ],
+      "commissural_lane_weights": [
+        0.4343787387149391,
+        0.5656212612850609
+      ],
+      "channel_gram_cosine": 0.04319651258261912,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 19,
+      "gate_evidence": 0.7656228201952382,
+      "active_evidence": 0.7782000854470077,
+      "gate_evidence_exact": 0.765622820195238,
+      "active_evidence_exact": 0.7782000854470071,
+      "memory": [
+        0.5880053891029238,
+        0.7403530283613059
+      ],
+      "diffused": [
+        0.6260922989175193,
+        0.7022661185467103
+      ],
+      "leak_lane_weights": [
+        0.44265567287584695,
+        0.5573443271241532
+      ],
+      "commissural_lane_weights": [
+        0.4713278364379235,
+        0.5286721635620765
+      ],
+      "channel_gram_cosine": 0.032971208694327965,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 20,
+      "gate_evidence": 0.4623891794054368,
+      "active_evidence": 0.7654369428210315,
+      "gate_evidence_exact": 0.4623891794054366,
+      "active_evidence_exact": 0.7654369428210316,
+      "memory": [
+        0.5251972842541803,
+        0.7528949855911686
+      ],
+      "diffused": [
+        0.5821217095884275,
+        0.6959705602569215
+      ],
+      "leak_lane_weights": [
+        0.4109228235280149,
+        0.5890771764719851
+      ],
+      "commissural_lane_weights": [
+        0.4554614117640075,
+        0.5445385882359925
+      ],
+      "channel_gram_cosine": 0.052779401882817906,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 21,
+      "gate_evidence": 0.4842466620875269,
+      "active_evidence": 0.7431087734213326,
+      "gate_evidence_exact": 0.48424666208752715,
+      "active_evidence_exact": 0.7431087734213322,
+      "memory": [
+        0.5047219731708537,
+        0.7480018795062506
+      ],
+      "diffused": [
+        0.565541949754703,
+        0.6871819029224014
+      ],
+      "leak_lane_weights": [
+        0.40289962715426014,
+        0.5971003728457398
+      ],
+      "commissural_lane_weights": [
+        0.45144981357713004,
+        0.5485501864228699
+      ],
+      "channel_gram_cosine": 0.06161359729765361,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 22,
+      "gate_evidence": 0.4320809593470246,
+      "active_evidence": 0.815084996044286,
+      "gate_evidence_exact": 0.4320809593470243,
+      "active_evidence_exact": 0.815084996044286,
+      "memory": [
+        0.46840146625893914,
+        0.7815434377752684
+      ],
+      "diffused": [
+        0.5466869591380215,
+        0.703257944896186
+      ],
+      "leak_lane_weights": [
+        0.3747376902351212,
+        0.6252623097648788
+      ],
+      "commissural_lane_weights": [
+        0.43736884511756063,
+        0.5626311548824394
+      ],
+      "channel_gram_cosine": 0.03616486672802606,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 23,
+      "gate_evidence": 0.6094934889637671,
+      "active_evidence": 0.8349819311780691,
+      "gate_evidence_exact": 0.6094934889637675,
+      "active_evidence_exact": 0.834981931178069,
+      "memory": [
+        0.5389474776113531,
+        0.8082626844766687
+      ],
+      "diffused": [
+        0.606276279327682,
+        0.7409338827603398
+      ],
+      "leak_lane_weights": [
+        0.4000470696984991,
+        0.599952930301501
+      ],
+      "commissural_lane_weights": [
+        0.4500235348492496,
+        0.5499764651507505
+      ],
+      "channel_gram_cosine": 0.04304101683449865,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 24,
+      "gate_evidence": 0.6192362612906158,
+      "active_evidence": 0.8070170650756341,
+      "gate_evidence_exact": 0.6192362612906155,
+      "active_evidence_exact": 0.807017065075634,
+      "memory": [
+        0.5790918694509845,
+        0.8076398747761514
+      ],
+      "diffused": [
+        0.6362288707822762,
+        0.7505028734448597
+      ],
+      "leak_lane_weights": [
+        0.4175947308206523,
+        0.5824052691793477
+      ],
+      "commissural_lane_weights": [
+        0.4587973654103262,
+        0.5412026345896739
+      ],
+      "channel_gram_cosine": 0.03193564007880593,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 25,
+      "gate_evidence": 0.5411513155835055,
+      "active_evidence": 0.7920571296980998,
+      "gate_evidence_exact": 0.541151315583505,
+      "active_evidence_exact": 0.7920571296980998,
+      "memory": [
+        0.5601215925172449,
+        0.7998485022371256
+      ],
+      "diffused": [
+        0.6200533199472151,
+        0.7399167748071553
+      ],
+      "leak_lane_weights": [
+        0.4118631686665218,
+        0.5881368313334782
+      ],
+      "commissural_lane_weights": [
+        0.4559315843332609,
+        0.544068415666739
+      ],
+      "channel_gram_cosine": 0.03640372987247976,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 26,
+      "gate_evidence": 0.7132477457968743,
+      "active_evidence": 0.8305042661592305,
+      "gate_evidence_exact": 0.7132477457968739,
+      "active_evidence_exact": 0.8305042661592302,
+      "memory": [
+        0.6366846691570596,
+        0.8151763841981781
+      ],
+      "diffused": [
+        0.6813075979173392,
+        0.7705534554378983
+      ],
+      "leak_lane_weights": [
+        0.4385300285352287,
+        0.5614699714647713
+      ],
+      "commissural_lane_weights": [
+        0.46926501426761436,
+        0.5307349857323855
+      ],
+      "channel_gram_cosine": 0.025507906645089624,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 27,
+      "gate_evidence": 0.5214049533500742,
+      "active_evidence": 0.811327126340303,
+      "gate_evidence_exact": 0.5214049533500739,
+      "active_evidence_exact": 0.8113271263403025,
+      "memory": [
+        0.5790448112535669,
+        0.8132517552692405
+      ],
+      "diffused": [
+        0.6375965472574853,
+        0.7547000192653222
+      ],
+      "leak_lane_weights": [
+        0.4158918618177038,
+        0.5841081381822962
+      ],
+      "commissural_lane_weights": [
+        0.45794593090885194,
+        0.5420540690911482
+      ],
+      "channel_gram_cosine": 0.023974655796913755,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 28,
+      "gate_evidence": 0.866644255219396,
+      "active_evidence": 0.8455889110538561,
+      "gate_evidence_exact": 0.8666442552193957,
+      "active_evidence_exact": 0.8455889110538559,
+      "memory": [
+        0.7228445332364815,
+        0.8294203331615484
+      ],
+      "diffused": [
+        0.7494884832177482,
+        0.8027763831802817
+      ],
+      "leak_lane_weights": [
+        0.46567087156576187,
+        0.5343291284342382
+      ],
+      "commissural_lane_weights": [
+        0.4828354357828809,
+        0.5171645642171191
+      ],
+      "channel_gram_cosine": 0.011267506998969626,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 29,
+      "gate_evidence": 0.5681791751503857,
+      "active_evidence": 0.7701184538444285,
+      "gate_evidence_exact": 0.5681791751503855,
+      "active_evidence_exact": 0.7701184538444285,
+      "memory": [
+        0.6455118541934336,
+        0.7997693935029884
+      ],
+      "diffused": [
+        0.6840762390208223,
+        0.7612050086755997
+      ],
+      "leak_lane_weights": [
+        0.44663407570138336,
+        0.5533659242986165
+      ],
+      "commissural_lane_weights": [
+        0.4733170378506916,
+        0.5266829621493083
+      ],
+      "channel_gram_cosine": 0.06660606306292274,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "layer": 30,
+      "gate_evidence": 0.7312757871708694,
+      "active_evidence": 0.7613556559926741,
+      "gate_evidence_exact": 0.7312757871708696,
+      "active_evidence_exact": 0.7613556559926747,
+      "memory": [
+        0.6883938206821515,
+        0.7805625247478312
+      ],
+      "diffused": [
+        0.7114359966985714,
+        0.7575203487314113
+      ],
+      "leak_lane_weights": [
+        0.4686278273849245,
+        0.5313721726150754
+      ],
+      "commissural_lane_weights": [
+        0.48431391369246224,
+        0.5156860863075378
+      ],
+      "channel_gram_cosine": 0.051945614529687115,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 0,
+      "gate_evidence": 0.08020211338541017,
+      "active_evidence": 0.09497087290673194,
+      "gate_evidence_exact": 0.08020211400978644,
+      "active_evidence_exact": 0.09497087408973195,
+      "memory": [
+        0.08020211338541017,
+        0.09497087290673194
+      ],
+      "diffused": [
+        0.08389430326574061,
+        0.09127868302640149
+      ],
+      "leak_lane_weights": [
+        0.4578452139398611,
+        0.5421547860601388
+      ],
+      "commissural_lane_weights": [
+        0.47892260696993055,
+        0.5210773930300694
+      ],
+      "channel_gram_cosine": 0.6716291323951571,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 1,
+      "gate_evidence": 0.10776724966047294,
+      "active_evidence": 0.11607420062587544,
+      "gate_evidence_exact": 0.10783465825197192,
+      "active_evidence_exact": 0.11607420063008267,
+      "memory": [
+        0.09398468152294155,
+        0.10552253676630369
+      ],
+      "diffused": [
+        0.09686914533378209,
+        0.10263807295546315
+      ],
+      "leak_lane_weights": [
+        0.4710841157971674,
+        0.5289158842028326
+      ],
+      "commissural_lane_weights": [
+        0.48554205789858373,
+        0.5144579421014164
+      ],
+      "channel_gram_cosine": 0.6218429222731274,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 2,
+      "gate_evidence": 0.138234903402643,
+      "active_evidence": 0.1488945714305497,
+      "gate_evidence_exact": 0.13823492536214116,
+      "active_evidence_exact": 0.14889457144398988,
+      "memory": [
+        0.11610979246279227,
+        0.12720855409842668
+      ],
+      "diffused": [
+        0.11888448287170086,
+        0.12443386368951809
+      ],
+      "leak_lane_weights": [
+        0.47719292073020486,
+        0.5228070792697952
+      ],
+      "commissural_lane_weights": [
+        0.4885964603651024,
+        0.5114035396348976
+      ],
+      "channel_gram_cosine": 0.5137476927150699,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 3,
+      "gate_evidence": 0.19724717326102445,
+      "active_evidence": 0.19259729680536325,
+      "gate_evidence_exact": 0.1972471732610244,
+      "active_evidence_exact": 0.19259729680537274,
+      "memory": [
+        0.15667848286190836,
+        0.15990292545189497
+      ],
+      "diffused": [
+        0.15748459350940502,
+        0.1590968148043983
+      ],
+      "leak_lane_weights": [
+        0.49490740374306746,
+        0.5050925962569325
+      ],
+      "commissural_lane_weights": [
+        0.49745370187153376,
+        0.5025462981284662
+      ],
+      "channel_gram_cosine": 0.4439452710366586,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 4,
+      "gate_evidence": 0.19010032002975916,
+      "active_evidence": 0.251622180435984,
+      "gate_evidence_exact": 0.19010032002993418,
+      "active_evidence_exact": 0.25162218043598406,
+      "memory": [
+        0.17338940144583376,
+        0.20576255294393947
+      ],
+      "diffused": [
+        0.18148268932036019,
+        0.197669265069413
+      ],
+      "leak_lane_weights": [
+        0.4573084733926682,
+        0.5426915266073318
+      ],
+      "commissural_lane_weights": [
+        0.4786542366963341,
+        0.5213457633036658
+      ],
+      "channel_gram_cosine": 0.3264781512151796,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 5,
+      "gate_evidence": 0.2159840837744903,
+      "active_evidence": 0.29878603286246225,
+      "gate_evidence_exact": 0.2159840838068573,
+      "active_evidence_exact": 0.2987860328624621,
+      "memory": [
+        0.19468674261016203,
+        0.25227429290320086
+      ],
+      "diffused": [
+        0.20908363018342174,
+        0.23787740532994114
+      ],
+      "leak_lane_weights": [
+        0.4355787801201777,
+        0.5644212198798223
+      ],
+      "commissural_lane_weights": [
+        0.4677893900600889,
+        0.5322106099399112
+      ],
+      "channel_gram_cosine": 0.3239085320460493,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 6,
+      "gate_evidence": 0.2691134990941609,
+      "active_evidence": 0.27404770069400064,
+      "gate_evidence_exact": 0.2691134990941609,
+      "active_evidence_exact": 0.2740477006940006,
+      "memory": [
+        0.23190012085216144,
+        0.2631609967986007
+      ],
+      "diffused": [
+        0.23971533983877125,
+        0.2553457778119909
+      ],
+      "leak_lane_weights": [
+        0.4684272559166199,
+        0.5315727440833801
+      ],
+      "commissural_lane_weights": [
+        0.4842136279583099,
+        0.5157863720416901
+      ],
+      "channel_gram_cosine": 0.37303686771117245,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 7,
+      "gate_evidence": 0.25734797998240655,
+      "active_evidence": 0.275507998293307,
+      "gate_evidence_exact": 0.2573482231493337,
+      "active_evidence_exact": 0.27550799829330697,
+      "memory": [
+        0.244624050417284,
+        0.26933449754595384
+      ],
+      "diffused": [
+        0.25080166219945144,
+        0.2631568857637864
+      ],
+      "leak_lane_weights": [
+        0.47596066139322457,
+        0.5240393386067755
+      ],
+      "commissural_lane_weights": [
+        0.48798033069661223,
+        0.5120196693033877
+      ],
+      "channel_gram_cosine": 0.3760045133117723,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 8,
+      "gate_evidence": 0.2947245364175659,
+      "active_evidence": 0.3583629322073969,
+      "gate_evidence_exact": 0.2947245364175659,
+      "active_evidence_exact": 0.35836293220739707,
+      "memory": [
+        0.26967429341742494,
+        0.31384871487667537
+      ],
+      "diffused": [
+        0.2807178987822375,
+        0.3028051095118628
+      ],
+      "leak_lane_weights": [
+        0.46214851785502675,
+        0.5378514821449732
+      ],
+      "commissural_lane_weights": [
+        0.4810742589275133,
+        0.5189257410724867
+      ],
+      "channel_gram_cosine": 0.274307024089608,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 9,
+      "gate_evidence": 0.2840749368159398,
+      "active_evidence": 0.3837475862459669,
+      "gate_evidence_exact": 0.28407493681593965,
+      "active_evidence_exact": 0.3837475862459669,
+      "memory": [
+        0.2768746151166824,
+        0.34879815056132113
+      ],
+      "diffused": [
+        0.2948554989778421,
+        0.3308172667001614
+      ],
+      "leak_lane_weights": [
+        0.4425230412844488,
+        0.5574769587155513
+      ],
+      "commissural_lane_weights": [
+        0.47126152064222443,
+        0.5287384793577756
+      ],
+      "channel_gram_cosine": 0.32611850324665126,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 10,
+      "gate_evidence": 0.34697312224104443,
+      "active_evidence": 0.4710391915369788,
+      "gate_evidence_exact": 0.3469731222410445,
+      "active_evidence_exact": 0.4710391915369788,
+      "memory": [
+        0.3119238686788634,
+        0.40991867104915
+      ],
+      "diffused": [
+        0.33642256927143505,
+        0.38541997045657833
+      ],
+      "leak_lane_weights": [
+        0.43212175995667246,
+        0.5678782400433275
+      ],
+      "commissural_lane_weights": [
+        0.46606087997833623,
+        0.5339391200216638
+      ],
+      "channel_gram_cosine": 0.23708251493938517,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 11,
+      "gate_evidence": 0.2776617221254083,
+      "active_evidence": 0.5600214133267728,
+      "gate_evidence_exact": 0.2776617417863886,
+      "active_evidence_exact": 0.5600214133267726,
+      "memory": [
+        0.2947927954021359,
+        0.48497004218796136
+      ],
+      "diffused": [
+        0.3423371070985922,
+        0.437425730491505
+      ],
+      "leak_lane_weights": [
+        0.3780544303870781,
+        0.6219455696129219
+      ],
+      "commissural_lane_weights": [
+        0.439027215193539,
+        0.560972784806461
+      ],
+      "channel_gram_cosine": 0.15898724439024906,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 12,
+      "gate_evidence": 0.3639801953001569,
+      "active_evidence": 0.5202028769410065,
+      "gate_evidence_exact": 0.3639801953001569,
+      "active_evidence_exact": 0.5202028769410065,
+      "memory": [
+        0.3293864953511464,
+        0.502586459564484
+      ],
+      "diffused": [
+        0.37268648640448077,
+        0.4592864685111496
+      ],
+      "leak_lane_weights": [
+        0.39591009948700695,
+        0.604089900512993
+      ],
+      "commissural_lane_weights": [
+        0.4479550497435035,
+        0.5520449502564966
+      ],
+      "channel_gram_cosine": 0.22075579902628606,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 13,
+      "gate_evidence": 0.3469730663436243,
+      "active_evidence": 0.528824018003596,
+      "gate_evidence_exact": 0.34697306634362424,
+      "active_evidence_exact": 0.528824018003596,
+      "memory": [
+        0.3381797808473853,
+        0.51570523878404
+      ],
+      "diffused": [
+        0.38256114533154895,
+        0.4713238742998763
+      ],
+      "leak_lane_weights": [
+        0.39604838247819213,
+        0.6039516175218078
+      ],
+      "commissural_lane_weights": [
+        0.44802419123909604,
+        0.551975808760904
+      ],
+      "channel_gram_cosine": 0.14360212520845078,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 14,
+      "gate_evidence": 0.30351034452374936,
+      "active_evidence": 0.5792362597473378,
+      "gate_evidence_exact": 0.30351034452375,
+      "active_evidence_exact": 0.5792362597473381,
+      "memory": [
+        0.32084506268556734,
+        0.547470749265689
+      ],
+      "diffused": [
+        0.3775014843305977,
+        0.4908143276206586
+      ],
+      "leak_lane_weights": [
+        0.3695027296169729,
+        0.630497270383027
+      ],
+      "commissural_lane_weights": [
+        0.4347513648084864,
+        0.5652486351915136
+      ],
+      "channel_gram_cosine": 0.11855070056101051,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 15,
+      "gate_evidence": 0.30891143437139973,
+      "active_evidence": 0.482878563120009,
+      "gate_evidence_exact": 0.30891143437139973,
+      "active_evidence_exact": 0.48287856312000865,
+      "memory": [
+        0.31487824852848356,
+        0.515174656192849
+      ],
+      "diffused": [
+        0.3649523504445749,
+        0.4651005542767576
+      ],
+      "leak_lane_weights": [
+        0.3793472039402058,
+        0.6206527960597942
+      ],
+      "commissural_lane_weights": [
+        0.4396736019701029,
+        0.5603263980298971
+      ],
+      "channel_gram_cosine": 0.28366406597193017,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 16,
+      "gate_evidence": 0.48655656762507415,
+      "active_evidence": 0.49745070822299636,
+      "gate_evidence_exact": 0.4865565676250744,
+      "active_evidence_exact": 0.4974507082229962,
+      "memory": [
+        0.40071740807677886,
+        0.5063126822079227
+      ],
+      "diffused": [
+        0.42711622660956483,
+        0.4799138636751367
+      ],
+      "leak_lane_weights": [
+        0.44179064439968074,
+        0.5582093556003194
+      ],
+      "commissural_lane_weights": [
+        0.47089532219984037,
+        0.5291046778001597
+      ],
+      "channel_gram_cosine": 0.2402674935090578,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 17,
+      "gate_evidence": 0.4211107617461781,
+      "active_evidence": 0.49545433287637497,
+      "gate_evidence_exact": 0.42111076174617823,
+      "active_evidence_exact": 0.4954543328763752,
+      "memory": [
+        0.4109140849114785,
+        0.5008835075421488
+      ],
+      "diffused": [
+        0.4334064405691461,
+        0.4783911518844813
+      ],
+      "leak_lane_weights": [
+        0.45066370904283454,
+        0.5493362909571655
+      ],
+      "commissural_lane_weights": [
+        0.47533185452141724,
+        0.5246681454785828
+      ],
+      "channel_gram_cosine": 0.22413833936426508,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 18,
+      "gate_evidence": 0.42940540822185774,
+      "active_evidence": 0.5757266791102709,
+      "gate_evidence_exact": 0.42940540822185763,
+      "active_evidence_exact": 0.5757266791102709,
+      "memory": [
+        0.4201597465666681,
+        0.5383050933262099
+      ],
+      "diffused": [
+        0.4496960832565535,
+        0.5087687566363245
+      ],
+      "leak_lane_weights": [
+        0.43836740700225046,
+        0.5616325929977495
+      ],
+      "commissural_lane_weights": [
+        0.4691837035011252,
+        0.5308162964988747
+      ],
+      "channel_gram_cosine": 0.16741218449519243,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 19,
+      "gate_evidence": 0.3889468438313806,
+      "active_evidence": 0.5249081284197542,
+      "gate_evidence_exact": 0.38894684383138045,
+      "active_evidence_exact": 0.5249081284197541,
+      "memory": [
+        0.4045532951990244,
+        0.531606610872982
+      ],
+      "diffused": [
+        0.4363166241175138,
+        0.49984328195449257
+      ],
+      "leak_lane_weights": [
+        0.4321412320427953,
+        0.5678587679572047
+      ],
+      "commissural_lane_weights": [
+        0.4660706160213977,
+        0.5339293839786023
+      ],
+      "channel_gram_cosine": 0.20332613308957379,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 20,
+      "gate_evidence": 0.3750940498322582,
+      "active_evidence": 0.5267692737474686,
+      "gate_evidence_exact": 0.37509404983225814,
+      "active_evidence_exact": 0.5267692737474686,
+      "memory": [
+        0.3898236725156413,
+        0.5291879423102253
+      ],
+      "diffused": [
+        0.42466473996428733,
+        0.49434687486157924
+      ],
+      "leak_lane_weights": [
+        0.42417709006812143,
+        0.5758229099318786
+      ],
+      "commissural_lane_weights": [
+        0.4620885450340607,
+        0.5379114549659393
+      ],
+      "channel_gram_cosine": 0.1496718823694382,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 21,
+      "gate_evidence": 0.3928562539088528,
+      "active_evidence": 0.5387989748305615,
+      "gate_evidence_exact": 0.3928562539088527,
+      "active_evidence_exact": 0.5387989748305614,
+      "memory": [
+        0.39133996321224707,
+        0.5339934585703934
+      ],
+      "diffused": [
+        0.4270033370517836,
+        0.4983300847308568
+      ],
+      "leak_lane_weights": [
+        0.4229177872537412,
+        0.5770822127462588
+      ],
+      "commissural_lane_weights": [
+        0.46145889362687054,
+        0.5385411063731295
+      ],
+      "channel_gram_cosine": 0.1983581376260226,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 22,
+      "gate_evidence": 0.3359782514919842,
+      "active_evidence": 0.5675308627734328,
+      "gate_evidence_exact": 0.33597825149198424,
+      "active_evidence_exact": 0.5675308627734327,
+      "memory": [
+        0.3636591073521156,
+        0.5507621606719131
+      ],
+      "diffused": [
+        0.41043487068206497,
+        0.5039863973419637
+      ],
+      "leak_lane_weights": [
+        0.3976931859185055,
+        0.6023068140814944
+      ],
+      "commissural_lane_weights": [
+        0.4488465929592528,
+        0.5511534070407472
+      ],
+      "channel_gram_cosine": 0.11051410798175244,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 23,
+      "gate_evidence": 0.3233000734939926,
+      "active_evidence": 0.6290715333729264,
+      "gate_evidence_exact": 0.32330007349399287,
+      "active_evidence_exact": 0.6290715333729264,
+      "memory": [
+        0.3434795904230541,
+        0.5899168470224198
+      ],
+      "diffused": [
+        0.4050889045728955,
+        0.5283075328725784
+      ],
+      "leak_lane_weights": [
+        0.36798896657790076,
+        0.6320110334220993
+      ],
+      "commissural_lane_weights": [
+        0.43399448328895035,
+        0.5660055167110497
+      ],
+      "channel_gram_cosine": 0.12250878212671051,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 24,
+      "gate_evidence": 0.36851079366532485,
+      "active_evidence": 0.6508509701466969,
+      "gate_evidence_exact": 0.3685107936653248,
+      "active_evidence_exact": 0.6508509701466969,
+      "memory": [
+        0.3559951920441895,
+        0.6203839085845584
+      ],
+      "diffused": [
+        0.4220923711792817,
+        0.5542867294494662
+      ],
+      "leak_lane_weights": [
+        0.3646075502998203,
+        0.6353924497001797
+      ],
+      "commissural_lane_weights": [
+        0.43230377514991014,
+        0.5676962248500899
+      ],
+      "channel_gram_cosine": 0.17794719235864961,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 25,
+      "gate_evidence": 0.2538560055987006,
+      "active_evidence": 0.6797749891495775,
+      "gate_evidence_exact": 0.253856005598701,
+      "active_evidence_exact": 0.6797749891495775,
+      "memory": [
+        0.30492559882144504,
+        0.6500794488670679
+      ],
+      "diffused": [
+        0.39121406133285075,
+        0.5637909863556623
+      ],
+      "leak_lane_weights": [
+        0.31929213312482974,
+        0.6807078668751703
+      ],
+      "commissural_lane_weights": [
+        0.4096460665624148,
+        0.5903539334375851
+      ],
+      "channel_gram_cosine": 0.07835055071152651,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 26,
+      "gate_evidence": 0.4612330286121041,
+      "active_evidence": 0.7082021028996116,
+      "gate_evidence_exact": 0.46123302861210413,
+      "active_evidence_exact": 0.7082021028996119,
+      "memory": [
+        0.38307931371677456,
+        0.6791407758833398
+      ],
+      "diffused": [
+        0.45709467925841585,
+        0.6051254103416985
+      ],
+      "leak_lane_weights": [
+        0.3606402453384114,
+        0.6393597546615886
+      ],
+      "commissural_lane_weights": [
+        0.43032012266920566,
+        0.5696798773307944
+      ],
+      "channel_gram_cosine": 0.13878902573871202,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 27,
+      "gate_evidence": 0.43394593081398225,
+      "active_evidence": 0.7049218915130228,
+      "gate_evidence_exact": 0.4339459308139821,
+      "active_evidence_exact": 0.7049218915130226,
+      "memory": [
+        0.40851262226537843,
+        0.6920313336981813
+      ],
+      "diffused": [
+        0.47939230012357914,
+        0.6211516558399806
+      ],
+      "leak_lane_weights": [
+        0.3711915549140545,
+        0.6288084450859455
+      ],
+      "commissural_lane_weights": [
+        0.43559577745702727,
+        0.5644042225429727
+      ],
+      "channel_gram_cosine": 0.07283646291671912,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 28,
+      "gate_evidence": 0.4556371671267446,
+      "active_evidence": 0.7971172454293344,
+      "gate_evidence_exact": 0.45563716712674496,
+      "active_evidence_exact": 0.797117245429335,
+      "memory": [
+        0.43207489469606153,
+        0.7445742895637578
+      ],
+      "diffused": [
+        0.5101997434129856,
+        0.6664494408468338
+      ],
+      "leak_lane_weights": [
+        0.36720791589879165,
+        0.6327920841012085
+      ],
+      "commissural_lane_weights": [
+        0.4336039579493958,
+        0.5663960420506042
+      ],
+      "channel_gram_cosine": 0.07340537021401257,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 29,
+      "gate_evidence": 0.4539493132591095,
+      "active_evidence": 0.7456105755091483,
+      "gate_evidence_exact": 0.4539493132591091,
+      "active_evidence_exact": 0.745610575509148,
+      "memory": [
+        0.4430121039775855,
+        0.7450924325364531
+      ],
+      "diffused": [
+        0.5185321861173025,
+        0.6695723503967362
+      ],
+      "leak_lane_weights": [
+        0.37287300095445003,
+        0.62712699904555
+      ],
+      "commissural_lane_weights": [
+        0.43643650047722504,
+        0.5635634995227751
+      ],
+      "channel_gram_cosine": 0.09738608942994355,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "layer": 30,
+      "gate_evidence": 0.42802875583155714,
+      "active_evidence": 0.793922916364805,
+      "gate_evidence_exact": 0.42802875583155714,
+      "active_evidence_exact": 0.7939229163648049,
+      "memory": [
+        0.4355204299045713,
+        0.7695076744506291
+      ],
+      "diffused": [
+        0.5190172410410857,
+        0.6860108633141146
+      ],
+      "leak_lane_weights": [
+        0.36141931323470194,
+        0.638580686765298
+      ],
+      "commissural_lane_weights": [
+        0.43070965661735094,
+        0.569290343382649
+      ],
+      "channel_gram_cosine": 0.05239812170637785,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 0,
+      "gate_evidence": 0.07554269105320384,
+      "active_evidence": 0.09363955971876338,
+      "gate_evidence_exact": 0.07554324074260439,
+      "active_evidence_exact": 0.09363955976962059,
+      "memory": [
+        0.07554269105320384,
+        0.09363955971876338
+      ],
+      "diffused": [
+        0.08006690821959372,
+        0.0891153425523735
+      ],
+      "leak_lane_weights": [
+        0.4465166452657275,
+        0.5534833547342725
+      ],
+      "commissural_lane_weights": [
+        0.47325832263286377,
+        0.5267416773671363
+      ],
+      "channel_gram_cosine": 0.7306670519479903,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 1,
+      "gate_evidence": 0.12046058239810786,
+      "active_evidence": 0.12253002347015854,
+      "gate_evidence_exact": 0.12046058239817238,
+      "active_evidence_exact": 0.12253064148037915,
+      "memory": [
+        0.09800163672565584,
+        0.10808479159446097
+      ],
+      "diffused": [
+        0.10052242544285712,
+        0.1055640028772597
+      ],
+      "leak_lane_weights": [
+        0.475536586880086,
+        0.524463413119914
+      ],
+      "commissural_lane_weights": [
+        0.487768293440043,
+        0.5122317065599571
+      ],
+      "channel_gram_cosine": 0.6455303203144288,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 2,
+      "gate_evidence": 0.16275573230367713,
+      "active_evidence": 0.16823611961442433,
+      "gate_evidence_exact": 0.16275573431677665,
+      "active_evidence_exact": 0.16823611961442433,
+      "memory": [
+        0.1303786845146665,
+        0.13816045560444265
+      ],
+      "diffused": [
+        0.13232412728711054,
+        0.1362150128319986
+      ],
+      "leak_lane_weights": [
+        0.4855109182849014,
+        0.5144890817150986
+      ],
+      "commissural_lane_weights": [
+        0.49275545914245067,
+        0.5072445408575492
+      ],
+      "channel_gram_cosine": 0.563849203177145,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 3,
+      "gate_evidence": 0.1723050004930496,
+      "active_evidence": 0.1617648128567148,
+      "gate_evidence_exact": 0.17230500049305658,
+      "active_evidence_exact": 0.1617648128567148,
+      "memory": [
+        0.15134184250385804,
+        0.1499626342305787
+      ],
+      "diffused": [
+        0.15099704043553822,
+        0.15030743629889853
+      ],
+      "leak_lane_weights": [
+        0.5022887284786263,
+        0.49771127152137384
+      ],
+      "commissural_lane_weights": [
+        0.5011443642393132,
+        0.4988556357606869
+      ],
+      "channel_gram_cosine": 0.4929479764663666,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 4,
+      "gate_evidence": 0.24688308202225345,
+      "active_evidence": 0.1886095300201354,
+      "gate_evidence_exact": 0.2468830820222536,
+      "active_evidence_exact": 0.18860953002013503,
+      "memory": [
+        0.19911246226305573,
+        0.16928608212535706
+      ],
+      "diffused": [
+        0.19165586722863107,
+        0.17674267715978176
+      ],
+      "leak_lane_weights": [
+        0.5404811319045982,
+        0.45951886809540177
+      ],
+      "commissural_lane_weights": [
+        0.5202405659522992,
+        0.47975943404770094
+      ],
+      "channel_gram_cosine": 0.3619079134848933,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 5,
+      "gate_evidence": 0.19746069542476047,
+      "active_evidence": 0.22447071547086742,
+      "gate_evidence_exact": 0.19746069542476033,
+      "active_evidence_exact": 0.22447071547086725,
+      "memory": [
+        0.1982865788439081,
+        0.19687839879811225
+      ],
+      "diffused": [
+        0.19793453383245913,
+        0.19723044380956123
+      ],
+      "leak_lane_weights": [
+        0.5017817622075197,
+        0.4982182377924803
+      ],
+      "commissural_lane_weights": [
+        0.5008908811037598,
+        0.49910911889624016
+      ],
+      "channel_gram_cosine": 0.3417378640912947,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 6,
+      "gate_evidence": 0.3178607966940904,
+      "active_evidence": 0.24537335624911716,
+      "gate_evidence_exact": 0.31786079669409073,
+      "active_evidence_exact": 0.24537335763105572,
+      "memory": [
+        0.25807368776899925,
+        0.2211258775236147
+      ],
+      "diffused": [
+        0.24883673520765312,
+        0.23036283008496083
+      ],
+      "leak_lane_weights": [
+        0.5385515899026568,
+        0.46144841009734316
+      ],
+      "commissural_lane_weights": [
+        0.5192757949513284,
+        0.4807242050486715
+      ],
+      "channel_gram_cosine": 0.3037551835001784,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 7,
+      "gate_evidence": 0.32229082134312326,
+      "active_evidence": 0.3064847224200519,
+      "gate_evidence_exact": 0.32229082134312326,
+      "active_evidence_exact": 0.3064847224200516,
+      "memory": [
+        0.2901822545560613,
+        0.26380529997183333
+      ],
+      "diffused": [
+        0.28358801591000427,
+        0.27039953861789034
+      ],
+      "leak_lane_weights": [
+        0.5238064504957212,
+        0.4761935495042788
+      ],
+      "commissural_lane_weights": [
+        0.5119032252478606,
+        0.4880967747521395
+      ],
+      "channel_gram_cosine": 0.2764514256081885,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 8,
+      "gate_evidence": 0.3681207762390282,
+      "active_evidence": 0.4429559762666437,
+      "gate_evidence_exact": 0.36812077623902834,
+      "active_evidence_exact": 0.44295597626664385,
+      "memory": [
+        0.3291515153975447,
+        0.3533806381192385
+      ],
+      "diffused": [
+        0.33520879607796816,
+        0.34732335743881504
+      ],
+      "leak_lane_weights": [
+        0.48225056314427683,
+        0.5177494368557232
+      ],
+      "commissural_lane_weights": [
+        0.4911252815721384,
+        0.5088747184278616
+      ],
+      "channel_gram_cosine": 0.21050116754619544,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 9,
+      "gate_evidence": 0.36793871342591195,
+      "active_evidence": 0.3631427143745172,
+      "gate_evidence_exact": 0.3679387134259118,
+      "active_evidence_exact": 0.36314271437451706,
+      "memory": [
+        0.3485451144117283,
+        0.3582616762468778
+      ],
+      "diffused": [
+        0.3509742548705157,
+        0.3558325357880905
+      ],
+      "leak_lane_weights": [
+        0.49312643712286947,
+        0.5068735628771305
+      ],
+      "commissural_lane_weights": [
+        0.4965632185614347,
+        0.5034367814385653
+      ],
+      "channel_gram_cosine": 0.21626185335752018,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 10,
+      "gate_evidence": 0.2760062711383096,
+      "active_evidence": 0.3885187905754247,
+      "gate_evidence_exact": 0.2760062711383096,
+      "active_evidence_exact": 0.38851879057542477,
+      "memory": [
+        0.312275692775019,
+        0.3733902334111513
+      ],
+      "diffused": [
+        0.32755432793405204,
+        0.3581115982521182
+      ],
+      "leak_lane_weights": [
+        0.4554341711450755,
+        0.5445658288549244
+      ],
+      "commissural_lane_weights": [
+        0.4777170855725378,
+        0.5222829144274623
+      ],
+      "channel_gram_cosine": 0.17037944821770287,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 11,
+      "gate_evidence": 0.2748185597621054,
+      "active_evidence": 0.36435496567425396,
+      "gate_evidence_exact": 0.27481855976229164,
+      "active_evidence_exact": 0.36435496567425396,
+      "memory": [
+        0.29354712626856216,
+        0.36887259954270263
+      ],
+      "diffused": [
+        0.31237849458709727,
+        0.3500412312241675
+      ],
+      "leak_lane_weights": [
+        0.4431436970103137,
+        0.5568563029896864
+      ],
+      "commissural_lane_weights": [
+        0.4715718485051568,
+        0.5284281514948432
+      ],
+      "channel_gram_cosine": 0.18463436780135292,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 12,
+      "gate_evidence": 0.29980610561380605,
+      "active_evidence": 0.4294742002693556,
+      "gate_evidence_exact": 0.2998061056138061,
+      "active_evidence_exact": 0.42947420026935584,
+      "memory": [
+        0.2966766159411841,
+        0.3991733999060291
+      ],
+      "diffused": [
+        0.32230081193239535,
+        0.37354920391481783
+      ],
+      "leak_lane_weights": [
+        0.42635138202874595,
+        0.5736486179712541
+      ],
+      "commissural_lane_weights": [
+        0.46317569101437295,
+        0.536824308985627
+      ],
+      "channel_gram_cosine": 0.2275881246387394,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 13,
+      "gate_evidence": 0.3086194236408502,
+      "active_evidence": 0.41323096289195965,
+      "gate_evidence_exact": 0.30861942364085004,
+      "active_evidence_exact": 0.41323096289195904,
+      "memory": [
+        0.3026480197910172,
+        0.4062021813989944
+      ],
+      "diffused": [
+        0.3285365601930115,
+        0.38031364099700005
+      ],
+      "leak_lane_weights": [
+        0.42695624446876695,
+        0.5730437555312331
+      ],
+      "commissural_lane_weights": [
+        0.46347812223438345,
+        0.5365218777656166
+      ],
+      "channel_gram_cosine": 0.2156074356430566,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 14,
+      "gate_evidence": 0.31641558997177527,
+      "active_evidence": 0.3644207466678014,
+      "gate_evidence_exact": 0.3164155899717754,
+      "active_evidence_exact": 0.36442074666780133,
+      "memory": [
+        0.3095318048813962,
+        0.3853114640333979
+      ],
+      "diffused": [
+        0.3284767196693966,
+        0.36636654924539747
+      ],
+      "leak_lane_weights": [
+        0.44546996240579956,
+        0.5545300375942004
+      ],
+      "commissural_lane_weights": [
+        0.4727349812028998,
+        0.5272650187971002
+      ],
+      "channel_gram_cosine": 0.21197946583645955,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 15,
+      "gate_evidence": 0.35309582959739283,
+      "active_evidence": 0.42022849936358214,
+      "gate_evidence_exact": 0.3530958295973928,
+      "active_evidence_exact": 0.4202284993635818,
+      "memory": [
+        0.3313138172393945,
+        0.40276998169849
+      ],
+      "diffused": [
+        0.34917785835416837,
+        0.38490594058371613
+      ],
+      "leak_lane_weights": [
+        0.4513296952183916,
+        0.5486703047816083
+      ],
+      "commissural_lane_weights": [
+        0.47566484760919575,
+        0.5243351523908042
+      ],
+      "channel_gram_cosine": 0.16961320184438877,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 16,
+      "gate_evidence": 0.5291071934109388,
+      "active_evidence": 0.4491997487181865,
+      "gate_evidence_exact": 0.5291071934109385,
+      "active_evidence_exact": 0.44919974871818674,
+      "memory": [
+        0.4302105053251667,
+        0.4259848652083382
+      ],
+      "diffused": [
+        0.4291540952959596,
+        0.4270412752375453
+      ],
+      "leak_lane_weights": [
+        0.5024676845158573,
+        0.4975323154841427
+      ],
+      "commissural_lane_weights": [
+        0.5012338422579287,
+        0.49876615774207134
+      ],
+      "channel_gram_cosine": 0.21017394970757516,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 17,
+      "gate_evidence": 0.3663164625648347,
+      "active_evidence": 0.4109550298899304,
+      "gate_evidence_exact": 0.366316462564835,
+      "active_evidence_exact": 0.41095502988993055,
+      "memory": [
+        0.39826348394500066,
+        0.4184699475491343
+      ],
+      "diffused": [
+        0.4033150998460341,
+        0.41341833164810093
+      ],
+      "leak_lane_weights": [
+        0.48762970705927394,
+        0.512370292940726
+      ],
+      "commissural_lane_weights": [
+        0.493814853529637,
+        0.5061851464703631
+      ],
+      "channel_gram_cosine": 0.19626766323849526,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 18,
+      "gate_evidence": 0.31703122084294033,
+      "active_evidence": 0.2973938259119092,
+      "gate_evidence_exact": 0.31703122084294105,
+      "active_evidence_exact": 0.29739382591190916,
+      "memory": [
+        0.3576473523939705,
+        0.3579318867305218
+      ],
+      "diffused": [
+        0.3577184859781083,
+        0.357860753146384
+      ],
+      "leak_lane_weights": [
+        0.4998011860035938,
+        0.5001988139964062
+      ],
+      "commissural_lane_weights": [
+        0.49990059300179684,
+        0.5000994069982031
+      ],
+      "channel_gram_cosine": 0.3257758663646567,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 19,
+      "gate_evidence": 0.3935093744877278,
+      "active_evidence": 0.27537783373091657,
+      "gate_evidence_exact": 0.39350937448772794,
+      "active_evidence_exact": 0.27537783373091657,
+      "memory": [
+        0.37557836344084916,
+        0.3166548602307192
+      ],
+      "diffused": [
+        0.36084748763831664,
+        0.3313857360332517
+      ],
+      "leak_lane_weights": [
+        0.5425604414778034,
+        0.4574395585221966
+      ],
+      "commissural_lane_weights": [
+        0.5212802207389017,
+        0.4787197792610983
+      ],
+      "channel_gram_cosine": 0.31204715561892515,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 20,
+      "gate_evidence": 0.3504449723566496,
+      "active_evidence": 0.3163124559646534,
+      "gate_evidence_exact": 0.3504449723566496,
+      "active_evidence_exact": 0.3163124559646535,
+      "memory": [
+        0.3630116678987494,
+        0.3164836580976863
+      ],
+      "diffused": [
+        0.35137966544848365,
+        0.32811566054795205
+      ],
+      "leak_lane_weights": [
+        0.5342371816412664,
+        0.4657628183587335
+      ],
+      "commissural_lane_weights": [
+        0.5171185908206333,
+        0.4828814091793667
+      ],
+      "channel_gram_cosine": 0.26847411744255945,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 21,
+      "gate_evidence": 0.3456078578376908,
+      "active_evidence": 0.31009118235875127,
+      "gate_evidence_exact": 0.34560785783769066,
+      "active_evidence_exact": 0.3100911823587513,
+      "memory": [
+        0.35430976286822013,
+        0.31328742022821876
+      ],
+      "diffused": [
+        0.3440541772082198,
+        0.3235430058882191
+      ],
+      "leak_lane_weights": [
+        0.5307238733765564,
+        0.46927612662344365
+      ],
+      "commissural_lane_weights": [
+        0.5153619366882781,
+        0.4846380633117218
+      ],
+      "channel_gram_cosine": 0.22088207296763393,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 22,
+      "gate_evidence": 0.3333996249067549,
+      "active_evidence": 0.293239608014499,
+      "gate_evidence_exact": 0.3333996249067546,
+      "active_evidence_exact": 0.2932396080144989,
+      "memory": [
+        0.3438546938874875,
+        0.3032635141213589
+      ],
+      "diffused": [
+        0.33370689894595534,
+        0.31341130906289105
+      ],
+      "leak_lane_weights": [
+        0.5313630332632935,
+        0.46863696673670646
+      ],
+      "commissural_lane_weights": [
+        0.5156815166316466,
+        0.48431848336835326
+      ],
+      "channel_gram_cosine": 0.3945611668398813,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 23,
+      "gate_evidence": 0.35786935017338484,
+      "active_evidence": 0.3762972811100981,
+      "gate_evidence_exact": 0.35786935017338506,
+      "active_evidence_exact": 0.3762972811100978,
+      "memory": [
+        0.35086202203043615,
+        0.3397803976157285
+      ],
+      "diffused": [
+        0.34809161592675925,
+        0.3425508037194054
+      ],
+      "leak_lane_weights": [
+        0.5080226931473345,
+        0.49197730685266544
+      ],
+      "commissural_lane_weights": [
+        0.5040113465736673,
+        0.4959886534263327
+      ],
+      "channel_gram_cosine": 0.4776404481281545,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 24,
+      "gate_evidence": 0.32493489032324446,
+      "active_evidence": 0.41180149263082205,
+      "gate_evidence_exact": 0.3249348903232442,
+      "active_evidence_exact": 0.41180149263082205,
+      "memory": [
+        0.33789845617684033,
+        0.37579094512327527
+      ],
+      "diffused": [
+        0.34737157841344907,
+        0.36631782288666653
+      ],
+      "leak_lane_weights": [
+        0.4734530953679522,
+        0.5265469046320478
+      ],
+      "commissural_lane_weights": [
+        0.4867265476839761,
+        0.513273452316024
+      ],
+      "channel_gram_cosine": 0.3301897178748363,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 25,
+      "gate_evidence": 0.3208885790165841,
+      "active_evidence": 0.4472069123750464,
+      "gate_evidence_exact": 0.32088857901658413,
+      "active_evidence_exact": 0.4472069123750465,
+      "memory": [
+        0.3293935175967122,
+        0.41149892874916083
+      ],
+      "diffused": [
+        0.34991987038482436,
+        0.3909725759610487
+      ],
+      "leak_lane_weights": [
+        0.44459019554228313,
+        0.5554098044577168
+      ],
+      "commissural_lane_weights": [
+        0.4722950977711416,
+        0.5277049022288585
+      ],
+      "channel_gram_cosine": 0.25779747466340097,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 26,
+      "gate_evidence": 0.3811288355281957,
+      "active_evidence": 0.48796377801667556,
+      "gate_evidence_exact": 0.3811288355281955,
+      "active_evidence_exact": 0.4879637780166757,
+      "memory": [
+        0.35526117656245393,
+        0.4497313533829182
+      ],
+      "diffused": [
+        0.37887872076757,
+        0.42611380917780217
+      ],
+      "leak_lane_weights": [
+        0.44132232703645385,
+        0.5586776729635461
+      ],
+      "commissural_lane_weights": [
+        0.47066116351822695,
+        0.529338836481773
+      ],
+      "channel_gram_cosine": 0.3669216860454843,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 27,
+      "gate_evidence": 0.36658340524875654,
+      "active_evidence": 0.5305459897482717,
+      "gate_evidence_exact": 0.36658340524875666,
+      "active_evidence_exact": 0.5305459897482718,
+      "memory": [
+        0.36092229090560524,
+        0.490138671565595
+      ],
+      "diffused": [
+        0.3932263860706027,
+        0.45783457640059755
+      ],
+      "leak_lane_weights": [
+        0.4240851205977137,
+        0.5759148794022863
+      ],
+      "commissural_lane_weights": [
+        0.4620425602988569,
+        0.5379574397011432
+      ],
+      "channel_gram_cosine": 0.2590550670244094,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 28,
+      "gate_evidence": 0.23896485136581852,
+      "active_evidence": 0.6063046005651317,
+      "gate_evidence_exact": 0.23896504268518848,
+      "active_evidence_exact": 0.6063046005651317,
+      "memory": [
+        0.2999435711357119,
+        0.5482216360653633
+      ],
+      "diffused": [
+        0.36201308736812476,
+        0.4861521198329505
+      ],
+      "leak_lane_weights": [
+        0.3536381457163498,
+        0.6463618542836501
+      ],
+      "commissural_lane_weights": [
+        0.42681907285817494,
+        0.5731809271418251
+      ],
+      "channel_gram_cosine": 0.1988618425193947,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 29,
+      "gate_evidence": 0.29397415780171826,
+      "active_evidence": 0.5570800932618153,
+      "gate_evidence_exact": 0.29397415780171826,
+      "active_evidence_exact": 0.557080093261815,
+      "memory": [
+        0.2969588644687151,
+        0.5526508646635893
+      ],
+      "diffused": [
+        0.36088186451743365,
+        0.4887278646148707
+      ],
+      "leak_lane_weights": [
+        0.3495238511121988,
+        0.6504761488878011
+      ],
+      "commissural_lane_weights": [
+        0.42476192555609943,
+        0.5752380744439006
+      ],
+      "channel_gram_cosine": 0.28565487926284244,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "layer": 30,
+      "gate_evidence": 0.2526226605529108,
+      "active_evidence": 0.5386489327725275,
+      "gate_evidence_exact": 0.25262266055291066,
+      "active_evidence_exact": 0.5386489327725276,
+      "memory": [
+        0.27479076251081297,
+        0.5456498987180584
+      ],
+      "diffused": [
+        0.34250554656262433,
+        0.47793511466624705
+      ],
+      "leak_lane_weights": [
+        0.33493069699791117,
+        0.6650693030020889
+      ],
+      "commissural_lane_weights": [
+        0.41746534849895556,
+        0.5825346515010444
+      ],
+      "channel_gram_cosine": 0.24782715791334034,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 0,
+      "gate_evidence": 0.08557241796900604,
+      "active_evidence": 0.1063518563244985,
+      "gate_evidence_exact": 0.08557242059318089,
+      "active_evidence_exact": 0.10635185632449864,
+      "memory": [
+        0.08557241796900604,
+        0.1063518563244985
+      ],
+      "diffused": [
+        0.09076727755787915,
+        0.10115699673562539
+      ],
+      "leak_lane_weights": [
+        0.4458655283913825,
+        0.5541344716086174
+      ],
+      "commissural_lane_weights": [
+        0.4729327641956912,
+        0.5270672358043087
+      ],
+      "channel_gram_cosine": 0.8263112406424516,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 1,
+      "gate_evidence": 0.11381063573601594,
+      "active_evidence": 0.11756620137477289,
+      "gate_evidence_exact": 0.11381063573601619,
+      "active_evidence_exact": 0.11756620137481662,
+      "memory": [
+        0.09969152685251098,
+        0.1119590288496357
+      ],
+      "diffused": [
+        0.10275840235179216,
+        0.10889215335035451
+      ],
+      "leak_lane_weights": [
+        0.47101944297659054,
+        0.5289805570234094
+      ],
+      "commissural_lane_weights": [
+        0.48550972148829524,
+        0.5144902785117047
+      ],
+      "channel_gram_cosine": 0.6891279367767481,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 2,
+      "gate_evidence": 0.1449148777820067,
+      "active_evidence": 0.16572841412112113,
+      "gate_evidence_exact": 0.14491487778226564,
+      "active_evidence_exact": 0.165728414121121,
+      "memory": [
+        0.12230320231725884,
+        0.1388437214853784
+      ],
+      "diffused": [
+        0.12643833210928873,
+        0.13470859169334853
+      ],
+      "leak_lane_weights": [
+        0.46833100898285873,
+        0.5316689910171412
+      ],
+      "commissural_lane_weights": [
+        0.48416550449142937,
+        0.5158344955085706
+      ],
+      "channel_gram_cosine": 0.5480607593939087,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 3,
+      "gate_evidence": 0.1864449752858964,
+      "active_evidence": 0.2134960345689573,
+      "gate_evidence_exact": 0.18644497528589654,
+      "active_evidence_exact": 0.2134960345689574,
+      "memory": [
+        0.15437408880157763,
+        0.17616987802716785
+      ],
+      "diffused": [
+        0.15982303610797519,
+        0.1707209307207703
+      ],
+      "leak_lane_weights": [
+        0.46703042346423673,
+        0.5329695765357633
+      ],
+      "commissural_lane_weights": [
+        0.48351521173211837,
+        0.5164847882678816
+      ],
+      "channel_gram_cosine": 0.4516423412357192,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 4,
+      "gate_evidence": 0.1529598217370395,
+      "active_evidence": 0.22871109979944435,
+      "gate_evidence_exact": 0.15295982849389422,
+      "active_evidence_exact": 0.22871109979944443,
+      "memory": [
+        0.15366695526930857,
+        0.2024404889133061
+      ],
+      "diffused": [
+        0.16586033868030794,
+        0.19024710550230672
+      ],
+      "leak_lane_weights": [
+        0.4315185143686774,
+        0.5684814856313227
+      ],
+      "commissural_lane_weights": [
+        0.4657592571843387,
+        0.5342407428156614
+      ],
+      "channel_gram_cosine": 0.43230567285689303,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 5,
+      "gate_evidence": 0.1824699125914703,
+      "active_evidence": 0.26526354808429226,
+      "gate_evidence_exact": 0.1824699125914703,
+      "active_evidence_exact": 0.2652635480842923,
+      "memory": [
+        0.16806843393038945,
+        0.23385201849879916
+      ],
+      "diffused": [
+        0.18451433007249188,
+        0.21740612235669676
+      ],
+      "leak_lane_weights": [
+        0.4181634274010979,
+        0.5818365725989021
+      ],
+      "commissural_lane_weights": [
+        0.45908171370054895,
+        0.540918286299451
+      ],
+      "channel_gram_cosine": 0.38068091739301396,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 6,
+      "gate_evidence": 0.1807966898883642,
+      "active_evidence": 0.25163179341468306,
+      "gate_evidence_exact": 0.18079726782574607,
+      "active_evidence_exact": 0.251631793414683,
+      "memory": [
+        0.17443256190937684,
+        0.2427419059567411
+      ],
+      "diffused": [
+        0.19150989792121792,
+        0.22566456994490006
+      ],
+      "leak_lane_weights": [
+        0.4181285657332144,
+        0.5818714342667856
+      ],
+      "commissural_lane_weights": [
+        0.45906428286660717,
+        0.5409357171333927
+      ],
+      "channel_gram_cosine": 0.3660387010410375,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 7,
+      "gate_evidence": 0.2677509327058332,
+      "active_evidence": 0.29720876021337095,
+      "gate_evidence_exact": 0.26775093270583317,
+      "active_evidence_exact": 0.29720876021337106,
+      "memory": [
+        0.22109174730760503,
+        0.26997533308505606
+      ],
+      "diffused": [
+        0.23331264375196778,
+        0.2577544366406933
+      ],
+      "leak_lane_weights": [
+        0.4502271810417801,
+        0.5497728189582198
+      ],
+      "commissural_lane_weights": [
+        0.47511359052089003,
+        0.5248864094791099
+      ],
+      "channel_gram_cosine": 0.30365617847132104,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 8,
+      "gate_evidence": 0.2837700181775093,
+      "active_evidence": 0.2979402167976823,
+      "gate_evidence_exact": 0.2837700181775094,
+      "active_evidence_exact": 0.2979402167976823,
+      "memory": [
+        0.25243088274255715,
+        0.2839577749413692
+      ],
+      "diffused": [
+        0.2603126057922602,
+        0.2760760518916662
+      ],
+      "leak_lane_weights": [
+        0.4706118951741616,
+        0.5293881048258385
+      ],
+      "commissural_lane_weights": [
+        0.48530594758708084,
+        0.5146940524129193
+      ],
+      "channel_gram_cosine": 0.37336379892836014,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 9,
+      "gate_evidence": 0.2590244044395751,
+      "active_evidence": 0.3228661433939467,
+      "gate_evidence_exact": 0.2590244044395809,
+      "active_evidence_exact": 0.3228661433939468,
+      "memory": [
+        0.25572764359106614,
+        0.30341195916765795
+      ],
+      "diffused": [
+        0.2676487224852141,
+        0.29149088027351
+      ],
+      "leak_lane_weights": [
+        0.4573592039078225,
+        0.5426407960921775
+      ],
+      "commissural_lane_weights": [
+        0.47867960195391124,
+        0.5213203980460888
+      ],
+      "channel_gram_cosine": 0.4145627878233349,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 10,
+      "gate_evidence": 0.31900714345515263,
+      "active_evidence": 0.4171854538078507,
+      "gate_evidence_exact": 0.3190071434551527,
+      "active_evidence_exact": 0.4171854538078506,
+      "memory": [
+        0.28736739352310936,
+        0.3602987064877543
+      ],
+      "diffused": [
+        0.3056002217642706,
+        0.34206587824659307
+      ],
+      "leak_lane_weights": [
+        0.443696826988921,
+        0.556303173011079
+      ],
+      "commissural_lane_weights": [
+        0.4718484134944605,
+        0.5281515865055395
+      ],
+      "channel_gram_cosine": 0.25930841086567846,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 11,
+      "gate_evidence": 0.2448984782685856,
+      "active_evidence": 0.3868214933559329,
+      "gate_evidence_exact": 0.24489847827657643,
+      "active_evidence_exact": 0.3868214933559328,
+      "memory": [
+        0.26613293589584747,
+        0.3735600999218436
+      ],
+      "diffused": [
+        0.2929897269023465,
+        0.34670330891534457
+      ],
+      "leak_lane_weights": [
+        0.4160322545260503,
+        0.5839677454739496
+      ],
+      "commissural_lane_weights": [
+        0.4580161272630251,
+        0.5419838727369748
+      ],
+      "channel_gram_cosine": 0.24380718196866935,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 12,
+      "gate_evidence": 0.317111295687427,
+      "active_evidence": 0.4904365535802706,
+      "gate_evidence_exact": 0.31711129568742713,
+      "active_evidence_exact": 0.4904365535802702,
+      "memory": [
+        0.2916221157916372,
+        0.4319983267510571
+      ],
+      "diffused": [
+        0.3267161685314922,
+        0.39690427401120215
+      ],
+      "leak_lane_weights": [
+        0.40300425284686625,
+        0.5969957471531337
+      ],
+      "commissural_lane_weights": [
+        0.45150212642343307,
+        0.5484978735765669
+      ],
+      "channel_gram_cosine": 0.23925832156218005,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 13,
+      "gate_evidence": 0.29074092500448095,
+      "active_evidence": 0.4359928550831559,
+      "gate_evidence_exact": 0.2907409315075181,
+      "active_evidence_exact": 0.43599285508315566,
+      "memory": [
+        0.2911815203980591,
+        0.4339955909171065
+      ],
+      "diffused": [
+        0.326885038027821,
+        0.3982920732873446
+      ],
+      "leak_lane_weights": [
+        0.40153159256499227,
+        0.5984684074350077
+      ],
+      "commissural_lane_weights": [
+        0.4507657962824962,
+        0.5492342037175039
+      ],
+      "channel_gram_cosine": 0.2218041224888122,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 14,
+      "gate_evidence": 0.3826982483784593,
+      "active_evidence": 0.5293276436824631,
+      "gate_evidence_exact": 0.3826982483784594,
+      "active_evidence_exact": 0.5293276436824633,
+      "memory": [
+        0.33693988438825917,
+        0.4816616172997848
+      ],
+      "diffused": [
+        0.37312031761614056,
+        0.4454811840719034
+      ],
+      "leak_lane_weights": [
+        0.41160428327269505,
+        0.5883957167273051
+      ],
+      "commissural_lane_weights": [
+        0.4558021416363475,
+        0.5441978583636525
+      ],
+      "channel_gram_cosine": 0.19256234118710963,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 15,
+      "gate_evidence": 0.3438953374930172,
+      "active_evidence": 0.48685847906183516,
+      "gate_evidence_exact": 0.34389533749304135,
+      "active_evidence_exact": 0.48685847906183505,
+      "memory": [
+        0.34041761094063816,
+        0.48426004818081
+      ],
+      "diffused": [
+        0.37637822025068113,
+        0.44829943887076706
+      ],
+      "leak_lane_weights": [
+        0.41278869043608435,
+        0.5872113095639157
+      ],
+      "commissural_lane_weights": [
+        0.4563943452180422,
+        0.5436056547819579
+      ],
+      "channel_gram_cosine": 0.26686309396307223,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 16,
+      "gate_evidence": 0.3455516174450876,
+      "active_evidence": 0.4969724894040709,
+      "gate_evidence_exact": 0.3455516174450877,
+      "active_evidence_exact": 0.4969724894040711,
+      "memory": [
+        0.34298461419286286,
+        0.49061626879244047
+      ],
+      "diffused": [
+        0.3798925278427573,
+        0.45370835514254604
+      ],
+      "leak_lane_weights": [
+        0.41144943724694905,
+        0.588550562753051
+      ],
+      "commissural_lane_weights": [
+        0.4557247186234745,
+        0.5442752813765255
+      ],
+      "channel_gram_cosine": 0.22783455968895405,
+      "snapshot": true
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 17,
+      "gate_evidence": 0.3167485007621938,
+      "active_evidence": 0.5369624725678281,
+      "gate_evidence_exact": 0.31674850076219363,
+      "active_evidence_exact": 0.536962472567828,
+      "memory": [
+        0.32986655747752835,
+        0.5137893706801343
+      ],
+      "diffused": [
+        0.37584726077817987,
+        0.46780866737948285
+      ],
+      "leak_lane_weights": [
+        0.39099655021434615,
+        0.6090034497856539
+      ],
+      "commissural_lane_weights": [
+        0.44549827510717305,
+        0.5545017248928269
+      ],
+      "channel_gram_cosine": 0.1620566895659482,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 18,
+      "gate_evidence": 0.30557549726539673,
+      "active_evidence": 0.5229764354818549,
+      "gate_evidence_exact": 0.3055754972653965,
+      "active_evidence_exact": 0.5229764354818549,
+      "memory": [
+        0.31772102737146257,
+        0.5183829030809946
+      ],
+      "diffused": [
+        0.36788649629884557,
+        0.46821743415361156
+      ],
+      "leak_lane_weights": [
+        0.3800018344603739,
+        0.6199981655396262
+      ],
+      "commissural_lane_weights": [
+        0.4400009172301869,
+        0.559999082769813
+      ],
+      "channel_gram_cosine": 0.19177378369294606,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 19,
+      "gate_evidence": 0.2849684795213668,
+      "active_evidence": 0.4825032779218921,
+      "gate_evidence_exact": 0.2849684809983055,
+      "active_evidence_exact": 0.48250327792189224,
+      "memory": [
+        0.30134475344641465,
+        0.5004430905014433
+      ],
+      "diffused": [
+        0.3511193377101718,
+        0.4506685062376861
+      ],
+      "leak_lane_weights": [
+        0.3758410104631267,
+        0.6241589895368733
+      ],
+      "commissural_lane_weights": [
+        0.43792050523156334,
+        0.5620794947684367
+      ],
+      "channel_gram_cosine": 0.1948765313916296,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 20,
+      "gate_evidence": 0.45868169246972146,
+      "active_evidence": 0.5680867943210827,
+      "gate_evidence_exact": 0.45868169246972196,
+      "active_evidence_exact": 0.5680867943210823,
+      "memory": [
+        0.38001322295806805,
+        0.534264942411263
+      ],
+      "diffused": [
+        0.4185761528213668,
+        0.4957020125479642
+      ],
+      "leak_lane_weights": [
+        0.4156428944188536,
+        0.5843571055811464
+      ],
+      "commissural_lane_weights": [
+        0.4578214472094268,
+        0.5421785527905731
+      ],
+      "channel_gram_cosine": 0.23648908804050325,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 21,
+      "gate_evidence": 0.3995973434037309,
+      "active_evidence": 0.5669763699405114,
+      "gate_evidence_exact": 0.39959734340373104,
+      "active_evidence_exact": 0.5669763699405111,
+      "memory": [
+        0.38980528318089946,
+        0.5506206561758872
+      ],
+      "diffused": [
+        0.4300091264296464,
+        0.5104168129271403
+      ],
+      "leak_lane_weights": [
+        0.41449865094906946,
+        0.5855013490509305
+      ],
+      "commissural_lane_weights": [
+        0.45724932547453473,
+        0.5427506745254653
+      ],
+      "channel_gram_cosine": 0.2776460424464368,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 22,
+      "gate_evidence": 0.41168082265332073,
+      "active_evidence": 0.4951493201370339,
+      "gate_evidence_exact": 0.41168082265332073,
+      "active_evidence_exact": 0.4951493201370341,
+      "memory": [
+        0.4007430529171101,
+        0.5228849881564606
+      ],
+      "diffused": [
+        0.4312785367269477,
+        0.49234950434662295
+      ],
+      "leak_lane_weights": [
+        0.43387926210134337,
+        0.5661207378986567
+      ],
+      "commissural_lane_weights": [
+        0.46693963105067166,
+        0.5330603689493283
+      ],
+      "channel_gram_cosine": 0.24025051415636783,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 23,
+      "gate_evidence": 0.40699336857845864,
+      "active_evidence": 0.46884944104746495,
+      "gate_evidence_exact": 0.40699336857845847,
+      "active_evidence_exact": 0.46884944104746507,
+      "memory": [
+        0.40386821074778434,
+        0.49586721460196276
+      ],
+      "diffused": [
+        0.42686796171132896,
+        0.47286746363841814
+      ],
+      "leak_lane_weights": [
+        0.44887441282062646,
+        0.5511255871793734
+      ],
+      "commissural_lane_weights": [
+        0.47443720641031323,
+        0.5255627935896867
+      ],
+      "channel_gram_cosine": 0.28050203855500644,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 24,
+      "gate_evidence": 0.36231513645993746,
+      "active_evidence": 0.509794743030606,
+      "gate_evidence_exact": 0.3623151364599374,
+      "active_evidence_exact": 0.5097947430306061,
+      "memory": [
+        0.38309167360386087,
+        0.5028309788162844
+      ],
+      "diffused": [
+        0.4130264999069667,
+        0.4728961525131785
+      ],
+      "leak_lane_weights": [
+        0.43242112904251734,
+        0.5675788709574826
+      ],
+      "commissural_lane_weights": [
+        0.46621056452125864,
+        0.5337894354787414
+      ],
+      "channel_gram_cosine": 0.23840624844348404,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 25,
+      "gate_evidence": 0.337579887033502,
+      "active_evidence": 0.5034904568834677,
+      "gate_evidence_exact": 0.3375798870335022,
+      "active_evidence_exact": 0.5034904568834678,
+      "memory": [
+        0.3603357803186814,
+        0.503160717849876
+      ],
+      "diffused": [
+        0.39604201470148004,
+        0.4674544834670774
+      ],
+      "leak_lane_weights": [
+        0.4172984848032848,
+        0.5827015151967152
+      ],
+      "commissural_lane_weights": [
+        0.45864924240164234,
+        0.5413507575983576
+      ],
+      "channel_gram_cosine": 0.286278251485411,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 26,
+      "gate_evidence": 0.3375919286445142,
+      "active_evidence": 0.4356820957325056,
+      "gate_evidence_exact": 0.337591928644517,
+      "active_evidence_exact": 0.4356820957325054,
+      "memory": [
+        0.34896385448159783,
+        0.4694214067911908
+      ],
+      "diffused": [
+        0.3790782425589961,
+        0.4393070187137926
+      ],
+      "leak_lane_weights": [
+        0.4264053508721234,
+        0.5735946491278766
+      ],
+      "commissural_lane_weights": [
+        0.4632026754360617,
+        0.5367973245639382
+      ],
+      "channel_gram_cosine": 0.20257524501490856,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 27,
+      "gate_evidence": 0.36413223658801364,
+      "active_evidence": 0.4160365102730777,
+      "gate_evidence_exact": 0.36413223658801325,
+      "active_evidence_exact": 0.41603651027307764,
+      "memory": [
+        0.35654804553480574,
+        0.44272895853213423
+      ],
+      "diffused": [
+        0.3780932737841379,
+        0.4211837302828021
+      ],
+      "leak_lane_weights": [
+        0.44608820686769646,
+        0.5539117931323037
+      ],
+      "commissural_lane_weights": [
+        0.47304410343384823,
+        0.5269558965661518
+      ],
+      "channel_gram_cosine": 0.2171984966445048,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 28,
+      "gate_evidence": 0.3641246148115161,
+      "active_evidence": 0.4804211288204236,
+      "gate_evidence_exact": 0.36412461481151603,
+      "active_evidence_exact": 0.4804211288204235,
+      "memory": [
+        0.3603363301731609,
+        0.4615750436762789
+      ],
+      "diffused": [
+        0.3856460085489404,
+        0.4362653653004994
+      ],
+      "leak_lane_weights": [
+        0.43841263381660955,
+        0.5615873661833904
+      ],
+      "commissural_lane_weights": [
+        0.4692063169083047,
+        0.5307936830916953
+      ],
+      "channel_gram_cosine": 0.2579949891154004,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 29,
+      "gate_evidence": 0.3907226946637805,
+      "active_evidence": 0.4185139864024647,
+      "gate_evidence_exact": 0.3907226946637803,
+      "active_evidence_exact": 0.4185139864024647,
+      "memory": [
+        0.3755295124184707,
+        0.4400445150393718
+      ],
+      "diffused": [
+        0.391658263073696,
+        0.4239157643841465
+      ],
+      "leak_lane_weights": [
+        0.4604481013072502,
+        0.5395518986927499
+      ],
+      "commissural_lane_weights": [
+        0.4802240506536251,
+        0.5197759493463749
+      ],
+      "channel_gram_cosine": 0.2664553003952215,
+      "snapshot": false
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "layer": 30,
+      "gate_evidence": 0.41208042776545367,
+      "active_evidence": 0.44207088816488993,
+      "gate_evidence_exact": 0.41208042776545356,
+      "active_evidence_exact": 0.4420708881648896,
+      "memory": [
+        0.3938049700919622,
+        0.44105770160213087
+      ],
+      "diffused": [
+        0.4056181529695044,
+        0.4292445187245887
+      ],
+      "leak_lane_weights": [
+        0.47170029687979464,
+        0.5282997031202055
+      ],
+      "commissural_lane_weights": [
+        0.4858501484398974,
+        0.5141498515601027
+      ],
+      "channel_gram_cosine": 0.23706875885418985,
+      "snapshot": true
+    }
+  ]
+}

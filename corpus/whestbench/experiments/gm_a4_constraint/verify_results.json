@@ -1,0 +1,105 @@
+{
+  "experiment": "gm_a4_constraint",
+  "check": "two-signal verification of step-0 kill",
+  "signal_2a_import_closure_bytecode": {
+    "modules_in_first_party_closure": [
+      "base_estimator",
+      "cost_model",
+      "estimator",
+      "fold3_estimator",
+      "fold_estimator",
+      "row_blocked_winograd"
+    ],
+    "n_modules": 6,
+    "per_module_hits": {
+      "base_estimator": {
+        "file": "base_estimator.py",
+        "hits": []
+      },
+      "cost_model": {
+        "file": "cost_model.py",
+        "hits": []
+      },
+      "estimator": {
+        "file": "estimator.py",
+        "hits": []
+      },
+      "fold3_estimator": {
+        "file": "fold3_estimator.py",
+        "hits": []
+      },
+      "fold_estimator": {
+        "file": "fold_estimator.py",
+        "hits": []
+      },
+      "row_blocked_winograd": {
+        "file": "row_blocked_winograd.py",
+        "hits": []
+      }
+    },
+    "any_residual_source_reachable": false,
+    "hits_union": [],
+    "estimator_class_present": true,
+    "fold3_module_loaded": "fold3_estimator"
+  },
+  "signal_2b_measured_cap_binding": {
+    "capped_metered_F_values": [
+      242953633960,
+      244450742805,
+      227908524575,
+      243030949252
+    ],
+    "max_capped_metered_F": 244450742805,
+    "max_capped_metered_over_B": 0.8987159661948529,
+    "cap_constant_from_source": 244800000000.0,
+    "g2_uncapped_diagnostic_F": 299488907107,
+    "g2_uncapped_would_breach_B": true,
+    "g2_n_eff_trimmed_from_to": [
+      39936,
+      31232
+    ],
+    "a4_worst_hostile_F": 259700796917,
+    "a4_worst_F_minus_max_capped_metered": 15250054112,
+    "a4_worst_F_reachable_under_cap": false,
+    "coherent_variant_measured": 274450742805.0,
+    "coherent_variant_measured_over_B": 1.0090100838419118
+  },
+  "attack": {
+    "H1_uncapped_tally_caller": {
+      "files_defining__tally": [
+        "corpus/whestbench/experiments/t3_fold3_deterministic_cap/capped_fold3.py",
+        "corpus/whestbench/experiments/t3_fold3_deterministic_cap/package_source/estimator.py"
+      ],
+      "their_cap_and_fix_status": {
+        "corpus/whestbench/experiments/t3_fold3_deterministic_cap/capped_fold3.py": {
+          "declares_cap_billed_flops": true,
+          "u2_fix_applied": true
+        },
+        "corpus/whestbench/experiments/t3_fold3_deterministic_cap/package_source/estimator.py": {
+          "declares_cap_billed_flops": true,
+          "u2_fix_applied": true
+        }
+      },
+      "any_uncapped_tally_caller": false,
+      "verdict": "H1 fails: every _tally definer carries CAP=244.8e9"
+    },
+    "H2_cost_model_underprediction": {
+      "observed_metered_over_pred_errors": [
+        3.5205750898326116e-05,
+        3.4992781040577015e-05,
+        3.7524251955689536e-05,
+        3.738094514682544e-05
+      ],
+      "max_observed_error": 3.7524251955689536e-05,
+      "underprediction_required_to_reach_A4_worst_F": 0.0608692684517973,
+      "ratio_required_over_observed": 1622.1314291268136,
+      "verdict": "H2 fails: required miss is ~1.6e3x the largest observed miss"
+    },
+    "attack_landed": false
+  },
+  "signal_2c_bit_repeat": {
+    "results_json_sha256_run1": "2025a069aee18d7d459f9b1466ba5cadcd7bbeeb617099ab888bd1c37774643a",
+    "results_json_sha256_run2": "2025a069aee18d7d459f9b1466ba5cadcd7bbeeb617099ab888bd1c37774643a",
+    "bitwise_identical": true
+  }
+}

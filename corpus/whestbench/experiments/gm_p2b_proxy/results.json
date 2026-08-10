@@ -1,0 +1,107 @@
+{
+  "experiment": "gm_p2b_proxy",
+  "date": "2026-08-10",
+  "revival_of": "p2b_weights_only_rotation_proxy (reopening gen3_p2_rotation_selection)",
+  "mining_search_key": "p2b_weights_only_rotation_proxy",
+  "predeclaration": "PREDECLARATION.md in this directory (written before any code ran)",
+  "status": "MEASURED",
+  "gate_result": "KILL_CONFIRMED",
+  "killed_at_step0": true,
+  "predicted_on_record": {
+    "verdict": "KILL_CONFIRMED",
+    "step0_max_rel_dev_varpre": "< 1e-4",
+    "fold_on_total_and_fold_kink_total_within_net_spread": "exactly 0",
+    "borderline_frac_overall_within_net_rel_spread": "< 1e-3",
+    "pooled_within_net_ranked_abs_rho": "< 0.40 for all three diagnostics"
+  },
+  "step0": {
+    "gate": "max relative deviation of layer-0 var_pre, rotated vs unrotated first layer",
+    "thresholds": {"kill_if_below": 1e-4, "revival_survives_if_at_or_above": 1e-2},
+    "max_rel_dev_all": 4.558046e-07,
+    "max_rel_dev_at": {"net": 202, "r": 3},
+    "max_abs_RtR_minus_I_all": 2.073e-08,
+    "outcome": "KILL"
+  },
+  "step1": {
+    "design": {
+      "nets": [101, 202, 303],
+      "rotations_per_net": 16,
+      "rotation_seed_formula": "900000+net*1000+r",
+      "n_pairs": 48,
+      "diagnostics": ["borderline_frac_overall", "fold_on_total", "fold_kink_total"],
+      "y": "p2_results.json q1_oracle_headroom.per_net[net].mse_per_rotation (archived, read-only)",
+      "gate_rho": 0.40,
+      "gate_extra": "per-net Spearman sign consistency",
+      "wall_s": 18.9
+    },
+    "within_net_distinct_values_out_of_16": {
+      "borderline_frac_overall": {"101": 1, "202": 1, "303": 1},
+      "fold_on_total": {"101": 1, "202": 1, "303": 1},
+      "fold_kink_total": {"101": 1, "202": 1, "303": 1}
+    },
+    "constant_values": {
+      "borderline_frac_overall": {"101": 0.09835379464285714, "202": 0.09249441964285714, "303": 0.08551897321428571},
+      "fold_on_total": {"101": 224, "202": 242, "303": 241},
+      "fold_kink_total": {"101": 247, "202": 260, "303": 247}
+    },
+    "pooled_within_net_ranked_rho": {
+      "borderline_frac_overall": 0.0,
+      "fold_on_total": 0.0,
+      "fold_kink_total": 0.0
+    },
+    "per_net_spearman": {
+      "borderline_frac_overall": {"101": 0.0, "202": 0.0, "303": 0.0},
+      "fold_on_total": {"101": 0.0, "202": 0.0, "303": 0.0},
+      "fold_kink_total": {"101": 0.0, "202": 0.0, "303": 0.0}
+    },
+    "passes_gate": {"borderline_frac_overall": false, "fold_on_total": false, "fold_kink_total": false},
+    "permutation_null": {
+      "draws": 10000, "seed": 20260810,
+      "null_mean": 0.0, "null_sd": 0.0, "two_sided_p": 1.0,
+      "frac_null_draws_reaching_gate": 0.0
+    },
+    "alpha_spread_over_rotations": {
+      "layer0_alpha_exactly_zero_all_nets": true,
+      "max_abs_spread_any_layer": {"101": 6.528751428369617e-09, "202": 7.055529493982249e-09, "303": 7.9417930010095e-09},
+      "max_rel_spread_any_layer": {"101": 4.722950721621987e-05, "202": 5.859703745331535e-06, "303": 1.0697385216166084e-06}
+    }
+  },
+  "two_signal_verification": {
+    "S1_closed_form_orthogonal_invariance_checked_on_48_rotations": 4.558046e-07,
+    "S2_measured_degeneracy_distinct_values": 1,
+    "S3_archive_anchor_bitwise": {
+      "net101_r0": {"bitwise_equal_to_archive": true, "max_abs_diff": 0.0},
+      "net101_r15": {"bitwise_equal_to_archive": true, "max_abs_diff": 0.0},
+      "wrong_index_control_r0_vs_archive_r15_max_abs_diff": 0.09482479421421885
+    },
+    "S4_spearman_two_way": "computed; x fully tied so the d^2 formula is diagnostic only (x_has_ties=true recorded)",
+    "S5_permutation_null": "null_sd 0.0, p 1.0, 0/10000 draws reach the gate",
+    "S6_determinism": {
+      "bitwise_repeat_net101_r0_alpha31": true,
+      "repeat_under_different_BLAS_thread_count": "within_net_degeneracy_S2, statistics and permutation_null_S5 byte-identical; only float64 fingerprints moved by 1.936e-15 / 5.653e-16 relative"
+    }
+  },
+  "comparison_to_original_records": {
+    "p2b_best_pooled_rho": -0.1656862745098039,
+    "this_deep_class_pooled_rho": 0.0,
+    "p2_oracle_of_8_panel_gain": 0.6160089092709584,
+    "p2_pilot_cost_k8_frac_B": 0.33426704014939307,
+    "this_selection_stage_flops_per_candidate": 41943040.0,
+    "this_selection_stage_k8_frac_B": 0.0012336188235294117,
+    "reading": "the 271x cheaper selection stage exists; the statistic it computes is rotation-invariant, so it selects nothing"
+  },
+  "deviations": [
+    "S3 anchor first run non-bitwise (max_abs_diff 3.6833807826042175e-07 at r=0, 4.0442682802677155e-07 at r=15); cause diagnosed as BLAS reduction order (P2 sets OMP/OPENBLAS/MKL_NUM_THREADS=6 before importing numpy); re-run with those three lines is bitwise (max_abs_diff 0.0). No gate number changed.",
+    "Step 1 run after step 0 killed, as permitted and labelled CONFIRMATORY in PREDECLARATION section 2; gate numbers unchanged.",
+    "rotated_alphas() and weight_diagnostics() reproduced verbatim in step1_deep_diag_proxy.py because run_m185_g0.py is a checkpointed CLI harness and is not importable standalone.",
+    "No truth file read; target vector taken from the committed p2_results.json archive."
+  ],
+  "firewall_compliance": {
+    "writes": "corpus/whestbench/experiments/gm_p2b_proxy/ only",
+    "frozen_v3": "imported read-only, sys.dont_write_bytecode=True, never edited",
+    "nets": "synthetic He (seeds 101/202/303), constructed locally",
+    "no_git": true, "no_network": true, "no_submission": true,
+    "no_truth_scorer_private_holdout_reads": true,
+    "held_lane_untouched": "no m245_*/M243/M244/tasks/journal-m245* access"
+  }
+}

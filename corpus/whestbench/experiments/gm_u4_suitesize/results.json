@@ -1,0 +1,255 @@
+{
+ "experiment": "gm_u4_suitesize",
+ "repo_root": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding",
+ "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+ "step0": {
+  "source": "corpus\\whestbench\\experiments\\s1b_dispersion_corrected\\s1b_results.json",
+  "arms": {
+   "s17_low": {
+    "vD": 0.08135950765383865,
+    "n_suites_tail": 1000000,
+    "P_above_2.5e-7_50net": 0.00046,
+    "P_above_2.5e-7_50net_se": 1.959179378817529e-05,
+    "P_above_2.5e-7_100net": 3e-06,
+    "P_above_2.5e-7_100net_se": 1.7144660799776532e-06,
+    "ratio_G0a": 153.33333333333334,
+    "P_below_1.6e-7_50net": 0.092107,
+    "P_below_1.6e-7_100net": 0.027853,
+    "ratio_G0b": 3.306896923132158,
+    "crosscheck_1_minus_Pbelow_2.5e-7_50net": 0.00045999999999990493,
+    "crosscheck_1_minus_Pbelow_2.5e-7_100net": 3.000000000086267e-06,
+    "crosscheck_abs_err_50": 9.508453052697874e-17,
+    "crosscheck_abs_err_100": 8.626691754606147e-17,
+    "analytic_sd_ratio_50": 1.0009113139003574,
+    "analytic_sd_ratio_100": 0.9998919704860293
+   },
+   "s17_high": {
+    "vD": 0.12203926148075797,
+    "n_suites_tail": 1000000,
+    "P_above_2.5e-7_50net": 0.00085,
+    "P_above_2.5e-7_50net_se": 2.691175253012008e-05,
+    "P_above_2.5e-7_100net": 7e-06,
+    "P_above_2.5e-7_100net_se": 2.5643239997624276e-06,
+    "ratio_G0a": 121.42857142857143,
+    "P_below_1.6e-7_50net": 0.105756,
+    "P_below_1.6e-7_100net": 0.03541,
+    "ratio_G0b": 2.9866139508613387,
+    "crosscheck_1_minus_Pbelow_2.5e-7_50net": 0.0008499999999999064,
+    "crosscheck_1_minus_Pbelow_2.5e-7_100net": 6.999999999979245e-06,
+    "crosscheck_abs_err_50": 9.356664748549903e-17,
+    "crosscheck_abs_err_100": 2.075484830657212e-17,
+    "analytic_sd_ratio_50": 1.0009466183261093,
+    "analytic_sd_ratio_100": 0.9998870789771596
+   }
+  },
+  "G0a_ratio_ge_10x_both_arms": true,
+  "G0b_ratio_ge_2x_both_arms": true,
+  "step0_pass": true
+ },
+ "coverage": {
+  "files_in_scope": 1385,
+  "files_read": 1385,
+  "bytes_read": 30152341,
+  "files_unreadable": [],
+  "files_skipped_held_lane": [
+   "tasks\\journal-m245-static-closure.md",
+   "tasks\\m245_green_driver.ps1",
+   "tasks\\m245_green_receipt_builder.py"
+  ],
+  "n_files_skipped_binary": 35,
+  "files_skipped_binary_sample": [
+   "corpus\\whestbench\\experiments\\a_series_granular_adversarial\\a4_det_run1.npz",
+   "corpus\\whestbench\\experiments\\a_series_granular_adversarial\\a4_det_run2.npz",
+   "corpus\\whestbench\\experiments\\dac_prize_report_extension\\WHestBench-Algorithmic-Prize-Report-DRAFT-v2.pdf",
+   "corpus\\whestbench\\experiments\\m180_design_strength\\m180_g0_partial_net101.npz",
+   "corpus\\whestbench\\experiments\\m180_design_strength\\m180_g0_partial_net202.npz",
+   "corpus\\whestbench\\experiments\\m180_design_strength\\m180_g0_partial_net303.npz",
+   "corpus\\whestbench\\experiments\\m181_terminal_smoothing\\m181_g0_partial_net101.npz",
+   "corpus\\whestbench\\experiments\\m181_terminal_smoothing\\m181_g0_partial_net202.npz",
+   "corpus\\whestbench\\experiments\\m181_terminal_smoothing\\m181_g0_partial_net303.npz",
+   "corpus\\whestbench\\experiments\\m181_terminal_smoothing\\m181_truth_net101.npz",
+   "corpus\\whestbench\\experiments\\m181_terminal_smoothing\\m181_truth_net202.npz",
+   "corpus\\whestbench\\experiments\\m181_terminal_smoothing\\m181_truth_net303.npz",
+   "corpus\\whestbench\\experiments\\pb1_premise_battery\\m191_g0b_partial_net101.npz",
+   "corpus\\whestbench\\experiments\\pb1_premise_battery\\m191_g0b_partial_net202.npz",
+   "corpus\\whestbench\\experiments\\pb1_premise_battery\\m191_g0b_partial_net303.npz",
+   "corpus\\whestbench\\experiments\\pb1_premise_battery\\p2_partial_net101.npz",
+   "corpus\\whestbench\\experiments\\pb1_premise_battery\\p2_partial_net202.npz",
+   "corpus\\whestbench\\experiments\\pb1_premise_battery\\p2_partial_net303.npz",
+   "corpus\\whestbench\\experiments\\s11_full129_breakeven\\s11_stacks.npz",
+   "corpus\\whestbench\\experiments\\s2_paid_weighting\\s2_partial_net101.npz"
+  ],
+  "file_list_sha256": "0725cc9c6794d4c34ecfdb898a78fbd618ab69b59d1310c4a2a7cd53e836e142"
+ },
+ "signalA_n_hits": 61,
+ "signalB_n_hits": 50884,
+ "signalC_n_hits": 56,
+ "signalB_number_histogram_suitewords": {
+  "0": 1500,
+  "1": 1280,
+  "2": 684,
+  "4": 444,
+  "7": 416,
+  "8": 366,
+  "5": 364,
+  "943": 357,
+  "6": 324,
+  "3": 309,
+  "10": 224,
+  "819": 208,
+  "288": 153,
+  "942": 153,
+  "487": 153,
+  "50": 149,
+  "292": 145,
+  "16": 133,
+  "256": 130,
+  "267": 130,
+  "789": 129,
+  "265": 120,
+  "266": 118,
+  "100": 107,
+  "815": 107,
+  "491": 104,
+  "9": 103,
+  "490": 102,
+  "20": 100,
+  "32": 99,
+  "346": 99,
+  "289": 99,
+  "311": 96,
+  "764": 96,
+  "765": 96,
+  "2026": 95,
+  "31": 95,
+  "345": 94,
+  "309": 92,
+  "313": 90
+ },
+ "verification": {
+  "sqrt_N_structural_check": {
+   "s17_low": {
+    "sd_50": 1.7856461793664454e-08,
+    "sd_100": 1.2613566277436977e-08,
+    "ratio": 1.415655287403208,
+    "sqrt2": 1.4142135623730951,
+    "rel_dev_from_sqrt2": 0.0010194535453991837
+   },
+   "s17_high": {
+    "sd_50": 1.887102989821761e-08,
+    "sd_100": 1.3329708263585182e-08,
+    "ratio": 1.4157121465119016,
+    "sqrt2": 1.4142135623730951,
+    "rel_dev_from_sqrt2": 0.0010596590067286332
+   }
+  },
+  "closed_form_recomputation": {
+   "s17_low": {
+    "vD": 0.08135950765383865,
+    "vF": 0.3641995628656461,
+    "anchor": 1.83e-07,
+    "closed_form_sd_50": 1.784020376798548e-08,
+    "bootstrap_sd_50": 1.7856461793664454e-08,
+    "ratio_50": 1.0009113139003574,
+    "closed_form_sd_100": 1.2614929062092329e-08,
+    "bootstrap_sd_100": 1.2613566277436977e-08,
+    "ratio_100": 0.9998919704860293
+   },
+   "s17_high": {
+    "vD": 0.12203926148075797,
+    "vF": 0.3641995628656461,
+    "anchor": 1.83e-07,
+    "closed_form_sd_50": 1.8853183129561672e-08,
+    "bootstrap_sd_50": 1.887102989821761e-08,
+    "ratio_50": 1.0009466183261093,
+    "closed_form_sd_100": 1.3331213637864875e-08,
+    "bootstrap_sd_100": 1.3329708263585182e-08,
+    "ratio_100": 0.9998870789771596
+   }
+  },
+  "adjudication": [
+   {
+    "file": "corpus/whestbench/core/RULES_V12_ANALYSIS_20260808.md",
+    "line": 73,
+    "quote": "- **Phase-end standings use all 100 MLPs** (50 public + 50 private, \u00a75.4) \u2014 the live leaderboard shows only the public half, so even the Phase-1 standing is not what today's board displays.",
+    "primary": true,
+    "resolving_for_U4": false,
+    "reason": "Sizes the PHASE-END STANDINGS benchmark (public+hidden halves of the Phase suite), not the September Private Re-evaluation suite, which the same document describes (lines 13-15) as 'a separate, fresh, never-seen test suite ... generated from private seeds that were not used during either Phase 1 or Phase 2' with NO count. Strongest available prior for the fresh-suite size, not a statement of it."
+   },
+   {
+    "file": "corpus/whestbench/core/RULES_V12_ANALYSIS_20260808.md",
+    "line": 13,
+    "quote": "The Private Re-evaluation runs **Sept 20-30, 2026** on \"a separate, fresh, never-seen test suite ... generated from private seeds that were not used during either Phase 1 or Phase 2.\"",
+    "primary": true,
+    "resolving_for_U4": false,
+    "reason": "Verbatim rules quote of the exact object U4 asks about; states seeds and freshness, states NO size. This is the decisive negative."
+   },
+   {
+    "file": "corpus/whestbench/sources/research_top_method_forensics_20260803.md",
+    "line": 26,
+    "quote": "Section 5.4 says the live score is only the 50-MLP public half; Phase-I prizes combine public and hidden halves, and Phase-II prizes use a fresh unseen rerun.",
+    "primary": true,
+    "resolving_for_U4": false,
+    "reason": "Sizes the PUBLIC half (50). Explicitly leaves the fresh unseen rerun unsized. Corroborates the 50+50 composition."
+   },
+   {
+    "file": "corpus/whestbench/sources/research_phase1_top_arc_repo_20260803.md",
+    "line": 65,
+    "quote": "Phase II requires designating one entry, which is rerun on a fresh unseen MLP suite; public-suite tuning and accounting-dependent tricks may not survive that rerun or code review.",
+    "primary": true,
+    "resolving_for_U4": false,
+    "reason": "'a fresh unseen MLP suite' -- no count."
+   },
+   {
+    "file": "corpus/whestbench/core/HOSTED_INTEL_20260808.md",
+    "line": 49,
+    "quote": "- **Designation slots: TWO.** Official facts panel: \"Fresh private rerun of each team's **up to two nominated submissions, per phase**.\"",
+    "primary": true,
+    "resolving_for_U4": false,
+    "reason": "Organizer official-facts panel quoted verbatim; sizes the nomination count, not the suite."
+   },
+   {
+    "file": "corpus/whestbench/core/FLIP_READINESS_20260810.md",
+    "line": 21,
+    "quote": "Prize ranking is EXCLUSIVELY the private re-evaluation, on a freshly generated suite with private seeds unused in either phase.",
+    "primary": true,
+    "resolving_for_U4": false,
+    "reason": "Aug-10 organizer-text read (Aug-4 update email 19fcb021d19e8278 + discourse 18125). No count."
+   },
+   {
+    "file": "corpus/whestbench/core/GEN3_RECURSION_PACKET_20260808.md",
+    "line": 99,
+    "quote": "the Phase standings add a withheld 50, and the prize adds fresh private seeds",
+    "primary": false,
+    "resolving_for_U4": false,
+    "reason": "Internal restatement; corroborates the withheld half = 50 and again leaves the prize suite unsized."
+   },
+   {
+    "file": "AGENT_CHANNEL.md",
+    "line": 611,
+    "quote": "the prize is decided by ONE draw of a 100-net private suite",
+    "primary": false,
+    "resolving_for_U4": false,
+    "reason": "OUR OWN seed-idea prose (2026-08-09), not a source. It is also the single place in the corpus where 100 is asserted as the private-suite size, and it contradicts the 50 used in every S1/S4/U9 bootstrap -- an internal inconsistency this scan surfaces, not evidence."
+   },
+   {
+    "file": "corpus/whestbench/handoff/RESOURCE_PROVENANCE.md",
+    "line": 14,
+    "quote": "| WHest starter kit | https://github.com/AIcrowd/whest-starterkit.git | `c99ef4af15bae7dd19e1d9c46fa4794d90a91d40` |",
+    "primary": true,
+    "resolving_for_U4": false,
+    "reason": "DECISIVE COVERAGE FACT: the starter kit is referenced by URL+commit and deliberately NOT vendored ('No ... competition binaries', 'No API token, hosted model, paper PDF, challenge weight/truth file, scorer ... is included'). The falsifier's premise 'the starter kit already sitting in sources/' is false -- sources/ holds research notes only. A starter-kit re-read is therefore NOT response-free/offline; it needs the network."
+   }
+  ],
+  "n_adjudicated": 9,
+  "n_resolving": 0
+ },
+ "verdict": {
+  "gate_result": "KILL_CONFIRMED",
+  "step0": "PASS",
+  "resolving_statements_found": 0,
+  "disposition": "U4 = BLOCKED-EXTERNAL (organizer); level stays assumed; settling check re-pointed from rules re-read to the organizer channel (U19 inbox watch / direct question)",
+  "predeclared_prediction": "KILL_CONFIRMED",
+  "prediction_matched": true
+ }
+}

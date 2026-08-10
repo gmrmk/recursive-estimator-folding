@@ -1,0 +1,299 @@
+{
+  "schema": 1,
+  "experiment": "gm_latent_cubature",
+  "mining_key": "latent_sparse_radial_cubature",
+  "ledger_record": "corpus/whestbench/headroom/fold_ledger.json candidate index 11",
+  "verdict": "KILL_CONFIRMED",
+  "verdict_basis": "gate1 and gate2 both fail on the full eight-case frozen bank",
+  "predeclared_prediction": {
+    "gate1_aggregate_ratio": "FAIL, point prediction R in [1.0,3.0] centred ~1.3",
+    "gate2_wins": "FAIL, point prediction W <= 3 of 8",
+    "gate3_invariance": "PASS",
+    "gate4_step0_arithmetic": "PASS, both dtype readings well below 80e9",
+    "overall": "KILL_CONFIRMED"
+  },
+  "gates": {
+    "gate1_aggregate_ratio_at_most_0_80": {
+      "value": 1.0319985295056735,
+      "threshold": 0.8,
+      "passes": false
+    },
+    "gate2_wins_at_least_6_of_8": {
+      "value": 4,
+      "threshold": 6,
+      "passes": false
+    },
+    "gate3_permutation_and_scale_equivariance": {
+      "permutation_relative_max_error": 2.0378868031173505e-16,
+      "positive_scale_relative_max_error": 4.2737583849311574e-16,
+      "ranks_equal": true,
+      "tolerance": 1e-10,
+      "passes": true
+    },
+    "gate4_conservative_target_arithmetic_below_80e9": {
+      "float64_billed": 86396699264.61469,
+      "float32_billed_with_25pct_contingency": 53997937040.38418,
+      "threshold": 80000000000,
+      "passes_under_float64": false,
+      "passes_under_float32": true,
+      "note": "dtype-conditional; the frozen candidate is float64 and FlopScope 0.10.0 bills float64 at rate 2.0"
+    }
+  },
+  "uncertainty": {
+    "method": "case-level nonparametric bootstrap, B=200000, seed 20260810",
+    "aggregate_ratio": 1.0319985295056735,
+    "aggregate_ratio_ci95": [
+      0.4429038640994148,
+      2.637812140330009
+    ],
+    "bootstrap_probability_ratio_at_most_0_80": 0.275315,
+    "paired_sign_flip_permutation_p_two_sided_on_mean_log_ratio": 0.757455,
+    "observed_mean_log_ratio": 0.12001765036405765,
+    "exact_binomial_p_wins_ge_6_under_fair_coin": 0.14453125
+  },
+  "per_case": [
+    {
+      "depth": 16,
+      "seed": 18560,
+      "baseline_mse": 0.00036883632778490836,
+      "candidate_mse": 0.0012147148740874424,
+      "ratio": 3.2933710228126416,
+      "win": false,
+      "rank_min": 1,
+      "rank_max": 11,
+      "children_max_per_layer": 40
+    },
+    {
+      "depth": 16,
+      "seed": 18561,
+      "baseline_mse": 0.00082109632505381,
+      "candidate_mse": 0.0006269647056412461,
+      "ratio": 0.7635702249674036,
+      "win": true,
+      "rank_min": 2,
+      "rank_max": 12,
+      "children_max_per_layer": 40
+    },
+    {
+      "depth": 16,
+      "seed": 18562,
+      "baseline_mse": 0.0014425199155688232,
+      "candidate_mse": 0.0015212349114110606,
+      "ratio": 1.0545677012793255,
+      "win": false,
+      "rank_min": 2,
+      "rank_max": 12,
+      "children_max_per_layer": 36
+    },
+    {
+      "depth": 16,
+      "seed": 18563,
+      "baseline_mse": 0.00020847053245471415,
+      "candidate_mse": 0.000465128546114589,
+      "ratio": 2.2311476861394235,
+      "win": false,
+      "rank_min": 1,
+      "rank_max": 12,
+      "children_max_per_layer": 38
+    },
+    {
+      "depth": 32,
+      "seed": 18720,
+      "baseline_mse": 0.0003183393828079917,
+      "candidate_mse": 0.002208483385352833,
+      "ratio": 6.937512304862679,
+      "win": false,
+      "rank_min": 1,
+      "rank_max": 12,
+      "children_max_per_layer": 38
+    },
+    {
+      "depth": 32,
+      "seed": 18721,
+      "baseline_mse": 0.00280918997993452,
+      "candidate_mse": 0.0005633429093333263,
+      "ratio": 0.20053571077683305,
+      "win": true,
+      "rank_min": 1,
+      "rank_max": 12,
+      "children_max_per_layer": 40
+    },
+    {
+      "depth": 32,
+      "seed": 18722,
+      "baseline_mse": 0.00030040728236955323,
+      "candidate_mse": 0.00019489957918787676,
+      "ratio": 0.6487844690399893,
+      "win": true,
+      "rank_min": 1,
+      "rank_max": 12,
+      "children_max_per_layer": 40
+    },
+    {
+      "depth": 32,
+      "seed": 18723,
+      "baseline_mse": 0.000599216069023735,
+      "candidate_mse": 0.0002930752304831001,
+      "ratio": 0.489097748931515,
+      "win": true,
+      "rank_min": 1,
+      "rank_max": 12,
+      "children_max_per_layer": 40
+    }
+  ],
+  "aggregate": {
+    "baseline_mse_sum": 0.0068680758149980555,
+    "candidate_mse_sum": 0.0070878441416114745,
+    "aggregate_ratio": 1.0319985295056737,
+    "wins": 4,
+    "cases": 8
+  },
+  "seals": {
+    "seal1_comparator_independent_recompute_max_abs_delta": 1.3156142841808105e-14,
+    "seal1_banked_baseline_mse_max_abs_delta": 0.0,
+    "seal1_passes": true,
+    "seal2_repair_neutrality_max_relative_mse_delta": 6.467534916416456e-14,
+    "seal2_detail": [
+      {
+        "seed": 18560,
+        "original_mse": 0.0012147148740873806,
+        "revived_mse": 0.0012147148740874424,
+        "relative_mse_delta": 5.08757447117818e-14,
+        "original_ratio": 3.2933710228124635,
+        "revived_ratio": 3.2933710228126416,
+        "relative_ratio_delta": 5.407218680080541e-14
+      },
+      {
+        "seed": 18561,
+        "original_mse": 0.0006269647056412867,
+        "revived_mse": 0.0006269647056412461,
+        "relative_mse_delta": 6.467534916416456e-14,
+        "original_ratio": 0.7635702249674551,
+        "revived_ratio": 0.7635702249674036,
+        "relative_ratio_delta": 6.746510885073198e-14
+      },
+      {
+        "seed": 18562,
+        "original_mse": 0.0015212349114110606,
+        "revived_mse": 0.0015212349114110606,
+        "relative_mse_delta": 0.0,
+        "original_ratio": 1.0545677012793533,
+        "revived_ratio": 1.0545677012793255,
+        "relative_ratio_delta": 2.6319387159266418e-14
+      }
+    ],
+    "seal2_passes": true,
+    "seal3_bit_repeat_all_identical": true,
+    "step0_two_signal_agreement": {
+      "float64": true,
+      "float32": true
+    }
+  },
+  "refreeze_against_retained_hashes": {
+    "candidate_sha256_measured": "a31fd01802ff79167efe00c1b3b129c2744853d9ad0a9897c990af5988c4f24c",
+    "candidate_sha256_retained": "a31fd01802ff79167efe00c1b3b129c2744853d9ad0a9897c990af5988c4f24c",
+    "contract_sha256_measured": "df2ef00fff7b77fc365fc80536524dfec388363f6a77993aa81c9c47c97a400a",
+    "contract_sha256_retained": "df2ef00fff7b77fc365fc80536524dfec388363f6a77993aa81c9c47c97a400a",
+    "match": true,
+    "truth_bank_sha256": "a07455ae94a0be47cd351a430e457be76de6c4cd6fc0bd31858e0f9bd72f8dc1"
+  },
+  "resource_containment": {
+    "max_peak_working_set_bytes": 85803008,
+    "rss_limit_bytes": 2000000000,
+    "max_case_wall_seconds": 5.421629899996333,
+    "total_wall_seconds": 41.975669500010554,
+    "all_eight_cases_completed": true
+  },
+  "resource_contrast_with_killed_harness": {
+    "original_peak_working_set": "24.6 GB and 13.8 GB, externally stopped",
+    "original_cases_completed": 3,
+    "revived_max_peak_working_set_bytes": 85803008,
+    "revived_cases_completed": 8,
+    "nonreturning_case_seed_18563_now_completes": true
+  },
+  "step0_detail": {
+    "static": {
+      "installed_weights": {
+        "take": 4.0,
+        "sort": 4.0,
+        "argsort": 4.0,
+        "searchsorted": 4.0,
+        "copy": 1.0,
+        "concatenate": 1.0,
+        "diag": 1.0,
+        "outer": 1.0,
+        "matmul": 1.0,
+        "linalg.eigh": 1.0,
+        "cumsum": 1.0,
+        "exp": 16.0,
+        "zeros": 0.0
+      },
+      "installed_dtype_rates": {
+        "float64": 2.0,
+        "float32": 1.0
+      },
+      "measured_unit_cost_derivations": {
+        "eigh_64_f64_over_n3": 18.0,
+        "matmul_64_f64_over_n3": 3.96875,
+        "take_per_element_f64": 8.0,
+        "copy_per_element_f64": 2.0,
+        "exp_per_element_f64": 32.0,
+        "diag_bills_input_elements_only": 2.0
+      },
+      "arithmetic_raw_ops_total": 42949672960,
+      "data_movement_raw_ops_total": 248676672.30734178,
+      "raw_ops_total": 43198349632.30734,
+      "billed": {
+        "float32_no_contingency": 43198349632.30734,
+        "float32_with_25pct_contingency": 53997937040.38418,
+        "float64_no_contingency": 86396699264.61469,
+        "float64_with_25pct_contingency": 107995874080.76836
+      },
+      "verdict": "KILL under float64 billing; PASS under float32 billing -> dtype-conditional, not a clean unilateral step-0 kill; proceed to the predeclared accuracy falsifier"
+    },
+    "crosscheck": {
+      "observations": [
+        {
+          "width": 64,
+          "depth": 32,
+          "seed": 18720,
+          "rank_max": 12,
+          "rank_mean": 2.4680851063829787,
+          "rank_max_over_n": 0.1875,
+          "children_max_per_layer": 38,
+          "children_max_over_2qn": 0.09895833333333333
+        },
+        {
+          "width": 128,
+          "depth": 32,
+          "seed": 24960,
+          "rank_max": 24,
+          "rank_mean": 5.095744680851064,
+          "rank_max_over_n": 0.1875,
+          "children_max_per_layer": 72,
+          "children_max_over_2qn": 0.09375
+        }
+      ],
+      "extrapolation": {
+        "rank_fraction_of_n_used": 0.1875,
+        "children_fraction_of_2qn_used": 0.09895833333333333,
+        "rank_at_n256": 48.0,
+        "children_at_n256": 152.0,
+        "worst_case_rank": 256,
+        "worst_case_children": 1536
+      },
+      "data_movement_share_of_raw_worst_case": 0.005756624371625544,
+      "data_movement_share_of_raw_observed": 0.0011317176758238717,
+      "billed_float64_observed": 85996669871.35541,
+      "billed_float32_observed_with_25pct": 53747918669.59713,
+      "gather_heavy_hypothesis": "FALSIFIED: gathers and other data movement are O(q n^2) and O(M n) elements against O(n^3) arithmetic; even at the worst-case bound they are a sub-1% share, and with observed structure they shrink further. The repricing lever that actually moves gate 4 is the float64 dtype rate of 2.0, not data movement."
+    }
+  },
+  "firewall": {
+    "truth_generation": "none; banked truth vectors only",
+    "whest_data_scorer_holdout_api_network": "not accessed",
+    "frozen_sources_edited": "none; loaded by path, reducer replaced by in-process monkeypatch only",
+    "git": "no git commands run",
+    "writes": "confined to corpus/whestbench/experiments/gm_latent_cubature/"
+  }
+}

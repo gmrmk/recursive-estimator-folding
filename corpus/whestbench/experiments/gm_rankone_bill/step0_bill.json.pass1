@@ -1,0 +1,82 @@
+{
+  "strict_composed_headroom": 1986871472,
+  "m151_slot": 10291363760,
+  "square_f32": 33488896,
+  "a_term_per_layer_f32": 130816,
+  "frozen_f64_record": {
+    "m205_one_f64_square_raw": 2076311552,
+    "m205_one_f64_square_protected": 2595389440
+  },
+  "f32_repricing": {
+    "m205_raw": 1038155776,
+    "m205_protected": 1297694720,
+    "m205_slack_vs_headroom": 689176752,
+    "m205_pct_under": 34.686529134482434,
+    "m204_m206_raw": 1042211072,
+    "m204_m206_protected": 1302763840,
+    "m204_m206_slack_vs_headroom": 684107632,
+    "m204_m206_pct_under": 34.431398388914005
+  },
+  "m203_rows": [
+    {
+      "depth": 3,
+      "terminal_f64": 9069419520,
+      "terminal_f32": 4534709760,
+      "projection_f64": 2580192000,
+      "projection_f32": 1290096000,
+      "combined_f64": 11649611520,
+      "combined_f32": 5824805760,
+      "vs_m151_slot_f32": -4466558000,
+      "vs_strict_headroom_f32": 3837934288
+    },
+    {
+      "depth": 4,
+      "terminal_f64": 8320856320,
+      "terminal_f32": 4160428160,
+      "projection_f64": 2580192000,
+      "projection_f32": 1290096000,
+      "combined_f64": 10901048320,
+      "combined_f32": 5450524160,
+      "vs_m151_slot_f32": -4840839600,
+      "vs_strict_headroom_f32": 3463652688
+    },
+    {
+      "depth": 5,
+      "terminal_f64": 7963587520,
+      "terminal_f32": 3981793760,
+      "projection_f64": 2580192000,
+      "projection_f32": 1290096000,
+      "combined_f64": 10543779520,
+      "combined_f32": 5271889760,
+      "vs_m151_slot_f32": -5019474000,
+      "vs_strict_headroom_f32": 3285018288
+    },
+    {
+      "depth": 6,
+      "terminal_f64": 8171994320,
+      "terminal_f32": 4085997160,
+      "projection_f64": 2580192000,
+      "projection_f32": 1290096000,
+      "combined_f64": 10752186320,
+      "combined_f32": 5376093160,
+      "vs_m151_slot_f32": -4915270600,
+      "vs_strict_headroom_f32": 3389221688
+    }
+  ],
+  "m203_best_depth": 5,
+  "m203_best_combined_f32": 5271889760,
+  "m203_pct_under_m151_slot": 48.773652521247584,
+  "m203_over_strict_headroom": true,
+  "predeclared_match": {
+    "m205_raw": true,
+    "m205_protected": true,
+    "m205_slack_vs_headroom": true,
+    "m204_m206_raw": true,
+    "m204_m206_protected": true,
+    "m204_m206_slack_vs_headroom": true
+  },
+  "predeclared_all_match": true,
+  "m203_combined_f32_matches_mined_5_271_889_760": true,
+  "frozen_f64_reproduced": true,
+  "step0_gate": "PASS"
+}

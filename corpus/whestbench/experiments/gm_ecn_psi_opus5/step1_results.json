@@ -1,0 +1,45 @@
+{
+  "alpha_range": [
+    -2.3225055662652805,
+    2.085003063365958
+  ],
+  "ell_range": [
+    -1.036951168065721,
+    0.7798434029980418
+  ],
+  "environment": {
+    "numpy": "2.4.6",
+    "python": "3.14.4"
+  },
+  "gate_thresholds": {
+    "derivative_rel": 1e-06,
+    "observable_rel": 1e-10
+  },
+  "gates": {
+    "G1A_alpha_block_cd_h1e-5": true,
+    "G1B_ell_block_cd_h1e-5": true,
+    "G1C_gl_cd_alpha_block": true,
+    "G1C_gl_cd_ell_block": true,
+    "G1C_gl_observable_matches_frozen": true,
+    "G1D_step_halving_alpha": true,
+    "G1D_step_halving_ell": true
+  },
+  "max_rel_err": {
+    "G1A_alpha_block_h1e-5": 6.535666962912099e-10,
+    "G1B_ell_block_h1e-5": 3.6009255606963945e-10,
+    "G1C_gl_cd_alpha_block": 1.401756002358895e-10,
+    "G1C_gl_cd_ell_block": 6.582785484237782e-11,
+    "G1C_gl_vs_frozen_observable": 3.2687270594713815e-14,
+    "G1D_alpha_block_h5e-6": 3.4236629155771126e-10,
+    "G1D_ell_block_h5e-6": 5.142192866221394e-10,
+    "identity_hprime_equals_Phi": 6.664295034754594e-10
+  },
+  "n_derivative_entries": 18432,
+  "n_theta_points": 9216,
+  "schema": "gm-ecn-psi-step1-jacobian-cd-v1",
+  "sigma_range": [
+    0.3545339502983291,
+    2.1811306802278816
+  ],
+  "step1_pass": true
+}

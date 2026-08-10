@@ -1,0 +1,83 @@
+{
+  "step": 0,
+  "gate_id": "index 11 kill_condition clause 4",
+  "gate_rule": "KILL if conservative n=256,L=32 target operations >= 80e9",
+  "gate_threshold": 80000000000,
+  "flopscope_version": "0.10.0+np2.4.6",
+  "installed_weights": {
+    "take": 4.0,
+    "sort": 4.0,
+    "argsort": 4.0,
+    "searchsorted": 4.0,
+    "copy": 1.0,
+    "concatenate": 1.0,
+    "diag": 1.0,
+    "outer": 1.0,
+    "matmul": 1.0,
+    "linalg.eigh": 1.0,
+    "cumsum": 1.0,
+    "exp": 16.0,
+    "zeros": 0.0
+  },
+  "installed_dtype_rates": {
+    "float64": 2.0,
+    "float32": 1.0
+  },
+  "measured_unit_costs_billed_flops": {
+    "take_1000_f64": 8000,
+    "copy_1000_f64": 2000,
+    "sort_1000_f64": 80000,
+    "argsort_1000_f64": 80000,
+    "eigh_64_f64": 4718592,
+    "diag_vec64_f64": 128,
+    "outer_64_f64": 8192,
+    "matmul_64_f64": 1040384,
+    "exp_1000_f64": 32000
+  },
+  "measured_unit_cost_derivations": {
+    "eigh_64_f64_over_n3": 18.0,
+    "matmul_64_f64_over_n3": 3.96875,
+    "take_per_element_f64": 8.0,
+    "copy_per_element_f64": 2.0,
+    "exp_per_element_f64": 32.0,
+    "diag_bills_input_elements_only": 2.0
+  },
+  "shape": {
+    "n": 256,
+    "depth": 32,
+    "q": 3,
+    "max_children_per_layer": 1536
+  },
+  "arithmetic_terms_per_layer": {
+    "covariance_sandwiches_2qn3": 100663296,
+    "component_eigendecompositions_9qn3": 452984832,
+    "recompression_eigensolver_9n3": 150994944,
+    "child_moment_rebin_passes_12qn3": 603979776,
+    "remaining_means_factors_nodes_2n3": 33554432
+  },
+  "arithmetic_raw_ops_total": 42949672960,
+  "data_movement_terms_per_layer": {
+    "argsort_eigenvalues": 24576.0,
+    "gather_eigenvalues": 3072.0,
+    "gather_eigenvectors": 786432.0,
+    "searchsorted_cumsum": 3072.0,
+    "factor_copy_nr": 196608.0,
+    "child_diag_fill": 393216.0,
+    "compressor_argsort": 65034.00960443079,
+    "compressor_gather": 6144.0,
+    "compressor_diff": 1536,
+    "child_exp": 6291456.0
+  },
+  "data_movement_raw_ops_total": 248676672.30734178,
+  "raw_ops_total": 43198349632.30734,
+  "billed": {
+    "float32_no_contingency": 43198349632.30734,
+    "float32_with_25pct_contingency": 53997937040.38418,
+    "float64_no_contingency": 86396699264.61469,
+    "float64_with_25pct_contingency": 107995874080.76836
+  },
+  "frozen_candidate_dtype": "float64 (latent_sparse_cubature.py declares dtype=np.float64 throughout; no FP32 port of this candidate is frozen)",
+  "gate4_kill_under_float64": true,
+  "gate4_kill_under_float32": false,
+  "verdict": "KILL under float64 billing; PASS under float32 billing -> dtype-conditional, not a clean unilateral step-0 kill; proceed to the predeclared accuracy falsifier"
+}
