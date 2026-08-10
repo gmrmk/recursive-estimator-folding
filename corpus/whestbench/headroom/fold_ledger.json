@@ -2306,6 +2306,15 @@
       "bias_class": "diagnostic (response-free premise probe; no estimator built)",
       "result": "KILLED on all gates: best gated value 2.371e-5 (0.9x bar, inside its own permutation null |5.3e-5|); k256 negative (overfit); structural mechanism - all 64,512 directions occupy 64,512 DISTINCT first-layer cells (singletons), so cell identity is a per-point unique label structurally incapable of OOS generalization; only aggregates generalize and they measure at fitting noise. Two-signal: split-sample + permutation null; instrument sanity: S15 Base-B reproduced exactly (0.3609/0.4037/0.4385), injected 1e-3 signal recovered.",
       "status": "killed"
+    },
+    {
+      "id": "gen7_svdv_rotation_construction",
+      "mechanism": "Seed-side rotation CONSTRUCTION (not selection): replace the champion's grader-seed Haar input rotation with the deterministic V from W0 = U S V^T (first_weight = Vh @ W0), coupling the rotation to the possessed weights' singular basis. The one lane the convergence certificate left untested; distinct from the S2/P2/P2b selection kills (no observable needed).",
+      "prediction": "Fleet-adversarial: the attacker predicted a win (24-rotation oracle spread 5.8e-8..6.8e-7 with the champion at the mean); the campaign's gating results predicted null.",
+      "kill_condition": "Paired per-net t >= 3 on the committed public 0..99 basis at seed 0 under common random numbers, twice-run bit-identical determinism, no C/B regression.",
+      "bias_class": "exact (rotation choice only; estimator unchanged downstream)",
+      "result": "KILLED - clean null: t = +0.19, variant better on exactly 50/100 nets (coin flip), bootstrap CI on mean delta [-3.19e-8, +2.61e-8] symmetric about 0, drop-top-5 sign flip confirms artifact; determinism bit-identical both arms, noise floor exactly 0.0; C/B +0.0014 (the SVD's 3.6e8 FLOPs) with no compensating MSE reduction. V is marginally Haar and its W0-coupling buys no systematic alignment with the fixed Kerdock frame. The seed-side rotation lane closes at the point-evaluation level; deeper seed-side structure remains M245's held question.",
+      "status": "killed"
     }
   ]
 }
