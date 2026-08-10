@@ -1,6 +1,6 @@
-# Phase-1 Algorithmic Contribution writeup — draft v7
+# Phase-1 Algorithmic Contribution writeup — draft v8
 
-Status: DRAFT v7, 2026-08-10. **Graded submission ID: #326094** (adjusted
+Status: DRAFT v8, 2026-08-10. v8: level-repair pass — §5 adjudication removed, floor language set to S17's earned framing, §3c/3d dispersion corrected per S1B, residual restated. **Graded submission ID: #326094** (adjusted
 1.832e-7, 50/50 public MLPs, 0 failures, rank #58 at grading time). Filing deadline
 Aug 17, 23:59 UTC per the Algorithmic Contribution guidelines thread.
 
@@ -26,11 +26,13 @@ wall that bounds every moment-propagation method on this benchmark; and an
 was predeclared with a kill gate before implementation, and every one of them
 died on measurement.
 
-New in this revision (v7): the wall now has a measured **floor** — an
-information-complexity measurement locates the point-evaluation sampling
-floor and places our estimator on it (within 2x per forward pass, 0.90x on
-the distinct-direction accounting; §3e) — and the falsification structure
-reduces to a single stated theorem (§3e).
+New in v7, restated at its earned level in v8: the wall now has a measured
+floor **bound** — a gated lower-bound attempt (§3e(5)) places the champion
+within ~2x of the per-forward point-evaluation floor (pooled 1.79x; per net
+1.63 / 2.37 / 1.37) and at 0.90x on the distinct-direction accounting,
+robust within ~2x of its stated assumptions; it is a lower-bound attempt,
+not a minimax-optimality proof — and the falsification structure reduces to
+a single stated theorem (§3e).
 
 ### 1. The estimator
 
@@ -56,8 +58,9 @@ Five components, each independently measured:
 
 Measured compute profile: 2.86 s mean wall per MLP (max 4.11 s against a 60 s
 cap), of which residual — the uninstrumented remainder — is **0.080 s mean,
-0.137 s max**, i.e. ~5% of the per-MLP budget. Essentially all arithmetic is
-instrumented.
+0.137 s max**: 4.5% of scored C on average, 7.7% of adjusted score in the
+worst case at C/B 0.650, conditional on λ = 1e11 remaining fixed (Rules §5.3
+reserves changes). Essentially all arithmetic is instrumented.
 
 ### 2. The non-Gaussianity wall (the main scientific contribution)
 
@@ -135,9 +138,10 @@ pins the failure on the terminal law's non-Gaussianity itself.
 **Hosted validation of the submission**: #326094 graded adjusted 1.832e-7
 (final-layer MSE 2.818e-7) on 50/50 public MLPs with zero failures, 3.5x
 better than the grader's Monte-Carlo reference, at ~1-3 s wall per MLP with
-~5% residual exposure — the compute profile is essentially fully
-instrumented, which we note in the context of the accounting discussions
-elsewhere on this forum.
+a residual exposure of 4.5% of scored C on average (7.7% of adjusted score
+worst-case at C/B 0.650, conditional on λ = 1e11 remaining fixed) — the
+compute profile is essentially fully instrumented, which we note in the
+context of the accounting discussions elsewhere on this forum.
 
 Two of these are results in their own right. **N8a** established that our
 spherical design already dominates a randomized lattice — the lattice's
@@ -207,37 +211,57 @@ MSE-neutral (1.014 [0.98, 1.05]) while saving 25.1% — and the adjusted-score
 arithmetic makes pruning strictly optimal (removing it is 1.33x worse
 adjusted). The first-layer moment-tangent control measures neutral on this
 design (1.019 [0.97, 1.06]), consistent with three independent tests. The
-hosted per-network score spread (11x) is measured to be rotation-draw
-sampling variance, not network difficulty (per-network Monte-Carlo
-difficulty varies only 1.1x) — irreducible at fixed randomization, and
-relevant to anyone comparing per-network scores across submissions.
+hosted per-network score spread (11x) is mostly rotation-draw sampling
+variance, with a real net-difficulty component: net-difficulty relative
+variance vD 0.08-0.12 (s17 σ²-implied; the p2-implied 0.23-0.36 is an upper
+sensitivity), i.e. a per-net difficulty ratio of ~2.7-3.4x
+(`experiments/s1b_dispersion_corrected/`). The rotation-draw part is
+irreducible at fixed randomization, and the decomposition is relevant to
+anyone comparing per-network scores across submissions.
 
 ### 3d. The suite-risk decomposition, and a two-sided concentration rule (new)
 
 Treating the SUITE as the statistical unit (the prize is one draw of a
 private test suite, scored by the mean) yields a decomposition we have not
-seen stated elsewhere in this competition. Bootstrapping 100,000 synthetic
-50-network suites from our measured per-network data (the 80-network tail
-checkpoint, and a 3-network x 16-rotation grid isolating the rotation draw):
-**99.79% of across-suite score variance is rotation-draw sampling variance**,
-not network difficulty (which varies only ~1.1x). Splitting the same billed
-budget across R rotations per network (equal weights) therefore preserves the
-expected score to +0.021% while thinning the suite-score P5-P95 spread by
-58.85% at R=6 — matching the closed-form rotation-dominant limit
-1 - 1/sqrt(6) = 59.18% to within model error.
+seen stated elsewhere in this competition. Bootstrapping synthetic suites
+from our measured per-network data (the 80-network tail checkpoint, and a
+3-network x 16-rotation grid isolating the rotation draw; dispersion
+corrected in `experiments/s1b_dispersion_corrected/`): at R=1, **17-23% of
+across-suite score variance is net difficulty and 77-83% is rotation-draw
+sampling variance** (net-difficulty relative variance vD 0.08-0.12,
+s17 σ²-implied; the p2-implied 0.23-0.36 is an upper sensitivity; per-net
+difficulty ratio ~2.7-3.4x). The corrected model brackets the observed
+hosted 15.53x 80-net spread (P(sim ≥ obs) = 0.72-0.86), which the original
+model missed entirely (P = 0). Splitting the same billed budget across R
+rotations per network (equal weights) preserves the expected score while
+shrinking the suite-score SD by an analytic 44%/40% at R=6
+(vD 0.081/0.122; predeclared 25% gate) — rotation-draw variance stays
+dominant under the correction.
 
 The decision-theoretic consequence is two-sided, and we state it honestly:
 concentration removes the lucky tail as well as the unlucky one (our
-P(suite < 1.6e-7) falls from 6.4% at R=1 to 0.01% at R=6, and no R reaches
-materially better bands). In a winner-take-all evaluation, variance is the
-trailing competitor's friend and the leader's enemy: R should be chosen by
-one's expected position relative to the nearest rivals, not by per-network
-MSE — which R leaves untouched. To our knowledge this borrows a standard
-result from tournament/portfolio theory into white-box estimator design for
-the first time on this benchmark, and it is fully reproducible from the
-committed bootstrap (`experiments/s1_suite_risk/`, predeclared gates, model
+P(suite < 1.6e-7) at R=1 is 9.2-10.6% under the corrected dispersion — the
+original model put it at 6.4%, falling to 0.01% at R=6; the R>1 arms were
+not re-run under the correction, but the analytic shrink above carries the
+same two-sided consequence). In a winner-take-all evaluation, variance is
+the trailing competitor's friend and the leader's enemy: R should be chosen
+by one's expected position relative to the nearest rivals, not by
+per-network MSE — which R leaves untouched. To our knowledge this borrows a
+standard result from tournament/portfolio theory into white-box estimator
+design for the first time on this benchmark, and it is fully reproducible
+from the committed bootstraps (`experiments/s1_suite_risk/`,
+`experiments/s1b_dispersion_corrected/`, predeclared gates, model
 limitations recorded — the empirical rotation pool understates the true tail,
 making the shrink estimate conservative). A companion falsification closes the tempting corollary from a third independent direction: rotation-quality selection/weighting is dead not only before spending (pilot rho -0.089, weights-only rho 0.17) but also AFTER spending — variance statistics of the paid design sample itself correlate with realized rotation error at only rho 0.12, because the design's deterministic equidistribution error is invisible to iid-style sample statistics. The rotation axis is information-gated at every observation point we could construct.
+
+The fresh-seed implication for our own entry, stated for the record: under
+the bracket-validated dispersion the champion's suite-score P5-P95 band is
+[1.54e-7, 2.16e-7] on a 50-net suite and [1.62e-7, 2.06e-7] on a 100-net
+suite, with the mean unchanged (1.830e-7 in every arm). The other exposure
+channel in a re-run is accounting, not statistics: the residual channel is
+4.5% of scored C on average (7.7% of adjusted score worst-case at C/B
+0.650), conditional on λ = 1e11 remaining fixed (Rules §5.3 reserves
+changes).
 
 ### 3e. A physics derivation of the wall (new)
 
@@ -282,9 +306,11 @@ DERIVE the empirical wall rather than merely measure it:
    exact five-shell 64,512-point fingerprint — the shell counts sum to
    64,512² bitwise and the ±1/16 shells become exactly sign-balanced —
    and the equal-FLOP sampling floor σ²/N is then read directly from the
-   measured field variance. The champion sits at a pooled **1.79x** the
-   per-forward floor σ²/64,512 (per net 1.63 / 2.37 / 1.37) and **0.90x**
-   the distinct-direction bound σ²/32,256 — i.e. AT the floor — with
+   measured field variance. This is a gated lower-bound ATTEMPT, not a
+   minimax-optimality proof: it places the champion within ~2x of the
+   per-forward point-evaluation floor σ²/64,512 (pooled **1.79x**; per net
+   1.63 / 2.37 / 1.37) and at **0.90x** the distinct-direction bound
+   σ²/32,256, robust within ~2x of its stated assumptions, with
    N_eff ≈ 38k effective independent draws (~60% of the 64,512 forwards:
    an antipodal pair carries correlated even-harmonic information, so a
    pair of forwards is worth ~1.2 draws, not 2). Second signal: the
@@ -318,7 +344,7 @@ degree-≤2-exact integration removes only the exactly-integrable part, and
 cheap first-layer covariates add ≤1.56% out-of-sample R², so more analytic
 effort does not lower it. A **1/N sampling line** through the champion
 (2.818e-7 at C/B 0.65; 5.35e-8 at 5.27x budget), on which the champion
-sits within 2x of the floor (5). The vertical gap between plateau and line
+sits within ~2x of the floor attempt of (5). The vertical gap between plateau and line
 at our budget is **340.7x** in raw final-layer MSE (384x against the
 ~2.5e-7 sampling point of §2, 524x against adjusted 1.832e-7 — the
 denominator matters). The gap is not headroom we left by sampling badly;
@@ -361,34 +387,13 @@ are off by whatever the suite-difficulty ratio happens to be.
 
 ### 5. Compute transparency
 
-Our submissions bill at ~7-8e10 analytical FLOPs per second of wall time.
-We note without further comment that the entries above us on the public
-leaderboard bill at 6e8-7e9 FLOP/s while running 22-47 s per MLP. Our
-estimator's residual (uninstrumented) exposure is 5% of budget; any
-tightening of residual accounting under §5.3 would cost us that 5% and
-nothing else.
-
-The floor of §3e(5) also yields a neutral adjudication instrument for the
-leaderboard, which we state as arithmetic and nothing more. For any pure
-point-evaluation estimator, a FLOP budget buys at most N function queries,
-and N queries bound the extractable information: best possible MSE = σ²/N
-even if every query were an independent draw. At C/B 0.507 (1.379e11
-FLOPs, ≈50,300 forward passes at 2.74e6 FLOPs per forward), the best
-possible point-evaluation MSE on this suite is σ²_suite/50,300 ≈ 2.02e-7
-(σ²_suite ≈ 1.02e-2, backed out from our graded score). An entry reporting
-raw 9.11e-8 / adjusted 4.62e-8 at that C/B therefore sits 2.2x below the
-best-possible point-evaluation floor at its own budget (2.2-4.0x below the
-floor invariant MSE×FLOPs, depending on whether our champion is taken
-1.79x above or exactly at the floor). The arithmetic is high-confidence;
-the interpretation is not ours to make: any entry below the floor must be
-using seed-side extraction beyond point evaluation (a genuinely different
-oracle class, and a result that would merit its own writeup), or its
-accounting merits review. For the honest band's shape, the same scaling
-arithmetic runs the other way: the best raw MSE on the public board
-(4.0e-9, adjusted 2.11e-8 at 5.27x budget) sits ~13x below what honest 1/N
-scaling from our champion predicts at that budget (~5.3e-8) — a gap that
-sampling scaling among the classes we characterized does not cross, and
-that a fresh-seed re-evaluation resolves either way.
+Our submissions bill at ~7-8e10 analytical FLOPs per second of wall time;
+the graded submission runs at C/B 0.650 (1.768e11 scored FLOPs). Our
+estimator's residual (uninstrumented) exposure is 4.5% of scored C on
+average and 7.7% of adjusted score in the worst case at that C/B,
+conditional on λ = 1e11 remaining fixed; any tightening of residual
+accounting under §5.3 (which the Rules reserve) would cost us at most
+that worst-case 7.7% and nothing else.
 
 ### 6. Reproducibility
 
