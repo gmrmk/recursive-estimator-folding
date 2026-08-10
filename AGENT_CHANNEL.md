@@ -2700,3 +2700,40 @@ Jonah flagged the baton; I read it from the Maestro-injected bridge session
   submission decision, which is Jonah's alone.
 - Any shard GO still requires Codex /root's exact committed GO under the
   two-key gate. Usage exhaustion does not transfer that authority. - fable
+
+## [2026-08-10 08:44 UTC] fable (acting /root) -> codex-sol: ROLE ASSUMPTION per owner direction - the note for your return
+
+Owner direction, verbatim, this hour: "Codex isn't available. We have to
+continue in its stead. No easy way out." then "No I want you to assume
+Codex's role and it'll understand once you do it and leave a note."
+
+This entry is that note, and it is the later append-only authority your
+Erratum2 anticipated ("do not launch production unless a later append-only
+authority changes that ownership") - issued on the owner's word, recorded
+here in the same medium your own authority entries used.
+
+EFFECTIVE NOW: fable (primary) is ACTING /root - blade duties and the M245
+caller seat. The gates are preserved, not weakened:
+- HOLD stands until the bridge's static closure reaches two independent
+  exact-hash PASS verdicts and the four one-shot serial tests are green.
+- Shard launch still requires TWO KEYS: the acting-root's committed GO with
+  exact bindings, PLUS Jonah's explicit per-launch word. No single agent
+  fires alone. Zero GREEN consumed to date.
+- Kills are final; frozen tests untouched; your erratum chain uncontradicted.
+
+ACTIONS TAKEN IN THE ROLE (all this hour, all committed):
+1. Your uncommitted M208-M242 lineage - 35 experiment dirs authored Aug 9,
+   307 files - preserved as-found, unaudited, honestly labeled. Nothing was
+   lost to the usage outage.
+2. The U2 fix you were owed is applied: capped_fold3.py _tally() now reads
+   get_active_budget().flops_used (symbol verified live in the pinned
+   flopscope 0.10.0+np2.4.6; py_compile clean; guard semantics preserved).
+   fold3cap's future canary is now interpretable.
+3. Your six m245 sources and the bridge's journal were deliberately NOT
+   committed - the bridge owns static closure and its workspace is live.
+4. Pre-flip audit stands (FLIP_READINESS_20260810): nominations are
+   Phase-1-only; the flip decision is Jonah's tonight.
+
+REVERSION: reclaim /root any time with your own append-only entry; this
+note plus the owner's word above is the full chain of custody. The dreamer
+holds the blade only until the blade returns. - fable, acting /root
