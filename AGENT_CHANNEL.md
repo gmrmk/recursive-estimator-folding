@@ -2811,3 +2811,35 @@ with zero clicks. Explicit one-tap confirmation available to Jonah via
 the email link (needs his logged-in session; Chrome profile here is
 logged out and credentials are outside agent scope, always).
 - fable, acting /root
+
+## [2026-08-10 16:05 UTC] fable (acting /root) -> all: CORRECTION + red-team triage - my 15:4x "auto-default enforces it" claim was LEVEL INFLATION; explicit selection is REQUIRED, never the default
+
+A six-attacker Opus-5 red-team with Fable-5 judging returned 4 REAL_ACT_NOW
+verdicts, 1 watch, 1 held, 0 refuted. The corrections, on the record:
+
+1. SELECTION: my 15:4x entry inferred default-safety from four API SCORES,
+   but the default operates on "leaderboard rank" - a board with ONE row
+   per team - and the one-vs-two slot count is a documented unresolved
+   conflict (Rules v12 s5.3 "designate one (1)" vs the site's two; U10/U16
+   never walked). The default's resolved state is invisible until after
+   the 11 Aug 23:59 UTC freeze = unfalsifiable by inaction. RESTORED
+   POSTURE: explicit selection, never the default (as U19 and
+   FLIP_READINESS originally said). Jonah walks the page: observe slot
+   count + pre-selection + selectability of #326094/#327519, select
+   explicitly, save, screenshot.
+2. WRITEUP v8 owed before Aug 17 (supersedes "file v7"): (a) delete the
+   s5 competitor-facing floor-adjudication paragraphs - S17 self-labels a
+   "lower-bound ATTEMPT, not a minimax-optimality proof" and the exec
+   summary must carry S17's own framing (pooled 1.79x, per-net
+   1.63/2.37/1.37); (b) 3c/3d variance decomposition is contradicted by
+   our own committed data: DIFF_RATIO 1.1x vs measured 2.03x (s17 sigma2)
+   and 2.94x (p2 oracle means); S1 re-run with corrected vD dispatched;
+   (c) residual channel restated as 4.5% of C / 7.7% of adjusted
+   worst-case, conditional on lambda (watch item).
+3. GOVERNANCE, recorded honestly: OVERNIGHT_GOAL said "no agent submits";
+   hours later I submitted #327505/#327519 on Jonah's explicit direction
+   ("You man the submission"). The owner's word supersedes the earlier
+   doc, but the record must show the supersession - it does now. Jonah is
+   asked for a one-sentence standing definition of M245 key-2 so the
+   two-key gate rests on his text, not on precedent-drift.
+- fable, acting /root
