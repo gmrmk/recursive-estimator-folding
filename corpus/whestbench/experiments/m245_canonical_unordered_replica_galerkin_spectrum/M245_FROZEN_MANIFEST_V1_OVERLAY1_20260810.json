@@ -1,0 +1,341 @@
+{
+  "schema": "m245-authority-manifest-v1-overlay1",
+  "candidate": "m245_canonical_unordered_replica_galerkin_spectrum",
+  "date": "2026-08-10",
+  "status": "FROZEN_AUTHORITY_REPAIR_ONLY_NO_MATERIALIZATION",
+  "authority_scope": "prematerialization_transport_topology_ownership_and_metering_only",
+  "authority_commit_v1": "c4468c3d330f968ce1a3b376d56aa1f6b640e709",
+  "v1_sha256": {
+    "M245_PREDECLARATION_20260810.md": "aa9ca84d48e840435d350fbab3be3f1c98356b541d54a018968cfa16b97f2512",
+    "M245_FROZEN_MANIFEST_V1_20260810.json": "17a9df68304c7b06dd29957cc6fd4180242a9cc1bafb79e30c35f2426825b6b4",
+    "M245_SHA256SUMS_V1_20260810.txt": "0fbc35bfa2e77993e19d50d03ebfdda8851b137cdde18e6ef6613172c8c565c9"
+  },
+  "precedence": [
+    "M245_PREMATERIALIZATION_ERRATUM1_20260810.md",
+    "M245_FROZEN_MANIFEST_V1_OVERLAY1_20260810.json",
+    "M245_PREDECLARATION_20260810.md",
+    "M245_FROZEN_MANIFEST_V1_20260810.json"
+  ],
+  "supersedes_only": [
+    "fixture argv and import-startup isolation policy",
+    "fixture environment policy",
+    "four-path namespace and worker-owned intent sequence",
+    "fixture materialization process topology",
+    "fixture materialization path ownership",
+    "fixture materialization resource endpoint",
+    "fixture materialization receipt binding"
+  ],
+  "unchanged_v1": [
+    "mathematics",
+    "fixture census and generator",
+    "shard ownership",
+    "numeric thresholds",
+    "firewall",
+    "no-credit boundary"
+  ],
+  "authorization": {
+    "materializer_or_supervisor_code_created": false,
+    "transport_tests_created": false,
+    "scientific_import_or_execution_authorized": false,
+    "fixture_launch_authorized": false,
+    "fixture_launches_consumed": 0,
+    "candidate_or_shard_work_authorized": false
+  },
+  "paths": {
+    "authority_directory": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m245_canonical_unordered_replica_galerkin_spectrum",
+    "supervisor_source": "supervise_m245_fixture_materialization.py",
+    "worker_source": "materialize_m245_fixtures.py",
+    "dummy_transport_test": "test_m245_fixture_materialization_transport.py",
+    "static_validation_receipt": "M245_FIXTURE_MATERIALIZATION_STATIC_VALIDATION_RECEIPT_20260810.json",
+    "execution_paths_initially_absent": [
+      "M245_FIXTURE_MATERIALIZATION_INTENT_20260810.json",
+      ".M245_FROZEN_MANIFEST_V2_20260810.json.tmp",
+      "M245_FROZEN_MANIFEST_V2_20260810.json",
+      "M245_FIXTURE_MATERIALIZATION_POSTPUBLICATION_RECEIPT_20260810.json",
+      "M245_FIXTURE_MATERIALIZATION_TERMINAL_METER_WITNESS_20260810.json"
+    ],
+    "execution_path_count": 5,
+    "mixed_root_or_symlink_escape_forbidden": true
+  },
+  "interpreters": {
+    "supervisor_base_interpreter": "C:\\Python314\\python.exe",
+    "supervisor_base_interpreter_sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a",
+    "launcher_redirector": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+    "launcher_redirector_sha256": "4b8c3912806b3c1591ba3cb403bff77ad309c3fe5756f87c20b7a6f8f0174262",
+    "worker_os_image": "C:\\Python314\\python.exe",
+    "worker_os_image_sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a",
+    "worker_logical_sys_executable": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+    "worker_base_executable": "C:\\Python314\\python.exe"
+  },
+  "argv_and_cwd": {
+    "supervisor_argv": [
+      "C:\\Python314\\python.exe",
+      "-I",
+      "-B",
+      "-S",
+      "-u",
+      "<authority_directory>\\supervise_m245_fixture_materialization.py"
+    ],
+    "launcher_argv": [
+      "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe",
+      "-B",
+      "-P",
+      "-s",
+      "-S",
+      "-u",
+      "<authority_directory>\\materialize_m245_fixtures.py"
+    ],
+    "worker_sys_argv": [
+      "<authority_directory>\\materialize_m245_fixtures.py"
+    ],
+    "cwd_all_processes": "<authority_directory>",
+    "user_arguments_allowed": false,
+    "relative_worker_path_allowed": false
+  },
+  "environment": {
+    "ambient_environment_persisted_or_forwarded": false,
+    "canonical_complete_sanitized_child_map_bound_in_intent": true,
+    "identical_digest_required_in_launcher_and_worker": true,
+    "fixed": {
+      "BLIS_NUM_THREADS": "1",
+      "COMSPEC": "C:\\Windows\\System32\\cmd.exe",
+      "MKL_DYNAMIC": "FALSE",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_DYNAMIC": "FALSE",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PATH": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts;C:\\Python314;C:\\Windows\\System32;C:\\Windows",
+      "PATHEXT": ".COM;.EXE;.BAT;.CMD",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "0",
+      "PYTHONNOUSERSITE": "1",
+      "SYSTEMROOT": "C:\\Windows",
+      "TEMP": "C:\\Users\\strid\\AppData\\Local\\Temp",
+      "TMP": "C:\\Users\\strid\\AppData\\Local\\Temp",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "WINDIR": "C:\\Windows"
+    },
+    "required_absent": [
+      "PYTHONHOME",
+      "PYTHONPATH",
+      "PYTHONSTARTUP",
+      "PYTHONINSPECT"
+    ],
+    "unlisted_key_credential_token_proxy_allowed": false,
+    "network_allowed": false,
+    "supervisor_startup_flags": ["-I", "-B", "-S", "-u"],
+    "launcher_worker_startup_flags": ["-B", "-P", "-s", "-S", "-u"],
+    "worker_pre_GO_assertions": [
+      "sys.flags.no_site == 1",
+      "sys.flags.no_user_site == 1",
+      "sys.flags.safe_path == 1",
+      "sys.dont_write_bytecode is True",
+      "venv site-packages absent from sys.path",
+      "numpy and numpy.* absent from sys.modules",
+      "I present and exact hash-bound immutable bytes",
+      "V2 temp, V2, R, and T absent"
+    ],
+    "worker_post_GO_import": "insert exact venv Lib/site-packages once at sys.path[0] without site or .pth processing, then sole import numpy as np and require version 2.4.6"
+  },
+  "topology": {
+    "exact_chain": "S -> L -> W",
+    "S_role": "external_stdlib_supervisor",
+    "L_role": "inert_exact_venv_redirector",
+    "W_role": "sole_scientific_worker",
+    "distinct_pid_count": 3,
+    "job_members": [
+      "L",
+      "W"
+    ],
+    "job_total_processes_required": 2,
+    "job_active_process_limit": 2,
+    "job_active_processes_at_R_endpoint": 2,
+    "job_active_processes_after_EXIT": 0,
+    "job_kill_on_close": true,
+    "job_completion_port_process_census": true,
+    "launch_sequence": [
+      "S exclusive-publishes and verifies intent",
+      "S creates L suspended",
+      "S assigns L to fresh job before resume",
+      "S resumes L",
+      "L redirects to W",
+      "W signals READY before NumPy import",
+      "S opens and retains W handle and verifies identity/topology",
+      "S signals GO",
+      "W imports NumPy and materializes V2",
+      "W emits canonical DONE, signals DONE, and waits EXIT",
+      "S validates V2 and cross-checks Job",
+      "S publishes, fsyncs, reopens, and hashes provisional R while L/W remain live",
+      "S captures endpoint then all three live PeakWS/CPU counters",
+      "S signals EXIT",
+      "W immediately os._exit(0), then L exits while S retains handles",
+      "S records child-exit clock, ActiveProcesses zero, exit codes, and conservative final CPU",
+      "S publishes T outside endpoint"
+    ],
+    "control_events": {
+      "kind": "collision-refusing initially-nonsignaled manual-reset Local Windows events",
+      "names": [
+        "Local\\M245_<first32_intent_sha256>_READY",
+        "Local\\M245_<first32_intent_sha256>_GO",
+        "Local\\M245_<first32_intent_sha256>_DONE",
+        "Local\\M245_<first32_intent_sha256>_EXIT"
+      ],
+      "ERROR_ALREADY_EXISTS": "permanent_fail",
+      "worker_stdout": "exactly two newline-terminated canonical JSON records M245_W_READY then M245_W_DONE",
+      "worker_stderr": "must remain empty",
+      "control_file_log_or_sixth_path": false
+    },
+    "W_handle_retained_before_GO": true,
+    "L_creates_exactly_W_and_no_other": true,
+    "W_childless": true,
+    "any_process_beyond_L_W_or_any_W_child": "permanent_fail",
+    "required_identity_fields": [
+      "pid",
+      "parent_pid",
+      "creation_filetime",
+      "image_path",
+      "image_sha256",
+      "argv",
+      "cwd",
+      "environment_sha256",
+      "job_membership",
+      "process_handle_access_mask",
+      "handle_acquisition_time",
+      "exit_code",
+      "kernel_time_100ns",
+      "user_time_100ns"
+    ],
+    "pid_without_creation_time_and_retained_handle_sufficient": false
+  },
+  "ownership": {
+    "S": [
+      "intent I",
+      "postpublication receipt R",
+      "terminal meter witness T",
+      "job and process handles",
+      "resource and topology evidence"
+    ],
+    "L": [],
+    "W": [
+      "fixture generation",
+      "temporary V2",
+      "final V2"
+    ],
+    "W_entry_path_state": "I present with exact immutable hash; V2 temp, V2, R, T absent",
+    "W_may_create_or_rewrite_I": false,
+    "W_may_write_receipt_or_other_path": false,
+    "five_path_namespace_supersedes_v1_four_path_namespace": true
+  },
+  "publication": {
+    "intent": "exclusive canonical JSON, flush, fsync, reopen, parse, byte verify, hash before L creation",
+    "v2": "exclusive same-directory temp, flush, fsync, reopen, parse, hash, os.link create-if-absent, device/inode/length/bytes/hash verify, temp unlink",
+    "receipt_R": "S-owned exclusive canonical JSON, flush, fsync, reopen, parse, byte verify, hash; provisional until T",
+    "witness_T": "S-owned exclusive canonical JSON, flush, fsync, reopen, parse, byte verify, hash; publication outside measured endpoint",
+    "rename_or_replace": false,
+    "directory_fsync_claimed": false,
+    "only_passing_terminal_status": "PASS_M245_FIXTURE_AUTHORITY_BOUND"
+  },
+  "resource_meter": {
+    "charged_processes": [
+      "S",
+      "L",
+      "W"
+    ],
+    "t0": "S OS creation FILETIME from GetProcessTimes",
+    "endpoint": "completion of R fsync plus reopen/parse/byte verification/SHA-256",
+    "endpoint_clock_api": "GetSystemTimePreciseAsFileTime immediately after R hash",
+    "child_exit_clock_api": "GetSystemTimePreciseAsFileTime after confirmed W and L exit",
+    "T_publication_inside_endpoint": false,
+    "wall_cap_seconds": 30.0,
+    "child_exit_wall_cap_seconds": 30.0,
+    "rss_cap_bytes": 268435456,
+    "cpu": {
+      "definition": "sum larger live-at-endpoint or post-exit retained-handle KernelTime plus UserTime for S,L,W; post-endpoint and orderly-exit overhead retained conservatively",
+      "units": [
+        "100ns",
+        "seconds"
+      ],
+      "independent_cap": null,
+      "missing_or_negative": "permanent_fail"
+    },
+    "rss": {
+      "sample_period_seconds_max_nominal": 0.01,
+      "maximum_observed_gap_seconds": 0.1,
+      "sample_on_every_job_notification": true,
+      "sampled_metric": "max through confirmed child exit of concurrent sum WorkingSetSize for S,L,W",
+      "sampled_metric_is_gap_free_peak": false,
+      "barrier": "L and W remain live and idle through R publication and endpoint",
+      "peak_capture": "S, L, and W PeakWorkingSetSize lifetime-to-endpoint captured live immediately after endpoint before EXIT",
+      "post_teardown_memory_query_required": false,
+      "conservative_metric": "sum of all three PeakWorkingSetSize lifetime-to-endpoint values captured live after endpoint",
+      "binding_gate_metric": "max(sampled_metric, conservative_metric)"
+    },
+    "counter_or_handle_unavailable": "permanent_fail",
+    "S_control_plane_charged": true,
+    "S_inclusive_256MiB_cap_is_conservative_tightening": true
+  },
+  "receipt_and_witness": {
+    "R_status": "provisional",
+    "R_binds": [
+      "intent hash",
+      "V2 path, bytes, and hash",
+      "authority/runtime/source/static receipt hashes",
+      "pre-endpoint identities and job census, explicitly excluding future exit codes",
+      "T required declaration"
+    ],
+    "T_binds": [
+      "R path, bytes, and hash",
+      "intent and V2 hashes",
+      "S,L,W retained-handle identities",
+      "job TotalProcesses and process-event census",
+      "raw and derived CPU, RSS, wall measurements",
+      "caps and gate verdicts",
+      "sampling timestamps and maximum gap",
+      "observed pre-T state: I, V2, R present and V2 temp, T absent",
+      "expected T path and status",
+      "post-EXIT child exit codes and final conservative CPU",
+      "post-EXIT Job ActiveProcesses == 0 and child-exit wall <= 30 seconds",
+      "terminal status"
+    ],
+    "T_self_attestation_of_own_publication_time_cost_existence_bytes_or_hash": false,
+    "T_publication_verified_only_by_later_independent_audit_and_checksum": true,
+    "missing_or_failing_T": "V2_and_R_permanently_invalid_no_retry"
+  },
+  "prelaunch_hash_binding": {
+    "future_exact_hashes_required": [
+      "supervisor source",
+      "worker source",
+      "dummy transport test",
+      "static validation receipt",
+      "this erratum",
+      "this overlay",
+      "V1 authority files",
+      "every V1 parent and runtime file"
+    ],
+    "two_normalized_distinct_static_reviewers_required": true,
+    "all_rehashed_by_S_before_intent": true,
+    "all_rehashed_by_W_before_numpy": true
+  },
+  "frozen_order": [
+    "commit erratum overlay and checksum receipt",
+    "write dummy-only transport tests first and preserve missing-implementation RED",
+    "implement S and W without previewing frozen fixtures",
+    "run dummy transport tests only",
+    "obtain two independent read-only static PASS audits",
+    "commit canonical static-validation receipt binding exact hashes",
+    "fresh read-only five-path absence and hash audit",
+    "separate explicit one-shot launch authorization",
+    "invoke S exactly once; direct L or W invocation forbidden",
+    "require passing T",
+    "commit V2, R, T, and V2 checksum receipt",
+    "obtain two fresh independent read-only audits before scientific work"
+  ],
+  "failure": {
+    "pre_intent_parent_drift": "BLOCKED_PARENT_DRIFT",
+    "post_intent_any_failure": "BLOCKED_FIXTURE_AUTHORITY_NO_RETRY",
+    "preexisting_any_execution_path": "BLOCKED_FIXTURE_AUTHORITY_NO_RETRY",
+    "residual_v2_temp": "BLOCKED_FIXTURE_AUTHORITY_NO_RETRY",
+    "retry_or_second_materialization": false
+  }
+}
