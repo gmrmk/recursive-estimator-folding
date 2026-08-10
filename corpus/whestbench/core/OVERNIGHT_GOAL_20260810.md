@@ -17,13 +17,17 @@ and the U2 fix (commit 931285d) removed fold3cap's known metering defect.
 
 ## Overnight lanes (all running or done as of 09:0x UTC)
 
-1. DOOR A RESURRECTION (agent running): rebuild fold3cap with the fixed
-   source; re-run predeclared engineering gates G1-G4 with the pinned
-   toolchain; STOP on any gate discrepancy (kill-grade signal, not a
-   fix-tonight); on identical outputs: build tar (member-identical to
-   d3f5aefa, only the fix differs, proven by extract-and-diff),
-   validate-package ok:true, stage as Desktop\whest-submit\
-   6_fold3cap_FIXED_<hash8>.tar.gz. NO submission by any agent, ever.
+1. DOOR A RESURRECTION — DONE 09:5x UTC, ALL GREEN: gates re-run on fixed
+   source BIT-IDENTICAL to the frozen 2026-08-08 record (7 differing JSON
+   leaves, all wall_s timing; 0 non-wall; _tally deltas exact: sim_cost
+   6784399632/6968410237/6491132347, dp_cost 20053248 x3 — U2's
+   behavior-preservation prediction CONFIRMED by measurement). New tar
+   sha256 A8CAFBEF...9151 (11,776 B), validate-package ok:true; tar diff
+   proves only the fix hunk + 2 derived manifest fields differ from sealed
+   d3f5aefa (itself re-hashed unchanged). STAGED:
+   Desktop\whest-submit\6_fold3cap_FIXED_a8cafbef.tar.gz (hash re-verified
+   by orchestrator). Full record: t3_fold3_deterministic_cap/
+   FOLD3CAP_REBUILD_20260810.md. Score remains unknown until graded.
 2. TWIN VERIFIED (done this hour, fresh signals): sha256 8382E269...EA06
    exact; validate-package ok:true (whestbench 0.14.0, issues: []); 10 tar
    members, list-identical to the graded package's sibling.
