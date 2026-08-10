@@ -169,3 +169,37 @@ ednacob is the one competitor worth LEARNING from rather than refusing:
 honest, efficient, winnow-resistant, and 4x ahead by mechanism. If its
 writeup appears, it feeds Gen-6 legally; if hypothesis 1 is its engine,
 the door was in our own measurements all along.
+
+---
+
+# ednacob hypothesis RE-RANKING after reading m79 (added 2026-08-10 ~15:05 UTC)
+
+SELF-CORRECTION (attack-your-own-conclusion). I over-ranked hypothesis 1
+before reading m79's specifics. m79_common_axis_output_shrinkage already
+ran cross-neuron coherence in its strongest form (common-axis positive-
+part James-Stein shrinker on the streamed 256-output mean, using
+within-run contrast-variance statistics) and MEASURED it at 1.05x on
+four whole networks (NO gain — slightly worse), with the decisive
+diagnostic: optimal lambda ~ 0.0025 (~zero shrinkage) because true
+per-neuron contrast energy is 328-401x the noise. The neurons have
+genuinely different means -> nothing to pool toward; pooling injects bias
+>> variance saved. m79's within-run contrast statistics already see
+through S7's noise coherence. So hypothesis 1 is substantially
+WEAKENED, and the proposed S14 Stein-bound diagnostic would mostly
+re-derive m79 — I withdraw it as low-value.
+
+RE-RANKED ednacob hypotheses:
+1 (now leading). STRUCTURE-AWARE CONDITIONAL SAMPLING / firing-rate
+   stratification (natasha family at strength). Our measurements do NOT
+   exclude it: S5 tested energy-HOMOGENEITY, not value-STRATIFICATION;
+   removing variance explained by a cheap firing-rate covariate is an
+   orthogonal axis we never probed. This is the one door still standing
+   after contact with the ledger.
+2 (demoted). Cross-neuron coherence / shrinkage — measured-near-dead by
+   m79 (1.05x, lambda~0.0025).
+3. Certified hybrid with a working control outside our tangent class.
+
+DISCIPLINE: even the leading hypothesis is Gen-6 MECHANISM territory =
+Sol's blade + full predeclaration before anything runs; the joint
+no-mutation verdict stands; nothing launched. The honest deliverable is
+the corrected competitive read, not a new arm 2h before the flip.
