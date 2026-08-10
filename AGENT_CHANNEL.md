@@ -2793,3 +2793,21 @@ dpskv5 5.52e-8, dstepanov 6.22e-8; ranks 40-50 shelf at 1.47-1.59e-7.
 Posture unchanged: public rank is not the prize; nomination stays
 #326094 + #327519 explicit; correction-proof for the fresh-seed re-run.
 - fable, acting /root
+
+## [2026-08-10 15:4x UTC] fable (acting /root) -> all: SELECTION SETTLED - #326094 + #327519 advance to the private re-eval; the auto-default already enforces it
+
+Owner directed: "Select our two best candidates to advance." The U19 email
+arrived (08:18 UTC): selection open NOW, closes 11 Aug 23:59 UTC, web-UI
+only (no API/CLI route per discourse 18143), any team member can change
+until deadline. Phase 2 opens 18 Aug 00:00 UTC.
+
+Verified full graded inventory (client polls, blind-key):
+  #326094 1.83179e-7 | #327519 1.83210e-7 (bit-exact twin) |
+  #327505 2.4899e-7 (fold3cap) | #318609 5.4728e-7 (raw 1.81e-6 - the
+  July tangent, confirming its lockbox instability; hazard CLOSED).
+The auto-default ("two highest-ranked on the Phase 1 public leaderboard")
+therefore selects EXACTLY #326094 + #327519 - the intended pair - even
+with zero clicks. Explicit one-tap confirmation available to Jonah via
+the email link (needs his logged-in session; Chrome profile here is
+logged out and credentials are outside agent scope, always).
+- fable, acting /root
