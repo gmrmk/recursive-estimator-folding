@@ -2277,8 +2277,8 @@
       "prediction": "CONFIRM-REDUCTION: layer-1 residual-split MSE matches the antipodal champion to <1% (ideally to numerical precision, since the algebra is an identity); deep-residual closure lands at ~9.6e-5 (M181 wall), >>2.5e-7 sampling. Yields a clean writeup IDENTITY (residual decomposition = antipodal symmetrization), not a new lever.",
       "kill_condition": "If layer-1 residual-split MSE matches antipodal within 1% AND deep closure >= M181 wall -> CONFIRMED reduction (the assertion is now an observed identity; no new mechanism, ledger as screened-confirm). SURPRISE branch (would reopen, unlikely): residual-split beats antipodal by >10% at matched billed FLOPs -> escalate, because the identity would be violated and something is genuinely new.",
       "bias_class": "exact (identity check + measurement; no estimator change ships, no submission)",
-      "result": null,
-      "status": "proposed"
+      "result": "CONFIRMED (both forms measured, assertion -> observation): FORM 2 (decomposition) \u2014 layer-1 identity ReLU(Wu)+ReLU(-Wu)=|Wu| BIT-EXACT dev 0.0 on 8.26M entries/net x3; residual-split vs antipodal champion MSE ratio 1.000000, max final-vector dev 0.0 at matched 64,512 samples; reproduces committed M181 arm0 baseline to sub-ppm (0.999997x). The residual decomposition IS antipodal pairing (promoted 1.91x pillar) \u2014 a clean writeup IDENTITY, not a lever. Deep-residual closure arm 1.28e-6 = 3.7x above the sampling floor (M181 wall confirmed). FORM 1 (exact reparametrization, owner scope-add): per-layer residual magnitude R_l = mean||F_l||/mean||y_l|| = min 1.108/median 1.162/max 1.231 (all >1, no layer <0.3) -> NO near-identity structure; Form-1 reduces to the S8 contraction law, no perturbative lever. Both predicted, both confirmed, zero surprise. Firewall clean; artifacts experiments/s16_residual_decomp/.",
+      "status": "screened"
     },
     {
       "id": "s17_information_complexity_lower_bound",
