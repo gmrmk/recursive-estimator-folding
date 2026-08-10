@@ -230,9 +230,12 @@ corrected in `experiments/s1b_dispersion_corrected/`): at R=1, **17-23% of
 across-suite score variance is net difficulty and 77-83% is rotation-draw
 sampling variance** (net-difficulty relative variance vD 0.08-0.12,
 s17 σ²-implied; the p2-implied 0.23-0.36 is an upper sensitivity; per-net
-difficulty ratio ~2.7-3.4x). The corrected model brackets the observed
-hosted 15.53x 80-net spread (P(sim ≥ obs) = 0.72-0.86), which the original
-model missed entirely (P = 0). Splitting the same billed budget across R
+difficulty ratio ~2.7-3.4x). The corrected model brackets the
+independently observed 15.53x 80-net max/min spread (P(sim ≥ obs) =
+0.72-0.86), which the original model missed entirely (P = 0); the spread
+was measured on the local synthetic 80-net tail checkpoint (m185 stage 1,
+`a1b_tail_diagnostics.json`) — the same basis as the model, and previously
+mislabeled "hosted" in one internal verdict, corrected here. Splitting the same billed budget across R
 rotations per network (equal weights) preserves the expected score while
 shrinking the suite-score SD by an analytic 44%/40% at R=6
 (vD 0.081/0.122; predeclared 25% gate) — rotation-draw variance stays
