@@ -31,7 +31,7 @@ graph TD
 | id | hypothesis | settling check (cheapest falsifier) | gate/resolve | owner | status |
 |---|---|---|---|---|---|
 | U1 | Phase-2 duplicate-nomination allowed? | organizer Q (Sol drafts, Jonah posts) | written answer before Door B | Sol/Jonah | OPEN external |
-| U2 | fold3cap residual inflation magnitude | static code bound (AGENT RUNNING) | inside/outside metered path + delta | fable(now)/Sol | RESOLVING |
+| U2 | fold3cap residual inflation magnitude | static code bound | RESOLVED 2026-08-10: NEEDS-FIX. Billed-F clean (0); residual (lambda*R) channel inflates with process history (0.035% of B single-net .. ~11% at K=100; near-CAP nets at K>=92 breach C>B -> zero-prediction). T3 gates blind to it. One-line behavior-preserving fix: get_active_budget().flops_used (NOT current_budget() - absent in flopscope v0.14). Canary BLOCKED until Sol applies fix. See u2_fold3cap_bound/ | fable->Sol | RESOLVED (fix owed) |
 | U4 | private suite 50 vs 100 nets | rules re-read / rider on U1 | scales all P-tables | fable | OPEN cheap |
 | U7 | re-grade wave complete? | board watch | joe_wanza settled at 2.11e-8 | fable | MONITOR |
 | U8 | v3.1 hosted transfer ~1.83e-7 | the flip submission grade | +/-2% of local | grader | settles at flip |

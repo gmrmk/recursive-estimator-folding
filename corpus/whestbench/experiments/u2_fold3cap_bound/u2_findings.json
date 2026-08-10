@@ -1,0 +1,54 @@
+{
+  "task": "U2 fold3cap residual-billing inflation bound (static analysis)",
+  "date": "2026-08-10",
+  "budget_B": 272000000000.0,
+  "lambda_flops_per_second": 100000000000.0,
+
+  "inside_metered_path": true,
+  "billed_flop_channel_inflation": 0,
+  "billed_flop_channel_note": "budget_summary_dict is pure Python; charges no ops; F (flops_used) and n_eff selection are unaffected. All inflation is in the residual (lambda*R) channel of the final scored C = F + lambda*R.",
+
+  "inflation_channel": "residual_wall_time (lambda*R), NOT billed FLOPs",
+  "grows_with_process_history": true,
+  "history_source": "process-global BudgetAccumulator, appended per net at BudgetContext.__exit__ (_budget.py:995), never reset across the suite",
+
+  "calibrated_cost_per_op_seconds": 5.0e-07,
+  "calibrated_cost_per_op_flops_equiv": 50000.0,
+  "ops_per_full_predict_estimate": 2000,
+  "ops_per_full_predict_band": [1500, 2500],
+
+  "inflation_lower_flops": 9.5e7,
+  "inflation_lower_case": "single-net canary / K=1 / process-recycled harness; residual ~0.95 ms; ~0.035% of B",
+  "inflation_upper_flops": 3.0e10,
+  "inflation_upper_case": "last net (K=100) of a 100-net single-process suite; residual ~0.30 s; ~11% of B",
+  "inflation_upper_flops_band": [2.2e10, 3.7e10],
+  "inflation_50net_last_flops": 1.48e10,
+
+  "adjusted_delta": {
+    "unit": "relative worsening of adjusted suite score, no failures",
+    "suite_100net_single_process": 0.06,
+    "suite_50net_single_process": 0.03,
+    "late_single_net_K100": 0.12,
+    "catastrophic_tail": "near-CAP net (F/B~0.89) at suite position K>=92 breaches C>B -> budget failure -> multiplier 1.0, zero-prediction (mse ~1e-6..1e-5 into the mean); reintroduces the exact 5/100-breach mode the cap removes"
+  },
+
+  "gates_blind_to_this": true,
+  "gates_blind_reason": "run_t3_gates.py records only ctx.flops_used (F) and used non-binding METER_BUDGET=1e15; never reads residual_wall_time_s",
+
+  "recommendation": "needs-fix",
+  "fix": "replace flops.budget_summary_dict()[\"flops_used\"] in Estimator._tally with an O(1) active-context read: get_active_budget().flops_used (from flopscope._budget import get_active_budget)",
+  "fix_is_behavior_preserving": true,
+  "fix_note": "deltas within one predict are identical (accumulator constant during a predict); n_eff/G1/G2/G3 unchanged. Literal current_budget() does NOT exist in flopscope v0.14 (0 grep matches); use get_active_budget().flops_used.",
+
+  "citations": {
+    "tally_and_calls": "capped_fold3.py:259-264,275,278,413,421",
+    "budget_summary_dict": "flopscope/_budget.py:1199-1228",
+    "get_data_iterates_all_ops": "flopscope/_budget.py:1142-1165",
+    "residual_formula": "flopscope/_budget.py:539",
+    "cross_net_accumulation": "flopscope/_budget.py:995",
+    "cost_law": "whestbench/budget.py:14-51",
+    "score_multiplier": "whestbench/scoring.py:573-581,830-838",
+    "single_process_suite": "whestbench/scoring.py:611-627 ; subprocess_worker.py:141-219",
+    "gates_meter_F_only": "run_t3_gates.py:136-152"
+  }
+}
