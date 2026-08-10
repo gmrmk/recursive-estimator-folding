@@ -1,0 +1,13 @@
+# Runtime dependencies for the corpus tooling and its tests.
+#
+# The skill itself (SKILL.md, references/) and scripts/fold_ledger.py are
+# standard-library only and need nothing here. This file exists because the
+# evidence graph is executable evidence: corpus/whestbench/graph/
+# build_evidence_graph.py regenerates graph.json, and its coverage test imports
+# that module, so CI must be able to import networkx.
+networkx>=3.0
+
+# Numerical experiments under corpus/whestbench/experiments/ require numpy.
+# Not imported by the default `unittest discover -s tests` suite, but pinned
+# here so a reproduction of the recorded measurements has one install step.
+numpy>=1.24
