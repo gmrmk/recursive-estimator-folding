@@ -1,0 +1,221 @@
+{
+  "ledger_id": "s17_information_complexity_lower_bound",
+  "framing": "LOWER-BOUND ATTEMPT: achievable-envelope points are UPPER bounds on S(B); the point-floor invariant gap is a LOWER bound (impossibility). Not a minimax proof, not a closure certificate.",
+  "labels": {
+    "observed": "ran/read this session",
+    "derived": "follows from observations by shown steps",
+    "reported": "committed doc/result says so"
+  },
+  "A_meanfield_residual_correlation": {
+    "note": "derived from S7 depth-32 kernel; mean-removed so c_r(0)=0 exactly, c_r(1)=1. Antipodal doubling of the design cancels the ODD part, so only the even combination survives in the quadrature sum.",
+    "c_r(+1/16)_86.42deg": 0.007253617317327825,
+    "c_r(-1/16)_93.58deg": -0.006504540449450375,
+    "c_r(0)_90deg": 0.0,
+    "c_r(-1)_antipode": -0.05151847436926806,
+    "c_r_even(1/16)": 0.000374538433938725,
+    "level": "derived"
+  },
+  "A_fingerprint": {
+    "base_multiplicities_from_S6": {
+      "N_base": 32256,
+      "t=0": 8225280,
+      "t=+1/16": 548352000,
+      "t=-1/16": 483840000
+    },
+    "base_census_check": true,
+    "doubled_multiplicities_derived": {
+      "diag_t=1": 64512,
+      "antipode_t=-1": 64512,
+      "within_t=0": 32901120,
+      "cross_t=+1/16": 2064384000,
+      "cross_t=-1/16": 2064384000
+    },
+    "doubled_census_sum": 4161798144,
+    "N_full_sq": 4161798144,
+    "doubled_census_exact": true,
+    "sign_balanced": true,
+    "inflation_coefficients_over_iid": {
+      "antipode c_r(-1)": 1.0,
+      "within c_r(0)": 510.0,
+      "cross c_r_even(1/16)": 64000.0
+    },
+    "level": "derived (exact from the S6 census by the doubling map)",
+    "meanfield_plugin_inflation_UNSTABLE_diagnostic": {
+      "value": 24.918941297709132,
+      "why_unstable": "64,000 * c_even(1/16): mean-field c_even(1/16)=3.745e-04 is a second-order Taylor tail the depth-32 iteration does not resolve to the ~1e-5 precision the coefficient demands; empirical c_even(1/16)=~-5e-6 (Section 3) is ~75x smaller. Do NOT read this as the floor.",
+      "level": "derived (documented artifact)"
+    }
+  },
+  "A_per_net": {
+    "101": {
+      "mu": 0.4341106913552532,
+      "sigma2_var(ybar)": 0.0079004722096335,
+      "sigma2_mean(r_global^2)": 0.0079004722096335,
+      "sigma2_two_way_rel_diff": 0.0,
+      "emp_c(0)_within": -0.0012721317816402036,
+      "emp_c_even(1/16)_cross": -5.467822805418879e-06,
+      "champion_mse": 1.9971942916463923e-07,
+      "champion_mse_m181_crosscheck": 1.9971998400629498e-07,
+      "champion_vs_m181_ratio": 0.9999972219021621,
+      "iid_floor_sigma2_over_64512": 1.2246515701936849e-07,
+      "dir_floor_sigma2_over_32256": 2.4493031403873697e-07,
+      "ratio_champ_over_costfloor": 1.6308265471219099,
+      "ratio_champ_over_dirfloor": 0.8154132735609549,
+      "N_eff_sigma2_over_champ": 39557.8549502098,
+      "N_eff_over_N_eval": 0.6131859956319724
+    },
+    "202": {
+      "mu": 0.7068114199252553,
+      "sigma2_var(ybar)": 0.016002145106185965,
+      "sigma2_mean(r_global^2)": 0.016002145106185965,
+      "sigma2_two_way_rel_diff": 0.0,
+      "emp_c(0)_within": -0.0012885292561605843,
+      "emp_c_even(1/16)_cross": -5.336899215208749e-06,
+      "champion_mse": 5.872086598611009e-07,
+      "champion_mse_m181_crosscheck": 5.872094245418941e-07,
+      "champion_vs_m181_ratio": 0.9999986977715934,
+      "iid_floor_sigma2_over_64512": 2.48049124289837e-07,
+      "dir_floor_sigma2_over_32256": 4.96098248579674e-07,
+      "ratio_champ_over_costfloor": 2.367307933629177,
+      "ratio_champ_over_dirfloor": 1.1836539668145885,
+      "N_eff_sigma2_over_champ": 27251.20762008369,
+      "N_eff_over_N_eval": 0.4224207530394917
+    },
+    "303": {
+      "mu": 0.531848303985827,
+      "sigma2_var(ybar)": 0.011124831593729415,
+      "sigma2_mean(r_global^2)": 0.011124831593729415,
+      "sigma2_two_way_rel_diff": 0.0,
+      "emp_c(0)_within": -0.0013491547893640598,
+      "emp_c_even(1/16)_cross": -4.852842224198937e-06,
+      "champion_mse": 2.3692484273379475e-07,
+      "champion_mse_m181_crosscheck": 2.369255085030329e-07,
+      "champion_vs_m181_ratio": 0.9999971899638735,
+      "iid_floor_sigma2_over_64512": 1.724459262420854e-07,
+      "dir_floor_sigma2_over_32256": 3.448918524841708e-07,
+      "ratio_champ_over_costfloor": 1.3739080295883108,
+      "ratio_champ_over_dirfloor": 0.6869540147941554,
+      "N_eff_sigma2_over_champ": 46955.10806449753,
+      "N_eff_over_N_eval": 0.7278507574481884
+    }
+  },
+  "A_pooled": {
+    "ratio_champ_over_costfloor(sigma2/64512)": {
+      "mean": 1.7906808367797993,
+      "sd": 0.515631542652912,
+      "se": 0.29770000995332074,
+      "t95_ci": [
+        0.5096776939506602,
+        3.071683979608938
+      ],
+      "per_net": [
+        1.6308265471219099,
+        2.367307933629177,
+        1.3739080295883108
+      ]
+    },
+    "ratio_champ_over_dirfloor(sigma2/32256)": {
+      "mean": 0.8953404183898996,
+      "sd": 0.257815771326456,
+      "se": 0.14885000497666037,
+      "t95_ci": [
+        0.2548388469753301,
+        1.535841989804469
+      ],
+      "per_net": [
+        0.8154132735609549,
+        1.1836539668145885,
+        0.6869540147941554
+      ]
+    },
+    "meanfield_plugin_UNSTABLE_not_a_floor": 24.918941297709132,
+    "s7_finite_width_band": [
+      1.7,
+      2.2
+    ],
+    "note": "equal-FLOP floor sigma^2/N_eval counts every one of the 64,512 forwards as a draw; distinct-direction floor sigma^2/N_base counts the 32,256 base directions (antipode pair = 2 forwards)."
+  },
+  "A_gate": {
+    "gated_quantity": "pooled champ/(sigma^2/64512)",
+    "value": 1.7906808367797993,
+    "per_net": [
+      1.6308265471219099,
+      2.367307933629177,
+      1.3739080295883108
+    ],
+    "n_nets_in_gate_i(<2x)": 2,
+    "class": "i",
+    "verdict": "champion within 2x of the sampling floor -> floor located",
+    "dir_matched_pooled": 0.8953404183898996
+  },
+  "B_envelope": {
+    "points": [
+      {
+        "regime": "(i) B~0 cheap observables",
+        "flops": 0.0,
+        "achievable_mse": null,
+        "note": "S15 covariates explain 1.56% of residual -> essentially unreduced",
+        "bound": "UPPER (no reduction)",
+        "level": "observed(S15)"
+      },
+      {
+        "regime": "(ii) analytic closure (deg<=2 exact plateau)",
+        "flops": 0.0,
+        "achievable_mse": 9.6e-05,
+        "note": "T2/M181 full-cov Gaussian closure",
+        "bound": "UPPER/achievable",
+        "level": "reported(T2/M181)"
+      },
+      {
+        "regime": "(iii) our sampling budget (champion)",
+        "flops": 176800000000.0,
+        "achievable_mse": 2.818e-07,
+        "note": "C/B 0.650, antipodal Kerdock MC",
+        "bound": "UPPER/achievable",
+        "level": "reported(leaderboard)"
+      },
+      {
+        "regime": "(iv) 5.27x-budget sampling scaling",
+        "flops": 931735999999.9999,
+        "achievable_mse": 5.347248576850095e-08,
+        "note": "joe_wanza-class honest reference (1/N)",
+        "bound": "UPPER/achievable",
+        "level": "derived(1/N from champion)"
+      },
+      {
+        "regime": "(v) B=inf",
+        "flops": Infinity,
+        "achievable_mse": 0.0,
+        "note": "limit",
+        "bound": "limit",
+        "level": "derived"
+      }
+    ],
+    "plateau_to_line": "closure plateau 9.6e-5 is budget-independent (analytic, deg<=2 exact); sampling line MSE ~ 1/B anchored at champion 2.818e-7.",
+    "gap_closure_over_champion_raw": 340.66713981547196,
+    "gap_closure_over_champion_adjusted": 524.0174672489084,
+    "gap_note": "width of the region between the closure plateau and the sampling line, reachable AMONG TESTED CLASSES ONLY by seed-side methods. This is a MAP of tested classes, NOT a proof no untested output-side method enters it.",
+    "level": "reported points; derived gap"
+  },
+  "C_ednacob": {
+    "ednacob_raw_mse": 9.11e-08,
+    "ednacob_C_over_B": 0.507,
+    "ednacob_flops": 137904000000.0,
+    "champion_flops": 176800000000.0,
+    "variance_per_flop_ednacob_vs_champion": 3.9657744377832187,
+    "champion_above_pointfloor_x": 1.7906808367797993,
+    "ednacob_below_pointfloor_generous_x": 2.214674081683319,
+    "ednacob_below_pointfloor_tight_x": 3.9657744377832187,
+    "budget_form": {
+      "flops_per_forward": 2740575.396825397,
+      "ednacob_affordable_forwards": 50319.36,
+      "suite_sigma2_backed_out": 0.010152273496539091,
+      "ednacob_best_point_mse_floor": 2.0175680884135035e-07,
+      "ednacob_actual_mse": 9.11e-08,
+      "ednacob_beats_best_point_floor_x": 2.214674081683319
+    },
+    "verdict": "ednacob-honest is IMPOSSIBLE within point-evaluation: it sits 2.21x-3.97x below the best point-sampling floor invariant. It therefore REQUIRES seed-side extraction (exact-control class, weight access) [strengthens M245], OR is over-budget/suspect [consistent with forensics].",
+    "confidence": "high on the arithmetic (>=2.2x below the point floor in every accounting); moderate on assumptions: ednacob in the point-eval class at comparable per-forward cost, and sigma^2/N as the point lower bound (valid absent seed-side control variates).",
+    "level": "derived"
+  }
+}
