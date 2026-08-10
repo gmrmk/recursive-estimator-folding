@@ -1,0 +1,1144 @@
+{
+  "array_receipt_policy": {
+    "arrays_per_event": [
+      "mu",
+      "C"
+    ],
+    "decimal_encoding": "nested row-major strings from repr(float(x)); display and round-trip only",
+    "hash": "sha256_lowercase_hex",
+    "hash_preimage": "dtype.str UTF8 || 0x00 || shape_json UTF8 || 0x00 || ascontiguousarray(array).tobytes(order='C')",
+    "hex_encoding": "nested row-major strings from float(x).hex(); authoritative with byte hash",
+    "literal_rows_E00_E01_also_required": true,
+    "mpmath_decode": "verify bytes then float.as_integer_ratio() then mp.mpf(numerator)/mp.mpf(denominator)",
+    "mpmath_from_decimal_repr_forbidden": true,
+    "scientific_authority": "verified float64 C-order bytes plus matching float.hex rows",
+    "shape_json": "json.dumps(list(array.shape),ensure_ascii=True,separators=(',',':'))"
+  },
+  "artifact": "M245_FROZEN_FIXTURE_AUTHORITY_V2",
+  "authority_commit_v1": "c4468c3d330f968ce1a3b376d56aa1f6b640e709",
+  "authority_precedence": [
+    "M245_PREMATERIALIZATION_ERRATUM1_20260810.md",
+    "M245_FROZEN_MANIFEST_V1_OVERLAY1_20260810.json",
+    "M245_PREDECLARATION_20260810.md",
+    "M245_FROZEN_MANIFEST_V1_20260810.json"
+  ],
+  "authority_repair_commit": "853b30cf5ef8f87788aab6cee73218edddd6f466",
+  "authority_sha256": {
+    "M245_FIXTURE_MATERIALIZATION_STATIC_VALIDATION_RECEIPT_20260810.json": "137722b7abdc58699e7c3759129f9b12c72793c711f80e45285a373a07196b88",
+    "M245_FIXTURE_MATERIALIZATION_TDD_RECEIPT_20260810.md": "b5f473f7a2c983f50842a7f8d6912245a158761a4057d564359af1399f7b6c9b",
+    "M245_FROZEN_MANIFEST_V1_20260810.json": "17a9df68304c7b06dd29957cc6fd4180242a9cc1bafb79e30c35f2426825b6b4",
+    "M245_FROZEN_MANIFEST_V1_OVERLAY1_20260810.json": "b7aa2176b19571537e3313d8b2e4c8c1daad32b73fde42ce61b7522e4f3f1072",
+    "M245_PREDECLARATION_20260810.md": "aa9ca84d48e840435d350fbab3be3f1c98356b541d54a018968cfa16b97f2512",
+    "M245_PREMATERIALIZATION_ERRATUM1_20260810.md": "18f743c6bda98dc2c9c926db31ec93188a9670f1f2da3fcc761de14766e366b1",
+    "M245_SHA256SUMS_V1_20260810.txt": "0fbc35bfa2e77993e19d50d03ebfdda8851b137cdde18e6ef6613172c8c565c9",
+    "M245_SHA256SUMS_V1_OVERLAY1_20260810.txt": "0dc4a2fe475a05db1db1f9cf9c15e13c66f95f16ae7b44b6fee1f0cb9592236a",
+    "base::python.exe": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a",
+    "base::python314.dll": "a07f7d09c3121492bb066535c6d0811df5fbc2090cbca7031a97bb47ce1480c9",
+    "repository::AGENTS.md": "63b20777dbf2d365f001e63d0458c019651ece1f72bbfe0dca8c2d37057bc210",
+    "repository::corpus/whestbench/core/GEN4_CLOSING_20260808.md": "ceb850283a38bb4f8e45bd448cea809235d90f00d25aa959301cdccda9fce0e0",
+    "repository::corpus/whestbench/core/GOAL_STATEMENT_20260808.md": "61bf8ab6be2f7759ad89cdd883553b30c1f6e98b87f921edf6713fe0a7e0fd34",
+    "repository::corpus/whestbench/experiments/m237_writeahead_native_receipt/m237_durable_native_receipt.py": "774cef483c33b149524121144a4c5ede9141f094aa6fe5037414e31bddac873c",
+    "repository::corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_DISPOSITION_20260809.md": "238e7bfb70a86ca8c8a66a1a737d3376d4f4efa0a12e15d484acbcb442af3667",
+    "repository::corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_G0A_POSTPUBLICATION_RECEIPT_20260809.json": "7358e7447e6645319e374698bb80270eda8867ed1834cb83c0ded63ded6850a5",
+    "repository::corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_G0A_RESULT_20260809.json": "9cd0fd4155ed58a2ee35be94506daa8bffb6ed3b4b01b24160eb25e189bb7db8",
+    "repository::corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_PREDECLARATION_20260809.md": "a53e3cbf58b9bdc290e6abbf3323a1b7e5162a370774dcd918ddb2193340a9c3",
+    "repository::corpus/whestbench/experiments/m243_fable_oracle/FABLE_M245_REUSE_MAP.md": "bb431b52f25204085326cff91cff2ae9117d5b4b98161fe48ad27d262aadb589",
+    "runtime::Lib/site-packages/mpmath-1.3.0.dist-info/METADATA": "44b66ea444b9c0d19ae94815d356bf047ae6b680c19268b5c265687cd6a81406",
+    "runtime::Lib/site-packages/mpmath-1.3.0.dist-info/RECORD": "901345890d54cdcd59fe71b1391fd3ccd85ab23a92ab4d433cce48e29f84b472",
+    "runtime::Lib/site-packages/mpmath/__init__.py": "b241584d2c1fc0304b0a1015ea923749d7b0800411dd406dcab7c82bf25d9fe8",
+    "runtime::Lib/site-packages/numpy-2.4.6.dist-info/METADATA": "b082c52ccbe3b880bae177c35171b52ed6c947f3ad71e3762f2723f60a411de0",
+    "runtime::Lib/site-packages/numpy-2.4.6.dist-info/RECORD": "525e6195cd5af59e51ed5fccccf2b1eb0ecfd508eb731bd217701ab355454fa9",
+    "runtime::Lib/site-packages/numpy.libs/libscipy_openblas64_-63c857e738469261263c764a36be9436.dll": "63c857e738469261263c764a36be9436ebdeaa272e340a828f42047a97131080",
+    "runtime::Lib/site-packages/numpy/__init__.py": "65d5e777b6d662ba19cb80800bef3eb999eda7aee51eea62c308feabf679dba4",
+    "runtime::Lib/site-packages/numpy/_core/_multiarray_umath.cp314-win_amd64.pyd": "ecafa466c06217851e7e0e8ca9fdb6b039811b32f021e1b9833334c09ada70bf",
+    "runtime::Lib/site-packages/numpy/_core/multiarray.py": "7e25a653ea4bd1639e4bb4d3fdf941b9ea8a9b3d3c8226ddac1142a1a9d24a81",
+    "runtime::Lib/site-packages/numpy/linalg/__init__.py": "3782aa04e50465446b8ffd34ab70dfff22f03eb99130a1dd9ba511d6c89bbb66",
+    "runtime::Lib/site-packages/numpy/linalg/_linalg.py": "bdae22bd533cf10a9827741de04a5d79b5457eb53ceab9beb9a890966ecfd32c",
+    "runtime::Lib/site-packages/numpy/linalg/_umath_linalg.cp314-win_amd64.pyd": "04d5b3d2f0e8493762eafb13249f2e386645212a8a4858a82c5f7957279bf839",
+    "runtime::Lib/site-packages/numpy/linalg/lapack_lite.cp314-win_amd64.pyd": "50d10a40079765ebcc1eb846d17cd54d660330529fc080960280dd7b84603215",
+    "runtime::Lib/site-packages/numpy/random/__init__.py": "f21e391916d7a4bd74c49ceac3f9fa5e09e6e9263f254602a87e92a5e0a7a946",
+    "runtime::Lib/site-packages/numpy/random/_common.cp314-win_amd64.pyd": "c4aa8072382728a9390d76643169f80a307c422b73402e2ee9041b32bf204665",
+    "runtime::Lib/site-packages/numpy/random/_generator.cp314-win_amd64.pyd": "69c5aa9b41c0a60ee8600a4c1434c86fa96dfc00f4cd3171aed9729aacaa549b",
+    "runtime::Lib/site-packages/numpy/random/_philox.cp314-win_amd64.pyd": "8ceb13f5a97eb161fd7d93d2e597dc99d3387a76f32ef187a57103ac759bda15",
+    "runtime::Lib/site-packages/numpy/random/bit_generator.cp314-win_amd64.pyd": "2743114b72bb0034311b940f71322f5d2ece5ca334cfc9d11c92de4c16c4aaa5",
+    "runtime::Scripts/python.exe": "4b8c3912806b3c1591ba3cb403bff77ad309c3fe5756f87c20b7a6f8f0174262",
+    "runtime::pyvenv.cfg": "6fc69a2fa8b9e2b7846b6da49368faadd93ad22b13e9cfa36c3c2ec77b00097f",
+    "test_m245_fixture_materialization_transport.py": "f3a0835eaddc55ab54726c1366a04148c238d3c9fc10388e3c8c976c5eb8c97f"
+  },
+  "canonical_event_policy": {
+    "array_order": "C",
+    "canonicalizes_singletons_by_ascending_index": true,
+    "dimension": 3,
+    "dtype": "<f8",
+    "duplicate_orientation_forbidden": true,
+    "repeated_index": 0,
+    "requires_pairwise_distinct": true,
+    "serialized_event": [
+      0,
+      1,
+      2
+    ],
+    "unordered_singleton_pair": [
+      1,
+      2
+    ]
+  },
+  "date": "2026-08-10",
+  "fixture_census": {
+    "array_count": 16,
+    "event_count": 8,
+    "event_ids": [
+      "E00",
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07"
+    ],
+    "generated_count": 6,
+    "literal_count": 2,
+    "shard_count": 4
+  },
+  "fixtures": [
+    {
+      "C": {
+        "bytes": 72,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.9eb851eb851ecp-1",
+            "0x0.0p+0",
+            "0x0.0p+0"
+          ],
+          [
+            "0x0.0p+0",
+            "0x1.35c28f5c28f5cp+0",
+            "0x1.004189374bc6ap-1"
+          ],
+          [
+            "0x0.0p+0",
+            "0x1.004189374bc6ap-1",
+            "0x1.b0a3d70a3d70ap+0"
+          ]
+        ],
+        "raw_c_hex": "ec51b81e85ebe93f0000000000000000000000000000000000000000000000005c8fc2f5285cf33f6abc74931804e03f00000000000000006abc74931804e03f0ad7a3703d0afb3f",
+        "raw_c_order_sha256": "b6089f81da98b94d79cd4486b1593c89f7ad9ea40603b56bd3ab1b7eeceab7e7",
+        "repr_rows": [
+          [
+            "0.81",
+            "0.0",
+            "0.0"
+          ],
+          [
+            "0.0",
+            "1.21",
+            "0.5005"
+          ],
+          [
+            "0.0",
+            "0.5005",
+            "1.69"
+          ]
+        ],
+        "sha256": "d08ff8e9dde55e1e81fa9b31be277173127d0bcea45fde5f7b328541ad097497",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "diagnostics": {
+        "C_bytewise_equal_to_transpose": true,
+        "absolute_conditional_correlation_strictly_less_than_one": true,
+        "all_finite": true,
+        "conditional_correlation": {
+          "hex": "0x1.6666666666666p-2",
+          "repr": "0.35"
+        },
+        "conditional_covariance_jk": {
+          "hex": "0x1.004189374bc6ap-1",
+          "repr": "0.5005"
+        },
+        "conditional_variance_j": {
+          "hex": "0x1.35c28f5c28f5cp+0",
+          "repr": "1.21"
+        },
+        "conditional_variance_k": {
+          "hex": "0x1.b0a3d70a3d70ap+0",
+          "repr": "1.69"
+        },
+        "conditional_variances_strictly_positive": true,
+        "determinant": {
+          "hex": "0x1.741634142eb62p+0",
+          "repr": "1.4534637975"
+        },
+        "eigvalsh_max": {
+          "hex": "0x1.00a60fb1437a3p+1",
+          "repr": "2.0050677886528816"
+        },
+        "eigvalsh_min": {
+          "hex": "0x1.9eb851eb851ecp-1",
+          "repr": "0.81"
+        },
+        "eigvalsh_min_strictly_positive": true,
+        "numpy_linalg_cholesky_pass": true
+      },
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "event_id": "E00",
+      "mu": {
+        "bytes": 24,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "-0x1.199999999999ap-1",
+            "0x1.999999999999ap-3",
+            "0x1.4cccccccccccdp-1"
+          ]
+        ],
+        "raw_c_hex": "9a9999999999e1bf9a9999999999c93fcdcccccccccce43f",
+        "raw_c_order_sha256": "7f9711d7df547942fc86db8a0a77d397ecda0ca0682e7fb3429d96620fc63251",
+        "repr_rows": [
+          [
+            "-0.55",
+            "0.2",
+            "0.65"
+          ]
+        ],
+        "sha256": "289d0203f792b2d1bac055fc5bb1a48c8c3d90c1d19864b50ba465ea515ae063",
+        "shape": [
+          3
+        ]
+      },
+      "no_redraw": true,
+      "origin": "literal_v1",
+      "role": "independent_positive_control_P0_equals_K"
+    },
+    {
+      "C": {
+        "bytes": 72,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.f5c28f5c28f5cp+0",
+            "0x1.9ce075f6fd220p-1",
+            "-0x1.cf0d844d013a9p-1"
+          ],
+          [
+            "0x1.9ce075f6fd220p-1",
+            "0x1.47ae147ae147bp-1",
+            "0x1.16872b020c49cp-4"
+          ],
+          [
+            "-0x1.cf0d844d013a9p-1",
+            "0x1.16872b020c49cp-4",
+            "0x1.71eb851eb851fp+1"
+          ]
+        ],
+        "raw_c_hex": "5c8fc2f5285cff3f20d26f5f07cee93fa913d044d8f0ecbf20d26f5f07cee93f7b14ae47e17ae43f9cc420b07268b13fa913d044d8f0ecbf9cc420b07268b13f1f85eb51b81e0740",
+        "raw_c_order_sha256": "0b2a5b1b05c9c14855ee0c3fd6f474e3d970c1c55e8dded56f6b8efe9e4e57f2",
+        "repr_rows": [
+          [
+            "1.96",
+            "0.8064",
+            "-0.9044"
+          ],
+          [
+            "0.8064",
+            "0.64",
+            "0.068"
+          ],
+          [
+            "-0.9044",
+            "0.068",
+            "2.89"
+          ]
+        ],
+        "sha256": "c36bd1e2a4b8aa723f902b708d84178016119417b925ef22c695eb23a67b5aba",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "diagnostics": {
+        "C_bytewise_equal_to_transpose": true,
+        "absolute_conditional_correlation_strictly_less_than_one": true,
+        "all_finite": true,
+        "conditional_correlation": {
+          "hex": "0x1.021b66d6a5663p-1",
+          "repr": "0.504115308477321"
+        },
+        "conditional_covariance_jk": {
+          "hex": "0x1.c2a8869c66d37p-2",
+          "repr": "0.440096"
+        },
+        "conditional_variance_j": {
+          "hex": "0x1.3b9f127f5e84fp-2",
+          "repr": "0.308224"
+        },
+        "conditional_variance_k": {
+          "hex": "0x1.3c80e8c8abd5ep+1",
+          "repr": "2.472684"
+        },
+        "conditional_variances_strictly_positive": true,
+        "determinant": {
+          "hex": "0x1.1d3a7ff005a52p+0",
+          "repr": "1.11417388544"
+        },
+        "eigvalsh_max": {
+          "hex": "0x1.bf04b4849d724p+1",
+          "repr": "3.492331089738302"
+        },
+        "eigvalsh_min": {
+          "hex": "0x1.667bd71fa99b0p-3",
+          "repr": "0.17504089417816493"
+        },
+        "eigvalsh_min_strictly_positive": true,
+        "numpy_linalg_cholesky_pass": true
+      },
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "event_id": "E01",
+      "mu": {
+        "bytes": 24,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.8000000000000p-1",
+            "-0x1.ccccccccccccdp-2",
+            "0x1.3333333333333p-3"
+          ]
+        ],
+        "raw_c_hex": "000000000000e83fcdccccccccccdcbf333333333333c33f",
+        "raw_c_order_sha256": "40971bd6323a92db1709d43d895a9db8013d740a322eb69fb981bdc2e44a2c12",
+        "repr_rows": [
+          [
+            "0.75",
+            "-0.45",
+            "0.15"
+          ]
+        ],
+        "sha256": "e74f214c82be1f4a7532399bcfe91e40752b4a1a7764259deeb47fbf9b306311",
+        "shape": [
+          3
+        ]
+      },
+      "no_redraw": true,
+      "origin": "literal_v1",
+      "role": "dense_correlated_literal"
+    },
+    {
+      "C": {
+        "bytes": 72,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.729cc7b9bc39fp-1",
+            "0x1.785bb1c481013p-3",
+            "-0x1.3cc42724217cfp-4"
+          ],
+          [
+            "0x1.785bb1c481013p-3",
+            "0x1.465de771f4d88p+0",
+            "-0x1.f7aac317ea02ep-3"
+          ],
+          [
+            "-0x1.3cc42724217cfp-4",
+            "-0x1.f7aac317ea02ep-3",
+            "0x1.fc1e7d4f6cc29p-1"
+          ]
+        ],
+        "raw_c_hex": "9fc39b7bcc29e73f1310481cbb85c73fcf17427242ccb3bf1310481cbb85c73f884d1f77de65f43f2ea07e31ac7acfbfcf17427242ccb3bf2ea07e31ac7acfbf29ccf6d4e7c1ef3f",
+        "raw_c_order_sha256": "35fe11061f3e00c08ccc95a4622ba0824f165eed6623760d2ad43d207a394247",
+        "repr_rows": [
+          [
+            "0.7238523878314601",
+            "0.1837686431973685",
+            "-0.07733550347810979"
+          ],
+          [
+            "0.1837686431973685",
+            "1.2748703625883042",
+            "-0.24593117157678662"
+          ],
+          [
+            "-0.07733550347810979",
+            "-0.24593117157678662",
+            "0.9924201163725047"
+          ]
+        ],
+        "sha256": "e93a92372fc8cee8f86817d645a50e8eb009c09220f4d6e987a541b94abdc3a4",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "diagnostics": {
+        "C_bytewise_equal_to_transpose": true,
+        "absolute_conditional_correlation_strictly_less_than_one": true,
+        "all_finite": true,
+        "conditional_correlation": {
+          "hex": "-0x1.a58a90f3741f9p-3",
+          "repr": "-0.20583070033036657"
+        },
+        "conditional_covariance_jk": {
+          "hex": "-0x1.cf7517a0aca60p-3",
+          "repr": "-0.22629755457963352"
+        },
+        "conditional_variance_j": {
+          "hex": "0x1.3a6c5c247c826p+0",
+          "repr": "1.228215941341213"
+        },
+        "conditional_variance_k": {
+          "hex": "0x1.f7e384253f6f6p-1",
+          "repr": "0.9841576858013628"
+        },
+        "conditional_variances_strictly_positive": true,
+        "determinant": {
+          "hex": "0x1.ad00630853a6ep-1",
+          "repr": "0.8378935763992794"
+        },
+        "eigvalsh_max": {
+          "hex": "0x1.78421d2dd4ab9p+0",
+          "repr": "1.4697588192836248"
+        },
+        "eigvalsh_min": {
+          "hex": "0x1.56185921c3751p-1",
+          "repr": "0.6681545118060318"
+        },
+        "eigvalsh_min_strictly_positive": true,
+        "numpy_linalg_cholesky_pass": true
+      },
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "event_id": "E02",
+      "mu": {
+        "bytes": 24,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.5fc8168874842p-1",
+            "0x1.6157ca07f3a61p+0",
+            "-0x1.f0c7e7308ec33p-2"
+          ]
+        ],
+        "raw_c_hex": "4248876881fce53f613a7fa07c15f63f33ec08737e0cdfbf",
+        "raw_c_order_sha256": "e1d296406eb6e9173fb4bb144b6294a03fa7d53ce1f8a8578e29f9cd531902cd",
+        "repr_rows": [
+          [
+            "0.6870734254428117",
+            "1.3802458066380938",
+            "-0.4851375697505233"
+          ]
+        ],
+        "sha256": "9fb6bf0f25a254110d0463255926d67e814095d4fb2b688fd10ba34343cf6798",
+        "shape": [
+          3
+        ]
+      },
+      "no_redraw": true,
+      "origin": "numpy_2_4_6_philox_v1",
+      "seed": 24501101
+    },
+    {
+      "C": {
+        "bytes": 72,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.2c0dc2f5694d8p+0",
+            "-0x1.348ea90017d8dp-4",
+            "-0x1.21fc892f4778cp-5"
+          ],
+          [
+            "-0x1.348ea90017d8dp-4",
+            "0x1.65026dcb207c5p-1",
+            "0x1.43937e4f32b54p-6"
+          ],
+          [
+            "-0x1.21fc892f4778cp-5",
+            "0x1.43937e4f32b54p-6",
+            "0x1.6d04d3bb19bcap-1"
+          ]
+        ],
+        "raw_c_hex": "d894562fdcc0f23f8d7d0190ea48b3bf8c77f492c81fa2bf8d7d0190ea48b3bfc507b2dc2650e63f542bf3e43739943f8c77f492c81fa2bf542bf3e43739943fca9bb13b4dd0e63f",
+        "raw_c_order_sha256": "d3cb9fc29662780bc8db99fd50027279ff3c5603b30e91e482852d055d8e1109",
+        "repr_rows": [
+          [
+            "1.172084984698179",
+            "-0.07533136382834567",
+            "-0.03539873880275399"
+          ],
+          [
+            "-0.07533136382834567",
+            "0.6972841558892858",
+            "0.01974952063464326"
+          ],
+          [
+            "-0.03539873880275399",
+            "0.01974952063464326",
+            "0.7129274526495177"
+          ]
+        ],
+        "sha256": "bd641ec076ea1bba8893d25a9ac246746aaa43121bffbb51a990c3ede0128162",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "diagnostics": {
+        "C_bytewise_equal_to_transpose": true,
+        "absolute_conditional_correlation_strictly_less_than_one": true,
+        "all_finite": true,
+        "conditional_correlation": {
+          "hex": "0x1.97c9832280146p-6",
+          "repr": "0.02488935285691809"
+        },
+        "conditional_covariance_jk": {
+          "hex": "0x1.1e4cf1a307ce3p-6",
+          "repr": "0.01747439954135367"
+        },
+        "conditional_variance_j": {
+          "hex": "0x1.6287d34a1e864p-1",
+          "repr": "0.6924425151803573"
+        },
+        "conditional_variance_k": {
+          "hex": "0x1.6c78b2d7398a7p-1",
+          "repr": "0.7118583572125957"
+        },
+        "conditional_variances_strictly_positive": true,
+        "determinant": {
+          "hex": "0x1.279f51f2c6bf3p-1",
+          "repr": "0.5773873909814696"
+        },
+        "eigvalsh_max": {
+          "hex": "0x1.2fd22d634b9ecp+0",
+          "repr": "1.1868008010311497"
+        },
+        "eigvalsh_min": {
+          "hex": "0x1.5bbdaded1ae7dp-1",
+          "repr": "0.6791815139708458"
+        },
+        "eigvalsh_min_strictly_positive": true,
+        "numpy_linalg_cholesky_pass": true
+      },
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "event_id": "E03",
+      "mu": {
+        "bytes": 24,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.55199d54ab8e0p-3",
+            "-0x1.43295a0e0832bp-3",
+            "0x1.8f22c2f912c6ep-2"
+          ]
+        ],
+        "raw_c_hex": "e0b84ad59951c53f2b83e0a09532c4bf6e2c912f2cf2d83f",
+        "raw_c_order_sha256": "019fd190dcfe87327627ef72971204e619b126ecd3e67e2bc9feffd476855e67",
+        "repr_rows": [
+          [
+            "0.1665527621711993",
+            "-0.15779371600458467",
+            "0.3897810425302798"
+          ]
+        ],
+        "sha256": "f78a57b8d2e1c70ed6b5f6bc75bce6fd1f266842e7e831f452e9720973b6f1fd",
+        "shape": [
+          3
+        ]
+      },
+      "no_redraw": true,
+      "origin": "numpy_2_4_6_philox_v1",
+      "seed": 24501102
+    },
+    {
+      "C": {
+        "bytes": 72,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.8890d13318974p-1",
+            "-0x1.a2895f42379aap-3",
+            "0x1.e06a55237a49bp-5"
+          ],
+          [
+            "-0x1.a2895f42379aap-3",
+            "0x1.3e7979d3eaeb9p+0",
+            "-0x1.6dd40fc32685dp-4"
+          ],
+          [
+            "0x1.e06a55237a49bp-5",
+            "-0x1.6dd40fc32685dp-4",
+            "0x1.03630b433b898p+0"
+          ]
+        ],
+        "raw_c_hex": "748931130d89e83faa7923f49528cabf9ba43752a506ae3faa7923f49528cabfb9ae3e9d97e7f33f5d6832fc40ddb6bf9ba43752a506ae3f5d6832fc40ddb6bf98b833b43036f03f",
+        "raw_c_order_sha256": "6e02fd90da1724602642b828fc7b7bd69c45a700cb3a64dc550914820adec5eb",
+        "repr_rows": [
+          [
+            "0.766729867446243",
+            "-0.20436357899502627",
+            "0.05864445332174136"
+          ],
+          [
+            "-0.20436357899502627",
+            "1.2440410749795048",
+            "-0.08931356579924583"
+          ],
+          [
+            "0.05864445332174136",
+            "-0.08931356579924583",
+            "1.0132300414220818"
+          ]
+        ],
+        "sha256": "d6b377eae2c733924c4c945bcaa3f3d9980e5bd9b7ac62c1ba1d06d9a83f60d2",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "diagnostics": {
+        "C_bytewise_equal_to_transpose": true,
+        "absolute_conditional_correlation_strictly_less_than_one": true,
+        "all_finite": true,
+        "conditional_correlation": {
+          "hex": "-0x1.1382ca4761df5p-4",
+          "repr": "-0.06726340308352248"
+        },
+        "conditional_covariance_jk": {
+          "hex": "-0x1.2dcdb89cab4fap-4",
+          "repr": "-0.07368251909311488"
+        },
+        "conditional_variance_j": {
+          "hex": "0x1.3087aba184ba3p+0",
+          "repr": "1.1895701665241425"
+        },
+        "conditional_variance_k": {
+          "hex": "0x1.023d14f2f1274p+0",
+          "repr": "1.0087445347900514"
+        },
+        "conditional_variances_strictly_positive": true,
+        "determinant": {
+          "hex": "0x1.d4efcc776aafap-1",
+          "repr": "0.9158920188686743"
+        },
+        "eigvalsh_max": {
+          "hex": "0x1.5a08527922510p+0",
+          "repr": "1.35168948609709"
+        },
+        "eigvalsh_min": {
+          "hex": "0x1.60ec4077af498p-1",
+          "repr": "0.6893024583911425"
+        },
+        "eigvalsh_min_strictly_positive": true,
+        "numpy_linalg_cholesky_pass": true
+      },
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "event_id": "E04",
+      "mu": {
+        "bytes": 24,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.62be8306284dcp+0",
+            "-0x1.109bf6d7b456bp-1",
+            "0x1.df63fd6b77852p-1"
+          ]
+        ],
+        "raw_c_hex": "dc846230e82bf63f6b457b6dbf09e1bf5278b7d63ff6ed3f",
+        "raw_c_order_sha256": "aefc4f4d53ceac07d246d75b7db0433389e4019d4c8dffd3e57161876030d719",
+        "repr_rows": [
+          [
+            "1.3857194795639804",
+            "-0.5324399126349538",
+            "0.9363097375569487"
+          ]
+        ],
+        "sha256": "1fbe1ef4753e778b2c55dc5130a7067f8630aaf21e088435b1d723cd2cad3502",
+        "shape": [
+          3
+        ]
+      },
+      "no_redraw": true,
+      "origin": "numpy_2_4_6_philox_v1",
+      "seed": 24501103
+    },
+    {
+      "C": {
+        "bytes": 72,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.254ca40cde7b8p+0",
+            "-0x1.16950ec8a1e89p-4",
+            "0x1.bbbaa37e4106ep-3"
+          ],
+          [
+            "-0x1.16950ec8a1e89p-4",
+            "0x1.597f2c5ba1172p-1",
+            "-0x1.a9101dcd0d6a2p-6"
+          ],
+          [
+            "0x1.bbbaa37e4106ep-3",
+            "-0x1.a9101dcd0d6a2p-6",
+            "0x1.31c3ca961fa6ap+0"
+          ]
+        ],
+        "raw_c_hex": "b8e7cd40ca54f23f891e8aec5069b1bf6e10e437aabbcb3f891e8aec5069b1bf7211bac5f297e53fa2d6d0dc01919abf6e10e437aabbcb3fa2d6d0dc01919abf6afa61a93c1cf33f",
+        "raw_c_order_sha256": "b950244f541d474c9e91f7a6cc12975ecf6adad3ef649d4d26c78764b5dc77c3",
+        "repr_rows": [
+          [
+            "1.1457006961268075",
+            "-0.06801324629679519",
+            "0.21666457871481576"
+          ],
+          [
+            "-0.06801324629679519",
+            "0.6747983800747035",
+            "-0.025943783857846577"
+          ],
+          [
+            "0.21666457871481576",
+            "-0.025943783857846577",
+            "1.194393788958815"
+          ]
+        ],
+        "sha256": "8f774f0d3c830c145e4e3a07e2c4cb1bf66f2344b54b02282069c1abb10c1aa5",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "diagnostics": {
+        "C_bytewise_equal_to_transpose": true,
+        "absolute_conditional_correlation_strictly_less_than_one": true,
+        "all_finite": true,
+        "conditional_correlation": {
+          "hex": "-0x1.e758a0032c824p-7",
+          "repr": "-0.01487262547593466"
+        },
+        "conditional_covariance_jk": {
+          "hex": "-0x1.aca986540d18ap-7",
+          "repr": "-0.013081732358934745"
+        },
+        "conditional_variance_j": {
+          "hex": "0x1.576df74f77647p-1",
+          "repr": "0.6707608494286398"
+        },
+        "conditional_variance_k": {
+          "hex": "0x1.27468ace1831dp+0",
+          "repr": "1.1534201386604714"
+        },
+        "conditional_variances_strictly_positive": true,
+        "determinant": {
+          "hex": "0x1.c5bba14a1d4b0p-1",
+          "repr": "0.8861971285793029"
+        },
+        "eigvalsh_max": {
+          "hex": "0x1.64d766be3cc45p+0",
+          "repr": "1.393911763615294"
+        },
+        "eigvalsh_min": {
+          "hex": "0x1.548ac7ac8c0b9p-1",
+          "repr": "0.6651213071945882"
+        },
+        "eigvalsh_min_strictly_positive": true,
+        "numpy_linalg_cholesky_pass": true
+      },
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "event_id": "E05",
+      "mu": {
+        "bytes": 24,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.7d7d58db1dcd0p-3",
+            "0x1.5902631d91df4p+0",
+            "-0x1.b3418a4d1a492p-1"
+          ]
+        ],
+        "raw_c_hex": "d0dcb18dd5d7c73ff41dd9312690f53f92a4d1a41834ebbf",
+        "raw_c_order_sha256": "022c4c54cdbccae4893e17a7e820edb3c8ab5d3311335e937576bf323af534dd",
+        "repr_rows": [
+          [
+            "0.18627423685732092",
+            "1.3476926753227163",
+            "-0.8501094073409539"
+          ]
+        ],
+        "sha256": "88b3723be0c296f823dca2f70aecd91c256b3e7775dc387e3fb0bd97212ec8ae",
+        "shape": [
+          3
+        ]
+      },
+      "no_redraw": true,
+      "origin": "numpy_2_4_6_philox_v1",
+      "seed": 24501104
+    },
+    {
+      "C": {
+        "bytes": 72,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.e9b9866a6e2d2p-1",
+            "0x1.6aec3f40df50bp-3",
+            "0x1.46a8455f80e94p-4"
+          ],
+          [
+            "0x1.6aec3f40df50bp-3",
+            "0x1.e554b8a48d83fp-1",
+            "-0x1.111c5edea0fcdp-9"
+          ],
+          [
+            "0x1.46a8455f80e94p-4",
+            "-0x1.111c5edea0fcdp-9",
+            "0x1.97ec74f65396ep-1"
+          ]
+        ],
+        "raw_c_hex": "d2e2a666989bee3f0bf50df4c3aec63f940ef855846ab43f0bf50df4c3aec63f3fd8488a4b55ee3fcd0feaedc51161bf940ef855846ab43fcd0feaedc51161bf6e39654fc77ee93f",
+        "raw_c_order_sha256": "8b56044534bc5006ee493310336b849d8eebb4299f773d99096926273e679c9e",
+        "repr_rows": [
+          [
+            "0.9564935688896077",
+            "0.1772084180519545",
+            "0.07975031946994654"
+          ],
+          [
+            "0.1772084180519545",
+            "0.9479119969244109",
+            "-0.0020836702163382404"
+          ],
+          [
+            "0.07975031946994654",
+            "-0.0020836702163382404",
+            "0.7967258978549532"
+          ]
+        ],
+        "sha256": "ec98fb8f33aeb2e66e65d142c318ed6c59cab686322703e3795e5d3f955074cc",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "diagnostics": {
+        "C_bytewise_equal_to_transpose": true,
+        "absolute_conditional_correlation_strictly_less_than_one": true,
+        "all_finite": true,
+        "conditional_correlation": {
+          "hex": "-0x1.44da10d464726p-6",
+          "repr": "-0.019827381549084276"
+        },
+        "conditional_covariance_jk": {
+          "hex": "-0x1.14376ba514be5p-6",
+          "repr": "-0.016858916398927355"
+        },
+        "conditional_variance_j": {
+          "hex": "0x1.d48578a9e4079p-1",
+          "repr": "0.915080805529228"
+        },
+        "conditional_variance_k": {
+          "hex": "0x1.9484e7f148425p-1",
+          "repr": "0.7900764925035487"
+        },
+        "conditional_variances_strictly_positive": true,
+        "determinant": {
+          "hex": "0x1.61ec81c323b02p-1",
+          "repr": "0.6912575293261798"
+        },
+        "eigvalsh_max": {
+          "hex": "0x1.238528d60cd8fp+0",
+          "repr": "1.138750602968546"
+        },
+        "eigvalsh_min": {
+          "hex": "0x1.72e27b70ba20cp-1",
+          "repr": "0.7243841719728734"
+        },
+        "eigvalsh_min_strictly_positive": true,
+        "numpy_linalg_cholesky_pass": true
+      },
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "event_id": "E06",
+      "mu": {
+        "bytes": 24,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "-0x1.b358b0fd8b5d1p-1",
+            "0x1.b3ad32d901238p-2",
+            "-0x1.450d4baffb29bp-1"
+          ]
+        ],
+        "raw_c_hex": "d1b5d80f8b35ebbf3812902dd33adb3f9bb2ffbad450e4bf",
+        "raw_c_order_sha256": "6c788e69c1cfac61bba402d9ca6122ad803dfcdd627cddbe09bd80c47a88be52",
+        "repr_rows": [
+          [
+            "-0.8502860364439419",
+            "0.42546538781633414",
+            "-0.6348670627899823"
+          ]
+        ],
+        "sha256": "b1e6a9b65c7da77159c17d4d4ef2c3d7fd86da343829e9bdfcb1acbdf03124ae",
+        "shape": [
+          3
+        ]
+      },
+      "no_redraw": true,
+      "origin": "numpy_2_4_6_philox_v1",
+      "seed": 24501105
+    },
+    {
+      "C": {
+        "bytes": 72,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "0x1.3011a5c133161p+0",
+            "-0x1.31d98f8bf19acp-2",
+            "0x1.45fb8ab858103p-5"
+          ],
+          [
+            "-0x1.31d98f8bf19acp-2",
+            "0x1.4d749341ce44cp+0",
+            "-0x1.8d029a019780ep-3"
+          ],
+          [
+            "0x1.45fb8ab858103p-5",
+            "-0x1.8d029a019780ep-3",
+            "0x1.3ec806a069f79p+0"
+          ]
+        ],
+        "raw_c_hex": "6131135c1a01f33fac19bff8981dd3bf038185abb85fa43fac19bff8981dd3bf4ce41c3449d7f43f0e7819a029d0c8bf038185abb85fa43f0e7819a029d0c8bf799f066a80ecf33f",
+        "raw_c_order_sha256": "c86d1a1249750275094b808b7e7f8ae11bd81a4a278008cdfd076705168265a8",
+        "repr_rows": [
+          [
+            "1.1877692791632273",
+            "-0.2986814908184907",
+            "0.03979279607551869"
+          ],
+          [
+            "-0.2986814908184907",
+            "1.302560046735624",
+            "-0.19385261838300533"
+          ],
+          [
+            "0.03979279607551869",
+            "-0.19385261838300533",
+            "1.245239652789648"
+          ]
+        ],
+        "sha256": "9995e0824efb30571c084d8e9c66d832019db5dc9430c9dbaa156d305852fd9a",
+        "shape": [
+          3,
+          3
+        ]
+      },
+      "diagnostics": {
+        "C_bytewise_equal_to_transpose": true,
+        "absolute_conditional_correlation_strictly_less_than_one": true,
+        "all_finite": true,
+        "conditional_correlation": {
+          "hex": "-0x1.30b60c5502eb8p-3",
+          "repr": "-0.14878472933229658"
+        },
+        "conditional_covariance_jk": {
+          "hex": "-0x1.7884550410950p-3",
+          "repr": "-0.18384615343718247"
+        },
+        "conditional_variance_j": {
+          "hex": "0x1.3a3a50f308119p+0",
+          "repr": "1.2274523347223918"
+        },
+        "conditional_variance_k": {
+          "hex": "0x1.3e70a831ac558p+0",
+          "repr": "1.2439065095207607"
+        },
+        "conditional_variances_strictly_positive": true,
+        "determinant": {
+          "hex": "0x1.c5fc6c927b561p+0",
+          "repr": "1.7733829362508333"
+        },
+        "eigvalsh_max": {
+          "hex": "0x1.a191c82ba12eep+0",
+          "repr": "1.6311307055013304"
+        },
+        "eigvalsh_min": {
+          "hex": "0x1.d26946b0f8274p-1",
+          "repr": "0.9109594431902921"
+        },
+        "eigvalsh_min_strictly_positive": true,
+        "numpy_linalg_cholesky_pass": true
+      },
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "event_id": "E07",
+      "mu": {
+        "bytes": 24,
+        "dtype": "<f8",
+        "hash_preimage": "dtype_utf8_NUL_canonical_shape_json_NUL_C_order_bytes",
+        "hex_rows": [
+          [
+            "-0x1.ab426eb0e7ad8p+0",
+            "0x1.1a17278650fc5p+0",
+            "-0x1.4dad0fbacdd04p-4"
+          ]
+        ],
+        "raw_c_hex": "d87a0eeb26b4fabfc50f657872a1f13f04ddacfbd0dab4bf",
+        "raw_c_order_sha256": "7f56f54a6929da2f2ee7cad84c5a1ff3becad23dc348582042358bda94852263",
+        "repr_rows": [
+          [
+            "-1.6689824277779532",
+            "1.101915808002546",
+            "-0.08146387237944813"
+          ]
+        ],
+        "sha256": "c9b134836a5120a7ec225f24497fe4016e38e6785bc5ed66ba0a95a780b078d8",
+        "shape": [
+          3
+        ]
+      },
+      "no_redraw": true,
+      "origin": "numpy_2_4_6_philox_v1",
+      "seed": 24501106
+    }
+  ],
+  "generated_fixture_algorithm": {
+    "applies_to": [
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07"
+    ],
+    "bit_generator": "numpy.random.Philox",
+    "dtype": "float64",
+    "generator_constructor": "numpy.random.Generator(numpy.random.Philox(seed))",
+    "library": "numpy",
+    "operation_order": [
+      "rng = numpy.random.Generator(numpy.random.Philox(seed))",
+      "A = numpy.float64(0.30) * rng.standard_normal((3,3))",
+      "d = rng.uniform(numpy.float64(0.45), numpy.float64(1.10), size=3)",
+      "C = A @ A.T + numpy.diag(d)",
+      "alpha = rng.uniform(numpy.float64(-1.75), numpy.float64(1.75), size=3)",
+      "mu = alpha * numpy.sqrt(numpy.diag(C))"
+    ],
+    "redraw_or_repair": false,
+    "required_checks": [
+      "all_finite",
+      "C_bytewise_equal_to_transpose",
+      "numpy_linalg_cholesky_pass",
+      "eigvalsh_min_strictly_positive",
+      "conditional_variances_strictly_positive",
+      "absolute_conditional_correlation_strictly_less_than_one"
+    ],
+    "seed_search": false,
+    "symmetrization_after_matmul": false,
+    "version": "2.4.6"
+  },
+  "intent_sha256": "742cb1ba7abf944714c55be55ee08007e3496c23a20f21fc44554df02d3a6167",
+  "numpy_version": "2.4.6",
+  "platform": {
+    "byteorder": "little",
+    "implementation": "CPython",
+    "python_version": "3.14.4"
+  },
+  "receipt_R_required": "M245_FIXTURE_MATERIALIZATION_POSTPUBLICATION_RECEIPT_20260810.json",
+  "retry_or_redraw": false,
+  "schema": "m245-authority-manifest-v2",
+  "scientific_quantities_evaluated": [],
+  "shards": [
+    {
+      "events_in_order": [
+        "E00",
+        "E01"
+      ],
+      "owner": "fable",
+      "shard_id": 0
+    },
+    {
+      "events_in_order": [
+        "E02",
+        "E03"
+      ],
+      "owner": "fable",
+      "shard_id": 1
+    },
+    {
+      "events_in_order": [
+        "E04",
+        "E05"
+      ],
+      "owner": "fable",
+      "shard_id": 2
+    },
+    {
+      "events_in_order": [
+        "E06",
+        "E07"
+      ],
+      "owner": "fable",
+      "shard_id": 3
+    }
+  ],
+  "source_sha256": {
+    "M245_FIXTURE_MATERIALIZATION_TDD_RECEIPT_20260810.md": "b5f473f7a2c983f50842a7f8d6912245a158761a4057d564359af1399f7b6c9b",
+    "M245_FROZEN_MANIFEST_V1_20260810.json": "17a9df68304c7b06dd29957cc6fd4180242a9cc1bafb79e30c35f2426825b6b4",
+    "M245_FROZEN_MANIFEST_V1_OVERLAY1_20260810.json": "b7aa2176b19571537e3313d8b2e4c8c1daad32b73fde42ce61b7522e4f3f1072",
+    "M245_PREDECLARATION_20260810.md": "aa9ca84d48e840435d350fbab3be3f1c98356b541d54a018968cfa16b97f2512",
+    "M245_PREMATERIALIZATION_ERRATUM1_20260810.md": "18f743c6bda98dc2c9c926db31ec93188a9670f1f2da3fcc761de14766e366b1",
+    "M245_SHA256SUMS_V1_20260810.txt": "0fbc35bfa2e77993e19d50d03ebfdda8851b137cdde18e6ef6613172c8c565c9",
+    "M245_SHA256SUMS_V1_OVERLAY1_20260810.txt": "0dc4a2fe475a05db1db1f9cf9c15e13c66f95f16ae7b44b6fee1f0cb9592236a",
+    "materialize_m245_fixtures.py": "e993b46f9cc9a2b580bee900f60ca5d3f1d29385e1694850fb9317d9b994163a",
+    "supervise_m245_fixture_materialization.py": "270a9f7d8ddd3fb5b68caec6f3d4352b70cf85491bc20771b4a3996f619bfd9b",
+    "test_m245_fixture_materialization_transport.py": "f3a0835eaddc55ab54726c1366a04148c238d3c9fc10388e3c8c976c5eb8c97f"
+  },
+  "static_validation_receipt_sha256": "137722b7abdc58699e7c3759129f9b12c72793c711f80e45285a373a07196b88",
+  "status": "PROVISIONAL_REQUIRES_PASSING_R_AND_T_AND_COMMITTED_AUDIT",
+  "terminal_witness_T_required": "M245_FIXTURE_MATERIALIZATION_TERMINAL_METER_WITNESS_20260810.json"
+}
