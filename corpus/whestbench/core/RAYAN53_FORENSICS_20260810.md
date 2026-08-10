@@ -62,3 +62,58 @@ accounting position cannot survive fresh-seed re-execution under review;
 hostile-tested, artifact-backed writeup) is precisely the counter — we
 are, by construction, the entry that cannot be winnowed. No action of
 ours changes based on rayan53's fate before September.
+
+---
+
+# joe_wanza forensic decomposition (added 2026-08-10 ~14:30 UTC)
+
+Public-data only. joe_wanza is a DIFFERENT failure mode than rayan53 and
+the more instructive one for our posture.
+
+## Profile
+- raw final-layer MSE 4.0e-9 — BEST on the board (70x better than us,
+  better than rayan53's 1.35e-8).
+- adjusted 2.11e-8 -> multiplier 5.27 -> C = 1.43e12 = 5.27x budget
+  (heavily compute-penalized; repriced in the wave, previous rank 1).
+- 1067 entries — an order of magnitude more than anyone (ednacob 119,
+  rayan53 50). No discourse writeup.
+
+## Reversed technique
+1067 submissions vs a 50-net PUBLIC suite = ~21 feedback cycles per net:
+the signature of overfitting to the public seeds. Variance check: at
+5.27x budget, honest sampling-scaling (MSE ~ 1/N) predicts ~5.3e-8, but
+joe_wanza reports 4.0e-9 — ~13x better than scaling allows, a gap our
+optimality proof says no honest estimator crosses but a thousand rounds
+of public-leaderboard tuning manufactures by fitting the specific 50
+nets. Level: derived (metadata + our scaling proof); the alternative
+(a genuinely 13x-better estimator) would require a writeup that does not
+exist.
+
+## Verdict
+joe_wanza is DOUBLE-exposed on the Sep private re-run: (a) the 5.27x
+compute penalty follows identically to fresh seeds; (b) the overfit
+component regresses when the seeds change. Likely September trajectory:
+DOWNWARD. Not an accounting artifact (its compute is honestly metered
+and penalized) — an over-budget, over-tuned honest estimator.
+
+## Why this is the important reverse (posture validation)
+joe_wanza is the CONTROL proving our thesis: the honest raw-MSE frontier
+(~4e-9) is reachable, but only via 5x budget + heavy public-suite tuning
+— exactly the two things a fresh-seed manual-validated re-run winnows.
+Our champion is the negative: 0.65x budget (headroom, no penalty) + ZERO
+fitted component (single Haar rotation, exact design, N8c-proven zero
+bias — nothing tuned to public nets to regress). The C1 lesson (structured
+estimators grade near local value) applies to us and NOT to joe_wanza,
+whose local value is a public-seed mirage.
+
+## Field synthesis
+The top of the board decomposes cleanly: (1) ACCOUNTING positions
+(rayan53, the re-graded wall tier) — winnowed by fresh-seed execution;
+(2) OVERFIT/OVER-BUDGET positions (joe_wanza) — winnowed by fresh seeds
++ persistent compute penalty; (3) the HONEST band (ednacob 4.6e-8 etc.).
+We sit at 1.83e-7, behind the honest band on the public board but
+CORRECTION-PROOF by construction — the only class immune to BOTH winnow
+mechanisms. The public rank understates our private-run standing relative
+to categories (1) and (2); the question that decides prize money is how
+DEEP the honest band runs and where the prize cutoffs fall (U9), not our
+position vs the artifacts above us.
