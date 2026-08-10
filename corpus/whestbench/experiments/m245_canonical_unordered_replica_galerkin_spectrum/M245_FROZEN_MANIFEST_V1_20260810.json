@@ -1,0 +1,624 @@
+{
+  "schema": "m245-authority-manifest-v1",
+  "candidate": "m245_canonical_unordered_replica_galerkin_spectrum",
+  "date": "2026-08-10",
+  "status": "FROZEN_DOCS_ONLY_FIXTURE_V2_REQUIRED",
+  "authority_scope": "dummy_only_materializer_TDD_static_review_and_one_fixture_materialization_only",
+  "materializer_transport_implementation_authorized": true,
+  "scientific_implementation_authorized": false,
+  "scientific_execution_authorized": false,
+  "scientific_evidence_exists": false,
+  "launch_counts_consumed": {
+    "fixture_materialization": 0,
+    "scientific_shards": 0,
+    "aggregation": 0
+  },
+  "path_roots": {
+    "repo_root_kind": "directory_containing_dot_git_and_AGENTS.md",
+    "repo_root": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding",
+    "runtime_root": "C:\\Users\\strid\\.venvs\\whestbench-frozen-m178",
+    "base_python_root": "C:\\Python314",
+    "authority_directory_repo_relative": "corpus/whestbench/experiments/m245_canonical_unordered_replica_galerkin_spectrum",
+    "future_fable_shard_directory_repo_relative": "corpus/whestbench/experiments/m245_fable_spectrum_shards",
+    "mixed_root_resolution_forbidden": true
+  },
+  "authority_files": {
+    "predeclaration": "corpus/whestbench/experiments/m245_canonical_unordered_replica_galerkin_spectrum/M245_PREDECLARATION_20260810.md",
+    "manifest_v1": "corpus/whestbench/experiments/m245_canonical_unordered_replica_galerkin_spectrum/M245_FROZEN_MANIFEST_V1_20260810.json",
+    "checksum_v1": "corpus/whestbench/experiments/m245_canonical_unordered_replica_galerkin_spectrum/M245_SHA256SUMS_V1_20260810.txt",
+    "observed_parent_head": "6419acb548735df01bb9b01669257ec6b7641aa4",
+    "required_branch": "agent/compression-survivor-corpus",
+    "authority_commit_rule": "every intent must bind the future commit that first contains predeclaration plus manifest_v1 plus checksum_v1"
+  },
+  "parent_hashes_repo_relative": {
+    "AGENTS.md": "63b20777dbf2d365f001e63d0458c019651ece1f72bbfe0dca8c2d37057bc210",
+    "corpus/whestbench/core/GOAL_STATEMENT_20260808.md": "61bf8ab6be2f7759ad89cdd883553b30c1f6e98b87f921edf6713fe0a7e0fd34",
+    "corpus/whestbench/core/GEN4_CLOSING_20260808.md": "ceb850283a38bb4f8e45bd448cea809235d90f00d25aa959301cdccda9fce0e0",
+    "corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_PREDECLARATION_20260809.md": "a53e3cbf58b9bdc290e6abbf3323a1b7e5162a370774dcd918ddb2193340a9c3",
+    "corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_DISPOSITION_20260809.md": "238e7bfb70a86ca8c8a66a1a737d3376d4f4efa0a12e15d484acbcb442af3667",
+    "corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_G0A_RESULT_20260809.json": "9cd0fd4155ed58a2ee35be94506daa8bffb6ed3b4b01b24160eb25e189bb7db8",
+    "corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_G0A_POSTPUBLICATION_RECEIPT_20260809.json": "7358e7447e6645319e374698bb80270eda8867ed1834cb83c0ded63ded6850a5",
+    "corpus/whestbench/experiments/m243_fable_oracle/FABLE_M245_REUSE_MAP.md": "bb431b52f25204085326cff91cff2ae9117d5b4b98161fe48ad27d262aadb589",
+    "corpus/whestbench/experiments/m237_writeahead_native_receipt/m237_durable_native_receipt.py": "774cef483c33b149524121144a4c5ede9141f094aa6fe5037414e31bddac873c"
+  },
+  "runtime": {
+    "python": "3.14.4",
+    "numpy": "2.4.6",
+    "mpmath": "1.3.0",
+    "interpreter_runtime_relative": "Scripts/python.exe",
+    "interpreter_sha256": "4b8c3912806b3c1591ba3cb403bff77ad309c3fe5756f87c20b7a6f8f0174262",
+    "pyvenv_cfg_runtime_relative": "pyvenv.cfg",
+    "pyvenv_cfg_sha256": "6fc69a2fa8b9e2b7846b6da49368faadd93ad22b13e9cfa36c3c2ec77b00097f",
+    "base_interpreter_base_relative": "python.exe",
+    "base_interpreter_sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a",
+    "base_python_dll_base_relative": "python314.dll",
+    "base_python_dll_sha256": "a07f7d09c3121492bb066535c6d0811df5fbc2090cbca7031a97bb47ce1480c9",
+    "files_runtime_relative_sha256": {
+      "Lib/site-packages/numpy/__init__.py": "65d5e777b6d662ba19cb80800bef3eb999eda7aee51eea62c308feabf679dba4",
+      "Lib/site-packages/numpy/random/__init__.py": "f21e391916d7a4bd74c49ceac3f9fa5e09e6e9263f254602a87e92a5e0a7a946",
+      "Lib/site-packages/numpy/random/_generator.cp314-win_amd64.pyd": "69c5aa9b41c0a60ee8600a4c1434c86fa96dfc00f4cd3171aed9729aacaa549b",
+      "Lib/site-packages/numpy/random/bit_generator.cp314-win_amd64.pyd": "2743114b72bb0034311b940f71322f5d2ece5ca334cfc9d11c92de4c16c4aaa5",
+      "Lib/site-packages/numpy/random/_common.cp314-win_amd64.pyd": "c4aa8072382728a9390d76643169f80a307c422b73402e2ee9041b32bf204665",
+      "Lib/site-packages/numpy/random/_philox.cp314-win_amd64.pyd": "8ceb13f5a97eb161fd7d93d2e597dc99d3387a76f32ef187a57103ac759bda15",
+      "Lib/site-packages/numpy/_core/multiarray.py": "7e25a653ea4bd1639e4bb4d3fdf941b9ea8a9b3d3c8226ddac1142a1a9d24a81",
+      "Lib/site-packages/numpy/_core/_multiarray_umath.cp314-win_amd64.pyd": "ecafa466c06217851e7e0e8ca9fdb6b039811b32f021e1b9833334c09ada70bf",
+      "Lib/site-packages/numpy/linalg/__init__.py": "3782aa04e50465446b8ffd34ab70dfff22f03eb99130a1dd9ba511d6c89bbb66",
+      "Lib/site-packages/numpy/linalg/_linalg.py": "bdae22bd533cf10a9827741de04a5d79b5457eb53ceab9beb9a890966ecfd32c",
+      "Lib/site-packages/numpy/linalg/_umath_linalg.cp314-win_amd64.pyd": "04d5b3d2f0e8493762eafb13249f2e386645212a8a4858a82c5f7957279bf839",
+      "Lib/site-packages/numpy/linalg/lapack_lite.cp314-win_amd64.pyd": "50d10a40079765ebcc1eb846d17cd54d660330529fc080960280dd7b84603215",
+      "Lib/site-packages/numpy-2.4.6.dist-info/METADATA": "b082c52ccbe3b880bae177c35171b52ed6c947f3ad71e3762f2723f60a411de0",
+      "Lib/site-packages/numpy-2.4.6.dist-info/RECORD": "525e6195cd5af59e51ed5fccccf2b1eb0ecfd508eb731bd217701ab355454fa9",
+      "Lib/site-packages/numpy.libs/libscipy_openblas64_-63c857e738469261263c764a36be9436.dll": "63c857e738469261263c764a36be9436ebdeaa272e340a828f42047a97131080",
+      "Lib/site-packages/mpmath/__init__.py": "b241584d2c1fc0304b0a1015ea923749d7b0800411dd406dcab7c82bf25d9fe8",
+      "Lib/site-packages/mpmath-1.3.0.dist-info/METADATA": "44b66ea444b9c0d19ae94815d356bf047ae6b680c19268b5c265687cd6a81406",
+      "Lib/site-packages/mpmath-1.3.0.dist-info/RECORD": "901345890d54cdcd59fe71b1391fd3ccd85ab23a92ab4d433cce48e29f84b472"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "network": false,
+    "scientific_worker_count": 1,
+    "scientific_worker_children": 0,
+    "inert_venv_launcher_redirector_max": 1,
+    "resource_meter_scope": "full_process_tree_including_launcher_redirector"
+  },
+  "canonical_event_policy": {
+    "dimension": 3,
+    "repeated_index": 0,
+    "unordered_singleton_pair": [
+      1,
+      2
+    ],
+    "serialized_event": [
+      0,
+      1,
+      2
+    ],
+    "requires_pairwise_distinct": true,
+    "canonicalizes_singletons_by_ascending_index": true,
+    "duplicate_orientation_forbidden": true,
+    "dtype": "<f8",
+    "array_order": "C"
+  },
+  "literal_fixtures": [
+    {
+      "event_id": "E00",
+      "role": "independent_positive_control_P0_equals_K",
+      "mu": [
+        -0.55,
+        0.20,
+        0.65
+      ],
+      "C": [
+        [
+          0.81,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.21,
+          0.5005
+        ],
+        [
+          0.0,
+          0.5005,
+          1.69
+        ]
+      ],
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "no_redraw": true
+    },
+    {
+      "event_id": "E01",
+      "role": "dense_correlated_literal",
+      "mu": [
+        0.75,
+        -0.45,
+        0.15
+      ],
+      "C": [
+        [
+          1.96,
+          0.8064,
+          -0.9044
+        ],
+        [
+          0.8064,
+          0.64,
+          0.068
+        ],
+        [
+          -0.9044,
+          0.068,
+          2.89
+        ]
+      ],
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "correlation_matrix": [
+        [
+          1.0,
+          0.72,
+          -0.38
+        ],
+        [
+          0.72,
+          1.0,
+          0.05
+        ],
+        [
+          -0.38,
+          0.05,
+          1.0
+        ]
+      ],
+      "correlation_determinant": 0.30734,
+      "no_redraw": true
+    }
+  ],
+  "generated_fixture_algorithm": {
+    "applies_to": [
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07"
+    ],
+    "library": "numpy",
+    "version": "2.4.6",
+    "bit_generator": "numpy.random.Philox",
+    "generator_constructor": "numpy.random.Generator(numpy.random.Philox(seed))",
+    "operation_order": [
+      "rng = numpy.random.Generator(numpy.random.Philox(seed))",
+      "A = numpy.float64(0.30) * rng.standard_normal((3,3))",
+      "d = rng.uniform(numpy.float64(0.45), numpy.float64(1.10), size=3)",
+      "C = A @ A.T + numpy.diag(d)",
+      "alpha = rng.uniform(numpy.float64(-1.75), numpy.float64(1.75), size=3)",
+      "mu = alpha * numpy.sqrt(numpy.diag(C))"
+    ],
+    "dtype": "float64",
+    "symmetrization_after_matmul": false,
+    "redraw_or_repair": false,
+    "seed_search": false,
+    "required_checks": [
+      "all_finite",
+      "C_bytewise_equal_to_transpose",
+      "numpy_linalg_cholesky_pass",
+      "eigvalsh_min_strictly_positive",
+      "conditional_variances_strictly_positive",
+      "absolute_conditional_correlation_strictly_less_than_one"
+    ]
+  },
+  "generated_fixtures": [
+    {
+      "event_id": "E02",
+      "seed": 24501101,
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "realized_values_location": "M245_FROZEN_MANIFEST_V2_20260810.json",
+      "materialized": false
+    },
+    {
+      "event_id": "E03",
+      "seed": 24501102,
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "realized_values_location": "M245_FROZEN_MANIFEST_V2_20260810.json",
+      "materialized": false
+    },
+    {
+      "event_id": "E04",
+      "seed": 24501103,
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "realized_values_location": "M245_FROZEN_MANIFEST_V2_20260810.json",
+      "materialized": false
+    },
+    {
+      "event_id": "E05",
+      "seed": 24501104,
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "realized_values_location": "M245_FROZEN_MANIFEST_V2_20260810.json",
+      "materialized": false
+    },
+    {
+      "event_id": "E06",
+      "seed": 24501105,
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "realized_values_location": "M245_FROZEN_MANIFEST_V2_20260810.json",
+      "materialized": false
+    },
+    {
+      "event_id": "E07",
+      "seed": 24501106,
+      "event": [
+        0,
+        1,
+        2
+      ],
+      "realized_values_location": "M245_FROZEN_MANIFEST_V2_20260810.json",
+      "materialized": false
+    }
+  ],
+  "array_receipt_v2": {
+    "scientific_authority": "verified float64 C-order bytes plus matching float.hex rows",
+    "decimal_encoding": "nested row-major strings from repr(float(x)); display and round-trip only",
+    "hex_encoding": "nested row-major strings from float(x).hex(); authoritative with byte hash",
+    "mpmath_decode": "verify bytes then float.as_integer_ratio() then mp.mpf(numerator)/mp.mpf(denominator)",
+    "mpmath_from_decimal_repr_forbidden": true,
+    "shape_json": "json.dumps(list(array.shape),ensure_ascii=True,separators=(',',':'))",
+    "hash_preimage": "dtype.str UTF8 || 0x00 || shape_json UTF8 || 0x00 || ascontiguousarray(array).tobytes(order='C')",
+    "hash": "sha256_lowercase_hex",
+    "arrays_per_event": [
+      "mu",
+      "C"
+    ],
+    "literal_rows_E00_E01_also_required": true
+  },
+  "shards": [
+    {
+      "shard_id": 0,
+      "owner": "fable",
+      "events_in_order": [
+        "E00",
+        "E01"
+      ]
+    },
+    {
+      "shard_id": 1,
+      "owner": "fable",
+      "events_in_order": [
+        "E02",
+        "E03"
+      ]
+    },
+    {
+      "shard_id": 2,
+      "owner": "fable",
+      "events_in_order": [
+        "E04",
+        "E05"
+      ]
+    },
+    {
+      "shard_id": 3,
+      "owner": "fable",
+      "events_in_order": [
+        "E06",
+        "E07"
+      ]
+    }
+  ],
+  "fixture_materialization": {
+    "owner": "codex",
+    "launches_authorized": 1,
+    "launches_consumed": 0,
+    "working_directory_repo_relative": "corpus/whestbench/experiments/m245_canonical_unordered_replica_galerkin_spectrum",
+    "script_name_future": "materialize_m245_fixtures.py",
+    "powershell_command": "& 'C:\\Users\\strid\\.venvs\\whestbench-frozen-m178\\Scripts\\python.exe' '.\\materialize_m245_fixtures.py'",
+    "required_paths_initially_absent": [
+      "M245_FIXTURE_MATERIALIZATION_INTENT_20260810.json",
+      ".M245_FROZEN_MANIFEST_V2_20260810.json.tmp",
+      "M245_FROZEN_MANIFEST_V2_20260810.json",
+      "M245_FIXTURE_MATERIALIZATION_POSTPUBLICATION_RECEIPT_20260810.json"
+    ],
+    "wall_seconds": 30,
+    "peak_rss_bytes": 268435456,
+    "scientific_worker_count": 1,
+    "scientific_worker_children": 0,
+    "inert_hash_bound_venv_launcher_redirector_max": 1,
+    "launcher_and_worker_pids_recorded_separately": true,
+    "resource_meter_scope": "full_process_tree_from_command_launch_through_receipt_publication",
+    "blas_threads": 1,
+    "network": false,
+    "retry": false,
+    "redraw": false,
+    "prelaunch_source_requirements": {
+      "materializer_source_committed_and_hashed": true,
+      "transaction_test_committed_and_hashed": true,
+      "static_validation_receipt_committed_and_hashed": true,
+      "independent_read_only_pass_audits": 2,
+      "four_path_absence_verified": true,
+      "tests_may_use_only_dummy_literals_and_non_census_dummy_seeds": true,
+      "tests_may_import_numpy_or_execute_frozen_seeds": false,
+      "tests_may_write_authority_paths": false
+    },
+    "durable_publication_order": [
+      "verify_four_paths_absent_and_all_hashes_before_numpy_import",
+      "exclusive_create_fsync_reopen_parse_hash_intent",
+      "exclusive_create_fsync_reopen_parse_hash_temporary_v2",
+      "same_directory_os_link_temp_to_absent_final_v2_create_if_absent",
+      "verify_source_final_device_inode_length_bytes_and_sha256_then_unlink_temp",
+      "exclusive_create_fsync_reopen_parse_hash_postpublication_receipt"
+    ],
+    "windows_transaction_primitive": "validated M237 O_EXCL plus file fsync/reopen plus create-if-absent hard link; no directory fsync claim",
+    "overwrite_capable_rename_or_replace": false,
+    "scientific_quantities_forbidden": [
+      "r",
+      "b",
+      "Hermite",
+      "Galerkin",
+      "replica",
+      "curve_fit"
+    ],
+    "v2_commit_required": true,
+    "v2_checksum_required": true,
+    "independent_read_only_pass_audits_required": 2
+  },
+  "mathematics": {
+    "degrees": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "basis": "orthonormal_probabilists_Hermite_hq_equals_Heq_over_sqrt_q_factorial",
+    "antithetic_operator": "S[f](t)=0.5*(f(t)+f(-t)), t>=0",
+    "repeated_scale_normalization": "divide_r_y_v_by_sigma_i_squared",
+    "solver": "unpivoted_Cholesky_each_leading_block",
+    "pseudoinverse": false,
+    "preliminary_G_plus_wording_superseded": true,
+    "gram_spd_theorem": "v_q has unique nonzero highest half-line polynomial degree q+2, so every finite leading Gram block is SPD",
+    "ridge": false,
+    "pivoting": false,
+    "rank_repair": false,
+    "ordinary_beta": "beta_q=E[b(G)h_q(G)]",
+    "replica_primary_import": false,
+    "replica_backend": "independent unary one-dimensional conditional factorization followed by replica identity",
+    "generic_augmented_5d_quadrature": false,
+    "M_same_replica_relation": "conditionally independent and identically distributed given signed G",
+    "M_cross_replica_relation": "conditionally independent sign-reversed copies, not iid given abs(G)"
+  },
+  "quadrature": {
+    "precisions_dps": [
+      80,
+      100
+    ],
+    "method": "tanh-sinh",
+    "maxdegree": 14,
+    "error_api": true,
+    "fallback": false,
+    "retry": false,
+    "outer_half_normal_base_panels": [
+      "0",
+      "0.25",
+      "1",
+      "2.5",
+      "5",
+      "8",
+      "10",
+      "16",
+      "+inf"
+    ],
+    "outer_event_addition": "sorted set union with abs(alpha_i), exact duplicate removal",
+    "replica_inner_half_normal_panels": [
+      "0",
+      "0.25",
+      "1",
+      "2.5",
+      "5",
+      "8",
+      "10",
+      "16",
+      "+inf"
+    ],
+    "plackett_panels": "exactly 16 directed equal panels from 0 to rho_c, decreasing when rho_c<0",
+    "fresh_cache_per_engine_event_precision": true,
+    "cross_precision_cache": false,
+    "cross_event_cache": false,
+    "cross_shard_cache": false
+  },
+  "fixed_b_backend_nodes": [
+    "0",
+    "+0x1p-8",
+    "-0x1p-8",
+    "+0.25",
+    "-0.25",
+    "+1",
+    "-1",
+    "+2.5",
+    "-2.5",
+    "+5",
+    "-5",
+    "+8",
+    "-8",
+    "+10",
+    "-10",
+    "+16",
+    "-16"
+  ],
+  "numeric_thresholds": {
+    "precision_agreement": "2e-12*max(1,abs(reference_100))",
+    "quadrature_per_call_observable": "finite returned error <= saved_mp_eps/8",
+    "quadrature_top_level_outer_panel_error_sum": "2e-14*max(1,abs(scalar))",
+    "nested_raw_error_sum": "diagnostic_only_not_propagated_certificate",
+    "analytic_R_G_direct": "at both dps, 2e-11*max(1,abs(reference)) for all R0:8 and all 45 upper-triangle G entries",
+    "leading_gram_lambda_ratio_min": "1e-25",
+    "leading_gram_condition_2_max": "1e25",
+    "solve_relative_inf_residual_max": "2e-20",
+    "monotonicity_tau": "2e-10*K",
+    "direct_residual_Q0_Q4_Q8": "2e-9*K",
+    "ordinary_beta_algebraic_identity_all_Q": "2e-20*K and gap >= -2e-10*K",
+    "ordinary_beta_direct_Q0_Q4_Q8": "2e-9*K",
+    "primary_b_vs_replica_b_fixed_nodes_each_dps": "2e-10*max(1,abs(primary_b))",
+    "replica_mu": "2e-9*max(1,abs(primary_mu))",
+    "replica_K": "5e-8*K"
+  },
+  "curve_report": {
+    "events": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07"
+    ],
+    "x_Q": "P_Q/K",
+    "E00_label": "ENDPOINT_CONTROL/NA",
+    "transforms": {
+      "geometric": "log(1-x)",
+      "logistic": "log(x/(1-x))",
+      "Gompertz": "log(-log(x))"
+    },
+    "second_difference_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "fit_degrees": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "holdout_degrees": [
+      6,
+      7,
+      8
+    ],
+    "tau_T": "1e-12+100*max_Q(abs(T_Q_80-T_Q_100))",
+    "tau_x": "1e-10+100*max_Q(abs(x_Q_80-x_Q_100))",
+    "labels_only": [
+      "FALSIFIED",
+      "NOT_FALSIFIED_ON_Q0_8"
+    ],
+    "domain_clipping": false,
+    "domains": {
+      "geometric": "0<=x<1; negative x refused even though transform is real",
+      "logistic": "0<x<1",
+      "Gompertz": "0<x<1"
+    },
+    "tail_extrapolation": false,
+    "only_future_bound": "0<=additional_explainable_energy_beyond_Q8<=K-P8"
+  },
+  "scientific_shard_resources": {
+    "shard_count": 4,
+    "max_invocations_per_shard": 2,
+    "max_launches_total": 8,
+    "max_cpu_seconds_total": 43200,
+    "wall_seconds_per_invocation": 5400,
+    "scientific_soft_stop_seconds": 5100,
+    "durable_publication_reserve_seconds": 300,
+    "peak_rss_bytes_per_invocation": 2147483648,
+    "scientific_worker_count_per_invocation": 1,
+    "scientific_worker_children_per_invocation": 0,
+    "inert_hash_bound_venv_launcher_redirector_max_per_invocation": 1,
+    "resource_meter_scope": "full_process_tree_including_launcher_redirector",
+    "blas_threads": 1,
+    "network": false,
+    "checkpoint_boundary": "after_complete_event_only_before_watchdog_cap",
+    "watchdog_cap_is_failure": true,
+    "third_invocation": false,
+    "retry": false,
+    "four_pass_receipts_required": true
+  },
+  "aggregation": {
+    "owner": "codex",
+    "authorized_only_after_four_pass_receipts": true,
+    "launches_max": 1,
+    "wall_seconds": 120,
+    "scientific_worker_count": 1,
+    "scientific_worker_children": 0,
+    "inert_hash_bound_venv_launcher_redirector_max": 1,
+    "network": false,
+    "scientific_imports": false,
+    "new_quadrature_or_solve_or_fit": false,
+    "drop_or_relabel_event": false
+  },
+  "firewall": {
+    "m243_candidate_or_reference_import": false,
+    "m151_source_arrays": false,
+    "m151_dtilde_or_F": false,
+    "m196_B1_or_H_or_VH": false,
+    "m178_code_call_provider_or_credit": false,
+    "response": false,
+    "truth": false,
+    "scorer": false,
+    "challenge_network_or_weights": false,
+    "champion_output": false,
+    "leaderboard": false,
+    "credentials": false,
+    "network_service": false,
+    "sealed_cells": false,
+    "submission": false,
+    "clipping_retry_or_hidden_compute": false
+  },
+  "forbidden_credit": [
+    "m243_revival",
+    "formula_component",
+    "total_support",
+    "provider",
+    "source_variance",
+    "native_cost",
+    "response",
+    "efficacy",
+    "mse",
+    "adjusted_score",
+    "integration",
+    "deployment",
+    "designation",
+    "submission"
+  ],
+  "pass_disposition": "PASSED_PRESERVED_GENERATED_SPECTRUM_PREMISE_ONLY"
+}
