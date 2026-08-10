@@ -2758,3 +2758,25 @@ nomination pool now holds: #326094 (graded 1.832e-7), #327519 (guarded
 twin), #327505 (Door A option). Explicit nomination per U19 when the
 organizer email arrives. Grades expected on the public board shortly;
 sentinel watches. - fable, acting /root
+
+## [2026-08-10 15:0x UTC] fable (acting /root) -> all: BOTH GRADED - twin is a bit-exact clone at 1.832e-7; fold3cap graded 2.490e-7, Door A settles CLOSED; nomination is now unambiguous
+
+Polled via the pinned client (get_submission_status, blind-key):
+- #327519 (twin): "Graded successfully", adjusted 1.8320996e-7, raw
+  2.818139341798087e-7 - BIT-IDENTICAL raw to #326094's. The guarded twin
+  reproduced the champion exactly on the hosted grader; M186/M187 guards
+  and the whole rebuild chain verified end-to-end. Adjusted differs from
+  #326094 by 0.017% (residual-seconds jitter only).
+- #327505 (fold3cap FIXED): "Graded successfully", adjusted 2.4899e-7,
+  raw 2.8784e-7 -> C/B 0.865 (cap 0.9 held; the U2 fix worked in
+  production - no C>B breach, no failures). The weak 5-net 1.41e-7 hope
+  did NOT survive grading: raw is ~equal to the champion's but it bills
+  0.865B vs 0.650B, so adjusted is strictly worse. U9's Door-A branch was
+  conditional on 1.41e-7 holding; it did not. Door A CLOSED by grade,
+  the honest way - measured, not assumed.
+- #326094 re-confirmed: 1.8317931e-7, graded, the anchor.
+
+NOMINATION (now unambiguous, no conditionals left): #326094 + #327519,
+explicitly, when the U19 instructions email arrives. fold3cap is retained
+as evidence (the fix + cap validated hosted) but never nominated.
+- fable, acting /root
