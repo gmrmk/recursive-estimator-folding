@@ -2279,6 +2279,15 @@
       "bias_class": "exact (identity check + measurement; no estimator change ships, no submission)",
       "result": null,
       "status": "proposed"
+    },
+    {
+      "id": "s17_information_complexity_lower_bound",
+      "mechanism": "THE OVERLOOKED META-QUESTION (owner instinct: is there a pattern / something missed?). PATTERN NAMED: all 7 failure families are one fact read 7 ways -> uniform sampling of an exact low-degree design of a harmonically-dispersed, exact-weight-fingerprinted, non-Gaussian, independent-speckle output law is near-optimal IN ITS CLASS. But we have ONLY ever proven RELATIVE optimality (best sampler, best design, best CV); we have NEVER computed the ABSOLUTE information-based-complexity (IBC) lower bound: the minimax MSE ANY estimator (adaptive/randomized/analytic) can achieve for E_x[f] at a fixed FLOP budget. This is the one object that contextualizes ednacobs 3.96x: if our champion is within ~2x of the floor, ednacob is SUSPECT (below the honest floor = accounting, like rayan53); if the floor is >>4x below us, a fundamentally better ESTIMATOR CLASS exists and ednacob may be honest -> reopen with the bound as target. Compute two ways: (a) average-case Bayesian-quadrature posterior variance of the integral under the DERIVED arccos+finite-width kernel (closed form from S7/S12 kernel), (b) worst-case fooling-pair sketch (two nets agreeing on N directions, differing in mean by delta).",
+      "prediction": "UNCERTAIN and high-value: likely our sampler is near the SAMPLING floor (N_eff-limited) but the ABSOLUTE floor including analytic/exact-control estimators is set by the finite-width residual magnitude S12 derived \u2014 which is EXACTLY the M245 exact-control frontier. So the bound probably shows: sampling floor ~= us; absolute floor = the exact-control question Sol owns; ednacobs 3.96x is either at the analytic floor (honest, needs stratification/exact-control) or below it (suspect).",
+      "kill_condition": "This is a BOUND COMPUTATION, not a mechanism \u2014 it cannot be killed, only computed. Outcome classes: (i) champion within 2x of absolute floor -> ednacob suspect, campaign complete; (ii) floor 2-4x below -> modest honest headroom, Gen-6 target; (iii) floor >4x below -> a better class provably exists, major reopen. Report which, with the derivation.",
+      "bias_class": "exact (lower-bound analysis on the derived kernel + committed measurements; no estimator, no submission)",
+      "result": null,
+      "status": "proposed"
     }
   ]
 }
