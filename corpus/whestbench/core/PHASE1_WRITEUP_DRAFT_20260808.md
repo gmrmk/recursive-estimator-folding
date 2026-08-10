@@ -1,6 +1,10 @@
-# Phase-1 Algorithmic Contribution writeup — draft v8
+# Phase-1 Algorithmic Contribution writeup — draft v9
 
-Status: DRAFT v8, 2026-08-10. v8: level-repair pass — §5 adjudication removed, floor language set to S17's earned framing, §3c/3d dispersion corrected per S1B, residual restated. **Graded submission ID: #326094** (adjusted
+Status: DRAFT v9, 2026-08-10. v9: adversarial-closure pass — new §3f (the Gen-7
+twenty-agent campaign, the seed-side SVD-V null, the 7/7 re-litigated kill
+families, S18's singleton-cell seal) and a falsification-hygiene paragraph in §4;
+v8's level rules carry over unchanged, and the floor remains a lower-bound
+attempt. v8: level-repair pass — §5 adjudication removed, floor language set to S17's earned framing, §3c/3d dispersion corrected per S1B, residual restated. **Graded submission ID: #326094** (adjusted
 1.832e-7, 50/50 public MLPs, 0 failures, rank #58 at grading time). Filing deadline
 Aug 17, 23:59 UTC per the Algorithmic Contribution guidelines thread.
 
@@ -378,7 +382,85 @@ tested classes, reachable only by seed-side methods — estimators that use
 the weights to un-randomize the structure at the source instead of
 testing the output.
 
-### 4. Methodological note: calibrate your suite before you trust your numbers
+### 3f. Adversarial closure: the floor as an earned result (new)
+
+Everything above is what survived a deliberate attempt to destroy it. Twenty
+adversarial agents across three fleets, all seeded, each mandated to BEAT the
+champion rather than to confirm it, spent a day attacking the campaign from
+every side we could name (`core/GEN7_ADVERSARIAL_CLOSURE_20260810.md`).
+
+**Six attack lenses against the estimator.** Five returned no candidate at all,
+each leaving a named obstruction on the record rather than a shrug:
+exact-identity (all four closed-form conditional expectations are already
+consumed by the estimator); control-variate (the 2-design absorbs every
+degree-≤2 statistic exactly, and degree-≥4 content is ~1e-5 R²);
+biased-hybrid (the baseline measures unbiased, so the MSE-optimal shrinkage
+weight is ~0, and every realizable form came out worse, -5.7% to -38%);
+cost-remap (the bill is ~99% irreducible float32 matmul already at the floor
+rate, f64 share 0.033% max); design-alt (the DGS bound needs N ≥ 33,152 for a
+4-design and ~44x the rows for degree-6 nulling, and Var·C is invariant on the
+flat speckle of §3e(2)).
+
+**The one candidate our own theory could not exclude.** The sixth lens found
+it: seed-side rotation CONSTRUCTION — replace the grader-seed Haar input
+rotation with the deterministic V from the first layer's SVD (W₀ = U S Vᵀ),
+coupling the randomization to the weights we already possess. This is the lane
+the speckle account of §3e leaves formally open, and the attacker predicted a
+win from a 24-rotation oracle spread of 5.8e-8 to 6.8e-7 with the champion
+sitting at the mean. Measured on the committed public 0-99 net basis at seed 0
+under common random numbers, twice-run bit-identical (noise floor exactly 0.0),
+it is a clean null: paired t = **+0.19** against a t ≥ 3 kill gate, the variant
+better on exactly **50 of 100** nets, a bootstrap CI on the mean delta of
+**[-3.19e-8, +2.61e-8]** symmetric about zero, and a drop-top-5 recomputation
+that flips the sign — bought with +3.6e8 billed FLOPs (C/B +0.0014) and no
+compensating MSE reduction. The mechanism of the null is that V is marginally
+Haar: coupling it to the weights' singular basis buys no alignment with the
+fixed cubature frame (ledger 242, killed).
+
+**Seven kill families re-litigated under changed premises: 7/7 held**, several
+strengthened. The fidelity family formally retired the dtype-repricing escape
+(M183 measured the f64 SHARE at 0.00%, which is invariant to how f64 is
+priced); the closure family's four insertion points were re-killed under
+maximally favourable cost assumptions; and the dispersion family named the one
+un-probed crack left in the whole record — non-smooth cell-membership
+covariates, inside a profitability window of R² ∈ [2.63e-5, 1e-4].
+
+**S18 seals that crack the same day** (`experiments/s18_cell_membership_probe/`,
+ledger 241). Arrangement-combinatorial features — cell-membership indicators at
+k = 16/64/256 and Hamming distance to the modal sign pattern — were gated as
+incremental regressors beyond the degree-≤2 basis on the S5/S15 trio, using
+S15's exact split. Every gated set lands below the predeclared per-coefficient
+fitting-noise cost of **2.63e-5** on all three nets (best gated value
+**2.371e-5**, 0.9x the bar and inside its own permutation null of |5.3e-5|),
+and none reaches the 1e-4 SIGNAL bar on any net (0 of 3, versus 2+ required).
+The mechanism is structural and identical on all three nets: all **64,512**
+design directions occupy **64,512 DISTINCT** first-layer activation cells —
+every cell a singleton, maximum cell count 1 — so at design spacing cell
+identity is a per-point unique label, which can memorize one training residual
+and can never activate on the held-out half. Only cell aggregates can
+generalize, and those measure at fitting noise. Instrument checks: S15's Base-B
+out-of-sample R² reproduced exactly (0.3609 / 0.4037 / 0.4385), an injected
+1e-3 signal recovered at 1.53e-3 / 0.89e-3 / 0.71e-3, and an independently
+recomputed first-layer pass reproducing the cached S5 arrays bit-exactly (max
+absolute difference 0.0 on all three nets).
+
+**What this establishes, and what it does not.** It does not upgrade §3e(5):
+the floor there remains a gated lower-bound attempt, not a minimax-optimality
+proof, and this section adds no theorem to it. What it does establish is the
+status of the claim itself. The champion's position is not an assumption and
+not a self-assessment: it is the statement left standing after twenty agents
+whose explicit job was to break it failed against seeded, deterministic,
+predeclared gates — including the single seed-side construction our own theory
+could not rule out in advance — while the same campaign turned on our own
+record and forced four same-day corrections, two of which are visible in this
+document (§3e(5)'s floor language de-escalated to S17's own "attempt", §3c/§3d's
+dispersion re-measured and bracket-validated). The question we leave open, and
+state as open: whether NON-rotation seed-side structure is extractable at all.
+The rotation lane closes at the point-evaluation level; the deeper lane is
+untested here. Every number in this section is reproducible from committed
+artifacts.
+
+### 4. Methodological notes: calibrate your suite, and re-measure your graveyard
 
 Local development suites are not the grader's suite. We measured ours by
 running a budget-matched Monte-Carlo reference on both: local 1.069e-6 versus
@@ -387,6 +469,26 @@ was understating its hosted expectation by that factor. We recommend this
 one-run calibration to anyone iterating locally; without it, cross-suite
 comparisons — including comparisons against published competitor numbers —
 are off by whatever the suite-difficulty ratio happens to be.
+
+**Falsification hygiene: the same standard applies to your dead entries.** A
+record-level sweep of our full ledger (~307 mechanism and uncertainty records,
+read one at a time; `core/GRAVEYARD_MINE_20260810.md`) found dispositions
+carried by wording rather than by evidence — three "kills" had never been run
+at all — so we ran 16 falsifiers on the strongest candidates and adjudicated
+all 16 (`core/GRAVEYARD_RUN_RESULTS_20260810.md`, with a predeclaration,
+verdict and results file per item under `experiments/gm_*/`). Ten historical
+dispositions converted from assumption to measurement and stand as confirmed
+kills; four revived as SCREENED Phase-2 proposals, which are proposals and not
+promotions; one is blocked for escalation and one is recorded as an honest
+inconclusive hold. The one revival that is a result in its own right is a dtype
+convention: the float32-parity precondition behind the rank-one square's cost
+had been assumed rather than measured, and discharging it (worst predeclared
+identity error 2.81e-6 against a 1e-5 gate, with an exact-rational reference at
+2.02e-16, an alternate-association cross-check at 1.98e-15, and a bitwise
+re-run in fresh interpreters) reprices the affected analytic bills about 2x
+down — screened only, measured at width 256, not reusable at larger widths
+without re-measurement, residual risks named on the record, nothing deployed
+and no Phase-1 score headroom claimed anywhere in the sweep.
 
 ### 5. Compute transparency
 
