@@ -1,7 +1,7 @@
-# Phase-1 Algorithmic Contribution writeup — draft v2
+# Phase-1 Algorithmic Contribution writeup — draft v7
 
-Status: DRAFT v2. **Graded submission ID: #326094** (adjusted 1.832e-7,
-50/50 public MLPs, 0 failures, rank #58 at grading time). Filing deadline
+Status: DRAFT v7, 2026-08-10. **Graded submission ID: #326094** (adjusted
+1.832e-7, 50/50 public MLPs, 0 failures, rank #58 at grading time). Filing deadline
 Aug 17, 23:59 UTC per the Algorithmic Contribution guidelines thread.
 
 ---
@@ -25,6 +25,12 @@ wall that bounds every moment-propagation method on this benchmark; and an
 **eight-mutation falsification ledger** in which every proposed improvement
 was predeclared with a kill gate before implementation, and every one of them
 died on measurement.
+
+New in this revision (v7): the wall now has a measured **floor** — an
+information-complexity measurement locates the point-evaluation sampling
+floor and places our estimator on it (within 2x per forward pass, 0.90x on
+the distinct-direction accounting; §3e) — and the falsification structure
+reduces to a single stated theorem (§3e).
 
 ### 1. The estimator
 
@@ -82,7 +88,9 @@ Monte-Carlo truth on He-initialized networks (MC noise floor 1-2e-7, i.e.
 | sampling estimator (this submission), same budget | ~2.5e-7 |
 
 Making the covariance exact buys a factor of ~7.5 over the diagonal closure.
-The remaining ~380x to sampling is third-and-higher-cumulant structure that
+The remaining 384x to sampling (340.7x against the graded raw 2.818e-7,
+524x against adjusted 1.832e-7 — the denominator matters, so we state all
+three) is third-and-higher-cumulant structure that
 **no Gaussian-moment closure can represent at any compute multiplier** —
 even priced at a zero-cost floor the exact closure trails by more than an
 order of magnitude.
@@ -138,6 +146,33 @@ conditioned away. **N8c** established that our estimator's final-layer error
 is **statistically pure variance** (bias share indistinguishable from zero),
 which is the strongest robustness property available going into a fresh-seed
 re-evaluation: there is no fitted component to overfit.
+
+Two further proposals die by **exact identity** rather than by statistics,
+and we record them as identities. The **Crofton kink-transect identity**
+(`experiments/s9_crofton_transect/`): the Gaussian mean of a bias-free ReLU
+network equals the Gaussian-weighted surface integral of its gradient jumps
+over the kink set — verified at machine precision (structural checks to
+6.7e-16, two independent transect estimators, 3 predeclared + 20 fresh
+nets) — and the unbiased estimator it induces is killed at 176,860x worse
+variance-per-FLOP than MC on the width-64 depth-8 screen (predeclared kill
+line 100x). The **residual/norm decomposition identity**
+(`experiments/s16_residual_decomp/`, confirmatory; clean statement:
+"residual decomposition = antipodal symmetrization"): both proposed forms
+reduce exactly to structure the estimator already has. The even/odd
+residual split |z|/2 ± z/2 is BIT-IDENTICAL to our antipodal pairing —
+layer-1 identity max deviation exactly 0.0 over 8,257,536 entries on each
+of 3 nets (IEEE negation is exact and the ReLU pair is a clamp partition),
+and the full estimators produce bit-equal final outputs (MSE ratio
+1.000000, max final deviation 0.0) on all 48 (net, seed) panels — while
+its "analytic linear + Gaussian corrections" deep reading is the closure
+family M181 already killed (closure 1.28e-6 vs sampling 3.41e-7): the
+linear part is exactly zero-mean (its measured mean decays 2.26x when n
+grows 4x, vs 2.0 predicted for pure noise), so the entire signal lives in
+the non-Gaussian ReLU corrections. The per-layer residual
+reparametrization measures R_l = mean‖F_l‖/mean‖y_l‖ in [1.108, 1.231]
+(median 1.162) across all 31 hidden layers — no layer is near-identity, so
+no perturbative truncation exists and the form reduces to the depth law of
+§3e(4).
 
 ### 3b. The design is an exact spherical 2-design, and its error spectrum is
 ### measured (new)
@@ -242,6 +277,27 @@ DERIVE the empirical wall rather than merely measure it:
    inflation of 1.58-1.87, bracketing our measured 1.70-2.20. The
    curve-widening shape and dispersion tightness remain honestly open;
    `experiments/s12_finite_width_kernel/`.)
+5. **The floor itself** (information frame; `experiments/s17_ibc_floor/`).
+   The design's exact inner-product census (1) antipodally doubles to an
+   exact five-shell 64,512-point fingerprint — the shell counts sum to
+   64,512² bitwise and the ±1/16 shells become exactly sign-balanced —
+   and the equal-FLOP sampling floor σ²/N is then read directly from the
+   measured field variance. The champion sits at a pooled **1.79x** the
+   per-forward floor σ²/64,512 (per net 1.63 / 2.37 / 1.37) and **0.90x**
+   the distinct-direction bound σ²/32,256 — i.e. AT the floor — with
+   N_eff ≈ 38k effective independent draws (~60% of the 64,512 forwards:
+   an antipodal pair carries correlated even-harmonic information, so a
+   pair of forwards is worth ~1.2 draws, not 2). Second signal: the
+   empirical residual correlations at the design's own spacings are
+   c(0) = -1.3e-3 and c_even(1/16) = -5.5e-6 — decorrelated at every
+   design pair, exactly as the speckle model of (2) requires. One
+   disclosed formula correction, reported honestly: the predeclared
+   four-term correlation-kernel floor formula is numerically unusable at
+   this scale — its cross-shell coefficient is 64,000, so a sub-1e-3
+   error in c_even(1/16) moves the predicted inflation by O(10), and the
+   naive plug-in returns 24.9, a documented artifact — so the floor is
+   anchored on σ²/N directly, with the kernel retained only as
+   corroboration.
 
 Together: the estimator's error consists of independent chi²₁ speckle
 draws whose generating structure is set by the earliest layers, sampled
@@ -249,10 +305,49 @@ by a design whose single exploitable mode is already optimally
 suppressed. Within this model, variance-per-billed-FLOP is not merely
 the observed best lever — it is the only lever the physics admits, and
 the finite-width offset in (2) locates the sole remaining crack at the
-exact-finite-width frontier. All four measurements are reproducible from
+exact-finite-width frontier. All five measurements are reproducible from
 committed artifacts (`experiments/s5_kink_concentration/`,
-`s6_bragg_spectrum/`, `s7_speckle/`, `s8_layer_profile/`), each with
-predeclared gates, two-signal verification, and recorded deviations.
+`s6_bragg_spectrum/`, `s7_speckle/`, `s8_layer_profile/`,
+`s17_ibc_floor/`), each with predeclared gates, two-signal verification,
+and recorded deviations.
+
+These measurements assemble into an achievable-envelope map S(B) — the
+least MSE reached at FLOP budget B **among tested method classes**. It has
+two arms. A budget-independent **closure plateau** at 9.6e-5: analytic
+degree-≤2-exact integration removes only the exactly-integrable part, and
+cheap first-layer covariates add ≤1.56% out-of-sample R², so more analytic
+effort does not lower it. A **1/N sampling line** through the champion
+(2.818e-7 at C/B 0.65; 5.35e-8 at 5.27x budget), on which the champion
+sits within 2x of the floor (5). The vertical gap between plateau and line
+at our budget is **340.7x** in raw final-layer MSE (384x against the
+~2.5e-7 sampling point of §2, 524x against adjusted 1.832e-7 — the
+denominator matters). The gap is not headroom we left by sampling badly;
+it is the price of point-evaluation information: pay FLOPs on the sloped
+arm, or accept the plateau. Among the classes we tested, the only way to
+sit INSIDE the gap — low MSE at low budget — is to leave the
+point-evaluation oracle entirely and read the weights themselves. This is
+a map of tested classes, not a proof that no untested output-side method
+enters the gap.
+
+The synthesis, stated once (`core/GOD_NODE_SYNTHESIS_20260810.md`): a
+centrality analysis of the campaign's full failure-and-passes evidence
+graph finds ONE god node. The finite-width output of a deep random ReLU
+network is maximum-entropy independent chi²₁ speckle sitting exactly at
+the degree-4 boundary of a maximum-structure exact 2-design — and this
+single fact is simultaneously why every proposed mutation fails (the
+speckle's dimensionality, weight-fidelity, and independence are one
+property), why the champion is correction-proof (a maximum-entropy
+unbiased residual has zero fitted structure to overfit — N8c's measured
+zero bias), and what sets the floor of (5) (the speckle's
+independent-cell count N_eff). One precision matters, and we state it
+carefully: the entropy is COMPUTATIONAL, not ontic. The residual is a
+deterministic function of weights we possess — the weights are the seed —
+that behaves as strong pseudo-randomness against every sub-budget test we
+constructed; the falsification ledger certifies PRNG strength, not
+information absence. That is exactly why the 340.7x gap region is, among
+tested classes, reachable only by seed-side methods — estimators that use
+the weights to un-randomize the structure at the source instead of
+testing the output.
 
 ### 4. Methodological note: calibrate your suite before you trust your numbers
 
@@ -272,6 +367,28 @@ leaderboard bill at 6e8-7e9 FLOP/s while running 22-47 s per MLP. Our
 estimator's residual (uninstrumented) exposure is 5% of budget; any
 tightening of residual accounting under §5.3 would cost us that 5% and
 nothing else.
+
+The floor of §3e(5) also yields a neutral adjudication instrument for the
+leaderboard, which we state as arithmetic and nothing more. For any pure
+point-evaluation estimator, a FLOP budget buys at most N function queries,
+and N queries bound the extractable information: best possible MSE = σ²/N
+even if every query were an independent draw. At C/B 0.507 (1.379e11
+FLOPs, ≈50,300 forward passes at 2.74e6 FLOPs per forward), the best
+possible point-evaluation MSE on this suite is σ²_suite/50,300 ≈ 2.02e-7
+(σ²_suite ≈ 1.02e-2, backed out from our graded score). An entry reporting
+raw 9.11e-8 / adjusted 4.62e-8 at that C/B therefore sits 2.2x below the
+best-possible point-evaluation floor at its own budget (2.2-4.0x below the
+floor invariant MSE×FLOPs, depending on whether our champion is taken
+1.79x above or exactly at the floor). The arithmetic is high-confidence;
+the interpretation is not ours to make: any entry below the floor must be
+using seed-side extraction beyond point evaluation (a genuinely different
+oracle class, and a result that would merit its own writeup), or its
+accounting merits review. For the honest band's shape, the same scaling
+arithmetic runs the other way: the best raw MSE on the public board
+(4.0e-9, adjusted 2.11e-8 at 5.27x budget) sits ~13x below what honest 1/N
+scaling from our champion predicts at that budget (~5.3e-8) — a gap that
+sampling scaling among the classes we characterized does not cross, and
+that a fresh-seed re-evaluation resolves either way.
 
 ### 6. Reproducibility
 
