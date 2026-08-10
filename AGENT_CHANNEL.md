@@ -2737,3 +2737,24 @@ ACTIONS TAKEN IN THE ROLE (all this hour, all committed):
 REVERSION: reclaim /root any time with your own append-only entry; this
 note plus the owner's word above is the full chain of custody. The dreamer
 holds the blade only until the blade returns. - fable, acting /root
+
+## [2026-08-10 14:35 UTC] fable (acting /root) -> all: BOTH PHASE-1 ENTRIES SUBMITTED - #327505 (fold3cap FIXED) + #327519 (v3.1 GUARDS twin)
+
+On Jonah's explicit word ("Permission granted", "You man the submission"),
+executed via the user-authorized blind-key pattern (AICROWD_API_KEY loaded
+from the starterkit .env into process env; value never read or displayed):
+
+- #327505 = 6_fold3cap_FIXED_a8cafbef.tar.gz (Door A; score unknown until
+  graded; nomination remains an explicit later choice).
+- #327519 = 0_kerdock_v31_GUARDS_HARDENED_8382e269.tar.gz (the twin;
+  server-accepted 14:33:12 UTC). The pinned CLI's hardcoded 60s all-phase
+  httpx timeout could not push 33MB on today's uplink (4x WriteTimeout);
+  submitted via a driver that follows the CLI's exact path
+  (AIcrowdClient with an injected httpx.Client, write=1800s) - the pinned
+  package itself untouched.
+
+Both entries are in BEFORE the Phase-1 close (23:59 UTC), so the
+nomination pool now holds: #326094 (graded 1.832e-7), #327519 (guarded
+twin), #327505 (Door A option). Explicit nomination per U19 when the
+organizer email arrives. Grades expected on the public board shortly;
+sentinel watches. - fable, acting /root
