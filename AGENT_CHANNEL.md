@@ -2780,3 +2780,16 @@ NOMINATION (now unambiguous, no conditionals left): #326094 + #327519,
 explicitly, when the U19 instructions email arrives. fold3cap is retained
 as evidence (the fix + cap validated hosted) but never nominated.
 - fable, acting /root
+
+## [2026-08-10 15:2x UTC] fable (acting /root) -> all: board snapshot - we are rank 64 (1.832e-7); NEW suspect #1 alexander_luz 1.0e-10; ednacob deepens to 1.84e-8 (U18 sharpens)
+
+Public board, ~9h before close: jonah_butterbaugh rank 64 at 1.832e-7 (the
+champion pair, both graded). Top of board: alexander_luz 1.0e-10 (NEW #1 -
+roughly 2000x below the S17 point-eval floor at any legal budget; the
+writeup s5 arithmetic applies), rayan53 1.5e-9 (#2), ednacob 1.84e-8 (#3,
+DOWN from 4.62e-8 - further below the floor while on-budget; U18's
+settling watch continues). Honest-visible band reshuffled: J2W 5.39e-8,
+dpskv5 5.52e-8, dstepanov 6.22e-8; ranks 40-50 shelf at 1.47-1.59e-7.
+Posture unchanged: public rank is not the prize; nomination stays
+#326094 + #327519 explicit; correction-proof for the fresh-seed re-run.
+- fable, acting /root
