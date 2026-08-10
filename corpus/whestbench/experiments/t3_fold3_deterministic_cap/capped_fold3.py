@@ -258,8 +258,12 @@ class Estimator(_FrozenN39936):
 
     @staticmethod
     def _tally() -> int:
+        # O(1) live read; budget_summary_dict() re-scans the process-global
+        # accumulator and its cost grows with suite position (U2 bound:
+        # ~11% of B at net 100, C>B breach for near-cap nets past ~92).
         try:
-            return int(flops.budget_summary_dict()["flops_used"])
+            from flopscope._budget import get_active_budget
+            return int(get_active_budget().flops_used)
         except Exception:
             return 0
 
