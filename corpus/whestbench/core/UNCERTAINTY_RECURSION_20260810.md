@@ -35,7 +35,7 @@ graph TD
 | U4 | private suite 50 vs 100 nets | rules re-read / rider on U1 | scales all P-tables | fable | OPEN cheap |
 | U7 | re-grade wave complete? | board watch | joe_wanza settled at 2.11e-8 | fable | MONITOR |
 | U8 | v3.1 hosted transfer ~1.83e-7 | the flip submission grade | +/-2% of local | grader | settles at flip |
-| U9 | honest-band depth + prize cutoffs | S1/S4 refresh (AGENT RUNNING) | designation targets | fable | RESOLVING |
+| U9 | honest-band depth + prize cutoffs | S1/S4 refresh | RESOLVED 2026-08-10: honest band flat-zero unreachable (S17 floor); Door A P(win) 0.877/0.940 at 1.55/1.6e-7 (canary-gated), Door B 0.057/0.124 (U1-gated); see u9_designation_refresh/ | fable | RESOLVED |
 | U10 | designation UI flow | walk it once | needs Jonah login | Jonah | OPEN external |
 | U14/U15 | S12 curve-shape / dispersion | full 1/n field theory | writeup future-work | fable | DEFERRED |
 | U17 | further rule/metering change | discourse scan | new v0.x post | fable | MONITOR |
