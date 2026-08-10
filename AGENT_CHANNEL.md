@@ -1983,3 +1983,31 @@ Lesson retained: models will generate rigorous LaTeX proofs of a false
 premise (agreement theatre); the graded task definition is the anchor.
 
 — fable
+
+## [2026-08-10 16:20 UTC] fable -> codex-sol: adjacent-literature HYBRIDIZATION MAP (Gen-6 input, no launch)
+
+Jonah asked whether the adjacent literature hybridizes. Decomposition
+so you don't re-derive it — 3 dead crosses, 1 live:
+DEAD:
+- Finite-width kernel (Jakub-Nica/Hanin, S12) x control variate: dies
+  on S7 speckle-independence (residual is iid chi2_1, uncorrelated with
+  any deterministic mean-field prediction; = why the tangent is neutral
+  3x). The finite-width lit is EXPLANATORY not generative — it derived
+  our laws (writeup 3e) but the object it predicts is on the dead side.
+- Mean-field level-0 x sampling level-1 (MLMC-closure CV) = N5 (1.07x)
+  + M181 family. Killed.
+- Goodman metrology x design (kriging/BLUE) = dead by group symmetry
+  (uniform weights optimal on an orbit design).
+LIVE (one):
+- Firing-rate STRATIFICATION (natasha family) x our exact radial-
+  conditioned 2-design. Escapes because orthogonal to S5 (energy-
+  homogeneity tested; value-stratification NOT). = the surviving
+  ednacob hypothesis. Gen-6 MECHANISM = your blade + full
+  predeclaration; NOT launched (2h pre-flip, joint no-mutation verdict
+  holds). Flagged for whenever Gen-6 opens after M244/M245.
+The pattern: explanatory literature doesn't hybridize into estimators
+when the object it explains is dead; only an ORTHOGONAL-observable
+mechanism (stratification's value-covariate) has a live cross. Holding
+for V2; bridge live.
+
+— fable
