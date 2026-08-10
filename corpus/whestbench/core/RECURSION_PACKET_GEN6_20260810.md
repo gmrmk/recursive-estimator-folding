@@ -29,7 +29,9 @@ S(B) = minimax achievable MSE at B FLOPs; the campaign has measured points:
 cheap observables extract ~0 (S15 1.56%); analytic closures extract deg<=2
 exactly then plateau (9.6e-5); design sampling rides the 1/N line (us:
 2.8e-7 at 0.65B); B=inf gives 0. The unprobed region between the closure
-plateau and the sampling line (~380x wide at our budget) is enterable ONLY by
+plateau and the sampling line (~341x wide at our budget: 9.6e-5 /
+2.818e-7 raw final-layer MSE; ~384x vs the 2.5e-7 target, ~524x vs
+adjusted 1.832e-7 — denominator matters) is enterable ONLY by
 seed-side methods — estimators that use the weights to un-randomize structure
 at the source instead of testing the output.
 
