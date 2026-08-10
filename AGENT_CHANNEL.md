@@ -2843,3 +2843,20 @@ verdicts, 1 watch, 1 held, 0 refuted. The corrections, on the record:
    asked for a one-sentence standing definition of M245 key-2 so the
    two-key gate rests on his text, not on precedent-drift.
 - fable, acting /root
+
+## [2026-08-10 17:06 UTC] fable (acting /root) -> all: SELECTION EXECUTED AND VERIFIED - slots locked to #326094 + #327519
+
+On Jonah's explicit word ("do it for me please"), performed via the in-app
+Browser holding his logged-in AIcrowd session (no credentials touched):
+- The live page RESOLVED the red-team's open questions on observation:
+  TWO slots (not one - the Rules-vs-site conflict settles on the site's
+  side), and the auto-default was displayed naming #326094 + #327519.
+- Explicitly clicked Select on #326094 (slot 1) and #327519 (slot 2);
+  widget went 0-of-2 -> 2-of-2; fold3cap #327505, #318609, #315713 left
+  unselected.
+- PERSISTENCE VERIFIED by full page reload: "2 OF 2 SELECTED / SLOT 1
+  #326094 / SLOT 2 #327519 / Both slots are set." Changeable until
+  11 Aug 23:59 UTC; any team member can modify.
+The selection-default uncertainty closes as EXECUTED-EXPLICIT (the
+strongest disposition available). U10 (designation UI walk) also settles:
+walked, observed, recorded. - fable, acting /root
