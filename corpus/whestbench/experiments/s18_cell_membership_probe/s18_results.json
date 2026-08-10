@@ -1,0 +1,527 @@
+{
+  "census": {
+    "101": {
+      "max_cell_count": 1,
+      "modal_majority_vs_literal_hamming": 131,
+      "n_directions": 64512,
+      "n_distinct_cells": 64512,
+      "n_exact_zero_preactivations": 0,
+      "n_singleton_cells": 64512,
+      "top10_cell_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "202": {
+      "max_cell_count": 1,
+      "modal_majority_vs_literal_hamming": 143,
+      "n_directions": 64512,
+      "n_distinct_cells": 64512,
+      "n_exact_zero_preactivations": 0,
+      "n_singleton_cells": 64512,
+      "top10_cell_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "303": {
+      "max_cell_count": 1,
+      "modal_majority_vs_literal_hamming": 128,
+      "n_directions": 64512,
+      "n_distinct_cells": 64512,
+      "n_exact_zero_preactivations": 0,
+      "n_singleton_cells": 64512,
+      "top10_cell_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "config": {
+    "base": "S15 Base-B: 256 linear s_m + 256 diag s_m^2 + top-16 cross = 633 cols (spans all deg-1, exact ||pre1||^2)",
+    "depth": 32,
+    "feature_sets": {
+      "active_count": "CONTROL (== 256*S15 C1), not gated",
+      "cells_k{16,64,256}": "top-k most-frequent-cell indicators, exact packed-bit cell identity",
+      "hamming_modal_literal": "Hamming dist to most-frequent full pattern (lexicographic tie-break)",
+      "hamming_modal_majority": "Hamming dist to per-unit majority pattern (over base directions)"
+    },
+    "gate_quantity": "swap-halves OOS incremental R^2 beyond Base-B",
+    "gates": {
+      "else": "INCONCLUSIVE",
+      "gated_sets": [
+        "cells_k16",
+        "cells_k64",
+        "cells_k256",
+        "hamming_modal_majority",
+        "hamming_modal_literal"
+      ],
+      "kill": "all gated sets < 2.63e-05 on all 3 nets",
+      "signal": "any gated set >= 0.0001 on 2+ nets"
+    },
+    "interpretations": [
+      "arm (a) active_count treated as CONTROL per the predeclaration parenthetical; excluded from gating; used to reproduce S15 C1 (pipeline cross-check)",
+      "'hashed sign-pattern bucket' implemented as collision-free exact packed-bit cell identity (a perfect hash)",
+      "'modal pattern' computed under BOTH readings (bitwise majority; literal most-frequent pattern); both gated, KILL requires both below bar"
+    ],
+    "n_base": 32256,
+    "n_full": 64512,
+    "net_seeds": [
+      101,
+      202,
+      303
+    ],
+    "prediction_on_record": "KILL",
+    "radius": 15.984382666608527,
+    "rotation_seed_formula": "900000 + net_seed*1000 + 0 (r=0)",
+    "target": "f(u) = S5 ybar (neuron-averaged final post-ReLU)",
+    "width": 256
+  },
+  "date": "2026-08-10",
+  "gate_evaluation": {
+    "all_gated_below_noise_cost_all_nets": true,
+    "best_gated_incremental_oos": {
+      "set": "hamming_modal_majority",
+      "value": 2.3711910036194883e-05
+    },
+    "noise_cost_bar": 2.63e-05,
+    "null_pool_max_abs_per_set": {
+      "active_count": 0.00012598350638781675,
+      "cells_k16": 5.577824294655809e-05,
+      "cells_k256": 0.0001400968331290997,
+      "cells_k64": 6.686082285434214e-05,
+      "hamming_modal_literal": 0.00011939328244114922,
+      "hamming_modal_majority": 5.304170922959539e-05
+    },
+    "per_set_per_net_incremental_oos": {
+      "active_count": [
+        0.0051115095846940295,
+        0.00594499469553722,
+        0.0057190760803447205
+      ],
+      "cells_k16": [
+        1.5387230084984438e-05,
+        1.0532571836141535e-05,
+        4.261410434969193e-06
+      ],
+      "cells_k256": [
+        -0.0001930789063473437,
+        -9.807887042895258e-05,
+        -6.974194149655943e-05
+      ],
+      "cells_k64": [
+        -2.3165290787829917e-05,
+        -7.563650677999689e-08,
+        -3.56812293570985e-05
+      ],
+      "hamming_modal_literal": [
+        2.152928780946306e-05,
+        2.2325971670400513e-05,
+        2.015752943002047e-05
+      ],
+      "hamming_modal_majority": [
+        1.9961879395347104e-05,
+        -3.510630829373085e-06,
+        2.3711910036194883e-05
+      ]
+    },
+    "signal_bar": 0.0001,
+    "signal_sets_ge_1e-4_on_2plus_nets": []
+  },
+  "instrument_injection": {
+    "101": {
+      "injected_r2": 0.001,
+      "net_recovered": 0.0015105944825905548,
+      "preexisting_incremental_oos": 1.9961879395347104e-05,
+      "recovered_incremental_oos": 0.001530556361985902
+    },
+    "202": {
+      "injected_r2": 0.001,
+      "net_recovered": 0.0008950801918699014,
+      "preexisting_incremental_oos": -3.510630829373085e-06,
+      "recovered_incremental_oos": 0.0008915695610405283
+    },
+    "303": {
+      "injected_r2": 0.001,
+      "net_recovered": 0.0006878096614680307,
+      "preexisting_incremental_oos": 2.3711910036194883e-05,
+      "recovered_incremental_oos": 0.0007115215715042256
+    }
+  },
+  "ledger_id": "s18_cell_membership_probe",
+  "nets": {
+    "101": {
+      "base_B": {
+        "r2_base_insample": 0.3857307032667507,
+        "r2_base_oos": 0.3609387150905595
+      },
+      "covariate_sets": {
+        "active_count": {
+          "incremental_insample": 0.004895303666754669,
+          "incremental_oos": 0.0051115095846940295,
+          "incremental_oos_AB": 0.005639620822558311,
+          "incremental_oos_BA": 0.004583398346829748,
+          "r2_full_oos": 0.36605022467525355
+        },
+        "cells_k16": {
+          "incremental_insample": 0.00012192433947766368,
+          "incremental_oos": 1.5387230084984438e-05,
+          "incremental_oos_AB": 3.029721434844035e-05,
+          "incremental_oos_BA": 4.772458215285269e-07,
+          "r2_full_oos": 0.3609541023206445
+        },
+        "cells_k256": {
+          "incremental_insample": 0.0026564235994604446,
+          "incremental_oos": -0.0001930789063473437,
+          "incremental_oos_AB": -0.000346255869303036,
+          "incremental_oos_BA": -3.990194339165143e-05,
+          "r2_full_oos": 0.3607456361842122
+        },
+        "cells_k64": {
+          "incremental_insample": 0.0006299056884275234,
+          "incremental_oos": -2.3165290787829917e-05,
+          "incremental_oos_AB": -1.8720608053635068e-05,
+          "incremental_oos_BA": -2.7609973522024767e-05,
+          "r2_full_oos": 0.3609155497997717
+        },
+        "hamming_modal_literal": {
+          "incremental_insample": 1.9831237420719905e-05,
+          "incremental_oos": 2.152928780946306e-05,
+          "incremental_oos_AB": 1.6338915821423328e-05,
+          "incremental_oos_BA": 2.6719659797502793e-05,
+          "r2_full_oos": 0.360960244378369
+        },
+        "hamming_modal_majority": {
+          "incremental_insample": 7.08487764812249e-05,
+          "incremental_oos": 1.9961879395347104e-05,
+          "incremental_oos_AB": 7.682698433852941e-05,
+          "incremental_oos_BA": -3.6903225547835206e-05,
+          "r2_full_oos": 0.3609586769699549
+        }
+      },
+      "wall_s": 68.6
+    },
+    "202": {
+      "base_B": {
+        "r2_base_insample": 0.42849363201981217,
+        "r2_base_oos": 0.4036992442555466
+      },
+      "covariate_sets": {
+        "active_count": {
+          "incremental_insample": 0.005574242365948223,
+          "incremental_oos": 0.00594499469553722,
+          "incremental_oos_AB": 0.0064467416522582255,
+          "incremental_oos_BA": 0.005443247738816215,
+          "r2_full_oos": 0.4096442389510838
+        },
+        "cells_k16": {
+          "incremental_insample": 0.00015228928127192232,
+          "incremental_oos": 1.0532571836141535e-05,
+          "incremental_oos_AB": 9.868466446238955e-07,
+          "incremental_oos_BA": 2.0078297027659175e-05,
+          "r2_full_oos": 0.40370977682738274
+        },
+        "cells_k256": {
+          "incremental_insample": 0.002042575360215293,
+          "incremental_oos": -9.807887042895258e-05,
+          "incremental_oos_AB": -7.229063283753501e-05,
+          "incremental_oos_BA": -0.00012386710802037015,
+          "r2_full_oos": 0.40360116538511764
+        },
+        "cells_k64": {
+          "incremental_insample": 0.0004851924221416781,
+          "incremental_oos": -7.563650677999689e-08,
+          "incremental_oos_AB": 1.6601204607891162e-05,
+          "incremental_oos_BA": -1.6752477621451156e-05,
+          "r2_full_oos": 0.4036991686190398
+        },
+        "hamming_modal_literal": {
+          "incremental_insample": 3.654893414367644e-05,
+          "incremental_oos": 2.2325971670400513e-05,
+          "incremental_oos_AB": 3.382890202996425e-05,
+          "incremental_oos_BA": 1.0823041310836778e-05,
+          "r2_full_oos": 0.403721570227217
+        },
+        "hamming_modal_majority": {
+          "incremental_insample": 2.544801932735652e-06,
+          "incremental_oos": -3.510630829373085e-06,
+          "incremental_oos_AB": -1.9785456651932876e-06,
+          "incremental_oos_BA": -5.042715993552882e-06,
+          "r2_full_oos": 0.4036957336247172
+        }
+      },
+      "wall_s": 87.6
+    },
+    "303": {
+      "base_B": {
+        "r2_base_insample": 0.45995707687320037,
+        "r2_base_oos": 0.4385422429104656
+      },
+      "covariate_sets": {
+        "active_count": {
+          "incremental_insample": 0.00572314515100919,
+          "incremental_oos": 0.0057190760803447205,
+          "incremental_oos_AB": 0.005414253996182117,
+          "incremental_oos_BA": 0.006023898164507324,
+          "r2_full_oos": 0.44426131899081034
+        },
+        "cells_k16": {
+          "incremental_insample": 9.534598551252937e-05,
+          "incremental_oos": 4.261410434969193e-06,
+          "incremental_oos_AB": 1.6651245853815944e-05,
+          "incremental_oos_BA": -8.128424983877558e-06,
+          "r2_full_oos": 0.4385465043209006
+        },
+        "cells_k256": {
+          "incremental_insample": 0.002101961687746845,
+          "incremental_oos": -6.974194149655943e-05,
+          "incremental_oos_AB": 4.509312177347624e-05,
+          "incremental_oos_BA": -0.0001845770047665951,
+          "r2_full_oos": 0.43847250096896906
+        },
+        "cells_k64": {
+          "incremental_insample": 0.00057039042888829,
+          "incremental_oos": -3.56812293570985e-05,
+          "incremental_oos_AB": 2.152275312417018e-05,
+          "incremental_oos_BA": -9.288521183836718e-05,
+          "r2_full_oos": 0.4385065616811085
+        },
+        "hamming_modal_literal": {
+          "incremental_insample": 2.141001633437778e-05,
+          "incremental_oos": 2.015752943002047e-05,
+          "incremental_oos_AB": 3.078788212595995e-05,
+          "incremental_oos_BA": 9.527176734080989e-06,
+          "r2_full_oos": 0.43856240043989564
+        },
+        "hamming_modal_majority": {
+          "incremental_insample": 1.9283542069425952e-05,
+          "incremental_oos": 2.3711910036194883e-05,
+          "incremental_oos_AB": 1.589779272948011e-05,
+          "incremental_oos_BA": 3.152602734290966e-05,
+          "r2_full_oos": 0.4385659548205018
+        }
+      },
+      "wall_s": 93.9
+    }
+  },
+  "permutation_null": {
+    "101": {
+      "active_count": {
+        "incremental_oos_per_perm": [
+          1.6677724845037822e-05,
+          -7.477072257311423e-05,
+          -5.752266048042465e-06
+        ],
+        "max_abs": 7.477072257311423e-05,
+        "mean": -2.1281754592039626e-05
+      },
+      "cells_k16": {
+        "incremental_oos_per_perm": [
+          -2.8741368778284482e-05,
+          -1.6469177184008643e-05,
+          7.257900545232232e-06
+        ],
+        "max_abs": 2.8741368778284482e-05,
+        "mean": -1.2650881805686964e-05
+      },
+      "cells_k256": {
+        "incremental_oos_per_perm": [
+          -0.0001400968331290997,
+          -6.630206878255329e-05,
+          -8.35626807987877e-05
+        ],
+        "max_abs": 0.0001400968331290997,
+        "mean": -9.665386090348023e-05
+      },
+      "cells_k64": {
+        "incremental_oos_per_perm": [
+          -6.686082285434214e-05,
+          -1.2672481885522835e-05,
+          -3.0651244536494815e-05
+        ],
+        "max_abs": 6.686082285434214e-05,
+        "mean": -3.672818309211993e-05
+      },
+      "hamming_modal_literal": {
+        "incremental_oos_per_perm": [
+          -7.4287794221694625e-06,
+          -1.4312976287289558e-05,
+          -0.00011939328244114922
+        ],
+        "max_abs": 0.00011939328244114922,
+        "mean": -4.7045012716869415e-05
+      },
+      "hamming_modal_majority": {
+        "incremental_oos_per_perm": [
+          -3.372774771859266e-05,
+          3.53686425003108e-06,
+          2.9753055143855178e-05
+        ],
+        "max_abs": 3.372774771859266e-05,
+        "mean": -1.4594277490213395e-07
+      }
+    },
+    "202": {
+      "active_count": {
+        "incremental_oos_per_perm": [
+          2.36105250180918e-05,
+          -2.5118874361629295e-05,
+          -3.948322762048484e-05
+        ],
+        "max_abs": 3.948322762048484e-05,
+        "mean": -1.3663858988007446e-05
+      },
+      "cells_k16": {
+        "incremental_oos_per_perm": [
+          4.771148434601358e-05,
+          -1.883646032185826e-05,
+          1.2838764645417555e-05
+        ],
+        "max_abs": 4.771148434601358e-05,
+        "mean": 1.3904596223190957e-05
+      },
+      "cells_k256": {
+        "incremental_oos_per_perm": [
+          -1.8570183316524158e-05,
+          8.51047712091546e-06,
+          5.664060752030853e-05
+        ],
+        "max_abs": 5.664060752030853e-05,
+        "mean": 1.5526967108233276e-05
+      },
+      "cells_k64": {
+        "incremental_oos_per_perm": [
+          1.626760486750367e-05,
+          -1.5758927461972938e-05,
+          6.346914506338841e-05
+        ],
+        "max_abs": 6.346914506338841e-05,
+        "mean": 2.132594082297305e-05
+      },
+      "hamming_modal_literal": {
+        "incremental_oos_per_perm": [
+          -0.00011148446463815631,
+          2.6224831789600778e-05,
+          -2.3064708947750923e-05
+        ],
+        "max_abs": 0.00011148446463815631,
+        "mean": -3.610811393210215e-05
+      },
+      "hamming_modal_majority": {
+        "incremental_oos_per_perm": [
+          2.9976001869935764e-05,
+          -2.9389138354041222e-05,
+          -4.036658501904711e-07
+        ],
+        "max_abs": 2.9976001869935764e-05,
+        "mean": 6.106588856802375e-08
+      }
+    },
+    "303": {
+      "active_count": {
+        "incremental_oos_per_perm": [
+          -4.4737005876038793e-05,
+          0.00012598350638781675,
+          3.679468192019364e-06
+        ],
+        "max_abs": 0.00012598350638781675,
+        "mean": 2.8308656234599106e-05
+      },
+      "cells_k16": {
+        "incremental_oos_per_perm": [
+          2.8632249658988584e-06,
+          -1.1495366698199838e-05,
+          -5.577824294655809e-05
+        ],
+        "max_abs": 5.577824294655809e-05,
+        "mean": -2.1470128226286356e-05
+      },
+      "cells_k256": {
+        "incremental_oos_per_perm": [
+          1.9497013888369885e-05,
+          -7.190271458645814e-05,
+          -4.03878180246231e-05
+        ],
+        "max_abs": 7.190271458645814e-05,
+        "mean": -3.093117290757045e-05
+      },
+      "cells_k64": {
+        "incremental_oos_per_perm": [
+          1.0657022563642649e-05,
+          -3.626216141638938e-05,
+          -1.705089439774099e-05
+        ],
+        "max_abs": 3.626216141638938e-05,
+        "mean": -1.4218677750162575e-05
+      },
+      "hamming_modal_literal": {
+        "incremental_oos_per_perm": [
+          -2.790803886421056e-05,
+          -2.6393404831459577e-05,
+          -1.0486152077215927e-05
+        ],
+        "max_abs": 2.790803886421056e-05,
+        "mean": -2.1595865257628688e-05
+      },
+      "hamming_modal_majority": {
+        "incremental_oos_per_perm": [
+          -3.2931508031630585e-07,
+          9.526850459296021e-06,
+          -5.304170922959539e-05
+        ],
+        "max_abs": 5.304170922959539e-05,
+        "mean": -1.4614724616871891e-05
+      }
+    }
+  },
+  "reuse_verification": {
+    "d1_max_abs_diff": {
+      "101": 0.0,
+      "202": 0.0,
+      "303": 0.0
+    },
+    "s15_c1_reproduction": {
+      "101": {
+        "abs_diff": 1.3883797966851574e-07,
+        "s15_C1_incremental_oos": 0.005111370746714361,
+        "s18_active_count_incremental_oos": 0.0051115095846940295
+      },
+      "202": {
+        "abs_diff": 8.758330702907102e-07,
+        "s15_C1_incremental_oos": 0.0059441188624669294,
+        "s18_active_count_incremental_oos": 0.00594499469553722
+      },
+      "303": {
+        "abs_diff": 6.455197084642705e-07,
+        "s15_C1_incremental_oos": 0.005719721600053185,
+        "s18_active_count_incremental_oos": 0.0057190760803447205
+      }
+    }
+  },
+  "total_wall_s": 250.1,
+  "verdict": "KILL: every gated cell-membership feature set is below the fitting-noise cost 2.63e-05 on all 3 nets (best = 2.371e-05 for hamming_modal_majority). The last named crack in the dispersion family closes."
+}
