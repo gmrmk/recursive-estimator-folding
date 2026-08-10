@@ -117,3 +117,55 @@ mechanisms. The public rank understates our private-run standing relative
 to categories (1) and (2); the question that decides prize money is how
 DEEP the honest band runs and where the prize cutoffs fall (U9), not our
 position vs the artifacts above us.
+
+---
+
+# ednacob orthogonal decomposition (added 2026-08-10 ~14:50 UTC)
+
+The honest-band leader, reversed using OUR theorems as the coordinate
+system. Profile: raw 9.11e-8 / adjusted 4.62e-8 / C/B 0.507 / 119 entries
+(2.4 probes/net — light tuning, winnow-resistant) / last sub Aug 6 /
+ZERO public trail (no corpus profile, no discourse posts).
+
+## The decomposition
+
+AXIS 1 (budget positioning): ELIMINATED — C/B 0.507 vs our 0.650, same
+metered regime; adjusted is scale-invariant along the sampling curve.
+The 4.62e-8 vs 1.83e-7 gap = a 3.96x variance-per-FLOP MECHANISM
+advantage. Real, honest, survives the winnow.
+
+AXIS 2 (better uniform sampling): EXCLUDED BY OUR PROOFS — uniform
+design sampling of the homogeneous speckle field is certified
+near-optimal in class (2-design exactness, N_eff 1-2% of independent,
+dispersion no-gos, conditioning no-gos). ednacob cannot be a better us.
+
+AXIS 3 (orthogonal candidates, ranked by our own measurements):
+1. CROSS-NEURON COHERENCE EXPLOITATION (strongest): S7 measured the 256
+   per-neuron targets at 0.975 coherence (~2 effective dof) — the one
+   enormous structure we measured and never exploited. Shrinkage/pooling
+   across coherent neurons is textbook Stein on exactly the per-neuron
+   scored metric. Corpse in family: m79 (one specific James-Stein arm,
+   killed); S7's coherence number is a NEW external fact about why the
+   family could work — a legal reopen shape, NOT reopened here.
+2. STRUCTURE-AWARE CONDITIONAL SAMPLING at strength (natasha-family,
+   firing-rate stratification): removes value-explained variance, which
+   is NOT excluded by S5's energy-homogeneity (different observable).
+3. A certified hybrid with a working control outside our tangent class.
+
+## Settling checks
+
+(a) The Aug 17 writeup deadline is the flush: a silent 4x honest leader
+    who wants the Algorithmic prize must publish within the week; the
+    armed pre-Aug-17 discourse watch catches it. HOLD until then.
+(b) Hypothesis 1 has a purely internal diagnostic: the Stein-gain upper
+    bound from our committed per-neuron field data (candidate S14
+    premise, cheap). Per the joint no-mutation verdict + the m79 corpse,
+    this goes to Sol for review BEFORE any predeclaration. Proposed in
+    channel; not launched.
+
+## Posture
+
+ednacob is the one competitor worth LEARNING from rather than refusing:
+honest, efficient, winnow-resistant, and 4x ahead by mechanism. If its
+writeup appears, it feeds Gen-6 legally; if hypothesis 1 is its engine,
+the door was in our own measurements all along.
