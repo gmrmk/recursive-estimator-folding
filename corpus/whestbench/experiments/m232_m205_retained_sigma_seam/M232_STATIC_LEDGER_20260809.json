@@ -1,0 +1,10 @@
+{
+  "mutation": "m232_m205_retained_sigma_seam",
+  "status": "FROZEN_BEFORE_CODE_AND_TESTS",
+  "one_changed_mechanism": "retain M205 diagonal sqrt output as a live layer-bound marginal sigma vector",
+  "frozen_kernel": {"calls": 171, "bill": "5467*N", "parent": "m228_caller_bound_rho08"},
+  "inclusive_seam_work": {"m205_diagonal_sqrt": "charged", "factor_divide_or_copy": "charged", "label_packing": "charged", "two_gathers": "charged", "free_setup_allowed": false},
+  "required_proofs": ["M205 factor and zero diagonal", "M224 generated value parity", "gauge", "permutation", "layer epoch vector identity", "copy and conditional rejection"],
+  "blocked_if_current_m205_m212_abi_absent": true,
+  "gates": {"raw_wall_strict_max_s": 0.016133916999970098, "raw_speedup_strict_min": 100.0, "variance_gate_authorized": false}
+}

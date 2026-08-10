@@ -1,0 +1,94 @@
+{
+  "mutation": "m224_gauge_invariant_rho08_chart",
+  "generation": 9,
+  "status": "PREDECLARED_BEFORE_IMPLEMENTATION",
+  "parent": "m221_batched_certified_distinct_atom",
+  "parent_hashes_sha256": {
+    "m221_batched_certified_distinct_atom.py": "044D801B0EF0FDC0240FE3A2841D110956118CCACD25A7B8B0879D2B617B9F6D",
+    "M221_RESULTS_20260809.json": "8E687E646C21DDFD750A5A16619210832566408383D9F4974D0C6CE63CC5510A",
+    "M221_FROZEN_MANIFEST_20260809.json": "2A872591C005CDFC17DEB956A3DDBBFC8A15CC558416C37A0772A5B399D8BD28"
+  },
+  "one_changed_mechanism": "replace physical chart coordinates by exact positive-gauge invariants and extend abs(rho) from 0.04 to 0.08",
+  "estimator_algebra_change": false,
+  "bias_class": "exact in expectation in real arithmetic",
+  "generated_only": true,
+  "response_free": true,
+  "strict_domain": "pairwise-distinct [2,1,1] only",
+  "forbidden_strata": ["[4]", "[3,1]", "[2,2]", "[1,1,1,1]"],
+  "normalized_chart": {
+    "abs_rho_max": 0.08,
+    "abs_alpha_and_t_max": 0.8,
+    "conditional_to_marginal_sigma_ratio_min": 0.8,
+    "conditional_to_marginal_sigma_ratio_max": 1.2,
+    "abs_standardized_repeated_center_max": 9.0,
+    "coordinates": {
+      "conditional_scale_ratio": "sigma_conditional/sigma_marginal",
+      "standardized_repeated_center": "(relu(mu_i+sigma_i*g)-activation_mean_i)/sigma_i",
+      "alpha": "conditional_mean/sigma_conditional",
+      "t": "(alpha_other-rho*alpha)/sqrt(1-rho^2)"
+    }
+  },
+  "unchanged_numerics": {
+    "phi_erf_taylor_terms": 16,
+    "plackett_composite_simpson_panels": 32,
+    "phi_abs_radius": 1e-14,
+    "phi2_abs_radius": 2.5e-12,
+    "event_radius": "1e-8*(1+abs(midpoint))",
+    "required_event_radius": "2e-7*(1+abs(midpoint))"
+  },
+  "plackett_real_axis_proof": {
+    "abs_alpha_max": 0.8,
+    "abs_rho_max": 0.08,
+    "log_derivative_bounds": [
+      0.8366589652033887,
+      2.6631972313064765,
+      5.850565827883243,
+      29.69789486724254
+    ],
+    "phi2_max": 0.15966669664112393,
+    "fourth_derivative_max": 13.12953045808698,
+    "simpson_abs_remainder_max": 2.2794323711956567e-13
+  },
+  "frozen_census": {
+    "widths": [3, 4, 5, 6, 7],
+    "state_seeds": [221700003, 221700004, 221700005, 221700006, 221700007],
+    "outer_probes": [0.0, 0.00390625, -0.00390625, 0.25, -0.25, 1.0, -1.0, 2.5, -2.5, 5.0, -5.0, 8.0, -8.0],
+    "event_count": 2730,
+    "native_context_seeds": "221730001..221730031",
+    "native_outer_seeds": [221720001, 221720002, 221720003, 221720004, 221720005],
+    "native_event_count_each": 3968
+  },
+  "fresh_cells": {
+    "widths": [3, 4, 5, 6, 7],
+    "state_seeds": [224700003, 224700004, 224700005, 224700006, 224700007],
+    "outer_probes": "same as frozen_census",
+    "event_count": 2730
+  },
+  "invariance": {
+    "width": 5,
+    "seed": 221700005,
+    "outer_probes": [-2.0, 0.0, 2.5],
+    "positive_gauge": "exp([-0.4,-0.1,0.0,0.2,0.5])",
+    "permutation": [3, 0, 4, 1, 2],
+    "scaled_value_tolerance": 5e-8,
+    "normalized_coordinate_tolerance": 2e-14,
+    "fallbacks_required": 0
+  },
+  "high_precision": {
+    "dps": [80, 100],
+    "self_tolerance": "1e-12*(1+abs(reference))",
+    "inherited_probe_count": 17,
+    "fresh_probe_count": 15,
+    "total_probe_count": 32
+  },
+  "inherited_native_speed_gate": {
+    "status": "FAILED_AND_NOT_RERUN_IN_M224",
+    "m216_best_wall_s": 1.6133916999970097,
+    "strict_speedup_min": 100.0,
+    "raw_wall_strict_max_s": 0.016133916999970098,
+    "component_ceiling": 6824272176,
+    "seeds_unchanged": true
+  },
+  "variance_gate_authorized": false,
+  "forbidden_inputs": ["challenge weights", "truth", "scorer", "leaderboard", "responses", "MSE"]
+}

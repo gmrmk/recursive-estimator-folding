@@ -1,0 +1,116 @@
+{
+  "candidate": "M234 prebound explicit-Philox execution fold",
+  "date": "2026-08-09",
+  "status": "PREDECLARED_NO_IMPLEMENTATION_NO_TEST_NO_RESULT",
+  "parent": "M231",
+  "firewall": "generated-only response-free execution/provenance audit",
+  "one_composite_failure_fold": [
+    "explicit fnp.random.Generator(fnp.random.Philox(domain_seed))",
+    "setup-hoist fixed-shape empty workspaces only",
+    "externalize audit-only hashes ledgers and host validation",
+    "prebind static metadata scalars and value-independent views"
+  ],
+  "statistical_mechanism_changed": false,
+  "preserved": {
+    "width": 256,
+    "layers": 31,
+    "subset_rows": 32,
+    "producer_epoch": 231,
+    "exact_live_objects": ["p", "B", "rho"],
+    "sampled_totals": ["t", "A", "E", "D"],
+    "residual": "M151 fixed-q0 K=128 independent strict residual",
+    "bias_class": "exactly unbiased per fixed state",
+    "replacement_credit": false
+  },
+  "rng": {
+    "domain": "M234_ROW_PERMUTED_EXEC_V1",
+    "domain_tag64": "0x4d3233345f455831",
+    "mask64": "0xffffffffffffffff",
+    "root_range": "0 <= external_seed <= 2^64-1",
+    "high64": "domain_tag64 xor ((epoch & 0xffffffff)<<32) xor ((31 & 0xff)<<24) xor ((256 & 0xffff)<<8) xor 32",
+    "domain_seed": "((high64 & mask64)<<64) | external_seed",
+    "constructor": "fnp.random.Generator(fnp.random.Philox(domain_seed))",
+    "permutation": "one permuted(label_bank,axis=1); first 32 each layer",
+    "default_rng_forbidden": true
+  },
+  "setup_hoist": {
+    "allowed": [
+      "m212 fixed-shape empty staged input buffers",
+      "m212 fixed-shape empty workspace",
+      "m234 fixed-shape empty powers and cross workspace",
+      "static Python metadata scalar coefficients and value-independent views"
+    ],
+    "forbidden": [
+      "fill copy stack arange permutation gather or numeric preprocessing",
+      "hoisted random state or selected rows",
+      "value-dependent moment or source calculation"
+    ]
+  },
+  "timed_positive_bill_operations": {
+    "arange": {"calls": 1, "bill": 1024},
+    "broadcast_to": {"calls": 1, "bill": 0},
+    "random.Generator.permuted": {"calls": 1, "bill": 31744},
+    "take_along_axis": {"calls": 1, "bill": 2031616},
+    "matmul": {"calls": 2, "bill": 767950848},
+    "multiply": {"calls": 16, "bill": 57901056},
+    "add": {"calls": 9, "bill": 36569088},
+    "sum": {"calls": 1, "bill": 492032},
+    "copyto": {"calls": 1, "bill": 15872},
+    "reshape": {"calls": 0, "bill": 0},
+    "inclusive_bill": 864993280
+  },
+  "forbidden_timed_calls": [
+    "empty",
+    "transpose",
+    "swapaxes",
+    "diagonal",
+    "allocation ledger",
+    "runtime hash",
+    "host validation",
+    "finite symmetry or digest audit",
+    "argsort unique set list or retry"
+  ],
+  "cost_gate": {
+    "m212_bill": 1249253376,
+    "m234_bill": 864993280,
+    "combined_bill": 2114246656,
+    "comparison_envelope": 3727757440,
+    "m234_residual_cap_s": 0.002025121700262334,
+    "combined_residual_cap_s": 0.003227021568,
+    "hostile_lambda": 500000000000.0,
+    "replacement_credit": false
+  },
+  "memory_mib": {
+    "incremental_persistent": 36.873046875,
+    "incremental_nominal_peak": 36.875,
+    "m212_m234_persistent": 138.955078125,
+    "rss_cap": 512.0
+  },
+  "native_seeds": [227700001, 227700002, 227700003, 227700004, 227700005],
+  "gate_order": [
+    "red_static_provenance",
+    "green_algebra",
+    "red_green_native",
+    "five_fresh_processes",
+    "G0",
+    "G1",
+    "holdout"
+  ],
+  "g0": {
+    "authorized_before_native_pass": false,
+    "bootstrap_seed": 2270001,
+    "bootstrap_resamples": 20000,
+    "upper90_ratio_lt": 0.99,
+    "every_cell_ratio_lt": 1.0,
+    "p99_ratio_lte": 1.25,
+    "width_slopes_nonpositive": true
+  },
+  "runtime_hashes": {
+    "flopscope_registry": "D735DA7D36ECF05BA7B927452DB126FE297E33398F3903C59B886E1BC1228795",
+    "flopscope_random_cost_formulas": "D14D86A2CA0700C0899318A9C7CD3F08E91AC80948682225D383D71E2D628F8F",
+    "flopscope_counted_classes": "6D7AA1E9C4F7A135EF7487FAF6B645AEA61C74983FA780DAFFB68240C6DA3F0D",
+    "numpy_philox_binary": "8CEB13F5A97EB161FD7D93D2E597DC99D3387A76F32EF187A57103AC759BDA15",
+    "numpy_generator_binary": "69C5AA9B41C0A60EE8600A4C1434C86FA96DFC00F4CD3171AED9729AACAA549B"
+  },
+  "credit": "predeclared execution-topology child only; no implementation test native result G0 MSE score submission or winner"
+}

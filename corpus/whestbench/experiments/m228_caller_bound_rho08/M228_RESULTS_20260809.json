@@ -1,0 +1,61 @@
+{
+  "mutation": "m228_caller_bound_rho08",
+  "status": "VALIDATED_KERNEL_ONLY_COMPONENT_NOT_INTEGRATED",
+  "one_changed_mechanism": "move event-dependent marginal singleton-sigma construction out of the bound-kernel timing path and expose it as caller setup",
+  "math_parent": "m224_gauge_invariant_rho08_chart",
+  "m224_code_sha256": "6ABA2D0AB618FF5D678977CC07FC89962C09092B537AAFFC282E069C10DFDA7B",
+  "reused_m226_kernel_sha256": "A52CE3B016CBE23B15C1061354D64CD78E405A37461EA727FCE119F7EBCE3571",
+  "artifact_hashes_sha256": {
+    "m228_caller_bound_rho08.py": "3B3EBBF737657931B73D7470D1EF65138F8CFEB98CCE61A05B4E7EFA067E4633",
+    "run_m228_native_trace.py": "5C4CCC41ABB78B6F53AC1AE60861DC8649FD31DC80BA1922FB037E41B70D0BDF",
+    "test_m228_caller_bound_rho08.py": "FF9EA8E731299ABEEA7884FB56F234A3C375AA951439DFC2AB1F60A023F6DA7D",
+    "M228_PREDECLARATION_20260809.md": "1E824AFE2A4B9ACA52A3C17A6F3050585128A8F06F0D8A4829566887EC6A96A9",
+    "M228_STATIC_LEDGER_20260809.json": "F548CC458AAD234E609967076E518FF8DEF5516A508AC665DA160ABBBD45C834"
+  },
+  "static_gate": {
+    "red_missing_module_reproduced": true,
+    "green_tests": "5/5 passed",
+    "caller_setup_columns": 20,
+    "caller_setup_new_bytes_at_target": 63488,
+    "persistent_kernel_bytes_at_target": 8515328,
+    "runtime_calls": 171,
+    "bill_per_event": 5467,
+    "target_bill": 21693056,
+    "returned_views_alias_persistent_slabs": true,
+    "m224_math_preserved": true
+  },
+  "accounting_boundary": {
+    "caller_setup_is_event_dependent_preprocessing": true,
+    "caller_setup_integrated_cost_credit": 0,
+    "kernel_trace_is_not_an_inclusive_predictor_trace": true,
+    "allocation_audit": "separate FlopScope execution plus tracemalloc source-frame delta",
+    "source_attributed_python_bytes_each": 536,
+    "persistent_slab_fingerprint_stable_each": true
+  },
+  "native_gate": {
+    "packages": {"python": "3.14", "numpy": "2.4.6", "flopscope": "0.10.0"},
+    "event_count_each": 3968,
+    "target_wall_limit_s": 0.016133916999970098,
+    "target_speedup_strict_min": 100.0,
+    "rows": [
+      {"role": "frozen", "seed": 221720001, "wall_s": 0.011540100007550791, "raw_speedup_vs_m216": 139.8074279201526, "residual_wall_s": 0.000779699970735237, "hostile_component": 411543041.3676185, "rss_bytes": 58003456, "caller_setup_wall_s": 0.00192910002078861, "value_parity_max_abs": 3.8163916471489756e-16},
+      {"role": "frozen", "seed": 221720002, "wall_s": 0.012143700005253777, "raw_speedup_vs_m216": 132.858329775851, "residual_wall_s": 0.0007582000398542732, "hostile_component": 400793075.9271366, "rss_bytes": 58204160, "caller_setup_wall_s": 0.0019749999919440597, "value_parity_max_abs": 2.5673907444456745e-16},
+      {"role": "frozen", "seed": 221720003, "wall_s": 0.011973899992881343, "raw_speedup_vs_m216": 134.74237307445316, "residual_wall_s": 0.0007704998424742371, "hostile_component": 406942977.23711854, "rss_bytes": 57950208, "caller_setup_wall_s": 0.002028899994911626, "value_parity_max_abs": 2.6367796834847468e-16},
+      {"role": "frozen", "seed": 221720004, "wall_s": 0.013040400022873655, "raw_speedup_vs_m216": 123.72256197409762, "residual_wall_s": 0.0008438998775091022, "hostile_component": 443642994.7545511, "rss_bytes": 58236928, "caller_setup_wall_s": 0.0019385000050533563, "value_parity_max_abs": 3.5388358909926865e-16},
+      {"role": "frozen", "seed": 221720005, "wall_s": 0.011992399988230318, "raw_speedup_vs_m216": 134.5345136570193, "residual_wall_s": 0.0007535000331699848, "hostile_component": 398443072.5849924, "rss_bytes": 58044416, "caller_setup_wall_s": 0.001974300015717745, "value_parity_max_abs": 2.6020852139652106e-16},
+      {"role": "adversarial_repeat", "seed": 221720001, "wall_s": 0.012631999998120591, "raw_speedup_vs_m216": 127.72258551591614, "residual_wall_s": 0.0007758999126963317, "hostile_component": 409643012.34816587, "rss_bytes": 58089472, "caller_setup_wall_s": 0.0019631000177469105, "value_parity_max_abs": 3.8163916471489756e-16}
+    ],
+    "all_rows_pass": true,
+    "billed_flops_each": 21693056,
+    "runtime_calls_each": 171,
+    "fallback_count_each": 0,
+    "chart_mismatch_count_each": 0,
+    "max_radius_parity_abs": 3.308722450212111e-24,
+    "worst_wall_margin_s": 0.003093516977096443,
+    "worst_speedup_margin_over_100x": 23.72256197409762,
+    "max_hostile_component": 443642994.7545511,
+    "max_rss_bytes": 58236928
+  },
+  "variance_gate_run": false,
+  "integrated_promotion_authorized": false
+}

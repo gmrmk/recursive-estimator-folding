@@ -1,0 +1,64 @@
+{
+  "after_terminal_floor_sensitivity": "6.690054960",
+  "candidate": "M214 complete-domain replacement DAG ledger",
+  "cost_coherent": false,
+  "firewall": "response-free static ledger; no contest or efficacy data",
+  "gate": "sum(all unknown effective costs) <= 6.824272176B, M213 passes, and one native caller proves exact M205 conservation",
+  "known_replacement_subtotal": "93.175727824",
+  "legacy_background_replacement_credit": false,
+  "provider_pass_assumed": false,
+  "remaining_before_unknowns": "6.824272176",
+  "rows": [
+    {
+      "amount_billions": "80.326002640",
+      "disposition": "retained_fully_charged",
+      "id": "m151_common_fixed",
+      "note": "old collision outputs must be retired semantically even if their cost remains"
+    },
+    {
+      "amount_billions": "3.247411200",
+      "disposition": "retained_fully_charged",
+      "id": "m151_k128_residual_products"
+    },
+    {
+      "amount_billions": "2.407464960",
+      "disposition": "removed_by_new_dag",
+      "id": "m151_endpoint_provider"
+    },
+    {
+      "amount_billions": "3.727757440",
+      "disposition": "removed_by_new_dag",
+      "id": "m151_b1_core"
+    },
+    {
+      "amount_billions": "8.304492288",
+      "disposition": "fully_additive",
+      "id": "m179",
+      "note": "no legacy-background replacement credit"
+    },
+    {
+      "amount_billions": "1.249253376",
+      "disposition": "fully_additive_new_call",
+      "id": "m212",
+      "note": "not arithmetic-identical to M151 distinct-only source emission"
+    },
+    {
+      "amount_billions": "0.048568320",
+      "disposition": "conditional_new_call_unearned",
+      "id": "m213",
+      "note": "provider-only projection pending independent identity and native cost gates"
+    }
+  ],
+  "source_m151_total": "89.708636240",
+  "status": "BLOCKED_COMPLETE_DOMAIN_REPLACEMENT_DAG",
+  "terminal_floor_sensitivity_total": "93.309945040",
+  "unknowns": [
+    "complete-owner issuer and old-collision output retirement",
+    "M179-bound M212 all-layer factor lifecycle",
+    "M213 inclusive event/provider RNG and local unary arithmetic",
+    "M198 conversion under the next pre-ReLU context",
+    "terminal response beyond the explicit floor",
+    "copies, allocations, provenance, and integrated residual wall"
+  ],
+  "variance_or_efficacy_authorized": false
+}

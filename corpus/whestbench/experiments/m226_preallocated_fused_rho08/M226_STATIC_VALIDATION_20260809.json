@@ -1,0 +1,60 @@
+{
+  "mutation": "m226_preallocated_fused_rho08",
+  "status": "STATIC_GATE_PASS_BEFORE_FIRST_TARGET_TRACE",
+  "red_phase": {
+    "initial_missing_module": true,
+    "first_implementation_bill_mismatch": {
+      "observed_bill_per_event": 5401,
+      "frozen_bill_per_event": 5467,
+      "cause": "one-sign Simpson fraction operand implicitly broadcast into a two-sign out view",
+      "repair": "setup-hoisted two-sign broadcast view makes operand/output shape and predeclared bill identical",
+      "ledger_changed": false,
+      "dummy_work_added": false
+    }
+  },
+  "probes": [
+    {
+      "events": 3,
+      "billed_flops": 16401,
+      "expected_billed_flops": 16401,
+      "runtime_calls": 171,
+      "setup_bytes": 6438,
+      "expected_setup_bytes": 6438,
+      "fallback_count": 0,
+      "max_m224_value_error": 3.469446951953614e-18
+    },
+    {
+      "events": 9,
+      "billed_flops": 49203,
+      "expected_billed_flops": 49203,
+      "runtime_calls": 171,
+      "setup_bytes": 19314,
+      "expected_setup_bytes": 19314,
+      "fallback_count": 0,
+      "max_m224_value_error": 4.092863201132779e-18
+    }
+  ],
+  "operation_calls_each": {
+    "abs": 7,
+    "add": 37,
+    "divide": 14,
+    "exp": 3,
+    "greater": 1,
+    "greater_equal": 2,
+    "isfinite": 1,
+    "less_equal": 6,
+    "logical_and": 9,
+    "matmul": 1,
+    "maximum": 6,
+    "multiply": 76,
+    "sqrt": 2,
+    "subtract": 6
+  },
+  "forbidden_runtime_operations_observed": [],
+  "target_prediction": {
+    "events": 3968,
+    "billed_flops": 21693056,
+    "setup_bytes": 8515328
+  },
+  "pass": true
+}

@@ -1,0 +1,25 @@
+{
+  "candidate": "M210 same-level fused depth-3 recursive Gram",
+  "date": "2026-08-09",
+  "response_free": true,
+  "parent": "M209 hostile five-times wall kill",
+  "changed_mechanism": "batch all same-depth Gram tree nodes into one matmul dispatch",
+  "width": 256,
+  "layers": 31,
+  "depth": 3,
+  "dtype": "float64",
+  "predicted_matmul_calls": 4,
+  "predicted_matmul_bill": 1167925248,
+  "predicted_reshape_calls": 4,
+  "predicted_reshape_bill": 16252928,
+  "strict_component_headroom": 1986871472,
+  "native_seeds": [210700001, 210700002, 210700003, 210700004, 210700005],
+  "forbidden": [
+    "challenge weights",
+    "truth",
+    "scorer",
+    "leaderboard",
+    "submission",
+    "cached response or efficacy records"
+  ]
+}

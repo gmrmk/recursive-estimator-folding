@@ -1,0 +1,60 @@
+{
+  "candidate": "M236 fixed B=8 layer-batched M212+M235",
+  "date": "2026-08-09",
+  "status": "PREDECLARED_NO_CODE_NO_TEST_NO_RESULT",
+  "parent": "M235 KILLED_FROZEN_NATIVE_RSS",
+  "one_changed_mechanism": "replace all-31 M212/M235 workspaces with one B=8 block workspace while retaining global source outputs",
+  "blocks_one_based": [[1, 8], [9, 16], [17, 24], [25, 31]],
+  "preserved": {
+    "width": 256,
+    "layers": 31,
+    "subset_rows": 32,
+    "dtype": "float64",
+    "recursion_depth": 3,
+    "setup_rng": "one immutable Philox receipt",
+    "algebra": "M212 plus M235 per-layer operation order and coefficients"
+  },
+  "memory_mib": {
+    "global_source": 31.060547,
+    "rank_receipt": 0.060547,
+    "m212_block": 18.328125,
+    "m235_block": 9.0,
+    "selected_gather": 0.5,
+    "numeric_peak": 58.949219,
+    "removed_vs_m235": 80.005859,
+    "projected_worst_worker_rss": 477.638672,
+    "native_rss_strict_lt": 496.0,
+    "contest_cap": 512.0
+  },
+  "setup_empty_calls": 18,
+  "predict_bills": {
+    "m212": 1249253376,
+    "m235": 864960512,
+    "combined": 2114213888
+  },
+  "predict_calls": {
+    "m212": {"stack": 8, "matmul": 16, "reshape": 16, "add": 12, "copyto": 100, "diagonal": 8, "multiply": 44, "sum": 4, "swapaxes": 32, "transpose": 32},
+    "m235": {"take_along_axis": 4, "matmul": 8, "add": 36, "copyto": 4, "multiply": 64, "sum": 4}
+  },
+  "wall_caps_s": {
+    "lawful_combined": 0.003227087104,
+    "conservative_combined": 0.003227021568,
+    "m235_component": 0.002025121700262334
+  },
+  "first_native": {
+    "setup_seed": 0,
+    "sequence": ["A", "B", "A"],
+    "source_seeds": {"A": 227700001, "B": 227710001},
+    "rss_strict_lt_mib": 496.0,
+    "independent_review_before_aggregate": true
+  },
+  "forbidden": [
+    "predict-time empty view construction RNG or retry",
+    "all-31 f64 staged internal or row workspace",
+    "block-local output bank or assembly copy",
+    "adaptive block size padding or dummy layer",
+    "post-result retune",
+    "G0 before complete native pass"
+  ],
+  "credit": "predeclaration only; no implementation native source-efficiency MSE score submission or prize credit"
+}

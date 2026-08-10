@@ -1,0 +1,34 @@
+{
+  "candidate": "M217 balanced three-color strict-support control",
+  "status": "KILLED_FROZEN_HOSTILE_WALL_GATE",
+  "generated_only": true,
+  "response_free": true,
+  "algebra_gate_pass": true,
+  "coefficient_expectation_gate_pass": true,
+  "strict_support_gate_pass": true,
+  "gauge_and_joint_permutation_gate_pass": true,
+  "native_arithmetic_gate_pass": true,
+  "native_hostile_wall_gate_pass": false,
+  "memory_gate_pass": true,
+  "first_failing_frozen_seed": 217700001,
+  "billed_flops": 1474032640,
+  "matmul_calls": 4,
+  "matmul_bill": 1172496384,
+  "residual_s": 0.007896099792560562,
+  "hostile_five_x_effective": 5422082536.280281,
+  "hostile_cap": 2250000000,
+  "hostile_excess": 3172082536.280281,
+  "persistent_bytes": 272744448,
+  "persistent_mib": 260.109375,
+  "peak_working_set_mib": 324.33984375,
+  "source_variance_executed": false,
+  "efficacy_executed": false,
+  "preserved_components": [
+    "balanced three-color strict-support identity",
+    "six color-role noncubic source compiler",
+    "four-call symmetry-recursive class-local Gram circuit",
+    "conditional control-plus-residual conservation"
+  ],
+  "firewall": "generated matrices only; no response, truth, scorer, challenge weights, leaderboard, submission, or champion access"
+}
+

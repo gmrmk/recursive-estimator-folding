@@ -1,0 +1,16 @@
+{
+  "candidate": "M211 explicit packed level fusion",
+  "date": "2026-08-09",
+  "firewall": "generated-only response-free resource audit",
+  "parent": "M210 untracked transpose temporary and implicit matmul packing",
+  "changed_mechanism": "preallocated ownership of all matmul operands and transpose scratch",
+  "width": 256,
+  "layers": 31,
+  "depth": 3,
+  "dtype": "float64",
+  "seeds": [211700001, 211700002, 211700003, 211700004, 211700005],
+  "inclusive_bill_upper_bound": 1350000000,
+  "hostile_wall_multiplier": 5.0,
+  "component_headroom": 1986871472,
+  "credit": "explicit-memory resource component only"
+}

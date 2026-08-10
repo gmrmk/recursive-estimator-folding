@@ -1,0 +1,45 @@
+{
+  "mutation": "m226_preallocated_fused_rho08",
+  "status": "FROZEN_BEFORE_CODE_TESTS_OR_PROBES",
+  "event_count_symbol": "N",
+  "setup": {
+    "empty_calls": 2,
+    "float64_elements": "268*N",
+    "bool_elements": "2*N",
+    "bytes": "2146*N",
+    "target_events": 3968,
+    "target_bytes": 8515328
+  },
+  "runtime": {
+    "calls": 171,
+    "bill": "5467*N",
+    "target_events": 3968,
+    "target_bill": 21693056,
+    "operations": {
+      "abs": {"calls": 7, "bill_per_event": 24, "target_bill": 95232},
+      "add": {"calls": 37, "bill_per_event": 714, "target_bill": 2833152},
+      "divide": {"calls": 14, "bill_per_event": 304, "target_bill": 1206272},
+      "exp": {"calls": 3, "bill_per_event": 2304, "target_bill": 9142272},
+      "greater": {"calls": 1, "bill_per_event": 2, "target_bill": 7936},
+      "greater_equal": {"calls": 2, "bill_per_event": 4, "target_bill": 15872},
+      "isfinite": {"calls": 1, "bill_per_event": 2, "target_bill": 7936},
+      "less_equal": {"calls": 6, "bill_per_event": 12, "target_bill": 47616},
+      "logical_and": {"calls": 9, "bill_per_event": 9, "target_bill": 35712},
+      "matmul": {"calls": 1, "bill_per_event": 260, "target_bill": 1031680},
+      "maximum": {"calls": 6, "bill_per_event": 18, "target_bill": 71424},
+      "multiply": {"calls": 76, "bill_per_event": 1658, "target_bill": 6578944},
+      "sqrt": {"calls": 2, "bill_per_event": 134, "target_bill": 531712},
+      "subtract": {"calls": 6, "bill_per_event": 22, "target_bill": 87296}
+    },
+    "forbidden_operation_calls": {
+      "empty": 0,
+      "copyto": 0,
+      "sum": 0,
+      "max": 0,
+      "reshape": 0
+    }
+  },
+  "target_raw_wall_strict_max_s": 0.016133916999970098,
+  "target_hostile_component_max": 6824272176,
+  "variance_gate_authorized": false
+}

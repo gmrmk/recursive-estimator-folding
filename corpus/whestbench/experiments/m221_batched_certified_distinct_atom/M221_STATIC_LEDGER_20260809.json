@@ -1,0 +1,41 @@
+{
+  "mutation": "m221_batched_certified_distinct_atom",
+  "status": "FROZEN_BEFORE_FIRST_TARGET_NATIVE_RUN",
+  "derivation_probes": {
+    "event_counts": [3, 9],
+    "observed_bill_per_event": [5484, 5484],
+    "observed_allocation_bytes_per_event": [3002, 3002]
+  },
+  "target": {
+    "event_count": 3968,
+    "predicted_bill": 21760512,
+    "predicted_allocation_bytes": 11911936,
+    "operation_bill": {
+      "copyto": 214272,
+      "multiply": 6944000,
+      "add": 2888704,
+      "divide": 1158656,
+      "sqrt": 531712,
+      "subtract": 95232,
+      "exp": 9142272,
+      "sum": 515840,
+      "maximum": 47616,
+      "abs": 95232,
+      "max": 23808,
+      "less_equal": 47616,
+      "logical_and": 31744,
+      "greater_equal": 15872,
+      "isfinite": 7936
+    },
+    "operation_bill_sum": 21760512
+  },
+  "frozen_native_limits": {
+    "m216_best_wall_s": 1.6133916999970097,
+    "strict_speedup_min": 100.0,
+    "raw_wall_strict_max_s": 0.016133916999970098,
+    "hostile_component_ceiling": 6824272176,
+    "peak_rss_bytes_max": 536870912,
+    "fallback_rows_required": 0
+  },
+  "variance_gate_authorized": false
+}

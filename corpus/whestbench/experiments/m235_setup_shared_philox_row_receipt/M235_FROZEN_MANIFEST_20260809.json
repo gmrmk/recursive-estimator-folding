@@ -1,0 +1,134 @@
+{
+  "candidate": "M235 setup-shared Philox SRSWOR row receipt",
+  "date": "2026-08-09",
+  "status": "PREDECLARED_NO_IMPLEMENTATION_NO_TEST_NO_RESULT",
+  "parent": "M231 via statically killed M234",
+  "firewall": "generated-only response-free setup native and source-efficiency ladder",
+  "one_changed_mechanism": "move exact SRSWOR receipt issuance from each predict to one official setup-seed receipt shared across MLPs",
+  "statistical_change": "same one-MLP marginal SRSWOR law; new cross-MLP shared-receipt dependence and setup-conditional loss",
+  "preserved": {
+    "width": 256,
+    "layers": 31,
+    "subset_rows": 32,
+    "exact_live_objects": ["p", "B", "rho"],
+    "sampled_totals": ["t", "A", "E", "D"],
+    "algebra": "unchanged affine M215 collision subtraction from M212",
+    "residual": "M151 fixed-q0 K=128 independent strict residual",
+    "precision": "float64",
+    "replacement_credit": false
+  },
+  "bias_class": {
+    "over_setup_seed": "exactly unbiased per fixed state",
+    "conditional_on_one_setup_receipt": "not generally unbiased for an arbitrary fixed state",
+    "contest_loss": "mean of per-MLP squared losses; never squared sum of errors"
+  },
+  "setup": {
+    "rng": "fnp.random.Generator(fnp.random.Philox(ctx.seed))",
+    "seed": "official SetupContext.seed directly with no participant salt",
+    "seed_shared_across_mlps": true,
+    "receipt": "one independently permuted integer-label row per layer; first 32 retained",
+    "receipt_bill_diagnostic": 32768,
+    "predict_flop_charge": 0,
+    "timeout_s_strict_lt": 5.0,
+    "rss_cap_mib": 512.0,
+    "allowed_preallocation": "fixed-shape empty M212 staged/base and M235 powers/cross workspaces only",
+    "forbidden": "MLP-dependent setup work participant seed fallback retry or receipt mutation"
+  },
+  "predict_operations": {
+    "take_along_axis": {"calls": 1, "bill": 2031616},
+    "matmul": {"calls": 2, "bill": 767950848},
+    "multiply": {"calls": 16, "bill": 57901056},
+    "add": {"calls": 9, "bill": 36569088},
+    "sum": {"calls": 1, "bill": 492032},
+    "copyto": {"calls": 1, "bill": 15872},
+    "reshape": {"calls": 0, "bill": 0},
+    "inclusive_bill": 864960512
+  },
+  "forbidden_predict_calls": [
+    "default_rng",
+    "Philox",
+    "Generator",
+    "arange",
+    "broadcast_to",
+    "permuted",
+    "empty",
+    "allocation ledger",
+    "runtime hash",
+    "receipt mutation",
+    "priority argsort retry or adaptive branch"
+  ],
+  "cost": {
+    "m212_bill": 1249253376,
+    "m235_bill": 864960512,
+    "combined_bill": 2114213888,
+    "comparison_envelope": 3727757440,
+    "lawful_combined_residual_cap_s": 0.003227087104,
+    "conservative_setup_amortized_combined_bill": 2114246656,
+    "conservative_combined_residual_cap_s": 0.003227021568,
+    "m235_residual_cap_after_frozen_m212_max_s": 0.002025121700262334,
+    "conditional_branch_cost_b": 88.095092688,
+    "m151_branch_cost_b": 89.708636240,
+    "cost_ratio": 0.982013509293762,
+    "break_even_vs_vr": 0.000143093203212184,
+    "one_percent_win_vs_vr": 0.0000635372711800617,
+    "replacement_credit": false
+  },
+  "memory_mib": {
+    "incremental_persistent": 36.873046875,
+    "incremental_nominal_peak": 36.875,
+    "m212_m235_persistent": 138.955078125,
+    "rss_cap": 512.0
+  },
+  "native": {
+    "mlp_seeds": [227700001, 227700002, 227700003, 227700004, 227700005],
+    "setup_seeds": [0, 235700001, 235700002, 235700003, 235700004],
+    "fresh_sequential_processes": 5,
+    "independent_aggregate_review_before_g0": true,
+    "required": "exact setup law and digest predict bill calls finite symmetry both wall gates setup timeout and RSS"
+  },
+  "g0": {
+    "state_cells": "M227 exact 24 width 8 16 24 diagonal-SPD and iid-He-SPD cells",
+    "setup_seeds": "0 plus 23501001..23501031",
+    "tail_setup_seeds": "23510000..23514095",
+    "bootstrap_seed": 2350001,
+    "bootstrap_resamples": 20000,
+    "hierarchy": "setup receipt then cells within family then residual event blocks",
+    "loss": "actual fixed-receipt per-cell squared source loss with empirical independent residual cross term",
+    "upper90_lt": 0.99,
+    "every_cell_setup_mean_lt": 1.0,
+    "seed0_pooled_and_family_lt": 1.0,
+    "setup_seed_pass_count_min": 30,
+    "setup_seed_count": 32,
+    "worst_setup_seed_pooled_lte": 1.05,
+    "p99_lte": 1.25,
+    "cross_term_interval_contains_zero": true
+  },
+  "g1": {
+    "state_seeds": [22732001, 22732002, 22732003, 22732004, 22732101, 22732102, 22732103, 22732104],
+    "event_seeds": [22733001, 22733002, 22733003, 22733004, 22733005, 22733006, 22733007, 22733008],
+    "setup_seeds": "0 plus 23532001..23532015",
+    "events_per_cell": 16384,
+    "bootstrap_seed": 22730001,
+    "bootstrap_resamples": 20000,
+    "outer_seed_pass_count_min": 14,
+    "outer_seed_count": 16,
+    "worst_outer_seed_pooled_lte": 1.05
+  },
+  "holdout": {
+    "state_seeds": "22732201..22732208 and 22732301..22732308",
+    "event_seeds": "22734001..22734016",
+    "setup_seeds": "23532251..23532266",
+    "untouched": true
+  },
+  "gate_order": [
+    "red_setup_provenance",
+    "green_algebra",
+    "red_green_native",
+    "five_fresh_processes",
+    "independent_native_aggregate_review",
+    "G0",
+    "G1",
+    "holdout"
+  ],
+  "credit": "predeclared setup-shared receipt child only; no implementation test native result source efficiency MSE score submission or winner"
+}

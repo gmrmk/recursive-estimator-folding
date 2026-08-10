@@ -1,0 +1,115 @@
+{
+  "aggregate": {
+    "hostile_margin_min": -15648129.867043972,
+    "hostile_projection_max": 2002519601.867044,
+    "inclusive_bill": 1269569536,
+    "peak_rss_mib": 254.60546875,
+    "persistent_mib": 195.08203125,
+    "residual_max_ms": 1.465900131734088,
+    "residual_mean_ms": 1.3349200424272567,
+    "strict_component_arithmetic_margin": 717301936
+  },
+  "candidate": "M211 explicit packed level fusion",
+  "disposition": {
+    "promoted": null,
+    "still_blocked": [
+      "M179-bound all-layer factor lifecycle and immediate M198 consumption",
+      "physical K4/K31/K22/C211 provider and residual proposal",
+      "full integrated replacement and terminal native trace",
+      "source variance, MSE, score, and winner evidence"
+    ]
+  },
+  "firewall": "generated matrices only; no response, truth, scorer, challenge weight, leaderboard, submission, or champion access",
+  "gates": {
+    "bill_below_1_35b": true,
+    "constant_bill": true,
+    "every_hostile_five_x_projection_fits": false,
+    "exact_four_matmul_calls": true,
+    "exact_four_reshape_calls": true,
+    "exact_matmul_bill": true,
+    "exact_reshape_bill": true,
+    "finite_no_failures": true,
+    "five_frozen_seeds": true,
+    "no_untracked_full_plane_temporary": true,
+    "persistent_below_300_mib": true,
+    "rss_below_512_mib": true
+  },
+  "records": [
+    {
+      "billed_flops": 1269569536,
+      "failure": null,
+      "finite": true,
+      "hostile": 1890969611.033307,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 254.6015625,
+      "persistent_mib": 195.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0012428001500666142,
+      "seed": 211700001,
+      "untracked_full_plane_temporaries": 0
+    },
+    {
+      "billed_flops": 1269569536,
+      "failure": null,
+      "finite": true,
+      "hostile": 1942069534.472631,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 254.4921875,
+      "persistent_mib": 195.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.001344999996945262,
+      "seed": 211700002,
+      "untracked_full_plane_temporaries": 0
+    },
+    {
+      "billed_flops": 1269569536,
+      "failure": null,
+      "finite": true,
+      "hostile": 1946319464.9708211,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 254.359375,
+      "persistent_mib": 195.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0013534998579416424,
+      "seed": 211700003,
+      "untracked_full_plane_temporaries": 0
+    },
+    {
+      "billed_flops": 1269569536,
+      "failure": null,
+      "finite": true,
+      "hostile": 1903269573.7243385,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 254.60546875,
+      "persistent_mib": 195.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.001267400075448677,
+      "seed": 211700004,
+      "untracked_full_plane_temporaries": 0
+    },
+    {
+      "billed_flops": 1269569536,
+      "failure": null,
+      "finite": true,
+      "hostile": 2002519601.867044,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 254.35546875,
+      "persistent_mib": 195.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.001465900131734088,
+      "seed": 211700005,
+      "untracked_full_plane_temporaries": 0
+    }
+  ],
+  "status": "KILLED_FROZEN_RESOURCE_GATE"
+}

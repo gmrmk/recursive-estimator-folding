@@ -1,0 +1,38 @@
+{
+  "mutation": "m238_live_m179_event_packer",
+  "status": "PREDECLARED_BEFORE_CODE_AND_TESTS",
+  "date": "2026-08-09",
+  "one_changed_mechanism": "preallocated metered live M179 layer-tape to M226 twenty-column strict-distinct event packer",
+  "parent_hashes_sha256": {
+    "m179_jacobian_archive.py": "29DA770375F6CB15CF70B0F797B09D4775652178FF86FF5B44CCDAAEFD3E01DE",
+    "m213_event_local_randomized_source211.py": "ED20BB8E1F28EA4A9F114CE06C4D3979DFA6C10E82C7AE4DD5E74D35E9ADEE59",
+    "m221_batched_certified_distinct_atom.py": "044D801B0EF0FDC0240FE3A2841D110956118CCACD25A7B8B0879D2B617B9F6D",
+    "m226_preallocated_fused_rho08.py": "A52CE3B016CBE23B15C1061354D64CD78E405A37461EA727FCE119F7EBCE3571",
+    "m228_caller_bound_rho08.py": "3B3EBBF737657931B73D7470D1EF65138F8CFEB98CCE61A05B4E7EFA067E4633"
+  },
+  "target": {"layers": 31, "width": 256, "events_per_layer": 128, "events": 3968},
+  "g0a": {
+    "widths": [3, 4, 5, 6, 7],
+    "seeds": [238700003, 238700004, 238700005, 238700006, 238700007],
+    "outer_g": [0.0, 0.25, -0.25, 1.0, -1.0, 2.5, -2.5],
+    "tree_relative_absolute_limit": 5e-13
+  },
+  "g0b": {
+    "incremental_bill_ceiling": 4000000,
+    "incremental_call_ceiling": 192,
+    "incremental_owned_byte_ceiling": 4194304,
+    "forbidden_runtime_operations": ["empty", "reshape", "concatenate", "sort"]
+  },
+  "g0c": {
+    "outer_seeds": [221720001, 221720002, 221720003, 221720004, 221720005],
+    "adversarial_repeat_seed": 221720001,
+    "combined_bill_ceiling": 25693056,
+    "raw_wall_limit_s": 0.016133916999970098,
+    "strict_speedup_min": 100.0,
+    "rss_ceiling_bytes": 536870912
+  },
+  "variance_authorized": false,
+  "response_authorized": false,
+  "m179_integration_credit": false,
+  "challenge_or_private_data_authorized": false
+}

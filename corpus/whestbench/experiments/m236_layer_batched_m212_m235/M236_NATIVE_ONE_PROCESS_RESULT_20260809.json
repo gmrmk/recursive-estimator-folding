@@ -1,0 +1,44 @@
+{
+  "candidate": "M236 fixed B=8 layer-batched M212+M235",
+  "date": "2026-08-09",
+  "status": "KILLED_FROZEN_NATIVE_RECEIPT_UNOBSERVABLE",
+  "failure": "The exactly-one authorized runner invocation completed its orchestration cell, but the tool wrapper discarded the shell return instead of forwarding stdout; the runner used an ephemeral TemporaryDirectory and no result artifact survived.",
+  "runner_invocation_count": 1,
+  "invocation": {
+    "date": "2026-08-09",
+    "exact_wall_clock_timestamp_available": false,
+    "tool_cell_id": "47",
+    "command": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Scripts\\python.exe C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m236_layer_batched_m212_m235\\run_m236_native_process.py"
+  },
+  "rerun_performed": false,
+  "stdout_captured": false,
+  "scratch_artifact_recovered": false,
+  "artifact_search": {
+    "temp_prefix": "C:\\Users\\strid\\AppData\\Local\\Temp\\m236_seed0_primary_*",
+    "candidate_result_patterns": ["*RESULT*", "*DISPOSITION*", "*stdout*"],
+    "pre_disposition_matches": 0
+  },
+  "native_metrics": null,
+  "native_gates_adjudicable": false,
+  "native_credit": false,
+  "native_aggregate_opened": false,
+  "g0_opened": false,
+  "algebra_evidence_preserved": {
+    "tests_passed": 5,
+    "raw_byte_parity_seeds": [227700001, 227710001],
+    "combined_bill": 2114213888,
+    "numeric_peak_bytes_static": 61812736
+  },
+  "frozen_hashes": {
+    "predeclaration": "793786132F08CE71ABACE2BDA29ADE347ED2800B9615799F85BA7F71836E3CC1",
+    "manifest": "3B9D3B43D7995FED5D1CA331B465F4DD71C236F0BA5F6D7497E392364D844CF2",
+    "erratum1": "54A63B652A7288EBE06C526C1B0300356DA7B3D8F79D9E9C0D0BA505127E56E1",
+    "erratum2": "6F01A9EE4CF99F73F4FB318A3FBB1244A1DEB09AA4C9DEFD76E8E1E17C29D5EB",
+    "module": "6C9E9AF9727722CB6ADE5E1CDA56D3F7A0E7BF82EF35EBDAEFA8AA883A854B75",
+    "algebra_test": "5E2DE041D68B0B07B437D5362D26195D4F7C7C5A1A45058E900BB4BB3AD4B722",
+    "entrypoint": "18D60E0FC02D034CC0E0006CFEDFA15E9188F59697C21294BD53B501AA9BFB25",
+    "runner": "CFC797EFE73CF5CD16D022E60983BBC84FDB707907D01FE035DDCD5997DCF675",
+    "native_static_test": "FED9175D374BAC53D2C03E01A405980F5DDE2AD93165CF5E453936B8B1BFB84F"
+  },
+  "stop_rule": "An absent native receipt cannot be inferred as a pass. Fixed M236 is killed without rerun, retune, aggregate, or G0."
+}

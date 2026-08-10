@@ -1,0 +1,10 @@
+{
+  "mutation": "m230_m223_live_sigma_gather",
+  "status": "FROZEN_BEFORE_CODE_AND_TESTS",
+  "one_changed_mechanism": "inclusive live M223 marginal-sigma vector label gather",
+  "kernel_parent": {"calls": 171, "bill": "5467*N", "math_parent": "m224_gauge_invariant_rho08_chart"},
+  "conditional_inclusive_addition": {"label_packing": "must be charged", "two_sigma_gathers": "must be charged", "free_setup_allowed": false},
+  "required_live_provider": {"owner": "M223/M179 live layer", "field": "retained marginal sigma vector", "element": "sqrt(C_ii)", "layer_epoch_identity": true, "vector_object_identity": true},
+  "blocked_if_provider_absent": true,
+  "gates": {"raw_wall_strict_max_s": 0.016133916999970098, "raw_speedup_strict_min": 100.0, "variance_gate_authorized": false}
+}
