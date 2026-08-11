@@ -82,6 +82,17 @@ of the propagated covariance itself. Round-off is concurrent, not causal.** The
 assembly-scale ratio remains a correct measurement; only the causal reading was
 wrong.
 
+> **SUPERSEDED IN PART by `gm_g7_depth_degeneracy`.** Two things below are
+> wrong and are corrected there. (1) The `0.0814` / `0.1202` median-of-ratios
+> figures use an unstable estimator — `lambda_min` is non-monotone layer to
+> layer, and the same cell type gave `0.10`, `0.90`, `0.12` across replicates. A
+> least-squares fit of `log10 lambda_min` on layer gives **0.719 decades per
+> layer** at width 256, scaling as **n^0.639** (R² = 0.992). (2) The `1e35`
+> condition number and "~35 digits" follow from that bad estimator; the fitted
+> value is **`κ ≈ 10^28`, ~28 significant digits**. The qualitative conclusion —
+> geometric collapse, not round-off, not fixable by representation or float64
+> precision — stands unchanged.
+
 ### The phenomenon has a name, and this corpus already sourced it
 
 This is the covariance-spectrum shadow of **depth degeneracy**: Jakub & Nica,
@@ -91,12 +102,20 @@ This is the covariance-spectrum shadow of **depth degeneracy**: Jakub & Nica,
 angle-contraction recursion at finite width, **exponential** decay where infinite
 width predicts polynomial."
 
-Exponential angle contraction means neuron correlations approach 1 with depth —
-consistent with the measured `max |rho| = 0.942` and `0.971` at layer 32 — and a
-correlation matrix whose off-diagonals approach 1 is one whose smallest
-eigenvalue approaches 0. The geometric `lambda_min` collapse measured here is
-that theorem expressed in the spectrum, and the finite-width **exponential** rate
-is exactly why depth 32 is unreachable while depth 6 was fine.
+> **RETRACTED by `gm_g7_depth_degeneracy`.** The paragraph that stood here
+> argued that neuron correlations approach 1 with depth, citing `max |rho| =
+> 0.942` and `0.971` at layer 32. **Those values were measured after the
+> recurrence had already gone non-PSD and been allowed to continue — they are
+> downstream of the failure, not evidence for its cause.** At the actual trip
+> layer, `max |rho| = 0.673` and `mean |rho| = 0.16`. A predeclared test of the
+> equicorrelation link failed in **0 of 24 cells** with median drift `6.4e6x`.
+>
+> The measured mechanism is **progressive rank concentration**, not uniform angle
+> contraction: effective rank falls from `155.3/256` (61%) to `39.5/256` (15%) by
+> layer 12 while mean correlation only reaches 0.16. The Jakub & Nica result
+> remains a plausible neighbour in the literature, but **this corpus has not
+> established the link and has direct evidence against its naive form.** Do not
+> cite it as established.
 
 ## What is now closed, and what is not
 
@@ -104,9 +123,11 @@ is exactly why depth 32 is unreachable while depth 6 was fine.
 - Factored/Gram propagation does not extend reach. Measured, 6/6.
 - Lowering the variance floor does not extend reach: ~1 layer per decade.
 - Higher float precision is now **quantified rather than speculated**: reaching
-  layer 32 needs ~35 significant digits, so float128 (~34 digits) is marginal at
-  best and `mpmath` at `dps >= 50` would be required — an enormous cost against a
-  closure already measured 311x from competitive as a predictor (`t2`).
+  layer 32 needs **~28 significant digits** (fitted in `gm_g7_depth_degeneracy`;
+  the ~35 figure first quoted here came from the superseded median-ratio
+  estimator). float64 carries ~16, so float128 (~34) would suffice on paper and
+  `mpmath` at `dps >= 40` comfortably — at an enormous cost against a closure
+  already measured 311x from competitive as a predictor (`t2`).
 
 **Not closed.**
 - This says nothing about G2 (the four-point vertex / information absence). That
@@ -115,9 +136,9 @@ is exactly why depth 32 is unreachable while depth 6 was fine.
   leave the `t2` 311x gap and the 1.40x analytic-control cap (R^2 = 0.287)
   untouched. **The G7 obstruction being deeper does not make the score arm
   better.**
-- The measurement is float64, He-Gaussian init, depth 32, widths 128–256. The
-  degeneracy literature predicts the rate depends on architecture and
-  initialization; other regimes are untested here.
+- The measurement is float64, He-Gaussian init, depth 32, widths 128–256.
+  `gm_g7_depth_degeneracy` extends this to widths 32–256 and to Haar-orthogonal
+  initialization, and finds the obstruction is **not** initialization-specific.
 
 ## Consequence for the write-up
 

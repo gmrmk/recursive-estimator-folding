@@ -200,10 +200,15 @@ entrywise-assembly noise**.
 > left the trip layer **unchanged in 6/6 cells**. `λ_min` decays geometrically
 > (median per-layer ratio **0.081–0.120** at width 256, `λ_max` steady at `O(8)`),
 > so reaching layer 32 would need ~22 decades of floor and a condition number
-> near `1e35` — **not representable in float64**. This is the spectral form of
-> finite-width depth degeneracy (Jakub & Nica, arXiv:2302.09712, already in
-> `sources/research_physics_depth_finitewidth_20260810.md`). Round-off is
-> concurrent, not causal.
+> near `1e35` — **not representable in float64**. Round-off is concurrent, not causal.
+> **Deepened and partly corrected by `gm_g7_depth_degeneracy`:** the fitted rate
+> is **0.719 decades/layer** at width 256 scaling as **n^0.639** (R² = 0.992),
+> giving `κ ≈ 10^28` at depth 32 (~28 digits, not the ~35 first quoted). The
+> mechanism is **rank concentration** — effective rank 61% → 15% of the dimension
+> by layer 12 while mean |ρ| reaches only 0.16 — **not** uniform angle
+> contraction; a predeclared equicorrelation test failed 0/24. Haar-orthogonal
+> init does **not** rescue it and is worse at width 256 (`n^0.927`), so the
+> obstruction belongs to ReLU composition, not to the weight ensemble.
 
 **Corollary that matters for any filing:** the M179 producer completes all 32
 layers anyway — its guard is per-pair (`|ρ| ≤ RHO_MAX`) and never fires. Measured
