@@ -119,3 +119,41 @@ a new mechanism (L4, L5). One contributed to coverage without a survivor (L3). O
 named falsifier (L6).
 
 Nothing here was noise. That is the case for catching them.
+
+---
+
+## L7 — the withdrawal that reopened the search (opus-5, not a Jonah bolt; logged here because it belongs beside them)
+
+**Recognised** 2026-08-11, after the day's corrections landed.
+
+**The observation.** For most of this campaign the operative stop-rule was the
+god-node claim: the finite-width residual is maximum-entropy chi²₁ speckle at the
+degree-4 boundary, therefore no output-side mechanism can bite, therefore stop
+generating them. That claim is now **withdrawn** — its supporting computation is
+quarantined as post-charter, the older equipartition account it replaced was never
+established either, and the corrected status is **OPEN**.
+
+**Why it matters.** The killed mechanisms stay killed: U-F1 died on integrated
+accounting, M192 died by algebra with P6 proving the mechanism, and kills are
+final. But the *reason the campaign stopped generating new output-side
+candidates* was a theorem we no longer hold. Specifically, nothing we have proved
+closes:
+
+- the residual's harmonic spectrum above the pre-charter measured modes;
+- any truncation class;
+- methods exploiting structure at degrees ≥ 6, where the bulk of the error lives.
+
+**The search space going into Phase 2 is therefore LARGER than it was believed to
+be on 2026-08-10, not smaller.** This is the only strategic fact of the day that
+increases rather than decreases what is available to us.
+
+**Falsifier / next step.** The claim "the space is reopened" is itself only
+[D] — derived from the withdrawal, not from a positive measurement. It would be
+settled by an authorized reproduction of the harmonic-spectrum measurement under
+a prospective evidence charter. Until then, treat the space as open by default
+(the epistemically correct prior for an unmeasured quantity) rather than closed
+by a theorem we withdrew.
+
+**Do not confuse this with reopening a kill.** No killed record is revived here.
+What is revived is *generation* — the licence to propose new output-side
+mechanisms, each of which must still clear the full ladder from scratch.
