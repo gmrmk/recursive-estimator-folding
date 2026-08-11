@@ -1,0 +1,252 @@
+{
+  "artifact": "M245_CMD2_SETUPCLASS_STATIC_DIAGNOSIS",
+  "schema": "cmd2-static-diagnosis-v1",
+  "produced_for": "codex-sol (adjudication owner)",
+  "produced_by": "read-only static analysis; no m245 module, test or script was imported or executed; cmd2 was NOT rerun",
+  "date_utc": "2026-08-10",
+  "question": "Does the single setUpClass ERROR in tasks/m245-green-logs/cmd2.err consume the M245 one-shot?",
+
+  "execution_state_reconstruction": {
+    "log_bytes": 3049,
+    "log_lines": 16,
+    "log_ends_with_newline": false,
+    "marker_census": {"ok": 14, "ERROR": 1, "FAIL": 0, "skipped": 0, "Traceback": 0, "warning": 0, "Ran_N_tests_summary": 0},
+    "exactly_one_error_marker_confirmed": true,
+    "class_order_observed": [
+      "TestM245ReplicaAuthorityAPIAndFirewall",
+      "TestM245ReplicaGatesAndSchema",
+      "TestM245ReplicaIndependentMath"
+    ],
+    "class_order_is_alphabetical_as_unittest_loads": true,
+    "test_method_census": {
+      "TestM245ReplicaAuthorityAPIAndFirewall": {"declared": 6, "ran": 6, "ok": 6},
+      "TestM245ReplicaGatesAndSchema": {"declared": 7, "ran": 0, "ok": 0, "note": "setUpClass ERROR set _classSetupFailed; all 7 methods skipped silently (unittest/suite.py:117-119)"},
+      "TestM245ReplicaIndependentMath": {"declared": 10, "started": 9, "ok": 8, "in_flight_at_kill": "test_run_replica_event_mu_uses_both_asymmetric_sign_branches_end_to_end", "never_started": "test_unary_relu_mean_matches_exact_special_cases"}
+    },
+    "declared_tests_total": 23,
+    "no_other_class_errored": true,
+    "why_no_traceback": "unittest stores the setUpClass exc_info in result.errors and only renders it in printErrors() at end of run; the process was killed before the summary.",
+    "timing": {
+      "cmd2_start_utc": "2026-08-10T10:46:23Z",
+      "cmd2_err_last_write_utc": "2026-08-10T14:20:52Z",
+      "elapsed_to_last_log_write_seconds": 12869,
+      "elapsed_human": "3h34m29s",
+      "stderr_is_line_buffered_python_3_9_plus": true,
+      "meaning": "last write == the moment the final test name was printed, i.e. the moment that test STARTED"
+    }
+  },
+
+  "setUpClass_operation_trace": {
+    "source": "test_m245_replica_core.py:566-587",
+    "ops_in_order": [
+      "1. cls.dummy = _varying_dummy_event()  [test file :176-189] - pure in-memory construction: struct.pack + hashlib.sha256 + json.dumps. Touches NO file.",
+      "2. cls.gateways = {} ; cls.results = {}",
+      "3. for dps in (80, 100):",
+      "3a.   gateway = _DummyQuadGateway(replica.mp)  [test file :200-237] - wraps mp.quad(method='tanh-sinh', maxdegree=14, error=True)",
+      "3b.   scope = replica.cache_scope_id(shard_id=97, invocation_index=1, event_id='DUMMY_VARYING_NONZERO_NOT_IN_FROZEN_CENSUS', engine='replica', precision_dps=dps)  [core :490-513]",
+      "3c.   cls.gateways[dps] = gateway",
+      "3d.   cls.results[dps] = replica.run_replica_event(cls.dummy, dps, quad_gateway=gateway, cache_scope_id=scope)  [core :816-921]",
+      "3d.i     entry guards  [core :825-830]",
+      "3d.ii    with mp.workdps(dps)  [core :831]",
+      "3d.iii   context = _event_context(cls.dummy)  [core :390-464] - decode + SPD + Schur complement",
+      "3d.iv    fixed_values = [b_at(g) for g in FIXED_B_NODES]  [core :843] - 17 nodes x 8 inner tanh-sinh panels",
+      "3d.v     mu_rep = _integrate_outer(..., 'mu_rep', lambda g: rb(g)*b_at(g))  [core :851-858] - 9 outer panels, last is [16, inf)",
+      "3d.vi    M_same = _integrate_outer(..., 'M_same', ...)  [core :859-866]",
+      "3d.vii   M_cross = _integrate_outer(..., 'M_cross', ...)  [core :867-874]",
+      "3d.viii  replica_moments_from_components(...)  [core :875-879]",
+      "3d.ix    nested_error_sum = mp.fsum(<empty generator>)  [core :881-885]",
+      "3d.x     result dict assembly  [core :886-919]",
+      "3d.xi    validate_replica_result(result)  [core :920, :1100-1176]"
+    ]
+  },
+
+  "decisive_arithmetic_facts": {
+    "rho_c_is_exactly_zero": {
+      "value": true,
+      "why": "C_jk = -0.075 and C_ij*C_ik/C_ii = fl(0.30)*fl(-0.25) = -0.075 exactly (division by 4 is an exact binary scaling), so the Schur off-diagonal is exactly 0",
+      "verified_by": "exact fractions.Fraction arithmetic on the binary64 literals, independent_arithmetic_check.py",
+      "corroborated_by": "test_m245_primary_core.py:211-213 comment states this is deliberate",
+      "consequence": "ell=0, s=1, eta=0 -> the replica inner integrand loses its h dependence and collapses to constant*phi(t)"
+    },
+    "spd_checks": {"C00": 1.0, "leading_2x2_minor": 0.91, "det": 0.853125, "variance_j": 0.91, "variance_k": 0.9375, "all_strictly_positive": true},
+    "outer_panel_bounds": {
+      "alpha": 0.1,
+      "collides_with_a_base_panel": false,
+      "bounds": [0.0, 0.1, 0.25, 1.0, 2.5, 5.0, 8.0, 10.0, 16.0, "inf"],
+      "panel_count": 9,
+      "last_panel": "[16, inf)"
+    },
+    "precision_ladder": {
+      "dps_80": {"ambient_prec_bits": 269, "inside_outer_quad_bits": 289, "inner_evaluation_bits": 309, "inner_absolute_gate_saved_eps_over_8": "2.5134559e-88"},
+      "dps_100": {"ambient_prec_bits": 336, "inside_outer_quad_bits": 356, "inner_evaluation_bits": 376, "inner_absolute_gate_saved_eps_over_8": "1.70318e-108"}
+    },
+    "mpmath_gate_identity": {
+      "fact": "mpmath quadrature.py:740 sets epsilon = ctx.eps/8 and quadrature.py:239 breaks the degree loop on err <= epsilon; the M245 quadrature_call_gate is error <= saved_eps/8 with saved_eps read at the same ambient precision",
+      "consequence": "the M245 call gate fires if and only if mp.quad exhausted maxdegree=14 without declaring convergence",
+      "both_thresholds_are_ABSOLUTE_not_relative": true
+    },
+    "tanh_sinh_node_reach_on_outer_panel_16_inf": {
+      "dps_80_prec_289_degree_1": {"nodes": 19, "max_node_g": "2.5179336e+61"},
+      "dps_100_prec_356_degree_1": {"nodes": 21, "max_node_g": "1.7422316e+101"},
+      "measured_by": "mpmath _tanh_sinh.get_nodes(mpf(16), inf, 1, prec) - generic mpmath, no m245 code"
+    },
+    "replica_inner_panel_magnitude_vs_outer_node": [
+      {"g": "16", "abs_panel_0_value": "0.96064991"},
+      {"g": "1e3", "abs_panel_0_value": "67.018075"},
+      {"g": "1e6", "abs_panel_0_value": "67131.39"},
+      {"g": "1e10", "abs_panel_0_value": "6.7131504e+8"},
+      {"g": "1e20", "abs_panel_0_value": "6.7131504e+18"},
+      {"g": "2.5179e61 (the degree-1 node)", "abs_panel_0_value": "~8.5e59 (linear extrapolation of the measured slope 0.067*g)"}
+    ],
+    "measured_absolute_gate_failure_threshold": {
+      "integrand_shape_tested": "constant * exp(-t^2/2) over [0, 0.25] at prec 289, maxdegree=14, error=True - the exact shape the replica inner integrand collapses to when rho_c == 0",
+      "passes": ["1e0", "1e3", "1e5", "1e6", "1e8", "1e12", "1e20", "1e40", "1e45"],
+      "fails": ["1e50", "1e53", "1e55", "1e56", "1e57", "1e58", "1e59", "1e60", "1e61"],
+      "threshold_between": ["1e45", "1e50"],
+      "replica_actual_magnitude_at_the_degree_1_node": "~8.5e59",
+      "orders_of_margin_into_the_failing_region": "about 10 to 14"
+    },
+    "cost_calibration": {
+      "mp_erfc_prec_309_us": 40.98,
+      "mp_exp_prec_309_us": 10.96,
+      "mp_erfc_prec_376_us": 54.00,
+      "mp_exp_prec_376_us": 13.78,
+      "replica_inner_integrand_primitives_per_evaluation": "5 exp + 4 erfc ~= 220 us at prec 309",
+      "tanh_sinh_cumulative_node_count_per_panel_prec_289": {"through_degree_5": 313, "through_degree_6": 625, "through_degree_7": 1251, "through_degree_8": 2501, "through_degree_14_estimated": 160000},
+      "derived_cost_of_the_8_surviving_IndependentMath_tests": "368 real unary quad calls x ~1251 evals x ~275 us ~= 2 minutes",
+      "derived_conclusion": "the 8 surviving tests cannot account for 3h34m; setUpClass consumed essentially all of it"
+    }
+  },
+
+  "surviving_candidates_ranked": [
+    {
+      "rank": 1,
+      "id": "C1",
+      "classification": "DETERMINISTIC",
+      "title": "Absolute quadrature gate is unsatisfiable at the unbounded outer panel [16, inf)",
+      "raise_site_primary": "m245_replica_core.py:574-575  raise M245ReplicaContractError('quadrature returned an over-threshold error')",
+      "raise_site_as_surfaced": "m245_replica_core.py:556-557  raise M245ReplicaContractError('quadrature gateway failed for mu_rep') from exc",
+      "trigger_chain": [
+        "run_replica_event :851 -> _integrate_outer(quantity='mu_rep')",
+        "_integrate_outer :788 panel loop reaches panel index 8 = [mpf(16), mp.inf]",
+        "_request_quad :789 -> _DummyQuadGateway -> mp.quad([16, inf], tanh-sinh, maxdegree=14, error=True)",
+        "mpmath quadrature.py:229 get_nodes(16, inf, 1, 289) -> transform_nodes b==inf branch (quadrature.py:117-125) u = 2/(x+1) with 1-x ~ 2^-299 -> node g = 2.5179e61",
+        "_integrate_outer.integrand :786 -> branch_function(point) -> run_replica_event :857 lambda g: rb(g)*b_at(g) -> :834 b_at -> :601 _replica_b_from_context",
+        "inner panel 0 = [0, 0.25], integrand = _phi(t)*(plus_j*plus_k + minus_j*minus_k); with rho_c == 0 the bracket is a CONSTANT of magnitude ~8.6e60",
+        "inner mp.quad cannot drive the ABSOLUTE error below ctx.eps/8 = 2.513e-88 within 14 degrees -> returns err ~ 1e-32",
+        "_request_quad :562 quadrature_call_gate(1e-32, 2.011e-87) -> False -> :575 raise",
+        "exception propagates out of the inner mp.quad, through the outer integrand, and is re-wrapped by the OUTER _request_quad at :556-557"
+      ],
+      "why_deterministic": "the node position, the precision ladder, the gate constant and the integrand magnitude are all fixed by frozen code and frozen data; nothing depends on wall clock, scheduling, memory state or ordering",
+      "rerun_changes_anything": false,
+      "why_the_finite_panels_survive": "outer panels 0..7 cap |g| at 16, where the inner panel magnitude is 0.96 - measured to pass",
+      "why_lines_12_13_of_cmd2_survived": "_dummy_event(rho) and _closed_form_dummy(rho) both have C[i][j] = C[i][k] = 0, so nu_j and nu_k do not depend on g; b(g) is constant and O(1) at every node including 1e61",
+      "why_the_in_flight_test_at_line_16_would_not_have_hit_it": "it uses _closed_form_dummy, same reason - so its silence is not evidence either way",
+      "consumes_one_shot_if_true": "yes - a reproducible contract failure of the replica implementation, not an environmental event"
+    },
+    {
+      "rank": 2,
+      "id": "C2",
+      "classification": "CONTINGENT",
+      "title": "Same absolute gate, fired earlier on a finite outer panel or on an outer top-level call",
+      "raise_site": "m245_replica_core.py:574-575 (inner) or :556-557 (outer wrap)",
+      "trigger": "the outer integrand inherits the inner quadrature's finite accuracy; tanh-sinh successive-degree differences plateau at that noise floor. If the plateau exceeds the OUTER gate (saved_eps/8 at ambient prec 269 = 1.6e-82), mpmath runs all 14 degrees and the gate fails.",
+      "why_contingent": "depends on the realised noise floor of nested quadrature, which is not statically computable",
+      "rerun_changes_anything": false,
+      "note": "deterministic in practice (the arithmetic is deterministic) but not decidable by static reading"
+    },
+    {
+      "rank": 3,
+      "id": "C3",
+      "classification": "CONTINGENT (environmental)",
+      "title": "MemoryError / resource exhaustion during degree-9..14 node escalation or b_cache growth",
+      "raise_site": "wrapped at m245_replica_core.py:556-557 by `except Exception as exc`",
+      "trigger": "mpmath standard_cache holds ~1.6e5 node pairs per degree at degrees 9-14 for two precisions; context['b_cache'] (:699) stores one closure plus one result per distinct outer node and is never evicted",
+      "why_contingent": "depends on host memory at that moment",
+      "rerun_changes_anything": "possibly",
+      "note": "this is the ONE surviving branch that would be an environmental artifact rather than a contract defect; MemoryError is an Exception subclass so unittest renders it identically as ERROR"
+    },
+    {
+      "rank": 4,
+      "id": "C4",
+      "classification": "CONTINGENT (low)",
+      "title": "mpmath internal exception at extreme arguments",
+      "raise_site": "wrapped at m245_replica_core.py:556-557",
+      "trigger": "_phi (:350-351) computes mp.exp(-(v*v)/2) and _Phi (:354-355) computes mp.erfc(-v/sqrt(2)) at v ~ 1e61 (dps 80) or ~1e101 (dps 100); an OverflowError or ValueError from mpmath's elementary-function guards would be wrapped identically",
+      "rerun_changes_anything": false
+    },
+    {
+      "rank": 5,
+      "id": "C5",
+      "classification": "CONTINGENT (very low)",
+      "title": "Nonfinite quadrature value or error returned by mp.quad at an extreme node",
+      "raise_site": "m245_replica_core.py:560 or :561 via _as_mpf -> :346 'must be finite'",
+      "rerun_changes_anything": false
+    },
+    {
+      "rank": 6,
+      "id": "C6",
+      "classification": "CONTINGENT (very low, requires all three outer integrations to complete)",
+      "title": "Late contract check inside validate_replica_result",
+      "raise_sites": [
+        "m245_replica_core.py:1128 constant-zero replica node stub",
+        "m245_replica_core.py:1135-1136 replica moment identity mismatch",
+        "m245_replica_core.py:1137-1138 M_same <= 0 or M_cross == 0 or K_rep <= 0",
+        "m245_replica_core.py:1097 replica cache scope is not reconstructible",
+        "m245_replica_core.py:1168-1169 outer error sum failed reconstruction"
+      ],
+      "static_analysis": "all of these were traced and found to PASS: K_rep = Var((X(G)+X(-G))/2) > 0 analytically; the scope round-trips through _validate_result_cache_scope :1041-1072; the outer error sums are bounded by 9*eps/8",
+      "rerun_changes_anything": false
+    }
+  ],
+
+  "eliminated_causes": [
+    {"id": "E1", "cause": "interruption / session death / Ctrl-C / process signal", "eliminated_by": "C:/Python314/Lib/unittest/suite.py:166-167 wraps setUpClass() in `except Exception`. KeyboardInterrupt and SystemExit are NOT Exception subclasses and would have aborted the run. cmd2.err lines 8-16 show 9 further tests ran. The raised object was therefore an Exception subclass.", "strength": "hard, non-numeric, no cmd1 needed"},
+    {"id": "E2", "cause": "missing file / hash mismatch / authority drift / V2 unloadable", "eliminated_by": "setUpClass reads no file at all - _varying_dummy_event() is built in memory from float literals. Independently cmd2 line 1 and line 5 passed (replica frozen constants + replica V2 rehash/validate), and cmd1 tests 3-4 passed the same from the primary side.", "strength": "hard"},
+    {"id": "E3", "cause": "mpmath absent / precision context broken / gateway protocol wrong / mp.quad kwargs wrong", "eliminated_by": "cmd2 lines 12-13 passed, running 368 real mp.quad(tanh-sinh, maxdegree=14, error=True) calls through the identical _DummyQuadGateway and mp.workdps at both 80 and 100 dps; cmd1's 31 tests likewise.", "strength": "hard"},
+    {"id": "E4", "cause": "array receipt schema / dtype / shape / hex-row / raw-hash / receipt-hash failure on the varying event", "eliminated_by": "test_m245_primary_core.py:735-744 setUpClass builds a BYTE-IDENTICAL _varying_dummy_event() (same helper, same literals, same event_id) and cmd1 passed it; plus cmd2 lines 2-3 passed the replica's own decoder tests.", "strength": "hard"},
+    {"id": "E5", "cause": "SPD / symmetry / conditional variance / |rho_c| >= 1 failure in _event_context (:416-436)", "eliminated_by": "two independent signals: (i) exact Fraction arithmetic - symmetric, C00=1, minor 0.91, det 0.853125, var_j 0.91, var_k 0.9375, rho_c exactly 0; (ii) cmd1's conditional_pair_parameters (m245_primary_core.py:407-423), an independent reimplementation of the same Schur complement, accepted the same event.", "strength": "hard"},
+    {"id": "E6", "cause": "cache_scope_id raise (:500-509)", "eliminated_by": "all five guards satisfied by inspection: shard_id=97 int >= 0 non-bool; invocation_index=1; event_id non-empty and free of CR/LF/NUL; engine='replica'; dps in (80,100).", "strength": "hard by inspection"},
+    {"id": "E7", "cause": "run_replica_event entry guards (:825-830)", "eliminated_by": "inspection: dps in PRECISIONS_DPS, gateway callable, scope a non-empty str.", "strength": "hard by inspection"},
+    {"id": "E8", "cause": "top_level_error_gate failure at :698 (unary) or :806 (outer)", "eliminated_by": "structurally unreachable: any panel reaching the sum already passed error <= saved_eps/8, so error_sum <= 8*eps/8 ~ 8e-88 (inner) or 9*eps/8 ~ 1.4e-82 (outer), both far below the 2e-14*max(1,|value|) threshold. If the call gate fails, _request_quad raises first.", "strength": "hard structural"},
+    {"id": "E9", "cause": "cache / scope collision", "eliminated_by": "_cache_key uses the exact mpf 4-tuple; scope is constant within the call; call_role is constantly 'outer_top_level' because _DummyQuadGateway exposes neither active_request_index nor current_request_index (:516-521). On a hit the gateway has neither record_cache_hit nor ledger, so :658 returns without raising. No collision raise-site is reachable.", "strength": "hard structural"},
+    {"id": "E10", "cause": "mp.fsum over the empty nested-record generator (:881-885)", "eliminated_by": "call_role is never 'nested_unary' with this gateway so the generator is empty; mpmath mpf_sum([]) returns fzero, mp.nstr gives '0.0', _as_mpf accepts it and it is >= 0 at :1161.", "strength": "hard structural"},
+    {"id": "E11", "cause": "RecursionError", "eliminated_by": "no recursive call path exists; nesting depth is fixed at outer-quad -> integrand -> inner-quad -> integrand.", "strength": "hard structural"}
+  ],
+
+  "retracted_elimination": {
+    "id": "R1",
+    "what_I_initially_eliminated": "nested mp.quad (quad called from inside a quad integrand) as a failure family, on the grounds that cmd1's run_primary_event nests _integrate_half_normal -> b_at -> _primary_b_from_parameters -> 16 _gateway_request calls and passed",
+    "why_it_does_not_hold": "for this event rho_c == 0, and m245_primary_core.py:305-309 plackett_panel_bounds(0) returns tuple(0*index/16 for index in range(17)) = seventeen zeros. All 16 primary inner panels are degenerate [0,0]. mpmath quadrature.py:217-218 does `if a == b: continue`, so summation evaluates NOTHING and returns (0, 0) instantly, which trivially satisfies the gate. cmd1 therefore never executed a single real nested quadrature on this event. The primary test's own comment (test_m245_primary_core.py:211-213) says the event was chosen to exercise the outer path 'cheaply'.",
+    "consequence": "cmd1 licenses NOTHING about the replica's nested inner-quadrature behaviour. The replica's INNER_BASE_PANELS are frozen and non-degenerate, so the replica runs 8 real inner tanh-sinh quadratures per b evaluation regardless of rho_c."
+  },
+
+  "architectural_asymmetry": {
+    "primary": "the nested integrand is _bivariate_pdf (m245_primary_core.py:511-516), a probability density bounded by 1/(2*pi*sqrt(delta)); its panel integrals are always O(1), so the ABSOLUTE gate err <= eps/8 is always satisfiable at any outer node",
+    "replica": "the nested integrand is _phi(t)*(centered_j*centered_k) (m245_replica_core.py:670-676); its magnitude scales linearly with the OUTER node g whenever C[i][j] or C[i][k] is nonzero, and _outer_panel_bounds (:761-767) terminates the panel list with mp.inf, so mpmath places outer nodes at g ~ 1e61 (dps 80) and ~1e101 (dps 100)",
+    "consequence": "the gate is absolute, not relative; the replica feeds it unbounded-magnitude integrands and the primary does not"
+  },
+
+  "decidability_verdict": {
+    "class_of_cause_is_decided": "an Exception raised by the replica implementation inside run_replica_event's outer integration (or, at lowest rank, resource exhaustion inside that same work). It is NOT an interruption artifact and NOT environmental/authority/schema.",
+    "exact_raise_site_is_NOT_statically_decidable": "five distinct causes funnel into the same wrapped M245ReplicaContractError at :557 and no traceback exists",
+    "genuine_contract_failure_vs_environmental_artifact": {
+      "interruption_adjacent_artifact": "ELIMINATED on a hard non-numeric ground (E1)",
+      "environmental_artifact": "only C3 (MemoryError) survives, ranked 3rd, and it would still be exhaustion caused by the replica's own workload",
+      "genuine_reproducible_contract_failure": "C1 is deterministic, is reached unconditionally once the finite outer panels complete, and is supported by measured evidence with ~10 orders of magnitude of margin",
+      "plain_statement": "the evidence distinguishes these two, and it favours a genuine reproducible contract failure - but it cannot prove WHICH raise-site fired, and C3 remains open"
+    },
+    "timing_evidence": {
+      "observed": "cmd2 ran 3h34m29s before its final log write",
+      "derived": "the 8 surviving IndependentMath tests cost ~2 minutes at measured primitive costs and measured node counts, so setUpClass consumed essentially the whole interval",
+      "not_observable": "the exact setUpClass/IndependentMath split - stderr carries no per-line timestamps and no other artifact was written during the run",
+      "reading": "the raise came at the END of hours of successful nested quadrature, not at entry - which is consistent with C1/C2/C3 and inconsistent with every eliminated early-deterministic cause"
+    }
+  },
+
+  "one_settling_check_that_would_close_it_completely": {
+    "what": "the traceback",
+    "how_it_could_be_obtained_without_rerunning_cmd2": "evaluate replica.run_replica_event(_varying_dummy_event(), 80, ...) OUTSIDE the frozen test file, or read the b(g) magnitude at the [16,inf) degree-1 node directly - either would name the raise-site exactly",
+    "why_this_agent_did_not_do_it": "the sealed charter forbids importing or executing any m245 module; this is stated as an option for the adjudication owner, not a recommendation"
+  }
+}

@@ -1,0 +1,19 @@
+prec=289  saved_eps=2.0107647e-87  gate=2.5134559e-88
+
+   scale      panel value    returned err   pass    secs
+    1e45    2.4742007e+44         1.0e-91   True    0.04
+    1e50    2.4742007e+49         1.0e-43  False    7.93
+    1e53    2.4742007e+52         1.0e-40  False    3.56
+    1e55    2.4742007e+54         1.0e-38  False    2.72
+    1e56    2.4742007e+55         1.0e-37  False    2.08
+    1e57    2.4742007e+56         1.0e-36  False    2.03
+    1e58    2.4742007e+57         1.0e-35  False    2.47
+    1e59    2.4742007e+58         1.0e-34  False    2.49
+    1e60    2.4742007e+59         1.0e-33  False    2.26
+    1e61    2.4742007e+60         1.0e-32  False    2.58
+
+passing exponents: [45]
+failing exponents: [50, 53, 55, 56, 57, 58, 59, 60, 61]
+
+Replica inner panel [0,0.25] value at the degree-1 node of the outer
+panel [16,inf) (g = 2.5179e61):  ~ -8.5e59   (|value| ~ 1e60)
