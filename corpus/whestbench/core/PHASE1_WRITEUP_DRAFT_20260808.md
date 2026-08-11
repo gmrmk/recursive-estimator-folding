@@ -1,11 +1,14 @@
-# Phase-1 Algorithmic Contribution writeup — draft v10
+# Phase-1 Algorithmic Contribution writeup — draft v11
 
-Status: DRAFT v10, 2026-08-11. **v10 is a correction release against the v9
+Status: DRAFT v11, 2026-08-11. **v11 is a correction release against the v9
 filed on 2026-08-10**, and every change it makes is a defect we found in our own
-filed text after filing. The three errata are stated in full in §0 below and
-marked inline at each site (E1 §3 table and §3f, E2 §4, E3 §3d). None of them
-changes a conclusion; two of them change a number we published, and one of them
-retracts a recommendation we made to the field. We are re-filing rather than
+filed text after filing. The four errata are stated in full in §0 below and
+marked inline at each site (E1 §3 table and §3f, E2 §4, E3 §3d, **E4 §3e/§3f**).
+E1–E3 change numbers and one recommendation without changing a conclusion.
+**E4 changes a conclusion**: the paper's central synthesis was stated as a
+theorem, it is not one, and its corrected status is open. We would rather file
+a weaker paper that is true than a stronger one that is not, and we would rather
+say so on the first page than in a footnote. We are re-filing rather than
 leaving them standing, because a paper whose §4 tells other people not to carry
 dispositions by wording cannot carry its own claims that way.
 
@@ -85,6 +88,43 @@ the median.
 error. Folding that in widens the honest 50-net P5-P95 band from
 [1.54e-7, 2.16e-7] to **[1.46e-7, 2.25e-7]** and raises P(suite score > 2.5e-7)
 from 0.034% to **0.57%**. We state the wider band.
+
+**E4 — the central synthesis was stated as a theorem and is not one (§3e, §3f).**
+This is the largest correction in the document and it goes against our own
+headline. v9 asserted that the finite-width output of a deep random ReLU network
+is *maximum-entropy* independent chi²₁ speckle sitting at the degree-4 boundary
+of an exact 2-design, and that this one fact explains every failed mutation, the
+champion's correction-proofness, and a floor set by an independent-cell count
+`N_eff`. **Withdrawn.** Three separate defects:
+
+1. *The evidence is quarantined.* The harmonic-spectrum computation that
+   appeared to establish the mechanism was executed after a sealed evidence
+   charter and was not disclosed as in flight, so it carries no evidence weight.
+   Its outputs are retained and visibly marked rather than deleted, because
+   deleting an inadmissible measurement is worse than quarantining it.
+2. *The older account does not revive.* Withdrawing the replacement does not
+   restore equipartition — the record never established that either. The
+   degree-ℓ design-error operator and the residual field's harmonic energy
+   coefficients are different objects, and flatness of the former implies
+   nothing about the latter. A chi²-like one-point amplitude marginal does not
+   determine a harmonic spectrum.
+3. *Family-local results were promoted to global ones.* Output-side feature
+   families failing at the frozen target is a strong family-local observation.
+   It is not a spectral-tail theorem, a no-truncation theorem, or a minimax
+   floor, and v9 used it as all three.
+
+Corrected status: **open**, not reverted. What survives is stated in §3e in the
+narrower form it earns, and it is still enough for the claim that matters — the
+champion is correction-proof because it has zero fitted structure to overfit,
+which is a measured property (N8c zero bias) and needs no entropy argument.
+
+Two audits reached this independently and within hours of each other: an
+adversarial partner auditing our papers under a sealed evidence protocol, and
+our own twelve-agent refinement pass, which separately flagged that the
+correction had been inserted into one section and never propagated to the four
+that depend on it. Neither audit was prompted by the other. We record that
+because it is the strongest evidence we can offer that the correction is real
+rather than defensive.
 
 A note on how these were found, since it bears on §4's argument. E1 and E2 both
 surfaced from an adversarial pass over our own record run against public forum
@@ -392,13 +432,18 @@ DERIVE the empirical wall rather than merely measure it:
    anchored on σ²/N directly, with the kernel retained only as
    corroboration.
 
-Together: the estimator's error consists of independent chi²₁ speckle
-draws whose generating structure is set by the earliest layers, sampled
-by a design whose single exploitable mode is already optimally
-suppressed. Within this model, variance-per-billed-FLOP is not merely
-the observed best lever — it is the only lever the physics admits, and
-the finite-width offset in (2) locates the sole remaining crack at the
-exact-finite-width frontier. All five measurements are reproducible from
+Together, **and at the level these five measurements actually earn**
+(Erratum E4): the estimator's error is consistent with independent chi²₁
+speckle draws whose generating structure is set by the earliest layers,
+sampled by a design whose single *measured* exploitable mode is already
+optimally suppressed. This is a **model the measurements support, not a
+theorem they prove** — the one-point amplitude and the correlations at
+realized spacings are measured; the harmonic spectrum beyond the
+pre-charter modes is not. Within this model, variance-per-billed-FLOP was
+the best lever we found and the finite-width offset in (2) is the crack we
+could locate. v9 said "the only lever the physics admits" and "the sole
+remaining crack"; both are withdrawn as overstatements of a family-local
+result. All five measurements are reproducible from
 committed artifacts (`experiments/s5_kink_concentration/`,
 `s6_bragg_spectrum/`, `s7_speckle/`, `s8_layer_profile/`,
 `s17_ibc_floor/`), each with predeclared gates, two-signal verification,
@@ -422,17 +467,30 @@ point-evaluation oracle entirely and read the weights themselves. This is
 a map of tested classes, not a proof that no untested output-side method
 enters the gap.
 
-The synthesis, stated once (`core/GOD_NODE_SYNTHESIS_20260810.md`): a
-centrality analysis of the campaign's full failure-and-passes evidence
-graph finds ONE god node. The finite-width output of a deep random ReLU
-network is maximum-entropy independent chi²₁ speckle sitting exactly at
-the degree-4 boundary of a maximum-structure exact 2-design — and this
-single fact is simultaneously why every proposed mutation fails (the
-speckle's dimensionality, weight-fidelity, and independence are one
-property), why the champion is correction-proof (a maximum-entropy
-unbiased residual has zero fitted structure to overfit — N8c's measured
-zero bias), and what sets the floor of (5) (the speckle's
-independent-cell count N_eff). One precision matters, and we state it
+The synthesis, restated at its earned level (`core/GOD_NODE_SYNTHESIS_20260810.md`;
+**substantially withdrawn — Erratum E4**). A centrality analysis of the
+campaign's evidence graph finds one central node, and v9 stated it as a
+theorem. It is not one. The admissible statement is:
+
+> At the frozen target, the Kerdock estimator is an exact spherical 2-design
+> whose committed degree-4 design-error operator is broadly distributed, and
+> whose measured output residual has chi-squared-like **one-point** energy and
+> very small correlations **at the design's realized spacings**. Multiple
+> predeclared output-side feature families failed against it. These are strong
+> descriptive and family-local observations. The residual harmonic spectrum
+> beyond the pre-charter measured modes, and any universal truncation or
+> lower-bound consequence, **remain open**.
+
+What v9 asserted and this version withdraws: that the residual is
+*maximum-entropy* (equipartition was never established, and the R0 computation
+that appeared to replace it is quarantined); that degree 4 is *the* boundary
+or the only suppressed degree; and that an independent-cell count `N_eff` sets
+a floor. A chi²-like one-point amplitude marginal does not determine a harmonic
+spectrum, and the degree-ℓ design-error operator and the residual field's
+harmonic energy coefficients are different mathematical objects. What survives
+is narrower and still useful: the champion is correction-proof because it has
+**zero fitted structure to overfit**, which is N8c's measured zero bias and
+does not require the entropy claim at all. One precision matters, and we state it
 carefully: the entropy is COMPUTATIONAL, not ontic. The residual is a
 deterministic function of weights we possess — the weights are the seed —
 that behaves as strong pseudo-randomness against every sub-budget test we
