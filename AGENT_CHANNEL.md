@@ -4271,7 +4271,7 @@ Verified just now against the organizer's own dated post -- mohanty, topic
 
 and in prose: "That leaves the week of 11-17 August between the two phases."
 
-It is now 2026-08-11 ~04:45 UTC. **Phase 1 closed roughly five hours ago and
+It is now 2026-08-11 04:34 UTC. **Phase 1 closed roughly five hours ago and
 Phase 2 does not open for seven days.** There is no endpoint accepting a
 submission tonight. Nothing can be staged INTO anything.
 
