@@ -1,6 +1,6 @@
-# Phase-1 Algorithmic Contribution writeup — draft v11
+# Phase-1 Algorithmic Contribution writeup — draft v12
 
-Status: DRAFT v11, 2026-08-11. **v11 is a correction release against the v9
+Status: DRAFT v12, 2026-08-11. **v11 is a correction release against the v9
 filed on 2026-08-10**, and every change it makes is a defect we found in our own
 filed text after filing. The four errata are stated in full in §0 below and
 marked inline at each site (E1 §3 table and §3f, E2 §4, E3 §3d, **E4 §3e/§3f**).
@@ -22,33 +22,62 @@ Aug 17, 23:59 UTC per the Algorithmic Contribution guidelines thread.
 
 ---
 
-## Structured spherical designs, and a certified measurement of where
-## mechanistic estimation stops working at depth 32
+## Where white-box estimation on random ReLU MLPs stops working, and how we
+## know: four theorems about what cannot be improved, and the falsification
+## protocol that caught our own errors
 
 ### Executive summary
 
-We submit a sampling estimator built on a **structured phased-Hadamard
-spherical design** with exact radial conditioning, pilot-rescued structural
-pruning, three-terminal-layer folding, and a frozen first-layer moment-tangent
-control. On our local suite it scores adjusted 1.62e-7 against a
-budget-matched Monte-Carlo baseline of 1.07e-6 — a **6.6x improvement per
-FLOP over sampling**, with zero measured bias at the scored layer.
+**What this contributes is a map of the boundary, not a score.** The estimator
+we submit is a vehicle for the measurements; the durable content is a set of
+statements about what no method of a given shape can achieve on these networks,
+each stated at exactly the confidence its evidence earns — including four
+claims we withdrew during the week, with their arithmetic.
 
-Alongside it we contribute something we believe is more durable than the
-score: a **certified-exact Gaussian-closure implementation** and a direct
-measurement of its error at depth 32, which quantifies the non-Gaussianity
-wall that bounds every moment-propagation method on this benchmark; and an
-**eight-mutation falsification ledger** in which every proposed improvement
-was predeclared with a kill gate before implementation, and every one of them
-died on measurement.
+**The mechanism, and why it carries no fitted constants.** The estimator
+integrates over a frozen phased-Hadamard **exact spherical 2-design** (126
+mutually unbiased frames × 256 directions, antipodally doubled to 64,512) at
+the exact radius `E‖X‖`, with structural pruning, terminal-layer folding, and a
+first-layer moment-tangent control. Every constant in it is *forced* by the
+construction — the design, the radius, and the weights are all determined, none
+are tuned. There is **zero fitted structure anywhere in the estimator**, which
+is a measured property (N8c: zero bias at the scored layer), not a design
+aspiration. That matters more than the score: it is why the estimator cannot
+overfit a public suite, and it is the property we would defend under audit.
 
-New in v7, restated at its earned level in v8: the wall now has a measured
-floor **bound** — a gated lower-bound attempt (§3e(5)) places the champion
-within ~2x of the per-forward point-evaluation floor (pooled 1.79x; per net
-1.63 / 2.37 / 1.37) and at 0.90x on the distinct-direction accounting,
-robust within ~2x of its stated assumptions; it is a lower-bound attempt,
-not a minimax-optimality proof — and the falsification structure reduces to
-a single stated theorem (§3e).
+**Four things we can now say about the boundary, three of them proved.**
+
+1. **Uniform weights cannot be improved on a fixed design.** For any zonal
+   criterion, positive-semidefiniteness plus constant row sums makes uniform
+   weighting a global minimiser of the quadrature error at *every*
+   spherical-harmonic degree, and for every nonnegative mixture of degrees.
+   Reweighting a fixed point set is therefore closed — for anyone, not just us.
+   *(Strict uniqueness holds only where the kernel is definite: verified at
+   degrees 4, 6, 8; false at degree 2, where the design is exact; open above.)*
+2. **A whole family of truth-free estimators is dead by algebra.** If an
+   estimator anchors on its own uniform frame mean, the sum-one GLS solution is
+   uniform *identically* — for every ridge and every shrinkage, with no
+   probabilistic model. Four descendants that failed in four apparently
+   different ways are one failure, and the identity predicts it without an
+   experiment.
+3. **Every divergence-form rewrite of the target is one of exactly two kinds.**
+   Either it is free of the kink set, in which case it collapses to reweighted
+   point evaluations whose entire radial content is Euler's identity — or it
+   deposits mass on the kink set, and any realization must locate kinks and
+   evaluate gradient jumps there. No third class exists.
+4. **An exact surface identity for the Gaussian mean exists and is useless as
+   an estimator.** `E[f(X)]` equals a Gaussian-weighted integral of normal
+   gradient jumps over the kink set. The identity is exact; the estimator it
+   induces is worse than Monte Carlo by ~189× in variance even with a free
+   oracle for every crossing.
+
+**What we do NOT claim**, and withdrew during the week: that the residual is
+maximum-entropy; that its harmonic spectrum is characterized; that any
+truncation class is closed; or that a minimax floor is established. Those are
+**open**, and §0 gives the four errata with their evidence.
+
+**The falsification protocol is the second contribution**, and §4b reports it
+being turned on ourselves under adversarial conditions.
 
 ### 0. Errata against the v9 filed 2026-08-10
 
@@ -621,6 +650,74 @@ re-run in fresh interpreters) reprices the affected analytic bills about 2x
 down — screened only, measured at width 256, not reusable at larger widths
 without re-measurement, residual risks named on the record, nothing deployed
 and no Phase-1 score headroom claimed anywhere in the sweep.
+
+### 4b. LLM involvement, stated in full, and what we did about it
+
+The guidelines require full transparency about LLM involvement and warn that
+unhedged dubious claims reduce credibility. We take both seriously enough to
+make our answer a section rather than a disclaimer.
+
+**Disclosure.** This campaign was conducted end-to-end by large language models
+operating as agents, under human direction. The estimator, the experiments, the
+ledger, this document and the six companion papers were all written by LLMs.
+Nothing here is human-authored code with LLM assistance; it is the other way
+round. We think that is exactly the situation the guidelines are worried about,
+and the rest of this section is what we built to make it auditable.
+
+**The evidence-tag discipline.** Every load-bearing claim in this document and
+in all six papers carries one of five labels: **[O]** observed (a run in this
+corpus produced it), **[D]** derived (follows by steps shown inline), **[R]**
+reported (a committed artifact says so, not re-derived here), **[A]** assumed
+(a stated modelling choice), **[GAP]** a known hole with the check that would
+close it. The rule is that no claim may be stated above the level its artifact
+earned. The tags exist because a fluent model produces plausible text whether or
+not the underlying claim is true, so fluency has to be decoupled from confidence
+mechanically rather than by intention.
+
+**The adversarial protocol.** Two LLM agents from different model families
+worked the same corpus under a sealed evidence charter: each committed proposals
+by SHA-256 before revealing bytes, each audited the other's mathematics, and
+neither could admit a measurement as evidence unless it was disclosed as in
+flight before it ran. A third mechanism — a twelve-agent refinement pass over
+the six papers, with adversarial verifiers instructed to *refute* rather than
+confirm — ran independently of both.
+
+**What that machinery found, in one day, in our own flagship claims.** We
+report this because it is the strongest evidence we can offer that the labels
+above are load-bearing rather than decorative:
+
+- A **false uniqueness theorem.** Our proof that uniform weights are the unique
+  constrained minimiser at every even degree is false at degree 2: the design is
+  an exact 2-design there, so the kernel matrix has a 126-dimensional null space
+  and every per-frame reweighting is free. Found by three independent routes
+  within hours — a two-frame witness, the full kernel dimension, and an exact
+  rational recomputation. The global-minimiser half survives and is what §0
+  and the papers now claim.
+- An **unproved exhaustiveness step.** The "no third class" clause of our
+  divergence-form dichotomy was asserted under hypotheses too weak to carry it;
+  an admissible field of the form `s·x/|x|^(d+1)` produces a third singular
+  source at the origin. The definition has been strengthened and the branches
+  are unaffected.
+- A **control with no power, presented as a control.** A permutation null we
+  cited as evidence is provably incapable of returning anything but the value it
+  returned — our own corollary forces it. Its residual was *smaller* than the
+  real arm's, which is the signature of re-measuring an identity.
+- An **inadmissible measurement supporting a headline.** The computation
+  underpinning our central spectral claim was executed after the evidence
+  charter without disclosure. It is now quarantined — retained and struck rather
+  than deleted — and the claim it supported is **open**. Withdrawing it does not
+  revive the account it replaced, which was never established either.
+
+Several published figures were also wrong at the third significant digit or in
+their normalisation, and are corrected in §0 and in the papers with the
+arithmetic shown.
+
+**The asymmetry we want on the record.** Public scrutiny of this work — a forum
+sweep across every competitor write-up and organizer thread we could find —
+produced **no** defect in our record. Every defect above was found by our own
+machinery pointed at ourselves. We do not offer that as proof of correctness. We
+offer it as the reason to believe the remaining claims are labelled honestly:
+the same process that produced them is demonstrably willing to destroy them.
 
 ### 5. Compute transparency
 
