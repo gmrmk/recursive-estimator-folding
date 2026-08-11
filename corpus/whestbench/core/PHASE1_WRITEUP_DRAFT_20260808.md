@@ -109,16 +109,28 @@ the fourth is a measured screen and is labelled as one.**
    probabilistic model. Four descendants that failed in four apparently
    different ways are one failure, and the identity predicts it without an
    experiment.
-3. **Every divergence-form rewrite of the target is one of exactly two kinds.**
-   Either it is free of the kink set, in which case it collapses to reweighted
-   point evaluations whose entire radial content is Euler's identity — or it
-   deposits mass on the kink set, and any realization must locate kinks and
-   evaluate gradient jumps there. No third class exists.
-4. **An exact surface identity for the Gaussian mean exists and is useless as
-   an estimator.** `E[f(X)]` equals a Gaussian-weighted integral of normal
-   gradient jumps over the kink set. The identity is exact; the estimator it
-   induces is worse than Monte Carlo by ~189× in variance even with a free
-   oracle for every crossing.
+3. **Within one admissible class of surface rewrites, there are exactly two
+   kinds and no third.** [proved, under stated hypotheses] Either the rewrite is
+   free of the kink set — in which case it collapses to reweighted point
+   evaluations whose entire radial content is Euler's identity — or it deposits
+   mass on the kink set, and realizing *that rewrite* means locating kinks and
+   evaluating gradient jumps.
+   **Scope, and it is the narrowest of the four:** exhaustiveness holds over a
+   specific admissible class (fields jointly locally Lipschitz in all three
+   slots, with an `o(|x|^{1-d})` bound at the origin) and **fails without those
+   hypotheses** — a third class exists under weaker ones, and we exhibit it. The
+   result classifies **representations of the integral**, so "requires locating
+   K" describes what a rewrite of this shape *contains*; it is **not an
+   algorithmic lower bound** on estimating the target by other means. Companion
+   P5 carries the proof, the counterexample, and the open items.
+4. **An exact surface identity for the Gaussian mean exists, and the estimator
+   it induces is far worse than sampling on the screen we ran.** [measured, not
+   proved] `E[f(X)]` equals a Gaussian-weighted integral of normal gradient
+   jumps over the kink set — that identity is exact and independently
+   implemented twice. The induced estimator lost to Monte Carlo by ~189× in
+   variance (per-seed 196.0 / 173.3 / 199.9) even granting a free oracle for
+   every crossing and jump. **Scope:** that is a measurement at the widths and
+   depths screened, not a theorem about every kink-set method.
 
 **What we do NOT claim**, and withdrew during the week: that the residual is
 maximum-entropy; that its harmonic spectrum is characterized; that any

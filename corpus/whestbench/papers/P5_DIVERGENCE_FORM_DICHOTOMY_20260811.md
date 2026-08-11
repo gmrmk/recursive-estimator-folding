@@ -26,9 +26,17 @@ has that jump or does not. **Class A** (no jump) is proved here to carry *no der
 elementary rigidity lemma shows the jump-free fields are affine in the gradient with an antisymmetric coefficient, and
 one tangential integration by parts then collapses every such rewrite to a reweighting of point evaluations of `f`
 whose entire radial content is Euler's identity. **Class B** (jump present) has a nonzero summand that is literally an
-integral over K, so realizing it requires locating and integrating over K. The dichotomy is exhaustive and exclusive by
-construction, and it has a one-line avatar: distributionally `Delta_S f = -(d-1) f + (facet jump measure on K)`, whose
-first term is class A and whose second is class B, with no third term [D, corroborated verbatim at d = 256 by ledger
+integral over K, so realizing it *within this class of rewrites* requires locating and integrating over K.
+
+**Scope of the exhaustiveness, stated in the abstract because draft 1 overstated it there.** The dichotomy is
+exhaustive **over the admissible class D1 as strengthened in draft 2** — joint local Lipschitzness in all three slots
+and an `o(|x|^{1-d})` bound at the origin — and not "by construction" as draft 1 said. Under draft-1 D1 there is a
+third class, exhibited in §2.2. Two further limits belong here rather than in a late section: the theorem classifies
+**representations of the target integral**, so class B's "requires locating K" is a statement about what a
+divergence-form rewrite *contains*, **not an algorithmic lower bound** on estimating `T_G(f)` by other means; and the
+class-B pricing is measured on a narrow screen, not proved. It has a one-line avatar: distributionally
+`Delta_S f = -(d-1) f + (facet jump measure on K ∩ S^{d-1}, carrying H^{d-2})`, whose first term is class A and whose
+second is class B, with no third term under the strengthened D1 [D, corroborated verbatim at d = 256 by ledger
 record `compact_group_laplacian_control`].
 
 Two corrections to the thesis as it was handed to me, both material. First, **class A is not identical to the
@@ -84,7 +92,9 @@ reproduces it to **4.9e-17 relative** — i.e. the frozen literal is correct to 
 >    **376 ulps apart**.
 > 3. The parenthetical blamed the frozen literal for carrying excess digits. It has this backwards — the literal is
 >    accurate to `4.9e-17`, and it is **this paper's own `lgamma` recomputation** that is low, by `4.18e-14`
->    relative. That is `lgamma` roundoff, not a discrepancy in the artifact. The champion's design directions are the Kerdock frame scaled by exactly this radius (line 131,
+>    relative. That is `lgamma` roundoff, not a discrepancy in the artifact.
+
+The champion's design directions are the Kerdock frame scaled by exactly this radius (line 131,
 `multiply(output, MEAN_CHI_256 / 16.0)`), which is L0 implemented as an estimator [O].
 
 ### 2.2 What "divergence-form rewrite" means (so the claim can be falsified)
@@ -171,7 +181,14 @@ Two hypotheses, both stated so they can be attacked:
 > does.
 
 > **Corollary (the one-line avatar).** For every `f` in `F_d`, distributionally on the sphere,
-> `Delta_S f = -(d-1) f + J H^{d-1}|_{K cap S^{d-1}}`.
+> `Delta_S f = -(d-1) f + J H^{d-2}|_{K cap S^{d-1}}`.
+>
+> **Measure corrected (draft 2).** Draft 1 wrote `H^{d-1}` here. `K` is a union
+> of hyperplanes through the origin, so it is `(d-1)`-dimensional in `R^d` and
+> carries `H^{d-1}` *there* — but each such hyperplane meets `S^{d-1}` in a great
+> `(d-2)`-sphere, so the sphere-restricted jump set is `(d-2)`-dimensional and
+> the correct measure on it is **`H^{d-2}`**. The ambient identity in P2 is
+> unaffected and keeps `H^{d-1}`; only this restricted avatar was wrong.
 > The first term is class A (proportional to `f`, no K); the second is class B (supported on K); there is no third term.
 
 ### 2.4 What the theorem is not
@@ -357,7 +374,7 @@ Euclidean Laplacian for `f = r^alpha g(u)` is `Delta f = r^(alpha-2)[Delta_S g +
 the trace of `D(grad f)`, i.e. the facet-jump measure `J H^{d-1}|_K` — and in each cell interior `f` is linear so
 `Delta f = 0` there. Rearranging,
 
-> `Delta_S f = -(d-1) f + J H^{d-1}|_{K cap S^{d-1}}`   (distributionally on the sphere).  [D]
+> `Delta_S f = -(d-1) f + J H^{d-2}|_{K cap S^{d-1}}`   (distributionally on the sphere).  [D]
 
 This is the dichotomy compressed to one line. The first term is proportional to `f` itself: it is class A and it is
 information-free, since applying it returns a multiple of the quantity you were trying to integrate. The second is the
