@@ -78,7 +78,9 @@ of a system from a proxy rather than from the artifact that ships — and becaus
 a paper claiming an evidence discipline should show the discipline failing and
 being caught, not only succeeding.
 
-What survives, precisely: the measured final-layer bias is zero (N8c), and no
+What survives, precisely: the N8c screen detects no material final-layer bias (point estimate -0.0336
+against a 0.25 kill threshold, three nets and sixteen rotations — an
+observation, not a theorem; see E6), and no
 component fits to the *evaluation* suite. **Near-zero measured bias does not
 prove absence of fitting**, and we no longer claim it does. The defensible
 statement is that the fitted parts are few, enumerated above, frozen before
@@ -295,7 +297,7 @@ was retuned after seeing results. All are reproducible from the corpus.
 | N7 | RQMC superconvergence at depth 32 | slopes -0.97/-1.23 vs -1.25 gate | killed |
 | N8a | Kronecker lattice vs our frames | lattice **2.1x worse** (CI [1.65,2.65]) | killed |
 | N8b | disclosed native backend | 0.94e11 FLOP/s < λ = 1e11 | killed |
-| N8c | offline-trained corrector | bias share -0.034 (CI [-0.031,0.097]) | killed |
+| N8c | offline-trained corrector | bias share **-0.0336** on a 3-net, 16-rotation screen, against a predeclared kill threshold of 0.25. **Erratum E6: the printed CI [-0.031, 0.097] does not contain its own point estimate** and is not a usable net-level interval | killed |
 | N9 | frames + tangent + deeper fold | +2.1% (positive control +34.5% on iid) | killed |
 | M180 | stronger spherical designs (MUB mix / coset rotations / remix) | all arms +20-49% variance | killed |
 | M181 | terminal rectified-Gaussian smoothing (3 arms incl. unbiased CV) | bias 4-6x baseline MSE; var identical; lambda -> 0 | killed |
@@ -324,7 +326,10 @@ Two of these are results in their own right. **N8a** established that our
 spherical design already dominates a randomized lattice — the lattice's
 advantage over iid evaporates once the radial degree of freedom is
 conditioned away. **N8c** established that our estimator's final-layer error
-is **statistically pure variance** (bias share indistinguishable from zero),
+shows **no material final-layer bias on the N8c screen** (point estimate
+-0.0336 against a 0.25 kill threshold; see E6 — this is an observation on three
+nets and sixteen rotations, not a zero-bias theorem, and it does not license any
+inference to the private suite),
 which is the strongest robustness property available going into a fresh-seed
 re-evaluation: there is no fitted component to overfit.
 
@@ -573,7 +578,7 @@ a floor. A chi²-like one-point amplitude marginal does not determine a harmonic
 spectrum, and the degree-ℓ design-error operator and the residual field's
 harmonic energy coefficients are different mathematical objects. What survives
 is narrower and still useful: the champion has **no component that fits the
-evaluation suite**, and its measured final-layer bias is zero (N8c) — which does
+evaluation suite**, and the N8c screen detects no material final-layer bias (E6) — which does
 not require the entropy claim at all, and is not the same as having no fitted
 constants (it has several; see the executive summary). One precision matters, and we state it
 carefully: the entropy is COMPUTATIONAL, not ontic. The residual is a
