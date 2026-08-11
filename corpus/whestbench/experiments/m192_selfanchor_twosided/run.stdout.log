@@ -1,0 +1,36 @@
+[22:49:55] loaded caches: 3 nets x 16 rotations x 126x256
+[22:49:55] A0 crosscheck: re-running frozen M192 oracle machinery (384 outer fits, 9216 inner fits) ...
+[22:50:02]   A0 net 101: ratio=0.146840 frozen=0.146840 diff=0.000e+00
+[22:50:10]   A0 net 202: ratio=0.095677 frozen=0.095677 diff=0.000e+00
+[22:50:19]   A0 net 303: ratio=0.143037 frozen=0.143037 diff=0.000e+00
+[22:50:19] A0 panel=0.126193 frozen=0.126193 reproduces=True
+[22:50:19] A1 self-anchor / M192 solver, alpha=0.25 frozen ...
+[22:50:19]   A1 net 101: ratio=1.000000000000 max|rot ratio-1|=1.854e-13
+[22:50:20]   A1 net 202: ratio=1.000000000000 max|rot ratio-1|=1.495e-13
+[22:50:20]   A1 net 303: ratio=1.000000000000 max|rot ratio-1|=2.829e-13
+[22:50:20] A1 panel=1.000000000000 max|w-1/126|=1.455e-15 max rel |C1|=4.500e-15
+[22:50:20] A1b alpha sweep (robustness; predeclared to be alpha-invariant for alpha>0) ...
+[22:50:20]   alpha=0.0: EXCEPTION RuntimeError: GLS weights do not sum to one
+[22:50:21]   alpha=0.25: panel=1.000000000000 max|w-u|=1.455e-15
+[22:50:22]   alpha=0.5: panel=1.000000000000 max|w-u|=7.858e-16
+[22:50:23]   alpha=0.75: panel=1.000000000000 max|w-u|=4.077e-16
+[22:50:25]   alpha=0.9: panel=1.000000000000 max|w-u|=1.821e-16
+[22:50:26]   alpha=0.99: panel=1.000000000000 max|w-u|=6.765e-17
+[22:50:26] A2 self-anchor / M194 projected-block solver (independent implementation) ...
+[22:50:26]   A2 net 101: ratio=1.000000000000
+[22:50:27]   A2 net 202: ratio=1.000000000000
+[22:50:28]   A2 net 303: ratio=1.000000000000
+[22:50:28] A2 panel=1.000000000000 |b_self|med=4.121e-19 |b_truth|med=1.263e-05
+[22:50:28] A3 permutation null control (per-frame output-index shuffle on the covariance training block) ...
+[22:50:29]   A3 net 101: ratio=1.000000000000
+[22:50:29]   A3 net 202: ratio=1.000000000000
+[22:50:30]   A3 net 303: ratio=1.000000000000
+[22:50:30] A4 positive control: same shuffle inside the frozen M192 truth-trained oracle (power check for A3) ...
+[22:50:31]   A4 net 101: oracle_unshuffled=0.146840 oracle_shuffled=0.774569
+[22:50:32]   A4 net 202: oracle_unshuffled=0.095677 oracle_shuffled=0.596948
+[22:50:32]   A4 net 303: oracle_unshuffled=0.143037 oracle_shuffled=1.059396
+[22:50:32] A5 identity check: self-anchored covariance vs P C_m192 P ...
+[22:50:33] A5 max rel Frobenius error = 6.404e-15
+[22:50:33] A1 panel ratio = 1.000000000000
+[22:50:33] verdict = KILLED  (prediction_held=True)
+[22:50:33] wrote C:\Users\strid\Documents\Codex\2026-08-02\https-chatgpt-com-share-6a5556ed-2e1c\publish\recursive-estimator-folding\corpus\whestbench\experiments\m192_selfanchor_twosided\results.json  in 38.1s

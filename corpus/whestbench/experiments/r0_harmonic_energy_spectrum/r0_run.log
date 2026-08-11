@@ -1,0 +1,112 @@
+=== CROSS-CHECKS (recomputed vs committed) ===
+  dim_H4_recomputed_vs_s6                [183148480, 183148480, True]
+  dim_H6_recomputed_vs_s6                [414173091136, 414173091136, True]
+  G4_at_0                                [4.5777065690089265e-05, 4.5777065690089265e-05]
+  G4_at_1_over_16                        [-3.087381444552529e-05, -3.087381444552529e-05]
+  G6_at_0                                [-8.837271368743101e-07, -8.837271368743101e-07]
+  G6_at_1_over_16                        [9.534594054985972e-07, 9.534594054985972e-07]
+  C4_at_1                                [177556160, 177556160]
+  C4_coeffs_t0_t2_t4                     [[8128, -4194048, 181742080], [8128, -4194048, 181742080]]
+  lam_top_deg4_vs_s6_closed_form         [7.350908201315546e-07, 7.350908201315546e-07]
+  lam_top_deg6_vs_s6_closed_form         [3.194089008420301e-05, 3.194089008420301e-05]
+  haar_H4_design_over_iid_rms            [0.15398405597386836, 0.15398405597386836]
+  haar_H6_design_over_iid_rms            [1.0150297289025836, 1.0150297289025836]
+  m191_odd_degrees_zero_on_doubled_design [0.0, 0.0, 0.0]
+  kappa_1_1_equals_1                     1.0
+  max_abs_kappa                          1.0
+
+=== ARM B VALIDATION ===
+  c32_table_37pt_max_abs_dev                     0.0
+  c32_probe_8pt_max_abs_dev                      0.0
+  c32_at_90deg_abs_dev_vs_committed_plateau      0.0
+  taylor_two_radii_max_abs_diff                  0.0
+  taylor_two_radii_max_rel_diff                  0.0
+  b0_vs_committed_plateau                        [0.9747204751243134, 0.9747204751243136]
+  a0_vs_committed_plateau                        [0.9747299895417147, 0.9747204751243136]
+  sum_b_k_ge1_vs_1_minus_b0                      [0.02399802357793223, 0.025279524875686632]
+  cum_a_through_L40                              0.8515397038139609
+  recon_vs_committed_cpred_maxabs_theta_ge60     0.0003765102280852283
+
+=== ARM A (model-free, committed table only) vs ARM B ===
+  armB a_1..a_3 : [0.11067  0.096708 0.072673]
+  w0.18_L3   a_1..a_3 = [0.118265 0.038495 0.257454]  cond=4.16e+02  maxresid=1.25e-05  maxreldiff=2.543e+00
+  w0.26_L4   a_1..a_3 = [0.118681 0.028863 0.338426]  cond=3.48e+03  maxresid=9.90e-06  maxreldiff=3.657e+00
+  w0.50_L6   a_1..a_3 = [0.119461 0.010093 0.52186 ]  cond=9.03e+04  maxresid=5.65e-06  maxreldiff=6.181e+00
+  a_1 by Richardson on the 3 smallest committed t: 0.109822  (armB 0.110670)
+
+=== SPECTRUM ===
+  l |        dim H_l | a_l (per degree) | cum a  | a_l/dimH_l (per mode) | N*lam_top (DESIGN)
+  1 |   2.560000e+02 |   1.106700e-01 | 0.1107 |        4.323048e-04 | 0.000000e+00
+  2 |   3.289500e+04 |   9.670795e-02 | 0.2074 |        2.939898e-06 | 0.000000e+00
+  3 |   2.828800e+06 |   7.267287e-02 | 0.2801 |        2.569035e-08 | 0.000000e+00
+  4 |   1.831485e+08 |   6.059504e-02 | 0.3406 |        3.308520e-10 | 2.371109e-02
+  5 |   9.522602e+09 |   4.975555e-02 | 0.3904 |        5.224995e-12 | 0.000000e+00
+  6 |   4.141731e+11 |   4.297589e-02 | 0.4334 |        1.037631e-13 | 1.030285e+00
+  7 |   1.549924e+13 |   3.691520e-02 | 0.4703 |        2.381743e-15 | 0.000000e+00
+  8 |   5.094362e+14 |   3.264362e-02 | 0.5029 |        6.407793e-17 | 9.990471e-01
+  9 |   1.494011e+16 |   2.879489e-02 | 0.5317 |        1.927355e-18 | 0.000000e+00
+ 10 |   3.958140e+17 |   2.588863e-02 | 0.5576 |        6.540604e-20 | 1.000033e+00
+ 11 |   9.568876e+18 |   2.324091e-02 | 0.5809 |        2.428802e-21 | 0.000000e+00
+ 12 |   2.128439e+20 |   2.115254e-02 | 0.6020 |        9.938050e-23 | 9.999988e-01
+ 13 |   4.386446e+21 |   1.922999e-02 | 0.6212 |        4.383956e-24 | 0.000000e+00
+ 14 |   8.425333e+22 |   1.766722e-02 | 0.6389 |        2.096916e-25 | 1.000000e+00
+ 15 |   1.516002e+24 |   1.621557e-02 | 0.6551 |        1.069627e-26 | 0.000000e+00
+ 16 |   2.566728e+25 |   1.500914e-02 | 0.6701 |        5.847579e-28 | 1.000000e+00
+ 20 |   1.232880e+30 |   1.125567e-02 | 0.7202 |        9.129577e-33 | 1.000000e+00
+ 24 |   2.860694e+34 |   8.765498e-03 | 0.7587 |        3.064116e-37 | 1.000000e+00
+ 32 |   2.799868e+42 |   5.738420e-03 | 0.8139 |        2.049532e-45 | 1.000000e+00
+ 40 |   4.678034e+49 |   4.024117e-03 | 0.8515 |        8.602154e-53 | 1.000000e+00
+
+=== MODEL-FREE DISCRIMINATOR: effective single-degree index n_eff(t)=lnC/lnt ===
+  (equipartition band-limited at L  =>  n_eff == L at EVERY t)
+  t =                         0.25882   0.50000   0.70711   0.93969   0.98481   0.99619
+  mean-field (committed)        2.451     3.409     4.821    10.559    17.343    24.473
+  measured net 101                  -         -     2.560     4.080     5.004     6.198
+  measured net 202                  -         -     2.705     4.268     4.389     6.231
+  measured net 303                  -         -     1.911     3.299     3.584     4.756
+  equipartition band-limited C(t):
+     t=0.258819     {'L=4': '0.003242', 'L=6': '0.0001059', 'L=8': '9.365e-07', 'L=12': '-8.054e-10'}
+     t=0.500000     {'L=4': '0.0591', 'L=6': '0.01331', 'L=8': '0.002834', 'L=12': '0.0001058'}
+     t=0.707107     {'L=4': '0.2458', 'L=6': '0.119', 'L=8': '0.05664', 'L=12': '0.0122'}
+     t=0.939693     {'L=4': '0.7781', 'L=6': '0.6842', 'L=8': '0.6004', 'L=12': '0.4595'}
+
+=== EQUIPARTITION TEST ===
+  predicted_a4_over_a1_if_equipartitioned              715423.75
+  predicted_a12_over_a1_if_equipartitioned             8.314215970461219e+17
+  observed_a4_over_a1_armB                             0.5475289048691709
+  observed_a12_over_a1_armB                            0.19113155307261984
+  violation_factor_at_l4_armB                          1306641.0624859096
+  violation_factor_at_l12_armB                         4.3499965530559247e+18
+  per_mode_l1_over_l4_armB                             1306641.0624859093
+  per_mode_l1_over_l4_S15_conservative                 [75.24467339190899, 33.06238211423914, 67.36373244279375]
+  per_mode_l1_over_l4_S15_pointwise                    [186.43000727171093, 97.08056092470814, 181.22319450304232]
+  S15_per_mode_l4_is_at_or_below_1dof_noise_floor      [6.138150762446948e-06, 1.1513186034739498e-05, 7.9045562159763e-06, 1.5500992063492063e-05]
+
+=== CASCADE TEST ===
+  l1_12                      {'per_degree_powerlaw_exponent_p': 0.714392109397135, 'per_degree_powerlaw_logR2': 0.9535764334241376, 'per_mode_powerlaw_exponent_p': 17.81900952714704, 'per_mode_powerlaw_logR2': 0.9319267824850823, 'per_mode_exponential_slope_per_degree': -3.860256097873707, 'per_mode_exponential_logR2': 0.9952552290415869}
+  l4_24                      {'per_degree_powerlaw_exponent_p': 1.098801734510776, 'per_degree_powerlaw_logR2': 0.9937638985423898, 'per_mode_powerlaw_exponent_p': 35.92301992482145, 'per_mode_powerlaw_logR2': 0.9725190605889504, 'per_mode_exponential_slope_per_degree': -3.0731843987837175, 'per_mode_exponential_logR2': 0.9953790592762346}
+  l12_40                     {'per_degree_powerlaw_exponent_p': 1.391183607461557, 'per_degree_powerlaw_logR2': 0.9976005832801499, 'per_mode_powerlaw_exponent_p': 58.529557130033886, 'per_mode_powerlaw_logR2': 0.9899509107891891, 'per_mode_exponential_slope_per_degree': -2.4518810248436402, 'per_mode_exponential_logR2': 0.996681367276956}
+  l1_40                      {'per_degree_powerlaw_exponent_p': 1.0382370072131972, 'per_degree_powerlaw_logR2': 0.9617621645106478, 'per_mode_powerlaw_exponent_p': 35.44896261140983, 'per_mode_powerlaw_logR2': 0.9025607195916941, 'per_mode_exponential_slope_per_degree': -2.771179875997958, 'per_mode_exponential_logR2': 0.9881950991459575}
+  running_per_degree_exponent {'l1_2': 0.1945582197353812, 'l2_4': 0.6744347464004268, 'l4_8': 0.892398828271696, 'l8_16': 1.1209592758157376, 'l16_32': 1.387116194052397, 'l12_24': 1.2709226601826136, 'l20_40': 1.4839080489562348}
+
+=== ESTIMATOR ERROR BY DEGREE ===
+  per_degree_contribution                {'4': np.float64(4.454285923176905e-08), '6': np.float64(1.3726882234688966e-06), '8': np.float64(1.0110525017059879e-06), '10': np.float64(8.02625192444475e-07), '12': np.float64(6.557697517940699e-07), '14': np.float64(5.477188389417357e-07), '16': np.float64(4.6531322843139805e-07), '18': np.float64(4.007130230055361e-07), '20': np.float64(3.489481385357462e-07), '22': np.float64(3.0671814035993486e-07), '24': np.float64(2.71747824623898e-07), '26': np.float64(2.424197612909931e-07), '28': np.float64(2.1755410967124387e-07), '30': np.float64(1.962711462881828e-07), '32': np.float64(1.7790240461979398e-07), '34': np.float64(1.6193150553106218e-07), '36': np.float64(1.4795373087467145e-07), '38': np.float64(1.3564777372183695e-07), '40': np.float64(1.2475560090183782e-07)}
+  share_of_total                         {'4': np.float64(0.0044840801117146025), '6': np.float64(0.13818699716635297), '8': np.float64(0.1017815311587724), '10': np.float64(0.08079938568547158), '12': np.float64(0.06601561176356988), '14': np.float64(0.05513824650839569), '16': np.float64(0.04684256532501178), '18': np.float64(0.040339334473675145), '20': np.float64(0.03512822111140951), '22': np.float64(0.03087697415053095), '24': np.float64(0.02735655134883297), '26': np.float64(0.024404127822945133), '28': np.float64(0.021900930322470865), '30': np.float64(0.019758398063197572), '32': np.float64(0.017909237263620984), '34': np.float64(0.0163014646103804), '36': np.float64(0.014894337577591113), '38': np.float64(0.013655510553993111), '40': np.float64(0.012559007627196674)}
+  unresolved_tail_above_L40_mass         0.14846029618603906
+  unresolved_tail_error_share            0.23166748735486692
+  deg4_share_of_total_error              0.0044840801117146025
+  even_deg_ge6_share_of_total_error      0.9955159198882854
+  implied_MSE_over_sigma2                9.93355562836654e-06
+  implied_N_eff                          100668.88810129295
+  s17_measured_N_eff                     [39557.85, 27251.21, 46955.11]
+  s17_measured_MSE_over_sigma2           [2.5278481012658226e-05, 3.67e-05, 2.1303956834532375e-05]
+  degrees_needed_for_50pct_of_error      [6, 8, 10, 12, 14, 16, 18]
+  dim_of_that_truncation_space           6.249090475176743e+27
+
+=== S15 ANCHORS ===
+   one_dof_insample_R2_noise_floor 1.5500992063492063e-05
+   101 {'a1_lower_bound_optimal_deg1_mode': 0.29294988576712766, 'a1_upper_bound_baseA_plus_C4_R2': 0.32677869222115097, 'deg_le2_partial_share_baseB_oos': 0.3609387150905595, 'per_mode_l1_random_mode': 0.0011443354912778424, 'per_mode_l4_single_zonal_mean_over_5_axes': 6.138150762446948e-06, 'per_mode_l4_single_zonal_max_over_5_axes': 1.5208192682525379e-05, 'per_mode_ratio_l1_over_l4_conservative': 75.24467339190899, 'per_mode_ratio_l1_over_l4_pointwise': 186.43000727171093}
+   202 {'a1_lower_bound_optimal_deg1_mode': 0.28613287892045486, 'a1_upper_bound_baseA_plus_C4_R2': 0.3634247437298653, 'deg_le2_partial_share_baseB_oos': 0.4036992442555466, 'per_mode_l1_random_mode': 0.0011177065582830268, 'per_mode_l4_single_zonal_mean_over_5_axes': 1.1513186034739498e-05, 'per_mode_l4_single_zonal_max_over_5_axes': 3.3805989974378114e-05, 'per_mode_ratio_l1_over_l4_conservative': 33.06238211423914, 'per_mode_ratio_l1_over_l4_pointwise': 97.08056092470814}
+   303 {'a1_lower_bound_optimal_deg1_mode': 0.36671716571855495, 'a1_upper_bound_baseA_plus_C4_R2': 0.4025447921776206, 'deg_le2_partial_share_baseB_oos': 0.4385422429104656, 'per_mode_l1_random_mode': 0.0014324889285881053, 'per_mode_l4_single_zonal_mean_over_5_axes': 7.9045562159763e-06, 'per_mode_l4_single_zonal_max_over_5_axes': 2.126498750354422e-05, 'per_mode_ratio_l1_over_l4_conservative': 67.36373244279375, 'per_mode_ratio_l1_over_l4_pointwise': 181.22319450304232}
+
+wrote r0_results.json

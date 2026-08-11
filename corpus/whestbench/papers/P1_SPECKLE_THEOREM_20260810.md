@@ -145,6 +145,40 @@ Artifact: `experiments/s7_speckle/`. Verdict: **PASS** (2/3 nets inside the pred
 - *Why it is a pillar:* it fixes the **law**. A real field whose energy is chi^2_1 is a single Gaussian amplitude, the
   maximum-entropy law at fixed second moment. No shape parameter is left to exploit.
 
+#### CORRECTION (2026-08-11, R0 harmonic-spectrum run): the mechanism stated
+#### below is WRONG; the conclusion survives
+
+`experiments/r0_harmonic_energy_spectrum/` tested this section's implicit claim
+that the residual is **per-mode equipartitioned**, and **falsified it**. The
+model-free margin from S15 alone (per-mode l=1 against a single zonal H_4 mode)
+is **33.1 / 75.2 / 67.4x** where equipartition predicts exactly 1.0; the
+closed-form margin is 1.31e6 at l=4 and 4.35e18 at l=12; and the effective
+single-degree index n_eff(t) = lnC/lnt climbs 2.56->6.20 / 2.71->6.23 /
+1.91->4.76 across the measured nets, where a band-limited flat spectrum forces
+it constant. Energy per DEGREE does follow a power law (implied exponent
+p = 1.099 over l = 4-24, log-R^2 0.994, rising to 1.391 over l = 12-40).
+
+The paper's CONCLUSION is unaffected and is now established from a second,
+independent direction: **no truncation class reopens.** Degree 4 - the 42x
+Bragg notch this section celebrates - carries only **0.45%** of the estimator
+error; even degrees >= 6 carry **99.55%**; no single degree exceeds **13.8%**;
+and capturing half the error requires exactly integrating degrees
+{6,8,10,12,14,16,18}, joint dimension **6.249e27**. New at R0/R1, by exact
+arithmetic on S6's committed dyadic census: **degree 4 is the ONLY suppressed
+degree** - degrees 8, 10, 12, ... are iid-level to five digits.
+
+So the correct mechanism is not "energy is everywhere equally." It is: *the
+energy the design does not already integrate is spread across 40+ degrees, none
+carrying more than 14% of the error, the cheapest of which costs 4.1e11
+dimensions to touch.* Decay is a_l * l! / d^l - **dimension-driven, not
+transfer-driven** - which is why the fluid-dynamics reading below is a
+CONTRAST: the same power law, but a **dimension wall** where turbulence has an
+inertial range that LES can model. Also recorded honestly: this run's
+error-by-degree table implies N_eff = 100,669 against S17's measured
+27,251 / 39,558 / 46,955, a **2.1-3.7x optimism** whose leading cause is S17's
+own disclosed object mismatch (its sigma^2 is the neuron-averaged scalar while
+the champion's MSE is per-component). That tension is open.
+
 #### Interlude: the name is literal, and optics predicted all three numbers
 
 "Speckle" here is not a borrowed image. Fully-developed optical speckle is what a coherent field becomes after
