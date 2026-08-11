@@ -1,0 +1,153 @@
+{
+  "flopscope": "0.10.0+np2.4.6",
+  "reps": 5,
+  "probes": [
+    {
+      "op": "add",
+      "shape": [
+        32256,
+        128
+      ],
+      "n_calls": 2000,
+      "residual_s_min": 0.022565600047528278,
+      "residual_us_per_call": 11.282800023764139,
+      "overhead_s": 0.2603974999037746,
+      "backend_s": 5.3312797000508,
+      "flops": 8257536000
+    },
+    {
+      "op": "add",
+      "shape": [
+        16128,
+        64
+      ],
+      "n_calls": 2000,
+      "residual_s_min": 0.029749799959972734,
+      "residual_us_per_call": 14.874899979986367,
+      "overhead_s": 0.30517220008186996,
+      "backend_s": 1.5346015999602969,
+      "flops": 2064384000
+    },
+    {
+      "op": "add",
+      "shape": [
+        8064,
+        32
+      ],
+      "n_calls": 2000,
+      "residual_s_min": 0.018368999943049857,
+      "residual_us_per_call": 9.184499971524929,
+      "overhead_s": 0.1851002001458255,
+      "backend_s": 0.16267399991193088,
+      "flops": 516096000
+    },
+    {
+      "op": "add",
+      "shape": [
+        4032,
+        16
+      ],
+      "n_calls": 2000,
+      "residual_s_min": 0.009355699970910791,
+      "residual_us_per_call": 4.677849985455396,
+      "overhead_s": 0.089470700120728,
+      "backend_s": 0.02817499990851502,
+      "flops": 129024000
+    },
+    {
+      "op": "matmul",
+      "shape": [
+        32256,
+        128,
+        128
+      ],
+      "n_calls": 500,
+      "residual_s_min": 0.01267679998636595,
+      "residual_us_per_call": 25.3535999727319,
+      "overhead_s": 0.1937595000345027,
+      "backend_s": 3.973340999978973,
+      "flops": 526417920000
+    },
+    {
+      "op": "matmul",
+      "shape": [
+        16128,
+        64,
+        64
+      ],
+      "n_calls": 500,
+      "residual_s_min": 0.0076336999954946805,
+      "residual_us_per_call": 15.267399990989361,
+      "overhead_s": 0.11133359997256775,
+      "backend_s": 0.3186030000288156,
+      "flops": 65544192000
+    },
+    {
+      "op": "matmul",
+      "shape": [
+        8064,
+        32,
+        32
+      ],
+      "n_calls": 500,
+      "residual_s_min": 0.0051525999915611465,
+      "residual_us_per_call": 10.305199983122293,
+      "overhead_s": 0.07581450003999635,
+      "backend_s": 0.12963939996916451,
+      "flops": 8128512000
+    },
+    {
+      "op": "matmul",
+      "shape": [
+        4032,
+        16,
+        16
+      ],
+      "n_calls": 500,
+      "residual_s_min": 0.004852400070376461,
+      "residual_us_per_call": 9.704800140752923,
+      "overhead_s": 0.07057989994427771,
+      "backend_s": 0.04362199998649885,
+      "flops": 999936000
+    }
+  ],
+  "cheapest_elementwise_us_per_call": 4.677849985455396,
+  "cheapest_matmul_us_per_call": 9.704800140752923,
+  "irreducible_floor_per_product": {
+    "d1": {
+      "internal_nodes": 1,
+      "elementwise_calls": 15,
+      "matmul_calls": 7,
+      "min_residual_s_floor": 0.00013810135076710138,
+      "min_residual_charge_flops": 13810135.076710138
+    },
+    "d2": {
+      "internal_nodes": 8,
+      "elementwise_calls": 120,
+      "matmul_calls": 49,
+      "min_residual_s_floor": 0.0010368772051515406,
+      "min_residual_charge_flops": 103687720.51515406
+    },
+    "d3": {
+      "internal_nodes": 57,
+      "elementwise_calls": 855,
+      "matmul_calls": 343,
+      "min_residual_s_floor": 0.007328308185842615,
+      "min_residual_charge_flops": 732830818.5842615
+    },
+    "d4": {
+      "internal_nodes": 400,
+      "elementwise_calls": 6000,
+      "matmul_calls": 2401,
+      "min_residual_s_floor": 0.05136832505068014,
+      "min_residual_charge_flops": 5136832505.068014
+    },
+    "d5": {
+      "internal_nodes": 2801,
+      "elementwise_calls": 42015,
+      "matmul_calls": 16807,
+      "min_residual_s_floor": 0.3596484431045428,
+      "min_residual_charge_flops": 35964844310.45428
+    }
+  }
+}

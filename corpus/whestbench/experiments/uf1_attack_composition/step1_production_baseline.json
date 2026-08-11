@@ -1,0 +1,66 @@
+{
+  "production_shape": {
+    "M": 64512,
+    "K": 256,
+    "N": 256,
+    "classical_direct_bill": 8439201792,
+    "BLOCK_ROWS": 4096
+  },
+  "metered_production": {
+    "workspace_setup_flops": 0,
+    "total_flops": 7427768320,
+    "multiply_flops": 7427768320,
+    "core_calls": 16,
+    "total_matmul_calls": 16,
+    "relative_frobenius_vs_float64_classical": 5.355172651766537e-07
+  },
+  "metered_production_repeat": {
+    "workspace_setup_flops": 0,
+    "total_flops": 7427768320,
+    "multiply_flops": 7427768320,
+    "core_calls": 16,
+    "total_matmul_calls": 16,
+    "relative_frobenius_vs_float64_classical": 5.355172651766537e-07
+  },
+  "metered_production_out_aliases_left": {
+    "workspace_setup_flops": 0,
+    "total_flops": 7427768320,
+    "multiply_flops": 7427768320,
+    "core_calls": 16,
+    "total_matmul_calls": 16,
+    "relative_frobenius_vs_float64_classical": 5.355172651766537e-07
+  },
+  "bitwise_repeat_identical": true,
+  "alias_identical_bill": true,
+  "frozen_closed_form_bill": {
+    "strategy": "winograd_batched_owned",
+    "selected_bill": 7427768320,
+    "direct_bill": 8439201792,
+    "core_calls": 16,
+    "total_matmul_calls": 16
+  },
+  "frozen_independently_expanded_bill": 7427768320,
+  "depth1_closed_forms": {
+    "V1_winograd15_floor(4,4,7)": 7415332864,
+    "V2_winograd15_batched_UF1(6,6,7)": 7423623168,
+    "V5_production_batched_ACTUAL(7,7,7)": 7427768320
+  },
+  "identification": {
+    "metered_multiply_flops": 7427768320,
+    "matches_frozen_closed_form": true,
+    "matches_independently_expanded": true,
+    "matches_V5_777": true,
+    "matches_V2_667_as_UF1_assumed": false,
+    "V2_undercount_flops": 4145152
+  },
+  "r_production_vs_classical": 0.88015057621222,
+  "UF1_reported_r1_V1": 0.878677,
+  "UF1_reported_r1_V2": 0.879659,
+  "fraction_crosscheck_d1": {
+    "V1_winograd15_floor": true,
+    "V2_winograd15_batched_UF1": true,
+    "V5_production_batched_ACTUAL": true,
+    "V3_strassen18_floor": true,
+    "V4_m218_copy_idiom": true
+  }
+}

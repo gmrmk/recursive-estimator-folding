@@ -1,0 +1,124 @@
+{
+  "surface": "U-F1 resource ceiling / peak simultaneous memory of Strassen-Winograd recursion",
+  "verdict": "SURVIVES",
+  "date": "2026-08-10",
+  "interpreter": "work/whest-v014/Scripts/python.exe (CPython 3.14.4, numpy 2.4.6, flopscope 0.10.0+np2.4.6, whestbench 0.14.0)",
+  "deviations_from_task_text": [
+    "The task named 'the hosted memory margin our own record notes (1.445 MiB)' as comparator (a). That margin is against a 512-MiB gate that HOSTED_INTEL_20260808.md:52-54 records as SELF-IMPOSED, superseded by a browser-read official facts panel giving the grader 64 GB. I therefore measured against BOTH ceilings and report both, rather than treating 512 MiB as the ceiling.",
+    "I did not rely on the recorded 510.555-MiB champion peak implied by the 1.445-MiB margin. I MEASURED the champion's peak working set first-hand on a synthetic He net (452.312 / 452.691 MiB over two runs). The measured value is MORE favourable to the claim than the recorded one, so using it is the conservative choice for a kill attempt.",
+    "psutil is not installed in whest-v014; process memory is read with ctypes K32GetProcessMemoryInfo (PeakWorkingSetSize / PeakPagefileUsage), the same 'peak working set' quantity the corpus quotes."
+  ],
+  "enforced_ceiling": {
+    "value_mb": 65536,
+    "value_bytes": 68719476736,
+    "evidence": [
+      "site-packages/whestbench/cli.py:393  _default_resource_limits(memory_limit_mb=65_536)",
+      "site-packages/whestbench/scoring.py:64  ContestSpec.memory_limit_mb: int = 65_536",
+      "site-packages/whestbench/subprocess_worker.py:162  resource.setrlimit(RLIMIT_AS, memory_limit_mb*1MiB)",
+      "site-packages/whestbench/runner.py:138  local runner: memory_limit_mb is ADVISORY only",
+      "HOSTED_INTEL_20260808.md:52  official facts panel, grader memory 64 GB"
+    ],
+    "note": "This is the only memory ceiling mechanically enforced anywhere in the installed harness. No RSS cap, no allocation guard, and no per-array limit exists in flopscope 0.10.0 or whestbench 0.14.0."
+  },
+  "campaign_self_imposed_gate": {
+    "value_bytes": 536870912,
+    "status": "still mechanically enforced inside the campaign's own experiment harnesses, but declared moot at the hosted level",
+    "executable_instances_found": [
+      "m216_antithetic_distinct_provider.py:67  RSS_CEILING = 512*1024*1024",
+      "m217.../run_m217_native_trace.py:39  MEMORY_CAP = 512*1024*1024",
+      "m145.../test_m145_defensive_acg.py:272  assert projected_peak_mib < 512.0",
+      "m169/m209/m210/m211/m212/m215/m218 aggregate_*.py  'rss_below_512_mib' predicates"
+    ],
+    "prior_kills_on_this_gate": [
+      "Integrated Batched-B Winograd: peak working set 667.328 MiB > 512 MiB (SALVAGE_MAP_20260806.md:58) - the kill that produced RowBlockedBatchedWinograd",
+      "M81 full129_pareto: needed 1.75 MiB, had 1.44 MiB (AGENT_CHANNEL.md:1373)"
+    ],
+    "retirement_evidence": "HOSTED_INTEL_20260808.md:52-54 'Memory risk was overstated. Grader has 64 GB; the campaign's 512-MiB gate was self-imposed.'"
+  },
+  "derived_and_measured_footprints": {
+    "method": "batched all-levels-live row-blocked Strassen-Winograd, BLOCK_ROWS=4096, width 256, float32. Level l holds 7^l left/product stacks of (rows/2^l, w/2^l) and a 7^l right stack of (w/2^l)^2, i.e. (7/4)^l*(2*R*W + W^2) elements; all levels are simultaneously live because a level's batched matmul consumes the whole 7^l stack in one call.",
+    "level_stacks_bytes": {"d1": 15138816, "d2": 41631744, "d3": 87994368, "d4": 169128960, "d5": 311114496},
+    "level_stacks_MiB": {"d1": 14.4375, "d2": 39.703125, "d3": 83.91796875, "d4": 161.2939453125, "d5": 296.701904296875},
+    "cross_checks": {
+      "closed_form_Fraction_vs_explicit_enumeration": "5/5 depths exact",
+      "vs_CODEX_HANDOFF_20260810_line_591_598_DERIVED_column": "5/5 exact (14.44 / 39.70 / 83.92 / 161.29 / 296.70 MiB)",
+      "vs_live_frozen_RowBlockedBatchedWinograd(64512,256,4096)": "left+right+products = 15,138,816 B, equals the d1 closed form exactly; buffer_bytes = 19,349,504 B; full_output_bytes = 0",
+      "vs_OS_peak_working_set_delta_over_import_floor_MiB": {"d1": 14.652, "d2": 39.840, "d3": 83.969, "d4": 161.500, "d5": 296.629}
+    }
+  },
+  "depth_first_sw_product_at_production_M": {
+    "note": "U-F1's own metered implementation (uf1_derive_and_verify.py::sw_product) is depth-first and NOT row-blocked; U-F1 metered it at M=8064 'for wall/memory tractability'. I ran it at the full production M=64512.",
+    "peak_working_set_MiB": {"d0": 234.215, "d1": 404.320, "d2": 392.848, "d3": 388.656, "d4": 395.023, "d5": 435.340},
+    "analytic_peak_total_MiB": {"d0": 126.250, "d1": 347.000, "d2": 354.938, "d3": 356.922, "d4": 357.418, "d5": 357.542},
+    "billed_flops_reproduced": {"d0": 8439201792, "d1": 7415332864, "d2": 6548406272, "d3": 5840523264, "d4": 5309811712, "d5": 5000639744},
+    "billed_matches_analytic": "6/6 exact",
+    "bounded_not_exponential": "temporaries converge to 4/3 of the level-0 term (geometric 4^-l), so the depth-first tree is O(M*K + M*N), not O((7/4)^d)"
+  },
+  "champion_measurement": {
+    "net": "synthetic He 256x256 x depth 32, seed 101, mlp.seed 901101 (construction copied from v31_guards/run_v31_gates.py::he_weights)",
+    "estimator": "IMPORTED from experiments/v31_guards/package_source/kerdock_v3_estimator.py (unmodified)",
+    "runs": [
+      {"label": "champion_d1", "ballast_MiB": 0.0, "peak_working_set_MiB": 452.312, "peak_commit_MiB": 884.832, "billed_flops": 179197201680, "output_checksum": 3789.9152370693},
+      {"label": "champion_d1_repeat", "ballast_MiB": 0.0, "peak_working_set_MiB": 452.691, "peak_commit_MiB": 884.984, "billed_flops": 179197201680, "output_checksum": 3789.9152370693},
+      {"label": "champion_d2", "ballast_MiB": 25.266, "peak_working_set_MiB": 477.844, "peak_commit_MiB": 910.555, "billed_flops": 179197201680, "output_checksum": 3789.9152370693},
+      {"label": "champion_d3", "ballast_MiB": 69.480, "peak_working_set_MiB": 522.430, "peak_commit_MiB": 954.910, "billed_flops": 179197201680, "output_checksum": 3789.9152370693},
+      {"label": "champion_d4", "ballast_MiB": 146.856, "peak_working_set_MiB": 599.246, "peak_commit_MiB": 1031.844, "billed_flops": 179197201680, "output_checksum": 3789.9152370693},
+      {"label": "champion_d5", "ballast_MiB": 282.264, "peak_working_set_MiB": 735.211, "peak_commit_MiB": 1168.324, "billed_flops": 179197201680, "output_checksum": 3789.9152370693}
+    ],
+    "determinism": "billed FLOPs bitwise identical and output checksum identical across all six runs; ballast does not perturb the computation",
+    "vs_512MiB_gate_at_BLOCK_ROWS_4096": {"d1": "pass (-59.69)", "d2": "pass (-34.16)", "d3": "FAIL (+10.43 MiB)", "d4": "FAIL (+87.25 MiB)", "d5": "FAIL (+223.21 MiB)"},
+    "vs_enforced_64GiB_ceiling": {"d4_peak_commit_fraction": 0.015745, "d5_peak_commit_fraction": 0.017827, "smallest_margin": "56.1x headroom at d=5 on peak commit"}
+  },
+  "the_repair_that_defeats_the_kill": {
+    "claim": "the Strassen workspace is LINEAR in BLOCK_ROWS while the charged bill is EXACTLY BLOCK_ROWS-invariant, so any memory envelope is met at zero FLOP cost by shrinking the row block",
+    "measured_bill_invariance": {
+      "shape": "(64512x256)@(256x256), frozen RowBlockedBatchedWinograd, depth 1",
+      "block_rows_tested": [4096, 2048, 1808, 896, 512, 240, 128],
+      "billed_flops_every_case": 7427768320,
+      "identical": true,
+      "equals_corpus_recorded_L1_bill": "7,427,768,320 / 8,439,201,792 = 0.880151, the value CODEX_HANDOFF_20260810.md:594 records for the committed batched formulation",
+      "core_calls": {"4096": 16, "2048": 32, "1808": 36, "896": 72, "512": 126, "240": 269, "128": 504},
+      "wall_s": {"4096": 0.2438, "2048": 0.3142, "1808": 0.2996, "896": 0.3997, "512": 0.7508, "240": 0.8999, "128": 1.3100},
+      "relative_frobenius_vs_float64_classical": {"4096": 5.355e-07, "2048": 5.116e-07, "1808": 5.278e-07, "896": 5.188e-07, "512": 4.834e-07, "240": 5.256e-07, "128": 5.188e-07},
+      "caveat": "the f32 result is NOT bitwise invariant to block height (summation order changes); the parity drift stays at 4.8e-7..5.4e-7, i.e. ~40x inside the frozen 2e-5 gate"
+    },
+    "largest_block_height_that_keeps_the_champion_under_512MiB": {
+      "headroom_for_level_stacks_MiB": 74.125,
+      "d1": {"max_block_rows": 4096, "stack_MiB": 14.438, "row_blocks": 16},
+      "d2": {"max_block_rows": 4096, "stack_MiB": 39.703, "row_blocks": 16},
+      "d3": {"max_block_rows": 3600, "stack_MiB": 74.064, "row_blocks": 18},
+      "d4": {"max_block_rows": 1808, "stack_MiB": 73.926, "row_blocks": 36},
+      "d5": {"max_block_rows": 896, "stack_MiB": 71.928, "row_blocks": 72}
+    },
+    "geometry_legality_verified": {
+      "1808": {"blocks": 36, "tail_rows": 1232, "every_block_divisible_by_16": true, "billed_flops": 7427768320},
+      "896": {"blocks": 72, "tail_rows": 0, "every_block_divisible_by_32": true, "billed_flops": 7427768320}
+    },
+    "cost_of_the_repair": "row-loop wall only, which the corpus's own audit places in unbilled backend time: +23% at 1808 rows (0.2996 s vs 0.2438 s), +64% at 896 rows (0.3997 s). Zero charged FLOPs."
+  },
+  "flopscope_per_call_ledger_finding": {
+    "observation": "flopscope retains roughly 2.6-3.5 KiB of accounting state per matmul call inside a BudgetContext, so a DEPTH-FIRST recursion with 7^d leaf calls pays a memory term that grows as 7^d.",
+    "evidence_MiB_over_analytic": {"M8064_d4": 8.2, "M8064_d5": 47.3, "M64512_d5": 41.3},
+    "why_it_does_not_bite": "the fused BATCHED dispatch is O(1) in batch size: a single (16807,128,8)@(16807,8,8) call bills 258,155,520 (exact formula match), runs in 0.040 s, and its peak working set exceeds the stack bytes by only ~0.4 MiB. The production path is batched."
+  },
+  "defect_found_in_the_claim_artifacts": {
+    "severity": "immaterial to the verdict, reported for honesty",
+    "what": "UF1_ACCOUNTING.md line 152-153 prose gives absolute charged FLOPs at M=64512 V1 as d3 5,840,555,008 / d4 5,309,760,256 / d5 5,000,676,352. Its own artifact uf1_results.json and my re-metered live flopscope run both give 5,840,523,264 / 5,309,811,712 / 5,000,639,744.",
+    "deltas_flops": {"d3": -31744, "d4": 51456, "d5": -36608},
+    "relative": {"d3": -5.4e-06, "d4": 9.7e-06, "d5": -7.3e-06},
+    "impact": "none on r(d) to 6 decimals; the headline ratios 0.878677 / 0.775951 / 0.692071 / 0.629184 / 0.592549 reproduce exactly from the artifact"
+  },
+  "what_would_have_to_be_true_to_kill_on_this_surface": [
+    "The 512-MiB envelope would have to be reinstated as a binding gate AND BLOCK_ROWS would have to be frozen at 4096 (it is a constructor argument, and the bill is provably invariant to it), OR",
+    "the enforced ceiling would have to fall below ~1.2 GiB of peak commit - it is 64 GiB, a 56x margin at the worst depth, OR",
+    "the level stacks would have to be forced M-proportional rather than BLOCK_ROWS-proportional, which would require abandoning row blocking; even then the depth-first tree measures 435 MiB peak at M=64512 d=5, still inside 512 MiB standalone."
+  ],
+  "files": [
+    "memprobe.py",
+    "uf1_mem_derive.py -> uf1_mem_derive.json",
+    "uf1_mem_case.py -> measured.jsonl",
+    "uf1_mem_champion.py -> champ.jsonl",
+    "uf1_mem_blockrows.py -> uf1_mem_blockrows.json, blockrows_stdout.txt",
+    "uf1_mem_verdict.json (this file)"
+  ]
+}

@@ -1,0 +1,408 @@
+{
+  "raw_mse_derivation": "1.832e-07 / max(0.1,0.65) = 2.818462e-07",
+  "raw_mse": 2.8184615384615385e-07,
+  "rms_error_per_neuron": 0.0005308918475981279,
+  "e1_toy_chain": {
+    "d0": {
+      "n": 33,
+      "mean": 1.1746084011682259e-06,
+      "mean_ci95": [
+        1.1104791649504766e-06,
+        1.2421922859592225e-06
+      ],
+      "median": 1.1443753074031372e-06,
+      "max": 1.7038599237438426e-06,
+      "p95": 1.5257373574570155e-06,
+      "n_pass": 33,
+      "lognormal_mu": -13.667705493321485,
+      "lognormal_sigma": 0.16340498951249183,
+      "P_single_net_exceeds_2e-5": 0.0,
+      "P_any_of_50_nets_exceeds": 0.0
+    },
+    "d1": {
+      "n": 33,
+      "mean": 1.977402949481194e-06,
+      "mean_ci95": [
+        1.8590887132469543e-06,
+        2.1035566433348982e-06
+      ],
+      "median": 1.8784652367212039e-06,
+      "max": 2.9527323950720406e-06,
+      "p95": 2.65128759370641e-06,
+      "n_pass": 33,
+      "lognormal_mu": -13.149460569630515,
+      "lognormal_sigma": 0.17823234798463325,
+      "P_single_net_exceeds_2e-5": 0.0,
+      "P_any_of_50_nets_exceeds": 0.0
+    },
+    "d2": {
+      "n": 33,
+      "mean": 3.638741582904652e-06,
+      "mean_ci95": [
+        3.4164704396448507e-06,
+        3.8786090093426074e-06
+      ],
+      "median": 3.4613556945651535e-06,
+      "max": 5.536712140251077e-06,
+      "p95": 4.8238164916997e-06,
+      "n_pass": 33,
+      "lognormal_mu": -12.540247405205323,
+      "lognormal_sigma": 0.18144931407899567,
+      "P_single_net_exceeds_2e-5": 0.0,
+      "P_any_of_50_nets_exceeds": 0.0
+    },
+    "d3": {
+      "n": 33,
+      "mean": 6.673477611104028e-06,
+      "mean_ci95": [
+        6.241440102139403e-06,
+        7.13513993277687e-06
+      ],
+      "median": 6.222253349228139e-06,
+      "max": 1.0346196104297877e-05,
+      "p95": 9.006346261223416e-06,
+      "n_pass": 33,
+      "lognormal_mu": -11.935428019023892,
+      "lognormal_sigma": 0.1902697246900104,
+      "P_single_net_exceeds_2e-5": 2.265824416980422e-09,
+      "P_any_of_50_nets_exceeds": 1.1329121452074986e-07
+    },
+    "d4": {
+      "n": 33,
+      "mean": 1.2595754155732789e-05,
+      "mean_ci95": [
+        1.1768990822865301e-05,
+        1.34796182052123e-05
+      ],
+      "median": 1.1706470008619155e-05,
+      "max": 1.9661027744930377e-05,
+      "p95": 1.6945098082421465e-05,
+      "n_pass": 33,
+      "lognormal_mu": -11.300963839522032,
+      "lognormal_sigma": 0.19432682927925765,
+      "P_single_net_exceeds_2e-5": 0.006640084344630814,
+      "P_any_of_50_nets_exceeds": 0.28330964178379214
+    },
+    "d5": {
+      "n": 33,
+      "mean": 2.8782087601671058e-05,
+      "mean_ci95": [
+        2.687440387176456e-05,
+        3.086677717191791e-05
+      ],
+      "median": 2.6845031080904883e-05,
+      "max": 4.5842423699654035e-05,
+      "p95": 3.828631292552248e-05,
+      "n_pass": 1,
+      "lognormal_mu": -10.474960205708022,
+      "lognormal_sigma": 0.19608075733408586,
+      "P_single_net_exceeds_2e-5": 0.9606731279978882,
+      "P_any_of_50_nets_exceeds": 1.0
+    }
+  },
+  "e2_production": {
+    "d0": {
+      "rel_frobenius_mean": 1.1553211683677337e-06,
+      "rel_frobenius_max": 1.567766747055513e-06,
+      "n_nets_passing_2e-5": 4,
+      "rel_colmean_mean": 5.037229982333657e-09,
+      "coherence_mean": 0.004373249235447049,
+      "mse_contribution_mean": 2.09489449498365e-17,
+      "mse_contribution_ci95": [
+        1.548349972098003e-17,
+        2.682339401010195e-17
+      ],
+      "mse_contribution_max": 3.016488493727747e-17,
+      "fraction_of_champion_mse": 7.432758852289152e-11,
+      "r_mse_if_orthogonal": 1.0000000000743277,
+      "r_mse_worst_case_aligned": 1.0000206907875906
+    },
+    "d1": {
+      "rel_frobenius_mean": 1.938734203937849e-06,
+      "rel_frobenius_max": 2.7676337423069484e-06,
+      "n_nets_passing_2e-5": 4,
+      "rel_colmean_mean": 9.487457974482994e-08,
+      "coherence_mean": 0.052254921769807575,
+      "mse_contribution_mean": 9.636180399926863e-15,
+      "mse_contribution_ci95": [
+        3.6336542802253115e-15,
+        1.672150254286459e-14
+      ],
+      "mse_contribution_max": 2.048471850418038e-14,
+      "fraction_of_champion_mse": 3.418950469406365e-08,
+      "r_mse_if_orthogonal": 1.0000000341895048,
+      "r_mse_worst_case_aligned": 1.000539259093071
+    },
+    "d2": {
+      "rel_frobenius_mean": 3.3158727560211366e-06,
+      "rel_frobenius_max": 4.794355829371797e-06,
+      "n_nets_passing_2e-5": 4,
+      "rel_colmean_mean": 1.876628332252783e-07,
+      "coherence_mean": 0.05898501057426672,
+      "mse_contribution_mean": 3.288050476183268e-14,
+      "mse_contribution_ci95": [
+        1.65580687687357e-14,
+        4.9202940754929665e-14
+      ],
+      "mse_contribution_max": 5.0522045768429136e-14,
+      "fraction_of_champion_mse": 1.1666117955890416e-07,
+      "r_mse_if_orthogonal": 1.0000001166611796,
+      "r_mse_worst_case_aligned": 1.0008469471875963
+    },
+    "d3": {
+      "rel_frobenius_mean": 5.922586247189711e-06,
+      "rel_frobenius_max": 8.749985167955857e-06,
+      "n_nets_passing_2e-5": 4,
+      "rel_colmean_mean": 3.5731304424864805e-07,
+      "coherence_mean": 0.06435370206996377,
+      "mse_contribution_mean": 1.2365071051557623e-13,
+      "mse_contribution_ci95": [
+        6.099930577325552e-14,
+        1.8661183422022852e-13
+      ],
+      "mse_contribution_max": 2.1276096443598593e-13,
+      "fraction_of_champion_mse": 4.38717040584741e-07,
+      "r_mse_if_orthogonal": 1.0000004387170405,
+      "r_mse_worst_case_aligned": 1.0017384353309615
+    },
+    "d4": {
+      "rel_frobenius_mean": 1.1214793674187525e-05,
+      "rel_frobenius_max": 1.6684890020818467e-05,
+      "n_nets_passing_2e-5": 4,
+      "rel_colmean_mean": 5.50202043327208e-07,
+      "coherence_mean": 0.052406094858613736,
+      "mse_contribution_mean": 2.79824495671973e-13,
+      "mse_contribution_ci95": [
+        1.6299176069102222e-13,
+        3.584133933810169e-13
+      ],
+      "mse_contribution_max": 3.6284050422272783e-13,
+      "fraction_of_champion_mse": 9.928270861723933e-07,
+      "r_mse_if_orthogonal": 1.000000992827086,
+      "r_mse_worst_case_aligned": 1.0022705346333218
+    },
+    "d5": {
+      "rel_frobenius_mean": 2.534330222325922e-05,
+      "rel_frobenius_max": 3.749671651365267e-05,
+      "n_nets_passing_2e-5": 1,
+      "rel_colmean_mean": 1.1930087763265343e-06,
+      "coherence_mean": 0.04915572392684271,
+      "mse_contribution_mean": 1.2375260471220377e-12,
+      "mse_contribution_ci95": [
+        8.305546020936224e-13,
+        1.5622389957279622e-12
+      ],
+      "mse_contribution_max": 1.658941373848451e-12,
+      "fraction_of_champion_mse": 4.390785647539981e-06,
+      "r_mse_if_orthogonal": 1.0000043907856475,
+      "r_mse_worst_case_aligned": 1.004858094530104
+    }
+  },
+  "e2_all31_strassen_net202": {
+    "d4": {
+      "rel_frobenius_per_sample": 1.6949271199051328e-05,
+      "rel_colmean": 6.396874197917916e-07,
+      "mse_contribution": 1.3599415327278256e-13
+    },
+    "d5": {
+      "rel_frobenius_per_sample": 3.8148489510665226e-05,
+      "rel_colmean": 1.4619655194070928e-06,
+      "mse_contribution": 7.103279069696059e-13
+    }
+  },
+  "bias_decomposition_net101": {
+    "d1": {
+      "n_rotation_seeds": 6,
+      "mean_squared_delta": 1.1772373136748483e-14,
+      "bias_squared": 1.1737122845118653e-14,
+      "bias_share": 0.9970056766617604,
+      "bias_rms": 1.0833800277427424e-07,
+      "bias_share_of_champion_mse": 4.1643721884973385e-08
+    },
+    "d4": {
+      "n_rotation_seeds": 6,
+      "mean_squared_delta": 2.768349672932543e-13,
+      "bias_squared": 2.743410821403584e-13,
+      "bias_share": 0.9909914373271563,
+      "bias_rms": 5.23775793770921e-07,
+      "bias_share_of_champion_mse": 9.733717434019266e-07
+    }
+  },
+  "e4_regime_flips": {
+    "per_net": {
+      "101": {
+        "d4": {
+          "flips_max_predicate": 0,
+          "flips_min_predicate": 0,
+          "threshold_tests": 31744,
+          "min_relative_margin_to_threshold": 2.2748073222404292e-05,
+          "seconds": 39.9
+        },
+        "d5": {
+          "flips_max_predicate": 0,
+          "flips_min_predicate": 0,
+          "threshold_tests": 31744,
+          "min_relative_margin_to_threshold": 2.2748073222404292e-05,
+          "seconds": 54.2
+        }
+      },
+      "202": {
+        "d4": {
+          "flips_max_predicate": 0,
+          "flips_min_predicate": 0,
+          "threshold_tests": 31744,
+          "min_relative_margin_to_threshold": 1.3217923998398611e-05,
+          "seconds": 34.7
+        },
+        "d5": {
+          "flips_max_predicate": 0,
+          "flips_min_predicate": 0,
+          "threshold_tests": 31744,
+          "min_relative_margin_to_threshold": 1.3217923998398611e-05,
+          "seconds": 45.9
+        }
+      },
+      "303": {
+        "d5": {
+          "flips_max_predicate": 0,
+          "flips_min_predicate": 0,
+          "threshold_tests": 31744,
+          "min_relative_margin_to_threshold": 8.382418057793812e-05,
+          "seconds": 60.1
+        }
+      }
+    },
+    "total_tests": 158720,
+    "total_flips": 0,
+    "rule_of_three_95pct_upper_rate": 1.8901209677419356e-05
+  },
+  "score_translation": {
+    "d1": {
+      "uf1_cost_gain": 1.0606,
+      "net_gain_if_orthogonal": 1.0605999637386125,
+      "net_gain_worst_case": 1.0600283700625304,
+      "mse_headroom_ratio": 112.37640825838417
+    },
+    "d2": {
+      "uf1_cost_gain": 1.118,
+      "net_gain_if_orthogonal": 1.1179998695728166,
+      "net_gain_worst_case": 1.1170539143288658,
+      "mse_headroom_ratio": 139.3239173919436
+    },
+    "d3": {
+      "uf1_cost_gain": 1.1697,
+      "net_gain_if_orthogonal": 1.169699486832903,
+      "net_gain_worst_case": 1.1676700810761504,
+      "mse_headroom_ratio": 97.61651582756309
+    },
+    "d4": {
+      "uf1_cost_gain": 1.2118,
+      "net_gain_if_orthogonal": 1.2117987968933315,
+      "net_gain_worst_case": 1.2090547992048215,
+      "mse_headroom_ratio": 93.28199486221139
+    },
+    "d5": {
+      "uf1_cost_gain": 1.2376,
+      "net_gain_if_orthogonal": 1.2375945659875422,
+      "net_gain_worst_case": 1.2316166896966,
+      "mse_headroom_ratio": 48.90806437126159
+    }
+  },
+  "kill_condition_d4": {
+    "required_r_mse_to_cancel_gain": 1.2118,
+    "required_rms_delta_aligned": 5.352338939588578e-05,
+    "measured_rms_delta": 5.289844002160868e-07,
+    "amplification_factor_required": 101.18141361828782,
+    "mse_amplification_required": 10237.67846179504
+  },
+  "out_of_surface_flag_cost_baseline": {
+    "observation": "row_blocked_winograd.py docstring 'Exact one-level Winograd' and cost_model.owned_batched_candidate_bill dispatch winograd_batched_owned whenever m,k even; the champion's C=1.7683e11 therefore ALREADY contains the depth-1 saving on the eligible lane. U-F1 prices r(d) against classical d=0, which double-counts it.",
+    "arithmetic": "saved = (r_base - r_d)*145.138e9*0.574164; C_d = 176.830e9 - saved; score = 2.818462e-7*max(0.1,C_d/B); gain = 1.832e-7/score",
+    "table": {
+      "d2": {
+        "uf1_baseline_d0": {
+          "saved_flops": 18670678595.284973,
+          "C_d": 158159321404.71503,
+          "C_over_B": 0.5813693461063416,
+          "score": 1.6385674099655718e-07,
+          "gain": 1.118049821361022
+        },
+        "honest_baseline_d1_already_shipped": {
+          "saved_flops": 8560467261.08684,
+          "C_d": 168269532738.91315,
+          "C_over_B": 0.6185329283736114,
+          "score": 1.7433115543697454e-07,
+          "gain": 1.050873548912098
+        }
+      },
+      "d3": {
+        "uf1_baseline_d0": {
+          "saved_flops": 25660651862.617126,
+          "C_d": 151169348137.38287,
+          "C_over_B": 0.5556752791892806,
+          "score": 1.566149658734378e-07,
+          "gain": 1.1697477247994668
+        },
+        "honest_baseline_d1_already_shipped": {
+          "saved_flops": 15550440528.418997,
+          "C_d": 161279559471.581,
+          "C_over_B": 0.5928388614565504,
+          "score": 1.670893803138552e-07,
+          "gain": 1.0964191719179468
+        }
+      },
+      "d4": {
+        "uf1_baseline_d0": {
+          "saved_flops": 30901215153.779716,
+          "C_d": 145928784846.22028,
+          "C_over_B": 0.5364117743464907,
+          "score": 1.5118562023481586e-07,
+          "gain": 1.2117554547546294
+        },
+        "honest_baseline_d1_already_shipped": {
+          "saved_flops": 20791003819.58158,
+          "C_d": 156038996180.41843,
+          "C_over_B": 0.5735753566137606,
+          "score": 1.6166003467523328e-07,
+          "gain": 1.1332423648679737
+        }
+      },
+      "d5": {
+        "uf1_baseline_d0": {
+          "saved_flops": 33954120144.823032,
+          "C_d": 142875879855.17697,
+          "C_over_B": 0.5251897650295316,
+          "score": 1.4802273955246637e-07,
+          "gain": 1.2376476786869974
+        },
+        "honest_baseline_d1_already_shipped": {
+          "saved_flops": 23843908810.6249,
+          "C_d": 152986091189.3751,
+          "C_over_B": 0.5623533472968014,
+          "score": 1.5849715399288373e-07,
+          "gain": 1.1558567165706042
+        }
+      }
+    },
+    "caveat": "COST SURFACE, NOT MINE. I did not meter C; I read the dispatch rule from the frozen source. Flagged for the cost falsifier."
+  },
+  "deviations": [
+    "E2/E4/E6 use a numpy twin of the champion's SAMPLED path at full width: no structural pruning (active-set narrowing) and no terminal-three-layer fold algebra. Both omissions are conservative for error magnitude (pruning narrows the products; the fold is an exact re-association of the same float32 maps). The twin's depth-1 injected MSE was cross-checked against the SHIPPED RowBlockedBatchedWinograd kernel and agrees to 5.5% (e6).",
+    "E2 arms compare against a float64-classical reference, not against benchmark truth (firewall forbids truth reads). The MSE translation therefore uses the rigorous triangle-inequality worst case r_MSE <= (1+sqrt(mean(delta^2)/MSE_raw))^2, which needs no truth.",
+    "Haar rotation omitted in the 4-net E2 sweep (W0 iid Gaussian is rotation-invariant in distribution); it IS applied in the 6-seed bias decomposition, which is where it matters.",
+    "MLP weights are generated with numpy default_rng at the same He scale as whestbench.generation.sample_mlp rather than through the flopscope RNG; distribution identical, streams differ.",
+    "Cost-side figures (r(d), 57.4164% eligibility, 1.2118x) are U-F1's own and were NOT independently metered here; only the MSE side is mine."
+  ],
+  "two_signal_verification": {
+    "signal_A": "E1 seed 20260810 reproduces every one of the six committed uf1_attack.json relative_final_error values to 0.00e+00 relative difference (bit-identical), so the reproduction harness is the same instrument.",
+    "signal_B": "E6 runs the frozen shipped RowBlockedBatchedWinograd (different schedule: batched 7-stack, explicit copies, 4096-row blocking) over the same production chain: injected MSE 1.1383e-14 vs the numpy twin's 1.0793e-14, ratio 1.0547.",
+    "signal_C": "E4 measures 0 pilot-threshold sign flips over 158,720 predicate tests at d=4 and d=5, an independent (discrete) probe of the same drift."
+  },
+  "overflow_probe": {
+    "peak_left_intermediate_S_d5": 121.78450012207031,
+    "peak_leaf_product_d5": 263.286376953125,
+    "float32_max": 3.4028234663852886e+38,
+    "headroom_factor": 1.2924419051849085e+36,
+    "note": "Strassen pre-additions did not exceed the magnitude of the leaf products themselves on a real chain; overflow needs activations ~1e35, which no He-init net reaches."
+  }
+}

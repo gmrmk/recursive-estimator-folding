@@ -1,0 +1,130 @@
+{
+  "rounds": 9,
+  "residual_rate_flops_per_s": 100000000000.0,
+  "production_flops": 7427768320,
+  "production_residual_ms_median": 4.52560001576785,
+  "production_residual_ms_all": [
+    4.2863,
+    4.8361,
+    4.253,
+    4.5367,
+    4.5636,
+    4.5256,
+    6.6613,
+    4.3564,
+    4.5072
+  ],
+  "arms": {
+    "d2_block4096": {
+      "flops": 6582603776,
+      "billed_flops_saved_vs_production": 845164544,
+      "residual_ms_median": 8.966000012151198,
+      "paired_delta_residual_ms_mean": 4.688411141412669,
+      "paired_delta_residual_ms_ci95": [
+        3.7559000209310196,
+        5.6086333578504215
+      ],
+      "residual_charged_effective_flops_mean": 468841114.1412669,
+      "residual_charged_effective_flops_ci95": [
+        375590002.0931019,
+        560863335.7850422
+      ],
+      "NET_effective_saving_mean": 376323429.8587331,
+      "NET_effective_saving_ci95": [
+        284301208.21495783,
+        469574541.9068981
+      ],
+      "net_is_positive_at_95ci_low": true,
+      "workspace_MiB_single_block_height": 39.703125
+    },
+    "d3_block4096": {
+      "flops": 5912804352,
+      "billed_flops_saved_vs_production": 1514963968,
+      "residual_ms_median": 14.10530000066501,
+      "paired_delta_residual_ms_mean": 9.605933307789705,
+      "paired_delta_residual_ms_ci95": [
+        8.148419126225944,
+        11.109133308814812
+      ],
+      "residual_charged_effective_flops_mean": 960593330.7789706,
+      "residual_charged_effective_flops_ci95": [
+        814841912.6225944,
+        1110913330.8814812
+      ],
+      "NET_effective_saving_mean": 554370637.2210294,
+      "NET_effective_saving_ci95": [
+        404050637.1185188,
+        700122055.3774056
+      ],
+      "net_is_positive_at_95ci_low": true,
+      "workspace_MiB_single_block_height": 83.91796875
+    },
+    "d4_block4096": {
+      "flops": 5448739072,
+      "billed_flops_saved_vs_production": 1979029248,
+      "residual_ms_median": 24.845000025379704,
+      "paired_delta_residual_ms_mean": 20.219966681502736,
+      "paired_delta_residual_ms_ci95": [
+        17.6548700214476,
+        22.837431957476735
+      ],
+      "residual_charged_effective_flops_mean": 2021996668.1502736,
+      "residual_charged_effective_flops_ci95": [
+        1765487002.1447601,
+        2283743195.7476735
+      ],
+      "NET_effective_saving_mean": -42967420.15027356,
+      "NET_effective_saving_ci95": [
+        -304713947.7476735,
+        213542245.85523987
+      ],
+      "net_is_positive_at_95ci_low": false,
+      "workspace_MiB_single_block_height": 161.2939453125
+    },
+    "d5_block4096": {
+      "flops": 5256198080,
+      "billed_flops_saved_vs_production": 2171570240,
+      "residual_ms_median": 36.07140000167419,
+      "paired_delta_residual_ms_mean": 31.21114447963515,
+      "paired_delta_residual_ms_ci95": [
+        27.434960310529277,
+        35.835488901890734
+      ],
+      "residual_charged_effective_flops_mean": 3121114447.963515,
+      "residual_charged_effective_flops_ci95": [
+        2743496031.0529275,
+        3583548890.1890736
+      ],
+      "NET_effective_saving_mean": -949544207.9635148,
+      "NET_effective_saving_ci95": [
+        -1411978650.1890736,
+        -571925791.0529275
+      ],
+      "net_is_positive_at_95ci_low": false,
+      "workspace_MiB_single_block_height": 296.701904296875
+    },
+    "d4_block1024": {
+      "flops": 5448739072,
+      "billed_flops_saved_vs_production": 1979029248,
+      "residual_ms_median": 59.72600003588013,
+      "paired_delta_residual_ms_mean": 58.881577757549366,
+      "paired_delta_residual_ms_ci95": [
+        50.65879998720549,
+        69.72544440173402
+      ],
+      "residual_charged_effective_flops_mean": 5888157775.754937,
+      "residual_charged_effective_flops_ci95": [
+        5065879998.720549,
+        6972544440.173402
+      ],
+      "NET_effective_saving_mean": -3909128527.754937,
+      "NET_effective_saving_ci95": [
+        -4993515192.173402,
+        -3086850750.7205486
+      ],
+      "net_is_positive_at_95ci_low": false,
+      "workspace_MiB_single_block_height": 43.9892578125
+    }
+  },
+  "production_workspace_MiB_single_block_height": 14.4375
+}

@@ -1,0 +1,2650 @@
+{
+  "runs": [
+    {
+      "seed": 11,
+      "total_charged": 167353743187,
+      "matmul_lane_charged": 165726352451,
+      "op_totals": {
+        "matmul": {
+          "calls": 732,
+          "flops": 165726352451
+        },
+        "maximum": {
+          "calls": 97,
+          "flops": 413232128
+        },
+        "copyto": {
+          "calls": 937,
+          "flops": 377619141
+        },
+        "add": {
+          "calls": 1409,
+          "flops": 315888290
+        },
+        "subtract": {
+          "calls": 823,
+          "flops": 186568284
+        },
+        "reshape": {
+          "calls": 25,
+          "flops": 140378112
+        },
+        "mean": {
+          "calls": 6,
+          "flops": 63866880
+        },
+        "multiply": {
+          "calls": 577,
+          "flops": 54261760
+        },
+        "linalg.qr": {
+          "calls": 1,
+          "flops": 44739244
+        },
+        "getitem": {
+          "calls": 230,
+          "flops": 21553924
+        },
+        "concatenate": {
+          "calls": 67,
+          "flops": 3832902
+        },
+        "max": {
+          "calls": 31,
+          "flops": 1500147
+        },
+        "random.Generator.standard_normal": {
+          "calls": 1,
+          "flops": 1048576
+        },
+        "stats.norm.cdf": {
+          "calls": 32,
+          "flops": 786432
+        },
+        "min": {
+          "calls": 3,
+          "flops": 483092
+        },
+        "stats.norm.pdf": {
+          "calls": 32,
+          "flops": 442368
+        },
+        "sort": {
+          "calls": 31,
+          "flops": 391168
+        },
+        "power": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "exp": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "sum": {
+          "calls": 1,
+          "flops": 130560
+        },
+        "true_divide": {
+          "calls": 95,
+          "flops": 48640
+        },
+        "flatnonzero": {
+          "calls": 105,
+          "flops": 19464
+        },
+        "sqrt": {
+          "calls": 65,
+          "flops": 16960
+        },
+        "argsort": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "stack": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "less": {
+          "calls": 32,
+          "flops": 16128
+        },
+        "greater_equal": {
+          "calls": 31,
+          "flops": 15872
+        },
+        "greater": {
+          "calls": 34,
+          "flops": 3597
+        },
+        "where": {
+          "calls": 1,
+          "flops": 2048
+        },
+        "less_equal": {
+          "calls": 6,
+          "flops": 1772
+        },
+        "arange": {
+          "calls": 1,
+          "flops": 1024
+        },
+        "logical_and": {
+          "calls": 3,
+          "flops": 768
+        },
+        "invert": {
+          "calls": 6,
+          "flops": 527
+        },
+        "ones": {
+          "calls": 1,
+          "flops": 256
+        },
+        "diag": {
+          "calls": 1,
+          "flops": 0
+        },
+        "zeros": {
+          "calls": 1,
+          "flops": 0
+        },
+        "empty": {
+          "calls": 1,
+          "flops": 0
+        }
+      },
+      "n_deep_hooks": 28,
+      "deep_hook_charged": 154720254241,
+      "first_product_charged": 264241152
+    },
+    {
+      "seed": 12,
+      "total_charged": 160596642439,
+      "matmul_lane_charged": 158698089982,
+      "op_totals": {
+        "matmul": {
+          "calls": 763,
+          "flops": 158698089982
+        },
+        "add": {
+          "calls": 2305,
+          "flops": 505410738
+        },
+        "maximum": {
+          "calls": 97,
+          "flops": 411941888
+        },
+        "copyto": {
+          "calls": 1249,
+          "flops": 353483685
+        },
+        "subtract": {
+          "calls": 1367,
+          "flops": 298421468
+        },
+        "reshape": {
+          "calls": 25,
+          "flops": 140378112
+        },
+        "mean": {
+          "calls": 6,
+          "flops": 59222016
+        },
+        "multiply": {
+          "calls": 577,
+          "flops": 54261760
+        },
+        "linalg.qr": {
+          "calls": 1,
+          "flops": 44739244
+        },
+        "getitem": {
+          "calls": 227,
+          "flops": 21563028
+        },
+        "concatenate": {
+          "calls": 65,
+          "flops": 3625388
+        },
+        "max": {
+          "calls": 30,
+          "flops": 1484327
+        },
+        "random.Generator.standard_normal": {
+          "calls": 1,
+          "flops": 1048576
+        },
+        "stats.norm.cdf": {
+          "calls": 32,
+          "flops": 786432
+        },
+        "min": {
+          "calls": 3,
+          "flops": 571113
+        },
+        "stats.norm.pdf": {
+          "calls": 32,
+          "flops": 442368
+        },
+        "sort": {
+          "calls": 30,
+          "flops": 373944
+        },
+        "power": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "exp": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "sum": {
+          "calls": 1,
+          "flops": 130560
+        },
+        "true_divide": {
+          "calls": 95,
+          "flops": 48640
+        },
+        "flatnonzero": {
+          "calls": 104,
+          "flops": 19505
+        },
+        "sqrt": {
+          "calls": 65,
+          "flops": 16960
+        },
+        "argsort": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "stack": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "less": {
+          "calls": 32,
+          "flops": 16128
+        },
+        "greater_equal": {
+          "calls": 31,
+          "flops": 15872
+        },
+        "greater": {
+          "calls": 33,
+          "flops": 3545
+        },
+        "where": {
+          "calls": 1,
+          "flops": 2048
+        },
+        "less_equal": {
+          "calls": 6,
+          "flops": 1815
+        },
+        "arange": {
+          "calls": 1,
+          "flops": 1024
+        },
+        "logical_and": {
+          "calls": 3,
+          "flops": 768
+        },
+        "invert": {
+          "calls": 6,
+          "flops": 577
+        },
+        "ones": {
+          "calls": 1,
+          "flops": 256
+        },
+        "diag": {
+          "calls": 1,
+          "flops": 0
+        },
+        "zeros": {
+          "calls": 1,
+          "flops": 0
+        },
+        "empty": {
+          "calls": 1,
+          "flops": 0
+        }
+      },
+      "n_deep_hooks": 28,
+      "deep_hook_charged": 151088919681,
+      "first_product_charged": 264241152
+    },
+    {
+      "seed": 13,
+      "total_charged": 182184691669,
+      "matmul_lane_charged": 180147378467,
+      "op_totals": {
+        "matmul": {
+          "calls": 732,
+          "flops": 180147378467
+        },
+        "add": {
+          "calls": 2417,
+          "flops": 564194974
+        },
+        "maximum": {
+          "calls": 97,
+          "flops": 441230336
+        },
+        "copyto": {
+          "calls": 1252,
+          "flops": 364580949
+        },
+        "subtract": {
+          "calls": 1435,
+          "flops": 325002012
+        },
+        "reshape": {
+          "calls": 25,
+          "flops": 140378112
+        },
+        "mean": {
+          "calls": 6,
+          "flops": 70898688
+        },
+        "multiply": {
+          "calls": 577,
+          "flops": 54261760
+        },
+        "linalg.qr": {
+          "calls": 1,
+          "flops": 44739244
+        },
+        "getitem": {
+          "calls": 230,
+          "flops": 22672452
+        },
+        "concatenate": {
+          "calls": 67,
+          "flops": 4168288
+        },
+        "max": {
+          "calls": 31,
+          "flops": 1267516
+        },
+        "random.Generator.standard_normal": {
+          "calls": 1,
+          "flops": 1048576
+        },
+        "stats.norm.cdf": {
+          "calls": 32,
+          "flops": 786432
+        },
+        "stats.norm.pdf": {
+          "calls": 32,
+          "flops": 442368
+        },
+        "min": {
+          "calls": 3,
+          "flops": 423729
+        },
+        "sort": {
+          "calls": 31,
+          "flops": 420336
+        },
+        "power": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "exp": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "sum": {
+          "calls": 1,
+          "flops": 130560
+        },
+        "true_divide": {
+          "calls": 95,
+          "flops": 48640
+        },
+        "flatnonzero": {
+          "calls": 105,
+          "flops": 19035
+        },
+        "sqrt": {
+          "calls": 65,
+          "flops": 16960
+        },
+        "argsort": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "stack": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "less": {
+          "calls": 32,
+          "flops": 16128
+        },
+        "greater_equal": {
+          "calls": 31,
+          "flops": 15872
+        },
+        "greater": {
+          "calls": 34,
+          "flops": 3268
+        },
+        "where": {
+          "calls": 1,
+          "flops": 2048
+        },
+        "less_equal": {
+          "calls": 6,
+          "flops": 1743
+        },
+        "arange": {
+          "calls": 1,
+          "flops": 1024
+        },
+        "logical_and": {
+          "calls": 3,
+          "flops": 768
+        },
+        "invert": {
+          "calls": 6,
+          "flops": 456
+        },
+        "ones": {
+          "calls": 1,
+          "flops": 256
+        },
+        "diag": {
+          "calls": 1,
+          "flops": 0
+        },
+        "zeros": {
+          "calls": 1,
+          "flops": 0
+        },
+        "empty": {
+          "calls": 1,
+          "flops": 0
+        }
+      },
+      "n_deep_hooks": 28,
+      "deep_hook_charged": 163753789297,
+      "first_product_charged": 264241152
+    },
+    {
+      "seed": 14,
+      "total_charged": 159372953352,
+      "matmul_lane_charged": 157679410710,
+      "op_totals": {
+        "matmul": {
+          "calls": 747,
+          "flops": 157679410710
+        },
+        "maximum": {
+          "calls": 97,
+          "flops": 405039104
+        },
+        "add": {
+          "calls": 1745,
+          "flops": 374216860
+        },
+        "copyto": {
+          "calls": 1058,
+          "flops": 363846753
+        },
+        "subtract": {
+          "calls": 1027,
+          "flops": 219105068
+        },
+        "reshape": {
+          "calls": 25,
+          "flops": 140378112
+        },
+        "mean": {
+          "calls": 6,
+          "flops": 61673472
+        },
+        "multiply": {
+          "calls": 577,
+          "flops": 54261760
+        },
+        "linalg.qr": {
+          "calls": 1,
+          "flops": 44739244
+        },
+        "getitem": {
+          "calls": 227,
+          "flops": 21090208
+        },
+        "concatenate": {
+          "calls": 65,
+          "flops": 3610370
+        },
+        "max": {
+          "calls": 30,
+          "flops": 1616730
+        },
+        "random.Generator.standard_normal": {
+          "calls": 1,
+          "flops": 1048576
+        },
+        "stats.norm.cdf": {
+          "calls": 32,
+          "flops": 786432
+        },
+        "min": {
+          "calls": 3,
+          "flops": 521985
+        },
+        "stats.norm.pdf": {
+          "calls": 32,
+          "flops": 442368
+        },
+        "sort": {
+          "calls": 30,
+          "flops": 366880
+        },
+        "power": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "exp": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "sum": {
+          "calls": 1,
+          "flops": 130560
+        },
+        "true_divide": {
+          "calls": 95,
+          "flops": 48640
+        },
+        "flatnonzero": {
+          "calls": 104,
+          "flops": 19680
+        },
+        "sqrt": {
+          "calls": 65,
+          "flops": 16960
+        },
+        "argsort": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "stack": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "less": {
+          "calls": 32,
+          "flops": 16128
+        },
+        "greater_equal": {
+          "calls": 31,
+          "flops": 15872
+        },
+        "greater": {
+          "calls": 33,
+          "flops": 3750
+        },
+        "where": {
+          "calls": 1,
+          "flops": 2048
+        },
+        "less_equal": {
+          "calls": 6,
+          "flops": 1791
+        },
+        "arange": {
+          "calls": 1,
+          "flops": 1024
+        },
+        "logical_and": {
+          "calls": 3,
+          "flops": 768
+        },
+        "invert": {
+          "calls": 6,
+          "flops": 571
+        },
+        "ones": {
+          "calls": 1,
+          "flops": 256
+        },
+        "diag": {
+          "calls": 1,
+          "flops": 0
+        },
+        "zeros": {
+          "calls": 1,
+          "flops": 0
+        },
+        "empty": {
+          "calls": 1,
+          "flops": 0
+        }
+      },
+      "n_deep_hooks": 28,
+      "deep_hook_charged": 148253240205,
+      "first_product_charged": 264241152
+    },
+    {
+      "seed": 15,
+      "total_charged": 156259164397,
+      "matmul_lane_charged": 154533457934,
+      "op_totals": {
+        "matmul": {
+          "calls": 779,
+          "flops": 154533457934
+        },
+        "maximum": {
+          "calls": 97,
+          "flops": 401942528
+        },
+        "add": {
+          "calls": 1857,
+          "flops": 401260192
+        },
+        "copyto": {
+          "calls": 1125,
+          "flops": 357664083
+        },
+        "subtract": {
+          "calls": 1095,
+          "flops": 234419140
+        },
+        "reshape": {
+          "calls": 25,
+          "flops": 140378112
+        },
+        "mean": {
+          "calls": 6,
+          "flops": 61092864
+        },
+        "multiply": {
+          "calls": 577,
+          "flops": 54261760
+        },
+        "linalg.qr": {
+          "calls": 1,
+          "flops": 44739244
+        },
+        "getitem": {
+          "calls": 227,
+          "flops": 20859036
+        },
+        "concatenate": {
+          "calls": 65,
+          "flops": 3553456
+        },
+        "max": {
+          "calls": 30,
+          "flops": 1572198
+        },
+        "random.Generator.standard_normal": {
+          "calls": 1,
+          "flops": 1048576
+        },
+        "stats.norm.cdf": {
+          "calls": 32,
+          "flops": 786432
+        },
+        "min": {
+          "calls": 3,
+          "flops": 524032
+        },
+        "stats.norm.pdf": {
+          "calls": 32,
+          "flops": 442368
+        },
+        "sort": {
+          "calls": 30,
+          "flops": 363792
+        },
+        "power": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "exp": {
+          "calls": 31,
+          "flops": 253952
+        },
+        "sum": {
+          "calls": 1,
+          "flops": 130560
+        },
+        "true_divide": {
+          "calls": 95,
+          "flops": 48640
+        },
+        "flatnonzero": {
+          "calls": 104,
+          "flops": 19645
+        },
+        "sqrt": {
+          "calls": 65,
+          "flops": 16960
+        },
+        "argsort": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "stack": {
+          "calls": 1,
+          "flops": 16384
+        },
+        "less": {
+          "calls": 32,
+          "flops": 16128
+        },
+        "greater_equal": {
+          "calls": 31,
+          "flops": 15872
+        },
+        "greater": {
+          "calls": 33,
+          "flops": 3738
+        },
+        "where": {
+          "calls": 1,
+          "flops": 2048
+        },
+        "less_equal": {
+          "calls": 6,
+          "flops": 1792
+        },
+        "arange": {
+          "calls": 1,
+          "flops": 1024
+        },
+        "logical_and": {
+          "calls": 3,
+          "flops": 768
+        },
+        "invert": {
+          "calls": 6,
+          "flops": 547
+        },
+        "ones": {
+          "calls": 1,
+          "flops": 256
+        },
+        "diag": {
+          "calls": 1,
+          "flops": 0
+        },
+        "zeros": {
+          "calls": 1,
+          "flops": 0
+        },
+        "empty": {
+          "calls": 1,
+          "flops": 0
+        }
+      },
+      "n_deep_hooks": 28,
+      "deep_hook_charged": 145498000151,
+      "first_product_charged": 264241152
+    }
+  ],
+  "tapes": {
+    "11": [
+      {
+        "kind": "first_product_WHT",
+        "m": 32256,
+        "k": 256,
+        "n": 256,
+        "charged": 264241152
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 256,
+        "charged": 7427768320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 253,
+        "charged": 7345191168
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 253,
+        "n": 255,
+        "charged": 8323854336
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 255,
+        "n": 253,
+        "charged": 8324112384
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 253,
+        "n": 248,
+        "charged": 8095804416
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 248,
+        "n": 244,
+        "charged": 6859666856
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 244,
+        "n": 239,
+        "charged": 6615226618
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 239,
+        "n": 227,
+        "charged": 7000713216
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 227,
+        "n": 223,
+        "charged": 6531581952
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 223,
+        "n": 217,
+        "charged": 6243987456
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 217,
+        "n": 218,
+        "charged": 6103544832
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 218,
+        "n": 216,
+        "charged": 5340740580
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 216,
+        "n": 214,
+        "charged": 5242971132
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 214,
+        "n": 199,
+        "charged": 4835474343
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 199,
+        "n": 204,
+        "charged": 5237535744
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 204,
+        "n": 195,
+        "charged": 4517393034
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 195,
+        "n": 207,
+        "charged": 5207279616
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 207,
+        "n": 189,
+        "charged": 5048967168
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 189,
+        "n": 189,
+        "charged": 4608866304
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 189,
+        "n": 182,
+        "charged": 4438619136
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 182,
+        "n": 169,
+        "charged": 3495991044
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 169,
+        "n": 183,
+        "charged": 3989422080
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 183,
+        "n": 191,
+        "charged": 4509259776
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 191,
+        "n": 185,
+        "charged": 4559450112
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 185,
+        "n": 178,
+        "charged": 4249211904
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 178,
+        "n": 174,
+        "charged": 3516764601
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 174,
+        "n": 163,
+        "charged": 3224455857
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 163,
+        "n": 182,
+        "charged": 3826400256
+      }
+    ],
+    "12": [
+      {
+        "kind": "first_product_WHT",
+        "m": 32256,
+        "k": 256,
+        "n": 256,
+        "charged": 264241152
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 256,
+        "charged": 7427768320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 256,
+        "charged": 7427768320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 254,
+        "charged": 7369964672
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 254,
+        "n": 245,
+        "charged": 7058398634
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 245,
+        "n": 243,
+        "charged": 7681572864
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 243,
+        "n": 240,
+        "charged": 7524873216
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 240,
+        "n": 240,
+        "charged": 6530005440
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 240,
+        "n": 229,
+        "charged": 6235825680
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 229,
+        "n": 234,
+        "charged": 6913557504
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 234,
+        "n": 222,
+        "charged": 5891229981
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 222,
+        "n": 230,
+        "charged": 5789622027
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 230,
+        "n": 229,
+        "charged": 5975999610
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 229,
+        "n": 216,
+        "charged": 6382881792
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 216,
+        "n": 210,
+        "charged": 5145427476
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 210,
+        "n": 200,
+        "charged": 4765413660
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 200,
+        "n": 197,
+        "charged": 4473975800
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 197,
+        "n": 184,
+        "charged": 4677700608
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 184,
+        "n": 196,
+        "charged": 4092317320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 196,
+        "n": 178,
+        "charged": 3960904318
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 178,
+        "n": 181,
+        "charged": 3660305670
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 181,
+        "n": 192,
+        "charged": 4483132416
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 192,
+        "n": 188,
+        "charged": 4096833216
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 188,
+        "n": 179,
+        "charged": 3823491266
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 179,
+        "n": 186,
+        "charged": 4295273472
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 186,
+        "n": 175,
+        "charged": 3698819901
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 175,
+        "n": 182,
+        "charged": 4108962816
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 182,
+        "n": 181,
+        "charged": 3742559730
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 181,
+        "n": 165,
+        "charged": 3854333952
+      }
+    ],
+    "13": [
+      {
+        "kind": "first_product_WHT",
+        "m": 32256,
+        "k": 256,
+        "n": 256,
+        "charged": 264241152
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 256,
+        "charged": 7427768320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 256,
+        "charged": 7427768320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 256,
+        "charged": 7427768320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 254,
+        "charged": 7369964672
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 254,
+        "n": 248,
+        "charged": 7140330652
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 248,
+        "n": 242,
+        "charged": 6803669572
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 242,
+        "n": 249,
+        "charged": 6834216004
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 249,
+        "n": 238,
+        "charged": 7646929920
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 238,
+        "n": 232,
+        "charged": 6260631412
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 232,
+        "n": 231,
+        "charged": 6080349380
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 231,
+        "n": 227,
+        "charged": 6765889536
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 227,
+        "n": 224,
+        "charged": 6560805888
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 224,
+        "n": 210,
+        "charged": 5335998864
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 210,
+        "n": 199,
+        "charged": 4745091645
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 199,
+        "n": 208,
+        "charged": 5339980800
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 208,
+        "n": 209,
+        "charged": 4934727616
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 209,
+        "n": 203,
+        "charged": 5474488320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 203,
+        "n": 202,
+        "charged": 5290822656
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 202,
+        "n": 213,
+        "charged": 4883601086
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 213,
+        "n": 216,
+        "charged": 5935942656
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 216,
+        "n": 214,
+        "charged": 5242971132
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 214,
+        "n": 214,
+        "charged": 5194425103
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 214,
+        "n": 198,
+        "charged": 4807863207
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 198,
+        "n": 200,
+        "charged": 4493104308
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 200,
+        "n": 206,
+        "charged": 4673966500
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 206,
+        "n": 192,
+        "charged": 4488588384
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 192,
+        "n": 199,
+        "charged": 4338369504
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 199,
+        "n": 188,
+        "charged": 4827755520
+      }
+    ],
+    "14": [
+      {
+        "kind": "first_product_WHT",
+        "m": 32256,
+        "k": 256,
+        "n": 256,
+        "charged": 264241152
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 256,
+        "charged": 7427768320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 255,
+        "charged": 7402994816
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 255,
+        "n": 252,
+        "charged": 8291275776
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 252,
+        "n": 249,
+        "charged": 7116621624
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 249,
+        "n": 243,
+        "charged": 7807242240
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 243,
+        "n": 239,
+        "charged": 7493584896
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 239,
+        "n": 234,
+        "charged": 7216118784
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 234,
+        "n": 228,
+        "charged": 6049738422
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 228,
+        "n": 211,
+        "charged": 5460702030
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 211,
+        "n": 205,
+        "charged": 5581320192
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 205,
+        "n": 217,
+        "charged": 5738858496
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 217,
+        "n": 210,
+        "charged": 5880075264
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 210,
+        "n": 207,
+        "charged": 4934759865
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 207,
+        "n": 203,
+        "charged": 5421975552
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 203,
+        "n": 197,
+        "charged": 5160185856
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 197,
+        "n": 188,
+        "charged": 4779113472
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 188,
+        "n": 193,
+        "charged": 4120638144
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 193,
+        "n": 194,
+        "charged": 4830852096
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 194,
+        "n": 192,
+        "charged": 4227117216
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 192,
+        "n": 195,
+        "charged": 4251664032
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 195,
+        "n": 177,
+        "charged": 4454424576
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 177,
+        "n": 166,
+        "charged": 3791692800
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 166,
+        "n": 168,
+        "charged": 3167233188
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 168,
+        "n": 188,
+        "charged": 3584729064
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 188,
+        "n": 184,
+        "charged": 3926583416
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 184,
+        "n": 163,
+        "charged": 3409769412
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 163,
+        "n": 164,
+        "charged": 3449005056
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 164,
+        "n": 176,
+        "charged": 3277195600
+      }
+    ],
+    "15": [
+      {
+        "kind": "first_product_WHT",
+        "m": 32256,
+        "k": 256,
+        "n": 256,
+        "charged": 264241152
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 256,
+        "charged": 7427768320
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 256,
+        "n": 255,
+        "charged": 7402994816
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 255,
+        "n": 248,
+        "charged": 8159929344
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 248,
+        "n": 248,
+        "charged": 6971661424
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 248,
+        "n": 249,
+        "charged": 7003659376
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 249,
+        "n": 238,
+        "charged": 7646929920
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 238,
+        "n": 239,
+        "charged": 6452557111
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 239,
+        "n": 227,
+        "charged": 7000713216
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 227,
+        "n": 227,
+        "charged": 6648477696
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 227,
+        "n": 219,
+        "charged": 6414686208
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 219,
+        "n": 202,
+        "charged": 5708860416
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 202,
+        "n": 210,
+        "charged": 4811927547
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 210,
+        "n": 203,
+        "charged": 4839925755
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 203,
+        "n": 196,
+        "charged": 5134058496
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 196,
+        "n": 202,
+        "charged": 4491975334
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 202,
+        "n": 199,
+        "charged": 4564326249
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 199,
+        "n": 194,
+        "charged": 4981423104
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 194,
+        "n": 183,
+        "charged": 4033126237
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 183,
+        "n": 174,
+        "charged": 4108962816
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 174,
+        "n": 174,
+        "charged": 3437736183
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 174,
+        "n": 173,
+        "charged": 3420897942
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 173,
+        "n": 171,
+        "charged": 3817046016
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 171,
+        "n": 174,
+        "charged": 3838786560
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 174,
+        "n": 176,
+        "charged": 3477024600
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 176,
+        "n": 165,
+        "charged": 3301258576
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 165,
+        "n": 170,
+        "charged": 3618800640
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 170,
+        "n": 167,
+        "charged": 3227100905
+      },
+      {
+        "kind": "deep_hook",
+        "m": 64512,
+        "k": 167,
+        "n": 165,
+        "charged": 3555385344
+      }
+    ]
+  },
+  "eligibility": {
+    "per_seed": [
+      {
+        "seed": 11,
+        "n_deep_hooks": 28,
+        "deep_hook_direct_volume": 162355350528,
+        "deep_hook_charged_actual": 154720254241,
+        "matmul_lane_charged": 165726352451,
+        "total_charged": 167353743187,
+        "deep_hook_share_of_matmul_lane": 0.9335887259495791,
+        "matmul_share_of_total": 0.9902757434341845,
+        "widths_k": [
+          256,
+          256,
+          253,
+          255,
+          253,
+          248,
+          244,
+          239,
+          227,
+          223,
+          217,
+          218,
+          216,
+          214,
+          199,
+          204,
+          195,
+          207,
+          189,
+          189,
+          182,
+          169,
+          183,
+          191,
+          185,
+          178,
+          174,
+          163
+        ],
+        "widths_n": [
+          256,
+          253,
+          255,
+          253,
+          248,
+          244,
+          239,
+          227,
+          223,
+          217,
+          218,
+          216,
+          214,
+          199,
+          204,
+          195,
+          207,
+          189,
+          189,
+          182,
+          169,
+          183,
+          191,
+          185,
+          178,
+          174,
+          163,
+          182
+        ],
+        "max_depth_per_hook": [
+          8,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "by_depth": {
+          "0": {
+            "strict_calls": 28,
+            "strict_direct_volume": 162355350528,
+            "strict_frac_of_deep_hook_direct": 1.0,
+            "generous_core_volume": 162355350528,
+            "generous_frac_of_deep_hook_direct": 1.0
+          },
+          "1": {
+            "strict_calls": 5,
+            "strict_direct_volume": 32227614720,
+            "strict_frac_of_deep_hook_direct": 0.19850047821147715,
+            "generous_core_volume": 161437151232,
+            "generous_frac_of_deep_hook_direct": 0.9943445085547603
+          },
+          "2": {
+            "strict_calls": 2,
+            "strict_direct_volume": 16230961152,
+            "strict_frac_of_deep_hook_direct": 0.09997182784068942,
+            "generous_core_volume": 159836221440,
+            "generous_frac_of_deep_hook_direct": 0.984483855445432
+          },
+          "3": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05197981935645887,
+            "generous_core_volume": 156333219840,
+            "generous_frac_of_deep_hook_direct": 0.9629077165094019
+          },
+          "4": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05197981935645887,
+            "generous_core_volume": 149100134400,
+            "generous_frac_of_deep_hook_direct": 0.918356764437437
+          },
+          "5": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05197981935645887,
+            "generous_core_volume": 134948782080,
+            "generous_frac_of_deep_hook_direct": 0.8311939313433749
+          },
+          "6": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05197981935645887,
+            "generous_core_volume": 110147272704,
+            "generous_frac_of_deep_hook_direct": 0.6784332782737817
+          },
+          "7": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05197981935645887,
+            "generous_core_volume": 67406266368,
+            "generous_frac_of_deep_hook_direct": 0.415177363411716
+          },
+          "8": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05197981935645887,
+            "generous_core_volume": 8439201792,
+            "generous_frac_of_deep_hook_direct": 0.05197981935645887
+          }
+        }
+      },
+      {
+        "seed": 12,
+        "n_deep_hooks": 28,
+        "deep_hook_direct_volume": 164596432896,
+        "deep_hook_charged_actual": 151088919681,
+        "matmul_lane_charged": 158698089982,
+        "total_charged": 160596642439,
+        "deep_hook_share_of_matmul_lane": 0.9520525401291027,
+        "matmul_share_of_total": 0.9881781310731877,
+        "widths_k": [
+          256,
+          256,
+          256,
+          254,
+          245,
+          243,
+          240,
+          240,
+          229,
+          234,
+          222,
+          230,
+          229,
+          216,
+          210,
+          200,
+          197,
+          184,
+          196,
+          178,
+          181,
+          192,
+          188,
+          179,
+          186,
+          175,
+          182,
+          181
+        ],
+        "widths_n": [
+          256,
+          256,
+          254,
+          245,
+          243,
+          240,
+          240,
+          229,
+          234,
+          222,
+          230,
+          229,
+          216,
+          210,
+          200,
+          197,
+          184,
+          196,
+          178,
+          181,
+          192,
+          188,
+          179,
+          186,
+          175,
+          182,
+          181,
+          165
+        ],
+        "max_depth_per_hook": [
+          8,
+          8,
+          1,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "by_depth": {
+          "0": {
+            "strict_calls": 28,
+            "strict_direct_volume": 164596432896,
+            "strict_frac_of_deep_hook_direct": 1.0,
+            "generous_core_volume": 164596432896,
+            "generous_frac_of_deep_hook_direct": 1.0
+          },
+          "1": {
+            "strict_calls": 11,
+            "strict_direct_volume": 70949910528,
+            "strict_frac_of_deep_hook_direct": 0.431053755416617,
+            "generous_core_volume": 164090787840,
+            "generous_frac_of_deep_hook_direct": 0.9969279707518358
+          },
+          "2": {
+            "strict_calls": 5,
+            "strict_direct_volume": 33580302336,
+            "strict_frac_of_deep_hook_direct": 0.20401597862827114,
+            "generous_core_volume": 162910863360,
+            "generous_frac_of_deep_hook_direct": 0.9897593799188527
+          },
+          "3": {
+            "strict_calls": 3,
+            "strict_direct_volume": 24294703104,
+            "strict_frac_of_deep_hook_direct": 0.1476016379975292,
+            "generous_core_volume": 160069754880,
+            "generous_frac_of_deep_hook_direct": 0.9724983224948734
+          },
+          "4": {
+            "strict_calls": 3,
+            "strict_direct_volume": 24294703104,
+            "strict_frac_of_deep_hook_direct": 0.1476016379975292,
+            "generous_core_volume": 156292448256,
+            "generous_frac_of_deep_hook_direct": 0.9495494252585239
+          },
+          "5": {
+            "strict_calls": 2,
+            "strict_direct_volume": 16878403584,
+            "strict_frac_of_deep_hook_direct": 0.1025441638499213,
+            "generous_core_volume": 143129935872,
+            "generous_frac_of_deep_hook_direct": 0.8695810313364228
+          },
+          "6": {
+            "strict_calls": 2,
+            "strict_direct_volume": 16878403584,
+            "strict_frac_of_deep_hook_direct": 0.1025441638499213,
+            "generous_core_volume": 115423838208,
+            "generous_frac_of_deep_hook_direct": 0.7012535823357142
+          },
+          "7": {
+            "strict_calls": 2,
+            "strict_direct_volume": 16878403584,
+            "strict_frac_of_deep_hook_direct": 0.1025441638499213,
+            "generous_core_volume": 73739796480,
+            "generous_frac_of_deep_hook_direct": 0.44800361212318845
+          },
+          "8": {
+            "strict_calls": 2,
+            "strict_direct_volume": 16878403584,
+            "strict_frac_of_deep_hook_direct": 0.1025441638499213,
+            "generous_core_volume": 16878403584,
+            "generous_frac_of_deep_hook_direct": 0.1025441638499213
+          }
+        }
+      },
+      {
+        "seed": 13,
+        "n_deep_hooks": 28,
+        "deep_hook_direct_volume": 179302846464,
+        "deep_hook_charged_actual": 163753789297,
+        "matmul_lane_charged": 180147378467,
+        "total_charged": 182184691669,
+        "deep_hook_share_of_matmul_lane": 0.9089990134216522,
+        "matmul_share_of_total": 0.9888173194831239,
+        "widths_k": [
+          256,
+          256,
+          256,
+          256,
+          254,
+          248,
+          242,
+          249,
+          238,
+          232,
+          231,
+          227,
+          224,
+          210,
+          199,
+          208,
+          209,
+          203,
+          202,
+          213,
+          216,
+          214,
+          214,
+          198,
+          200,
+          206,
+          192,
+          199
+        ],
+        "widths_n": [
+          256,
+          256,
+          256,
+          254,
+          248,
+          242,
+          249,
+          238,
+          232,
+          231,
+          227,
+          224,
+          210,
+          199,
+          208,
+          209,
+          203,
+          202,
+          213,
+          216,
+          214,
+          214,
+          198,
+          200,
+          206,
+          192,
+          199,
+          188
+        ],
+        "max_depth_per_hook": [
+          8,
+          8,
+          8,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "by_depth": {
+          "0": {
+            "strict_calls": 28,
+            "strict_direct_volume": 179302846464,
+            "strict_frac_of_deep_hook_direct": 1.0,
+            "generous_core_volume": 179302846464,
+            "generous_frac_of_deep_hook_direct": 1.0
+          },
+          "1": {
+            "strict_calls": 14,
+            "strict_direct_volume": 95484340224,
+            "strict_frac_of_deep_hook_direct": 0.5325310897569667,
+            "generous_core_volume": 178860810240,
+            "generous_frac_of_deep_hook_direct": 0.9975346948879099
+          },
+          "2": {
+            "strict_calls": 3,
+            "strict_direct_volume": 25317605376,
+            "strict_frac_of_deep_hook_direct": 0.14120024235690654,
+            "generous_core_volume": 177295233024,
+            "generous_frac_of_deep_hook_direct": 0.9888032260525039
+          },
+          "3": {
+            "strict_calls": 3,
+            "strict_direct_volume": 25317605376,
+            "strict_frac_of_deep_hook_direct": 0.14120024235690654,
+            "generous_core_volume": 174988025856,
+            "generous_frac_of_deep_hook_direct": 0.975935571057059
+          },
+          "4": {
+            "strict_calls": 3,
+            "strict_direct_volume": 25317605376,
+            "strict_frac_of_deep_hook_direct": 0.14120024235690654,
+            "generous_core_volume": 170278649856,
+            "generous_frac_of_deep_hook_direct": 0.9496706450234081
+          },
+          "5": {
+            "strict_calls": 3,
+            "strict_direct_volume": 25317605376,
+            "strict_frac_of_deep_hook_direct": 0.14120024235690654,
+            "generous_core_volume": 160282902528,
+            "generous_frac_of_deep_hook_direct": 0.8939227998267234
+          },
+          "6": {
+            "strict_calls": 3,
+            "strict_direct_volume": 25317605376,
+            "strict_frac_of_deep_hook_direct": 0.14120024235690654,
+            "generous_core_volume": 143920594944,
+            "generous_frac_of_deep_hook_direct": 0.8026676529806014
+          },
+          "7": {
+            "strict_calls": 3,
+            "strict_direct_volume": 25317605376,
+            "strict_frac_of_deep_hook_direct": 0.14120024235690654,
+            "generous_core_volume": 80073326592,
+            "generous_frac_of_deep_hook_direct": 0.44658145796964205
+          },
+          "8": {
+            "strict_calls": 3,
+            "strict_direct_volume": 25317605376,
+            "strict_frac_of_deep_hook_direct": 0.14120024235690654,
+            "generous_core_volume": 25317605376,
+            "generous_frac_of_deep_hook_direct": 0.14120024235690654
+          }
+        }
+      },
+      {
+        "seed": 14,
+        "n_deep_hooks": 28,
+        "deep_hook_direct_volume": 157242580992,
+        "deep_hook_charged_actual": 148253240205,
+        "matmul_lane_charged": 157679410710,
+        "total_charged": 159372953352,
+        "deep_hook_share_of_matmul_lane": 0.9402193954013668,
+        "matmul_share_of_total": 0.9893737136296926,
+        "widths_k": [
+          256,
+          256,
+          255,
+          252,
+          249,
+          243,
+          239,
+          234,
+          228,
+          211,
+          205,
+          217,
+          210,
+          207,
+          203,
+          197,
+          188,
+          193,
+          194,
+          192,
+          195,
+          177,
+          166,
+          168,
+          188,
+          184,
+          163,
+          164
+        ],
+        "widths_n": [
+          256,
+          255,
+          252,
+          249,
+          243,
+          239,
+          234,
+          228,
+          211,
+          205,
+          217,
+          210,
+          207,
+          203,
+          197,
+          188,
+          193,
+          194,
+          192,
+          195,
+          177,
+          166,
+          168,
+          188,
+          184,
+          163,
+          164,
+          176
+        ],
+        "max_depth_per_hook": [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          2,
+          2,
+          0,
+          0,
+          2
+        ],
+        "by_depth": {
+          "0": {
+            "strict_calls": 28,
+            "strict_direct_volume": 157242580992,
+            "strict_frac_of_deep_hook_direct": 1.0,
+            "generous_core_volume": 157242580992,
+            "generous_frac_of_deep_hook_direct": 1.0
+          },
+          "1": {
+            "strict_calls": 7,
+            "strict_direct_volume": 35916152832,
+            "strict_frac_of_deep_hook_direct": 0.22841238426267818,
+            "generous_core_volume": 156481597440,
+            "generous_frac_of_deep_hook_direct": 0.9951604486062289
+          },
+          "2": {
+            "strict_calls": 4,
+            "strict_direct_volume": 20666290176,
+            "strict_frac_of_deep_hook_direct": 0.1314293497704126,
+            "generous_core_volume": 155182583808,
+            "generous_frac_of_deep_hook_direct": 0.9868992408353765
+          },
+          "3": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05366995211322154,
+            "generous_core_volume": 152836153344,
+            "generous_frac_of_deep_hook_direct": 0.9719768804340334
+          },
+          "4": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05366995211322154,
+            "generous_core_volume": 147252510720,
+            "generous_frac_of_deep_hook_direct": 0.936467143893369
+          },
+          "5": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05366995211322154,
+            "generous_core_volume": 137719185408,
+            "generous_frac_of_deep_hook_direct": 0.8758390032723179
+          },
+          "6": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05366995211322154,
+            "generous_core_volume": 114895355904,
+            "generous_frac_of_deep_hook_direct": 0.7306885652674799
+          },
+          "7": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05366995211322154,
+            "generous_core_volume": 67406266368,
+            "generous_frac_of_deep_hook_direct": 0.4286769267125513
+          },
+          "8": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.05366995211322154,
+            "generous_core_volume": 8439201792,
+            "generous_frac_of_deep_hook_direct": 0.05366995211322154
+          }
+        }
+      },
+      {
+        "seed": 15,
+        "n_deep_hooks": 28,
+        "deep_hook_direct_volume": 155382183936,
+        "deep_hook_charged_actual": 145498000151,
+        "matmul_lane_charged": 154533457934,
+        "total_charged": 156259164397,
+        "deep_hook_share_of_matmul_lane": 0.9415307344843149,
+        "matmul_share_of_total": 0.9889561263836303,
+        "widths_k": [
+          256,
+          256,
+          255,
+          248,
+          248,
+          249,
+          238,
+          239,
+          227,
+          227,
+          219,
+          202,
+          210,
+          203,
+          196,
+          202,
+          199,
+          194,
+          183,
+          174,
+          174,
+          173,
+          171,
+          174,
+          176,
+          165,
+          170,
+          167
+        ],
+        "widths_n": [
+          256,
+          255,
+          248,
+          248,
+          249,
+          238,
+          239,
+          227,
+          227,
+          219,
+          202,
+          210,
+          203,
+          196,
+          202,
+          199,
+          194,
+          183,
+          174,
+          174,
+          173,
+          171,
+          174,
+          176,
+          165,
+          170,
+          167,
+          165
+        ],
+        "max_depth_per_hook": [
+          8,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "by_depth": {
+          "0": {
+            "strict_calls": 28,
+            "strict_direct_volume": 155382183936,
+            "strict_frac_of_deep_hook_direct": 1.0,
+            "generous_core_volume": 155382183936,
+            "generous_frac_of_deep_hook_direct": 1.0
+          },
+          "1": {
+            "strict_calls": 6,
+            "strict_direct_volume": 34748614656,
+            "strict_frac_of_deep_hook_direct": 0.2236331976792946,
+            "generous_core_volume": 154673326080,
+            "generous_frac_of_deep_hook_direct": 0.9954379721146668
+          },
+          "2": {
+            "strict_calls": 2,
+            "strict_direct_volume": 16358694912,
+            "strict_frac_of_deep_hook_direct": 0.10528037705235205,
+            "generous_core_volume": 152715644928,
+            "generous_frac_of_deep_hook_direct": 0.982838836857266
+          },
+          "3": {
+            "strict_calls": 2,
+            "strict_direct_volume": 16358694912,
+            "strict_frac_of_deep_hook_direct": 0.10528037705235205,
+            "generous_core_volume": 150239674368,
+            "generous_frac_of_deep_hook_direct": 0.9669041235118813
+          },
+          "4": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.054312544580246105,
+            "generous_core_volume": 143559327744,
+            "generous_frac_of_deep_hook_direct": 0.9239111210016865
+          },
+          "5": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.054312544580246105,
+            "generous_core_volume": 136664285184,
+            "generous_frac_of_deep_hook_direct": 0.8795363903514855
+          },
+          "6": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.054312544580246105,
+            "generous_core_volume": 110147272704,
+            "generous_frac_of_deep_hook_direct": 0.7088796792132122
+          },
+          "7": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.054312544580246105,
+            "generous_core_volume": 67406266368,
+            "generous_frac_of_deep_hook_direct": 0.4338094925719657
+          },
+          "8": {
+            "strict_calls": 1,
+            "strict_direct_volume": 8439201792,
+            "strict_frac_of_deep_hook_direct": 0.054312544580246105,
+            "generous_core_volume": 8439201792,
+            "generous_frac_of_deep_hook_direct": 0.054312544580246105
+          }
+        }
+      }
+    ]
+  }
+}

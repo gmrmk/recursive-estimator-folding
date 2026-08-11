@@ -1,0 +1,341 @@
+{
+  "DEVIATIONS": [
+    "U-F1's V2 'batched' variant is (6,6,7); the frozen production kernel writes SEVEN blocks on each side (3 copies + 4 arithmetic, row_blocked_winograd.py lines 110-116 and 137-143), i.e. (7,7,7). A fifth variant V5=(7,7,7) was added and metered; it is the production schedule bit-exactly.",
+    "flopscope v0.10.0 bills numpy.reshape at 1/element even when it returns a view. The frozen kernel pays none because its stacks are preallocated with a leading 7 axis. The depth-d kernel was rewritten reshape-free (all reshapes hoisted to construction) so the comparison is not contaminated by an implementation artifact.",
+    "Eligibility is held at the depth-1 measured 57.4164% at every depth. U-F1 itself notes depth 4-5 needs k,n = 0 mod 16/32 so raw eligibility that deep is worse. Every honest gain below is therefore an UPPER bound.",
+    "Residual wall was measured on this machine, not the graded host. The FLOP-only kill (CH4 row) does not depend on it."
+  ],
+  "CH2_grant_V1_floor_numerator": [
+    {
+      "d": 1,
+      "numerator_schedule": "V1_floor_granted",
+      "bill": 7415332864,
+      "r_vs_classical": 0.8786770415928928,
+      "marginal_factor_vs_metered_production": 0.9983258153102976,
+      "C": 176690485142.75635,
+      "C_over_B": 0.6494871647502778,
+      "score": 1.8305545935730906e-07,
+      "gain_vs_champion": 1.000789600283971
+    },
+    {
+      "d": 1,
+      "numerator_schedule": "V5_production_reachable",
+      "bill": 7427768320,
+      "r_vs_classical": 0.88015057621222,
+      "marginal_factor_vs_metered_production": 1.0,
+      "C": 176830000000.0,
+      "C_over_B": 0.65,
+      "score": 1.832e-07,
+      "gain_vs_champion": 1.0
+    },
+    {
+      "d": 2,
+      "numerator_schedule": "V1_floor_granted",
+      "bill": 6548406272,
+      "r_vs_classical": 0.7759509054763458,
+      "marginal_factor_vs_metered_production": 0.8816115406248966,
+      "C": 166964332782.63458,
+      "C_over_B": 0.6137353181514024,
+      "score": 1.7297893890051833e-07,
+      "gain_vs_champion": 1.0590884714893523
+    },
+    {
+      "d": 2,
+      "numerator_schedule": "V5_production_reachable",
+      "bill": 6582603776,
+      "r_vs_classical": 0.7800031256794956,
+      "marginal_factor_vs_metered_production": 0.886215548521578,
+      "C": 167347998640.05457,
+      "C_over_B": 0.6151456150881381,
+      "score": 1.733764256679183e-07,
+      "gain_vs_champion": 1.056660380984538
+    },
+    {
+      "d": 3,
+      "numerator_schedule": "V1_floor_granted",
+      "bill": 5840523264,
+      "r_vs_classical": 0.6920705782312925,
+      "marginal_factor_vs_metered_production": 0.7863092940410936,
+      "C": 159022509273.60403,
+      "C_over_B": 0.5845423911544569,
+      "score": 1.647510247069177e-07,
+      "gain_vs_champion": 1.1119809441301014
+    },
+    {
+      "d": 3,
+      "numerator_schedule": "V5_production_reachable",
+      "bill": 5912804352,
+      "r_vs_classical": 0.7006354982061318,
+      "marginal_factor_vs_metered_production": 0.7960404925499884,
+      "C": 159833439381.33267,
+      "C_over_B": 0.5875232460434668,
+      "score": 1.6559116719255866e-07,
+      "gain_vs_champion": 1.1063392033885768
+    },
+    {
+      "d": 4,
+      "numerator_schedule": "V1_floor_granted",
+      "bill": 5309811712,
+      "r_vs_classical": 0.6291841151414904,
+      "marginal_factor_vs_metered_production": 0.7148596298706312,
+      "C": 153068393363.83542,
+      "C_over_B": 0.5626559728920038,
+      "score": 1.5858242189817706e-07,
+      "gain_vs_champion": 1.1552352259926353
+    },
+    {
+      "d": 4,
+      "numerator_schedule": "V5_production_reachable",
+      "bill": 5448739072,
+      "r_vs_classical": 0.6456462597167862,
+      "marginal_factor_vs_metered_production": 0.7335634119508994,
+      "C": 154627035909.60413,
+      "C_over_B": 0.568385304197493,
+      "score": 1.6019721189073957e-07,
+      "gain_vs_champion": 1.1435904397946026
+    },
+    {
+      "d": 5,
+      "numerator_schedule": "V1_floor_granted",
+      "bill": 5000639744,
+      "r_vs_classical": 0.5925489006247476,
+      "marginal_factor_vs_metered_production": 0.6732358265046156,
+      "C": 149599756348.89575,
+      "C_over_B": 0.5499057944171365,
+      "score": 1.549888331341837e-07,
+      "gain_vs_champion": 1.182020641715472
+    },
+    {
+      "d": 5,
+      "numerator_schedule": "V5_production_reachable",
+      "bill": 5256198080,
+      "r_vs_classical": 0.6228311882508426,
+      "marginal_factor_vs_metered_production": 0.7076416298347873,
+      "C": 152466895661.23465,
+      "C_over_B": 0.5604449594514648,
+      "score": 1.57959256263859e-07,
+      "gain_vs_champion": 1.1597927486691775
+    }
+  ],
+  "UF1_claimed_gain_d4_at_measured_eligibility": 1.2118,
+  "CH4_flop_only_no_residual": {
+    "whole_lane|V1_floor_granted": [
+      {
+        "d": 1,
+        "gain": 1.0013760231541993
+      },
+      {
+        "d": 2,
+        "gain": 1.1076288817003246
+      },
+      {
+        "d": 3,
+        "gain": 1.2126980452478242
+      },
+      {
+        "d": 4,
+        "gain": 1.3055455151905948
+      },
+      {
+        "d": 5,
+        "gain": 1.3664945554612413
+      }
+    ],
+    "whole_lane|V5_production_reachable": [
+      {
+        "d": 1,
+        "gain": 1.0
+      },
+      {
+        "d": 2,
+        "gain": 1.103012137522973
+      },
+      {
+        "d": 3,
+        "gain": 1.2010645412793512
+      },
+      {
+        "d": 4,
+        "gain": 1.2798935588665383
+      },
+      {
+        "d": 5,
+        "gain": 1.3157220102075933
+      }
+    ],
+    "measured_57.4164pct|V1_floor_granted": [
+      {
+        "d": 1,
+        "gain": 1.000789600283971
+      },
+      {
+        "d": 2,
+        "gain": 1.0590884714893523
+      },
+      {
+        "d": 3,
+        "gain": 1.1119809441301014
+      },
+      {
+        "d": 4,
+        "gain": 1.1552352259926353
+      },
+      {
+        "d": 5,
+        "gain": 1.182020641715472
+      }
+    ],
+    "measured_57.4164pct|V5_production_reachable": [
+      {
+        "d": 1,
+        "gain": 1.0
+      },
+      {
+        "d": 2,
+        "gain": 1.056660380984538
+      },
+      {
+        "d": 3,
+        "gain": 1.1063392033885768
+      },
+      {
+        "d": 4,
+        "gain": 1.1435904397946026
+      },
+      {
+        "d": 5,
+        "gain": 1.1597927486691775
+      }
+    ]
+  },
+  "residual_inclusive_trace_level": {
+    "production_product_equivalents_in_eligible_mass": 11.019291091181508,
+    "rows": [
+      {
+        "arm": "d2_block4096",
+        "bound": "mean",
+        "trace_net_effective_saving": 4146817418.045207,
+        "C": 172683182581.9548,
+        "score": 1.7890380053731902e-07,
+        "gain": 1.0240140201034176
+      },
+      {
+        "arm": "d2_block4096",
+        "bound": "ci_lo",
+        "trace_net_effective_saving": 3132797770.8952236,
+        "C": 173697202229.10477,
+        "score": 1.7995434851762706e-07,
+        "gain": 1.0180359713955731
+      },
+      {
+        "arm": "d2_block4096",
+        "bound": "ci_hi",
+        "trace_net_effective_saving": 5174378566.280319,
+        "C": 171655621433.71967,
+        "score": 1.778392232463804e-07,
+        "gain": 1.0301439505625412
+      },
+      {
+        "arm": "d3_block4096",
+        "bound": "mean",
+        "trace_net_effective_saving": 6108771423.942305,
+        "C": 170721228576.0577,
+        "score": 1.768711704752235e-07,
+        "gain": 1.0357821430579783
+      },
+      {
+        "arm": "d3_block4096",
+        "bound": "ci_lo",
+        "trace_net_effective_saving": 4452351585.986307,
+        "C": 172377648414.0137,
+        "score": 1.7858726002062607e-07,
+        "gain": 1.0258290539809007
+      },
+      {
+        "arm": "d3_block4096",
+        "bound": "ci_hi",
+        "trace_net_effective_saving": 7714848727.559932,
+        "C": 169115151272.44006,
+        "score": 1.7520723696833693e-07,
+        "gain": 1.0456189091841424
+      },
+      {
+        "arm": "d4_block4096",
+        "bound": "mean",
+        "trace_net_effective_saving": -473470510.0729622,
+        "C": 177303470510.07297,
+        "score": 1.836905264799263e-07,
+        "gain": 0.9973296038215672
+      },
+      {
+        "arm": "d4_block4096",
+        "bound": "ci_lo",
+        "trace_net_effective_saving": -3357731689.7746863,
+        "C": 180187731689.7747,
+        "score": 1.8667868826311557e-07,
+        "gain": 0.9813653701154547
+      },
+      {
+        "arm": "d4_block4096",
+        "bound": "ci_hi",
+        "trace_net_effective_saving": 2353084167.343536,
+        "C": 174476915832.65646,
+        "score": 1.8076214997762068e-07,
+        "gain": 1.0134865071182277
+      },
+      {
+        "arm": "d5_block4096",
+        "bound": "mean",
+        "trace_net_effective_saving": -10463304031.49536,
+        "C": 187293304031.49536,
+        "score": 1.940402267633883e-07,
+        "gain": 0.9441341264942613
+      },
+      {
+        "arm": "d5_block4096",
+        "bound": "ci_lo",
+        "trace_net_effective_saving": -15559003760.96695,
+        "C": 192389003760.96695,
+        "score": 1.99319490408919e-07,
+        "gain": 0.9191273749704626
+      },
+      {
+        "arm": "d5_block4096",
+        "bound": "ci_hi",
+        "trace_net_effective_saving": -6302216774.16646,
+        "C": 183132216774.16647,
+        "score": 1.8972924341473335e-07,
+        "gain": 0.9655865205741587
+      },
+      {
+        "arm": "d4_block1024",
+        "bound": "mean",
+        "trace_net_effective_saving": -43075825160.17346,
+        "C": 219905825160.17346,
+        "score": 2.2782755849880553e-07,
+        "gain": 0.8041169435652821
+      },
+      {
+        "arm": "d4_block1024",
+        "bound": "ci_lo",
+        "trace_net_effective_saving": -55024997470.79588,
+        "C": 231854997470.7959,
+        "score": 2.4020717941893237e-07,
+        "gain": 0.7626749560240694
+      },
+      {
+        "arm": "d4_block1024",
+        "bound": "ci_hi",
+        "trace_net_effective_saving": -34014906977.22189,
+        "C": 210844906977.2219,
+        "score": 2.184402361489965e-07,
+        "gain": 0.838673328823178
+      }
+    ]
+  },
+  "CH3_divisor_check": {
+    "model_implied_d1_trace_saving": 11145279847.332382,
+    "recorded_d1_trace_saving": 11037909953.0,
+    "relative_agreement": 0.009727375453284982
+  }
+}

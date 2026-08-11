@@ -1,0 +1,48 @@
+== A. exact binary64 rational arithmetic on the varying dummy event ==
+fl(0.30)*fl(-0.25)         = -0.075
+fl(-0.075)                 = -0.075
+C_jk - C_ij*C_ik/C_ii == 0 : True
+variance_j = 0.91 > 0 : True
+variance_k = 0.9375 > 0 : True
+leading 2x2 minor = 0.91 > 0 : True
+det(C)     = 0.853125 > 0 : True
+symmetric exactly          : True (built from one symmetric tuple)
+=> rho_c == 0 EXACTLY, so ell=0, s=1, eta=0
+
+== B. _outer_panel_bounds census ==
+alpha = |mu_i/sigma_i| = 0.1
+alpha collides with a base panel : False
+outer bounds = [0.0, 0.1, 0.25, 1.0, 2.5, 5.0, 8.0, 10.0, 16.0, inf]
+outer panel count = 9  (last panel is [16, inf))
+
+== C. precision and absolute-gate ladder ==
+dps=80: ambient prec=269 bits | outer-quad prec=289 | inner-eval prec=309 bits (~93.0 digits)
+         inner absolute gate  saved_eps/8 = 2.51346e-88
+         round-off floor per unit magnitude = 2^-309 = 9.58807e-94
+         MAX integrand magnitude that can meet the gate: |M| <= 262144.0
+dps=100: ambient prec=336 bits | outer-quad prec=356 | inner-eval prec=376 bits (~113.2 digits)
+         inner absolute gate  saved_eps/8 = 1.70318e-108
+         round-off floor per unit magnitude = 2^-376 = 6.49713e-114
+         MAX integrand magnitude that can meet the gate: |M| <= 262144.0
+
+== D. mpmath tanh-sinh node reach for the outer panel [16, inf) ==
+dps=80 prec=289 degree=1: 19 nodes, max node g = 2.5179336e+61
+dps=80 prec=289 degree=2: 20 nodes, max node g = 6.9876358e+78
+dps=100 prec=356 degree=1: 21 nodes, max node g = 1.7422316e+101
+dps=100 prec=356 degree=2: 20 nodes, max node g = 6.9876358e+78
+
+== E. independent re-derivation of |b-panel| magnitude vs outer node g ==
+global_relu_mean_j = 0.3068946359   global_relu_mean_k = 0.5667612421
+weight of inner panel [0,0.25] for 2*phi = 0.1974126514
+g =         16.0  |b-panel[0,0.25]| = 0.96064991
+g =       1000.0  |b-panel[0,0.25]| = 67.018075
+g =       1.0e+6  |b-panel[0,0.25]| = 67131.39
+g =      1.0e+10  |b-panel[0,0.25]| = 6.7131504e+8
+g =      1.0e+20  |b-panel[0,0.25]| = 6.7131504e+18
+inner absolute gate at dps=80 = 2.51346e-88
+round-off floor for magnitude M is ~M*2^-309
+=> the gate becomes unsatisfiable once |M| exceeds 262144.0
+
+== F. mpmath primitive cost at the replica's inner evaluation precision ==
+prec=309: erfc =    40.98 us   exp =    10.96 us
+prec=376: erfc =    54.00 us   exp =    13.78 us
