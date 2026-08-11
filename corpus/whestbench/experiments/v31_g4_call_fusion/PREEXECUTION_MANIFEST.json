@@ -1,0 +1,112 @@
+{
+  "schema": "v31-g4-preexecution-manifest-v7",
+  "created_utc": "2026-08-11T17:13:22Z",
+  "supersedes": "v1-v5 receipt/source-contract repairs and v6's order-dependent production-fixture import path; every earlier run is non-creditable for the v7 child",
+  "status": "synthetic_contracts_only",
+  "source_construction_base_head": "ae54efcec19fb7a4f6a9fa52e096fbb99f65d0d4",
+  "proposal": {
+    "path": "corpus/whestbench/core/CODEX_V31_G4_EXACT_CALL_FUSION_PROPOSAL_20260811.md",
+    "sha256": "77EED01B6A7EF002BED93B4B81A0F2C7F9499B3A0395D5820A70728B50B9A326"
+  },
+  "parent": {
+    "archive_sha256": "8382E269C9B32E0935492734DDF8182560120F7E9331621AA18839D5D1F4EA06",
+    "row_blocked_winograd_sha256": "A3BF5C8014198E33037D6AEAFC3F4138A98908754BB82BFCF5ACDD92B1D9FCCA",
+    "cost_model_sha256": "2A42E0D9CA3A80ECB4FF2BE302CCFAAACFA34BF6FE920B1EEA27FEB7AE798D68",
+    "fold3_estimator_sha256": "68449E3EFE3B82A860B884A2BD05C9260E1EFBD138A343257CDC51AD38A63F6F",
+    "kerdock_v3_estimator_sha256": "076D0A5D81891DDCBB4509DC6E2BFF5459D935B5556490A85D98DAC60759AACF",
+    "guards_wrapper_sha256": "5E7D52156B330BF63AC4FF0E0F38D864B32677F82BC8ED4D1382787A27D3E0C9"
+  },
+  "child_source": {
+    "candidate_source/base_estimator.py": "B64376E09279E520465D63C4C0B2933A8EDB0EC8EAE9D6086C16C1830E7ECE4E",
+    "candidate_source/cost_model.py": "2A42E0D9CA3A80ECB4FF2BE302CCFAAACFA34BF6FE920B1EEA27FEB7AE798D68",
+    "candidate_source/estimator.py": "0D8D3DED799C301DE749657A3BF90E900CD318363F6468758948DB6A1A57AC03",
+    "candidate_source/fold3_estimator.py": "2BDF423B38D633E4287EE37FB03E66B0184DABD51BB483D2C273EAFC6BAD11BB",
+    "candidate_source/fold_estimator.py": "0C6187E19CF567D7F7B5658902DC00A123F6219C815E2EA6711589E0A4E9159D",
+    "candidate_source/kerdock_phases.npz": "A5E747F95423F5A45972D1A0735F223044A8A998407EB0C6DB51AEFDF47F4906",
+    "candidate_source/kerdock_v3_estimator.py": "E6717E1F289CFF786103077E3D531D53D1D5E1CA8060E8192998033F5C47AC8D",
+    "candidate_source/row_blocked_winograd.py": "7F9D93C0299929E9788CFE05205394E3D3AEDF66F19C8015B026B844D7FAC4F2",
+    "candidate_source/sobol_owen_u32.npz": "050339EC9966BD046B4FCF53C85240F89D2CD1F7D60C30421922203045EED0CA"
+  },
+  "synthetic_fixtures": {
+    "test_g4_static.py": {
+      "sha256": "F073EC159208B8FE820B8B647A9E9C824012E31368003BEE257643A567FE924A",
+      "scope": "all 65536 positive width pairs, complete manifest hash bindings, API census, production partition and workspace"
+    },
+    "test_g4_grouped_kernel.py": {
+      "sha256": "738C9103663A69C44F8A309148F5E80CAA6A72D6E259E562A88D859036DF58C3",
+      "seeds": [3104, 313072],
+      "scope": "hand-constructed deterministic matrices, production physical stride, finite extremes, and zero-width parent-exception parity only; no MLP or truth"
+    },
+    "test_g4_integration_static.py": {
+      "sha256": "C8C453C002883B4DF4A45CB54A73616F94135E0B4EA8B0131FD6763A4C707F31",
+      "scope": "recursive package surface with no generated caches/extras, byte-identical parent executable guard AST, setup-owned activation and bind seams"
+    },
+    "test_g4_flopscope_synthetic.py": {
+      "sha256": "58FF7718FB28A268B15E8AB88B7960640AC355645CBC020B50676C379F5FFB87",
+      "scope": "isolated pinned FlopScope 0.10.0 hand-matrix bitwise parity and analytical-bill identity; no MLP or truth"
+    },
+    "test_g4_setup_synthetic.py": {
+      "sha256": "7F9008537FB8D1876978FB7CD74BB5D233FC97700F7DAFB65B655425525A3479",
+      "scope": "isolated replay of width-256 and validator-width-4 setup allocation/binding, exact group row coverage, sharing, shapes, strides, and in-place list alias only; no MLP or predict call"
+    },
+    "test_g4_production_flopscope_synthetic.py": {
+      "sha256": "66A03829B8894F24A49E4D4FA27485080BF89E9B68F2AE0FD9EB67FE15BF3625",
+      "seeds": [116112, 116109],
+      "scope": "predeclared pinned-FlopScope hand-matrix parity at the exact 64512-row production partition for full-width even L1 and odd-tail L1; no MLP or truth"
+    }
+  },
+  "runtime": {
+    "python": "3.14.4",
+    "python_executable_from_repo_root": "../../work/whest-v014/Scripts/python.exe",
+    "python_executable_sha256": "4B8C3912806B3C1591BA3CB403BFF77AD309C3FE5756F87C20B7A6F8F0174262",
+    "python_flags": ["-B"],
+    "numpy": "2.4.6",
+    "flopscope": "0.10.0",
+    "whestbench": "0.14.0",
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "constants": {
+    "BLOCK_ROWS": 4096,
+    "GROUP": 4
+  },
+  "allowed_grouped_hot_apis": [
+    "copyto",
+    "add",
+    "subtract",
+    "matmul",
+    "shares_memory"
+  ],
+  "forbidden_grouped_hot_apis": [
+    "reshape",
+    "stack",
+    "concatenate",
+    "broadcast_to",
+    "pad",
+    "as_strided"
+  ],
+  "authority": {
+    "source_construction": true,
+    "synthetic_contracts": true,
+    "generated_network_forward": false,
+    "truth_or_scorer": false,
+    "heldout_or_private_data": false,
+    "hosted_run": false,
+    "package_promotion": false,
+    "selection_change": false,
+    "submission": false
+  },
+  "unearned": [
+    "full-wrapper FlopScope parity on generated networks",
+    "complete dynamic bill",
+    "whole-wrapper peak RSS",
+    "wall or residual reduction",
+    "official Phase-2 legality",
+    "adjusted-score improvement",
+    "candidate or promotion status"
+  ]
+}
