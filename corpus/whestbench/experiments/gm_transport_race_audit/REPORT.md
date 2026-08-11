@@ -102,19 +102,95 @@ behaviour would inherit an unguarded coverage hole. Two cheap repairs:
   bound for no benefit. Not recommended.
 - The coverage hole above is the item that should carry forward.
 
+---
+
+# Races 2 and 3 — also NOT REPRODUCED
+
+**Correction to an earlier note in this session**, which said these needed a
+Windows host. That was wrong. Both races turn on the *namespace guard* and the
+*burn primitive*, which are ordinary POSIX file operations — `open("xb")` is
+`O_CREAT|O_EXCL`, plus `os.fsync`. Only the process/handle/job census is
+Windows-specific, and neither race turns on it. Both ran here unmodified.
+
+## What the design actually is
+
+- `EXECUTION_PATHS` is a **fixed five-path namespace** with frozen basenames.
+  Nothing is derived from a PID.
+- `assert_paths_absent` requires **all five paths to be absent**, raising
+  `FileExistsError` naming the occupants otherwise.
+- `_write_exclusive_fsync` uses `open("xb")` — exclusive create — then `fsync`.
+- `_publish_owned_json` re-reads the bytes, re-parses, and re-hashes before
+  returning, so publication is verified durable rather than assumed.
+- The frozen intent payload declares `"no_retry": True` and
+  `"post_intent_failure_permanent": True`.
+
+## Measured — 9/9 probes pass
+
+| probe | result |
+|---|---|
+| R2a clean namespace accepted | PASS |
+| R2b stale invocation-1 artifact blocks invocation-2 | PASS — `FileExistsError` |
+| R2c no overwrite of a malformed stale payload | PASS — refused, original bytes intact |
+| R2d namespace not PID-derived | PASS — fixed five-path set |
+| R3a burn is once-only | PASS — `O_EXCL`; a burned path can never be re-burned |
+| R3b burn precedes receipt | PASS — trace idx 1 < 10; source lines 2308 < 2318 < 2560 |
+| R3c crash-after-intent blocks retry | PASS — the intent file *is* the burn |
+| R3d no-retry policy declared | PASS |
+| R3e the 8-attempt-limit premise | PASS — no attempt counter exists |
+
+**Race 2** requires invocation-2 to inherit or overwrite invocation-1 state. It
+fails closed at two independent layers: the namespace must be absent to start,
+and exclusive create refuses to overwrite even if it were reached.
+
+**Race 3 is inverted.** The audit worries about "a crash between receipt
+creation and burn". The burn happens **before** the receipt — INTENT is
+published, fsynced, and verified durable at line 2308–2318, while
+`_publish_r_and_capture_endpoint` is not called until line 2560, and the frozen
+`EXPECTED_TRACE` independently orders `INTENT_VERIFIED` (index 1) before
+`R_PUBLISHED` (index 10). A crash anywhere after the burn leaves INTENT on disk,
+so the next invocation dies at `assert_paths_absent`.
+
+**R3e retires the premise.** There is no attempt counter anywhere in the
+supervisor; the policy is `no_retry`. There is no 8-attempt limit to break.
+
+### A probe bug worth recording
+
+An earlier version of R3b compared `str.find` offsets and matched the
+*definition* of `_publish_r_and_capture_endpoint` (char 33647) rather than its
+call site, reporting a **false FALSIFIED**. Definitions sit above the flow that
+calls them, so source offsets of `def`s say nothing about execution order. The
+probe now checks the frozen state trace (authoritative) and corroborates with
+call-site line numbers. Recorded because a false positive in a race audit is as
+costly as a false negative.
+
+## Conditional note — control-event naming
+
+`control_event_names` derives from the intent SHA-256 prefix: distinct intents
+give distinct names, and **the same intent gives identical names across
+invocations**. That is deterministic, not unique-per-invocation. It is safe under
+`no_retry` plus the namespace-absent guard. If `no_retry` were ever relaxed,
+these names become a collision surface — the one place where the audit's
+"hard-link cryptographic namespace isolation" recommendation would become load-
+bearing.
+
 ## Scope
 
-Only `evaluate_resource_gate` was exercised. **Races 2 (PID/stale handle reuse)
-and 3 (intent-burn atomicity) are untouched** — both live in the Windows
-process/handle/job machinery, which cannot be executed on this Linux host. They
-remain open. Nothing here evaluates a fixture, launches a shard, or makes an
-estimator, variance, MSE, or score claim.
+`evaluate_resource_gate`, `assert_paths_absent`, `_write_exclusive_fsync` and
+`_publish_owned_json` were exercised directly. The Windows process/handle/job
+census (`_open_process`, `_process_times`, job assignment) was **not** — it is
+unreachable here, and a real end-to-end shard launch on Windows remains the only
+test of the whole topology. Nothing here evaluates a fixture, launches a shard,
+or makes an estimator, variance, MSE, or score claim.
 
 ## Reproduction
 
 ```bash
 cd corpus/whestbench/experiments/gm_transport_race_audit
-python3 falsify_transport_race1.py
+python3 falsify_transport_race1.py    # Race 1
+python3 falsify_transport_race23.py   # Races 2 and 3
 ```
 
-Stdlib only. Reads the frozen supervisor read-only and never edits it.
+Stdlib only. Both read the frozen supervisor **read-only** and never edit it; it
+is deliberately not vendored here, and the scripts refuse with an explicit
+message if it is absent (it arrives with PR #1). All filesystem effects are
+confined to a temporary directory.

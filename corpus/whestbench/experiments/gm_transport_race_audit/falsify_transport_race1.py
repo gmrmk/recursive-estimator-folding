@@ -39,9 +39,20 @@ if not hasattr(ctypes, "wintypes"):
     sys.modules["ctypes.wintypes"] = stub
     ctypes.wintypes = stub
 
-SUP = (Path(__file__).resolve().parent.parent
-       / "m245_canonical_unordered_replica_galerkin_spectrum"
-       / "supervise_m245_fixture_materialization.py")
+_NAME = "supervise_m245_fixture_materialization.py"
+_HERE = Path(__file__).resolve().parent
+_CANDIDATES = [
+    _HERE.parent / "m245_canonical_unordered_replica_galerkin_spectrum" / _NAME,
+    _HERE / _NAME,
+]
+SUP = next((p for p in _CANDIDATES if p.is_file()), None)
+if SUP is None:
+    raise SystemExit(
+        "supervisor not found. This falsifier reads the frozen M245 supervisor "
+        "read-only; it is deliberately NOT vendored here. Checked:\n  "
+        + "\n  ".join(str(p) for p in _CANDIDATES)
+        + "\nThe file arrives with PR #1 (agent/compression-survivor-corpus)."
+    )
 spec = importlib.util.spec_from_file_location("sup", SUP)
 sup = importlib.util.module_from_spec(spec)
 try:
