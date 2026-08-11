@@ -1,7 +1,40 @@
-# P1 — The finite-width residual of deep random ReLU networks is computational speckle: a measured theorem at the boundary of an exact spherical design
+# P1 — The finite-width residual of deep random ReLU networks: descriptive speckle observations at the boundary of an exact spherical design
 
-Internal research paper, draft 1. Date 2026-08-10. Corpus: `corpus/whestbench`. Audience: future Opus / researcher
-sessions with no conversation memory. Status: **measured synthesis**, not a proof. Every numeric claim below is quoted
+> ## ⛔ DRAFT 2 — REPAIRED 2026-08-11. Read this before anything else.
+>
+> **The title of draft 1 said "a measured theorem." There is no theorem here.**
+> Draft 1's central claim — that the residual is *maximum-entropy* independent
+> chi²₁ speckle, and that this explains every failed mutation, the champion's
+> correction-proofness, and an achievable floor — has been withdrawn on two
+> independent grounds, found by two audits within hours of each other and
+> neither prompted by the other:
+>
+> 1. **Evidence Erratum 1** (`P1_SPECKLE_THEOREM_EVIDENCE_ERRATUM1_20260811.md`,
+>    commit `05d3197`, SHA-256 `83E6FD80…`): the R0 harmonic computation that
+>    supplied the mechanism was executed post-charter and undisclosed, so it is
+>    inadmissible. Its numbers are **retained and visibly quarantined** in §3.1,
+>    not deleted. Withdrawing it does **not** revive the older equipartition
+>    account, which was never established either. Corrected status: **OPEN**.
+> 2. **The S17 reuse retirement** (`experiments/gm_s17_reuse/`, ledger 257):
+>    three floor-related ratios in Pillar 7 were **n=3 artifacts**. The
+>    headline `0.90x distinct-direction` — load-bearing in draft 1's abstract
+>    for "the champion sits at the floor" — is **1.0044, CI [0.8450, 1.1639]**
+>    at n=80, a band straddling parity.
+>
+> **What survives, and it is the claim that mattered:** the champion is
+> correction-proof because it has **zero fitted structure to overfit** (N8c's
+> measured zero bias). That is a measurement. It never needed the entropy
+> argument, and it is unaffected by both withdrawals.
+>
+> Draft 1's descriptive core also survives at its own level: chi²-like
+> one-point energy, very small correlations at the design's realized spacings,
+> and the failure of every output-side feature family the campaign tested.
+> These are strong **family-local** observations and are not a spectral-tail
+> theorem, a no-truncation theorem, or a minimax floor.
+
+Internal research paper, draft 2. Date 2026-08-11 (draft 1: 2026-08-10). Corpus: `corpus/whestbench`. Audience: future
+Opus / researcher sessions with no conversation memory. Status: **descriptive measured observations**, not a theorem
+and not a proof. Every numeric claim below is quoted
 verbatim from a committed artifact whose path is given inline and collected again in §5. Level tags, per the corpus
 evidence discipline (`corpus/whestbench/README.md`): **[O]** observed (a run in this corpus produced it), **[D]**
 derived (follows from observations by shown steps), **[R]** reported (a committed artifact says so; not re-derived
@@ -14,9 +47,13 @@ no minimax claim appears anywhere in this document.
 
 Across sixteen predeclared experiments and 242 ledger records, the campaign to beat a Kerdock-design Monte-Carlo
 estimator of the sphere-mean of a depth-32, width-256, bias-free He-initialised ReLU network failed in seven distinct
-ways. This paper argues the seven failures are one measurement read seven times, and states that measurement as a single
-theorem-shaped claim: the estimator's finite-width residual field is **maximum-entropy independent chi-squared-with-one-
-degree-of-freedom speckle**, living **exactly at the degree-4 boundary** of a maximum-structure exact spherical 2-design.
+ways. This paper argues the seven failures are one measurement read seven times. v1 then stated that measurement as a
+single theorem-shaped claim — "the residual field is **maximum-entropy** independent chi²₁ speckle living **exactly at
+the degree-4 boundary**" — and **that formulation is withdrawn** (Evidence Erratum 1). The admissible statement is
+weaker and descriptive: at the frozen target the residual has **chi²-like one-point energy** and **very small
+correlations at the design's realized spacings**, against an exact spherical 2-design whose committed degree-4
+design-error operator is broadly distributed. Whether the residual is maximum-entropy, how its energy is distributed
+across harmonic degrees, and whether any truncation class can reopen are **open questions**, not results of this paper.
 
 Two objects meet at that boundary. The design (Kerdock, 126 phased-Hadamard frames x 256 rows = 32,256 directions,
 antipodally doubled to 64,512) is engineered for maximum structure: it integrates degree <= 2 exactly and, at degree 4,
@@ -31,11 +68,25 @@ combinatorial (best gated 2.371e-5 against a 2.63e-5 fitting-noise bar) [O, S18]
 The entropy is **computational, not ontic**. The residual is a deterministic, bit-reproducible function of weights the
 estimator already possesses; what the seven failure families certify is pseudo-random *strength against every sub-budget
 test the campaign constructed*, not the absence of information (`core/RECURSION_PACKET_GEN6_20260810.md`). Three
-consequences follow mechanically: every output-side estimator class dies for the same reason; the champion is
-correction-proof because a max-entropy unbiased field has no fitted structure to overfit; and the achievable floor is
-set by the speckle's independent-cell count N_eff ~ 38k, against which the champion measures 1.79x cost-matched or
-0.90x distinct-direction [O, S17]. What this paper does **not** claim: minimax optimality, a proved lower bound, or
-exclusion of untested output-side classes — §4 states the scope honestly.
+consequences were claimed to follow mechanically. **Two of the three are withdrawn** (Evidence Erratum 1, §3.1;
+S17 reuse retirement, below), and the paper's corrected position is:
+
+- **Survives.** Every output-side estimator class the campaign tested died, and the champion is correction-proof
+  because it has **zero fitted structure to overfit** — N8c's measured zero bias. This needs no entropy argument and
+  does not depend on any withdrawn claim.
+- **Withdrawn.** "A max-entropy unbiased field": equipartition was never established pre-charter, and the R0
+  computation that appeared to replace it is quarantined. The paper does not assert maximum entropy.
+- **Withdrawn.** "The achievable floor is set by N_eff": no floor is established here. S17's measured `N_eff` of
+  ~38k survives at its own level within the family S17 measured, but it does not set an achievable floor, and the
+  `100,669` figure that was compared against it is inadmissible.
+- **Retired numbers.** The `0.90x distinct-direction` ratio is an **n=3 artifact**; at n=80
+  (`experiments/gm_s17_reuse/`) the distinct-direction ratio is **1.0044, CI [0.8450, 1.1639]** — a band straddling
+  parity, not a champion sitting below the floor. The `1.79x` cost-matched figure is stated here at n=3 and is
+  **unreconciled** against the n=80 pooled value of 2.01 [1.69, 2.33]; treat it as pending, not confirmed.
+
+What this paper does **not** claim: minimax optimality, a proved lower bound, a complete harmonic tail, a
+no-truncation theorem, or exclusion of untested output-side classes — §4 states the scope honestly, and the residual
+spectrum and truncation consequence are **open**.
 
 ---
 
@@ -158,26 +209,69 @@ single-degree index n_eff(t) = lnC/lnt climbs 2.56->6.20 / 2.71->6.23 /
 it constant. Energy per DEGREE does follow a power law (implied exponent
 p = 1.099 over l = 4-24, log-R^2 0.994, rising to 1.391 over l = 12-40).
 
-The paper's CONCLUSION is unaffected and is now established from a second,
-independent direction: **no truncation class reopens.** Degree 4 - the 42x
-Bragg notch this section celebrates - carries only **0.45%** of the estimator
-error; even degrees >= 6 carry **99.55%**; no single degree exceeds **13.8%**;
-and capturing half the error requires exactly integrating degrees
-{6,8,10,12,14,16,18}, joint dimension **6.249e27**. New at R0/R1, by exact
-arithmetic on S6's committed dyadic census: **degree 4 is the ONLY suppressed
-degree** - degrees 8, 10, 12, ... are iid-level to five digits.
+> ### ⛔ EVIDENCE ERRATUM 1 — everything from here to the end of this block is QUARANTINED
+>
+> The R0 harmonic computation below was executed **after** the sealed Codex/Opus
+> evidence charter was accepted (charter at `f2f224b`; the R0 runner first
+> entered the record at `e549b41`, its expanded report and the in-place
+> correction to this paper at `807eb93`), and was not disclosed as in flight or
+> prospectively authorized. It is therefore inadmissible as evidence in this
+> paper. See `P1_SPECKLE_THEOREM_EVIDENCE_ERRATUM1_20260811.md` (commit
+> `05d3197`, SHA-256 `83E6FD80…`, independent static verdict PASS).
+>
+> **The numbers are retained and NOT deleted**, because deleting an
+> inadmissible measurement is worse than quarantining a visible one. They carry
+> **zero evidence weight** until a fresh, prospectively authorized reproduction
+> restores observational status.
+>
+> **Specifically withdrawn:** the `0.45% / 99.55% / 13.8%` shares; the
+> `{6,8,10,12,14,16,18}` half-energy set and its `6.249e27` dimension; the claim
+> that degree 4 is the ONLY suppressed degree; that degrees ≥ 8 are iid-level;
+> `N_eff = 100,669` and its comparison with S17; and **the entire "dimension
+> wall" replacement account**, which was this paper's answer to its own
+> falsified equipartition mechanism.
+>
+> **What does not revive.** Withdrawing the replacement does **not** restore the
+> original equipartition claim — the pre-charter record never established it
+> either. The degree-ℓ design-error operator and the residual field's harmonic
+> energy coefficients are different mathematical objects; flatness of the former
+> implies nothing about the latter; a chi²-like one-point amplitude marginal
+> does not determine a harmonic spectrum; and family-local output observations
+> cannot be promoted into a global spectral-tail theorem.
+>
+> **Corrected status: OPEN.** The residual harmonic spectrum beyond the
+> pre-charter measured modes, and any universal truncation or lower-bound
+> consequence, are open questions. This paper no longer asserts that no
+> truncation class reopens.
 
-So the correct mechanism is not "energy is everywhere equally." It is: *the
-energy the design does not already integrate is spread across 40+ degrees, none
-carrying more than 14% of the error, the cheapest of which costs 4.1e11
-dimensions to touch.* Decay is a_l * l! / d^l - **dimension-driven, not
-transfer-driven** - which is why the fluid-dynamics reading below is a
-CONTRAST: the same power law, but a **dimension wall** where turbulence has an
-inertial range that LES can model. Also recorded honestly: this run's
-error-by-degree table implies N_eff = 100,669 against S17's measured
-27,251 / 39,558 / 46,955, a **2.1-3.7x optimism** whose leading cause is S17's
-own disclosed object mismatch (its sigma^2 is the neuron-averaged scalar while
-the champion's MSE is per-component). That tension is open.
+The quarantined text, retained verbatim for the record:
+
+> ~~The paper's CONCLUSION is unaffected and is now established from a second,
+> independent direction: **no truncation class reopens.** Degree 4 — the 42x
+> Bragg notch this section celebrates — carries only **0.45%** of the estimator
+> error; even degrees >= 6 carry **99.55%**; no single degree exceeds **13.8%**;
+> and capturing half the error requires exactly integrating degrees
+> {6,8,10,12,14,16,18}, joint dimension **6.249e27**. New at R0/R1, by exact
+> arithmetic on S6's committed dyadic census: **degree 4 is the ONLY suppressed
+> degree** — degrees 8, 10, 12, ... are iid-level to five digits.~~
+>
+> ~~So the correct mechanism is not "energy is everywhere equally." It is: the
+> energy the design does not already integrate is spread across 40+ degrees,
+> none carrying more than 14% of the error, the cheapest of which costs 4.1e11
+> dimensions to touch. Decay is a_l * l! / d^l — **dimension-driven, not
+> transfer-driven** — which is why the fluid-dynamics reading below is a
+> CONTRAST: the same power law, but a **dimension wall** where turbulence has an
+> inertial range that LES can model. Also recorded honestly: this run's
+> error-by-degree table implies N_eff = 100,669 against S17's measured
+> 27,251 / 39,558 / 46,955, a **2.1-3.7x optimism** whose leading cause is S17's
+> own disclosed object mismatch (its sigma^2 is the neuron-averaged scalar while
+> the champion's MSE is per-component). That tension is open.~~
+
+**Note on what survives this quarantine.** S17's own measured `N_eff` of
+`27,251 / 39,558 / 46,955` (pooled ~38k) is a **pre-charter** measurement and
+survives at the level its own artifact earned, within the family and target S17
+measured. It is the `100,669` figure derived from the inadmissible run, and the
+`2.1–3.7x` comparison between them, that carry no weight.
 
 #### Interlude: the name is literal, and optics predicted all three numbers
 
@@ -307,16 +401,26 @@ Verdicts: **FAIL-PASS / NOT-KILLED** and **PARTIAL / DERIVED**.
 
 ### Pillar 7 — S17: the floor, located
 
-Artifact: `experiments/s17_ibc_floor/`. Verdict: **GATE (i)** — champion within 2x of the sampling floor.
+Artifact: `experiments/s17_ibc_floor/`. Verdict as filed: **GATE (i)** — champion within 2x of the sampling floor.
+**SUPERSEDED at n=80** (`experiments/gm_s17_reuse/`, ledger 257): the corrected verdict is **class i/ii, boundary
+unresolved — pooled 2.01, CI [1.69, 2.33]**. S17's own class rule flips at 2.0 and the n=80 point estimate is 2.0088,
+so the gate call sits on the knife edge rather than obtaining. Every ratio in this pillar was computed at **n=3** and
+the n=80 recomputation moves all of them; they are retained below with their retirements marked inline.
 
 - Field variance sigma^2 = Var(ybar) over the 64,512-point design, computed two ways with relative difference **0.0**:
   **7.900e-3 / 1.600e-2 / 1.112e-2** [O].
 - Equal-FLOP iid Monte-Carlo floor sigma^2 / N_eval: 1.225e-7 / 2.480e-7 / 1.724e-7 against champion per-net MSE
   1.997e-7 / 5.872e-7 / 2.369e-7 — ratios **1.63 / 2.37 / 1.37**, pooled **1.7906808367797993** (sd 0.5157, se 0.2977,
-  t-95 % CI [0.510, 3.072]) [O]. On the distinct-direction accounting (the 64,512 forwards are 32,256 base directions
-  plus antipodes) the ratio is **0.82 / 1.18 / 0.69**, pooled **0.8953404183898996** — the champion sits *at* the floor.
-- Effective independent draws N_eff = sigma^2 / MSE_champ = **39,557.85 / 27,251.21 / 46,955.11**, pooled **~38k** —
-  about 60 % of the 64,512 evaluations, i.e. an antipodal pair is worth ~1.2 independent draws, not 2 [O + D].
+  t-95 % CI [0.510, 3.072]) [O, **n=3 — unreconciled against the n=80 pooled 2.01 [1.69, 2.33]; treat as pending**].
+  On the distinct-direction accounting (the 64,512 forwards are 32,256 base directions plus antipodes) the ratio is
+  0.82 / 1.18 / 0.69, pooled 0.8953404183898996 — ~~the champion sits *at* the floor~~.
+  **RETIRED.** That figure is an n=3 artifact. At n=80 the distinct-direction ratio is **1.0044, CI
+  [0.8450, 1.1639]** — a band straddling parity. The champion does **not** sit below the floor on this accounting;
+  the honest reading is that the two are indistinguishable at the resolution we have.
+- Effective independent draws N_eff = sigma^2 / MSE_champ = **39,557.85 / 27,251.21 / 46,955.11**, pooled **~38k**
+  [O, S17, pre-charter — survives at its own level within the family S17 measured]. The gloss that this is "about
+  60 % of the 64,512 evaluations, i.e. an antipodal pair is worth ~1.2 independent draws, not 2" is **n=3 only**
+  and was not reproduced at n=80; treat it as [O, n=3], not as a general property of the design.
 - The S(B) envelope: analytic degree-<= 2-exact closure plateaus at **9.6e-5** regardless of budget; the sampling line
   runs through the champion at 2.818e-7 (1.768e11 FLOPs) and 5.35e-8 at 5.27x budget. Gap between plateau and line:
   **340.66713981547196x** raw, **524.0174672489084x** adjusted [R + D].
@@ -470,6 +574,8 @@ Paths are relative to the corpus root
 | P5 singleton-cell mechanism | `experiments/s18_cell_membership_probe/run_s18.py` | `s18_results.json` | `S18_VERDICT.md` |
 | P6 depth law 0.87/layer + finite-width origin | `experiments/s8_layer_profile/run_s8.py`, `experiments/s12_finite_width_kernel/run_s12.py` | `s8_results.json`, `s8_run.log`, `s12_results.json` | `S8_VERDICT.md`, `S12_VERDICT.md` |
 | P7 floor, N_eff, S(B) envelope | `experiments/s17_ibc_floor/run_s17.py` | `s17_results.json` | `S17_VERDICT.md` |
+| **P7 retirement at n=80** (supersedes the three n=3 ratios above) | `experiments/gm_s17_reuse/run_gm_s17_reuse.py` | `results.json` | `VERDICT.md` |
+| **R0 harmonic spectrum — QUARANTINED, zero evidence weight** (retained, not deleted; see Evidence Erratum 1) | `experiments/r0_harmonic_energy_spectrum/run_r0.py` | `r0_results.json` | `R0_HARMONIC_SPECTRUM.md` |
 | the synthesis (god-node framing) | — | — | `core/GOD_NODE_SYNTHESIS_20260810.md` |
 | computational-vs-ontic entropy correction | — | — | `core/RECURSION_PACKET_GEN6_20260810.md` |
 | adversarial evidence (20 agents, 3 fleets) | — | — | `core/GEN7_ADVERSARIAL_CLOSURE_20260810.md` |
@@ -507,7 +613,7 @@ Setting constants (width 256, depth 32, N = 32,256 / 64,512, radius `mean_chi(25
 | combinatorial ceiling | 2.371e-5 best gated (bar 2.63e-5) | S18 |
 | sigma^2 (field variance) | 7.900e-3 / 1.600e-2 / 1.112e-2 | S17 |
 | N_eff | 39,558 / 27,251 / 46,955 (~38k) | S17 |
-| champion / floor | 1.7906808367797993 cost-matched, 0.8953404183898996 distinct-direction | S17 |
+| champion / floor | **n=80: 1.0044 [0.8450, 1.1639] distinct-direction; 2.01 [1.69, 2.33] pooled.** Retired n=3 values: 1.7906808367797993 cost-matched, 0.8953404183898996 distinct-direction | gm_s17_reuse (S17 retired) |
 | plateau-to-line gap | 340.66713981547196x raw, 524.0174672489084x adjusted | S17 |
 
 ---
