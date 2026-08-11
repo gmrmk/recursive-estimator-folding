@@ -192,9 +192,18 @@ layer:
 
 Below ~64 the floor is reached by **genuine ill-conditioning**, one to three
 orders above round-off. From ~80 up the eigenvalue is **at or beneath the
-entrywise-assembly noise** — the indefiniteness is representational. An
-entrywise-assembled Gram goes indefinite once `λ_min ≲ ε·n·λ_max`, and depth
-drives `λ_min` down geometrically.
+entrywise-assembly noise**.
+
+> **CORRECTED by `gm_factored_cholesky` (§6 outcome).** This was read as meaning
+> the indefiniteness *is* representational at production width. It is not.
+> Forming `C = MᵀM` as a Gram — PSD by construction, assembly error removed —
+> left the trip layer **unchanged in 6/6 cells**. `λ_min` decays geometrically
+> (median per-layer ratio **0.081–0.120** at width 256, `λ_max` steady at `O(8)`),
+> so reaching layer 32 would need ~22 decades of floor and a condition number
+> near `1e35` — **not representable in float64**. This is the spectral form of
+> finite-width depth degeneracy (Jakub & Nica, arXiv:2302.09712, already in
+> `sources/research_physics_depth_finitewidth_20260810.md`). Round-off is
+> concurrent, not causal.
 
 **Corollary that matters for any filing:** the M179 producer completes all 32
 layers anyway — its guard is per-pair (`|ρ| ≤ RHO_MAX`) and never fires. Measured
@@ -466,8 +475,14 @@ ceiling on an entire method family, established two independent ways (R² = 0.28
 from the control side, 311x plus PSD loss from the prediction side), with a named
 obstruction and certified reference code. Nobody publishes the ceiling.
 
-**The single highest-value next action is §6**, because it is the only untested
-route in G7 and it resolves in one ~100-second measurement.
+**§6 has been executed and is CLOSED.** `gm_factored_cholesky` fired
+`KILL_NO_GAIN`: the Gram form does not extend reach by a single layer in any of
+6 cells, because it defends against `λ_min` going negative when the binding
+failure is `λ_min` going *small*. The gain is the mechanism it identified —
+geometric `λ_min` collapse, ~1 order of magnitude per layer, which no floor,
+representation, or double-precision arithmetic reaches. **Next in queue is §6's
+item 1** (vectorize `m167.complete_source_reference`), which unblocks only the
+cost half of ARM C and does not touch reachability.
 
 **Before any filing cites M178/M179 as certified:** land the spectral guard and
 record what it refuses. A provider that silently propagates non-PSD state through

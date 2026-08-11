@@ -85,10 +85,17 @@ layer**:
 `min eig` one to three orders of magnitude *above* the round-off scale: the
 covariance is genuinely, geometrically ill-conditioning with depth and trips a
 real floor. From ~80 upward the ratio falls to `O(1)` and below: `min eig` is at
-or beneath the entrywise-assembly noise, i.e. **at production width the
-indefiniteness is round-off in the dense entrywise representation**, exactly as
-predeclared — but the predeclaration was wrong to claim this mechanism at all
-widths.
+or beneath the entrywise-assembly noise.
+
+> **CORRECTION (superseded by `gm_factored_cholesky`).** An earlier version of
+> this section read that ratio as showing that *at production width the
+> indefiniteness **is** round-off in the dense entrywise representation*. That
+> causal inference was wrong. `gm_factored_cholesky` removed the assembly error
+> entirely by forming `C = M^T M` as a Gram (PSD by construction) and the trip
+> layer was **unchanged in 6 of 6 cells**. `lambda_min` decays geometrically —
+> median per-layer ratio 0.081–0.120 at width 256 — as a property of the
+> propagated covariance itself; round-off is concurrent, not causal. The ratio
+> measurement above stands; only the causal reading was wrong.
 
 ## What this does and does not license
 
