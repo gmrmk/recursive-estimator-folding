@@ -25,9 +25,9 @@ Aug 17, 23:59 UTC per the Algorithmic Contribution guidelines thread.
 
 ---
 
-## Where white-box estimation on random ReLU MLPs stops working, and how we
-## know: four theorems about what cannot be improved, and the falsification
-## protocol that caught our own errors
+## Beyond Gaussian closure: structured spherical quadrature for deep random
+## ReLU networks — and a map of which white-box improvement families fail, why,
+## and what remains open
 
 ### Executive summary
 
@@ -37,26 +37,70 @@ statements about what no method of a given shape can achieve on these networks,
 each stated at exactly the confidence its evidence earns — including four
 claims we withdrew during the week, with their arithmetic.
 
-**The mechanism, and why it carries no fitted constants.** The estimator
-integrates over a frozen phased-Hadamard **exact spherical 2-design** (126
-mutually unbiased frames × 256 directions, antipodally doubled to 64,512) at
-the exact radius `E‖X‖`, with structural pruning, terminal-layer folding, and a
-first-layer moment-tangent control. Every constant in it is *forced* by the
-construction — the design, the radius, and the weights are all determined, none
-are tuned. There is **zero fitted structure anywhere in the estimator**, which
-is a measured property (N8c: zero bias at the scored layer), not a design
-aspiration. That matters more than the score: it is why the estimator cannot
-overfit a public suite, and it is the property we would defend under audit.
+**The mechanism, and an exact map of which parts are forced and which are
+chosen.** The estimator integrates over a frozen phased-Hadamard **exact
+spherical 2-design** (126 mutually unbiased frames × 256 directions, antipodally
+doubled to 64,512) at the exact radius `E‖X‖`, with structural pruning,
+terminal-layer folding, and a first-layer moment-tangent control.
 
-**Four things we can now say about the boundary, three of them proved.**
+All values below are read from the **deployed** class,
+`kerdock_v3_estimator.py`, not from the base classes it inherits from — a
+distinction that cost us two wrong statements before we got it right (see the
+correction note).
 
-1. **Uniform weights cannot be improved on a fixed design.** For any zonal
-   criterion, positive-semidefiniteness plus constant row sums makes uniform
-   weighting a global minimiser of the quadrature error at *every*
-   spherical-harmonic degree, and for every nonnegative mixture of degrees.
-   Reweighting a fixed point set is therefore closed — for anyone, not just us.
-   *(Strict uniqueness holds only where the kernel is definite: verified at
-   degrees 4, 6, 8; false at degree 2, where the design is exact; open above.)*
+*Forced by the construction, with nothing tunable in them:* the design itself;
+the sample count `n_base = 126 × 256 = 32,256` base directions, antipodally
+doubled to 64,512 — this is the design's size, not a budget anyone picked; the
+exact radius `E‖X‖ = 15.98438266660852747…` from the chi moments, applied via
+`radial_conditioning = True`; and the uniform weights, which are not a
+convenience but provably the constrained optimum at every degree (§3b, and the
+proof in companion P4).
+
+*Selected during development, and therefore fitted in the sense that matters to
+an auditor:* the moment-tangent coefficient `λ = 0.9807112198896164` (inherited
+and active), the pilot sizes `pilot_base = 256` and `fold_pilot_base = 1,024`,
+the pruning parameter `dead_alpha = −2.0` (inherited and active), and the phase
+window `phase_start = 2`, `phase_stop = 128`. Six constants, all scalar, all
+frozen before grading.
+
+**Correction, stated here because this very paragraph got it wrong twice.**
+A prior v12 draft claimed "every constant is forced," "none are tuned," and
+"zero fitted structure anywhere in the estimator." **False** — the six constants
+above are selected. An adversarial audit caught it within the hour. The repair
+was then *also* wrong: it listed `n_base = 14,000` and a decision to disable
+radial conditioning as fitted choices, both read from the base class, when the
+deployed subclass overrides them to `32,256` and `True`. A second audit caught
+that within fifteen minutes.
+
+We leave both errors on the page rather than quietly landing the third version,
+because the failure mode is exactly the one §4b is about — asserting a property
+of a system from a proxy rather than from the artifact that ships — and because
+a paper claiming an evidence discipline should show the discipline failing and
+being caught, not only succeeding.
+
+What survives, precisely: the measured final-layer bias is zero (N8c), and no
+component fits to the *evaluation* suite. **Near-zero measured bias does not
+prove absence of fitting**, and we no longer claim it does. The defensible
+statement is that the fitted parts are few, enumerated above, frozen before
+grading, and confined to scalar budget and correction coefficients rather than
+to anything that could learn the target.
+
+**Four boundary results, each stated with its exact scope. Three are proved;
+the fourth is a measured screen and is labelled as one.**
+
+1. **Fixed, output-independent reweighting of a fixed design cannot help, under
+   a zonal Haar-averaged criterion.** [proved] Positive-semidefiniteness plus
+   constant row sums makes uniform weighting a global minimiser of the
+   quadrature error at *every* spherical-harmonic degree, and for every
+   nonnegative mixture of degrees.
+   **Scope, and it is narrow on purpose:** this closes *fixed*,
+   *output-independent* weights against a *zonal* criterion. It does **not**
+   close arbitrary reweighting — not weights that depend on the realised
+   network, not adaptive rules (which would need their own unbiasedness proof),
+   not changes to the point set, and not non-zonal criteria such as the realised
+   output covariance. *(Strict uniqueness holds only where the kernel is
+   definite: verified at degrees 4, 6, 8; **false at degree 2**, where the design
+   is exact and every per-frame reweighting is free; open above.)*
 2. **A whole family of truth-free estimators is dead by algebra.** If an
    estimator anchors on its own uniform frame mean, the sum-one GLS solution is
    uniform *identically* — for every ridge and every shrinkage, with no
@@ -147,8 +191,10 @@ champion's correction-proofness, and a floor set by an independent-cell count
 
 Corrected status: **open**, not reverted. What survives is stated in §3e in the
 narrower form it earns, and it is still enough for the claim that matters — the
-champion is correction-proof because it has zero fitted structure to overfit,
-which is a measured property (N8c zero bias) and needs no entropy argument.
+champion's final-layer bias is measured at zero (N8c) and no component of it
+fits the evaluation suite. That is a measurement and it needs no entropy
+argument. It is **not** a claim that the estimator contains no fitted constants
+— it does, and they are enumerated in the executive summary.
 
 Two audits reached this independently and within hours of each other: an
 adversarial partner auditing our papers under a sealed evidence protocol, and
@@ -526,9 +572,10 @@ or the only suppressed degree; and that an independent-cell count `N_eff` sets
 a floor. A chi²-like one-point amplitude marginal does not determine a harmonic
 spectrum, and the degree-ℓ design-error operator and the residual field's
 harmonic energy coefficients are different mathematical objects. What survives
-is narrower and still useful: the champion is correction-proof because it has
-**zero fitted structure to overfit**, which is N8c's measured zero bias and
-does not require the entropy claim at all. One precision matters, and we state it
+is narrower and still useful: the champion has **no component that fits the
+evaluation suite**, and its measured final-layer bias is zero (N8c) — which does
+not require the entropy claim at all, and is not the same as having no fitted
+constants (it has several; see the executive summary). One precision matters, and we state it
 carefully: the entropy is COMPUTATIONAL, not ontic. The residual is a
 deterministic function of weights we possess — the weights are the seed —
 that behaves as strong pseudo-randomness against every sub-budget test we
@@ -741,7 +788,7 @@ that worst-case 7.7% and nothing else.
 ### 6. Reproducibility
 
 All artifacts, predeclarations, kill gates, adversarial audits, frozen
-manifests, and the 191-record fold ledger are in the public corpus at
+manifests, and the 267-record fold ledger are in the public corpus at
 github.com/gmrmk/recursive-estimator-folding. Every claim above cites a
 committed measurement; negative results are retained in full to prevent
 retrospective cherry-picking.
