@@ -1,0 +1,18 @@
+[
+ {
+  "file": "m217_balanced_three_color_strict_control\\run_m217_native_trace.py",
+  "line": 107,
+  "kind": "dict.get",
+  "dead_name": "random.permutation",
+  "falsy_default": false,
+  "line_text": "permutation = operations.get(\"random.permutation\", operations.get(\"permutation\", {}))"
+ },
+ {
+  "file": "n1_native_scaled_premise\\n2_throughput_and_scaling.py",
+  "line": 32,
+  "kind": "dict.get",
+  "dead_name": "Build Dependencies",
+  "falsy_default": true,
+  "line_text": "return {k: v.get(\"name\") for k, v in cfg.get(\"Build Dependencies\", {}).items()"
+ }
+]

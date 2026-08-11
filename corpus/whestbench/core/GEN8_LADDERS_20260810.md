@@ -101,21 +101,30 @@ Three contrasts worth stating explicitly:
 
 ## The Gen-8 promotion rule (what actually changes)
 
-A candidate may not be promoted unless **all four** hold:
+**Revised after the gen8_gate_audit (see §"Audit result" below) — the width
+formulation is withdrawn and replaced.** A candidate may not be promoted unless
+**all four** hold:
 
 1. **R-sufficiency** — resolved at the rung its stakes require, and the rung is
    named in the record. (Existing practice, now explicit.)
-2. **R3 crossed** — its load-bearing statistic measured at >= 2 scales spanning
-   the screen-to-production gap, with the extrapolation to n=256 reported as an
-   interval, not a point. Given the parallel session's own honest note that
-   strict per-width monotonicity **failed at the 64 -> 72 step**, a two-point
-   line is not sufficient evidence: use >= 3 widths, or report the rank statistic
-   rather than a fitted extrapolation, and gate on the *unfavourable* end of the
-   interval.
-3. **P1 and P5 boundaries stated** — width behaviour and instrument validity are
-   mandatory rungs, because those are the two that have actually bitten us. The
-   P5 check is concrete: run the detector against a fixture where the effect is
-   known present and confirm it fires.
+2. **R3 crossed on the mechanism's OWN declared sensitivity axis** — the
+   load-bearing statistic measured at >= 2 points along whichever axis the
+   mechanism's effect is claimed to depend on, with the extrapolation to the
+   production point reported as an interval and gated on its *unfavourable* end.
+   The axis must be declared in the predeclaration, before measurement. Width is
+   one such axis; the audit found the historical corpses died on width, **depth,
+   angular/gate aliasing, and effect-size-at-screen**, so fixing the axis to
+   width in advance is both under- and over-inclusive. Where the axis genuinely
+   is width, the parallel session's own non-monotonicity at 64 -> 72 means >= 3
+   points or a rank statistic, not a two-point line.
+3. **Evidence at production shape, and the instrument-validity gate.** Clause 2
+   does not replace measuring at the real operating point; the corpus already
+   does that, just too late to prevent wasted production runs. And — new, from
+   the audit — **no detector may produce a promotion-bearing or kill-bearing
+   null unless it fired on a positive fixture in the same run.** M183 is the
+   proof of need; the antidote already exists in our own corpus at
+   `m217_.../run_m217_native_trace.py:119`, which uses `int(matmul.get("calls",
+   -1))` — a loud sentinel — instead of a falsy default.
 4. **Unrun P rungs declared** — the record names which perturbations were not
    attempted. Silence is not robustness.
 
@@ -192,9 +201,53 @@ feedstock for both ladders.
   instrumented-share audit measure? *Determines whether our 95.5% is measured
   the way we think it is.*
 
-## What I am not claiming
+## Audit result — the six-corpse premise is substantially WITHDRAWN
 
-The six-corpse premise is under verification as this is written; if the audit
-finds those failures were not width-caused, rung P1 keeps its place on the
-measured SPD evidence but the "six corpses" justification is withdrawn, and
-this document will say so. The ladder structure does not depend on that count.
+`experiments/gen8_gate_audit/` (Opus, independent, ledger pinned at sha
+`60c9c72a…`). As promised above, the document says so:
+
+**Only 1 of the 6 corpses is width-caused.** `weight_identified_latent_factor`
+alone shows the claimed signature (screened at widths 4/8/16, died at 32/64).
+Four of the remaining five had **no width transition at all** — screen width 64
+and kill width 64 — and the decisive mechanical fact is that `aggregate.wins`
+and `aggregate.ratio` are two fields of *one* artifact over *one* eight-case
+bank with every case at width 64; width 256 appears only under
+`cost_accounting`, a projected bill rather than a measurement. The fifth died on
+**depth** (layer 0 at 8/8 versus layers 8/14/16/30 at 3/16). Collateral: only 3
+of the 6 actually carry the "8/8 screen" signature, and "no kill condition names
+256" rests on just 5 of 223 records naming any width at all. The corpses died on
+width, depth, aliasing, and effect-size-at-screen — a mixed set. **A width-only
+gate was post-hoc pattern-matching on it**, which is why clause 2 above is now
+written against each mechanism's own declared axis.
+
+**The gate as originally worded would have punished our best records.** 14
+records fail a >= 2-width clause, and **10 fail it while measured AT 256** —
+including the promoted `row_blocked_winograd_production` and our only
+`validated` record, `v31_guards_m186_m187`. A rule that fails artifacts for
+being measured only at the true operating point is mis-specified, not merely
+weak. Genuine non-256 exposure is 8 of 60 promotion-eligible records
+(`conditional_corr_spectrum`, `conditional_residual_cumulant_spectrum`,
+`conditional_residual_covariance_algebra`, `cumulant_polynomial_quotient`,
+`m86_boundary_laplace_coarea`, `m126_repeated_output_source_contraction`,
+`m198_source211_delay_one_adapter`, `m200_streaming_overlap_fixture`).
+
+**Correction to my own claim of an hour ago:** `gm_rankone_bill` is *not* the
+gate's first customer. It is pinned at n=256 / layers=31 and passes both
+clauses. `gm_c1_bound`, `gm_u3_grid` and `gm_u9_s4_d2` carry no width parameter,
+so the gate is inapplicable to them (`gm_u3_grid`'s "48" was flagged and is a
+false positive — it is the rotation-pool size).
+
+**The M183 defect class is a class of one, and the instrument behind the width
+proposal is sound.** Of 8 shape-matched detectors, 7 were cleared by an explicit
+firing check against positive fixtures — including `gm_m179_m199`, the very
+record that licenses this whole line of work. M183 is the sole confirmed void,
+and it carries a *second* dead name at line 62 (`op.name`; the field is
+`op_name`), masked by the first. It is cited twice in the **filed** write-up:
+line 129 in the ledger table, and — load-bearing — **line 422, where it retires
+the dtype-repricing escape**. That citation is the open item, and it is U-I2:
+an outward-facing erratum decision belonging to Jonah alone.
+
+What survives unchanged: the two-ladder structure, the R3 rung, and the
+measured SPD width evidence itself (0/22 replicates at width >= 96 reaching
+depth 32; Spearman -0.743), which was never in question. What changed is the
+gate's specification and its justification.

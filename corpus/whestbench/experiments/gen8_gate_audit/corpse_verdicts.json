@@ -1,0 +1,240 @@
+{
+ "tally": {
+  "CONFIRMED_width_caused": 1,
+  "NOT_width_caused": 5,
+  "INDETERMINATE": 0
+ },
+ "shared_baseline_cross_check": {
+  "baseline_mse_sum_per_corpse": {
+   "gate_aligned_scalar_split": 0.0068680758149980555,
+   "rb_conditional_marginals": 0.0068680758149980555,
+   "full_covariance_2n_sigma_mixture": 0.0068680758149980555
+  },
+  "all_identical": true,
+  "reading": "the three corpses are scored against a bit-identical comparator on a bit-identical eight-case bank, which is why their ratios agree to 7 significant figures"
+ },
+ "corpses": {
+  "gate_aligned_scalar_split": {
+   "ledger_id": "latent_gate_aligned_split",
+   "ledger_status": "killed",
+   "ledger_kill_condition": "n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken permutation/positive-gauge covariance, or conservative target arithmetic at least 80B.",
+   "ledger_result": "The operator passed seven structural tests, cost 68.640B conservatively, and improved all 8/8 n64 cases, but aggregate ratio 0.997502 missed the <=0.8 materiality gate by about 80x in effect size. Kill the generic-compressor leaf; preserve the boundary direction and exact conditional moments as stable-sign components.",
+   "graveyard_screen_cell": "8/8 n64 wins",
+   "graveyard_production_cell": "ratio 0.997502 vs gate <=0.8",
+   "artifact": "work\\scorefloor_generation\\latent_gate_split\\fresh_n64_results.json",
+   "artifact_sha256": "68846a84cd84de015d2b5e5207f46de7edd9b14c6b8090cc3cbdb2cccbb63e6d",
+   "n_cases": 8,
+   "MEASURED_case_widths": [
+    64
+   ],
+   "MEASURED_case_depths": [
+    16,
+    32
+   ],
+   "screen_statistic_source": "aggregate.wins in this same file",
+   "kill_statistic_source": "aggregate.ratio in this same file",
+   "wins": 8,
+   "ratio": 0.9975024218012577,
+   "width_256_appears_only_as": {
+    "width": 256,
+    "depth": 32
+   },
+   "screen_width": [
+    64
+   ],
+   "production_width": [
+    64
+   ],
+   "width_was_varied": false,
+   "verdict": "NOT width-caused: screen statistic and kill statistic are two columns of the SAME run at the SAME width; width was never varied. 256 appears only in the projected cost model."
+  },
+  "rb_conditional_marginals": {
+   "ledger_id": "latent_gate_rb_marginals",
+   "ledger_status": "killed",
+   "ledger_kill_condition": "n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken PSD/permutation/positive-gauge covariance, or conservative target arithmetic at least 80B.",
+   "ledger_result": "The exact-marginal implementation passed six numerical, PSD, symmetry, and cost tests and improved 8/8 cases, but ratio 0.997502361 was only 6.08e-8 better than its parent and missed the <=0.8 materiality gate. The scalar statistic explains only about 1.0303e-4 of each coordinate variance, so the largest marginal correction is 1.12e-7. Kill this marginal-only link; preserve the exact conditional integrals and move the missing state to cross-neuron conditional dependence.",
+   "graveyard_screen_cell": "8/8 stable n64 wins",
+   "graveyard_production_cell": "ratio 0.997502361",
+   "artifact": "work\\scorefloor_generation\\latent_gate_rb_marginals\\fresh_n64_results.json",
+   "artifact_sha256": "4631dd77376a72108565fa19c7ba5f57c2459107e5cdc782253beebadb77195a",
+   "n_cases": 8,
+   "MEASURED_case_widths": [
+    64
+   ],
+   "MEASURED_case_depths": [
+    16,
+    32
+   ],
+   "screen_statistic_source": "aggregate.wins in this same file",
+   "kill_statistic_source": "aggregate.ratio in this same file",
+   "wins": 8,
+   "ratio": 0.9975023609978109,
+   "width_256_appears_only_as": {
+    "width": 256,
+    "depth": 32
+   },
+   "screen_width": [
+    64
+   ],
+   "production_width": [
+    64
+   ],
+   "width_was_varied": false,
+   "verdict": "NOT width-caused: screen statistic and kill statistic are two columns of the SAME run at the SAME width; width was never varied. 256 appears only in the projected cost model."
+  },
+  "q3_response_gram_recursion": {
+   "ledger_id": "latent_gate_response_gram",
+   "ledger_status": "killed",
+   "ledger_kill_condition": "Aggregate ratio above 0.8, fewer than 6/8 wins, broken permutation/positive-gauge covariance, or conservative target arithmetic at least 80B.",
+   "ledger_result": "The recursive implementation passes PSD, n64 symmetry, 71.494B cost, and 8/8 wins versus fullcov, but ratio 0.997502340 misses materiality and differs from the marginal-only child by only 2.14e-8 relatively. Generic q3 reduction retains correction norms to 8.22e-16; the source itself is median 9.64e-13 and maximum 4.63e-7 relative to covariance. Kill the one-scalar recursive source; preserve the response-Gram operator and expand conditioning directions.",
+   "graveyard_screen_cell": "8/8 wins vs fullcov",
+   "graveyard_production_cell": "ratio 0.997502340",
+   "artifact": "work\\scorefloor_generation\\latent_gate_response_gram\\fresh_n64_results.json",
+   "artifact_sha256": "f58a78ccd312fd992dfa31d4cf2b5a017eb1a80acc1d701dda29f596d453ac28",
+   "n_cases": 8,
+   "MEASURED_case_widths": [
+    64
+   ],
+   "MEASURED_case_depths": [
+    16,
+    32
+   ],
+   "screen_statistic_source": "aggregate.wins in this same file",
+   "kill_statistic_source": "aggregate.ratio in this same file",
+   "wins": null,
+   "ratio": 0.9975023396798792,
+   "width_256_appears_only_as": "not present (cost model reported in REPORT.md only)",
+   "screen_width": [
+    64
+   ],
+   "production_width": [
+    64
+   ],
+   "width_was_varied": false,
+   "verdict": "NOT width-caused: screen statistic and kill statistic are two columns of the SAME run at the SAME width; width was never varied. 256 appears only in the projected cost model."
+  },
+  "full_covariance_2n_sigma_mixture": {
+   "ledger_id": "latent_full_sigma",
+   "ledger_status": "killed",
+   "ledger_kill_condition": "n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken scale/permutation invariance, or conservative target arithmetic at least 80B.",
+   "ledger_result": "The covariance-exact 2n rule passed covariance, relative-tolerance symmetry, and 48.381B conservative cost, but scored n64 ratio 8.8716 with 1/8 wins. Kill this one-frame sigma implementation; preserve the proof that eliminating rank collapse and matching second moments is insufficient because ReLU gate/angular structure is aliased.",
+   "graveyard_screen_cell": "covariance matched to 3.01e-15",
+   "graveyard_production_cell": "n64 ratio 8.8716, 1/8 wins",
+   "artifact": "work\\scorefloor_generation\\latent_full_sigma\\fresh_n64_results.json",
+   "artifact_sha256": "a07455ae94a0be47cd351a430e457be76de6c4cd6fc0bd31858e0f9bd72f8dc1",
+   "n_cases": 8,
+   "MEASURED_case_widths": [
+    64
+   ],
+   "MEASURED_case_depths": [
+    16,
+    32
+   ],
+   "screen_statistic_source": "aggregate.wins in this same file",
+   "kill_statistic_source": "aggregate.ratio in this same file",
+   "wins": 1,
+   "ratio": 8.871600739504565,
+   "width_256_appears_only_as": {
+    "width": 256,
+    "depth": 32
+   },
+   "screen_width": [
+    64
+   ],
+   "production_width": [
+    64
+   ],
+   "width_was_varied": false,
+   "verdict": "NOT width-caused: screen statistic and kill statistic are two columns of the SAME run at the SAME width; width was never varied. 256 appears only in the projected cost model."
+  },
+  "radial_susceptibility_compressor": {
+   "ledger_id": "randomized_radial_susceptibility_compressor",
+   "ledger_status": "killed",
+   "ledger_kill_condition": "One-step error reduction below 20%, wins below 75%, broken moment conservation/symmetry/PSD, or conservative target cost at least 80B.",
+   "ledger_result": "The top susceptibility pullback passes exact moments, PSD, symmetry, spectral, and 71.953B cost guards but reaches RMS ratio 0.975251 and 11/24 wins. It wins 8/8 layer-zero states yet worsens mid/late groups; covariance contributes 99.35% of generic observable-error energy. Kill single mean/gate geometry; preserve the invariant pullback and add active-covariance geometry.",
+   "graveyard_screen_cell": "layer-0 8/8 wins",
+   "graveyard_production_cell": "2.475% aggregate, 11/24 wins",
+   "artifact": "work\\scorefloor_generation\\randomized_radial_susceptibility_compressor\\one_step_results.json",
+   "artifact_sha256": "31c90e55b53d0882e89e3d06b0c7a44817515180ce86b36244fbd0274cf1a3bc",
+   "n_states": 24,
+   "MEASURED_state_widths": [
+    64
+   ],
+   "wins_by_layer": {
+    "depth16_layer0": "4/4",
+    "depth16_layer14": "1/4",
+    "depth16_layer8": "0/4",
+    "depth32_layer0": "4/4",
+    "depth32_layer16": "2/4",
+    "depth32_layer30": "0/4"
+   },
+   "aggregate_wins": 11,
+   "aggregate_ratio": 0.9752510229590308,
+   "width_was_varied": false,
+   "verdict": "NOT width-caused: all 24 states are at width 64. The 8/8-vs-11/24 split is entirely a DEPTH/layer split (layer 0 wins 8/8; layers 8/14/16/30 win 3/16). The report states this: 'The result is sharply depth dependent.'"
+  },
+  "weight_identified_latent_q3r2": {
+   "ledger_id": "weight_identified_latent_factor",
+   "ledger_status": "killed",
+   "ledger_kill_condition": "Collapses to the killed scalar scale mixture, is not identified equivariantly, mixture growth/recompression exceeds budget, or exact small-n premise shows no material gain over fullcov.",
+   "ledger_result": "q=3,r=2 passed the original small-width premise but failed the adversarial width law: 0/8 wins at n=64 with ratios 2.928 and 1.596. Top-two trace capture collapses from 88.4% at n=4 to 3.02% at n=256. Kill this fixed-r tensor-quadrature implementation; preserve forward weight-defined components, analytic diagonal rectification, recompression, and symmetry.",
+   "graveyard_screen_cell": "small-width ratio 0.04738, 6/7 wins",
+   "graveyard_production_cell": "n64 loses 8/8",
+   "artifact": "work\\scorefloor_generation\\latent_factor_closure\\premise_results.json",
+   "artifact_sha256": "c6955d5fbaa8eac6ea2799cc72e5bbe6c0fce74dcc87148a5670c6fa10e6dac8",
+   "MEASURED_screen_widths": [
+    4,
+    8,
+    16
+   ],
+   "MEASURED_kill_widths": [
+    32,
+    64
+   ],
+   "kill_groups": [
+    {
+     "width": 32,
+     "depth": 16,
+     "cases": 6,
+     "wins": 5,
+     "aggregate_ratio": 0.5606485990826299
+    },
+    {
+     "width": 32,
+     "depth": 32,
+     "cases": 6,
+     "wins": 4,
+     "aggregate_ratio": 0.9169292725592122
+    },
+    {
+     "width": 64,
+     "depth": 16,
+     "cases": 4,
+     "wins": 0,
+     "aggregate_ratio": 2.92806697507322
+    },
+    {
+     "width": 64,
+     "depth": 32,
+     "cases": 4,
+     "wins": 0,
+     "aggregate_ratio": 1.5958661885581993
+    }
+   ],
+   "kill_artifact": "work\\scorefloor_generation\\latent_factor_closure\\adversarial_width_sweep.json",
+   "kill_artifact_sha256": "387e22551286f12f7f1eaf438323f7203f59c029904ebdd11ad31a58cffa438c",
+   "trace_capture_width_law": {
+    "4": 0.8838,
+    "8": 0.6168,
+    "16": 0.373,
+    "32": 0.2146,
+    "64": 0.1144,
+    "128": 0.0586,
+    "256": 0.0302
+   },
+   "trace_capture_source": "LATENT_FACTOR_ADVERSARIAL_AUDIT.md, 16 fresh first-layer matrices per width",
+   "width_was_varied": true,
+   "verdict": "CONFIRMED width-caused: screen at widths 4/8/16 (ratio 0.04738, 6/7 wins), reversal measured at 32 (0.5606/0.9169) and 64 (2.9281/1.5959, 0/8 wins), with an independently measured width law for the mechanism (top-2 trace share 88.4% -> 3.02%). This is the one corpse the proposed gate describes."
+  }
+ }
+}

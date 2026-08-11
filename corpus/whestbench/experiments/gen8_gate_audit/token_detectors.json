@@ -1,0 +1,794 @@
+{
+ "all": [
+  {
+   "file": "gm_a4_constraint\\run_step0.py",
+   "line": 102,
+   "literal": "get_active_budget().flops_used",
+   "scanned_var": "cap_src",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\gm_a4_constraint\\verify_two_signal.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\capped_fold3.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\package_source\\estimator.py"
+   ],
+   "line_text": "fix_applied = \"get_active_budget().flops_used\" in cap_src"
+  },
+  {
+   "file": "gm_a4_constraint\\verify_two_signal.py",
+   "line": 138,
+   "literal": "cap_billed_flops = 244.8e9",
+   "scanned_var": "txt",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 2,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\capped_fold3.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\package_source\\estimator.py"
+   ],
+   "line_text": "\"declares_cap_billed_flops\": \"cap_billed_flops = 244.8e9\" in txt,"
+  },
+  {
+   "file": "gm_a4_constraint\\verify_two_signal.py",
+   "line": 139,
+   "literal": "get_active_budget().flops_used",
+   "scanned_var": "txt",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\gm_a4_constraint\\run_step0.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\capped_fold3.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\package_source\\estimator.py"
+   ],
+   "line_text": "\"u2_fix_applied\": \"get_active_budget().flops_used\" in txt,"
+  },
+  {
+   "file": "gm_a4_constraint\\verify_two_signal.py",
+   "line": 132,
+   "literal": "def _tally",
+   "scanned_var": "read_text",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 2,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\capped_fold3.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\package_source\\estimator.py"
+   ],
+   "line_text": "and \"def _tally\" in p.read_text(encoding=\"utf-8\", errors=\"replace\")"
+  },
+  {
+   "file": "gm_flatworm_response_ladder\\ladder_controller.py",
+   "line": 53,
+   "literal": "\nRHO = 0.5\n",
+   "scanned_var": "_flatworm_text",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 1,
+   "example_locations": [
+    "work\\scorefloor_generation\\flatworm_ladder_attenuator\\flatworm_ladder.py"
+   ],
+   "line_text": "assert \"\\nRHO = 0.5\\n\" in _flatworm_text and \"\\nKAPPA = 0.25\\n\" in _flatworm_text"
+  },
+  {
+   "file": "gm_flatworm_response_ladder\\ladder_controller.py",
+   "line": 53,
+   "literal": "\nKAPPA = 0.25\n",
+   "scanned_var": "_flatworm_text",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 1,
+   "example_locations": [
+    "work\\scorefloor_generation\\flatworm_ladder_attenuator\\flatworm_ladder.py"
+   ],
+   "line_text": "assert \"\\nRHO = 0.5\\n\" in _flatworm_text and \"\\nKAPPA = 0.25\\n\" in _flatworm_text"
+  },
+  {
+   "file": "m147_endpoint_safe_bridge\\run_m147_static_audit.py",
+   "line": 122,
+   "literal": "degenerate conditional singleton",
+   "scanned_var": "str",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 5,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m147_endpoint_safe_bridge\\m147_endpoint_safe_bridge.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m147_endpoint_safe_bridge\\test_m147_endpoint_safe_bridge.py",
+    "work\\scorefloor_generation\\m147_endpoint_safe_bridge\\m147_endpoint_safe_bridge.py"
+   ],
+   "line_text": "if \"degenerate conditional singleton\" not in str(error):"
+  },
+  {
+   "file": "m169_m163_call_fusion\\run_m169_native_trace.py",
+   "line": 160,
+   "literal": "reshape",
+   "scanned_var": "operations",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 817,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\replicated_fold_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\c1_local_mc_calibration\\estimator.py"
+   ],
+   "line_text": "\"no_reshape\": \"reshape\" not in operations,"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 69,
+   "literal": "len(sources) != len(weights) + 1",
+   "scanned_var": "m125",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 5,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m125_source_batched_forward_tangent\\m125_forward_tangent.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m175_b8_labelled_background_abi\\verify_m175_static.py",
+    "work\\scorefloor_generation\\m125_source_batched_forward_tangent\\m125_forward_tangent.py"
+   ],
+   "line_text": "if \"len(sources) != len(weights) + 1\" not in m125:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 75,
+   "literal": "mean.size > 8",
+   "scanned_var": "m122",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m122_nonzero_bridge_theory\\m122_nonzero_bridge.py",
+    "work\\scorefloor_generation\\m122_nonzero_bridge_theory\\m122_nonzero_bridge.py",
+    "work\\scorefloor_generation\\m174_m169_staging_interface\\verify_m174_static.py"
+   ],
+   "line_text": "if \"mean.size > 8\" not in m122:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 86,
+   "literal": "fnp.stack(weights, axis=0, out=staged.weight)",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 4,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m169_m163_call_fusion\\m169_fused_compiler.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m209_batched_recursive_gram_control\\m209_flopscope_sidecar.py",
+    "work\\scorefloor_generation\\m169_m163_call_fusion\\m169_fused_compiler.py"
+   ],
+   "line_text": "if \"fnp.stack(weights, axis=0, out=staged.weight)\" not in m169:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 88,
+   "literal": "fnp.stack(covariances, axis=0, out=staged.covariance)",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m169_m163_call_fusion\\m169_fused_compiler.py",
+    "work\\scorefloor_generation\\m169_m163_call_fusion\\m169_fused_compiler.py",
+    "work\\scorefloor_generation\\m174_m169_staging_interface\\verify_m174_static.py"
+   ],
+   "line_text": "if \"fnp.stack(covariances, axis=0, out=staged.covariance)\" not in m169:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 53,
+   "literal": "def _diagonal_gaussian_pass",
+   "scanned_var": "base",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 35,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m175_b8_labelled_background_abi\\verify_m175_static.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\v31_guards\\package_source\\base_estimator.py"
+   ],
+   "line_text": "if \"def _diagonal_gaussian_pass\" not in base or \"var = fnp.ones\" not in base:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 53,
+   "literal": "var = fnp.ones",
+   "scanned_var": "base",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 36,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m175_b8_labelled_background_abi\\verify_m175_static.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\v31_guards\\package_source\\base_estimator.py"
+   ],
+   "line_text": "if \"def _diagonal_gaussian_pass\" not in base or \"var = fnp.ones\" not in base:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 55,
+   "literal": "covariance_pre =",
+   "scanned_var": "base",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 6,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m175_b8_labelled_background_abi\\verify_m175_static.py",
+    "work\\scorefloor_generation\\fullcov_gaussian_mm\\estimator.py"
+   ],
+   "line_text": "if \"covariance_pre =\" in base or \"_relu_fullcov\" in base:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 55,
+   "literal": "_relu_fullcov",
+   "scanned_var": "base",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 9,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m144_gate_split_merge\\m144_cost_probe.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m144_gate_split_merge\\m144_flopscope_batch_probe.py"
+   ],
+   "line_text": "if \"covariance_pre =\" in base or \"_relu_fullcov\" in base:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 67,
+   "literal": "import numpy as np",
+   "scanned_var": "m125",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 2661,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\capture_n_sweep.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\probe_mixed_quantization.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\terminal_moment_anchor_falsifier.py"
+   ],
+   "line_text": "if \"import numpy as np\" not in m125 or \"import flopscope\" in m125:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 67,
+   "literal": "import flopscope",
+   "scanned_var": "m125",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 421,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold3_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold_estimator.py"
+   ],
+   "line_text": "if \"import numpy as np\" not in m125 or \"import flopscope\" in m125:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 79,
+   "literal": "deliberately a small-width",
+   "scanned_var": "m129",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m129_source_frechet_tangent\\m129_source_frechet.py",
+    "work\\scorefloor_generation\\m129_source_frechet_tangent\\m129_source_frechet.py",
+    "work\\scorefloor_generation\\m174_m169_staging_interface\\verify_m174_static.py"
+   ],
+   "line_text": "if \"deliberately a small-width\" not in m129 or \"algebra oracle\" not in m129:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 79,
+   "literal": "algebra oracle",
+   "scanned_var": "m129",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m129_source_frechet_tangent\\m129_source_frechet.py",
+    "work\\scorefloor_generation\\m129_source_frechet_tangent\\m129_source_frechet.py",
+    "work\\scorefloor_generation\\m174_m169_staging_interface\\verify_m174_static.py"
+   ],
+   "line_text": "if \"deliberately a small-width\" not in m129 or \"algebra oracle\" not in m129:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 84,
+   "literal": "LAYERS = 31",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 48,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m146_pilot_adaptive_hh\\trace_m146_flopscope.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m156_extended_domain_star_control\\run_m156_native_trace.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m163_exterior_collision_null\\m163_exterior_collision_null.py"
+   ],
+   "line_text": "if \"LAYERS = 31\" not in m169 or \"WIDTH = 256\" not in m169:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 84,
+   "literal": "WIDTH = 256",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 64,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\k1_native_forward_kernel\\k1_kernel.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m146_pilot_adaptive_hh\\trace_m146_flopscope.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m156_extended_domain_star_control\\run_m156_native_trace.py"
+   ],
+   "line_text": "if \"LAYERS = 31\" not in m169 or \"WIDTH = 256\" not in m169:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 94,
+   "literal": "fnp.matmul(edge, w, out=x.z)",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 5,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m164_staged_audit\\m164_flopscope_sidecar.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m169_m163_call_fusion\\m169_fused_compiler.py",
+    "work\\scorefloor_generation\\m164_staged_audit\\m164_flopscope_sidecar.py"
+   ],
+   "line_text": "if \"fnp.matmul(edge, w, out=x.z)\" not in m169 or \"fnp.matmul(x.lhs, x.rhs, out=x.product)\" not in m169:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 94,
+   "literal": "fnp.matmul(x.lhs, x.rhs, out=x.product)",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m169_m163_call_fusion\\m169_fused_compiler.py",
+    "work\\scorefloor_generation\\m169_m163_call_fusion\\m169_fused_compiler.py",
+    "work\\scorefloor_generation\\m174_m169_staging_interface\\verify_m174_static.py"
+   ],
+   "line_text": "if \"fnp.matmul(edge, w, out=x.z)\" not in m169 or \"fnp.matmul(x.lhs, x.rhs, out=x.product)\" not in m169:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 98,
+   "literal": "def generated_inputs",
+   "scanned_var": "runner",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 9,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m156_extended_domain_star_control\\run_m156_native_trace.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m164_staged_audit\\run_m164_native_trace.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m169_m163_call_fusion\\run_m169_native_trace.py"
+   ],
+   "line_text": "if \"def generated_inputs\" not in runner or \"rng.standard_normal\" not in runner:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 98,
+   "literal": "rng.standard_normal",
+   "scanned_var": "runner",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 324,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\terminal_moment_anchor_falsifier.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\a_series_granular_adversarial\\run_a4_hostile.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\a_series_granular_adversarial\\run_m185_g0.py"
+   ],
+   "line_text": "if \"def generated_inputs\" not in runner or \"rng.standard_normal\" not in runner:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 100,
+   "literal": "whestbench",
+   "scanned_var": "runner",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 209,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\capture_n_sweep.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\probe_mixed_quantization.py"
+   ],
+   "line_text": "if \"whestbench\" in runner or \"BaseEstimator\" in runner:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 100,
+   "literal": "BaseEstimator",
+   "scanned_var": "runner",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 126,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\estimator_base_n14000_r4.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\estimator_n10000.py"
+   ],
+   "line_text": "if \"whestbench\" in runner or \"BaseEstimator\" in runner:"
+  },
+  {
+   "file": "m174_m169_staging_interface\\verify_m174_static.py",
+   "line": 63,
+   "literal": "fnp.stack(means",
+   "scanned_var": "unparse",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 10,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator_diagonal.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m175_b8_labelled_background_abi\\verify_m175_static.py"
+   ],
+   "line_text": "if not any(\"fnp.stack(means\" in ast.unparse(node.value) for node in returns if node.value):"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 56,
+   "literal": "return fnp.stack(means, axis=0)",
+   "scanned_var": "predict_text",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 8,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator_diagonal.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m176_background_archive_producer\\verify_m176_static.py"
+   ],
+   "line_text": "if \"return fnp.stack(means, axis=0)\" not in predict_text:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 99,
+   "literal": "all_layer_staging_required",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m169_m163_call_fusion\\m169_fused_compiler.py",
+    "work\\scorefloor_generation\\m169_m163_call_fusion\\m169_fused_compiler.py",
+    "work\\scorefloor_generation\\m175_b8_labelled_background_abi\\verify_m175_static.py"
+   ],
+   "line_text": "if \"all_layer_staging_required\" not in m169:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 43,
+   "literal": "def _diagonal_gaussian_pass",
+   "scanned_var": "base",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 35,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m174_m169_staging_interface\\verify_m174_static.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\v31_guards\\package_source\\base_estimator.py"
+   ],
+   "line_text": "if \"def _diagonal_gaussian_pass\" not in base or \"var = fnp.ones\" not in base:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 43,
+   "literal": "var = fnp.ones",
+   "scanned_var": "base",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 36,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m174_m169_staging_interface\\verify_m174_static.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\v31_guards\\package_source\\base_estimator.py"
+   ],
+   "line_text": "if \"def _diagonal_gaussian_pass\" not in base or \"var = fnp.ones\" not in base:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 45,
+   "literal": "covariance_pre =",
+   "scanned_var": "base",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 6,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m174_m169_staging_interface\\verify_m174_static.py",
+    "work\\scorefloor_generation\\fullcov_gaussian_mm\\estimator.py"
+   ],
+   "line_text": "if \"covariance_pre =\" in base or \"_relu_fullcov\" in base:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 45,
+   "literal": "_relu_fullcov",
+   "scanned_var": "base",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 9,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m144_gate_split_merge\\m144_cost_probe.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m144_gate_split_merge\\m144_flopscope_batch_probe.py"
+   ],
+   "line_text": "if \"covariance_pre =\" in base or \"_relu_fullcov\" in base:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 54,
+   "literal": "means.append(mu)",
+   "scanned_var": "predict_text",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 41,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fullcov_gaussian_mm\\estimator_diagonal.py"
+   ],
+   "line_text": "if \"means.append(mu)\" not in predict_text or \"covariances.append\" in predict_text:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 54,
+   "literal": "covariances.append",
+   "scanned_var": "predict_text",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 12,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m156_extended_domain_star_control\\run_m156_native_trace.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m164_staged_audit\\run_m164_native_trace.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m169_m163_call_fusion\\run_m169_native_trace.py"
+   ],
+   "line_text": "if \"means.append(mu)\" not in predict_text or \"covariances.append\" in predict_text:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 70,
+   "literal": "import numpy as np",
+   "scanned_var": "m125",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 2661,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\capture_n_sweep.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\probe_mixed_quantization.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\terminal_moment_anchor_falsifier.py"
+   ],
+   "line_text": "if \"import numpy as np\" not in m125 or \"import flopscope\" in m125:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 70,
+   "literal": "import flopscope",
+   "scanned_var": "m125",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 421,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold3_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold_estimator.py"
+   ],
+   "line_text": "if \"import numpy as np\" not in m125 or \"import flopscope\" in m125:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 97,
+   "literal": "LAYERS = 31",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 48,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m146_pilot_adaptive_hh\\trace_m146_flopscope.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m156_extended_domain_star_control\\run_m156_native_trace.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m163_exterior_collision_null\\m163_exterior_collision_null.py"
+   ],
+   "line_text": "if \"LAYERS = 31\" not in m169 or \"WIDTH = 256\" not in m169:"
+  },
+  {
+   "file": "m175_b8_labelled_background_abi\\verify_m175_static.py",
+   "line": 97,
+   "literal": "WIDTH = 256",
+   "scanned_var": "m169",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 64,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\k1_native_forward_kernel\\k1_kernel.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m146_pilot_adaptive_hh\\trace_m146_flopscope.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m156_extended_domain_star_control\\run_m156_native_trace.py"
+   ],
+   "line_text": "if \"LAYERS = 31\" not in m169 or \"WIDTH = 256\" not in m169:"
+  },
+  {
+   "file": "m176_background_archive_producer\\verify_m176_static.py",
+   "line": 49,
+   "literal": "analytic_local_kernels",
+   "scanned_var": "m125",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 17,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m120_price_normal_ordered_adjoint\\m120c_analytic_dense_reference.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m120_price_normal_ordered_adjoint\\m120c_protocol_harness.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m120_price_normal_ordered_adjoint\\test_m120c_analytic_dense_reference.py"
+   ],
+   "line_text": "if \"analytic_local_kernels\" in m125:"
+  },
+  {
+   "file": "m209_batched_recursive_gram_control\\run_m209_native_trace.py",
+   "line": 138,
+   "literal": "reshape",
+   "scanned_var": "operations",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 817,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\replicated_fold_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\c1_local_mc_calibration\\estimator.py"
+   ],
+   "line_text": "\"no_reshape\": \"reshape\" not in operations,"
+  },
+  {
+   "file": "m215_rankone_collision_correction\\run_m215_native_trace.py",
+   "line": 93,
+   "literal": "budget",
+   "scanned_var": "locals",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 371,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\capture_n_sweep.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold3_estimator.py"
+   ],
+   "line_text": "if \"budget\" not in locals():"
+  },
+  {
+   "file": "m218_selective_l2_strassen\\run_m218_native_trace.py",
+   "line": 131,
+   "literal": "budget",
+   "scanned_var": "locals",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 371,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\capture_n_sweep.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold3_estimator.py"
+   ],
+   "line_text": "if \"budget\" not in locals():"
+  },
+  {
+   "file": "m231_exact_permuted_row_receipt\\run_m231_native_trace.py",
+   "line": 178,
+   "literal": "argsort",
+   "scanned_var": "operations",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 257,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\a_series_granular_adversarial\\a1b_tail_diagnostics.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\a_series_granular_adversarial\\a1_hosted_ledger.py"
+   ],
+   "line_text": "\"no_argsort\": \"argsort\" not in operations,"
+  },
+  {
+   "file": "m232_m205_retained_sigma_seam\\m232_m205_retained_sigma_seam.py",
+   "line": 140,
+   "literal": "marginal_sigma",
+   "scanned_var": "state_fields",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 11,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m226_preallocated_fused_rho08\\m226_preallocated_fused_rho08.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m228_caller_bound_rho08\\m228_caller_bound_rho08.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m230_m223_live_sigma_gather\\m230_m223_live_sigma_gather.py"
+   ],
+   "line_text": "present = \"marginal_sigma\" in state_fields or \"marginal_sigma\" in input_fields"
+  },
+  {
+   "file": "m232_m205_retained_sigma_seam\\m232_m205_retained_sigma_seam.py",
+   "line": 140,
+   "literal": "marginal_sigma",
+   "scanned_var": "input_fields",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 11,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m226_preallocated_fused_rho08\\m226_preallocated_fused_rho08.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m228_caller_bound_rho08\\m228_caller_bound_rho08.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m230_m223_live_sigma_gather\\m230_m223_live_sigma_gather.py"
+   ],
+   "line_text": "present = \"marginal_sigma\" in state_fields or \"marginal_sigma\" in input_fields"
+  },
+  {
+   "file": "m245_canonical_unordered_replica_galerkin_spectrum\\run_m245_scientific_shard.py",
+   "line": 3010,
+   "literal": "intent",
+   "scanned_var": "observed_pair_kinds",
+   "polarity": "fail-closed (safe)",
+   "occurs_elsewhere_in_first_party_tree": 297,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\graph\\build_evidence_graph.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\dac_prize_report_extension\\build_phase2_report_v2.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\m120_price_normal_ordered_adjoint\\corrected_cp_jacobian.py"
+   ],
+   "line_text": "if \"intent\" not in observed_pair_kinds:"
+  },
+  {
+   "file": "m245_canonical_unordered_replica_galerkin_spectrum\\supervise_m245_fixture_materialization.py",
+   "line": 666,
+   "literal": "retained_handle_roles",
+   "scanned_var": "sample",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 0,
+   "example_locations": [],
+   "line_text": "if \"retained_handle_roles\" in sample:"
+  },
+  {
+   "file": "m245_canonical_unordered_replica_galerkin_spectrum\\test_m245_fixture_materialization_transport.py",
+   "line": 97,
+   "literal": "numpy",
+   "scanned_var": "_import_roots",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 3364,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\base_estimator.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\capture_n_sweep.py",
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold3_estimator.py"
+   ],
+   "line_text": "if \"numpy\" in _import_roots(node):"
+  },
+  {
+   "file": "terra_m153_pilot_reuse\\run_m153_pilot_prefix_reuse_structural.py",
+   "line": 132,
+   "literal": "formal:layer4:pilot",
+   "scanned_var": "reused_stages",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 3,
+   "example_locations": [
+    "publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\terra_m153_pilot_reuse\\test_m153_pilot_prefix_reuse.py",
+    "work\\scorefloor_generation\\terra_m153_pilot_reuse\\run_m153_pilot_prefix_reuse_structural.py",
+    "work\\scorefloor_generation\\terra_m153_pilot_reuse\\test_m153_pilot_prefix_reuse.py"
+   ],
+   "line_text": "\"formal_layer4_dispatched_normally\": \"formal:layer4:pilot\" in reused_stages,"
+  },
+  {
+   "file": "wc1_winner_ablation\\wc1_ablation.py",
+   "line": 651,
+   "literal": "A_frames",
+   "scanned_var": "arms",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 0,
+   "example_locations": [],
+   "line_text": "if \"A_frames\" in arms:"
+  },
+  {
+   "file": "wc1_winner_ablation\\wc1_ablation.py",
+   "line": 653,
+   "literal": "A_radial",
+   "scanned_var": "arms",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 0,
+   "example_locations": [],
+   "line_text": "if \"A_radial\" in arms:"
+  },
+  {
+   "file": "wc1_winner_ablation\\wc1_ablation.py",
+   "line": 657,
+   "literal": "A_antithetic",
+   "scanned_var": "arms",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 0,
+   "example_locations": [],
+   "line_text": "if \"A_antithetic\" in arms:"
+  }
+ ],
+ "permanently_void_fail_open": [
+  {
+   "file": "m245_canonical_unordered_replica_galerkin_spectrum\\supervise_m245_fixture_materialization.py",
+   "line": 666,
+   "literal": "retained_handle_roles",
+   "scanned_var": "sample",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 0,
+   "example_locations": [],
+   "line_text": "if \"retained_handle_roles\" in sample:"
+  },
+  {
+   "file": "wc1_winner_ablation\\wc1_ablation.py",
+   "line": 651,
+   "literal": "A_frames",
+   "scanned_var": "arms",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 0,
+   "example_locations": [],
+   "line_text": "if \"A_frames\" in arms:"
+  },
+  {
+   "file": "wc1_winner_ablation\\wc1_ablation.py",
+   "line": 653,
+   "literal": "A_radial",
+   "scanned_var": "arms",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 0,
+   "example_locations": [],
+   "line_text": "if \"A_radial\" in arms:"
+  },
+  {
+   "file": "wc1_winner_ablation\\wc1_ablation.py",
+   "line": 657,
+   "literal": "A_antithetic",
+   "scanned_var": "arms",
+   "polarity": "FAIL-OPEN (M183 shape)",
+   "occurs_elsewhere_in_first_party_tree": 0,
+   "example_locations": [],
+   "line_text": "if \"A_antithetic\" in arms:"
+  }
+ ]
+}
