@@ -1,6 +1,15 @@
-# Phase-1 Algorithmic Contribution writeup — draft v9
+# Phase-1 Algorithmic Contribution writeup — draft v10
 
-Status: DRAFT v9, 2026-08-10. v9: adversarial-closure pass — new §3f (the Gen-7
+Status: DRAFT v10, 2026-08-11. **v10 is a correction release against the v9
+filed on 2026-08-10**, and every change it makes is a defect we found in our own
+filed text after filing. The three errata are stated in full in §0 below and
+marked inline at each site (E1 §3 table and §3f, E2 §4, E3 §3d). None of them
+changes a conclusion; two of them change a number we published, and one of them
+retracts a recommendation we made to the field. We are re-filing rather than
+leaving them standing, because a paper whose §4 tells other people not to carry
+dispositions by wording cannot carry its own claims that way.
+
+v9, 2026-08-10: adversarial-closure pass — new §3f (the Gen-7
 twenty-agent campaign, the seed-side SVD-V null, the 7/7 re-litigated kill
 families, S18's singleton-cell seal) and a falsification-hygiene paragraph in §4;
 v8's level rules carry over unchanged, and the floor remains a lower-bound
@@ -37,6 +46,52 @@ within ~2x of the per-forward point-evaluation floor (pooled 1.79x; per net
 robust within ~2x of its stated assumptions; it is a lower-bound attempt,
 not a minimax-optimality proof — and the falsification structure reduces to
 a single stated theorem (§3e).
+
+### 0. Errata against the v9 filed 2026-08-10
+
+Three defects in the filed text, found by our own post-filing audit. None
+changes a conclusion of this paper. Two change a published number and one
+retracts advice we gave the field, so all three are stated here rather than
+patched quietly. Each is also marked at its site.
+
+**E1 — the 0.00% f64-lane figure came from a structurally void detector
+(§3 ledger table, §3f).** `run_m183_falsifier.py:58` reads
+`dts = getattr(op, "dtypes", None) or ()`, and the installed flopscope 0.10.0
+`OpRecord` has no `dtypes` field — its fields are `count, cumulative,
+flop_cost, flopscope_backend_duration_s, flopscope_context_start_offset_s,
+flopscope_overhead_duration_s, index, namespace, op_name, resolved_dtype,
+shapes, subscripts`. The guard therefore evaluated `any(...)` over an empty
+tuple for every op on every program, and 0.00% was the only output it could
+ever produce. Two independent signals establish this: the dataclass field list
+read from the pinned venv, and the detector run against a deliberately
+100%-float64 program (five 64x64 f64 matmuls) reporting `f64_share 0.0` while a
+corrected `resolved_dtype` detector reports `1.0` on the same log. The honest
+measurement is **1.193e8 FLOPs, 0.0755% of predict, with a full-recast ceiling
+of 59,656,312 FLOPs** — which independently reproduces the 59.66M our Gen-7
+cost-remap attacker derived by a different route. The M183 kill stands, and
+the dtype-repricing escape stays closed, because the corrected ceiling is still
+immaterial. What does not stand is the number.
+
+**E2 — the 1.65 suite-calibration ratio is a mean artifact, and we recommended
+it (§4).** Recomputing the same committed 22-net panel by median gives
+6.47355e-7 against the grader's published 6.470e-7, a 0.05% match. The 1.65
+came entirely from the right tail of a per-net distribution with roughly an 11x
+spread. There is no suite-difficulty shift, our filed advice to apply that
+factor was wrong, and §4 now carries the corrected recommendation: calibrate on
+the median.
+
+**E3 — the fresh-seed band treated its own anchor as exact (§3d).** The
+1.830e-7 anchor is itself a 50-net measurement carrying a 9.83% standard
+error. Folding that in widens the honest 50-net P5-P95 band from
+[1.54e-7, 2.16e-7] to **[1.46e-7, 2.25e-7]** and raises P(suite score > 2.5e-7)
+from 0.034% to **0.57%**. We state the wider band.
+
+A note on how these were found, since it bears on §4's argument. E1 and E2 both
+surfaced from an adversarial pass over our own record run against public forum
+material — external attack on this work produced no defect, and internal audit
+produced these three. We take that asymmetry as the strongest evidence
+available that the record is honest, and we would rather publish the asymmetry
+than the tidier document.
 
 ### 1. The estimator
 
@@ -126,7 +181,7 @@ was retuned after seeing results. All are reproducible from the corpus.
 | N9 | frames + tangent + deeper fold | +2.1% (positive control +34.5% on iid) | killed |
 | M180 | stronger spherical designs (MUB mix / coset rotations / remix) | all arms +20-49% variance | killed |
 | M181 | terminal rectified-Gaussian smoothing (3 arms incl. unbiased CV) | bias 4-6x baseline MSE; var identical; lambda -> 0 | killed |
-| M183 | float32 hot-path recast (the "free 2x") | 0.00% f64-lane billing — already clean | killed |
+| M183 | float32 hot-path recast (the "free 2x") | 0.0755% f64-lane billing (1.193e8 FLOPs of predict; full-recast ceiling 59,656,312 FLOPs) — no material lane. **Erratum E1: v9 filed 0.00% here, from a structurally void detector.** | killed |
 | M184 | mid-layer exact on-composition + sparsity | 0.00% billed reduction (certain-on absent where wide; 2.3x under break-even at depth) | killed |
 
 M180's kill carries a structural result: the phased-Hadamard design is
@@ -264,7 +319,12 @@ making the shrink estimate conservative). A companion falsification closes the t
 The fresh-seed implication for our own entry, stated for the record: under
 the bracket-validated dispersion the champion's suite-score P5-P95 band is
 [1.54e-7, 2.16e-7] on a 50-net suite and [1.62e-7, 2.06e-7] on a 100-net
-suite, with the mean unchanged (1.830e-7 in every arm). The other exposure
+suite, with the mean unchanged (1.830e-7 in every arm). **Erratum E3: those
+bands treat the hosted 1.830e-7 anchor as exact, and it is not** — it is
+itself a 50-net measurement carrying a 9.83% standard error. Folding the
+anchor's own error in widens the honest 50-net band to **[1.46e-7, 2.25e-7]**
+and raises P(suite score > 2.5e-7) from 0.034% to **0.57%**, a 17x increase.
+Still small; no longer negligible, and we would rather state the wider band. The other exposure
 channel in a re-run is accounting, not statistics: the residual channel is
 4.5% of scored C on average (7.7% of adjusted score worst-case at C/B
 0.650), conditional on λ = 1e11 remaining fixed (Rules §5.3 reserves
@@ -397,7 +457,8 @@ degree-≤2 statistic exactly, and degree-≥4 content is ~1e-5 R²);
 biased-hybrid (the baseline measures unbiased, so the MSE-optimal shrinkage
 weight is ~0, and every realizable form came out worse, -5.7% to -38%);
 cost-remap (the bill is ~99% irreducible float32 matmul already at the floor
-rate, f64 share 0.033% max); design-alt (the DGS bound needs N ≥ 33,152 for a
+rate, f64 share 0.033% of ops and 0.0755% of billed predict FLOPs — two
+different denominators, both immaterial); design-alt (the DGS bound needs N ≥ 33,152 for a
 4-design and ~44x the rows for degree-6 nulling, and Var·C is invariant on the
 flat speckle of §3e(2)).
 
@@ -419,8 +480,10 @@ fixed cubature frame (ledger 242, killed).
 
 **Seven kill families re-litigated under changed premises: 7/7 held**, several
 strengthened. The fidelity family formally retired the dtype-repricing escape
-(M183 measured the f64 SHARE at 0.00%, which is invariant to how f64 is
-priced); the closure family's four insertion points were re-killed under
+(the honest f64 share is 0.0755% of billed predict, so a complete recast is
+capped at 59,656,312 FLOPs — immaterial however f64 is priced; v9 filed 0.00%
+here from a void detector, and the conclusion is unchanged, see Erratum E1);
+the closure family's four insertion points were re-killed under
 maximally favourable cost assumptions; and the dispersion family named the one
 un-probed crack left in the whole record — non-smooth cell-membership
 covariates, inside a profitability window of R² ∈ [2.63e-5, 1e-4].
@@ -463,12 +526,23 @@ artifacts.
 ### 4. Methodological notes: calibrate your suite, and re-measure your graveyard
 
 Local development suites are not the grader's suite. We measured ours by
-running a budget-matched Monte-Carlo reference on both: local 1.069e-6 versus
-the grader's published 6.47e-7, a ratio of **1.65**. Every local score we held
-was understating its hosted expectation by that factor. We recommend this
-one-run calibration to anyone iterating locally; without it, cross-suite
-comparisons — including comparisons against published competitor numbers —
-are off by whatever the suite-difficulty ratio happens to be.
+running a budget-matched Monte-Carlo reference on both. **Calibrate on the
+median, not the mean** — and this correction is one we had to apply to
+ourselves (Erratum E2). Our filed v9 reported local 1.069e-6 against the
+grader's published 6.47e-7, a ratio of 1.65, and advised the field to apply
+that factor. Recomputing the same committed 22-net panel by median gives
+6.47355e-7 against the grader's 6.470e-7 — **a 0.05% match**. The 1.65 was
+entirely an artifact of the mean, which the per-net score distribution's ~11x
+right tail dominates. There was no suite-difficulty shift to apply, and the
+recommendation as filed was wrong.
+
+The methodological point survives in stronger form. Local development suites
+are still not the grader's suite, and a one-run calibration is still worth
+doing before any cross-suite comparison — including comparisons against
+published competitor numbers. But run it on the median. On a heavy-tailed
+per-net distribution the sample mean is a statistic about the tail, not about
+the suite, and comparing two means across suites measures which one happened
+to draw a worse outlier.
 
 **Falsification hygiene: the same standard applies to your dead entries.** A
 record-level sweep of our full ledger (~307 mechanism and uncertainty records,
