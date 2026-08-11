@@ -210,10 +210,57 @@ explains why two independently-derived obstruction families, previously filed
 under different causes across ~15 corpses, are the same wall approached from two
 sides** — and why no `(n, L)` the competition offers satisfies both.
 
-**Scope.** `r_eff(n,1) ∝ n` is measured at 8 widths with R² = 0.9999 and is
-solid. `γ` is fitted over the healthy prefix (layers 1–12 at width 256), so
-`r_eff(256, 32) ≈ 2.6` is an **extrapolation ~20 layers past the data** and is
-stated as a prediction, not a measurement. The decay-rate exponent moved from
+### The extrapolation tested — the law saturates, and the number survives
+
+`r_eff(256,32) ≈ 2.6` was an extrapolation 20 layers past the fit, and the pure
+geometric form is **self-evidently wrong** at that range: `0.607·32·0.88³² ≈
+0.32`, and `r_eff ≥ 1` always. So it must saturate. Tested directly at widths
+where the recurrence survives all 32 layers (38 of 48 cells reached L=32
+SPD-safe, 12 replicates per cell type):
+
+| L | 1 | 4 | 8 | 12 | 16 | 20 | 24 | 32 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| He n=32, `r_eff` | 19.5 | 10.7 | 6.6 | 4.2 | 3.2 | 2.4 | 2.2 | **1.98** |
+| ratio to `γ^L` fit | 1.00 | 0.81 | 0.82 | 0.88 | 1.12 | 1.38 | 2.13 | **5.34** |
+
+**The geometric law holds to `L ≈ 12–16` (ratio 0.8–1.2) and saturates after.**
+By `L = 32` the measured rank is 3–5× above the geometric prediction.
+
+And the saturation value is the same everywhere:
+
+| | He n=32 | He n=48 | Orth n=32 | Orth n=48 |
+|---|---:|---:|---:|---:|
+| `r_eff` at L=32 | **1.98** | **1.66** | **1.76** | **2.38** |
+
+**`r_eff` saturates at ≈ 2, independent of width and of initialization.** The
+corrected law is
+
+```
+r_eff(n, L) ≈ max( r_∞ , c·n·γ^L ),    r_∞ ≈ 2
+```
+
+The extrapolated `2.6` survives as a *number* — the state really is effectively
+rank-2 at depth 32 — but the functional form that produced it was wrong past
+`L ≈ 16`. Recorded as a corrected prediction, not a lucky one.
+
+**This sharpens the bridge rather than weakening it.** The tragedy is now exact
+and measured at both ends:
+
+```
+L = 1  :  r_eff ∝ n     -> 155 of 256.  Rank-2 captures 1.3%.   G1 kills it.
+L = 32 :  r_eff -> ~2    -> the state IS rank-2, where you need it.
+                            But the path there is not representable. G7 kills it.
+```
+
+The corpus's entire fixed-rank family was the right idea at the wrong end of the
+network, and the right end is unreachable.
+
+**Scope.** `r_eff(n,1) ∝ n` is measured at 8 widths with R² = 0.9999. The
+saturation `r_∞ ≈ 2` is measured at widths 32 and 48 on both arms, where the
+recurrence survives to depth 32; **it is not measured at width 256**, where the
+float64 path dies at layer ~11. Whether `r_∞` is width-independent up to 256 is
+the open question, and it is the one place high-precision arithmetic (~28
+digits, per P3) would pay for itself. The decay-rate exponent moved from
 `n^0.639` (4 points, R² 0.992) to `n^0.697` (8 points, R² 0.935) under
 hardening — more points, more honest spread; quote the 8-point figure.
 
