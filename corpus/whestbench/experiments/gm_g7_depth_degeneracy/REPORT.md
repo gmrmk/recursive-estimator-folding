@@ -14,8 +14,8 @@ Second signal: the He arm at width 256 reproduces `ℓ* = 12` and `10` from
 | result | value |
 |---|---|
 | `λ_min` decay, He, width 256 | **0.719 decades per layer** (R² 0.76–0.88) |
-| decay rate vs width, He | **∝ n^0.639**, R² = **0.9917** |
-| decay rate vs width, Haar-orthogonal | **∝ n^0.927**, R² = **0.9885** |
+| decay rate vs width, He | **∝ n^0.697**, R² = **0.935** (8 width points) |
+| decay rate vs width, Haar-orthogonal | **∝ n^1.049**, R² = **0.955** (8 width points) |
 | `κ` at layer 32, width 256, He (fitted extrapolation) | **≈ 10^27.9** |
 | significant digits required at depth 32 | **≈ 28** (float64 carries ~16) |
 | effective rank, width 256 | `155.3/256` (60.7%) at layer 1 → `39.5/256` (15.4%) at layer 12 |
@@ -34,13 +34,15 @@ Fitted by least squares on `log10 λ_min` vs layer over the healthy prefix
 | Haar-orthogonal | 0.164 | 0.312 | 0.694 | **1.074** |
 
 ```
-He   :  rate ∝ n^0.639   (R² = 0.9917)
-Orth :  rate ∝ n^0.927   (R² = 0.9885)
+4 width points :  He n^0.639 (R² 0.992)   Orth n^0.927 (R² 0.989)
+8 width points :  He n^0.697 (R² 0.935)   Orth n^1.049 (R² 0.955)   <- quote these
 ```
 
 **P2 supported.** The competing account — that the rate is width-independent and
 `ℓ*(n)` falls only because `λ_min` starts lower at larger `n` — is refuted: the
-rate itself scales, over an 8× width range, with R² > 0.98 on both arms.
+rate itself scales over an 8× width range on both arms. Hardening from 4 to 8
+width points moved the exponents up and the R² down (more points, more honest
+spread); **the 8-point figures are the ones to cite.**
 
 ## P3 — required precision is linear in depth, and now has a number
 
@@ -65,8 +67,8 @@ Haar-orthogonal initialization at matched scale does **not** rescue the collapse
 | 128 | 18, 18, 12 | 16, 12, 14 | 0.410 | **0.694** |
 | 256 | 12, 10, 11 | 13, 11, 11 | 0.719 | **1.074** |
 
-At production width orthogonal init is **worse**, decaying at `n^0.927` against
-He's `n^0.639`.
+At production width orthogonal init is **worse**, decaying at `n^1.049` against
+He's `n^0.697` (8-point fits).
 
 The predeclaration stated the two readings in advance: if orthogonal init
 survives, the obstruction belongs to the Gaussian ensemble (narrow); if it also
@@ -133,6 +135,87 @@ layer**, which use every point and report R². The median-ratio figures are
 superseded.
 
 ---
+
+## THE BRIDGE — one quantity governs G1 and G7, and it pulls both ways
+
+**Hardened to 8 width points (32, 48, 64, 96, 128, 160, 192, 256), 3 replicates
+each, both arms.**
+
+| n | 32 | 48 | 64 | 96 | 128 | 160 | 192 | 256 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| He: decades/layer | 0.185 | 0.183 | 0.289 | 0.468 | 0.410 | 0.546 | 0.574 | 0.719 |
+| He: `r_eff` at L=1 | 18.9 | 28.8 | 39.0 | 58.2 | 77.4 | 97.4 | 116.8 | 155.3 |
+| He: `r_eff/n` | 59.0% | 60.0% | 61.0% | 60.6% | 60.5% | 60.9% | 60.8% | **60.7%** |
+| Orth: `r_eff/n` | 100% | 100% | 100% | 100% | 100% | 100% | 100% | **100%** |
+| per-layer rank ratio γ | 0.93 | 0.90 | 0.87 | 0.87 | 0.88 | 0.88 | 0.88 | 0.87 |
+
+```
+He   :  decay ∝ n^0.697 (R² = 0.935)    r_eff(n, L=1) ∝ n^1.011 (R² = 0.9999)
+Orth :  decay ∝ n^1.049 (R² = 0.955)    r_eff(n, L=1) ∝ n^1.000 (R² = 1.0000)
+```
+
+**The effective rank of the propagated state is `r_eff(n, L) ≈ c·n·γ^L`**, with
+`c ≈ 0.607` (He) or `1.000` (orthogonal) and `γ ≈ 0.88` on both arms.
+
+The orthogonal arm is the control that makes this readable: orthogonal `W` gives
+`C = 2·WᵀW = 2I` at layer 1, so `r_eff/n` is **exactly** 100% — perfect isotropy
+— and it *still* degenerates at `γ ≈ 0.89`. Starting from a perfectly conditioned
+state buys nothing. **The per-layer rank loss is entirely the ReLU's doing.**
+
+### The two obstructions are the same knob, read in opposite directions
+
+- **G1 (the O(1/n) dilution law)** is the `n` direction. A fixed-rank-`r`
+  summary captures roughly `r/r_eff` of the trace, and `r_eff ∝ n^1.011`, so the
+  captured share **vanishes as 1/n**. That is the dilution law, derived rather
+  than observed. Check against the corpus's own recorded numbers for rank-2:
+
+  | | predicted `2/r_eff` | corpus-recorded |
+  |---|---:|---:|
+  | n = 4 | 82% | **88.4%** |
+  | n = 256 | 1.3% | **3.02%** |
+
+  Same order and the right trend, from an independent measurement. The
+  prediction sits *below* both recorded values, which is the expected direction:
+  `r/r_eff` assumes a flat spectrum, and real spectra are top-heavy.
+
+- **G7 (the spectral collapse)** is the `L` direction. The same `r_eff` falls as
+  `γ^L`, driving `λ_min` below representable.
+
+**They pull opposite ways on one quantity.** A cheap fixed-rank approximation
+needs `r_eff` **small**. A numerically defined exact state needs `r_eff`
+**large**. Width raises it; depth lowers it.
+
+The competition sits at `n = 256, L = 32`, and the campaign needed both at once:
+
+```
+r_eff(256, 1)  ≈ 155   -> far too large for rank-2 to capture  (G1 kills it)
+r_eff(256, 32) ≈ 2.6   -> small enough, but unreachable        (G7 kills the path)
+```
+
+**That is the cogent statement.** The state *does* become effectively low-rank by
+depth 32 — `r_eff ≈ 2.6` of 256 — which is exactly the regime where the corpus's
+whole fixed-rank family would have worked. It cannot be exploited because the
+trajectory to get there passes through a middle where the exact state is not
+representable in double precision, and a fixed-rank approximation applied at the
+*start*, where it is affordable, captures 1.3% of the trace.
+
+**Every G1 corpse and the entire G7 group are two shadows of `r_eff ≈ c·n·γ^L`.**
+
+### Explicitly not a solve
+
+This does not produce an estimator, and it does not move `v` or `c`. `t2`'s 311×
+and the 1.40× analytic-control cap are untouched, and the score budget is
+unchanged at ~2.2×. What it produces is a **single two-parameter law that
+explains why two independently-derived obstruction families, previously filed
+under different causes across ~15 corpses, are the same wall approached from two
+sides** — and why no `(n, L)` the competition offers satisfies both.
+
+**Scope.** `r_eff(n,1) ∝ n` is measured at 8 widths with R² = 0.9999 and is
+solid. `γ` is fitted over the healthy prefix (layers 1–12 at width 256), so
+`r_eff(256, 32) ≈ 2.6` is an **extrapolation ~20 layers past the data** and is
+stated as a prediction, not a measurement. The decay-rate exponent moved from
+`n^0.639` (4 points, R² 0.992) to `n^0.697` (8 points, R² 0.935) under
+hardening — more points, more honest spread; quote the 8-point figure.
 
 ## What this licenses for the paper
 
