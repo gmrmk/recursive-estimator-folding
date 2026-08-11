@@ -1,16 +1,19 @@
 # Phase-1 Algorithmic Contribution writeup — draft v12
 
-Status: DRAFT v12, 2026-08-11. **v11 is a correction release against the v9
-filed on 2026-08-10**, and every change it makes is a defect we found in our own
-filed text after filing. The four errata are stated in full in §0 below and
-marked inline at each site (E1 §3 table and §3f, E2 §4, E3 §3d, **E4 §3e/§3f**).
-E1–E3 change numbers and one recommendation without changing a conclusion.
-**E4 changes a conclusion**: the paper's central synthesis was stated as a
-theorem, it is not one, and its corrected status is open. We would rather file
-a weaker paper that is true than a stronger one that is not, and we would rather
-say so on the first page than in a footnote. We are re-filing rather than
-leaving them standing, because a paper whose §4 tells other people not to carry
-dispositions by wording cannot carry its own claims that way.
+Status: DRAFT v12, 2026-08-11. **A correction release, and a restructure.**
+v10–v11 corrected five defects we found in our own v9 after filing it; v12
+reorganises the document around what the algorithmic-contribution guidelines
+actually judge — understanding of white-box estimation, mechanistic content, and
+full transparency about LLM involvement — rather than around a score.
+
+The five errata are stated in full in §0 and marked inline at each site
+(E1 §3 table and §3f, E2 §4, E3 §3d, **E4 §3e/§3f**, **E5 §3e(5)**). E1–E3 and
+E5 change published numbers and one recommendation. **E4 changes a conclusion**:
+the central synthesis was stated as a theorem, it is not one, and its corrected
+status is open. We would rather file a weaker paper that is true than a stronger
+one that is not, and we would rather say so on the first page than in a
+footnote — a document whose §4 tells other people not to carry dispositions by
+wording cannot carry its own claims that way.
 
 v9, 2026-08-10: adversarial-closure pass — new §3f (the Gen-7
 twenty-agent campaign, the seed-side SVD-V null, the 7/7 re-litigated kill
@@ -81,10 +84,10 @@ being turned on ourselves under adversarial conditions.
 
 ### 0. Errata against the v9 filed 2026-08-10
 
-Three defects in the filed text, found by our own post-filing audit. None
-changes a conclusion of this paper. Two change a published number and one
-retracts advice we gave the field, so all three are stated here rather than
-patched quietly. Each is also marked at its site.
+**Five** defects in the filed text, all found by our own post-filing audit.
+Three change a published number, one retracts advice we gave the field, and
+**one changes a conclusion**. All five are stated here rather than patched
+quietly, and each is also marked at its site.
 
 **E1 — the 0.00% f64-lane figure came from a structurally void detector
 (§3 ledger table, §3f).** `run_m183_falsifier.py:58` reads
@@ -443,10 +446,16 @@ DERIVE the empirical wall rather than merely measure it:
    64,512² bitwise and the ±1/16 shells become exactly sign-balanced —
    and the equal-FLOP sampling floor σ²/N is then read directly from the
    measured field variance. This is a gated lower-bound ATTEMPT, not a
-   minimax-optimality proof: it places the champion within ~2x of the
-   per-forward point-evaluation floor σ²/64,512 (pooled **1.79x**; per net
-   1.63 / 2.37 / 1.37) and at **0.90x** the distinct-direction bound
-   σ²/32,256, robust within ~2x of its stated assumptions, with
+   minimax-optimality proof. **Erratum E5: all three ratios below were
+   computed at n = 3 and are retired.** At n = 80 (`experiments/gm_s17_reuse/`)
+   the distinct-direction ratio is **1.0044, CI [0.8450, 1.1639]** — a band
+   straddling parity, so the champion does *not* sit below this bound; the
+   pooled ratio is **2.01, CI [1.69, 2.33]**, which straddles the class
+   boundary at 2.0, so the gate call is unresolved rather than obtained. The
+   retired n = 3 figures were: pooled 1.79x (per net 1.63 / 2.37 / 1.37) against
+   the per-forward floor σ²/64,512, and 0.90x against the distinct-direction
+   bound σ²/32,256. Read the corrected statement as: champion and floor are
+   **indistinguishable at the resolution we have**. With
    N_eff ≈ 38k effective independent draws (~60% of the 64,512 forwards:
    an antipodal pair carries correlated even-harmonic information, so a
    pair of forwards is worth ~1.2 draws, not 2). Second signal: the
