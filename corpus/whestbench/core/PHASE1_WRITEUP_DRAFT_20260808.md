@@ -100,9 +100,19 @@ the fourth is a measured screen and is labelled as one.**
    close arbitrary reweighting — not weights that depend on the realised
    network, not adaptive rules (which would need their own unbiasedness proof),
    not changes to the point set, and not non-zonal criteria such as the realised
-   output covariance. *(Strict uniqueness holds only where the kernel is
-   definite: verified at degrees 4, 6, 8; **false at degree 2**, where the design
-   is exact and every per-frame reweighting is free; open above.)*
+   output covariance.
+   **Uniqueness is weaker still, and weakest on the set we actually deploy.**
+   On the 32,256-point base set, uniform is the *unique* minimiser only where the
+   kernel is positive definite — verified at degrees 4, 6 and 8; **false at
+   degree 2**, where the design is exact and every per-frame reweighting is free;
+   open above. On the **antipodally doubled 64,512-point set the estimator
+   actually uses**, uniqueness fails at *every* even degree: the even-degree
+   kernel has the block form `J₂ ⊗ K`, whose kernel contains every antipodally
+   antisymmetric perturbation, so the minimum is attained on a
+   32,256-dimensional affine set containing uniform. **Uniform is therefore *a*
+   minimiser of our deployed design, never the unique one.** That does not weaken
+   the closure — a global minimiser is all the closure needs — but "the
+   constrained minimiser" would be the wrong phrase and we no longer use it.
 2. **A whole family of truth-free estimators is dead by algebra.** If an
    estimator anchors on its own uniform frame mean, the sum-one GLS solution is
    uniform *identically* — for every ridge and every shrinkage, with no
@@ -282,12 +292,27 @@ Monte-Carlo truth on He-initialized networks (MC noise floor 1-2e-7, i.e.
 | sampling estimator (this submission), same budget | ~2.5e-7 |
 
 Making the covariance exact buys a factor of ~7.5 over the diagonal closure.
-The remaining 384x to sampling (340.7x against the graded raw 2.818e-7,
-524x against adjusted 1.832e-7 — the denominator matters, so we state all
-three) is third-and-higher-cumulant structure that
-**no Gaussian-moment closure can represent at any compute multiplier** —
-even priced at a zero-cost floor the exact closure trails by more than an
-order of magnitude.
+
+**The like-for-like gap is `340.9×`, raw against raw** (`9.6055e-5` closure
+against the graded raw `2.818e-7`). That is the only ratio in which numerator
+and denominator are the same quantity, and it is the one to quote.
+
+*Erratum E7.* Earlier drafts also printed "524× against adjusted 1.832e-7."
+**That figure mixes units** — it divides a *raw* closure MSE by an *adjusted*
+champion score — and it overstates the gap by an order of magnitude relative to
+a true adjusted comparison. If the closure were granted the most favourable
+possible multiplier (the `0.1` floor), adjusted-against-adjusted is
+`9.6055e-6 / 1.832e-7 = ` **`52.4×`**, not 524×. Both figures are stated here
+so the arithmetic can be checked.
+
+The gap is third-and-higher-cumulant structure that this Gaussian-moment closure
+does not represent. **Scope, corrected:** earlier drafts said "no Gaussian-moment
+closure can represent at any compute multiplier." That is a universal claim and
+we did not prove it. What we measured is that *this* implementation — a
+pairwise-exact, assumed-Gaussian recurrence as built — trails by the factor
+above, and that granting it a zero-cost floor does not close the gap. It kills
+this implementation as a competitive estimator. It does not prove that no
+Gaussian-informed method can work.
 
 **The design principle this yields:** exact Gaussian structure pays when
 *subtracted* (our moment-tangent control: -19.8% adjusted on its lineage) and
