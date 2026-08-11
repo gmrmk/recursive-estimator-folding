@@ -257,11 +257,23 @@ Five components, each independently measured:
    ReLU.
 5. **Moment-tangent control**, frozen coefficient λ = 0.9807112198896164.
 
-Measured compute profile: 2.86 s mean wall per MLP (max 4.11 s against a 60 s
-cap), of which residual — the uninstrumented remainder — is **0.080 s mean,
-0.137 s max**: 4.5% of scored C on average, 7.7% of adjusted score in the
-worst case at C/B 0.650, conditional on λ = 1e11 remaining fixed (Rules §5.3
-reserves changes). Essentially all arithmetic is instrumented.
+Measured compute profile, **with the provenance of each number stated, because
+these are not all from the same machine** (Erratum E9):
+
+- **Local measurements, on our own T4 development host — NOT hosted grader
+  timings:** 2.86 s mean wall per MLP, 4.11 s max against a 60 s cap; residual
+  (the uninstrumented remainder) 0.080 s mean, 0.137 s max. Earlier drafts
+  presented these without provenance, which invited reading them as grader
+  figures. Wall time is hardware-dependent and these do not transfer.
+- **Hosted, from the graded ledger for `#326094`:** adjusted 1.832e-7 on 50/50
+  public MLPs with 0 failures, at C/B 0.650.
+
+The residual share — 4.5% of scored C on average, 7.7% of adjusted score in the
+worst case at C/B 0.650 — is derived from the local timings and therefore
+inherits their machine dependence. It is conditional on λ = 1e11 remaining fixed
+(Rules §5.3 reserves changes), and the organizers have stated they are still
+deciding whether Phase 2 keeps residual-time accounting at all. Essentially all
+arithmetic is instrumented; that claim rests on the FLOP census, not on timing.
 
 ### 2. The non-Gaussianity wall (the main scientific contribution)
 
@@ -421,10 +433,27 @@ this task.
 ### 3c. The marginal-value map (new)
 
 Single-component ablations of the submitted estimator on a cached-truth
-panel (paired seeds, CIs): exact radial conditioning 2.14x [1.51, 3.04],
-the spherical design 2.02x [1.45, 2.83], antipodal pairing 1.91x [1.41,
-2.56] — three multiplicative variance pillars, each exact arithmetic or
-proven locally optimal. Terminal folding is exactly MSE-neutral (ratio
+panel (paired seeds, CIs): the spherical design 2.02x [1.45, 2.83],
+antipodal pairing 1.91x [1.41, 2.56].
+
+**Erratum E8: the "exact radial conditioning 2.14x" figure was a bundled
+attribution and is withdrawn.** The `2.141x` arm ablates *two* things at once —
+it replaces the Kerdock frames with iid points **and** disables exact radial
+conditioning — so it cannot be read as the value of radial conditioning. The
+committed isolated factors are **frame design 2.01643x** and **residual radial
+improvement beyond the retained degree-2 radial control 1.06183x**
+(`wc1_results.json`, `derived_isolated_ratios`). The second number is small for
+a reason the companion P5 derives exactly: the ablated arm still retains the
+variance-optimal degree-2 member of the same class-A family, which alone removes
+99.9861% of the radial second-moment excess. So radial conditioning is doing
+real but *marginal* work on top of a control that was already nearly optimal —
+not carrying a 2.14x pillar.
+
+Also withdrawn with it: "three multiplicative variance pillars, each exact
+arithmetic or **proven locally optimal**." Two of the three were never proven
+locally optimal, and the multiplicativity was never tested factorially.
+
+Terminal folding is exactly MSE-neutral (ratio
 1.00003) while saving 4.8% of billed budget; structural pruning is
 MSE-neutral (1.014 [0.98, 1.05]) while saving 25.1% — and the adjusted-score
 arithmetic makes pruning strictly optimal (removing it is 1.33x worse
