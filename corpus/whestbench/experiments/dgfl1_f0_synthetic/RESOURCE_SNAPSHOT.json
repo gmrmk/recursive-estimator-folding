@@ -1,0 +1,27 @@
+{
+  "captured_local": "2026-08-11T17:36:35.5001660-05:00",
+  "method": "native read-only Windows CIM probe",
+  "skill_detector_status": "blocked: bundled Python lacks optional psutil dependency; no package installed",
+  "cpu": {
+    "physical_packages": 1,
+    "logical_processors": 16
+  },
+  "memory": {
+    "total_bytes": 41689669632,
+    "available_bytes_at_capture": 8147824640
+  },
+  "disk_c": {
+    "total_bytes": 1023107596288,
+    "free_bytes_at_capture": 246820446208
+  },
+  "gpu": {
+    "name": "AMD Radeon (TM) Graphics",
+    "reported_adapter_ram_bytes": 1073741824,
+    "used_by_f0": false
+  },
+  "decision": {
+    "normative_execution": "serial",
+    "parallel_test_scope": "deterministic one-, two-, and three-shard ownership simulations only; no processes spawned and no speed claim",
+    "reason": "F0 arrays are tiny; deterministic semantics matter more than throughput"
+  }
+}
