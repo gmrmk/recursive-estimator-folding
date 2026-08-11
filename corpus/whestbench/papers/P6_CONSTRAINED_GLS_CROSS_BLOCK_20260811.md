@@ -44,12 +44,18 @@ about how to deviate from its own mean: a fixed point, not a solution.
 
 The measurement is a kill confirmation with a sharp predeclared falsifier that did not fire: panel ratio
 **1.0000000000000073**, per-net 1.0000000000 on all three nets, 48/48 rotations within **2.9e-13** of 1,
-`max |w - 1/126| = 1.46e-15`, an independent second solver at **1.0000000000000069**, a permutation null at
-**1.0000000000000597** whose power is proved by a positive control that destroys **88.5 %** of the genuine oracle's
-log-gain (0.126193 -> 0.788288) [O, `experiments/m192_selfanchor_twosided/results.json`]. Because the self-anchored
-covariance equals `P C_m192 P` to **6.40e-15** relative Frobenius error over 384 fits, that run is an exact isolation
-experiment: **true `A` with true `b` gives 0.126193 (87.38 % reduction); true `A` with `b = 0` gives exactly 1.000000.**
-All of the M192 headroom is carried by the 126-vector `b`, and none of it by the 126x126 contrast block.
+`max |w - 1/126| = 1.46e-15`, and an independent second solver at **1.0000000000000069**
+[O, `experiments/m192_selfanchor_twosided/results.json`]. (Draft 1 also cited a permutation null at
+**1.0000000000000597** "whose power is proved by a positive control." **Withdrawn** — §2.11 now shows that Corollary 1
+forces that null to return uniform for any input whatsoever, so it carries no independent signal. The positive control
+is real but tests a different arm.) Because the self-anchored covariance equals `P C_m192 P` to **6.40e-15** relative
+Frobenius error over 384 fits, that run is an exact isolation experiment: **true `A` with true `b` gives 0.126193
+(87.38 % reduction); true `A` with `b = 0` gives exactly 1.000000.**
+
+All of the M192 headroom **that distinguishes the solution from uniform** is carried by the 126-vector `b`; the
+126×126 contrast block carries none of it **on its own**, though it is the metric that converts `b` into a weight
+direction and it does change `w` whenever `b ≠ 0` (§1.4). The qualifier is load-bearing and draft 1's abstract dropped
+it — which is the same error class this paper opens by correcting in its own commissioning statement, committed twice.
 
 This unifies rather than extends the failure list. M193 contaminates `b` additively with `p Pq`; M194 estimates it at
 about 5x noise-to-signal; M195 and M197 pay full-Kerdock design structure to buy an estimate of it; the self-anchor
@@ -135,9 +141,15 @@ magnitude, never through the linear term, so Theorem 1(iii) survives the shrinka
 nuance already flagged in `M192_M195_NOTES.md`: "With trace shrinkage, even a pure rank-one addition can alter the ridge
 scale" [R].
 
-**Not a claim that `b = 0` is the only way to reach uniform.** If `A` is singular on `V` and `b` lies in `ker A`, the
-minimiser is also uniform. Under any strictly positive ridge that case is empty, which is why (iv) is stated with the
-positive-definiteness hypothesis.
+**Not a claim that `b = 0` is the only way to reach uniform.** Draft 1 read: "If `A` is singular on `V` and `b` lies
+in `ker A`, the minimiser is also uniform." **That is false and contradicts §2.4.** If `0 ≠ b ∈ ker(A|_V)`, take
+`v = −t b`: then `J(v) = −(2t/√p)‖b‖² + t² bᵀA b = −(2t/√p)‖b‖² → −∞`, so **no minimiser exists at all**, uniform or
+otherwise. The sentence confused the pseudo-inverse solver's output (`A⁺b = 0`) with the argmin.
+
+Corrected: if `A|_V` is singular and `b` is **orthogonal to** `ker(A|_V)`, the argmin is the whole affine set
+`1/p + ker(A|_V)`, which contains uniform — so uniform is *a* minimiser without `b = 0`. If `b` has a component in
+`ker(A|_V)`, the objective is unbounded below and there is no minimiser. Under any strictly positive ridge both cases
+are empty, which is why (iv) is stated with the positive-definiteness hypothesis.
 
 **Not a statement about biased estimators.** The whole reduction is driven by the unbiasedness constraint `1^T w = 1`.
 Drop it and `alpha` re-enters immediately. The theorem says that unbiasedness is precisely what makes the common block
@@ -407,11 +419,20 @@ All from `experiments/m192_selfanchor_twosided/results.json` unless marked, and 
 - **The second solver is independent.** A2 runs the same construction through M194's separately written projected-block
   code and returns 1.0000000000000069 [O]. Agreement here is not a re-run: the two solvers share no line of code, only
   Theorem 1.
-- **The null has power.** A3's 1.0000000000000597 would be uninterpretable alone — a dead probe and a real null look
-  identical. A4 applies the same per-row output-index shuffle inside the frozen truth-trained M192 oracle and moves the
-  panel from 0.126193 to 0.788288. In log-gain terms, `ln 0.7882882297648867 = -0.237891` against
-  `ln 0.12619260077870575 = -2.069946`, so the shuffle destroys `1 - 0.237891/2.069946 =` **88.51 %** of the genuine
-  oracle's log-gain [D, arithmetic on committed numbers]. The control has power; A3 is a real null [O + D].
+- **The null has NO power, and this paper's own Corollary 1 is why** (corrected, draft 2). Draft 1 claimed A3 was "a
+  real null" whose power was lent by the A4 positive control. **That is wrong.** A3 builds its covariance by
+  row-centring the shuffled block before the second moment — `residual = block - block.mean(axis=0); c = residual @
+  residual.T / n` — which is exactly `P S' P` for the shuffled `S'`. By Corollary 1, `c 1 = 0` identically for *any*
+  `S'`, so `w = 1/p` for **every** input and **every** shuffle. A3 could not have returned anything else. Its
+  `max_abs_weight_minus_uniform` of 8.847e-17 is in fact *smaller* than A1's, which is the signature of an identity
+  being re-measured rather than a hypothesis being tested.
+  A4 does not rescue it: A4 shuffles a *different* construction (`err = fm[:,train] - truth[train]`, where `b != 0`)
+  and therefore establishes only that the per-row shuffle is destructive on a `b != 0` covariance — 0.126193 →
+  0.788288, i.e. `1 - 0.237891/2.069946 =` **88.51 %** of the genuine oracle's log-gain [D]. That is a true statement
+  about A4 and says nothing about A3.
+  **No permutation null can have power against the self-anchored arm**, because the thing being permuted is
+  annihilated by the projector before it can matter. The genuinely independent signals in this run are A2 (a second
+  solver sharing no line of code) and A5 (the contrast arm), not A3.
 - **The decisive pair.** By (2.10) and row 8 of §2.10, A1 ran the frozen solver on the **exact true contrast block** with
   `b = 0`:
 
@@ -525,7 +546,10 @@ Status change: **killed -> killed**, reframed.
 
 `grep` for `selfanchor` over `headroom/fold_ledger.json` returns zero matches, and no candidate record in the ledger's 267
 entries refers to this arm; the only id containing `two_sided` is the unrelated `m91_two_sided_cycle_sketch` [O]. A
-corpus-wide `grep -rl "m192_selfanchor"` over `.md` and `.json` returns exactly one file, the arm's own `results.json` [O].
+corpus-wide `grep -rl "m192_selfanchor"` over `.md` and `.json` returns **three** files: this paper,
+`papers/P4_UNIFORM_WEIGHT_OPTIMALITY_20260811.md` (which treats the arm as a sibling result), and the arm's own
+`results.json` [O, re-run 2026-08-11]. Draft 1 said "exactly one file" and tagged it [O]; it was wrong. The
+bookkeeping conclusion is unaffected — `fold_ledger.json` still contains zero occurrences of `selfanchor`.
 The arm's evidence therefore lives entirely in `experiments/m192_selfanchor_twosided/` (`PREDECLARATION.md`, `VERDICT.md`,
 `results.json`, two run logs, the runner and the test suite). This is a bookkeeping gap, not an evidential one — see
 **[GAP-3]**.
