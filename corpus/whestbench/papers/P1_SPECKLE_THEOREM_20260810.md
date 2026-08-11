@@ -36,7 +36,7 @@ Internal research paper, draft 2. Date 2026-08-11 (draft 1: 2026-08-10). Corpus:
 Opus / researcher sessions with no conversation memory. Status: **descriptive measured observations**, not a theorem
 and not a proof. Every numeric claim below is quoted
 verbatim from a committed artifact whose path is given inline and collected again in §5. Level tags, per the corpus
-evidence discipline (`corpus/whestbench/README.md`): **[O]** observed (a run in this corpus produced it), **[D]**
+evidence discipline (introduced here; note the corpus README does NOT contain this scheme, contrary to draft 1 — P4/P5/P6 now cite this section instead): **[O]** observed (a run in this corpus produced it), **[D]**
 derived (follows from observations by shown steps), **[R]** reported (a committed artifact says so; not re-derived
 here), **[A]** assumed (a stated modelling choice). No claim here is labelled above the level its artifact earned, and
 no minimax claim appears anywhere in this document.

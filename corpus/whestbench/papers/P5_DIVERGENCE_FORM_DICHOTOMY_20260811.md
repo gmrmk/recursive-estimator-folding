@@ -2,7 +2,7 @@
 
 Internal research paper, draft 1. Date 2026-08-11. Corpus: `corpus/whestbench`. Audience: future Opus / researcher
 sessions with no conversation memory. Status: **proof, with a measured pricing half that is explicitly not proved.**
-Level tags follow P1 and the corpus evidence discipline (`corpus/whestbench/README.md`): **[O]** observed (a committed
+Level tags follow P1 and the corpus evidence discipline (defined in P1 §0, `papers/P1_SPECKLE_THEOREM_20260810.md` lines 39-43 — the paper that introduced them; the corpus README does NOT define this scheme, contrary to draft 1): **[O]** observed (a committed
 artifact in this corpus contains it, or this session read it out of committed code), **[D]** derived (follows from
 observations or from stated mathematics by steps shown here), **[R]** reported (a committed artifact says so and this
 paper did not re-derive it), **[A]** assumed (a stated modelling or definitional choice). Firewall: read-only. No
@@ -72,17 +72,42 @@ Two targets, related by an exactly known constant:
 *Proof.* Polar factorization `X = R U` with `R = ||X|| ~ chi_d` independent of `U ~ Unif(S^{d-1})`; positive
 1-homogeneity gives `f(Ru) = R f(u)` pointwise for every `u`, so `E[f(X)] = E[R] E[f(U)]`. [D]
 
-At `d = 256`, `m_256 = 15.984382666607859` recomputed here from `lgamma`, matching the frozen constant
-`MEAN_CHI_256 = 15.98438266660852747` in `experiments/v31_guards/package_source/kerdock_v3_estimator.py` line 18 to
-6.7e-13 relative (the frozen literal carries more digits than double precision resolves; both round to the same
-float64) [O + D]. The champion's design directions are the Kerdock frame scaled by exactly this radius (line 131,
+At `d = 256`, `m_256 = 15.98438266660852747777519742115107395022...` (exact, 40 dps). The frozen constant
+`MEAN_CHI_256 = 15.98438266660852747` in `experiments/v31_guards/package_source/kerdock_v3_estimator.py` line 18
+reproduces it to **4.9e-17 relative** — i.e. the frozen literal is correct to every digit it carries [O + D].
+
+> **CORRECTED (draft 2).** Draft 1 read: "`m_256 = 15.984382666607859` recomputed here from `lgamma`, matching the
+> frozen constant … to 6.7e-13 relative (the frozen literal carries more digits than double precision resolves; both
+> round to the same float64)." **Three errors in one sentence**, all verified this session:
+> 1. `6.679e-13` is the **absolute** difference, not the relative one; the relative difference is **4.1785e-14**.
+> 2. "Both round to the same float64" is **false**: the two doubles are `402ff801013faa71` and `402ff801013fa8f9`,
+>    **376 ulps apart**.
+> 3. The parenthetical blamed the frozen literal for carrying excess digits. It has this backwards — the literal is
+>    accurate to `4.9e-17`, and it is **this paper's own `lgamma` recomputation** that is low, by `4.18e-14`
+>    relative. That is `lgamma` roundoff, not a discrepancy in the artifact. The champion's design directions are the Kerdock frame scaled by exactly this radius (line 131,
 `multiply(output, MEAN_CHI_256 / 16.0)`), which is L0 implemented as an estimator [O].
 
 ### 2.2 What "divergence-form rewrite" means (so the claim can be falsified)
 
-**D1 (admissible field).** An *admissible field* is a map `Phi : (R^d \ {0}) x R x R^d -> R^d`, fixed independently of
-`f`, continuous in all slots, locally Lipschitz in the first, and of polynomial growth, applied pointwise as
-`V_f(x) = Phi(x, f(x), grad f(x))`.
+**D1 (admissible field) — STRENGTHENED in draft 2; see the note below.** An *admissible field* is a map
+`Phi : (R^d \ {0}) x R x R^d -> R^d`, fixed independently of `f`, **locally Lipschitz jointly in all three slots**, of
+polynomial growth in `(x, s, p)` at infinity, and **`o(|x|^{1-d})` as `x -> 0` with locally integrable `x`-gradient**,
+applied pointwise as `V_f(x) = Phi(x, f(x), grad f(x))`.
+
+> **Why D1 was strengthened.** Draft 1 required only "continuous in all slots, locally Lipschitz in the first," with no
+> condition at the origin. Two independent audits found the same two holes, and both break the dichotomy's
+> exhaustiveness rather than its two branches:
+>
+> 1. **No control at the origin admits a third singular source.** `Phi(x, s, p) = s·x/|x|^(d+1)` is admissible under
+>    draft-1 D1, has no `p`-dependence at all — so the non-degeneracy condition holds trivially and the K-deposit
+>    vanishes identically — yet `div V_f` carries a Dirac mass at the origin. That is a singular term arising from
+>    neither class. The `o(|x|^{1-d})` bound removes it.
+> 2. **Continuity in `(s,p)` does not make the composition BV.** D3 infers `V_f ∈ BV_loc` from L1, but L1 is a
+>    statement about `f` and `grad f`, not about `Phi(x, f, grad f)`. Joint local Lipschitzness supplies the missing
+>    step and makes `V_f` locally Lipschitz on each activation cell.
+>
+> Both branches (A) and (B) are unaffected — they were proved under hypotheses that already imply what is now written
+> into D1. What was genuinely unproved in draft 1 is the **"no third class"** clause, which is the load-bearing one.
 
 **D2 (divergence-form rewrite).** A *divergence-form rewrite* of the target is a pair `(Phi, mu)` with `Phi` admissible
 and `mu` a fixed weight (Gaussian density, Lebesgue measure on a ball, or a surface measure obtained by applying the
@@ -134,6 +159,11 @@ Two hypotheses, both stated so they can be attacked:
 >
 > There is no third class. The alternative is a condition and its negation; and for `f` in `F_d` the **only** source of
 > a singular term in the distributional divergence of any admissible field is the jump of `grad f` across `K`.
+>
+> *This last clause holds under D1 as strengthened in draft 2, and only under it.* Without the `o(|x|^{1-d})` bound at
+> the origin there is an explicit third source (a Dirac mass at 0), and without joint local Lipschitzness the
+> composition need not be `BV_loc` at all, so the ac-plus-jump decomposition the argument relies on is unavailable.
+> Draft 1 asserted this clause under weaker hypotheses than it needs.
 
 > **Corollary (Rao-Blackwell).** Among unbiased estimators of `T_G(f)` of the form `(1/N) sum_i w(R_i) R_i f(U_i)`,
 > with `(R_i, U_i)` the polar decomposition of iid Gaussians and `E[w(R) R] = m_d`, the variance is minimized exactly
@@ -149,7 +179,10 @@ Two hypotheses, both stated so they can be attacked:
 It is a statement about **rewrites of the target integral**, not about estimators. It does not say that class-B
 estimators are expensive — that is §4, and it is measured. It does not exclude estimators outside the divergence-form
 shape (harmonic expansions, control variates from other sources, multi-fidelity, seed-side extraction); §5 lists them.
-Part (A)'s collapse uses hypotheses (U) and (L); part (B) and the exhaustiveness use neither.
+Part (A)'s collapse uses hypotheses (U) and (L). Part (B) uses neither. The exhaustiveness uses neither (U) nor (L)
+either — but it *does* use the regularity now written into D1, namely joint local Lipschitzness in all three slots and
+the `o(|x|^{1-d})` bound at the origin, without which there is a third class. Draft 1 said the exhaustiveness "uses
+neither" full stop, which read as needing no hypothesis on `Phi` at all; that was the error.
 
 ---
 

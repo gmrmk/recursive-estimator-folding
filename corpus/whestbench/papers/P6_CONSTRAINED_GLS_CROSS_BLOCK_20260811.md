@@ -5,7 +5,7 @@ sessions with no conversation memory. Status: **proof, with measured confirmatio
 whose central claim is an identity rather than a measurement: §2 stands alone and can be checked with a pencil. Every
 numeric claim is quoted from a committed artifact whose path is given inline and collected again in §5, or is arithmetic
 performed on such numbers and shown in place. Level tags, per the corpus evidence discipline
-(`corpus/whestbench/README.md`): **[O]** observed (a run in this corpus produced it), **[D]** derived (follows by steps
+(defined in P1 §0, `papers/P1_SPECKLE_THEOREM_20260810.md` lines 39-43 — the paper that introduced them; the corpus README does NOT define this scheme, contrary to draft 1): **[O]** observed (a run in this corpus produced it), **[D]** derived (follows by steps
 shown here), **[R]** reported (a committed artifact says so; not re-derived here), **[A]** assumed (a stated modelling
 choice). Where a step needs a fact this corpus does not contain, it is marked **[GAP]** with the check that would close it.
 

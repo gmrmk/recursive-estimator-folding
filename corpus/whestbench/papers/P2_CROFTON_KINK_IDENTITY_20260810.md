@@ -19,7 +19,10 @@ estimator over random lines whose breakpoints are enumerated exactly rather than
 We verified the identity at machine precision — structural checks to **6.7e-16**, two structurally distinct unbiased transect estimators,
 3 predeclared plus 20 fresh random nets — then killed the estimator it induces: on the predeclared width-64 depth-8 screen its
 variance-per-FLOP is **176,860× worse** than Monte Carlo against a predeclared kill line of 100×. The failure is intrinsic, not an
-implementation artifact: with a free oracle for every crossing and jump the variance factor alone is still ≈196×. The identity is an
+implementation artifact: with a free oracle for every crossing and jump the variance factor alone is still
+**196.0 / 173.3 / 199.9× across seeds 404 / 505 / 606, geometric mean 189.4×** [O, `s9_results.json` `stage_B`].
+(Draft 1 quoted "≈196×" here and in §5 — that is seed 404's value alone, presented without attribution as a
+campaign-level figure. Corrected draft 2; §3.1's per-seed attribution was already right.) The identity is an
 analysis instrument, not an estimator.
 
 ## 1. The identity
@@ -212,7 +215,8 @@ geometry explains a network-level Gaussian quantity. **A substitutable exact tar
 derivations, and `J = c‖a‖` factorizes into upstream and downstream chains, the same product structure the depth-transmission law (S8/S12)
 manipulates. **A machine-precision test oracle:** the §2.1 checks test any code claiming to enumerate a PL network's breakpoints along a
 line — affineness between knots catches a missed knot, `Δs_k = c_k|a_k·u|` catches a wrong chain — both float64-tight and needing no
-reference implementation. **A negative result with a stated price:** the ×196 zero-cost variance factor is the bar any
+reference implementation. **A negative result with a stated price:** the **≥173×** zero-cost variance factor
+(geomean 189.4×, per-seed 196.0 / 173.3 / 199.9) is the bar any
 structure-exploiting successor must clear (stratifying by layer, importance-sampling lines toward high-`|J|` cones), by ≥2 to reach even
 INCONCLUSIVE.
 

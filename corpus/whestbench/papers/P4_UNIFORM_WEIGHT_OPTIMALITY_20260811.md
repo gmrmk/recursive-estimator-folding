@@ -30,7 +30,7 @@
 Internal research paper, draft 1. Date 2026-08-11. Corpus: `corpus/whestbench`. Audience: future Opus / researcher
 sessions with no conversation memory. Status: **proof**, not a measurement — every step below is either an exact
 arithmetic identity shown in full, or a fact quoted from a committed artifact whose path is given inline and collected
-again in §6. Level tags follow P1 and the corpus evidence discipline (`corpus/whestbench/README.md`): **[O]** observed
+again in §6. Level tags follow P1 and the corpus evidence discipline (defined in P1 §0, `papers/P1_SPECKLE_THEOREM_20260810.md` lines 39-43 — the paper that introduced them; the corpus README does NOT define this scheme, contrary to draft 1): **[O]** observed
 (a run in this corpus produced it), **[D]** derived (follows from observations by shown steps), **[R]** reported (a
 committed artifact says so; not re-derived here), **[A]** assumed (a stated modelling choice). Where a step needed a
 fact the corpus does not contain, the paper says so and does not invent one.
@@ -588,8 +588,15 @@ lemma rather than a restatement of it. One further alignment worth recording: SE
 A with true b → 0.126193; true A with b = 0 → 1.000000) establishes that **the 126×126 contrast block A contributes
 nothing on its own under sum-one; it is only the metric that converts b into a weight direction** [O]. This paper adds
 the complementary half: the design's own contribution to b is exactly zero, at every degree, forever. Together they say
-that the entire M192 family lives or dies on one 126-vector, b = P C_e 1/√126, whose median realised norm is 1.26e-05
-[O] — and that no property of the design can move it.
+that the entire M192 family lives or dies on one 126-vector, b = P C_e 1/√126, whose median realised norm is
+**1.418e-04** [O] — and that no property of the design can move it.
+
+> **Normalisation, corrected (draft 2).** Draft 1 gave this norm as `1.26e-05`, which is M194's committed
+> `cross_norm = 1.2631074082393916e-05` — that is `‖b‖/√126` in M194's normalisation, not `‖b‖`. P6 §2.8 defines the
+> same object identically (`b = PCu` with `u = 1/√p · 1`) and gives the larger value; P6 is right, and the two papers
+> differed by exactly `√126 = 11.2250`. Verified: `1.2631074082393916e-05 × √126 = 1.4178345492983424e-04`.
+> The two normalisations are now stated once, here and in P6 §2.8, rather than silently disagreeing across two papers
+> of the same date in the same directory.
 
 **What is superseded rather than derived.**
 
