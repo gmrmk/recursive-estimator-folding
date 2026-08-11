@@ -1,4 +1,31 @@
-# P4 — Uniform weights are the constrained minimiser of the Kerdock design's quadrature error at every spherical-harmonic degree: a proof
+# P4 — Uniform weights are a global constrained minimiser of the Kerdock design's quadrature error at every spherical-harmonic degree, and the unique one only where the kernel is definite: a proof, corrected
+
+> ## ⚠ DRAFT 2 — corrected 2026-08-11
+>
+> Draft 1's title said "**the** constrained minimiser … at every degree," and its
+> Theorem (B) asserted strict uniqueness at every even ℓ ≥ 2. **The uniqueness
+> claim is false at ℓ = 2 and is withdrawn.** `G₂(0) = −1/255` and
+> `G₂(1/16) = 0` exactly, so `λ_top⁽²⁾ = λ_mid⁽²⁾ = 0` and `K₂` carries a
+> 126-dimensional kernel — every per-frame reweighting is free at degree 2. It
+> costs nothing operationally, since `Q₂(u) = 0`, but the theorem must say so.
+>
+> Three independent routes found this within hours and none was prompted by the
+> others: an adversarial partner's hostile audit, this corpus's own refinement
+> pass, and an exact-`Fraction` recomputation.
+>
+> **What survives is the load-bearing half.** Positive-semidefiniteness plus
+> constant row sums proves uniform is a **global** minimiser at every degree and
+> for every nonnegative zonal mixture of degrees — which is all that is needed
+> to close fixed zonal reweighting of the 126-frame point set. Strictness is now
+> claimed only at ℓ = 4, 6, 8, each verified in exact rational arithmetic; ℓ = 2
+> is a proved exception and ℓ ≥ 10 is explicitly open with its settling check
+> named.
+>
+> Also corrected in draft 2: the reweighting "prices" 43.3×/42.5× were shell
+> ratios of the wrong operator (the exact quadrature-form values are 43 and
+> 699,008/16,575); the abstract stated the 43× without its degree-4 scope, which
+> the body already retracted; and the degree-6 check is a transcription check,
+> not an independent one.
 
 Internal research paper, draft 1. Date 2026-08-11. Corpus: `corpus/whestbench`. Audience: future Opus / researcher
 sessions with no conversation memory. Status: **proof**, not a measurement — every step below is either an exact
@@ -41,10 +68,17 @@ decompose as constant(1) + frame-contrast(125) + within-frame(32,130) = 32,256 [
 126-frame set is **exactly** Q₄(u) = |G₄(1/16)|/42 = 65/88,424,448 = 7.350908201315546e-07, reproducing S6's
 `lam_top` to every printed digit, and equals the "three missing frames" of the 129-frame complete real MUB spread
 whose degree-4 error is exactly zero [D]. (3) The price of deviating from uniform is the Bragg suppression figure
-itself: a per-frame reweighting costs **43.3×** and a per-point reweighting **42.5×** the constant mode in S6's
-committed deviation-operator normalisation (exactly 43 and 699,008/16,575 = 42.1724× in the quadrature-form
-normalisation) [D]. The mode the design suppresses 42× is the mode the constraint pins, and every direction the weights
-could move in is priced at 42–43× the error being chased.
+itself: in the quadrature-form normalisation — the one that actually enters `Q_ℓ(u+δ)` — a per-frame reweighting
+costs **exactly 43×** and a per-point reweighting **exactly 699,008/16,575 = 42.1724×** the constant mode [D]. (S6's
+committed *deviation-operator* normalisation gives the shell ratios 43.3143 and 42.4805; those are **not** reweighting
+prices, because the `−1/m₄` shift they carry never enters `Q_ℓ`. Draft 1 led with them. They are retained below only
+to connect to the campaign's headline "42×".)
+
+**And the scope, which draft 1's abstract omitted and its own §3.7 and §5.5 state: the 43× is a degree-4 phenomenon
+only.** At degree 6 the same formulas give λ_mid/λ_top = 0.9701 and λ_bulk/λ_top = 0.9706 — a price of roughly **par**.
+Since the overwhelming majority of the realised error lives at even degrees ≥ 6, the deterrent against reweighting is
+**not** the 43×; it is that the gain there is exactly zero. Anyone quoting "43× penalty for reweighting" as an
+operational number is quoting a degree-4 figure for a degree-4 sliver of the error.
 
 What it closes, stated strictly: **none** of `m192_cross_output_gls`, `m193`, `m194`, `m195`, `m197` or `s2` is fully
 derived by this theorem, because in every case the criterion optimised was the *realised* network-output covariance,
@@ -109,10 +143,40 @@ Given precisely enough to be falsified. Two claims, one on the base set and one 
 >
 >     Q_ℓ(w) = Q_ℓ(u) + δᵀ K_ℓ δ  ≥  Q_ℓ(u),        for every ℓ ≥ 1.
 >
-> At every **even** ℓ ≥ 2 the inequality is **strict** for every δ ≠ 0, because K_ℓ has exactly three eigenvalues, all
-> positive. Hence, combining with (MASTER): for every target f with any even-degree content ℓ ≥ 2, uniform weights are
-> the **unique** minimiser over **W** of the Haar-averaged mean squared error — pointwise in f, not merely on average
-> over a function ensemble.
+> **CORRECTED (draft 2).** Draft 1 read: "At every **even** ℓ ≥ 2 the inequality is **strict** for every δ ≠ 0,
+> because K_ℓ has exactly three eigenvalues, all positive." **That is false at ℓ = 2**, by this paper's own §3.5
+> formulas, and the uniqueness clause that followed from it is withdrawn.
+>
+> **The ℓ = 2 exception.** The exact Gegenbauer recurrence at α = 127 gives `G₂(0) = −1/255` and `G₂(1/16) = 0`
+> exactly. Substituting into §3.5:
+>
+>     λ_top⁽²⁾ = 1 + 255(−1/255) + 32,000·0 = 0
+>     λ_mid⁽²⁾ = 1 + 255(−1/255) −    256·0 = 0
+>     λ_bulk⁽²⁾ = 1 − (−1/255)              = 256/255
+>
+> So K₂ has **two** distinct eigenvalues, not three positive ones, and a **126-dimensional kernel = span(F)**: *every*
+> per-frame reweighting is exactly free at degree 2. A target with pure degree-2 content therefore has infinitely many
+> minimisers. This is not numerical — each complete orthonormal frame integrates degree 2 exactly, which is precisely
+> the statement that the design is an exact 2-design.
+>
+> Operationally it costs nothing, because `Q₂(u) = 0`: uniform attains the global minimum at ℓ = 2, it is simply not
+> the unique attainer. But the clause must be restricted to the degrees where `K_ℓ ≻ 0`.
+>
+> **Corrected statement.** For even ℓ ≥ 4 the inequality is strict for every δ ≠ 0 **at the degrees verified below**
+> — ℓ = 4, 6 and 8, each checked in exact rational arithmetic from the `C_ℓ^(127)` recurrence [D]. For general even
+> ℓ ≥ 10, strictness follows if `255|G_ℓ(0)| + 256|G_ℓ(1/16)| < 1`, which is **[A]** on the decay of `G_ℓ` and is
+> **not proved here**. Settling check, named and not run: evaluate the exact `Fraction` recurrence for even ℓ up to
+> 40 and report `min_ℓ λ_mid⁽ℓ⁾`.
+>
+> Hence, combining with (MASTER): uniform weights are a **global minimiser** over **W** of the Haar-averaged mean
+> squared error at every degree, pointwise in f; and the **unique** minimiser exactly at those degrees where the
+> positively-weighted sum of the active `K_ℓ` is positive definite on `1^⊥` — established at ℓ = 4, 6, 8, false at
+> ℓ = 2, and open elsewhere.
+>
+> **Attribution.** The ℓ = 2 counterexample was found independently and simultaneously by three routes: the
+> adversarial partner's hostile audit (a `+q/−q` two-frame contrast witness), this corpus's own refinement pass (the
+> full 126-dimensional kernel, above), and an exact `Fraction` recomputation confirming `Q₂(u) = 0`. Draft 1's
+> uniqueness claim survived none of them.
 >
 > **(B) On the doubled set Y.** The same holds with |Y| = 64,512 in place of N. At every **odd** ℓ the conclusion is
 > stronger still: K_ℓ^Y 1 = 0, so Q_ℓ(u) = 0 and uniform is a global minimiser over all of R^{|Y|}, not merely over
@@ -327,7 +391,11 @@ sum `deg4.S1_sum_G4` = 764.8249027237362 gives Q₄(u) = S1/N² = 7.350908201315
 **Positive definiteness at degree 4.** All three eigenvalues are strictly positive (195/8,224 > 0, 8,385/8,224 > 0,
 21,844/21,845 > 0), so K₄ ≻ 0 and δᵀK₄δ > 0 for every δ ≠ 0. Uniform is the **unique** minimiser of Q₄ over **W** [D].
 
-**Degree 6, as an independent check of the machinery.** S6 commits G₆(0) = −8.837271368743101e-07 and G₆(1/16) =
+**Degree 6, as a transcription check.** (Draft 1 called this "an independent check of the machinery." It is not
+independent: S6's committed `deg6.closed_form` was produced from the *same* three-shell decomposition this paper uses,
+so feeding `G₆` into §3.5 re-runs S6's computation and checks the transcription, not the derivation. An independent
+check would be the exact-rational route — `G₆(0) = −1/1,131,571`, `G₆(1/16) = 16,637/17,449,091,072` from the
+`C₆^(127)` recurrence — which §5.7 declines to run.) S6 commits G₆(0) = −8.837271368743101e-07 and G₆(1/16) =
 9.534594054985972e-07 [O]. Feeding those floats into the §3.5 formulas:
 
 | shell | this paper | S6 `deg6.closed_form` |
@@ -336,8 +404,13 @@ sum `deg4.S1_sum_G4` = 764.8249027237362 gives Q₄(u) = S1/N² = 7.350908201315
 | λ_mid/N | 3.098743067870441e-05 | 3.098743067870441e-05 |
 | λ_bulk/N | 3.10020115242788e-05 | 3.10020115242788e-05 |
 
-All three reproduce to the last digit, from a general-ℓ formula S6 never printed [D vs O]. All three are positive, so
-uniform is the unique minimiser at degree 6 too.
+All three reproduce S6's committed `deg6.closed_form` to the last digit [D vs O — transcription confirmed]. All three
+are positive, so uniform is the unique minimiser at degree 6.
+
+**Degree 8, added in draft 2 as the third verified degree.** The exact `C₈^(127)` recurrence gives
+λ_top = 108,330,305,611/108,433,637,376, λ_mid = 108,435,124,633/108,433,637,376, λ_bulk ≈ 1 − 2.37e-8 — all strictly
+positive [D]. Strictness is therefore established at ℓ = 4, 6, 8 and **nowhere else**; ℓ = 2 is a proved exception and
+ℓ ≥ 10 is open.
 
 ### 3.7 The price of reweighting: 43.3× and 42.5×
 
