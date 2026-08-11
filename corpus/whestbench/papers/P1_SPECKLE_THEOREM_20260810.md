@@ -113,7 +113,7 @@ Artifact: `experiments/s6_bragg_spectrum/`. Verdict: **KILL** (of the low-rank-c
 - Flatness: the top-100 eigenvalues carry **0.32 %** of tr(D^2) (full-N closed form 0.0032221249837913308; subsample
   observed 0.0063737437723080615) against a predeclared KILL threshold of < 5 % and a PASS requirement of >= 50 %.
   Participation rank tr(D^2)^2 / tr(D^4) = **32,266.169565128537 ~ N** [O]. Scale: dim H_4 = **183,148,480**, so the
-  design span is 5.6e-3 of the degree-4 space and the deficiency is spread evenly over it.
+  design span is 1.7612e-4 of the degree-4 space and the deficiency is spread evenly over it.
 - **Second signal:** tr(D^2) two independent ways — exact pairwise sum 3.099748626998932e-05 vs exact-rational closed
   form 3.099748626991116e-05, relative difference **2.52e-12**; plus a structure-agnostic 16,000-direction dense
   eigensolve matching the closed-form multiset to max abs error **3.55e-12** [O]. Both reproduced independently for this

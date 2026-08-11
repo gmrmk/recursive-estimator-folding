@@ -1,0 +1,108 @@
+{
+  "note": "M=32256 rows; K=N=W; padding charged at full padded volume; V1 Winograd-15 floor schedule.",
+  "widths_evaluated": 249,
+  "widths_with_r_best_below_1": 242,
+  "min_width_that_pays": 10,
+  "samples": {
+    "8": {
+      "r_best": 1.0,
+      "depth": 0,
+      "padded_width": 8
+    },
+    "16": {
+      "r_best": 0.9354998719918075,
+      "depth": 1,
+      "padded_width": 16
+    },
+    "24": {
+      "r_best": 0.8777031091691996,
+      "depth": 2,
+      "padded_width": 24
+    },
+    "32": {
+      "r_best": 0.8492496535651297,
+      "depth": 2,
+      "padded_width": 32
+    },
+    "48": {
+      "r_best": 0.7889068374060151,
+      "depth": 3,
+      "padded_width": 48
+    },
+    "64": {
+      "r_best": 0.7589490766779152,
+      "depth": 3,
+      "padded_width": 64
+    },
+    "96": {
+      "r_best": 0.7011721184710795,
+      "depth": 4,
+      "padded_width": 96
+    },
+    "100": {
+      "r_best": 0.7838542227506581,
+      "depth": 3,
+      "padded_width": 104
+    },
+    "127": {
+      "r_best": 0.6830062744133268,
+      "depth": 4,
+      "padded_width": 128
+    },
+    "128": {
+      "r_best": 0.6723552268129473,
+      "depth": 4,
+      "padded_width": 128
+    },
+    "129": {
+      "r_best": 0.7911827877208556,
+      "depth": 3,
+      "padded_width": 136
+    },
+    "160": {
+      "r_best": 0.6405465839312149,
+      "depth": 5,
+      "padded_width": 160
+    },
+    "192": {
+      "r_best": 0.6192713311458722,
+      "depth": 5,
+      "padded_width": 192
+    },
+    "200": {
+      "r_best": 0.6914236779324303,
+      "depth": 4,
+      "padded_width": 208
+    },
+    "224": {
+      "r_best": 0.6040883207688603,
+      "depth": 5,
+      "padded_width": 224
+    },
+    "250": {
+      "r_best": 0.6215290899258835,
+      "depth": 5,
+      "padded_width": 256
+    },
+    "255": {
+      "r_best": 0.5973708846123038,
+      "depth": 5,
+      "padded_width": 256
+    },
+    "256": {
+      "r_best": 0.59270849107337,
+      "depth": 5,
+      "padded_width": 256
+    }
+  },
+  "unweighted_mean_r_best_over_W_8_to_256": 0.7522611006692881,
+  "unweighted_mean_r_best_over_W_128_to_256": 0.6808596891495186,
+  "depth_histogram": {
+    "0": 7,
+    "1": 16,
+    "2": 32,
+    "3": 62,
+    "4": 76,
+    "5": 56
+  }
+}
