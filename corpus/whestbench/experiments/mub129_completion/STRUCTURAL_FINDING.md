@@ -24,11 +24,25 @@ cancel pairwise. So an antipodal 4-design in `S^255` is a 5-design and needs
 | 128 (all phases) | 65,536 | 256 short — cannot be either |
 | **129** | **66,048** | clears by exactly 256 |
 
-**Möller's theorem extends the same bounds to arbitrary positive-weight cubature
-on the sphere, with no antipodality hypothesis.** So no reweighting of the
-deployed points escapes this — which is the exact complement of P4, where
-uniform weights were shown to be a global minimiser. P4 closes reweighting from
-the optimality side; Möller closes it from the counting side.
+**Erratum M1 (codex-sol, 2026-08-12 03:24 UTC): the Möller claim below was
+overbroad and is narrowed.** An earlier version of this paragraph said Möller
+extends the 65,792 bound to arbitrary positive-weight cubature with no
+antipodality hypothesis. That is wrong as applied here. The 65,792 figure is the
+**degree-5** bound, equivalently the degree-4 bound *under antipodal pair
+symmetry*. A general positive-weight degree-4 rule faces the smaller even-degree
+bound `dim P_2(S^255) = C(257,2) + C(256,1) = 33,152`, which 64,512 clears
+roughly twice over.
+
+The defensible statement is therefore: **no admissible pair-symmetric antipodal
+reweighting of these 64,512 nodes reaches degree 4.** Since the deployed design
+*is* antipodal by construction, that is the case that binds us. We do not claim
+that no arbitrary positive-weight non-antipodal rule on 64,512 freely chosen
+nodes can reach degree 4 — that question is open and the counting does not
+settle it.
+
+This remains the complement of P4: P4 closes reweighting from the optimality
+side, and the counting bound closes it from the size side, for the antipodal
+class we actually deploy.
 
 At degree 6 the closure is permanent, not marginal: an antipodal 6-design needs
 `2*C(258,3) = 5,658,112` points, **87.7x** what we spend, and any positive-weight

@@ -72,7 +72,7 @@
   "geomean_score_ratio": 0.9370437357791304,
   "variance_removed_pct": 8.474797900643072,
   "k1_fires": false,
-  "verdict": "SURVIVES_K1",
+  "verdict": "SURVIVES_K1 (gate as written), headline restated as a bracket after the 03:24 corrections",
   "wall_seconds": 96.84050846099854,
   "second_signal_gegenbauer_design_defect": {
     "degree_2": {
@@ -93,5 +93,26 @@
   },
   "second_signal_note": "Exact rational Gegenbauer arithmetic on the angle set. Independent of the variance run: no networks, no randomness, no shared code path. Confirms degree-4 annihilation at m=129 exactly and degree-6 essentially unchanged.",
   "derived_E4_over_E6": 2.9523001880761166,
-  "derived_E4_over_E6_note": "Derived under a two-degree truncation (degrees >=8 assumed negligible). Solves ratio = A6(129)E6 / (A4(126)E4 + A6(126)E6) for E4/E6. [D], not [O]."
+  "derived_E4_over_E6_note": "Derived under a two-degree truncation (degrees >=8 assumed negligible). Solves ratio = A6(129)E6 / (A4(126)E4 + A6(126)E6) for E4/E6. [D], not [O].",
+  "CORRECTION_20260812_0324": {
+    "raised_by": "codex-sol, AGENT_CHANNEL.md entry 175",
+    "correction_1_aggregation": "The geomean is NOT the contest estimand. The official aggregate is a network-mean MSE, so the score-faithful statistic is sum(V129)/sum(V126).",
+    "mse_faithful_arithmetic_ratio": 0.9011067622930458,
+    "geomean_ratio_superseded": 0.9152520209935693,
+    "correction_2_cost": "129/126 is not a measured GUARDS bill. 64512/4096=15.75 and 66048/4096=16.125, so the BLOCK_ROWS=4096 count goes 16->17. But row_blocked_winograd.py:26-46 sizes the workspace min(block_rows,max_m), fixing the block count without establishing that a partial block bills as full. Tails: 15*4096+3072 and 16*4096+512.",
+    "cost_ratio_bracket": [
+      1.0238095238095237,
+      1.0625
+    ],
+    "score_ratio_bracket": [
+      0.9225616852047849,
+      0.9574259349363611
+    ],
+    "gain_pct_bracket": [
+      4.257406506363893,
+      7.743831479521512
+    ],
+    "headline_status": "The 6.3% point estimate is WITHDRAWN. Replaced by the bracket above. Both endpoints are wins.",
+    "still_open": "Composition with pruning, folding, tangent, guards, FlopScope and residual is UNMEASURED and unclaimed. The raw dense runner omits all of them."
+  }
 }
