@@ -822,11 +822,15 @@ round. We think that is exactly the situation the guidelines are worried about,
 and the rest of this section is what we built to make it auditable.
 
 **The evidence-tag discipline.** Every load-bearing claim in this document and
-in all six papers carries one of five labels: **[O]** observed (a run in this
-corpus produced it), **[D]** derived (follows by steps shown inline), **[R]**
-reported (a committed artifact says so, not re-derived here), **[A]** assumed
-(a stated modelling choice), **[GAP]** a known hole with the check that would
-close it. The rule is that no claim may be stated above the level its artifact
+in all six papers carries one of four labels introduced in companion P1 (front
+matter, lines 38-42 — **not** the corpus README, which does not contain the
+scheme): **[O]** observed (a run in this corpus produced it), **[D]** derived
+(follows by steps shown inline), **[R]** reported (a committed artifact says so,
+not re-derived here), **[A]** assumed (a stated modelling choice). A fifth,
+**[GAP]** — a known hole with the check that would close it — is used in this
+document and in P5 and P6 but is **not** part of P1's scheme; *erratum E13*,
+since earlier drafts attributed all five to P1 and cited a "P1 §0" that does not
+exist. The rule is that no claim may be stated above the level its artifact
 earned. The tags exist because a fluent model produces plausible text whether or
 not the underlying claim is true, so fluency has to be decoupled from confidence
 mechanically rather than by intention.

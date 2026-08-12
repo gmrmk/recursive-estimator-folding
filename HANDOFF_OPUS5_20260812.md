@@ -119,8 +119,9 @@ load-bearing).
 - **No truth, scorer, private, or holdout reads** outside an authorized gate.
 - **Evidence tags on every claim**: `[O]` observed this session, `[D]` derived by
   shown steps, `[R]` reported by a committed artifact, `[A]` assumed, `[GAP]`
-  known hole. Defined in P1 §0 — **not** in the corpus README, which does not
-  contain the scheme despite four papers having cited it there (now fixed).
+  known hole. The first four are defined in P1's front matter, lines 38-42 —
+  **not** in the corpus README, and **not** in a "P1 §0", which does not exist.
+  `[GAP]` is a fifth tag P1 never defines; P5 and P6 use it anyway.
 - **Two independent signals before "done."** A tool exit code is not a signal.
   Re-verify with a *fresh* signal after the last edit.
 - **Predeclare the kill gate before writing code.**
