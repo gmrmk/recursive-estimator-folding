@@ -1,0 +1,35 @@
+{
+  "schema_version": "dgfl1-f05-postexecution-runtime-attestation-v1",
+  "status": "POSTEXECUTION_DISCLOSURE_NOT_PART_OF_PREEXECUTION_SEAL",
+  "preexecution_manifest_sha256": "BCE377D1349BF6412A54DAF823D2B90A06F76DFE1CDD60EC2BFE501229EC8169",
+  "result_file_sha256": "06758EF252F55FAB504EC9C6716E8D889C2EBA82199B735EFB8E5D0AF6822392",
+  "finding": "The preexecution manifest bound selected Python and NumPy native files but omitted two non-system DLLs from the same NumPy wheel that were loaded by the exercised process.",
+  "loaded_omitted_files": [
+    {
+      "absolute_path": "C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Lib/site-packages/numpy.libs/libscipy_openblas64_-9e3e5a4229c1ca39f10dc82bba9e2b2b.dll",
+      "bytes": 20403712,
+      "sha256": "9E3E5A4229C1CA39F10DC82BBA9E2B2BF48037790932566F37AFF1A7CCF3588F"
+    },
+    {
+      "absolute_path": "C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Lib/site-packages/numpy.libs/msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+      "bytes": 575056,
+      "sha256": "A4C2229BDC2A2A630ACDC095B4D86008E5C3E3BC7773174354F3DA4F5BEB9CDE"
+    }
+  ],
+  "independent_verification": {
+    "method": "A fresh pinned Python process exercised numpy.linalg.det, enumerated its loaded modules through Windows PSAPI EnumProcessModules/GetModuleFileNameExW, and independently hashed both matching numpy.libs DLLs.",
+    "both_files_observed_loaded": true,
+    "first_screen_and_independent_replay_entire_parsed_results_equal": true,
+    "all_realized_payload_hashes_equal": true
+  },
+  "disposition": {
+    "old_manifest_modified": false,
+    "scientific_status": "PASS_F05_SYNTHETIC_COVARIANCE_ONLY_WITH_DISCLOSED_RUNTIME_SEAL_CAVEAT",
+    "interpretation": "The current-machine deterministic numerical result is preserved by an exact independent replay, but the original preexecution native dependency inventory was not exhaustive. This attestation is post-outcome provenance and cannot retroactively strengthen the prospective seal.",
+    "still_unearned": [
+      "cross-machine bitwise reproducibility",
+      "generated-network or W0 evidence",
+      "provider, cost, score, ranking, promotion, package, or submission credit"
+    ]
+  }
+}

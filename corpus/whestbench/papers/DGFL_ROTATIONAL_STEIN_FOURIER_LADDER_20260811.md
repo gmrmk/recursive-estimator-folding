@@ -1,24 +1,62 @@
 # Dipole–Fourier Rotational Stein Ladders for White-Box Estimation in ReLU Networks
 
-*A theoretical construction and prospective falsification protocol*
+*A theoretical construction with a tested synthetic premise and prospective provider protocol*
 
-**Status:** companion theory note with `PASS_SYNTHETIC_MATH_ONLY`; no estimator-efficacy result<br>
+**Status:** companion theory note with `PASS_SYNTHETIC_MATH_ONLY` and `PASS_F05_SYNTHETIC_COVARIANCE_ONLY`<br>
 **Date:** 2026-08-11<br>
-**Implementation status:** deterministic math harness only; provider source absent and cost/resource bounds open<br>
+**Implementation status:** synthetic math, source-contract slice, and hand-network covariance screen complete; provider source absent and cost/resource bounds open<br>
 **Incumbent:** Kerdock v3.1 GUARDS remains the only integrated estimator
 
 ## Abstract
 
-We introduce a sparse control-variate family for Haar-randomized spherical quadrature of bias-free ReLU networks. The construction begins with a two-dimensional input plane and its skew rotation generator $J$. A single directional derivative $D y(u)[Ju]$ is then reused by two complementary classes of scalar modulators: linear dipoles and fixed-frequency cosine modes derived from pilot-selected deep gate directions. Each resulting vector control is a surface divergence on the fixed input sphere and therefore has exactly zero spherical mean in the ideal real-arithmetic model. When its geometry and coefficient vector are frozen independently of the production Haar rotation, subtracting the sampled control preserves the conditional mean of the base estimator.
+We formulate a sparse control-variate family for Haar-randomized spherical quadrature of bias-free ReLU networks. The construction begins with a two-dimensional input plane and its skew rotation generator $J$. A single directional derivative $D y(u)[Ju]$ is then reused by two complementary classes of scalar modulators: linear dipoles and fixed-frequency cosine modes derived from pilot-selected deep gate directions. Each resulting vector control is a surface divergence on the fixed input sphere and therefore has exactly zero spherical mean in the ideal real-arithmetic model. When its geometry and coefficient vector are frozen independently of the production Haar rotation, subtracting the sampled control preserves the conditional mean of the base estimator.
 
 The central computational idea is a shared-$J$ ladder. The expensive network Jacobian–vector product is evaluated once per selected node, while all dipole and Fourier readouts are formed by inexpensive scalar modulation. The separate rungs are retained during development to measure interaction and incremental value, but linearity would permit a future provider to fuse them into one scalar field after coefficients have been frozen.
 
 This paper proves the mean-zero identity and specifies a falsification program.
-Its deterministic synthetic harness passes 20 of 20 manifest-bound mathematical
-contract tests. It reports no variance reduction, score improvement, cost pass,
-provider implementation, or generated-network result. The construction is a
-fixed-sphere control rather than a moving-boundary estimator; it neither
+Its deterministic mathematical harness passes 20 of 20 manifest-bound tests.
+A separate prospectively frozen hand-network screen then obtains held joint
+rotation-variance reduction $R^2=0.941621$, with both the Fourier and dipole
+blocks contributing positively and a paired-bootstrap lower bound of
+$0.919390$. This is synthetic premise evidence, not a score improvement, cost
+pass, provider implementation, or generated-network result. The construction
+is a fixed-sphere control rather than a moving-boundary estimator; it neither
 reconstructs a boundary integral nor implies zero variance.
+
+```mermaid
+flowchart TB
+    accTitle: DGFL mechanism and evidence ladder
+    accDescr: The exact rotational Stein identity leads to one shared JVP, dipole and Fourier controls, a frozen correction, three observed synthetic or source-contract gates, and two still-unrun provider and generated-network gates.
+
+    theorem["Exact rotational Stein identity<br/>C_h = div_S(y h Ju)<br/>E C_h = 0"]
+    shared["One shared JVP per selected row<br/>v_J = D y(u)[Ju]"]
+    rungs["Complementary readouts<br/>two dipoles plus fixed Fourier rungs"]
+    correction["Frozen pre-Q correction<br/>Y_DGFL = Y0 - sum_r beta_r Z_r"]
+    math_f0["Observed: synthetic math F0<br/>20 of 20 contracts pass"]
+    source_slice["Observed: source-contract slice<br/>16 of 16 contracts pass"]
+    covariance["Observed: synthetic covariance F0.5<br/>joint R2 = 0.941621<br/>bootstrap lower = 0.919390"]
+    provider{"Complete provider F0-S passes?<br/>Pilot A, guards, bills, wall and RSS"}
+    f1["Future generated-network F1<br/>held factorial variance and inclusive cost"]
+    stop(["Kill or revise the DGFL branch"])
+
+    theorem --> shared --> rungs --> correction --> math_f0 --> source_slice --> covariance --> provider
+    provider -->|"Pass only"| f1
+    provider -->|"Fail"| stop
+
+    classDef theoremClass fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#3b0764
+    classDef mechanismClass fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a5f
+    classDef observedClass fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    classDef unresolvedClass fill:#fef9c3,stroke:#ca8a04,stroke-width:2px,color:#713f12
+    class theorem theoremClass
+    class shared,rungs,correction mechanismClass
+    class math_f0,source_slice,covariance observedClass
+    class provider,f1,stop unresolvedClass
+```
+
+*Figure 1. DGFL mechanism and evidence ladder. Green boxes are exact observed
+results at their stated scope. The provider and generated-network gates remain
+unrun. The vertical layout is only a communication device; no equations or
+physical claims from the supplied reference image are used.*
 
 ## Relationship to the Phase-1 writeup
 
@@ -57,6 +95,53 @@ This is a synthetic mathematical-contract result, not a complete source F0.
 It does not test a generated network, production $Q$, W0 guard paths, real
 multiprocessing, cost, variance reduction, MSE, or score. This result section
 was finalized only after the sealed run and did not alter its source or tests.
+
+## Synthetic F0.5 covariance result
+
+The next truth-free screen tested whether the fixed dipole-Fourier bank carries
+actual covariance signal, without using a challenge or generated network,
+truth, a scorer, or provider execution. Its
+[pre-execution manifest](../experiments/dgfl1_f05_synthetic_covariance/PREEXECUTION_MANIFEST.json)
+has SHA-256
+`BCE377D1349BF6412A54DAF823D2B90A06F76DFE1CDD60EC2BFE501229EC8169`.
+The exact [result](../experiments/dgfl1_f05_synthetic_covariance/F05_RESULTS.json)
+has SHA-256
+`06758EF252F55FAB504EC9C6716E8D889C2EBA82199B735EFB8E5D0AF6822392`.
+
+On 128 fit rotations and 128 untouched held rotations of one deterministic
+two-dimensional hand ReLU network, the frozen six-rung joint control achieved
+
+\[
+R^2_{\mathrm{joint}}=0.9416211929936065.
+\]
+
+The held partial values were
+
+\[
+R^2_{F\mid D}=0.9388937394051985,
+\qquad
+R^2_{D\mid F}=0.33005233901223785.
+\]
+
+Thus neither block is redundant on this example. The one-sided paired
+bootstrap lower order statistic was `0.9193896186765471`, and the frozen
+whole-record permutation test returned `1/1025`. All predeclared gates passed.
+An independent payload-exact replay reproduced the complete parsed result and every
+realized payload hash. The [notes](../experiments/dgfl1_f05_synthetic_covariance/F05_NOTES.md)
+preserve the evidence boundary.
+
+A post-execution module census found two loaded NumPy-wheel DLLs omitted from
+the manifest's selected native-file inventory. The original manifest remains
+unchanged, and the exact files are recorded in a separate
+[runtime attestation](../experiments/dgfl1_f05_synthetic_covariance/POSTEXECUTION_RUNTIME_ATTESTATION.json).
+The complete parsed-result and realized-payload match supports current-machine determinism, but
+the preexecution native dependency seal was not exhaustive; no cross-machine
+bitwise claim is made.
+
+This is the first positive synthetic covariance result for the DGFL mechanism, but only on
+one deterministic $d=2$ hand network. It earns the next source-completeness
+gate. It does not establish transfer to $d=256$, Kerdock or W0, generated
+networks, provider cost, MSE, official score, or ranking.
 
 ## 1. Problem and scope
 
@@ -478,12 +563,14 @@ normative schedule.
 
 ## 9. Feasibility boundary
 
-The current work is not a provider implementation and does not complete the
-source-contract portion of F0. A source audit found no theorem-level cost kill
-for a sparse 64-row sidecar, but it also found no complete upper bound. One
-candidate source seam is a descendant estimator that preserves the base files,
-retains the exact first production rotation, executes the base provider, and
-then performs a serial selected-row primal/JVP replay.
+The current work is not a provider implementation. A manifest-bound
+source-contract slice passed 16 of 16 tests and established a descendant seam
+for the exact first production rotation, complete-branch correction state
+machine, selected-row convention, and known typed component subtotals. It did
+not complete provider F0-S: Pilot A, all-path upper bills, guard and route
+integration, wall, RSS, and applicable evaluator rules remain open. A source
+audit found no theorem-level cost kill for a sparse 64-row sidecar, but it also
+found no complete upper bound.
 
 The bound technical proposal records only a rough 0.27–0.54 billion-operation
 orientation for the 64-row tangent path, depending on whether primal replay is
@@ -495,10 +582,15 @@ The provisional inherited ledger leaves a numerical witness margin of about 12.3
 
 ## 10. Prospective falsification ladder
 
-The first gate is symbolic and synthetic only. It must verify the skew identities in (3), the signs in (4)–(6), the physical-input scale, the weak divergence identity on hand-built continuous piecewise-linear networks, the independence of every pilot object from production $Q$, exact row coverage, one JVP per row, deterministic reduction, and typed accounting for every path. Boundary fixtures must compare one-sided derivatives and an integrated weak identity rather than treating one library's ReLU subgradient at zero as canonical.
+The symbolic synthetic F0 passed its 20 mathematical contracts. The bounded
+$d=2$ F0.5 covariance screen then passed its prospectively frozen joint,
+partial, bootstrap, and permutation gates. The source-contract slice also
+passed, but complete provider F0-S is still the next gate: it must freeze Pilot
+A, production-$Q$ handling, guard and route totality, complete success and
+failure bills, wall, RSS, and applicable rules.
 
-Only after that gate survives should the smallest premise panel be considered.
-A future F1 manifest must freeze four development networks, one
+Only after complete provider F0-S survives should the generated-network premise
+panel be considered. A future F1 manifest must freeze four development networks, one
 domain-separated Pilot-A rotation per network, sixteen independent base/control
 rotations per network, eight rotations for the coefficient fit, and eight
 untouched rotations for evaluation. It must also freeze two dipoles, exactly
@@ -524,7 +616,7 @@ on its bounded screen. First-layer-only dipole signal is annihilated at low
 degree by antipodal complete orthonormal bases. These are strong, family-local
 adverse priors for DGFL.
 
-They are not a theorem against the present deep shared-$J$ construction. The narrow hypothesis is that pilot-selected deep input pullbacks identify a low-dimensional rotational error correlated with the structured design, and that odd dipole and even Fourier readouts remove complementary parts of that error while sharing one derivative chain. That hypothesis is currently unmeasured.
+They are not a theorem against the present deep shared-$J$ construction. The narrow hypothesis is that pilot-selected deep input pullbacks identify a low-dimensional rotational error correlated with the structured design, and that odd dipole and even Fourier readouts remove complementary parts of that error while sharing one derivative chain. F0.5 measured a strong complementary effect on one deterministic $d=2$ hand network. Transfer to $d=256$, generated networks, Kerdock/W0 residuals, and the provider remains unmeasured.
 
 Finite implementation introduces further limitations. A seeded float32 QR is not literally Haar distributed; finite-precision divergence evaluations need a numerical bias bound; all post-rotation paths must be total; and guard or fallback behavior can preserve neither exact centering nor the base mean unless explicitly proved. The honest deployed statement is therefore conditional mean preservation in an ideal Haar/real-arithmetic model, followed by numerical and source-level gates for the actual provider.
 
@@ -532,7 +624,7 @@ Finite implementation introduces further limitations. A seeded float32 QR is not
 
 The useful part of the wave picture is not a claim that weights form a crystal. It is a way to choose structured, differentiable readouts of a piecewise-linear response. The dipole plane supplies an oriented local rotation. Deep gate pullbacks supply candidate phase directions in the physical input space. Fixed cosine modes provide a small Fourier ladder. The rotational Stein identity converts each modulated directional derivative into a known-zero-mean control. Sharing one JVP makes the combined family computationally plausible, and the factorial design tests whether either block contributes after the other at inclusive cost.
 
-This formulation is intentionally modest. It contains one exact identity, one constrained operator family, one implementation hypothesis, and a sequence of tests capable of killing it cheaply. It contains no boundary reconstruction theorem, no transport model, no claim of machine precision, and no result from a generated, held-out, hosted, or contest evaluation.
+This formulation is intentionally modest. It contains one exact identity, one constrained operator family, one implementation hypothesis, and a sequence of tests capable of killing it cheaply. It contains no boundary reconstruction theorem, no transport model, no claim of machine precision, and no result from a held-out network, generated-network panel, hosted run, or contest evaluation. Its held result is limited to rotations of one hand-built network.
 
 ## 13. Conclusion
 
@@ -540,10 +632,11 @@ The Phase-1 writeup explains the estimator that was built. This companion
 isolates one possible successor: a finite bank of rotational-divergence controls
 whose dipole and Fourier modulators share one deep JVP. Under an independent
 ideal Haar rotation, the correction preserves the base provider's conditional
-expectation. Whether it purchases enough held covariance to justify its full
-cost is deliberately unresolved. The synthetic mathematical slice has now
-passed, but it is not a complete F0. The next legitimate contribution is a
-source-only F0 contract; only if that survives should a prospectively frozen F1
+expectation. The mathematical F0, source-contract slice, and synthetic F0.5
+hand-network covariance screen have passed. Whether the effect transfers to
+$d=256$ or generated networks and purchases enough covariance to justify its
+complete provider cost remains unresolved. The next legitimate contribution is
+complete provider F0-S; only if it survives should a prospectively frozen F1
 premise panel be considered.
 
 ## Reproducibility and provenance

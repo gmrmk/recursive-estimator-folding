@@ -1,0 +1,232 @@
+{
+  "schema_version": "dgfl1-f05-preexecution-v1",
+  "created_local": "2026-08-11T18:50:00-05:00",
+  "status": "SEALED_PREEXECUTION_DO_NOT_EDIT",
+  "construction_head": "8F110EDC9DC15E3B644B05843FF22BE13D5A5506",
+  "objective": "Truth-free prospective covariance screen for the fixed six-rung DGFL dipole-Fourier control on one deterministic d=2 hand CPWL network.",
+  "authority_boundary": {
+    "allows_this_exact_hand_network_screen": true,
+    "allows_generated_or_challenge_networks": false,
+    "allows_truth_or_scorer_reads": false,
+    "allows_provider_predict_or_worker_execution": false,
+    "allows_post_result_axis_frequency_ridge_seed_or_gate_changes": false,
+    "possible_positive_status": "PASS_F05_SYNTHETIC_COVARIANCE_ONLY",
+    "cannot_establish": [
+      "behavior on W0 or d=256",
+      "generated-network covariance or variance reduction",
+      "provider source feasibility, totality, budget, wall, RSS, or residual",
+      "bias, MSE, official score, ranking, promotion, package, or submission"
+    ]
+  },
+  "bound_files": [
+    {
+      "path_from_experiment": "dgfl1_f05.py",
+      "bytes": 25832,
+      "sha256": "9B54450CBC5291D6F441DBCA607D52573C930C4B4C7AE394AA5B6FE0FA5BE568"
+    },
+    {
+      "path_from_experiment": "test_dgfl1_f05.py",
+      "bytes": 19459,
+      "sha256": "82B1D95B659719226B9836DEDA8D073A7300E6B258EC93916D03A7E6B7341625"
+    },
+    {
+      "path_from_experiment": "run_dgfl1_f05.py",
+      "bytes": 11166,
+      "sha256": "92AA96751B960310D778A41F9CE85800FE35C915FB0B829FDF10955EEBC58E95"
+    },
+    {
+      "path_from_experiment": "../dgfl1_f0_synthetic/dgfl1_f0.py",
+      "bytes": 11634,
+      "sha256": "2D8DE711FAF66C986F6C087A052BC828EDA4DFB0D81D994C6A217D7822CA0939"
+    },
+    {
+      "path_from_experiment": "../dgfl1_f0_synthetic/test_dgfl1_f0.py",
+      "bytes": 17612,
+      "sha256": "0A05C5D22AF38F0E77528F1191F47EBE363CA7C99F9DB2C71441C9706EECFBDE"
+    },
+    {
+      "path_from_experiment": "../dgfl1_f0_synthetic/PREEXECUTION_MANIFEST.json",
+      "bytes": 5708,
+      "sha256": "85CA3CCF5F6BE7E1E3DBF7F417E5CF1138F55B737F22B5A3F47BA9F5E7F4821B"
+    },
+    {
+      "path_from_experiment": "../dgfl1_f0_synthetic/RESOURCE_SNAPSHOT.json",
+      "bytes": 895,
+      "sha256": "6D72B82AB111C288BB9DDE72035D5C1060F8E227064341DAF7F22D4E81C32B60"
+    },
+    {
+      "path_from_experiment": "../dgfl1_f0_synthetic/F0_RESULTS.json",
+      "bytes": 3063,
+      "sha256": "251931A4F6B1EDC27593276248D213793CAB3EB730CBEB46F0A9AC9EC3250780"
+    },
+    {
+      "path_from_experiment": "../dgfl1_f0_source_contract/PREEXECUTION_MANIFEST.json",
+      "bytes": 4587,
+      "sha256": "71BD5DB7B882FFD1632DD9F767C0F9834B997DE2AF87E7466E9EC704CAEA65AC"
+    },
+    {
+      "path_from_experiment": "../dgfl1_f0_source_contract/F0_SOURCE_RESULTS.json",
+      "bytes": 2930,
+      "sha256": "3ABE8235047207DF60E15EC236450F992C32E649F4DD3D62BAC6B940FFEF20EF"
+    },
+    {
+      "path_from_experiment": "../../core/CODEX_DGFL1_DIPOLE_FOURIER_LADDER_PROPOSAL_20260811.md",
+      "bytes": 29113,
+      "sha256": "47F9BD3EF003833900ACCAB8EFD00C85B869553D14A02C46996534CDF6D099BA"
+    },
+    {
+      "path_from_experiment": "../../papers/DGFL_ROTATIONAL_STEIN_FOURIER_LADDER_20260811.md",
+      "bytes": 27087,
+      "sha256": "A690D1367E1C4B516FF5C0478A487462695A135269DD3CFE94647967BDB6E238"
+    }
+  ],
+  "runtime": {
+    "python_version": "3.12.13",
+    "python_executable": "C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "python_executable_bytes": 91648,
+    "python_executable_sha256": "3C6A206B7D93CCA823934A83732220DCFFD413FD1036D9FB82EEBB64599CF7F3",
+    "numpy_version": "2.3.5",
+    "bytecode_disabled": true,
+    "pythonhashseed": "0",
+    "threads": 1,
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "worker_processes": 0,
+    "native_files": [
+      {
+        "absolute_path": "C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python312.dll",
+        "bytes": 6971904,
+        "sha256": "960A3863C9CB129F946BBC28947EBCDC9EBAEC16AFEE2C10764BDFED61416556"
+      },
+      {
+        "absolute_path": "C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Lib/site-packages/numpy/__init__.py",
+        "bytes": 27188,
+        "sha256": "A1792C20AF1146952A6DFCE4C0DAEB197B2832B23D27434A97544544C497742D"
+      },
+      {
+        "absolute_path": "C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Lib/site-packages/numpy/_core/_multiarray_umath.cp312-win_amd64.pyd",
+        "bytes": 4529152,
+        "sha256": "F3864A0C1D52317877A9D5B48262F89360F7D67854AE68C41BCE535F6582209E"
+      },
+      {
+        "absolute_path": "C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Lib/site-packages/numpy/random/_pcg64.cp312-win_amd64.pyd",
+        "bytes": 94720,
+        "sha256": "A17ECFEE39793EC0FC6800F2767A5D306A9711AD92049A9D143DABC21E4E9E7D"
+      },
+      {
+        "absolute_path": "C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Lib/site-packages/numpy/linalg/_umath_linalg.cp312-win_amd64.pyd",
+        "bytes": 112128,
+        "sha256": "BB838944CD6DED87F6CE9C084A29741256E966269CF0246691BBEFBCBF5D4F7A"
+      }
+    ]
+  },
+  "frozen_mechanism": {
+    "dimension": 2,
+    "radius": 1.0,
+    "weights": [
+      [[1.0, -0.3], [0.4, 0.8], [-0.7, 0.5]],
+      [[0.6, -0.2, 0.9], [-0.4, 1.1, 0.3]]
+    ],
+    "relu_jvp_convention": "strictly positive preactivation",
+    "pilot_angle_radians": 0.137,
+    "pilot_selected_deep_units": [0, 1],
+    "pilot_pullbacks": [[0.52, -0.34], [0.040000000000000036, 1.0]],
+    "pilot_axis_order": [0, 1],
+    "m": [1.0, 0.0],
+    "b": [0.0, 1.0],
+    "J": [[0.0, -1.0], [1.0, 0.0]],
+    "design_row_order": ["+e1", "-e1", "+e2", "-e2"],
+    "rung_order": [
+      "dipole_m",
+      "dipole_b",
+      "axis0_sqrt2",
+      "axis0_2sqrt2",
+      "axis1_sqrt2",
+      "axis1_2sqrt2"
+    ],
+    "jvp_evaluations_per_rotation": 4,
+    "fit_rotations": 128,
+    "held_rotations": 128
+  },
+  "seeds": {
+    "generator": "numpy.random.Generator(numpy.random.PCG64DXSM(seed))",
+    "fit_rotations": 3606118401,
+    "held_rotations": 3606118402,
+    "bootstrap": 3606118403,
+    "permutation": 3606118404
+  },
+  "fixture_payloads": {
+    "fit_rotations": {
+      "shape": [128, 2, 2],
+      "dtype": "<f8",
+      "layout": "C",
+      "sha256_c_order_payload": "BDDA3E2AAF5ABFCBABE05AAA9CCFC3928CF4406006BADE0CF140C2EE368C52C3"
+    },
+    "held_rotations": {
+      "shape": [128, 2, 2],
+      "dtype": "<f8",
+      "layout": "C",
+      "sha256_c_order_payload": "757DA553306CB1A644BDFD9A0A4F39FBA5800557375F80896017B73090D78D71"
+    },
+    "permutations": {
+      "shape": [1024, 2, 128],
+      "dtype": "<u2",
+      "layout": "C",
+      "sha256_c_order_payload": "716CE92671E981918A6D1F2D4EC1C371795721D8B8D0566BD5F882F8D34487F8"
+    },
+    "bootstrap": {
+      "shape": [4096, 128],
+      "dtype": "<u2",
+      "layout": "C",
+      "sha256_c_order_payload": "60BFF8CF76A7CEF92731C8B25B7DCF1D8568F9AE73F296EE70E64D61ED758E5C"
+    }
+  },
+  "mechanism_payloads": {
+    "W1": {"shape": [3, 2], "dtype": "<f8", "sha256_c_order_payload": "EAA35F65EB92E9D0B0A7D540FEFE191455AC1EEB886992072E3305E9EE4C6206"},
+    "W2": {"shape": [2, 3], "dtype": "<f8", "sha256_c_order_payload": "156B94C33BDD34906167F0FE06A9ABC4EC90B0E070F0A5CC46A332C4E798A2B1"},
+    "design_rows": {"shape": [4, 2], "dtype": "<f8", "sha256_c_order_payload": "6C9A55E5C3D9CD9288689F215A77B99E3B10902862A644C68E32EF9EBC571DAB"},
+    "pilot": {"shape": [2], "dtype": "<f8", "sha256_c_order_payload": "019FF7AD8E91E7D2DA00B416960EF8189C6DD59DEDB8A7787DDAF1C3C616DDA1"},
+    "first_preactivation": {"shape": [3], "dtype": "<f8", "sha256_c_order_payload": "41304CF55DA4C63BCD8D020A449C3050E2F9A591CF694E897645C64B992AA328"},
+    "deep_preactivation": {"shape": [2], "dtype": "<f8", "sha256_c_order_payload": "F8369BD9EDBC5D80BDAB4CDA3DA097171E4B02A6D4E0A9664BA5A9C3E27CDF89"},
+    "first_mask": {"shape": [3], "dtype": "|b1", "sha256_c_order_payload": "9F44AC6ACB8A37B00B615DC89259D306035BE82DEE7DB2B472E4C48326195440"},
+    "pullbacks": {"shape": [2, 2], "dtype": "<f8", "sha256_c_order_payload": "A4E6B71F69D3F7E336DB6F05DABECA23391035965F91E050286FE509A89E40CB"},
+    "axes": {"shape": [2, 2], "dtype": "<f8", "sha256_c_order_payload": "744FAE94405FB6FFE8F60D396DFE6D229DF46AECB72116511D0A71113EA64DFF"},
+    "m": {"shape": [2], "dtype": "<f8", "sha256_c_order_payload": "3239B05C38B825EBB79F103172438292A22A0951351A6B81BE1DF5D44776CC65"},
+    "b": {"shape": [2], "dtype": "<f8", "sha256_c_order_payload": "FC62429C3E69001D65972CDEB94FB9AA18A7D9C16BC449E1E474E7E41BB95A7D"},
+    "J": {"shape": [2, 2], "dtype": "<f8", "sha256_c_order_payload": "C4B31ED64280CB80A693E5AB551136B63439D7BB2900DB77EB8B831C7D9A39B0"},
+    "frequencies": {"shape": [2], "dtype": "<f8", "sha256_c_order_payload": "D1BF3A7C38615D0089C9DD755A6AA2DFBE85B865D81E85F17C8E8C64FD78BD25"}
+  },
+  "statistical_contract": {
+    "fit_centering": "fit Y and fit Z separately over the 128 fit rotations only",
+    "ridge": "lambda = 2^-20 * trace(G) / 6",
+    "coefficient_law": "one fixed six-vector from explicit ascending unpivoted float64 Cholesky; all factorial arms zero blocks of this same vector without refitting",
+    "trace_variance": "sample trace variance sum_i ||A_i-mean(A)||^2/(n-1)",
+    "permutation": "1024 whole-Z-record nulls; fit and held permutations drawn independently in that order; original centered-Z Gram, ridge, and Cholesky are cached because row permutation preserves them; each null recomputes the cross-vector and coefficient solve; ties count against candidate",
+    "permutation_p": "p_num = 1 + count(R2_null >= R2_observed); pass only if p_num <= 10 out of denominator 1025",
+    "bootstrap": "4096 paired whole-held-record resamples; identical index vector for all arms; beta fixed; no refit; one-sided lower is sorted index 40 without interpolation",
+    "point_gates": [
+      "joint: 10*V11 <= 9*V00",
+      "Fourier partial: V11 < V10",
+      "dipole partial: V11 < V01",
+      "bootstrap joint-R2 lower > 0",
+      "permutation p_num <= 10"
+    ]
+  },
+  "disposition": {
+    "integrity_runtime_fixture_or_unexpected_exception": "ABORT_INVALID_RUN with zero scientific credit",
+    "pilot_geometry_or_mechanism_failure_during_preflight": "ABORT_INVALID_RUN with zero scientific credit",
+    "named solve_denominator_or_numeric_contract_failure_after_preflight": "KILLED_F05_SYNTHETIC_COVARIANCE_IMPLEMENTATION",
+    "completed_quantitative_gate_failure": "KILLED_F05_SYNTHETIC_COVARIANCE with every triggered reason",
+    "all_gates_pass": "PASS_F05_SYNTHETIC_COVARIANCE_ONLY"
+  },
+  "exact_commands_from_experiment_directory": {
+    "powershell_environment_prefix": "$env:PYTHONHASHSEED='0'; $env:OMP_NUM_THREADS='1'; $env:OPENBLAS_NUM_THREADS='1'; $env:MKL_NUM_THREADS='1'; $env:NUMEXPR_NUM_THREADS='1';",
+    "development_contract_tests": "& 'C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B -m unittest -v test_dgfl1_f05.py",
+    "preflight": "& 'C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B run_dgfl1_f05.py --preflight-only",
+    "sealed_screen": "& 'C:/Users/strid/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -B run_dgfl1_f05.py"
+  }
+}

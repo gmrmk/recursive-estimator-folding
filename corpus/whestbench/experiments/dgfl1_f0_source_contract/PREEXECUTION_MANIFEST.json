@@ -1,0 +1,101 @@
+{
+  "schema_version": "dgfl1-f0-source-contract-v1",
+  "created_local": "2026-08-11T18:23:33.2938628-05:00",
+  "status": "SOURCE_CONTRACT_SYNTHETIC_ONLY",
+  "repository_head_at_seal": "a451699b24e1da26673e914cef17bff7f7c98fee",
+  "files": {
+    "source": {
+      "path": "dgfl1_source_contract.py",
+      "sha256": "BE3F9B9E664201F8BFDF7F085188317800B5E416EFBAC8AD2C33B82296222556"
+    },
+    "tests": {
+      "path": "test_dgfl1_source_contract.py",
+      "sha256": "8E3D543B45DD95268F2DFB7ADD7D27868FD5DB53DE122AB8B58771E224F728DD"
+    },
+    "proposal": {
+      "path": "../../core/CODEX_DGFL1_DIPOLE_FOURIER_LADDER_PROPOSAL_20260811.md",
+      "sha256": "47F9BD3EF003833900ACCAB8EFD00C85B869553D14A02C46996534CDF6D099BA"
+    },
+    "prior_math_manifest": {
+      "path": "../dgfl1_f0_synthetic/PREEXECUTION_MANIFEST.json",
+      "sha256": "85CA3CCF5F6BE7E1E3DBF7F417E5CF1138F55B737F22B5A3F47BA9F5E7F4821B"
+    },
+    "prior_math_result": {
+      "path": "../dgfl1_f0_synthetic/F0_RESULTS.json",
+      "sha256": "251931A4F6B1EDC27593276248D213793CAB3EB730CBEB46F0A9AC9EC3250780"
+    },
+    "w0_archive": {
+      "path": "../v31_guards/submission_kerdock_v31_guards_20260808.tar.gz",
+      "sha256": "8382E269C9B32E0935492734DDF8182560120F7E9331621AA18839D5D1F4EA06"
+    },
+    "phase_asset": {
+      "path": "../v31_guards/package_source/kerdock_phases.npz",
+      "sha256": "A5E747F95423F5A45972D1A0735F223044A8A998407EB0C6DB51AEFDF47F4906"
+    }
+  },
+  "immutable_parent_sources": {
+    "kerdock_v3_estimator.py": "076D0A5D81891DDCBB4509DC6E2BFF5459D935B5556490A85D98DAC60759AACF",
+    "fold3_estimator.py": "68449E3EFE3B82A860B884A2BD05C9260E1EFBD138A343257CDC51AD38A63F6F",
+    "row_blocked_winograd.py": "A3BF5C8014198E33037D6AEAFC3F4138A98908754BB82BFCF5ACDD92B1D9FCCA",
+    "estimator.py": "5E7D52156B330BF63AC4FF0E0F38D864B32677F82BC8ED4D1382787A27D3E0C9"
+  },
+  "runtime": {
+    "python_executable": "C:/Users/strid/Documents/Codex/2026-08-02/https-chatgpt-com-share-6a5556ed-2e1c/work/whest-v014/Scripts/python.exe",
+    "python_executable_sha256": "4B8C3912806B3C1591BA3CB403BFF77AD309C3FE5756F87C20B7A6F8F0174262",
+    "python_version": "3.14.4",
+    "numpy_version": "2.4.6",
+    "flopscope_version": "0.10.0",
+    "flopscope_module_version": "0.10.0+np2.4.6",
+    "whestbench_version": "0.14.0",
+    "pythonhashseed": "0",
+    "numeric_thread_limits": 1
+  },
+  "fixed_base_labels": [
+    0, 841, 1938, 3035, 3876, 4973, 6070, 7167,
+    8008, 9105, 10202, 11043, 12140, 13237, 14334, 15175,
+    16272, 17113, 17954, 19051, 20148, 21245, 22086, 23183,
+    24280, 25121, 26218, 27315, 28412, 29253, 30350, 31447
+  ],
+  "fixed_row_order": "the 32 positive labels above in ascending frame order, followed by their labels plus 32256",
+  "fixed_geometry": {
+    "base_rows": 32256,
+    "selected_base_rows": 32,
+    "selected_physical_rows_with_antipodes": 64,
+    "frame_count": 126,
+    "dimension": 256,
+    "selection_rule": "frame=floor(126*i/32), row=(73*i) mod 256 for i=0..31",
+    "pairwise_geometry": "one row from each of 32 distinct mutually unbiased frames; absolute off-diagonal Gram entries equal 1/16"
+  },
+  "closed_cost_orientations": {
+    "float32_replay_float32_trigonometry": 556694912,
+    "float32_replay_float64_trigonometry": 556711296,
+    "float64_replay_float64_trigonometry": 1096579840,
+    "claim": "closed-component subtotal only, not a complete provider or invocation upper bound"
+  },
+  "open_items": [
+    "Pilot-A source and complete bill",
+    "axis and modulator casts",
+    "route certificate",
+    "coefficient application and finite guards",
+    "cleanup and return",
+    "inherited W0 worst-case prefix",
+    "wall-time upper bound",
+    "allocator and process RSS upper bound",
+    "official Phase-2 meter and resource rules"
+  ],
+  "authority": {
+    "hash_and_source_inspection": true,
+    "deterministic_synthetic_Q_and_geometry_tests": true,
+    "generated_network_execution": false,
+    "challenge_truth_or_scorer_access": false,
+    "provider_execution": false,
+    "multiprocessing": false,
+    "packaging_or_submission": false,
+    "promotion": false
+  },
+  "execution": {
+    "command": "$env:PYTHONHASHSEED='0'; $env:OMP_NUM_THREADS='1'; $env:OPENBLAS_NUM_THREADS='1'; $env:MKL_NUM_THREADS='1'; & 'C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Scripts\\python.exe' -B -m unittest -v test_dgfl1_source_contract.py",
+    "expected_tests": 16,
+    "evidence_boundary": "Only the first post-manifest exact-command pass may support this source-contract receipt."
+  }
+}
