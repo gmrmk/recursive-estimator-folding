@@ -47,13 +47,26 @@ the Walsh doubling the complete set has `d^2+2d` points against a floor of
 66048/65792. The completed design is a near-tight antipodal 5-design, over the
 floor by 0.39%.
 
-**Completing it is worth nothing.** [O] We built it and measured it against a
-point-count-matched control: three networks, sixty-four rotations, two seed
-families, cached truth. The completion improves MSE by 3.42% over the 126-frame
-design — but adding three *arbitrary* frames improves it by 3.25%. Isolating
-degree-4 exactness at equal 66,048 points leaves **0.176%, CI [0.970, 1.028],
-P(better) = 0.54**, against a 2.33% break-even set by the point-count cost. A
-committed degree-4 control variate corroborates independently at +0.42%.
+**And we can say in advance what completing it is worth.** [D] For a bias-free
+He-initialised ReLU network the rotation-averaged two-point function is exactly
+the iterated arc-cosine kernel `K(c) = (E||X||^2/d)·kappa^32(c)`, so the
+estimator's variance decomposes as `sum_l ||f_l||^2 A_l` against the design
+defects above. That predicts `V126 = 2.4977e-7` against a measured geomean of
+`2.6697e-7` over sixteen fresh networks — **the variance of this estimator is
+predictable from first principles to 6.4%** — and it puts the degree-4 share of
+that variance at **0.4497%**.
+
+**So completion is worth about half a percent, against a 2.33% break-even** set
+by the point-count cost. [O] Measurement agrees from two further directions: a
+point-count-matched experiment isolating degree-4 exactness at equal 66,048
+points returns `0.176%, CI [0.970, 1.028], P(better) = 0.54`, and a committed
+degree-4 control variate returns `+0.42%`. Three routes, one predictive, all
+landing an order of magnitude below the bar.
+
+That agreement is worth more than any of the three alone, because the analytic
+route explains the other two. Most of the variance is simply not where design
+strength lives: **86% of it sits at degrees 8 and above**, which no reachable
+design touches.
 
 **And degree 6, where the error actually lives, is unreachable.** [D] The
 measured angular error sits at degree 4 (11% of the iid level) and degree 6
@@ -72,9 +85,20 @@ networks the two come apart.
 ## Notes for whoever inserts this
 
 - Companion numbers, all committed and independently reproducible: exact
-  Gegenbauer defects in rationals are `A_4 = 7.351e-07` at m=126, `2.412e-07` at
-  m=128, exactly `0` at m=129, with `A_6` moving only `3.194e-05 -> 3.122e-05`.
-  Worth a footnote; they make "exactly zero" checkable.
+  Gegenbauer defects in rationals are `A_4 = 7.350908201315546e-07` at m=126,
+  `2.4120167535566633e-07` at m=128, exactly `0` at m=129, with `A_6` moving only
+  `3.194089008420301e-05 -> 3.122025216144244e-05`. Worth a footnote; they make
+  "exactly zero" checkable.
+- **Scope the defect formula to even degrees.**
+  `A_l = (1/N)[2 P_l(1) + 510 P_l(0) + 512(m-1) P_l(1/16)]` is valid only for even
+  `l`; at odd `l` the true defect is zero by antipodal cancellation and the
+  formula returns nonzero. Only even degrees are used here, so nothing above
+  depends on it, but the formula is wrong as written and must not be published
+  unscoped.
+- The tail law is worth one sentence if space allows: because `P_l(1/16) -> 0`,
+  `A_l -> 2/N`, so `A_l(129)/A_l(126) = 126/129` to six digits for every even
+  `l >= 8`. The design's own high-degree behaviour is the 1/N law, which is why
+  adding points cannot beat adding points.
 - **Do not** state that no arbitrary positive-weight non-antipodal rule can reach
   degree 4 on 64,512 nodes. The general even-degree bound is `dim P_2 = 33,152`,
   which 64,512 clears twice over. The claim is scoped to pair-symmetric antipodal
