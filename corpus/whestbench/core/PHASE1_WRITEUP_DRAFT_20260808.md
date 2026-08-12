@@ -577,8 +577,11 @@ DERIVE the empirical wall rather than merely measure it:
    an antipodal pair carries correlated even-harmonic information, so a
    pair of forwards is worth ~1.2 draws, not 2). Second signal: the
    empirical residual correlations at the design's own spacings are
-   c(0) = -1.3e-3 and c_even(1/16) = -5.5e-6 — decorrelated at every
-   design pair, exactly as the speckle model of (2) requires. One
+   c(0) = -1.3e-3 and c_even(1/16) = -5.5e-6 — **small at the two
+   shell-aggregate spacings the design realizes** (Erratum E10; earlier
+   drafts wrote "decorrelated at every design pair," which claims a
+   pairwise property from a shell-aggregate measurement and is
+   withdrawn). One
    disclosed formula correction, reported honestly: the predeclared
    four-term correlation-kernel floor formula is numerically unusable at
    this scale — its cross-shell coefficient is 64,000, so a sub-1e-3
@@ -649,12 +652,18 @@ not require the entropy claim at all, and is not the same as having no fitted
 constants (it has several; see the executive summary). One precision matters, and we state it
 carefully: the entropy is COMPUTATIONAL, not ontic. The residual is a
 deterministic function of weights we possess — the weights are the seed —
-that behaves as strong pseudo-randomness against every sub-budget test we
-constructed; the falsification ledger certifies PRNG strength, not
-information absence. That is exactly why the 340.7x gap region is, among
-tested classes, reachable only by seed-side methods — estimators that use
-the weights to un-randomize the structure at the source instead of
-testing the output.
+and it **survived every sub-budget test this campaign constructed**
+(Erratum E10). Earlier drafts said the ledger "certifies PRNG strength."
+It does not: a finite battery of failed attacks is evidence about the
+battery, not a certificate of pseudorandomness, and no formal
+indistinguishability claim is available here. What the ledger records is
+that the families we tried did not find exploitable structure — which
+leaves open both that a family we did not try would, and that the
+structure is there to be found.
+
+Among the classes we tested, the 340.9x gap region was reachable only by
+seed-side methods — estimators using the weights at the source rather
+than testing the output. That is a statement about tested classes.
 
 ### 3f. Adversarial closure: the floor as an earned result (new)
 
@@ -733,9 +742,12 @@ record and forced four same-day corrections, two of which are visible in this
 document (§3e(5)'s floor language de-escalated to S17's own "attempt", §3c/§3d's
 dispersion re-measured and bracket-validated). The question we leave open, and
 state as open: whether NON-rotation seed-side structure is extractable at all.
-The rotation lane closes at the point-evaluation level; the deeper lane is
-untested here. Every number in this section is reproducible from committed
-artifacts.
+Earlier drafts said "the rotation lane closes at the point-evaluation level."
+**Withdrawn (E10):** one seed-side rotation construction was built and measured
+a clean null (paired t = +0.19), and a lane is not closed by a single null. The
+accurate statement is that the one rotation-side construction we built did not
+work, and the deeper lane is untested here. Every number in this section is
+reproducible from committed artifacts.
 
 ### 4. Methodological notes: calibrate your suite, and re-measure your graveyard
 
