@@ -888,8 +888,27 @@ that worst-case 7.7% and nothing else.
 
 ### 6. Reproducibility
 
-All artifacts, predeclarations, kill gates, adversarial audits, frozen
-manifests, and the 267-record fold ledger are in the public corpus at
-github.com/gmrmk/recursive-estimator-folding. Every claim above cites a
-committed measurement; negative results are retained in full to prevent
-retrospective cherry-picking.
+The estimator source, predeclarations, kill gates, adversarial audits, frozen
+manifests, and the 267-record fold ledger are at
+
+    github.com/gmrmk/recursive-estimator-folding
+      /tree/<COMMIT-SHA-PINNED-AT-FILING>/corpus/whestbench
+
+**Read that path, not the repository root.** The default branch is a
+2026-08-06 snapshot and does not contain the papers, this write-up, the
+ablation results, or the current ledger; the ledger it does carry has 43
+records rather than 267, which would contradict this section. The campaign
+branch is `agent/compression-survivor-corpus`, and the filing pins an exact
+commit so the citation cannot drift.
+
+The repository contains no challenge data, no private truth, no scorer, no
+credentials, and not the #326094 submission archive. Negative results are
+retained in full rather than pruned, which is what makes the falsification
+ledger checkable rather than merely asserted.
+
+*Erratum E12.* Earlier drafts, including the version filed 2026-08-10, cited
+the bare repository URL and stated that all artifacts and the 267-record ledger
+were there. On the default branch they are not. A reader following that
+citation would have found a stale tree whose ledger disagrees with this
+document by 224 records. The artifacts were always public on the campaign
+branch; the citation pointed at the wrong place.
