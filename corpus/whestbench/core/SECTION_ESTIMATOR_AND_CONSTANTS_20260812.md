@@ -25,19 +25,16 @@ orthonormal basis `H_256 diag(phi_s)/16`, antipodally doubled to 64,512 points
 at the exact chi-mean radius, with a per-network Haar rotation as the sole
 randomization. Five components, each independently ablated in §3:
 
-1. **The design.** Measured 2.02x variance reduction against radially
-   conditioned Monte Carlo, isolated.
+1. **The design**, worth 2.02x isolated against radially conditioned Monte Carlo.
 2. **Exact radial conditioning.** A bias-free ReLU network is positively
-   one-homogeneous, so `E[f(X)] = E||X|| · E[f(U)]` holds exactly, layer by
-   layer. The radial degree of freedom is not reduced, it is *removed*, and
-   every sample sits on the mean-radius sphere.
+   one-homogeneous, so `E[f(X)] = E||X|| · E[f(U)]` holds exactly at every
+   layer. The radial degree of freedom is not reduced, it is *removed*.
 3. **Pilot-rescued structural pruning.** An analytic diagonal pass marks
-   neurons whose standardized pre-activation falls below a threshold as
-   provisionally cold; a 256-antipodal-pair pilot rescues any that fire. Saves
-   **25.109% of B**.
+   neurons below a threshold as provisionally cold; a 256-antipodal-pair pilot
+   rescues any that fire. Saves **25.109% of B**.
 4. **Three-terminal-layer folding.** Dead columns vanish, always-on columns
    compose linearly into the next weight matrix, and only kink columns retain a
-   ReLU. Saves **4.828% of B** at a measured MSE ratio of 1.000033.
+   ReLU. Saves **4.828% of B** at an MSE ratio of 1.000033.
 5. **A first-layer moment-tangent control**, frozen coefficient, measured
    neutral on this design.
 
@@ -70,23 +67,22 @@ record 202) with **all arms flat**. That flatness is worth more than the
 omission cost — it is direct evidence the estimator is insensitive to a dial we
 were free to choose, which is the property an auditor is actually looking for.
 
-Two further values are frozen but belong in neither column: the backend block
-height `BLOCK_ROWS = 4,096`, and the frame ordering, both implementation
-constants carrying no development selection.
+Two further values are frozen but belong in neither column — the backend block
+height `BLOCK_ROWS = 4,096` and the frame ordering — implementation constants
+carrying no development selection.
 
-**We have twice stated this wrongly.** An earlier draft claimed "every constant
-is forced" and "zero fitted structure anywhere in the estimator." False. The
-repair was also wrong, listing values read from a base class that the deployed
-subclass overrides. Both errors were caught within the hour by adversarial audit,
-and both are left on the page rather than quietly replaced, because a paper
-arguing for an evidence discipline should show that discipline failing and being
-caught. The count has since moved from six to seven for the same reason.
+**We have stated this wrongly twice.** An earlier draft claimed "zero fitted
+structure anywhere in the estimator." False. The repair was also wrong, reading
+values from a base class the deployed subclass overrides. Both were caught within
+the hour by adversarial audit, and both are left on the page rather than quietly
+replaced, because a paper arguing for an evidence discipline should show that
+discipline failing and being caught. The count moved from six to seven for the
+same reason.
 
-**What we do claim, precisely:** the fitted surface is seven scalars, enumerated
-above, frozen before grading, confined to budget and correction coefficients, and
-containing nothing that could learn the target. No component was fit to the
-evaluation suite. Near-zero measured bias does not prove absence of fitting, and
-we do not claim it does.
+**What we claim, precisely:** the fitted surface is seven scalars, frozen before
+grading, confined to budget and correction coefficients, containing nothing that
+could learn the target, and no component was fit to the evaluation suite. Low
+measured bias does not prove absence of fitting, and we do not claim it does.
 
 ---
 
