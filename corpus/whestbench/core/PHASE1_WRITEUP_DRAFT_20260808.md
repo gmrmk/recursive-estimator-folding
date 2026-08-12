@@ -333,7 +333,7 @@ boundary). We think this is the sharpest available statement of why depth-32
 white-box estimation is hard, and it is stated with certificates rather than
 intuition.
 
-### 3. Falsification ledger — eight predeclared kills
+### 3. Falsification ledger — twelve predeclared kills
 
 Every entry was predeclared with its kill gate **before** implementation; none
 was retuned after seeing results. All are reproducible from the corpus.
@@ -365,7 +365,9 @@ pins the failure on the terminal law's non-Gaussianity itself.
 
 **Hosted validation of the submission**: #326094 graded adjusted 1.832e-7
 (final-layer MSE 2.818e-7) on 50/50 public MLPs with zero failures, 3.5x
-better than the grader's Monte-Carlo reference, at ~1-3 s wall per MLP with
+better than the grader's Monte-Carlo reference, at **5.75 s mean / 6.80 s max**
+wall per MLP against the 60 s cap (hosted, `a1_hosted_ledger.json`, 50 rows,
+min 4.61 s — see E9; earlier drafts printed a local T4 figure here) with
 a residual exposure of 4.5% of scored C on average (7.7% of adjusted score
 worst-case at C/B 0.650, conditional on λ = 1e11 remaining fixed) — the
 compute profile is essentially fully instrumented, which we note in the
@@ -615,9 +617,10 @@ cheap first-layer covariates add ≤1.56% out-of-sample R², so more analytic
 effort does not lower it. A **1/N sampling line** through the champion
 (2.818e-7 at C/B 0.65; 5.35e-8 at 5.27x budget), on which the champion
 sits within ~2x of the floor attempt of (5). The vertical gap between plateau and line
-at our budget is **340.7x** in raw final-layer MSE (384x against the
-~2.5e-7 sampling point of §2, 524x against adjusted 1.832e-7 — the
-denominator matters). The gap is not headroom we left by sampling badly;
+at our budget is **340.9x** in raw final-layer MSE (384x against the
+~2.5e-7 sampling point of §2; the withdrawn 524x figure mixed raw against
+adjusted and is not restated here — see E7, and §2 for the two admissible
+ratios, 340.9x raw/raw and 52.4x adjusted/adjusted). The gap is not headroom we left by sampling badly;
 it is the price of point-evaluation information: pay FLOPs on the sloped
 arm, or accept the plateau. Among the classes we tested, the only way to
 sit INSIDE the gap — low MSE at low budget — is to leave the
