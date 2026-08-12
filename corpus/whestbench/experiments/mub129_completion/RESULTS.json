@@ -72,7 +72,7 @@
   "geomean_score_ratio": 0.9370437357791304,
   "variance_removed_pct": 8.474797900643072,
   "k1_fires": false,
-  "verdict": "SURVIVES_K1 (gate as written), headline restated as a bracket after the 03:24 corrections",
+  "verdict": "K1 FAILED on re-analysis (was: SURVIVES_K1). Candidate remains KILLED by prior art S11/M81; the theorem stands.",
   "wall_seconds": 96.84050846099854,
   "second_signal_gegenbauer_design_defect": {
     "degree_2": {
@@ -114,5 +114,32 @@
     ],
     "headline_status": "The 6.3% point estimate is WITHDRAWN. Replaced by the bracket above. Both endpoints are wins.",
     "still_open": "Composition with pruning, folding, tangent, guards, FlopScope and residual is UNMEASURED and unclaimed. The raw dense runner omits all of them."
+  },
+  "CORRECTION_20260812_adversarial_audit": {
+    "source": "independent adversarial audit, 2026-08-12",
+    "derived_E4_over_E6_WITHDRAWN": 2.9523001880761166,
+    "why": "The two-degree truncation assumed degrees >=8 negligible. They are not: an independent derivation via the iterated arc-cosine kernel K(c)=(mean_chi^2/D)*kappa^32(c) puts 86% of predicted variance (2.141e-07 of 2.498e-07) at degrees >=8. Corrected E4/E6 = 1.410.",
+    "corrected_E4_over_E6": 1.41,
+    "predicted_degree4_variance_share_pct": 0.4497,
+    "four_independent_estimates_of_the_degree4_share_pct": {
+      "kernel_derivation": 0.4497,
+      "m191_cv_deg4": 0.42,
+      "r0_harmonic_spectrum_inadmissible": 0.45,
+      "s11_matched_control_upper_bound": 0.176
+    },
+    "power": "Between-net log-ratio sd 0.035. n=3 x 16 rotations gives 5% power against a 0.45% effect, i.e. the type-I rate. ~500 networks needed for 80%.",
+    "published_run_CI_on_score_ratio": [
+      0.804,
+      1.092
+    ],
+    "published_run_p_vs_1": 0.209,
+    "same_3_nets_64_rotations_score_ratio": 0.98638,
+    "sixteen_fresh_nets_score_ratio": 1.00087,
+    "sixteen_fresh_nets_CI": [
+      0.9825,
+      1.0196
+    ],
+    "net1_outlier_sigma": -3.73,
+    "verdict": "K1 should be read as FAILED, not survived. The point estimate was an n=3 sampling artifact driven by one -3.7 sigma network. Structural and design-theoretic claims are untouched: A_4(129)=0 exactly, m=129 unique, the Walsh ladder, the DGS closure, and the asset certificate all reproduced to the last digit."
   }
 }

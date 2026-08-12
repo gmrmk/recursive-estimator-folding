@@ -36,20 +36,48 @@ persistent increment **1.75195 MiB** against M71's frozen margin **1.44531 MiB**
 crossing the 480 MiB safety gate. Even had the variance value passed, that
 blocker remained.
 
-## My methodological error, which is the useful part
+## My methodological error — CORRECTED 2026-08-12 by an adversarial audit
 
-`PREDECLARATION.md` gated K1 against `126/129 = 0.976744`, described there as
-"the pure-1/N null." **That is a theoretical null, not an empirical control.**
-The correct control is point-count-matched: add three *arbitrary* frames and see
-what the extra 1,536 points buy on their own. S11 ran exactly that and found the
-control captures +3.25% of the completion's +3.42%. Nearly the whole raw gain is
-generic more-samples averaging, which is precisely what the point-count cost
-increase offsets.
+**An earlier version of this section got the diagnosis wrong, and the correction
+is more useful than the original.**
 
-My 3x16 raw screen reported a larger raw ratio (arithmetic 0.901107) because it
-measured raw quadrature at 16 rotations without pruning, folding, tangent or
-guards. Direction and cause are the same. **A matched-point control would have
-killed it on the first run, and I did not include one.**
+What I first wrote: that I had gated against `126/129 = 0.976744`, "a theoretical
+null, not an empirical control," and that a matched-point control would have
+killed it on the first run.
+
+**That causal story is false.** An independent adversarial audit re-derived the
+design defects in exact rational Gegenbauer arithmetic and found
+`A_l(129)/A_l(126) = 126/129` to six or more digits for **every even `l >= 8`**,
+and `0.977438` at `l = 6`. Because `P_l(1/16) -> 0`, the defect tends to `2/N`,
+so **the design's own tail law is the 1/N law.** The K1 bar was correct and
+marginally conservative. The auditor's own point-count-matched control at `n = 3`
+returned an "isolated degree-4" figure of **4.14% with a CI spanning
+everything** — the control is not redundant, but at this sample size it is as
+noise-dominated as the arm it was meant to check.
+
+**The actual mechanism is statistical power.** Between-network log-ratio standard
+deviation is `0.035`. Three networks at sixteen rotations has **5% power against
+a 0.45% effect — exactly the type-I rate, i.e. none.** Roughly **500 networks**
+would be needed for 80%. The experiment could not have detected the true effect,
+and could not have failed to produce a large-looking point estimate by chance.
+
+The empirical collapse, all from the audit:
+
+    published, 3 nets x 16 rotations   score ratio 0.93704   CI [0.804, 1.092]  p = 0.21
+    SAME 3 nets x 64 rotations         score ratio 0.98638                      p = 0.51
+    16 FRESH nets x 16 rotations       score ratio 1.00087   CI [0.9825, 1.0196] p = 0.92
+
+Quadrupling rotations on the same three networks moves every ratio upward and
+cuts the headline from 6.3% to 1.4%. Sixteen fresh networks put it at a **0.09%
+loss**. Net 1 of the published three, at ratio 0.8586, is a **-3.73 sigma
+outlier** against a 16-network population. The 6.3% was one net.
+
+**The lesson, restated correctly: a predeclaration that does not state its power
+is incomplete.** I fixed a threshold and a sample size without ever asking what
+effect that design could resolve. Had I computed it, `n = 3` against a
+sub-percent effect would have been visibly hopeless before any code was written.
+The missing control was a real gap; the missing power calculation was the fatal
+one.
 
 Second error, process rather than method: I searched the 267-record ledger for
 `dgfl` before starting and never searched for `129` or `full129`. The collision
