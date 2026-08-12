@@ -792,9 +792,24 @@ and no Phase-1 score headroom claimed anywhere in the sweep.
 
 ### 4b. LLM involvement, stated in full, and what we did about it
 
-The guidelines require full transparency about LLM involvement and warn that
-unhedged dubious claims reduce credibility. We take both seriously enough to
-make our answer a section rather than a disclaimer.
+Official Rules v12 §5.7 *encourages* prize-eligible solutions to disclose "what
+LLM tools — if any — were materially used in generating or substantially
+modifying the Solution code, and the extent of that use," and §6 lists "the
+clarity and accuracy of the technical writeup" among the judging criteria. We
+disclose well past what is asked, because the honest answer here is unusual
+enough that a disclaimer would misrepresent it.
+
+*Erratum E11.* Earlier drafts, including the version filed 2026-08-10, opened
+this section by saying the guidelines "require full transparency about LLM
+involvement and warn that unhedged dubious claims reduce credibility." **Both
+halves were wrong.** Disclosure is encouraged, not required; and the second
+clause is not organizer text at all — a full-text search of the challenge forum
+for *unhedged*, *dubious* and *credibility* returns zero results, and the phrase
+appears nowhere in Rules v12. We had been citing, as the governing standard for
+this entire document, a sentence the organizers never wrote. It is the sharpest
+instance we have of the failure mode this section exists to guard against, and
+we found it the only way such things are ever found: by going and reading the
+primary source instead of our own summary of it.
 
 **Disclosure.** This campaign was conducted end-to-end by large language models
 operating as agents, under human direction. The estimator, the experiments, the
