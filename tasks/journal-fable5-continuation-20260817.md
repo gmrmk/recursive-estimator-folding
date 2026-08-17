@@ -50,11 +50,19 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
 - Session goal set by owner (/goal): evidence-calibrated refinement under the operational
   contract; Stop hook active.
 
+- 2026-08-17 ~22:0x UTC: repo PUBLIC + **corrected AC filing SENT** (Gmail 1a011a886c288f40;
+  short form inline + PDF links; pinned tree HTTP 200 anon). Bolts L8/L9 logged (cd45a07).
+  Audited semantic pass landed: graph **665 nodes / 4,112 edges / 25 communities**
+  (endpoint check NONE missing; determinism identical; coverage OK; d69b141 pushed).
+  WHAT_IF_FORECAST_20260817.md + continuation-plan updates pushed (614afe1).
+  Installs: caveman plugin ✓, pxpipe updated 0.13.1 ✓ (proxy start + logon task blocked by
+  classifier — user runs it), Headroom MCP verified live ✓, InsForge setup.sh fetched +
+  inspected (execution blocked — user runs two commands; Docker 29.4.3 present).
+
 ## Next action (exactly ONE — overwrite, never a list)
-Log bolts L8 (Abel/Bayesian) + L9 (Galois/hypercube) in the lightning ledger, then land the
-audited semantic proposals in the builder, rebuild + recluster + promote, then the
-what-if-oracle forecast and the continuation-plan update (transcript deltas), then memory
-close-out and final report.
+Session complete pending owner actions: Phase-2 rules diff at 00:00 UTC; optional Discourse
+companion post; pxpipe/InsForge activation commands; M245 + slot-2 + branch-integration
+decisions per CONTINUATION_PLAN_20260817.md §6.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
