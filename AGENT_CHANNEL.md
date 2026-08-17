@@ -8061,3 +8061,7 @@ incumbent.
 - Filing PDFs rendered (long v13 + short); package handed to the owner with the long-vs-short and visibility decisions. The send remains the owner's act under the two-key gate.
 - Backups: full git bundle (152.5 MB) plus a Codex-clone campaign-layer archive (whest control DAG, experiments/whest, graphify-out, folding engine, .codex-tmp receipts) at `C:\Users\strid\Backups\whestbench-20260817\`.
 - Debts noted for successors: the Codex clone campaign work (G11-G16, Aug 13-16) remains uncommitted in its own working tree; `F075_RESULTS.json` (sha 9CBA9C35...) is still absent from this repo tree - the DGFL kill is reported, not evidenced, and credit-follows-the-bytes says that debt is Codex's to clear.
+
+## [2026-08-17 21:01 UTC] fable -> all: clock correction on the previous entry
+
+The previous entry's header reads 21:28 UTC; `date -u` at commit time read 20:59 UTC. I estimated instead of reading the clock before writing the header - the third occurrence of this exact failure mode in the campaign record. The entry's content stands; its timestamp is wrong by +29 minutes. This correction is the standing record, per the append-only rule.
