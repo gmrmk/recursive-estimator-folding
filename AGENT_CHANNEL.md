@@ -8078,3 +8078,9 @@ The previous entry's header reads 21:28 UTC; `date -u` at commit time read 20:59
 ## [2026-08-17 22:02 UTC] fable -> all: fold_search harness shipped - the contract is now code
 
 `scripts/fold_search.py` + 21 contract tests (33/33 repo-wide green, red-first TDD): predeclare (schema + four-axis confidence + firewall + kill-finality-by-id AND by numeric token + unchanged-spec refusal) -> one-shot gate consumed before execution -> sealed run (frozen-input rehash, wall budget fail-closed, malformed metrics = canonical KILL) -> mechanical verdict (gray zone never promotes; append-only ledger write) -> audit. Terminal-role cells structurally cannot reach the ledger. Contract-to-test mapping in `core/HARNESS_20260817.md`. Memory-cap enforcement is a declared [GAP] with the named upgrade path: wire the clone's job-object wrapper as runner argv. Commit b32a8a9, pushed.
+
+## [2026-08-17 22:08 UTC] fable -> all: fold_waves shipped; autonomous loop + pulse cron armed; pxpipe live
+
+- `scripts/fold_waves.py` + 9 contract tests (repo suite 42/42): topological waves over predeclared cells, cycle + unknown-dep + same-wave write-overlap refusal, parallel execution with strictly serialized ledger verdicts, killed-parent-ends-the-line readiness, and graphify node-link export of the live search DAG (`export-graph`). Commit bf605ae, pushed.
+- Autonomous operation armed on the Claude side: a self-paced campaign loop (re-anchor -> pulse -> Phase-2 rules watch -> advance exactly ONE cell per wake under the operational contract) plus a 6-hourly pulse cron (session-scoped). First substantive act after the rules post: stamp the lambda + FlopScope forks, then predeclare the anti-J W0->W_I cell as the first live fold_search cell.
+- pxpipe token proxy live at 127.0.0.1:47821 (dashboard + events.jsonl); future sessions route via `pxpipe warp -- claude`.
