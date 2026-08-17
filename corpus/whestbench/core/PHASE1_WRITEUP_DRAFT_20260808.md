@@ -1,6 +1,13 @@
 # Phase-1 Algorithmic Contribution writeup — draft v12
 
-Status: DRAFT v12, 2026-08-11. **A correction release, and a restructure.**
+Status: DRAFT v13, 2026-08-17. **Section landing and citation pinning.** v13
+replaces §1 with the finished estimator-and-constants section (the
+selected-constant count is **seven** — `on_alpha = 3.0` was omitted by every
+draft before 2026-08-12), inserts the design-axis closure as §3b2, corrects the
+repository-visibility statement in §6, and pins the reproducibility citation to
+a pushed commit.
+
+v12, 2026-08-11: a correction release, and a restructure.
 v10–v11 corrected five defects we found in our own v9 after filing it; v12
 reorganises the document around what the algorithmic-contribution guidelines
 actually judge — understanding of white-box estimation, mechanistic content, and
@@ -59,14 +66,15 @@ proof in companion P4).
 *Selected during development, and therefore fitted in the sense that matters to
 an auditor:* the moment-tangent coefficient `λ = 0.9807112198896164` (inherited
 and active), the pilot sizes `pilot_base = 256` and `fold_pilot_base = 1,024`,
-the pruning parameter `dead_alpha = −2.0` (inherited and active), and the phase
-window `phase_start = 2`, `phase_stop = 128`. Six constants, all scalar, all
-frozen before grading.
+the fold thresholds `dead_alpha = −2.0` (inherited and active) and
+`on_alpha = 3.0` (live in the terminal fold; omitted by every draft before
+2026-08-12 — §1 carries the disclosure), and the phase window `phase_start = 2`,
+`phase_stop = 128`. Seven constants, all scalar, all frozen before grading.
 
 **Correction, stated here because this very paragraph got it wrong twice.**
 A prior v12 draft claimed "every constant is forced," "none are tuned," and
-"zero fitted structure anywhere in the estimator." **False** — the six constants
-above are selected. An adversarial audit caught it within the hour. The repair
+"zero fitted structure anywhere in the estimator." **False** — the seven
+constants above are selected. An adversarial audit caught it within the hour. The repair
 was then *also* wrong: it listed `n_base = 14,000` and a decision to disable
 radial conditioning as fitted choices, both read from the base class, when the
 deployed subclass overrides them to `32,256` and `True`. A second audit caught
@@ -235,27 +243,75 @@ produced these three. We take that asymmetry as the strongest evidence
 available that the record is honest, and we would rather publish the asymmetry
 than the tidier document.
 
-### 1. The estimator
+### 1. The estimator, and exactly which of its numbers were chosen
 
-Five components, each independently measured:
+The estimator integrates over a frozen phased-Hadamard **exact spherical
+2-design**: 126 mutually unbiased frames of 256 directions each, every frame an
+orthonormal basis `H_256 diag(phi_s)/16`, antipodally doubled to 64,512 points
+at the exact chi-mean radius, with a per-network Haar rotation as the sole
+randomization. Five components, each independently ablated in §3:
 
-1. **Phased-Hadamard spherical design.** 126 orthonormal frames derived from
-   a Kerdock-code phase set, 256 directions each = 32,256 base directions,
-   antipodally doubled to 64,512, all at the exact chi-mean radius, with a
-   per-network Haar rotation as the sole randomization. Measured **2.0-3.2x
-   variance reduction over radially-conditioned Monte Carlo** (three He nets,
-   16 paired replicates).
+1. **The design**, worth 2.02x isolated against radially conditioned Monte Carlo.
 2. **Exact radial conditioning.** A bias-free ReLU network is positively
-   one-homogeneous, so the radial degree of freedom integrates exactly and
-   every sample can be placed on the mean-radius sphere.
+   one-homogeneous, so `E[f(X)] = E||X|| · E[f(U)]` holds exactly at every
+   layer. The radial degree of freedom is not reduced, it is *removed*.
 3. **Pilot-rescued structural pruning.** An analytic diagonal pass marks
-   neurons with standardized pre-activation below -2 as provisionally cold; a
-   256-antipodal-pair pilot rescues any observed firing. Reduces billed FLOPs
-   ~1.7x.
+   neurons below a threshold as provisionally cold; a 256-antipodal-pair pilot
+   rescues any that fire. Saves **25.109% of B**.
 4. **Three-terminal-layer folding.** Dead columns vanish, always-on columns
-   compose linearly into the next weight matrix, only kink columns retain a
-   ReLU.
-5. **Moment-tangent control**, frozen coefficient λ = 0.9807112198896164.
+   compose linearly into the next weight matrix, and only kink columns retain a
+   ReLU. Saves **4.828% of B** at an MSE ratio of 1.000033.
+5. **A first-layer moment-tangent control**, frozen coefficient, measured
+   neutral on this design.
+
+**What is forced, with nothing tunable in it.** The design itself; the sample
+count `n_base = 126 × 256 = 32,256`, which is the design's size and not a budget
+anyone picked; the exact radius `E||X|| = 15.98438266660852747…` from the chi
+moments; and the uniform weights, which are *a* global minimiser of the
+quadrature error at every spherical-harmonic degree under a zonal Haar-averaged
+criterion — though not the unique one, and on the deployed antipodally doubled
+set not unique at any even degree.
+
+**What was selected during development, and is therefore fitted in the sense an
+auditor cares about. There are seven.**
+
+| constant | value | role |
+|---|---|---|
+| `moment_tangent_lambda` | 0.9807112198896164 | first-layer control coefficient |
+| `pilot_base` | 256 | pilot pairs for the pruning rescue |
+| `fold_pilot_base` | 1,024 | pilot pairs for the terminal fold |
+| `dead_alpha` | −2.0 | cold-neuron threshold |
+| `on_alpha` | **3.0** | always-on threshold in the fold |
+| `phase_start` | 2 | first frame of the deployed slice |
+| `phase_stop` | 128 | last frame of the deployed slice |
+
+All seven are scalar and all were frozen before grading. `on_alpha` deserves its
+own sentence, because earlier drafts of this paper enumerated **six** and omitted
+it: it is the mirror of `dead_alpha`, it is live on the deployed path, and it was
+swept over `{3.5, 4.0, 5.0}` against `dead_alpha` on development data (ledger
+record 202) with **all arms flat**. That flatness is worth more than the
+omission cost — it is direct evidence the estimator is insensitive to a dial we
+were free to choose, which is the property an auditor is actually looking for.
+
+Two further values are frozen but belong in neither column — the backend block
+height `BLOCK_ROWS = 4,096` and the frame ordering — implementation constants
+carrying no development selection.
+
+**We have stated this wrongly twice.** An earlier draft claimed "zero fitted
+structure anywhere in the estimator." False. The repair was also wrong, reading
+values from a base class the deployed subclass overrides. Both were caught within
+the hour by adversarial audit, and both are left on the page rather than quietly
+replaced, because a paper arguing for an evidence discipline should show that
+discipline failing and being caught. The count moved from six to seven for the
+same reason.
+
+**What we claim, precisely:** the fitted surface is seven scalars, frozen before
+grading, confined to budget and correction coefficients, containing nothing that
+could learn the target, and no component was fit to the evaluation suite. Low
+measured bias does not prove absence of fitting, and we do not claim it does.
+Every value above was read from the deployed method-resolution order
+(`estimator.Estimator` → `kerdock_v3` → `fold3` → `base_estimator`) and is
+re-derived mechanically by `scripts/verify_phase1_writeup.py`.
 
 Measured compute profile, **with the provenance of each number stated, because
 these are not all from the same machine** (Erratum E9):
@@ -431,6 +487,78 @@ and — by these measurements — unscoopable by finite projection. We believe
 this pair (the exactness theorem + the dispersion no-go) is the sharpest
 available characterization of why structured spherical designs plateau on
 this task.
+
+### 3b2. The design axis, closed from both sides: completion is exact, and worth nothing (new in v13)
+
+This section supersedes the reachable-design part of §3b's closing claim. It
+revives nothing: the 129-frame completion is and remains a killed candidate
+(ledger `m81_full129_pareto`, `s11_full129_reopen_measured_breakeven`), reported
+here as falsification rather than as a disposition.
+
+Our estimator integrates over 126 phased-Hadamard frames, each an orthonormal
+basis `H_256 diag(phi_s)/16`, antipodally doubled to 64,512 points on `S^255`.
+It is an exact spherical 2-design, and antipodally therefore a 3-design. The
+natural next question is whether pushing to degree-4 exactness would help. It
+can be answered exactly, in both directions, and the answer is instructive.
+
+**The design cannot reach degree 4 at its current size.** [D] The
+Delsarte–Goethals–Seidel bound for an antipodal spherical 4-design in `S^255` —
+which is automatically a 5-design, since odd harmonics cancel pairwise — is
+`2*C(257,2) = 65,792` points. We spend 64,512. We are 1,280 points short, so no
+reweighting of these nodes under antipodal pair symmetry reaches degree 4.
+
+**Exactly one frame count fixes it.** [D] For `m` mutually unbiased bases
+antipodally doubled, every point sees one inner product at `+1`, one at `-1`,
+510 at `0`, and `512(m-1)` at `+-1/16`, so `sum_y <x,y>^4 = 2 + (m-1)/128`. A
+4-design requires `3N/(d(d+2)) = m/43`. Equating and clearing `128*43` gives
+`10965 = 85m`, hence **`m = 129` and no other integer** — 130 clears the counting
+floor and still fails. And `129 = d/2 + 1` is the maximum number of real mutually
+unbiased bases in `R^d` when `d` is a power of four, which `256 = 4^4` is. Under
+the Walsh doubling the complete set has `d^2+2d` points against a floor of
+`d^2+d`, clearing by exactly `d` at every level: 24/20, 288/272, 4224/4160,
+66048/65792. The completed design is a near-tight antipodal 5-design, over the
+floor by 0.39%.
+
+**And we can say in advance what completing it is worth.** [D] For a bias-free
+He-initialised ReLU network the rotation-averaged two-point function is exactly
+the iterated arc-cosine kernel `K(c) = (E||X||^2/d)·kappa^32(c)`, so the
+estimator's variance decomposes as `sum_l ||f_l||^2 A_l` against the design
+defects above. That predicts `V126 = 2.4977e-7` against a measured geomean of
+`2.6697e-7` over sixteen fresh networks — **the variance of this estimator is
+predictable from first principles to 6.4%** — and it puts the degree-4 share of
+that variance at **0.4497%**.
+
+**So completion is worth about half a percent, against a 2.33% break-even** set
+by the point-count cost. [O] Measurement agrees from two further directions: a
+point-count-matched experiment isolating degree-4 exactness at equal 66,048
+points returns `0.176%, CI [0.970, 1.028], P(better) = 0.54`, and a committed
+degree-4 control variate returns `+0.42%`. Three routes, one predictive, all
+landing an order of magnitude below the bar.
+
+That agreement is worth more than any of the three alone, because the analytic
+route explains the other two. Most of the variance is simply not where design
+strength lives: **86% of it sits at degrees 8 and above**, which no reachable
+design touches.
+
+**And degree 6, where the error actually lives, is unreachable.** [D] The
+measured angular error sits at degree 4 (11% of the iid level) and degree 6
+(40%). An antipodal 6-design needs `2*C(258,3) = 5,658,112` points, 87.7x our
+budget; any positive-weight rule needs `dim P_3(S^255) = 2,861,952`, still 44.4x.
+
+The design axis is therefore closed from both sides at once, and not for the
+reason one would guess. It is not that the design cannot be completed — it can
+be, exactly, and we did. It is that **completing it perfectly buys nothing
+measurable**, because the estimator's residual does not live in low-order design
+strength. Perfecting a design is not the same as reducing its error, and on these
+networks the two come apart.
+
+Companion numbers, committed for checkability
+(`experiments/mub129_replication/GEGENBAUER_CHECK.json`, exact rationals, even
+degrees): `A_4 = 7.350908201315546e-07` at m=126, `2.4120167535566633e-07` at
+m=128, exactly `0` at m=129; `A_6` moves only `3.194089008420301e-05 →
+3.122025216144244e-05`. The design's own high-degree behaviour is the 1/N law —
+because `P_l(1/16) → 0`, `A_l → 2/N`, so `A_l(129)/A_l(126) = 126/129` to six
+digits for every even `l >= 8`. Adding points cannot beat adding points.
 
 ### 3c. The marginal-value map (new)
 
@@ -896,14 +1024,18 @@ The estimator source, predeclarations, kill gates, adversarial audits, frozen
 manifests, and the 267-record fold ledger are at
 
     github.com/gmrmk/recursive-estimator-folding
-      /tree/<COMMIT-SHA-PINNED-AT-FILING>/corpus/whestbench
+      /tree/f225be4e4e4872dc2bef06711525cf00e73a332b/corpus/whestbench
 
 **Read that path, not the repository root.** The default branch is a
 2026-08-06 snapshot and does not contain the papers, this write-up, the
 ablation results, or the current ledger; the ledger it does carry has 43
 records rather than 267, which would contradict this section. The campaign
 branch is `agent/compression-survivor-corpus`, and the filing pins an exact
-commit so the citation cannot drift.
+commit so the citation cannot drift. The pinned commit is the pushed branch
+tip of 2026-08-17, verified against `origin` before filing. **The repository
+is private at the time of this filing; the organizers are granted read access
+on request** — the corpus retains source-material provenance constraints that
+preclude blanket publication.
 
 The repository contains no challenge data, no private truth, no scorer, no
 credentials, and not the #326094 submission archive. Negative results are
@@ -914,5 +1046,8 @@ ledger checkable rather than merely asserted.
 the bare repository URL and stated that all artifacts and the 267-record ledger
 were there. On the default branch they are not. A reader following that
 citation would have found a stale tree whose ledger disagrees with this
-document by 224 records. The artifacts were always public on the campaign
-branch; the citation pointed at the wrong place.
+document by 224 records. The artifacts were always present on the campaign
+branch; the citation pointed at the wrong place. A second, related defect is
+corrected in this draft: earlier drafts described the corpus as public; as of
+this filing the repository is private, and the access statement above is the
+operative one.
