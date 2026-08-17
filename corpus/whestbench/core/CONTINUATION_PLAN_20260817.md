@@ -74,11 +74,19 @@ without a premise change that clears the full ladder again.
 
 ## 3. Frontier queue (ranked; each item names its predeclared gate)
 
-1. **anti-J precondition** — run `W0 → W_I` (identity network), measure `d_48`
-   and `κ_AB(I)`. Agreed by both agents on 2026-08-11 and never run; cheapest
-   decisive measurement in the record. Gate: the already-published promotion
-   bar κ ≤ −269/525; the negative-eigenvalue trap forbids spectrum-only
-   evidence — a fully replayed pipeline null is mandatory.
+1. **anti-J precondition — DONE 2026-08-17, PASS_SCREEN** (cell
+   `ajpre1_w0_wi_precondition`, gate sealed at commit d186678 before the run).
+   Measured on 8 synthetic He nets: `d_48` upper96.667 = **1.1209** under the
+   1.25 Arm-1 ceiling; `κ_AB(I)` = **−0.027** [−0.127, +0.072]. Both halves of
+   my predeclared signature were falsified — the split debt is small (~5.7%),
+   not disqualifying, and the halves are already fractionally antithetic. The
+   family's bar is now a measured shift: κ from −0.027 to below −0.5124.
+   **Reachable next anti-J step** (was blocked on this precondition): the
+   independent fixed-direction transfer premise gate (sealed AJ2-F48 lines
+   584-671), then the seven-gate reflection-credit measurement — but the
+   negative-eigenvalue trap still forbids spectrum-only evidence, so any
+   reflection result owes a fully replayed pipeline null. This is a larger
+   build; queue it behind the cheap deciders below.
 2. **Lens-1 base-sensitivity test, then the net2 decision.** The joint HOLD on
    held net2 stands until the base-change refit (free, uses no holdout) is
    done. Gate: predeclare the transfer threshold before opening net2; net2 is

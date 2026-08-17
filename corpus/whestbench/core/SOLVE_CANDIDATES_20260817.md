@@ -49,7 +49,29 @@ the clone's own 24-pair contract only if λ survives.
 Confidence: implementation 0.9 · mechanism 0.85 (numbers are [R] until the
 archive reproduces them) · generalization 0.7 · compliance 0.9.
 
-### #3 — WC1: certified Plackett Source211Jet provider (**UNREFUTED — do not predeclare yet**)
+### #3 — WC1: certified Plackett Source211Jet provider — **REFUTED 2026-08-17 (Opus cold-refuter, file-line cited)**
+
+The cold refutation killed it on all four axes: (1) COMPOSABILITY — WC1's core
+clause is verbatim the fixed-node Plackett/Owen-T line rule **M162 killed**
+(`M162…:3`, disposition `REQUIRE_SYMBOLIC_CANCELLATION_PLUS_RANK_AWARE_INTERVAL
+_CERTIFICATE`, none of which WC1 supplies); M178 is bivariate-only ("OPENS ONLY
+M176"), M165 is rank-one-only ("no operation credit"), M173 is a rank-2 layer
+certificate only — the union is not the atlas (insight 113 names the full-rank
+trivariate Source211Jet as still *uncovered*). (2) COST — M205's minimal
+provider is already **2.595B > 1.987B** strict headroom; certified integration
+is additive on top. (3) PRIOR KILL — **M211 `KILLED_FROZEN_RESOURCE_GATE`**
+(2.0025B vs 1.987B), gm_m179_m199 `KILL_CONFIRMED` (M198 covariance goes
+non-PSD at layer 12/32, width 256). (4) NON-IDENTIFIABILITY — WC1 evaluates an
+orthant *probability* and calls it a physical *coefficient provider at native
+cost*: two different objects, shortcutting exactly the layer-bound provider the
+record names as the block. **WC1 is the M205 god edge relabeled.** Surviving
+residue: none as a provider; only the research program M162/M165/M173 already
+say is required and unbuilt (symbolic rank-face cancellation + rank-aware
+interval certificate + native cost trace + nontransverse/zero-marginal charts).
+The exact-control spine (M151→M179→M198→M205→M125b) stays blocked on that
+program, not on a composable shortcut. Kill is final.
+
+### (archived draft of #3, kept for the record)
 The highest ceiling in the set: composes preserved tissue only —
 M162's trivariate-orthant compression identity × M178's certified
 Phi2/Owen-T primitive (4,048 FLOPs/pair) × M165/M173's boundary-strata
