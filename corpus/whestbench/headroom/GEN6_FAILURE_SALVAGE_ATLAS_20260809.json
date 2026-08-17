@@ -11,7 +11,7 @@
     "resource_ceiling": "Hard C <= 272000000000; promotion safety gate Cmax < 258400000000 and zero failures.",
     "score_formula": "MSE * max(0.1, (billed_FLOPs + 1e11 * residual_seconds) / 2.72e11) under installed WHestBench 0.14.0 and FlopScope 0.10.0."
   },
-  "ledger_sha256": "81743b71f3b5ff7d4b34963e7cf3d67767799916452b6ab2862b528ee07b64f9",
+  "ledger_sha256": "8afec50ab41776225066cab074766e4b4aad6e9a38fc1887d0f7113642c86d2b",
   "purpose": "Exhaustive descriptive salvage atlas; non-evidentiary and non-promotional.",
   "records": [
     {
@@ -8269,57 +8269,1761 @@
         "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
       ],
       "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "rotation-draw variance = 99.79% of across-suite variance (tail theorem re-confirmed quantitatively). TWO-SIDED INTERPRETATION (the decision rule): thinning kills the lucky tail too \u2014 P(suite<1.6e-7) 6.4% at R=1 -> 0.01% at R=6",
+        "Rotation splitting is DEFENSIVE: locks expected position vs the 1.55-1.6e-7 near-rival band, cannot overtake the honest 3.7-7.4e-8 band under any R"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "numerical_or_endpoint_coverage",
+        "theorem_or_class_closure"
+      ],
+      "id": "s1_suite_risk_bootstrap",
+      "index": 223,
+      "information_sources": [
+        "sampled_network_paths",
+        "weights_only_analytic_state"
+      ],
+      "kill_condition": "Width shrink <25%, or mean inflation >=2%, or decomposition shows rotation-draw variance is not the dominant across-suite component.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity"
+      ],
+      "passed_tissue": [
+        "PASS all 3 gates at 100k suites: width shrink R6-vs-R1 58.85% (gate 25%, closed-form limit 59.18%)"
+      ],
+      "prediction": "P5-P95 width of bootstrapped 50-net suite-score distribution shrinks >=25% at R=6 vs R=1; mean shift <2%; P(suite score < 1.6e-7) improves.",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL at G0-CORRELATION: pooled within-net |rho| = 0.122 (bootstrap 95% CI [-0.153, +0.375], never reaches the 0.4 gate)"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "numerical_or_endpoint_coverage"
+      ],
+      "id": "s2_paid_information_rotation_weighting",
+      "index": 224,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "output_or_frame_statistics",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "|rho(in-sample variance estimate, realized per-rotation MSE)| < 0.4 on the P2 grid, OR weighted-vs-equal MSE ratio >= 0.98, OR any detectable bias in the split-sample combined estimator.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "No passed component is asserted; preserve the exact predeclaration, evidence, and falsifier as negative knowledge."
+      ],
+      "prediction": "Split-sample inverse-variance weighting at matched billed FLOPs beats equal weights iff the in-sample variance estimate correlates with realized conditional MSE with |rho| >= 0.4 (the P2b bar its weights-only proxies failed at 0.17).",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "run-level ctx.seed rooting permitted per pinned SDK) \u2014 any rotation-count/seeding variant is implementable in-package, with constraints recorded (mlp.seed-keyed slots for replay safety). G0b effect KILL: block-orthogonal coupling suite-mean-error variance ratio 0.9557 (95% CI [0.876, 1.043] \u2014 spans null) = 4.4% vs the 10% gate",
+        "One harness bugfix logged pre-verdict, no statistic changed"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "arithmetic_cost"
+      ],
+      "id": "s3_cross_net_coupled_rotations",
+      "index": 225,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "output_or_frame_statistics",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "G0a: grader forces per-net independent seeding outside our control -> dead at predeclaration. G0b: variance reduction <10% or any per-net marginal distortion detected.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "G0a legality PASS (durable, reusable): rotation derived entirely in participant code (kerdock_v3_estimator.py:149 rotation = self._haar_rotation(int(mlp.seed), mlp.width)",
+        "grader passes only (mlp, budget)",
+        "antithetic (R,-R) ratio 1.0028 (pure null). 12 nets w64/d8, 200k-sample truth, 2000 ensembles/arm, exact Haar marginals verified 12/12. Reinforcement: hosted suite aggregates per-MLP SQUARED losses \u2014 the tested signed-mean coupling channel is an upper bound, real-metric gain smaller still"
+      ],
+      "prediction": "G0a: our package derives rotation seeds internally (as the v3 source suggests) -> coupling is implementable. G0b: coupled ensembles reduce suite-mean variance measurably (>=10%) vs independent draws.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "R6 arm FAILS the bar 0/3 (its thinned tail cannot reach thresholds: P<1.6e-7 = 0.0001) \u2014 S1-defense and S4-portfolio are mutually exclusive strategies selected by expected position"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost"
+      ],
+      "id": "s4_designation_portfolio_bootstrap",
+      "index": 226,
+      "information_sources": [
+        "sampled_network_paths",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "Diversification gain < 2 points absolute at EVERY threshold and every mean-offset arm -> designate on pure means, portfolio frame dead.",
+      "operator_families": [
+        "sampling_and_design",
+        "engineering_and_cost",
+        "harmonic_and_symmetry",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "SURVIVES via the same-mean arm at 3/3 thresholds: decorrelation gain (rho 0.0 vs 1.0) = 2.85pp [2.80,2.91] at T=1.55e-7, 6.00pp [5.88,6.12] at 1.60e-7, 16.50pp [16.28,16.72] at 1.70e-7 \u2014 a fully decorrelated same-mean second entry ~doubles P(at least one < T) (0.0285/0.0637/0.2063 -> 0.0570/0.1237/0.3713). rho=0.9 still retains 1.4/2.6/6.2pp"
+      ],
+      "prediction": "P(at least one suite score < T) for T in {1.55e-7, 1.6e-7, 1.7e-7} improves by >=2 percentage points absolute for low-rho pairs vs rho=1 pairs at equal means; the gain grows when the second candidate has higher variance.",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL \u2014 both predeclared criteria fired independently: pooled near/far decile energy ratios 0.978-1.007 (~1.0 vs the 3x pass / 1.5x kill bars) on every observable combo (d1, dmin, kcount x global/frame residual)",
+        "Full 64,512 directions x 3 nets, no fallback"
+      ],
+      "failure_boundaries": [
+        "nonidentifiability_or_missing_information",
+        "approximation_or_materiality"
+      ],
+      "id": "s5_landau_kink_concentration_premise",
+      "index": 227,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "weights_only_analytic_state",
+        "endpoint_or_facet_geometry",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "Nearest/farthest decile energy ratio < 1.5x pooled, or non-monotone/sign-inconsistent across nets -> the edge-concentration premise is false and the Landau frame dies here (M191 closure stands untouched). NOTE: even a PASS does not reopen harmonic CVs by itself -- it only licenses predeclaring a kink-localized frame arm for Sol review.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "endpoint_facet_and_coarea",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "KILL \u2014 both predeclared criteria fired independently: pooled near/far decile energy ratios 0.978-1.007 (~1.0 vs the 3x pass / 1.5x kill bars) on every observable combo (d1, dmin, kcount x global/frame residual)"
+      ],
+      "prediction": "Residual energy density within the nearest-decile of d_kink exceeds the farthest-decile by >=3x (strong concentration), monotone across deciles; effect visible on >=2 of 3 nets.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "kink-localized frames are NOT a reopen candidate"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL at the concentration gate (top-100 eigs carry 0.32% of tr(D^2) vs 5% kill bar",
+        "participation rank 32,266 ~ N \u2014 maximally flat, no Bragg modes) \u2014 BUT the corpse is the designs complete algebraic anatomy: spectrum EXACTLY three shells (mid 3.16034e-5 x125 / bulk 3.09951e-5 x32,130 / constant mode 7.296e-7 x1, suppressed 42x)"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "wall_calls_or_allocation"
+      ],
+      "id": "s6_bloch_design_bragg_spectrum",
+      "index": 228,
+      "information_sources": [
+        "sampled_network_paths",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "Top-100 eigenvalues carry <5% of tr(D^2) (error operator spread \u2014 crystal frame dead, M191 closure extends to the design side). 5-50%: INCONCLUSIVE, held unresolved. NOTE: a PASS only licenses predeclaring a design-side aliased-mode CV arm for Sol review; nothing reopens by itself.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "participation rank 32,266 ~ N \u2014 maximally flat, no Bragg modes) \u2014 BUT the corpse is the designs complete algebraic anatomy: spectrum EXACTLY three shells (mid 3.16034e-5 x125 / bulk 3.09951e-5 x32,130 / constant mode 7.296e-7 x1, suppressed 42x)",
+        "inner-product fingerprint EXACTLY {0 within-frame, +-1/16 cross-frame} (the MUB signature \u2014 source of the arccos(1/16)=86.42deg min angle from S7)",
+        "the identity (1/N^2)SumG4 = lambda_top ties M191s ~11%-of-iid deg-4 error ENTIRELY to the one suppressed constant mode"
+      ],
+      "prediction": "The deg-4 error operator is massively concentrated: top-100 eigenvalues carry >=50% of tr(D^2) (vs ambient dim 1.8e8) \u2014 the design fails on few, algebraically structured modes (its reciprocal lattice), making a design-side CV subspace tractable regardless of f dispersion.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "No new estimator lever opens (independence = nothing between points to exploit)",
+        "Artifacts: experiments/s7_speckle/. xi off by >5x from mean-field, or no coherent decay structure in C_r(theta) -> the speckle/wave-packet model is quantitatively wrong for this observable"
+      ],
+      "failure_boundaries": [
+        "nonidentifiability_or_missing_information",
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation"
+      ],
+      "id": "s7_wavepacket_speckle_correlation",
+      "index": 229,
+      "information_sources": [
+        "sampled_network_paths",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "xi off by >5x from mean-field, or no coherent decay structure in C_r(theta) -> the speckle/wave-packet model is quantitatively wrong for this observable; frame dies here. Factor 2-5: INCONCLUSIVE, held unresolved. A PASS licenses only: (a) a first-principles variance formula for the writeup, (b) a design-spacing adjudication note; no estimator arm without Sol review.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity",
+        "compression_and_low_rank"
+      ],
+      "passed_tissue": [
+        "PASS (2/3 nets within factor 2, all monotone): xi_measured 36.98/35.60/45.95 deg vs first-principles xi_meanfield 20.91 deg (ratios 1.77/1.70/2.20)",
+        "Sols exact-control territory). MB RESOLUTION: Exp(1) rejected",
+        "effective independent neurons at depth 32 = ~1.5-2 of 256 (coherence plateau c32(0)=0.9747). DESIGN ADJUDICATION (the unifying fact): Kerdock minimum inter-direction angle = arccos(1/16) = 86.42 deg exactly = ~2x ABOVE the speckle scale -> every design point is an INDEPENDENT chi2_1 draw"
+      ],
+      "prediction": "xi_measured within a factor of 2 of the mean-field prediction on >=2/3 nets, with a coherent monotone C_r(theta); the comparison to design spacing states whether independent-speckle count or redundancy governs.",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "MODEL REJECTED, STRUCTURE DISCOVERED (predeclared PASS gate failed 3/3 \u2014 max dev vs the flat chi_1=1 mean-field prediction 21-31x",
+        "KILL gate half-fired: >5x deviations yes, but structure is highly COHERENT so not killed): the layer-defect profile decays near-GEOMETRICALLY with depth, fitted per-layer transmission 0.869/0.879/0.876 (~0.87), spanning ~95x from layer 0 to 31. EARLY LAYERS DOMINATE: top-5 layers (always 0-3 + one of 4/5) carry 0.409-0.511 (mean 0.459) of residual variance \u2014 2.9x mean-field"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation"
+      ],
+      "id": "s8_tdse_layer_defect_profile",
+      "index": 230,
+      "information_sources": [
+        "sampled_network_paths",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "Profile shape off mean-field by >5x at multiple depths AND no coherent structure -> the layer-decomposition frame fails as a quantitative model (reported, frame dies). The concentration question is reported as evidence, not gated.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity",
+        "compression_and_low_rank"
+      ],
+      "passed_tissue": [
+        "MODEL REJECTED, STRUCTURE DISCOVERED (predeclared PASS gate failed 3/3 \u2014 max dev vs the flat chi_1=1 mean-field prediction 21-31x",
+        "last-3 layers (the fold-exactified ones) carry mean 0.0054 \u2014 16-22x BELOW mean-field (no contradiction: fold was promoted for billing, not variance). PHYSICS SYNTHESIS with S7: the medium contracts onto the coherent cone (c32=0.975, ~2 effective dof) so late randomness is forgotten",
+        "(c) NO estimator arm from this alone (first-layer exact treatments heavily mined: tangent neutral, M107 dead) \u2014 flagged to Sol"
+      ],
+      "prediction": "Measured v_l profile matches the mean-field susceptibility-product shape within factor 2 across layers on >=2/3 nets; secondary question reported either way: does any small layer set (<=5 layers) carry >=50% of total (targeted-headroom flag) or is the profile flat (uniformity brick).",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "IDENTITY VERIFIED, ESTIMATOR KILLED",
+        "Stage B (w64 d8, honest madd metering): variance-per-FLOP 176,860x geomean WORSE than radially-conditioned MC (CI 133k-237k per net) \u2014 3 orders past the 100x kill line"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "memory_or_liveness",
+        "numerical_or_endpoint_coverage",
+        "theorem_or_class_closure"
+      ],
+      "id": "s9_crofton_kink_transect_identity",
+      "index": 231,
+      "information_sources": [
+        "sampled_network_paths",
+        "endpoint_or_facet_geometry"
+      ],
+      "kill_condition": "(a) identity fails beyond numerical error -> derivation wrong, dead immediately; (b) variance-per-FLOP worse than 100x MC -> hopeless, dead. 10-100x: INCONCLUSIVE, held.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "endpoint_facet_and_coarea",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "IDENTITY VERIFIED, ESTIMATOR KILLED",
+        "Stage A (3/3 nets, w16 d4): the Euler x Stein surface identity E[f] = integral over the kink set of J phi_d dH^{d-1}, estimated by Crofton line transects over exactly-enumerated breakpoints, agrees with 1e7-sample MC at z_comb 0.08/0.23/0.72 with machine-precision certificates (per-interval affineness 6.7e-16, slope-jump identity Delta_s = c|a.u| to 1.3e-12, 4 closed-form anchors). A NEW verified exact representation \u2014 writeup-grade mathematics",
+        "COMBINATION hatch measured shut: error laws confirmed INDEPENDENT (pooled r 0.055 +- 0.15 \u2014 the S7 combinable-reasoning validated) but inverse-variance gain 0.3% (the transect weight is negligible). VERDICT QUALITY: a concurrent independent implementation (Sol-side cross-check found in-dir, not read by the harness) corroborates both stages (identity 3/3"
+      ],
+      "prediction": "(a) identity verifies to numerical precision (it is a theorem if the derivation is right \u2014 failure means the derivation is wrong, not noise); (b) transect variance-per-FLOP within 10x of MC (parity not required at G0 \u2014 the mechanism only needs to be non-hopeless to earn a full arm predeclaration for Sol review).",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "DEAD far below the kill line: closed-form MLMC-over-depth gain 0.056x geomean (0.043/0.069/0.059 per net) = ~18x WORSE than single-level",
+        "RESOLVES the two-brief disagreement: full ladder worse than the dead two-level MFMC (0.90x reproduced from the same data \u2014 machinery validated). Two-signal: iid-Gaussian resample agrees within 1.3% (population property, not design artifact). Target fidelity: E_u[g_32] = champion target exactly, no telescope gap"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation"
+      ],
+      "id": "s10_mlmc_depth_increment_variance",
+      "index": 232,
+      "information_sources": [
+        "sampled_network_paths"
+      ],
+      "kill_condition": "Closed-form MLMC gain < 1.1x at matched billed FLOPs -> depth-fidelity family fully dead (extends the MFMC two-level kill to the whole ladder). 1.1-1.3x: INCONCLUSIVE.",
+      "operator_families": [
+        "sampling_and_design",
+        "engineering_and_cost",
+        "analytic_moment_closure"
+      ],
+      "passed_tissue": [
+        "increment MEANS do not decay (persistent truncation bias). Sensitivity: even at exact 0.87 decay, gain 0.050x",
+        "RESOLVES the two-brief disagreement: full ladder worse than the dead two-level MFMC (0.90x reproduced from the same data \u2014 machinery validated). Two-signal: iid-Gaussian resample agrees within 1.3% (population property, not design artifact). Target fidelity: E_u[g_32] = champion target exactly, no telescope gap"
+      ],
+      "prediction": "V_l decays fast enough that the closed-form MLMC gain at matched billed cost is >=1.3x -> full arm proposal for Sol; the increments are cheap to estimate since level-l and level-l+1 forwards share all computation up to layer l.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "RE-KILLED on the M81 break-even, NOW MEASURED \u2014 with the methodological catch of the night: raw completion-vs-126 MSE reduction = +3.42% (naively BEATS the 2.326% break-even), but a matched-point random-frame CONTROL (+1536 generic points, deg-4 not zeroed) = +3.25% \u2014 the raw gain is almost entirely generic more-samples averaging, exactly what the point-count cost offsets",
+        "Artifacts: experiments/s11_full129_breakeven/. Measured fractional MSE reduction from deg-4->0 < 2.33% -> S11 re-KILLED on the M81 break-even, now WITH measurement (the design-strength gain is real but adjusted-negative). Only a measured reduction > ~3% (margin over break-even) advances to the memory/parity/hosted gates M81 named."
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "memory_or_liveness",
+        "representation_not_closed"
+      ],
+      "id": "s11_full129_reopen_measured_breakeven",
+      "index": 233,
+      "information_sources": [
+        "sampled_network_paths",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "Measured fractional MSE reduction from deg-4->0 < 2.33% -> S11 re-KILLED on the M81 break-even, now WITH measurement (the design-strength gain is real but adjusted-negative). Only a measured reduction > ~3% (margin over break-even) advances to the memory/parity/hosted gates M81 named.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "compression_and_low_rank",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "RE-KILLED on the M81 break-even, NOW MEASURED \u2014 with the methodological catch of the night: raw completion-vs-126 MSE reduction = +3.42% (naively BEATS the 2.326% break-even), but a matched-point random-frame CONTROL (+1536 generic points, deg-4 not zeroed) = +3.25% \u2014 the raw gain is almost entirely generic more-samples averaging, exactly what the point-count cost offsets",
+        "Degree-4 exactness ISOLATED (completion vs control at equal 66,048 points): +0.176%, CI [0.970, 1.028], P(ratio<1)=0.54 \u2014 indistinguishable from zero, 13x under break-even",
+        "Committed proxies corroborate (m191 cv_deg4 +0.42%, R2 ~0.2%). Design math verified exactly: the 129-completion IS an exact 5-design (every line 4th-moment sum = 1.5 = Welch bound with equality"
+      ],
+      "prediction": "UNCERTAIN, likely re-kill: deg-6 (40% of iid) dominates deg-4 (11%), so removing deg-4 removes the smaller structured component; the MSE reduction may not clear 2.33%. If it DOES clear (measured), the memory-margin question (M81 ground a) returns as an implementation gate for Sol.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "no estimator implication."
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost"
+      ],
+      "id": "s12_finite_width_kernel_capstone",
+      "index": 234,
+      "information_sources": [
+        "weights_only_analytic_state"
+      ],
+      "kill_condition": "Both routes miss (curve outside CIs at most angles AND inflation outside [1.3, 3]) -> the finite-width theory does not explain our laws; they stay empirical in the writeup (stated honestly). Analysis-only either way; no estimator implication.",
+      "operator_families": [
+        "higher_cumulant_source",
+        "compression_and_low_rank"
+      ],
+      "passed_tissue": [
+        "No passed component is asserted; preserve the exact predeclaration, evidence, and falsifier as negative knowledge."
+      ],
+      "prediction": "(a) the finite-width flow lands the correlation curve within the S7 bootstrap CIs at >=5 of 7 measured angles on >=2/3 nets and implies a transmission in [0.83, 0.91]; (b) the D/n route predicts xi inflation in [1.5, 2.4].",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "feasibility reading excludes the surrogate outright (gain exactly 1.0). Width-128 trend arm: rho doubles (0.21-0.27) but required rho grows faster (0.807) -> gain 0.8415x \u2014 NO sweet spot exists on the width axis"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "representation_not_closed"
+      ],
+      "id": "s13_width_pooled_mfmc_premise",
+      "index": 235,
+      "information_sources": [
+        "sampled_network_paths",
+        "output_or_frame_statistics",
+        "offline_learned_features"
+      ],
+      "kill_condition": "Closed-form MFMC gain < 1.1x at matched billed FLOPs -> width-fidelity closed too (joins depth in a fully-dead fidelity family). >= 1.3x -> arm proposal for Sol review (never composes with M243). 1.1-1.3x INCONCLUSIVE.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity",
+        "compression_and_low_rank",
+        "routing_and_learned_surrogates"
+      ],
+      "passed_tissue": [
+        "feasibility reading excludes the surrogate outright (gain exactly 1.0). Width-128 trend arm: rho doubles (0.21-0.27) but required rho grows faster (0.807) -> gain 0.8415x \u2014 NO sweet spot exists on the width axis",
+        "MECHANISM (coheres with S7/S8/S10): the output field is a fingerprint of the exact realized early-layer weights (the coherence cone orientation)"
+      ],
+      "prediction": "UNCERTAIN: S7 coherence physics (cone set by early layers; pooled early layers inherit orientation statistics) gives nonzero rho; the S10 lesson (re-mixing) cuts against it. The number decides.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL \u2014 residual is COVARIATE-BLIND (as it is kink-blind, S5): best out-of-sample split-sample incremental R^2 = 1.56% (union C1 firing-rate/C2 ||h1||/C3 top-8 PCs) vs the 5% kill bar",
+        "Artifacts: experiments/s15_stratification/. Incremental R^2 < 5% pooled -> KILL: residual is covariate-blind (joins kink-blind S5)"
+      ],
+      "failure_boundaries": [
+        "nonidentifiability_or_missing_information",
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "protocol_or_generalization"
+      ],
+      "id": "s15_firstlayer_stratification_premise",
+      "index": 236,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "output_or_frame_statistics",
+        "offline_learned_features",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "Incremental R^2 < 5% pooled -> KILL: residual is covariate-blind (joins kink-blind S5); ednacob hypothesis 1 closed; wall proof completes. PASS >= 20% on >=2/3 nets -> stratified-arm predeclaration handed to Sol (Gen-6, blade-gated). 5-20% INCONCLUSIVE -> escalate to Sol with cost-precise framing.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "0/3 nets near the 20% pass bar",
+        "Per-set pooled: firing-rate 0.56%, ||h1|| 1.26%, top-8 0.30%. MECHANISM = M191 dispersion, re-confirmed: the apparent harmonic signal collapses to ~6e-6..1.2e-5 once degree-2 contamination (which the design integrates EXACTLY) is removed",
+        "Base-B (removes degree-1 + ||pre1||^2 exactly) is the correct base \u2014 the C4 degree-1 control reads +0.29..0.37 under the leaky lean base but -0.000 under Base-B, so all gate numbers use Base-B"
+      ],
+      "prediction": "ON RECORD: likely KILL for the M191 dispersion reason \u2014 but S8 early-layer informativeness is a real countervailing signal; the measurement is earned.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "Deep-residual closure arm 1.28e-6 = 3.7x above the sampling floor (M181 wall confirmed). FORM 1 (exact reparametrization, owner scope-add): per-layer residual magnitude R_l = mean||F_l||/mean||y_l|| = min 1.108/median 1.162/max 1.231 (all >1, no layer <0.3) -> NO near-identity structure",
+        "Form-1 reduces to the S8 contraction law, no perturbative lever"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "protocol_or_generalization"
+      ],
+      "id": "s16_residual_norm_decomposition_confirm",
+      "index": 237,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "If layer-1 residual-split MSE matches antipodal within 1% AND deep closure >= M181 wall -> CONFIRMED reduction (the assertion is now an observed identity; no new mechanism, ledger as screened-confirm). SURPRISE branch (would reopen, unlikely): residual-split beats antipodal by >10% at matched billed FLOPs -> escalate, because the identity would be violated and something is genuinely new.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "compression_and_low_rank",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "CONFIRMED (both forms measured, assertion -> observation): FORM 2 (decomposition) \u2014 layer-1 identity ReLU(Wu)+ReLU(-Wu)=|Wu| BIT-EXACT dev 0.0 on 8.26M entries/net x3",
+        "reproduces committed M181 arm0 baseline to sub-ppm (0.999997x). The residual decomposition IS antipodal pairing (promoted 1.91x pillar) \u2014 a clean writeup IDENTITY, not a lever",
+        "Deep-residual closure arm 1.28e-6 = 3.7x above the sampling floor (M181 wall confirmed). FORM 1 (exact reparametrization, owner scope-add): per-layer residual magnitude R_l = mean||F_l||/mean||y_l|| = min 1.108/median 1.162/max 1.231 (all >1, no layer <0.3) -> NO near-identity structure"
+      ],
+      "prediction": "CONFIRM-REDUCTION: layer-1 residual-split MSE matches the antipodal champion to <1% (ideally to numerical precision, since the algebra is an identity); deep-residual closure lands at ~9.6e-5 (M181 wall), >>2.5e-7 sampling. Yields a clean writeup IDENTITY (residual decomposition = antipodal symmetrization), not a new lever.",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "Artifacts: experiments/s17_ibc_floor/. This is a BOUND COMPUTATION, not a mechanism \u2014 it cannot be killed, only computed"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "theorem_or_class_closure"
+      ],
+      "id": "s17_information_complexity_lower_bound",
+      "index": 238,
+      "information_sources": [
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "output_or_frame_statistics",
+        "offline_learned_features"
+      ],
+      "kill_condition": "This is a BOUND COMPUTATION, not a mechanism \u2014 it cannot be killed, only computed. Outcome classes: (i) champion within 2x of absolute floor -> ednacob suspect, campaign complete; (ii) floor 2-4x below -> modest honest headroom, Gen-6 target; (iii) floor >4x below -> a better class provably exists, major reopen. Report which, with the derivation.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "No passed component is asserted; preserve the exact predeclaration, evidence, and falsifier as negative knowledge."
+      ],
+      "prediction": "UNCERTAIN and high-value: likely our sampler is near the SAMPLING floor (N_eff-limited) but the ABSOLUTE floor including analytic/exact-control estimators is set by the finite-width residual magnitude S12 derived \u2014 which is EXACTLY the M245 exact-control frontier. So the bound probably shows: sampling floor ~= us; absolute floor = the exact-control question Sol owns; ednacobs 3.96x is either at the analytic floor (honest, needs stratification/exact-control) or below it (suspect).",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "No failed link is asserted at the recorded gate; downstream claims remain separate."
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "theorem_or_class_closure"
+      ],
+      "id": "recursion_convergence_certificate",
+      "index": 239,
+      "information_sources": [
+        "sampled_network_paths",
+        "endpoint_or_facet_geometry",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "This certificate is FALSIFIED only if a legal estimator mutation is exhibited that (a) is not in the 6 forbidden classes AND (b) is not exact-control or decision-layer. None exists as of ledger 239. If S17 shows the absolute floor is >4x below the champion, the certificate REOPENS (a better class provably exists). Otherwise the recursion is terminally converged.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "endpoint_facet_and_coarea",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "exact-control M245 = the seed-side attack (un-randomize structure at the source) \u2014 finding the compute for the entropy IS M245s mission"
+      ],
+      "prediction": "CONVERGED. Per the recursion skill (continue until no legal next mutation exists): no legal estimator mutation remains in the exhausted classes. The ONLY complementary classes the theorem does NOT forbid are (a) EXACT-CONTROL (attack the finite-width structure at the source, before it becomes speckle) = Sol M245, blade-gated; (b) the DECISION/SUITE layer (exploit the KNOWN speckle statistics for designation) = already mutated as S1/S4. Forward motion = S17 (confirm the absolute floor) + Sol M245, NOT a new sampler.",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "S17 (launched now, upgraded to compute the S(B) curve) quantifies extractable-information-per-FLOP and remains the reopener",
+        "Per the recursion skill (continue until no legal next mutation exists): no legal estimator mutation remains in the exhausted classes"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILLED on all gates: best gated value 2.371e-5 (0.9x bar, inside its own permutation null |5.3e-5|)"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "arithmetic_cost",
+        "protocol_or_generalization"
+      ],
+      "id": "s18_cell_membership_probe",
+      "index": 240,
+      "information_sources": [
+        "sampled_network_paths"
+      ],
+      "kill_condition": "OOS incremental R^2 < 2.63e-5 (per-coefficient fitting-noise cost) on all 3 nets; SIGNAL if >= 1e-4 on 2+ nets.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity"
+      ],
+      "passed_tissue": [
+        "structural mechanism - all 64,512 directions occupy 64,512 DISTINCT first-layer cells (singletons), so cell identity is a per-point unique label structurally incapable of OOS generalization",
+        "instrument sanity: S15 Base-B reproduced exactly (0.3609/0.4037/0.4385), injected 1e-3 signal recovered."
+      ],
+      "prediction": "KILL - the god-node implies the residual is independent chi2_1 speckle uncorrelated with any function of the input point at design spacing; cell membership is such a function.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILLED - clean null: t = +0.19, variant better on exactly 50/100 nets (coin flip), bootstrap CI on mean delta [-3.19e-8, +2.61e-8] symmetric about 0, drop-top-5 sign flip confirms artifact",
+        "C/B +0.0014 (the SVD's 3.6e8 FLOPs) with no compensating MSE reduction"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "arithmetic_cost",
+        "numerical_or_endpoint_coverage"
+      ],
+      "id": "gen7_svdv_rotation_construction",
+      "index": 241,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "Paired per-net t >= 3 on the committed public 0..99 basis at seed 0 under common random numbers, twice-run bit-identical determinism, no C/B regression.",
+      "operator_families": [
+        "sampling_and_design"
+      ],
+      "passed_tissue": [
+        "KILLED - clean null: t = +0.19, variant better on exactly 50/100 nets (coin flip), bootstrap CI on mean delta [-3.19e-8, +2.61e-8] symmetric about 0, drop-top-5 sign flip confirms artifact",
+        "determinism bit-identical both arms, noise floor exactly 0.0"
+      ],
+      "prediction": "Fleet-adversarial: the attacker predicted a win (24-rotation oracle spread 5.8e-8..6.8e-7 with the champion at the mean); the campaign's gating results predicted null.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "R = 1.6516655333837535 vs published 1.652 (abs err 3.34e-4). G0b DID NOT KILL on the merits: CV_of_mean = 0.2206761611341289 against the predeclared threshold 0.08691320026992318, i.e",
+        "Propagated, Kerdock v3's hosted expectation moves from the published point 9.80e-8 to a band [6.68e-8, 1.56e-7] -- from 1.41x BETTER than oabuod 9.45e-8 to 1.65x WORSE"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "protocol_or_generalization"
+      ],
+      "id": "gm_c1_bound",
+      "index": 242,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "endpoint_or_facet_geometry",
+        "offline_learned_features"
+      ],
+      "kill_condition": "Claims-unchanged band for R = [1.3705820, 2.1415344], derived from C1's OWN predeclared comparability band [0.8, 1.25] applied to the parity ratio P(R) = (1.619e-7 / R) / 9.45e-8. G0 reproduction: |mean22/1.0686e-6 - 1| <= 0.005 AND |R - 1.652| <= 0.005, else STOP INCONCLUSIVE (do not retune, do not substitute a data source). G0b arithmetic KILL, run BEFORE any bootstrap: if CV_of_mean <= 0.0869132 (normal-theory interval fully inside the band) then STOP, KILL_CONFIRMED, C1 stands exactly as written. G1 main gate: KILL_CONFIRMED iff the 95% bootstrap CI is a subset of the band; REVIVED_PASS iff it leaves the band on at least one side (AND R_max_imp > R). G2 reporting gate (not a verdict gate): endpoints within +/-0.05 of the mined [1.04, 2.42] and 2.36. Kill-honesty clause: on a kill, report it as a full success; do not enlarge B, change the band, switch interval type, or re-impute.",
+      "operator_families": [
+        "sampling_and_design",
+        "compression_and_low_rank",
+        "endpoint_facet_and_coarea",
+        "routing_and_learned_surrogates",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "G0 PASSED and the data premise is proven: the 25-row mean of the archived adjusted_final_layer_score reproduces the committed top-level aggregate 0.09778592927244555 to relative 1.4e-16 (judge 2.2e-16). mean22 = 1.0686276000992886e-06",
+        "G1 -> REVIVED_PASS: 95% percentile bootstrap CI (B = 200,000) = [1.0362, 2.4230], width 1.387 = 1.80x the band width 0.771",
+        "G2 PASSED (|d| = 0.0038 / 0.0030 / 0.0042, all within +/-0.05). FRAGILITY (worker's post-hoc attack on its own PASS, which made C1 worse): dropping the single largest net moves the POINT estimate to 1.3722, 1.7e-3 above the band's lower edge"
+      ],
+      "prediction": "Predeclared in PREDECLARATION.md before any computation: R reproduces at 1.652 from the archived rows (mean22 = 1.0686e-6); 95% percentile bootstrap CI on R = [1.04, 2.42] at B = 200,000; 1-sigma 0.36; relative variance ~1.07; max/min ~22.4x; the 3 excluded nets are the 3 highest-effective-compute nets; R_max_imputed = 2.36; the parity claim fails across the CI. Predicted verdict REVIVED_PASS.",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "R must not appear as a divisor point constant in Gen-8"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "STEP 0 (deterministic, no Monte Carlo): the committed model's P = 0 against 15.53x is a SUPPORT ARTIFACT, not a likelihood statement -- s1_results.json itself records model_pool_max_spread_bound = 11.07319421676679, and times DIFF_RATIO 1.1 that is 12.18051 < 15.53167, so P = 0 exactly, guaranteed by the choice to resample a 48-atom empirical pool before any dispersion parameter was considered",
+        "Step 0 killed the k=12 fitted-GPD cell exactly (bound 12.20972"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage"
+      ],
+      "id": "gm_u3_grid",
+      "index": 243,
+      "information_sources": [
+        "sampled_network_paths",
+        "endpoint_or_facet_geometry"
+      ],
+      "kill_condition": "Frozen before the run; the pool set {empirical-48, GPD-extended, lognormal-extended} was quoted verbatim from the mining record in PREDECLARATION.md section 0 before any code, so the passing arm was not chosen post hoc. GATE A -- KILL_CONFIRMED if NEITHER decisive cell (vD = 7.5689e-04 crossed with gpd_ext at MLE xi, and with lognorm_ext) has P(sim >= 15.531671197493653) inside the closed interval [0.20, 0.90] at NREP = 10,000; REVIVED_PASS if EITHER does. GATE B (interpretive, cannot rescue a Gate-A kill alone) -- xi* = smallest swept GPD shape at vD = 7.5689e-04, k = 12 landing in [0.20, 0.90]; fails to rescue if xi* lies outside the 95 percent profile-likelihood CI from the committed 12 exceedances (LR 3.841). No arm, threshold, pool variant, NREP or interval to be changed after seeing a result.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "endpoint_facet_and_coarea"
+      ],
+      "passed_tissue": [
+        "STEP 0 (deterministic, no Monte Carlo): the committed model's P = 0 against 15.53x is a SUPPORT ARTIFACT, not a likelihood statement -- s1_results.json itself records model_pool_max_spread_bound = 11.07319421676679, and times DIFF_RATIO 1.1 that is 12.18051 < 15.53167, so P = 0 exactly, guaranteed by the choice to resample a 48-atom empirical pool before any dispersion parameter was considered",
+        "Step 0 killed the k=12 fitted-GPD cell exactly (bound 12.20972",
+        "GATE A = REVIVED_PASS: decisive cell (vD = 7.5689e-04, lognorm_ext) gives P5/P50/P95 = 8.593/13.934/26.040, brackets_observed = true, P(sim >= OBS) = 0.3767 (SE 0.0048), inside [0.20, 0.90]"
+      ],
+      "prediction": "Predeclared, PREDECLARATION.md section 6, on record before any code: KILL_CONFIRMED on Gate A at roughly 60/40 -- no (vD <= 0.01, heavy-F) cell would reach P(sim >= OBS) in [0.20, 0.90]. Reasoning given in advance from input statistics only: pool log-SD 0.55269 gives a lognormal 80-draw typical spread exp(0.55269 * 4.49240) = 11.98, about 30 percent short of 15.53. Named live risk, in advance: 'lognorm_ext has an unbounded LOWER tail as well ... If lognorm_ext lands P in [0.20, 0.90], Gate A is a REVIVED_PASS and I will report it as such without retuning.' Secondary predictions: k=12 GPD MLE would be a bounded-tail step-0 kill (correct); xi* >= 0.3 (wrong, xi* = 0.00); Gate B would rescue (correct, moot).",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "the word 'validated' must go and the step-0 bound 12.1805 must be printed wherever the old 'P = 0' appears)",
+        "reopen U3 from 'accept as conservative' to 'unidentified -- width sign unresolved' with a two-sided rotation-shape band on suite SD of approximately [0.978, 1.034] times the committed 1.5640e-08"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED -- the mechanism stays dead and is now measured",
+        "Step 0 did not kill (ceilings 0.0455/0.4273/0.5010 linear, 0.0502/0.4654/0.5430 log, against the 0.75 threshold). Perfect oracle, 200,000 replicates per arm (two disjoint 100k streams), n=80, a1b's exact scoring code: precision = recall = 0.281804 / 0.500359 / 0.536547 and Spearman 0.075622 / 0.462025 / 0.539414 at vD = 7.5689e-4 / 0.081360 / 0.122039"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "protocol_or_generalization"
+      ],
+      "id": "gm_a1b_diffflag",
+      "index": 244,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "Step-0 arithmetic gate -- STOP with KILL_CONFIRMED if the closed-form ceilings sqrt(vD/(vD+vF)) and its log-scale variant both reach >= 0.75 at both corrected vD. Main gate, verbatim from the mined cheapest_falsifier -- KILL_CONFIRMED if mean perfect-oracle precision >= 0.65 at BOTH vD = 0.0814 and vD = 0.1220; REVIVED_PASS if <= 0.60 at both AND a1b's 0.50 lies inside the oracle's central 90%; INCONCLUSIVE in (0.60, 0.65). No retuning past a failed gate.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "Step 0 did not kill (ceilings 0.0455/0.4273/0.5010 linear, 0.0502/0.4654/0.5430 log, against the 0.75 threshold). Perfect oracle, 200,000 replicates per arm (two disjoint 100k streams), n=80, a1b's exact scoring code: precision = recall = 0.281804 / 0.500359 / 0.536547 and Spearman 0.075622 / 0.462025 / 0.539414 at vD = 7.5689e-4 / 0.081360 / 0.122039",
+        "both corrected arms below the 0.60 revive threshold and a1b's 0.50 inside the oracle central 90% at both (p5/p95 0.350/0.650 and 0.400/0.700), so the WORKER GATE returned REVIVED_PASS",
+        "quantile-form equivalence 200/200. PROVENANCE: a1b_tail_diagnostics.json reproduced exactly from the frozen stage-1 checkpoint (all 7 Spearmans to 1e-12, best flag borderline_frac rho -0.5627285513361463, precision 0.50, recall 0.50, spread 15.531671197493653, 20 flagged / 20 tail of 80). JUDGE INDEPENDENT SIGNAL: a from-scratch reimplementation (own pool construction from p2_results.json, own solve of h per vD, own RNG and protocol code, 40k reps) gives precision 0.2825/0.4988/0.5368 and rho 0.0759/0.4615/0.5395, matching to three decimals"
+      ],
+      "prediction": "Predeclared in PREDECLARATION.md before any harness code. Under the S1b-corrected dispersion model (MSE_i = S * D_i * F_i, D log-uniform with relative variance vD, F drawn from the archived 48-value P2 rotation pool, vF = 0.3641995628656461), a PERFECT net-difficulty oracle run through a1b's exact scoring code at n=80 would score Spearman ~0.05-0.08 / ~0.43-0.47 / ~0.50-0.54 and precision = recall ~0.26-0.29 / ~0.50 / ~0.54 at vD = 7.57e-4 / 0.0814 / 0.1220; it would NOT reach 0.65 precision at either corrected vD. Realizable-gain bound predicted <= 0 at all three vD.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "(2) M185 stage-1's 'borderline_frac -0.424 runs ANTI-mechanism' dismissed a value sitting inside the perfect-oracle band (0.462 / 0.539) and must be restated"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED at step 0, by proof rather than by a weak correlation",
+        "STEP 0 KILLED: max_rel_dev_all = 4.558046147938225e-07 at (net 202, r = 3)"
+      ],
+      "failure_boundaries": [
+        "nonidentifiability_or_missing_information",
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation"
+      ],
+      "id": "gm_p2b_proxy",
+      "index": 245,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "output_or_frame_statistics",
+        "offline_learned_features"
+      ],
+      "kill_condition": "Step 0 (arithmetic, no experiment): max relative deviation of layer-0 var_pre, rotated versus unrotated first layer, over all 48 (net, rotation) pairs -- < 1e-4 -> KILL (invariance holds at rounding level, proxy class has zero within-net signal by construction); >= 1e-2 -> the invariance argument is wrong and step 1 decides on merits. Step 1 (P2b's own gate, unchanged, no retuning): REVIVED_PASS iff some diagnostic reaches pooled within-net-ranked |rho| >= 0.40 AND its three per-net Spearman values share one sign and none is exactly 0; KILL_CONFIRMED otherwise.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "compression_and_low_rank"
+      ],
+      "passed_tissue": [
+        "frozen Haar rotations orthogonal to max |R.T R - I| = 2.073e-08. STEP 1 (run as CONFIRMATORY, permitted and labelled as such in PREDECLARATION section 2, gate numbers untouched, 18.9 s wall): all three diagnostics take exactly ONE distinct value across the 16 rotations of each net -- all nine (diagnostic, net) cells at abs_spread 0.0 and rel_spread 0.0, including the float-valued borderline_frac_overall which had only been predicted near-constant",
+        "fold_kink_total {101: 247, 202: 260, 303: 247}. Every per-net Spearman and every pooled within-net-ranked rho is exactly 0.0",
+        "passes_gate false for all three"
+      ],
+      "prediction": "Predeclared before any code ran: KILL_CONFIRMED, with a step-0 arithmetic gate derived in closed form. _diagonal_gaussian_pass initializes mu = zeros, var = ones (isotropic standard Gaussian input) and v3 rotates the FIRST LAYER ONLY, so at layer 0 mu_pre = 0 @ (R.T W1) = 0 exactly and var_pre[j] = ||(R.T W1)[:,j]||^2 = ||W1[:,j]||^2 for any orthogonal R; by induction every subsequent layer's alpha and every alpha-derived diagnostic is rotation-invariant in exact arithmetic, leaving only float32 rounding. Predicted max relative deviation of layer-0 var_pre < 1e-4; fold_on_total and fold_kink_total IDENTICAL across all 16 rotations of a net (spread exactly 0); borderline_frac_overall within-net relative spread < 1e-3; pooled within-net-ranked |rho| < 0.40 for all three diagnostics.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "that diagnosis was wrong and the true cause is an EXACT INVARIANCE -- a diagonal Gaussian pass launched from an isotropic input is blind to an orthogonal rotation of the first layer at every depth -- so any future proxy built from _diagonal_gaussian_pass on the rotated net is provably a zero-information rotation selector and can be rejected by argument with no experiment run",
+        "any future attempt must use a signal that is provably rotation-dependent"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED -- measured, and killed harder than predicted",
+        "Step 2: exact-psi aggregate ratio 1.0064508507414671, bootstrap 95% [1.0001717201220055, 1.0133491606824023] -- WORSE than the generic q3 comparator, not merely non-material -- against the frozen surrogate's 0.9114717897200765. Wins vs generic collapsed 32/32 -> 9/32. Paired on the same 32 units, exact psi is better on 0 of 32 (exact two-sided sign p = 4.6566e-10), paired pooled-ratio difference +0.0949791 with CI95 [0.0779218, 0.1113188] entirely above zero"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "protocol_or_generalization",
+        "representation_not_closed"
+      ],
+      "id": "gm_ecn_psi",
+      "index": 246,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "weights_only_analytic_state",
+        "endpoint_or_facet_geometry",
+        "offline_learned_features"
+      ],
+      "kill_condition": "Inherited from idx 35 (disjunctive): central differences fail; exact psi loses the fresh synthetic advantage; target component count forces dense over-budget transport without a predeclared streaming formulation; fixed-64-step marginals fail; shape-generic moment/PSD/symmetry fails; or the corrected candidate misses ratio 0.80 and 24/32 wins. Operationalised for this run as G2-PRIMARY (ratio <= 0.80 AND wins >= 24/32), G2-MATERIALITY (ratio < 0.8942, the pre-existing lower endpoint of the parent judge's bootstrap CI for the surrogate's 0.911472), G2-STRUCTURAL (10 sub-gates), G2-REPRO (bit-exact reproduction of the frozen cache).",
+      "operator_families": [
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "endpoint_facet_and_coarea",
+        "routing_and_learned_surrogates",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "Step 1 PASSED (max relative error 6.536e-10 on the alpha block, 3.601e-10 on the ell block over 9,216 theta points / 18,432 derivative entries",
+        "Step 2: exact-psi aggregate ratio 1.0064508507414671, bootstrap 95% [1.0001717201220055, 1.0133491606824023] -- WORSE than the generic q3 comparator, not merely non-material -- against the frozen surrogate's 0.9114717897200765. Wins vs generic collapsed 32/32 -> 9/32. Paired on the same 32 units, exact psi is better on 0 of 32 (exact two-sided sign p = 4.6566e-10), paired pooled-ratio difference +0.0949791 with CI95 [0.0779218, 0.1113188] entirely above zero",
+        "All 10 structural sub-gates PASSED for the new arm (mean residual 1.073e-14, covariance 6.439e-15, PSD violation 0.0, Sinkhorn marginals 1.749e-15, bin mass 1.110e-16, min effective rank 2.673194, medoids unambiguous, permutation 1.665e-16, coordinate gauge 2.220e-16, all finite), so the failure is the mechanism and not the plumbing"
+      ],
+      "prediction": "PREDECLARED before any code (PREDECLARATION.md section 2, mtime 2026-08-10 13:28:43, strictly before the first script at 13:29:25): step 1 central-difference validation of the exact Jacobian PASSES below 1e-8; step 2 FAILS both effect gates with exact-psi aggregate ratio in [0.85, 1.05], i.e. above the materiality threshold 0.8942 and far above the 0.80 effect gate; expected gain for the score ZERO; predicted verdict KILL_CONFIRMED. Both halves of the prediction held.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "SCOPE LIMIT THAT MUST SURVIVE INTO THE WRITEUP: the prescribed mutation bundles a coordinate change with a metric change and the run does not decompose them"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED at step 0 exactly as predicted",
+        "G0-B FAILED BOTH LEGS"
+      ],
+      "failure_boundaries": [
+        "nonidentifiability_or_missing_information",
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage"
+      ],
+      "id": "gm_a4_constraint",
+      "index": 247,
+      "information_sources": [
+        "sampled_network_paths",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "Three two-sided step-0 gates, all predeclared. G0-A arithmetic: KILL if S = 259,700,796,917 + 3.0e10 <= B = 2.72e11 (expected to PASS at 1.065 B and therefore not to be the discriminator). G0-B co-occurrence: KILL if BOTH (B1) 'budget_summary_dict is reachable from the frozen-v3 path that produced F = 259,700,796,917' and (B2) 'F = 259,700,796,917 is reachable under CAP = 244.8e9' FAIL, i.e. no single configuration can produce both addends. G0-C novelty: KILL if the only coherent variant (CAP + 3.0e10 = 1.0103 B) is already-committed U2 content AND U2's one-line fix is already on disk. Whole-revival kill condition: the record STAYS DEAD if the mined breach arithmetic is not realizable on one net AND the only realizable variant is already-committed U2 content. Stage (b) kill/confirm (never reached): KILL if C/B is flat by position and max <= 0.955; CONFIRM if C/B rises with position and any net at position >= 90 crosses B.",
+      "operator_families": [
+        "sampling_and_design",
+        "engineering_and_cost",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "compression_and_low_rank",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "KILL_CONFIRMED at step 0 exactly as predicted",
+        "G0-A PASSED and was not the discriminator: S = 289,700,796,917 = 1.0650764592536766 B",
+        "ATTACK PASS, both counter-hypotheses tested, neither landed: H1 (an uncapped estimator that also calls _tally) -- exactly 2 files in the corpus define _tally, both declare cap_billed_flops = 244.8e9 and both carry the U2 fix (the judge's repo-wide scan returns 3 hits, the third being the worker's own verify_two_signal.py, which corroborates its declared deviation #1)"
+      ],
+      "prediction": "On record before any code ran (PREDECLARATION.md section 5, verbatim): 'I predict stage (a) KILLS at step 0 and stage (b) is never reached. Reason predicted in advance: the two addends are produced by two mutually exclusive estimator configurations, so their sum is not a physically realizable C for any single net.' Stage (b), a 100-net warm single-process billing sweep, was predeclared to run ONLY if step 0 left the candidate alive.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "the row schema carries wall_s only, judge-checked across every row), so its '4.5% worst-case headroom' must be quoted as an F-channel statement"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED at G1, the record's own first kill condition",
+        "measured, and a clean mechanism kill rather than an artifact"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "memory_or_liveness",
+        "numerical_or_endpoint_coverage",
+        "protocol_or_generalization",
+        "representation_not_closed"
+      ],
+      "id": "gm_flatworm_response_ladder",
+      "index": 248,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "endpoint_or_facet_geometry"
+      ],
+      "kill_condition": "No improvement over scalar fusion on fresh states, any collapse to one lane, use of reference outcomes to set depth/coefficients, broken symmetry/PSD/moments, or target cost at least 80B.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "endpoint_facet_and_coarea",
+        "routing_and_learned_surrogates",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "Every other gate PASSED: step-0 lane-collapse minimum commissural lane weight 0.4096460665624148 over 184 scored layers against a 0.01 floor (G2)",
+        "AMENDMENT A1 AND THE PINCER THAT CLOSES IT: lane evidence was computed by a fixed 64-step permutation-equivariant power iteration rather than exact eigh, declared before any run for cost-accounting reasons, with max absolute difference from the exact eigvalsh diagnostic 0.0006337612408954252. The exact-eigh controller was therefore never run for accuracy, but it cannot rescue the record -- charging two full eigh per layer at 2*9*32*256^3 = 9,663,676,416 replaces the 1,073,741,824 power-iteration line, giving 67.24B subtotal and 84.05B with contingency, above the 80B gate",
+        "exact eigh fails G5. JUDGE VERIFICATION, two independent signals: (1) all four aggregate ratios, all head-to-head counts, both split-sample halves, the mean paired log ratio and both step-0 lane-weight minima recomputed directly from the 24 per-state joint errors and the 184-row ladder trace, bypassing every aggregate the worker wrote -- all reproduce exactly, and max |e_controller_half - e_scalar_fusion| = 0.0 confirms the strict-generalization claim"
+      ],
+      "prediction": "Ledger prediction under test: the two-lane state retains shared early response while detecting late channel separation and improves the scalar dual-observable compressor without a truth-fitted depth threshold. Falsifier's own predeclared counter-prediction (PREDECLARATION.md, SHA-256 fd8fa16780acb4dc64f160ac9a7d38585dc0c8d2aefbf68ec1d5e409529b1b39, written and hash-pinned before any code existed): KILL_CONFIRMED at G1 with ratio_A2 >= 0.965944 landing in [0.95, 1.00], arms within 2% of baseline, G2 not killing because (I - 0.25*L) is nonexpansive and contracts the lane weights toward each other, G4/G5 passing because only a positive convex reweighting of two PSD Grams changes.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED, measured, prediction matched",
+        "MAIN FALSIFIER KILL_CONFIRMED: a full read of the committed corpus (worker: 1385 files, 30,152,341 bytes, 0 unreadable, Signal A 61 hits, Signal B 50,884 hits / 13,947 private-family / 133 adjudicated, Signal C 56 sentences, 9 candidates adjudicated at source) yields 0 resolving statements (results.json verdict.resolving_statements_found = 0). Decisive negative, verbatim from the corpus's own direct read of the authoritative document (core/RULES_V12_ANALYSIS_20260808.md:13-15): the Private Re-evaluation runs Sept 20-30, 2026 on 'a separate, fresh, never-seen test suite ... generated from private seeds that were not used during either Phase 1 or Phase 2' -- seeds, freshness, dates, no count"
+      ],
+      "failure_boundaries": [
+        "nonidentifiability_or_missing_information",
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider"
+      ],
+      "id": "gm_u4_suitesize",
+      "index": 249,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "Step 0 -- matched-arm (same vD) 50-vs-100-net ratios must satisfy G0a P(>2.5e-7) ratio >= 10x AND G0b P(<1.6e-7) ratio >= 2x on both bracket-validated arms, recomputed from the machine file s1b_dispersion_corrected/s1b_results.json; failure means the changed premise is refuted and U4 is immaterial. Main -- REVIVED_PASS requires at least one RESOLVING statement (an explicit integer count of nets in the PRIVATE/fresh/re-evaluation suite, attributable to organizer material, quoted verbatim with file:line); a full read yielding ZERO resolving statements is KILL_CONFIRMED. Our own modelling assumption and the public-half count were predeclared as NOT resolving.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "endpoint_facet_and_coarea",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "Step 0 PASS: matched-arm ratios G0a 153.33 (s17_low, vD = 0.08135950765383865) and 121.43 (s17_high, vD = 0.12203926148075797)",
+        "SD_50/SD_100 = 1.415655 and 1.415712 vs sqrt(2). The judge re-derived all four cells directly from s1b_results.json with exact agreement, then attacked the weakest link: the 100-net cells are raw counts of 3 and 7 in 1e6 draws, so the point ratios are order-of-magnitude only, and a Poisson 97.5% upper bound on the rate gives conservative G0a floors of 52.5x and 58.9x -- still five times the 10x gate, so the step-0 PASS is robust rather than a rare-count artifact",
+        "TWO-SIGNAL VERIFICATION, both held: (1) the worker's ripgrep cross-engine returns exactly two non-self lines (RULES_V12_ANALYSIS:73, already adjudicated non-resolving, and an unrelated m152 '28/32 MLPs')"
+      ],
+      "prediction": "Predeclared 2026-08-10 before execution: KILL_CONFIRMED. Basis on record: the recursion doc's own taxonomy (line 68) already files U4 under external organizer facts 'we cannot resolve, only ask/watch'; the corpus was predicted to state the PUBLIC half is 50 MLPs and to describe the September re-run as fresh/unseen WITHOUT a size. Secondary prediction: '100' would appear nowhere attributable to organizer text and any occurrence would be our own scenario arm. Step-0 predicted PASS at ~120x/~150x (G0a) and ~3.0x/~3.3x (G0b), with the miner's '65-150x' flagged in advance as a loose rendering expected to land above 100x.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "it must NOT stay folded into U1, which was closed as moot",
+        "SENTINEL_SYNTHETIC.md in the artifacts dir is a FABRICATED positive-control file, is not evidence, and must never be cited as a source"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "blocked",
+      "failed_link": [
+        "BLOCKED_ESCALATE -- three gates measured and passed with two or more independent signals each",
+        "the one decisive gate has ZERO valid signals, so this is neither a kill nor a revival"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "memory_or_liveness",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider",
+        "protocol_or_generalization",
+        "theorem_or_class_closure"
+      ],
+      "id": "gm_m116_streams",
+      "index": 250,
+      "information_sources": [
+        "weights_only_analytic_state",
+        "offline_learned_features",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "STEP-0 KILL if baseline_bill - 189,738,221,568 < 1,000,000,000. G1 residual > 0.170 s. G2 any nonzero count of differing float32 words vs the 512-call reference. G3 whole-process peak > 464 MiB. Invariants, any failure also a kill: billed FLOPs != 189,738,221,568, any non-finite value, predict wall at least 20 s.",
+      "operator_families": [
+        "engineering_and_cost",
+        "control_and_multifidelity",
+        "compression_and_low_rank",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "BLOCKED_ESCALATE -- three gates measured and passed with two or more independent signals each",
+        "The judge independently re-derived W3 = 343*D(m/8,k/8,n/8) + 651*(mk+kn+mn)/64 = 5,912,804,352 and 32*W3 + 32*64,512*256 = 189,738,221,568, matching this row's metered bill exactly, and verified the L1 baseline 7,427,768,320 is a quote from the committed 2026-08-07 table (line 110) rather than invented for the revival",
+        "THREE GATES MEASURED AND PASSED"
+      ],
+      "prediction": "Predeclared in PREDECLARATION.md before any code. STEP 0: pre-L3 baseline minus 189,738,221,568 far above the 1B relevance floor; predicted 238,217,068,544 - 189,738,221,568 = 48,478,846,976. STEP 1 at G=4: residual 0.046416 + 160*5.508760478e-4 = 0.1345 s, PASS with only ~26% margin and declared on record as the tight gate; bitwise parity EXACT (0 of 16,515,072 float32 words) against a rebuilt 512-call B=4096 reference; peak ~401 MiB under 464 MiB; bill exactly 189,738,221,568. Exactly one fused configuration authorized, no retuning past a failed gate.",
+      "raw_status": "blocked",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED at the accuracy gate on its own frozen eight-case n=64 bank",
+        "Per-case ratios 3.2934, 0.7636, 1.0546, 2.2311, 6.9375, 0.2005, 0.6488, 0.4891 (seeds 18560-18563 at L=16, 18720-18723 at L=32). Invariance passes: permutation 2.0378868031173505e-16, positive-scale 4.2737583849311574e-16, ranks_equal, tolerance 1e-10, reproducing the original killed run's own recorded values"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "memory_or_liveness",
+        "numerical_or_endpoint_coverage",
+        "protocol_or_generalization",
+        "representation_not_closed"
+      ],
+      "id": "gm_latent_cubature",
+      "index": 251,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "Index 11's own clause, unrelaxed -- n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken scale/permutation invariance, or conservative n=256,L=32 target arithmetic at least 80B. Survival required all four.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "higher_cumulant_source",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "Per-case ratios 3.2934, 0.7636, 1.0546, 2.2311, 6.9375, 0.2005, 0.6488, 0.4891 (seeds 18560-18563 at L=16, 18720-18723 at L=32). Invariance passes: permutation 2.0378868031173505e-16, positive-scale 4.2737583849311574e-16, ranks_equal, tolerance 1e-10, reproducing the original killed run's own recorded values",
+        "Three seals hold -- comparator independent recompute 1.32e-14 with banked baseline delta exactly 0.0, repair neutrality against the original run's three completed cases 6.47e-14, and 8/8 bitwise repeat in fresh processes",
+        "The judge added a fourth independent signal: every candidate MSE rebuilt from the stored pass-2 prediction vectors in cases_pass2/*.json against the committed truth bank work/scorefloor_generation/latent_full_sigma/fresh_n64_results.json reproduces bitwise (relative delta 0.0), giving aggregate ratio 1.0319985295056735 and 4 wins, and the comparator baselines are the bank's own committed baseline_mse values matching to exactly 0.0 -- so the denominator is not something the worker could have shaded (the 1-ulp gap between ...35 and ...37 is real and is sum-ordering). The judge also read fold_ledger.json index 11 directly and confirmed the four gates are its kill_condition clause verbatim, i.e"
+      ],
+      "prediction": "Predeclared before any code (PREDECLARATION.md section 6): gate 1 FAILS with R in [1.0, 3.0] centred near 1.3; gate 2 FAILS with W <= 3 of 8; gate 3 PASSES; gate 4 PASSES 'well below 80e9' on both dtype readings; overall KILL_CONFIRMED with zero score gain. Predeclared reversal condition: R <= 0.80 AND W >= 6 would be REVIVED_PASS. No retuning of tau, q, radius, seeds, or case set after seeing any number; one arm only.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Gen-8 must pin the convention in the ledger invariants and re-price indices 13 and 14 before any production FlopScope port is authorised"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "THE PREDICTED KILL MODE DID NOT FIRE, and the attack that landed partially was ATTRIBUTED rather than explained away: I4 under the frozen module's naive n^3-term sequential accumulator grows with width to 7.379363385615973e-05 at w = 28 (global worst over every run, still 13.5x below GATE K), but replacing that accumulator with a blocked/pairwise reduction of the IDENTICAL algebra holds the error at 8.568e-07..2.162e-06, flat in width, operand-normalised 7.068e-08..1.770e-07 = f32 eps",
+        "and the carrier is the TEST ORACLE's accumulator, which m205_rankone_complete_physical_owner.py:268 itself labels 'prohibited outside small-width tests' (verified verbatim by the judge) and which no billed path uses"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider",
+        "protocol_or_generalization"
+      ],
+      "id": "gm_rankone_bill",
+      "index": 252,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "offline_learned_features",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "Fixed in advance, not retuned. STEP-0 KILL if M205 f32 protected >= H or M204 f32 protected >= H, in which case stop and write KILL_CONFIRMED. GATE K (kill the parity premise) if any predeclared identity has result-normalised rel > 1.0e-03. GATE R (revive) if every predeclared identity has rel <= 1.0e-05 AND step 0 passed. Between 1.0e-05 and 1.0e-03: INCONCLUSIVE, no threshold retuning.",
+      "operator_families": [
+        "higher_cumulant_source",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "endpoint_facet_and_coarea",
+        "routing_and_learned_surrogates",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "STEP 0 PASS: all six predeclared f32 integers and the frozen f64 record reproduced exactly (2,076,311,552 / 2,595,389,440 / 7,963,587,520 / 2,580,192,000 / 10,543,779,520), and the judge re-derived every one from the closed forms independently with exact agreement",
+        "STEP 1 GATE R MET, GATE K never approached: every predeclared identity landed between 2.38e-08 and 2.81e-06. I1 distinct delta-tilde 7.06e-08/2.07e-07/2.79e-07 (w = 3/4/5)",
+        "(2) exact-rational ground truth at width 3 (fractions.Fraction) -- f64 compiler 2.0193961366861051e-16 versus exact, f32 compiler 2.0284100182998444e-07, i.e"
+      ],
+      "prediction": "Predeclared in PREDECLARATION.md section 7 before any code ran: (1) the step-0 arithmetic gate PASSES, the mined f32 integers are correct, and both protected bills fall under the strict M199 composed headroom H = 1,986,871,472; (2) step-1 identities HOLD at float32-eps scale (REVIVE), rel ~1e-7..1e-5, because every identity is a polynomial contraction with no structurally enforced cancellation to zero. Strongest counter-hypothesis named in advance and hunted specifically: I4, source(T) = source(c) + source(T-c), losing the quartic collision cells to catastrophic cancellation between source(c) and source(T-c).",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "I3d naive at n = 256 holds only 1.16x margin under GATE R and grows with n (4.45e-07 -> 8.63e-06 across n = 16..256) with the blocked path also growing (1.09e-07 -> 1.24e-06, ~8.1x margin), so this parity result is WIDTH-256-SPECIFIC and must not be reused at larger n, layer count, or depth without re-measurement",
+        "whether the already-booked 98,013,128,528 is itself f64-priced was NOT checked and must not be quoted"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED on two independent predeclared signals",
+        "not both). G1, the candidate's own identification claim, FAILED: bootstrap 95% upper bound on vD_moment(raw, ddof1) = 0.08258 > 0.08 with P(vD >= 0.08) = 0.0290, and the judge's independent bootstrap gives upper bound 0.08302 with P = 0.0300 -- n = 80 does not exclude S1b's range even on the observable most favourable to the candidate"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage"
+      ],
+      "id": "gm_s1s4_vd",
+      "index": 253,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "weights_only_analytic_state"
+      ],
+      "kill_condition": "Predeclared G0, verbatim from the mining record: 'if a two-parameter (vD, tail-index) fit to the 80-net panel's second moment AND range jointly puts vD >= 0.08 under both floor treatments, S1b stands and this candidate is dead.' Predeclared PASS condition for revival: G0 does not fire AND G1 PASS AND G2 PASS.",
+      "operator_families": [
+        "sampling_and_design",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "compression_and_low_rank"
+      ],
+      "passed_tissue": [
+        "CAUSE OF THE CANDIDATE'S LOW RAW READING: mse_raw = mse_corr + floor31, and floor31 is a less-dispersed positively correlated additive component worth 25.15% of the mean, which DAMPS relative variance (0.3818 raw vs 0.5615 floor-subtracted)",
+        "the purely multiplicative S*D*F premise behind the moment identity is what fails",
+        "JUDGE INFLUENCE ATTACK (not run by the worker): leave-one-out minimum bound 0.0920, and an adversarial removal of the 5 most bound-inflating nets still leaves 0.0640 -- the exclusion of the candidate's 0.0129 is outlier-robust, while the claim that the bound lands INSIDE 0.081-0.122 is NOT outlier-robust and is downgraded to 'vD >= ~0.06 robustly, point bound 0.102, consistent with S1b'. G2 PASSED: shape freedom is real -- at vD = 0.012913 only beta <= 3 bracket 15.5317, while at vD = 0.144634 every beta brackets it, and S1's own frozen log-uniform still fails the bracket at the raw reading (P = 0.029), so that reading rescues nothing"
+      ],
+      "prediction": "Predeclared in PREDECLARATION.md, written before any code in the directory ran: P1 vD_moment(raw) = 0.0094 (ddof0) / 0.0129 (ddof1) with bootstrap 95% upper bound below 0.08. P2 vD_moment(corr) = 0.139/0.145. P3 some finite tail index beta brackets 15.5317 at both readings. P4 S1 keeps all three gates PASS at vD 0.0814/0.1220 with R6-vs-R1 width shrink ~44%/40% and rotation share ~0.83/0.77, returning to ~58-59% at the raw reading. P5 S4's Door-B gain shrinks as vD rises, below 5pp at T = 1.6e-7 but above the 2pp gate. P6 the floor-correlation ceiling is violated under the raw reading.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "screened_component",
+      "failed_link": [
+        "Signal 2 (independent path: S1-style integer indexing, no copula, no ndtr, seed 20260810, 1e6 suites): U = 1.9100 [1.8977, 1.9222] and 1.8729 [1.8621, 1.8837] -- clean of 1.95 at BOTH arms",
+        "and signal 2 is a genuinely distinct sampling path rather than a re-wrapping of signal 1. The judge then ran a THIRD path (integer indexing, 400k suites, seeds 777 and 4242) reproducing the ordering and magnitudes: U_high = 1.8678 / 1.8609, U_low = 1.9134 / 1.8887. KILL_CONFIRMED IS UNREACHABLE and the deciding-arm CI ambiguity is moot: the kill requires U >= 1.95 at BOTH arms, and the high arm is excluded by four independent estimates spanning 1.861-1.880, each 0.070-0.089 below the bar with non-overlapping CIs, so the verdict holds under both the deciding-arm and the stricter conjunctive reading of the CI rule"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "numerical_or_endpoint_coverage"
+      ],
+      "id": "gm_u9_s4_d2",
+      "index": 254,
+      "information_sources": [
+        "sampled_network_paths",
+        "weights_only_analytic_state"
+      ],
+      "kill_condition": "Verbatim from the mining record's cheapest_falsifier: 'If the factor stays >= 1.95x at both vD values, the revival is dead and S4's D2 pass stands as written.' KILL_CONFIRMED iff U(1.55e-7) >= 1.95 at BOTH vD = 0.08135950765383865 and vD = 0.12203926148075797; REVIVED_PASS iff below 1.95 at at least one; INCONCLUSIVE if the deciding arm's 95% CI straddles 1.95. STEP 0 control reproduction blocking.",
+      "operator_families": [
+        "sampling_and_design",
+        "engineering_and_cost",
+        "analytic_moment_closure",
+        "higher_cumulant_source",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank"
+      ],
+      "passed_tissue": [
+        "STEP 0 PASSED: 31/31 committed S4 cells at abs_diff = 0.0, including 0.05701 / 0.12373 / 0.87683 / 0.93972, baseline pA 0.02849 / 0.06373 / 0.2063, scoreA_sd 1.556004718551518e-08 and scoreA_mean 1.82926005895453e-07 at full double precision, so the scipy-free Cephes-shaped ndtr on libm erf/erfc is proven immaterial",
+        "SECONDARY, AS PREDICTED: S4's own 2-pp diversification gate SURVIVES in every arm (same_mean gain at 1.55e-7 grows 2.852 -> 4.478 -> 5.211 pp)",
+        "UNPREDICTED SECONDARY: the r6 arm now passes 2 pp on its own at 1.7e-7 (1.526 -> 4.725 -> 5.319 pp) where the committed model said it did not, and U9's Door A cells move the other way (0.87683 -> 0.83655 at 1.55e-7), halving the Door A / Door B gap from 15.38x to 7.51x"
+      ],
+      "prediction": "PREDECLARATION.md section 6, written before any harness code, with a step-0a arithmetic pre-check recorded before the run: (1) STEP 0 control reproduces the committed S4 cells, proving the ndtr substitution immaterial; (2) simulated two-entry correlation at rho_pair = 0 matches Eq.1 at 0.1712 / 0.2300 (+/-0.002); (3) pA(1.55e-7) rises 0.02849 -> ~0.048-0.052 / ~0.058-0.062; (4) U(1.55e-7) falls 2.001 -> ~1.90-1.92 (vD = 0.0814) and ~1.86-1.89 (vD = 0.1220), below 1.95 at both; (5) predeclared verdict REVIVED_PASS; (6) honest limit -- the fall is modest, 'roughly doubles' survives as prose, and S4's own 2-pp diversification gate was predicted to still PASS (~4.5-5.5 pp vs the 2 pp bar) so S4's SURVIVES verdict was predicted unchanged with only the D2 magnitude moving. Step-0a Jensen bound U <= 2 - pA from committed S1b pA gave 1.95008 / 1.93947, fixing the direction in advance.",
+      "raw_status": "screened",
+      "reopening_condition": [
+        "and signal 2 is a genuinely distinct sampling path rather than a re-wrapping of signal 1. The judge then ran a THIRD path (integer indexing, 400k suites, seeds 777 and 4242) reproducing the ordering and magnitudes: U_high = 1.8678 / 1.8609, U_low = 1.9134 / 1.8887. KILL_CONFIRMED IS UNREACHABLE and the deciding-arm CI ambiguity is moot: the kill requires U >= 1.95 at BOTH arms, and the high arm is excluded by four independent estimates spanning 1.861-1.880, each 0.070-0.089 below the bar with non-overlapping CIs, so the verdict holds under both the deciding-arm and the stricter conjunctive reading of the CI rule",
+        "WHAT THE GEN-8 FOLD LADDER MUST DO NEXT: (1) LOAD-BEARING -- pin a lower confidence bound on vD from the observed 80-net 15.53x spread, NOT from the n=3 chi2(2) CI, and confirm it exceeds ~0.06 with margin"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "blocked",
+      "failed_link": [
+        "all four records remain killed and no revival gate opens",
+        "ARM A then FAILED its predeclared gate: 3/5 pass at k=1, max C_k1 = 282.529771691B, worst residual 0.984526 s against the 0.650282682 s ceiling"
+      ],
+      "failure_boundaries": [
+        "nonidentifiability_or_missing_information",
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "memory_or_liveness",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider",
+        "protocol_or_generalization"
+      ],
+      "id": "gm_residual_k1",
+      "index": 255,
+      "information_sources": [
+        "sampled_network_paths",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "Predeclared, exact: KILLED if, in ARM A, max_i C_k1(i) >= 258.4e9 over the five target workers -- equivalently if worst-worker residual exceeds (258.4e9 - billed_i)/1e11, which on the 2026-08-07 worst worker (billed 193.371731851e9) is 0.650282682 s. Independently KILLED if any frozen structural assertion fails, or peak RSS >= 512 MiB, or any worker fails to complete.",
+      "operator_families": [
+        "engineering_and_cost",
+        "higher_cumulant_source",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "all four records remain killed and no revival gate opens",
+        "STEP 0 PASSED exactly as predicted: 5/5 at k=1, worst 210.352002450B, margin 18.60%, k* = 3.8296, and it also reproduced the ledger's own k=5 record verbatim (3/5 pass, max 278.273084846B), which validates the recomputation against the frozen record",
+        "ARM A then FAILED its predeclared gate: 3/5 pass at k=1, max C_k1 = 282.529771691B, worst residual 0.984526 s against the 0.650282682 s ceiling"
+      ],
+      "prediction": "Predeclared in PREDECLARATION.md before any code. STEP 0 -- the cached 2026-08-07 M160 measurements re-charged at k=1 pass 5/5, worst worker 210.352002450B, margin 48.047997550B = 18.60%, break-even k* = 3.8296. ARM A (binding) -- a fresh five-worker re-run of the frozen harness under a 1-physical-core participant pin inflates residual by less than 2.5x, keeping worst residual <= 0.45 s and worst C_k1 <= 240e9, all five passing 258.4e9 with all structural invariants and RSS < 512 MiB; billed_flops and prediction_sha256 reproduce 2026-08-07 bitwise per seed. ARM B (1 logical CPU) predeclared as explicitly NON-BINDING.",
+      "raw_status": "blocked",
+      "reopening_condition": [
+        "WHAT MUST HAPPEN BEFORE THIS FAMILY CAN BE RECONSIDERED: one predeclared settling experiment",
+        "The faithful emulation requires participant-thread affinity pinned to one physical core WITH the BLAS/flopscope backend free on ~7 cores -- per-thread affinity or an out-of-process backend -- evaluated against the identical k=1 / 258.4e9 gate, and it must report a DISTRIBUTION over repeated residual draws per worker rather than a single draw, since ARM A showed 2.3x within-process variance and the second-predict draws cleared the gate by only 1.25%. Until that runs, 'the k=1 residual charge makes this family deployment-legal' stays DERIVED-from-frozen-unpinned-data, never OBSERVED-under-pin, and the graveyard entry stands"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED",
+        "DECISIVE KILL -- KILL_REACHABILITY: at the real composition width 256 the pre-ReLU covariance of the zero-order recurrence crosses M198's VARIANCE_FLOOR (1e-12) at layer 12 of 32 (rep 0) and layer 10 (rep 1), goes strictly negative at layer 13 / 12, and reaches -1.068471e-11 / -2.303857e-09 by layer 32, so m198.DelayOneContext.__post_init__ refuses fail-closed ('pre-ReLU covariance is not safely SPD') and the identity trace M199 named as the only lawful child terminates roughly a third of the way in"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "memory_or_liveness",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider",
+        "protocol_or_generalization"
+      ],
+      "id": "gm_m179_m199",
+      "index": 256,
+      "information_sources": [
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "KILL_COST if B32 > 9.723621632e9. KILL_SHADOW if G5 (legacy-call surveillance) or G6 (event-ledger lifetime/operation audit) fails in any cell. KILL_PARITY if G3 (absolute 2e-12 parity) or G8 (mu_32 identity to 1e-12) fails in any cell. KILL_REACHABILITY if the 32-layer producer raises fail-closed on generic He weights at the real composition width. REVIVED_PASS only if GATE 0 passes AND G1..G8 pass in every ARM B cell and in ARM C.",
+      "operator_families": [
+        "engineering_and_cost",
+        "analytic_moment_closure",
+        "higher_cumulant_source",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "STEP 0 / clause (b) PASS, every predicted digit exact: live flopscope 0.10.0 re-metering gives matmul 134,217,216 (equal to frozen 2026-08-07), per_layer 267,886,848, B31 8,304,492,288 (equal to the ledger m179_standalone_total), B32 8,572,379,136 = 8.572379136B against the 9.723621632B threshold with margin 1.151242496B",
+        "all five M199 ledger identities hold in exact rational arithmetic",
+        "T_A = 89.70863624 + 8.572379136 - 7.73675016 = 90.544265216. Clause (a) PASS in all 10 depth-32 cells where a trace exists: monkeypatched counters on build_extended_background / build_labelled_carrier_maps / labelled_inhomogeneous_source_recurrence record 0/0/0 calls in the measured stream"
+      ],
+      "prediction": "Predeclared in PREDECLARATION.md before any harness code: mm_layer re-meters to 134,217,216; per_layer = 267,886,848; B32 = 8,572,379,136 = 8.572379136B, passing the 9.723621632B conditional-replacement threshold with 1.151242496B margin; T_A = 90.544265216B (headroom 9.455734784B, a 4.76x expansion of strict headroom); T_B under the legacy 1.25 reserve = 92.687360000B. ARM B (frozen widths 2..7, depth 32) and ARM C (width 256, depth 32) predicted to pass all of G1..G8. Named residual risks in stated order: (i) parity degradation past the absolute 2e-12 gate from ill-conditioning at depth 32, (ii) fail-closed RHO_MAX/non-PSD refusal, (iii) wall-clock overrun.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "OPEN -- M200's parity gate is absolute (2e-12) and does not transfer past its depth 3..6 provenance, so any future depth-extended use needs a scale-relative gate declared in advance"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "KILL_CONFIRMED -- the gate STANDS, and under the mining record's own outcome semantics STANDS means the revival changes no decision, so it is killed as a decision-mover while the parent record is CONFIRMED IN DIRECTION and CORRECTED IN THREE NUMBERS",
+        "Staged as predeclared: n=20 (seeds 1000-1019) PRIMARY pooled 1.4836, se 0.2475, CI [0.9656, 2.0016] -> ['REOPENS', 'STRADDLES_1.2'], extended to all 80 per the record's own rule with no threshold retuned and results_n20.json / checkpoint_n20.json preserved verbatim as the audit trail"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation"
+      ],
+      "id": "gm_s17_reuse",
+      "index": 257,
+      "information_sources": [
+        "truth_or_oracle_only",
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "endpoint_or_facet_geometry",
+        "output_or_frame_statistics"
+      ],
+      "kill_condition": "From the mining record's cheapest_falsifier -- the floor claim STANDS iff the n=80 pooled 95% CI excludes 1.2 from below; REOPENS iff the CI includes 1.0; REOPENS_UPWARD iff it excludes 2.5 from above; run n=20 first and extend to 80 only if the CI still straddles 1.2. Plus a step-0 arithmetic kill gate: if any of S17's three per-net ratio_champ_over_costfloor failed to reproduce from the committed arrays, the mined instrument is not the object in the record and the reuse premise dies at step 0.",
+      "operator_families": [
+        "sampling_and_design",
+        "engineering_and_cost",
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "endpoint_facet_and_coarea",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "CAVEAT ON LEVEL: the reference sigma^2 in s17_results.json was itself computed as ybar.var() from the same committed npz, so this establishes instrument identity and ratio arithmetic, NOT an independent re-derivation of the S17 forward, and the champion MSEs in step 0 are hardcoded constants",
+        "Staged as predeclared: n=20 (seeds 1000-1019) PRIMARY pooled 1.4836, se 0.2475, CI [0.9656, 2.0016] -> ['REOPENS', 'STRADDLES_1.2'], extended to all 80 per the record's own rule with no threshold retuned and results_n20.json / checkpoint_n20.json preserved verbatim as the audit trail",
+        "n=80 (seeds 1000-1079) DECISIVE: PRIMARY pooled 2.0088457167346236, sd 1.4329454642217263, se 0.16020817330248863, 95% t CI [1.689959358184685, 2.3277320752845623] -> STANDS (excludes 1.2 from below, also excludes 1.0 so not REOPENS, below 2.5 so not REOPENS_UPWARD)"
+      ],
+      "prediction": "PREDECLARATION.md, mtime-verified as written before any result artifact (13:50 vs step0 13:51, checkpoint 13:58, results 14:01). Predicted: step-0 re-derivation of S17 section A from the cached S5 arrays reproduces to rel err < 1e-12; n=20 PRIMARY pooled point 1.5 in band [1.2, 1.9] with 95% CI half-width <= 0.35; n=20 S17-convention pooled point 1.75 in band [1.4, 2.1]; final gate STANDS, flagged MARGINAL with an explicit extend-to-80 branch if the n=20 CI straddled 1.2; diagnostic per-output-floor accounting ~0.1. Deviations declared up front: numerator harmonization (PRIMARY champ = m185 mse_corr, single rotation draw r=0, versus S16/S17's 16-replicate raw MSE against 3.5M-sample truth; S17-CONVENTION adds back floor31*600000/3.5e6), and the resulting inflation of the realized se above the mining record's projected ~0.06.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Staged as predeclared: n=20 (seeds 1000-1019) PRIMARY pooled 1.4836, se 0.2475, CI [0.9656, 2.0016] -> ['REOPENS', 'STRADDLES_1.2'], extended to all 80 per the record's own rule with no threshold retuned and results_n20.json / checkpoint_n20.json preserved verbatim as the audit trail",
+        "n=80 (seeds 1000-1079) DECISIVE: PRIMARY pooled 2.0088457167346236, sd 1.4329454642217263, se 0.16020817330248863, 95% t CI [1.689959358184685, 2.3277320752845623] -> STANDS (excludes 1.2 from below, also excludes 1.0 so not REOPENS, below 2.5 so not REOPENS_UPWARD)"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "the installed flopscope 0.10.0 OpRecord dataclass has NO 'dtypes' field (fields: count, cumulative, flop_cost, flopscope_backend_duration_s, flopscope_context_start_offset_s, flopscope_overhead_duration_s, index, namespace, op_name, resolved_dtype, shapes, subscripts), so any() ran over an empty tuple for every op on every program - 0.00% was the only value it could ever return",
+        "(b) empirical, detector returns f64_share 0.0 on a deliberately 100%-float64 program while the corrected resolved_dtype detector returns 1.0. VERDICT SURVIVES on independent evidence: corrected f64 charge 1.193e8 FLOPs (0.0755% of predict), recast ceiling 59,656,312 FLOPs, reproducing the Gen-7 cost-remap attacker's 59.66M to the digit - no material f64 lane"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation"
+      ],
+      "id": "gen8_m183_detector_void",
+      "index": 258,
+      "information_sources": [
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "N/A - instrument audit. Defect confirmed if the detector cannot report a nonzero share on a known-f64 program.",
+      "operator_families": [
+        "engineering_and_cost",
+        "analytic_moment_closure",
+        "harmonic_and_symmetry",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "(b) empirical, detector returns f64_share 0.0 on a deliberately 100%-float64 program while the corrected resolved_dtype detector returns 1.0. VERDICT SURVIVES on independent evidence: corrected f64 charge 1.193e8 FLOPs (0.0755% of predict), recast ceiling 59,656,312 FLOPs, reproducing the Gen-7 cost-remap attacker's 59.66M to the digit - no material f64 lane"
+      ],
+      "prediction": "Forum claim would either contradict M183's 0.00% or be already covered by it.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "CLOSED IN OUR FAVOUR, no contradiction"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation"
+      ],
+      "id": "gen8_rival_5design_adjudication",
+      "index": 259,
+      "information_sources": [
+        "output_or_frame_statistics",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "Proposal to upgrade design strength dies if the measured value of nulling degree 3-5 on our integrand is below its cost.",
+      "operator_families": [
+        "sampling_and_design",
+        "engineering_and_cost",
+        "higher_cumulant_source",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry"
+      ],
+      "passed_tissue": [
+        "the 129 real MUBs hit the Welch minimum exactly, sum|<x_i,x_j>|^4 = 49,536/N^2 = 3/66,048) - and OUR OWN S11 section 2 had already verified the identical fact on the frozen asset (1.5 exactly, Phi4/Welch=1.0000000000) and priced the completion at <=0.176% against a 2.326% break-even"
+      ],
+      "prediction": "Either their advantage is design strength (refuting S6/S15) or it is cost/arithmetic (confirming our record).",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "ORCHESTRATOR HYPOTHESIS KILLED",
+        "there is no easiness shift to apply"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "bias_or_invalid_expectation",
+        "approximation_or_materiality",
+        "memory_or_liveness"
+      ],
+      "id": "gen8_c1_ratio_artifact_and_anchor_se",
+      "index": 260,
+      "information_sources": [
+        "unspecified_in_record"
+      ],
+      "kill_condition": "Hypothesis dies if the local/grader discrepancy is explained by a distributional artifact rather than difficulty.",
+      "operator_families": [
+        "control_and_multifidelity"
+      ],
+      "passed_tissue": [
+        "SEPARATE REAL DEFECT FOUND: S1b treats the hosted 1.830e-7 anchor as exact when it is a 50-net measurement with 9.83% SE"
+      ],
+      "prediction": "Orchestrator hypothesis: the 1.65 ratio is a suite-difficulty bias that should SHIFT the band downward-optimistic.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "while half<256: ... half*=2 = 8 stages = log2(256)) with a half-frame WHT scratch, docstring 'Return the exact Kerdock first preactivation without directions' and 'no full direction storage exists to release' - the 64,512x256 direction matrix is never materialized",
+        "Deep layers already use RowBlockedBatchedWinograd via _sample_matmul"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider"
+      ],
+      "id": "gen8_fractalize_kerdock_bolt",
+      "index": 261,
+      "information_sources": [
+        "sampled_network_paths",
+        "output_or_frame_statistics",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "(a) dies if the frozen estimator already applies the design via fast transform; (b) dies if it reduces to M180's killed design-perturbation family.",
+      "operator_families": [
+        "sampling_and_design",
+        "engineering_and_cost",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry"
+      ],
+      "passed_tissue": [
+        "while half<256: ... half*=2 = 8 stages = log2(256)) with a half-frame WHT scratch, docstring 'Return the exact Kerdock first preactivation without directions' and 'no full direction storage exists to release' - the 64,512x256 direction matrix is never materialized",
+        "Second signal: this predicts cost parity with the rival, and Gen-8 measured exactly that (their post-Strassen budget 64.27% vs our C/B 65.01%). Incidental finding: that path already passes out= destination buffers, partially answering U-P4 (the 18101 residual lever) at zero cost",
+        "perturbation destroys the exact 2-design property) - killed"
+      ],
+      "prediction": "(a) plausible cost lever, since the rival at 18145 credits their entire 1.5412x gain to cheaper arithmetic via 8 Walsh-Hadamard passes; (b) likely already covered by M180 if read as design perturbation.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Gen-8 skeptic killed the reopening on inflated arithmetic and misread lineage). Recorded as uncertainty U-F1, not as a claim"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "(a) kink-boundary/gradient-jump geometry is exactly S9's Crofton kink-transect identity - built, exact to 6.7e-16, and its induced estimator KILLED at 176,860x worse variance-per-FLOP",
+        "(d) index-as-control is the control-variate family - killed (S15 incremental 1.56%"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider"
+      ],
+      "id": "gen8_refraction_optics_bolt",
+      "index": 262,
+      "information_sources": [
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "endpoint_or_facet_geometry"
+      ],
+      "kill_condition": "Each sub-mechanism dies if it is already implemented in the champion or already killed with a committed measurement.",
+      "operator_families": [
+        "sampling_and_design",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "endpoint_facet_and_coarea"
+      ],
+      "passed_tissue": [
+        "(a) kink-boundary/gradient-jump geometry is exactly S9's Crofton kink-transect identity - built, exact to 6.7e-16, and its induced estimator KILLED at 176,860x worse variance-per-FLOP",
+        "(b) degree-dispersion IS the champion's architecture: the exact 2-design nulls degree<=2 analytically and samples the degree>=4 remainder - the design IS the prism",
+        "independently replicated by a rival at 18085 whose CV correlation decays 0.86->0.25 with depth). (e) birefringence = the even/odd antipodal split, exact and banked (S16 bit-identical, max deviation 0.0). CONTRIBUTION (not a mechanism, an identification): optical speckle theory makes three sharp predictions our committed data selects without fitting - real vs complex field fixes chi^2_1 over Exp(1) in advance (measured discrimination ~18x: KS 0.0099/0.0090/0.0071 vs 0.1635/0.1649/0.1643)"
+      ],
+      "prediction": "At least one of the five is untested and yields a mechanism.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "and the finite-aperture picture requires a LARGER grain than the infinite-width limit, which is the measured 1.70/1.70/2.20x offset that S7 already flagged as systematic rather than scatter"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "(1) Only 1 of 6 corpses is width-caused (weight_identified_latent_factor, screened 4/8/16 -> died 32/64). Four had NO width transition (screen 64 == kill 64)",
+        "'no kill_condition names 256' rests on 5 of 223 records naming any width"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "memory_or_liveness",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider"
+      ],
+      "id": "gen8_gate_audit",
+      "index": 263,
+      "information_sources": [
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "The width-only gate is adopted verbatim if >=4 of 6 corpses are confirmed width-caused AND our own record is not mis-punished by the clause.",
+      "operator_families": [
+        "engineering_and_cost",
+        "compression_and_low_rank",
+        "endpoint_facet_and_coarea",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "gm_rankone_bill is pinned n=256/layers=31 and PASSES both clauses - the orchestrator's earlier claim that it was the gate's first customer is retracted",
+        "evidence at production shape retained"
+      ],
+      "prediction": "Orchestrator predicted the gate was the right instinct in the wrong shape (width being one axis of a general transfer problem) and that the M183 defect might be a class.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "and the pricing-exploit attack FAILED (classical 2x2 blocking prices exactly equal to direct, zero slack, so the gain is Strassen's 7-vs-8 not an accounting artifact). Rival topic 18145's 1.5412x reconciles arithmetically at 97.5% of our d=5 figure with no error on their part",
+        "STATUS: Phase-2 CANDIDATE per its predeclaration, not a reopening - no kernel code written"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "memory_or_liveness",
+        "theorem_or_class_closure"
+      ],
+      "id": "uf1_strassen_flop_only_accounting",
+      "index": 264,
+      "information_sources": [
+        "sampled_network_paths",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "U-F1 closes permanently if the charged ratio r(d) >= 1 at every recursion depth d=1..5 under FLOP-only accounting.",
+      "operator_families": [
+        "sampling_and_design",
+        "engineering_and_cost",
+        "higher_cumulant_source",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "Price table METERED not assumed (matmul = m*n*(2k-1) exact 8/8 shapes",
+        "add/sub/mul and copyto/concat/stack 1/element exact 12/12",
+        "empty/zeros/views exactly 0"
+      ],
+      "prediction": "Open question. v0.10.0 now bills data movement (copy/fill/concat 1/elem) and dtype-prices arithmetic, which was expected to possibly overturn Strassen since it trades multiplies for additions and temporaries.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "STATUS: Phase-2 CANDIDATE per its predeclaration, not a reopening - no kernel code written",
+        "must still cross R3 on its declared sensitivity axis (recursion depth) with the instrument-validity gate"
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "PUBLISHED U-F1 TRANSLATION KILLED",
+        "the literal judge composition is 0.8900733x, while the production-style row-blocked d4 microbenchmark is approximately parity with an interval spanning win and loss"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "memory_or_liveness",
+        "missing_interface_or_provider",
+        "theorem_or_class_closure"
+      ],
+      "id": "uf1_translation_reaudit_20260811",
+      "index": 265,
+      "information_sources": [
+        "sampled_network_paths",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "Retire the published U-F1 translation if it re-banks the champion's existing depth-1 saving or transports depth-1 eligibility to depth 4. Do not kill every Strassen/Winograd composition unless a production-composed implementation is integrated through current v3.1 and fails complete residual, memory, MSE, and per-MLP score accounting.",
+      "operator_families": [
+        "engineering_and_cost",
+        "control_and_multifidelity"
+      ],
+      "passed_tissue": [
+        "Exact baseline survives: direct 8,439,201,792 FLOPs"
+      ],
+      "prediction": "The published 1.2118x depth-4 headline will fail once the already-shipped depth-1 Winograd baseline, current-v3.1 hook census, strict depth-4 eligibility, residual schedule, and mean-of-per-MLP score law are reconciled. A smaller row-blocked residue may remain scientifically open but must receive zero credit without an integrated estimator run.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "A smaller row-blocked residue may remain scientifically open but must receive zero credit without an integrated estimator run."
+      ],
+      "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "(3) CASCADE clause 2 FAILS: per MODE it is not a power law (nominal exponent triples with the band, 17.8->58.5",
+        "(4) TRUNCATION DOES NOT REOPEN: degree 4 (the 42x Bragg notch) carries only 0.45% of the estimator error, even degrees >=6 carry 99.55%, no single degree exceeds 13.8%, and capturing 50% requires exact integration of degrees {6,8,10,12,14,16,18} at joint dimension 6.249e27. (5) NEW RESULT at R0/R1 by exact arithmetic on S6's dyadic census: DEGREE 4 IS THE ONLY SUPPRESSED DEGREE - 8, 10, 12, ... are iid-level to five digits"
+      ],
+      "failure_boundaries": [
+        "approximation_or_materiality",
+        "wall_calls_or_allocation"
+      ],
+      "id": "r0_harmonic_energy_spectrum",
+      "index": 266,
+      "information_sources": [
+        "unspecified_in_record"
+      ],
+      "kill_condition": "Truncation reopens if any single degree carries >=50% of the estimator error; equipartition dies if per-mode energy varies by >1e3 across degrees.",
+      "operator_families": [
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "compression_and_low_rank"
+      ],
+      "passed_tissue": [
+        "CONCLUSION SURVIVES FROM A NEW DIRECTION",
+        "(4) TRUNCATION DOES NOT REOPEN: degree 4 (the 42x Bragg notch) carries only 0.45% of the estimator error, even degrees >=6 carry 99.55%, no single degree exceeds 13.8%, and capturing 50% requires exact integration of degrees {6,8,10,12,14,16,18} at joint dimension 6.249e27. (5) NEW RESULT at R0/R1 by exact arithmetic on S6's dyadic census: DEGREE 4 IS THE ONLY SUPPRESSED DEGREE - 8, 10, 12, ... are iid-level to five digits",
+        "leading cause is S17's own disclosed object mismatch (sigma^2 neuron-averaged scalar vs per-component champion MSE). Two runs bitwise identical"
+      ],
+      "prediction": "Orchestrator predicted equipartition would hold and the fluid analogy would be a contrast only.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "(4) TRUNCATION DOES NOT REOPEN: degree 4 (the 42x Bragg notch) carries only 0.45% of the estimator error, even degrees >=6 carry 99.55%, no single degree exceeds 13.8%, and capturing 50% requires exact integration of degrees {6,8,10,12,14,16,18} at joint dimension 6.249e27. (5) NEW RESULT at R0/R1 by exact arithmetic on S6's dyadic census: DEGREE 4 IS THE ONLY SUPPRESSED DEGREE - 8, 10, 12, ... are iid-level to five digits"
+      ],
+      "result_present": true
     }
   ],
   "schema_version": 1,
   "summary": {
     "canonical_status_counts": {
-      "blocked": 7,
-      "killed_or_closed": 161,
+      "blocked": 9,
+      "killed_or_closed": 191,
       "open_or_uncertain": 11,
       "preserved_component": 12,
       "promoted": 2,
-      "screened_component": 28,
+      "screened_component": 40,
       "validated": 2
     },
     "failure_boundary_counts": {
-      "approximation_or_materiality": 210,
-      "arithmetic_cost": 169,
-      "bias_or_invalid_expectation": 84,
-      "memory_or_liveness": 50,
-      "missing_interface_or_provider": 58,
+      "approximation_or_materiality": 252,
+      "arithmetic_cost": 204,
+      "bias_or_invalid_expectation": 93,
+      "memory_or_liveness": 61,
+      "missing_interface_or_provider": 67,
       "no_failure_at_recorded_gate": 4,
-      "nonidentifiability_or_missing_information": 11,
-      "numerical_or_endpoint_coverage": 119,
-      "protocol_or_generalization": 31,
-      "representation_not_closed": 48,
-      "theorem_or_class_closure": 16,
-      "variance_or_signal_to_noise": 145,
-      "wall_calls_or_allocation": 91
+      "nonidentifiability_or_missing_information": 18,
+      "numerical_or_endpoint_coverage": 142,
+      "protocol_or_generalization": 43,
+      "representation_not_closed": 53,
+      "theorem_or_class_closure": 23,
+      "variance_or_signal_to_noise": 177,
+      "wall_calls_or_allocation": 121
     },
     "information_source_counts": {
-      "deterministic_compute_only": 58,
-      "endpoint_or_facet_geometry": 46,
-      "offline_learned_features": 57,
-      "output_or_frame_statistics": 80,
-      "sampled_network_paths": 116,
-      "truth_or_oracle_only": 71,
-      "unspecified_in_record": 11,
-      "weights_only_analytic_state": 113
+      "deterministic_compute_only": 74,
+      "endpoint_or_facet_geometry": 55,
+      "offline_learned_features": 65,
+      "output_or_frame_statistics": 99,
+      "sampled_network_paths": 150,
+      "truth_or_oracle_only": 87,
+      "unspecified_in_record": 13,
+      "weights_only_analytic_state": 130
     },
     "operator_family_counts": {
-      "analytic_moment_closure": 100,
-      "compression_and_low_rank": 138,
-      "control_and_multifidelity": 147,
-      "endpoint_facet_and_coarea": 52,
-      "engineering_and_cost": 47,
-      "harmonic_and_symmetry": 113,
-      "higher_cumulant_source": 103,
-      "robustness_and_protocol": 135,
-      "routing_and_learned_surrogates": 29,
-      "sampling_and_design": 111
+      "analytic_moment_closure": 120,
+      "compression_and_low_rank": 161,
+      "control_and_multifidelity": 182,
+      "endpoint_facet_and_coarea": 64,
+      "engineering_and_cost": 61,
+      "harmonic_and_symmetry": 136,
+      "higher_cumulant_source": 111,
+      "robustness_and_protocol": 161,
+      "routing_and_learned_surrogates": 34,
+      "sampling_and_design": 144
     },
-    "total_records": 223,
+    "total_records": 267,
     "unresolved_or_component_ids": [
       "latent_sparse_radial_cubature",
       "latent_randomized_radial",
@@ -8378,7 +10082,21 @@
       "m199_composed_cost_reconciliation",
       "m200_streaming_overlap_fixture",
       "m205_rankone_complete_physical_owner",
-      "m207_zero_variance_rank_one_guard"
+      "m207_zero_variance_rank_one_guard",
+      "s1_suite_risk_bootstrap",
+      "s4_designation_portfolio_bootstrap",
+      "s7_wavepacket_speckle_correlation",
+      "s8_tdse_layer_defect_profile",
+      "s12_finite_width_kernel_capstone",
+      "s16_residual_norm_decomposition_confirm",
+      "s17_information_complexity_lower_bound",
+      "recursion_convergence_certificate",
+      "gm_c1_bound",
+      "gm_u3_grid",
+      "gm_m116_streams",
+      "gm_rankone_bill",
+      "gm_u9_s4_d2",
+      "gm_residual_k1"
     ]
   }
 }

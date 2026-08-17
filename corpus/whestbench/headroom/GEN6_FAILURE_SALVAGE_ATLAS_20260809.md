@@ -2,37 +2,37 @@
 
 Status: deterministic descriptive derivation from the append-only fold ledger. It does not promote an estimator, authorize a contest run, or treat an empirical kill as a family-wide theorem.
 
-Ledger SHA-256: `81743b71f3b5ff7d4b34963e7cf3d67767799916452b6ab2862b528ee07b64f9`
-Coverage: **223/223 records**; every record has a status disposition, operator family, information source, failure boundary, preserved tissue, and reopening condition.
+Ledger SHA-256: `8afec50ab41776225066cab074766e4b4aad6e9a38fc1887d0f7113642c86d2b`
+Coverage: **267/267 records**; every record has a status disposition, operator family, information source, failure boundary, preserved tissue, and reopening condition.
 
 ## Coverage summary
 
 | canonical disposition | count |
 |---|---:|
-| blocked | 7 |
-| killed_or_closed | 161 |
+| blocked | 9 |
+| killed_or_closed | 191 |
 | open_or_uncertain | 11 |
 | preserved_component | 12 |
 | promoted | 2 |
-| screened_component | 28 |
+| screened_component | 40 |
 | validated | 2 |
 
 ### Failure boundaries (multi-label)
 
 | boundary | records |
 |---|---:|
-| approximation_or_materiality | 210 |
-| arithmetic_cost | 169 |
-| variance_or_signal_to_noise | 145 |
-| numerical_or_endpoint_coverage | 119 |
-| wall_calls_or_allocation | 91 |
-| bias_or_invalid_expectation | 84 |
-| missing_interface_or_provider | 58 |
-| memory_or_liveness | 50 |
-| representation_not_closed | 48 |
-| protocol_or_generalization | 31 |
-| theorem_or_class_closure | 16 |
-| nonidentifiability_or_missing_information | 11 |
+| approximation_or_materiality | 252 |
+| arithmetic_cost | 204 |
+| variance_or_signal_to_noise | 177 |
+| numerical_or_endpoint_coverage | 142 |
+| wall_calls_or_allocation | 121 |
+| bias_or_invalid_expectation | 93 |
+| missing_interface_or_provider | 67 |
+| memory_or_liveness | 61 |
+| representation_not_closed | 53 |
+| protocol_or_generalization | 43 |
+| theorem_or_class_closure | 23 |
+| nonidentifiability_or_missing_information | 18 |
 | no_failure_at_recorded_gate | 4 |
 
 ## Interpretation discipline
@@ -269,6 +269,50 @@ Coverage: **223/223 records**; every record has a status disposition, operator f
 | 220 | `m205_rankone_complete_physical_owner` | blocked | higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, endpoint_facet_and_coarea, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state, endpoint_or_facet_geometry | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, missing_interface_or_provider |
 | 221 | `m206_m204_native_replacement_audit` | killed_or_closed | sampling_and_design, higher_cumulant_source, control_and_multifidelity, compression_and_low_rank, endpoint_facet_and_coarea | truth_or_oracle_only, sampled_network_paths, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
 | 222 | `m207_zero_variance_rank_one_guard` | preserved_component | control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, endpoint_facet_and_coarea, robustness_and_protocol | truth_or_oracle_only, weights_only_analytic_state, endpoint_or_facet_geometry, deterministic_compute_only | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage |
+| 223 | `s1_suite_risk_bootstrap` | screened_component | sampling_and_design, control_and_multifidelity | sampled_network_paths, weights_only_analytic_state | variance_or_signal_to_noise, approximation_or_materiality, numerical_or_endpoint_coverage, theorem_or_class_closure |
+| 224 | `s2_paid_information_rotation_weighting` | killed_or_closed | sampling_and_design, analytic_moment_closure, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, deterministic_compute_only | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, arithmetic_cost, numerical_or_endpoint_coverage |
+| 225 | `s3_cross_net_coupled_rotations` | killed_or_closed | sampling_and_design, control_and_multifidelity, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, output_or_frame_statistics, deterministic_compute_only | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, arithmetic_cost |
+| 226 | `s4_designation_portfolio_bootstrap` | screened_component | sampling_and_design, engineering_and_cost, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, output_or_frame_statistics | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost |
+| 227 | `s5_landau_kink_concentration_premise` | killed_or_closed | sampling_and_design, analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, endpoint_facet_and_coarea, robustness_and_protocol | truth_or_oracle_only, weights_only_analytic_state, endpoint_or_facet_geometry, output_or_frame_statistics | nonidentifiability_or_missing_information, approximation_or_materiality |
+| 228 | `s6_bloch_design_bragg_spectrum` | killed_or_closed | sampling_and_design, analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, robustness_and_protocol | sampled_network_paths, output_or_frame_statistics | approximation_or_materiality, wall_calls_or_allocation |
+| 229 | `s7_wavepacket_speckle_correlation` | screened_component | sampling_and_design, control_and_multifidelity, compression_and_low_rank | sampled_network_paths, output_or_frame_statistics | nonidentifiability_or_missing_information, variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
+| 230 | `s8_tdse_layer_defect_profile` | screened_component | sampling_and_design, control_and_multifidelity, compression_and_low_rank | sampled_network_paths, output_or_frame_statistics | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
+| 231 | `s9_crofton_kink_transect_identity` | killed_or_closed | sampling_and_design, analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, endpoint_facet_and_coarea, robustness_and_protocol | sampled_network_paths, endpoint_or_facet_geometry | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, arithmetic_cost, memory_or_liveness, numerical_or_endpoint_coverage, theorem_or_class_closure |
+| 232 | `s10_mlmc_depth_increment_variance` | killed_or_closed | sampling_and_design, engineering_and_cost, analytic_moment_closure | sampled_network_paths | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
+| 233 | `s11_full129_reopen_measured_breakeven` | killed_or_closed | sampling_and_design, analytic_moment_closure, control_and_multifidelity, compression_and_low_rank, robustness_and_protocol | sampled_network_paths, output_or_frame_statistics | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, memory_or_liveness, representation_not_closed |
+| 234 | `s12_finite_width_kernel_capstone` | screened_component | higher_cumulant_source, compression_and_low_rank | weights_only_analytic_state | approximation_or_materiality, arithmetic_cost |
+| 235 | `s13_width_pooled_mfmc_premise` | killed_or_closed | sampling_and_design, control_and_multifidelity, compression_and_low_rank, routing_and_learned_surrogates | sampled_network_paths, output_or_frame_statistics, offline_learned_features | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, representation_not_closed |
+| 236 | `s15_firstlayer_stratification_premise` | killed_or_closed | sampling_and_design, analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, output_or_frame_statistics, offline_learned_features, deterministic_compute_only | nonidentifiability_or_missing_information, variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, protocol_or_generalization |
+| 237 | `s16_residual_norm_decomposition_confirm` | screened_component | sampling_and_design, analytic_moment_closure, control_and_multifidelity, compression_and_low_rank, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, output_or_frame_statistics | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, protocol_or_generalization |
+| 238 | `s17_information_complexity_lower_bound` | screened_component | sampling_and_design, analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, robustness_and_protocol | sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, offline_learned_features | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, theorem_or_class_closure |
+| 239 | `recursion_convergence_certificate` | screened_component | sampling_and_design, analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, endpoint_facet_and_coarea, robustness_and_protocol | sampled_network_paths, endpoint_or_facet_geometry, output_or_frame_statistics | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, arithmetic_cost, theorem_or_class_closure |
+| 240 | `s18_cell_membership_probe` | killed_or_closed | sampling_and_design, control_and_multifidelity | sampled_network_paths | variance_or_signal_to_noise, arithmetic_cost, protocol_or_generalization |
+| 241 | `gen7_svdv_rotation_construction` | killed_or_closed | sampling_and_design | truth_or_oracle_only, sampled_network_paths, output_or_frame_statistics | variance_or_signal_to_noise, arithmetic_cost, numerical_or_endpoint_coverage |
+| 242 | `gm_c1_bound` | screened_component | sampling_and_design, compression_and_low_rank, endpoint_facet_and_coarea, routing_and_learned_surrogates, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state, endpoint_or_facet_geometry, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, wall_calls_or_allocation, numerical_or_endpoint_coverage, protocol_or_generalization |
+| 243 | `gm_u3_grid` | screened_component | sampling_and_design, control_and_multifidelity, harmonic_and_symmetry, endpoint_facet_and_coarea | sampled_network_paths, endpoint_or_facet_geometry | variance_or_signal_to_noise, approximation_or_materiality, wall_calls_or_allocation, numerical_or_endpoint_coverage |
+| 244 | `gm_a1b_diffflag` | killed_or_closed | sampling_and_design, control_and_multifidelity, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state, deterministic_compute_only | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, protocol_or_generalization |
+| 245 | `gm_p2b_proxy` | killed_or_closed | sampling_and_design, analytic_moment_closure, control_and_multifidelity, compression_and_low_rank | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, offline_learned_features | nonidentifiability_or_missing_information, variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
+| 246 | `gm_ecn_psi` | killed_or_closed | analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, endpoint_facet_and_coarea, routing_and_learned_surrogates, robustness_and_protocol | truth_or_oracle_only, weights_only_analytic_state, endpoint_or_facet_geometry, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, protocol_or_generalization, representation_not_closed |
+| 247 | `gm_a4_constraint` | killed_or_closed | sampling_and_design, engineering_and_cost, analytic_moment_closure, control_and_multifidelity, compression_and_low_rank, robustness_and_protocol | sampled_network_paths, deterministic_compute_only | nonidentifiability_or_missing_information, variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage |
+| 248 | `gm_flatworm_response_ladder` | killed_or_closed | sampling_and_design, analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, endpoint_facet_and_coarea, routing_and_learned_surrogates, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state, endpoint_or_facet_geometry | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, numerical_or_endpoint_coverage, protocol_or_generalization, representation_not_closed |
+| 249 | `gm_u4_suitesize` | killed_or_closed | sampling_and_design, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, endpoint_facet_and_coarea, robustness_and_protocol | truth_or_oracle_only, output_or_frame_statistics | nonidentifiability_or_missing_information, variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, numerical_or_endpoint_coverage, missing_interface_or_provider |
+| 250 | `gm_m116_streams` | blocked | engineering_and_cost, control_and_multifidelity, compression_and_low_rank, robustness_and_protocol | weights_only_analytic_state, offline_learned_features, deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, numerical_or_endpoint_coverage, missing_interface_or_provider, protocol_or_generalization, theorem_or_class_closure |
+| 251 | `gm_latent_cubature` | killed_or_closed | sampling_and_design, analytic_moment_closure, higher_cumulant_source, harmonic_and_symmetry, compression_and_low_rank, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state, deterministic_compute_only | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, numerical_or_endpoint_coverage, protocol_or_generalization, representation_not_closed |
+| 252 | `gm_rankone_bill` | screened_component | higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, endpoint_facet_and_coarea, routing_and_learned_surrogates, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, offline_learned_features, deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider, protocol_or_generalization |
+| 253 | `gm_s1s4_vd` | killed_or_closed | sampling_and_design, analytic_moment_closure, control_and_multifidelity, compression_and_low_rank | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, wall_calls_or_allocation, numerical_or_endpoint_coverage |
+| 254 | `gm_u9_s4_d2` | screened_component | sampling_and_design, engineering_and_cost, analytic_moment_closure, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank | sampled_network_paths, weights_only_analytic_state | variance_or_signal_to_noise, approximation_or_materiality, numerical_or_endpoint_coverage |
+| 255 | `gm_residual_k1` | blocked | engineering_and_cost, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, deterministic_compute_only | nonidentifiability_or_missing_information, variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, numerical_or_endpoint_coverage, missing_interface_or_provider, protocol_or_generalization |
+| 256 | `gm_m179_m199` | killed_or_closed | engineering_and_cost, analytic_moment_closure, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank, robustness_and_protocol | sampled_network_paths, weights_only_analytic_state, deterministic_compute_only | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, numerical_or_endpoint_coverage, missing_interface_or_provider, protocol_or_generalization |
+| 257 | `gm_s17_reuse` | killed_or_closed | sampling_and_design, engineering_and_cost, analytic_moment_closure, control_and_multifidelity, harmonic_and_symmetry, endpoint_facet_and_coarea, robustness_and_protocol | truth_or_oracle_only, sampled_network_paths, weights_only_analytic_state, endpoint_or_facet_geometry, output_or_frame_statistics | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
+| 258 | `gen8_m183_detector_void` | killed_or_closed | engineering_and_cost, analytic_moment_closure, harmonic_and_symmetry, robustness_and_protocol | deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
+| 259 | `gen8_rival_5design_adjudication` | killed_or_closed | sampling_and_design, engineering_and_cost, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry | output_or_frame_statistics, deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
+| 260 | `gen8_c1_ratio_artifact_and_anchor_se` | killed_or_closed | control_and_multifidelity | unspecified_in_record | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, memory_or_liveness |
+| 261 | `gen8_fractalize_kerdock_bolt` | killed_or_closed | sampling_and_design, engineering_and_cost, control_and_multifidelity, harmonic_and_symmetry | sampled_network_paths, output_or_frame_statistics, deterministic_compute_only | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider |
+| 262 | `gen8_refraction_optics_bolt` | killed_or_closed | sampling_and_design, control_and_multifidelity, harmonic_and_symmetry, endpoint_facet_and_coarea | sampled_network_paths, weights_only_analytic_state, endpoint_or_facet_geometry | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider |
+| 263 | `gen8_gate_audit` | killed_or_closed | engineering_and_cost, compression_and_low_rank, endpoint_facet_and_coarea, robustness_and_protocol | deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, numerical_or_endpoint_coverage, missing_interface_or_provider |
+| 264 | `uf1_strassen_flop_only_accounting` | killed_or_closed | sampling_and_design, engineering_and_cost, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, theorem_or_class_closure |
+| 265 | `uf1_translation_reaudit_20260811` | killed_or_closed | engineering_and_cost, control_and_multifidelity | sampled_network_paths, deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, missing_interface_or_provider, theorem_or_class_closure |
+| 266 | `r0_harmonic_energy_spectrum` | killed_or_closed | control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank | unspecified_in_record | approximation_or_materiality, wall_calls_or_allocation |
 
 ## Machine-readable tissue and reopening rules
 
