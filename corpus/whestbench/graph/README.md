@@ -2,10 +2,13 @@
 
 This directory is a compact, auditable corpus for the user-requested local
 Graphify/LightRAG-style analysis. The builder combines hand-audited causal
-edges with an exhaustive descriptive navigation layer generated from all 223
+edges with an exhaustive descriptive navigation layer generated from all 267
 append-only ledger records. The latter prevents omissions but is explicitly
-not mathematical evidence. The current rebuilt graph has 578 nodes, 3,461
-edges, and 25 local Graphify communities.
+not mathematical evidence. The current rebuilt graph (2026-08-17) has 665
+nodes, 4,112 edges, and 25 local Graphify communities; the freeze-window arc
+(DGFL/Lens-1, MUB129/design-axis, compute-lane closure, errata/filing) and
+the post-freeze Codex clone line are covered by hand-audited nodes — see
+`FREEZE_WINDOW_GRAPH_ADDENDUM_20260817.md`.
 
 The semantic Graphify/Ollama pass is retained only as a proposal source. The
 canonical graph is rebuilt deterministically from typed nodes and edges in

@@ -29,9 +29,32 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   satellites; post-freeze Codex; plan attack) + 3 research briefs (DAG/hypothesis, tokens,
   swarms). Evidence: agent results in session; load-bearing facts spot-probed (git ahead-17
   observed; junction target observed; atlas --check red observed).
+- 2026-08-17 ~20:50 UTC: atlas rebuilt (267 records; --check exit 0 observed) + 12/12 repo
+  tests green (unittest output observed). Commits 19e78b7 (atlas), 8a7dd9c (evidence:
+  GEGENBAUER_CHECK + v31_v5d3_static_replay), f225be4 (journal).
+- 2026-08-17 ~20:55 UTC: pushed branch; ls-remote == local HEAD f225be4 (observed).
+- 2026-08-17 ~21:05 UTC: write-up v13 landed — §1 replaced with estimator-and-constants
+  section, §3b2 design-axis closure inserted, seven-constants sweep, §6 pinned to
+  f225be4e4e4872dc2bef06711525cf00e73a332b + private-repo access statement. Evidence:
+  verifier 32/32 exit 0 AFTER last edit; greps 0/0/0 (placeholder / six-constants /
+  public-corpus); pinned-SHA tree probes 3/3 PRESENT; commit 97019ca pushed, ls-remote
+  match observed. Long-doc word count: 10,220 (short-form in flight via subagent).
+- Repo visibility observed PRIVATE (gh repo view). §6 now carries access-on-request wording;
+  owner may flip to public before sending (one-sentence edit if so).
+
+- 2026-08-17 21:25-21:38 UTC: **Repo flipped PUBLIC** (gh verified); visibility statements
+  updated in both manuscripts (verifier 32/32 fresh, commit 6c579e6); filing PDFs committed
+  (811dca9); pinned tree + raw PDF probe HTTP 200 unauthenticated; **corrected AC filing SENT**
+  to arc-whestbench@aicrowd.com (Gmail id 1a011a886c288f40) — short form inline + PDF links,
+  supersedes v9. Channel entries 09a24c2 (+ earlier clock-correction 8fb5e01). All pushed.
+- Session goal set by owner (/goal): evidence-calibrated refinement under the operational
+  contract; Stop hook active.
 
 ## Next action (exactly ONE — overwrite, never a list)
-Rebuild the failure-salvage atlas, then run the three repo tests.
+Log bolts L8 (Abel/Bayesian) + L9 (Galois/hypercube) in the lightning ledger, then land the
+audited semantic proposals in the builder, rebuild + recluster + promote, then the
+what-if-oracle forecast and the continuation-plan update (transcript deltas), then memory
+close-out and final report.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
