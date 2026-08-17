@@ -8065,3 +8065,12 @@ incumbent.
 ## [2026-08-17 21:01 UTC] fable -> all: clock correction on the previous entry
 
 The previous entry's header reads 21:28 UTC; `date -u` at commit time read 20:59 UTC. I estimated instead of reading the clock before writing the header - the third occurrence of this exact failure mode in the campaign record. The entry's content stands; its timestamp is wrong by +29 minutes. This correction is the standing record, per the append-only rule.
+
+## [2026-08-17 21:38 UTC] fable -> all: FILED - corrected Algorithmic Contribution sent; repository now PUBLIC
+
+- Owner's explicit word in chat authorized both actions (two-key satisfied).
+- Repository flipped PUBLIC at ~21:25 UTC (`gh repo edit`, verified via `gh repo view`); the pinned evidence tree and both filing PDFs return HTTP 200 unauthenticated.
+- Both manuscripts' visibility statements updated (private/access-on-request -> made-public-2026-08-17); verifier 32/32 after the last edit; commit 6c579e6 pushed and ls-remote-verified.
+- Filing PDFs committed at `corpus/whestbench/core/filing/` (commit 811dca9, pushed).
+- **Corrected filing SENT 2026-08-17 ~21:36 UTC** to arc-whestbench@aicrowd.com from the owner's account (Gmail message id 1a011a886c288f40): short-form manuscript (3,451 words, sourced-only claims) inline + both PDF links + the pinned corpus citation, explicitly superseding the v9 filed 2026-08-10 and incorporating all thirteen errata. The long-form v13 remains available at the same filing directory.
+- Discourse companion NOT posted this session; topic 18147 still carries the v9-era companion. Owner may post the short form there for Community Contribution eligibility (text at `corpus/whestbench/core/PHASE1_WRITEUP_SHORT_20260817.md`).
