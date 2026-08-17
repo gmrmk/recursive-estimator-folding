@@ -1,0 +1,50 @@
+{
+  "bias_class": "unbiased",
+  "budgets": {
+    "billed_flops_declared": 0,
+    "memory_mib_declared": 2048,
+    "wall_seconds": 900
+  },
+  "causal_mechanism": "Each 48-frame half is not the exact spherical 2-design the full 126-frame bank is, so within-half rotation variance rises relative to V_0 (d_48 > 1); and both halves integrate the same network over overlapping direction geometry, so their centered errors are positively rather than antithetically related (kappa_AB(I) > 0). Exact algebra from the sealed AJ2-F48 record: kappa = 2*C_AB/(V_A+V_B) [line 368], d_48 = 48*(V_A+V_B)/(252*V_0) [line 381], V_C/V_0 = (63*d_48/48)*(1+kappa) [line 383].",
+  "cheapest_falsifier": "One paired two-arm measurement on synthetic bias-free He nets: compute V_A, V_B, C_AB over held-out rotations within each fixed network (the D792 definition, line 363-365), plus V_0 on the full bank, and read d_48 and kappa_AB(I) directly. No estimator is built, no reflection is applied, no eigensolve exists.",
+  "confidence": {
+    "compliance": 0.95,
+    "generalization": 0.6,
+    "implementation": 0.85,
+    "mechanism": 0.9
+  },
+  "equal_budget_baseline": "W0 = the full 126-frame Kerdock bank measured under the identical rotation draws (V_0 in the same run) \u2014 the split is priced against the incumbent geometry, not against an external estimator.",
+  "evidence_role": "development",
+  "frozen_inputs": [
+    {
+      "path": "corpus/whestbench/experiments/ajpre1_w0_wi/runner_ajpre1.py",
+      "sha256": "ebc29261e5697fab39938df698f2a94201d27a87c861b4cfc36b4f57f0986de7"
+    }
+  ],
+  "hypothesis": "The F48 split's design debt d_48 exceeds the unearned d_48=1 floor that every published anti-J gate assumes, and the incumbent's identity-reflection arm coupling kappa_AB(I) sits far above the parity bar -5/21 = -0.238095, so the reflection has a materially larger deficit to close than the family's published thresholds state.",
+  "id": "ajpre1_w0_wi_precondition",
+  "inconclusive_band_note": "PASS (d_48_upper <= 1.25) means the Arm-1 admissibility ceiling is reachable and the family survives its cheapest precondition. KILL (d_48_upper >= 1.6) means the split debt alone exceeds any published reflection credit and the family is retired. The band (1.25, 1.6) is INCONCLUSIVE BY CONSTRUCTION: at n=8 nets the one-sided bound is wide enough that a fail-closed reading would permanently kill a family the full 50,000-replicate D792 panel might have passed. Kills are final, so an underpowered kill is the expensive error and the gray zone is mandatory.",
+  "predeclared_at_utc": "2026-08-17T23:02:20.144009+00:00",
+  "predicted_signature": "d_48 mean in [1.05, 1.6] with upper96.667 above the 1.25 Arm-1 admissibility ceiling, and kappa_AB(I) positive (roughly [0.0, 0.6]) \u2014 far from the -0.238095 parity bar and further still from the -0.5124 promotion bar. The recognizable failure signature of this prediction is d_48_upper <= 1.25 together with kappa_AB(I) already negative, which would mean the split costs nothing and the halves are naturally antithetic \u2014 the one outcome that would make the anti-J family cheap rather than expensive.",
+  "provenance": "Gate algebra transcribed verbatim from corpus/whestbench/core/CODEX_SEALED_PROPOSAL_AJ2_F48_20260811.md lines 361-390 and 470-479. Frozen geometry from lines 41-47. The 1.25 ceiling is that record's own upper96.667[d_48,panel] Arm-1 gate (line 479); -5/21 and -269/525 are its parity and promotion bars.",
+  "runner": {
+    "argv": [
+      "python",
+      "corpus/whestbench/experiments/ajpre1_w0_wi/runner_ajpre1.py"
+    ],
+    "cwd": "C:/Users/strid/.claude/skills/recursive-estimator-folding",
+    "readable_roots": [
+      "C:/Users/strid/.claude/skills/recursive-estimator-folding/corpus/whestbench/experiments/ajpre1_w0_wi"
+    ]
+  },
+  "second_signal": "The same run reports V_C/V_0 = (63*d_48/48)*(1+kappa) computed independently of the gate metric; it must agree with the algebra recomputed from the reported V_A, V_B, C_AB, V_0 to floating precision, and the per-net d_48 spread with its df is reported so the gate's power is auditable rather than assumed.",
+  "seeds": [
+    20260817
+  ],
+  "terminal": false,
+  "thresholds": {
+    "kill_when_gte": 1.6,
+    "metric": "d_48_upper96667",
+    "pass_when_lte": 1.25
+  }
+}
