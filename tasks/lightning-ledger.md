@@ -157,3 +157,55 @@ by a theorem we withdrew.
 **Do not confuse this with reopening a kill.** No killed record is revived here.
 What is revived is *generation* — the licence to propose new output-side
 mechanisms, each of which must still clear the full ladder from scratch.
+
+---
+
+## L8 — "what if there is an underlying Able's Theorem that we can use after using principles of Bayesian linear regression to clean up what we are calling noise"
+
+**Spoken** 2026-08-17, during the Fable-5 continuation session, minutes after the corrected filing went out.
+
+**Steelmanned as.** Two mechanisms. (a) *Abel/Poisson smoothing as a control:* the spherical
+Poisson integral `f_r = sum_l r^l f_l` preserves the sphere mean exactly (`E[f_r] = f_0 = E[f]`)
+while damping harmonic `l` by `r^l`, so `c = f - f_r` is an exactly mean-zero control whose
+covariance with the design error is precisely the high-degree tail — where 86% of the
+estimator's variance lives [D, arc-cosine decomposition]. (b) *Bayesian linear regression:*
+shrinkage priors on control strengths to stabilize what G12 estimated by OLS.
+
+**Outcome: (a) BLOCKED-ON-EVALUABILITY with a named premise change; (b) KILLED BY EXISTING
+EVIDENCE.**
+
+- (a) `f_r` has no closed form at depth 32; the adjacent corpses are M181 (smoothing as
+  *replacement*: bias 4–6x baseline) and the §3b harmonic CV (tractable bases explain 0.2–0.3%
+  of per-neuron variance; dispersion across ~1.8e8-dim harmonic spaces). The identity itself is
+  new to the record: mean-preserving tail damping is *not* what M181 tested. The premise change
+  that licenses a candidate: compose with Codex's compressed-proxy control — an Abel-smoothed
+  **proxy** is analytic at layer 1 via the arc-cosine/Gegenbauer coefficients, giving a
+  computable mean-zero tail-damped control. Queued as a predeclarable cell; no run authorized.
+- (b) G12's kill diagnosis is inner-product mismatch (training-fold projection vs held-fold
+  quadrature error), which shrinkage cannot repair; the "noise" is deterministic unresolved
+  structure (P1 corrected status), not sampling error; and the measured cross-network
+  coefficient sign-flipping (−3.74..+3.56; H2 kill; ICC 0.129) means an honest hierarchical
+  prior shrinks to zero — the Bayesian route's own posterior recommendation is the direct
+  estimator, which is what is deployed. [O] on the collisions, [D] on the identities, [A] on
+  the proxy-composition value.
+
+---
+
+## L9 — "We could also borrow Galois Theory and they hypercube dimensional matrix"
+
+**Spoken** 2026-08-17, same session, immediately after L8.
+
+**Steelmanned as.** Use the Galois structure of the Kerdock set (GF(128) quadratic phases;
+Z4/GR(4,7) lineage) and the hypercube/Kronecker structure (`H_256 = H_2^{(x)8}`, frames as
+(Z/2)^8 characters) as new estimator levers.
+
+**Outcome: L5-CLASS — the bolt names structure the artifact already runs on, plus one open
+diagnostic sliver.** The production estimator already computes through the hypercube group's
+fast transform (radix-2 WHT butterfly) and the design's Galois phases; the group-action
+improvement lanes are closed by the all-even-order frame-potential no-go (equality exactly at
+the MUB point), M180 (every frame-family perturbation loses 20–49% variance), N8a (Kronecker
+lattice 2.1x worse), and the TT-rank explosion. The open sliver: the repo's Kerdock set lacks
+an exact GR(4,7)/Gray-map automorphism certificate (Codex flagged the missing "+2 induces the
+stored row permutation" proof). Certifying that action is a cheap, predeclarable diagnostic
+that would license frame-orbit symmetry arguments — with value capped in advance by the no-go.
+Queued as diagnostic only. [O] on the closures, [D] on the structure identification.
