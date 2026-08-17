@@ -39,9 +39,9 @@ Read that path, not the repository root: the default branch is a 2026-08-06
 snapshot whose ledger carries 43 records rather than 267. The campaign branch
 is `agent/compression-survivor-corpus`; the pinned commit is the pushed branch
 tip of 2026-08-17, verified against `origin` before filing, so the citation
-cannot drift. The repository is private at the time of this filing; the
-organizers are granted read access on request. It contains no challenge data,
-no private truth, no scorer, no credentials, and not the #326094 submission
+cannot drift. The repository was made public on 2026-08-17, immediately before
+this filing, so the citation resolves for any reader. It contains no challenge
+data, no private truth, no scorer, no credentials, and not the #326094 submission
 archive.
 
 ### 1. The estimator, and exactly which of its numbers were chosen

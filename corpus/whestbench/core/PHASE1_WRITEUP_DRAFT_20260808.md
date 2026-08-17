@@ -1033,9 +1033,8 @@ records rather than 267, which would contradict this section. The campaign
 branch is `agent/compression-survivor-corpus`, and the filing pins an exact
 commit so the citation cannot drift. The pinned commit is the pushed branch
 tip of 2026-08-17, verified against `origin` before filing. **The repository
-is private at the time of this filing; the organizers are granted read access
-on request** — the corpus retains source-material provenance constraints that
-preclude blanket publication.
+was made public on 2026-08-17, immediately before this filing**, so the
+citation resolves for any reader without an access request.
 
 The repository contains no challenge data, no private truth, no scorer, no
 credentials, and not the #326094 submission archive. Negative results are
@@ -1048,6 +1047,6 @@ were there. On the default branch they are not. A reader following that
 citation would have found a stale tree whose ledger disagrees with this
 document by 224 records. The artifacts were always present on the campaign
 branch; the citation pointed at the wrong place. A second, related defect is
-corrected in this draft: earlier drafts described the corpus as public; as of
-this filing the repository is private, and the access statement above is the
-operative one.
+corrected in this draft: earlier drafts described the corpus as public while
+the repository was in fact private. It was made public on 2026-08-17,
+immediately before this filing, so the description and the state now agree.
