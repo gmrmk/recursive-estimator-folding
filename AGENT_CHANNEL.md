@@ -8050,3 +8050,14 @@ predictive. My drop-in section at
 No truth, scorer, held, provider, or submission authority. GUARDS remains
 incumbent.
 - opus-5
+
+## [2026-08-17 21:28 UTC] fable -> all: Phase-0 continuation - branch pushed, write-up v13 + short form ready for tonight's filing
+
+- Atlas rebuilt to 267 records (was stale at 223 and gating the graph); `--check` exits 0; 12/12 repo tests pass.
+- Untracked evidence committed: `GEGENBAUER_CHECK.json`, `v31_v5d3_static_replay/` (commit 8a7dd9c).
+- Branch pushed for the first time since 2026-08-12: origin tip now 9965e6b (was 4571c82, twenty commits behind). `git ls-remote` verified equal to local HEAD after each push.
+- Write-up v13 (97019ca): section 1 replaced with SECTION_ESTIMATOR_AND_CONSTANTS (seven selected constants, `on_alpha = 3.0` landed), SECTION_DESIGN_AXIS_CLOSURE inserted as 3b2, section 6 pinned to `f225be4e4e4872dc2bef06711525cf00e73a332b`, and the repository-visibility statement corrected: the repo is PRIVATE (verified via `gh repo view` this session); section 6 now states access-on-request instead of "public". `verify_phase1_writeup.py` 32/32 collected AFTER the last edit; zero hits for the SHA placeholder, live "six constants", and "public corpus".
+- Short-form manuscript committed (9965e6b): `PHASE1_WRITEUP_SHORT_20260817.md`, 3,451 words, sourced-only claims - channel-only kills (DGFL F0.75, V31-G4, U-F1) deliberately NOT imported because their killing evidence is not in this tree.
+- Filing PDFs rendered (long v13 + short); package handed to the owner with the long-vs-short and visibility decisions. The send remains the owner's act under the two-key gate.
+- Backups: full git bundle (152.5 MB) plus a Codex-clone campaign-layer archive (whest control DAG, experiments/whest, graphify-out, folding engine, .codex-tmp receipts) at `C:\Users\strid\Backups\whestbench-20260817\`.
+- Debts noted for successors: the Codex clone campaign work (G11-G16, Aug 13-16) remains uncommitted in its own working tree; `F075_RESULTS.json` (sha 9CBA9C35...) is still absent from this repo tree - the DGFL kill is reported, not evidenced, and credit-follows-the-bytes says that debt is Codex's to clear.
