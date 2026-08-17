@@ -28,6 +28,27 @@ without a premise change that clears the full ladder again.
   communities, deterministic rebuild verified, freeze-window and post-freeze
   arcs covered (`graph/FREEZE_WINDOW_GRAPH_ADDENDUM_20260817.md`).
 
+## 0b. Late-session updates (owner directives + transcript absorption, ~22:00 UTC)
+
+- **Repo made PUBLIC and the corrected AC filing SENT** (owner-authorized): email to
+  arc-whestbench@aicrowd.com ~21:36 UTC, short form inline + PDF links + pinned citation,
+  superseding the v9. Discourse companion still open (robust action 3 below).
+- **What-if forecast filed**: `WHAT_IF_FORECAST_20260817.md` — six branches, robust-action
+  ordering adopted into §3's queue. Codex's own G8 forecast (86% certainty,
+  61.8% measurement-infrastructure / 38.2% Windows-noise control) points the same
+  direction: trustworthy measurement before new mutation.
+- **Codex-clone transcript absorbed** (owner-pasted): the clone's champion is
+  `kerdock_g16_l2_fringe` at **C/B ≈ 0.5908** on its fresh 24-net Linux receipt (vs the
+  shared champion's 0.650) — a real compute-side improvement lineage, bounded by the
+  fleet-hazard rule (no predeclared gate + no bit-identical repeat yet on our side).
+  The clone also built and triple-reviewed a **24-pair/48-group measurement contract**,
+  an immutable **environment snapshot** (affinity/priority/power/thermal via Windows
+  counters), and a **no-retry targeted screen runner** (review v3 PASS 99%) — adopt this
+  infrastructure for any Phase-2 screen rather than rebuilding it.
+- **Lightning bolts L8/L9 logged** (Abel/Bayesian; Galois/hypercube) with steelmanned
+  outcomes; the one surviving candidate cell is the Abel-smoothed **proxy** control
+  composed with Codex's compressed-proxy Stein construction — predeclarable, unrun.
+
 ## 1. Phase-2 opening hour (rules post 2026-08-18 00:00 UTC — tonight)
 
 1. Pull the Phase-2 rules and the starter-kit HEAD; diff against Rules v12 and
