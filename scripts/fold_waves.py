@@ -85,6 +85,10 @@ def _cell_status(cell_dir: Path) -> str:
     rpath = cell_dir / "report.json"
     if rpath.exists():
         return json.loads(rpath.read_text("utf-8"))["outcome"]
+    if (cell_dir / "GATE_TOKEN.consumed").exists():
+        # Token spent, no report: the run crashed before the report landed.
+        # Reporting this as "predeclared" hid dead cells as pending work.
+        return "RUN_CRASHED"
     return "predeclared"
 
 
@@ -104,13 +108,39 @@ def ready_cells(cells_dir) -> list:
 
 
 def run_wave(cells_dir, ids, ledger_path, workers: int = 4) -> list:
-    """Execute the given cells in parallel; verdict them serially."""
+    """Execute the given cells in parallel; verdict them serially.
+
+    One cell's failure must never suppress a sibling's verdict — the review
+    showed pool.map re-raising the first exception and dropping a clean
+    sibling's ledger row, a one-move way to bury unfavorable evidence.
+    """
     cells = _load_cells(Path(cells_dir))
-    targets = [cells[c]["dir"] for c in ids]
+    ids = sorted(set(ids))
+    targets = [(c, cells[c]["dir"]) for c in ids]
+
+    def _safe_run(target):
+        cid, cell_dir = target
+        try:
+            fold_search.run(cell_dir)
+            return None
+        except Exception as exc:  # noqa: BLE001 — recorded, not swallowed
+            return {"cell_id": cid, "verdict": "RUN_ERROR",
+                    "error": f"{type(exc).__name__}: {exc}"}
+
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        list(pool.map(fold_search.run, targets))
-    # The ledger is append-only and single-writer: verdicts never race.
-    return [fold_search.verdict(t, ledger_path) for t in targets]
+        run_errors = [e for e in pool.map(_safe_run, targets) if e]
+
+    results = list(run_errors)
+    errored = {e["cell_id"] for e in run_errors}
+    for cid, cell_dir in targets:
+        if cid in errored:
+            continue
+        try:
+            results.append(fold_search.verdict(cell_dir, ledger_path))
+        except Exception as exc:  # noqa: BLE001
+            results.append({"cell_id": cid, "verdict": "VERDICT_ERROR",
+                            "error": f"{type(exc).__name__}: {exc}"})
+    return results
 
 
 def export_graph(cells_dir, out_path) -> dict:

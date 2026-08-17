@@ -24,11 +24,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
+import os
 import platform
 import re
 import subprocess
 import sys
 import time
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -60,10 +63,12 @@ REQUIRED_FIELDS = (
     "evidence_role", "confidence",
 )
 CONFIDENCE_AXES = ("implementation", "mechanism", "generalization", "compliance")
-DENY_SEGMENTS = {"holdout", "validation", "truth", "private"}
-# Numeric tokens precise enough to identify a mechanism (the MUB129 lesson:
-# the ledger must be searched by number, not only by name).
-NUMERIC_TOKEN = re.compile(r"\d+\.\d{3,}|\b\d{4,}\b")
+DENY_SEGMENTS = {"holdout", "heldout", "validation", "val", "truth", "private",
+                 "eval", "gold", "answers", "test", "scorer"}
+# Any run of digits with optional decimal/exponent, INCLUDING inside an
+# identifier (no word boundary — the review showed 'run4821x' hid its code).
+NUMERIC_RUN = re.compile(r"\d+\.\d+(?:[eE][-+]?\d+)?|\d+(?:[eE][-+]?\d+)?"
+                         r"|\.\d+")
 
 
 def canonical(obj) -> bytes:
@@ -78,6 +83,42 @@ def sha256_file(path: Path) -> str:
     return sha256_bytes(Path(path).read_bytes())
 
 
+@contextmanager
+def _locked(lock_path: Path, timeout: float = 30.0):
+    """OS-level exclusive lock via O_CREAT|O_EXCL — cross-process and thread
+    safe (the review demonstrated unlocked read-modify-write dropping and
+    corrupting ledger/registry entries under parallel calls)."""
+    lock_path = Path(str(lock_path) + ".lock")
+    deadline = time.monotonic() + timeout
+    fd = None
+    while fd is None:
+        try:
+            fd = os.open(str(lock_path), os.O_CREAT | os.O_EXCL | os.O_RDWR)
+        except (FileExistsError, PermissionError):
+            # PermissionError: NTFS delete-pending window while the previous
+            # holder's unlink settles — retry exactly like a held lock.
+            if time.monotonic() > deadline:
+                raise TimeoutError(f"could not acquire {lock_path}")
+            time.sleep(0.01)
+    try:
+        yield
+    finally:
+        os.close(fd)
+        try:
+            os.unlink(str(lock_path))
+        except OSError:
+            pass
+
+
+def _atomic_write(path: Path, text: str) -> None:
+    """Write via temp + os.replace so a crash mid-write cannot truncate the
+    target (the append-only ledger must survive power loss)."""
+    path = Path(path)
+    tmp = path.with_suffix(path.suffix + f".tmp{os.getpid()}")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(str(tmp), str(path))
+
+
 def _load_ledger(ledger_path: Path) -> dict:
     return json.loads(Path(ledger_path).read_text(encoding="utf-8"))
 
@@ -89,7 +130,26 @@ def _killed_records(ledger: dict):
 
 
 def _numeric_tokens(text: str) -> set:
-    return set(NUMERIC_TOKEN.findall(text))
+    """Canonical numeric keys: parse each digit run to a float and normalize,
+    so 0.7731, 0.77310, and 7.731e-1 collide (the same mechanism reworded).
+    Keep only identifying magnitudes: >=3 significant figures OR integer >=1000.
+    """
+    keys = set()
+    for m in NUMERIC_RUN.finditer(text):
+        raw = m.group(0)
+        try:
+            val = float(raw)
+        except ValueError:
+            continue
+        if "." in raw or "e" in raw.lower():
+            digits = (raw.lstrip("-+0").replace(".", "")
+                      .split("e")[0].split("E")[0])
+            is_identifying = len(digits.rstrip("0")) >= 3
+        else:
+            is_identifying = abs(val) >= 1000
+        if is_identifying and math.isfinite(val):
+            keys.add(f"{val:.6e}")
+    return keys
 
 
 def _check_spec(spec: dict) -> None:
@@ -104,6 +164,10 @@ def _check_spec(spec: dict) -> None:
     for key in ("metric", "pass_when_lte", "kill_when_gte"):
         if key not in th:
             raise SpecError(f"thresholds.{key} is required")
+    if not (th["pass_when_lte"] < th["kill_when_gte"]):
+        raise SpecError(
+            "thresholds must satisfy pass_when_lte < kill_when_gte; an "
+            "inverted spec collapses the gray zone into automatic KILL")
     if "wall_seconds" not in spec["budgets"]:
         raise SpecError("budgets.wall_seconds is required")
     runner = spec["runner"]
@@ -121,11 +185,20 @@ def _check_firewall(spec: dict, terminal: bool) -> None:
     paths = list(spec["runner"]["readable_roots"]) + list(spec["frozen_inputs"])
     if role == "development":
         for p in paths:
-            parts = {seg.lower() for seg in Path(str(p)).parts}
+            # Resolve BEFORE checking: junctions/symlinks aliasing a denied
+            # directory under an innocent name were a demonstrated bypass.
+            declared = Path(str(p))
+            try:
+                resolved = declared.resolve()
+            except OSError:
+                resolved = declared
+            parts = ({seg.lower() for seg in declared.parts}
+                     | {seg.lower() for seg in resolved.parts})
             hit = parts & DENY_SEGMENTS
             if hit:
                 raise FirewallError(
-                    f"development cell may not touch {sorted(hit)} path: {p}")
+                    f"development cell may not touch {sorted(hit)} path: {p} "
+                    f"(resolves to {resolved})")
 
 
 def _check_kill_finality(spec: dict, ledger_path: Path, registry: Path) -> None:
@@ -150,14 +223,17 @@ def _check_kill_finality(spec: dict, ledger_path: Path, registry: Path) -> None:
                 f"numeric token {tok} collides with killed record "
                 f"{killed_numbers[tok]!r}; search-the-ledger-by-number rule")
     spec_hash = sha256_bytes(canonical(spec))
-    seen = json.loads(registry.read_text("utf-8")) if registry.exists() else {}
-    if spec_hash in seen:
-        raise KillFinalityError(
-            f"byte-identical spec already predeclared as {seen[spec_hash]!r}; "
-            "never rerun an unchanged failure — name the causal adjustment")
-    seen[spec_hash] = spec["id"]
     registry.parent.mkdir(parents=True, exist_ok=True)
-    registry.write_text(json.dumps(seen, indent=2), encoding="utf-8")
+    with _locked(registry):
+        seen = (json.loads(registry.read_text("utf-8"))
+                if registry.exists() else {})
+        if spec_hash in seen:
+            raise KillFinalityError(
+                f"byte-identical spec already predeclared as "
+                f"{seen[spec_hash]!r}; never rerun an unchanged failure — "
+                "name the causal adjustment")
+        seen[spec_hash] = spec["id"]
+        _atomic_write(registry, json.dumps(seen, indent=2))
 
 
 def predeclare(spec: dict, cells_dir, ledger_path, terminal: bool = False) -> Path:
@@ -186,7 +262,10 @@ def predeclare(spec: dict, cells_dir, ledger_path, terminal: bool = False) -> Pa
 
 def _seal_check(cell: Path, pd: dict) -> None:
     token = cell / "GATE_TOKEN"
-    if not token.exists():
+    consumed = cell / "GATE_TOKEN.consumed"
+    if consumed.exists() or not token.exists():
+        # A stray consumed marker beside a live token is treated as spent:
+        # fail closed rather than let Windows' rename FileExistsError leak.
         raise OneShotError(
             "authorization token already consumed; the one development run "
             "is spent — a retry needs a new predeclaration with a named "
@@ -205,16 +284,20 @@ def run(cell) -> Path:
     _seal_check(cell, pd)
     # Consume the token BEFORE execution: a crash mid-run must not leave a
     # second attempt open (fail closed).
-    (cell / "GATE_TOKEN").rename(cell / "GATE_TOKEN.consumed")
+    try:
+        (cell / "GATE_TOKEN").rename(cell / "GATE_TOKEN.consumed")
+    except (FileExistsError, OSError) as exc:
+        raise OneShotError(f"token consumption raced or failed: {exc}")
 
     argv = pd["runner"]["argv"]
     wall_budget = pd["budgets"]["wall_seconds"]
+    metric_key = pd["thresholds"]["metric"]
     started = time.monotonic()
     outcome, metrics, stdout_tail, exit_code = "COMPLETED", None, "", None
     try:
         proc = subprocess.run(
             argv, cwd=pd["runner"]["cwd"], capture_output=True, text=True,
-            timeout=wall_budget)
+            errors="replace", timeout=wall_budget)
         exit_code = proc.returncode
         stdout_tail = (proc.stdout or "").strip().splitlines()[-1:] or [""]
         stdout_tail = stdout_tail[0]
@@ -224,9 +307,22 @@ def run(cell) -> Path:
             try:
                 metrics = json.loads(stdout_tail)
             except (json.JSONDecodeError, ValueError):
+                metrics = None
                 outcome = "PROTOCOL_KILL_MALFORMED_METRICS"
+            else:
+                # Shape + finiteness gates: a scalar, a missing declared
+                # metric, or a NaN/Infinity must be a canonical protocol
+                # kill, never a downstream crash or a fake gray zone.
+                if (not isinstance(metrics, dict)
+                        or metric_key not in metrics
+                        or not isinstance(metrics[metric_key], (int, float))
+                        or not math.isfinite(metrics[metric_key])):
+                    outcome = "PROTOCOL_KILL_MALFORMED_METRICS"
     except subprocess.TimeoutExpired:
         outcome = "BUDGET_KILL_WALL"
+    except Exception as exc:  # noqa: BLE001 — token is spent; a report MUST exist
+        outcome = "PROTOCOL_KILL_MALFORMED_METRICS"
+        stdout_tail = f"runner launch failed: {type(exc).__name__}: {exc}"
     wall_used = round(time.monotonic() - started, 3)
 
     git_head = None
@@ -259,8 +355,7 @@ def run(cell) -> Path:
     body = json.dumps(report, indent=2, sort_keys=True)
     report["report_sha256"] = sha256_bytes(body.encode("utf-8"))
     path = cell / "report.json"
-    path.write_text(json.dumps(report, indent=2, sort_keys=True),
-                    encoding="utf-8")
+    _atomic_write(path, json.dumps(report, indent=2, sort_keys=True))
     return path
 
 
@@ -285,8 +380,7 @@ def verdict(cell, ledger_path) -> dict:
         else:
             result, status = "INCONCLUSIVE", "blocked"
 
-    ledger = _load_ledger(Path(ledger_path))
-    ledger["candidates"].append({
+    record = {
         "id": pd["id"],
         "status": status,
         "mechanism": pd["causal_mechanism"],
@@ -299,9 +393,12 @@ def verdict(cell, ledger_path) -> dict:
             "report_sha256": rep.get("report_sha256"),
             "outcome": rep["outcome"],
         },
-    })
-    Path(ledger_path).write_text(json.dumps(ledger, indent=2),
-                                 encoding="utf-8")
+    }
+    ledger_path = Path(ledger_path)
+    with _locked(ledger_path):
+        ledger = _load_ledger(ledger_path)
+        ledger["candidates"].append(record)
+        _atomic_write(ledger_path, json.dumps(ledger, indent=2))
     out = {
         "verdict": result,
         "status_written": status,
@@ -309,8 +406,8 @@ def verdict(cell, ledger_path) -> dict:
         "confidence": pd["confidence"],
         "report_sha256": rep.get("report_sha256"),
     }
-    (cell / "verdict.json").write_text(json.dumps(out, indent=2, sort_keys=True),
-                                       encoding="utf-8")
+    _atomic_write(cell / "verdict.json",
+                  json.dumps(out, indent=2, sort_keys=True))
     return out
 
 
