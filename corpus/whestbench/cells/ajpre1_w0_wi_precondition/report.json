@@ -1,0 +1,36 @@
+{
+  "cell_id": "ajpre1_w0_wi_precondition",
+  "environment": {
+    "argv": [
+      "python",
+      "corpus/whestbench/experiments/ajpre1_w0_wi/runner_ajpre1.py"
+    ],
+    "git_head": "d186678e861dc1632bdea2a2eb2c83112fece436",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "evidence_role": "development",
+  "exit_code": 0,
+  "metrics": {
+    "d_48_mean": 1.056887,
+    "d_48_sd": 0.098741,
+    "d_48_upper96667": 1.120909,
+    "df": 7,
+    "kappa_lower96667": -0.126722,
+    "kappa_mean": -0.027183,
+    "kappa_upper96667": 0.072357,
+    "n_nets": 8,
+    "n_rotations": 24,
+    "parity_bar_kappa": -0.23809523809523808,
+    "promotion_bar_kappa": -0.5123809523809524,
+    "vc_over_v0_mean": 1.338268
+  },
+  "outcome": "COMPLETED",
+  "predeclaration_sha256": "f93804559f20b7aebdc486ac9b5ca211e5ec2253a723dd0d9e3a2c09fe01dc0b",
+  "ran_at_utc": "2026-08-17T23:05:05.372732+00:00",
+  "report_sha256": "f38035e85c9437a40e399c89a91b7043751cfc375dca44dd7fe24cf4e43d2b73",
+  "stdout_last_line": "{\"d_48_upper96667\": 1.120909, \"d_48_mean\": 1.056887, \"d_48_sd\": 0.098741, \"kappa_mean\": -0.027183, \"kappa_upper96667\": 0.072357, \"kappa_lower96667\": -0.126722, \"vc_over_v0_mean\": 1.338268, \"n_nets\": 8, \"n_rotations\": 24, \"df\": 7, \"parity_bar_kappa\": -0.23809523809523808, \"promotion_bar_kappa\": -0.5123809523809524}",
+  "terminal_no_mutation": false,
+  "wall_seconds_budget": 900,
+  "wall_seconds_used": 154.548
+}

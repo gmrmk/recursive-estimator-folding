@@ -2540,6 +2540,33 @@
       "bias_class": "diagnostic (R0/R1, no estimator change, no new forwards)",
       "result": "BOTH PICTURES FALSIFIED; CONCLUSION SURVIVES FROM A NEW DIRECTION. (1) EQUIPARTITION IS DEAD - our own stated mechanism. Model-free margin from S15 (per-mode l=1 vs one zonal H_4 mode) 33.1/75.2/67.4x where equipartition predicts 1.0; closed-form margin 1.31e6 at l=4, 4.35e18 at l=12; n_eff(t)=lnC/lnt climbs 2.56->6.20 / 2.71->6.23 / 1.91->4.76 where a flat band-limited spectrum forces it constant. (2) CASCADE clause 1 HOLDS: energy per DEGREE is a power law, p=1.099 over l=4-24 (log-R^2 0.994) rising to 1.391 over l=12-40; Kolmogorov 5/3 sits just above the resolved band and the agent explicitly DECLINED to read it as a mechanism since p is not constant. (3) CASCADE clause 2 FAILS: per MODE it is not a power law (nominal exponent triples with the band, 17.8->58.5; semi-log beats log-log at every band, 0.995-0.997 vs 0.90-0.99); decay is a_l*l!/d^l, DIMENSION-driven not transfer-driven. (4) TRUNCATION DOES NOT REOPEN: degree 4 (the 42x Bragg notch) carries only 0.45% of the estimator error, even degrees >=6 carry 99.55%, no single degree exceeds 13.8%, and capturing 50% requires exact integration of degrees {6,8,10,12,14,16,18} at joint dimension 6.249e27. (5) NEW RESULT at R0/R1 by exact arithmetic on S6's dyadic census: DEGREE 4 IS THE ONLY SUPPRESSED DEGREE - 8, 10, 12, ... are iid-level to five digits. (6) OPEN TENSION reported not absorbed: the error-by-degree table implies N_eff = 100,669 vs S17's measured 27,251/39,558/46,955, 2.1-3.7x optimistic; leading cause is S17's own disclosed object mismatch (sigma^2 neuron-averaged scalar vs per-component champion MSE). Two runs bitwise identical; lambda_top(4) recomputed by hand matches S6's independent closed form to 6 ulp. P1 corrected in the same commit: the mechanism clause is replaced, the conclusion stands, and the fluid analogy is recorded as a CONTRAST - same power law, but a dimension wall where turbulence has an inertial range.",
       "status": "killed"
+    },
+    {
+      "id": "ajpre1_w0_wi_precondition",
+      "status": "screened",
+      "mechanism": "Each 48-frame half is not the exact spherical 2-design the full 126-frame bank is, so within-half rotation variance rises relative to V_0 (d_48 > 1); and both halves integrate the same network over overlapping direction geometry, so their centered errors are positively rather than antithetically related (kappa_AB(I) > 0). Exact algebra from the sealed AJ2-F48 record: kappa = 2*C_AB/(V_A+V_B) [line 368], d_48 = 48*(V_A+V_B)/(252*V_0) [line 381], V_C/V_0 = (63*d_48/48)*(1+kappa) [line 383].",
+      "bias_class": "unbiased",
+      "prediction": "d_48 mean in [1.05, 1.6] with upper96.667 above the 1.25 Arm-1 admissibility ceiling, and kappa_AB(I) positive (roughly [0.0, 0.6]) \u2014 far from the -0.238095 parity bar and further still from the -0.5124 promotion bar. The recognizable failure signature of this prediction is d_48_upper <= 1.25 together with kappa_AB(I) already negative, which would mean the split costs nothing and the halves are naturally antithetic \u2014 the one outcome that would make the anti-J family cheap rather than expensive.",
+      "kill_condition": "{\"kill_when_gte\": 1.6, \"metric\": \"d_48_upper96667\", \"pass_when_lte\": 1.25}",
+      "result": {
+        "verdict": "PASS_SCREEN",
+        "metrics": {
+          "d_48_mean": 1.056887,
+          "d_48_sd": 0.098741,
+          "d_48_upper96667": 1.120909,
+          "df": 7,
+          "kappa_lower96667": -0.126722,
+          "kappa_mean": -0.027183,
+          "kappa_upper96667": 0.072357,
+          "n_nets": 8,
+          "n_rotations": 24,
+          "parity_bar_kappa": -0.23809523809523808,
+          "promotion_bar_kappa": -0.5123809523809524,
+          "vc_over_v0_mean": 1.338268
+        },
+        "report_sha256": "f38035e85c9437a40e399c89a91b7043751cfc375dca44dd7fe24cf4e43d2b73",
+        "outcome": "COMPLETED"
+      }
     }
   ]
 }
