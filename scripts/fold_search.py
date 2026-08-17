@@ -63,8 +63,20 @@ REQUIRED_FIELDS = (
     "evidence_role", "confidence",
 )
 CONFIDENCE_AXES = ("implementation", "mechanism", "generalization", "compliance")
-DENY_SEGMENTS = {"holdout", "heldout", "validation", "val", "truth", "private",
-                 "eval", "gold", "answers", "test", "scorer"}
+DENY_SEGMENTS = ("holdout", "heldout", "validation", "val", "truth",
+                 "private", "eval", "gold", "answers", "scorer")
+# "test" is deliberately absent: whole-token matching still hits the
+# "_test_" in every unittest temp directory, and the campaign's protected
+# concepts are holdout/truth/scorer, not developer test fixtures.
+# Whole-token match so 'value'/'eval'/'interval' don't trip 'val', while a
+# real path segment '/val/' or a string '.../holdout/truth.csv' does.
+_DENY_RE = re.compile(
+    r"(?<![a-z0-9])(" + "|".join(DENY_SEGMENTS) + r")(?![a-z0-9])")
+
+
+def _deny_hit(text: str):
+    m = _DENY_RE.search(str(text).lower())
+    return m.group(1) if m else None
 # Any run of digits with optional decimal/exponent, INCLUDING inside an
 # identifier (no word boundary — the review showed 'run4821x' hid its code).
 NUMERIC_RUN = re.compile(r"\d+\.\d+(?:[eE][-+]?\d+)?|\d+(?:[eE][-+]?\d+)?"
@@ -168,37 +180,55 @@ def _check_spec(spec: dict) -> None:
         raise SpecError(
             "thresholds must satisfy pass_when_lte < kill_when_gte; an "
             "inverted spec collapses the gray zone into automatic KILL")
-    if "wall_seconds" not in spec["budgets"]:
-        raise SpecError("budgets.wall_seconds is required")
+    wall = spec["budgets"].get("wall_seconds")
+    if not isinstance(wall, (int, float)) or isinstance(wall, bool) or wall <= 0:
+        raise SpecError(
+            "budgets.wall_seconds must be a positive number; null/0 would "
+            "pass timeout=None to the runner and remove the wall cap")
     runner = spec["runner"]
     for key in ("argv", "cwd", "readable_roots"):
         if key not in runner:
             raise SpecError(f"runner.{key} is required")
 
 
-def _check_firewall(spec: dict, terminal: bool) -> None:
+def _check_firewall(spec: dict, terminal: bool,
+                    require_exists: bool = True) -> None:
     role = spec["evidence_role"]
     if role != "development" and not terminal:
         raise FirewallError(
             f"evidence_role {role!r} is terminal; predeclare it with "
             "terminal=True and its results can never feed mutation")
-    paths = list(spec["runner"]["readable_roots"]) + list(spec["frozen_inputs"])
-    if role == "development":
-        for p in paths:
-            # Resolve BEFORE checking: junctions/symlinks aliasing a denied
-            # directory under an innocent name were a demonstrated bypass.
-            declared = Path(str(p))
-            try:
-                resolved = declared.resolve()
-            except OSError:
-                resolved = declared
-            parts = ({seg.lower() for seg in declared.parts}
-                     | {seg.lower() for seg in resolved.parts})
-            hit = parts & DENY_SEGMENTS
-            if hit:
-                raise FirewallError(
-                    f"development cell may not touch {sorted(hit)} path: {p} "
-                    f"(resolves to {resolved})")
+    if role != "development":
+        return
+    # cwd is inside the boundary too — the review reached holdout through a
+    # denied cwd with relative reads while readable_roots looked clean.
+    paths = (list(spec["runner"]["readable_roots"])
+             + list(spec["frozen_inputs"])
+             + [spec["runner"]["cwd"]])
+    for p in paths:
+        declared = Path(str(p))
+        if require_exists and not declared.exists():
+            raise FirewallError(
+                f"declared path does not exist at predeclare time: {p} — "
+                "a later-created junction there would bypass the resolve "
+                "check, so nonexistent declarations are refused")
+        try:
+            resolved = declared.resolve()
+        except OSError:
+            resolved = declared
+        hit = _deny_hit(str(declared)) or _deny_hit(str(resolved))
+        if hit:
+            raise FirewallError(
+                f"development cell may not touch {hit!r} path: {p} "
+                f"(resolves to {resolved})")
+    # argv is scanned too: readable_roots is declarative, and an argv that
+    # names a denied location is the cheapest honest tripwire we have short
+    # of OS-level confinement (which stays a named [GAP] in the docs).
+    for arg in spec["runner"]["argv"]:
+        hit = _deny_hit(str(arg))
+        if hit:
+            raise FirewallError(
+                f"development cell argv names a {hit!r} location: {arg!r}")
 
 
 def _check_kill_finality(spec: dict, ledger_path: Path, registry: Path) -> None:
@@ -282,12 +312,31 @@ def run(cell) -> Path:
     cell = Path(cell)
     pd = json.loads((cell / "predeclaration.json").read_text("utf-8"))
     _seal_check(cell, pd)
-    # Consume the token BEFORE execution: a crash mid-run must not leave a
-    # second attempt open (fail closed).
+    # Re-run the firewall at execution time: a junction created between
+    # predeclare and run was a demonstrated bypass of the predeclare-only
+    # resolve check. predeclare froze frozen_inputs into {path, sha256}
+    # dicts, so present a string view for the scan.
+    fw_view = dict(pd)
+    fw_view["frozen_inputs"] = [item["path"] if isinstance(item, dict)
+                                else item for item in pd["frozen_inputs"]]
+    _check_firewall(fw_view, bool(pd.get("terminal")))
+    # Consume the token BEFORE execution via an atomic O_CREAT|O_EXCL claim:
+    # the review proved concurrent Path.rename on Windows lets multiple
+    # racers through, while exclusive-create admits exactly one.
+    token = cell / "GATE_TOKEN"
+    consumed = cell / "GATE_TOKEN.consumed"
     try:
-        (cell / "GATE_TOKEN").rename(cell / "GATE_TOKEN.consumed")
-    except (FileExistsError, OSError) as exc:
-        raise OneShotError(f"token consumption raced or failed: {exc}")
+        fd = os.open(str(consumed), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        raise OneShotError("authorization already claimed by another caller")
+    try:
+        os.write(fd, token.read_bytes())
+    finally:
+        os.close(fd)
+    try:
+        token.unlink()
+    except OSError:
+        pass
 
     argv = pd["runner"]["argv"]
     wall_budget = pd["budgets"]["wall_seconds"]
@@ -360,10 +409,34 @@ def run(cell) -> Path:
 
 
 def verdict(cell, ledger_path) -> dict:
-    """Compute PASS/KILL/INCONCLUSIVE mechanically and append to the ledger."""
+    """Compute PASS/KILL/INCONCLUSIVE mechanically and append to the ledger.
+
+    Authenticated end to end (the review defeated the unauthenticated form
+    four ways): the consumed token must exist and still hash-match the
+    predeclaration; the report must bind to this cell and predeclaration and
+    must re-derive its own body hash; and verdicts are one-shot.
+    """
     cell = Path(cell)
+    if (cell / "verdict.json").exists():
+        raise FirewallError(
+            "verdict already recorded; verdicts are one-shot — a re-verdict "
+            "after editing evidence was a demonstrated kill-finality bypass")
+    consumed = cell / "GATE_TOKEN.consumed"
+    if not consumed.exists():
+        raise SealError("no consumed authorization token: this cell never ran")
+    pd_hash = sha256_file(cell / "predeclaration.json")
+    if consumed.read_text("utf-8").strip() != pd_hash:
+        raise SealError("predeclaration.json changed after the run")
     pd = json.loads((cell / "predeclaration.json").read_text("utf-8"))
     rep = json.loads((cell / "report.json").read_text("utf-8"))
+    if rep.get("cell_id") != pd["id"]:
+        raise SealError("report belongs to a different cell")
+    if rep.get("predeclaration_sha256") != pd_hash:
+        raise SealError("report was produced under a different predeclaration")
+    body = {k: v for k, v in rep.items() if k != "report_sha256"}
+    if sha256_bytes(json.dumps(body, indent=2, sort_keys=True)
+                    .encode("utf-8")) != rep.get("report_sha256"):
+        raise SealError("report body hash mismatch: report.json was edited")
     if pd.get("terminal"):
         raise FirewallError(
             "terminal cells are structurally unable to feed mutation; their "
