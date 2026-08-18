@@ -8714,3 +8714,52 @@ ways, two campaigns, one law - "a deterministic correction has almost nothing st
 subtract"); C at the certified per-call floor + the suite ladder's banked wins + exactly
 ONE queued equation (Codex's terminal-route fold, 0.446%, directed tier on ladder
 landing); deployment slope-gated (doubly witnessed); the rest is the organizers' email.
+
+## [2026-08-18 ~16:0x UTC] fable -> all: DISCOURSE COMPETITOR SWEEP (34 write-ups) - standing correction (~7th declared), a five-splice stack to ~1.31e-7 [R], and three threads converging on ONE experiment
+
+Full report in the task output; all competitor numbers [R] reported, never verified.
+
+STANDING CORRECTION: on publicly DECLARED adjusted scores we are ~7th, not leading:
+ednacob 1.845e-8 (below what kaileh57's Arb-certified LP permits ANY fixed nonnegative
+rule at that support - either genuinely non-fixed or an accounting artifact; earlier
+9.5e-11-class front entries were REMOVED unexplained), Puffi 9.10e-8, ely2sh 1.196e-7,
+pranay212 1.23e-7, mliston 1.334e-7, baltsat 1.439e-7, SOX 1.551e-7, us 1.83e-7. The
+structural read: every declared gain ahead of us is PREDICTION-PRESERVING ARITHMETIC
+(multiplier), not accuracy - the compute lane we ground all night is where Phase 2 will
+be fought; expect openers near 1.2-1.4e-7.
+
+INDEPENDENT CORROBORATIONS of our science (write-up gold): kaileh57's LP certificate
+confirms the deg>=6 ceiling (R2 0.2351% at 4.05% cost) and deg<=5 controls pathwise ZERO;
+butterbaugh's 340x closure gap double-witnesses subtract-not-predict; trim_qewas's
+organizer-reproduced flat-budget theorem validates our C/B posture (floor-drop is exactly
+neutral); qi_zhang5: CV gains collapse 1.42x -> 1.04x under QMC; omer_kiraz: antithetic
+mirrors on lattices made it WORSE.
+
+RANKED SPLICE STACK [R arithmetic, stacked ~0.718 -> 1.83e-7 to ~1.31e-7]:
+1. COMPLETE 126 -> 129 FRAMES (the identity/coordinate basis question). Four independent
+   builds use 129; Puffi ablation says MUB-129 = 0.81x MSE ("identity basis worth 19%,
+   nearly free at layer 0") vs ely2sh's measured 0.9% - a 20x open discrepancy. OUR OWN
+   HISTORY: m81/s11 measured ~breakeven on OUR carrier (low power); the design doc says
+   A_4 = EXACTLY 0 at m=129. Judge hypothesis [D]: Puffi's 19% is against a weaker
+   carrier and our controls already capture part of it - but the question is open at our
+   power. ONE PAIRED POWERED RUN on our GUARDS carrier settles: Puffi-vs-ely2sh, the
+   mub129 door's powered-rerun key, and a possible 0.5-19% score win, simultaneously.
+2. STRASSEN DEPTH-2 DEPLOYMENT (18184's own table: depth-2 TOTAL 104,169/sample vs
+   130,958 direct - an 11:1 WIN where depth-5 was the 18:1 loss; our slope wall was
+   drawn at depth 5, over-generalized). Under lambda-survives the deployed optimum is
+   shallow-depth; under lambda-dies our metered floor stands. Fork-gated deployment test.
+3. Gate-support pilot (ely2sh: -8.3% compute, +0.07% raw, cliff at threshold 16).
+4. Radial Rao-Blackwellisation at exactly our support (x0.988).
+5. FWHT ping-pong (kaileh57: 3.19e8 ops bit-identical) + Tichavsky rank-40 (bulzan:
+   -0.65-0.79% bit-identical).
+DEAD on our walls, confirmed by their own numbers: Korobov+ridge (2x worse than us,
+fitted), learned propagators (10.7x worse), GRU correctors, reweighting oracles (proxy
+cosine 0.018).
+
+CONVERGENCE: the graph mine (mub129 single-bridge, underpowered kill), the doc mine
+(terminal-route fold queued), and this sweep all point at the same next move class:
+POWERED PAIRED MEASUREMENTS ON OUR OWN CARRIER of the 129-completion and the deployment
+depth - cheap, decisive, score-bearing. Awaiting the merged-graph adjudicator to fold
+this into the named winner. Residual risks the miner declared: matmul share assumed
+~98% (our flopscope_bom_receipt says 98.94% - confirmed [O]); the 126-of-129 subset
+confirmed from the design doc [O].
