@@ -120,11 +120,33 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   Fable judges, predeclares through fold_search, runs locally. headroom-recursion skill invoked;
   its LEDGER gates bind (paired stats + noise floor, evidence over labels, frozen fallback).
 
+- 2026-08-18 02:0x-03:0x UTC: **k32 free test EXECUTED, three cells.** Ladder recovered the
+  frozen production beta from channel 6879 + full math; hostile Opus review REJECTED the
+  draft on 9 blocking findings (all fixed at judge tier; off-protocol smoke only). v1 (gate
+  a70464d): ran to completion, PROTOCOL_KILL on metric-name mismatch (spec name vs runner
+  key) — data authenticated and observed. v2 (gate 5a8ec69): declared fresh seeds but runner
+  hardcoded v1 constants — bit-identical rerun CAUGHT by output comparison; recorded as
+  carrying NO independent weight. Harness hardened: verdict() seed-agreement protocol kill
+  (spec.seeds vs runner-reported config.seeds) + tests, suite 76/76 OK. v3 (gate 0bca673,
+  fresh seeds 20260820-22, hardened harness): TRUE replication — INCONCLUSIVE/blocked
+  mechanically; scientifically: phenomenon absent 6/6 seeds (v1+v3), transport broken 0/6
+  signs, cosines -0.93..+0.18, pullback collinearity 0.81-0.95 replicated. Channel 03:02 UTC;
+  SOLVE_CANDIDATES addendum; atlas 272 current. DISPOSITION: last accuracy thread dead off
+  its hand-built origin; fitted-coefficient controls dead as a class; net2 seal spend
+  unjustified; value = compute lane + contribution write-up (+ closure leg + collinearity
+  observation).
+- 2026-08-18 ~03:1x UTC: theorem-splice swarm launched (wf_84b25d35-19d, 13 agents): six
+  Sonnet splice lanes (Stein x collision-owners, Crofton x Hermite-4, Abel x exact-control,
+  Galois x frame-symmetry, arccos-kernel x moment-tangent [theorem-fixed coefficients — the
+  post-k32 surviving design space], atlas-top-splice) -> per-lane Opus assassins -> Opus
+  synthesizer. Target: the M205 physical provider gap (cost-retired, purely structural) or a
+  closure certificate.
+
 ## Next action (exactly ONE — overwrite, never a list)
-When ladder wf_582761b2-420 returns: judge the attack verdict, apply blocking fixes myself,
-finalize runner+spec out of _draft/, predeclare via fold_search (one-shot), run, verdict,
-record in channel + SOLVE_CANDIDATES, push. Judge against the PREDECLARED hypothesis above —
-the prediction does not move after the data. Phase-2 rules stamp the moment they post.
+When splice swarm wf_84b25d35-19d returns: judge the synthesis against the assassin verdicts,
+spot-probe the recommended lane's arithmetic, and predeclare its cell through fold_search if
+one survives (else record the certified-none in the channel). Phase-2 rules stamp the moment
+they post — loop + cron armed.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).

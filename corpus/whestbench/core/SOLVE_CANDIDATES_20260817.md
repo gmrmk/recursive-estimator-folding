@@ -178,3 +178,22 @@ spine and is unrefuted; everything else protects power, provenance, or
 closes lanes with proofs. The forecast's 1% insight stands: the private
 re-run is the biggest mechanism, and slot robustness buys rank cheaper than
 variance reduction. The queue above is ordered accordingly.
+
+---
+
+## Addendum 2026-08-18: the k32/Lens-1 accuracy thread is dead by replication
+
+Cells `k32_base_sensitivity_v1..v3` (gates a70464d / 5a8ec69 / 0bca673; full story in the
+channel at 03:02 UTC). Six independent seeds across v1+v3: the k-high Fourier-Stein control
+produces NO positive held variance reduction on width-256 challenge-family nets (phenomenon
+absent 6/6, two seeds significantly negative), and fitted coefficients do not transport
+across exact-2-design bases (signs preserved 0/6, cosines -0.93..+0.18). v2 is recorded as a
+deterministic rerun with no independent weight (seed-plumbing failure, now structurally
+impossible: harness seed-agreement protocol kill, tests 76/76).
+
+Consequences for this ranking: any candidate that FITS coefficients per-net or per-frame is
+dead as a class (noise-fitting death, now replicated). The surviving accuracy-side design
+space is theorem-fixed coefficients only (population-exact structure, subtract side). The
+sealed net2 spend is unjustified on current evidence. New replicated observation available
+as tissue: deep ReLU pullback collinearity 0.81-0.95 at layers 8/16/24/32; new instrument:
+exact-2-design base pairs with 4x degree-4 defect contrast.

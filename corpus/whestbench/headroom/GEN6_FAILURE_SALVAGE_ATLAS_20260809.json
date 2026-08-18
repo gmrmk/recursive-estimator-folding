@@ -11,7 +11,7 @@
     "resource_ceiling": "Hard C <= 272000000000; promotion safety gate Cmax < 258400000000 and zero failures.",
     "score_formula": "MSE * max(0.1, (billed_FLOPs + 1e11 * residual_seconds) / 2.72e11) under installed WHestBench 0.14.0 and FlopScope 0.10.0."
   },
-  "ledger_sha256": "64e0a62dc4d5f96d635e57976c5cb005bc2f2047a6e900560970c85ec86b9fd0",
+  "ledger_sha256": "0bc104d7b815e9005d14b67b289da4bf0dbf03d815771c5dc5547e7e8c976216",
   "purpose": "Exhaustive descriptive salvage atlas; non-evidentiary and non-promotional.",
   "records": [
     {
@@ -10125,12 +10125,54 @@
         "Degree-energy and design-defect second signals must reproduce v1 (hi arm ~0.28 of energy at degree >= 6 vs lo ~0.005"
       ],
       "result_present": true
+    },
+    {
+      "canonical_status": "blocked",
+      "failed_link": [
+        "{'verdict': 'INCONCLUSIVE', 'metrics': {'bases': {'base1_rows_antipodal': 512, 'base2_frames': 4, 'base2_rows_antipodal': 2048}, 'cell': 'k32_base_sensitivity', 'config': {'anchor_layers': [8, 16, 24, 32], 'd': 256, 'depth': 32, 'eval_net_labels': ['s2', 's3', 's4', 's5', 's6', 's7'], 'fit_net_labels': ['s0', 's1'], 'fit_rotations': 8, 'held_rotations': 6, 'k_hi': 32.0, 'k_lo': 16.0, 'p': 8192, 'seeds': [20260820, 20260821, 20260822], 'width': 256}, 'flops_declared': 3437000000000.0, 'gate': {'inconclusive_metric': 0.25, 'kill_when_gte': 0.4, 'metric_definition': '1 - median over seeds of signed cos(beta_base1_hi, beta_base2_hi)",
+        "signed = cos if all four rung signs preserved else -abs(cos)', 'pass_when_lte': 0.1}, 'metric': 0.25, 'one_minus_median_signed_cos_hi': 0.25, 'per_seed': [{'beta_base1_hi': [-0.090437, -0.099187, -0.133914, -0.144741], 'beta_base1_lo': [-0.044324, 0.188404, -0.219525, -0.354651], 'beta_base2_hi': [0.119649, -0.046073, -0.213944, 0.078979], 'beta_base2_lo': [-0.179438, 0.123375, -0.274791, 0.378752], 'cos_beta_hi': 0.175744, 'cos_beta_lo': -0.180363, 'fit_diagnostics': {'base1_hi': {'cond_G': 5.235397, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.976534}, 'base1_lo': {'cond_G': 8.05654, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.295548}, 'base2_hi': {'cond_G': 5.005269, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.271956}, 'base2_lo': {'cond_G': 6.002445, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.064192}}, 'held_r2_hi_base1_per_net': [-0.035806, -0.0181, -0.10176, -0.060943, -0.039928, -0.00244], 'held_r2_hi_base2_per_net': [-0.046648, -0.002554, -0.034052, -0.0892, -0.019917, -0.090413], 'held_r2_hi_finallayer_per_net': [-0.148464, -0.010033, -0.386682, -0.137276, -0.123821, 0.111956], 'held_r2_lo_base1_per_net': [0.010883, 0.001992, -0.046746, -0.032046, -0.042644, 0.010845], 'mean_r2_hi_base1': -0.043163, 'mean_zero_expected': 0.408248, 'mean_zero_ratio_hi': 0.481571, 'min_active_units_any_layer': 105, 'min_pilot_clearance': 2.054488, 'min_stack_norm': 63.247614, 'paired_delta_hi_minus_lo_per_net': [-0.046689, -0.020092, -0.055014, -0.028897, 0.002716, -0.013285], 'paired_t_hi_base1': -3.026738, 'paired_t_lo_base1': -1.470614, 'raw_max_axis_alignment': 0.889421, 'seed': 20260820, 'signed_cos_hi': -0.175744, 'signed_cos_lo': -0.180363, 'signs_preserved_hi': False, 'signs_preserved_lo': False}, {'beta_base1_hi': [-0.072897, -0.023287, -0.015102, -0.135928], 'beta_base1_lo': [-0.20978, 0.173803, -0.000884, 0.004422], 'beta_base2_hi': [0.107124, 0.246032, 0.121884, -0.090117], 'beta_base2_lo': [0.346391, 0.145811, -0.320288, -0.142181], 'cos_beta_hi': -0.064793, 'cos_beta_lo': -0.340479, 'fit_diagnostics': {'base1_hi': {'cond_G': 8.741237, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.995809}, 'base1_lo': {'cond_G': 8.030279, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.249343}, 'base2_hi': {'cond_G': 3.458962, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.128676}, 'base2_lo': {'cond_G': 7.062794, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.055314}}, 'held_r2_hi_base1_per_net': [-0.048532, -0.03471, -0.030047, -0.007219, -0.034464, -0.029472], 'held_r2_hi_base2_per_net': [-0.074785, -0.082642, -0.025353, -0.078086, 0.002342, -0.054066], 'held_r2_hi_finallayer_per_net': [-0.117626, -0.083719, -0.181411, -0.043179, -0.061825, -0.107404], 'held_r2_lo_base1_per_net': [0.015416, -0.011427, -0.000321, -0.013357, -0.000793, -0.019247], 'mean_r2_hi_base1': -0.030741, 'mean_zero_expected': 0.408248, 'mean_zero_ratio_hi': 0.340597, 'min_active_units_any_layer': 109, 'min_pilot_clearance': 1.667897, 'min_stack_norm': 50.759874, 'paired_delta_hi_minus_lo_per_net': [-0.063948, -0.023283, -0.029725, 0.006138, -0.033671, -0.010225], 'paired_t_hi_base1': -5.607807, 'paired_t_lo_base1': -0.977694, 'raw_max_axis_alignment': 0.873357, 'seed': 20260821, 'signed_cos_hi': -0.064793, 'signed_cos_lo': -0.340479, 'signs_preserved_hi': False, 'signs_preserved_lo': False}, {'beta_base1_hi': [-0.0651, -0.014898, -0.078266, -0.121888], 'beta_base1_lo': [-0.149609, -0.009505, -0.000626, -0.239759], 'beta_base2_hi': [0.075903, -0.05738, 0.080526, 0.193032], 'beta_base2_lo': [0.194659, 0.120624, 0.083241, -0.014202], 'cos_beta_hi': -0.925395, 'cos_beta_lo': -0.389996, 'fit_diagnostics': {'base1_hi': {'cond_G': 10.373778, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 1.260649}, 'base1_lo': {'cond_G': 7.661945, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.244668}, 'base2_hi': {'cond_G': 17.866884, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.41239}, 'base2_lo': {'cond_G': 7.348918, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.073247}}, 'held_r2_hi_base1_per_net': [0.003438, 0.012052, -0.010457, -0.019262, -0.057037, 0.059175], 'held_r2_hi_base2_per_net': [0.012002, 0.019782, -0.012635, -0.020247, 0.048825, -0.009752], 'held_r2_hi_finallayer_per_net': [0.11218, 0.040406, -0.074283, 0.025576, -0.101113, 0.176079], 'held_r2_lo_base1_per_net': [-0.005624, -0.00975, -0.021684, -0.020869, -0.014319, 0.027722], 'mean_r2_hi_base1': -0.002015, 'mean_zero_expected': 0.408248, 'mean_zero_ratio_hi': 0.446293, 'min_active_units_any_layer': 108, 'min_pilot_clearance': 1.640284, 'min_stack_norm': 56.54445, 'paired_delta_hi_minus_lo_per_net': [0.009062, 0.021802, 0.011227, 0.001607, -0.042717, 0.031453], 'paired_t_hi_base1': -0.128573, 'paired_t_lo_base1': -0.992958, 'raw_max_axis_alignment': 0.871699, 'seed': 20260822, 'signed_cos_hi': -0.925395, 'signed_cos_lo': -0.389996, 'signs_preserved_hi': False, 'signs_preserved_lo': False}], 'phenomenon_absent': True, 'power_screen': {'contrast_lo_per_seed_paired_t': [-1.470614, -0.977694, -0.992958], 'paired_t_required_every_seed': 2.0, 'per_seed_mean_r2': [-0.043163, -0.030741, -0.002015], 'per_seed_paired_t': [-3.026738, -5.607807, -0.128573], 'rung_signs_consistent_across_seeds': True, 'seed_noise_floor_std': 0.021105, 'unit_of_analysis_note': 'seed is the independent unit"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "arithmetic_cost",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "missing_interface_or_provider"
+      ],
+      "id": "k32_base_sensitivity_v3",
+      "index": 271,
+      "information_sources": [
+        "sampled_network_paths",
+        "weights_only_analytic_state",
+        "output_or_frame_statistics",
+        "offline_learned_features"
+      ],
+      "kill_condition": "{\"kill_when_gte\": 0.4, \"metric\": \"one_minus_median_signed_cos_hi\", \"pass_when_lte\": 0.1}",
+      "operator_families": [
+        "sampling_and_design",
+        "higher_cumulant_source",
+        "control_and_multifidelity",
+        "harmonic_and_symmetry",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "signed = cos if all four rung signs preserved else -abs(cos)', 'pass_when_lte': 0.1}, 'metric': 0.25, 'one_minus_median_signed_cos_hi': 0.25, 'per_seed': [{'beta_base1_hi': [-0.090437, -0.099187, -0.133914, -0.144741], 'beta_base1_lo': [-0.044324, 0.188404, -0.219525, -0.354651], 'beta_base2_hi': [0.119649, -0.046073, -0.213944, 0.078979], 'beta_base2_lo': [-0.179438, 0.123375, -0.274791, 0.378752], 'cos_beta_hi': 0.175744, 'cos_beta_lo': -0.180363, 'fit_diagnostics': {'base1_hi': {'cond_G': 5.235397, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.976534}, 'base1_lo': {'cond_G': 8.05654, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.295548}, 'base2_hi': {'cond_G': 5.005269, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.271956}, 'base2_lo': {'cond_G': 6.002445, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.064192}}, 'held_r2_hi_base1_per_net': [-0.035806, -0.0181, -0.10176, -0.060943, -0.039928, -0.00244], 'held_r2_hi_base2_per_net': [-0.046648, -0.002554, -0.034052, -0.0892, -0.019917, -0.090413], 'held_r2_hi_finallayer_per_net': [-0.148464, -0.010033, -0.386682, -0.137276, -0.123821, 0.111956], 'held_r2_lo_base1_per_net': [0.010883, 0.001992, -0.046746, -0.032046, -0.042644, 0.010845], 'mean_r2_hi_base1': -0.043163, 'mean_zero_expected': 0.408248, 'mean_zero_ratio_hi': 0.481571, 'min_active_units_any_layer': 105, 'min_pilot_clearance': 2.054488, 'min_stack_norm': 63.247614, 'paired_delta_hi_minus_lo_per_net': [-0.046689, -0.020092, -0.055014, -0.028897, 0.002716, -0.013285], 'paired_t_hi_base1': -3.026738, 'paired_t_lo_base1': -1.470614, 'raw_max_axis_alignment': 0.889421, 'seed': 20260820, 'signed_cos_hi': -0.175744, 'signed_cos_lo': -0.180363, 'signs_preserved_hi': False, 'signs_preserved_lo': False}, {'beta_base1_hi': [-0.072897, -0.023287, -0.015102, -0.135928], 'beta_base1_lo': [-0.20978, 0.173803, -0.000884, 0.004422], 'beta_base2_hi': [0.107124, 0.246032, 0.121884, -0.090117], 'beta_base2_lo': [0.346391, 0.145811, -0.320288, -0.142181], 'cos_beta_hi': -0.064793, 'cos_beta_lo': -0.340479, 'fit_diagnostics': {'base1_hi': {'cond_G': 8.741237, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.995809}, 'base1_lo': {'cond_G': 8.030279, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.249343}, 'base2_hi': {'cond_G': 3.458962, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.128676}, 'base2_lo': {'cond_G': 7.062794, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.055314}}, 'held_r2_hi_base1_per_net': [-0.048532, -0.03471, -0.030047, -0.007219, -0.034464, -0.029472], 'held_r2_hi_base2_per_net': [-0.074785, -0.082642, -0.025353, -0.078086, 0.002342, -0.054066], 'held_r2_hi_finallayer_per_net': [-0.117626, -0.083719, -0.181411, -0.043179, -0.061825, -0.107404], 'held_r2_lo_base1_per_net': [0.015416, -0.011427, -0.000321, -0.013357, -0.000793, -0.019247], 'mean_r2_hi_base1': -0.030741, 'mean_zero_expected': 0.408248, 'mean_zero_ratio_hi': 0.340597, 'min_active_units_any_layer': 109, 'min_pilot_clearance': 1.667897, 'min_stack_norm': 50.759874, 'paired_delta_hi_minus_lo_per_net': [-0.063948, -0.023283, -0.029725, 0.006138, -0.033671, -0.010225], 'paired_t_hi_base1': -5.607807, 'paired_t_lo_base1': -0.977694, 'raw_max_axis_alignment': 0.873357, 'seed': 20260821, 'signed_cos_hi': -0.064793, 'signed_cos_lo': -0.340479, 'signs_preserved_hi': False, 'signs_preserved_lo': False}, {'beta_base1_hi': [-0.0651, -0.014898, -0.078266, -0.121888], 'beta_base1_lo': [-0.149609, -0.009505, -0.000626, -0.239759], 'beta_base2_hi': [0.075903, -0.05738, 0.080526, 0.193032], 'beta_base2_lo': [0.194659, 0.120624, 0.083241, -0.014202], 'cos_beta_hi': -0.925395, 'cos_beta_lo': -0.389996, 'fit_diagnostics': {'base1_hi': {'cond_G': 10.373778, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 1.260649}, 'base1_lo': {'cond_G': 7.661945, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.244668}, 'base2_hi': {'cond_G': 17.866884, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.41239}, 'base2_lo': {'cond_G': 7.348918, 'lambda': 0.0, 'solve_residual': 0.0, 'trace_G': 0.073247}}, 'held_r2_hi_base1_per_net': [0.003438, 0.012052, -0.010457, -0.019262, -0.057037, 0.059175], 'held_r2_hi_base2_per_net': [0.012002, 0.019782, -0.012635, -0.020247, 0.048825, -0.009752], 'held_r2_hi_finallayer_per_net': [0.11218, 0.040406, -0.074283, 0.025576, -0.101113, 0.176079], 'held_r2_lo_base1_per_net': [-0.005624, -0.00975, -0.021684, -0.020869, -0.014319, 0.027722], 'mean_r2_hi_base1': -0.002015, 'mean_zero_expected': 0.408248, 'mean_zero_ratio_hi': 0.446293, 'min_active_units_any_layer': 108, 'min_pilot_clearance': 1.640284, 'min_stack_norm': 56.54445, 'paired_delta_hi_minus_lo_per_net': [0.009062, 0.021802, 0.011227, 0.001607, -0.042717, 0.031453], 'paired_t_hi_base1': -0.128573, 'paired_t_lo_base1': -0.992958, 'raw_max_axis_alignment': 0.871699, 'seed': 20260822, 'signed_cos_hi': -0.925395, 'signed_cos_lo': -0.389996, 'signs_preserved_hi': False, 'signs_preserved_lo': False}], 'phenomenon_absent': True, 'power_screen': {'contrast_lo_per_seed_paired_t': [-1.470614, -0.977694, -0.992958], 'paired_t_required_every_seed': 2.0, 'per_seed_mean_r2': [-0.043163, -0.030741, -0.002015], 'per_seed_paired_t': [-3.026738, -5.607807, -0.128573], 'rung_signs_consistent_across_seeds': True, 'seed_noise_floor_std': 0.021105, 'unit_of_analysis_note': 'seed is the independent unit",
+        "within-seed nets share one beta and one rotation fixture'}, 'second_signal_degree_energy': {'analytic_hi': [0.03667, 0.0, 0.293364, 0.0, 0.391151, 0.0, 0.208614, 0.0, 0.059604, 0.0, 0.010596], 'analytic_lo': [0.648054, 0.0, 0.324027, 0.0, 0.027002, 0.0, 0.0009, 0.0, 1.6e-05, 0.0, 0.0], 'base1_hi': {'degree_energy_mean': [0.038296, 0.0, 0.303234, 0.0, 0.378269, 0.0, 0.210975, 0.0, 0.05762, 0.0, 0.011606], 'degree_ge6_fraction_mean': 0.280201, 'degree_ge6_fraction_std': 0.068066}, 'base1_lo': {'degree_energy_mean': [0.643668, 0.0, 0.316617, 0.0, 0.031616, 0.0, 0.003979, 0.0, 0.002142, 0.0, 0.001978], 'degree_ge6_fraction_mean': 0.008099, 'degree_ge6_fraction_std': 0.014633}, 'base2_hi': {'degree_energy_mean': [0.037805, 0.0, 0.290736, 0.0, 0.394534, 0.0, 0.20698, 0.0, 0.059681, 0.0, 0.010265], 'degree_ge6_fraction_mean': 0.276925, 'degree_ge6_fraction_std': 0.017391}, 'base2_lo': {'degree_energy_mean': [0.645275, 0.0, 0.324847, 0.0, 0.027678, 0.0, 0.001261, 0.0, 0.000472, 0.0, 0.000469], 'degree_ge6_fraction_mean': 0.002201, 'degree_ge6_fraction_std': 0.002562}}, 'second_signal_design_defects': {'base1': {'A2': 0.0, 'A4': 0.0039518, 'A6': 0.0039054}, 'base2': {'A2': 0.0, 'A4': 0.00098823, 'A6': 0.00097615}}, 'smoke': False, 'transport': {'cos_beta_hi_per_seed': [0.175744, -0.064793, -0.925395], 'cos_beta_lo_per_seed': [-0.180363, -0.340479, -0.389996], 'signs_preserved_hi_per_seed': [False, False, False], 'signs_preserved_lo_per_seed': [False, False, False]}, 'verdict_view': 'INCONCLUSIVE(phenomenon_absent)', 'wall_seconds': 342.205701}, 'report_sha256': '09facb4023ddc9af761ef07d7d81fed0d05f04db6499d48c3b98a84c726e3d2d', 'outcome': 'COMPLETED'}"
+      ],
+      "prediction": "V1-INFORMED PRIORS (v1 completed scientifically before dying on a metric-name plumbing mismatch; its authenticated report was observed before this predeclaration and the priors below reflect that): modal outcome is the honest phenomenon-absent forced value (probability ~0.7) -- on fresh seeds the k-high control again produces no positive held variance reduction on width-256 challenge-family nets (v1 observed per-seed paired t of -1.87 / -2.04 / +0.32 and inconsistent rung signs across seeds). Conditional on the phenomenon appearing, transport breaks (kill band) at ~0.8 (v1 observed cosines -0.066 / -0.559 / -0.237 with zero of three seeds preserving signs, i.e. noise-fit coefficients do not transport). The recognizable failure signature of the whole reading remains: metric at or below the pass threshold with all four signs preserved on every seed -- base-insensitivity, reopening the accuracy frontier. Degree-energy and design-defect second signals must reproduce v1 (hi arm ~0.28 of energy at degree >= 6 vs lo ~0.005; A2 machine zero both bases, A4 contrast ~4x).",
+      "raw_status": "blocked",
+      "reopening_condition": [
+        "noise-fit coefficients do not transport). The recognizable failure signature of the whole reading remains: metric at or below the pass threshold with all four signs preserved on every seed -- base-insensitivity, reopening the accuracy frontier",
+        "Degree-energy and design-defect second signals must reproduce v1 (hi arm ~0.28 of energy at degree >= 6 vs lo ~0.005"
+      ],
+      "result_present": true
     }
   ],
   "schema_version": 1,
   "summary": {
     "canonical_status_counts": {
-      "blocked": 10,
+      "blocked": 11,
       "killed_or_closed": 192,
       "open_or_uncertain": 11,
       "preserved_component": 12,
@@ -10139,43 +10181,43 @@
       "validated": 2
     },
     "failure_boundary_counts": {
-      "approximation_or_materiality": 256,
-      "arithmetic_cost": 208,
+      "approximation_or_materiality": 257,
+      "arithmetic_cost": 209,
       "bias_or_invalid_expectation": 94,
       "memory_or_liveness": 61,
-      "missing_interface_or_provider": 69,
+      "missing_interface_or_provider": 70,
       "no_failure_at_recorded_gate": 4,
       "nonidentifiability_or_missing_information": 18,
-      "numerical_or_endpoint_coverage": 145,
+      "numerical_or_endpoint_coverage": 146,
       "protocol_or_generalization": 44,
       "representation_not_closed": 53,
       "theorem_or_class_closure": 23,
-      "variance_or_signal_to_noise": 180,
-      "wall_calls_or_allocation": 125
+      "variance_or_signal_to_noise": 181,
+      "wall_calls_or_allocation": 126
     },
     "information_source_counts": {
       "deterministic_compute_only": 75,
       "endpoint_or_facet_geometry": 55,
-      "offline_learned_features": 67,
-      "output_or_frame_statistics": 102,
-      "sampled_network_paths": 153,
+      "offline_learned_features": 68,
+      "output_or_frame_statistics": 103,
+      "sampled_network_paths": 154,
       "truth_or_oracle_only": 87,
       "unspecified_in_record": 13,
-      "weights_only_analytic_state": 132
+      "weights_only_analytic_state": 133
     },
     "operator_family_counts": {
       "analytic_moment_closure": 120,
       "compression_and_low_rank": 162,
-      "control_and_multifidelity": 185,
+      "control_and_multifidelity": 186,
       "endpoint_facet_and_coarea": 64,
       "engineering_and_cost": 62,
-      "harmonic_and_symmetry": 139,
-      "higher_cumulant_source": 113,
-      "robustness_and_protocol": 165,
+      "harmonic_and_symmetry": 140,
+      "higher_cumulant_source": 114,
+      "robustness_and_protocol": 166,
       "routing_and_learned_surrogates": 34,
-      "sampling_and_design": 147
+      "sampling_and_design": 148
     },
-    "total_records": 271,
+    "total_records": 272,
     "unresolved_or_component_ids": [
       "latent_sparse_radial_cubature",
       "latent_randomized_radial",
@@ -10251,7 +10293,8 @@
       "gm_residual_k1",
       "ajpre1_w0_wi_precondition",
       "clone_l2fringe_flop_recompute_v2",
-      "k32_base_sensitivity_v2"
+      "k32_base_sensitivity_v2",
+      "k32_base_sensitivity_v3"
     ]
   }
 }

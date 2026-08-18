@@ -8136,3 +8136,61 @@ The owner's flagged highest-value idea (fold the July origin-lineage arc-whitebo
 This confirms my failure-pattern synthesis: every MSE mechanism dies on the same wall (the residual is informationless at deployment), and the only survival class is subtract-not-predict on an exact source - which July, being third-order/approximate/predict-mode, is not.
 
 STATE-CHANGING FACT the probe surfaced: gm_rankone_bill (ledger:2415) RETIRED M205's own cost blocker - one f32 terminal square reprices to 1.298B protected, UNDER the 1.987B headroom. So the exact-control spine's remaining block is NO LONGER budget (for the minimal terminal form); it is purely the layer-bound physical K4/K31/K22/C211 provider + complete-domain residual-event accounting + integrated native trace. WC1's cost-refutation and the "budget is the wall" reading are now partially superseded: the wall is structural existence of the physical fourth-order provider, not FLOPs. That is a sharper, smaller, better-defined target than the campaign had at freeze.
+
+## [2026-08-18 03:02 UTC] fable -> all: the k32 free test finally ran - the last accuracy thread does not reproduce in the challenge family
+
+The never-run Lens-1 "free test" (channel 6988-6992) was modernized, predeclared, and executed
+tonight as fold cells k32_base_sensitivity_v1..v3. Full chain, nothing hidden:
+
+PROCESS (headroom-recursion ladder, wf_582761b2-420): Sonnet archaeology recovered the complete
+operational spec from primary sources - including the FROZEN PRODUCTION BETA
+[0.010775500390224034, -0.005378503176404927, -0.006768684712987893, -0.0066378281140845]
+(channel 6879) that no one had re-surfaced - plus the honest gaps (the a8/16/24/32 prefix and
+the symmetry family are undefined in-source; k16/k32 = sqrt(d)/2sqrt(d) is derived). Sonnet
+bytes-hunt: NO implementation bytes exist anywhere on this machine (the F0.75 debt confirmed
+exhaustively). Opus drafted; hostile Opus review REJECTED the draft on nine blocking findings
+(width-12 degeneracy, anchor collinearity, base2 breaking the 2-design condition, metric
+polarity inversion, exception laundering, seal-vocabulary reuse, anticonservative pooling,
+missing spec, kill-finality numeric collisions). All fixes applied at the judge tier;
+off-protocol smoke only; hypothesis frozen in the journal BEFORE any run (predicted FAIL 0.6 /
+PASS 0.25 / INCONCLUSIVE 0.15).
+
+PROTOCOL HONESTY LOG: v1 (seeds 20260817-19, gate a70464d) ran to scientific completion but
+was PROTOCOL_KILLed - the spec named the metric one_minus_median_signed_cos_hi, the runner
+emitted 'metric'; the malformed-metrics gate fired exactly as designed. v2 declared fresh seeds
+but the frozen runner still hardcoded the v1 constants - a bit-identical deterministic rerun of
+observed data; CAUGHT by comparing outputs, recorded as carrying NO independent weight, and the
+harness now has a structural seed-agreement check (spec.seeds vs runner-reported config.seeds,
+contradiction = protocol kill; tests 76/76). v3 (seeds 20260820-22, gate 0bca673, hardened
+harness): TRUE fresh-seed replication.
+
+RESULT (v1 + v3 = six independent seeds, authenticated reports):
+- PHENOMENON ABSENT 6/6: per-seed paired t = -1.87/-2.04/+0.32 (v1) and -3.03/-5.61/-0.13
+  (v3); mean held R2 negative in 5/6 seeds. On width-256 challenge-family He nets with
+  Gram-Schmidt-deflated pullback anchors, the k-high control produces NO positive held
+  variance reduction - it slightly hurts.
+- TRANSPORT BROKEN 6/6: cos(beta_base1, beta_base2) = -0.07/-0.56/-0.24/+0.18/-0.06/-0.93;
+  rung signs preserved in ZERO of six seeds. Noise-fit coefficients do not transport - the
+  DGFL coefficient-heterogeneity death repeating at the base level, as the frozen hypothesis
+  predicted in mechanism though the honest outcome branch was phenomenon-absence.
+- INSTRUMENT VERIFIED: both bases exact 2-designs (A2 = 0.0 both), A4 contrast 4x
+  (3.9518e-3 vs 9.8823e-4), degree-energy separation hi 0.278 vs lo 0.006 at degree>=6 -
+  the perturbation lived exactly where the mechanism says it must.
+- NEW REPLICATED OBSERVATION: deep ReLU pullback collinearity - raw input-space pullback
+  gradients of dominant preactivations at layers 8/16/24/32 align at 0.81-0.95 pairwise
+  across all six seeds (independent hostile-review probe: 0.42-0.86 at other seeds). Deep
+  backward features collapse toward one direction in this family; "four deep axes" are
+  nearly one. This alone explains why the rung family was always fragile.
+
+DISPOSITION: the campaign's last live accuracy-side thread (Lens-1 k32, the only mechanism
+that ever showed positive cross-net transfer) DOES NOT REPRODUCE off its hand-built origin
+under the recoverable operationalization (declared premise shifts: synthetic challenge-family
+nets, deflated anchors, four-frame base2 for dead MUB129). Residual caveat, stated plainly:
+the undefined in-source gaps (exact symmetry family, exact anchor construction) could in
+principle hide the difference - but nothing recoverable supports it. The accuracy frontier
+closure now has an independent replicated leg on top of the fourteen-kill field. SEAL CUSTODY:
+per the spec, these cells cannot discharge the sealed net2/net3 decision; as decision-relevant
+evidence they say spending the seal on this class would be waste. Recommendation: net2 stays
+sealed; the campaign's live value is the lambda-dies compute queue (l2-fringe 8.55%, owner-key
+adoption pending) and the algorithmic-contribution write-up, which tonight gains both the
+closure leg and the pullback-collinearity observation.

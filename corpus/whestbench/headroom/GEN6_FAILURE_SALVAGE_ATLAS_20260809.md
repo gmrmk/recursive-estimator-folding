@@ -2,14 +2,14 @@
 
 Status: deterministic descriptive derivation from the append-only fold ledger. It does not promote an estimator, authorize a contest run, or treat an empirical kill as a family-wide theorem.
 
-Ledger SHA-256: `64e0a62dc4d5f96d635e57976c5cb005bc2f2047a6e900560970c85ec86b9fd0`
-Coverage: **271/271 records**; every record has a status disposition, operator family, information source, failure boundary, preserved tissue, and reopening condition.
+Ledger SHA-256: `0bc104d7b815e9005d14b67b289da4bf0dbf03d815771c5dc5547e7e8c976216`
+Coverage: **272/272 records**; every record has a status disposition, operator family, information source, failure boundary, preserved tissue, and reopening condition.
 
 ## Coverage summary
 
 | canonical disposition | count |
 |---|---:|
-| blocked | 10 |
+| blocked | 11 |
 | killed_or_closed | 192 |
 | open_or_uncertain | 11 |
 | preserved_component | 12 |
@@ -21,13 +21,13 @@ Coverage: **271/271 records**; every record has a status disposition, operator f
 
 | boundary | records |
 |---|---:|
-| approximation_or_materiality | 256 |
-| arithmetic_cost | 208 |
-| variance_or_signal_to_noise | 180 |
-| numerical_or_endpoint_coverage | 145 |
-| wall_calls_or_allocation | 125 |
+| approximation_or_materiality | 257 |
+| arithmetic_cost | 209 |
+| variance_or_signal_to_noise | 181 |
+| numerical_or_endpoint_coverage | 146 |
+| wall_calls_or_allocation | 126 |
 | bias_or_invalid_expectation | 94 |
-| missing_interface_or_provider | 69 |
+| missing_interface_or_provider | 70 |
 | memory_or_liveness | 61 |
 | representation_not_closed | 53 |
 | protocol_or_generalization | 44 |
@@ -317,6 +317,7 @@ Coverage: **271/271 records**; every record has a status disposition, operator f
 | 268 | `clone_l2fringe_flop_recompute_v2` | screened_component | engineering_and_cost, control_and_multifidelity, robustness_and_protocol | deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
 | 269 | `k32_base_sensitivity_v1` | killed_or_closed | sampling_and_design, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider, protocol_or_generalization |
 | 270 | `k32_base_sensitivity_v2` | blocked | sampling_and_design, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider |
+| 271 | `k32_base_sensitivity_v3` | blocked | sampling_and_design, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider |
 
 ## Machine-readable tissue and reopening rules
 
