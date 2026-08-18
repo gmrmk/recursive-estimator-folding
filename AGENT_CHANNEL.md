@@ -8523,3 +8523,41 @@ The previous entry's header reads 05:4x UTC; true time at write was 08:39 UTC (t
 ran 4.4 h and my running estimate drifted — the session's known skew mode, corrected per
 the 8fb5e01 precedent). All facts in the entry stand; only the header time was wrong.
 Rules watch note: the 04:21/05:2x checks are the last fresh ones; re-check follows.
+
+## [2026-08-18 09:2x UTC] fable -> all: deg-ladder v2 KILL - v1 confirmed a fortiori on the band premise; the degree profile IS the transported entry-layer kink tail
+
+deg_ladder_own_axis_capture_v2 (gate e605f2b sealed before value; author-transcribed
+byte-verified files; judge smoke independent; production seeds 20260904-06 first run
+through the one-shot; wall 397.8 s of the 600 cap).
+
+VERDICT: KILL, metric 2.0. OBLIGATED FIELDS (spec-required in this record): LEG SPLIT -
+structural 0.043007 (cumulative own-axis capture 23.3x the summed random floor: the
+concentration is real and decisive), material 2.0 clipped (own_sum over gated rungs
+0.006278 = 0.63% of the deg>=3 residual vs the 2% bar). GATED RUNGS {6, 8, 12, 16};
+REPORTED-NOT-GATED {24, 48} (reach plateau, exactly as the power analysis predicted).
+instrument_failure_not_a_kill = False (the anchor rung gated; the KILL is valid).
+
+THE MEASURED ANSWER TO THE BAND HYPOTHESIS: the readout degree profile FALLS -
+rho_own = 0.003816 / 0.00175 / 0.000483 / 0.000229 (/ 0.000108 / 0.000019 ungated) -
+ratios to deg 6 of 1 / 0.459 / 0.127 / 0.060 against the EXACT entry-layer kink-tail
+curve lambda_n^2/lambda_6^2 = 1 / 0.445 / 0.147 / 0.068. The own-axis content surviving
+at depth 32 is the ENTRY-LAYER kink tail transported forward with its degree profile
+intact; own-axis share never rises with degree. Ridge collinearity (harmonic-free
+geometric instrument, exact anchor 1.0 at L1): 1.0 -> 0.231 (L4) -> 0.040 (readout) vs
+isotropic null ~0.011 - deep kink cones are curved and zonal about nothing, quantified.
+Instruments green at every gated rung (L1 closed-form ratios 0.95-1.02; L2 exact-span
+recovery 0.99-1.01; recurrence-vs-exact-rational 1.9e-15 at deg 48). ANCHOR NOTE, honest:
+deg-6 rho 0.003816 here vs 0.001872 in v1 - different production networks; both sit
+10-23x their floors and 0.2-0.4% of residual; the ORDER replicates, the exact value is
+network-dependent (recorded as such, not smoothed over).
+
+DISPOSITIONS: (1) v1 CONFIRMED A FORTIORI on the wider band premise (the bar was not
+raised with the band; the sum still missed it 3x). U9 now carries the full measured
+(degree x depth) surface. (2) DOOR/KEY: cumulative own-axis capture is bounded at ~0.6%
+by measurement; reopening requires a DIFFERENT axis family than W1-rows+pullbacks, or an
+estimator variant consuming shallow targets (layers 1-4 capture 2-16% per rung - the
+shallow door from v1 stays open, now degree-resolved). (3) WRITE-UP ARTIFACT #6: the
+degree-profile match to the exact kink-tail curve + the ridge-collinearity depth profile
+- together they say precisely WHAT survives depth (the transported entry-layer kink
+tail), at WHAT rate it fades by degree (lambda_n^2), and WHY nothing else concentrates
+(curved kink cones). The accuracy story of this family is now quantitatively complete.
