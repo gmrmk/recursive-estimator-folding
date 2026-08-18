@@ -408,6 +408,25 @@ def run(cell) -> Path:
     return path
 
 
+def _seeds_disagree(pd: dict, rep: dict) -> bool:
+    """True when the spec declares seeds AND the runner reports the seeds it
+    actually used (metrics.config.seeds convention) AND the two differ.
+
+    Runners that do not report their seeds are not bound (older cells predate
+    the convention); the check cannot fire on absence, only on contradiction.
+    """
+    declared = pd.get("seeds")
+    metrics = rep.get("metrics")
+    observed = None
+    if isinstance(metrics, dict):
+        config = metrics.get("config")
+        if isinstance(config, dict):
+            observed = config.get("seeds")
+    if not declared or not isinstance(observed, list):
+        return False
+    return [int(s) for s in observed] != [int(s) for s in declared]
+
+
 def verdict(cell, ledger_path) -> dict:
     """Compute PASS/KILL/INCONCLUSIVE mechanically and append to the ledger.
 
@@ -443,6 +462,13 @@ def verdict(cell, ledger_path) -> dict:
             "reports are read by humans, never by the ledger")
     th = pd["thresholds"]
     if rep["outcome"] != "COMPLETED":
+        result, status = "KILL", "killed_protocol"
+    elif _seeds_disagree(pd, rep):
+        # The harness never injects spec.seeds into the runner -- runners own
+        # their seeds. A spec that declares one seed set while the runner
+        # reports another is a replication-theatre hazard (demonstrated by
+        # k32_base_sensitivity_v2: "fresh seed" spec, stale runner constant,
+        # bit-identical rerun of observed data).
         result, status = "KILL", "killed_protocol"
     else:
         value = rep["metrics"][th["metric"]]

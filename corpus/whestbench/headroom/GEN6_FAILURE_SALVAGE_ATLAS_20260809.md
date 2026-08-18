@@ -2,35 +2,35 @@
 
 Status: deterministic descriptive derivation from the append-only fold ledger. It does not promote an estimator, authorize a contest run, or treat an empirical kill as a family-wide theorem.
 
-Ledger SHA-256: `8afec50ab41776225066cab074766e4b4aad6e9a38fc1887d0f7113642c86d2b`
-Coverage: **267/267 records**; every record has a status disposition, operator family, information source, failure boundary, preserved tissue, and reopening condition.
+Ledger SHA-256: `64e0a62dc4d5f96d635e57976c5cb005bc2f2047a6e900560970c85ec86b9fd0`
+Coverage: **271/271 records**; every record has a status disposition, operator family, information source, failure boundary, preserved tissue, and reopening condition.
 
 ## Coverage summary
 
 | canonical disposition | count |
 |---|---:|
-| blocked | 9 |
-| killed_or_closed | 191 |
+| blocked | 10 |
+| killed_or_closed | 192 |
 | open_or_uncertain | 11 |
 | preserved_component | 12 |
 | promoted | 2 |
-| screened_component | 40 |
+| screened_component | 42 |
 | validated | 2 |
 
 ### Failure boundaries (multi-label)
 
 | boundary | records |
 |---|---:|
-| approximation_or_materiality | 252 |
-| arithmetic_cost | 204 |
-| variance_or_signal_to_noise | 177 |
-| numerical_or_endpoint_coverage | 142 |
-| wall_calls_or_allocation | 121 |
-| bias_or_invalid_expectation | 93 |
-| missing_interface_or_provider | 67 |
+| approximation_or_materiality | 256 |
+| arithmetic_cost | 208 |
+| variance_or_signal_to_noise | 180 |
+| numerical_or_endpoint_coverage | 145 |
+| wall_calls_or_allocation | 125 |
+| bias_or_invalid_expectation | 94 |
+| missing_interface_or_provider | 69 |
 | memory_or_liveness | 61 |
 | representation_not_closed | 53 |
-| protocol_or_generalization | 43 |
+| protocol_or_generalization | 44 |
 | theorem_or_class_closure | 23 |
 | nonidentifiability_or_missing_information | 18 |
 | no_failure_at_recorded_gate | 4 |
@@ -313,6 +313,10 @@ Coverage: **267/267 records**; every record has a status disposition, operator f
 | 264 | `uf1_strassen_flop_only_accounting` | killed_or_closed | sampling_and_design, engineering_and_cost, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, theorem_or_class_closure |
 | 265 | `uf1_translation_reaudit_20260811` | killed_or_closed | engineering_and_cost, control_and_multifidelity | sampled_network_paths, deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, memory_or_liveness, missing_interface_or_provider, theorem_or_class_closure |
 | 266 | `r0_harmonic_energy_spectrum` | killed_or_closed | control_and_multifidelity, harmonic_and_symmetry, compression_and_low_rank | unspecified_in_record | approximation_or_materiality, wall_calls_or_allocation |
+| 267 | `ajpre1_w0_wi_precondition` | screened_component | sampling_and_design, harmonic_and_symmetry, compression_and_low_rank, robustness_and_protocol | sampled_network_paths, output_or_frame_statistics | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage |
+| 268 | `clone_l2fringe_flop_recompute_v2` | screened_component | engineering_and_cost, control_and_multifidelity, robustness_and_protocol | deterministic_compute_only | approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation |
+| 269 | `k32_base_sensitivity_v1` | killed_or_closed | sampling_and_design, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider, protocol_or_generalization |
+| 270 | `k32_base_sensitivity_v2` | blocked | sampling_and_design, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider |
 
 ## Machine-readable tissue and reopening rules
 

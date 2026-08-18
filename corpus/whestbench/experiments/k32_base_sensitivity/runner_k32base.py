@@ -91,7 +91,11 @@ if SMOKE:
     SEEDS = (987654321,)
 else:
     N_NETS, N_FIT_Q, N_HELD_Q = 8, 8, 6
-    SEEDS = (20260817, 20260818, 20260819)
+    # v3: genuinely fresh seeds. v2 declared fresh seeds in its spec but this
+    # constant still held the v1 values -- the harness does not inject
+    # spec.seeds, the runner owns them. Kept in exact agreement with spec.json;
+    # the harness now protocol-kills on disagreement.
+    SEEDS = (20260820, 20260821, 20260822)
 FIT_NETS = (0, 1)                   # channel 6968: fit nets 0/1 only
 EVAL_NETS = tuple(range(2, N_NETS))
 N_PROBE_AXES = 64
