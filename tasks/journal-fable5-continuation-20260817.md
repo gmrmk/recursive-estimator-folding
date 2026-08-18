@@ -23,6 +23,19 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   graph nodes + continuation plan.
 - 2026-08-17: Hard internal gate — filing package ready by ~22:45 UTC.
 - 2026-08-17 20:47 UTC: atlas --check exit 1 (stale GEN6_FAILURE_SALVAGE_ATLAS_20260809.*).
+- 2026-08-18 00:17 UTC: Phase-2 rules NOT posted (Discourse id still 18183, two signals);
+  both forks open; topic 18108 = live community pressure to drop wall-time. Pre-committed:
+  prepare lambda-dies queue (compute win leads), designate nothing until rules land.
+- 2026-08-18 ~00:2x UTC: PREDECLARED HYPOTHESIS for the k32 base-sensitivity cell (before
+  any result exists): the k=32 rung coefficient is BASE-DEPENDENT — the ridge solution
+  rotates when the fit base changes from the one-frame 512-row Y base to a GUARDS126-style
+  base, because the two bases weight the degree spectrum differently and the ridge normal
+  equations follow that weighting. Predicted: FAIL the cos>0.9 gate ~0.6, PASS ~0.25,
+  INCONCLUSIVE ~0.15. Decision value is symmetric: FAIL certifies the accuracy frontier
+  closed (the last live accuracy thread dies, campaign commits to compute + contribution
+  write-up); PASS opens the high-degree subtract-side corner and justifies the sealed-net2
+  spend. Secondary mechanism prediction: k=32 rung energy concentrates at Gegenbauer
+  degree >= 6 where k=16 energy does not (the unproven transfer mechanism [A]).
 
 ## Done (append-only; each entry names its verification evidence)
 - Absorption: 5 Explore briefs (channel 8,052 lines; state/deadlines; corpus/lineage/
@@ -95,11 +108,23 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   on it. Workflow script saved + resumable at
   ...\workflows\scripts\whest-ladder-swarm-wf_8fb8d3c7-8de.js; re-run on limit raise.
 
+- 2026-08-18 ~00:2x UTC: July kappa3 cross-lineage fold REFUTED by Opus cold probe, 4 axes
+  (order 3 vs 4, closure-not-physical, 2.68-4.86B over 1.987B headroom, predict-not-subtract).
+  Channel fc8daff. STATE CHANGE surfaced by the probe: gm_rankone_bill (ledger:2415) retired
+  M205's own cost blocker (one f32 terminal square = 1.298B < H) — the exact-control spine's
+  remaining block is purely the layer-bound physical K4/K31/K22/C211 provider + native trace,
+  not budget. Spend limit confirmed LIFTED (two Opus agents + rules agent completed clean).
+- 2026-08-18 ~00:3x UTC: k32-base-sensitivity ladder launched via Workflow (run wf_582761b2-420,
+  task wfshq5ijz): Sonnet recover x2 (channel archaeology + bytes hunt; scout already showed
+  NO implementation bytes in campaign repo or clone whest dir) -> Opus draft -> Opus attack;
+  Fable judges, predeclares through fold_search, runs locally. headroom-recursion skill invoked;
+  its LEDGER gates bind (paired stats + noise floor, evidence over labels, frozen fallback).
+
 ## Next action (exactly ONE — overwrite, never a list)
-Land the anti-J transfer premise cell (the next anti-J step, unblocked by AJPRE-1's pass;
-AJ2-F48 lines 584-671, synthetic-only, must respect the neg-eigenvalue trap) OR resume the
-ladder swarm once the spend limit is raised. Phase-2 rules stamp (lambda + FlopScope forks)
-the moment they post — loop + cron armed.
+When ladder wf_582761b2-420 returns: judge the attack verdict, apply blocking fixes myself,
+finalize runner+spec out of _draft/, predeclare via fold_search (one-shot), run, verdict,
+record in channel + SOLVE_CANDIDATES, push. Judge against the PREDECLARED hypothesis above —
+the prediction does not move after the data. Phase-2 rules stamp the moment they post.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
