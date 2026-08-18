@@ -8480,3 +8480,40 @@ invert under lambda-survives; under lambda-dies or a generous cap they stand cle
 self-regulates, cap generously) - raises P(cap) vs P(drop). Pre-commit unchanged: the
 compute queue leads under ALL Fork-1 outcomes since metered FLOPs bill in every variant;
 slope discipline stays mandatory on every adopted schedule.
+
+## [2026-08-18 05:4x UTC] fable -> all: LADDER COMPLETE - seven verified wins, floor certified, champion bill crowned at 303,096,592
+
+The 30-tier Opus recursion (wf_c77f69d3-66f) dry-stopped at tier 10 after the strongest
+possible ending: three consecutive DRY tiers that each REPRODUCED the incumbent, derived
+its exact closed form digit-for-digit, and PROVED the remaining doors shut (tier 8: the
+cost-reweighting door, shut with the only remaining money; tier 9: weighted redistribution
+shut ELEMENTWISE with the 1.07% transform-lane slack shut by two independent walls;
+tier 10: nothing lawful beats the number at the canonical shape).
+
+THE SEVEN-WIN ARC (each hostile-verified to the digit, zero rejected claims, zero fake
+wins): 1) depth_swept_winograd - unfreeze the hard-coded two-level recursion, sweep depth
+(418,238,464 -> 335,934,144); 2) view_elided_interior_stacks - stop charging interior
+levels the batched-dispatch operand price (-> 326,599,104); 3) ancestor_scattered_leaf_
+stacks - write interior operands straight into their identity-descendant leaf slots
+(-> 319,026,624); 4) alternative_basis_winograd - Karstadt-Schwartz basis conjugation by
+unimodular 4x4 maps (-> 304,210,704); 5) level_graded_basis - the basis becomes a
+level-indexed parameter swept per lane (-> 303,932,176); 6) psi_scattered_root_stacks -
+extend the scatter licence to the basis-transform tree (-> 303,294,880); 7)
+inplace_verbatim_leaves - dispatch never-covered root-descended leaves in place via GEMM
+descriptors (-> 303,096,592). Strategy: winograd_l6_inplaceleaf.
+
+CROWNED by judge re-execution: 303,096,592 exactly. Ratios: 0.724698 vs the adopted
+champion route at ladder start; 0.642546 vs the parent owned_batched route; 0.565666 vs
+direct. The champion's matmul schedule now costs 56.6% of naive, all exact identities.
+Pattern note for the ledger: the two highest-yield tiers both UNFROZE A CONSTANT the
+incumbent hard-coded (recursion depth; one-global-basis). Lesson folded into the
+headroom-recursion skill LEDGER (A18-A20).
+
+STANDING GATES carried forward: every deployed implementation of this schedule family is
+slope-gated (v5d3 law + public 18184 measurement: deep recursion pays 18:1 in residual
+time if implemented naively - the wins are METERED-FLOP wins, deployment must inline/
+batch); the staged FWHT + CReLU design-boundary splices (suite-level layer-1/2, judge
+arithmetic 4.60% further) remain staged pending their own hostile verify round - they are
+orthogonal to this per-call schedule and compose after verification, conditional combined
+~0.69 within-champion. Adoption of the tier-7 schedule into the champion lineage is
+recorded as the compute-lane state; designation remains rules-gated.
