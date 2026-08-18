@@ -8464,3 +8464,19 @@ the depth-resolved zonal concentration curve - the quantitative form of the desi
 boundary lemma (exact structure penetrates one nonlinearity; zonal structure decays
 geometrically thereafter, measured rate ~x0.4-0.5/layer) - plus the controlled pullback
 concentration measurement (top-8 active-subspace share 3.6x its isotropic null).
+
+## [2026-08-18 05:2x UTC] fable: rules watch update - still unposted; community topic 18184 sharpens Fork 1 and corroborates our slope law
+
+Discourse id 18184 (bin_yong_bong, no organizer reply) measured Strassen-Winograd depth
+vs residual wall time at width 256: depth-2 optimum (101,507 metered + 2,662 residual-eq);
+depth-5 "saves 24,000 metered FLOPs per sample and spends 432,000 residual ones - an 18:1
+loss." Recommends: lambda=1e11 already self-regulates, any Phase-2 cap at or above
+~250 ms per MLP, and clarification whether numpy inside flopscope primitives bills as
+residual. DECISION RELEVANCE: (1) independent public corroboration of our v5d3 call-slope
+law - deep recursive schedules pay in residual time; our seven ladder wins are METERED-
+FLOP wins whose deployed implementations must honor the inline/batch slope gate or they
+invert under lambda-survives; under lambda-dies or a generous cap they stand clean.
+(2) Fork 1 now has community voices both ways (18108: drop the channel; 18184: it
+self-regulates, cap generously) - raises P(cap) vs P(drop). Pre-commit unchanged: the
+compute queue leads under ALL Fork-1 outcomes since metered FLOPs bill in every variant;
+slope discipline stays mandatory on every adopted schedule.
