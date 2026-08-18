@@ -1,0 +1,60 @@
+{
+  "bias_class": "exact",
+  "budgets": {
+    "billed_flops_declared": 0,
+    "memory_mib_declared": 512,
+    "wall_seconds": 120
+  },
+  "causal_mechanism": "The l2-fringe route dispatches two Winograd levels (grouped_l2_candidate_bill: 49 leaves at m/4,k/4,n/4) where the parent dispatches one (owned_batched_candidate_bill: 7 leaves at m/2,k/2,n/2), reducing the leaf-matmul FLOP count on the modulo-four core; matmul is ~96.6% of the billed total, so the scheduling change moves the aggregate bill directly.",
+  "cheapest_falsifier": "Sum flops_used across the 24 committed candidate and parent per-MLP receipts and take the ratio; if it is not below 1 the win is not FLOP-only. Cross-check against the deterministic cost_model.py route ratio on the production shape.",
+  "confidence": {
+    "compliance": 0.95,
+    "generalization": 0.55,
+    "implementation": 0.85,
+    "mechanism": 0.9
+  },
+  "equal_budget_baseline": "The parent arm (owned_batched route) measured under the identical 24 networks and the identical FlopScope backend \u2014 the same receipts, different route.",
+  "evidence_role": "development",
+  "frozen_inputs": [
+    {
+      "path": "C:/Users/strid/Documents/Codex/2026-07-07/will-you-have-a-look-at/experiments/whest/reports/g16-l2-fringe-fresh-linux/repeat0-candidate.json",
+      "sha256": "40266646fdeb2d68e740677b9302aed9973c6d7fcad5a4917a01e73c4f8a804f"
+    },
+    {
+      "path": "C:/Users/strid/Documents/Codex/2026-07-07/will-you-have-a-look-at/experiments/whest/reports/g16-l2-fringe-fresh-linux/repeat0-parent.json",
+      "sha256": "0f2a6f5a85aa291f851f0416f1b31925e686a40e51c427aa005624484a0b05eb"
+    },
+    {
+      "path": "C:/Users/strid/Documents/Codex/2026-07-07/will-you-have-a-look-at/experiments/whest/candidates/kerdock_g16_l2_fringe/cost_model.py",
+      "sha256": "033ed08a08849741ef97d16428b17d5f61e5eb6e0a2c9a18669e3d6972de8d65"
+    }
+  ],
+  "hypothesis": "Codex's kerdock_g16_l2_fringe compute win is a real FLOP-only reduction (candidate/parent billed-FLOP ratio materially below 1), independently reproducible by re-aggregating his committed per-network FlopScope receipts and consistent with the cost_model.py route arithmetic \u2014 so the lambda-dies half of the win transfers to our side as evidence rather than remaining a transcript claim.",
+  "id": "clone_l2fringe_flop_recompute",
+  "inconclusive_band_note": "PASS (flop_only_ratio <= 0.96) certifies the lambda-dies compute win as reproduced-on-our-side evidence. KILL (>= 1.0) means no FLOP-only win exists. The band (0.96, 1.0) is INCONCLUSIVE: a win smaller than 4% is real but too marginal to lead the compute queue over V5-d3 without the per-stage FlopScope census, an open Fable debt.",
+  "predeclared_at_utc": "2026-08-18T00:05:47.427596+00:00",
+  "predicted_signature": "flop_only_ratio in [0.93, 0.96] (a real 4-7% billed-FLOP reduction), effective_compute_ratio close to the reported 0.949316 (it carries the Linux wall residual, so slightly different), matmul_only_ratio below 1 (the win lives in the matmul schedule), and cost_model_route_ratio below 1 on the production shape (the two-level route is cheaper on the even core). The recognizable failure signature is flop_only_ratio >= 1.0, which would mean the compute win is an artifact of the wall-time residual rather than a FLOP reduction.",
+  "provenance": "Reads Codex's committed arm receipts and his own cost_model.py verbatim. This certifies only the compute-side FLOP-only, transferable half; the -4.948% SCORE half needs a lawful owner-keyed truth run and stays [R]. Adoption into champion lineage remains an owner-key decision (continuation plan section 6).",
+  "runner": {
+    "argv": [
+      "python",
+      "corpus/whestbench/experiments/clone_l2fringe_recompute/runner_recompute.py"
+    ],
+    "cwd": "C:/Users/strid/.claude/skills/recursive-estimator-folding",
+    "readable_roots": [
+      "C:/Users/strid/.claude/skills/recursive-estimator-folding/corpus/whestbench/experiments/clone_l2fringe_recompute",
+      "C:/Users/strid/Documents/Codex/2026-07-07/will-you-have-a-look-at/experiments/whest/reports/g16-l2-fringe-fresh-linux",
+      "C:/Users/strid/Documents/Codex/2026-07-07/will-you-have-a-look-at/experiments/whest/candidates/kerdock_g16_l2_fringe"
+    ]
+  },
+  "second_signal": "The cost_model.py route ratio (grouped_l2 vs owned_batched) on the 4096x256x256 production shape is computed independently of the receipt aggregation; it must land below 1 in the same direction, confirming the win is the Winograd-level scheduling change the cost model encodes and not a receipt artifact.",
+  "seeds": [
+    0
+  ],
+  "terminal": false,
+  "thresholds": {
+    "kill_when_gte": 1.0,
+    "metric": "flop_only_ratio",
+    "pass_when_lte": 0.96
+  }
+}
