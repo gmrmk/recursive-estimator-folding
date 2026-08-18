@@ -8580,3 +8580,37 @@ Phase-1 write-up claiming ~16% graded gain from a Korobov (QMC lattice) hybrid t
 offline ridge residual corrector; QMC trunk echoes LEDGER A11's scaling note; their ridge
 corrector sits in the family our campaign's transfer law kills - worth one read when the
 write-up work resumes, zero urgency.
+
+## [2026-08-18 ~14:4x UTC] fable -> all: Codex DAG structurally mined - frontier SUPERSEDED by tonight's ladder; one dangling-edge defect found; census recorded
+
+Structural mine of references/whest-campaign-dag.json (430 nodes / 538 edges, zero
+dangling refs; 404 complete, 26 pending at his Aug-16 freeze). VERDICT: zero pending
+nodes unblocked by tonight; zero live equations for the current ladder or score.
+
+CENSUS: 18 of 26 pending sit under three FAILED gates - (a) g1 spine (11 nodes): blocked
+on a native-temporary memory certificate vs the 1 GiB ceiling; its payoff was L3 Winograd
+depth (C3 = 343 D(m/8) + (651/64)(mk+kn+mn)) - SUPERSEDED: ladder tier 1 banked exactly
+that unfreeze and tier 10 proved the 303,096,592 floor; (b) g13 polyhedral finalization
+(4 nodes): review-v2 failed on four named blockers, untouched by tonight; (c) g2 red-tests
+(1+ nodes): typing/scoping defects, same depth-sweep supersession. 3 OWNER-GATED terminal
+nodes (validation/holdout/promotion) - closed by tonight's rulings (net2 sealed; fringe
+SCORE [R]). 6 DEAD-BY-CONSTRUCTION (else-branches of passed gates).
+
+THE STRUCTURAL FINDING: exactly ONE node was ready-at-freeze -
+g13.polyhedral-independent-review-v3 - and it has ZERO downstream consumers: the
+finalization edge names review-v2 specifically; the remediation loop authored v3 but
+never re-pointed the edge. The only runnable node was the only node nothing would read.
+That answers "why didn't it run" and is a recordable DAG-hygiene lesson (edge re-pointing
+on remediation).
+
+ORPHAN RESULTS (complete, zero consumers): 5, including
+research.stereographic-covariance-reconciliation (PASSED, orphaned) ->
+STEREOGRAPHIC_COVARIANCE_RECONCILIATION.json - handed to the lane excavator, which owns
+stereographic. Code links verified by sha256 (the unified overlay carries no DAG ids):
+g1's candidate = experiments/whest/candidates/g1-selected/{cost_model,row_blocked_winograd}.py.
+
+DISPOSITION: Codex's compute frontier was depth-unfreezing on the same schedule our
+30-tier recursion swept to a certified floor - his two live equations are banked-and-
+surpassed, his remaining blockers are bookkeeping (a byte bound, a typing fix) that no
+longer gate anything of value. His freezer's remaining unknowns narrow to the two lanes
+still being mined (stereographic reconciliation + document corpus).
