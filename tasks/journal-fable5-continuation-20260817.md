@@ -183,12 +183,15 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   measurement recorded as Fork-1 intel).
 
 ## Next action (exactly ONE — overwrite, never a list)
-Judge suite-ladder wf_99a680fb-565 when it returns (seeded FWHT+CReLU tiers 1-2, then
-free tiers on suite uniformity; crown by re-execution). In parallel: judge the
-multi-degree zonal cell design when it returns (deg ladder {6,8,12,16,24,48}, kink-tail
-hypothesis: own-axis concentration INCREASES with degree; cumulative-capture metric;
-supersedes-or-confirms deg6 v1 on a declared premise change), then seal + run it.
-Rules stamp on any organizer post (last checked 08:4x — unposted).
+On API capacity returning (or next wake): re-run the suite-ladder completion
+(scripts/suite-ladder-completion-wf_3680b4cb-35a.js fresh, or resume) to EARN the floor
+certificate (needs 2 more genuine adjudications; tier-20 DRY carries as 1; incumbent
+crowned 144,867,083,088). Behind it, in strict order: (1) OWNER KEY decision on the named
+WINNER (fold floor+splices into row_blocked_production, predicted 1.4640e-7, -31%,
+falsifiers predeclared — implementation campaign staged); (2) rules stamp on the
+organizers' email/post (watch: forum id > 18186 + inbox); (3) the 129-completion powered
+paired run on our carrier (settles Puffi-19%/ely2sh-0.9%/our-breakeven, the mub129 key,
+and splice #1); (4) the remaining sweep splices + terminal-route fold tier.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
