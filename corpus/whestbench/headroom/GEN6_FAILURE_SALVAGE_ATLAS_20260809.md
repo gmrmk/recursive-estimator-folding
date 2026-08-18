@@ -2,15 +2,15 @@
 
 Status: deterministic descriptive derivation from the append-only fold ledger. It does not promote an estimator, authorize a contest run, or treat an empirical kill as a family-wide theorem.
 
-Ledger SHA-256: `811314173f23c1437d49610d663da3c87e98e71ea092850bfc2a4cfd2c090986`
-Coverage: **274/274 records**; every record has a status disposition, operator family, information source, failure boundary, preserved tissue, and reopening condition.
+Ledger SHA-256: `c57e80c9c208d1ea6852230d67f3956eea41b6a7ac2ece33ab9fd0ae8deb4554`
+Coverage: **275/275 records**; every record has a status disposition, operator family, information source, failure boundary, preserved tissue, and reopening condition.
 
 ## Coverage summary
 
 | canonical disposition | count |
 |---|---:|
 | blocked | 12 |
-| killed_or_closed | 193 |
+| killed_or_closed | 194 |
 | open_or_uncertain | 11 |
 | preserved_component | 12 |
 | promoted | 2 |
@@ -21,17 +21,17 @@ Coverage: **274/274 records**; every record has a status disposition, operator f
 
 | boundary | records |
 |---|---:|
-| approximation_or_materiality | 259 |
+| approximation_or_materiality | 260 |
 | arithmetic_cost | 209 |
-| variance_or_signal_to_noise | 183 |
-| numerical_or_endpoint_coverage | 148 |
-| wall_calls_or_allocation | 128 |
-| bias_or_invalid_expectation | 94 |
+| variance_or_signal_to_noise | 184 |
+| numerical_or_endpoint_coverage | 149 |
+| wall_calls_or_allocation | 129 |
+| bias_or_invalid_expectation | 95 |
 | missing_interface_or_provider | 71 |
 | memory_or_liveness | 61 |
 | representation_not_closed | 53 |
-| protocol_or_generalization | 46 |
-| theorem_or_class_closure | 23 |
+| protocol_or_generalization | 47 |
+| theorem_or_class_closure | 24 |
 | nonidentifiability_or_missing_information | 18 |
 | no_failure_at_recorded_gate | 4 |
 
@@ -320,6 +320,7 @@ Coverage: **274/274 records**; every record has a status disposition, operator f
 | 271 | `k32_base_sensitivity_v3` | blocked | sampling_and_design, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths, weights_only_analytic_state, output_or_frame_statistics, offline_learned_features | variance_or_signal_to_noise, approximation_or_materiality, arithmetic_cost, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider |
 | 272 | `m207_reachability_v1` | blocked | analytic_moment_closure, harmonic_and_symmetry, compression_and_low_rank, robustness_and_protocol | weights_only_analytic_state | variance_or_signal_to_noise, approximation_or_materiality, wall_calls_or_allocation, numerical_or_endpoint_coverage, missing_interface_or_provider, protocol_or_generalization |
 | 273 | `m207b_semantics_v1` | killed_or_closed | analytic_moment_closure, control_and_multifidelity, robustness_and_protocol | weights_only_analytic_state, deterministic_compute_only | variance_or_signal_to_noise, approximation_or_materiality, wall_calls_or_allocation, numerical_or_endpoint_coverage, protocol_or_generalization |
+| 274 | `deg6_own_axis_zonal_capture_v1` | killed_or_closed | sampling_and_design, analytic_moment_closure, higher_cumulant_source, control_and_multifidelity, harmonic_and_symmetry, robustness_and_protocol | sampled_network_paths | variance_or_signal_to_noise, bias_or_invalid_expectation, approximation_or_materiality, wall_calls_or_allocation, numerical_or_endpoint_coverage, protocol_or_generalization, theorem_or_class_closure |
 
 ## Machine-readable tissue and reopening rules
 

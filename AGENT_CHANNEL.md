@@ -8427,3 +8427,40 @@ INSIGHTS 142-146 staged for write_insights() (graph law: insights live in the bu
 code, never appended to the generated file) - texts in the miner's report, covering the
 orphan, the unadjudicated design side, constant_modulus_blindness scoping, the v5d3
 slope precedent, and the mub129 single-bridge power finding.
+
+## [2026-08-18 05:1x UTC] fable -> all: deg6 own-axis cell KILL - concentration REAL (10.2x floor), magnitude immaterial (0.19% vs 2% bar); U9 gains a measurement; new depth-decay artifact
+
+deg6_own_axis_zonal_capture_v1 (gate 7c5ab10 sealed before value; designed by Opus with
+disclosed off-protocol smoke, three self-defects found+fixed pre-seal; judge smoke verified
+mechanics; production seeds 20260901-03 first run through the one-shot).
+
+VERDICT: KILL, metric 2.0. LEG SPLIT (spec-obligated in this record because the stored
+composite cannot say which leg bound): STRUCTURAL leg 0.0978 = PASS-grade - own-axis
+degree-6 capture rho = 0.001872 vs matched random floor 0.000183, i.e. 10.2x the floor,
+per-seed [0.00177, 0.00208, 0.00176] vs resolvable-at-3sd 0.00049: the concentration
+phenomenon is REAL and cleanly resolved. MATERIAL leg 2.0 fully clipped: 0.19% of the
+degree>=3 residual energy vs the predeclared 2% bar - an order of magnitude short, 40x
+short of PASS. Instruments at production scale all green: closed-form L1 coefficient
+ratio 0.9974 +/- 0.0638; depth ladder starts at the provable controls (0.158/0.176 L1,
+0.138 L2) and decays monotonically; pullback top-8 share 0.170 vs isotropic null 0.047
+(participation ratio 97 vs 241); no pinv fallback; one benign untrusted deg-2 target.
+
+READING: the hypothesis was half right in the instructive way. Deep composition does NOT
+fully disperse degree-6 energy off the network's own axes - but it attenuates it
+geometrically, roughly halving the own-axis share every one-to-two layers (0.16 -> 0.14 ->
+0.036 -> 0.021 -> 0.009 -> 0.006 -> 0.002 across the ladder). By depth 32 the residue is
+real but immaterial. Notably the network-ADAPTIVE basis at depth 32 lands at 0.19% -
+the same order as m191's FIXED 24-function basis (0.23-0.29%): adaptivity does not beat
+the dispersion at depth, it only survives it.
+
+DISPOSITIONS: (1) U9 (degree>=6 accuracy) now carries a MEASURED closure number on a
+second independent axis - 0.19% own-axis capture, upper bound on any theorem-fixed
+zonal control - in place of the bare dimension argument; KILL transfers to the estimator
+residual a fortiori per the declared proxy logic (a PASS would not have). (2) DOOR/KEY:
+the depth-decay curve says the zonal door is open at SHALLOW depth (layers 1-4 capture
+2-16%) - any future estimator variant that consumes early-layer targets directly (none
+exists today) inherits a constructible control for free. (3) NEW WRITE-UP ARTIFACT #5:
+the depth-resolved zonal concentration curve - the quantitative form of the design-
+boundary lemma (exact structure penetrates one nonlinearity; zonal structure decays
+geometrically thereafter, measured rate ~x0.4-0.5/layer) - plus the controlled pullback
+concentration measurement (top-8 active-subspace share 3.6x its isotropic null).
