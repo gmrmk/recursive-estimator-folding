@@ -8854,3 +8854,25 @@ capacity holds. The adjudicator's falsifiers stand predeclared: C >= 200B kills 
 thesis; wall multiplier >= 7.58 under lambda-survives holds deployment; raw-MSE past bit
 tolerance breaks exactness. Custody: all implementation in NEW lineage files; the
 incumbent champion is never edited in place (A13); crowning by judge re-execution.
+
+## [2026-08-18 ~18:2x UTC] fable: JUDGE PRE-REGISTRATION - independent post-fold C derivation, filed BEFORE Phase 1 reports (two-signal discipline applied forward)
+
+Deriving the winner's number a second way, from the receipts, before the locator agent
+can anchor me:
+1. ROUTE IDENTIFICATION [D, checkable]: 504 calls/net x the OLD frozen route price
+   418,238,464 = 210.792B, vs the champion's measured receipt 222.405B - a 5.51% gap
+   (11.61B) attributable to non-schedule ops (controls, pilots, folds, instrumentation).
+   Inference: the deployed champion runs the 418M-class route; the receipt is
+   schedule-dominated with ~11.6B absolute overhead. Phase 1 must confirm which route the
+   deployed code actually freezes - if it is NOT the 418M-class route, this derivation
+   and the adjudicator's both need revisiting.
+2. POST-FOLD PREDICTION [D]: the crowned suite bill IS the full per-net schedule
+   (144.867B). Post-fold C ~ 144.87B + 11.61B overhead (absolute, not proportional -
+   overhead ops are not schedule ops) ~ 156.5B. Score ~ 2.1218e-7 x 156.5/222.405 =
+   1.493e-7 (-29.6%).
+3. RECONCILIATION with the adjudicator: its 153.5B/1.4640e-7 applied 0.69 to TOTAL C,
+   implicitly compressing the overhead too; mine carries overhead at absolute value.
+   Band pre-registered: C in [150B, 165B], score in [1.45e-7, 1.53e-7]. Both derivations
+   sit far inside the C >= 200B falsifier; if realized C lands OUTSIDE [150, 165] the
+   overhead model (or the route identification) was wrong and gets re-derived from the
+   itemized receipts, not patched.
