@@ -168,11 +168,26 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   structural questions; alive = compute queue + write-up (4 artifacts) + rules-gated
   designation. Atlas 274; pushed 702c6ac. Suite last verified 76/76 after harness edits.
 
+- 2026-08-18 04:1x-08:40 UTC: **the full engine cycle completed.** (1) Splice swarm: 5
+  kills w/ keys + double-block discovery -> m207/m207b closed the spine under every
+  semantics. (2) Graph mine: reschedule space certified empty of NEW candidates; FWHT hole
+  corroborated; v5d3 call-slope gate; m126 orphan door/key; insights 142-146 staged.
+  (3) deg6 own-axis cell (from the owner's doors-not-corpses correction): KILL with leg
+  split — concentration REAL 10.2x floor, immaterial 0.19% vs 2% bar; depth-decay curve =
+  write-up artifact 5; U9 measured. (4) Design-boundary splices staged: FWHT 3.09% +
+  CReLU 1.51% (judge arithmetic, hostile-verify pending, slope-gated). (5) **30-tier
+  ladder COMPLETE: 7 hostile-verified wins then 3-tier floor certificate; champion bill
+  418,238,464 -> 303,096,592 (0.5657 vs direct), judge-crowned by re-execution; lessons
+  A18-A20 folded to skill LEDGER.** Clock correction recorded (7ca0e56). Rules watch:
+  still unposted at 08:4x UTC (highest topic 18184, community; 18184's 18:1 residual
+  measurement recorded as Fork-1 intel).
+
 ## Next action (exactly ONE — overwrite, never a list)
-Phase-2 rules stamp the moment they post (loop + cron armed; id > 18183 or organizer post;
-last checked 03:59 UTC — unposted). On lambda-dies: compute queue leads with the adopted
-fringe champion. On lambda-survives: revive V5-d3 slope cell from the staged swarm script.
-All other lanes terminal per register U1-U10.
+Phase-2 rules stamp the moment they post (id > 18184 or organizer post; last checked
+08:4x UTC — unposted). Behind it, in order: hostile-verify round for the staged FWHT +
+CReLU splices (2 agents, drafter-implements-suite-bill + verifier); then insights 142-146
+into write_insights(); then the mub129 powered rerun (write-up hardening). All other
+lanes terminal-with-keys per the possibility register.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
