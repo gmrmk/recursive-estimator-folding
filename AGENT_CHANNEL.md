@@ -8194,3 +8194,75 @@ evidence they say spending the seal on this class would be waste. Recommendation
 sealed; the campaign's live value is the lambda-dies compute queue (l2-fringe 8.55%, owner-key
 adoption pending) and the algorithmic-contribution write-up, which tonight gains both the
 closure leg and the pullback-collinearity observation.
+
+## [2026-08-18 03:5x UTC] fable -> all: splice swarm verdicts (five kills, one discovery) + m207 reachability cell RUN - the spine's wall is a per-network lottery
+
+THEOREM-SPLICE SWARM (wf_84b25d35-19d, 13 agents, 6 lanes x assassin + synthesis). Five
+constructive splices REFUTED with premise changes recorded; one certified-none with a
+campaign-reframing discovery. Kill digest (full JSONs in the workflow journal):
+1. Stein x collision-owners: E_U[div_S(y h Ju)] = 0 for EVERY network, h, skew J - a
+   functional vanishing identically across the model class carries zero information about
+   any W-dependent table. Deep kill: the rotational generator is DEGREE-PRESERVING, so it
+   lacks the descent recursion that makes Gaussian Stein (Isserlis) determine moments.
+   Premise change: a degree-lowering generator with a computable base case.
+2. Crofton x Hermite-4: closed dilemma - exact facet enumeration 3.5e4x over H (m86),
+   sampling killed (m202 names Kac-Rice/Crofton/roulette verbatim); the proposed two-line
+   transect observes a codim-2 event with probability zero. Premise change: all three of
+   m202's ESS proof + m86's ownership + m168's certificate simultaneously.
+3. Abel x trace: the operand does not exist (m179's mechanism is a recurrence with no
+   second sequence to contract); the guard fires MID-recurrence, unreachable by any
+   terminal reordering. Premise change: exactly the invariance m207 tests (below).
+4. Galois/Kerdock x frames: within one Kerdock frame directions are ORTHONORMAL, so the
+   XOR-angle variable is identically zero and the promised angle-indexed table degenerates
+   to ~3 constants - reinstating the artificial-constant target M205 exists to replace.
+   Premise change: owner table in the layer's unit basis from the archived M179 trace,
+   with the O(n^4) bill carried honestly.
+5. arccos-kernel deg-4 zonal control: S15's positive control already ceilings this exact
+   object at pure_deg4_R2 = 3.381e-5 (deg-4 = 0.45% of MSE; its own bar missed 4.4x at the
+   theoretical maximum); and dropping the DGFL JVP term drops the exact cancellation - the
+   'cheap' variant is biased. Premise change: divergence-type mean-zero control at
+   degree >= 6 where 99.55% of the MSE lives, basis dim comparable to 4.1e11.
+6. Atlas: NONE of the 25 splice proposals' reopening constraints are satisfied - certified
+   after the two strongest reopening attacks were run and failed.
+
+THE DISCOVERY (synthesis, ledger-verified verbatim): the exact-control spine is DOUBLY
+blocked. Everyone aimed at blocker A (the M205 physical provider); blocker B - gm_m179_m199
+KILL_REACHABILITY, production-width covariance crossing the M198 variance floor mid-trace
+with the fail-closed guard refusing - sits UPSTREAM at layer ~12 of 32. A perfect provider
+bought at 1.298B still cannot run past the guard. No provider construction is fundable
+until B settles.
+
+M207 REACHABILITY CELL (recommended by the synthesis; gate 21bd94f sealed before value;
+smoke on off-protocol seed disclosed in-spec; runner emits the declared metric name and
+config.seeds - both k32 lessons wired in). RESULT: metric log10 kappa12 = 10.48, mechanical
+verdict INCONCLUSIVE/blocked = the predeclared MARGINAL band (predicted 0.5 modal). The
+data inside the band:
+- TRACE STABLE at every width/rep (gauge log 0.16-0.34 decades over 32 layers): the
+  scale-decay mechanism is REFUTED on production seeds - branch B is dead regardless of
+  the scalar; no lawful gauge can repair the wall because there is no scale to remove.
+- WIDTH-MONOTONE FINGERPRINT FALSIFIED (w64 rep0 kappa 1e10.96 > w256 rep0 1e10.48): the
+  wall is NOT a smooth Lyapunov collapse at a fixed layer. The kappa depth-profile at
+  production width bounces 1e7..1e12.6 with the max at layer 19 (not 12), grazing
+  near-singular and RECOVERING as the ReLU covariance map re-inflates the spectrum.
+- MECHANISM (revised, [D] from 3 seeds x 6 width-reps): INTERMITTENT STOCHASTIC
+  NEAR-SINGULARITY. Each layer's Gaussian congruence occasionally produces a near-rank-
+  deficient covariance; the arccos map restores it; whether any layer dips below the
+  absolute 1e-12 floor is a per-network lottery draw, not a deterministic depth wall.
+  gm_m179_m199's layer-12 crossing was one rep's draw of this process.
+- OPERATIONAL CONSEQUENCE [D, estimate]: with per-network floor-crossing probability p
+  in the 0.1-0.3 range suggested by the small sample (smoke grazed 1e-12; production
+  min eig reached 3.2e-9 and 2.2e-10 without crossing), a full 24-network production
+  sweep hits the fail-closed guard somewhere with probability ~1-(1-p)^24 = 92-99.98%.
+  The spine at width 256 in f64 under absolute floor semantics is effectively CERTAIN to
+  fail-closed in production. That is closure-in-practice. The only exits are owner-level:
+  change M198's floor semantics (relative/normalized floor instead of absolute - a
+  semantics decision, not a lawful code repair under m179's kill_condition), or accept
+  per-network guard losses. Recorded as the m207 disposition; the provider program stays
+  DO-NOT-FUND until an owner rules on floor semantics.
+
+Scoreboard after tonight: accuracy frontier closed + replicated (k32 6/6); spine
+closure-leaning on a quantified lottery mechanism with the decision handed to the owner;
+live value = lambda-dies compute queue (l2-fringe 8.55% reproduced, adoption owner-keyed)
++ the algorithmic-contribution write-up, which now carries three new artifacts: the
+closure leg, the pullback-collinearity observation, and the intermittent-near-singularity
+mechanism with its per-network lottery quantification.

@@ -142,11 +142,25 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   synthesizer. Target: the M205 physical provider gap (cost-retired, purely structural) or a
   closure certificate.
 
+- 2026-08-18 03:1x-03:2x UTC: **splice swarm returned (13/13) + m207 cell RUN.** Five splices
+  assassin-refuted with premise changes (Stein degree-preservation kill; Crofton closed
+  dilemma; Abel no-operand; Kerdock XOR-collapse; deg-4 zonal ceilinged by S15 at 0.45% of
+  MSE). Discovery: spine DOUBLY blocked — gm_m179_m199 reachability wall upstream of the
+  M205 provider gap. m207_reachability_v1 (gate 21bd94f, smoke-disclosed, both k32 lessons
+  wired): metric 10.48 = predicted marginal band; trace STABLE everywhere (branch-B scale
+  mechanism refuted — no gauge repairs it); width-monotone fingerprint FALSIFIED → revised
+  mechanism: intermittent stochastic near-singularity, restored by the arccos map, floor
+  crossing = per-network lottery (~92-99.98% guard-fire across a 24-net sweep at estimated
+  p). Spine = closure-in-practice pending an OWNER decision on M198 floor semantics
+  (relative vs absolute). Provider program DO-NOT-FUND until then. Channel 03:26 UTC
+  (verdicts digest + disposition); atlas 273. Evidence: cells/m207_reachability_v1/*,
+  workflow journal wf_84b25d35-19d.
+
 ## Next action (exactly ONE — overwrite, never a list)
-When splice swarm wf_84b25d35-19d returns: judge the synthesis against the assassin verdicts,
-spot-probe the recommended lane's arithmetic, and predeclare its cell through fold_search if
-one survives (else record the certified-none in the channel). Phase-2 rules stamp the moment
-they post — loop + cron armed.
+Phase-2 rules stamp the moment they post (loop + cron armed; forks: lambda + FlopScope).
+Meanwhile surface the two OWNER decisions in the next user-facing report: (1) M198 floor
+semantics (relative floor reopens the spine; absolute = closure-in-practice), (2) l2-fringe
+compute-win adoption into the champion (owner-keyed, leads the lambda-dies queue).
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
