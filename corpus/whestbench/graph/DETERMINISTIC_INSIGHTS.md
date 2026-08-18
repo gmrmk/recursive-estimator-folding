@@ -1,6 +1,6 @@
 # Deterministic graph analysis
 
-Nodes: 665; edges: 4112; communities: 8.
+Nodes: 710; edges: 4319; communities: 7.
 
 The metrics describe topology, not truth. Edge confidence and the original reports remain authoritative. The community count on this page uses NetworkX greedy modularity; Graphify's separate cluster-only pass may legitimately return a different partition and count for the same nodes and edges.
 
@@ -8,31 +8,31 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 
 | node | status | betweenness | degree centrality |
 |---|---|---:|---:|
-| Winning legal adjusted score | target | 0.3757 | 0.1325 |
-| approximation or materiality | descriptive_index | 0.0867 | 0.3795 |
-| arithmetic cost | descriptive_index | 0.0664 | 0.3072 |
-| Full-covariance sigma latent closure | rejected_component_preserved | 0.0572 | 0.0105 |
-| latent_full_sigma | killed | 0.0564 | 0.0211 |
-| Connected finite-width four-point vertex | proved+measured | 0.0506 | 0.0392 |
-| killed or closed | descriptive_index | 0.0504 | 0.2877 |
-| M118 separated trivariate collision vertex | killed_preexecution_cost_and_mask | 0.0455 | 0.0090 |
-| Rank-four latent copula resummation | rejected_integrator_preserved | 0.0409 | 0.0105 |
-| compression and low rank | descriptive_index | 0.0407 | 0.2425 |
+| Winning legal adjusted score | target | 0.3703 | 0.1283 |
+| approximation or materiality | descriptive_index | 0.0849 | 0.3681 |
+| arithmetic cost | descriptive_index | 0.0641 | 0.2948 |
+| 272B combined-budget law | proved | 0.0615 | 0.0282 |
+| Full-covariance sigma latent closure | rejected_component_preserved | 0.0506 | 0.0099 |
+| latent_full_sigma | killed | 0.0498 | 0.0197 |
+| killed or closed | descriptive_index | 0.0458 | 0.2750 |
+| Connected finite-width four-point vertex | proved+measured | 0.0441 | 0.0367 |
+| M118 separated trivariate collision vertex | killed_preexecution_cost_and_mask | 0.0415 | 0.0085 |
+| robustness and protocol | descriptive_index | 0.0381 | 0.2398 |
 
 ## Highest-degree God nodes
 
 | node | status | degree | community |
 |---|---|---:|---:|
-| approximation or materiality | descriptive_index | 252 | 1 |
-| arithmetic cost | descriptive_index | 204 | 1 |
-| killed or closed | descriptive_index | 191 | 1 |
-| control and multifidelity | descriptive_index | 182 | 1 |
-| variance or signal to noise | descriptive_index | 177 | 1 |
-| compression and low rank | descriptive_index | 161 | 2 |
-| robustness and protocol | descriptive_index | 161 | 1 |
-| sampled network paths | descriptive_index | 150 | 1 |
-| sampling and design | descriptive_index | 144 | 1 |
-| numerical or endpoint coverage | descriptive_index | 142 | 1 |
+| approximation or materiality | descriptive_index | 261 | 1 |
+| arithmetic cost | descriptive_index | 209 | 1 |
+| killed or closed | descriptive_index | 195 | 1 |
+| control and multifidelity | descriptive_index | 189 | 1 |
+| variance or signal to noise | descriptive_index | 185 | 1 |
+| robustness and protocol | descriptive_index | 170 | 1 |
+| compression and low rank | descriptive_index | 164 | 1 |
+| sampled network paths | descriptive_index | 156 | 1 |
+| numerical or endpoint coverage | descriptive_index | 150 | 1 |
+| sampling and design | descriptive_index | 150 | 1 |
 
 ## M107-M112 local mutation nodes
 
@@ -48,7 +48,7 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 | Corrected spherical nodal beta-law identity | proved_and_executed_in_m110 | 3 | 0 |
 | M109 centering and gauge failure | proved_static_preexecution | 3 | 0 |
 | M110 corrected bounded nodal occupancy | killed_empirically_all_four | 6 | 0 |
-| Broad even ReLU-nodal spectrum | proved_plus_computed | 3 | 5 |
+| Broad even ReLU-nodal spectrum | proved_plus_computed | 3 | 4 |
 | M110 held nodal-phase reversal | measured_all_four | 4 | 0 |
 | Exact arcsine gate covariance | proved_candidate_atom | 3 | 0 |
 | Pairwise gate-phase interference | prospective_single_edge | 5 | 0 |
@@ -65,59 +65,55 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 ## Articulation points
 
 - Winning legal adjusted score
-- M118 separated trivariate collision vertex
 - 272B combined-budget law
+- M118 separated trivariate collision vertex
 - L-shaped failure frontier
-- H1 equivariant learned residual closure
 - M125b coalesced forward Gaussian tangent
+- H1 equivariant learned residual closure
 - M110 corrected bounded nodal occupancy
+- M198 Source211 delay-one semantic adapter
 - Exact-control inference architecture
 - Goal-oriented adjoint cumulant
-- Full-covariance Gaussian closure
 - Broad even ReLU-nodal spectrum
 - H3 rank-5 k4 tensor sketch
-- M198 Source211 delay-one semantic adapter
 - M159 homogeneity-normalized endpoint ABI
 - M71 owned-buffer Kerdock challenger
 - Clean-room PLE flash sidecar
+- Full-covariance Gaussian closure
 - Unnormalized signed-facet Feynman--Kac SMC
-- Conductance-weighted hidden-edge sampler
-- Phase-2 lambda survival fork
 - anti-J promotion bar kappa <= -0.5124
+- Conductance-weighted hidden-edge sampler
 - Symmetric pair-feature diagonal probe
-- DGFL rotational Stein control family
+- Phase-1 write-up v13 amendment
+- Ladder-1 per-call schedule floor
 - Three-node Gaussian TT cross
+- Fifty-nine-item uncertainty register
 - Final-row cumulant quotient regression
 - Random 32,256 sampler
 - M116b in-place streamed level-3 multiplication
-- Phase-1 write-up v13 amendment
 - Dyadic depth-memory features
+- DGFL rotational Stein control family
 - M115 projective arc-cosine Nyström control
 - Herglotz cosine structure factor
 - Source-before-compression rule
-- Phase-2 transformer legality
 - Exact-psi streaming entropic compressor
-- H2 weight-conditioned blend coefficient
-- Exact-mean weight distillation
+- Phase-2 transformer legality
 - M113 matrix-free connected Hermite vertex
-- M145 defensive angular-central-Gaussian transport
+- H2 weight-conditioned blend coefficient
 - Finite-horizon factorized k3
 - P5: divergence-form dichotomy
 - M119 Schur-Nystrom covariance adjoint
 - M121 bridge-source response interface
-- Codex post-freeze clone campaign G11-G16
 - Errata E5-E13 repair pass
 - Effective trainable capacity
 - Even 1-to-2 harmonic coherence
-- Codex DOMAIN_METHOD_HISTORY survivors
+- P2: Crofton kink-transect identity
 - Conditional rotation variance is not MSE
 - M104 nested-Hermite final packet
 - M158 absolute endpoint ABI falsifier
 - M245 half-consumed one-shot
-- P2: Crofton kink-transect identity
 - Shared-CP all-output covariance adjoint
 - Terminal-Born incidence overlap
-- Fifty-nine-item uncertainty register
 - Centered-covariance negative-eigenvalue trap
 
 ## Audited shortest paths to the target
@@ -270,3 +266,32 @@ The metrics describe topology, not truth. Edge confidence and the original repor
 139. Codex's post-freeze survivors are lambda-fork-contingent: L2-fringe peeling is -4.948% score at +37.49% wall on its own baseline. If Phase-2 rules drop residual-time accounting, wall-heavy savings become free and the compute queue re-ranks; if lambda survives, they stay priced. The rules diff at Phase-2 open decides the entire compute lane ordering.
 140. anti-J remains the only open mechanism with a predeclared bar nothing in the record has reached (kappa <= -269/525, 51.2% of the Cauchy-Schwarz maximum), and its cheapest decisive precondition - the W0 -> W_I identity-network measurement - was agreed by both agents and never run. Its negative-eigenvalue trap (>=129 exact -1 null eigenvalues at S=128, n=256) is the campaign's most transferable theorem, and L6's external falsifier remains unrun.
 141. M245's half-consumed one-shot is the only unadjudicated authority question in the record: cmd1 PASS, cmd2 setUpClass ERROR, with static diagnosis ranking deterministic mp.quad absolute-gate exhaustion first, so a rerun likely fails identically and the one-shot question may be moot on the merits. Adjudication is reserved to Codex or the owner; a successor surfaces it, never seizes it.
+142. The signed distinct-Hadamard P8 bank's 248/255 exact variance factor and its 0.216 matched-cost importance-edge source tables are passed components with no consumer in the champion estimator, so the door is recorded with its key: the day any champion variant estimates a quadratic functional through probes, both upgrades are free and component-passed under two authors.
+143. The structural compute-lane closure has no edge to any design-algebra node - the monomial theorem closed the weight side and the design side was never adjudicated - so the staged layer-1/layer-2 transform splices occupy a genuine hole of absence rather than a reopened kill.
+144. Constant-modulus probe blindness is scoped to probe-amplitude coding and bounds no design-side structure, so it must not be cited against the transform splices that act before the first nonlinearity.
+145. V5-d3 static replay is the graph's only case of a large FLOP saving dying, and it died on per-call slope (5.509e-4 s/call, integrated k about 1.05) rather than arithmetic, which makes call-slope - not op count - the predicted failure mode of every new schedule.
+146. The MUB 126-to-129 completion lever is the single bridge between design-axis write-up tissue and the production guards, and its kill is prior-art collision plus 5% power against a 0.45% effect, so a powered rerun is cheap write-up hardening rather than a revived candidate.
+147. The k32 base-sensitivity cells close the campaign's last accuracy thread by replication rather than argument: across six independent seeds the phenomenon is absent 6/6 and base-to-base sign transport fails 6/6, with both bases verified exact 2-designs in the same run.
+148. Two protocol kills preceded the science - v1 on a metric-name mismatch and v2 on a bit-identical deterministic rerun carrying no independent weight - and the second is why the harness now compares spec.seeds against runner-reported config.seeds structurally.
+149. Deep ReLU pullback collinearity (0.81-0.95 pairwise at layers 8/16/24/32, replicated across all six seeds) explains why the rung family was always fragile: the four deep axes are nearly one axis.
+150. The noise-fitting death law folds DGFL's cross-network coefficient heterogeneity and k32's cross-base transport failure into one restriction - only theorem-fixed coefficients transport - and that restriction is the sharpest search-space cut the campaign owns.
+151. M207 refutes the scale-decay branch by measurement (trace stable at 0.16-0.34 gauge decades over 32 layers) and falsifies the width-monotone fingerprint, leaving an intermittent stochastic near-singularity where a deterministic depth wall was assumed.
+152. M207b measures the inversion the floor-semantics ruling did not anticipate: at the same numeric bar a relative floor is 8.7x stricter than the absolute one it replaced (p 0.13 against 0.015 on identical eigendecompositions), lifting 24-network sweep risk to 96.5%.
+153. The exact-control spine M151 -> M179 -> M198 -> M205 -> M125b is closed under every floor semantics, and it terminates on measurement rather than fiat: no numeric floor is both f64-meaningful and rarely crossed, and higher precision inherits kappa times eps.
+154. The ReLU covariance map is the only thing keeping that recurrence alive - 40 of 40 pure-congruence controls collapse by layer 8 - and the balance it strikes is precisely what leaves a heavy-tailed conditioning lottery behind.
+155. The degree-6 own-axis cell splits its legs honestly: concentration is real at 10.2x the matched random floor while captured energy is 0.19% against a 2% bar, so the degree>=6 accuracy question gains a measured closure number in place of a bare dimension argument.
+156. The degree-ladder v2 cell confirms v1 a fortiori on the wider band (0.63% summed capture at 23x the floor) and names the survivor: the readout degree profile is the entry-layer kink tail transported forward, matching lambda_n^2 at 1/0.459/0.127/0.060 against 1/0.445/0.147/0.068.
+157. Both cells are the same lemma seen twice - exact structure penetrates exactly one nonlinearity, after which zonal concentration decays about 0.4-0.5 per layer - which is why the zonal door stays open only at layers 1-4 and only for an estimator that consumes shallow targets.
+158. Ladder-1 ends at a certified floor rather than an exhausted searcher: seven hostile-verified wins take the champion schedule from 418,238,464 to 303,096,592, and three consecutive dry tiers reproduced the incumbent, derived its closed form, and proved the remaining doors shut.
+159. The two highest-yield ladder tiers both unfroze a constant the incumbent had hard-coded - the recursion depth and the single global basis - which is the transferable search heuristic of the arc.
+160. The suite ladder is banked but unfinished: FWHT survives only with its 1/16 normalization after a hostile rejection of the unnormalized form, alongside CReLU at layer 2, W-stack hoisting, cross-net design sharing, and antipodal base-row billing, at about 5.2% at the snapshot.
+161. The two owner decisions resolved in opposite directions: the relative-floor ruling was tested and refuted by the measurement it authorized, while l2-fringe adoption stands as compute-half only, its 8.55% billed-FLOP win reproduced three ways from Codex's own receipts.
+162. Codex's DAG frontier is superseded rather than blocked - its g1/g2 depth formulas are ladder tier one with the floor certified past them - and its one node ready at freeze had zero consumers because the remediation loop never re-pointed the finalization edge to review-v3.
+163. G13 polyhedral died on its own applicability gate, run for the first time tonight: 4096 probes give 4096 distinct regions at occupancy 1, and 262,144 probes make it worse, so the lane closes on a number rather than on an argument.
+164. Bounded-squeeze died the same way: the theorem-fixed interval recurrence collapses to a zero lower bound by layer 3 and grows to 2.5e29 above a true mean near 0.014, a slack of 6e34 against its author's own named pre-kill.
+165. Stereographic covariance was killed by its author 20m41s after it was written and the Ralph candidates screened dead, so no live estimator equation survives anywhere in the frozen frontier.
+166. Exactly one live equation survives the three-miner adjudication - Codex's terminal-route fold, 0.446% on 7,419,079,616 billed ops, rejected against an arbitrary 0.500% bar - and it is live precisely because the suite model bills 32 uniform layers and no ladder tier touched the folded ones.
+167. The slope law now carries two independent witnesses, the 2026-08-14 fringe wall ratio of 1.3749 and the public 18184 measurement of an 18:1 residual loss, so every deployed member of this schedule family is slope-gated regardless of its metered win.
+168. Three corrections land against standing campaign beliefs: the compute ceiling is 272B rather than 27.2B (a wrong cap once rejected a 19.81% champion), the 8-basis score-floor question is closed with three documents stale against it, and the Kerdock 5-design does not extend through ReLU (aligned ridge 0.49588 against 0.39894).
+169. Two campaigns that never shared a mechanism reached one sentence - a deterministic correction has almost nothing stable to subtract - which is the strongest available evidence that the MSE frontier is an information floor and not an engineering gap.
+170. Phase 2 is delayed to about August 19 with the details arriving by participant email, so the rules watch now includes the owner's inbox; the compute queue keeps its lead under every Fork-1 outcome, and the competitor claim at topic 18185 rests on a ridge corrector of the class the transfer law kills.

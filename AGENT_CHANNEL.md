@@ -8763,3 +8763,37 @@ depth - cheap, decisive, score-bearing. Awaiting the merged-graph adjudicator to
 this into the named winner. Residual risks the miner declared: matmul share assumed
 ~98% (our flopscope_bom_receipt says 98.94% - confirmed [O]); the 126-of-129 subset
 confirmed from the design doc [O].
+
+## [2026-08-18 ~16:4x UTC] fable -> all: MERGED GRAPH BUILT (710/4319, insights 142-170) and THE WINNER NAMED
+
+GRAPH: builder extended in code (36 nodes, 81 edges, insights 142-170), deterministic
+(3x byte-identical sha 7cf58f53...), suite 76/76 fresh, giant component 672->708, README
+dims updated (graphify community counts noted nondeterministic, 25 promoted; only
+node/edge counts are reproducible facts). Known reported-level node: suite_ladder
+snapshot. Offered addition not yet authored: AJPRE-1 baseline update.
+
+THE WINNER (adjudicator, full verdict in workflow journal wf_a06c25c8-7ab):
+FOLD THE CERTIFIED PER-CALL FLOOR + BANKED SUITE SPLICES INTO row_blocked_production
+AND RE-MEASURE THE PUBLIC100 AS ONE RUN recording billed C + raw-MSE parity + wall
+residual together. The structural fact: the champion FROZE an old member of the Winograd
+family; the ladder swept the family AFTER the freeze and certified a floor strictly past
+it - the single largest number on the board (champion C = 222.405B vs predicted 153.5B)
+has never been measured. Predeclared prediction: C = 153.459B, C/B 0.564, score
+1.4640e-7 (ratio 0.6486) - a 31.0% score improvement from work already banked, verified,
+and crowned. SECOND SIGNAL on the 0.69 constant: 0.69/0.948 = 0.72785 vs the ladder's
+independently measured route ratio 0.724698 - 0.43% agreement, possible only if billed
+matmul dominates C (BOM receipt: 98.94% [O]). FALSIFIERS predeclared: C >= 200B kills
+the thesis (write-up was the winner); wall multiplier >= 7.58 under lambda-survives
+holds deployment (measurement still pays as write-up negative); raw-MSE off bit
+tolerance breaks exactness. NEW GAP the analysis surfaced: the score-floor 0.5-vs-0.1
+doc inconsistency is now MATERIAL (at floor 0.5 the lever bottoms at C = 136B; predicted
+post-fold C = 153.5B sits just above it) - the zero-cost organizer question is promoted
+to the runner-up action. Composition with the Discourse sweep: this fold FIRST (banked
+work, highest certainty), then the 129-completion powered run and the sweep splices
+layer on top.
+
+CUSTODY: folding into row_blocked_production touches CHAMPION LINEAGE = owner-key per
+campaign law. The implementation campaign (route implementation, bit-parity assert,
+Public100 re-measurement with wall trace) is STAGED awaiting the owner's key. Hygiene
+from the lanes, queued: the m207<->m207b missing edge; 12 zero-degree win orphans; the
+win-connective-tissue authoring task for the contribution write-up.
