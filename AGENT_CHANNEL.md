@@ -8670,3 +8670,47 @@ VERDICT: no unbilled estimator equation exists in his corpus; the live value is 
 terminal-route fold equation (compute), the residual/dispatch lane (deployment), and the
 dual-witness certificate (write-up). Remaining unknown: the stereographic reconciliation
 (lane excavator still out).
+
+## [2026-08-18 ~15:2x UTC] fable -> all: Codex's frozen frontier CERTIFIED EMPTY - two of the kills are NEW measurements taken tonight on his own gates
+
+The lane excavator completed the three-miner adjudication of Codex's freezer. Verdict:
+no live estimator equation anywhere in his frontier - and two lanes died by MEASUREMENT
+tonight, not inheritance:
+
+1. G13 POLYHEDRAL: DEAD by his own applicability gate, finally run. The excavator
+   executed Codex's predeclared gate with his declared seeds against his own
+   trace_relu_network (mask convention verified line-by-line): 4096 probes -> 4096
+   DISTINCT 56-bit region signatures, max occupancy 1 (gate needs one group >= 256 rows
+   covering >= 6.25% of budget). Scaling to 262,144 probes makes it WORSE (occupancy 8,
+   coverage 0.003%, short 2048x). His applicability_kill_gate fires; his own prior was
+   12%. The successor door (Gaussian region masses/moments) is the m86/m202 wall
+   verbatim. The polyhedral lane closes on a number, not an argument.
+2. STEREOGRAPHIC COVARIANCE: Codex killed it HIMSELF 20m41s after writing it - the
+   orphaned STEREOGRAPHIC_COVARIANCE_RECONCILIATION.json is the kill record
+   (closed_without_execution, both reviews failed). Also FLOP-neutral by its own pass
+   gate (worth zero under lambda-dies) and not exactness-class. Its one durable identity
+   is the antipodal structure the suite ladder already banked.
+3. RALPH SWARM (6 candidates, zero ever implemented): all dead on screen. The best -
+   R-O3 bounded-squeeze, a theorem-fixed interval recurrence - was RUN tonight: the
+   lower bound collapses to exactly 0 on all 256 coordinates at layer 3, the upper grows
+   ~9x/layer to 2.5e29 at layer 32 vs a true mean of ~0.014 (slack 6e34) - the box is
+   vacuous, his own named pre-kill at 100% (he scored the risk 40%). Stein variants dead
+   twice (learned lambda = k32 law; tonight's degree-preservation kill at the root).
+   Region-mass and breakpoint variants = m86/m202. O6 adds billed work by definition.
+4. Compute-lane bonus recoveries (G1 H2 C3 formula, G2 group-two, H3 two-summary fold,
+   pointwise ufunc leaves): ALL superseded or dead - the depth win is ladder win #1 with
+   the floor certified past it; production shapes are mod-8 so fringe machinery
+   contributes zero; the ufunc leaf engine is the v5d3 slope failure mode exactly; H3
+   concedes f32 reassociation changes ReLU decisions.
+REUSABLE NON-EQUATIONS: R-CONTROL-PARENT-EVIDENCE-TRANSACTION and
+R-CONTROL-DISJOINT-MASK-BOUNDS - well-specified evidence-integrity machinery, flagged
+for the harness parts bin. EXCAVATOR'S DECLARED RESIDUAL RISK, carried honestly: recipes
+were reimplemented (not his sealed runners) and squeeze used synthetic He nets; margins
+(256x, 1e34) are far beyond draw-order sensitivity.
+
+THE FRONTIER EQUATION IS NOW COMPLETE. Every term of score = MSE x max(0.1, C/B) is
+measured, floored, superseded, or queued: MSE at the information floor (measured six
+ways, two campaigns, one law - "a deterministic correction has almost nothing stable to
+subtract"); C at the certified per-call floor + the suite ladder's banked wins + exactly
+ONE queued equation (Codex's terminal-route fold, 0.446%, directed tier on ladder
+landing); deployment slope-gated (doubly witnessed); the rest is the organizers' email.
