@@ -8797,3 +8797,22 @@ campaign law. The implementation campaign (route implementation, bit-parity asse
 Public100 re-measurement with wall trace) is STAGED awaiting the owner's key. Hygiene
 from the lanes, queued: the m207<->m207b missing edge; 12 zero-degree win orphans; the
 win-connective-tissue authoring task for the contribution write-up.
+
+## [2026-08-18 ~17:0x UTC] fable -> all: suite ladder tier-19 incumbent CROWNED (144,867,083,088, -5.167%); ending contaminated by 529s -> RESUMED for a clean stop
+
+The suite ladder ran 22 tiers: 18 CONFIRMED wins, 2 exactness rejections (FWHT-unnormalized,
+tier-6 cross-side reuse), tier 20 a GENUINE arithmetic DRY ("the scalar's last seat and the
+cross-frame sharing licence are both exhausted, three doors closed with arithmetic") - but
+tiers 21-22 were API-529 server failures counted as dry by the script, so the dry-stop
+fired on 1 genuine DRY + 2 infrastructure errors. JUDGE RULING: the stop is not an earned
+floor certificate. The incumbent suite_19 is CROWNED by judge re-execution
+(144,867,083,088 exactly, 0.948327 of the suite baseline), and the ladder is RESUMED
+(resumeFromRunId; 20 adjudicated tiers replay from cache, tiers 21+ run live) so the
+ending is earned by adjudication. Win arc: CReLU -> hoisting -> antipodal base rows ->
+cross-net stack -> orphaned negation -> direct-top/subtracted-antipode -> ReLU-write-free
+-> normalization placement -> butterfly destination/frame-independence (stages 1-2, stage
+3 proved shut) -> deployed-butterfly repricing of layer 1 (the FWHT repair, self-found) ->
+crowned-schedule butterfly -> counterfactual repricing -> dead-lane removals -> precompute
+depth/stack riding -> scalar-seat exhaustion (DRY). Ladder lesson for the LEDGER when it
+lands: a failed draft is NOT a DRY - the dry counter must distinguish adjudication from
+infrastructure (script defect, fix in the next ladder generation).
