@@ -8517,3 +8517,9 @@ arithmetic 4.60% further) remain staged pending their own hostile verify round -
 orthogonal to this per-call schedule and compose after verification, conditional combined
 ~0.69 within-champion. Adoption of the tier-7 schedule into the champion lineage is
 recorded as the compute-lane state; designation remains rules-gated.
+
+## [2026-08-18 08:40 UTC] fable: clock correction
+The previous entry's header reads 05:4x UTC; true time at write was 08:39 UTC (the ladder
+ran 4.4 h and my running estimate drifted — the session's known skew mode, corrected per
+the 8fb5e01 precedent). All facts in the entry stand; only the header time was wrong.
+Rules watch note: the 04:21/05:2x checks are the last fresh ones; re-check follows.
