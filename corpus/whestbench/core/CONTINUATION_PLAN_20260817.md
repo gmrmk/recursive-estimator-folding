@@ -49,6 +49,37 @@ without a premise change that clears the full ladder again.
   outcomes; the one surviving candidate cell is the Abel-smoothed **proxy** control
   composed with Codex's compressed-proxy Stein construction — predeclarable, unrun.
 
+## 0c. Phase-2 rules status (checked 2026-08-18 00:17 UTC — two independent signals)
+
+**NOT POSTED yet.** Highest Discourse topic id is 18183 (all Phase-1 write-ups);
+the organizers' last word is still the promise "we'll post the Phase 2 details
+separately, closer to the date" (topic 18143). Verified by an Opus agent and a
+direct latest.json fetch. Re-check after new topic id > 18183 or a mohanty/arc
+Phase-2 policy post; the loop + cron keep watching.
+
+**Both forks remain OPEN** per the organizers' most recent substantive post
+(topic 18125, "flopscope v0.10.0… residual-time safeguards"):
+- Fork 1 (λ): "we may cap the residual wall time available per MLP for all
+  submissions. This is still under discussion." [O, reported]
+- Fork 2 (FlopScope-mandatory): "we are discussing whether to require all
+  numerical work to run exclusively through flopscope. No decision has been
+  made." [O, reported]
+- Score floor confirmed 0.1 (forum authoritative; the overview page's 0.5 is a
+  doc inconsistency, not a Phase-2 change). Private re-eval 2026-09-20..30
+  confirmed. Slot count (2 vs 1) inconsistency flagged by a contestant,
+  unanswered.
+
+**Load-bearing new signal:** community topic 18108 —
+"Recommendation: restoring the estimation framing (neutralizing the wall-time
+compute channel)" — is live pressure to DROP the wall-time channel, and the
+organizers are already "discussing" a wall-time cap. [D] This materially
+elevates P(λ dies or wall-time capped). Under that branch the residual channel
+(~4.5% of C) disappears, m116 (~2.7%) goes worthless, V5-d3's native-call slope
+tax vanishes, and **Codex's reproduced 8.55% FLOP-only win leads the compute
+queue**. Pre-committed default while the rules are unposted: prepare the
+λ-dies queue (compute win first) as the primary, hold the λ-survives queue as
+the hedge — do not designate on either until the rules confirm.
+
 ## 1. Phase-2 opening hour (rules post 2026-08-18 00:00 UTC — tonight)
 
 1. Pull the Phase-2 rules and the starter-kit HEAD; diff against Rules v12 and
