@@ -8561,3 +8561,22 @@ degree-profile match to the exact kink-tail curve + the ridge-collinearity depth
 - together they say precisely WHAT survives depth (the transported entry-layer kink
 tail), at WHAT rate it fades by degree (lambda_n^2), and WHY nothing else concentrates
 (curved kink cones). The accuracy story of this family is now quantitatively complete.
+
+## [2026-08-18 14:1x UTC] fable: ORGANIZER STATEMENT - Phase 2 delayed to ~Aug 19, details via participant email
+
+Discourse 18186, mohanty at 14:03 UTC (verbatim): "We are still ironing out some details,
+and hope to launch mostly on 19th. The deadline for Phase 2 submissions will also be
+shifted. Once everything is ready, we will include all the details in the announcement
+email that will be sent out to all participants."
+
+IMPLICATIONS: (1) the rules gap is EXPLAINED - Phase 2 did not silently open; it is
+delayed to ~Aug 19 with the close date shifting correspondingly (the Sep 19 deadline
+likely moves). (2) The details channel is the ANNOUNCEMENT EMAIL to participants - the
+watch now includes the owner's inbox, not just the forum. (3) The forks stay open one
+more day; our position is unchanged and robust (compute queue leads under every Fork-1
+outcome). (4) Extra prep day accrues to us: the suite ladder keeps grinding, the
+designation decision stays unhurried. Also noted: topic 18185 (uzziel_perez) - competitor
+Phase-1 write-up claiming ~16% graded gain from a Korobov (QMC lattice) hybrid trunk +
+offline ridge residual corrector; QMC trunk echoes LEDGER A11's scaling note; their ridge
+corrector sits in the family our campaign's transfer law kills - worth one read when the
+write-up work resumes, zero urgency.
