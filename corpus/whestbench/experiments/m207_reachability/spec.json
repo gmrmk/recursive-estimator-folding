@@ -1,0 +1,43 @@
+{
+  "id": "m207_reachability_v1",
+  "hypothesis": "The M198 reachability wall at production width is a CONDITIONING collapse, not a scale artifact: under He initialization the trace of the zero-order covariance recurrence stays healthy through all layers while the minimum eigenvalue of the trace-normalized covariance collapses toward the variance floor by the recorded crossing layer -- so an exact positive-homogeneity gauge cannot repair it, and the exact-control spine's reachability at production width is at best seed-marginal (the absolute floor guard fires on a nonzero fraction of reps of the same family).",
+  "causal_mechanism": "Repeated Gaussian congruence spreads log singular values at a per-layer rate that grows with width (Lyapunov spectrum of random matrix products), while the ReLU covariance map preserves overall scale by construction of He initialization (the factor-two variance exactly compensates the ReLU halving, so the trace carries no decay to hide behind). The collapse therefore lives entirely in the SHAPE of the spectrum: the normalized minimum eigenvalue falls toward the floor mid-depth at production width. The same collapse is visible from the backward side as the replicated deep pullback collinearity -- backward features aligning is the rank-deficiency of the same covariance measured by a different instrument.",
+  "cheapest_falsifier": "Run the zero-order recurrence (identity input covariance; congruence by the layer weight; ReLU arc-cosine covariance map) at three widths, two seeded reps, in two passes -- absolute, and exactly trace-gauge-rescaled per layer with the factor carried in the log. If the trace DECAYS at production width while the normalized spectrum stays healthy (log10 condition at the recorded crossing layer at or below the pass bar), the wall is a repairable scale artifact and the hypothesis dies -- the gauge premise reopens the spine with the provider as sole blocker.",
+  "frozen_inputs": [
+    "C:/Users/strid/.claude/skills/recursive-estimator-folding/corpus/whestbench/experiments/m207_reachability/runner_m207.py"
+  ],
+  "seeds": [20260823, 20260824],
+  "equal_budget_baseline": "The absolute (ungauged) pass on the identical weights and seeds -- the same recurrence with the only change being the exactness-preserving per-layer trace gauge.",
+  "thresholds": {
+    "metric": "log10_kappa12_norm_w256_rep0",
+    "pass_when_lte": 10,
+    "kill_when_gte": 12
+  },
+  "budgets": {
+    "wall_seconds": 300,
+    "memory_mib_declared": 1024,
+    "billed_flops_declared": 0
+  },
+  "runner": {
+    "argv": [
+      "python",
+      "corpus/whestbench/experiments/m207_reachability/runner_m207.py"
+    ],
+    "cwd": "C:/Users/strid/.claude/skills/recursive-estimator-folding",
+    "readable_roots": [
+      "C:/Users/strid/.claude/skills/recursive-estimator-folding/corpus/whestbench/experiments/m207_reachability"
+    ]
+  },
+  "predicted_signature": "SMOKE-INFORMED (off-protocol seed 555000111, declared): trace stays within one decade of flat at every width (scale-decay mechanism ABSENT -- this is the load-bearing secondary: if it holds on production seeds, branch B is refuted regardless of the scalar), kappa12 rises monotonically with width in every rep (Lyapunov fingerprint; smoke observed log10 values 6.09 / 7.16 / 11.85 across the three widths), and the production-width metric lands in the marginal band (10, 12) with probability ~0.5 -- the same conditioning collapse as the recorded wall, grazing the floor within roundoff, seed-marginal rather than cleanly crossed. Clean branch A (metric at or above the kill bar) ~0.3; branch B (at or below the pass bar) ~0.2. Smoke also observed a NON-monotone depth profile at production width (conditioning peaks mid-depth near the recorded crossing layer, then recovers by the last layer) -- predicted to reproduce on production seeds; if instead kappa keeps rising to the last layer, the recovery was seed noise and clean branch A strengthens. KILL here means branch A: spine reachability closure evidence. PASS means branch B: the gauge premise reopens gm_m179_m199.",
+  "second_signal": "Three, all in-run and independent of the eigvalsh metric: (a) Cholesky success/failure on the normalized covariance at the crossing layer (a different algorithm agreeing on definiteness); (b) the width-scaling fingerprint -- kappa12 strictly rising 64 -> 128 -> 256 in every rep, the Lyapunov law a floating-point artifact has no reason to obey; (c) the gauge log at every width (the accumulated trace factor), which directly measures whether any scale decay exists for branch B to blame.",
+  "evidence_role": "development",
+  "bias_class": "exact",
+  "confidence": {
+    "implementation": 0.85,
+    "mechanism": 0.75,
+    "generalization": 0.6,
+    "compliance": 0.95
+  },
+  "inconclusive_band_note": "The band (10, 12) is not a failure of the cell -- it is the MARGINAL regime, and on smoke evidence the likeliest world: production-width reachability grazes the variance floor within accumulated-roundoff distance, so the M198 absolute floor guard fires on some reps of the same family and not others. Operationally that is closure-leaning: a production spine run risks the fail-closed guard on any given network, and no lawful code change fixes a conditioning collapse (the gauge only removes scale, which the trace log will show was never the problem). Escalating the floor semantics is an owner decision, not a lawful repair. The interpretation and the disposition both go to the channel with the trace and kappa profiles attached.",
+  "provenance": "Cell recommended by the theorem-splice swarm synthesis (run wf_84b25d35-19d) after five of six splice lanes were assassin-refuted and the sixth certified that none of the twenty-five atlas splices reopen: the swarm's one discovery is that the exact-control spine is DOUBLY blocked -- the provider gap (M205) AND the gm_m179_m199 KILL_REACHABILITY wall (production-width covariance crossing the variance floor at the recorded mid-depth layer, fail-closed guard refusing) -- and the reachability wall is strictly upstream, so no provider construction is fundable until it settles. Mechanism verbatim from the ledger record; the gauge's lawfulness rests on exact positive homogeneity (ReLU is degree-one homogeneous so the covariance map scales linearly; the congruence is linear), a gauge being categorically distinct from the banned clip/floor/ridge. Synthetic seeded He nets of the challenge family stand in for the archived nets (the wall is claimed as a family property; the smoke seed reproduced its location and magnitude at production width). SMOKE DISCLOSURE: one off-protocol seed was run before this predeclaration and its observations are folded into the predicted signature above -- trace-stable, kappa12 near the kill bar at production width, non-monotone depth profile; the production seeds were never run before the gate was sealed. Runner emits the metric under the declared threshold name and reports config.seeds for the harness seed-agreement check (both lessons from tonight's k32 cells, the second now mechanically enforced). Verdict semantics: KILL = conditioning closure evidence (branch A), PASS = repairable scale artifact (branch B) reopening gm_m179_m199 on the named gauge premise, which also retroactively supplies the premise change the Abel lane was refused for lacking."
+}
