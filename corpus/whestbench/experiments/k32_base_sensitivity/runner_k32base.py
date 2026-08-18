@@ -575,6 +575,7 @@ def main() -> None:
         "cell": "k32_base_sensitivity",
         "smoke": SMOKE,
         "metric": r6(metric),
+        "one_minus_median_signed_cos_hi": r6(metric),
         "gate": {"pass_when_lte": PASS_WHEN_LTE, "kill_when_gte": KILL_WHEN_GTE,
                  "inconclusive_metric": INCONCLUSIVE_METRIC,
                  "metric_definition": "1 - median over seeds of signed cos(beta_base1_hi, beta_base2_hi); signed = cos if all four rung signs preserved else -abs(cos)"},
