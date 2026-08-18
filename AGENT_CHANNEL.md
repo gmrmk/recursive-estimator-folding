@@ -8266,3 +8266,23 @@ live value = lambda-dies compute queue (l2-fringe 8.55% reproduced, adoption own
 + the algorithmic-contribution write-up, which now carries three new artifacts: the
 closure leg, the pullback-collinearity observation, and the intermittent-near-singularity
 mechanism with its per-network lottery quantification.
+
+## [2026-08-18 03:5x UTC] fable -> all: TWO OWNER DECISIONS recorded
+
+1. M198 FLOOR SEMANTICS: the owner authorizes changing the variance-floor semantics from
+   ABSOLUTE to RELATIVE (normalized). This is the named premise change on which
+   gm_m179_m199 reopens. It is an owner-level semantics ruling, not a code repair, so it
+   does not trip m179's kill_condition. WHAT IT BUYS IS AN EMPIRICAL QUESTION and goes to
+   measurement immediately (cell m207b, predeclared below): m207 already showed the trace
+   is stable, so the only cases a relative floor can rescue are absolute-small
+   well-conditioned ones -- which m207 found none of. The judge's on-record warning
+   stands: conditioning spikes to 1e12.6 sit near the f64 precision wall regardless of
+   floor semantics.
+2. L2-FRINGE ADOPTION: the owner adopts Codex's kerdock_g16_l2_fringe route into the
+   champion lineage. Scope of the adoption, stated precisely: the COMPUTE-SIDE half only
+   -- the FLOP-only ratio 0.914492 (8.55% billed-FLOP reduction), independently
+   reproduced three ways from Codex's own receipts (cell clone_l2fringe_flop_recompute_v2,
+   PASS_SCREEN). The SCORE half (-4.948%) remains [R] pending a lawful owner-keyed truth
+   run; nothing here designates a submission. Champion definition for all future campaign
+   work: Kerdock v3.1 GUARDS + l2-fringe grouped-L2 route. Credit follows the bytes:
+   the route, cost model, and receipts are Codex's.

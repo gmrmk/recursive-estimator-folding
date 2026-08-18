@@ -1,0 +1,50 @@
+{
+  "bias_class": "exact",
+  "budgets": {
+    "billed_flops_declared": 0,
+    "memory_mib_declared": 1024,
+    "wall_seconds": 600
+  },
+  "causal_mechanism": "Two forces set the spectrum: repeated Gaussian congruence spreads log singular values at the Lyapunov rate (alone it drives the covariance to numerical singularity by mid-depth -- the pure-congruence control arm must show this), while the arc-cosine ReLU covariance map partially re-inflates the lower spectrum each layer (it mixes the correlation structure toward its fixed point, lifting the minimum eigenvalue). The balance leaves a heavy-tailed per-network maximum-condition distribution whose tail visits the floor at any lawful bar; because the trace is stable and the top eigenvalue exceeds one, normalizing by the top eigenvalue moves every crossing threshold UP, so relative semantics at the same numeric value fires at least as often as absolute.",
+  "cheapest_falsifier": "Run two hundred independent production-width recurrences and count networks whose trace-normalized spectrum dips below the bar at any layer. If the relative-semantics guard-fire fraction is at or below the pass threshold (a level at which a full production sweep survives with high probability), the semantics change rescues the spine and the hypothesis dies -- the provider gap returns as the sole blocker.",
+  "confidence": {
+    "compliance": 0.95,
+    "generalization": 0.6,
+    "implementation": 0.85,
+    "mechanism": 0.8
+  },
+  "equal_budget_baseline": "The absolute-semantics count on the identical two hundred networks (same eigendecompositions, different threshold rule) -- and the pure-congruence control arm on forty networks isolating the ReLU map's restorative role.",
+  "evidence_role": "development",
+  "frozen_inputs": [
+    {
+      "path": "C:/Users/strid/.claude/skills/recursive-estimator-folding/corpus/whestbench/experiments/m207b_semantics/runner_m207b.py",
+      "sha256": "5860a5a9cd2754bd45a90d8039777439d096ed1c356da0552780a0ca42746750"
+    }
+  ],
+  "hypothesis": "The owner-authorized relative floor semantics does NOT rescue the exact-control spine: in the trace-stable regime m207 established, the maximum eigenvalue exceeds one, so at the same numeric bar a relative crossing is implied by events weaker than an absolute crossing -- the relative guard is at least as strict, not looser -- and the per-network guard-fire probability under relative semantics remains material. The recurrence's conditioning is a real, heavy-tailed property of the balance between Gaussian-congruence Lyapunov spread and ReLU-map spectral restoration, not a floor-semantics artifact, so no lawful choice of semantics or bar rescues production-width reachability.",
+  "id": "m207b_semantics_v1",
+  "inconclusive_band_note": "The band (0.003, 0.05) means the relative guard fires rarely enough that a sweep MIGHT survive (risk roughly 7 to 71 percent across the band) -- an operationally gray zone in which the spine is neither certified closed nor safely open; the disposition would then be an owner risk-tolerance call with the measured number attached. The pass bar 0.003 is chosen so that sweep survival exceeds ~93 percent.",
+  "predeclared_at_utc": "2026-08-18T04:04:24.805498+00:00",
+  "predicted_signature": "SMOKE-INFORMED (off-protocol base seed 777000999, n=10 main + 5 control, disclosed): metric lands in the KILL region (relative guard-fire fraction at or above 0.05) with probability ~0.85 -- smoke observed 0.30 with Wilson CI (0.11, 0.60), and 24-network sweep risk 99.98% under relative semantics. Relative fires at least as often as absolute on the same networks (smoke: 0.30 vs 0.10 -- the inversion the hypothesis predicts). The control arm collapses without the ReLU map (smoke: 5/5 crossed, max condition capped, collapse by the first third of depth) while the main arm's maximum-condition distribution is heavy-tailed with median near eleven decades and tail past fourteen. Band (0.003, 0.05) ~0.12; PASS at or below 0.003 ~0.03. Recognizable failure of the hypothesis: relative fraction at or below the pass bar while absolute stays material -- that would mean the semantics change genuinely rescues the spine.",
+  "provenance": "Direct sequel to m207_reachability_v1 (marginal band; trace stable; intermittent near-singularity mechanism) executing the OWNER'S 2026-08-18 floor-semantics ruling as a measurement: the ruling authorizes relative semantics, and this cell quantifies what that buys at production width with real sample size (two hundred networks vs m207's six width-reps). The judge's on-record warning (channel 03:5x UTC) predicted the change buys little because the conditioning sits near the f64 precision wall; the smoke sharpened that to an inversion: at the same numeric bar, relative is STRICTER in the trace-stable regime. SMOKE DISCLOSURE: one off-protocol base seed run before predeclaration, all observations folded into the predicted signature; production base seed never run before the gate was sealed. Runner emits the metric under the declared threshold name and reports config.seeds for the harness seed-agreement check. Verdict semantics: KILL = the semantics change does not rescue the spine (full reachability closure across both semantics -- the campaign's largest open structural lane terminates); PASS = relative semantics rescues (provider gap returns as sole blocker). Control-arm finding (ReLU map as spectral restorer) is a write-up artifact regardless of branch.",
+  "runner": {
+    "argv": [
+      "python",
+      "corpus/whestbench/experiments/m207b_semantics/runner_m207b.py"
+    ],
+    "cwd": "C:/Users/strid/.claude/skills/recursive-estimator-folding",
+    "readable_roots": [
+      "C:/Users/strid/.claude/skills/recursive-estimator-folding/corpus/whestbench/experiments/m207b_semantics"
+    ]
+  },
+  "second_signal": "Three, in-run: (a) the absolute-vs-relative ordering on the identical eigendecompositions (the inversion is a sign prediction, independent of the fraction's magnitude); (b) the pure-congruence control arm's collapse (mechanism isolation: the ReLU map as restorer); (c) the Wilson confidence intervals and the argmax-layer histogram (intermittency: crossings spread across depth rather than concentrating at one layer).",
+  "seeds": [
+    20260825
+  ],
+  "terminal": false,
+  "thresholds": {
+    "kill_when_gte": 0.05,
+    "metric": "relative_floor_crossing_fraction_w256",
+    "pass_when_lte": 0.003
+  }
+}
