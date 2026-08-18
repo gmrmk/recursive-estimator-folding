@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import sys
 from pathlib import Path
 
 CLONE = Path("C:/Users/strid/Documents/Codex/2026-07-07/will-you-have-a-look-at")
@@ -40,6 +41,9 @@ def arm_flops(path: Path):
 def load_cost_model():
     spec = importlib.util.spec_from_file_location("cm_l2fringe", COST_MODEL)
     cm = importlib.util.module_from_spec(spec)
+    # Register before exec: a frozen @dataclass resolves cls.__module__ via
+    # sys.modules, which is None for an unregistered dynamic import (py3.14).
+    sys.modules[spec.name] = cm
     spec.loader.exec_module(cm)
     return cm
 

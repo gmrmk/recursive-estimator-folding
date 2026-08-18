@@ -1,5 +1,5 @@
 {
-  "id": "clone_l2fringe_flop_recompute",
+  "id": "clone_l2fringe_flop_recompute_v2",
   "hypothesis": "Codex's kerdock_g16_l2_fringe compute win is a real FLOP-only reduction (candidate/parent billed-FLOP ratio materially below 1), independently reproducible by re-aggregating his committed per-network FlopScope receipts and consistent with the cost_model.py route arithmetic — so the lambda-dies half of the win transfers to our side as evidence rather than remaining a transcript claim.",
   "causal_mechanism": "The l2-fringe route dispatches two Winograd levels (grouped_l2_candidate_bill: 49 leaves at m/4,k/4,n/4) where the parent dispatches one (owned_batched_candidate_bill: 7 leaves at m/2,k/2,n/2), reducing the leaf-matmul FLOP count on the modulo-four core; matmul is ~96.6% of the billed total, so the scheduling change moves the aggregate bill directly.",
   "cheapest_falsifier": "Sum flops_used across the 24 committed candidate and parent per-MLP receipts and take the ratio; if it is not below 1 the win is not FLOP-only. Cross-check against the deterministic cost_model.py route ratio on the production shape.",
