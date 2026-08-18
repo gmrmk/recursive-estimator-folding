@@ -183,11 +183,12 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   measurement recorded as Fork-1 intel).
 
 ## Next action (exactly ONE — overwrite, never a list)
-Phase-2 rules stamp the moment they post (id > 18184 or organizer post; last checked
-08:4x UTC — unposted). Behind it, in order: hostile-verify round for the staged FWHT +
-CReLU splices (2 agents, drafter-implements-suite-bill + verifier); then insights 142-146
-into write_insights(); then the mub129 powered rerun (write-up hardening). All other
-lanes terminal-with-keys per the possibility register.
+Judge suite-ladder wf_99a680fb-565 when it returns (seeded FWHT+CReLU tiers 1-2, then
+free tiers on suite uniformity; crown by re-execution). In parallel: judge the
+multi-degree zonal cell design when it returns (deg ladder {6,8,12,16,24,48}, kink-tail
+hypothesis: own-axis concentration INCREASES with degree; cumulative-capture metric;
+supersedes-or-confirms deg6 v1 on a declared premise change), then seal + run it.
+Rules stamp on any organizer post (last checked 08:4x — unposted).
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
