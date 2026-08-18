@@ -8816,3 +8816,26 @@ crowned-schedule butterfly -> counterfactual repricing -> dead-lane removals -> 
 depth/stack riding -> scalar-seat exhaustion (DRY). Ladder lesson for the LEDGER when it
 lands: a failed draft is NOT a DRY - the dry counter must distinguish adjudication from
 infrastructure (script defect, fix in the next ladder generation).
+
+## [2026-08-18 ~17:5x UTC] fable: suite-ladder completion BLOCKED on sustained API capacity (12 consecutive 529s); ending deferred honestly, value banked
+
+The continuation ladder's dry-counter fix worked as designed: all 10 drafts failed on
+server 529 overload, NONE advanced the counter, and the run ended dry_stop_earned=false
+instead of minting a fake certificate. State: the tier-19 incumbent stands CROWNED at
+144,867,083,088 (-5.167%, 18 hostile-verified wins, 2 genuine rejections, tier-20 genuine
+arithmetic DRY = 1 of the 3 the earned stop needs). The floor certificate is INCOMPLETE
+pending 2 more genuine adjudications - a capacity retry (resume wf_3680b4cb-35a or re-run
+the completion script) rides the next wake or the next session; the banked value is
+unaffected. Retry law honored: 12 identical infrastructure failures is a change-the-
+hypothesis wall, not a retry-harder wall.
+
+NIGHT-END STANDING, one paragraph: champion bill crowned twice (per-call 303,096,592
+floor-certified; suite 144,867,083,088 crowned, certificate pending); THE WINNER named
+and staged owner-keyed (fold floor+splices into row_blocked_production, predicted C
+153.5B, score 1.4640e-7, -31%, falsifiers predeclared); splice queue behind it
+(129-completion powered run first, then depth-2 deployment test, gate-support pilot,
+radial RB, ping-pong/Tichavsky); merged graph 710/4319 committed with insights 142-170;
+Codex's freezer fully adjudicated (3 miners, 2 new measurements, 1 live equation
+recovered); 8 sealed cells, ~35 hostile-verified compute wins, 6+ write-up artifacts,
+possibility register with keys on every door; Phase 2 delayed to ~Aug 19, rules via
+participant email, watch armed on forum + inbox.
