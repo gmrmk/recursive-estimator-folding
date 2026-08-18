@@ -59,10 +59,47 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   classifier — user runs it), Headroom MCP verified live ✓, InsForge setup.sh fetched +
   inspected (execution blocked — user runs two commands; Docker 29.4.3 present).
 
+- 2026-08-17 ~22:0x-22:1x UTC: fold_search harness shipped (b32a8a9, 21 tests, red-first) +
+  fold_waves DAG-parallel scheduler (bf605ae, 9 tests; suite 42/42) + HARNESS doc. pxpipe
+  proxy LIVE on 47821 (npx path; events.jsonl tracking). caveman plugin installed. Pulse
+  cron armed (6-hourly, session-scoped). Autonomous campaign loop armed (hourly wake:
+  pulse -> rules stamp -> one cell per wake).
+- 2026-08-17 ~22:15 UTC: solve-swarm launched (6 lenses -> per-proposal refuters ->
+  synthesizer -> SOLVE_CANDIDATES_20260817.md). numpy 2.4.4 confirmed for synthetic
+  falsifiers; corpus/whestbench/cells/ created.
+
+- 2026-08-17 22:0x-23:5x UTC: harness hardened against BOTH reviews (single reviewer +
+  5-lens Opus swarm): round-1 C1-C4/H1-H3/M1-M5 (locks, atomic writes, resolved+broadened
+  firewall, crash-safe reports, value-normalized numeric collision, partial-wave verdicts) at
+  1ca8c26; round-2 the swarm CRITICALs — authenticated verdicts (consumed-token hash, report
+  binding, body-hash re-derivation, one-shot idempotence), atomic O_EXCL authorization claim,
+  cwd+argv firewall, existence-required declarations, run-time firewall recheck, wall_seconds
+  validation — at ffa64dd. 73/73 Windows, 61/61 WSL (WSL testing now standard per owner).
+- **Two live cells landed through the harness:**
+  - `ajpre1_w0_wi_precondition` PASS_SCREEN (gate sealed d186678 before value): d_48
+    upper96.667 = 1.1209 < 1.25 Arm-1 ceiling, kappa_AB(I) = -0.027. Predicted signature
+    falsified both ways; the unearned d_48=1 assumption is retired. Family bar now a measured
+    kappa shift -0.027 -> below -0.5124. Commit 61bc50c.
+  - `clone_l2fringe_flop_recompute_v2` PASS_SCREEN (gate 96ce7b4; v1 runner retired on a
+    py3.14 dataclass-import bug): Codex's l2-fringe win reproduced 3 ways from his own
+    receipts — effective 0.9499 == his 0.9493; **FLOP-only 0.9145 (8.55% win, bigger than the
+    -5.068% headline once the +37.49% Linux wall is stripped)**; cost_model route 0.8866
+    confirms the mechanism. Fleet-hazard discharged; top lambda-dies compute item. SCORE half
+    stays [R] (owner-keyed truth run). Commit cff52e1.
+- WC1 (Source211Jet provider, M205 god edge) KILLED by Opus cold refuter, file-line cited;
+  recorded in SOLVE_CANDIDATES; kill final.
+- Codex's headroom-recursion engine pip-installed editable here: `headroom_recursion` resolves
+  to the clone, all 25 folding/ modules + whest-dag CLI runnable. Ancestor skill backed up at
+  Backups/headroom-recursion-skill-bak-20260817.
+- **BLOCKER (user-only):** monthly spend limit — the ladder swarm (6 Sonnet drafts) all failed
+  on it. Workflow script saved + resumable at
+  ...\workflows\scripts\whest-ladder-swarm-wf_8fb8d3c7-8de.js; re-run on limit raise.
+
 ## Next action (exactly ONE — overwrite, never a list)
-Session complete pending owner actions: Phase-2 rules diff at 00:00 UTC; optional Discourse
-companion post; pxpipe/InsForge activation commands; M245 + slot-2 + branch-integration
-decisions per CONTINUATION_PLAN_20260817.md §6.
+Land the anti-J transfer premise cell (the next anti-J step, unblocked by AJPRE-1's pass;
+AJ2-F48 lines 584-671, synthetic-only, must respect the neg-eigenvalue trap) OR resume the
+ladder swarm once the spend limit is raised. Phase-2 rules stamp (lambda + FlopScope forks)
+the moment they post — loop + cron armed.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
