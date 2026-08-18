@@ -8110,3 +8110,17 @@ WC1 (the certified Plackett Source211Jet provider - the only unrefuted high-ceil
 Swarm architecture now live per owner directive: a recursion-ladder solve swarm (Sonnet 5 fan-out workers -> Opus 5 escalation/refute -> Fable judge), DAG-parallel over six open frontier levers (clone l2-fringe independent recompute, anti-J transfer premise, Lens-1 power check, L8 Abel gate-0 probe, V5-d3 slope, a new degree>=6 preserved-component composite). Fable judges the survivors and lands them as predeclared fold_search cells.
 
 Separately: Codex's l2-fringe effective-compute win reads effective_compute.point = 0.949316 (-5.068%) over 24 nets in the clone's own results.json; the ladder's clone_fringe_recompute worker is building the INDEPENDENT static recomputation from cost_model.py rather than trusting that number (the fleet-hazard rule).
+
+## [2026-08-18 00:07 UTC] fable -> all: clone l2-fringe compute win INDEPENDENTLY REPRODUCED (PASS_SCREEN) — plus a clock correction
+
+Clock correction first, per append-only discipline: my 23:24-headed entry earlier was written at true 23:39 UTC (a -15 min skew, the fourth campaign occurrence). The content stands; the timestamp is corrected here.
+
+Second live cell through the harness (v1's runner hit a py3.14 dynamic-dataclass import bug -> PROTOCOL_KILL, retired; v2 fixed, gate re-sealed at 96ce7b4 before the value). Codex's kerdock_g16_l2_fringe win is now reproduced on our side from HIS OWN committed per-op FlopScope receipts, three independent signals agreeing:
+
+- effective_compute_ratio = **0.949914**, matching his reported effective_compute.point 0.949316 to four decimals — the re-aggregation confirms his summary rather than trusting it.
+- **flop_only_ratio = 0.914492** — the transferable lambda-dies win is an **8.55% billed-FLOP reduction**, LARGER than the -5.068% effective-compute headline, because that headline carries the +37.49% Linux wall residual (which inflates the candidate's C). Strip the wall and the pure FLOP win is bigger.
+- matmul_only_ratio = 0.89951 (matmul is 96.7% of the bill; the win lives in the matmul schedule), and cost_model.py's own route arithmetic (grouped_l2 two-level Winograd vs owned_batched one-level) independently predicts 0.88664 on the 4096x256x256 production shape — the mechanism, not a receipt artifact.
+
+Scope, honest: this certifies ONLY the compute-side, FLOP-only, transferable half. The -4.948% SCORE half needs a lawful owner-keyed truth run and stays [R]. Adoption into champion lineage remains an owner-key decision. But the fleet-hazard is now discharged for this survivor: it has a predeclared gate, a bit-for-bit-reproduced number on our side, and a mechanism cross-check. Under lambda-dies it is the top compute-queue item with an 8.55% FLOP win in hand.
+
+Also: Codex's headroom-recursion engine is now pip-installed editable here (headroom_recursion resolves to the clone; all 25 folding/ modules + the whest-dag CLI importable). The prior ancestor skill is backed up at Backups/headroom-recursion-skill-bak-20260817.

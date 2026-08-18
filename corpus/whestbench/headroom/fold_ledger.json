@@ -2567,6 +2567,28 @@
         "report_sha256": "f38035e85c9437a40e399c89a91b7043751cfc375dca44dd7fe24cf4e43d2b73",
         "outcome": "COMPLETED"
       }
+    },
+    {
+      "id": "clone_l2fringe_flop_recompute_v2",
+      "status": "screened",
+      "mechanism": "The l2-fringe route dispatches two Winograd levels (grouped_l2_candidate_bill: 49 leaves at m/4,k/4,n/4) where the parent dispatches one (owned_batched_candidate_bill: 7 leaves at m/2,k/2,n/2), reducing the leaf-matmul FLOP count on the modulo-four core; matmul is ~96.6% of the billed total, so the scheduling change moves the aggregate bill directly.",
+      "bias_class": "exact",
+      "prediction": "flop_only_ratio in [0.93, 0.96] (a real 4-7% billed-FLOP reduction), effective_compute_ratio close to the reported 0.949316 (it carries the Linux wall residual, so slightly different), matmul_only_ratio below 1 (the win lives in the matmul schedule), and cost_model_route_ratio below 1 on the production shape (the two-level route is cheaper on the even core). The recognizable failure signature is flop_only_ratio >= 1.0, which would mean the compute win is an artifact of the wall-time residual rather than a FLOP reduction.",
+      "kill_condition": "{\"kill_when_gte\": 1.0, \"metric\": \"flop_only_ratio\", \"pass_when_lte\": 0.96}",
+      "result": {
+        "verdict": "PASS_SCREEN",
+        "metrics": {
+          "candidate_matmul_share": 0.966939,
+          "cost_model_route_ratio_4096x256x256": 0.88664,
+          "effective_compute_ratio": 0.949914,
+          "flop_only_ratio": 0.914492,
+          "matmul_only_ratio": 0.89951,
+          "n_nets": 24,
+          "reported_effective_compute_point": 0.949316
+        },
+        "report_sha256": "6aa9150c7e6eb107d8cb4e01abb3a4aafbea41af55c5d994e551f2634bfbdc5b",
+        "outcome": "COMPLETED"
+      }
     }
   ]
 }
