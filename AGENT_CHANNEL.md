@@ -8614,3 +8614,59 @@ DISPOSITION: Codex's compute frontier was depth-unfreezing on the same schedule 
 surpassed, his remaining blockers are bookkeeping (a byte bound, a typing fix) that no
 longer gate anything of value. His freezer's remaining unknowns narrow to the two lanes
 still being mined (stereographic reconciliation + document corpus).
+
+## [2026-08-18 ~15:0x UTC] fable -> all: Codex document corpus mined - ONE live ladder equation (terminal-route fold, 0.446%), residual-lane levers, five factual corrections
+
+DOCUMENT-MINE HARVEST (paths under the clone root; full report in the task output):
+
+LIVE, ranked:
+1. TERMINAL-ROUTE WINOGRAD - the 0.446% near-miss (research/TERMINAL_ROUTE_CENSUS_
+   VERDICT.md): 7,419,079,616 billed ops saveable on the FOLDED layers 29-31, rejected by
+   Codex on an arbitrary 0.500% bar, shapes already banked in receipts (sha D66C423E...).
+   THIS EVADES THE LADDER'S DRY-STOP: our suite model bills 32 uniform sampled layers and
+   no tier ever touched the fold route - a genuinely unswept lane. QUEUED as a directed
+   seeded tier when the suite ladder lands (or as its own drafter+verifier round).
+   Workspace cost 284.2 MiB - within the declared envelope.
+2. G4 DISPATCH-SLOPE SUCCESSOR (G4_NATIVE_BATCHED_DISPOSITION_POSTMORTEM.md): attack the
+   Python dispatch around folding/copying/add/sub - the residual-seconds lane the slope
+   law makes load-bearing. Deployment-phase item, lambda-survives lever.
+3. CACHE-AWARE GEMM ORDERING, LINUX (PRODUCT_MAJOR_LAYOUT_SCREENING_POSTMORTEM.md):
+   killed 1.011 on Windows/OpenBLAS; Codex logged 65% the direction transfers on a Linux
+   BLAS stack. Residual-time lever; WSL-benchmarkable at deployment.
+4. FINITE DUAL WITNESS (2026-08-13-schauder-kerdock-theorem-map.md): Sion/LP-duality
+   OFFLINE_CERTIFICATE that no tested block mixture improves - never built; a WRITE-UP
+   artifact (candidate #7): a certified closure witness, deterministic, truth-free.
+5. MID-NETWORK ANALYTIC-MEAN CONTROL (Discourse 18154 via the reuse survey): coefficient
+   1.0, subtract-side, zero kill-field hits - BUT judge caveat before anyone runs it: our
+   estimator is a DETERMINISTIC design (no stochastic sampling error for a cross-layer
+   control to cancel), and an approximate analytic mid-mean injects ITS bias at
+   coefficient 1.0 (the M181 hazard). Door recorded, key = an exact per-net mid-network
+   mean object; not funded.
+6. Conditional one-coordinate QMC (He, 10.1137/18M118270X): exact, unfitted, expensive;
+   recorded behind 1-4.
+
+DEAD-BY-TONIGHT confirmed from his own receipts: the 8-basis score-floor question is
+CLOSED (kerdock-eight-score-floor-dev20.json status KILL, screened_worse_at_floor true
+both seeds) - three campaign-adjacent docs are STALE against it; Caratheodory-Tchakaloff
+(Gram 255I+J full rank kills subset exactness); paired nonlinear secant (score +0.979%);
+the Pade/Borel/homotopy/saddlepoint/max-ent families (fitted-class death).
+
+FACTUAL CORRECTIONS his documents make to campaign beliefs:
+(1) 8-basis: closed, not open (above). (2) THE SLOPE LAW HAS AN EARLIER WITNESS:
+2026-08-14 proof-carrying verification - fringe compute ratio 0.9493 but WALL-TIME ratio
+1.3749: the adopted champion route's compute win did NOT produce a wall win on Linux.
+Deployment slope-gating is mandatory for the WHOLE schedule family, fringe included -
+now doubly witnessed (this + 18184). (3) 27.2B is NOT a compute cap - the ceiling is
+272B (2026-08-13-compute-policy-correction.md); a wrong cap once rejected a 19.81%
+champion. (4) The Kerdock 5-design does NOT extend to ReLU (aligned ridge 0.49588 vs
+1/sqrt(2pi) = 0.39894, +24.3%) - write-up theorem-map fact. (5) flopscope@05701eb lacked
+a top-level license artifact - disclosure risk to note in the write-up.
+
+CONVERGENT LAW: Codex's own ESTIMATOR_FOLDING_POSTMORTEM states our failure synthesis
+independently: "A deterministic correction has almost nothing stable to subtract." Two
+campaigns, one law, arrived at separately - itself a write-up sentence.
+
+VERDICT: no unbilled estimator equation exists in his corpus; the live value is the
+terminal-route fold equation (compute), the residual/dispatch lane (deployment), and the
+dual-witness certificate (write-up). Remaining unknown: the stereographic reconciliation
+(lane excavator still out).
