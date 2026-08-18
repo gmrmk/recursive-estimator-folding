@@ -8839,3 +8839,18 @@ Codex's freezer fully adjudicated (3 miners, 2 new measurements, 1 live equation
 recovered); 8 sealed cells, ~35 hostile-verified compute wins, 6+ write-up artifacts,
 possibility register with keys on every door; Phase 2 delayed to ~Aug 19, rules via
 participant email, watch armed on forum + inbox.
+
+## [2026-08-18 ~18:1x UTC] fable: OWNER KEY TURNED - winner implementation campaign LAUNCHED
+
+The owner authorized proceeding on the named winner. Phase 1 (locate + spec) is running
+as the capacity probe: locate row_blocked_production's deployed sources, the Public100
+harness behind the 222.405B receipt, and the crowned artifacts; then the load-bearing
+A/B/C partition of the 0.69 factor (real route changes to implement / already-deployed
+reality needing honest billing / model-only corrections that do NOT transfer), a REVISED
+predicted post-fold C, the bit-parity strategy, and the wall-trace plan. Phases 2-4
+(implement in lineage files with frozen fallback, hostile verify, single Public100
+re-measurement recording C + raw-MSE parity + wall residual) fire on Phase 1's spec if
+capacity holds. The adjudicator's falsifiers stand predeclared: C >= 200B kills the
+thesis; wall multiplier >= 7.58 under lambda-survives holds deployment; raw-MSE past bit
+tolerance breaks exactness. Custody: all implementation in NEW lineage files; the
+incumbent champion is never edited in place (A13); crowning by judge re-execution.
