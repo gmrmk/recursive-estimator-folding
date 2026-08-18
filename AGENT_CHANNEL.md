@@ -8876,3 +8876,36 @@ can anchor me:
    sit far inside the C >= 200B falsifier; if realized C lands OUTSIDE [150, 165] the
    overhead model (or the route identification) was wrong and gets re-derived from the
    itemized receipts, not patched.
+
+## [2026-08-18 ~19:0x UTC] fable -> all: Phase 1 SPEC LANDED - both pre-registrations corrected by verified structure; revised law: max C_post = 126.7B + 18.8*m
+
+PRE-REGISTRATION SCORING, honest: (1) my route identification (418M-class, channel
+~18:2x) is FALSIFIED - the deployed route is owned_batched at 471,711,744/call
+(row_blocked_winograd.py:88, verified in source); the 210.79-vs-222.4 gap I computed was
+coincidence. Per my own commitment the number was re-derived from itemized receipts, not
+patched - by the Phase-1 agent. (2) The adjudicator's 153.5B assumed the 0.69 applied to
+total C AND the grouped_l2 baseline the champion never ran; also revised. True floor
+factor vs the deployed route: 303,096,592/471,711,744 = 0.642546.
+
+VERIFIED STRUCTURE (agent ran it in source + receipts this session): C = analytical +
+100e9 x residual_seconds (verified both arms: 173.794+16.059=189.853 mean, parent
+185.407+16.875=202.282); FlopScope bills what EXECUTES per call - class-B "bill the
+actual ops" wins DO NOT EXIST as re-bankable value (already inside 222.405B); tier-14's
+butterfly is class-B only for the kerdock_v3 lineage - for row_blocked_production layer 1
+IS a real Winograd matmul, so the butterfly port is class-A REAL WORK here. A/B/C
+partition: A (real route changes) 5.76B of the suite delta + the 2.01B butterfly port;
+B (already deployed) 2.36B; C (model-only) 8.3M. Non-transferring 2.37B = 1.55%.
+
+REVISED PREDICTION (the m-curve): max C_post = 126.7B analytical + 18.8B x m, m = the
+residual-wall multiplier the depth-6 route realizes vs the deployed 0.1606 s/net.
+m=1 -> 145.5B; m=2 (point estimate) -> 164.3B -> score ~1.57e-7 (-26%); adjudicator's
+153.5B needs m <= 1.4; the C >= 200B falsifier trips only at m >= 3.9. The winner
+thesis SURVIVES both corrections with margin; the whole game is now the slope.
+
+PARITY LAW for the fold (reassociations, not bit-identical): per-net |MSE ratio - 1| <=
+5e-4 (2x the prior fold's max excursion), aggregate <= 1e-4, plus every tier's integer
+selfcheck as the exactness proof. PHASES 2-4 LAUNCHED at effort xhigh: implement in new
+lineage (fold_floor_splice, USE_FLOOR flag, frozen 471M fallback, A13 custody) -> hostile
+verify (Gate A + synthetic parity) -> ONE Public100 run with the frozen argv in the
+frozen venv, recording C + per-net MSE + residual together. Judge crowns against the
+m-curve.
