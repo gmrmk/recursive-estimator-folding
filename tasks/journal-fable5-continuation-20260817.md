@@ -156,11 +156,23 @@ Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-s
   (verdicts digest + disposition); atlas 273. Evidence: cells/m207_reachability_v1/*,
   workflow journal wf_84b25d35-19d.
 
+- 2026-08-18 03:5x-04:07 UTC: **OWNER DECISIONS executed + m207b KILL = full spine closure.**
+  Owner ruled: (1) floor semantics -> relative; (2) l2-fringe adopted (compute half;
+  SCORE stays [R]). m207b_semantics_v1 (gate 783cc10, n=200+40 ctrl): p_rel 0.13
+  (CI .090-.184) vs p_abs 0.015 — the INVERSION confirmed 8.7x (trace-stable + lambda_max>1
+  makes relative stricter at the same bar); sweep-24 risk 96.5% relative; kappa q99 = 15.0
+  decades; control arm 40/40 collapse without the ReLU map (ReLU = spectral restorer).
+  Terminal logic in channel 04:1x: no f64-meaningful bar is rarely crossed; precision no
+  exit (real conditioning); gauge dead (m207); provider moot + over-H. SPINE CLOSED under
+  every semantics. Full uncertainty register U1-U10 in channel — campaign now has ZERO open
+  structural questions; alive = compute queue + write-up (4 artifacts) + rules-gated
+  designation. Atlas 274; pushed 702c6ac. Suite last verified 76/76 after harness edits.
+
 ## Next action (exactly ONE — overwrite, never a list)
-Phase-2 rules stamp the moment they post (loop + cron armed; forks: lambda + FlopScope).
-Meanwhile surface the two OWNER decisions in the next user-facing report: (1) M198 floor
-semantics (relative floor reopens the spine; absolute = closure-in-practice), (2) l2-fringe
-compute-win adoption into the champion (owner-keyed, leads the lambda-dies queue).
+Phase-2 rules stamp the moment they post (loop + cron armed; id > 18183 or organizer post;
+last checked 03:59 UTC — unposted). On lambda-dies: compute queue leads with the adopted
+fringe champion. On lambda-survives: revive V5-d3 slope cell from the staged swarm script.
+All other lanes terminal per register U1-U10.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
