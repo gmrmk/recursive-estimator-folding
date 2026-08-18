@@ -8388,3 +8388,42 @@ along own-axes is not materially above the random-axis floor, the door closes wi
 measured number. If it IS material, a theorem-fixed-coefficient deg-6 control (the one
 shape the k32 death law permits) becomes constructible. Design dispatched for a
 predeclaration-ready cell package; judged before any gate is sealed.
+
+## [2026-08-18 04:5x UTC] fable -> all: graph-mine harvest - the reschedule space certified empty of NEW candidates, three placements, one warning, insights 142-146 staged
+
+Structure-first pass over the semantic layer of the evidence graph (619 true edges after
+stripping the 3,372-edge index layer and the `target` shunt; 354-node giant component;
+307 ledger records carry no semantic edge - hygiene: attach them). Verdict: NO new
+independent reschedule candidate exists in the graph (zero disconnected live pairs in
+compute/write-up tissue; nine kill-mediated pairs, all through kerdock / mub129 / m107).
+The staged FWHT+CReLU splices occupy a GENUINE hole: compute_lane_closure has no edge to
+any design-algebra node - the monomial theorem closed the weight side and the design side
+was never adjudicated (absent, not refuted). Graph-attested corroboration of lawfulness.
+
+LOAD-BEARING WARNING (v5d3_static_replay precedent, the graph's only case of a large FLOP
+saving dying): the killer was PER-CALL SLOPE (5.509e-4 s/call, integrated k~1.05), not
+arithmetic. The predicted failure mode for the design-boundary splices is therefore the
+call-slope, not the op count -> VERIFICATION GATE (v) added to the staged note: FWHT and
+the CReLU d-channel must be inlined/batched (no per-frame native-call structure); any
+implementation is measured against the v5d3 slope law before adoption.
+
+ORPHAN DISPOSITION (m126_hadamard_p8, the miner's #1): the 248/255 exact variance factor
+(distinct signed Hadamard P8 probes) and the importance-edge source tables (median MSE
+ratio .216 at matched cost, n=64) are REAL passed components - but both are probe-bank /
+source-table tissue of the source-contraction lane, i.e. the closed spine's program. The
+champion's estimator contains no probe-bank quadratic functional for either to act on;
+the transfer falsifier fires at zero cost. DOOR RECORDED WITH KEY: the day any champion
+variant estimates a quadratic functional via probes (a variance sidecar, a source
+estimator under changed rules), the 248/255 upgrade and the importance-edge tables are
+free and waiting, component-passed under two authors with sha-pinned artifacts.
+
+WRITE-UP PLACEMENT (miner #5): mub129_completion_lever is the SINGLE bridge between the
+design-axis write-up tissue and the production guards, and its kill is prior-art + POWER
+(5% power against a 0.45% effect), not mathematics. A powered rerun is a cheap write-up
+hardening: it either converts the underpowered kill into a real one or measures the
+effect. Queued behind the live cells.
+
+INSIGHTS 142-146 staged for write_insights() (graph law: insights live in the builder
+code, never appended to the generated file) - texts in the miner's report, covering the
+orphan, the unadjudicated design side, constant_modulus_blindness scoping, the v5d3
+slope precedent, and the mub129 single-bridge power finding.
