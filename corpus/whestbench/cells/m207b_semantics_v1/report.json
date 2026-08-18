@@ -1,0 +1,116 @@
+{
+  "cell_id": "m207b_semantics_v1",
+  "environment": {
+    "argv": [
+      "python",
+      "corpus/whestbench/experiments/m207b_semantics/runner_m207b.py"
+    ],
+    "git_head": "783cc10bb2ce051ebbf0917a0959bb7f52ad745c",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "evidence_role": "development",
+  "exit_code": 0,
+  "metrics": {
+    "cell": "m207b_semantics",
+    "config": {
+      "d": 256,
+      "depth": 32,
+      "n_ctrl": 40,
+      "n_reps": 200,
+      "seeds": [
+        20260825
+      ],
+      "width": 256
+    },
+    "control_arm_pure_congruence": {
+      "argmax_layer_histogram_octiles": [
+        7,
+        33,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "crossed_absolute": 40,
+      "crossed_relative": 40,
+      "max_log10_kappa_quantiles": {
+        "max": 30.0,
+        "q50": 30.0,
+        "q90": 30.0,
+        "q99": 30.0
+      },
+      "n": 40,
+      "p_absolute": 1.0,
+      "p_absolute_ci95": [
+        0.912378,
+        1.0
+      ],
+      "p_relative": 1.0,
+      "p_relative_ci95": [
+        0.912378,
+        1.0
+      ],
+      "sweep24_risk_absolute": 1.0,
+      "sweep24_risk_relative": 1.0,
+      "sweep24_risk_relative_ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "floor": 1e-12,
+    "main_arm_relu": {
+      "argmax_layer_histogram_octiles": [
+        20,
+        31,
+        20,
+        20,
+        19,
+        24,
+        34,
+        32
+      ],
+      "crossed_absolute": 3,
+      "crossed_relative": 26,
+      "max_log10_kappa_quantiles": {
+        "max": 16.165662,
+        "q50": 10.814336,
+        "q90": 12.331559,
+        "q99": 15.015628
+      },
+      "n": 200,
+      "p_absolute": 0.015,
+      "p_absolute_ci95": [
+        0.005114,
+        0.043166
+      ],
+      "p_relative": 0.13,
+      "p_relative_ci95": [
+        0.090282,
+        0.183664
+      ],
+      "sweep24_risk_absolute": 0.304224,
+      "sweep24_risk_relative": 0.964644,
+      "sweep24_risk_relative_ci95": [
+        0.89678,
+        0.992329
+      ]
+    },
+    "metric_semantics": "fraction of independent production-width networks whose zero-order covariance recurrence has, at ANY of the 32 layers, min_eig/max_eig below 1e-12 (or a nonpositive spectrum) -- the relative-semantics guard-fire probability per network",
+    "relative_floor_crossing_fraction_w256": 0.13,
+    "relu_map_is_restorer": true,
+    "smoke": false,
+    "sweep_nets": 24,
+    "wall_seconds": 79.785323
+  },
+  "outcome": "COMPLETED",
+  "predeclaration_sha256": "1921283f3266184db8cf6ea7f5f1c6e6bc3ba26d8cb5a9c2f8afbecb69ad2554",
+  "ran_at_utc": "2026-08-18T04:05:45.495870+00:00",
+  "report_sha256": "7b41ca3a7b8a9b6fa99d275e6d4fe20e538afcca715a23f4e0820c56f1805aea",
+  "stdout_last_line": "{\"cell\": \"m207b_semantics\", \"smoke\": false, \"relative_floor_crossing_fraction_w256\": 0.13, \"metric_semantics\": \"fraction of independent production-width networks whose zero-order covariance recurrence has, at ANY of the 32 layers, min_eig/max_eig below 1e-12 (or a nonpositive spectrum) -- the relative-semantics guard-fire probability per network\", \"main_arm_relu\": {\"n\": 200, \"crossed_relative\": 26, \"crossed_absolute\": 3, \"p_relative\": 0.13, \"p_relative_ci95\": [0.090282, 0.183664], \"p_absolute\": 0.015, \"p_absolute_ci95\": [0.005114, 0.043166], \"sweep24_risk_relative\": 0.964644, \"sweep24_risk_relative_ci95\": [0.89678, 0.992329], \"sweep24_risk_absolute\": 0.304224, \"max_log10_kappa_quantiles\": {\"q50\": 10.814336, \"q90\": 12.331559, \"q99\": 15.015628, \"max\": 16.165662}, \"argmax_layer_histogram_octiles\": [20, 31, 20, 20, 19, 24, 34, 32]}, \"control_arm_pure_congruence\": {\"n\": 40, \"crossed_relative\": 40, \"crossed_absolute\": 40, \"p_relative\": 1.0, \"p_relative_ci95\": [0.912378, 1.0], \"p_absolute\": 1.0, \"p_absolute_ci95\": [0.912378, 1.0], \"sweep24_risk_relative\": 1.0, \"sweep24_risk_relative_ci95\": [1.0, 1.0], \"sweep24_risk_absolute\": 1.0, \"max_log10_kappa_quantiles\": {\"q50\": 30.0, \"q90\": 30.0, \"q99\": 30.0, \"max\": 30.0}, \"argmax_layer_histogram_octiles\": [7, 33, 0, 0, 0, 0, 0, 0]}, \"relu_map_is_restorer\": true, \"floor\": 1e-12, \"sweep_nets\": 24, \"config\": {\"d\": 256, \"width\": 256, \"depth\": 32, \"n_reps\": 200, \"n_ctrl\": 40, \"seeds\": [20260825]}, \"wall_seconds\": 79.785323}",
+  "terminal_no_mutation": false,
+  "wall_seconds_budget": 600,
+  "wall_seconds_used": 79.98
+}

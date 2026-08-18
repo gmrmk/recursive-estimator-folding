@@ -8286,3 +8286,60 @@ mechanism with its per-network lottery quantification.
    run; nothing here designates a submission. Champion definition for all future campaign
    work: Kerdock v3.1 GUARDS + l2-fringe grouped-L2 route. Credit follows the bytes:
    the route, cost model, and receipts are Codex's.
+
+## [2026-08-18 04:1x UTC] fable -> all: m207b KILL - the spine is closed under EVERY floor semantics; full uncertainty register
+
+m207b_semantics_v1 (gate 783cc10 sealed before value; n=200 production-width networks + 40
+pure-congruence controls; all three predeclared second signals agreed):
+
+THE MEASUREMENT: p_relative = 0.13 (Wilson CI 0.090-0.184) vs p_absolute = 0.015
+(CI 0.005-0.043) on the IDENTICAL eigendecompositions. The predicted INVERSION is
+confirmed at 8.7x: in the trace-stable regime with max eigenvalue above one, a relative
+floor at the same numeric bar is STRICTER than the absolute floor it replaced. The owner's
+semantics change, as specified, makes the spine deader: 24-network sweep risk 96.5%
+(CI 89.7-99.2%) relative vs 30.4% absolute. Kappa quantiles (log10): q50 10.8, q90 12.3,
+q99 15.0, max 16.2 -- the tail reaches past the f64 eps wall. Crossings are intermittent
+and near-uniform across depth (argmax histogram 20/31/20/20/19/24/34/32 by octile): there
+is no "wall at layer 12"; gm_m179_m199's crossing was one draw of this process.
+CONTROL ARM: without the ReLU covariance map, 40/40 pure-congruence chains collapse to
+non-positive spectra by ~layer 8. THE RELU MAP IS THE ONLY THING KEEPING THE RECURRENCE
+ALIVE, and the balance it strikes leaves a heavy-tailed conditioning lottery.
+
+TERMINAL LOGIC, developed to conclusion: (a) no numeric value of a relative OR absolute
+floor is simultaneously f64-meaningful and rarely crossed -- reaching p <= 0.003 needs a
+bar below the q99.7 of the max-kappa distribution, i.e. at or beyond eps, where a floor no
+longer separates signal from roundoff; (b) higher precision does not exit -- the
+conditioning is real mathematics (Lyapunov spread vs ReLU restoration), so quad-precision
+production would measure the same kappa and any f64 consumption inherits kappa*eps up to
+O(1) relative error, destroying the spine's exactness class; (c) the gauge exit died in
+m207 (trace stable, nothing to remove); (d) the provider exit is moot AND over budget
+(naive unit-basis owner table ~4.3e9 FLOPs for ONE layer > H = 1.987e9; 69x over for 32).
+THE EXACT-CONTROL SPINE M151->M179->M198->M205->M125b IS CLOSED. The campaign's largest
+open structural lane terminates on measurement, not fiat.
+
+UNCERTAINTY REGISTER (every open uncertainty at its logical conclusion):
+- U1 semantics rescue: RESOLVED NO (this cell; inversion mechanism).
+- U2 unit-basis provider bill: RESOLVED dead by arithmetic (over H at one layer) and moot.
+- U3 fringe SCORE half: TERMINAL LABEL [R] -- needs the owner-keyed official truth run;
+  adoption stands as compute-side only.
+- U4 Phase-2 rules: TERMINAL WATCH -- unposted at 03:59 UTC (Discourse id still 18183);
+  pre-committed fork table armed; V5-d3's slope cell is the one item that revives only if
+  lambda survives.
+- U5 lottery probability: RESOLVED -- p_abs 0.015 (0.005-0.043), p_rel 0.13 (0.090-0.184);
+  the earlier rough 0.1-0.3 absolute estimate is corrected DOWN by this measurement.
+- U6 mechanism: RESOLVED -- ReLU map is the spectral restorer (40/40 control collapse);
+  intermittent, depth-uniform, heavy-tailed.
+- U7 k32 residual caveat: TERMINAL LABEL -- undefined in-source gaps could hide the
+  original hand-built phenomenon; no recoverable test exists; closed as far as evidence
+  reaches.
+- U8 net2 seal: RESOLVED -- stays sealed.
+- U9 degree>=6 accuracy: TERMINAL -- only lawful shape is a divergence-type mean-zero
+  control with basis dimension ~4.1e11; infeasible; accuracy frontier closed on all counts.
+- U10 spine: RESOLVED -- CLOSED under every semantics (this entry).
+
+ALIVE after the register: (1) the adopted champion GUARDS + l2-fringe and the lambda-dies
+compute queue; (2) the algorithmic-contribution write-up, now carrying FOUR artifacts
+(closure leg, pullback collinearity, near-singularity lottery with n=200 CIs, ReLU-map-as-
+restorer + the relative-stricter inversion); (3) Phase-2 designation decisions when the
+rules post. Nothing else. The campaign is, for the first time, free of open structural
+questions -- everything remaining is either owner-keyed, organizer-gated, or write-up.

@@ -11,7 +11,7 @@
     "resource_ceiling": "Hard C <= 272000000000; promotion safety gate Cmax < 258400000000 and zero failures.",
     "score_formula": "MSE * max(0.1, (billed_FLOPs + 1e11 * residual_seconds) / 2.72e11) under installed WHestBench 0.14.0 and FlopScope 0.10.0."
   },
-  "ledger_sha256": "1b2f4a1a960d76637b7eb5e45a855ccac9a8874ebe29f6a13aee3401ff970b49",
+  "ledger_sha256": "811314173f23c1437d49610d663da3c87e98e71ea092850bfc2a4cfd2c090986",
   "purpose": "Exhaustive descriptive salvage atlas; non-evidentiary and non-promotional.",
   "records": [
     {
@@ -10202,13 +10202,47 @@
         "PASS means branch B: the gauge premise reopens gm_m179_m199."
       ],
       "result_present": true
+    },
+    {
+      "canonical_status": "killed_or_closed",
+      "failed_link": [
+        "{'verdict': 'KILL', 'metrics': {'cell': 'm207b_semantics', 'config': {'d': 256, 'depth': 32, 'n_ctrl': 40, 'n_reps': 200, 'seeds': [20260825], 'width': 256}, 'control_arm_pure_congruence': {'argmax_layer_histogram_octiles': [7, 33, 0, 0, 0, 0, 0, 0], 'crossed_absolute': 40, 'crossed_relative': 40, 'max_log10_kappa_quantiles': {'max': 30.0, 'q50': 30.0, 'q90': 30.0, 'q99': 30.0}, 'n': 40, 'p_absolute': 1.0, 'p_absolute_ci95': [0.912378, 1.0], 'p_relative': 1.0, 'p_relative_ci95': [0.912378, 1.0], 'sweep24_risk_absolute': 1.0, 'sweep24_risk_relative': 1.0, 'sweep24_risk_relative_ci95': [1.0, 1.0]}, 'floor': 1e-12, 'main_arm_relu': {'argmax_layer_histogram_octiles': [20, 31, 20, 20, 19, 24, 34, 32], 'crossed_absolute': 3, 'crossed_relative': 26, 'max_log10_kappa_quantiles': {'max': 16.165662, 'q50': 10.814336, 'q90': 12.331559, 'q99': 15.015628}, 'n': 200, 'p_absolute': 0.015, 'p_absolute_ci95': [0.005114, 0.043166], 'p_relative': 0.13, 'p_relative_ci95': [0.090282, 0.183664], 'sweep24_risk_absolute': 0.304224, 'sweep24_risk_relative': 0.964644, 'sweep24_risk_relative_ci95': [0.89678, 0.992329]}, 'metric_semantics': 'fraction of independent production-width networks whose zero-order covariance recurrence has, at ANY of the 32 layers, min_eig/max_eig below 1e-12 (or a nonpositive spectrum) -- the relative-semantics guard-fire probability per network', 'relative_floor_crossing_fraction_w256': 0.13, 'relu_map_is_restorer': True, 'smoke': False, 'sweep_nets': 24, 'wall_seconds': 79.785323}, 'report_sha256': '7b41ca3a7b8a9b6fa99d275e6d4fe20e538afcca715a23f4e0820c56f1805aea', 'outcome': 'COMPLETED'} {\"kill_when_gte\": 0.05, \"metric\": \"relative_floor_crossing_fraction_w256\", \"pass_when_lte\": 0.003}"
+      ],
+      "failure_boundaries": [
+        "variance_or_signal_to_noise",
+        "approximation_or_materiality",
+        "wall_calls_or_allocation",
+        "numerical_or_endpoint_coverage",
+        "protocol_or_generalization"
+      ],
+      "id": "m207b_semantics_v1",
+      "index": 273,
+      "information_sources": [
+        "weights_only_analytic_state",
+        "deterministic_compute_only"
+      ],
+      "kill_condition": "{\"kill_when_gte\": 0.05, \"metric\": \"relative_floor_crossing_fraction_w256\", \"pass_when_lte\": 0.003}",
+      "operator_families": [
+        "analytic_moment_closure",
+        "control_and_multifidelity",
+        "robustness_and_protocol"
+      ],
+      "passed_tissue": [
+        "No passed component is asserted; preserve the exact predeclaration, evidence, and falsifier as negative knowledge."
+      ],
+      "prediction": "SMOKE-INFORMED (off-protocol base seed 777000999, n=10 main + 5 control, disclosed): metric lands in the KILL region (relative guard-fire fraction at or above 0.05) with probability ~0.85 -- smoke observed 0.30 with Wilson CI (0.11, 0.60), and 24-network sweep risk 99.98% under relative semantics. Relative fires at least as often as absolute on the same networks (smoke: 0.30 vs 0.10 -- the inversion the hypothesis predicts). The control arm collapses without the ReLU map (smoke: 5/5 crossed, max condition capped, collapse by the first third of depth) while the main arm's maximum-condition distribution is heavy-tailed with median near eleven decades and tail past fourteen. Band (0.003, 0.05) ~0.12; PASS at or below 0.003 ~0.03. Recognizable failure of the hypothesis: relative fraction at or below the pass bar while absolute stays material -- that would mean the semantics change genuinely rescues the spine.",
+      "raw_status": "killed",
+      "reopening_condition": [
+        "Reopen only with a new observable, exact identity, circuit class, or resource proof that repairs the recorded first break; parameter drift is excluded."
+      ],
+      "result_present": true
     }
   ],
   "schema_version": 1,
   "summary": {
     "canonical_status_counts": {
       "blocked": 12,
-      "killed_or_closed": 192,
+      "killed_or_closed": 193,
       "open_or_uncertain": 11,
       "preserved_component": 12,
       "promoted": 2,
@@ -10216,43 +10250,43 @@
       "validated": 2
     },
     "failure_boundary_counts": {
-      "approximation_or_materiality": 258,
+      "approximation_or_materiality": 259,
       "arithmetic_cost": 209,
       "bias_or_invalid_expectation": 94,
       "memory_or_liveness": 61,
       "missing_interface_or_provider": 71,
       "no_failure_at_recorded_gate": 4,
       "nonidentifiability_or_missing_information": 18,
-      "numerical_or_endpoint_coverage": 147,
-      "protocol_or_generalization": 45,
+      "numerical_or_endpoint_coverage": 148,
+      "protocol_or_generalization": 46,
       "representation_not_closed": 53,
       "theorem_or_class_closure": 23,
-      "variance_or_signal_to_noise": 182,
-      "wall_calls_or_allocation": 127
+      "variance_or_signal_to_noise": 183,
+      "wall_calls_or_allocation": 128
     },
     "information_source_counts": {
-      "deterministic_compute_only": 75,
+      "deterministic_compute_only": 76,
       "endpoint_or_facet_geometry": 55,
       "offline_learned_features": 68,
       "output_or_frame_statistics": 103,
       "sampled_network_paths": 154,
       "truth_or_oracle_only": 87,
       "unspecified_in_record": 13,
-      "weights_only_analytic_state": 134
+      "weights_only_analytic_state": 135
     },
     "operator_family_counts": {
-      "analytic_moment_closure": 121,
+      "analytic_moment_closure": 122,
       "compression_and_low_rank": 163,
-      "control_and_multifidelity": 186,
+      "control_and_multifidelity": 187,
       "endpoint_facet_and_coarea": 64,
       "engineering_and_cost": 62,
       "harmonic_and_symmetry": 141,
       "higher_cumulant_source": 114,
-      "robustness_and_protocol": 167,
+      "robustness_and_protocol": 168,
       "routing_and_learned_surrogates": 34,
       "sampling_and_design": 148
     },
-    "total_records": 273,
+    "total_records": 274,
     "unresolved_or_component_ids": [
       "latent_sparse_radial_cubature",
       "latent_randomized_radial",
