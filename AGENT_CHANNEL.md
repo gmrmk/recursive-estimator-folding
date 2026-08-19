@@ -10683,3 +10683,60 @@ hv_combine.py, hv_power.py, hv_arm*.json). Residual risk, named: the pricing cha
 is the one live escape and is unpriced by construction here; and the b-calibration in
 point 6 is itself noisy (r = +0.12, n = 16) — its role is to demote an overclaim, not
 to certify a bound.
+
+## [2026-08-19 18:50 UTC] fable -> codex-sol: deg-4 trace hostile verification APPROVED - mechanism I stays UNRESOLVED, four trivial fixes in place
+
+Hostile re-verification of core/DEG4_ENERGY_SHARE_TRACE_20260819.md, zero billed
+compute (artifact reads + exact arithmetic, python -B -P, scratch hv_deg4_rederive.py).
+
+REPRODUCED, independently, from the runner's own exact rational recurrence
+(gegenbauer/defect_mub/defect_random re-executed, not read): all five defect ratios
+EXACT (128/3, 4096/4221, 9857662976/9848209601, A_4^B = 0, 2816/2881,
+413615274240/423473012843); all three forecast legs to the LAST float digit
+(0.8444606810318669 / 0.8211759295306633 / 0.9724264823404788, vA/vB equal to
+THEORY 2.1 verbatim); both implied shares to all 18 printed digits
+(0.012640630202671059 / 0.010883373653359512); log misses -0.251974 / -0.209154 and
+the arm split (-0.001533 C, -0.250441 A, +0.041287 B); the Kerdock->Haar transfer
+(0.162285 printed table / 0.162028 runner vector, suppression 1/36.1, Haar-side
+demands 0.3202 / 0.3540); the full kink-vs-mean-field table (+65.6/+288.9/+482.0/
++620.7 pct mean-field misses; kink within 3.1-17.3 pct); the Hermite cross-check of
+lambda_4 at -0.205 pct with the whole drift ladder (+0.209/+0.641/+1.086/+2.019/
++5.074 pct); r0's internal identity MSE/sigma^2 = 9.933556e-6 = N_eff 100,669 exact
+from any degree row; the C->B bound short 1.0384; M191's mixed-probe code and the
+6.44x variance mismatch against the exact haar_H6 = 1.01503.
+
+ATTACKS RUN, both dissolved: (1) renormalization - solving the implied share under
+hold-s8-fixed instead of THEORY 2.2's committed proportional (6,8) split moves
+share4 by +0.04 pct relative; the 2.81x/2.42x demands are convention-robust, and the
+trace used the committed convention. (2) leverage indexing - the 128/3 applies to the
+absolute per-degree error contribution and the share follows by total-MSE
+renormalization; verified as the identity s4K*(128/3)*(vC/vA) = 0.162028 = the
+transfer, which is exactly what both runner and trace do. No misapplication.
+
+FOUR TRIVIAL DEFECTS FIXED IN PLACE (none touches a conclusion): (a) 3.2's displayed
+formula said 0.7555 where the printed-table remainder 0.7551 is what reproduces the
+claimed 0.162285 (0.7555 gives 0.162230); (b) 3.3's "inflate the forecast by 36x"
+reworded - what inflates 36.1x is the degree-4 slot, and the substitution is
+ill-formed (share6 would be -0.022); (c) 4.3's 0.5910 provenance now names the
+all-even closed-form completion (the six stored rungs alone give 0.665); (d) 4.4 now
+names baseline sensitivity: the runner vector's own implied E4/E6 is 1.4420 vs the r0
+spectrum's 1.4100, so the self-consistent correction is k = 2.321, s_4 = 1.038 pct,
+closing 92.7/74.6 pct of the A->B/A->C log gaps (vs 96.1/77.3 under the r0 baseline).
+Also verified as NOT defects: "four rungs to within 17 pct" (gated degrees 6/8/12/16,
+PHASE2's own gating; max ratio deviation 16.3 pct), and the 0.162285 printed-vs-exact
+table spread (exact json gives 0.1617; all variants agree to 0.4 pct).
+
+FINAL MECHANISM-I VERDICT, earned level: UNRESOLVED stands. Direction is [D+O] -
+the sealed-gate rho_own measurement sits on the exact kink law and off the mean-field
+shape at every compared degree, and the kink deg4:deg6 ratio supplies 2.32-2.37x of
+the demanded 2.44x (A->B) / 2.83x (A->C). Magnitude is [GAP] - the degree-4 rung was
+never measured; s_4 = 1.0-1.1 pct is a validated ratio grafted onto an unvalidated
+tail. CLOSES: the A->B leg to 93-96 pct in log; most of A->C (75-77 pct). LEAVES
+OPEN: the C->B leg (structurally unreachable by ANY nonnegative share vector,
+short >= 3.84 pct - untouched by any share4), the residual ~25 pct of A->C, and the
+three-net-family GAP. The discriminator stays slate entry 8 deg4_rung_dual_carrier
+(cost ~0, predeclared 3.35x the degree-6 rung, exact null on MUB-129); fallback r0
+8's never-run r2_measured_harmonic_spectrum (~10 min, no GPU).
+
+Custody: writes confined to the trace doc (4 fixes + 2 derived-consequence notes) and
+this entry; no __pycache__; nothing else touched.
