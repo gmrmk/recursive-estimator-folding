@@ -10311,3 +10311,74 @@ experiments/uf1_attack_eligibility/*. Carried at [R] and not recomputed: §8.5's
 its per-seed deltas — every ratio above inherits that. Not opened: the clone's cost model,
 so the per-hook L1-best call counts behind +281.6 are unverified here, and §9.2.4's
 "17 odd-k hooks x 16 blocks = 272" is a corroboration rather than a check.
+
+---
+
+## [2026-08-19 12:51 UTC] fable -> all: G-B settling check verified — APPROVED; door CLOSED; final disposition, no successor pass
+
+VERDICT: **APPROVED.** `core/KERDOCK_SCHEDULE_STATIC_GATES_20260819.md` §11 ran the one
+number §10.5 named as deciding the door and filed CLOSED. This final hostile pass (§11.9)
+re-derived everything §11 rests on from an independent parse of the recorded tape and an
+independently implemented route family, re-ran the matched comparison at every corner,
+and confirms: **`kerdock_host_depth2_winograd_schedule_pass` is CLOSED** — a
+context-indexed measured-static kill, campaign-law-conservative, deployment frame per the
+owner ruling recorded in §11.0. Five trivial defects fixed in place, itemised in §11.9;
+none moves any ratio, verdict, or threshold. **No `fold_search` cell is fundable on this
+door. This disposition needs no successor.**
+
+THE DECIDING NUMBER, INDEPENDENTLY REPRODUCED. Mean ΔL1 = **8,269,535,869** (per seed:
+11,543,513,583 / 5,994,588,306 / 5,751,535,090 / 9,585,858,877 / 8,472,183,489) — 33.4%
+below the 12,422,199,972.7 boundary, so the baseline-matched deployment-frame mean fires
+at the conservative campaign law at **1.1739x** and at the host law at **3.1133x**, on
+5 of 5 seeds at both laws (worst seed 1.0408x). The verification chain: this pass's own
+closed forms equal the tape's 140 recorded charges 140/140, the real frozen module
+140/140, the real clone module 140/140 (odd-k / dual-odd) and 280/280 (mod-4 L2 at both
+block heights); sum-frozen equals the tape's recorded per-net totals 5/5 in both
+carriers; §3.2's 28-row seed-11 table reproduces 28/28 on all three route columns;
+§11.3's nine panel columns land to the unit; every §11.4–§11.6 ratio, breakeven, and
+attack number re-derives from exact rationals. §11's append-only claim is proved by
+hash: the committed HEAD version is byte-identical to the working file's first 113,219
+bytes, sha256 916f60e7...a087f.
+
+FRAME CONSISTENCY — THE DEFECT CLASS THAT FELLED §9: zero mixed pairings anywhere in
+§11. Deployment rows pair frozen→L2 calls with ΔL1+ΔL2; own rows pair L1-best→L2 calls
+with ΔL2; the sub-moves and both reopening thresholds are matched-frame quotients. The
+honest own-frame output stays NOT ESTABLISHED (0.8020x campaign, 2.1268x host, 1 of 5
+seeds firing at the conservative law) — never PASS — so the door does not open under
+either frame ruling, which is why a disposition rather than another HELD is correct.
+
+FIVE TRIVIAL DEFECTS FIXED IN PLACE (§11.9 itemises). §11.1's host-law exact-rational
+cell was off by 100x (the adjacent decimal 1.4609318182e-3 and FLOP-eq 146,093,181.818 —
+the values every computation used — were right); three host-law Δ(λR) cells were off by
+one in the last digit (computed from the 11-digit decimal instead of the exact rational;
+no ratio moves at four decimals); and §11.4(b)'s "anti-correlated" is measured at
+Pearson r = +0.41 and now reads "far from proportional" — the substance stands, since
+seed 15 fires at 1.0836 against the 0.8020 own-frame mean.
+
+THE MARGIN, STATED PLAINLY. 1.1739x at the mean, 1.0408x at the weakest seed. The
+conservative anchor must be wrong by 14.82% (mean) or 3.92% (tightest seed) to flip a
+row, and the only other measured law sits 2.652x LARGER, so both measurements bracket
+the decision from above. A closure, not a rout — exactly as §11.7 files it.
+
+REOPENING, QUANTIFIED. (i) A measured per-dispatch law on this host, in a quiesced slot,
+below the matched breakeven 4.6926e7 FLOP-eq/dispatch (= 4.6926e-4 s/dispatch, 14.82%
+under the campaign anchor, 3.11x under the host anchor); or (ii) an operator variant
+reaching the same eligible surface at <= 433 dispatches per net against the frozen
+incumbent (measured here: +508.8); or (iii) an owner reversal of §11.0's deployment-frame
+ruling, which returns the door to §10.5's HELD — not to OPEN — and then still requires
+(i) before any cell. Parameter drift excluded. The strict leg stays HELD, do not seal
+(G-A 11.995% predeclared / 6.058% under idx 264's normaliser; G-B NOT ESTABLISHED).
+
+COMPLIANCE FOR THIS PASS. Zero billed compute: no harness, no FlopScope, no estimator
+execution, no scored row, no cell predeclared, no seed consumed. Every python invocation
+ran `python -B -P` with PYTHONDONTWRITEBYTECODE=1 from an isolated scratchpad outside the
+corpus; the 2026-08-19 slope law was not loaded, and both laws were rebuilt in exact
+rationals from the ledger anchors. Fences not written and no file inside them opened or
+searched — fold_floor_splice 2026-08-19T00:35:42, frame_completion_129 04:34:40, cells/
+04:00:17, row_blocked_production 2026-08-07T15:26:47, stat'd after the last edit and
+identical to the second to five earlier passes' records; corpus-wide `*.pyc` newer than
+2026-08-19 returns nothing. attack_translation.json mtime 2026-08-10T21:39:38, unchanged.
+Read set: the tape, the two cost models (frozen package + Codex clone, both unfenced),
+and the governing document. Carried at [R], unchanged: idx 268's 24-net receipts, idx
+250's residual numbers, and the public-100 replay (§8.6 item 3) — still unrun, still
+unable to rescue G-B per §11.8 risk 1.

@@ -1799,3 +1799,508 @@ override, and the §9.4 reopening-condition withdrawal.
 was edited, no annotation was attached to any ledger record, no fenced path was opened or
 written, the 2026-08-19 slope law was not loaded, `attack_translation.json` was not
 regenerated, and no estimator, harness, FlopScope context or scored row was executed.
+
+---
+
+# 11. THE SETTLING CHECK, RUN — 2026-08-19T12:32Z
+
+Appended by a fifth pass commissioned to run the settling check §10.5 named as the one
+unrun number that decides the door: **compute mean ΔL1 over the 5-net panel from the
+recorded tape and re-run the matched comparison.** Static arithmetic over an artifact
+already on disk, zero billed compute. **Append-only: this pass edited nothing in §0–§10.**
+Where it corrects an earlier printed figure it does so here, in §11.7, without touching
+the line it corrects.
+
+**Verdict, up front. Mean ΔL1 = 8,269,535,869 — 28.4% *below* seed 11's, and 33.4% below
+the boundary §10.3 named. The matched deployment-frame comparison therefore fires at
+1.1739×, not the ≈1.03× §10.3 conditioned on, and it fires on 5 of 5 seeds under the
+conservative campaign anchor and at every corner under the host anchor. Door status:
+CLOSED — a context-indexed measured-static kill, campaign-law-conservative. The door does
+not open under the other frame either: there it is NOT ESTABLISHED, never PASS. No
+`fold_search` cell is fundable on this door.**
+
+## 11.0 Compliance, basis, and what this pass read
+
+**Zero billed compute.** No harness, no FlopScope, no estimator execution, no scored row,
+no cell predeclared, no seed consumed. Every `python` invocation ran `python -B -P` with
+`PYTHONDONTWRITEBYTECODE=1` from a scratch directory outside the corpus. The 2026-08-19
+slope law (`headroom/slope_cost_model.py`, `SLOPE_COST_MODEL_20260819.*`) was not loaded,
+not imported, and no number below derives from it; it is named only in this ban clause.
+Both per-dispatch laws are rebuilt below in exact rationals from ledger fields this pass
+read itself.
+
+**Fences.** `experiments/fold_floor_splice`, `experiments/frame_completion_129`, `cells/`
+and `experiments/row_blocked_production` were **not written and no file inside them was
+opened** — not even by a search. Their mtimes, stat'd after this pass's last edit [O], are
+`2026-08-19T00:35:42`, `2026-08-19T04:34:40`, `2026-08-19T04:00:17` and
+`2026-08-07T15:26:47` in local time (`05:35:42`, `09:34:40`, `09:00:17`, `20:26:47` UTC) —
+identical to the second against the values §7, §8.8, §9.0 and §10.0 recorded.
+`find . -name "*.pyc" -newermt 2026-08-19` over the whole corpus returns nothing [O].
+
+**Read set** [O]: `experiments/uf1_attack_eligibility/attack_eligibility_raw.json` (the
+recorded tape — this pass's only input), the frozen
+`experiments/v31_guards/package_source/cost_model.py`,
+`experiments/clone_l2fringe_recompute/runner_recompute.py` (for the clone's path), the
+Codex clone's `experiments/whest/candidates/kerdock_g16_l2_fringe/cost_model.py` (outside
+the corpus, unfenced), and this document. **Modified:** this document only (§11 appended).
+No recorded artifact was regenerated: `attack_translation.json` mtime is
+`2026-08-10T21:39:38`, unchanged [O].
+
+**The frame ruling, recorded as the owner call §10.5 item 2 asked for.** §10.5 left open
+"which frame W1.2 governs: the door's own increment (+227.2, the predeclared basis) or the
+deployment (+508.8 with the matched denominator). §9 chose neither." **The owner made that
+call in the directive commissioning this section** [R, directive 2026-08-19]: the
+disposition is keyed to the **deployment frame**, matched on both sides. §11.4 reports
+both frames regardless, and §11.7 states what the disposition would be under the other
+one, so the ruling's weight is visible rather than assumed.
+
+**Evidence tags** carry §0's meanings: **[O]** observed here, **[D]** derived here by shown
+arithmetic, **[R]** reported by a record and not re-derived, **[A]** an assumption named as
+such.
+
+## 11.1 PREDECLARATION — thresholds restated before any number in this section
+
+**The gate, transcribed unchanged from §9.2.1, which transcribed it unchanged from §4.1,
+which tightened `MI_SOLVE` §W1.2's "exceeds" to "≥" in the conservative direction:**
+
+> `projected residual increase ≥ projected FLOP saving`, both in FLOP-equivalents at
+> `λ = 1e11` (1 s of residual = 1e11 FLOPs) → the door **CLOSES** on G-B. Otherwise G-B
+> passes.
+
+**The matching rule, transcribed from §10.2, which is the defect this pass exists to
+repair.** A comparison is admissible only if its numerator and denominator are measured
+against the **same** baseline. The two self-consistent frames are therefore fixed, before
+any number:
+
+| frame | dispatch delta (numerator side) | FLOP saving (denominator side) |
+|---|---|---|
+| **deployment** | frozen deployed incumbent → L2 | `ΔL1 + ΔL2` = frozen → L2 |
+| **own** | L1-best → L2 | `ΔL2` = L1-best → L2 |
+
+and the two sub-moves are priced separately, each self-consistently:
+`frozen → L1-best` (+calls) against `ΔL1`, and `L1-best → L2` (+calls) against `ΔL2`.
+
+**The two measured laws, as §9.2.2 licensed them and §10.1 rebuilt them — a bracket, not a
+point.** Rebuilt here a third time, in exact rationals, from the ledger's own anchors [O/D]:
+
+| law | exact rational | s per dispatch | FLOP-eq per dispatch at λ=1e11 |
+|---|---|--:|--:|
+| **campaign** (m116b/m116c, idx 117/118), the **lower/conservative** anchor | `(0.6105131132 − 0.3284645767)/(1024 − 512) = 14102426825/25600000000000` | `5.508760478515625e-4` | **55,087,604.785** |
+| **host** (idx 250), the **upper** anchor | `(0.933445 − 0.419197)/(512 − 160) = 64281/44000000` | `1.4609318182e-3` | **146,093,181.818** |
+
+Both agree with §9.2.2's and §10.1's printed values to 11 significant figures.
+
+**The decision rule, stated before the numbers** [R, directive 2026-08-19]: if the
+deployment-frame **mean** fires at **both** laws → **CLOSED**; if it fires only at the host
+law → **HELD**, with the reopening condition stated as the measured-law threshold in the
+matched frame; if it fails to fire at the campaign law in the deployment frame → **HELD
+leaning open**, with a quiesced-host per-dispatch measurement named as the sole settler.
+
+**The boundary §10.3 named, restated before it is tested.** At the conservative campaign
+law the deployment-frame mean fires **iff**
+`mean ΔL1 ≤ 508.8 × 55,087,604.785 − 15,606,373,342 = 12,422,199,972.7` — a value only
+**7.61% above** seed 11's 11,543,513,583. §10.3 could not evaluate it and conditioned its
+row 3 on `mean ΔL1 = seed 11's`, which would have given ≈1.0324×. **The direction matters
+and §10.3 states it correctly: the gate fires when mean ΔL1 is BELOW the boundary, because
+a larger ΔL1 enlarges the matched denominator.**
+
+## 11.2 The recompute, and the five independent anchors it reproduces
+
+The tape records, per net, every deep hook's `(m, k, n)` and its exact FlopScope charge
+[O]. Everything else is closed-form. This pass **re-typed by hand** `direct_cost`,
+`batched_winograd_core_cost`, `batched_winograd_l2_core_cost`, the frozen package's
+`owned_batched_candidate_bill`, the clone's odd-`k` `owned_batched_candidate_bill`, the
+`dual_odd` branch and the mod-4 block of `grouped_l2_candidate_bill`, importing nothing
+from the corpus or the clone; the re-typed forms were then cross-checked against the real
+modules as a second signal. `L1-best` is the cheapest of the three one-level owned routes
+at full `m`; `L2 mod-4` is priced per 4096-row block (15 × 4096 + 1 × 3072 = 64,512), the
+pessimistic accounting §3.2 declares.
+
+**Checks, all exact** [O/D]:
+
+| check | result |
+|---|---|
+| re-typed frozen closed form vs the recorded tape charge | **140/140**, zero mismatches |
+| re-typed frozen vs the real `package_source/cost_model.py` | **140/140** |
+| re-typed clone odd-`k` vs the real clone `cost_model.py` | **140/140** |
+| re-typed mod-4 L2 term (total **and** `call_count`) vs the real `grouped_l2_candidate_bill` | **140/140** |
+| Σ frozen per net vs the tape's own recorded `deep_hook_charged` | **5/5** exact |
+
+**And it reproduces five separately published anchors, computed by three earlier passes,
+exactly** [O/D vs R] — this is the check that would fail if the route family were wrong:
+
+| anchor | published in | recomputed here |
+|---|---|---|
+| seed-11 ΔL1 | §3.2 total, 11,543,513,583 | **11,543,513,583** |
+| seed-11 ΔL2 | §3.2 total, 15,416,783,746 | **15,416,783,746** |
+| seed-11 `frozen → L2` | §10.2, 26,960,297,329 | **26,960,297,329** |
+| **5-net mean ΔL2** | §3.4, 15,606,373,342 | **15,606,373,342** |
+| **per-seed frozen-baseline Δcalls** | §8.5, +624/+432/+448/+464/+576 | **+624/+432/+448/+464/+576** |
+| means of the three deltas | §5.1 +227.2, §9.2.4 +281.6, §8.5 +508.8 | **+227.2 / +281.6 / +508.8** |
+
+**§8.5's +508.8 and its per-seed deltas are hereby upgraded from [R] to [O/D].** §10.7 risk
+2 named them as carried from the §8 verifier and never recomputed, with every ratio in
+§10.3 inheriting that. They are recomputed here from a different construction — the bills'
+own `call_count` field times `ceil(m / 4096)` per hook — and land on all five recorded
+values to the unit. **That risk is discharged.**
+
+## 11.3 THE NUMBER — mean ΔL1, and the full matched panel
+
+_(first appearance of any result in this section; §11.1 precedes it)_
+
+| seed | Σ frozen | Σ L1-best | Σ L2 mod-4 blocked | **ΔL1** | **ΔL2** | **ΔL1+ΔL2** |
+|--:|--:|--:|--:|--:|--:|--:|
+| 11 | 154,720,254,241 | 143,176,740,658 | 127,759,956,912 | 11,543,513,583 | 15,416,783,746 | 26,960,297,329 |
+| 12 | 151,088,919,681 | 145,094,331,375 | 129,310,710,816 | 5,994,588,306 | 15,783,620,559 | 21,778,208,865 |
+| 13 | 163,753,789,297 | 158,002,254,207 | 140,785,233,904 | 5,751,535,090 | 17,217,020,303 | 22,968,555,393 |
+| 14 | 148,253,240,205 | 138,667,381,328 | 123,694,033,120 | 9,585,858,877 | 14,973,348,208 | 24,559,207,085 |
+| 15 | 145,498,000,151 | 137,025,816,662 | 122,384,722,768 | 8,472,183,489 | 14,641,093,894 | 23,113,277,383 |
+| **mean** | | | | **8,269,535,869** | **15,606,373,342** | **23,875,909,211** |
+
+All three means are exact integers (the five-seed sums divide by 5 without remainder), and
+`8,269,535,869 + 15,606,373,342 = 23,875,909,211` closes the panel on itself.
+
+**Against §11.1's boundary: mean ΔL1 = 8,269,535,869 ≤ 12,422,199,972.7. The
+deployment-frame mean fires at the conservative anchor, with 1.5022× of headroom on ΔL1**
+[D]. Seed 11 — the only seed §3.2 published, and the seed every earlier pass reasoned from
+— carries the panel's **largest** ΔL1; the mean is 28.36% below it. §10.3's conditional
+"≈1.03 if mean ΔL1 equals seed 11's" was therefore the pessimistic corner of the real
+panel, not its centre.
+
+**The dispatch panel, recomputed** [O/D]:
+
+| seed | calls frozen | calls L1-best | calls L2 | frozen→L1best | L1best→L2 | **frozen→L2** |
+|--:|--:|--:|--:|--:|--:|--:|
+| 11 | 544 | 992 | 1168 | +448 | +176 | **+624** |
+| 12 | 576 | 752 | 1008 | +176 | +256 | **+432** |
+| 13 | 544 | 704 | 992 | +160 | +288 | **+448** |
+| 14 | 560 | 896 | 1024 | +336 | +128 | **+464** |
+| 15 | 592 | 880 | 1168 | +288 | +288 | **+576** |
+| **mean** | 563.2 | 844.8 | 1072.0 | **+281.6** | **+227.2** | **+508.8** |
+
+## 11.4 THE MATCHED COMPARISON — both self-consistent frames, both measured laws
+
+Gate as predeclared in §11.1: fires when `Δcalls × law ≥ matched FLOP saving`.
+
+**(a) Deployment frame — frozen deployed incumbent → L2, matched on both sides** [D]:
+
+| seed | Δcalls | matched saving | campaign Δ(λR) | ratio | fires? | host Δ(λR) | ratio | fires? |
+|--:|--:|--:|--:|--:|:-:|--:|--:|:-:|
+| 11 | +624 | 26,960,297,329 | 34,374,665,386 | 1.2750 | **yes** | 91,162,145,455 | 3.3813 | **yes** |
+| 12 | +432 | 21,778,208,865 | 23,797,845,267 | 1.0927 | **yes** | 63,112,254,545 | 2.8980 | **yes** |
+| 13 | +448 | 22,968,555,393 | 24,679,246,944 | 1.0745 | **yes** | 65,449,745,455 | 2.8495 | **yes** |
+| 14 | +464 | 24,559,207,085 | 25,560,648,620 | 1.0408 | **yes** | 67,787,236,364 | 2.7602 | **yes** |
+| 15 | +576 | 23,113,277,383 | 31,730,460,356 | 1.3728 | **yes** | 84,149,672,727 | 3.6408 | **yes** |
+| **mean** | **+508.8** | **23,875,909,211** | **28,028,573,315** | **1.1739** | **yes** | **74,332,210,909** | **3.1133** | **yes** |
+
+**5 of 5 seeds and the mean fire at BOTH laws.** Worst seed at the conservative anchor:
+seed 14, 1.0408×.
+
+**(b) Own frame — the door's own delta against its own saving** [D]:
+
+| seed | Δcalls | ΔL2 | campaign Δ(λR) | ratio | fires? | host Δ(λR) | ratio | fires? |
+|--:|--:|--:|--:|--:|:-:|--:|--:|:-:|
+| 11 | +176 | 15,416,783,746 | 9,695,418,442 | 0.6289 | no | 25,712,400,000 | 1.6678 | **yes** |
+| 12 | +256 | 15,783,620,559 | 14,102,426,825 | 0.8935 | no | 37,399,854,545 | 2.3695 | **yes** |
+| 13 | +288 | 17,217,020,303 | 15,865,230,178 | 0.9215 | no | 42,074,836,364 | 2.4438 | **yes** |
+| 14 | +128 | 14,973,348,208 | 7,051,213,412 | 0.4709 | no | 18,699,927,273 | 1.2489 | **yes** |
+| 15 | +288 | 14,641,093,894 | 15,865,230,178 | 1.0836 | **yes** | 42,074,836,364 | 2.8737 | **yes** |
+| **mean** | **+227.2** | **15,606,373,342** | **12,515,903,807** | **0.8020** | no | **33,192,370,909** | **2.1268** | **yes** |
+
+The own-frame bracket straddles 1.0 at the mean, exactly as §9.2.3's first table and
+§10.3's first row report. Its honest output is **NOT ESTABLISHED** — not PASS. Note the
+per-seed structure, which neither earlier pass had: the own-frame delta is
+**far from proportional** to ΔL2 across the panel (Pearson r = +0.41; seed 14 pays 128
+calls for 14.97e9; seed 13 pays 288 for 17.22e9), so the mean ratio 0.8020 is not a stable
+margin — one of five seeds already fires against it.
+
+## 11.5 The two sub-moves, priced separately — the attribution inversion, confirmed
+
+§10.2's finding was that the mixed pairing inverts the attribution. With the true panel
+means in hand it is sharper than §10.2 could show [D]:
+
+| sub-move | Δcalls | ΔFLOP it banks | campaign ratio | fires? | host ratio | fires? |
+|---|--:|--:|--:|:-:|--:|:-:|
+| **`frozen → L1-best`** routing — **m71's, INELIGIBLE per §2's G-A.3 cl. 2** | +281.6 | 8,269,535,869 | **1.8759** | **yes** | **4.9749** | **yes** |
+| **`L1-best → L2`** fringe — **the door's own step** | +227.2 | 15,606,373,342 | **0.8020** | no | 2.1268 | **yes** |
+
+Per seed the routing sub-move fires at the campaign law on **5 of 5** (2.1379 / 1.6174 /
+1.5325 / 1.9309 / 1.8726); the door's own step fires on **1 of 5**.
+
+**The residual-losing move is the one the door does not own, and it loses by 1.88× where
+the door's own step passes at 0.80×.** §9.2.3 charged the door for that move and credited
+it none of its saving; §10.2 caught the mismatch; this section prices both halves on the
+real panel. The inversion is not marginal — the ineligible half is 2.34× worse than the
+eligible half at the same law.
+
+## 11.6 The attack
+
+1. *Counter-hypothesis: mean ΔL1 comes out low because the L1-best route family is
+   mis-typed — the clone's odd-`k` or dual-odd branch is wrong, which would inflate ΔL2 at
+   ΔL1's expense.* Tested against four published anchors that no error in this pass could
+   have chosen: seed-11 ΔL1 and ΔL2 land on §3.2's printed totals exactly, the 5-net mean
+   ΔL2 lands on §3.4's 15,606,373,342 exactly, and `frozen − L2` lands on §10.2's
+   26,960,297,329 exactly. A route-family error would have to be zero on seed 11 and
+   exactly self-cancelling in the mean across seeds 12–15. **The attack fails; the panel
+   stands.**
+2. *Counter-hypothesis: the fire is an artifact of the pessimistic blocked L2 accounting
+   (§7 risk 4), which understates the eligible saving.* Tested by re-pricing the L2 route
+   with the `k×n` transform hoisted out of the row loop — the optimistic corner risk 4
+   names. The matched mean saving rises 0.380% to 23,966,526,584, and the deployment-frame
+   mean ratio moves from **1.1739 to 1.1695** [D]. **Still fires at both laws. The attack
+   lands on the third decimal and changes nothing.**
+3. *Counter-hypothesis: the fire depends on picking the larger law, or on a two-point law
+   being right to better than it can be.* Tested by computing how far the conservative
+   anchor would have to fall to flip each row [D]:
+
+   | row | matched breakeven (FLOP-eq/dispatch) | campaign anchor is | law must fall |
+   |---|--:|--:|--:|
+   | seed 11 | 43,205,604.7 | 1.2750× it | 21.57% |
+   | seed 12 | 50,412,520.5 | 1.0927× it | 8.49% |
+   | seed 13 | 51,269,096.9 | 1.0745× it | 6.93% |
+   | **seed 14** (tightest) | **52,929,325.6** | **1.0408× it** | **3.92%** |
+   | seed 15 | 40,127,217.7 | 1.3728× it | 27.16% |
+   | **mean** | **46,925,922.2** | **1.1739× it** | **14.82%** |
+
+   **This attack lands, partially, and the result is in the deliverable rather than
+   patched away.** The mean needs a 14.82% error in the conservative anchor to flip, which
+   the two-anchor spread does not support — the *other* measured law is 2.652× **larger**,
+   not smaller, so both measurements bracket the decision from above. But the tightest
+   seed flips on a 3.92% error, so the per-seed unanimity is not as robust as the 5/5 count
+   suggests, and this is stated as the margin the closure actually carries.
+
+   Seed 11's baseline-matched breakeven **43,205,604.7** reproduces §10.5's `4.3206e7` [O/D
+   vs R] — a fourth published anchor recovered.
+
+## 11.7 FINAL DISPOSITION — DOOR CLOSED
+
+**`kerdock_host_depth2_winograd_schedule_pass`: CLOSED.**
+
+Mechanically from §11.1's decision rule: the deployment-frame **mean** fires at the host
+law (3.1133×) **and** at the conservative campaign law (1.1739×), on 5 of 5 seeds
+individually as well. That is the `CLOSED` branch.
+
+| leg | G-A | G-B | door |
+|---|---|---|---|
+| idx 268 l2-fringe | PASS (§3.4, §8.2 — unchanged, confirmed twice) | **FIRES**, matched deployment frame, both laws, 5/5 seeds (§11.4a) | **CLOSED_GB** |
+| idx 58/59 fused strict | passes at 11.995% predeclared, 6.058% under idx 264's normaliser — **do not seal** (§10.4, unchanged) | NOT ESTABLISHED (§9.2.4, unchanged) | **HELD — do not seal** |
+
+**The honesty §10 demands, stated rather than buried.**
+
+1. **The closure rests on the owner's frame ruling, and the ruling is load-bearing.**
+   Under W1.2's literal words — "the operator's **own** dispatch-count delta" — the own
+   frame governs and the conservative anchor returns 0.8020×, which does **not** fire.
+   §11.0 records the directive's ruling that the deployment frame decides. If a later owner
+   reverses that ruling, this section's `CLOSED` reverts to §10.5's `HELD`.
+2. **But the door does not open under either ruling.** The own frame's honest output is
+   **NOT ESTABLISHED**, never PASS: it fires at the host law on 5 of 5 seeds and at the
+   campaign law on 1 of 5. There is no frame and no licensed law under which G-B returns a
+   clean pass. **The operational consequence is identical in both frames — no `fold_search`
+   cell is fundable on this door** — which is why this pass files a disposition rather than
+   another `HELD`.
+3. **The margin is 1.1739× at the mean and 1.0408× at the weakest seed**, not the
+   1.80×–4.76× §9.4 filed. It is a closure, not a rout. §11.6 item 3 prices exactly how
+   much law error it tolerates.
+4. **Two figures printed above are corrected here, neither reversing its own conclusion:**
+
+   | § | printed | correct | why |
+   |---|---|---|---|
+   | 10.2, sub-move row 1 | `frozen → L1-best`: +281.6 vs 11,543,513,583, ratio **1.3438** | ratio **1.8759** (mean-matched, +281.6 vs mean ΔL1 8,269,535,869) or **2.1379** (seed-11-matched, +448 vs 11,543,513,583) | the row pairs a **mean** dispatch delta with a **seed-11** ΔFLOP — the same mean/seed mismatch, one level down, that §10.2 exists to correct. Both self-consistent pairings fire **harder**, so §10.2's conclusion strengthens. |
+   | 10.3, row 3 | deployment frame at the mean: `≈1.03` conditioned on `mean ΔL1 = seed 11's` | **1.1739** at the measured `mean ΔL1 = 8,269,535,869` | §10.3 named this as conditional and unrun; it is now run. Seed 11 carries the panel's largest ΔL1, so the condition was the pessimistic corner. |
+
+### The closure record — context-indexed measured-static kill
+
+| axis | value |
+|---|---|
+| **carrier** | `kerdock_mub` |
+| **precision** | float32 (the frozen v3 entrypoint's dtype; not decisive on this kill) |
+| **convention** | `residual_wall` |
+| **mechanism** | `compiler_schedule` |
+| **kill type** | **measured-static** — static exact enumeration over a recorded tape, priced by a *measured* per-dispatch law; zero billed compute, no estimator run, no seed consumed |
+| **first break** | projected residual increase ≥ projected FLOP saving at λ=1e11 in the **baseline-matched deployment frame**: +508.8 dispatches/net against the frozen deployed incumbent costs 2.8029e10 (campaign) to 7.4332e10 (host) FLOP-eq, against the matched saving `ΔL1+ΔL2` of 2.3876e10 — **1.1739× to 3.1133×**, firing on 5 of 5 seeds under the conservative anchor (worst seed 1.0408×) |
+| **decisive number** | **mean ΔL1 = 8,269,535,869**, below the 12,422,199,973 boundary §10.3 named, by 1.5022× |
+| **instrument** | the m116b/m116c campaign law 5.5087604785e-4 s/dispatch (conservative anchor, idx 117/118) and idx 250's host law 1.4609318182e-3 s/dispatch (upper anchor), both at λ=1e11; the 2026-08-19 slope law was **not** used |
+| **frame** | deployment (frozen deployed incumbent → L2), matched on both sides, per the owner ruling of 2026-08-19 [R] |
+| **reopening condition** | **(i)** a measured per-dispatch law **on this host, in a quiesced slot**, coming in below the matched breakeven `23,875,909,211 / 508.8 = 4.6926e7` FLOP-eq per dispatch (= `4.6926e-4` s/dispatch) — 14.82% below the conservative anchor and 3.11× below the host anchor; **or (ii)** an operator variant reaching the same eligible surface at **≤ 433 dispatches per net** against the frozen incumbent (the largest Δcalls the matched saving covers at the conservative law), against the +508.8 measured here; **or (iii)** an owner reversal of §11.0's frame ruling, which returns the door to §10.5's `HELD`, not to OPEN. Parameter drift is excluded. |
+
+**Preserved tissue — carried forward intact, none of it touched by the kill.** §9.4's list
+survives and this pass re-derived all three items a third time (§11.2): the G-A eligibility
+enumeration, the 140-bill tape, and the two reproduced route prices. So do §9's two new
+assets — the residual channel's two measured per-dispatch laws, and the finding that idx 69
+is not a residual-channel instrument. **Newly banked by this section: the full 5-net ΔL1 /
+ΔL2 / dispatch panel of §11.3**, which is the first time the ineligible (m71-owned)
+increment has been stated for any seed but 11, and which is what any future schedule
+proposal on this carrier needs in order to state a matched comparison at all.
+
+## 11.8 Verification, and what this pass leaves open
+
+**Two independent signals per load-bearing claim.**
+
+- **Mean ΔL1 = 8,269,535,869.** Signal 1: computed from the recorded tape through re-typed
+  closed forms that reproduce the tape's own 140 charges 140/140 and the tape's recorded
+  per-net `deep_hook_charged` 5/5 [O/D]. Signal 2: the same computation's seed-11 row lands
+  on §3.2's independently published ΔL1 total 11,543,513,583 exactly, and its 5-net ΔL2
+  mean lands on §3.4's independently published 15,606,373,342 exactly — two figures
+  produced by an earlier pass from re-typed source sharing no code with this one [O/D vs R].
+- **The dispatch panel.** Signal 1: `call_count` × `ceil(m/4096)` per hook, summed [O/D].
+  Signal 2: the five per-seed frozen-baseline deltas land on §8.5's +624/+432/+448/+464/+576
+  to the unit, and all three means land on §5.1's +227.2, §9.2.4's +281.6 and §8.5's +508.8
+  exactly — a construction §8.5 did not use [O/D vs R].
+- **The two laws.** Signal 1: rebuilt here in exact rationals from `candidates[117]`,
+  `candidates[118]` and `candidates[250]` [O/D]. Signal 2: they agree with §9.2.2's and
+  §10.1's printed values to 11 significant figures, from two earlier independent rebuilds.
+- **The verdict.** Signal 1: the deployment-frame mean at the conservative law, 1.1739×
+  [D]. Signal 2: the same test per seed fires 5/5 at that law and 5/5 at the other, and
+  survives the optimistic L2 accounting at 1.1695× — a verdict that survives a change of
+  instrument, a change of seed, and a change of cost accounting [D].
+- **Fences and artifact.** Signal 1: four directory mtimes stat'd after the last edit, equal
+  to the second to four earlier passes' recorded values. Signal 2: the corpus-wide `*.pyc`
+  sweep returns nothing, and `attack_translation.json`'s mtime is unchanged [O].
+
+**Named risks, at their earned level.**
+
+1. **The panel is still 5 synthetic He nets, not the public 100** (§7 risk 1, §9.5 risk 4,
+   unchanged). §8.6 item 3 — replay the logging subclass over
+   `experiments/t4_kerdock_descriptive_rescore/kerdock_v3_official100.json` — **remains
+   unrun**. §9.5 already argued it cannot rescue G-B because both sides of the ratio move
+   with the same fringe mix; that argument now has per-seed support, since the deployment
+   ratio varies only 1.0408–1.3728 across a panel whose ΔL1 varies by 2.01×. It would still
+   sharpen §3.4 and §8.2.
+2. **The tightest seed flips on a 3.92% error in the conservative law** (§11.6 item 3). The
+   mean needs 14.82%. Neither measured law is published with an uncertainty interval, and
+   the campaign law is a two-point slope.
+3. **Cross-host transfer, unchanged from §10.7 risk 4.** Both laws were measured on
+   machines that are not necessarily the Kerdock host in a quiesced state. This is why
+   reopening condition (i) names an on-host quiesced measurement, and why the conservative
+   anchor rather than the host anchor carries the verdict.
+4. **The strict leg is untouched by this pass** and stays exactly where §10.4 and §10.5 put
+   it: passes G-A at 11.995% under the predeclared normaliser, 6.058% under idx 264's,
+   G-B NOT ESTABLISHED, **do not seal**. Its fallback clause (§9.2.4) is still unsettled;
+   the settling check remains one read of idx 58/59's package source, and it changes nothing
+   about the door.
+5. **Not verified by this pass, and named as such:** idx 268's 24-net receipts and idx 250's
+   residual numbers are carried at [R] from the ledger, not re-aggregated; neither deployed
+   executable was opened (only the two cost models); idx 69 was not re-read, and per §9.1.7
+   licenses nothing either way; and the `BLOCK_ROWS = 4096` blocking of the L2 route is
+   §3.2's declared accounting, re-derived here but not observed in a deployed operator.
+
+**Skipped deliberately, and named as skipped:** no cell was predeclared, no ledger field was
+edited, no annotation was attached to any ledger record, no fenced path was opened or
+written or searched, the 2026-08-19 slope law was not loaded, `attack_translation.json` was
+not regenerated, the public-100 replay was not run, and no estimator, harness, FlopScope
+context or scored row was executed.
+
+**This is the last pass on this door.** The one number §10.5 named as deciding it has been
+computed from an artifact that was already on disk, the comparison has been re-run matched
+in both frames at both licensed laws, and the disposition follows mechanically in either
+frame to the same operational answer. **No `fold_search` cell is fundable on this door**, and
+none should be predeclared without an explicit owner ruling that reverses §11.0's frame call
+— which would return the door to `HELD`, and would then additionally require the on-host
+quiesced per-dispatch measurement of reopening condition (i) before any cell.
+
+## 11.9 FINAL HOSTILE VERIFICATION — 2026-08-19T12:51Z — APPROVED, DISPOSITION STANDS
+
+Appended by a sixth and final pass commissioned to verify §11 so that the disposition
+needs no successor: re-derive mean ΔL1 and mean ΔL2 from the recorded tape through an
+independent parse and an independently implemented route family, re-run the matched
+comparison at every corner, check frame consistency on every ratio, and fix what is
+trivially wrong in place. Same envelope as every pass above: zero billed compute, every
+`python` ran `python -B -P` with `PYTHONDONTWRITEBYTECODE=1` from a scratch directory
+outside the corpus, the 2026-08-19 slope law never loaded.
+
+**Verdict: §11 is APPROVED. `kerdock_host_depth2_winograd_schedule_pass` is CLOSED as
+filed.** The disposition follows mechanically from §11.1's predeclared decision rule, and
+every load-bearing number in §11.2–§11.7 reproduces exactly from this pass's independent
+re-derivation. Five trivial defects were found and fixed in place, itemised below; none
+moves any ratio, verdict, or threshold.
+
+**What was re-derived, and against what.** This pass parsed
+`attack_eligibility_raw.json` with its own code and implemented all three route families
+itself from the two module sources (`experiments/v31_guards/package_source/cost_model.py`
+and the Codex clone's `kerdock_g16_l2_fringe/cost_model.py`, both unfenced), then
+cross-checked against the real modules as a second signal [O/D]:
+
+- this pass's frozen closed form equals the tape's 140 recorded charges **140/140** and
+  the real frozen module (total and `call_count`) **140/140**;
+- its clone odd-`k`/dual-odd forms equal the real clone module **140/140**; its mod-4 L2
+  block bill equals the real `grouped_l2_candidate_bill` at both block heights (4096 and
+  3072) **280/280**, with the grouped selector picking the l2 arm on all of them;
+- Σ frozen per net equals the tape's own recorded totals **5/5**, in both carriers
+  (`runs[].deep_hook_charged` and `eligibility.per_seed[].deep_hook_charged_actual`);
+- §3.2's seed-11 table — published three passes before §11 existed — reproduces on all
+  28 rows × three route columns, **28/28**;
+- §11.3's two panels reproduce on all nine columns × five seeds **to the unit**,
+  including mean ΔL1 = **8,269,535,869**, mean ΔL2 = 15,606,373,342, matched mean
+  23,875,909,211, and the 563.2 / 844.8 / 1072.0 call means;
+- §11.4's twenty per-seed ratios and four means, §11.5's sub-moves (1.8759 / 0.8020 and
+  both per-seed rows), §11.6's breakevens with the 3.92% / 14.82% flip margins and the
+  hoisted-L2 recompute (23,966,526,584; 1.1695), §11.1's boundary 12,422,199,972.7 with
+  its 1.5022× headroom, and §11.7's reopening thresholds (4.6926e7 FLOP-eq/dispatch;
+  ≤ 433 dispatches/net) all reproduce from exact rationals [D].
+
+**Frame consistency — the defect class that felled §9 — checked on every ratio in §11:
+zero mixed pairings.** Deployment rows divide frozen→L2 calls by `ΔL1 + ΔL2`; own rows
+divide L1-best→L2 calls by `ΔL2`; sub-move 1 divides frozen→L1-best calls by `ΔL1`;
+every breakeven and both reopening thresholds are matched-frame quotients. The one mixed
+ratio §11 prints (1.3438) appears only as the §10.2 defect it corrects, and it re-derives
+as printed [O/D].
+
+**§11's append-only claim, proved mechanically here.** The committed HEAD version of this
+document is 113,219 bytes with sha256 `916f60e7…a087f`, and the working file's first
+113,219 bytes hash identically [O]. §0–§10 were untouched by §11; this pass touched
+§0–§10 not at all, and §11 only at the five cells below.
+
+**Five trivial defects, fixed in place** — the fixes are this pass's only edits above
+§11.9, and nothing downstream of any of them moves:
+
+| where | was | now | why |
+|---|---|---|---|
+| §11.1, host-law row | exact rational `1607025000/110000000000000` (= 1.4609e-**5** s) | `64281/44000000` | transcription slip, two orders of magnitude; the adjacent decimal `1.4609318182e-3` and the FLOP-eq 146,093,181.818 were already correct and are what every computation used |
+| §11.4(a) seed 11, host Δ(λR) | 91,162,145,456 | 91,162,145,455 | exact is 91,162,145,454.5454…; the cell was computed from the 11-digit decimal law instead of the exact rational. Ratio 3.3813 unaffected |
+| §11.4(a) seed 12, host Δ(λR) | 63,112,254,546 | 63,112,254,545 | same cause; exact 63,112,254,545.4545…. Ratio 2.8980 unaffected |
+| §11.4(b) seed 12, host Δ(λR) | 37,399,854,546 | 37,399,854,545 | same cause; exact 37,399,854,545.4545…. Ratio 2.3695 unaffected |
+| §11.4(b), closing note | "anti-correlated with ΔL2" | "far from proportional to ΔL2 (Pearson r = +0.41)" | the measured correlation is **positive** (+0.4065 over 5 points), so the word was wrong; the substance — the 0.8020 mean is not a stable margin, and seed 15 already fires at 1.0836 — stands unchanged |
+
+One boundary case, noted and left: §11.4(b) seed 14's campaign Δ(λR) is exactly
+7,051,213,412.5, and the printed 7,051,213,412 is round-half-even; it is kept.
+
+**The disposition, at its earned level.** `CLOSED` is the branch §11.1's predeclared rule
+returns on the measured numbers: the baseline-matched deployment-frame mean fires at the
+host law (3.1133×) and at the conservative campaign law (1.1739×), and per seed 5/5 at
+both, worst seed 1.0408×. The closure is conditional on exactly the two things §11.7
+names: the owner's deployment-frame ruling [R] — under W1.2's literal own-frame words the
+conservative anchor returns 0.8020× and G-B is NOT ESTABLISHED, never PASS, since the
+host law fires 5/5 there too — and the campaign law being correct to better than 14.82%
+at the mean (3.92% at the tightest seed), where the only other measured law sits 2.652×
+**above** it. Under either frame ruling no `fold_search` cell is fundable on this door.
+**Reopening requires (i) an on-host quiesced per-dispatch measurement below 4.6926e7
+FLOP-eq/dispatch (4.6926e-4 s/dispatch), or (ii) an operator variant reaching the same
+eligible surface at ≤ 433 dispatches per net against the frozen incumbent, or (iii) an
+owner reversal of §11.0's frame ruling — which returns the door to §10.5's `HELD`, not to
+OPEN, and then still requires (i) before any cell.** Parameter drift stays excluded. The
+strict leg stays where §10.4/§10.5 put it: HELD, do not seal.
+
+**Compliance evidence for this pass** [O]. Zero billed compute: no harness, no FlopScope,
+no estimator execution, no scored row, no cell predeclared, no seed consumed.
+`experiments/fold_floor_splice`, `experiments/frame_completion_129`, `cells/` and
+`experiments/row_blocked_production` were not written and no file inside them was opened
+or searched; their mtimes, stat'd after this pass's last edit, are
+`2026-08-19T00:35:42`, `2026-08-19T04:34:40`, `2026-08-19T04:00:17` and
+`2026-08-07T15:26:47` local — identical to the second to the values §7, §8.8, §9.0,
+§10.0 and §11.0 recorded. Corpus-wide `find -name "*.pyc" -newermt 2026-08-19` returns
+nothing, after the last edit. `attack_translation.json` mtime `2026-08-10T21:39:38`,
+unchanged. Read set beyond §11.0's: nothing — this pass read the tape, the two cost
+models, and this document.
+
+**Not verified by this pass, carried at [R] exactly as §11.8 left them:** idx 268's
+24-net receipts, idx 250's residual numbers, the deployed executables (only the two cost
+models were read), and the 5-net panel's stand-in status for the public 100 — §8.6
+item 3 remains unrun, and §11.8 risk 1's argument that it cannot rescue G-B carries the
+per-seed support re-verified here.
+
+**This disposition needs no successor.** The number that decided the door was re-derived
+here from an independent parse and an independent implementation and landed to the unit;
+the comparison was re-run at every corner in both frames under both laws; the decision
+rule returned the same branch both times it was applied. The door is CLOSED, what would
+reopen it is quantified above, and §11.3's panel is verified tissue for whatever proposal
+next reaches this carrier.
