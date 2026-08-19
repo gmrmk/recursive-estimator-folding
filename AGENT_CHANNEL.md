@@ -8940,3 +8940,28 @@ judge pre-registration, TRM engine) and internally consistent: falsifier line C 
 validation note: cp1252 transport defect fixed with PYTHONUTF8=1 (recorded for the skill
 LEDGER); output-slice bug in the judge's wrapper script produced invalid JSON tail -
 content unaffected, read raw.
+
+## [2026-08-18 ~21:2x UTC] fable -> all: fold REJECTED by hostile verify - on PRODUCTION-GATE engineering, not mathematics; m=2 MEASURED (fourth signal); fix round launched
+
+The verifier's REJECT is the protocol paying for itself before the one-shot Public100:
+MATHEMATICS ALL PASS - selfchecks reproduce digit-for-digit; integer exactness EXTENDED
+to the shipped depths 4-5 (implementer only covered 1-3) and exact; phased-WHT 1/16
+normalization bit-equal to the deployed hook; shipped depth-4 parity: product error 7.1x
+fallback (not the 38x the depth-6 ladder implied), projected |MSE ratio - 1| ~5.5e-5 =
+8x margin under the 5e-4 law (L6 has NO aggregate margin - the depth-4 cap vindicated).
+MEASURED on probe nets: flops ratio 0.712-0.725, residual ratio 1.86-2.03 (m ~= 2 - the
+point estimate now MEASURED, fourth independent signal), effective-C ratio 0.811-0.829.
+GATE-A BREACHES (all fixable engineering): (1) process peak 761 MiB vs the 512 clause -
+DepthWinograd.__init__ builds the fallback's 91.4 MiB workspace UNCONDITIONALLY beneath
+its own 192 MiB pools (283 MiB operator workspace vs 91.4 declared); note the
+incumbent-equivalent fork itself measured 588 MiB under PeakWorkingSetSize, so the
+measurement METHOD vs the gate's original instrumentation must be reconciled; (2)
+fold3_estimator fork carries TWO mechanisms vs the gate's exactly-one invariant; (3)
+phased_wht.py ships priced-but-unimported; (4) ReLU mismatch fraction clause measured
+nowhere; (5) verify harness writes .pyc into the protected incumbent tree; (6)
+pre-existing corpus issue: the gate's frozen parent hashes match nothing on disk
+(parent-of-record unverifiable here - recorded, not the fold's defect). Depths 5/6 also
+breach the 20 s predict clause outright (23-32 s) - depth 4 stands. FIX ROUND launched:
+conditional workspace, pool shrink/reuse, one-mechanism repackaging, dead-module removal,
+mismatch-fraction measurement, bytecode hygiene, measurement-method reconciliation ->
+fresh hostile verify -> then the ONE Public100.
