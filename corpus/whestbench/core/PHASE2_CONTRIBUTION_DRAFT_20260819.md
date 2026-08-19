@@ -1,4 +1,51 @@
-# Phase-2 Algorithmic Contribution writeup — draft v1.2
+# Phase-2 Algorithmic Contribution writeup — draft v1.3
+
+Status: DRAFT v1.3, 2026-08-19. **P2 ran. The last live prediction is closed, and it did
+not close the way it was filed.**
+
+**What v1.3 adds.** One event, reported in three layers that this revision refuses to
+merge. The 129-frame completion cell — prediction P2, the only live pre-registered item
+left after P1's withdrawal — **ran once, under seal, and reported**: cell
+`frame_completion_129_three_arm_regime_decomposition_v1`, ledger candidate **#277**,
+`ran_at_utc` `2026-08-19T09:34:41.057336+00:00`, `outcome` `COMPLETED`, `exit_code` 0,
+2034.097 s of a 3600 s wall budget, seeds `[0, 20260818]` **[O, `report.json`, read and
+re-derived this session]**.
+
+1. **The mechanical verdict is `PASS_SCREEN`, and it stands in the ledger untouched.**
+   The one gated scalar, `frame_completion_129_margin_t = −4.705301350825718`, sits
+   below the sealed `pass_when_lte = −1.9842169515086827` (§13).
+2. **The judged disposition is INSTRUMENT-SUSPECT, and the PASS is not honoured.** A
+   separate pre-registered rule — the honour window on the achieved bootstrap standard
+   error — bound against the run: the copied `se_log` is `0.07054498655771349` against a
+   predeclared window of `[0.019, 0.03]`. The effect cleared the gate only because it
+   sits 4.7 standard errors deep in a test that turned out to be far less powerful than
+   its own power projection (§13).
+3. **The scientific content is a reversal of the completion thesis, not a confirmation
+   of it.** The three-arm decomposition puts **103.66% of the log gain on the
+   design-quality leg** — Haar → Kerdock at identical frame count and identical billed
+   rows — and shows the 126 → 129 completion leg as a small net **loss** on the adjusted
+   score, with a confidence interval straddling unity. What pays is **leaving the Haar
+   family**. Completing the design does not pay for its three extra frames (§13b).
+
+**The distinction this revision holds throughout, because collapsing it is the easiest
+available way to mislead a reader.** A mechanical verdict and a judged disposition are
+different objects with different authorities. The gate is a one-shot mechanism that
+applied a threshold sealed before the value existed, and its output is a fact about the
+ledger. The disposition is the judge applying a *second* pre-registered rule to the
+instrument that produced that value, and its output is a statement about how much the
+first one is worth. This document reports **both**, in that order, at every mention. A
+PASS that is not honoured is neither a hidden failure nor a validated win, and writing it
+as either one would be the error.
+
+**What v1.3 does not change.** No score is claimed. The custody on this cell is **burned
+Public100, descriptive only**; `PASS_SCREEN` confers no validation, no promotion
+eligibility, designates nothing, and touches no champion lineage. The host-side arithmetic
+moved at the point estimate and did **not** settle at the gate's own confidence level
+(§13). The build-queue question the cell leaves pointing forward — Kerdock-126 design on
+the deployed carrier — is materially the `kerdock_v3` family the campaign already holds.
+
+**Status of the v1.2 record, retained verbatim below because corrections here are
+append-only.**
 
 Status: DRAFT v1.2, 2026-08-19. **Theorem integration and governance disposition.**
 This revision does three things and changes the document's centre of mass while doing
@@ -59,6 +106,14 @@ state that in those words. The 129-frame completion cell (P2) stands as the one 
 pre-registered prediction and is running. The final sentence is unchanged and is the
 one that matters: **nothing in this document claims a score.**
 
+**Correction to the correction above [v1.3].** "P2 … is running" is superseded: it ran,
+once, and reported at `2026-08-19T09:34:41Z`. There is now **no** live pre-registered
+prediction in this document. P1 was withdrawn before measurement and P2 is measured; §13
+carries both dispositions and §13b carries what P2 found. The final sentence is again
+unchanged and is again the one that matters: **nothing in this document claims a score.**
+P2 was measured on a **burned Public100** panel, which makes its reading descriptive by
+custody and not a score under any convention this corpus uses.
+
 ---
 
 ## Beyond the closure wall: a regime-indexed information floor for deep random
@@ -80,6 +135,18 @@ path, or a channel timestamp. Cells are the sealed-gate experiments under
 `GATE_TOKEN.consumed`, a `report.json` whose SHA-256 is recorded in `verdict.json`,
 and the git commit at which the gate was sealed **before** the value existed.
 Ledger records are the 276 entries in `corpus/whestbench/headroom/fold_ledger.json`.
+
+**Correction to the ledger count [v1.3, audit pass].** The ledger now holds **277**
+entries, not 276: P2's cell appended
+`frame_completion_129_three_arm_regime_decomposition_v1` as candidate **#277** on
+2026-08-19 **[O, `headroom/fold_ledger.json`, read and counted this session — the tail
+`id` equals the cell id, `status` is `"screened"`, and its `kill_condition` equals the
+sealed thresholds]**. Every "276-record" reading elsewhere in this document — the
+citation-hygiene erratum immediately below, §10b, §15 — is the **pre-P2** count and is
+left standing as the record of what was true when it was written. No positional
+statement built on it moves, because the write is an append at the tail: position 183
+is still `t3_fold3_deterministic_cap` and `t4_kerdock_v3_descriptive_rescore` is still
+at position 184 **[O, re-counted this session against all 277 records]**.
 
 **A carrier-lineage convention, because §1's own doctrine demands it of us and not
 only of competitors.** Two estimator lineages run in this corpus and they do not share
@@ -131,6 +198,19 @@ P2, the 129-frame completion cell, which is running as this draft is written. §
 other prediction, P1, was withdrawn by governance before it ran (§10). This ordering is
 a change from v1.1, which led with the compute programme and its predictions; the
 evidence moved, so the emphasis moved with it.
+
+**Correction and one insertion to the reading order [v1.3].** P2 is no longer open; it
+ran and reported. Nothing in this document is now a pending prediction. A reader with
+limited time should insert one item at the top of the list above and read it before the
+theory:
+
+0. **§13b — the H2 reversal.** The three-arm cell that was built to price the 126 → 129
+   completion found that the completion does not pay and that the design-quality leg
+   carries all of the measured gain. It is the only place in this document where the
+   design theory of §11/§11b meets a powered MSE measurement on the deployed carrier, and
+   it disagrees with the magnitude the theory's own conversion forecast while confirming
+   its direction. Read §13's two-layer disposition immediately after it, because the
+   cell's mechanical PASS is **not** honoured and the two facts travel together.
 
 ---
 
@@ -1301,6 +1381,25 @@ that survives contact with a measurement outside its stated scope, and a theorem
 whose scope statement turns out to have been the load-bearing sentence, are both
 results.
 
+**The run happened, and the adjudication went to a third place neither branch named
+[v1.3].** "This is a prediction and not a result" is superseded: the cell ran once under
+seal on 2026-08-19 and its numbers are in §13 and §13b. The two sentences of §11 that
+survive contact with it are the two §11 refused to promote. **The direction held**: the
+deployed Haar carrier is in the strong-gain regime, and the swap it names measures a raw
+MSE ratio of `0.6661955563966138` against a pre-registered band of `[0.78, 0.93]` — more
+gain than either version of the band predicted, and past its lower edge rather than
+inside it **[O, `report.json`, re-derived from the raw per-network arrays this session]**.
+**The magnitude did not**: the defect-to-MSE conversion this section declined to perform
+was performed inside the cell as a structural forecast, and it **under-predicts** the
+measured gain on both design legs (§11b scorecard). And the tension §11 posed — theorem
+against measurement — dissolved rather than resolving: the third arm shows the gain
+living in **entering** the structured family, exactly where §11's own H2 paragraph placed
+it, and the completion increment that both the certificate and the `A_4` theorem were
+arguing about turns out to be a small net **loss** on the adjusted score (§13b). Nothing
+in the paragraphs above is retracted; the amended band is still the one filed before the
+data existed, which is the only property that made it worth filing. What is corrected is
+only the tense and the claim that no result exists yet.
+
 ---
 
 ### 11b. Addendum to Artifact 10 [v1.2] — the design axis, closed by theorem
@@ -1506,6 +1605,105 @@ in §11 (m191 ~9.1x, `m81_full129_pareto` ~21x, the exact defect ratio `128/3` =
 are exactly why P2's band was widened rather than narrowed. Promoting a defect law into
 a score prediction is the move §11 refuses and §11b refuses it again, one degree up.
 
+#### The theorem scorecard [v1.3] — every exact leg held on the deployed pipeline; the conversion did not
+
+P2's cell carried the whole of §11b's exact arithmetic as a **side channel** and emitted
+it next to the measurement, which makes the theorems checkable against the shipped code
+path rather than only against a scratchpad. This is the scorecard, and it separates two
+things that a reader would otherwise merge: the **exact legs**, which are now
+measured-confirmed on the deployed pipeline, and the **conversion from a defect to an
+MSE**, which is the leg that failed.
+
+**Every exact assertion held, in-cell, to the last float digit [O, re-derived
+independently this session in exact `Fraction` arithmetic from the dimension-256
+Gegenbauer recurrence, then compared field by field against the sealed
+`report.json.metrics.structure`; maximum absolute difference across all ten emitted
+structure fields, and across every other field re-derived from the raw arm arrays,
+`0.0`].**
+
+| assertion | exact form | cell's emitted float | absolute difference |
+|---|---|---:|---:|
+| `A_4,mub(129) = 0` | `0` | `0.0` | `0.0` |
+| `A_4,haar(126)` | `S_4/126` | `3.136387499227966e-05` | `0.0` |
+| `A_4,mub(126)` | `(3/128)·S_4/126` | `7.350908201315546e-07` | `0.0` |
+| `A_4` suppression, arm A over arm C | `128/3` | `42.666666666666664` | `0.0` |
+| `A_6,mub(126)/A_6,haar(126)` — the dyadic tax at 126 | `4221/4096 = 1.030517578125` | from `a6_arm_c = 3.194089008420301e-05` | `0.0` |
+| `A_6,mub(129)/A_6,haar(129)` — the dyadic tax at the completion | `33/32 = 1.03125` | from `a6_arm_b = 3.122025216144244e-05` | `0.0` |
+| `A_6,haar(126)` (the arm-A degree-6 reference) | `S_6/126` | `3.0994997816843286e-05` | `0.0` |
+| slate anchor `A_4,haar(1) = S_4` | `65/16448 = 0.003951848249027237` | `a4_arm_a × 126`, exactly equal | `0.0` |
+| slate anchor `A_6,haar(1) = S_6` | `16637/4260032 = 0.0039053697249222543` | `a6_arm_a × 126` = `0.003905369724922254` | `4.3e-19` (1 ulp) |
+
+**The one row that is not bit-exact, stated rather than rounded away.** Every field the
+cell **emits** matches the exact rational at absolute difference `0.0`, including
+`a6_arm_a` itself against `float(S_6/126)`. The `4.3e-19` in the last row is not a
+disagreement between the theory and the cell; it is the last-bit error of multiplying the
+emitted `a6_arm_a` back up by 126 in float to recover the single-frame anchor, and the
+degree-4 anchor happens to round-trip exactly while the degree-6 one lands one unit in the
+last place away. Both reproduce the slate's printed anchors — `0.003951848` and
+`0.003905370` — to every digit the slate prints. It is recorded because a table whose last
+column is `0.0` all the way down invites the reader to stop checking, and one of these
+values earns a different number.
+
+Two of those rows are stronger than a reported agreement, because the runner **fails
+closed** on them: `runner_fc129.py` aborts the cell if `A_4,mub(129) ≠ 0` in exact
+rationals, and aborts again if `A_4,haar(126)/A_4,mub(126) ≠ Fraction(128, 3)` **[O,
+`runner_fc129.py`, the two guards immediately preceding the structural forecast]**. A
+departure at either place is a **protocol kill**, not a reported number. The completion's
+degree-4 annihilation and the `128/3` identity therefore did not merely agree with the
+run; they were preconditions of the run existing at all, and it exists.
+
+**The conversion under-predicts the measured gain on both design legs, and that is the
+open item.** The cell's structural forecast converts the exact defect table into a
+predicted variance by weighting each degree with the manuscript's committed energy shares
+for the Kerdock carrier — `share4 = 0.004497`, `share8 = 0.86`, `share6` the remainder
+`0.135503`, against `v126k = 2.4977e-07`. Arm C's forecast is an **identity** by
+construction, because the per-degree energies were solved from that committed value; arm
+A's and arm B's forecasts are the predictive content **[O, `runner_fc129.py`, its own
+comment says so]**. Against the measurement:
+
+| leg | forecast MSE ratio | measured raw MSE ratio | forecast − measured | log-unit distance |
+|---|---:|---:|---:|---:|
+| design quality, A→C | `0.8444606810318669` | `0.6563696466865464` | `+0.18809103434532048` | `3.44` |
+| gated swap, A→B | `0.8211759295306633` | `0.6661955563966138` | `+0.15498037313404955` | `2.83` |
+| completion, C→B | `0.9724264823404788` | `1.0149700854688666` | `−0.0425` | — |
+
+**[O for the first three columns, all four forecast fields and both
+`forecast_minus_measured` fields re-derived from `report.json` at absolute difference
+`0.0`. D for the log-unit column: `(ln forecast − ln measured)` divided by the paired
+bootstrap standard error of that leg's raw-MSE ratio, recomputed here on the same 20,000
+shared resampling indices the cell itself uses — `se_log = 0.073892` on A→B and
+`0.073272` on A→C. The judge's channel entry reports "~2.8 bootstrap-SE" for this gap;
+that is the A→B figure and it reproduces exactly, while the A→C leg is further out at
+`3.44`, and both are printed here rather than the smaller one alone.]**
+
+The sign is the finding. The forecast is **too pessimistic on both design legs** — the
+measured carriers gain more than their defect shares say they should — and **too
+optimistic on the completion leg**, which the forecast placed below unity and which
+measured above it. A conversion that misses in both directions is not a mis-calibrated
+constant; it is the wrong map. Note also that the two design legs' misses are close to
+each other (`0.188` and `0.155` in ratio units) while the legs themselves differ by the
+whole completion increment, which is what a defect law that is right about **which
+carrier** and wrong about **how much** looks like.
+
+**The open item is therefore re-filed, and it replaces the one §11 carried.** §11 left
+open the *magnitude* question — which of three unreconciled quantifications of the
+degree-4 suppression (~9.1x, ~21x, `128/3` = 42.7x) governs the MSE gain. That framing is
+now retired by measurement: the cell's own exact `128/3` leg is confirmed, the measured
+gain exceeds what any of the three predicts through the committed energy shares, and the
+disagreement no longer sits between the three quantifications. **What needs revision is
+the defect-to-MSE conversion, not the defect law.** The settling check is the per-degree
+**post-control** energy table on the deployed carrier — the pre-control shares are what
+the forecast used, and the fold's tangent and kink controls are weighted toward low degree
+(the collapse mechanism named in the cell's own predeclaration), so the post-control
+degree-4 share is the quantity the conversion actually needs and does not have. That table
+is an artifact read, not a run **[GAP, named with its check, in the same class as §11b's
+uncommitted degree-6 script]**.
+
+**What this scorecard does not do.** It does not convert any theorem in §11b into a score
+claim; that refusal is unchanged and is now *supported* rather than merely stated, because
+the one place the conversion was attempted is the one place the numbers missed. The
+exact legs are mathematics and they held. The gain is a measurement and it exceeded them.
+
 ---
 
 ### 12. Sidebar — independent corroborations from the public record
@@ -1633,6 +1831,77 @@ predictions have diverged:
 | **P1** | **WITHDRAWN BY GOVERNANCE BEFORE MEASUREMENT** | **Never run, therefore never falsified.** The owner's re-plan ruling halted the fold lineage under the three-red-loops pipeline law and cancelled M1, the Public100 measurement that would have settled it (§10b). This is **not** a failed prediction and **not** a silent deletion. No evidence about the folded route's Public100 compute exists, in either direction. |
 | **P2** | **RUNNING** | The 129-frame completion cell is executing as this draft is written, under the owner's "repair + run" ruling: `spec.json`'s band repaired to the amended `[0.78, 0.93]` verbatim, the unsupported "12% of C" prose corrected in the same pass, re-hashed, arm-C Tier-1 pre-flight, then predeclare and one run. Its result is **not** in this document. |
 
+**Superseding disposition [v1.3]. P2 ran.** The row above is retained as the record of
+what was true when it was written. The current disposition is below, and it is reported in
+**two layers** that this document does not merge: what the sealed mechanism returned, and
+what the judge ruled that return is worth.
+
+| # | disposition as of 2026-08-19 09:53 UTC | what this means |
+|---|---|---|
+| **P1** | **WITHDRAWN BY GOVERNANCE BEFORE MEASUREMENT** — unchanged | Never run, therefore never falsified (§10b). |
+| **P2** | **RAN 2026-08-19.** Mechanical verdict **`PASS_SCREEN`**, ledger candidate **#277**, sealed one-shot, seeds agree. **Judged disposition: INSTRUMENT-SUSPECT — the PASS is NOT honoured.** | The gate's own threshold was cleared by a wide margin. A *second* pre-registered rule, on the achieved precision of the instrument, bound against the run and withheld the honour. Both facts are in the record; neither cancels the other. |
+
+**Layer one — the mechanical record, sealed thresholds only [O, every figure re-derived
+this session from the three raw arm reports and from `report.json`, absolute difference
+`0.0` on every field].**
+
+| quantity | value |
+|---|---:|
+| gated scalar `frame_completion_129_margin_t` | `−4.705301350825718` |
+| sealed `pass_when_lte` / `kill_when_gte` | `−1.9842169515086827` / `+1.9842169515086827` |
+| verdict | **`PASS_SCREEN`**, `status_written` `"screened"`, ledger candidate **#277** |
+| gated FLOP-only score ratio, arm A → arm B | `0.68165697632704` |
+| its bootstrap `se_log` | `0.07054498655771349` |
+| its CI95 | `[0.5949746792999954, 0.783629057815171]` |
+| lawful co-primary score ratio (reported, not gated) | `0.6809814774525338`, CI95 `[0.5942738689639309, 0.7832904131829699]`, **agrees in sign** |
+| raw MSE ratio, arm A → arm B | `0.6661955563966138` |
+| aggregate raw MSE, arms A / B / C | `3.799496813883252e-07` / `2.531207893952114e-07` / `2.493874381315209e-07` |
+| seeds (harness, bootstrap) | `[0, 20260818]` |
+
+**H1, scored against its own filed band.** The observed raw MSE ratio `0.6661955563966138`
+falls **below** the amended band's lower edge of `0.78`: `inside_band` is `false`, and the
+miss is on the **strong** side. The filed falsifier — a ratio above `0.95` — did **not**
+fire. The pre-registration's direction is confirmed and its magnitude is exceeded, which
+is a different outcome from either a hit or a falsification and is recorded as its own
+thing.
+
+**Layer two — the judged disposition, and why a cleared gate was not honoured [R, judge's
+channel entry `2026-08-19T09:53:09Z`, applied as written from the ultrareview merge
+pre-registered at `2026-08-19T07:07:56Z`; the arithmetic below re-derived here].** The
+honour rule was filed before the run and conditions the honouring of a PASS on the
+instrument achieving its predeclared precision. It did not:
+
+| quantity | value | source |
+|---|---:|---|
+| predeclared honour window on `se_log` | `[0.019, 0.03]` | pre-registration `07:07:56Z` **[R]** |
+| achieved `se_log` on the gated channel | `0.07054498655771349` | `report.json` **[O]** |
+| overshoot against the window's ceiling | **`2.3515x`** | `0.07054498655771349 / 0.03` **[D]** |
+| overshoot against the spec's own power projection | **`3.7129x`** | `0.07054498655771349 / 0.019` **[D]** |
+| the projection that failed | `0.0843` at 5 networks → `0.018850053050323227` at 100 | the smoke's `1/√n` scaling, recomputed **[D]** |
+| depth of the effect that cleared the gate | **4.705 standard errors** | the gated scalar itself **[O]** |
+
+The predeclaration's own words are the cleanest statement of what broke: "bootstrap log
+standard error scales as the reciprocal square root of network count, so `0.0843` at five
+networks implies about `0.019` at one hundred" **[O, `predeclaration.json`, read this
+session]**. Recomputing that projection gives `0.018850053050323227`, so the spec's
+arithmetic was right and its **premise** was wrong — the realized between-network
+dispersion at production scale sits far above the design. The consequence is precise and
+it is not a technicality: the test that ran was substantially **less powerful** than the
+test that was authorized, and the effect cleared it only because the effect is large. The
+judge additionally records the achieved gate size at ~7% against the declared 5%, and a
+symmetric bootstrap SE bias of 6.2% with no band flips **[R, channel]**.
+
+**Why both layers are printed, and what each one licenses.** The mechanical verdict is a
+fact about a one-shot mechanism that applied a threshold sealed in git before the value
+existed; verdicts in this corpus are one-shot and are never re-run to a better number, so
+`PASS_SCREEN` stays in the ledger exactly as written. The judged disposition is a fact
+about the instrument that produced the value, filed under a rule that was itself
+pre-registered, and it says the pass is not a validated pass. What follows is that the
+cell licenses **scientific reading** (§13b, and the scorecard of §11b) and licenses
+**nothing operational**: no validation, no promotion eligibility, no designation, no
+champion-lineage move. Re-earning the honour window is a **new cell**, not a re-read of
+this one, and the burned Public100 custody keeps any such reading descriptive in any case.
+
 **Why P1's wording matters more than its content.** A pre-registration exists so that a
 later reader can tell what was claimed before the data arrived. That contract is broken
 in two ways: by quietly removing a prediction that would have embarrassed you, and by
@@ -1681,6 +1950,227 @@ finding later: the mub129 **powered rerun**. The existing 126→129 kill on our 
 carrier had 5% power against a 0.45% effect, and sixteen fresh networks returned a
 score ratio of `1.00087` at `p = 0.92` **[R]**. That is an underpowered null, not a
 measured zero, and P2's cell is the powered instrument that replaces it.
+
+**The host arithmetic, answered at the strength it was earned [v1.3].** The paragraph
+above was written before the cell reported, precisely so that the verdict could not be
+re-narrated afterwards. Held to it, with `r` now measured at `0.6661955563966138`:
+
+```
+implied swap-on-row_blocked score
+    = r × row_count_ratio × unfolded row_blocked local adjusted score
+    = 0.6661955563966138 × 1.0238095238095237 × 2.121762464e-7
+    = 1.4471636948946426e-07                              [D, recomputed this session]
+
+held kerdock_v3                    1.6190838e-07          [R, t4_kerdock_v3_descriptive_rescore]
+ratio                              0.8938164256196267  →  10.62% under               [D]
+break-even r*  = 1.6190838e-7 / (1.0238095238095237 × 2.121762464e-7)
+                                 = 0.7453382342294529     [D, reproduces the pre-stated 0.7453]
+```
+
+The point estimate moved: `0.6662 < 0.7453`, so at the point estimate the swap on the
+deployed `row_blocked` carrier lands **10.6% under** the artifact the campaign already
+holds — a win on the host fork. **It is not settled at the gate's own confidence level.**
+The paired bootstrap CI95 on the *raw* MSE ratio is `[0.5782, 0.7711]` **[R, judge's
+channel entry; recomputed here on the same 20,000 shared resampling indices as
+`[0.5781507629095136, 0.7710597849253048]`, D]**, and its **upper bound `0.7711` exceeds
+`r* = 0.7453`**. A confidence interval that crosses the break-even is not a decision. The
+pre-stated value statement therefore stands exactly as filed: this is a **scientific**
+result and **host-fork evidence**, and it is **not** an immediate designation flip.
+
+**Custody, and the four independent blocks on any designation move [v1.3].** Each of the
+following blocks a designation move **on its own**, so no combination argument is
+available and removing any one of them changes nothing:
+
+1. **INSTRUMENT-SUSPECT.** The PASS is not honoured; the cell is not a validated pass.
+2. **The straddled CI.** The host-side win is not settled at gate confidence (above).
+3. **The undischarged arm-B memory increment.** The predeclaration says so in its own
+   words: "This cell measures score, not memory; a PASS authorizes a build stage that must
+   clear the memory gate separately, and the judge must not read a PASS as discharging it"
+   **[O, `predeclaration.json`, read this session]**. It remains undischarged.
+4. **Burned Public100 custody — descriptive only.** `PASS_SCREEN` confers no validation
+   and no promotion eligibility, designates nothing, and touches no champion lineage.
+   `fold_floor_splice` and `row_blocked_production` were untouched by the judge **[R,
+   channel]**.
+
+The custody chain itself was re-derived here rather than accepted **[O, this session]**:
+`sha256` of the `predeclaration.json` bytes is
+`c4c41ab8398e9762509d301224e46cde6f0270b5b850097f9a07a876362c260c`, which equals both
+`report.json`'s `predeclaration_sha256` and the consumed one-shot token in
+`GATE_TOKEN.consumed`; and the `sha256` of the report body with its own hash field removed
+is `13e1ed3789f3e1c57a2e126bf57c7c15ac0d5e055f17a8732ecba84476762fe3`, which equals
+`verdict.json`'s `report_sha256`. The binding order — pre-registration `07:07:56Z` <
+predeclaration `09:00:17Z` < run `09:34:41Z` — is the judge's, re-derived by the judge and
+by the `fold_search` audit with an empty problems list **[R, channel]**. The cell's own
+four-axis confidence is filed as compliance `0.95`, implementation `0.9`, generalization
+`0.55`, mechanism `0.45` **[O, `verdict.json`]**, and the low mechanism figure is the
+honest one given §11b's conversion result.
+
+**Where the build queue now points, stated because it is the actionable consequence and
+it is smaller than it sounds [v1.3].** The three-arm split (§13b) puts the whole of the
+measured gain on the design-quality leg and none of it on the completion. The construction
+that leg names is **Kerdock-126 design carried on the deployed pipeline** — which is
+materially the `kerdock_v3` family the campaign already holds and has already promoted.
+The cell's forward-pointing result is therefore a redirection of the host fork rather than
+a new construction to build: it is evidence about **which of two artifacts already in hand
+should host**, and §12's local↔hosted transfer band is the thing that governs whether that
+evidence is actionable. No new estimator is queued by this outcome.
+
+**Two honest extras, recorded because a reader would otherwise hit them [v1.3].**
+
+- **A runner-constant lag, immaterial here and recorded anyway.** `runner_fc129.py` line
+  110 still carries `H1_MSE_RATIO_BAND = (0.78, 0.86)`, the **pre-amendment** band, while
+  the sealed `spec.json` carries the amended `[0.78, 0.93]` with the amendment text — the
+  repair §11 records as landed went into the spec and not into the runner constant **[O,
+  both files read this session; the spec carries `0.93` three times and `0.86` once, in
+  the amendment's own history sentence]**. It changes nothing about this outcome, because
+  the observed `0.6661955563966138` sits below `0.78` and is therefore outside the band
+  under **both** versions, and `inside_band` is `false` either way. It is recorded because
+  a stale constant in a gate runner is the kind of thing that is harmless once and
+  dangerous the second time, and the same repair pass should have caught it.
+- **The smoke pointed the other way, and the gap is unresolved.** The off-protocol smoke
+  at harness seed `424242` with 5 networks measured a FLOP-only score ratio of `1.0518`
+  and a raw MSE ratio of `1.0387` — **arm B worse** — with bootstrap `se_log` `0.0843`,
+  and the predeclaration accordingly filed a predicted disposition of KILL ~0.80,
+  INCONCLUSIVE ~0.15, PASS ~0.05 **[O, `predeclaration.json`]**. Production at seed `0`
+  with 100 networks measured `0.68165697632704` on the same channel. In the smoke's own
+  standard-error units that is a gap of **5.15** on the score channel and **5.27** on the
+  raw channel **[D, `(ln 1.0518 − ln 0.68165697632704)/0.0843 = 5.145097237303071` and
+  `(ln 1.0387 − ln 0.6661955563966138)/0.0843 = 5.268587835949735`; combining the two
+  standard errors in quadrature instead gives `3.95`]**. A "≈4.5" figure for this gap is
+  in circulation in the handoff chain; it corresponds to dividing a **ratio-unit**
+  difference by a **log-unit** standard error (`4.39` and `4.42` respectively), which
+  mixes units, and the log-unit figures above are the ones this document prints. The sign
+  flip itself is **not explained**: a 5-network pilot and a 100-network production run on
+  the same pipeline, differing in harness seed, produced opposite-signed effects several
+  standard errors apart. Candidate causes — small-`n` frame-draw noise, a seed-specific
+  network subset, or the regime confound the instrument was built to watch — are not
+  discriminated by anything in this cell. **This is a new cell if it is wanted**, and it
+  is filed here as an open item rather than absorbed into the result, because a
+  measurement whose pilot disagreed with it at five standard errors is a measurement whose
+  variance model is not understood.
+
+---
+
+### 13b. The H2 reversal [v1.3] — what pays is leaving the Haar family, not completing it
+
+This is the cell's most important scientific content, and it inverts the question the cell
+was built to answer. P2 was designed to price the **126 → 129 completion**. The third arm
+was added to separate two legs that every prior argument in this corpus had run together:
+**entering** the structured design family, and **completing** it. The separation is clean
+because the two legs differ in exactly one respect each — the design leg holds frame count
+fixed at 126 and changes only the construction, and the completion leg holds the
+construction fixed and adds three frames.
+
+**The split [O, every figure re-derived this session from the raw per-network arrays;
+absolute difference `0.0` against the sealed emission on all ten fields].**
+
+| leg | what changes | adjusted (FLOP-only) score ratio | CI95 | raw MSE ratio |
+|---|---|---:|---|---:|
+| **design quality**, A → C | Haar-126 → **Kerdock-126**; frame count identical, billed rows identical | **`0.6597781265867341`** | `[0.5756321968339824, 0.759611683609333]` | `0.6563696466865464` |
+| **completion**, C → B | Kerdock-126 → **MUB-129**; three frames added | **`1.0331609201012664`** | `[0.9806503459119398, 1.08847782169281]` | `1.0149700854688666` |
+| gated swap, A → B | both at once | `0.68165697632704` | `[0.5949746792999954, 0.783629057815171]` | `0.6661955563966138` |
+
+**Read the second row first, because it is the reversal.** On the adjusted score the
+completion leg is `1.0331609201012664` — a **net loss of 3.3%** — with a CI95 of
+`[0.9807, 1.0885]` that **straddles unity**. Adding the three frames that take the
+degree-4 design defect to exactly zero does **not** pay for itself once the score law
+charges for them. The raw MSE moves the same way (`1.0149700854688666`, also a loss before
+any compute charge), so this is not an artifact of the billing: at 129 frames the estimator
+is slightly *worse* on raw error than at 126, and then pays extra compute on top.
+
+**Read the first row second, because it is where the gain is.** The design-quality leg
+carries a score ratio of `0.6597781265867341` — a 34% improvement — on a change that costs
+**nothing** in the cell's own accounting. Arm A and arm C are matched at 126 frames, and
+the cell's billing confirms the match rather than assuming it: `row_count_ratio_a_to_c` is
+exactly `1.0` and `billed_flop_ratio_a_to_c` is `0.9997391581774678` **[O]**. The A→B
+contrast, by contrast, carries a row-count ratio of `1.0238095238095237`, which is exactly
+`129/126` **[D, verified]**. Nothing was spent to obtain the design-quality gain.
+
+**The confound the cell was built to watch, printed here rather than left in the JSON
+[v1.3, audit pass].** That aggregate match holds per network only on average, and the
+cell says so in a channel the sections above did not print. The runner emits a
+per-network billed-FLOP ratio precisely because a departure from the row-count constant
+is the fold's dead/kink/on regime split moving between arms — "the one confound this
+design cannot remove, reported rather than gated" **[O, `runner_fc129.py`]** — and it
+moved. On A→C the per-network ratio spans
+`[0.9569311768071332, 1.0415022404710534]` at median `0.9995537147514719`, with **22 of
+100** networks inside half a percent of the matched `1.0`; on A→B it spans
+`[0.9699458116168297, 1.0711688292081132]` at median `1.022642867818914`, with **20 of
+100** inside half a percent of `129/126` **[O, `regime_confound_instrument`, all eight
+fields re-derived from the raw per-network arrays this session at exact equality]**.
+The medians sit on the row constants and the aggregates follow them, which is what the
+ratio-of-means point estimates above actually require. What the spread denies is the
+stronger reading — that every individual network ran the same fold regime in both arms
+— and that reading is not available from this cell. One further channel is not free
+even in aggregate: `effective_compute_ratio_a_to_c` is `1.0025095315957577` **[O]**, so
+the design leg is free on billed rows and billed FLOPs and `0.25%` adverse on the
+wall-time-inclusive channel. The cell emits no λ-included decomposition of the legs, so
+what that `0.25%` would do to the design leg's lawful score is unmeasured here **[GAP,
+named with its check: a λ-included leg split is a re-analysis of these same three arm
+reports and needs no new run]**.
+
+**The share, and the arithmetic that fixes it.** The design-quality leg's share of the log
+gain is **`1.03658336557389` — 103.66%** **[O, `design_quality_share_of_log_gain`,
+re-derived at absolute difference `0.0`]**. Two facts about that number belong next to it,
+because it is the headline and it is easy to misread:
+
+- **It is computed on the raw-MSE legs**, as `ln(r_mse,A→C) / ln(r_mse,A→B)` — the runner's
+  own definition **[O, `runner_fc129.py`]**. The score-adjusted legs are printed above
+  separately and are not what this ratio divides.
+- **A share above 100% is not an error; it is the reversal stated as a fraction.** It
+  exceeds unity precisely because the completion leg's contribution has the *opposite*
+  sign to the total. The design leg does not merely carry most of the gain — it carries
+  more than all of it, and the completion leg gives a little back.
+
+**Log-additivity `6.245004513516506e-17` is arithmetic, not interpretation [O, re-derived
+at absolute difference `0.0`].** The residual `ln(r_A→B) − ln(r_A→C) − ln(r_C→B)` on the
+score legs is at float noise because the three ratios are ratios of the same three arm
+means, so the identity is forced. It is printed as a **check that the decomposition is
+of the object it claims to be** — that the two legs compose into the gated contrast with
+nothing unaccounted between them — and it should carry no evidential weight beyond that.
+The scientific content is entirely in the two legs' values and intervals, not in their
+composing.
+
+**H2 was confirmed and exceeded.** The forecast filed before the run put the
+design-quality share at `0.8580798896092531` **[O, `h2_forecast_design_quality_share`,
+re-derived at absolute difference `0.0`]** — "most of the gain is design quality, not
+completion." The measurement returned `1.0366`: not most, **all**, plus a small negative
+contribution from the completion. §11's own H2 paragraph had located the gain in
+"**entering** the game rather than in completing it," and that is what the data shows.
+
+**The reconciliation with both prior witnesses, which is the amendment's required reading
+[D, from the cell's own three-arm data].** The completion result is consistent with
+**both** of the campaign's earlier findings, which had appeared to be in tension:
+
+- **s11's isolated degree-4 exactness at +0.176%.** As an MSE ratio that is `0.99824`,
+  and it sits **inside** the completion leg's score CI95 `[0.9807, 1.0885]` **[O]** and
+  inside the recomputed raw CI95 for that leg, `[0.9612118909862917, 1.0747573195924482]`
+  **[D, same 20,000 shared indices]**. The powered instrument does not contradict the
+  small isolated measurement; it brackets it.
+- **The dual-witness certificate, which found 126 minimax-optimal inside the structured
+  game.** Its worst-case margin of `0.0711%` is `R_6(129) = 4224/4221 = 1408/1407 =
+  1.0007107320540156` **[D, exact `Fraction`, re-derived this session; the certificate
+  already stores this as `game.worst_case_margin`]**. The certificate said the completion
+  does not pay **inside** the structured family. The cell measured the completion **on the
+  deployed pipeline** and found the same sign.
+- **The degree-6 dyadic tax supplies the mechanism.** §11b prices the completion's degree-6
+  cost at exactly `33/32` against `4221/4096` at 126 — the completion buys degree-4
+  exactness and **pays** `1/32` at degree 6, both confirmed exactly in this cell's own
+  structure table (§11b scorecard). A leg that zeroes an already-small defect while paying
+  a tax at the next degree and buying three frames' worth of compute is a leg with no
+  obvious reason to profit, and it did not.
+
+**What this changes in the campaign's picture, and what it leaves alone.** The completion
+question — the one §11 called "the tension is the point," with a certificate on one side
+and a carrier discovery on the other — is answered against the completion, and the two
+sides turn out to have been arguing about the smaller leg. The **carrier discovery itself
+is unaffected and is strengthened**: the deployed Haar carrier really is leaving a large
+gain on the table, the gain really is the degree-4 design defect, and the construction that
+captures it is the structured 126-frame family rather than its 129-frame completion. What
+this does **not** establish is any score claim, any designation move, or any transfer of
+the leg values to the hosted board (§13's four blocks, and §12's transfer band). And the
+magnitude of the gain exceeded the theory's own conversion on both design legs, which is
+filed as §11b's open item rather than smoothed into agreement.
 
 ---
 
@@ -1764,6 +2254,48 @@ measured zero, and P2's cell is the powered instrument that replaces it.
   wide**. Any sentence about where we would sit on the hosted board carries that band,
   and the settling check is one more paired grade.
 
+**Additions and two corrections [v1.3], all arising from P2's run.**
+
+- **Correction to the first bullet, a second time.** "The two live items in §13 have not
+  been measured at all", already narrowed to one item in v1.2, is now superseded
+  completely: **there are no live items**. P1 was withdrawn before measurement; P2 ran on
+  2026-08-19. The bullet's actual claim is unchanged and still holds: **no score.** P2 was
+  measured on a **burned Public100** panel and is descriptive by custody, which is a
+  weaker standing than a private-suite measurement rather than a substitute for one.
+- **Correction to "No claim that the A_4 theorem predicts an MSE gain."** That bullet said
+  the step from a defect to a score "is exactly what P2 measures." P2 measured it, and the
+  result is that the step **does not go through at the committed energy shares**: the
+  conversion under-predicts the measured gain by `0.155` (A→B) and `0.188` (A→C) in ratio
+  units, at `2.83` and `3.44` bootstrap standard errors. The bullet's refusal is retained
+  and is now measured rather than asserted — no theorem in §11 or §11b predicts an MSE
+  gain, and the one attempt to convert one into a prediction missed.
+- **No validated pass, and no promotion, from P2.** The mechanical verdict is
+  `PASS_SCREEN` and it stands in the ledger as candidate #277. The judged disposition is
+  **INSTRUMENT-SUSPECT** under a pre-registered honour rule the run failed, so the pass is
+  **not honoured**: it confers no validation, no promotion eligibility, designates
+  nothing, and moves no champion lineage. Any sentence that cites the PASS without the
+  disposition misreports this document.
+- **No claim that the achieved precision met its design.** The gated `se_log` landed at
+  `0.07054498655771349` against a predeclared honour window of `[0.019, 0.03]` —
+  `2.35x` the ceiling and `3.71x` the spec's own `1/√n` projection. The test that ran was
+  less powerful than the test that was authorized; the effect cleared it at 4.7 standard
+  errors. Re-earning the window is a **new cell**.
+- **No settled host-fork win.** At the point estimate the implied swap lands `10.6%` under
+  the held `kerdock_v3` artifact, and the raw-MSE CI95 upper bound `0.7711` **exceeds** the
+  break-even `r* = 0.7453`. The win is not settled at the gate's own confidence level, and
+  three further conditions (INSTRUMENT-SUSPECT, the undischarged arm-B memory increment,
+  and the descriptive-only custody) each block a designation move independently.
+- **No explanation of the smoke's sign flip.** The 5-network pilot measured arm B *worse*
+  at `1.0518`; production at 100 networks measured `0.68165697632704`, a gap of `5.15`
+  smoke standard errors on the same channel. Nothing in this cell discriminates the cause.
+  It is an open item and a candidate new cell, not a resolved anomaly.
+- **No claim that the completion is dead in general.** What is measured is that on **this**
+  carrier, at **this** point count, under **this** score law, the 126 → 129 completion is a
+  net loss with a CI straddling unity. The certificate's minimax statement inside the
+  structured game and s11's `+0.176%` isolated measurement both sit inside that interval,
+  so the three witnesses agree; none of them bounds a completion under a different score
+  law or a different control stack.
+
 ---
 
 ### 15. Reproduction and provenance
@@ -1775,6 +2307,12 @@ The repository was made public on 2026-08-17 at ~21:25 UTC. Phase-1's filing pin
 commit `f225be4e4e4872dc2bef06711525cf00e73a332b`; readers should use a pinned path
 rather than the repository root, whose default branch is a 2026-08-06 snapshot
 carrying 43 ledger records rather than 276.
+
+**[v1.3, audit pass]** Both "276" figures in the paragraph above are the **pre-P2**
+count. The ledger holds **277** entries since P2's cell was appended as candidate
+number 277; §0 carries the correction, and the tail-append leaves every positional
+citation in this document unmoved **[O, ledger re-counted this session]**. The
+default-branch comparison is unaffected in substance.
 
 Independently re-executed while writing this draft **[O, this session]**:
 
@@ -1872,6 +2410,101 @@ section — in particular anything derived from a `full.json` — must carry **"
 round-4 bill repair re-run"**, because the cost model that produced those numbers was
 wrong in both directions. No such number is present in it, and §10b is where this
 document says the same thing about its own.
+
+**The P2 reproduction block [v1.3] — how to check the 129 cell without trusting either
+the runner or this document.** Every P2 figure printed in §11b, §13 and §13b was
+re-derived in this session by a scratchpad script that shares no code with
+`runner_fc129.py`, reading only the three raw per-network arm reports and the sealed
+`report.json` **[O]**. The re-derivation is independent in the sense that matters: it
+rebuilds the per-network channels from `results.per_mlp` rather than reading any of the
+runner's aggregates.
+
+```
+inputs read (no estimator compute, no harness runs):
+  experiments/frame_completion_129/report_arm{A,B,C}.json   (100 networks each)
+  cells/frame_completion_129_three_arm_regime_decomposition_v1/{report,verdict,
+      predeclaration}.json, GATE_TOKEN.consumed
+
+sealed thresholds, applied independently (ASCII literals, for a machine check --
+the tables above print the same values in the document's typographic minus):
+  pass_when_lte                                -1.9842169515086827
+  kill_when_gte                                 1.9842169515086827
+  metric                                       "frame_completion_129_margin_t"
+  meets_pass                                   True        meets_kill  False
+
+rebuilt from raw arrays, then compared field by field against the sealed emission:
+  frame_completion_129_margin_t                -4.705301350825718        absdiff 0.0
+  score_flop_ratio / se_log / CI95 (A->B)      0.68165697632704 /
+                                               0.07054498655771349 /
+                                               [0.5949746792999954,
+                                                0.783629057815171]       absdiff 0.0
+  lawful co-primary ratio / se_log             0.6809814774525338 /
+                                               0.07082697501948278       absdiff 0.0
+  raw_mse_ratio (A->B)                         0.6661955563966138        absdiff 0.0
+  aggregate MSE, arms A / B / C                3.799496813883252e-07 /
+                                               2.531207893952114e-07 /
+                                               2.493874381315209e-07     absdiff 0.0
+  design leg A->C  score / se_log / CI / raw   0.6597781265867341 /
+                                               0.07107810387867139 /
+                                               [0.5756321968339824,
+                                                0.759611683609333] /
+                                               0.6563696466865464        absdiff 0.0
+  completion leg C->B score / se_log / CI / raw 1.0331609201012664 /
+                                               0.02668177476999677 /
+                                               [0.9806503459119398,
+                                                1.08847782169281] /
+                                               1.0149700854688666        absdiff 0.0
+  log_additivity_residual (score legs)         6.245004513516506e-17     absdiff 0.0
+  design_quality_share_of_log_gain (raw legs)  1.03658336557389          absdiff 0.0
+  h2_forecast_design_quality_share             0.8580798896092531        absdiff 0.0
+  all ten structure fields (A_4/A_6/A_8 x 3    exact Fraction recurrence,
+      arms, plus the 128/3 suppression)        independent of the runner  absdiff 0.0
+  all four forecast fields + both
+      forecast_minus_measured fields                                     absdiff 0.0
+
+  MAXIMUM ABSOLUTE DIFFERENCE OVER EVERY FIELD RE-DERIVED:               0.0
+
+computed here and NOT present in report.json:
+  raw-MSE (A->B) bootstrap CI95   [0.5781507629095136, 0.7710597849253048]
+      -- reproduces the judge's independently computed [0.5782, 0.7711]
+  raw-MSE (C->B) bootstrap CI95   [0.9612118909862917, 1.0747573195924482]
+      -- contains s11's 0.99824
+  se_log on the raw A->B / A->C legs        0.073892 / 0.073272
+  forecast-vs-measured log-unit distance    2.8305 (A->B) / 3.4389 (A->C)
+  r*                                        0.7453382342294529
+  implied swap-on-row_blocked               1.4471636948946426e-07  (10.62% under)
+  smoke-to-production gap in smoke SEs      5.145097237303071 (score channel)
+                                            5.268587835949735 (raw channel)
+
+custody, re-derived rather than accepted:
+  sha256(predeclaration.json bytes)
+      = c4c41ab8398e9762509d301224e46cde6f0270b5b850097f9a07a876362c260c
+      == report.json predeclaration_sha256 == GATE_TOKEN.consumed        MATCH
+  sha256(report body, sort_keys, indent=2, self-hash field removed)
+      = 13e1ed3789f3e1c57a2e126bf57c7c15ac0d5e055f17a8732ecba84476762fe3
+      == verdict.json report_sha256                                      MATCH
+```
+
+**The judge's own re-derivation, which is the independent one [R, channel entry
+`2026-08-19T09:53:09Z`].** Before this document's pass, the judge re-derived the same
+quantities with **fresh code** from the raw per-network arrays only, in a frozen venv under
+`-B -P` from a clean directory, and reported **absolute difference `0.0` on every number**,
+with the thresholds applied independently (`meets_pass` true, `meets_kill` false), seeds
+`[0, 20260818]` in agreement, and `spec` matching the runner config. The auth chain was
+re-derived by the judge and again by the `fold_search` audit with an empty problems list
+and the token consumed; the ledger tail metrics are byte-identical to `report.json`, the
+`kill_condition` matches the sealed thresholds, and the canonical spec hash is present in
+the 11-entry registry. Binding order: pre-registration `07:07:56Z` < predeclaration
+`09:00:17Z` < run `09:34:41Z`. This document's re-derivation and the judge's are separate
+code paths reaching the same numbers, which is the second signal; the third is the sealed
+emission itself.
+
+**Two P2 artifacts deliberately not re-derived here, named so the gap is visible [GAP].**
+The judge's achieved-gate-size figure (~7% against the declared 5%) and the bootstrap SE
+bias figure (6.2%, symmetric, no band flips) are carried at `[R]`. Both would be settled by
+the same check — a calibration pass on the bootstrap under the cell's own resampling
+scheme — and neither is load-bearing for any statement in §13 or §13b, which rest on the
+`se_log` value itself rather than on its bias.
 
 **Other v1.2 companion artifacts, read-only this session.**
 `core/ULTRAMATH_SLATE_20260819.md` (the theorems of §11b);
@@ -1983,3 +2616,89 @@ whose withdrawal had to be stated so it could not later read as either a hit or 
 failure, and a number this integration called new that its own certificate had already
 proved. That ratio is the same one §15 reports for the harness, and it is the only
 evidence available that the machinery is pointed at us as well as outward.
+
+**What v1.3 changed, in the same spirit.** Nothing in v1.2 was deleted. One event — P2's
+single sealed run — propagated into seven places, and every edit is an addition or a
+marked correction sitting next to the text it corrects.
+
+1. **Front matter and §0** — the centre of mass moved again, from "one prediction is
+   running" to "the prediction ran and reversed." The v1.2 status block is retained
+   verbatim under a banner and its "P2 … is running" correction is itself corrected. §0's
+   reading order gains a new item **0**, §13b, ahead of the theory.
+2. **§13 — the two-layer disposition.** The v1.2 `RUNNING` row is retained as the record
+   of what was true when written, and a superseding table reports the **mechanical
+   verdict** (`PASS_SCREEN`, margin `−4.705301350825718` against `pass_when_lte`
+   `−1.9842169515086827`, ledger #277) and the **judged disposition**
+   (INSTRUMENT-SUSPECT, the PASS not honoured, achieved `se_log` `0.07054498655771349`
+   outside the predeclared `[0.019, 0.03]`) as separate objects with different
+   authorities. H1 is scored against its own band: observed `0.6661955563966138`, **below**
+   the amended lower edge `0.78`, falsifier `0.95` not fired — direction confirmed, magnitude
+   exceeded, which is a third outcome distinct from both a hit and a falsification.
+3. **§13b — new section, the H2 reversal**, which is the cell's scientific content and the
+   reason it was worth its CPU. The design-quality leg carries `103.66%` of the log gain at
+   identical frame count and identical billed rows; the completion leg is a net **loss** on
+   the adjusted score (`1.0331609201012664`, CI straddling unity). The completion does not
+   pay for its three extra frames; what pays is leaving the Haar family. Reconciled against
+   both prior witnesses — s11's `0.99824` sits inside the completion leg's interval, and the
+   certificate's `0.0711%` margin is `R_6(129) = 1408/1407` — and against the degree-6
+   dyadic tax that supplies the mechanism.
+4. **§11b — the theorem scorecard.** Every exact leg is now **measured-confirmed on the
+   deployed pipeline** rather than only in a scratchpad: `A_4,mub(129) = 0.0` exactly,
+   `128/3 = 42.666666666666664`, the dyadic tax exact to the last float digit at both
+   `k = 126` (`4221/4096`) and `k = 129` (`33/32`), and both slate anchors reproduced. Two
+   of those are *protocol kill conditions* in the runner, not reported numbers. The
+   **defect-to-MSE conversion** is the leg that failed, under-predicting the measured gain
+   on both design legs by `0.155` and `0.188` in ratio units (`2.83` and `3.44` bootstrap
+   SEs) while over-predicting the completion leg. The open item is re-filed: **the
+   conversion needs revision, not the defect law**, and its settling check is the
+   post-control per-degree energy table, which is an artifact read.
+5. **§11** — a marked correction closing "this is a prediction and not a result," and
+   naming which of §11's two sentences survived contact with the measurement: the
+   direction held, the magnitude did not, and the certificate-versus-carrier tension
+   dissolved into the smaller leg rather than resolving.
+6. **§13 host arithmetic and custody** — the pre-stated arithmetic answered at the
+   strength it earned: implied swap `1.4471636948946426e-07`, `10.6%` under the held
+   `kerdock_v3` `1.6190838e-07` **at the point estimate**, with the raw-MSE CI upper bound
+   `0.7711` **exceeding** `r* = 0.7453` so the host-side win is **not settled at gate
+   confidence**. Four independent blocks on any designation move are enumerated, and the
+   custody chain (predeclaration hash = consumed token; report-body hash = verdict hash)
+   is re-derived here rather than accepted.
+7. **§14 and §15** — two corrections to stale claim boundaries and six new ones; the P2
+   reproduction block with every re-derived field at absolute difference `0.0`, the
+   quantities computed here that are absent from `report.json`, and the judge's
+   independent fresh-code re-derivation recorded as the second signal.
+8. **Two honest extras filed against ourselves.** The `H1_MSE_RATIO_BAND` constant at
+   `runner_fc129.py:110` still carries the **pre-amendment** `(0.78, 0.86)` while the spec
+   carries the amended `[0.78, 0.93]` — immaterial to this outcome, since `0.6662 < 0.78`
+   makes `inside_band` false under both, and recorded anyway because the repair pass that
+   fixed the spec should have caught it. And the **smoke's sign flip**: the 5-network pilot
+   at seed `424242` measured arm B *worse* at `1.0518`, production at seed `0` measured
+   `0.68165697632704`, a `5.15`-smoke-SE gap on the same channel that nothing in this cell
+   explains. A "≈4.5" figure in circulation for that gap divides a ratio-unit difference by
+   a log-unit standard error; the corrected log-unit figures are printed. The flip is filed
+   as an open item and a candidate new cell, not absorbed into the result.
+
+**The hostile audit pass on v1.3, repaired at its sites rather than in a separate
+note.** An independent pass re-derived every P2 figure printed above from the raw
+per-network arrays — 51 fields against the sealed emission at maximum absolute
+difference `0.0`, both custody hashes recomputed, the ledger tail re-counted — and
+found no numeric defect. It found two disclosure defects and repaired both by
+insertion: the **stale ledger count**, where this revision cited candidate `#277`
+while §0, §10b and §15 still read `276` and the document therefore contradicted itself
+on a checkable fact (§0, §15); and the **omitted regime-confound instrument**, the one
+emitted block of the cell that no section printed, whose eight per-network billed-FLOP
+fields qualify §13b's "identical billed rows" reading and are now printed there with
+the `effective_compute_ratio_a_to_c` figure that goes with them (§13b). Neither moves
+a conclusion, which is why both are corrections rather than retractions; the second is
+recorded as a disclosure failure of exactly the class this document elsewhere insists
+on catching.
+
+The pattern worth naming for this revision is different from v1.2's. v1.2's corrections
+were mostly to prose. v1.3's are mostly to **expectations**: a band that was widened
+honestly and still missed low, a conversion that ran the wrong way on both legs, a power
+projection that failed by `3.71x`, a pilot that pointed the other way at five standard
+errors, and a completion the whole campaign had been arguing about that turned out to be
+the small leg and the losing one. The single result that came out **stronger** than filed
+is the one nobody was testing: the design-quality leg, free at identical billed rows. A
+document whose predictions all landed would be evidence of a weak filing discipline; this
+is what the other case looks like when it is written down instead of smoothed.

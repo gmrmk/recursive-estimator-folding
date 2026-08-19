@@ -179,18 +179,41 @@ post. All prior operational contracts remain in force beneath this goal.
   still unposted at 08:4x UTC (highest topic 18184, community; 18184's 18:1 residual
   measurement recorded as Fork-1 intel).
 
+- 2026-08-19 ~10:0x-11:0x UTC: **manuscript v1.3 written and hostile-audited; P2 is in
+  the document.** `PHASE2_CONTRIBUTION_DRAFT_20260819.md` 1985 -> 2705 lines,
+  append-only (git diff: insertions only apart from the version line). New: front-matter
+  three-layer statement, §11b theorem scorecard, §13 two-layer disposition (mechanical
+  `PASS_SCREEN` / judged INSTRUMENT-SUSPECT, never merged), §13 host arithmetic + four
+  independent designation blocks + custody re-derivation, §13b (the H2 reversal), §14
+  claim boundaries, §15 reproduction block. **Independent audit pass, fresh code off the
+  raw per-network arrays** (`report_arm{A,B,C}.json` -> channels rebuilt from
+  `results.per_mlp`, exact `Fraction` Gegenbauer for the structure block): 51 fields vs
+  the sealed emission at max absdiff **0.0**; both custody hashes recomputed and matching
+  (`c4c41ab8…` == `predeclaration_sha256` == consumed token; `13e1ed37…` ==
+  `verdict.report_sha256`); ledger re-counted at 277 with tail id/status/kill_condition
+  correct and `result.metrics` byte-identical to `report.json`. Post-edit gate: 63
+  literals present-in-manuscript AND equal-to-source + 31 structural facts, ALL PASS.
+  **Two disclosure defects found and repaired by insertion**: (1) stale ledger count —
+  the draft cited candidate #277 while §0/§10b/§15 still read 276 (corrections appended
+  at §0 and §15; all positional citations verified unmoved by the tail-append); (2) the
+  **regime-confound instrument was omitted entirely** — the one emitted block no section
+  printed, whose eight per-network billed-FLOP fields qualify §13b's "identical billed
+  rows" reading (A->C spans 0.9569-1.0415, median 0.99955, 22/100 within half a percent
+  of 1.0; A->B spans 0.9699-1.0712, median 1.02264, 20/100 within half a percent of
+  129/126), now printed in §13b with `effective_compute_ratio_a_to_c` 1.00251 and a named
+  [GAP] for the missing λ-included leg split. No conclusion moved under either. Verdict
+  APPROVED.
+
 ## Next action (exactly ONE — overwrite, never a list)
-Write P2's outcome into the manuscript (v1.3, workflow launched): 129 cell ran —
-mechanical PASS at margin_t -4.705 (score ratio 0.6817, raw MSE 0.6662, BELOW the
-0.78 band edge), disposition INSTRUMENT-SUSPECT per the pre-registered se_log honour
-rule (0.0705 vs [0.019, 0.03]); H2 REVERSED THE SUBJECT: design-quality leg (Haar->
-Kerdock, same 126 count) carries 103.7% of the log gain, completion leg 126->129 is a
-small net LOSS (1.0332, CI straddles 1) — what pays is leaving the Haar family; all
-exact theorem assertions hold in-cell (A4_mub(129)=0.0, 128/3 exact, dyadic tax exact)
-but the defect->MSE conversion under-predicts (~2.8 SE). Ledger #277 (5da4cdc, pushed
-by the judge). Behind it: harvest Wave 0 (running, mi_graph mid-edit), then the
-designation memo final (v3.1 slot-1 stands — the 129 host arithmetic did NOT settle:
-CI upper 0.771 > r* 0.745, memory undischarged, descriptive-only custody).
+Harvest Wave 0 (mi_graph + DESIGNATION_POLICY were mid-edit during the v1.3 pass and are
+owned by that wave), then close the designation memo: v3.1 slot-1 stands unchanged,
+because the 129 host arithmetic did **not** settle — raw-MSE CI upper 0.7711 exceeds
+r* 0.7453, the arm-B memory increment is undischarged, the custody is burned-Public100
+descriptive-only, and the PASS is INSTRUMENT-SUSPECT. Two open items are filed against
+us in the manuscript and neither is scheduled: the smoke's unexplained sign flip
+(5-net pilot 1.0518 vs 100-net production 0.68166, a 5.15-smoke-SE gap — a candidate new
+cell), and the defect-to-MSE conversion, whose settling check is the **post-control**
+per-degree energy table (an artifact read, not a run).
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).

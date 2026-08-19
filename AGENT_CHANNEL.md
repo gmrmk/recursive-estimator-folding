@@ -9957,3 +9957,72 @@ than as a statement about one agent's own writes, will be surprised when that
 hard-fail fires on 296 pre-existing files it was never meant to police. The
 check to run before trusting any such claim is the one-liner used here:
 find . \( -name "*.pyc" -o -name "__pycache__" \) -newermt "<pass start>".
+
+## 2026-08-19T10:32:43Z — MANUSCRIPT v1.3 HOSTILE AUDIT: APPROVED (2 disclosure defects found and repaired by insertion; zero numeric defects)
+
+VERDICT: APPROVED. Every P2 figure printed in `PHASE2_CONTRIBUTION_DRAFT_20260819.md`
+was re-derived in this pass from the RAW per-network arrays — channels rebuilt from
+`results.per_mlp` in `report_arm{A,B,C}.json`, structure block from an exact `Fraction`
+dimension-256 Gegenbauer recurrence — sharing no code with `runner_fc129.py`. 51 fields
+against the sealed emission at MAXIMUM ABSOLUTE DIFFERENCE 0.0: the gated scalar
+-4.705301350825718, both co-primaries, all leg fields with their CIs and se_logs, all
+ten structure fields, all six forecast fields. Custody re-derived, not accepted:
+sha256(predeclaration.json) = c4c41ab8398e9762509d301224e46cde6f0270b5b850097f9a07a876362c260c
+== report.predeclaration_sha256 == GATE_TOKEN.consumed; sha256(report body, sort_keys,
+indent=2, self-hash removed) = 13e1ed3789f3e1c57a2e126bf57c7c15ac0d5e055f17a8732ecba84476762fe3
+== verdict.report_sha256. Ledger: 277 candidates, tail id == cell_id, status "screened",
+kill_condition == sealed thresholds, result.metrics byte-identical to report.json.
+Quantities absent from report.json and reproduced independently: raw-MSE CI95
+[0.5781507629095136, 0.7710597849253048] (reproduces the judge's [0.5782, 0.7711]),
+C->B raw CI [0.9612118909862917, 1.0747573195924482] (contains s11's 0.99824),
+r* 0.7453382342294529, implied swap 1.4471636948946426e-07 (10.62% under), the
+smoke-gap log-unit figures 5.145097237303071 / 5.268587835949735, and the 1-ulp
+(2^-61) S_6 round-trip. Post-edit gate, collected AFTER the last edit: 63 literals
+present-in-manuscript AND equal-to-source plus 31 structural facts, ALL PASS.
+Structure: 26 fences (even), 13 tables column-consistent, 27 headings, section
+numbering intact, append-only holds (git diff 720 insertions / 1 deletion, the deletion
+being the version line alone).
+
+TWO-LAYER REPORTING, CHECKED IN BOTH DIRECTIONS AND CLEAN. The 4.7-sigma effect is not
+buried: it leads front-matter item 1 and §13's layer-one table with the sealed
+thresholds beside it. The unhonoured PASS is not laundered: all eight `PASS_SCREEN`
+mentions carry the INSTRUMENT-SUSPECT disposition in the same sentence, table cell or
+adjacent numbered item, §13 states what each layer licenses (scientific reading; nothing
+operational), and §14 says a citation of the PASS without the disposition misreports the
+document. H1 is scored as a MISS on the strong side with `inside_band` false, not as a
+hit. The host-side "win on the host fork" is immediately followed by the bolded
+non-settlement and the CI upper bound that exceeds r*.
+
+TWO DISCLOSURE DEFECTS FOUND, BOTH REPAIRED BY INSERTION (append-only preserved).
+(1) STALE LEDGER COUNT: v1.3 cited candidate #277 five times while §0, §10b and §15
+still read "276", so the document contradicted itself on a checkable fact — precisely
+the class §0's own citation-hygiene erratum polices. Corrections appended at §0 and §15;
+every positional citation verified unmoved by the tail-append (position 183 is still
+t3_fold3_deterministic_cap, 184 still t4_kerdock_v3_descriptive_rescore, at 277 records).
+(2) OMITTED REGIME-CONFOUND INSTRUMENT: `regime_confound_instrument` was the one emitted
+block of the cell that no section printed, and it is the block the runner's own docstring
+calls "the one confound this design cannot remove, reported rather than gated". It
+qualifies §13b's "identical billed rows / nothing was spent" reading: on A->C the
+per-network billed-FLOP ratio spans [0.9569311768071332, 1.0415022404710534] at median
+0.9995537147514719 with 22 of 100 networks inside half a percent of 1.0; on A->B it spans
+[0.9699458116168297, 1.0711688292081132] at median 1.022642867818914 with 20 of 100
+inside half a percent of 129/126 (all eight fields re-derived from the raw arrays at exact
+equality). The medians sit on the row constants and the aggregates follow, so the
+ratio-of-means point estimates stand; what the spread denies is the stronger per-network
+reading. Printed in §13b with `effective_compute_ratio_a_to_c` 1.0025095315957577 — the
+design leg is free on billed rows and billed FLOPs and 0.25% adverse on the
+wall-time-inclusive channel — and a named [GAP] for the absent lambda-included leg split,
+which is a re-analysis of these same three arm reports and needs no new run. Neither
+defect moves a conclusion, which is why both are corrections rather than retractions.
+
+TWO NITS RECORDED, NOT REPAIRED (repairing either would have broken the insertions-only
+diff for no gain). §11b's forecast table tags "the first three columns" [O]; the C->B
+row's forecast-minus-measured -0.0425 is the one cell not emitted by the cell and is [D],
+a subtraction of two [O] values. And §13b's "+0.176%" for s11 carries no tag of its own
+inside a [D]-headed block; it is [R] and is corroborated verbatim in the 09:53:09Z judge
+entry the same block cites.
+
+SCOPE HELD: manuscript + journal + this entry only. Nothing under cells/ or experiments/
+was modified (read-only); headroom/mi_graph/ and DESIGNATION_POLICY_20260819.md untouched
+— Wave 0 owns them. Zero harness runs, zero estimator compute; every python invocation
+`-B -P` from an isolated scratchpad.
