@@ -10945,6 +10945,129 @@
         "report_sha256": "eab0a2f68a2047e4318dc20d5d20d5dab2310e8eb03ad666b58e54804841aba7",
         "outcome": "COMPLETED"
       }
+    },
+    {
+      "id": "frame_completion_129_three_arm_regime_decomposition_v1",
+      "status": "screened",
+      "mechanism": "The estimator integrates a network functional over a point set on the sphere, so its residual variance decomposes as the sum over even harmonic degrees of the functional's degree-l energy times the design's degree-l defect A_l. For m antipodally doubled orthonormal frames every point sees one inner product at plus one, one at minus one, and two times width-minus-one zeros inside its own doubled frame; the whole question is what the cross-frame block contributes. For mutually unbiased bases every cross inner product has modulus one over sixteen, and the resulting alternating sum very nearly cancels the self and antipode terms: at degree four it cancels them exactly, and only at m equal to 129, because equating the fourth-moment identity to the design requirement clears to a single linear equation in m with one integer root. For Haar-random orthonormal frames the cross-frame rows are marginally uniform on the sphere and the expected normalized Gegenbauer of a uniform direction is zero at every degree above zero, so the cross block contributes NOTHING and A_l collapses to the self-plus-antipode term alone. That is the mechanism, and it is a statement about which carrier is strong: at degree four the random-frame defect is one hundred twenty-eight thirds times the Kerdock one, while at degree six and above both carriers already sit at the reciprocal-point-count law and are indistinguishable. So on the deployed carrier the completion is not a marginal refinement of an already-exact degree; it removes a defect that is currently at full independent-sampling strength. The mechanism therefore has two separable legs and the third arm exists to separate them: entering the structured design family at fixed point count, which is where the degree-four defect actually falls by that factor, and completing the family from 126 frames to 129, which takes the residue to exactly zero and buys three more frames' worth of point count at the price the score law charges. Against all of that stands the collapse mechanism, which is why the gated contrast can go either way: the carrier is not a bare design average. It substitutes exact analytic means for provably dead neurons, composes always-on neurons through exact linear folding, and subtracts a tangent-transported correction whose control is the first layer's exactly known mean and second moment. That control's own harmonic content is the rectifier kink tail, which is weighted toward LOW degree, so the control removes proportionally more degree-four error than high-degree error and the post-control degree-four share can be far below the pre-control one. The measurement decides which of the two dominates, and the exact defect table for all three frame sets rides along in the report so the mechanism is attributable rather than argued.",
+      "bias_class": "measured_paired",
+      "prediction": "TWO PRE-REGISTERED PRIORS AND ONE MEASUREMENT THAT CONTRADICTS THEM; all three are stated because that disagreement is the reason the cell is worth an authorization. Off-protocol harness seed 424242 at --n-mlps 5, plus an off-protocol design-arithmetic seed 20260818777; production seed 0 at --n-mlps 100 never executed before sealing. (H1) THE A_4 RECONCILIATION LAW, pre-registered on the channel before any 129 run [AGENT_CHANNEL.md 2026-08-19 ~01:0x UTC]: the completion's gain scales with the carrier's degree-four defect, so Kerdock-regime carriers (A_4 near 7.35e-07) see sub-one-percent gains while independent-sampling-regime carriers (A_4 near 3.14e-05) see gains of the nineteen-percent class; our deployed carrier is in the independent-sampling regime, verified in source. AMENDED BEFORE ANY 129 RUN, AS INTEGRITY REQUIRES [AGENT_CHANNEL.md 2026-08-19 ~02:1x UTC, commit 0486668, the regime audit's pre-registration amendment]: the audit found THREE UNRECONCILED QUANTIFICATIONS of the Kerdock-versus-independent-sampling degree-four suppression -- m191 measured degree four at 0.098 to 0.107 of independent sampling (~9.1x) and degree six at 0.35 to 0.43 (~2.4x); m81_full129_pareto records A_4 = 0.047 (~21x); and the A_4 law as originally pre-registered used 42.7x, which is 128/3, the defect ratio. These three may measure DIFFERENT OBJECTS -- design defect versus MSE suppression versus per-block A_4 -- and which of them governs is exactly what the originally filed 0.78 to 0.86 band depended on. The DIRECTION, our carrier sitting in the strong-gain regime, stands on all three quantifications; the MAGNITUDE band therefore WIDENS HONESTLY to 0.78 to 0.93 pending reconciliation. PREDICTION, AS AMENDED: the arm A to arm B raw MSE ratio lands in the 0.78 to 0.93 band. FALSIFIER, UNCHANGED BY THE AMENDMENT: an MSE ratio above 0.95 on this carrier kills H1 and re-opens the public discrepancy. The reconciliation -- which of the three ratios governs the MSE gain -- is REQUIRED READING for the 129 verdict and is to be judged from this cell's own three-arm data. (H2) THE DECOMPOSITION PREDICTION, same channel entry: most of the gain is DESIGN QUALITY (Haar to structured), with the 126 to 129 completion increment small -- which reconciles the dual-witness certificate, that 126 is optimal INSIDE the structured game, with the larger public measurement, that the gain is ENTERING the game rather than completing it. The runner's own structural forecast agrees in direction and puts numbers on it: forecast MSE ratio 0.84 for the design-quality leg A to C and 0.97 for the completion leg C to B, i.e. a design-quality share of the forecast log gain of 0.858. Under H2 the recognizable signature is arm C landing close to arm B and far from arm A. THE FORECAST'S OWN EXTERNAL CHECK: re-weighting the manuscript's committed variance shares by the random-frame defects predicts arm A's variance at 2.957746e-07 against the committed random32,256 public raw MSE of 3.089512726e-07, an agreement of 4.3%, tighter than the 6.4% the manuscript reports for its own carrier. THE SMOKE, WHICH POINTS THE OTHER WAY (measurement, [O]): five networks at off-protocol seed 424242, arms A and B actually built and actually run, returned equal-network-weight FLOP-only score ratio 1.0518 and raw MSE ratio 1.0387 -- arm B WORSE -- with bootstrap log standard error 0.0843, placing the H1 band about 3.1 standard errors away. Two of five networks favoured arm B; three did not. Arm C was NOT smoked and its leg is therefore an untested prediction at production scale. PREDICTED DISPOSITION, taking the smoke over the priors because it is measurement on the real pipeline while the priors are a transplanted decomposition: KILL about 0.80, INCONCLUSIVE about 0.15, PASS about 0.05. Under KILL the reading is that the champion's tangent and fold controls have already absorbed the degree-four design error, which IS the low-degree-weighted collapse mechanism named in the causal mechanism; H1 is then falsified by its own declared threshold and the decomposition tells us whether even the design-quality leg is dead on this carrier. POWER, computed from the smoke's own standard error rather than assumed: bootstrap log standard error scales as the reciprocal square root of network count, so 0.0843 at five networks implies about 0.019 at one hundred. Against the declared five-percent margin that gives, at the two-sided 95% critical value, KILL power about 0.76 if the truth is exactly the reciprocal-point-count break-even, about 0.93 if the truth is the smaller public claim transferred, and PASS power essentially one if the truth is either the larger public claim or the H1 band. The 0.035 between-network log-ratio standard deviation quoted in the mub129 post-mortem is NOT the applicable figure and must not be used to read this cell: that number came from sixteen rotations averaged per network, which cuts frame-draw noise fourfold, and this design has one rotation per network. Using it would have overstated power by a factor of five and is exactly the error the post-mortem itself was written about. RECOGNIZABLE FAILURE OF THE PREDICTED DISPOSITION: an adjusted-score ratio at or below 0.95 with the bootstrap interval clear of it, which would confirm the larger public claim on our carrier, revive the completion as a live candidate on a premise m81 and s11 never tested, and make the manuscript's design-axis-closure section wrong as applied to the random-frame carrier -- correct for Kerdock, over-generalized to ours.",
+      "kill_condition": "{\"kill_when_gte\": 1.9842169515086827, \"metric\": \"frame_completion_129_margin_t\", \"pass_when_lte\": -1.9842169515086827}",
+      "result": {
+        "verdict": "PASS_SCREEN",
+        "metrics": {
+          "co_primary_lawful": {
+            "agrees_in_sign_with_primary": true,
+            "score_lambda_bootstrap_se_log": 0.07082697501948278,
+            "score_lambda_ci95": [
+              0.5942738689639309,
+              0.7832904131829699
+            ],
+            "score_lambda_ratio": 0.6809814774525338
+          },
+          "components": {
+            "aggregate_mse_arm_a": 3.799496813883252e-07,
+            "aggregate_mse_arm_b": 2.531207893952114e-07,
+            "aggregate_mse_arm_c": 2.493874381315209e-07,
+            "billed_flop_ratio_a_to_b": 1.0235565230101182,
+            "billed_flop_ratio_a_to_c": 0.9997391581774678,
+            "effective_compute_ratio_a_to_b": 1.0231415955634569,
+            "effective_compute_ratio_a_to_c": 1.0025095315957577,
+            "mean_multiplier_arm_a": 0.6390864316824633,
+            "mean_multiplier_arm_b": 0.6541410859158456,
+            "mean_multiplier_arm_c": 0.6389197312128677,
+            "raw_mse_ratio": 0.6661955563966138,
+            "row_count_ratio_a_to_b": 1.0238095238095237,
+            "row_count_ratio_a_to_c": 1.0
+          },
+          "config": {
+            "seeds": [
+              0,
+              20260818
+            ]
+          },
+          "decomposition_arm_c": {
+            "completion_leg_c_to_b": {
+              "raw_mse_ratio": 1.0149700854688666,
+              "score_flop_bootstrap_se_log": 0.02668177476999677,
+              "score_flop_ci95": [
+                0.9806503459119398,
+                1.08847782169281
+              ],
+              "score_flop_ratio": 1.0331609201012664
+            },
+            "design_quality_leg_a_to_c": {
+              "raw_mse_ratio": 0.6563696466865464,
+              "score_flop_bootstrap_se_log": 0.07107810387867139,
+              "score_flop_ci95": [
+                0.5756321968339824,
+                0.759611683609333
+              ],
+              "score_flop_ratio": 0.6597781265867341
+            },
+            "design_quality_share_of_log_gain": 1.03658336557389,
+            "h2_forecast_design_quality_share": 0.8580798896092531,
+            "h2_prediction": "most of the gain is design quality, not completion",
+            "log_additivity_residual": 6.245004513516506e-17,
+            "role": "reported_co_primary_not_gated"
+          },
+          "frame_completion_129_margin_t": -4.705301350825718,
+          "h1_pre_registered_check": {
+            "falsified": false,
+            "falsifier_threshold": 0.95,
+            "inside_band": false,
+            "mse_ratio_band": [
+              0.78,
+              0.86
+            ],
+            "mse_ratio_observed_a_to_b": 0.6661955563966138,
+            "role": "reported_prior_versus_outcome_not_gated"
+          },
+          "regime_confound_instrument": {
+            "a_to_b_nets_within_half_percent_of_row_ratio": 20,
+            "a_to_b_per_net_flop_ratio_max": 1.0711688292081132,
+            "a_to_b_per_net_flop_ratio_median": 1.022642867818914,
+            "a_to_b_per_net_flop_ratio_min": 0.9699458116168297,
+            "a_to_c_nets_within_half_percent_of_row_ratio": 22,
+            "a_to_c_per_net_flop_ratio_max": 1.0415022404710534,
+            "a_to_c_per_net_flop_ratio_median": 0.9995537147514719,
+            "a_to_c_per_net_flop_ratio_min": 0.9569311768071332
+          },
+          "structure": {
+            "a4_arm_a_random_frames": 3.136387499227966e-05,
+            "a4_arm_b_mub_completion": 0.0,
+            "a4_arm_c_kerdock_design": 7.350908201315546e-07,
+            "a4_suppression_factor_arm_a_over_arm_c": 42.666666666666664,
+            "a6_arm_a": 3.0994997816843286e-05,
+            "a6_arm_b": 3.122025216144244e-05,
+            "a6_arm_c": 3.194089008420301e-05,
+            "a8_arm_a": 3.1002171499286756e-05,
+            "a8_arm_b": 3.0251454542315478e-05,
+            "a8_arm_c": 3.097244080614878e-05,
+            "forecast_minus_measured_mse_ratio_a_to_b": 0.15498037313404955,
+            "forecast_minus_measured_mse_ratio_a_to_c": 0.18809103434532048,
+            "forecast_mse_ratio_a_to_b": 0.8211759295306633,
+            "forecast_mse_ratio_a_to_c": 0.8444606810318669,
+            "forecast_mse_ratio_c_to_b": 0.9724264823404788,
+            "forecast_variance_arm_a": 2.957745761410703e-07,
+            "forecast_variance_arm_b": 2.428829624941814e-07,
+            "forecast_variance_arm_c": 2.4977e-07
+          },
+          "verdict_inputs": {
+            "gated_contrast": "armA_vs_armB",
+            "margin": 0.05,
+            "score_flop_bootstrap_se_log": 0.07054498655771349,
+            "score_flop_ci95": [
+              0.5949746792999954,
+              0.783629057815171
+            ],
+            "score_flop_ratio": 0.68165697632704,
+            "t_crit": 1.9842169515086827
+          }
+        },
+        "report_sha256": "13e1ed3789f3e1c57a2e126bf57c7c15ac0d5e055f17a8732ecba84476762fe3",
+        "outcome": "COMPLETED"
+      }
     }
   ]
 }

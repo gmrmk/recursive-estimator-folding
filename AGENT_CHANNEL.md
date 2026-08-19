@@ -9630,3 +9630,98 @@ corpses). Banked/settled this round at zero compute:
 WAVE 0 LAUNCHES NOW (zero compute, parallel to the running 129 chain): v3.1 memo,
 memory-tier retirement, MI instrument repair + ownership-axis coding under the
 null_MAX fragility gate, small settlements (W0.6/W0.9/W0.10), hostile verify.
+
+## 2026-08-19T09:53:09Z — 129 JUDGE DISPOSITION (frame_completion_129_three_arm_regime_decomposition_v1): mechanical PASS_SCREEN; disposition INSTRUMENT-SUSPECT under the pre-registered se_log honour window
+
+MECHANICAL VERDICT, sealed thresholds only: frame_completion_129_margin_t =
+-4.705301350825718 vs pass_when_lte -1.9842169515086827 / kill_when_gte
++1.9842169515086827 -> PASS_SCREEN, status "screened", ledger candidate #277.
+Judge re-derivation, fresh code, raw per-network arrays from
+report_arm{A,B,C}.json only (frozen venv, -B -P, clean dir): metric
+-4.705301350825718, score ratio 0.68165697632704, se_log 0.07054498655771349,
+CI95 [0.5950, 0.7836], lawful co-primary 0.6810 (agrees in sign), raw MSE
+ratio 0.6662, both leg splits — every absolute difference vs the sealed
+emission 0.0. Thresholds applied independently: meets_pass true, meets_kill
+false. Seeds [0, 20260818] agree, spec == runner config. Auth chain re-derived
+by the judge AND by fold_search audit (problems [], token consumed): report
+body sha256 matches, consumed token == predeclaration hash, ledger tail
+metrics byte-identical to report.json, kill_condition == sealed thresholds,
+canonical spec hash present in the 11-entry registry. Binding order verified:
+pre-registration 07:07:56Z < predeclare 09:00:17Z < run 09:34:41Z.
+
+DISPOSITION: INSTRUMENT-SUSPECT — the PASS is NOT honoured (pre-registered
+judge rule, ultrareview merge 2026-08-19T07:07:56Z, applied as written). The
+copied se_log 0.07054498655771349 lands OUTSIDE the predeclared honour window
+[0.019, 0.03]: 2.35x the ceiling, 3.71x the spec's own power projection (the
+smoke's 0.0843-at-5 -> 0.019-at-100 scaling did not transfer). Achieved gate
+size ~7% recorded next to the copied se_log per the same pre-registration
+(bootstrap SE bias 6.2%, symmetric, no band flips). Direction of the
+suspicion: realized between-network dispersion far ABOVE design — a less
+powerful test than predeclared, cleared only because the effect sits ~4.7 se
+deep. The mechanical PASS_SCREEN stands in the ledger untouched (verdicts are
+one-shot); the judge does not honour it as a validated pass; re-earning the
+window is a NEW cell, and the burned Public100 custody keeps any such read
+descriptive regardless. se_log, all channels, copied: gated A->B
+0.07054498655771349; lawful co-primary 0.07082697501948278; design leg A->C
+0.07107810387867139; completion leg C->B 0.02668177476999677.
+
+LEG SPLITS COPIED (reported, never gated): design-quality A->C score_flop
+0.6598, CI95 [0.5756, 0.7596], raw MSE 0.6564. Completion C->B score_flop
+1.0332, CI95 [0.9807, 1.0885], raw MSE 1.0150. Log-additivity residual
+6.2e-17; design-quality share of log gain 1.0366 vs H2 forecast 0.8581 — H2
+confirmed and exceeded: the design leg carries ALL of the measured gain; the
+completion leg is a small net score LOSS with a CI straddling unity.
+
+ARM-C RECONCILIATION (the amendment's required reading, judged from the
+cell's own three-arm data): the completion leg is statistically consistent
+with BOTH prior witnesses — s11's isolated deg-4 exactness at +0.176%
+(0.99824 sits inside the C->B raw CI) and the dual-witness certificate (126
+optimal inside the structured game; its 0.0711% deg-6 break-even margin is
+R_6(129)). Completing to 129 does not pay inside the MUB family once the
+score law charges for three extra frames. The 03:0x pre-statement ("large on
+Haar, ~0.176% on Kerdock per s11 + the certificate") is exactly what the data
+shows. Of the amendment's three unreconciled suppressions (9.1x / 21x /
+42.7x): the 42.7x defect law is EXACT in the cell's own table, but NONE of
+the three maps to the measured MSE gain through the committed energy shares —
+measured A->C 0.6564 vs share-model forecast 0.8445, and A->B 0.6662 vs
+0.8212, a ~2.8 bootstrap-SE gap on the raw ratio — so the defect->MSE
+conversion, not the defect law, is what needs revision (manuscript input).
+
+H1 SCORED AGAINST OUTCOME: observed raw A->B 0.6662 falls BELOW the amended
+band [0.78, 0.93] (and below the runner's stale (0.78, 0.86) constant,
+runner_fc129.py line 110 — immaterial here, both agree since 0.6662 < 0.78;
+repair finding A recorded). Falsifier 0.95 not tripped. Direction (our
+carrier in the strong-gain regime) CONFIRMED; the magnitude band missed LOW —
+more gain than either version predicted.
+
+THEOREM CONTEXT (recorded; re-narrates nothing): every exact assertion holds
+in the cell's own defect table — A4_mub(129) = 0.0 exactly; A4 suppression
+128/3 exact; deg-6 dyadic tax exact to the last float digit, 4221/4096
+(1.030517578125) at k=126 and 33/32 (1.03125) at k=129 per the ULTRAMATH
+slate identities; slate external anchors reproduced (A4_haar(1) 0.003951848,
+A6_haar(1) 0.003905370). The theorems' NET prediction is NOT met in
+magnitude: measured ratios run below the defect-share forecast on both design
+legs (more gain than the shares predict) and the completion leg lands 1.6
+leg-SEs above its forecast (1.0150 vs 0.9724). Direction consistent on all
+three.
+
+HOST ARITHMETIC (pre-stated 08:41:38Z so the verdict cannot be re-narrated;
+stated against the measurement): r* = 0.7453. Measured raw r 0.6662 < r* at
+the point estimate — implied swap-on-row_blocked score 0.6662 x 1.0238095 x
+2.121762464e-7 = 1.4472e-7, i.e. 10.6% under unfolded kerdock_v3's
+1.6190838e-7. Judge-computed raw-MSE bootstrap CI95, same shared indices,
+reported not gated: [0.5782, 0.7711] — the UPPER bound exceeds r*, so the
+host-side win is NOT settled at the gate's own confidence level. The
+pre-stated value statement therefore stands exactly as filed: scientific
+result (theorem test, manuscript P2) plus host-fork evidence — NOT an
+immediate designation flip. The INSTRUMENT-SUSPECT disposition, the straddled
+CI, the undischarged arm-B memory gate, and the descriptive-only custody each
+independently block a designation move.
+
+CUSTODY: burned Public100 -> descriptive only. PASS_SCREEN confers no
+validation and no promotion eligibility, designates nothing, and touches no
+champion lineage. fold_floor_splice and row_blocked_production untouched by
+the judge. This entry's commit carries the sealed cell (predeclaration,
+consumed token, report, verdict), the three arm reports, the ledger (#277),
+the registry, the repaired spec + runner, and the Wave-0 files present in the
+tree at commit time, on agent/compression-survivor-corpus.

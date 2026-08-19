@@ -925,3 +925,385 @@ v2.1; it was relabelled in the script on 2026-08-19 so the output states its own
   is one pair, not a theorem. Any candidate whose per-network `C` distribution differs
   in shape from the incumbent's, the floored λ-dies leaves in particular, needs the
   per-network receipt rather than the aggregate.
+
+---
+
+# v3 — DESIGNATION ANNEX, 2026-08-19 (append-only; v1 and v2 above are unaltered)
+
+Filed under wave item **W0.1** of `core/MI_SOLVE_20260819.md` §4 ("v3.1 designation memo
+— SETTLED, bank it"). Zero compute: this annex runs no estimator, no harness and no
+FlopScope. Every number below is either read from a committed artifact or re-derived from
+one by stdlib arithmetic under `python -B` with `PYTHONDONTWRITEBYTECODE=1`.
+
+**Fence compliance, stated precisely rather than loosely.** Nothing in
+`experiments/fold_floor_splice`, `experiments/frame_completion_129` or `cells/` was written,
+and no file in any of them was opened, read or cited as a source for this annex; a check
+this session confirms no path under those three trees has a modification time later than the
+start of this work, and no bytecode file anywhere under the corpus was written. One
+qualification is carried rather than buried: a repo-wide content grep for the string
+`v31_guards`, run while locating the ledger, matched inside two files in those trees and
+returned their paths. That grep read bytes it did not need to. No content from either tree
+entered this annex, but "neither read nor written" would have been the wrong claim and is
+not made.
+
+Evidence tags carry §0's meaning: **[O]** observed (run or read this session) · **[D]**
+derived from observations by shown steps · **[R]** reported · **[A]** assumed.
+
+**Scope.** This annex settles one question: *within the Kerdock lineage, which artifact is
+the slot-1 candidate?* It changes no leaf of §2, no warrant W1–W3 and no measurement in
+§3. It replaces one row of the v2 comparison tables and adds one predeclared canary
+output.
+
+---
+
+## v3.0 The verdict in one paragraph
+
+The slot-1 candidate under the halt ruling is **v3.1** — ledger idx 206,
+`v31_guards_m186_m187` — and not bare `kerdock_v3` (ledger idx 183). v3.1 inherits idx
+183's local adjusted score at a constant measured cost of **+24,575 billed FLOPs per
+network**, which moves the score from `1.6190837992e-7` to **`1.6190840245e-7`**: a
+relative change of `1.39e-7`, the third significant digit untouched. Against that it
+closes two failure classes that frozen v3 demonstrably has, both reproduced to the FLOP at
+gate G2. The campaign's own promotion invariant treats failures as binary rather than as a
+priced trade, so the exchange is a seventh-significant-figure score concession for the
+removal of two demonstrated ways to score nothing on a network of the private suite. Every
+number in this annex is **local**, and §v3.6 fixes the rule under which it may be projected
+to a hosted position.
+
+---
+
+## v3.1 Why this annex exists now
+
+Round-4 fold verify is COMPLETE and the fold lineage HALTS under owner ruling 2; M1 is
+cancelled and the fold retires gate-green as a contribution artifact rather than a
+designation candidate [R: `MI_SOLVE_20260819.md` §3.1]. That removes from the slot-1
+contest every v2 row whose candidate contains the fold, including v2.7's folded-`kerdock_v3`
+row at `1.2687e-7` which was in any case `[A]` on portability. What survives as the
+designation pivot is v2's own surviving comparison — unfolded `kerdock_v3` against the
+incumbent `row_blocked` [R: `MI_SOLVE_20260819.md` §3.3]. This annex answers the question
+that pivot leaves open, which is which Kerdock artifact carries the slot.
+
+### The two records on the ledger's own axes
+
+| axis | idx 183 | idx 206 |
+|---|---|---|
+| `id` | `t4_kerdock_v3_descriptive_rescore` | `v31_guards_m186_m187` |
+| `carrier` | `kerdock_mub` | `kerdock_mub` |
+| `precision` | `unstated` | `unstated` |
+| `mechanism_family` | `design_frame` | `design_frame` |
+| `convention` | **`adjusted_score`** | **`flop_cost_wall`** |
+| `outcome` | `pass` | `win` |
+| `status` | `screened` | `validated` |
+| `scored_full_run` | `true` | `false` |
+| `matched_units` | 100 | 3 |
+
+[O: `headroom/mi_graph/mi_graph.json`, nodes 183 and 206, field-read this session]
+
+The pair is **one axis apart, on CONVENTION**, which is exactly the source flip W0.1 names:
+a one-axis door `flop_cost_wall → adjusted_score`. Re-pricing idx 206 out of the flop-cost
+currency into the adjusted-score currency is an EVIDENCE move under W0.5's governor and not
+a design move. No estimator changes; what changes is the currency the verdict is written
+in. Kills stay context-indexed: idx 206 was never a kill, and this annex reopens nothing.
+
+The label-epoch gate (W0.9) does not bite here. Both records carry the same `kerdock_mub`
+label on the same physical artifact lineage, so however the epoch settles it settles
+identically on both sides of this comparison, and no conclusion below depends on the label
+being genuine. [D]
+
+---
+
+## v3.2 The arithmetic, re-derived this session
+
+**Basis**, read from `experiments/t4_kerdock_descriptive_rescore/kerdock_v3_official100.json`
+(whestbench 0.14.0, FlopScope 0.10.0, public 0..99, seed 0, one run, 2026-08-08):
+
+| quantity | recorded in the artifact | re-derived from the 100 per-network rows |
+|---|---:|---:|
+| adjusted final-layer score | `1.6190837992231567e-7` | `1.6190837992231572883e-7` |
+| raw final-layer MSE | `2.493887556909158e-7` | `2.493887556909157868e-7` |
+| mean score multiplier | `0.6561138779836238` | `0.6561138779836236776` |
+| mean effective compute | `178462974811.54562` | `178462974811.5456403` |
+
+[O, both columns this session] The per-network identity
+`adjusted_i = mse_i × max(FLOOR, C_i / 2.72e11)` holds across all 100 rows with a worst
+relative deviation of `2.82e-16` [O].
+
+**Floor headroom, which licenses the whole calculation.** Minimum per-network `C/B` is
+`0.5680471`, maximum `0.7704964` [O]. Every one of the 100 networks sits above **both**
+candidate floors (0.1 and 0.5), so a constant billed addition maps to a constant multiplier
+addition on every network with no clipping anywhere.
+
+**The delta.** Gate G1 measured a constant `+24,575` billed FLOPs, bitwise-equal outputs on
+3 networks, harness anchored to `a4_det_run1` bitwise [O: ledger idx 206].
+
+| step | value | tag |
+|---|---:|---|
+| `Δmult = 24575 / 2.72e11` | `9.034926470588235e-8` | [D] |
+| `Δscore = mean_i(mse_i) × Δmult` | `2.253209070258917e-14` | [D] |
+| **v3.1 local adjusted = `1.6190837992231567e-7 + Δscore`** | **`1.6190840245440637e-7`** | **[D]** |
+| relative change | `1.391657e-7` | [D] |
+
+**Attack on the linear form, run rather than reasoned.** The linear step above assumes the
+floor never binds. Recomputing the score exactly and per network, as
+`mean_i( mse_i × max(FLOOR, (C_i + 24575)/B) )` with no linear approximation, returns
+`1.6190840245440643e-7`, agreeing with the linear result to `5.5e-23` absolute [O]. Floor
+inertness is therefore observed on this candidate rather than assumed.
+
+**Delta as a share of the bill.** Across the 100 networks the constant runs from `1.2217e-7`
+of the bill on the largest-bill network to `1.6751e-7` on the smallest [D], bracketing the
+`1.4–1.5e-7` the ledger record reports from its own 3 gate networks [O: ledger idx 206].
+
+**Compute safety, carried forward.** Maximum per-network `C` becomes `209,575,050,886`
+[D] — `22.95%` under `B` and `18.90%` under the `258.4e9` promotion safety gate [D]. The
+guard delta consumes none of the campaign's largest compute margin in any meaningful sense.
+
+---
+
+## v3.3 The dominance argument, stated at its earned level
+
+**This is not literal Pareto dominance, and the annex does not claim it.** On score v3.1 is
+adversely different from idx 183 by `2.253e-14` absolute, `1.39e-7` relative. Dominance is
+claimed on the decision-relevant reading, and here is the sizing that licenses it. Each row
+is a yardstick the campaign already owns, compared against the guard delta:
+
+| yardstick | magnitude | times larger than the `1.39e-7` guard delta |
+|---|---:|---:|
+| T4's own paired bootstrap CI half-width on these same 100 networks (`[0.645064, 0.898964]` about `0.763084`, 200k resamples, seed 20260808) [O] | `1.664e-1` | `1.2e6` |
+| S1's suite-draw CV at `R=1` on a 50-net suite [R: `S1_VERDICT.md`, via §0 F4] | `8.541e-2` | `6.1e5` |
+| the spread between the divergence map's planning default and its conservative arm, `1/0.884 − 1` [D] | `1.311e-1` | `9.4e5` |
+
+The delta sits six orders of magnitude below the resolution of every instrument in that
+list. It is not a score event; it is a bookkeeping entry.
+
+**Against that, what v3.1 buys, measured.** Gate G2 reproduced both frozen-v3 failure
+classes TO THE FLOP — the crash class at billed `5,159,851,464` and the non-finite class at
+billed `154,722,710,745` — while v3.1 completes finite and within budget on both: M186 took
+the analytic-degradation branch and M187 replaced 164 non-finite outputs with analytic
+means, zero clamps engaged [O: ledger idx 206]. Gate G3 validated the package: folder-mode
+`rc=0`, `validate-package` ok, contract validate ok, exactly 10 allowed members with no
+extras, sha-equal sources, hardened tar sha256 `8382e269…4ea06` at 33,347,024 bytes [O].
+
+**Why that side is not a priced trade.** The ledger's own invariant reads "promotion safety
+gate Cmax < 258.4e9 and **zero failures**" [O: `fold_ledger.json` `invariants.resource_ceiling`].
+A failure is disqualifying at the campaign's own gate rather than exchangeable against
+score, and the private re-run of 2026-09-20..30 is the only ranking that pays.
+
+**The trade, stated exactly.** v3.1 buys the closure of two demonstrated, reproduced-to-the-
+FLOP failure classes for `1.4e-7` of relative score on an axis the campaign's own invariant
+treats as binary. Bare `kerdock_v3` keeps the `1.4e-7` and keeps both failure classes open
+on a private suite it has never seen. **Slot-1 candidate under the halt ruling: v3.1
+(ledger idx 206).**
+
+---
+
+## v3.4 The updated incumbent-comparison row
+
+This replaces the "unfolded `kerdock_v3`" reference wherever v2 uses it as the slot-1
+benchmark — v2.2's comparison table, the rightmost column of v2.3, v2.6 and v2.7, and
+v2.9's crowning comparison. v2's arithmetic is untouched; only the reference candidate's
+identity and its seventh significant figure move.
+
+| candidate | basis | local adjusted | vs incumbent | tag |
+|---|---|---:|---:|---|
+| incumbent `row_blocked` | recorded public 0..99 | `2.121762464e-7` | `1.0000000x` | [O] |
+| `kerdock_v3` (ledger idx 183) | recorded, T4 official-100, descriptive | `1.6190837992e-7` | `0.763084382x` | [O] |
+| **v3.1 (ledger idx 206) — slot-1 candidate** | idx-183 basis + the measured constant guard delta | **`1.6190840245e-7`** | **`0.7630845x`** | **[D]** |
+| incumbent ÷ v3.1 | | | `1.3104709x` | [D] |
+
+The `0.763084382` cell reproduces T4's printed mean-ratio column to nine digits, which is
+v2.1's identity check: a transcription check only and not a licence [O].
+
+**Leaf stability.** Because the substitution scales the reference by `1 + 1.39e-7`, every
+`r*` in v2 moves in its seventh significant figure and no leaf answer moves: `0.87988 →
+0.879880122`, `0.88232 → 0.882320123`, `0.88859 → 0.888590124`, all still below the band's
+upper edge of `0.93` by the same margin they held before [D].
+
+---
+
+## v3.5 The local-versus-hosted rule this annex is bound by
+
+`R = 1.652` is retired, and INV3's "maps to ~9.8e-8 hosted" clause is void with it [R:
+`MI_SOLVE_20260819.md` §3.5]. The governing document is
+`core/LOCAL_VS_HOSTED_DIVERGENCE_MAP_20260819.md` §9, whose ruling reads verbatim:
+**"Planning default: R = 1.0. Conservative arm: R = 0.884. Never use R > 1."** Hosted
+projection is local ÷ R.
+
+| candidate | local | R = 1.000 (planning default) | R = 0.884 (conservative arm) |
+|---|---:|---:|---:|
+| v3.1 (ledger idx 206) | `1.6190840e-7` [D] | `1.6190840e-7` [D] | `1.8313403e-7` [D] |
+| `kerdock_v3` (ledger idx 183) | `1.6190838e-7` [O] | `1.6190838e-7` [D] | `1.8313400e-7` [D] |
+| incumbent `row_blocked` | `2.1218e-7` [O] | `2.1218e-7` [D] | `2.3999e-7` [D] |
+
+The idx-183 conservative-arm cell returns the map's own `1.8313e-7`, which is the observed
+hosted grade by construction and the table's self-consistency check rather than a
+prediction [O: map §10]. Two consequences bind on everything above:
+
+1. **No sentence in this annex states a position against any rival**, and none drawn from it
+   may. The map's §9 band is `[0.707, 1.105]` at 95% and contains `1.0`; v2.10 records the
+   campaign's two calibrations disagreeing by a factor of 1.87 in opposite directions.
+2. **The guard delta is invisible at either R.** `1.6190838e-7` and `1.6190840e-7` project
+   to the same hosted figure at every displayed digit [D]. Nothing in the designation turns
+   on it, which is precisely why the failure-mode side decides.
+
+---
+
+## v3.6 PREDECLARED — guard-fire counts are first-class canary outputs
+
+Filed **before** any graded run, so that the reading of a guard event cannot be re-narrated
+after the fact. Verbatim; no prose paraphrase is authoritative.
+
+```json
+{
+  "predeclaration": "guard-fire counts as first-class canary outputs of any graded run",
+  "id": "v31_guard_fire_canary",
+  "filed": "2026-08-19, before any graded or canary run of the v3.1 artifact",
+  "artifact": {
+    "ledger_idx": 206,
+    "ledger_id": "v31_guards_m186_m187",
+    "tar_sha256": "8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06",
+    "tar_bytes": 33347024
+  },
+  "hypothesis": "On any network that frozen v3 completes with finite outputs and no error, neither guard fires, so the v3.1 artifact is bitwise identical to frozen v3 on that network and its adjusted score equals the frozen-v3 score plus the constant billed guard delta.",
+  "causal_mechanism": "v3.1 is a subclass-only mutation of frozen v3 carrying two guards and changing nothing else. A guard firing is the only code path on which a v3.1 output can differ from the corresponding frozen-v3 output. Per-network bitwise identity therefore holds if and only if neither guard fired on that network, and the inherited score is exact on exactly the networks where neither fires.",
+  "required_outputs": {
+    "status": "FIRST-CLASS: reported at the same level as score and billed compute, per network and in aggregate, on every graded or canary run of this artifact. A run that does not report them does not discharge this predeclaration.",
+    "fields": [
+      "m186_empty_regime_guard_fire_count (per network, integer)",
+      "m187_finite_output_guard_replacement_count (per network, integer)",
+      "m187_clamp_tier_engagements (per network, integer; expected zero)",
+      "guard_fire_networks (list of network indices where either count is nonzero)"
+    ]
+  },
+  "reading_rule": {
+    "zero_on_every_network": "The inheritance holds suite-wide. The graded score is the frozen-v3 score plus the constant billed delta. This is the only outcome under which the inherited local number may be cited as describing this candidate.",
+    "nonzero_on_some_network": "The inherited number is VOID FOR THAT NETWORK ONLY. On a firing network v3.1 is not bitwise equal to frozen v3, so no inherited quantity describes it and only the graded measurement does. The candidate is NOT voided and the non-firing networks are NOT affected.",
+    "why_a_fire_is_not_a_regression": "On a network where a guard fires, frozen v3 would have crashed or emitted a non-finite value, and both are failures under the ledger invariant requiring zero failures. A guard fire is a network saved. What it voids is the identity claim, never the candidate.",
+    "no_renarration": "These readings are fixed here, before the run. A guard-fire count observed afterwards is read by this rule and by no other."
+  },
+  "expected_values": {
+    "public_0_99": "zero on all 100, from the frozen-v3 artifact scan re-derived 2026-08-19: 12128 float-valued leaves, zero non-finite, zero traceback tokens, zero failed networks, all five failure_breakdown categories zero",
+    "constructed_A4_hostile_networks": "NONZERO BY DESIGN and already observed at gate G2: M186 took the analytic-degradation branch, M187 replaced 164 non-finite outputs with analytic means, zero clamps. The never-fires claim is scoped to healthy networks and never to these."
+  },
+  "falsifier": "A graded run reporting a nonzero guard-fire count on a network whose frozen-v3 counterpart completed with finite outputs and no error. That combination contradicts the causal mechanism above and voids the inheritance argument as a whole rather than for one network.",
+  "billed_delta": {
+    "flops_per_network": 24575,
+    "source": "gate G1, measured constant across three networks",
+    "multiplier_delta": 9.034926470588235e-8,
+    "denominator": "B = 2.72e11",
+    "score_delta_on_the_idx_183_basis": 2.253209070258917e-14,
+    "reverify": "Re-measure the constant on the graded run. A billed delta that is not constant across networks breaks the linear form used in annex section v3.2, and the score must then be recomputed per network."
+  },
+  "compliance": {
+    "zero_compute": true,
+    "fenced_trees_not_written_and_not_sourced": ["experiments/fold_floor_splice", "experiments/frame_completion_129", "cells/"],
+    "local_never_quoted_as_hosted": "Hosted projection is local divided by R at the divergence map planning default R = 1.0 and conservative arm R = 0.884. R = 1.652 is retired. Never use R > 1."
+  }
+}
+```
+
+---
+
+## v3.7 Why the inheritance holds — the public-100 scan, re-derived
+
+v3.1 is a subclass-only mutation of frozen v3 [O: ledger idx 206], so a guard firing is the
+only code path on which its output can differ. Bitwise identity on a network is therefore
+equivalent to neither guard having fired on it, and the inherited score is exact on every
+such network.
+
+Gate G1 establishes this directly on 3 networks [O]. The other 97 rest on a scan of the
+frozen-v3 artifact, re-derived this session by a full recursive walk of
+`kerdock_v3_official100.json`:
+
+| certificate | value | route |
+|---|---:|---|
+| float-valued numeric leaves in the artifact | 12,128 | recursive walk, float leaves only [O] |
+| of those, non-finite | 0 | `math.isfinite` on every leaf [O] |
+| raw-text `NaN` / `Infinity` / `-Infinity` tokens | 0 / 0 / 0 | byte scan of the whole file [O] |
+| raw-text `Traceback` tokens | 0 | byte scan of the whole file [O] |
+| per-network `traceback` fields non-null | 0 of 100 | field read [O] |
+| `n_failed_mlps` | 0 | field read [O] |
+| `failure_breakdown` categories | all five 0 (budget / time / residual-wall-time / combined / error) | field read [O] |
+| per-network exhaustion flags set | 0 of 400 | field read [O] |
+
+The census definition matters and is stated so the count is reproducible: **12,128 is the
+number of float-valued leaves in the whole document**, integers excluded (there are 8,197 of
+those, and 20,325 numeric leaves in total). That is the figure W0.1 reports, and it
+reproduces exactly [O].
+
+The inference runs in two steps [D]:
+
+- **M187** (isfinite scan → analytic-mean replacement) fires only on a non-finite value. The
+  artifact carries 12,128 float leaves and not one of them is non-finite.
+- **M186** (specific-ValueError catch → analytic-means degradation) fires only when that
+  exception is raised. In frozen v3 that exception is uncaught and terminates the network —
+  the crash class reproduced at gate G2 with billed `5,159,851,464` [O]. The run recorded
+  zero errors, zero tracebacks and zero failed networks.
+
+Neither guard could have fired on the 100, v3.1 is bitwise identical to frozen v3 suite-wide,
+and the inheritance carries with only the constant billed delta.
+
+**One scope correction, because W0.1's shorthand invites the opposite reading.** The guards
+**did** fire, by design, on the two constructed A4 hostile networks — that is the G2 gate,
+and it is what "strictly fewer failure modes" means. "Never fired" is a statement about the
+100 public networks and about nothing else.
+
+---
+
+## v3.8 Residual risk of this annex
+
+There is one, and it appears in two forms. It is stated at full size and not padded with
+others.
+
+**The scan certifies recorded outputs and a failure breakdown. It does not record frozen
+v3's internal control flow.** Two specific gaps follow:
+
+- **(a) Internally-caught exceptions.** If the M186 ValueError can be raised and handled
+  *inside* frozen v3 on some path, so that it never surfaces as a harness error, the
+  artifact cannot see it. On such a network v3.1's guard intercepts first and may take the
+  analytic-degradation branch, breaking bitwise equality. Nothing in the record shows such a
+  path and nothing in the record excludes one. [A on the absence]
+- **(b) Unserialized intermediates.** M187 scans at its own scan point, which need not be a
+  point the artifact serializes. A non-finite intermediate that is masked or replaced
+  downstream before serialization is invisible to a scan of recorded outputs and visible to
+  M187. [A on the absence]
+
+Both gaps are one-sided in the same direction: they can only mean a guard fired where the
+scan reads that it did not. Neither can manufacture a failure that frozen v3 did not
+already have, so the exposure is to the **inheritance claim** and never to the candidate's
+safety. Size: 3 of 100 networks are covered by G1's direct bitwise gate [O]; the remaining
+97 rest on the inference in §v3.7 [D].
+
+**Settling check, named and costed.** The counters predeclared in §v3.6. They cost no extra
+run — they ride the graded run that is going to happen regardless, and they convert this
+[D] into an [O] the first time the candidate is graded. That is the whole reason the
+counters are predeclared as first-class outputs rather than as diagnostics.
+
+Two smaller items carried rather than buried:
+
+- **idx 206 has `scored_full_run: false` and `matched_units: 3`** [O]. v3.1 has never been
+  scored on 100 networks. Its number is inherited by the bitwise argument above, not
+  measured, and no sentence in this annex states it as a measurement of v3.1.
+- **The idx-183 basis is itself DESCRIPTIVE.** Public 0..99 is burned, and the record's own
+  `bias_class` says the run "confers no validation, no promotion, no winner representation"
+  [O]. Designating v3.1 does not upgrade that basis. `1.6190838e-7` is the best *measured*
+  local number the campaign owns — the divergence map tags that row `[O]` while every lower
+  figure in its consequence table is `[R*]`, a projection [O: map §10] — and it stays a
+  local descriptive number.
+
+---
+
+## v3.9 What this annex does not change
+
+- **Nothing is designated on an unrun cell.** §2.5 stands unaltered.
+- **Never two correlated slots.** W1 stands. This annex names slot 1 only. Slot 2 is left
+  OPEN: v2.8 already recorded that "fold alone" is not a slot-2 candidate, and the fold halt
+  removes the folded-`kerdock_v3` alternative from the list as well, so the slot-2
+  construction is a September decision under the standing highest-variance-lawful-candidate
+  policy.
+- **R is chosen last**, in September, from the position actually held. S1's rule stands.
+- **The λ, FLOOR and τ leaves of §2 are untouched.** v3.1 substitutes for bare `kerdock_v3`
+  wherever v2 uses it as the reference; every affected ratio moves in its seventh
+  significant figure and no leaf answer moves [D, shown in §v3.4].
+- **The fold halt is reported here, not decided here** [R: `MI_SOLVE_20260819.md` §3.1].
+- **The Phase-2 rules text still does not exist in the corpus.** §5's Ψ response applies to
+  this annex exactly as it applies to v1 and v2.

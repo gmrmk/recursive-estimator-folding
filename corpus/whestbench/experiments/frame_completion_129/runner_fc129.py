@@ -46,8 +46,13 @@ in.  What arm C can never do is change a disposition.
 --------------------------------------------------------------------------
 The gated statistic is the FLOP-only adjusted-score ratio.  The harness's own
 per-MLP score multiplier is max(0.1, C_m/B) with C_m = F_m + lambda*R_m, and
-R_m is residual wall time -- machine noise that is not reproducible and that
-measured 12% of C on this host.  F_m is bit-reproducible (verified).  So the
+R_m is residual wall time -- machine noise that is not reproducible and whose
+size is read off the archived Public100 runs rather than asserted: the
+per-network residual share lambda*R_m/C_m has median 4.35% and max 7.25% of
+effective compute on kerdock_v3 (kerdock_v3_official100.json, 100 networks),
+and 8.46% in aggregate on the deployed row-blocked carrier
+(ROW_BLOCKED_WINOGRAD_PRODUCTION_REPORT.md, mean residual 0.160585 s against
+mean effective C 189.852556B).  F_m is bit-reproducible (verified).  So the
 primary estimand recomputes the same score law with the wall-time channel held
 out, and the lawful lambda-included ratio rides along as a reported co-primary.
 Neither is chosen after seeing the run; this paragraph is the predeclaration.
