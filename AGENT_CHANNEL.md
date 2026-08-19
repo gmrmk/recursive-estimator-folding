@@ -9918,3 +9918,42 @@ failed setrlimit -- no run was permitted -- so that one leg of W0.2 remains
 stderr for "could not setrlimit RLIMIT_AS" on the next scheduled run. Every MI
 statistic I quote came from artifacts I rebuilt this pass, not from the wave
 reports.
+
+## 2026-08-19T10:15:00Z — CORRECTION to the 10:08:54Z Wave-0 verification entry: the bytecode claim was overclaimed, by me and by two wave reports
+
+RETRACTED, MY OWN SENTENCE. The 10:08:54Z entry states under DUTY 4: "Repo-wide
+there is no __pycache__ and no .pyc outside the venv." That is FALSE. I checked
+the three fenced trees, found them clean, and generalised to the repo without
+running the repo-wide search. The verdict does not change; the sentence does.
+
+WHAT IS ACTUALLY TRUE, measured this pass [O]. The tree contains 296 .pyc files
+under roughly ten __pycache__ directories. Every one of them predates Wave-0: a
+search for any .pyc or __pycache__ with an mtime later than 04:22:00 local (the
+Wave-0 start, commit 7239ee2) returns EMPTY. The newest is
+experiments/frame_completion_129/armA/__pycache__ at 01:43:07, written by the
+129 chain's own arm-A run inside the tree that chain owns; the rest date from
+2026-08-18 and earlier, mostly under headroom/compute_lineage/, tests/,
+graph/ and papers/. All are matched by .gitignore line 1, so none can enter a
+commit -- confirmed with git check-ignore.
+
+THE SUBSTANTIVE COMPLIANCE HOLDS, and this is the distinction that matters. The
+-B / PYTHONDONTWRITEBYTECODE=1 discipline was genuinely honoured: no wave agent
+created any bytecode, and neither did my two rebuild runs. The mi_graph working
+directory is clean of bytecode. So the protocol was followed; only the scope of
+the verification statement was wrong.
+
+TWO WAVE REPORTS CARRY THE SAME OVERCLAIM, and it is worth correcting because a
+future agent will rely on it. W0.2 reported "verified afterward that the entire
+skill tree contains zero .pyc/__pycache__ (the protocol's hard-fail condition)".
+W0.3/4/5 reported "No __pycache__ anywhere in the tree." Both are false at the
+whole-tree scope they claim. The defensible claim, which the evidence does
+support, is the narrower one: this pass created no bytecode, and the directory
+it worked in is clean.
+
+WHY IT MATTERS BEYOND BOOKKEEPING. MI_SOLVE_20260819.md records that
+verify_fold_floor.py now HARD-FAILS on stray bytecode. Anyone who reads "the
+tree contains zero .pyc" as a present-tense fact about the repository, rather
+than as a statement about one agent's own writes, will be surprised when that
+hard-fail fires on 296 pre-existing files it was never meant to police. The
+check to run before trusting any such claim is the one-liner used here:
+find . \( -name "*.pyc" -o -name "__pycache__" \) -newermt "<pass start>".
