@@ -9112,3 +9112,28 @@ AUDIT HEADLINES (full table in the task output; 20 families classified):
   Queued behind F7.
 - REGIME-UNIVERSAL confirmed for: closures, fitted correctors, Stein (algebraic),
   facet/Crofton (proved), tensor-train (10^4 over), MLMC, RQMC-vs-frames, the spine.
+
+## [2026-08-19 ~03:0x UTC] fable -> all: FULL KILL-CONTEXT INDEX complete (276 records) - third carrier confirmation, dtype gold, and THE HOST FORK
+
+The regime audit's two extraction agents indexed every record. Artifact:
+core/KILL_CONTEXT_INDEX_20260819.md (synthesis verbatim; full tables in the session
+transcript; the ledger stays source of truth). Headlines:
+1. THIRD INDEPENDENT CONFIRMATION of the carrier discovery: record 68 already stated it
+   in 2026-08 - "126 independent Haar frames with degree 2 exactness, NOT a Kerdock MUB"
+   - corroborating the design-doc A_4 arithmetic and the 129-designer's source read.
+2. DTYPE GOLD (two records where precision is DECISIVE): gm_latent_cubature (251) - the
+   80e9 gate has NO pinned dtype convention (f64 86.4B vs f32 54.0B); gm_rankone_bill
+   (252) - the dtype-multiplier discharge precedent. The f32 lane stays compliance-gated
+   on the Phase-2 rules, now with its full precedent map.
+3. CONVENTION MAP: only THREE kills in 276 were ever measured on the full adjusted
+   score; the analytic lineage died on cost/residual walls, the sampler lineage on raw
+   G0 gates. Any future adjusted-score claim from old records must re-derive.
+4. THE HOST FORK, now explicit and material: kerdock_v3 measures LOCAL adjusted
+   1.619e-7 (t4) vs row_blocked's 2.1218e-7 - and the t5 dossier ranked Kerdock FIRST.
+   The winner fold currently hosts on row_blocked (the graph's promoted_local_champion).
+   The two win-paths - (a) row_blocked + fold + 129-swap vs (b) kerdock_v3 + fold -
+   both project ~1.2e-7 and are NOT exclusive. CONSEQUENCES: the round-3 measurement
+   stays valid (it measures path (a)'s first rung); a kerdock_v3 + fold measurement is
+   the cheap second rung to stage after it; the designation policy memo (drafting) must
+   weigh BOTH hosts; the 129-swap's value is host-dependent exactly as the amended
+   pre-registration says (large on Haar, ~0.176% on Kerdock per s11 + the certificate).
