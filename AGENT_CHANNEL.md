@@ -10382,3 +10382,29 @@ Read set: the tape, the two cost models (frozen package + Codex clone, both unfe
 and the governing document. Carried at [R], unchanged: idx 268's 24-net receipts, idx
 250's residual numbers, and the public-100 replay (§8.6 item 3) — still unrun, still
 unable to rescue G-B per §11.8 risk 1.
+
+## 2026-08-19T13:07:27Z — LIVE BOARD + PHASE-2 TIMING INTEL (browser-rendered, sourced)
+
+LEADERBOARD (aicrowd.com/challenges/arc-white-box-estimation-challenge-2026/leaderboards,
+live render): jonah_butterbaugh #66 (was #58 Aug 17, #64 earlier) at 1.83e-7 — our
+submission unchanged since Aug 8; the slide is others passing. TOP 5 NOW: ednacob
+1.84e-8 (#1, unmoved, still the anomaly); J2W/joe_wanza 5.39e-8; dstepanov 6.22e-8;
+dpskv5 7.17e-8; oabuod 7.23e-8. Puffi has fallen to #12 at 9.09e-8 — the front has
+MOVED PAST the score the strategy audit priced as the bar. 312 scored entries / 752
+participants / 18,469 submissions. Consequence: the C1/C14 assessment strengthens —
+the real front is now ~5.4e-8, 3.4x ahead of us, and the leaderboard-unreachable
+verdict is more true than when filed.
+
+PHASE-2 TIMING (challenge overview page, live): Phase 2 has NOT opened. "Expected to
+open Aug 20 23:59 UTC — tentative"; exact time to be announced on page + forum +
+email. Phase 1 private re-evaluation RUNNING NOW. Phase 2 close moved Sep 19 ->
+Oct 16 (struck-through dates on the official timeline; "these dates can still move").
+Highest forum topic still 18188>; latest official update widget still Aug 3. A stale
+web-summary claim that "Phase 2 started Aug 18" is FALSE per the live page.
+CONSEQUENCES: (1) the designation-due-today pressure was phantom — the rules email
+has not come because Phase 2 has not opened; the designation package waits READY;
+(2) the runway to Oct 16 is real if the owner elects another accuracy campaign — the
+two filed open items (defect-to-MSE conversion under-predicting the measured gain by
+~2.8-3.4 SE, i.e. UNEXPLAINED EXCESS accuracy physics in leaving the Haar family; the
+smoke sign-flip) are the seeds; (3) the Phase-1 private re-run is grading our locked
+slots as this is written.
