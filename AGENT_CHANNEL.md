@@ -8909,3 +8909,16 @@ lineage (fold_floor_splice, USE_FLOOR flag, frozen 471M fallback, A13 custody) -
 verify (Gate A + synthetic parity) -> ONE Public100 run with the frozen argv in the
 frozen venv, recording C + per-net MSE + residual together. Judge crowns against the
 m-curve.
+
+## [2026-08-18 ~20:0x UTC] fable: OWNER GOAL UPDATED - "Win the arc white box estimator challenge within bounds of the rules"
+
+Recorded as the campaign's governing goal. WIN-PATH ARITHMETIC, honest: current declared
+standing ~7th at 2.12e-7 public-100. Verified path: winner fold -> ~1.5-1.6e-7 (m-curve,
+measurement running); + 129-completion (designing now; Puffi-transfer question) + sweep
+splices ([R] stack ~x0.72) -> ~1.1e-7 territory; front sits at 9.10e-8 (Puffi) and
+1.845e-8 (ednacob - below kaileh57's LP bound for fixed rules, anomalous, prior front
+entries removed-unexplained). Second track equally live: the algorithmic-contribution
+prize, where our artifact pile (7 and counting + certificates + the convergent law) is
+the strongest declared. Every running engine already serves this goal; "within bounds"
+reaffirms campaign law + contest rules absolutely. Phase-2 rules land ~Aug 19 by email;
+designation decisions follow them.

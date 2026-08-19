@@ -1,17 +1,14 @@
 # Fable-5 continuation session (2026-08-17) — journal
 
 ## Goal (frozen — edit only if the user changes scope)
-1. Phase 0 (clock-gated, deadline 23:59 UTC): repo gates green → commit untracked evidence
-   → backups → push (authorized) → amend Phase-1 write-up (§1 replacement, design-axis
-   insertion, seven-constants sweep, pushed-SHA pin) → hardened verify → hand owner the
-   filing package. Send is the owner's act.
-2. Phase 1–2: extend deterministic evidence graph with freeze-window + post-freeze-Codex
-   arcs; rebuild per graph/README law; local-only (--backend ollama) deep semantic pass as
-   proposal source; deep query analysis.
-3. Phase 3: CONTINUATION_PLAN_20260817.md (frontier queue, λ-fork table, hygiene queue,
-   tooling memo from 3 research briefs, awaiting-Jonah register).
-4. Phase 4: mempalace mining + project memory file.
-Approved plan: C:\Users\strid\.claude\plans\look-at-codex-s-headroom-recursion-snazzy-treehouse.md
+OWNER GOAL (updated 2026-08-18): WIN the ARC White-Box Estimation Challenge within the
+bounds of the rules. Both prize tracks: (1) leaderboard — close the gap from 2.12e-7
+toward the declared front (Puffi 9.10e-8 [R]; ednacob 1.845e-8 anomalous [R]) via the
+verified compute path: winner fold (projected ~1.5-1.6e-7 on the m-curve) then the
+splice stack (129-completion first); (2) the $20K algorithmic-contribution prize —
+seven artifacts + the two-campaign convergent law + certificates. Lawfulness absolute:
+campaign law (kills final, predeclare, two-key, no holdout) + contest rules as they
+post. All prior operational contracts remain in force beneath this goal.
 
 ## Constraints / decisions (append-only, dated)
 - 2026-08-17: Owner authorized: corrected filing tonight; push + backup all; execute everything.
