@@ -9504,3 +9504,89 @@ IN FLIGHT AFTER THIS ENTRY: the 129 execution chain (repair -> pre-flight ->
 predeclare -> ONE run -> judge, per ruling 1) and the manuscript integration
 (ultramath theorems + fold governance disposition + P1 withdrawal, hostile-verified).
 mi-solve (wf_77a537c1-bec) still deliberating. Monitor b7010mqdr + crons live.
+
+## 2026-08-19T09:19:35Z -- MI-SOLVE SYNTHESIZED (wf_77a537c1-bec, final stage): the solve is priced-and-executed, not tried
+
+Deposited: corpus/whestbench/core/MI_SOLVE_20260819.md (winning solve + full
+ultraplan, every surviving door mapped onto fold_search cells / recurse rungs /
+mutation-engine ports with spec sketches, thresholds, seeds policy, depends_on).
+
+THE SOLVE, one line: the survival information in the 276-record ledger is NOT in
+the design axes (all four together ~2% of the 0.7971-bit entropy; the only
+clearing axis is one dead cell, zonal_harmonic 2/33; carrier MI fails
+leave-one-win-out; precision negative) -- it is in the PRICING (convention =
+strongest real axis on verdict FORM, 0.0874 adj bits at the permutation floor,
+null on fate: the ledger knows which wall you hit, not whether the idea was good)
+and in the EXECUTION axis the instrument cannot see (idx 71 vs 72: Hamming-0 on
+all four axes, opposite outcomes on buffer ownership alone; 191 such H0 pairs vs
+1457 door edges). Consequence: re-price kills into the champion's currency first
+(zero compute), teach the instrument the ownership axis second, spend the one
+premise-shared design door (Kerdock-host depth-2 schedule pass, idx 42/48/16 ->
+idx 53 lineage) only behind two static paper gates, and file the graph itself
+into the manuscript as the kill ledger's quantitative form.
+
+Wave plan (full detail in the doc): W0 zero-compute NOW in parallel with the 129
+chain -- v3.1 designation memo (SETTLED: inherits 1.6190837992e-7, dominates idx
+183), memory three-tier retirement (512 relic / 1 GiB ruled / 65,536 enforced +
+the ten executable 512 predicates), MI instrument repair batch (idx 73/183/38
+relabels, 5-design regex, sensitivity field) + full re-rank under the null_MAX
+fragility gate, ownership-axis masked coding (pre-registered rule in the doc),
+D2 dtype closure + INV8 provenance as recurse rungs, label-epoch settlement from
+kerdock_phases.npz (GATE for all carrier mutations). W1 static gates G-A
+(eligibility >= 9% effective-bill share, idx 264 methodology) and G-B (residual
+projection from idx 69's 0.194269 s + idx 59's 69% erosion at lambda=1e11) for
+the schedule door. W2 X5 k=1 hostile-residual re-instrumentation per record 255's
+judge protocol, off the 129 box, with the mandatory governance paragraph
+(internal k=5->k=1 correction is NOT the organizer lambda-gap exploitation,
+AIcrowd 18108). W3 sealed cells only if gates pass and owner funds post-129:
+schedule cell (ONE run, thresholds prewritten), sampler-lane-on-Haar (flagged
+NOT-Ralph-vetted, triple-gated incl. the F7 collision), optional zonal probe.
+
+Integration: ultramath slate ULTRAMATH_SLATE_20260819.md ABSORBED (deg-4
+exclusivity prices all carrier-adjacent spends, rank-never-sum; design layer
+closed by theorem matches the graph's empirical axis silence). Ultrareview merge
++ three owner rulings ABSORBED (fold HALT honored -- no fold revival anywhere in
+the plan; 129 chain owns the harness; manuscript is the track; R=1.652 retired).
+No cells created this pass (129 chain active in cells/; predeclarations deferred
+to the harness owner). Fences honored: fold_floor_splice + frame_completion_129
+untouched. All python -B.
+
+## 2026-08-19T09:19:38Z — MANUSCRIPT v1.2 LANDED AND AUDITED (wf_577452e1-65f): 7 defects repaired in place; two credit corrections bind earlier entries
+
+The integration wrote v1.2 (new S11b theorems section, S10b governance disposition,
+S12 divergence-map integration, S13 disposition table with P1 = WITHDRAWN BY
+GOVERNANCE verbatim and the pre-stated P2 consequence); the hostile auditor returned
+NEEDS_WORK with 7 defects and REPAIRED ALL SEVEN IN PLACE, then re-verified with
+fresh signals: every identity re-derived in an independent script (own recurrence,
+own accumulation — Q_6(0) = -1/1131571, Q_6(1/16) = 16637/17449091072, master law,
+slope ratio 32, R_4(k) = (129-k)/3 and R_6(k) = (4095+k)/4221 over all k with zero
+failures); 74/74 disclosure checks green; append-only mechanically verified (752
+insertions, exactly 1 deletion = the title line); tag census 43[O]/35[D]/43[R]/
+9[GAP]/1[H1]/1[A-definition-only]; zero hedges, zero AI-vocabulary hits.
+
+TWO CREDIT CORRECTIONS THAT BIND EARLIER CHANNEL ENTRIES (append-only; recorded here,
+not erased there):
+1. The 1408/1407 result is NOT new to the integration: the dual-witness certificate
+   already stores it (game.worst_case_margin, degree6_penalty_above_126["129"], and a
+   named check). What IS new: the identification R_6(k) = (k/126)*A_6,mub(k)/
+   A_6,mub(126) = (4095+k)/4221 — the certificate's payoff line IS the degree-6 design
+   defect, and its 0.0711% break-even margin IS R_6(129). Symbols A_4/A_6 and the
+   constant 4096 occur zero times in the certificate; the identification is the
+   contribution.
+2. The carrier-optimality condition E6/E4 < 19.71 quoted in the 08:41:38Z harvest
+   entry was RETIRED BY THE SLATE ITSELF: Lane 2's theorem holds with NO energy-ratio
+   hypothesis (slate disagreement ledger: "unconditional theorem beats the vacuous
+   threshold; Lane 1 broke its own 'iff' and said so"). The manuscript records the
+   disagreement and prints the weaker conditional claim deliberately; the stronger
+   unconditional form is the slate's adjudicated result.
+
+Also filed by the auditor (observation, not defect): k32 base2 measures
+A4 = 0.00098823 = A_4,haar(4) to 0.03% — its four phased-Hadamard frames behave as
+independent draws, not a mutually unbiased union; the natural second multi-frame
+anchor if one is ever wanted. And a practical note: papers/a4_ratio_settling_check.py
+must run from a directory without a stray numbers.py (stdlib fractions shadowing).
+
+Manuscript state: 1,986 lines, sections 0-10, 10b, 11, 11b, 12-15, v1.2 changelog
+with the audit pass as item 7 ("five of seven are corrections to our own work").
+The 129 chain is mid-run (its dirty files under experiments/frame_completion_129 are
+its own; the judge commits them).

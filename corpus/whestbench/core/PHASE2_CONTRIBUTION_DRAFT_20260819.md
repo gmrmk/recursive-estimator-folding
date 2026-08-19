@@ -1,4 +1,35 @@
-# Phase-2 Algorithmic Contribution writeup — draft v1.1
+# Phase-2 Algorithmic Contribution writeup — draft v1.2
+
+Status: DRAFT v1.2, 2026-08-19. **Theorem integration and governance disposition.**
+This revision does three things and changes the document's centre of mass while doing
+them.
+
+**What v1.2 adds.** (i) The ultramath slate's theorems, which close the design axis:
+the degree-6 dyadic tax `A_l,mub(k)/A_l,haar(k) = 1 + (k−1)·X_l/S_l` with
+`X_4/S_4 = −1/128` and `X_6/S_6 = +1/4096` exactly — of which §11's `A_4` theorem is
+the degree-4 corollary — the unconditional carrier-optimality theorem, the Delsarte
+floor, and a fourth external anchor at the k32 instrument that reproduces both closed
+forms to five digits through an unrelated code path (§11b). (ii) The governance
+disposition of the fold lineage: the round-4 fix completed, the gate retired green,
+and the owner's re-plan ruling then **halted** the lineage under the three-red-loops
+pipeline law (§10). Prediction P1 of §13 was **withdrawn by governance before
+measurement** — never run, therefore never falsified, and recorded as such rather than
+erased. (iii) The cross-references that the repricing swarm's artifacts now make
+mandatory: the local↔hosted divergence map into §12, the `row_blocked` frozen-scalars
+disclosure into §15, and the policy-v2 supersession of §10's projected designation
+numbers.
+
+**The centre of mass has moved, and this front matter moves with it.** v1.1 led with a
+compute programme whose largest item was a pre-registered prediction. That prediction
+no longer exists. What leads now is what is **proved and measured**: the exact `A_4`
+and `A_6` theory with its four independent anchors, the unconditional carrier-optimality
+theorem, the carrier-free per-call floor `303,096,592`, the metered operator-level FLOP
+win, and the kill-ledger methodology that produced all of it. One prediction remains
+live — P2, the 129-frame completion cell — and it is **running** as this draft is
+written; §13 says so in those words rather than describing it as queued.
+
+**Status of the v1.1 record, retained verbatim below because corrections here are
+append-only.**
 
 Status: DRAFT v1.1, 2026-08-19. **First assembly, hostile-reviewed, editorially
 revised.** v1 was returned NEEDS_WORK by a hostile verifier with four punctures; this
@@ -18,6 +49,15 @@ Two of the ten items are **not results**. The Public100 re-measurement of the fo
 compute floor and the 129-frame completion cell are pre-registered predictions with
 filed falsifiers, and they are marked as such at every mention. Nothing in this
 document claims a score.
+
+**Correction to the paragraph above [v1.2].** One of those two items no longer exists
+as a live prediction. The Public100 re-measurement of the folded compute floor —
+prediction P1 of §13 — was **withdrawn by governance before measurement** on
+2026-08-19 (owner re-plan ruling, channel `2026-08-19T08:41:38Z`). It was never run and
+is therefore **never falsified**; it is neither a result nor a failure, and §10 and §13
+state that in those words. The 129-frame completion cell (P2) stands as the one live
+pre-registered prediction and is running. The final sentence is unchanged and is the
+one that matters: **nothing in this document claims a score.**
 
 ---
 
@@ -68,6 +108,29 @@ the `on_alpha` dial sweep Phase-1 attributes to record 202 is
 session]**. The record is correct and the pointer drifted. This document cites
 ledger entries by their string `id`, which is stable, and we recommend the same
 for anyone re-checking Phase-1.
+
+**What to read first, and why the order changed [v1.2].** A reader with limited time
+should read the **proved and measured** spine, which is now the document's weight:
+
+1. **§11b — the exact `A_4`/`A_6` design theory.** Two closed forms in exact rational
+   arithmetic, four independent anchors, and one of those anchors is a cell built for
+   an unrelated purpose whose measured value reproduces the closed form to all five of
+   its printed digits. No fitted parameter appears anywhere in it.
+2. **§11b — the carrier-optimality theorem.** Mutual unbiasedness is the unique
+   degree-4 minimizer over every union of orthonormal bases, unconditionally, and the
+   global minimizer of the weighted objective under a margin measured at 28x.
+3. **§9 — the carrier-free per-call floor `303,096,592`**, re-executed this session,
+   proved to be a floor by three adjudicated dry tiers, and the one large compute
+   number in this document that carries no carrier qualifier at all.
+4. **§1–§7 — the kill-ledger methodology**: twelve predeclared kills, the gates that
+   protocol-killed our own cells twice, and the corollary of §3 that pre-kills an
+   entire competitor family.
+
+Everything above is closed. What is **open** is confined to one place: §13's prediction
+P2, the 129-frame completion cell, which is running as this draft is written. §13's
+other prediction, P1, was withdrawn by governance before it ran (§10). This ordering is
+a change from v1.1, which led with the compute programme and its predictions; the
+evidence moved, so the emphasis moved with it.
 
 ---
 
@@ -655,6 +718,63 @@ under the frozen spectrum 90%, since R0's energy profile under-predicts measured
 `s17` absolute MSE by 2.1–3.7x and `δ` is a ratio in which most of that scale
 cancels.
 
+**Both payoff lines are design defects, not just the degree-4 one [D, v1.2; exact
+`Fraction` sweep over `k = 1 … 129`, zero failures, this session].** The paragraph
+above records that §11 turned `R_4` into the degree-4 defect scaled by compute. The
+degree-6 line is the same object at the next degree, and the check is the same one:
+
+```
+R_6(k) = (k/126) · A_6,mub(k) / A_6,mub(126) = (4095 + k)/4221     for every k = 1 … 129
+```
+
+It follows in one line from the degree-6 dyadic tax of §11b, `X_6/S_6 = +1/4096`:
+`k·A_6,mub(k) = S_6 + (k−1)X_6`, so the ratio is `[1+(k−1)/4096] / [1+125/4096] =
+(4095+k)/4221`, which is the certificate's printed line. **Neither of the certificate's
+two payoff lines was ever a payoff convention.** Both are the per-degree design defects
+of the carrier, and the convention supplies only the compute factor `k/126` and the
+normalization at `k = 126`. The opposite slopes that make the minimax value 1 are the
+opposite signs of `X_4/S_4` and `X_6/S_6`, and the 32:1 ratio of those slopes (§11b) is
+why degree 4 dominates the trade everywhere except in the last three blocks.
+
+**The certificate's own margin is the degree-6 tax, read in its own units [D, this
+session].** `R_6(129) = 1408/1407` exactly — the same `1408/1407`, `0.0711%`, that the
+dependency paragraph above computes as the gap between the break-even ratio
+`2881/2816` and the cheapest completion ratio `129/126`. The certificate's tightest
+number and the degree-6 penalty for completing the design are one quantity reached from
+two directions. Stated carefully, because the two nearby ratios are different objects:
+`1408/1407` is the completion's degree-6 penalty **in the payoff normalization**,
+relative to `k = 126` and carrying the compute factor, whereas the `33/32` of §11b is
+the completed design's degree-6 defect against the **iid reference at the same block
+count**. Both are exact; they are not the same ratio and neither may be substituted for
+the other.
+
+**Correction to the framing of the paragraph above, found by the audit pass on this
+draft [v1.2].** Only one half of it is new. The equality of the certificate's margin
+with its own degree-6 line was already established, executed and stored by the
+certificate itself: `dual_witness_certificate.json` carries
+`game.worst_case_margin = 1408/1407`, `game.degree6_penalty_above_126["129"] =
+1408/1407`, and `game.worst_case_ratio_by_k["129"] = {1408/1407, binding_degree 6}`,
+and the check list contains one named **"Worst-case margin equals the degree-6 penalty
+1408/1407 exactly"**; the companion markdown prints the same equality in its
+worst-case-by-`k` table and in its margin line **[O, both files read this session]**.
+What is new here is the other side of the identity — that `R_6` *is* the degree-6
+design defect scaled by compute — and that is new because the certificate contains no
+`A_l` quantity at any degree: the symbols `A_4` and `A_6` and the constant `4096` occur
+zero times in either file, and the only `A6` in the markdown is an objection label in
+its own §7 **[O, grepped this session]**. So the margin's equality with `R_6(129)` is
+the certificate's own result and is credited to it; the margin's *reading* as the
+completion's degree-6 design tax is this integration's. The distinction matters for the
+same reason §2's withdrawal of "butterbaugh's 340x" mattered: a result of ours restated
+in new words is not a second result.
+
+**What this does and does not do to §5.1's boundary.** It does not widen it. The
+narrowed claim above still speaks only about mixtures over the 129 canonical blocks
+under the stated payoff. What §11b's carrier-optimality theorem adds — separately, and
+by a different argument — is an unconditional statement over the strictly larger class
+of **all unions of orthonormal bases**, which is the class the certificate explicitly
+declined to bound. The two results are complementary rather than nested, and §11b
+states its own boundary.
+
 ---
 
 ### 9. Artifact 8 — certified compute floors, and the constant-unfreezing pattern
@@ -876,6 +996,142 @@ near 885.
 
 ---
 
+#### 10b. Governance disposition of the fold lineage [v1.2] — the gate went green and the lineage halted anyway
+
+Everything above this subsection was written while the fold was a live candidate whose
+Public100 measurement was pending. It is not one any more. Both halves of that sentence
+are recorded here, in order, because only one of them is the kind of ending a document
+like this usually reports.
+
+**The round-4 fix completed, and the gate retired green [R, channel
+`2026-08-19T08:41:38Z`, workflow `wf_27e7a983-7fa`].** The two blocking findings from
+round 3 were closed: `D-A3a` (cost-model static-versus-metered divergence on the
+fallback branch) was priced — fallback total = frozen bill + `m·n`, with 42 shapes
+metered, **0 delta and 0 above direct** — and `D-A3b` (selected-above-direct across
+18,290 swept shapes) was closed structurally, the plain product now seeding the search
+and the unreachable `direct_owned` class removed. The load-bearing verification result
+is the negative one: **production bills are unchanged byte-for-byte, with 35 operator
+products traced and 0 reroutes at production geometry.** The defect was real and
+sweep-visible, and it never touched a shipped product. Parity is unchanged at worst
+Frobenius `1.462611e-05` against a `2e-5` bar. The verifier returned
+**`APPROVED_PENDING_CEILING`**; the ceiling item `D-A6` was discharged by the owner's
+**1-GiB memory ruling** of `2026-08-19T06:12:13Z` (channel entry plus the
+`FOLD_FLOOR_SPLICE_PRODUCTION_GATE.md` addendum), against a measured peak of 615.87 MiB
+median and 616.27 MiB max with the instrument validated at +0.89% on the incumbent's
+own receipt **[R, channel `2026-08-19T08:41:38Z`; the peak figures are round-4's, and
+they are not the pair the ruling itself was written against — the `06:12:13Z` entry and
+the gate addendum both record 616.02 MiB median / 616.95 MiB max, the round-3
+measurement. The two readings differ by 0.1–0.7 MiB, both sit at roughly 60% of the
+1-GiB bar, and the discharge does not turn on which is used; the citation is corrected
+here rather than the number]**. The remaining finding `D-M1` is administrative: the gate manifest still
+names the round-3 `depth6_winograd` bytes `6ee49e57…` against on-disk round-4 bytes
+`88f8b787…`, and a re-freeze is required only if an archive is ever cut. **The fold
+therefore retires GATE-GREEN.**
+
+**And then the owner halted the lineage [R, same channel entry, ruling 2].** Under the
+three-red-loops pipeline law the ruling was `RE-PLAN NOW`: the fold lineage **HALTS**,
+the designation pivots to unfolded `kerdock_v3` against incumbent `row_blocked`, and
+the compute effort moves to this manuscript. The measurement M1 — the fold Public100 —
+is **CANCELLED**.
+
+**What informed the halt, stated as arithmetic rather than as judgement.** The
+ultrareview merge's rank-1 finding recomputed the fold's **paired** effective-`C` ratio
+from `full.json` at `0.83879 / 0.84470`, against the `0.739` the designation policy had
+been pricing **[R, channel `2026-08-19T07:07:56Z`, "CONFIRMED by merge recomputation";
+this ratio is a paired statistic and is not the `effective_C_ratio` 0.806/0.837 quoted
+from the same file above, which is the depth-4 arm's unpaired pair]**. Folding the
+deployed carrier at that ratio projects
+`2.1218e-7 × 0.8388 = 1.780e-7` **[D, recomputed this session: 1.77977e-7]**, against
+the unfolded `kerdock_v3` score of `1.6190838e-7` that the campaign **already holds**
+**[O, `headroom/fold_ledger.json` id `t4_kerdock_v3_descriptive_rescore`, recomputed
+from `kerdock_v3_official100.json` in the divergence map to 1.4e-11 relative. Cited by
+stable id per §0's own erratum: the divergence map cites it as "record 183", and
+counting the 276-record ledger the way §0 counts it puts `t4_kerdock_v3_descriptive_rescore`
+at position 184, with 183 landing on the unrelated `t3_fold3_deterministic_cap`
+**[O, ledger read this session]**. The value is in the record either way; the pointer
+is what drifted, exactly as §0 warns]**. The folded
+route is therefore **9.9% worse** than the unfolded artifact already in hand
+**[D, recomputed this session: 1.780/1.6190838 = 1.0994]**. A lineage that passes its
+own gate and still loses to what you already have is a lineage that has finished, and
+that is the reading the ruling took. The `[R*]` caveat of the divergence map applies to
+the `0.8388` as it does to every `full.json`-derived number — it is pending the
+round-4 bill repair re-run — and the direction of the finding does not depend on the
+repair, because the gap to be closed is 9.9% and the repair moved production bills by
+zero.
+
+**Prediction P1's disposition, stated exactly and not as a failure.** Prediction P1 of
+§13 — the Public100 re-measurement of the folded compute floor on the deployed
+`row_blocked` carrier — is **WITHDRAWN BY GOVERNANCE BEFORE MEASUREMENT**. It was
+**never run** and is therefore **never falsified**. It is not a failed prediction, it is
+not a quiet deletion, and it is not evidence about the folded route's compute either
+way. A pre-registration that is cancelled before its measurement carries exactly one
+piece of information — that it was cancelled, by whom, and when — and this document
+records that rather than either claiming the prediction or erasing it. §13 carries the
+same disposition in its table.
+
+**What survives the halt as contribution artifacts.** Four things, none of which
+depended on M1:
+
+1. **The metered operator-level FLOP win**, measured at the operator rather than
+   projected at the estimator: **`0.6524`** at `4096 × 256 × 256` and **`0.7145`** at
+   `256 × 256 × 256` **[R, channel `2026-08-19T08:41:38Z`]**. This is a statement about
+   a matmul schedule and it is untouched by the estimator-level verdict.
+2. **The carrier-free per-call floor `303,096,592`** of §9, re-executed this session,
+   which was never a fold quantity at all.
+3. **The m-curve methodology critique** — the scale-mix lesson, below.
+4. **The `D1` aliasing find and fix** as an engineering-rigor exhibit, below.
+
+**The scale-mix lesson, which is a critique of this section's own arithmetic [R,
+channel `2026-08-19T07:07:56Z`; recorded here rather than repaired].** The merge found
+that the headline this section is built on **mixed two scales**: the `126.7e9`
+analytical anchor is a **local-scale** quantity, while `222.405B` is the **record
+max-`C` net** from the incumbent's Public100 receipt. Dividing one by the other is not
+the like-for-like comparison the `m*` derivation presents it as, and the `0.739`
+that the designation policy carried is where that mix surfaced as a decision number.
+The four independent derivations in the list above agreed with each other because
+**they all inherited the same denominator**, which is precisely the failure mode that
+independent-derivation agreement is supposed to exclude and does not: four routes to
+one number are one signal when they share an input. We do not repair `m* = 5.09` here,
+because repairing it would require the measurement that governance cancelled. We record
+that **every score projection in this section is conditioned on a denominator the merge
+has since called mis-scaled**, and that the conclusion those projections supported —
+that `m` sits far below the falsifier line — is no longer load-bearing for anything,
+since the route it defended is halted. The transferable lesson is the one worth
+keeping: *an anchor and a receipt are not interchangeable just because they are
+denominated in the same units, and agreement among derivations that share a
+denominator measures the derivations, not the number.*
+
+**Supersession of this section's designation numbers [R, channel
+`2026-08-19T08:41:38Z`, repricing swarm `wf_b325115d-acd`, verifier APPROVED].** The
+projected scores quoted in the four derivations above — the graph adjudicator's
+`C = 153.5B` / `1.4640e-7`, the judge pre-registration's `C ≈ 156.5B` / `1.493e-7` and
+its band, and the TRM engine's ratios — are **superseded** as designation inputs by
+`core/DESIGNATION_POLICY_20260819.md` **v2**, which reprices on the measured basis
+(v1 is retained byte-intact under a supersession banner, 907 lines), and by
+`core/designation_repricing.py`, which parameterizes `(lambda_mode, floor, B,
+residual_constant, suite_size, host, C_ratio)` behind a 4-check selfcheck. The decision
+number that replaced them is `r*` (fold + 129 against unfolded `kerdock_v3`) `=
+0.8886 / 0.8823 / 0.8799` across bases. They are retained above as the record of what
+was derived and pre-registered at the time, which is what a pre-registration is for;
+they are not to be quoted forward as designation numbers.
+
+**The `D1` aliasing find and fix, kept as an engineering-rigor exhibit [R, channel
+`2026-08-19T06:12:13Z`, round-3 disposition `wf_d6440c2b-55a`].** Round 3 found an
+aliasing defect at the operator and fixed it **with a discriminating regression
+selfcheck that fails on the reverted build** — which is the property that separates a
+regression test from a green checkmark, and the reason this is worth reporting after
+the lineage it was found in has been halted. The same round restored the `D5` OFF-branch
+to incumbent shape and re-priced the hoist at `7,438,002` FLOPs, gated `D6` buffer
+retention, and purged stray bytecode. That last item produced a protocol finding of
+general application: an **external process wrote `.pyc` into custody trees mid-run**,
+so every agent running Python against a repository tree must use `-B` /
+`PYTHONDONTWRITEBYTECODE=1`, and `verify_fold_floor.py` now hard-fails on stray
+bytecode. Round 3's gate verdict was `REJECTED` and `measured = false` was **correctly
+held** — the harness declined to measure behind a rejected gate, which is the same
+fail-closed behaviour §9 reports on the suite ladder.
+
+---
+
 ### 11. Artifact 10 — the carrier discovery, and the A_4 reconciliation as a live prediction
 
 **The discovery [O, verified in source 2026-08-18 ~22:3x UTC].** The deployed
@@ -1005,6 +1261,19 @@ is behind it. We print the wider band because it is the one that was filed with 
 timestamp before any data existed, which is the only property that makes a
 pre-registration worth anything.
 
+**Resolved, and the resolution observed rather than assumed [v1.2, O,
+`experiments/frame_completion_129/spec.json` re-read at the close of this session].**
+The repair landed under the owner's ruling 1 of `2026-08-19T08:41:38Z`, **before**
+predeclaration and therefore inside the free window. The spec now carries the amended
+`[0.78, 0.93]` band with the amendment text, the unsupported "12% of C" prose is gone
+(zero occurrences), and the single surviving mention of `0.86` is the amendment's own
+history — "the originally filed 0.78 to 0.86 band" — which is the correct way for a
+widened pre-registration to record what it widened from. **The spec and the channel
+entry now agree**, and the discrepancy recorded in the paragraph above is closed. The
+paragraph stays because it is the record of a real finding at the time it was made, and
+because a document that deletes its own caught errors gives a reader no way to judge how
+well it catches them.
+
 A second arm (H2) adds Kerdock-126
 as a third condition from the shipped `kerdock_phases.npz`, and predicts that most
 of the gain comes from design *quality* (Haar → structured), with the 126→129
@@ -1031,6 +1300,211 @@ disagreement — and it is write-up material whichever way it lands, because a t
 that survives contact with a measurement outside its stated scope, and a theorem
 whose scope statement turns out to have been the load-bearing sentence, are both
 results.
+
+---
+
+### 11b. Addendum to Artifact 10 [v1.2] — the design axis, closed by theorem
+
+Source: `core/ULTRAMATH_SLATE_20260819.md` (five lanes × two rounds, synthesized
+2026-08-19 08:18:59 UTC) and the channel entry of `2026-08-19T08:41:38Z`. **Every
+load-bearing identity below was re-derived independently in this session** from the
+Gegenbauer recurrence in exact `Fraction` arithmetic under `python -B`, in a scratchpad
+script that shares no code with the slate's lanes and no code with
+`papers/a4_ratio_settling_check.py`. Where a claim was *not* re-derived here it is
+tagged `[R]` and says so.
+
+**Provenance gap, named before the theorems that rest on it [GAP].** The slate's own
+lane scripts (`lane1/`, `lane2/`, `lane3r2/`, `lane4r2/`, `lane5r2/`) live in a session
+scratchpad and are **not committed to this repository**. The committed artifact for the
+degree-4 case is `papers/a4_ratio_settling_check.py` (commit `89d44cb`), which covers
+consequence 1–3 of §11 and nothing at degree 6. The settling check is to commit a
+degree-6 companion script; until that lands, the degree-6 identities below rest on this
+session's re-derivation plus the slate's five agreeing code paths, and not on a
+committed artifact. This is the same debt class as §3's missing `F075_RESULTS.json`,
+recorded the same way.
+
+**The convention from §11 carries forward unchanged.** `A_l,mub(k)` is **exact per
+instance** — every cross-block inner product *is* `±1/16`, so it is a property of the
+design and not of a draw. `A_l,haar(k)` is an **expectation over the frame draw**:
+cross-frame zonal terms have mean zero rather than being identically zero. Every ratio
+below is therefore an exact design quantity over an expected iid reference, which is
+the sense in which §11's `42.67x` was always meant and measured. No statement below
+upgrades that.
+
+#### The degree-6 dyadic tax — the master law of which §11's `A_4` theorem is a corollary
+
+For a union of `k` orthonormal frames in `R^256`, antipodally doubled, with the MUB
+cross-block inner products at `±1/16`:
+
+```
+A_l,mub(k) / A_l,haar(k)  =  1 + (k − 1) · X_l / S_l          (exact, every even l)
+
+    S_l = A_l,haar(1) = [1 + 255·Q_l(0)] / 256      X_l = Q_l(1/16)
+
+    X_4 / S_4 = − 1/128          X_6 / S_6 = + 1/4096          (both exact)
+```
+
+**[D, re-derived this session in exact `Fraction` arithmetic from the dimension-256
+Gegenbauer recurrence: `Q_4(0) = 1/21845`, `Q_4(1/16) = −65/2105344`,
+`Q_6(0) = −1/1131571`, `Q_6(1/16) = 16637/17449091072`. The first two reproduce the
+values §11 already prints; the second two are new here.]**
+
+The two signs are the whole design game. **Degree 4 is the gain and degree 6 is the
+tax**, and they are dyadic rationals differing by exactly `2^5`:
+
+| quantity | value | what it is |
+|---|---:|---|
+| `X_4/S_4` | `−1/128` | degree-4 slope: completion **removes** defect |
+| `X_6/S_6` | `+1/4096` | degree-6 slope: completion **adds** defect |
+| **gain/tax slope ratio** | **exactly `32`** | why degree 4 dominates the trade |
+| `A_4,mub(126)/A_4,haar(126)` | `3/128` | the `128/3` of §11, inverted |
+| `A_4,mub(129)/A_4,haar(129)` | `0` | §11's consequence 1, now a special case |
+| `A_6,mub(126)/A_6,haar(126)` | `4221/4096` | Kerdock **3.0518% worse** than Haar at degree 6 |
+| `A_6,mub(129)/A_6,haar(129)` | **`33/32`** | the tax at the completion, exactly |
+
+**§11's `A_4` theorem is the degree-4 corollary.** Setting `l = 4` gives
+`1 + (k−1)(−1/128)`, whose root is `k = 129` — which is §11's completion index, reached
+there through the affine form of `k·A_4,mub(k)` and reached here as one instance of a
+per-degree law. Setting `k = 126` gives `3/128`, whose reciprocal is the `128/3` that
+v1 of this document flagged as an unexplained coincidence, v1.1 upgraded to a theorem,
+and v1.2 now exhibits as one row of a table.
+
+**The countervailing fact, stated plainly because it cuts against the completion.** At
+degree 6 the structured family is **worse** than iid, by 3.05% at `k = 126` and by
+exactly `33/32` at the completion. Completing the design does not improve the carrier
+at every degree; it zeroes degree 4 and pays `1/32` at degree 6. Whether that trade is
+net-positive is an MSE question about where a given carrier's error lives, which no
+theorem here settles and which P2 measures — the same boundary §11 draws, drawn again
+one degree up. The 129 cell's pre-registered band already brackets the net **[R,
+channel `2026-08-19T08:41:38Z`]**.
+
+#### The carrier-optimality theorem — unconditional, over a class the certificate declined to bound
+
+**Claim [R for the absolute-monotonicity mechanism, D for the moment identity].** For
+**any** union of orthonormal bases in `R^d`, the second moment of the inner product is
+pinned: `E[t²] = 1/d` exactly, by Parseval on each frame **[D, one line: for an
+orthonormal basis `{e_i}` scaled to fixed radius, `Σ_i (u·e_i)² = |u|²` is constant in
+`u`, so averaging over the `d` directions of each frame gives `1/d` regardless of which
+bases were chosen]**. The design freedom at degree `l` therefore collapses to a
+**single moment**, `⟨Q_l⟩`. The rectifier arc-cosine kernel is absolutely monotone —
+closed-form nonnegative coefficients, derived three independent ways in the slate — and
+absolute monotonicity survives composition, so the depth-composed even kernel is convex
+in the squared inner product. Jensen against the pinned Parseval constraint then places
+the **flat cross-Gram at the exact minimum**, making mutual unbiasedness the **unique
+degree-4 minimizer** over frame unions at every depth, with no energy-ratio hypothesis
+**[R, `ULTRAMATH_SLATE_20260819.md` entries 5 and 6; lanes L2 K3/K4, L1 ATK1, L4 ATK5;
+depth-32 numeric convexity, minimum second difference `+7.5e-10`]**.
+
+**Where a condition does enter, and the size of its margin.** Global optimality on the
+*weighted* objective — degree 4 and degree 6 together, with the degree-6 tax priced in
+— holds **iff `E6/E4 < 19.71`**, against a measured implied ratio of `0.6975`
+**[both figures R, channel `2026-08-19T08:41:38Z`; neither the threshold nor the energy
+ratio was re-derived here, and neither figure is in the slate in this form — see the
+disagreement recorded below]**. The margin is therefore **28x** **[D, the only part recomputed this session: 19.71/0.6975 = 28.26]**,
+and the adversarial floor — computed on the assumption that *all* degree-≥6 energy sat
+at degree 6 — still leaves **3.9x** **[R]**. A condition that survives its own worst
+case by a factor of four is reported as a condition, with both numbers, rather than
+dropped. It is also the one leg of §11b that is **not** exact rational arithmetic: it
+depends on a measured energy ratio, and the settling check is the per-degree energy
+table that entry 2 of the slate identifies as a zero-cost artifact read.
+
+**The two sources disagree about whether this condition exists at all, and the
+disagreement is recorded rather than resolved [O, both sources read this session].**
+The slate does not carry `19.71` or `0.6975`. It carries the same threshold in exact
+form as Lane 1's `w* = 178192/9039 = 19.7137`, and it files that threshold in its
+*dropped* register — "arithmetic confirmed, theorem vacuous … Superseded by entry 5" —
+on the grounds that a two-degree truncation is never a realizable absolutely monotone
+kernel and that explicit realizable kernels with ratios up to `~2261` still have the
+flat optimum. Its §0 backbone states the optimality result "with no energy-ratio
+hypothesis", and its disagreement ledger records "Carrier optimality: **Lane 2 over
+Lane 1** (unconditional theorem beats the vacuous threshold; Lane 1 broke its own 'iff'
+and said so)". The channel entry, written 23 minutes later, states the condition as
+live. We print the condition because it is the weaker of the two claims and because
+carrying the channel's ruling is this integration's task, and we print the slate's
+retirement because the slate adjudicated it and was the earlier, more detailed word on
+that specific point. **Neither reading changes any conclusion**: the measured `0.6975`
+sits below `19.71` and below `2261` alike. The settling check is one line — restate the
+weighted objective against a realizable absolutely monotone kernel and see whether the
+threshold binds at all. This is the same shape of disagreement as the Delsarte one
+below, and it is recorded the same way.
+
+**What this adds to §8.** The dual-witness certificate deliberately bounded only
+mixtures over the 129 canonical MUB blocks and said so in its §5.1 boundary. This
+theorem speaks about the strictly larger class of **all unions of orthonormal bases**,
+which is the class the certificate declined to enter. It does not inherit the
+certificate's payoff convention and it does not bound estimators outside the
+frame-union class either — a carrier built from something other than orthonormal frames
+is outside both results.
+
+#### The Delsarte floor — nothing cheaper exists, and the completion is nearly tight
+
+**Degree-6 exactness is out of budget by two orders of magnitude [R].** Achieving an
+exact degree-6 design requires at least **2,861,696 directions**, which the channel
+entry prices at **88.7x** the deployed carrier's direction count. And the completion is
+close to the best that degree-4 exactness permits: the 129-block completion is a
+**near-tight antipodal 4-design, sitting 0.389% above the absolute degree-4 floor**
+**[R, channel `2026-08-19T08:41:38Z`]**. Nothing cheaper exists at any block count, and
+the corollary for the campaign is that the degree-6 lane is closed on two independent
+axes — the carrier route by this floor, and the control route by the measured
+0.0019–0.0038 own-axis capture of §5–§6.
+
+**A corpus inconsistency in this number, recorded rather than resolved [O, both
+sources read this session].** The two sources disagree, and they disagree in a way that
+is worth stating because a reader will otherwise hit it:
+`ULTRAMATH_SLATE_20260819.md` §0 gives **2,861,952 points, "~44x the deployed count —
+points-vs-lines corrected from the ~88x on file"**, and its entry 5 adjudicates
+"Lane 4's degree-SIX points-vs-lines correction STANDS (~44x short, not ~88x)". The
+channel entry, written 23 minutes later, gives **2,861,696 directions, 88.7x**. The
+arithmetic says the disagreement is a **denominator convention plus 256 directions**:
+`2,861,696 / 32,256 = 88.72` against the base direction count, while
+`2,861,952 / 64,512 = 44.36` against the antipodally doubled point count — a factor of
+exactly 2, which is the antipodal doubling **[D, both recomputed this session]**. The
+two counts themselves differ by exactly 256, one frame. We print the channel's figure
+because the task of this integration is to carry the channel's ruling, and we print the
+slate's because the slate adjudicated the opposite convention and was the later word on
+that specific point. **Neither reading changes any conclusion**: 44x and 88x are both
+far outside a budget that would need to grow by more than an order of magnitude, and no
+decision in this corpus turns on which. The settling check is one line of the Delsarte
+LP restated in a single declared convention.
+
+#### The k32 external anchor — a fourth anchor, from a cell built for something else
+
+This is the strongest evidence in §11b and it costs nothing to check. The closed forms
+above, evaluated at a **single frame** (`k = 1`, where there are no cross-block terms
+and the MUB and Haar lines coincide), predict:
+
+```
+A_4,haar(1) = 65/16448      = 0.003951848…        [D, exact Fraction, this session]
+A_6,haar(1) = 16637/4260032 = 0.003905370…        [D, exact Fraction, this session]
+```
+
+The k32 base-sensitivity instrument of §3 — a cell built to test **coefficient
+transport across bases**, by a different agent, for an unrelated purpose, through a
+different code path — measured its `base1` design defects at:
+
+```
+base1.A4 = 0.0039518        base1.A6 = 0.0039054        (base1.A2 = 0.0)
+[O, cells/k32_base_sensitivity_v3/report.json,
+    metrics.second_signal_design_defects.base1, read this session]
+```
+
+**All five printed digits agree, at both degrees.** §11 already claimed the degree-4
+half of this as its fourth anchor; the degree-6 half is new in v1.2 and it is the
+better of the two, because `A_6` was never used to design or check anything in the k32
+cell and had no route by which it could have been tuned to match. The `A_2 = 0.0`
+column is the instrument's own null and it holds exactly, which is what says the
+measurement is of the object the closed form describes.
+
+**What §11b claims, and what it refuses to claim.** It claims that the design axis is
+closed as **mathematics**: the per-degree carrier dependence is a single exact rational
+at each degree, degree 4 and degree 6 are the only two that matter, the structured
+carrier is the unique degree-4 minimizer over frame unions, and nothing cheaper than
+the completion exists. It claims **nothing about MSE**. `A_l` is a property of the
+design; the gain is a property of how much of a given carrier's estimator error lives
+at degree `l`, and the three unreconciled quantifications of that suppression recorded
+in §11 (m191 ~9.1x, `m81_full129_pareto` ~21x, the exact defect ratio `128/3` = 42.7x)
+are exactly why P2's band was widened rather than narrowed. Promoting a defect law into
+a score prediction is the move §11 refuses and §11b refuses it again, one degree up.
 
 ---
 
@@ -1062,6 +1536,13 @@ of corroboration that carries weight.
   handle and our own post at Discourse topic 18147 (§2). It is a second *statement*
   of our result, not a second *witness* to it.
 
+**Scope correction to the sentence that opens this sidebar [v1.2].** "Every number in
+this sidebar is [R] … reported by other participants, read from the public forum, never
+re-run by us" describes the bullet list above and no longer describes the section. The
+two paragraphs that follow report **our own** numbers — the standing line's local scores
+and the local↔hosted map — and each carries its own tag and source at its own site. The
+bullets are unaffected.
+
 **Standing position, stated because a contribution document that hides it is not
 credible.** On publicly declared adjusted scores we are approximately 7th, not
 leading: ednacob 1.845e-8, Puffi 9.10e-8, ely2sh 1.196e-7, pranay212 1.23e-7,
@@ -1083,6 +1564,57 @@ Arb-certified LP permits any fixed nonnegative rule at that support, so it is ei
 genuinely non-fixed or an accounting artifact. We do not resolve it and we do not
 build on it.
 
+**The local↔hosted conversion, which the paragraph above declined to perform and which
+now exists [v1.2; `core/LOCAL_VS_HOSTED_DIVERGENCE_MAP_20260819.md`, every number in it
+re-derived from source artifacts in its own session].** The sentence above says local
+and hosted scores are different instruments and refuses to compare them. That refusal
+was correct and it is now replaceable by a measured map, with three consequences for
+how this section's standing line should be read.
+
+*First, a constant this corpus used for ten days is retired.* **`R = 1.65` is dead in
+both directions.** It was never a suite-difficulty ratio: it was the **skew of a
+22-net panel**, and the divergence map shows the tell — `mean/median = 1.65076` and
+`mean/printed = 1.65167` agree to 0.0548%, which they do *because* the panel's median
+equals the grader's printed reference. The "difficulty ratio" was numerically identical
+to a pure skew statistic of a single sample. Nothing in this corpus may divide or
+multiply a local score by 1.65 to reach a hosted one, and any earlier document of ours
+that did is wrong at that step.
+
+*Second, the honest map is `R ≈ 1` with a mildly adverse anchor.* Three independent
+routes land at parity or slightly against us: the MC-lane median matches the grader's
+printed MC reference to **+0.055%**; the single paired graded observation — the same
+frozen artifact scored locally and graded hosted, submission #326094 — puts the
+champion lane at **`R = 0.884`**, i.e. **hosted ~13% worse than local**; and the
+campaign's own same-day post-mortem recorded that failure of an out-of-sample
+projection before either statistic was computed. The 13% is **entirely raw MSE**: the
+two score multipliers agree to 0.14%, so the transfer risk is suite difficulty and not
+billing. The band that every position statement must now carry until a second paired
+anchor exists is **`R ∈ [0.707, 1.105]` at 95%, point `0.884`**. The planning default
+is `R = 1.0`, the conservative arm is `0.884`, and `R > 1` is never to be used — the
+local anchor is burned-descriptive, which biases `R = local/hosted` downward, so the
+one attack that would move the recommendation moves it toward parity.
+
+*Third, and this is what it does to the standing line above.* Our declared `1.83e-7` is
+a **hosted** number and the `1.6190838e-7` / `2.1218e-7` pair is **local**, so the
+`kerdock_v3` row is self-consistent by construction: `1.6190838e-7 / 0.8840979 =
+1.8313e-7` is the observed grade, which is the map's calibration check rather than a
+prediction. The divisor is the map's unrounded anchor; the rounded `0.884` printed
+everywhere else in this section returns `1.8315e-7`, and the difference is 0.01%
+**[D, both recomputed this session]**.
+Applying the same map to the deployed `row_blocked` local score of `2.1218e-7` projects
+`2.40e-7` hosted at the anchor. **Approximately 7th is therefore not an artifact of
+comparing instruments** — it survives the conversion, and at the adverse edge of the
+band it gets worse rather than better. The map also prices what a front position would
+actually cost: matching Puffi's `9.10e-8` needs a **local** score of `8.0e-8`–`9.1e-8`,
+which is **1.66–1.87x more MSE reduction than the corpus had been budgeting for** under
+the retired constant. We state that because the retired constant made the front look
+reachable and it is not the kind of error to correct quietly.
+
+The single highest-value check on all of this is named and cheap: **grade one more
+already-locally-scored artifact.** The band is one-anchor-wide, the two suites share
+**zero** of 150 net names so nothing cancels, and a second paired anchor is the only
+thing that separates a true suite offset from sampling error.
+
 ---
 
 ### 13. Pre-registered predictions, with their filed falsifiers
@@ -1091,6 +1623,33 @@ Neither of these is a result. Both were filed before the measurement that would
 settle them, both name the carrier lineage they are filed against, and P2's band was
 amended once — before its cell ran — in the direction that makes it harder to claim a
 hit. The amendment is in the table, not in a footnote.
+
+**Disposition [v1.2], stated before the table rather than after it, because the table
+is now a record of what was filed and not a list of what is pending.** The two
+predictions have diverged:
+
+| # | disposition as of 2026-08-19 08:41 UTC | what this means |
+|---|---|---|
+| **P1** | **WITHDRAWN BY GOVERNANCE BEFORE MEASUREMENT** | **Never run, therefore never falsified.** The owner's re-plan ruling halted the fold lineage under the three-red-loops pipeline law and cancelled M1, the Public100 measurement that would have settled it (§10b). This is **not** a failed prediction and **not** a silent deletion. No evidence about the folded route's Public100 compute exists, in either direction. |
+| **P2** | **RUNNING** | The 129-frame completion cell is executing as this draft is written, under the owner's "repair + run" ruling: `spec.json`'s band repaired to the amended `[0.78, 0.93]` verbatim, the unsupported "12% of C" prose corrected in the same pass, re-hashed, arm-C Tier-1 pre-flight, then predeclare and one run. Its result is **not** in this document. |
+
+**Why P1's wording matters more than its content.** A pre-registration exists so that a
+later reader can tell what was claimed before the data arrived. That contract is broken
+in two ways: by quietly removing a prediction that would have embarrassed you, and by
+reporting a cancelled prediction as though the cancellation were evidence. P1 was
+cancelled for a reason recorded in §10b — the folded route lost 9.9% to an artifact the
+campaign already held, so the measurement stopped being worth its CPU — and that reason
+is about the route's *value*, not about whether P1 would have hit. **We do not know
+whether P1 would have hit.** The row below stays in the table exactly as filed.
+
+**What P2's outcome will and will not decide [R, channel `2026-08-19T08:41:38Z`,
+pre-stated so the verdict cannot be re-narrated afterwards].** On the unfolded host the
+arithmetic is `r × 1.0238 × 2.121762464e-7` — the deployed **`row_blocked`** local
+adjusted score, unfolded — which beats the held **`kerdock_v3`** `1.6190838e-7` only
+at `r < 0.7453` — **below** P2's pre-registered PASS band. So whichever way P2 lands, it
+is a **scientific** result (a test of the `A_4` theory, and evidence about the host
+fork) and **not** an immediate designation flip. That is written here before the cell
+reports.
 
 | # | prediction | filed | falsifier |
 |---|---|---|---|
@@ -1103,6 +1662,19 @@ every block count from 1 to 129. What the amendment concerns is only the **magni
 the MSE gain that defect buys, which no theorem in this corpus fixes and the cell
 measures. The sealed spec still carries the pre-amendment band, which §11 records as an
 open repair.
+
+**The open repair is closed [v1.2; ordered R, channel `2026-08-19T08:41:38Z` owner
+ruling 1; landing O, spec re-read at the close of this session].** The repair was
+ordered as part of P2's execution chain and **has landed**: `spec.json` now carries the
+`[0.78, 0.93]` band with the commit `0486668` amendment text, the unsupported "12% of C"
+prose is removed, and the spec was re-hashed — all **before** predeclaration, which is
+the only window in which the repair is free rather than a protocol violation. §11's
+record of the discrepancy stands as written, with the resolution appended at its site.
+What matters about the direction of the fix: **the spec was brought up to the channel
+entry, not the channel entry quietly read down to the spec.** The `A_4` leg referenced
+above is also no longer only §11's degree-4 theorem: §11b generalizes it to the
+per-degree dyadic tax and prices the countervailing degree-6 term at exactly `33/32`,
+which the pre-registered band already brackets.
 
 A third item is designed and unrun, and is listed so that it is not mistaken for a
 finding later: the mub129 **powered rerun**. The existing 126→129 kill on our own
@@ -1149,6 +1721,49 @@ measured zero, and P2's cell is the powered instrument that replaces it.
 - **The exact-control spine's closure is f64-specific.** The mixed-precision exit was
   closed by argument, not measurement (§7, [GAP]).
 
+**Additions and one correction [v1.2].**
+
+- **Correction to the first bullet.** "The two live items in §13 have not been measured
+  at all" is superseded. There is now **one** live item: P2, which is running. P1 was
+  **withdrawn by governance before measurement** — never run, never falsified (§10b,
+  §13). The bullet's actual claim is unchanged and still holds: **no score.** Nothing in
+  this document has been measured on the private suite.
+- **No MSE claim from any theorem in §11b.** The dyadic tax, the carrier-optimality
+  theorem and the Delsarte floor are statements about **design defects** and about which
+  carriers minimize them. The step from a defect to a score is unmeasured, the three
+  quantifications of degree-4 suppression remain unreconciled (§11), and the degree-6
+  tax of `33/32` cuts against the completion in a direction no theorem here weighs
+  against the degree-4 gain. P2 measures that trade; §11b does not predict it.
+- **No claim that the design axis is closed outside the frame-union class.** The
+  carrier-optimality theorem is unconditional **over unions of orthonormal bases**. A
+  carrier built from anything else is outside it, as it is outside §8's certificate.
+  Its weighted-objective leg additionally carries a stated condition, `E6/E4 < 19.71`,
+  which is met by a measured 28x margin and by 3.9x under the adversarial floor —
+  reported as a condition with both numbers rather than dropped. The slate retires the
+  same threshold as vacuous while the channel states it as live; §11b records that
+  disagreement and no conclusion turns on it.
+- **The Delsarte figure is quoted under two conventions that disagree**, `2,861,696`
+  directions at 88.7x and `2,861,952` points at ~44x, and §11b records the disagreement
+  instead of picking a winner. No conclusion in this document depends on which is right.
+- **The degree-6 identities rest on an uncommitted script [GAP].** The committed
+  artifact `papers/a4_ratio_settling_check.py` covers degree 4 only; the slate's lanes
+  live in a session scratchpad. The degree-6 half was re-derived independently in this
+  session and by five agreeing lanes, and the settling check — commit a degree-6
+  companion script — is named in §11b.
+- **§10's score projections are superseded and its denominator is contested.** The
+  m-curve's `m* = 5.09`, the `C ∈ [150B, 165B]` band and the four agreeing derivations
+  all share one denominator that the ultrareview merge has since called a **scale mix**
+  (local-scale analytical anchor against a record max-`C` receipt). Those numbers are
+  retained as the record of what was pre-registered; they are **not** claimed forward,
+  they are superseded as designation inputs by `DESIGNATION_POLICY_20260819.md` v2, and
+  §10b states the methodology lesson rather than repairing arithmetic whose measurement
+  was cancelled.
+- **No hosted position claim without the transfer band.** §12 now carries the
+  local↔hosted map. `R = 1.65` is retired in both directions; the honest map is
+  `R ≈ 1` with a `0.884` anchor and a 95% band `[0.707, 1.105]` that is **one anchor
+  wide**. Any sentence about where we would sit on the hosted board carries that band,
+  and the settling check is one more paired grade.
+
 ---
 
 ### 15. Reproduction and provenance
@@ -1186,6 +1801,87 @@ m207_reachability_v1, m207b_semantics_v1, deg6_own_axis_zonal_capture_v1,
 deg_ladder_own_axis_capture_v2}/{predeclaration,report,verdict}.json`, plus
 `experiments/fold_floor_splice/full.json` and
 `headroom/FWHT_SPLICE_STAGED_20260818.md`.
+
+**Additionally re-derived for v1.2 [O, this session, exact `Fraction` arithmetic under
+`python -B`, zero harness runs and zero estimator compute].** The degree-6 half of §11b
+was reconstructed from the dimension-256 Gegenbauer recurrence in a scratchpad script
+sharing no code with the slate's lanes or with `a4_ratio_settling_check.py`:
+
+```
+Q_4(0) = 1/21845            Q_4(1/16) = -65/2105344          (both reproduce §11)
+Q_6(0) = -1/1131571         Q_6(1/16) = 16637/17449091072    (new in v1.2)
+
+X_4/S_4 = -1/128            X_6/S_6 = +1/4096                (exact)
+A_4,mub(129)/A_4,haar(129) = 0            A_6,mub(129)/A_6,haar(129) = 33/32
+A_4,mub(126)/A_4,haar(126) = 3/128        A_6,mub(126)/A_6,haar(126) = 4221/4096
+A_4,haar(1) = 65/16448     = 0.003951848…   vs k32 base1.A4 measured 0.0039518
+A_6,haar(1) = 16637/4260032 = 0.003905370…  vs k32 base1.A6 measured 0.0039054
+
+R_4(k) = (k/126)·A_4,mub(k)/A_4,mub(126) = (129-k)/3     ] all k = 1…129,
+R_6(k) = (k/126)·A_6,mub(k)/A_6,mub(126) = (4095+k)/4221 ] zero failures
+R_6(129) = 1408/1407  = the certificate's own 0.0711% margin (§8)
+```
+
+The two measured k32 values were read this session from
+`cells/k32_base_sensitivity_v3/report.json`,
+`metrics.second_signal_design_defects.base1` (`A2 = 0.0`, `A4 = 0.0039518`,
+`A6 = 0.0039054`). The `R_6` identity — that the certificate's degree-6 payoff line is
+the degree-6 design defect scaled by compute — is a new result of this integration
+rather than a restatement of the slate. The `1408/1407` equality with §8's margin is
+**not** new: the certificate already carries it as `game.worst_case_margin`, as
+`game.degree6_penalty_above_126["129"]` and as a named check, and §8 now credits it
+there. What this integration adds to that number is only its reading as the
+completion's degree-6 design tax.
+
+**The criterion-(iii) artifact, named because it is the one a judge needs.** Rules v12
+§6 criterion (iii) is "the ease of determining the actual performance impact of the
+contribution from the code and writeup together," and for the deployed `row_blocked`
+lineage that is answered in
+`core/SECTION_ESTIMATOR_AND_CONSTANTS_ROW_BLOCKED_20260819.md`, with its mechanical
+re-checker `core/verify_row_blocked_disclosure.py` (run it as
+`python -B core/verify_row_blocked_disclosure.py` after any edit to that file or to
+`experiments/row_blocked_production/candidate_source/`). Three things about it belong
+in this document rather than only in that one:
+
+- **It exists because the committed disclosure described the wrong host.**
+  `SECTION_ESTIMATOR_AND_CONSTANTS_20260812.md` enumerates the `kerdock_v3` MRO. Every
+  number in it checks out against a real file and it was cited about the deployed
+  entry, which is a cheaper mistake to make and a harder one to see than a false
+  number. Neither document supersedes the other: **two promoted lineages, two
+  disclosures**, and the older one gains a host banner rather than a rewrite.
+- **The fitted surface on the deployed host is six scalars, one boolean switch and one
+  structural integer**, all frozen before grading, confined to budget, threshold and
+  correction coefficients, with nothing that could learn the target and no component
+  fit to the evaluation suite. The count is six rather than five because **`n_base =
+  126 * 256` is *forced* on `kerdock_v3` and *selected* here** — the same literal, a
+  fact about a frozen design on one lineage and a number someone chose on the other,
+  which is precisely the kind of claim that does not survive being copied between
+  hosts.
+- **It carries a fourth disclosure tier that the `kerdock_v3` section did not need:
+  *present but unreachable*.** `radial_conditioning = True` strands a fitted-looking
+  radial polynomial (`257.0`, `66563.0`, `2600.0/537689.0`, `3.0/537689.0`) in a live
+  file, and the whole of `base_estimator.{setup,predict}` is dead on the deployed path.
+  Declaring those lets the mechanical check distinguish "undeclared" from "unreachable"
+  instead of reporting a false fitted surface. The carrier statement it lands on is the
+  one §11 depends on: **126 Haar-orthonormal frames of 256 directions, redrawn per
+  network from `ctx.seed`, degree-2 and degree-3 exact by construction, carrying the
+  full i.i.d. degree-4 error.**
+
+Its own standing caveat is inherited here: any performance number ever added to that
+section — in particular anything derived from a `full.json` — must carry **"pending
+round-4 bill repair re-run"**, because the cost model that produced those numbers was
+wrong in both directions. No such number is present in it, and §10b is where this
+document says the same thing about its own.
+
+**Other v1.2 companion artifacts, read-only this session.**
+`core/ULTRAMATH_SLATE_20260819.md` (the theorems of §11b);
+`core/LOCAL_VS_HOSTED_DIVERGENCE_MAP_20260819.md` (the transfer map of §12, which
+supersedes the scattered readings in `experiments/c1_local_mc_calibration/C1_REPORT.md`,
+`experiments/gm_c1_bound/VERDICT.md`, `CODEX_HANDOFF_20260810.md` §4.1/§4.2 and
+`SUBMISSION_RESULT_20260808.md` wherever those disagree);
+`core/DESIGNATION_POLICY_20260819.md` **v2** with `core/designation_repricing.py` (which
+supersede §10's projected designation numbers, v1 retained byte-intact under a
+supersession banner).
 
 **The harness is part of the contribution.** `scripts/fold_search.py` (21 contract
 tests) enforces the sequence: predeclare with a schema, four-axis confidence, an
@@ -1232,3 +1928,58 @@ recorded at their sites rather than fixed quietly: the sealed 129 spec disagrees
 channel entry that claims it carries the amendment verbatim (§11), and our declared
 standing line reports a `kerdock_v3` submission while the compute programme is measured
 on `row_blocked` (§12).
+
+**What v1.2 changed, in the same spirit.** Nothing in v1.1 was deleted; every edit is
+an addition or a marked correction sitting next to the text it corrects.
+
+1. **§0 and the front matter** — the centre of mass moved from the compute programme
+   and its predictions to what is proved and measured, per the strategy ruling. A
+   reading order was added; the "two of the ten items are not results" paragraph was
+   corrected rather than replaced.
+2. **§8** — the certificate's degree-6 payoff line `R_6(k)` is shown to be the degree-6
+   design defect scaled by compute, exactly as §11 showed for `R_4`, and its own
+   `1408/1407` margin is thereby read as the completion's degree-6 design tax. The
+   first is a new result of this integration, verified over all 129 block counts with
+   zero failures; the second is a **re-reading** of a number the certificate had
+   already proved and stored, and the audit pass on this draft corrected the sentence
+   that had called it new (§8, §15).
+3. **§10b** — the fold lineage's governance disposition: gate retired **green**, then
+   **halted** by owner ruling; P1 withdrawn before measurement; the four surviving
+   artifacts named. Two self-critical items are recorded here rather than smoothed: the
+   **scale-mix lesson**, which says four of this section's own agreeing derivations
+   shared a contested denominator and therefore constituted one signal rather than
+   four, and the **supersession** of its projected designation numbers by policy v2.
+4. **§11b** — the ultramath theorems, with a **fourth external anchor** at degree 6
+   that had no route to be tuned, and two items filed against ourselves: the
+   uncommitted degree-6 script `[GAP]`, and the Delsarte points-versus-lines
+   disagreement recorded unresolved because no conclusion turns on it.
+5. **§12** — the local↔hosted map: `R = 1.65` retired in both directions as a panel
+   skew statistic, `R ≈ 1` with a 13%-adverse anchor installed with its band, and the
+   correction stated that the retired constant had made the front look 1.66–1.87x
+   nearer than it is.
+6. **§13, §14, §15** — P1's and P2's dispositions; the stale claim boundaries corrected
+   and five new ones added; the criterion-(iii) `row_blocked` disclosure named with its
+   mechanical verifier, including the disclosure's own finding that the previously
+   committed estimator section described the wrong host.
+7. **The hostile audit pass on this draft**, whose findings are repaired at their sites
+   rather than in a separate note. It caught one **novelty overclaim** — the
+   `1408/1407` equality was already a stored, executed check of the dual-witness
+   certificate, so only its reading as a design tax is new (§8, §15); one **mis-cited
+   source** — §10b's memory peaks are round-4's, not the pair the `06:12:13Z` ruling
+   and the gate addendum were written against; one **positional ledger pointer** of the
+   kind §0's own erratum forbids, since `record 183` lands on an unrelated record and
+   the value is at `t4_kerdock_v3_descriptive_rescore`; one **unrecorded source
+   disagreement** — the slate retires the `E6/E4 < 19.71` threshold as vacuous while
+   the channel states it as live (§11b); a **rounded divisor** printed as an exact
+   division in §12; a missing **carrier qualifier** on §13's unfolded-host arithmetic;
+   and the **stale scope sentence** opening §12, which claimed the whole sidebar was
+   other people's numbers after v1.2 filled it with ours. No conclusion moved under any
+   of them, which is the only reason they are corrections rather than retractions.
+
+The pattern worth naming: of the seven items above, **five are corrections to our own
+work** — a shared denominator mistaken for independent agreement, a retired constant
+that had been flattering us, a disclosure that described the wrong host, a prediction
+whose withdrawal had to be stated so it could not later read as either a hit or a
+failure, and a number this integration called new that its own certificate had already
+proved. That ratio is the same one §15 reports for the harness, and it is the only
+evidence available that the machinery is pointed at us as well as outward.
