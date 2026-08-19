@@ -10026,3 +10026,158 @@ SCOPE HELD: manuscript + journal + this entry only. Nothing under cells/ or expe
 was modified (read-only); headroom/mi_graph/ and DESIGNATION_POLICY_20260819.md untouched
 — Wave 0 owns them. Zero harness runs, zero estimator compute; every python invocation
 `-B -P` from an isolated scratchpad.
+
+---
+
+## [2026-08-19 11:23 UTC] fable -> all: W1.1/W1.2 hostile verification — G-A CONFIRMED, G-B NOT ESTABLISHED, door status HELD not OPEN
+
+VERDICT: **REJECTED** as submitted. `core/KERDOCK_SCHEDULE_STATIC_GATES_20260819.md`
+reported G-A PASS, G-B PASS, DOOR OPEN. Independent re-derivation confirms G-A in full
+and withdraws G-B. Door status is **HELD**: no `fold_search` cell is fundable on this
+document until §8.6's two settling reads land. A verifier addendum (§8) is appended to
+the deliverable, append-only apart from seven arithmetic corrections and five pointers,
+all itemised in §8.7.
+
+G-A CONFIRMED, AND CONFIRMED THE HARD WAY. The verifier re-typed `direct_cost`,
+`batched_winograd_core_cost`, `batched_winograd_l2_core_cost`, the frozen package's
+`owned_batched_candidate_bill`, the l2-fringe clone's odd-k variant, the `dual_odd`
+branch and the mod-4 block of `grouped_l2_candidate_bill` by hand from source text,
+imported nothing from the corpus or the clone, and re-ran the whole enumeration over
+the recorded 5-net tape. Every load-bearing number reproduces exactly: entrypoint
+sha256 076d0a5d…0759aacf; 28 deep hooks per net on all five seeds (three ways —
+`range(1, depth-3)` at depth 32 in fold3_estimator.py:122, `n_deep_hooks: 28` in the
+tape, and idx 264's own "28 deep hook products per net"); 140/140 recorded charges equal
+the re-typed closed form with zero mismatches; every cell of the 28-row seed-11 table
+including both totals ΔL1 11,543,513,583 and ΔL2 15,416,783,746; r_prod
+0.88015057621222 against idx 264's recorded 0.88015058; grouped_l2/owned at 4096×256×256
+= 0.8866399221979091 against idx 268's recorded 0.88664; eligible ΔFLOP 15,606,373,342
+(fringe) and 2,216,269,776 (strict); leaf-cleanliness 2/5/3/4/2 and 26/23/25/24/26;
+Δdispatches +227.2 per net re-derived independently from `call_count` arithmetic; and
+every G-B figure — erosion 0.6906828703703705, Route A 10,779,054,736 / 1,530,739,570,
+the Route-B bracket [3,867,874,498, 5,473,609,455], the corners 5,230,839,797 /
+8,422,163,310 / 14,804,810,335, and Route C's 22,720,000,000. Ledger quotes for idx 53,
+59, 69, 183, 194, 264 and 268 check verbatim. The G-A verdict is robust to the
+normaliser: the magnitude operator clears the 9% bar at 84.45% under the predeclared
+r_ref, 42.65% under idx 264's own recorded r_d(d=2) = 0.7759509, and 9.56%
+unnormalised. **The door does not close on G-A.**
+
+BANNED INSTRUMENT: CLEAN. No number, constant or method traceable to
+`headroom/slope_cost_model.py` or `SLOPE_COST_MODEL_20260819.*` appears in the
+document; the 2026-08-19 slope law is named only in the compliance and ban clauses and
+was not loaded by either pass. Predeclaration order holds — §2 precedes §3, §4 precedes
+§5, and both thresholds are transcribed from MI_SOLVE §W1.1/§W1.2 without loosening
+(§4 tightens "exceeds" to ">=", the conservative direction). Fences verified fresh
+after the last write: fold_floor_splice 00:35:42, frame_completion_129 04:34:40,
+cells/ 04:00:17, row_blocked_production 2026-08-07T15:26:47 — all unchanged, all
+predating both passes; repo-wide `*.pyc` newer than 2026-08-19 returns nothing.
+
+WHY G-B FALLS. The gate has two licensed routes and neither carries discriminating
+weight. **Route A returns the same answer for every input it could be given**: it
+computes Δ(λR) = erosion × ΔFLOP with erosion = 0.6907 < 1, so Δ(λR) < ΔFLOP
+identically, for any operator and any eligibility surface. Its two rows would read the
+same if the whole of G-A were wrong by any factor, and §5.2 does not disclose this.
+**Route B's scaling denominator is contradicted by idx 69's own record.** §5.3 divides
+idx 69's absolute residual by Δdispatches69 ∈ [84, 168], inferred from block geometry,
+and §7 risk 5 asserts idx 69's internal dispatch count is "never recorded". Both are
+wrong: idx 69's kill condition reads "...or failure to REDUCE calls on every frozen
+generated target", its graph-node prediction reads "A changed dispatcher reduces ...
+core calls on every generated target", its mechanism prices calls at 100M each so the
+dispatcher will avoid them, and its result records the counts verbatim — "core calls
+are 150/150 then 191/194". Whatever the pairing, the magnitude of the change is at most
+3 on a base of 150–194, not +84 to +168. So idx 69's 0.194269 s cannot be attributed to
+a dispatch-count increase (§5.4's "the dispatch-count delta that produced idx 69's
+0.194269 s" is unsupported), the residual it measured belongs to the per-shape Python
+dispatcher, the block-height retune and the alias-liveness billing change idx 69 names,
+and scaling it by 227.2/Δ69 is not licensed. Insisting on the recorded Δ69 <= 3 sends
+the scale factor past 75 and Route B fires by more than an order of magnitude, which is
+the reductio. **G-B: NOT ESTABLISHED.**
+
+THE PROXY'S DISQUALIFICATION IS SOUND; ITS GROUND IS ANSWERED ELSEWHERE IN OUR OWN
+LEDGER. §5.4 sets aside idx 69's 100M-per-wrapper-call proxy because "the proxy is not
+a measurement" — correct, and idx 69 kills it by name. But the campaign holds a
+measurement of the same law that this document does not read and that MI_SOLVE's own
+addendum flags as unpriced: idx 250 `gm_m116_streams`, "Dispatches fell 512 to 160 and
+residual 0.933445 to 0.419197 s, confirming call-count domination a third time" —
+1.4609e-3 s per dispatch = 1.4609e8 FLOP-equivalents at lambda 1e11, 1.46x the proxy
+idx 69 guessed. At +227.2 dispatches that projects 3.32e10 and at the frozen-baseline
++508.8 it projects 7.43e10, against a 1.5606e10 FLOP saving: it FIRES by 2.1x to 4.8x.
+It is out of W1.2's declared basis and does not decide the gate. Widening that basis is
+an owner call, not a verifier's — but the reason given for setting the proxy aside no
+longer stands on its own.
+
+WHAT DOES SUPPORT THE SUBSTANTIVE CONCLUSION IS FILED AS OUT-OF-BASIS. idx 268's
+recorded effective_compute_ratio 0.949914 over 24 nets is a direct end-to-end
+measurement of this exact operator: effective compute FELL, so on that route the
+residual increase did not swallow the FLOP saving; measured erosion 41.4%, well under
+the 100% the gate needs. §5.6's fringe check is real and the verifier endorses it, with
+one deflation — carried through the survival fraction it reduces algebraically to
+"ΔFLOP/C = 8.745% against idx 268's measured FLOP cut 8.551%", a 2.27% relative
+agreement, not the 0.0011 absolute the text implies. The strict leg of that check is
+WITHDRAWN: it projects at zero erosion (0.987581) against idx 59's 0.989313, which was
+produced at 69% erosion from a 3.456% analytical cut where this pass's strict cut is
+1.242% — a factor of 2.78 apart, two offsetting differences landing near each other.
+§7's "a wrong eligibility surface could not land on both recorded ratios" is true of the
+fringe leg and false of the strict leg.
+
+TWO FURTHER DEFECTS THAT CHANGE WHAT W3.1 MUST PREDECLARE.
+(1) THE DECLARED OBSERVABLE IS ON THE WRONG BASELINE. §5.1's +227.2 is Δcalls against
+each operator's own one-level baseline — correct as written and independently
+reproduced. §6 finding 3 then declares it as the run's predicted output, but the run
+compares against the FROZEN deployed incumbent, which dispatches direct (one call per
+block) on every odd-k hook where L1-best would dispatch two or three. Recomputed per
+net, seeds 11–15: +624 / +432 / +448 / +464 / +576, mean **+508.8 (+67.8%)**, not
++227.2 (+30.3%). Predeclaring +30.3% would be falsified by a correct run for a reason
+unrelated to the mechanism under test — and it more than doubles every dispatch-driven
+residual projection above.
+(2) §3.5 IS WRONG ABOUT ITS OWN STRICT OPERATOR. §3.5 dismisses idx 264's recorded
+6.36% as "the eligibility of a different operator" because C1-STRICT recurses only
+hooks with 4|m,k,n. True of the FRINGE leg; false of the STRICT leg, which reaches
+exactly those hooks. Two signals: idx 264's recorded eligible_calls_strict at d=2 is
+[2, 5, 3, 4, 2], element for element this document's own winograd_l2_grouped exact
+counts; and re-pricing this document's strict surface with idx 264's recorded r_d(d=2)
+gives 6.058% against idx 264's recorded 6.3615%, 4.8% relative, from two independent
+cost models. Under the authority's literal instruction the strict operator's POINT
+ESTIMATE sits under the 9% bar, not merely its CI95 lower end. §6 finding 1 already
+recommends sealing on idx 268's fringe route rather than idx 59's tar; that
+recommendation is now binding rather than advisory.
+
+ONE ARITHMETIC CORRECTION MADE IN PLACE (itemised in the deliverable's §8.7). §5.6's
+product 0.585746 x 15,606,373,342 was booked as 9,142,213,504, which is what a
+4-significant-figure survival of 0.5858 gives; against the printed factor it is
+9,141,370,760, moving the projected ratio to 0.948777 and the difference to 0.001137.
+(The old ratio 0.948772 was also a mis-round of 0.9487725.) Nothing downstream moves.
+
+AND ONE CORRECTION TO THE CAMPAIGN'S TOOLING, FOUND BY A FAILED ATTACK ON THE
+DOCUMENT. An earlier draft of §8 "corrected" all five CI95 pairs, on a recompute that
+agreed with the recorded attack_translation.json. That agreement was not a second
+signal: the recompute had copied attack_translate.py's own ci95 helper, so both
+readings carried one shared defect. Recomputed with an independently keyed critical
+value the document's five pairs are RIGHT and the edit was reverted. The defect is in
+the corpus, not in the deliverable: **attack_translate.py:53 indexes its t-table at
+.get(n - 1) where the keys are t(df = key - 1)**, so it returns t(df = n - 2) — at
+n = 5 it fetches 3.182 where the two-sided 95% value for df = 4 is 2.776. Every CI95
+in attack_translation.json is therefore one degree of freedom too wide, by the factor
+2.776/3.182 = 0.8724. Point estimates and every `mean` field are unaffected and no
+campaign verdict turns on an interval width (idx 264's 8.98%/6.12% and its d2 row are
+means), but the helper should be fixed before any future gate reads an interval edge.
+
+WHAT WOULD SETTLE G-B, NAMED AND UNRUN. (i) Read idx 69's "150/150 then 191/194" to a
+decision — which side is parent, which is child; one read of idx 69's artifacts; until
+then Route B has no denominator. (ii) Re-anchor the projection on a measured
+call-count law (idx 250's 1.4609e8 per dispatch, or a fresh per-dispatch measurement on
+this host) and re-run G-B on the frozen baseline; this needs W1.2's basis widened,
+which is the owner's call. (iii) Replay the logging subclass over the public-100 shapes
+already recorded in experiments/t4_kerdock_descriptive_rescore/kerdock_v3_official100.json
+— one read, zero compute — which also settles the strict-operator reading, since the
+mod-4 fringe mix drives both. G-A is banked and does not need redoing.
+
+COMPLIANCE FOR THIS VERIFICATION PASS. Zero billed compute: no harness, no FlopScope,
+no estimator execution, no cell predeclared, no seed consumed, no scored row. Every
+python invocation ran `python -B -P` with PYTHONDONTWRITEBYTECODE=1 from an isolated
+scratchpad outside the corpus. Read-only files touched: the frozen package_source
+sources, the l2-fringe cost_model.py in the Codex clone, experiments/uf1_attack_eligibility/*,
+headroom/fold_ledger.json, graph/graph.json, core/MI_SOLVE_20260819.md. fold_floor_splice,
+frame_completion_129, cells/ and row_blocked_production were neither read nor written.
+Carried at [R] and not re-aggregated here: idx 268's 24-net receipts and idx 250's
+residual numbers. Not opened: the deployed l2-fringe executable (only its cost model).
+Unresolved and named: the pairing inside idx 69's "150/150 then 191/194".
