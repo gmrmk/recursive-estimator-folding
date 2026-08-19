@@ -1,4 +1,78 @@
-# Phase-2 Algorithmic Contribution writeup — draft v1.3
+# Phase-2 Algorithmic Contribution writeup — draft v1.4
+
+Status: DRAFT v1.4, 2026-08-19. **The moment lane. v1.3 closed holding one substantive
+open item against itself; five investigations took it apart. It is now located, narrowed,
+and still open — and the instrument doctrine that fell out of it is the larger result.**
+
+**What v1.4 adds.** v1.3's §11b filed one open item: the cell's own defect-to-MSE
+conversion under-predicted the measured gain on both design legs, by `0.155` (A→B) and
+`0.188` (A→C) in ratio units at `2.83` and `3.44` bootstrap standard errors, and the
+filing read "the conversion needs revision, not the defect law." Five committed
+investigations — a blind theory/data pair closed by a hostile synthesis, an off-protocol
+instrument probe, an artifact trace, and an inferential/constructive lane — took that item
+apart. This revision reports what they returned, in four layers it does not merge.
+
+1. **The miss is located, and it is a first moment.** The excess is an **arm-A-located
+   first-moment forecast error**: `99.39%` of the log gap sits on arm A's own leg, and the
+   forecast was right about both structured arms — arm C's own miss is `0.61%` of the gap,
+   `−0.15%` in ratio units. Four rival mechanisms are **refuted** rather than doubted:
+   ensemble-tail deletion by two theorems and two purpose-built detectors that both came
+   back empty, cross-degree covariance by Schur's lemma **exactly**, higher moments of the
+   instrument by an order count, and sampling luck by a bounded standard error (§13c).
+2. **The estimator-side mechanism is dead, killed four independent ways.** The one
+   estimator explanation the theory lane named — a pilot/rescue detection lever favouring
+   the structured arms — was measured directly and does not exist. Its own within-family
+   control reproduces `86%` of the effect the hypothesis wanted to attribute to the pilot
+   family, the lever itself measures `×0.9994` against the probe it was supposed to beat,
+   and two code reads show it cannot reach the decision it was supposed to move (§13c).
+3. **The spectral mechanism is UNRESOLVED-BUT-NARROWED, and the narrowing is the
+   contribution.** There is **no carrier-indexing error** — the forecast reproduces to one
+   ulp from the source spectrum, on the right arm, with the right defects. But the sole
+   producer of its `share4 = 0.4497%` is the infinite-width mean-field arc-cosine kernel,
+   and that kernel's **shape** is measurement-falsified at the readout by a sealed-gate cell
+   this document already carries in §5. Replacing one ratio — the degree-4:degree-6 ratio —
+   with the exact kink-tail value closes `96.1%` of the A→B log gap and `77.3%` of the A→C
+   gap. It does **not** close the item, and §13c says so in three ways (§13c).
+4. **The methods result is the rung-2k law**, and it is the part of this revision with
+   reach outside this campaign: an estimator of a `k`-th-moment quantity has sampling error
+   governed by central moments up to `μ_2k`; every recorded instrument failure in this
+   corpus is an instance of the same arithmetic; and the prescription that follows binds a
+   future cell **before it runs** rather than after it disappoints (§13d).
+
+**The distinction this revision holds throughout, because it is the one v1.3's open item
+was hiding.** *Located* is not *explained*, and *narrowed* is not *closed*. The excess gain
+now has a coordinate (arm A), a refuted list (four mechanisms, each with its own evidence),
+a dead candidate (the pilot lever), and a live candidate whose direction is `[D+O]` and
+whose magnitude is `[GAP]`. A reader who takes item 3 as a solved accounting problem has
+read it wrong, and §13c states the three separate reasons it is not: the substitute profile
+is an explicitly-labelled **hybrid**, a **`≥ 3.84%` structural short** on the completion leg
+is unreachable by **any** nonnegative share vector, and **three different network families**
+sit under the one comparison.
+
+**The P2 disposition does not move, and its cause does [§13, marked addendum].**
+INSTRUMENT-SUSPECT stands exactly as pre-registered. What v1.4 adds is why the instrument
+failed: the `[0.019, 0.03]` honour window was **unearnable from a five-network pilot** for
+reasons available in closed form before the run — the relative standard deviation of a
+variance estimated from five observations is exactly `1/√2` under normality, so the `3.71x`
+miss is a `1.31σ` event with no heavy tail invoked. The instrument broke on a **rung-2
+calibration error in the window**, not on the data's tails.
+
+**Two lawfulness moves, both theorem-fixed, neither an MSE claim [§15, and the disclosure
+addendum].** The deployed host's only fitted scalar in the correction path can be replaced
+by its theorem-fixed value `1`, taking the declared fitted surface from **six scalars to
+five** at a FLOP saving; and the four literals in the unreachable radial branch are proved
+to be **exact rationals forced by two independent routes**, which moves them out of
+lawfulness limbo. Neither is a score claim and §14 says so.
+
+**What v1.4 does not change.** No score. Nothing here has been measured on the private
+suite. P2's custody is unchanged — burned Public100, descriptive only — and every one of
+§13's four independent blocks on a designation move stands untouched. No mechanical verdict
+moves, no ledger entry is rewritten, and the five source documents that carry an
+object-mismatched claim are **cited and not edited**: the correction is recorded in this
+document's erratum register (§14b) in the manuscript's own append-only style.
+
+**Status of the v1.3 record, retained verbatim below because corrections here are
+append-only.**
 
 Status: DRAFT v1.3, 2026-08-19. **P2 ran. The last live prediction is closed, and it did
 not close the way it was filed.**
@@ -176,6 +250,16 @@ session]**. The record is correct and the pointer drifted. This document cites
 ledger entries by their string `id`, which is stable, and we recommend the same
 for anyone re-checking Phase-1.
 
+**A second erratum against Phase-1, opened here and stated in full in §14b [v1.4].** The
+sentence "the measured angular error sits at degree 4 (11% of the iid level) and degree 6
+(40%)" appears in the Phase-1 long draft, in the filed short form, and in three other
+committed documents. It is **object-mismatched**: the probes behind those two percentages
+are mixed zonal polynomials measured against a different comparator, and they are not
+measurements of the per-degree design defects the sentence is read as reporting. The five
+documents are **cited and not edited**; the correction is registered as **P2-E1** in §14b
+with the trace that establishes it. A Phase-1 reader who needs the degree-4 suppression
+should take it from §11's closed form, which is exact, and not from that sentence.
+
 **What to read first, and why the order changed [v1.2].** A reader with limited time
 should read the **proved and measured** spine, which is now the document's weight:
 
@@ -211,6 +295,23 @@ theory:
    it disagrees with the magnitude the theory's own conversion forecast while confirming
    its direction. Read §13's two-layer disposition immediately after it, because the
    cell's mechanical PASS is **not** honoured and the two facts travel together.
+
+**Two further insertions to the reading order [v1.4].** The disagreement item 0 names —
+between the theory's conversion and the measurement — is the subject of two new sections,
+and they sit at opposite ends of the reading order because they are different kinds of
+object:
+
+0b. **§13c — the excess-gain resolution.** Read it immediately after §13b. It is where the
+    `2.83`/`3.44`-SE miss is located (arm A, first moment, `99.39%`), where four rival
+    mechanisms are refuted with their evidence, and where the one surviving candidate is
+    stated at `[D+O]` for direction and `[GAP]` for magnitude. It closes nothing and it
+    narrows a great deal, and the difference between those two verbs is the section.
+
+5. **§13d — the rung-2k instrument law.** Read it last, or first if you are here for
+   methods rather than for this benchmark. It is the only result in this document that
+   binds work outside this campaign, it was produced entirely by our own instrument
+   failures, and it is the one section whose conclusion would be unchanged if every
+   measurement in this document were withdrawn.
 
 ---
 
@@ -1699,6 +1800,31 @@ degree-4 share is the quantity the conversion actually needs and does not have. 
 is an artifact read, not a run **[GAP, named with its check, in the same class as §11b's
 uncommitted degree-6 script]**.
 
+**Marked addendum to the open item [v1.4]. The re-filing above is correct and it was
+aimed one step downstream of the defect.** Five investigations have since taken the item
+apart, and §13c reports what they found; three of their results bear directly on the
+paragraph above and none of them retracts it.
+
+- **"The conversion needs revision, not the defect law" is confirmed, and sharpened to a
+  single slot.** There is no carrier-indexing error anywhere in the conversion: the
+  `share_l` slot of `runner_fc129.py` is unambiguously arm C's own per-degree MSE share,
+  correctly indexed, and all three forecast legs plus both implied shares reproduce from
+  the source spectrum in exact rational arithmetic to **one ulp** **[R,
+  `core/DEG4_ENERGY_SHARE_TRACE_20260819.md` §3.1]**. The defect law is untouched, as this
+  section's own scorecard already showed. What needs revision is one number, `share4`.
+- **The settling check named above is still valid and is no longer the cheapest one.** The
+  post-control per-degree energy table remains the quantity the conversion needs. But the
+  pre-control share vector has a **single producer** — the infinite-width mean-field
+  arc-cosine kernel, committed 2026-08-08 — and that producer's *shape* is falsified at the
+  readout by §5's own sealed-gate cell. That is upstream of the post-control question, and
+  the discriminator for it costs approximately nothing: add the degree-4 rung to the ladder
+  §5 already built. §13c carries the arithmetic and the predeclared prediction.
+- **The direction of the required correction is now second-signalled and its size is not.**
+  An exact, measured-validated second law for the same physical quantity puts degree 4 at
+  `3.3471x` degree 6 where the mean-field kernel puts it at `1.4100x`; the correction factor
+  `2.3739` sits against a demand of `2.436x` (A→B) and `2.834x` (A→C). Direction `[D+O]`,
+  magnitude `[GAP]` — the degree-4 rung was never run.
+
 **What this scorecard does not do.** It does not convert any theorem in §11b into a score
 claim; that refusal is unchanged and is now *supported* rather than merely stated, because
 the one place the conversion was attempted is the one place the numbers missed. The
@@ -2049,6 +2175,76 @@ evidence is actionable. No new estimator is queued by this outcome.
   measurement whose pilot disagreed with it at five standard errors is a measurement whose
   variance model is not understood.
 
+**Marked addendum to the disposition [v1.4] — the disposition stands; its cause is now
+known and it is not the one the record implies.** Nothing above is rewritten. The
+mechanical verdict is still `PASS_SCREEN`, still candidate #277, still untouched in the
+ledger. The judged disposition is still **INSTRUMENT-SUSPECT** and the PASS is still not
+honoured, under the same pre-registered rule, applied the same way. What changes is the
+diagnosis of *why the instrument missed*, and the change matters because the two readings
+license different repairs.
+
+**The `[0.019, 0.03]` window was unearnable from a five-network pilot, in closed form,
+before the cell ran [D, exact; the law is `core/CENTRAL_MOMENT_LADDER_20260819.md` §2.3,
+and every figure below was recomputed here].** The exact finite-`n` sampling law for a
+variance estimate is `sd(s²)/σ² = √((κ − (n−3)/(n−1))/n)`. At the pilot's `n₀ = 5`, the
+correction term `(n₀−3)/(n₀−1)` is exactly `1/2`, so under a **Gaussian** per-network law
+(`κ = 3`):
+
+```
+sd(ŝ₅²)/σ²  =  √( (3 − 1/2) / 5 )  =  √(1/2)  =  0.7071067811865476    exactly 1/√2
+sd(ŝ₅ )/σ   ≈  0.3535533905932738                                       ±35.4% on the SD scale
+```
+
+The pilot's implied between-network SD was `ŝ₅ = 0.0843·√5 = 0.1885005305032323`; the
+realised production SD was `0.07054498655771349·√100 = 0.7054498655771348`. On the variance
+scale that is a factor of `14.0058`, i.e. a relative shortfall of `ŝ₅²` of `0.9286008825652166`
+— which against a one-sigma band of `0.7071` is a **`1.3132`-standard-deviation event under
+normality** **[D, all four figures recomputed this session under `python -B -P` in exact and
+IEEE-double arithmetic]**. The kurtosis at which the same shortfall becomes *exactly* a
+one-sigma draw is `κ = 0.5 + 5·(0.9286008825652166)² = 4.8115`, an excess kurtosis of `1.81`
+**[D]**.
+
+**The consequence, stated as the correction it is.** The record above reads naturally as
+*the data turned out to be heavier-tailed than the design assumed*. That reading is not
+supported: **heavy tails are not needed to produce this miss.** The `3.7129x` overshoot is
+what a `1.58`-wide window (`0.03/0.019`) calibrated on a second moment estimated from five
+observations does under textbook normality. The failure is a **rung-2 calibration error in
+the window itself** — a point `1/√n` projection filed with no uncertainty on the pilot's
+own `ŝ₅` — and not a property of the measured population. Had the window been derived from
+the exact finite-`n` law at `κ = 3` it would have read `[0.005788, 0.031912]`, whose upper
+edge already grazes `0.03` before any tail is invoked **[D, recomputed here]**; the achieved
+`0.0705` would still have missed it, and the cell would have been resized or the gate
+forfeited rather than run into an unhonourable PASS. §13d states the law this is an
+instance of and the prescription that would have caught it at filing time.
+
+**What this does and does not license.** It does **not** rehabilitate the PASS: the
+disposition was filed against the *achieved* `se_log` and the achieved `se_log` is what it
+was, so INSTRUMENT-SUSPECT is correct under its own rule and stays. It does **not** move any
+of §13's four independent blocks on a designation move. What it licenses is a narrower and
+cheaper repair than "the population has tails we did not model": the honour window is
+re-earnable by predeclaring at rung 4 or by gating on an L-moment, and either is a
+specification change rather than a physics investigation. **Re-earning the window is still a
+new cell** (§13's own words); v1.4's contribution is that the new cell's predeclaration now
+has a law to be written against.
+
+**And a second reading of the smoke, which does not explain it either [v1.4].** §13's
+second honest extra files the smoke's sign flip as unexplained, and it remains unexplained.
+What the moment lane adds is that the smoke carried **two** anomalies rather than one, and
+that this changes what "bad luck" would have to mean. Under a lottery calibrated to the
+measured channel, the pilot's `se_log = 0.0843` at five networks sits **below the 5th
+percentile** of the `n = 5` distribution — the median draw is `0.2877` and the 5% point is
+`0.1263`, so the projection method itself loses only `1.32x` and the remaining `2.8x` is
+that this particular five-network sample was unusually tight **[R,
+`core/EXCESS_GAIN_MOMENTS_THEORY_20260819.md` §5.2]**. That is the *dispersion* anomaly. The
+*location* anomaly is the one §13 already prints: a `5.27`-smoke-SE sign-flipped point
+estimate. **The two are separate events, and their joint probability under that same
+calibrated lottery is of order `1e-4`** **[R, same source]**. A `1e-4` coincidence inside one
+five-network draw is weaker evidence for luck than for a **systematic difference between the
+smoke's subset at harness seed `424242` and production's at seed `0`**. Nothing in this cell
+discriminates that, and the candidate new cell §13 already files is unchanged — but it now
+has a sharper hypothesis to test than "small-`n` noise", and the joint figure is the reason
+the item should not be quietly retired as a fluke.
+
 ---
 
 ### 13b. The H2 reversal [v1.3] — what pays is leaving the Haar family, not completing it
@@ -2174,6 +2370,484 @@ filed as §11b's open item rather than smoothed into agreement.
 
 ---
 
+### 13c. The excess-gain resolution [v1.4] — located, four mechanisms refuted, one narrowed and still open
+
+**Sources, and why they are worth what they are.** Five committed documents, all
+hostile-verified, all at zero billed compute:
+`core/EXCESS_GAIN_MOMENTS_THEORY_20260819.md` and
+`core/EXCESS_GAIN_MOMENTS_DATA_20260819.md` — a **blind pair**, the theory lane written
+without opening any per-network array and the data lane written without opening any theory
+or core document — closed by `core/EXCESS_GAIN_MOMENTS_SYNTHESIS_20260819.md`, which
+re-derived both lanes' load-bearing numbers from scratch with independent code;
+`core/S7_RESCUE_PROBE_20260819.md`, an off-protocol instrument probe that ran the three
+arms' unmodified sources under observation; and
+`core/DEG4_ENERGY_SHARE_TRACE_20260819.md`, an artifact trace at rung R0/R1 only. The
+blind-pair structure is itself the reason the confrontation is worth reading: the theory
+lane pre-registered seven signatures before any array was opened, and the data lane
+measured them without knowing they had been predicted. **Nothing below is re-measured
+here; every figure is cited to one of those five, and the ones this session recomputed say
+so.**
+
+**The arc, stated honestly, because it does not end where an arc is supposed to end.** The
+open item was a number: the cell's structural forecast missed the measured gain by `0.155`
+(A→B) and `0.188` (A→C) in ratio units, at `2.83` and `3.44` bootstrap standard errors
+(§11b). Five investigations later, the miss has a **coordinate**, a **refuted list**, a
+**dead candidate**, and **one live candidate whose direction is second-signalled and whose
+magnitude is not**. That is a narrowing, not a closure, and this section is written so that
+the two cannot be confused.
+
+#### 1. The miss is a first moment, and it is located on arm A
+
+**The attribution [R, `SYNTHESIS` §1.2(c) and §2.3; the share recomputed here].** The A→C
+log miss decomposes exactly into the two arms' own misses:
+
+```
+ln(measured / forecast, A→C)  =  −0.251974
+                              =  (−0.250441  arm A)  +  (−0.001533  arm C)
+arm-A share of the miss       =   99.392%                          [D, recomputed this session]
+```
+
+Per-arm measured-over-forecast ratios are `1.2846` (A), `1.0422` (B), `0.9985` (C) **[R,
+`SYNTHESIS` §1.2(c), reproduced there in exact `Fraction` code that is not a re-run of the
+runner]**. **The forecast was right about the structured arms and wrong about the Haar
+arm.** Arm C — the one the forecast is an identity for by construction, and therefore the
+one whose agreement could most easily have been circular — lands at `−0.15%`. Arm B's own
+term is `+0.041287` in log units, which enters the A→B leg with the *opposite* sign to the
+gap, so on that leg arm A carries `119.7%` of the miss and arm B gives `19.7%` back **[D,
+`0.250441/0.209154 = 1.1974`, recomputed this session; the three-term identity
+`−0.250441 + 0.041287 = −0.209154` closes exactly]**.
+
+**Two provenance closures that harden the attribution, both bit-exact [R, `SYNTHESIS`
+§1.3–1.4].** They matter because each one, left open, was a live way for the attribution to
+be an artifact.
+
+- **The `se_log` channel confusion is closed.** The corpus quoted `2.83`/`3.44` beside
+  `se_log = 0.0705`, and the data lane proved those two arithmetically incompatible.
+  Re-running the runner's own bootstrap on the **score_flop** channel reproduces
+  `0.07054498655771349` to **all 17 digits**, while the raw-MSE paired-delta values behind
+  `2.83`/`3.44` are `0.073837`/`0.073146`. The brief had conflated two channels of one
+  runner; **no estimator was wrong**, and §11b's raw-leg standard errors and §13's gated
+  `se_log` are two different estimands that both reproduce.
+- **The circularity attack on arm C is dead by provenance.** `v126k = 2.4977e-7` is a
+  **first-principles iterated arc-cosine kernel value committed 2026-08-08**, eleven days
+  before this cell ran, and validated then against a sixteen-network geomean at 6.4%. Arm
+  C's `−0.15%` agreement is a prediction coming true, not a fit closing on itself. The
+  caveat travels with it: that 6.4% compared an arithmetic-mean prediction to a geomean
+  measurement, and `share4 = 0.45%` was **never separately validated** — which is exactly
+  the thread §3 below pulls.
+
+**One correction the synthesis filed against the data lane, carried because it changes what
+the coordinate means [R, `SYNTHESIS` §2.3].** The data lane read the forecast as landing on
+the *unweighted* per-network mean. That reading is arithmetically right and interpretively
+wrong: `v126k`'s kernel provenance fixes the forecast's estimand as the pooled **arithmetic**
+mean, and the `+2.55`-log-point agreement with the mean-of-ratios is **two unrelated
+~22–25-log-point effects cancelling** — the kernel's arm-A under-prediction against the
+Jensen inflation of a noisy-denominator statistic (`e^{σ_FA²} = 1.2355`). Corrected for
+that inflation, the physical per-network mean ratio is `≈ 0.6629`, within one log point of
+the pooled `0.6564`. The composition tilt is `≈ −1.0` of the `−22.1`-point weighting wedge;
+the other `−21` points are arm-A lottery noise regressing to the mean.
+
+#### 2. Ensemble-tail deletion is REFUTED — two theorems and two purpose-built detectors
+
+This was the leading hypothesis in the brief that opened the investigation. It is dead
+four ways, and two of them are mechanical rather than statistical **[R, `THEORY` §3 and
+ledger items 11–12; `SYNTHESIS` §3.1]**:
+
+- **`k = 1`.** All three arms draw their frames from the same `int(mlp.seed)`; arm C buys
+  the same ticket as arm A. Selection gain at `k = 1` is `0` by definition.
+- **Deletion without selection is mean-preserving.** The lottery factor satisfies
+  `E[F] = 1`, so deleting the tail moves a **ratio of means** by exactly zero. This is a
+  theorem, not an estimate.
+- **The first purpose-built detector came back empty.** The aggregate-minus-median-of-ratios
+  diagnostic measured `0.735` points (A→C) and `1.300` (A→B) against a **full-deletion
+  ceiling of `8.66` points** and a no-mechanism null of `3.31 ± 3.90`.
+- **The second came back empty too.** The skew of the bootstrap log-ratio measured `+0.0452`
+  (C/A) and `+0.0463` (B/A) against a pre-registered `> +0.15` deletion threshold.
+
+**And the whole per-network "tail" picture is reproducible with zero mechanism [R,
+`SYNTHESIS` §2.2].** A minimal shared-factor lognormal pairing null, fitted only to the
+measured log second moments — no composition effect, no deletion, no degree structure —
+reproduces **eight** measured signatures within `0.7σ` each: Spearman `0.508` vs `0.519`,
+top-decile gain share `45.1%` vs `47.8%`, the decile-difference diagnostic `9.0` vs `10.4`
+points, the weighting wedge `−0.153` vs `−0.163`, mean-of-ratios `0.814` vs `0.819`,
+worse-network count `25.9` vs `29`, mean/median absolute gain `1.63` vs `1.72`, and the
+log-log slope `−0.433` vs `−0.455`. Two closed-form checks of the same null agree to `1.0%`
+and `0.75%`. **The "badly-conditioned networks gain more" reading is, to one log point,
+regression to the mean against a noisy arm A.**
+
+That result is a methods contribution in its own right and it generalizes past this
+benchmark: **every per-network tail signature of a paired benchmark of this shape is
+reproducible by lognormal pairing statistics with no mechanism at all.** Anyone reading
+mean-of-ratios against ratio-of-means on paired heavy-tailed data needs that null before
+they need a story.
+
+#### 3. Cross-degree covariance is EXACTLY ZERO in expectation, by Schur
+
+**[R, `CENTRAL_MOMENT_LADDER` §3.b; the theorem, not a measurement.]** For a carrier
+configuration whose joint law is invariant under the diagonal action of `O(d)`, and an
+estimator linear in the empirical measure, `E[ε_l ε_m] = 0` **exactly** for `l ≠ m`: the
+coincident term vanishes by harmonic orthogonality, and the cross term is an invariant
+bilinear form on `H_l × H_m`, which are inequivalent irreducible `O(d)`-representations, so
+it vanishes by Schur's lemma. Three consequences bind this document:
+
+1. `MSE = Σ_l a_l A_l` is **exact**, not an approximation and not an independence
+   assumption. §11b's per-degree accounting is forced.
+2. Killing `A_4` removes exactly `a_4 A_4` and **not one unit more**. The completion's
+   degree-4 annihilation cannot, by any second-order mechanism, produce more MSE reduction
+   than the degree-4 share. **The excess gain is not a cross-degree covariance** — recorded
+   as a negative result with a proof rather than a null measurement.
+3. The first live cross-degree object is **order four**, it moves the *variance* of the
+   per-draw MSE rather than its mean, and it is suppressed by `1/126³ = 4.999e-07`. Its
+   leading sign is **positive**, set by the coincident-row term rather than by
+   `Q_4(0)·Q_6(0)`, which is a correction the ladder's own verification pass made against
+   its first draft.
+
+#### 4. Three further mechanisms, each refuted with its own evidence
+
+**[R, `SYNTHESIS` §3, "what the excess gain is NOT"; each figure sourced there.]**
+
+| candidate | why it is dead |
+|---|---|
+| a kurtosis or higher-moment correction to the instrument | kurtosis enters `Var(log x̄)` at `O(n⁻³)`: `+0.004%` to `+0.016%` at `n = 100`, against the `−4.5%` that would have been needed — and the channel it would have been needed on is not the channel `0.0705` belongs to (§1 above) |
+| sampling luck | for the gap to be a one-SE event, `se_log` would have to be `0.252` against a jackknife-bounded `0.073 ± 0.008`; even the tail-inflated simulated `p ≈ 5e-3` rejects |
+| the radial-conditioning floor | a common additive floor moves the ratio the **wrong way** — fitted to arm A it over-predicts arm C by `+33.9%` |
+| truncation of the degree ladder | degrees `≥ 12` are carrier-neutral; including them **widens** the gap rather than closing it |
+
+#### 5. Mechanism II — the pilot/rescue lever — is KILLED, four independent ways
+
+The theory lane's estimator-side completion put a `+28.66%` non-quadrature penalty on arm A
+through the pilot/dead-neuron-rescue channel: the rescue reads the first frame's rows, and a
+flat `±` Hadamard probe was argued to detect firing at up to `‖w‖₁/‖w‖₂ ≈ 16x` the
+resolution of a Haar probe. `S7_RESCUE_PROBE` built the instrument that tests it and the
+lever does not exist **[all four legs O in that document]**:
+
+1. **Its own within-family control reproduces the effect.** Arms B and C share the
+   phased-Hadamard pilot family, so B–C is a control that **cannot** be a
+   Hadamard-versus-Haar effect. On the S7 statistic the control moves `+64` at `t = +1.49`
+   against the cross-family A–C contrast's `+74` at `t = +1.57` — the control absorbs
+   **`86%`** of the effect the hypothesis wanted to attribute to the pilot type **[D,
+   `64/74 = 0.8649`, recomputed this session]**. At decision level the same inversion is
+   sharper: the symmetric-difference disagreement rate is `10.570%` for the control against
+   `10.192%` (A–B) and `10.032%` (A–C) — **the control is the highest of the three**. The
+   single largest `|t|` in the whole probe, `3.252`, is also a within-family contrast, which
+   under the hypothesis should have been the quietest cell in the table.
+2. **The lever itself measures `×0.9994`.** On `4,000` synthetic draws, `max|⟨u,w⟩|` is
+   `3.0512` under a Haar frame and `3.0495` under the raw Hadamard **[D, ratio `0.99944`,
+   recomputed this session]**. On the real networks, layer-1 paired over `n = 2,048` exactly
+   paired columns, the paired `t` values are `−0.279` and `+0.450` with win rates `49.8%` and
+   `50.1%`, and all `2,048` columns fire in all three arms so no detection difference is even
+   expressible there.
+3. **Parseval forbids it.** Any orthonormal frame scaled to `r̄` satisfies
+   `Σ_i ⟨u_i,w⟩² = r̄²‖w‖²`, so all three pilots carry *identical total detection energy*;
+   and an orthogonal map sends a Gaussian `w` to a Gaussian, so the 256 responses — and their
+   maximum — are identically distributed under Haar and under Hadamard. `‖w‖₁` prices an
+   **adaptive** probe `u = sign(w)/16`, and a fixed basis of 256 rows contains that pattern
+   with probability `256/2²⁵⁶`. (`‖w‖₁/‖w‖₂` is also `12.78` for a dense Gaussian row in
+   `R²⁵⁶`, not `16`; `16` is the flat-`w` ceiling.)
+4. **Two code reads close it independently of any statistics.** `predict()` left-multiplies
+   `W₀` by a fresh per-network Haar rotation **in all three arms**, which restores rotational
+   invariance even for structured weights; and the rescue test is applied to
+   `pilot_x = [relu(p); relu(−p)]`, not to the frame rows, so the flat `±r̄/16` geometry is
+   already gone **one ReLU before** the first `max(pilot_pre) > 0` is ever evaluated.
+
+**The probe is production's classification, and that is checked rather than assumed.**
+Running the *uninstrumented* arm estimators inside the harness's own budget context
+reproduced `flops_used` **digit-exact against the archived arm reports on 24 of 24
+arm×network cells**; the initial α-only partitions differ between arms in **0 of 248**
+cases, which isolates the pilot as the only free variable; and the archived `n = 100` FLOP
+channel — which knows nothing about the probe — returns `mean log(C/A) = −0.000191`,
+`t = −0.115`, with `49/100` networks above unity. The pre-registered decision rule was "arm A
+strictly greater on `≥ 8/10` networks"; the measurement is `5/8` against arm B and `6/8`
+against arm C, with totals `A 11535 / B 11525 / C 11461`.
+
+**The honest bound, carried from the probe's own attack section.** `n = 8` is small: the 95%
+CI on the A–C statistic is `[−4.67, +23.17]` per network, so a systematic arm-A penalty of up
+to ~23 extra dead neurons per network (≈1.3% of the cold pool) is **not excluded by the count
+channel alone**. The conclusion does not rest on the counts. It rests on the control, which
+cannot be a pilot-family effect by construction; on the independent `n = 100` FLOP channel;
+and on the direct measurement of the lever, which is a measurement of the mechanism rather
+than a statistical argument about counts.
+
+**Three corrections the probe filed against the theory document, and one attack that landed
+mid-draft.** `‖w‖₁/‖w‖₂ ≈ 16` is a ceiling and not a value; a Hadamard basis is not a better
+firing detector than a Haar basis at identical cost; and "replaced by the analytic
+diagonal-Gaussian mean" holds only at the last layer — in the main loop and at layers 29–30 a
+confirmed-dead neuron is simply **dropped**, so the misclassification channel's *form* is
+column zeroing with downstream propagation. The attack that landed: the probe's author first
+read the terminal fold's B–C clustering (`3.1%` against `5.8%`/`6.0%`) as a genuine family
+signature and was drafting it as partial support for mechanism II. Checking what else differs
+between the B and C fold pilots found the cause — they share `512` of `1024` rows
+**byte-for-byte**, while the main-loop pilot shares none and shows no clustering at all. The
+clustering is a shared-sample effect, correctly proportioned.
+
+**The consequence for the forward lever, which is a downgrade [D, from the probe's §7 and the
+synthesis's §3].** Both surviving repairs demand a `~4–5%` non-quadrature **arm-B** penalty,
+and its only named candidate was the frame-0 all-plus Walsh pilot row. The probe confirms the
+row is what it was said to be (row sum `+256·r̄/16` against arm C's `+16·r̄/16`) and confirms
+that its flips sit on the decision threshold at lottery size — median `|max(pilot_pre)|` at a
+flipped decision is `0.082–0.085` against per-arm medians over all cold decisions of
+`0.380–0.385`. The probe therefore forecasts the synthesis's pre-registered `A′/A` prediction into
+the **Repair-I** band `[0.97, 1.03]` rather than the Repair-II band `[0.72, 0.85]`. **What
+follows is that the `4–5%` arm-B penalty loses its only named mechanism**, and the C→B
+reversal needs either a new candidate or the pricing instrument the probe names as its own
+open item — a per-network MSE decomposition with the rescue set forced to a common choice
+across arms. That is a new instrument, not a re-read.
+
+#### 6. Mechanism I — UNRESOLVED-BUT-NARROWED, and the narrowing is the result
+
+`DEG4_ENERGY_SHARE_TRACE` closes the two clean readings of the surviving spectral mechanism
+by refuting **both**, which is what leaves the verdict where it is.
+
+**There is no carrier-indexing error [R, trace §3.1; hostile-verified].** The `share_l` slot
+of `runner_fc129.py` is unambiguously the **Kerdock-126 arm's** per-degree MSE share, and the
+`0.45%` it is fed is a Kerdock-arm per-degree MSE share. Same object, same carrier, correctly
+indexed. The proof is reproduction: all three committed forecast legs
+(`0.8444606810318669` / `0.8211759295306633` / `0.9724264823404788`) and both implied shares
+(`0.012640630202671059` / `0.010883373653359512`) re-derive from the source spectrum in exact
+`Fraction` arithmetic to **one ulp**. And the re-indexing does not even point the right way:
+transferring `0.45%` onto the Haar arm under the exact defect ratios gives **`16.2%`**, not
+`1.26%` — `12.8x` the wrong way — with the `~16%` and `~1/36` figures independently committed
+by the ultramath slate. **The excess does not close as an accounting correction.**
+
+**But the `0.45%` is not pinned on the right object either, and this is the finding [R, trace
+§1.3–1.5 and §4.2].** It has exactly **one** producer: the infinite-width mean-field iterated
+arc-cosine kernel. r0's re-derivation of 2026-08-10 is the same kernel, the same
+decomposition and the same design defects as the 2026-08-08 committed value — a
+re-derivation, **not a second independent signal**. No committed artifact measures the
+deployed networks' `E_4/E_{≥6}`. And the kernel's **shape** is measurement-falsified at the
+readout by a sealed-gate cell this document already carries in §5:
+
+| degree `n` | measured `ρ_own(n)/ρ_own(6)` | exact kink `λ_n²/λ_6²` | mean-field `a_n/a_6` | kink miss | **mean-field miss** |
+|---:|---:|---:|---:|---:|---:|
+| 8 | `0.458595` | `0.444566` | `0.759423` | `−3.1%` | **`+65.6%`** |
+| 12 | `0.126572` | `0.147255` | `0.492089` | `+16.3%` | **`+288.8%`** |
+| 16 | `0.060010` | `0.068332` | `0.349232` | `+13.9%` | **`+482.0%`** |
+| 24 | `0.028302` | `0.023420` | `0.203932` | `−17.3%` | **`+620.6%`** |
+
+**[R for the three profile columns, trace §4.2; D for the two miss columns, recomputed this
+session at the trace's convention.]** The mean-field spectrum decays as `l^{−1.1}`; the kink
+tail and the measurement both decay as `≈ n^{−2.7}`. **At every degree where both are
+defined, the measurement sits on the kink law and off the mean-field law by `1.66x` to
+`7.2x`.**
+
+**One convention note, because §5 quotes the same agreement as a different number.** §5 says
+the measured profile tracks the exact kink tail "to within 14%" at every gated rung; the
+table above says `3.1%` to `16.3%` across the gated rungs and `17.3%` including the ungated
+degree-24 rung. These are the same agreement under two denominators: §5 normalizes the
+deviation by the **exact** ratio (`3.2% / 14.0% / 12.2%` at degrees 8 / 12 / 16), the trace
+by the **measured** one (`3.1% / 16.3% / 13.9%`) **[D, both conventions recomputed this
+session]**. Neither is wrong and no conclusion turns on the choice; it is printed because a
+reader moving between §5 and this table would otherwise read a contradiction.
+
+**The correction, and how much of the gap one ratio closes [R, trace §4.3–4.4; the ratio and
+the closures recomputed here].** The two committed first-principles laws for the same
+physical quantity disagree at exactly the ratio the forecast is sensitive to:
+
+```
+mean-field arc-cosine kernel   E_4/E_6 = a_4/a_6     = 1.4100
+exact ReLU kink tail           E_4/E_6 = λ_4²/λ_6²   = 3.3471
+                                        correction   = 2.3739     [D, recomputed this session]
+demanded boost:   2.436x (A→B)   /   2.834x (A→C)
+```
+
+`λ_4 = −5.0744e−3` is exact and is independently confirmed to `0.205%` by a ReLU Hermite
+closed form on a different route. Applying that **single** ratio correction at degree 4 and
+leaving degrees `≥ 6` in their mean-field proportion gives **`share4 = 1.061%`** — `2.359x`
+the committed `0.4497%` — which closes **`96.1%`** of the A→B log gap and **`77.3%`** of the
+A→C log gap **[D, both closures recomputed this session from the committed forecast and
+measured ratios: log gaps `0.209154` and `0.251974`]**. Against the runner vector's own
+implied baseline (`E_4/E_6 = 1.4420` rather than the r0 spectrum's `1.4100`) the same move
+gives `share4 = 1.038%` and closes `92.7%` / `74.6%`. **Every conclusion here holds under
+either baseline.**
+
+#### 7. Why this is UNRESOLVED and not SUPPORTED — the three caveats, carried verbatim
+
+These are not hedges. Each one is a specific reason the item stays open, and each names what
+would settle it.
+
+- **The full kink profile is NOT a drop-in, and the §6 correction is an explicitly-labelled
+  hybrid [R, trace §4.5].** Substituted as a *complete* spectrum the kink tail gives
+  `share4 = 3.272%` and forecasts A→C `0.4237` / A→B `0.4003` against measured `0.6564` /
+  `0.6662` — an **overshoot of `3.1x`** and a worse fit than the committed vector. The cause
+  is structural: the kink tail decays at `p ≈ 2.7` while **`86%` of the Kerdock arm's error
+  sits at degrees `≥ 8`**, where the mean-field `p ≈ 1.1` tail is what supplies the mass. The
+  kink tail describes the own-axis, entry-layer-transported **sub-component** (`Σ_n ρ_own(n)
+  ≈ 0.6%` of residual energy), not the whole residual. **What survives the attack is the
+  degree-4:degree-6 ratio, not the profile.** The correction is a validated ratio grafted
+  onto an unvalidated tail and is labelled as such wherever it is used.
+- **The C→B structural short is untouched by ANY share vector [R, `THEORY` §2.3; the bound
+  recomputed here].** `max_l (A_l^B / A_l^C) = 2816/2881 = 0.9774383894481083` bounds
+  `forecast(C→B)` from above for **every nonnegative share vector**, while measured C→B is
+  `1.0149700854688666`. The model is short by **`≥ 3.84%`** structurally **[D,
+  `1.0149700854688666 / 0.9774383894481083 = 1.038398`, recomputed this session]**. **No
+  value of `share4` touches that leg.** The theory lane called this a structural
+  falsification of the model's shape; the synthesis **demoted** it, and the demotion is
+  carried here rather than the stronger claim: the leg carries `se_log = 0.029255` with an
+  influence-function excess kurtosis of `26.4` (effective df `7.04`), so `z = 1.288` against
+  the ceiling is one-sided `p(T₇) ≈ 0.12`. Leave-one-out shows the most favourable single
+  network deletion still leaves `B/C = 0.9938` above the ceiling, so no single network
+  rescues the model — but **one cell at `~1.3σ` is suggestive, not a falsification**. The
+  earned statement is: *a non-quadrature term of point size `≥ 3.84%` of arm C's MSE,
+  supported at `p ≈ 0.1`, one cell, mechanism candidate named — and that candidate has since
+  lost its lever (§5 above).*
+- **Three network families sit under one comparison [GAP, trace §4.5].** The kink-tail cell
+  ran on synthetic width-256 challenge-family networks (seeds 20260904–06); r0's constraints
+  came from synthetic He networks 101 / 202 / 303; the 129 cell's arms ran the deployed
+  estimator on burned Public100. **The transport identity was validated within the first
+  family only.** The settling check is the same cell run on a second family, and it is not
+  the cheapest check available.
+- **And the load-bearing number was never measured.** The degree-4 rung of the own-axis
+  ladder **does not exist** — the shipped ladder's degrees are `[6, 8, 12, 16, 24, 48]`, so
+  `λ_4`'s *realised capture at the readout* is an extrapolation of a four-rung-validated law.
+  The magnitude of mechanism I rests on one unmeasured number.
+
+**The cheapest discriminator, named with its predeclared prediction [R, trace §6, from
+`ULTRAMATH_SLATE` entry 8].** Add the degree-4 rung to the **already-built**
+`deg_ladder_own_axis_capture_v2` ladder (`deg4_rung_dual_carrier`). Cost is approximately
+zero — strictly cheaper than the rungs already consumed — and the instrument is at its **most**
+reliable there: `feature_reach_by_degree` runs `1.001` at degree 6 and falls monotonically
+with degree, so degree 4 gates ahead of every rung already run. **Predeclared prediction:
+`3.35x` the degree-six rung, with an exact null on a completed MUB-129 carrier since
+`A_4^B = 0` identically.** That single rung converts `λ_4` from a four-rung extrapolation
+into an observation and measures `E_4/E_6` on real networks, which is the one number the
+whole `2.81x` turns on. The fallback, if it comes back ambiguous, is r0 §8's specified and
+never-run `r2_measured_harmonic_spectrum` at ~10 minutes wall, single process, no GPU.
+
+#### 8. Where the fourth moment actually lives — the answer to the framing that opened this
+
+The question that started the lane was about central moments and the inference between them.
+The answer is that **the fourth moment governs the inference layer, at two removes from the
+score**, and never the point estimate **[R, `SYNTHESIS` §3, closing paragraph]**:
+
+1. **The precision of the standard error itself.** Effective degrees of freedom
+   `2n/(γ₂+2)` are `35.13` / `43.52` / `7.04` on the three legs, so every quoted `σ` carries
+   `±11%` on the A-legs and `±27%` on C/B. **"`2.83σ`" is `2.83 ± 0.31σ`.**
+2. **The plug-in `σ̂` at small `n`.** The `(κ−1)/(8n)` bias law is why the smoke's five-network
+   instrument was not an estimate of anything, and why the honour-window breach was an
+   instrument event rather than a physics event (§13's marked addendum, and §13d).
+3. **Berry–Esseen at `n = 100`** caps what any normal tail probability means on this channel:
+   the bound is `0.098` **[R, `THEORY` §5.4 — the one figure in this list the synthesis
+   carries in form only]** against a nominal `p` two orders of magnitude smaller. **`2.83` and
+   `3.44` are distances, not `p`-values**, and this document prints them as distances.
+
+The "inference between the elements" that moves the *point estimate* turns out to be a
+**first-moment** covariance, and §2 above shows it is mostly the pairing statistics of arm A's
+own lottery, with about one log point of genuine composition.
+
+#### 9. What §13c changes, and what it leaves exactly where it was
+
+**Changed.** §11b's open item is no longer "the conversion missed and we do not know where";
+it is "the conversion's `share4` slot is fed by a single producer whose shape is
+measurement-falsified, the correction's direction is second-signalled at `2.37x` against a
+demand of `2.44–2.83x`, and its magnitude waits on one rung that costs nothing to run."
+
+**Unchanged.** No score is claimed. No leg value transfers to the hosted board. The
+completion's verdict in §13b is untouched — none of this bears on whether 126 → 129 pays,
+because the completion leg is the one leg no share vector reaches. §13's four independent
+blocks on a designation move all stand. And the `2.83`/`3.44`-SE excess itself is **not an
+unclaimed accuracy lever**: it is already inside the measured score, both surviving repairs
+predict it reappears on fresh seeds, and re-claiming it would be double-counting **[R,
+`SYNTHESIS` §5.2]**. The one forward accuracy lever the synthesis identified — the arm-B
+re-phase — has since lost its named mechanism (§5 above), and this document does not carry
+it forward as a lever.
+
+---
+
+### 13d. The rung-2k instrument law [v1.4] — the methods result the failures paid for
+
+This section is the one result in this document that binds work outside this benchmark, and
+it was produced entirely by our own instruments breaking. Source:
+`core/CENTRAL_MOMENT_LADDER_20260819.md` §2, hostile-verified, zero billed compute; the
+arithmetic below was recomputed in this session under `python -B -P` in exact `Fraction` and
+IEEE-double arithmetic.
+
+**The law.**
+
+> **THE RUNG-2k LAW.** An estimator of a `k`-th central moment has sampling error governed by
+> central moments **up to `μ_2k`**. Measuring at rung `k` prices at rung `2k`.
+
+The exact statement, at leading order, for the `k`-th central-moment estimator on `n` i.i.d.
+observations:
+
+```
+Var( m̂_k ) = (1/n)( μ_{2k} − μ_k² − 2k μ_{k−1} μ_{k+1} + k² μ_2 μ_{k−1}² ) + O(1/n²)
+```
+
+Every term of order `2k` is present at leading order. There is **no version of this that
+depends on the estimator, the domain, or the sampling scheme**; it is an identity about
+central moments. Its rung-2 instance is the one this campaign needed three times and used
+zero times — exact at every `n ≥ 2`, with `κ = μ₄/μ₂²` the non-excess kurtosis:
+
+```
+Var(s²) = (1/n)[ μ₄ − ((n−3)/(n−1)) μ₂² ]           sd(s²)/σ² = √( (κ − (n−3)/(n−1)) / n )
+```
+
+**Every recorded instrument failure in this corpus is an instance, and they are ordered by
+`k` [D, the three cases; each is cited to its own record].**
+
+| # | instrument | rung reported | rung governing | what it cost |
+|---|---|---:|---:|---|
+| 1 | P2's `se_log` honour window (§13) | 2 | 4 | window missed by `3.71x`; a mechanical PASS not honoured, and a powered cell spent |
+| 2 | the log-ratio's skew (§13b, §13c) | 3 | 4 | the sign of the asymmetry is set by `(κ−1)·CV`, so a left-skew reading is available to be attributed to the wrong arm |
+| 3 | the sealed degree-6 zonal cell's noise premise (§14b, P2-E2) | 2 | 4 (`κ ≈ 2e4`) | "resolving at production scale" declared against an instrument its own predeclaration prices at `39%` relative noise |
+
+Failure 1 is worked in full at §13's marked addendum: at `n₀ = 5` the correction term
+`(n₀−3)/(n₀−1)` is exactly `1/2`, so under normality `sd(ŝ₅²)/σ² = √(1/2)` exactly, and the
+observed shortfall is a `1.31σ` event with no tail invoked. Failure 2 is a transform effect
+rather than a data effect: for a symmetric statistic with Gaussian kurtosis,
+`skew(log X) ≈ −3·CV`, so **the log of a positive statistic is left-skewed at order CV even
+when the statistic itself is exactly symmetric** — the derivation is checked against the
+lognormal case, where the exact answer is zero and the formula returns zero to leading
+order. Failure 3 is §14b.
+
+**PRESCRIPTION — binding on every future cell, and it binds at filing time rather than at
+verdict time.** Any cell whose gated or reported metric is a `k`-th-moment quantity must, in
+its predeclaration, do **one** of:
+
+1. **Predeclare a `2k`-th-moment estimate** with its source, and derive the honour window
+   from the exact finite-`n` formula above rather than from a point `1/√n` projection. The
+   window must be an **interval on `se`**, computed at the declared `κ` — not a target.
+2. **Declare an L-moment or robust fallback** as the gated statistic. L-moments have sampling
+   variance governed by the *second* moment of the order statistics regardless of `k`, so an
+   L-scale or L-skew gate escapes the ladder entirely. **This is the correct default when `κ`
+   is unknown**, which is the usual case.
+3. **Declare the instrument descriptive-only** and forfeit the gate.
+
+**A cell that does none of the three is INSTRUMENT-SUSPECT on filing, before it runs.** That
+is the whole force of the rule: the disposition P2 received *after* its run is one a
+predeclaration audit could have issued *before* it, at zero cost. Had the rule been in force,
+`frame_completion_129`'s honour rule would have been written against a `[0.005788, 0.031912]`
+window at `κ = 3` **[D, recomputed this session as
+`0.018850053050323227 · (1 ± 1.96·0.3535533905932738)`]**, and the cell would have been
+resized or its gate forfeited — either outcome strictly better than the one on file.
+*(One divergence from the source, named so a reader moving between the two does not hit a
+contradiction: the ladder's §2.6 words this counterfactual as "the PASS would have been
+honoured or the cell resized". Honouring was never reachable — the achieved `0.0705` misses
+even the corrected window's upper edge by `2.21x` **[D,
+`0.07054498655771349 / 0.031912`, recomputed this session]** — and §13's marked addendum
+carries the arithmetic. The ladder's own §2.3 figures agree with that arithmetic; the slip
+is confined to that one sentence of §2.6, and the source is cited, not edited.)*
+
+**The corollary, and the one exposure the ladder does not cover.** The deployed estimator's
+regime classifiers are `max`/`min` over pilot rows: **order statistics, not moments**. No
+moment predeclaration at any rung bounds their error, because their failure mode is a tail
+exceedance rather than a moment. The correct instrument there is an **exceedance bound at the
+declared `α`**, which the ladder supplies in closed form, and any future cell touching
+`dead_alpha`, `on_alpha`, `pilot_base` or `fold_pilot_base` must predeclare against that
+table and not against a variance. The ladder's own attack log records what that bound
+returns: at 2048 fold-pilot rows a nominal `on_alpha = 3.0` unit survives with probability
+`0.0629` and a nominal `dead_alpha = −2.0` unit stays dead with probability `3.4e-21`, so the
+**operative cut is `|α| ≈ 3.40` and is symmetric** — not the two nominal thresholds the
+disclosure names **[R, `CENTRAL_MOMENT_LADDER` §5, attack 4]**.
+
+**Why this is a contribution rather than a postmortem.** It is derived, not fitted; it is
+checkable in four lines of exact arithmetic; it names a *pre-run* audit that costs nothing;
+and it generalizes past this benchmark to any pre-registered gate on a variance, a standard
+error, a skew or a kurtosis — which is most gates. The campaign paid for it three times and
+did not have to.
+
+---
+
 ### 14. What this document does not claim
 
 - **No score.** Nothing here has been measured on the private suite, and the two
@@ -2296,6 +2970,149 @@ filed as §11b's open item rather than smoothed into agreement.
   so the three witnesses agree; none of them bounds a completion under a different score
   law or a different control stack.
 
+**Additions [v1.4], all arising from the moment lane.**
+
+- **No closure of the excess gain.** §13c locates it, refutes four mechanisms, and kills a
+  fifth. The one surviving candidate is **UNRESOLVED-BUT-NARROWED**: its direction is
+  `[D+O]` — an exact, measured-validated second law supplies `2.37x` against a demand of
+  `2.44x` (A→B) / `2.83x` (A→C) — and its **magnitude is `[GAP]`**, because the degree-4 rung
+  of the own-axis ladder was never run. Any reading of §13c as an accounting problem now
+  solved is a misreading of it.
+- **No claim that the kink profile replaces the mean-field spectrum.** Substituted whole it
+  overshoots by `3.1x`. What is carried forward is **one ratio**, grafted onto an unvalidated
+  tail, and it is labelled a hybrid wherever it appears.
+- **No claim that any share vector explains the completion leg.** `max_l (A_l^B/A_l^C) =
+  2816/2881` bounds the C→B forecast from above for **every** nonnegative share vector, and
+  the measurement sits `≥ 3.84%` past it. That short is also carried at its **demoted**
+  strength — `z = 1.288` on a leg with `7.04` effective degrees of freedom, one-sided
+  `p ≈ 0.12`, one cell — and not as the structural falsification the theory lane first wrote.
+- **No mechanism for the arm-B penalty.** Both surviving repairs demand `~4–5%` of
+  non-quadrature penalty on arm B, and the pilot/frame-0 candidate that named it has been
+  measured and does not carry it. The penalty is a **fitted residual with no mechanism**, and
+  this document does not carry the associated forward accuracy lever.
+- **No cross-family transfer of the kink-tail transport identity.** Three network families sit
+  under the one comparison (§13c), and the identity was validated within one of them.
+- **No MSE gain from either lawfulness move, and neither is a score claim.** The `λ → 1`
+  substitution **costs** `3.868e-4` of whatever MSE the tangent control removes, under a
+  labelled assumption; the radial reclassification changes **no number on the deployed path**,
+  because the branch it concerns is unreachable. Both are disclosure and lawfulness results.
+- **No re-honouring of P2's PASS.** §13's marked addendum diagnoses *why* the instrument
+  missed; it does not undo the disposition, which was filed against the achieved `se_log` and
+  stands. Re-earning the honour window remains a **new cell**.
+- **No explanation of the smoke's sign flip.** The two-anomaly reading (joint order `1e-4`)
+  sharpens the hypothesis from "small-`n` noise" to "a seed-`424242`-versus-seed-`0`
+  systematic". It does not settle it, and nothing in P2's cell discriminates the two.
+- **No claim that the rung-2k law is novel mathematics.** It is a textbook identity about
+  central moments. What is new here is the audit rule built on it, the observation that
+  **every** recorded instrument failure in this corpus is an instance of it, and the finding
+  that the prescription is a *pre-run* check available at zero cost (§13d).
+
+---
+
+### 14b. Erratum register [v1.4]
+
+Phase-1 carries errata `E1`–`E13`, all still in force. This register opens a **Phase-2
+series**, numbered `P2-E<n>` so the two do not collide. Its entries follow the corpus's
+append-only rule: **the documents they correct are cited and not edited.** For the filed
+Phase-1 short form that is not a choice — it was sent on 2026-08-17 and cannot be amended —
+and for the rest it is the convention, because a corpus that silently rewrites its own
+propagated claims gives a reader no way to judge how well it catches them.
+
+#### P2-E1 — the "degree 4 (11% of iid) / degree 6 (40%)" pair is object-mismatched
+
+**The claim, as it propagates.** The sentence "the measured angular error sits at degree 4
+(11% of the iid level) and degree 6 (40%)" appears in **five committed documents**:
+`core/PHASE1_WRITEUP_DRAFT_20260808.md`, `core/PHASE1_WRITEUP_SHORT_20260817.md` (the filed
+short form), `core/SECTION_DESIGN_AXIS_CLOSURE_20260812.md`,
+`core/HANDOFF_CODEX_SOL_20260808.md`, and `core/GEN4_CLOSING_20260808.md`. It is read
+throughout the corpus — including in §11 of this document, where m191's `~9.1x` is one of the
+three unreconciled quantifications of the degree-4 suppression — as a **measurement of the
+design's per-degree defects**.
+
+**What was actually measured [R, `core/DEG4_ENERGY_SHARE_TRACE_20260819.md` §2.1, from a
+source read of `experiments/pb1_premise_battery/run_m191_g0a.py`].** The probe is
+`p = t⁶ − 15/(N(N+2)(N+4))`, normalised to unit **sample** variance, with the error compared
+against `1/√M` at `M = 64,512`. Three mismatches, each independently disqualifying:
+
+1. **`t⁶` is not a degree-6 harmonic.** It decomposes as `H_6 ⊕ H_4 ⊕ H_2 ⊕ H_0`, and the
+   subtracted constant removes `H_0` **only**. The `H_4` component survives and is suppressed
+   `42x`; `H_2` survives and is annihilated exactly. The reported ratio is therefore a
+   **mixture statistic** weighted by the polynomial's own energy split — not `A_6`.
+2. **The comparator is the wrong one by a factor of two in variance.** It is `1/√64512`
+   rather than `1/√32256`: antipodal doubling leaves `A_l` unchanged at even `l` while halving
+   the iid variance, so the comparator is `2x` stricter than the `N·λ_top` convention the
+   corpus's exact census uses.
+3. **The exact answer is committed and disagrees.** A genuinely Haar-random `H_6` function
+   gives `haar_H6_design_over_iid_rms = 1.0150297289025836` — i.e. **`101.5%`**, not `40%`.
+   The measured `40%` is **`6.4x` below the exact value in variance**.
+
+**The correction.** The "11% / 40%" pair is **not** an independent measurement of the design's
+per-degree defects and is **not evidence about `share4` in either direction**. The exact
+per-degree defect law is §11's closed form and §11b's dyadic tax, both in exact rational
+arithmetic with four independent anchors, and that is where a reader should take the
+degree-4 suppression from — `128/3` exactly, not `~9.1x`. r0 was right to build its share
+table from the exact census rather than from m191 **[R, trace §1.3]**.
+
+**What moves in this document, and what does not.** §11's list of "three unreconciled
+quantifications" (m191 `~9.1x`, `m81_full129_pareto` `~21x`, the exact `128/3` = `42.7x`) is
+**retained as filed**, because it is the record of what was believed when P2's band was
+widened, and the widening was the right call on the information then available. What P2-E1
+adds is that the first of the three was never a measurement of that object. This does **not**
+retroactively narrow the pre-registered band: the band was filed before the data existed,
+which is the only property that made it worth filing, and §11b has already retired the
+three-way framing by measurement in any case. **The five documents are cited and not
+edited.**
+
+#### P2-E2 — the sealed degree-6 zonal cell's predeclaration refutes its own resolution premise
+
+**The record [R, `cells/deg6_own_axis_zonal_capture_v1/predeclaration.json`, quoted in
+`core/CENTRAL_MOMENT_LADDER_20260819.md` §2.5].** The judge's smoke read the instruments
+"noise-dominated (ratio 0.758, feature norm 0.734) — consistent with the documented
+heavy-tail (**kurtosis of order 2e4**) at toy sample counts, **resolving at production
+scale**." Disclosed sizes: designer quarter-scale pilot `8192`, halves `32768`, gradients
+`4096`.
+
+**The self-refutation, in one line of the rung-2k law (§13d).** The instrument that reads
+noise-dominated is a **mean squared zonal feature** — a *second* moment. The `κ ≈ 2e4` the
+same sentence cites is a *fourth* moment. Rung 2 measured, rung 4 governing. At `κ = 2e4` the
+relative standard deviation of that second-moment readout is `√((κ−1)/n)` **[D, the table
+recomputed this session]**:
+
+```
+n =   4,096  →  221%          n required for 10% rel-sd  =  1,999,900
+n =   8,192  →  156%          i.e. 15.3x beyond a four-fold scale-up
+n =  32,768  →   78%               of the disclosed halves (32,768 → 131,072)
+n = 131,072  →   39%
+```
+
+**A four-fold scale-up of the disclosed halves lands the instrument at `39%` relative
+standard deviation, not at a resolved reading.** The predeclaration's own kurtosis figure is
+what refutes its own resolution premise, and it did so **before the cell ran** — which is the
+entire point of §13d's prescription: this is a *pre-run* audit, available at zero cost from
+numbers the predeclaration itself discloses.
+
+**The limits of this erratum, stated because they are real [GAP, carried from the ladder's
+own ledger].** The arithmetic above is conditional on the **disclosed quarter-scale counts**;
+the cell's *production* sample counts were never read, and the settling check is one look at
+`cells/deg6_own_axis_zonal_capture_v1/spec.json` at zero cost. Nor does this erratum touch
+that cell's **reported result**, which §6 carries at `[O]` and which this document does not
+withdraw: `ρ_own = 0.001872` with per-seed `[0.00177, 0.00208, 0.00176]` against a
+resolvable-at-3sd threshold of `0.00049`. The nearest available check on the `39%` prediction
+is that cell's own between-seed dispersion, which is `9.73%` **[D, recomputed this session
+from the three per-seed values]** — but that figure is **itself a rung-2 read at `n = 3`**,
+where the exact law gives `sd(s²)/σ² = 1.0` under normality, a `±100%` one-sigma band on the
+variance scale and `±50%` on the SD scale. It therefore neither confirms nor refutes the
+prediction, which is the law biting a third time in the act of trying to check it.
+
+**What it is registered as: a standing warning, not a withdrawal.** A cell whose own
+predeclaration carries the number that refutes its resolution premise should **not be run
+behind a sealed gate** until that premise is repaired, because a sealed gate converts an
+unresolved instrument into a mechanical verdict and verdicts in this corpus are one-shot.
+Under §13d's prescription such a cell is **INSTRUMENT-SUSPECT on filing**, and the repair is
+one of the three declared branches — a rung-4 predeclaration, an L-moment gate, or a
+descriptive-only declaration. This is the same failure P2 paid for at §13, one rung down and
+one cell earlier.
+
 ---
 
 ### 15. Reproduction and provenance
@@ -2410,6 +3227,88 @@ section — in particular anything derived from a `full.json` — must carry **"
 round-4 bill repair re-run"**, because the cost model that produced those numbers was
 wrong in both directions. No such number is present in it, and §10b is where this
 document says the same thing about its own.
+
+**Three lawfulness results land on that disclosure [v1.4].** Source:
+`core/CENTRAL_MOMENT_LADDER_20260819.md` §3–§4, hostile-verified, zero billed compute,
+verdict `lawful_construction_verdict = CLOSED-BY-DERIVATION`. An addendum has been appended
+to the disclosure document itself; what belongs in the manuscript is the consequence for
+what we declare. **None of the three is a score claim, and §14 says so in its own words.**
+
+1. **The correction path's only fitted scalar can be replaced by a theorem-fixed value, and
+   the declared surface would go from six scalars to five at a FLOP saving.** The deployed
+   control subtracts `λ · delta_mean`, where `delta_mean` is the image of `(Δμ, Δv)` under
+   the **exact first-order tangent** of the analytic Gaussian map. Because that image is
+   exact, the control is **exactly unbiased for every `λ`, on every network** — `λ` is a
+   **pure variance knob** and contributes zero bias by construction. The only value any
+   theorem in play fixes is `λ = 1`; every other value is a variance-minimising choice that
+   must be estimated from data, which is fitted, which is dead under the death law of §3.
+   Substituting `1` for the deployed `0.9807112198896164` **removes the `row_blocked` host's
+   only fitted scalar in the correction path**, takes the declared fitted surface from **six
+   scalars to five**, and **saves `256` FLOPs** (`ΔC/C = −1.151e-09` — the width-256 multiply
+   disappears). Its exact cost is `(1 − λ)²/λ² = 3.8683631417925867e-4` of whatever MSE the
+   tangent control removes **[D, recomputed this session]**, under the labelled assumption
+   that the frozen `λ` sits at the optimum `λ*` **[A; settling check: one offline `λ`-sweep
+   over the stored tangent and sampled arms, no forwards]**. The control's realised MSE share
+   is **[GAP]**, with a named ablation at `moment_tangent_lambda = 0.0` on the stored panel.
+   **Stated exactly: the deployed surface is six, and five is what it becomes if the
+   substitution is adopted.** It is not adopted here, and no number in this document assumes
+   it.
+2. **The radial branch's four constants are theorem-fixed exact rationals, by two
+   independent routes, and are reclassified out of lawfulness limbo.** The committed
+   disclosure lists them as "present in the source, unreachable on this host", identifies
+   `257.0` and `66563.0` as moments of "a chi-square at 257 degrees of freedom", and
+   explicitly **declines to classify the branch's lawfulness**. The classification is
+   available in closed form and the attribution is off by one step:
+
+   - **Route 1 — the centring constants are `R`-tilted orthogonality centres at `d = 256`.**
+     From `E[R^{k+2}]/E[R^k] = d + k`: `E[R³]/E[R] = 257` and `E[R⁵]/E[R] = 257·259 = 66563`
+     **[D, re-derived this session]**. So `q₁ = S − 257` and `q₂ = S² − 66563` are exactly
+     orthogonal **to `R`**, not to `1` — which is precisely the tilting that makes a
+     *multiplicative* weight `w(S) = 1 + a q₁ + b q₂` unbiased for **every one-homogeneous
+     integrand and every `(a, b)`**. A bias-free ReLU network is one-homogeneous, so that is
+     the right orthogonality to impose.
+   - **Route 2 — with unbiasedness automatic, `(a, b)` are the exact rational minimiser of a
+     variance whose normal equations have integer coefficients** (all `χ²` raw moments are
+     integers), so the minimiser must be rational. Solved in exact `Fraction` arithmetic it
+     returns `a = −2600/537689` and `b = 3/537689` — **exactly the deployed literals**
+     `2600.0/537689.0` and `3.0/537689.0`. Re-derived independently in this session from the
+     raw `χ²` moments at `d = 256`: **both match exactly**, and `E[w²S]/E[S] = 536640/537689`
+     reproduces as an exact rational **[D, this session, `python -B -P`, `Fraction`]**.
+
+   **The four literals are therefore lawful under the death law's own criterion —
+   theorem-fixed, not a fitted surface.** They are also strictly dominated: the branch's own
+   optimum reduces radial variance by a factor of about `7.17e3`, while the deployed
+   `radial_conditioning = True` sets radial variance to **exactly zero**. The design is closed
+   at both ends of that axis. Recorded with the attack that produced it: the first hypothesis
+   — raw `χ²_257` moments under the one-homogeneous unbiasedness constraint
+   `a + (2d+3)b = 0` — predicts `a/b = −517` against the deployed `−866.67`, a clean
+   falsification, and correcting it to the `R`-tilted reading at `d = 256` is what made the
+   exact match possible.
+3. **The `k`-statistic construction is CLOSED-BY-DERIVATION, and two of its three candidates
+   close at identically zero.** (i) The exact finite-`n` unbiasing of the squared-deviation
+   mean buys **`0`**: the deployed code centres on the **exact analytic mean**, not the sample
+   mean, so `first_variance_residual` is already the *known-mean* central second moment, which
+   is unbiased at every `n` — the `n/(n−1)` factor multiplies an object this estimator never
+   forms. (ii) `μ₄`-aware weighting of direction contributions buys **`0`**: the 256
+   directions are exchangeable within each frame and the 126 frames are i.i.d., so
+   `Var(Σ w_i Y_i) = c + (v − c) Σ w_i²` is minimised at `w_i = 1/N` **exactly** whenever
+   `v > c`, and the margin is exactly known (`c/v = Q_4(0) = 1/21845` at degree 4). The
+   deployed plain mean already applies that weight, and once `radial_conditioning` fixes the
+   only rotation-invariant covariate the admissible weight space has **zero free dimensions**.
+   (iii) Per-channel `λ` splits and a third central-moment control are priced exactly
+   (`ΔC/C = 3.6468e-5` and `1.8502e-4`) and are dead on lawfulness before the price matters —
+   and independently rank-deficient, because all first-layer moment controls are zonal about
+   the **same** axis, so the moment ladder spans a one-dimensional subspace per neuron at
+   every degree.
+
+**Why this belongs in a criterion-(iii) discussion rather than in a results section.** Rules
+v12 §6 criterion (iii) asks how easily a reader can determine the contribution's actual
+performance impact from the code and the writeup together. Two of the three results above
+change what the writeup must *declare* — one fitted scalar has a lawful theorem-fixed
+substitute, and four literals previously left unclassified are provably not fitted — and
+none of them changes a measured number on the deployed path. That is the correct shape for a
+disclosure result, and it is why they are recorded here and in the disclosure's own addendum
+rather than as findings.
 
 **The P2 reproduction block [v1.3] — how to check the 129 cell without trusting either
 the runner or this document.** Every P2 figure printed in §11b, §13 and §13b was
@@ -2702,3 +3601,172 @@ the small leg and the losing one. The single result that came out **stronger** t
 is the one nobody was testing: the design-quality leg, free at identical billed rows. A
 document whose predictions all landed would be evidence of a weak filing discipline; this
 is what the other case looks like when it is written down instead of smoothed.
+
+**The v1.4 reproduction block — what this session recomputed, and what it did not.** Zero
+billed compute, zero harness runs, zero estimator execution, no seed consumed. All
+arithmetic under `python -B -P` with `PYTHONDONTWRITEBYTECODE=1` in the session scratchpad,
+in exact `fractions.Fraction` where the object is rational and IEEE-double where it is not.
+Every figure below was **recomputed here**; everything else in §13c, §13d, §14b and §15's
+lawfulness block is tagged `[R]` against one of the five source documents and was not
+re-derived.
+
+```
+recomputed this session (exact / double, no artifact re-run):
+
+  rung-2 window law
+    sd(s^2)/sigma^2 at n=5, kappa=3      = sqrt(Fraction(1,2))  = 0.7071067811865476
+    sd(s)/sigma                          = 0.3535533905932738
+    implied pilot SD  0.0843*sqrt(5)     = 0.1885005305032323
+    realised prod SD  0.070545*sqrt(100) = 0.7054498655771348
+    ratio (SD / variance scale)          = 3.742429 / 14.005775
+    relative shortfall of s5^2           = 0.9286008825652166
+    shortfall in sigma units             = 1.313239962155355      <- the 1.31-sigma event
+    kappa making it a 1-sd draw          = 4.811497995504496
+    overshoot vs 0.03 / vs 0.019         = 2.351499551923783 / 3.712894029353342
+    kappa=3 honour window that should
+      have been filed                    = [0.005788, 0.031912]
+
+  deg-4 share correction
+    kink   lam_4^2 / lam_6^2             = 3.3470557784401787
+    mean-field a_4 / a_6                 = 1.40995812005584
+    correction factor                    = 2.3738689332897502
+    log gaps  A->B / A->C                = 0.209154 / 0.251974
+    closure at share4 = 1.061%           = 96.07% (A->B) / 77.30% (A->C)
+    share4 multiple of committed         = 2.3594x
+    kink-vs-measured deviation, gated
+      rungs, measured-denominator        = 3.1% .. 16.3%   (17.3% incl. ungated deg 24)
+      exact-denominator (section 5's)    = 3.2% .. 14.0%
+    mean-field misses at the readout     = +65.6% .. +620.6%
+
+  C->B structural short
+    2816/2881                            = 0.9774383894481083
+    1.0149700854688666 / bound           = 1.038398017129192   -> short by >= 3.84%
+
+  mechanism-II kill, the two arithmetic legs
+    control / effect on the S7 statistic = 64/74 = 0.8648648648648649   -> 86%
+    Hadamard vs Haar detector            = 3.0495/3.0512 = 0.9994428421604614
+
+  arm-A location of the miss
+    -0.250441 + -0.001533                = -0.251974              (identity closes)
+    arm-A share of the A->C miss         = 99.39160%
+    -0.250441 + +0.041287                = -0.209154              (identity closes)
+    arm-A share of the A->B miss         = 119.740%
+
+  deg-6 cell self-refutation (P2-E2)
+    rel-sd sqrt((2e4-1)/n): 4096 221%, 8192 156%, 32768 78%, 131072 39%
+    n for a 10% instrument               = 1,999,900   (15.26x a four-fold scale-up)
+    that cell's own 3-seed dispersion    = 9.73%, itself a rung-2 read at n=3
+      (exact law at n=3, kappa=3: sd(s^2)/sigma^2 = 1.0 -- a +-100% band)
+
+  radial branch constants, exact Fraction from the raw chi-square moments at d=256
+    E[S^k], k=0..5   = 1, 256, 66048, 17172480, 4499189760, 1187786096640
+    E[R^3]/E[R]      = d+1        = 257                      == deployed literal
+    E[R^5]/E[R]      = (d+1)(d+3) = 66563                     == deployed literal
+    2x2 normal-equation solve  ->  a = -2600/537689, b = 3/537689    MATCH: True
+    E[w^2 S]/E[S]    = 536640/537689 = 0.9980490580986406     exact rational
+    radial variance reduction of that optimum ~ 7.17e3; deployed switch achieves 0
+
+  lambda -> 1 lawfulness move
+    (1-lambda)^2/lambda^2                = 3.8683631417925867e-4
+    (1-lambda)^2                         = 3.720570381467298e-4
+```
+
+**Deliberately not re-derived here, named so the gaps are visible [GAP].** The synthesis's
+fitted lognormal pairing null and its 4,000-replicate reproduction of the eight tail
+signatures; the theory lane's calibrated-lottery quantiles and the `1e-4` joint-anomaly
+figure; the S7 probe's per-network counts, its `24/24` digit-exact FLOP replay, and its
+`n = 2,048` paired detector; the trace's one-ulp reproduction of the three forecast legs and
+two implied shares; and the effective-degrees-of-freedom figures. All five source documents
+were independently hostile-verified before this integration, each with its own re-derivation
+recorded in the channel, and this document carries their figures at `[R]` rather than
+restating them as observations of its own.
+
+**What v1.4 changed, in the same spirit.** Nothing in v1.3 was deleted. Five committed
+investigations propagated into eight places, and every edit is an addition or a marked
+correction sitting next to the text it corrects.
+
+1. **Front matter and §0** — the centre of mass moved from "the prediction ran and reversed"
+   to "the reversal's one open item was taken apart, and it is now located rather than
+   closed." The v1.3 status block is retained verbatim under a banner. §0's reading order
+   gains two items, `0b` (§13c) at the top and `5` (§13d) at the bottom, and §0 gains a
+   forward pointer to the second Phase-1 erratum.
+2. **§13c — new section, the excess-gain resolution.** The `2.83`/`3.44`-SE miss is a
+   **first-moment, arm-A-located** forecast error carrying `99.39%` of the A→C gap and
+   `119.7%` of the A→B gap. Four mechanisms are refuted with their evidence — tail deletion
+   (`k = 1`, `E[F] = 1`, and two purpose-built detectors returning `0.735` points against an
+   `8.66`-point ceiling and `+0.045` against a `+0.15` threshold), cross-degree covariance
+   (**exactly zero** by Schur, with the first live term at order 4 suppressed `4.999e-07`),
+   the instrument's higher moments, and sampling luck. Two provenance items close bit-exact:
+   `se_log = 0.0705` is the score_flop channel to all 17 digits, and `v126k` predates the
+   cell by eleven days, which kills the circularity attack on arm C's `−0.15%`.
+3. **§13c §5 — mechanism II killed four independent ways.** The within-family control
+   reproduces `86%` of the effect and is the *highest* of the three decision-level
+   disagreement rates; the lever measures `×0.9994` synthetically and `t = −0.279 / +0.450`
+   on `2,048` paired columns; Parseval pins every orthonormal pilot to identical detection
+   energy; and two code reads (the per-network Haar rotation in all three arms, and the ReLU
+   applied before the rescue test) close it structurally. The probe's fidelity is
+   `flops_used` digit-exact on `24/24` arm×network cells. Its own honest bound — `n = 8`, CI
+   `[−4.67, +23.17]` — is carried, and so is the consequence: the `4–5%` arm-B penalty both
+   repairs demand **loses its only named mechanism**, and this document does not carry the
+   forward lever that rested on it.
+4. **§13c §6–§7 — mechanism I, UNRESOLVED-BUT-NARROWED.** No carrier-indexing error (three
+   forecast legs and two implied shares reproduce to **one ulp**), but the `0.4497%` share
+   has a single producer whose shape is **measurement-falsified at the readout** by §5's own
+   sealed-gate cell — `+65.6%` to `+620.6%` off, where the exact kink tail matches to
+   `3.1–16.3%`. Replacing one ratio (`3.3471` for `1.4100`) gives `share4 = 1.061%` and closes
+   `96.1%` / `77.3%` of the two log gaps. Three caveats are carried verbatim: the correction
+   is an explicitly-labelled **hybrid** (the whole profile overshoots `3.1x`), the C→B
+   **`≥ 3.84%` structural short** is unreachable by any nonnegative share vector *and* is
+   carried at its demoted `p ≈ 0.12` strength, and **three network families** sit under one
+   comparison. The cheapest discriminator is named with its predeclared prediction: the
+   degree-4 rung of the existing ladder, cost approximately zero, `3.35x` the degree-six rung.
+5. **§13d — new section, the rung-2k instrument law.** An estimator of a `k`-th central
+   moment has sampling error governed by moments up to `μ_2k`; all three recorded instrument
+   failures are instances ordered by `k`; and the prescription — predeclare at rung `2k`, or
+   gate on an L-moment, or file descriptive-only — makes a cell **INSTRUMENT-SUSPECT on
+   filing** rather than after it disappoints. The order-statistic corollary is carried for the
+   regime classifiers, whose operative cut is `|α| ≈ 3.40` rather than the two nominal
+   thresholds the disclosure names.
+6. **§13 — marked addendum to the disposition, which does not move.** INSTRUMENT-SUSPECT
+   stands as pre-registered. What is added is the cause: the `[0.019, 0.03]` window was
+   **unearnable from a five-network pilot** in closed form before the run, because the
+   relative standard deviation of a variance at `n = 5` is exactly `1/√2` under normality, so
+   the `3.71x` miss is a `1.31σ` event with **no heavy tail invoked**. The failure is a rung-2
+   calibration error in the window, not a property of the data. The window that should have
+   been filed is `[0.005788, 0.031912]`. And the smoke is re-read: two anomalies rather than
+   one — a below-5th-percentile dispersion draw *and* a `5.27`-SE location draw — joint
+   probability of order `1e-4`, which favours a **seed-`424242`-versus-seed-`0` systematic**
+   over luck without settling it.
+7. **§11b — marked addendum to the open item**, confirming its re-filing and aiming it one
+   step upstream: the conversion needs revision and the defect law does not, the defect is in
+   a single slot, and the settling check named there is still valid but no longer the
+   cheapest.
+8. **§14, §14b, §15 — nine new claim boundaries, a new erratum register, and the lawfulness
+   moves.** `P2-E1` records the object-mismatched "degree 4 (11%) / degree 6 (40%)" pair that
+   five committed documents propagate — `t⁶` is not a degree-6 harmonic, the comparator is
+   `2x` strict, and the exact Haar answer is `101.5%` rather than `40%` — and cites them
+   without editing them. `P2-E2` records the sealed degree-6 cell's pre-run self-refutation
+   as a standing warning, with its own limits named. §15 carries the three lawfulness
+   results: `moment_tangent_lambda → 1` is theorem-fixed (the control is exactly unbiased for
+   every `λ`, so `λ` is a pure variance knob) and would take the declared surface from six
+   scalars to five at a `256`-FLOP saving; the radial branch's four literals are exact
+   rationals forced by two independent routes and are reclassified as lawful; and the
+   `k`-statistic construction is **CLOSED-BY-DERIVATION** with two of three candidates at
+   identically zero.
+
+**The pattern worth naming for this revision, and it is a third one.** v1.2's corrections
+were mostly to prose and v1.3's were mostly to expectations. v1.4's are mostly to
+**instruments** — the objects that decide what a measurement is worth. A window that could
+not have been earned by the pilot that sized it. A share vector with one producer and no
+independent validation. A detection lever that Parseval forbids. Two percentages, propagated
+through five documents, that measure a different object than the sentence carrying them says.
+A predeclaration that contains the number refuting its own resolution premise. Not one of
+these is a wrong measurement; every one of them is a **correct number pointed at the wrong
+object**, which is the failure mode this corpus has caught last and least. It is also why
+§13d is the one section here whose statement contains nothing about this benchmark: the
+rung-2k law is an identity about central moments, and its prescription binds any
+pre-registered gate on a variance, a standard error, a skew or a kurtosis. The one result
+that came out **stronger** is again the one nobody was arguing about: the exact
+mathematics. Every closed form held — the defect law, the dyadic tax, Schur's diagonality,
+the radial constants, the finite-`n` sampling law. What failed, every time, was the step from
+an exact object to a claim about a measured one.

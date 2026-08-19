@@ -296,3 +296,196 @@ and degree-3 exact by construction and carrying the full i.i.d. degree-4 error.
   or to `experiments/row_blocked_production/candidate_source/`. It re-greps every
   declared scalar against source, checks the MRO resolution, and fails on any
   numeric literal in the fitted surface that this document does not declare.
+
+---
+
+## ADDENDUM [2026-08-19] — the lawfulness classification this section declined to make
+
+**Status:** appended 2026-08-19, append-only. **Nothing above is rewritten**; every
+statement in the section as first drafted stands where it was written, and this
+addendum sits beside the two places it bears on. Source:
+`core/CENTRAL_MOMENT_LADDER_20260819.md` §3–§4 (inferential/constructive lane,
+hostile-verified, verdict `lawful_construction_verdict = CLOSED-BY-DERIVATION`), whose
+arithmetic was re-derived independently in exact `fractions.Fraction` under
+`python -B -P` before this addendum was written. Cross-referenced from
+`core/PHASE2_CONTRIBUTION_DRAFT_20260819.md` §15 (draft v1.4). Zero billed compute; no
+estimator import, no harness run, no seed consumed.
+
+**What this addendum does and does not do.** It changes **no value in any table above**,
+adds **no literal** to the deployed path, and asserts **no performance number**. The
+deployed fitted surface is still what the section claims: **six scalars**, one boolean
+switch, one structural integer. What changes is the *classification* of two surfaces the
+section left unclassified or classified one step off, and the closure of a construction
+question the section did not open. All three are criterion-(iii) results — they change
+what a reader must be told, not what the code computes.
+
+### A1. The radial-reweight branch's four literals are theorem-fixed, not a fitted surface
+
+The section lists that branch under *present in the source, unreachable on this host*,
+declines to classify its lawfulness — "their classification belongs to the
+randomized-radial lineage's own disclosure, not to this one" — and identifies `257.0`
+and `66563.0 = 257 × 259` as moments of a chi-square at 257 degrees of freedom. **The
+integers are right and the object they centre is one step off, and that step is the
+whole classification.**
+
+At `d = 256`, with `S = ‖z‖²` and `R = ‖z‖`, the chi moment-ratio identity
+`E[R^{k+2}]/E[R^k] = d + k` gives [D, re-derived this session in exact `Fraction`
+arithmetic from the integer raw moments `E[S^k] = d(d+2)…(d+2k−2)`]:
+
+```
+E[R³]/E[R] = d + 1         = 257
+E[R⁵]/E[R] = (d+1)(d+3)    = 257 × 259 = 66563
+```
+
+So `q₁ = S − 257` and `q₂ = S² − 66563` are exactly orthogonal **to `R`**, not to `1`:
+`E[q₁R] = E[q₂R] = 0` identically. That is precisely the tilting that makes the
+*multiplicative* weight `w(S) = 1 + a·q₁ + b·q₂` unbiased for **every one-homogeneous
+integrand and every `(a, b)`** — and a bias-free ReLU network is positively
+one-homogeneous, which the "What is forced" section above already relies on for the
+exact radial identity. These are therefore the right centres for this host's own
+geometry, and not a reweighting toward a radial law belonging to some other lineage.
+
+With unbiasedness automatic for every `(a, b)`, the pair is free to minimise
+`Var(w(S)·R) = E[w²S] − E[R]²`. Every `χ²` raw moment is an integer, so the normal
+equations have integer coefficients and the minimiser is **rational**. Solved exactly
+[D, this session]:
+
+```
+a = −2600/537689        b = 3/537689        <- the deployed literals, exactly
+E[w²S]/E[S] = 536640/537689 = 0.9980490580986406      (exact rational)
+```
+
+**Classification, stated plainly.** The four literals are **theorem-fixed** — closed
+forms and exact rationals forced by the dimension — and are therefore lawful under the
+death law's own criterion, which admits theorem-fixed coefficients and rejects fitted
+ones. They are not a fitted surface, and this addendum retracts the section's declining
+to classify them rather than its description of them.
+
+**They are also strictly dominated, which is why nothing follows for the deployed
+path.** That optimum reduces the radial variance by a factor of roughly `7.17e3`, while
+the deployed switch `radial_conditioning = True` sets the radial variance to **exactly
+zero**. The branch is both lawful and worse than the branch that runs. The design is
+closed at both ends of that axis and there is nothing to construct on it.
+
+**The attack that produced this, recorded because it landed.** The first hypothesis
+tested was that the weights satisfy the one-homogeneous unbiasedness constraint
+`a + (2d+3)b = 0` against raw `χ²_257` moments. That predicts `a/b = −517` (and `−515`
+/ `−519` at `d = 256` / `258`) against the deployed `−866.666…` — a clean falsification.
+Correcting the reading to `R`-tilted centres at `d = 256` is what made the exact match
+above possible, and it is the reason the section's own attribution needed a step added
+rather than a number changed.
+
+### A2. `moment_tangent_lambda` has a theorem-fixed substitute, and the surface would become five
+
+The section declares `moment_tangent_lambda = 0.9807112198896164` as one of the six
+selected scalars, and that declaration is correct as deployed. Two facts about it were
+not available when the section was written.
+
+**First, the coefficient is a pure variance knob and carries exactly zero bias.** The
+control subtracts `λ · delta_mean`, where `delta_mean` is the image of `(Δμ, Δv)` under
+the **exact first-order tangent** of the analytic Gaussian map. Because that image is
+exact rather than approximate, the control is **exactly unbiased for every `λ`, on every
+network** — `λ` cannot move the estimate's bias at all, only its variance:
+
+```
+Var(M̂ − λΔ) = Var(M̂)(1 − ρ²) + Var(Δ)·(λ − λ*)² ,    λ* = Cov(M̂, Δ)/Var(Δ)
+```
+
+**Second, the only value any theorem fixes is `1`.** Every other value is a
+variance-minimising choice that has to be estimated from data — fitted, and therefore
+dead under the death law. Substituting the theorem-fixed `1` for the deployed constant
+would **remove this host's only fitted scalar in the correction path**, taking the
+declared surface from **six scalars** to five, and would **save 256 FLOPs** (the
+width-256 multiply disappears; `ΔC/C = −1.151e-09`). Its exact cost:
+
+```
+(1 − λ)²/λ² = 3.8683631417925867e-04     of the MSE the tangent control removes
+(1 − λ)²    = 3.7205703814672980e-04
+```
+
+[D, both recomputed this session] under the labelled assumption that the frozen `λ` sits
+at the optimum `λ*` [A]. **Settling check:** one offline `λ`-sweep over the stored
+tangent and the sampled arms — no forward passes. The control's realised share of the
+MSE is not measured in any artifact read for this addendum [GAP]; **settling check:** one
+ablation at `moment_tangent_lambda = 0.0` against the deployed value on the stored panel,
+whose ratio is the share.
+
+**No closed form for the deployed constant was found** [O]. Seven candidates were
+scanned — `E[R]²/d = 0.9980488`, `(d−1)/d`, `√(E[R]²/d)`, `126/128.478`, `1 − 1/51.845`,
+`1 − 2/103.7` among them — with a nearest miss of `1.43e-6`, which is not a match at 16
+digits. **The constant stays classified as fitted**, exactly as this section has it, and
+the substitution above is offered as the lawful alternative rather than as a
+rediscovery.
+
+**Stated exactly, because the distinction is the whole point of this section.** The
+deployed surface **is** six scalars. Five is what it becomes **if** the substitution is
+adopted. It is not adopted here, and no statement in this document assumes it. **Forward
+clause:** if it is ever adopted, this addendum's declaration must move into the tables
+above in the same edit — `moment_tangent_lambda` leaves the selected-scalar table, the
+count in the section heading and in "What we claim, precisely" changes, and
+`core/verify_row_blocked_disclosure.py` must be updated in the same commit, since it
+asserts both the constant's resolved value and the word "six" against this file.
+
+### A3. The `k`-statistic construction question is closed by derivation on this host
+
+The section enumerates what was selected; it does not ask whether the variance-side
+arithmetic could be improved by lawful machinery. Three candidates were priced, and two
+close at identically zero [all D, exact]:
+
+- **Exact finite-`n` unbiasing of the squared-deviation mean — closes at `0`.** The
+  `n/(n−1)` factor corrects a sample-mean-centred second moment. The deployed code does
+  not form one: it centres on the **exact analytic mean**, so `first_variance_residual`
+  is already the *known-mean* central second moment, whose bias is exactly `0` at every
+  `n` rather than `O(1/n)`. The correction multiplies an object this estimator never
+  builds. Cost `0` FLOPs, benefit `0` MSE.
+- **`μ₄`-aware weighting of direction contributions — closes at `0`.** Within one frame
+  the 256 directions are exchangeable, and the 126 frames are drawn independently, so for
+  weights summing to one, `Var(Σ wᵢYᵢ) = c + (v − c)·Σ wᵢ²` within a frame, which is
+  minimised at `wᵢ = 1/N` **exactly** whenever `v > c` — and the margin is exactly known,
+  `c/v = Q₄(0) = 1/21845` at degree 4. The deployed plain mean over all `2 × 126 × 256`
+  rows already applies that weight. More sharply: any admissible weight must be
+  measurable with respect to an observable rotation-invariant covariate, the only one is
+  the radius, and `radial_conditioning = True` fixes the radius exactly. **The weight
+  space has zero free dimensions on this host.**
+- **More control channels, or per-channel coefficients — unlawful, or identical.**
+  Splitting `λ` per input channel costs `8,110,592` extra FLOPs (`ΔC/C = 3.6468e-5`) and
+  adding a third central-moment control costs `41,148,672` (`ΔC/C = 1.8502e-4`). Both are
+  dead before the price matters: the only coefficient any theorem fixes is `1` on every
+  channel, and `(1, 1)` is arithmetically the deployed single-`λ` structure. They are
+  also rank-deficient — the first-layer moment ladder `Δμ, Δv, Δ₃, …` consists of
+  functions of `t = u·wⱼ` alone, all zonal about the **same** axis, so their degree-`l`
+  projections are scalar multiples of one zonal harmonic and the ladder spans a
+  one-dimensional subspace per neuron at every degree.
+
+**The consequence for this section is a negative one and belongs in it for that reason:**
+there is no lawful variance-side construction available on this host that the deployed
+arithmetic is not already performing, and the two candidates that could have been
+performance claims are exactly zero rather than small.
+
+### A4. One further precision about two declared thresholds — a behaviour note, not a correction
+
+`dead_alpha = -2.0` and `on_alpha = 3.0` are declared correctly above: they are the
+literals that were selected, and they are what the source resolves. What the pilot's
+finite row count does to them is worth stating because a reader will otherwise take the
+nominal numbers as the operative cuts. Because the regime tests are `max`/`min` over
+pilot rows, they are **order statistics rather than moments**, and their survival
+probabilities are exceedances: at 2048 fold-pilot rows a nominal `on_alpha = 3.0` unit
+survives with probability `0.0629`, and a nominal `dead_alpha = -2.0` unit stays dead
+with probability `3.4e-21` [R, `core/CENTRAL_MOMENT_LADDER_20260819.md` §5, attack 4].
+**The operative cut is `|α| ≈ 3.40` and it is symmetric.** Nothing in the tables above
+changes; the two literals remain declared at their source values. The note is here
+because any future cell touching `dead_alpha`, `on_alpha`, `pilot_base` or
+`fold_pilot_base` must predeclare against an exceedance bound and not against a variance
+[R, same source, and `PHASE2_CONTRIBUTION_DRAFT_20260819.md` §13d].
+
+### What this addendum claims, precisely
+
+The deployed fitted surface is unchanged: **six scalars**, one boolean switch, one
+structural integer, frozen before grading. Two of the surfaces this section describes are
+now classified where they were not: the radial branch's four literals are theorem-fixed
+exact rationals forced by two independent routes and are lawful under the death law's own
+criterion, and `moment_tangent_lambda` is a pure variance knob with a theorem-fixed
+substitute at `1` that would reduce the declared count to five at a 256-FLOP saving if it
+were ever adopted, which it has not been. No performance number is asserted anywhere in
+this addendum, and the standing caveat above — that any performance number added later
+must carry **"pending round-4 bill repair re-run"** — is inherited unchanged.
