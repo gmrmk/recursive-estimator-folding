@@ -10538,3 +10538,46 @@ orthonormal-pair moment oracle (Weingarten) and was not run — that is its sett
 check, exact and offline. What is proven stands on its own: in the canonical case the
 coincident-row term is positive and dominates, and every cross-row channel carries a
 Q_l(0) suppression factor the coincident term does not.
+
+## 2026-08-19T17:08:35Z — EXCESS-GAIN MOMENTS TRIO COMPLETE: verifier synthesis filed; the 2.83/3.44-SE excess is first-moment, arm-A-located; both instrument mysteries closed bit-exact
+
+fable (verifier lane) -> all. The blind pair (THEORY + DATA, both 20260819) is now
+confronted and synthesized: `core/EXCESS_GAIN_MOMENTS_SYNTHESIS_20260819.md`. Headlines:
+
+1. BOTH LANES VERIFY. Twenty-plus data-lane figures re-derived from the raw arrays with
+   independent code, every one matching to the printed digit; both theory derivations
+   (the Haar ensemble-variance law, the kappa-corrected sigma-hat law) confirmed by my
+   own MC — with one refinement: at the validity edge (kappa=50, n=100) the bias formula
+   overstates ~19%, so the judge-inversion reads kappa ~ 50-65, not 50.6.
+2. PROVENANCE CLOSED, BIT-EXACT. se_log=0.0705 is the runner's score_flop-channel
+   bootstrap (seed 20260818, 20k draws; reproduced to all 17 digits); the 2.83/3.44 are
+   raw-MSE paired-delta (0.073837/0.073146); the draft's 0.073892/0.073272 are the
+   same-seed raw-MSE bootstrap. And v126k=2.4977e-7 is the FIRST-PRINCIPLES arc-cosine
+   kernel value committed 2026-08-08 — arm C's -0.15% agreement is not circular.
+3. THE CONFRONTATION: both purpose-built deletion detectors (S2-diagnostic 0.74 pts vs
+   8.66 ceiling; bootstrap-skew +0.045 vs +0.15 threshold) came back NULL. Every "tail"
+   signature — Spearman 0.519, top-decile 47.8%, S3 diff 10.35 pts, the weighting wedge
+   -0.163, worse-count 29 — sits within 0.7 sigma of a no-mechanism lognormal pairing
+   null fitted to the measured log moments. The theory's pre-registered bands missed
+   where (and only where) they were parameterized from the P2 pool transfer.
+4. H-MOMENT, earned level: the excess is a first-moment arm-A mis-forecast (+28.46%,
+   99.39% of the A->C gap), with exactly two surviving two-parameter completions —
+   share4 undercounted ~2.8x + ~5% arm-B penalty, OR the pilot/dead-neuron channel
+   (+29% arm A) + ~4% arm B. Three aggregates cannot separate them (share system cond
+   8.7e18). Both demand a ~4-5% NON-QUADRATURE ARM-B PENALTY; frame-0 all-plus pilot row
+   is the named candidate. The C->B "structural falsification" is demoted to point-exact
+   but p~0.12 (z=1.29 vs ceiling, eff df 7).
+5. CORRECTIONS FILED: data-lane §6b's "forecast lands on the unweighted mean" is a
+   magnitude coincidence (kernel arm-A miss ~24 log-pts vs Jensen inflation of the
+   mean-of-ratios ~21 log-pts, e^{sigma_FA^2}=1.235), not an estimand identity; the
+   physical per-net ratio is ~0.663, within 1 log-pt of the pooled 0.656.
+6. RUNWAY (Oct 16): the one new accuracy lever is the B' pilot re-phase — both repairs
+   price the B-penalty at +4.4-5.2%, and removing it would flip the completion leg from
+   -1.5% to ~+3%. Falsifier ladder filed: S7 rescue-counter probe (hours, no
+   authorization) -> rotation-offset probe (owner custody ruling needed) -> fresh-seed
+   micro-cell n=32 with arms A/A'/C/B/B' and pre-registered P1-P5. Oracle gating
+   ceilings (0.6564 -> 0.5826/0.5563) are descriptive, burned, not claimable.
+
+Custody: zero billed compute, no estimator executed, no scored row; writes = the
+synthesis doc + this entry + scratchpad. All three trio docs commit together on
+agent/compression-survivor-corpus with this entry.
