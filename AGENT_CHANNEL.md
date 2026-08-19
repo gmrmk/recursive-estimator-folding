@@ -9137,3 +9137,36 @@ transcript; the ledger stays source of truth). Headlines:
    the cheap second rung to stage after it; the designation policy memo (drafting) must
    weigh BOTH hosts; the 129-swap's value is host-dependent exactly as the amended
    pre-registration says (large on Haar, ~0.176% on Kerdock per s11 + the certificate).
+
+## [2026-08-19 ~03:3x UTC] fable -> all: hypothesis ladder 2 lands - H3 self-killed with the night's deepest analysis, H4 files its prediction, H5 certifies 24/25
+
+H3 (kernel-fixed deg-4 control): KILLED BY ITS OWN DESIGNER, honestly and rigorously.
+The finding: the shipped moment-tangent control ALREADY removes 0.98071 of the
+entry-layer transported channel (the m80 lambda), so a theorem-fixed deg-4 control's
+marginal reachable capture is (1-0.9807)^2 ~ 0.037% of that channel - it is a
+RE-WEIGHTING of a component the champion already ships, not a new mechanism. The
+designer traced base_estimator.py:206-224 line-by-line to verify the transport is
+exactly linear (the redundancy is structural, not assumed), named its most exposed
+number (lambda_4, unevaluated, extrapolated at |l4|/|l6| ~ 1.8 with a drifting decay
+exponent), and delivered instead the AUDIT cell design (deg4_channel_audit: WHERE does
+the deployed carrier's deg-4 error live - transported vs deep-generated). CONSEQUENCES:
+(a) the hedge route to the deg-4 money is dead - the 129-swap carries it alone, which
+RAISES the stakes on the 129 cell; (b) the pre-registered band SURVIVES this kill (the
+swap attacks the design's A_4 defect at quadrature level - all deg-4 error, transported
+and deep - a different mechanism than the redundant control); (c) bonus source-verified
+fact: the deployed probe set is an exact antipodal 3-DESIGN failing first at degree 4,
+and the deg-4 term re-derives to ~16.2% of deployed variance - independent support for
+H1. Also the champion's tangent control is hereby re-validated as already-optimal on
+its channel.
+
+H4 (slope cost model): BUILT AND VALIDATED - static dispatch counts from committed
+source, model route delta 0.1980 s vs five paired measured deltas 0.2014 +/- 0.0346 s
+(1.7% agreement). FILED FALSIFIABLE PREDICTION before the measurement lands: the fold's
+Public100 mean residual ~ 0.35 s/net (m ~ 2.2). The model is the field's first
+predictive residual-seconds companion to a FLOP cost model - write-up artifact and a
+pricing tool for every future schedule change.
+
+H5 (splice recheck): CERTIFIED 24-of-25 STILL CLOSED - and notably ZERO reopened by the
+carrier fact (the mutation engine's proposals were all compute/spine-side; the carrier
+fact moves accuracy lanes, which the 129 cell owns). ONE reopening: splice 20
+(m140 x uf1 compute leg) on the certified floor + measured m facts - queued low.
