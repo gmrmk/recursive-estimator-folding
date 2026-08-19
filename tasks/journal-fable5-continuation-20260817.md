@@ -205,16 +205,18 @@ post. All prior operational contracts remain in force beneath this goal.
   APPROVED.
 
 ## Next action (exactly ONE — overwrite, never a list)
-The campaign is at STEADY STATE (2026-08-19 ~12:4x UTC). All swarm work complete,
-harvested, pushed through a6481ab. The last design door is CLOSED (final, verifier-
-approved, no-successor: mean dL1 8,269,535,869 vs boundary 12,422,199,973; deployment-
-frame fires at both laws 5/5 seeds, mean 1.1739x campaign / 3.1133x host; fringe leg
-CLOSED_GB, strict leg HELD do-not-seal; reopening conditions quantified in Section 11).
-Designation ready: v3.1 slot-1 (policy v3 annex) against the stated Phase-1 default.
-Manuscript v1.3 hostile-audited. Ledger 277. NEXT: on the rules email (owner inbox) run
-designation_repricing.py against the real text and file; on an owner-scheduled quiet
-machine run X5 k=1 re-instrumentation; optional unscheduled science: the smoke sign-flip
-cell and the defect-to-MSE conversion (post-control energy table read).
+Harvest the deg-4 energy-share trace (wf_ee4fced5-2f8) - the LAST discriminator of
+the moment-hierarchy investigation. State: mechanism II KILLED by S7 (control
+reproduced the effect; lever measured at 0.999x; Parseval + per-net Haar rotation +
+ReLU-before-rescue each independently close it; 286f5b4). Mechanism I stands alone:
+He-kernel deg-4 energy share ~2.8x the committed 0.45% - and the trace tests whether
+r0's 0.45% was measured ON KERDOCK (suppressed 42.7x), making the forecast miss a
+CARRIER-INDEXING error that closes the whole excess-gain anomaly as accounting. On
+its verdict: fold the moment results (rung-2k law, se-window unearnable re-read,
+deg6-cell pre-run refutation, lambda->1 lawfulness move, radial constants
+theorem-fixed, H-MOMENT disposition) into manuscript v1.4 + the disclosure, then
+steady state. Externals: rules email (Phase 2 opens ~Aug 20 23:59 UTC tentative),
+X5 owner-scheduled, B-prime re-phase lever status pending the trace.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
