@@ -180,14 +180,16 @@ post. All prior operational contracts remain in force beneath this goal.
   measurement recorded as Fork-1 intel).
 
 ## Next action (exactly ONE — overwrite, never a list)
-Await the fold round-4 verdict (wf_27e7a983-7fa: D-A3a/D-A3b cost-model fixes + hostile
-re-verify vs FOLD_FLOOR_SPLICE_PRODUCTION_GATE.md). On APPROVED or
-APPROVED_PENDING_CEILING: A.6 is already discharged by the 2026-08-19T06:12Z owner
-1 GiB ruling (channel + gate addendum) → run the ONE Public100 measurement and crown
-against the pre-filed frame (m-band [1.86, 2.64], slope 0.35 s prediction, C falsifier
-200B, parity law). Immediately behind it: seal+run the 129 cell, then F7 16-frame.
-Meanwhile harvest ultrareview (wf_b708199c-ca4), ultramath (wf_01a886a8-2ad), and
-mi-solve (wf_77a537c1-bec) as they land; Monitor b7010mqdr + crons cover liveness.
+Execute the 129 cell per the owner's "Repair + run" ruling: repair spec.json's band to
+the amended [0.78, 0.93] + the "12% of C" prose (free while unpredeclared), arm-C
+Tier-1 pre-flight (seed 424242, n-mlps 1), then predeclare via scripts/fold_search.py
+and the ONE production run, judged with the pre-registered additions (se_log PASS
+condition 0.019-0.03, achieved-size ~7% note, leg splits, arm-C decomposition) and the
+pre-stated unfolded-host arithmetic (beats kerdock_v3 only at r < 0.7453, below the
+PASS band — scientific/host-fork value, not a designation flip). CONTEXT: fold lineage
+HALTED by owner re-plan ruling (round-4 retired gate-green, archived; M1 cancelled; P1
+withdrawn by governance); designation = unfolded kerdock_v3 vs incumbent row_blocked
+under the Phase-1-default rules; manuscript integration runs in parallel.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
