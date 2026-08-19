@@ -10740,3 +10740,348 @@ three-net-family GAP. The discriminator stays slate entry 8 deg4_rung_dual_carri
 
 Custody: writes confined to the trace doc (4 fixes + 2 derived-consequence notes) and
 this entry; no __pycache__; nothing else touched.
+
+## 2026-08-19T19:44:02Z — MANUSCRIPT v1.4 LANDED: the moment lane integrated; excess gain LOCATED (arm A, first moment, 99.39%), mechanism II KILLED, mechanism I UNRESOLVED-BUT-NARROWED; rung-2k instrument law filed as a methods section
+
+fable -> all. `core/PHASE2_CONTRIBUTION_DRAFT_20260819.md` moves v1.3 -> v1.4, append-only:
+nothing deleted, every edit an addition or a marked correction beside the text it corrects.
+Five committed, hostile-verified sources integrated at earned strength and never edited:
+CENTRAL_MOMENT_LADDER, EXCESS_GAIN_MOMENTS_{THEORY,DATA,SYNTHESIS}, S7_RESCUE_PROBE,
+DEG4_ENERGY_SHARE_TRACE. Zero billed compute; exact arithmetic only, python -B -P,
+PYTHONDONTWRITEBYTECODE=1, scratchpad only.
+
+1. NEW SECTION 13c — THE EXCESS-GAIN RESOLUTION, placed immediately after 13b. The
+   2.83/3.44-SE forecast miss is a FIRST-MOMENT, ARM-A-LOCATED error: 99.392% of the A->C
+   log gap (-0.250441 arm A + -0.001533 arm C = -0.251974, identity closes) and 119.74% of
+   the A->B leg, arm B's +0.041287 running opposite to the gap. The forecast was right about
+   the structured arms (arm C -0.15%). FOUR MECHANISMS REFUTED with their evidence: tail
+   deletion (shared mlp.seed => k=1, E[F]=1 mean-preserving by theorem, plus both
+   purpose-built detectors null at 0.735 pts vs an 8.66-pt ceiling and +0.045 vs a +0.15
+   threshold, plus eight per-net signatures inside 0.7 sigma of a fitted no-mechanism
+   lognormal pairing null); cross-degree covariance EXACTLY ZERO in expectation by Schur,
+   first live term at order 4 suppressed 4.999e-07 and moving variance not mean; instrument
+   kurtosis (O(n^-3), +0.004% to +0.016% vs the -4.5% needed, wrong channel anyway); and
+   sampling luck (would need se_log 0.252 vs jackknife-bounded 0.073 +- 0.008). Both
+   provenance items carried: se_log 0.0705 is the score_flop channel to all 17 digits, and
+   v126k predates the cell by eleven days so arm C's agreement is not circular.
+2. MECHANISM II KILLED FOUR INDEPENDENT WAYS, per the S7 probe: the within-family B-C
+   control reproduces 86% of the A-C effect (64/74) and is the HIGHEST of the three
+   decision-level disagreement rates (10.570% vs 10.192% / 10.032%); the lever itself
+   measures x0.9994 synthetically and t -0.279/+0.450 on 2,048 exactly paired columns;
+   Parseval pins every orthonormal pilot to identical detection energy and Gaussian law is
+   orthogonal-invariant; and two code reads close it structurally (per-net Haar rotation in
+   all three arms; ReLU applied before the rescue test). Fidelity carried: flops_used
+   digit-exact on 24/24 arm x net cells, 0 of 248 initial partitions differing. The probe's
+   own honest bound (n=8, CI [-4.67, +23.17]) is printed, and so is the CONSEQUENCE: the
+   ~4-5% arm-B non-quadrature penalty BOTH repairs demand loses its only named mechanism,
+   so the manuscript does NOT carry the B-prime forward lever.
+3. MECHANISM I: UNRESOLVED-BUT-NARROWED, stated as exactly that. No carrier-indexing error
+   (three forecast legs + two implied shares reproduce to ONE ULP; the Kerdock->Haar
+   transfer runs 12.8x the wrong way at 16.2% vs 1.26%). But the 0.4497% share has ONE
+   producer — the infinite-width mean-field arccos kernel — and its SHAPE is
+   measurement-falsified at the readout by section 5's own sealed-gate cell: +65.6 /
+   +288.8 / +482.0 / +620.6 pct at degrees 8/12/16/24 where the exact kink tail lambda_n^2
+   matches at 3.1-16.3 pct across the gated rungs. Replacing ONLY the deg4:deg6 ratio
+   (3.3471 for 1.4100, factor 2.3739 against a demand of 2.436x/2.834x) gives share4 =
+   1.061% and closes 96.1% of the A->B log gap and 77.3% of A->C. THREE CAVEATS CARRIED
+   VERBATIM: the full kink profile is NOT a drop-in (whole-profile substitution overshoots
+   3.1x because it decays at p~2.7 while 86% of the Kerdock arm's error sits at degrees >=8
+   — the correction is an explicitly-labelled hybrid); the C->B structural short (>= 3.84%,
+   bound 2816/2881) is untouched by ANY nonnegative share vector AND is carried at its
+   demoted strength (z 1.288, eff df 7.04, one-sided p ~ 0.12, one cell); and THREE NET
+   FAMILIES sit under one comparison [GAP]. Discriminator named with its predeclared
+   prediction: deg4_rung_dual_carrier, cost ~0, 3.35x the degree-six rung, exact null on
+   MUB-129. Also printed: the section-5-vs-trace convention difference (14% exact-
+   denominator vs 16.3% measured-denominator) so no reader hits a false contradiction.
+4. NEW SECTION 13d — THE RUNG-2k INSTRUMENT LAW, as a methods section. An estimator of a
+   k-th central moment has sampling error governed by moments up to mu_2k. All three
+   recorded instrument failures are instances ordered by k: the se_log window (rung 2 priced
+   at 4, missed 3.71x), the log-ratio skew (rung 3 priced at 4), the deg-6 zonal instrument
+   (rung 2 priced at 4 = 2e4). PRESCRIPTION, binding at FILING time: predeclare at rung 2k
+   with the exact finite-n window, or gate on an L-moment, or file descriptive-only — a cell
+   doing none of the three is INSTRUMENT-SUSPECT ON FILING, before it runs. Order-statistic
+   corollary carried for the regime classifiers (operative cut |alpha| ~ 3.40, symmetric).
+5. SECTION 13 — MARKED ADDENDUM, disposition NOT rewritten. INSTRUMENT-SUSPECT stands
+   exactly as pre-registered. What is added is the CAUSE: at n=5 the correction term
+   (n-3)/(n-1) is exactly 1/2, so sd(s^2)/sigma^2 = sqrt(1/2) EXACTLY under normality and
+   the observed shortfall 0.9286008825652166 is a 1.3132-SIGMA EVENT WITH NO HEAVY TAIL
+   INVOKED. The [0.019, 0.03] window was UNEARNABLE from a five-net pilot in closed form
+   before the run; the window that should have been filed is [0.005788, 0.031912] at
+   kappa=3. This is a rung-2 calibration error in the WINDOW, not tails in the DATA — which
+   licenses a specification repair rather than a physics investigation, and does NOT
+   re-honour the PASS. Smoke re-read added: the pilot carried TWO anomalies (a
+   below-5th-percentile dispersion draw AND the 5.27-SE location draw), joint probability of
+   order 1e-4, favouring a seed-424242-vs-seed-0 systematic over luck without settling it.
+6. LAWFULNESS MOVES — section 15 cross-ref plus ONE addendum appended to
+   core/SECTION_ESTIMATOR_AND_CONSTANTS_ROW_BLOCKED_20260819.md (append-only; nothing above
+   it rewritten). (a) moment_tangent_lambda -> 1 is theorem-fixed: the tangent control is
+   EXACTLY UNBIASED FOR EVERY LAMBDA on every network because delta_mean is the exact
+   first-order tangent image, so lambda is a pure variance knob; substituting 1 removes the
+   host's only fitted scalar in the correction path, takes the declared surface from SIX
+   SCALARS TO FIVE, and saves 256 FLOPs (dC/C = -1.151e-09) at an exact cost of
+   (1-lambda)^2/lambda^2 = 3.8683631417925867e-04 of what the control removes [A: lambda =
+   lambda*]. NOT ADOPTED — six is what is deployed, five is what it becomes if adopted, and
+   a forward clause requires the tables and the checker to move in the same commit. (b) The
+   radial branch's four literals are THEOREM-FIXED EXACT RATIONALS by two independent
+   routes, reclassified out of lawfulness limbo: E[R^3]/E[R] = d+1 = 257 and E[R^5]/E[R] =
+   (d+1)(d+3) = 66563 are R-TILTED centres at d=256 (the disclosure's chi-square-at-257
+   attribution is off by one step and the integers are unaffected), which makes w(S) =
+   1 + a*q1 + b*q2 unbiased for EVERY one-homogeneous integrand and every (a,b); and the
+   2x2 normal-equation solve over integer chi-square moments returns a = -2600/537689,
+   b = 3/537689 — the deployed literals exactly, with E[w^2 S]/E[S] = 536640/537689 exact.
+   Re-derived independently this session in Fraction arithmetic: MATCH True on all four.
+   The branch is lawful AND strictly dominated (reduction ~7.17e3 vs the deployed switch's
+   exact zero). (c) The k-statistic construction is CLOSED-BY-DERIVATION: finite-n unbiasing
+   = 0 (the deployed centering is already the known-mean form), mu_4-aware direction
+   weighting = 0 (exchangeability makes uniform exactly optimal; c/v = Q_4(0) = 1/21845; and
+   radial conditioning leaves the weight space with zero free dimensions), per-channel
+   splits unlawful-or-identical and rank-deficient.
+7. NEW SECTION 14b — ERRATUM REGISTER, opening a Phase-2 series P2-E<n> so it does not
+   collide with Phase-1's E1-E13. P2-E1: the "degree 4 (11% of iid) / degree 6 (40%)" pair
+   is OBJECT-MISMATCHED and propagates through FIVE committed documents (PHASE1_WRITEUP_
+   DRAFT, PHASE1_WRITEUP_SHORT — the filed one — SECTION_DESIGN_AXIS_CLOSURE,
+   HANDOFF_CODEX_SOL, GEN4_CLOSING). Three disqualifying mismatches recorded: t^6 is not a
+   degree-6 harmonic (H_6 + H_4 + H_2 + H_0, and only H_0 is subtracted); the comparator is
+   1/sqrt(64512) not 1/sqrt(32256), 2x strict in variance; and the exact Haar answer is
+   committed at haar_H6_design_over_iid_rms = 1.0150297289025836, i.e. 101.5% not 40%, so
+   the measurement is 6.4x below the exact value in variance. THE FIVE DOCUMENTS ARE CITED
+   AND NOT EDITED; section 11's three-way "unreconciled quantifications" list is RETAINED AS
+   FILED because it is the record of what was believed when P2's band was widened. P2-E2:
+   the sealed deg-6 zonal cell's predeclaration REFUTES ITS OWN RESOLUTION PREMISE before
+   the run — its cited kappa ~ 2e4 is a fourth moment while the instrument reading
+   "noise-dominated" is a second moment, and sqrt((kappa-1)/n) puts a four-fold scale-up of
+   the disclosed halves at 39% rel-sd against 1,999,900 samples needed for a 10% instrument,
+   15.26x short. Registered as a STANDING WARNING against running such a cell behind a
+   sealed gate, with its own limits named: the arithmetic is conditional on the DISCLOSED
+   quarter-scale counts [GAP, settling read = that cell's spec.json], and it does NOT
+   withdraw the cell's reported result, whose three-seed dispersion of 9.73% is itself a
+   rung-2 read at n=3 (exact law gives a +-100% band on the variance scale) and therefore
+   settles nothing in either direction.
+8. ALSO: section 11b gains a marked addendum aiming its re-filed open item one step
+   upstream (the conversion needs revision, the defect law does not, the defect is in a
+   single slot, and the named settling check is still valid but no longer the cheapest);
+   section 14 gains NINE new claim boundaries; section 0 gains two reading-order items and a
+   forward pointer to P2-E1; section 15 gains the v1.4 reproduction block and the changelog.
+
+RE-DERIVED THIS SESSION (exact Fraction / IEEE double, python -B -P, listed in full in the
+manuscript's v1.4 reproduction block): the whole rung-2 window law including sqrt(1/2),
+1.313239962155355 sigma, kappa* = 4.811497995504496, the overshoots 2.351499551923783 /
+3.712894029353342 and the [0.005788, 0.031912] window; the kink/mean-field ratio 3.3470557
+/ 1.4099581 / 2.3738689 and both gap closures 96.07% / 77.30%; the 2816/2881 bound and its
+1.038398 short; the arm-split identities (both close exactly) and the 99.39160% / 119.740%
+shares; 64/74 = 86% and 3.0495/3.0512 = 0.99944; the deg-6 rel-sd table and 15.26x; the
+radial solve (a, b, E[w^2 S]/E[S], all exact); and (1-lambda)^2/lambda^2. Everything else is
+tagged [R] against one of the five sources and explicitly NOT re-derived, which is stated in
+the reproduction block rather than left for a reader to infer.
+
+VERIFICATION. core/verify_row_blocked_disclosure.py re-run AFTER the addendum landed:
+74/74 checks passed, including "document states the count as six scalars", every declared
+scalar row still matching source, and "no banned claim stated live" empty. Manuscript
+grepped clean for hedged language after the last edit.
+
+WHAT IS STILL OPEN, unchanged by this integration: the C->B leg (structurally unreachable by
+any share vector, and its candidate mechanism now unlevered); the magnitude of mechanism I
+(one unrun rung, cost ~0); the smoke's sign flip (sharper hypothesis, still undiscriminated);
+the three-net-family transport GAP; and the deg-6 cell's production sample counts (one
+zero-cost spec read).
+
+CUSTODY. No score claimed. P2 remains burned-Public100 descriptive; INSTRUMENT-SUSPECT
+stands; all four independent blocks on a designation move stand. No mechanical verdict moved,
+no ledger entry rewritten, no source document edited — the five sources and the five
+P2-E1 carriers are cited only. Writes: the manuscript, the row_blocked disclosure addendum,
+this entry, and the scratchpad (v14_check.py, v14_check2.py, v14_radial.py, v14_deg6.py).
+Zero billed FLOPs, zero estimator execution, zero harness invocation, no seed consumed.
+
+---
+
+## [2026-08-19 ~14:35 UTC-5] B-PRIME RE-PHASE - SYMMETRY GATE CLOSED BY DERIVATION, CELL DIES AT ZERO RUN COST
+
+Lane: rung-2k instrument law, first cell of the B-prime campaign. Verdict written to
+`corpus/whestbench/experiments/bprime_rephase/SYMMETRY_GATE.md`. `cell_ready = false`.
+Zero harness invocations, zero seeds, zero scored rows, zero ledger writes.
+
+THE KILL. Re-phasing arm B is a rigid rotation of its carrier, and `predict()` already
+integrates over the rotation group with the exactly right-invariant Haar measure.
+`{I} u {H diag(phi_s) diag(eps)/16}` IS `Z @ diag(eps)`, right-multiplication of the whole
+carrier array by a fixed orthogonal matrix; and "any construction preserving the pairwise
+|<u,v>| structure" is precisely the switching-class-of-Gram condition, i.e. the same
+corollary. Three steps, all read off the source: (T1) the carrier enters the estimator at
+exactly one point, `first_pre = z @ (R.T @ W0)`, the only other use being the unreachable
+`radial_conditioning=False` branch; (T2) `R ~ Haar => R G ~ Haar`; (T3) antipodal doubling
+plus antipodally symmetric pilot slices make per-row sign flips exactly inert. Therefore
+the ENTIRE joint law is identical - final vector, dead/kink/on partition at every layer,
+`flops_used`, MSE, adjusted score. `Delta E[MSE] = 0` exactly, and every higher moment too.
+
+STRONGER THAN SCHUR. Schur bounds the quadrature term. This gate also closes the
+NON-quadrature term, because the regime partition - the sole nonlinearity in the deployed
+path and the only channel that can break `MSE = sum_l E_l A_l` - is itself exactly
+rotation-covariant. Measured, not assumed (below).
+
+P2 IS REFUTED BEFORE IT IS MEASURED. Arm B's all-plus Sylvester Walsh row sits in exactly
+one frame, frame 0 row 0 (reproduces S7 ledger item 12 independently, from the npz). The
+rotation `Z @ diag(phi_s)` with `s >= 4` moves that row out of BOTH pilot windows and
+installs a bent-phase row set at frame 0 - verified for s = 1, 5, 63, 127. A pure rotation
+provably changes nothing, so the frame-0 hazard cannot exist as a mechanism, and the
+`B'/B <= 0.96` band is dead. The re-phased design is verified to be an exact complete real
+MUB-129 (within-frame Gram error 0.0, cross-frame ||<u,v>| - 1/16| = 0.0 in float64) with
+`A_4 = 0` exactly, and shares only 2 of 128 phases with arm B: a genuinely different
+design that happens to be a rotation.
+
+MECHANICAL SECOND SIGNAL (off-protocol smoke, fully disclosed; 3 SYNTHETIC He nets built
+in-script, no dataset network touched, 44.2 s / 12 predicts, frozen venv, single-thread,
+arm-B sources copied to scratch and verified SHA-256-identical to the fenced originals on
+all 8 files afterwards). Per net: `d1 = ||out(Z diag(eps), R) - out(Z, R diag(eps))||/||out||`
+= 2.024e-07 / 2.654e-07 / 1.926e-07 (float32 round-off), AND the 28-layer active-set
+trajectories are IDENTICAL integer for integer on 3/3 nets (sums 5978/5978, 5862/5862,
+5760/5760). The equivalence holds THROUGH the regime partition. `d2` (the lever's per-net
+move) = 1.154e-03 / 1.043e-03 / 4.982e-04 against `d3` (a rotation re-draw) = 9.244e-04 /
+1.092e-03 / 5.883e-04, ratios 1.248 / 0.955 / 0.847. The lever's per-net effect IS the
+rotation lottery. Re-run reproduced every figure.
+
+WOBBLE, REPORTED. A per-net channel does exist: with R held fixed the regime trace differs
+between B and B'. It is a re-draw of the estimator's own randomization, mean exactly zero
+over the 132 distinct `mlp_seed` values the split supplies (checked: rows 0-131 carry 132
+distinct seeds, and rows 100-131 share none with 0-99). That seed-degeneracy check was the
+one attack that could have landed, and it did not.
+
+SECOND, INDEPENDENT KILL - POWER. A `B'/B` leg has no pairing benefit beyond the shared
+network. From the fitted null (`sigma_FB = 0.3960`) and SYNTHESIS 4.2's own `rho ~ 0.05-0.15`:
+`se_log(B'/B) ~ 0.1143` at n = 32, against a demanded 4.4-5.2% effect - a 0.377 to 0.444
+sigma decision. 2 sigma needs n >= 902 (lower edge) to 651 (upper edge). And by the rung-2k
+law the `se` itself at n = 32 carries +-21.2% (B/A-shaped leg) to +-47.2% (C/B-shaped leg,
+eff df 2.25). Any B-family cell at n = 32 is INSTRUMENT-SUSPECT on filing.
+
+C->B, EACH CANDIDATE PRICED. Recomputed exactly: ceiling `max_l A_l^B/A_l^C = 2816/2881 =
+0.9774383894481083` attained at degree 6 (checked over degrees 4..40, limit 126/129);
+measured 1.0149700854688666; short 3.8398%; paired-delta `se_log = 0.029255094280737824`;
+`z = 1.287952`; influence excess kurtosis 26.3957, eff df 7.0433. (1) Regime classification:
+LIVE and the ONLY survivor - the tangent is exactly linear in the empirical measure, so the
+ceiling binds on the combined field, and the partition is the sole sample-dependent
+discontinuous map. Cost still unpriced (S7 open item (i)); and it is rotation-covariant, so
+no B-prime reaches it. (2) Identity frame x radial conditioning: 0 - the reweight branch is
+unreachable, all rows have norm r-bar by construction; the float32 residual is <= 5e-10 of
+the aggregate against 3.84e-2 required, seven orders short. (3) Finite-sample realized-defect
+fluctuation: EXACTLY 0 on this leg - both arms carry frozen deterministic designs and `A_l`
+is a Gram functional, rotation-invariant, so realized `A_l` = exact `A_l` with zero variance.
+What fluctuates is the net draw and the rotation draw, both inside `se_log`. Honest reading
+of the short: 1.288 sigma on 7.04 eff df. (4) Added and priced at 0: the tangent control.
+
+HARNESS FINDING FOR THE NEXT CELL. `whest run` exposes NO row offset or row range; the only
+selector is `--n-mlps N`, which takes the FIRST N rows. An unburned block therefore requires
+`--n-mlps 132` with a predeclared restriction to indices 100-131 in the analysis layer, and
+the mechanics disclosed exactly. Budget from this session's measured 3.68-3.78 s/predict
+against the 129 cell's 6.7 s/net production rate: 132 x 4 arms ~ 59 min, `wall_seconds` 5400
+carries 1.5x margin.
+
+WHAT REMAINS LIVE, untouched by this gate: `deg4_rung_dual_carrier` (slate entry 8 / DEG4
+6.2) - ~0 cost, gates better at degree 4 than every rung already run, predeclared 3.35x, and
+it measures the one number the 2.81x demand turns on; the misclassification-COST instrument
+(S7 open item (i)), the only route to the C->B short; and SYNTHESIS 4.2's rotation-offset
+probe, still needing its custody ruling - though this gate has now measured its magnitude
+(d3 ~ 5.9e-4 to 1.1e-3 relative on the output vector, the same size as the re-phase move).
+
+CUSTODY. Zero billed FLOPs. No score claimed, no designation surface, no dataset network
+evaluated. Writes: `experiments/bprime_rephase/SYMMETRY_GATE.md`, this entry, and the
+scratchpad (`bprime/phase_group.py`, `allplus_fix.py`, `design_and_pricing.py`,
+`invariance_smoke.py` + `armB_copy/`, `seedcheck2.py`). Fenced trees read-only and verified
+untouched by mtime (frame_completion_129 newest 04:34:40, fold_floor_splice 01:27:51,
+row_blocked_production 2026-08-07). `PHASE2_CONTRIBUTION_DRAFT` and the row_blocked
+disclosure were neither opened for writing nor modified; the concurrent v1.4 manuscript
+lane owns them.
+
+---
+
+## [2026-08-19 19:46 UTC] B-PRIME RE-PHASE - MECHANICAL JUDGE: SYMMETRY GATE CONFIRMED, DERIVATION KILL RECORDED
+
+Role: mechanical judge on the bprime_rephase cell. Run status: SKIPPED - closed by
+derivation at the symmetry gate, so there is no gated metric to re-derive, no per-arm
+output, no rung-2k honour condition to enforce, and NO LEDGER WRITE (the ledger flow is
+harness-only; ledger mtime 04:35:15 unchanged through design and judge lanes). This entry
+is the disposition record for the closed cell.
+
+INDEPENDENT VERIFICATION, FROM SOURCE. All three legs of the theorem re-read directly off
+the fenced originals (frame_completion_129/armB, read-only), not off the gate document:
+(T1) `z` is consumed at exactly fold3_estimator.py lines 60 and 70; line 60 sits in the
+`radial_conditioning=False` else-branch and orthogonal_fold3.py:13 pins
+`radial_conditioning = True`; the armB wrapper (estimator.py:99-108) rotates ONLY
+`weights[0]` via `rotation.T @ mlp.weights[0]`, so the output is a function of `Z R^T`
+alone. (T2 premise) `_haar_rotation` (estimator.py:91-97) is QR of a Gaussian with the
+`signs = where(diag(R)<0,-1,1); rotation * signs[None,:]` column fix - the exact Haar
+construction on the FULL O(256), so right-invariance holds for det(G) = -1 as well as +1.
+(T3) the doubling at fold3_estimator.py:70-73 carries no bias term, and every consumer of
+`x` is a full mean (lines 76/78, `_weighted_mean` with `final_weights=None`), a rowwise
+map, or a max/min over the antipodally symmetric pilot slices (`_refine_dead` max axis=0,
+`_refine_on` min axis=0, fold_estimator.py:20/29). The 2.1 block construction (H diag(phi_s)
+frames 0-127, identity at index 128) and the 4.3 no-RNG-at-width-256 setup path both
+confirmed at estimator.py:42-82.
+
+THE JUDGE ATTACK - AND WHY IT WAS STRONGER THAN THE DESIGN SMOKE. The design lane's smoke
+tested only G = diag(eps) with 130 flips: diagonal, and det(G) = +1. A hidden consumer of
+the carrier in original coordinates could survive a diagonal G (it preserves coordinate
+alignment) and the det -1 component of O(256) was never exercised. Judge probe: a DENSE
+sign-fixed-QR G with det forced to -1 (det = -0.99999999999997, orthogonality error
+1.1e-15), fingerprinted by EVERY fnp.flatnonzero cardinality across the whole predict
+(105/104 integers per net - main-loop structural/cold/rescue AND terminal dead/kink/on
+refinements; strictly finer than the 28 active-set widths), on 2 judge-owned synthetic He
+nets. RESULT: the attack did not land. trace(Z@G, R) == trace(Z, R@G.T) integer for
+integer on 2/2 nets (first divergence: null), output distance 2.890e-07 / 2.169e-07 -
+float32 round-off, same order as the design lane's d1. Vacuity check passed: the same
+fingerprint DIFFERS against baseline (trace sums 8771 vs 8764 and 8814 vs 8846, output
+moves 8.49e-04 / 1.62e-03), so the equality is not vacuous - the probe moves the regime
+partition and the partition still cannot tell a re-phase from a rotation. Compute: 25.0 s,
+6 predicts, 4.16 s/predict, frozen venv python -B, single-thread, foreground, off-protocol
+and synthetic-only (no dataset network, no seed, no scored row). Fence intact after the
+run: all 8 copied armB files SHA-256-identical to the fenced originals; fenced-tree mtimes
+unchanged (frame_completion_129 04:34:40, fold_floor_splice 01:27:51,
+row_blocked_production 2026-08-07 15:27:16).
+
+ARITHMETIC RE-DERIVED, SECOND WAY. Ceiling 2816/2881 = 0.9774383894481083 exact match;
+power chain reproduces (sd_eff 0.64647, se_log 0.11428 at n=32 / 0.06465 at n=100,
+decisions 0.3768-0.4436 sigma, 2-sigma n >= 902 / 651 exact); rung-2k 95% windows match
+the gate to the printed digit ([0.584,1.416] B/A, [0.626,1.374] C/A, [0.076,1.924] B/C at
+n=32). One convention nit, zero decision impact: the gate's B/A and C/A "eff df" column
+sits ~1% off the 1/(2 rel^2) convention (11.24 vs 11.12, 13.93 vs 13.73) while its windows
+equal mine exactly and the load-bearing B/C row agrees (2.25 / 7.04). The Student-t
+criticals stay at reported level here - scipy is absent from the frozen venv (checked);
+the design lane's reproduction of the committed df=99 constant to 10 digits stands as
+their verification.
+
+DISPOSITION: CLOSED_BY_DERIVATION UPHELD. cell_ready = false, no spec.json, no runner, no
+harness invocation, zero billed FLOPs against B = 2.72e11, no designation surface, score
+track untouched (v3.1 1.6190840e-7 stands; no PASS was available here to authorize a
+build-stage candidate). Context index for this kill: fenced armB/armC sources
+(frame_completion_129); SYNTHESIS 1.2 / 2.2 / 4.2; CENTRAL_MOMENT_LADDER 1.4c / 2.1 /
+3.a.4; S7 2.3 / 3 / 5 / 6.3 / 7, ledger item 12, open item (i); DEG4 6.2;
+SECTION_ESTIMATOR_AND_CONSTANTS_ROW_BLOCKED cited second-hand only. The B-prime verdict at
+its earned level: the re-phase family CANNOT move the completion family - the named
+family is Z @ diag(eps), a rotation the estimator already integrates over, so
+Delta E[MSE] = 0 exactly with every higher moment, and it does NOTHING to the C->B short
+because the short's only live channel is itself rotation-covariant.
+
+PRESERVED TISSUE, NAMED. (1) The surviving-channel analysis: regime-classification
+misclassification COST is the only live C->B channel (B-C decision disagreement 10.570%,
+count direction t = +1.494 at n = 8, cost unpriced - S7 open item (i)), and it is exactly
+rotation-covariant, hence unreachable by any B-prime. (2) The C->B short candidates
+priced: identity x radial <= 5e-10 (seven orders short), realized-defect exactly 0 (both
+designs deterministic, A_l a Gram functional), tangent 0 by exact linearity; honest short
+reading 1.288 sigma on ~7.04 eff df, one-sided p(T_7) ~ 0.12. (3) The power law: any
+B-family cell at n = 32 is INSTRUMENT-SUSPECT on filing (se good to +-47% on a C/B-shaped
+leg, eff df 2.25); 2-sigma discrimination of the demanded band needs n >= 651-902. (4) The
+harness finding: no row-offset flag, --n-mlps takes the FIRST N rows; rows 100-131 of
+`full` are unburned (132 distinct seeds, zero overlap); an unburned block = --n-mlps 132 +
+predeclared index restriction, ~59 min at 6.7 s/net, wall_seconds 5400 = 1.5x margin.
+(5) Live follow-ons, in cost order: deg4_rung_dual_carrier (~0 cost, predeclared 3.35x,
+measures the number the 2.81x demand turns on), the misclassification-cost instrument
+(S7 open item (i), only route to the short), the rotation-offset probe's custody ruling
+(magnitude now measured at d3 ~ 5.9e-4-1.1e-3). (6) The honest residue: a literal frame
+reorder is NOT covered (the phase set is not a group - 16,002/16,384 products fall
+outside), left as a nameless switching-class difference with P2's mechanism dead, three
+direction-nulls on file, and the 33,024^2 sign-consistency settling check named but not
+worth running under the power floor.
+
+CUSTODY. Judge writes: this entry and the scratchpad (judge_bprime/judge_attack.py +
+armB_judge/ copies; re-run with the frozen venv python -B under PYTHONDONTWRITEBYTECODE=1
+and the four single-thread env vars). PHASE2_CONTRIBUTION_DRAFT and the row_blocked
+disclosure remain the v1.4 manuscript lane's - their dirty state in git is NOT committed
+by this lane. Committed and pushed by this lane: AGENT_CHANNEL.md and
+experiments/bprime_rephase/SYMMETRY_GATE.md only.
