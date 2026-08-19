@@ -13,6 +13,15 @@ observations by shown steps · **[R]** reported by a document or a third party �
 Designation lock: **Sep 19**. Private re-run: **2026-09-20..30**, the only ranking
 that pays. [R: `CONTINUATION_PLAN_20260817.md` §0c, §1.4]
 
+> **BANNER ADDED 2026-08-19 BY THE v2 REVISION BLOCK (see the end of this file).**
+> Sections 1, 2 and 3 below are v1 and are **superseded on their numbers**. The fold
+> is priced there at a `C` ratio of `0.739`; the measured paired ratio is
+> `0.8388/0.8447`, and on the measured basis the folded `row_blocked` candidate is
+> **worse than the unfolded `kerdock_v3` candidate we already hold**. The band quoted
+> in §2.5 is the superseded `0.78-0.86`. Nothing in v1 has been deleted — read it for
+> the reasoning, then take every number from v2. The v2 tables are the output of
+> `core/designation_repricing.py`.
+
 ---
 
 ## 0. The four facts the whole tree rests on
@@ -384,3 +393,535 @@ specific decision they unblock.
   the real suite conditional null, signed preregistration, and global slot
   uniqueness. It is used here as a warrant for a *policy shape*, and for nothing
   stronger.
+
+---
+
+# v2 — REVISION BLOCK, 2026-08-19 (append-only; v1 above is unaltered)
+
+Filed against the four-lens ultrareview and its adversarial merge (`wf_b708199c-ca4`;
+full report `tasks/wgrvbok7a.output`; channel entry 2026-08-19T07:07:56Z). v2 repairs
+six defects in v1's arithmetic. It changes numbers and two leaf answers. It does not
+change v1's slot doctrine, its warrants W1-W3, or its measurement queue.
+
+**The caveat that travels with every number below that is derived from
+`experiments/fold_floor_splice/full.json`: pending round-4 bill repair re-run.** The
+committed `full.json` was produced under a static bill known wrong in both directions
+(an unpriced `m*n` copy-out on the fallback branch, and an `m*k` operand copy charged
+to a direct branch that never performs it), and that bill drives route selection, so
+every measured ratio here can move in either direction when the sweep is re-run.
+[O: `FOLD_FLOOR_SPLICE_PRODUCTION_GATE.md` addendum 2026-08-19T06:12:13Z;
+`candidate_source/depth6_winograd.py:939-941`]
+
+---
+
+## v2.0 The verdict in one paragraph
+
+On the measured paired basis the fold is not a slot-1 candidate on the `row_blocked`
+host. Folded `row_blocked` lands at `1.780e-7` against the unfolded `kerdock_v3`
+candidate already in hand at `1.6190838e-7`: the fold **loses by 9.9%**. v1's `0.739`
+came from dividing a local-scale analytical absolute by a record-scale total. The
+fold's value survives only as part of the `fold + 129` stack, and only if the 129 cell
+returns a raw-MSE ratio at or below **`r* = 0.8886`**, which is inside the amended band
+`[0.78, 0.93]` but excludes its upper quarter. The host fork is therefore the whole
+decision rather than a tiebreak.
+
+---
+
+## v2.1 The method fix — price by ratio, on one stated scale
+
+v1 formed absolutes: it back-solved a suite MSE from one network's `C`, then rebuilt
+each candidate's `C` from a hand-carried curve. v2 never forms an absolute. It prices
+every candidate as a **ratio against the incumbent's own recorded public-100 score**,
+because that recorded number already carries its own suite MSE and its own per-network
+multipliers.
+
+Two checks were cited to license the change, both in the script's `--selfcheck`. The
+second one holds. **The first does not, and is withdrawn as a licence below.**
+
+1. **WITHDRAWN 2026-08-19 (hostile verify): this check is an identity, not a licence.**
+   `1.6190837992231567e-7 / 2.121762464e-7 = 0.763084382` does agree to nine digits with
+   the figure printed in T4's `mean ratio` column — but that column is itself the ratio
+   of the two aggregate scores, not a mean of per-network ratios. Two signals establish
+   that: T4's *other* row reproduces the same way from its own two aggregates
+   (`1.6190837992231567e-7 / 2.101976249e-7 = 0.770267409` against its printed
+   `0.770267409`), and a mean of per-network ratios could not track a ratio of means to
+   ten significant figures on a suite with 65/100 paired wins and a heavy win-side tail.
+   T4's bootstrap is also 200,000 resamples, seed 20260808, not a million. Both sides of
+   the comparison are the same quantity, so it passes by construction and warrants
+   nothing. [O: `T4_REPORT.md` rows 26-27, both recomputed exactly] What survives is
+   algebra rather than that check: the adjusted score is `mean_i(MSE_i x mult_i)`, so a
+   `C` change that is a **common factor across networks** and stays above the floor
+   moves the score by exactly that factor [D]. Whether the fold's `C` ratio is common
+   across networks is the per-network receipt named in v2.10, and it is **UNSETTLED**.
+2. **Products of aggregates do not.** The incumbent's own recorded raw MSE times its
+   own mean multiplier is `3.089460087e-7 x 189.852556e9/2.72e11 = 2.1564e-7`, against
+   the recorded score `2.121762464e-7`. The product form over-states by **+1.633%** on
+   the very suite it is computed from. The production report says so in its own words:
+   "This is a true paired score comparison, not a product of aggregate ratios." [O]
+
+**The one scale, stated.** Every v2 table is on the **deployed suite-mean basis** for
+`row_blocked`: `C = 189.852556e9`, analytical `= 173.794058e9`, residual
+`= 0.160585 s/net`, recorded score `2.121762464e-7`, recorded raw MSE `3.089460087e-7`,
+all measured over the same 100 scored networks the score lives on. [O:
+`experiments/ROW_BLOCKED_WINOGRAD_PRODUCTION_REPORT.md`, child column] The two other
+scales in the record are named here once so they are never silently mixed again:
+
+| scale | analytical | residual term | total `C` | what it is |
+|---|---:|---:|---:|---|
+| **suite mean (v2's basis)** | `173.794058B` [O] | `16.0585B` [O] | `189.852556B` [O] | mean over all 100 scored nets |
+| record max-`C` net | `203.590357B` [D] | `18.815B` [D] | `222.405357B` [O] | one network, the worst-case `C` |
+| local paired probe | `186.406006B` [O] | `16.072830B` [O] | `202.478836B` [O] | 2 synthetic nets, `full.json` parent |
+
+The residual halves agree across all three (`0.160585` deployed mean against
+`0.160728 / 0.158453` on the probe nets, inside 0.1% and 1.3%). The analytical halves
+do not, and that is where v1's error lives.
+
+---
+
+## v2.2 The scale mix that produced the old headline (B2 / rank-1)
+
+v1 §1 priced `C_post(m) = (126.7 + 18.815m)e9` over `222.405357e9`. The numerator's
+`126.7e9` is a **local-scale** analytical quantity, measured against a local paired
+parent of `202.478836e9`. The denominator's `222.405357e9` is the **record max-`C`
+network**. The two belong to different populations, and the ratio between them is not
+a compute saving.
+
+Three arithmetic consequences, each checkable:
+
+- **The old headline reproduces exactly, so this is not a straw man.**
+  `(126.7 + 2 x 18.815)/222.405357 = 0.738876`, times `2.121762464e-7` gives
+  `1.5677e-7`. That is v1 §1a's row, to the digit. [O, `--selfcheck` item 2]
+- **v1's own derived suite MSE is 16.0% low.** F2 divides the recorded score by the
+  record network's multiplier and gets `2.594949e-7`. The incumbent's recorded raw MSE
+  is `3.089460087e-7`. Ratio `0.83994`. [O: `SUBMISSION_DOSSIER_20260808.md` row 3 and
+  the production report agree on `3.0895e-7`] Any leaf that used the derived MSE
+  inherited the mix.
+- **The ratio is scale-robust; the absolute is not.** Apply the two **measured
+  half-ratios** (analytical `0.712046`, residual `2.308659`) to each scale's own split
+  and the effective-`C` ratio lands in the same place every time: `0.8471` on the
+  suite-mean split [D, script `--suite-scale`], `0.8471` on the record-net split [D],
+  against `0.8388 / 0.8447` measured directly on the probe pair [O]. Three independent
+  routes to ~0.84. None of them is 0.739.
+
+**Measured paired basis, read verbatim from `full.json` `end_to_end.routes.floor_L4`
+against `end_to_end.incumbent` in the same run [O, pending round-4 bill repair
+re-run]:**
+
+| net | child flops | child residual | child `C` | parent `C` | `effective_C_ratio` |
+|---|---:|---:|---:|---:|---:|
+| 0 | `132,729,573,911` | `0.371067 s` | `169.836254B` | `202.478836B` | **`0.8387852`** |
+| 1 | `135,136,725,535` | `0.355609 s` | `170.697585B` | `202.070095B` | **`0.8447444`** |
+
+`flops + 1e11 x residual == effective_C` to `1.8e-16` relative on net 0 and `1.5e-15`
+on net 1, which re-verifies F1's decomposition against a third artifact. [O,
+`--selfcheck` item 1, whose printed `rel=` values are quoted verbatim in v2.10.
+CORRECTED 2026-08-19: this line previously claimed `1.8e-16` on both nets, which the
+script's own output contradicts by an order of magnitude on net 1.]
+
+### The row v1 does not contain
+
+| candidate | basis | score | vs unfolded `kerdock_v3` `1.6190838e-7` |
+|---|---|---:|---:|
+| **folded `row_blocked`** | measured paired, net 0 | **`1.7797e-7`** | **`1.0992x`, 9.9% WORSE** |
+| folded `row_blocked` | measured paired, net 1 | `1.7923e-7` | `1.1070x`, 10.7% worse |
+| folded `row_blocked` | suite-scale projection [D] | `1.7973e-7` | `1.1101x`, 11.0% worse |
+| unfolded `kerdock_v3` | recorded, T4 official-100 | `1.6190838e-7` [O] | `1.0000x` |
+
+`2.1218e-7 x 0.8388 = 1.780e-7`. The fold at its measured strength on its measured
+host does not beat a candidate the campaign already holds. Neither the manuscript nor
+v1 contains this comparison.
+
+---
+
+## v2.3 λ SURVIVES — re-priced (script output)
+
+`python -B designation_repricing.py --lambda-mode survives --floor 0.1`
+(identical at `--floor 0.5`; every `C/B` below is above both floors)
+
+| candidate | C (this scale) | C/B | score | vs incumbent | vs unfolded kerdock_v3 |
+|---|---:|---:|---:|---:|---:|
+| incumbent row_blocked | 189.853B | 0.6980 | 2.1218e-7 | 1.0000x | 1.3105x |
+| fold | 159.246B | 0.5855 | 1.7797e-7 | 0.8388x | 1.0992x |
+| fold + 129 @ raw-MSE 0.78 | 163.037B | 0.5994 | 1.4212e-7 | 0.6698x | 0.8778x |
+| fold + 129 @ raw-MSE 0.86 | 163.037B | 0.5994 | 1.5670e-7 | 0.7385x | 0.9678x |
+| fold + 129 @ raw-MSE 0.93 | 163.037B | 0.5994 | 1.6945e-7 | 0.7986x | 1.0466x |
+
+```
+break-even raw-MSE ratio at which fold+129 matches unfolded kerdock_v3 (1.6191e-7): r* = 0.88859
+  amended pre-registered band [0.78, 0.93]; falsifier > 0.95
+  -> the stack beats the candidate we already hold only on the band's lower 72.4% (r in [0.78, 0.8886])
+```
+
+`python -B designation_repricing.py --lambda-mode survives --suite-scale`
+(`C_ratio = 0.8470936`, the measured half-ratios projected onto the deployed suite's
+own analytical/residual split)
+
+| candidate | C (this scale) | C/B | score | vs incumbent | vs unfolded kerdock_v3 |
+|---|---:|---:|---:|---:|---:|
+| incumbent row_blocked | 189.853B | 0.6980 | 2.1218e-7 | 1.0000x | 1.3105x |
+| fold | 160.823B | 0.5913 | 1.7973e-7 | 0.8471x | 1.1101x |
+| fold + 129 @ raw-MSE 0.78 | 164.652B | 0.6053 | 1.4353e-7 | 0.6765x | 0.8865x |
+| fold + 129 @ raw-MSE 0.86 | 164.652B | 0.6053 | 1.5825e-7 | 0.7458x | 0.9774x |
+| fold + 129 @ raw-MSE 0.93 | 164.652B | 0.6053 | 1.7113e-7 | 0.8066x | 1.0570x |
+
+```
+break-even raw-MSE ratio at which fold+129 matches unfolded kerdock_v3 (1.6191e-7): r* = 0.87988
+  amended pre-registered band [0.78, 0.93]; falsifier > 0.95
+  -> the stack beats the candidate we already hold only on the band's lower 66.6% (r in [0.78, 0.8799])
+```
+
+On the net-1 basis (`--basis floor_L4_net1`), `r* = 0.88232`. The three bases therefore
+put `r*` at `0.8799 / 0.8823 / 0.8886`.
+
+**`r*` is the number the 129 cell is now for.** The cell's amended band is
+`[0.78, 0.93]`; `r*` sits at `0.880-0.889` depending on basis. A PASS in the band's
+lower two-thirds makes `fold + 129` the best candidate the campaign owns. A PASS in the
+upper quarter leaves the unfolded `kerdock_v3` candidate ahead of the whole stack. v1
+had no leaf for that outcome because on v1's arithmetic every 129 row won.
+
+---
+
+## v2.4 The 129 rows carry their own point-count factor (C5) and the amended band (C8)
+
+**C5.** The completion bills proportional to point count, and 129 frames over 126 is
+exactly `43/42 = 1.0238095238...`. [O: `CODEX_HANDOFF_20260810.md:131`;
+`s11_full129_breakeven/S11_VERDICT.md:48`] v1 held `C` fixed across all three 129 rows.
+The cell's pre-registered band is explicitly on the **raw** MSE ratio, so the compute
+cost is additional to it and not already inside it. [O: `spec.json`
+`predicted_signature`] Every 129 row in v2 carries the factor in its `C` column:
+`159.246B -> 163.037B` under λ-survives, `123.749B -> 126.696B` under λ-dies. Effect on
+the headline row: `fold + 129 @0.78` moves from `1.3882e-7` to **`1.4212e-7`**, a
+uniform `+2.38%` on all three.
+
+The factor is applied to the whole of `C` rather than to its analytical half alone.
+That is the conservative direction and it is [A] on the split; **M3 is the measurement
+that settles it**, and it must be read off the same receipt as M2.
+
+**C8.** The band `0.78-0.86` is superseded. Every occurrence in this policy, meaning
+v1 §1a's three 129 rows, §2.1's fallback wording and §2.5's "pre-registered band" line,
+is replaced by the amended band **`[0.78, 0.93]`**, filed 2026-08-19 ~02:1x UTC, commit
+`0486668` ("band widened honestly"), after the regime audit found three unreconciled
+quantifications of Kerdock-versus-iid degree-4 suppression (9.1x, 21x, 42.7x). The
+falsifier is unchanged at raw-MSE ratio `> 0.95`. [O: channel; manuscript §11, §13]
+
+**Open, and not fixable from this file:** `experiments/frame_completion_129/spec.json`
+still carries `0.78-0.86` and contains no amendment text, while the channel entry that
+sealed it states the seal-time spec carries the amendment verbatim. The cell is
+unpredeclared and its authorization unspent, so the repair is free now and becomes a
+protocol violation once predeclared. **Owner action, strictly before predeclare.**
+
+---
+
+## v2.5 λ CAPPED — admissibility re-derived from the measured residual (B8 / C4)
+
+v1 ran two incompatible residual bases at once. §1a's `C_post(m)` carries `18.815e9`
+per unit `m`, which is a residual base of `0.18815 s/net`; §1c tabulates `0.1606m`.
+The two are **17.2% apart** (`18.815/16.0585 = 1.17165`), and the reason is now
+identified: `18.815e9` is the **record max-`C` network's own residual term**
+(`222.405357 - 203.590357`), not the deployed mean. Neither base is a measurement of
+the fold.
+
+**One residual base, stated: the deployed suite mean `0.160585 s/net` [O]. The fold's
+residual is measured directly rather than derived from a coefficient, and `m` is an
+output, not an input.**
+
+Measured: fold residual `0.371067 s/net` (net 0) and `0.355609 s/net` (net 1), against
+same-run parents `0.160728` and `0.158453`, giving `m = 2.3087 / 2.2443` [O, pending
+round-4 bill repair re-run]. Cross-check: the deployed mean scaled by the measured
+ratio, `0.160585 x 2.3086588 = 0.370736`, agrees with the direct measurement to
+**0.089%**.
+
+`python -B designation_repricing.py --lambda-mode capped`
+
+```
+ADMISSIBILITY on the measured residual base (floor_L4_net0): fold 0.370736 s/net against parent 0.160585 s/net, m = 2.3087 [O]
+```
+
+| tau (s/net) | fold as built (measured) | verdict | implied m |
+|---|---:|---|---:|
+| 0.1606 | 0.370736 | BREACH | 2.3087 |
+| 0.2000 | 0.370736 | BREACH | 2.3087 |
+| 0.2500 | 0.370736 | BREACH | 2.3087 |
+| 0.3212 | 0.370736 | BREACH | 2.3087 |
+| 0.3556 | 0.370736 | BREACH | 2.3087 |
+| 0.3711 | 0.370736 | fits | 2.3087 |
+| 0.5000 | 0.370736 | fits | 2.3087 |
+
+**Leaf 2.4 flips.** v1 recorded `tau = 0.3212` as "fits" and drew the
+incumbent-designation boundary there. By measurement the fold as built breaches
+`0.3212`, and the boundary moves to `tau < 0.3711`. The two branches of that leaf
+designate different slot-1 candidates, so this is a decision change, not a rounding
+change.
+
+Two qualifiers carried rather than buried. First, `m` inherits an unbounded environment
+component: `check_end_to_end` measures the incumbent once, in the first ~40 s of a
+~9-minute single-process sweep, and never again, while the child's exposure window per
+predict is 5-10x longer; the unchanged incumbent has measured `0.1503 / 0.1606 / 0.1717`
+across runs, a 14% spread. The A-B-A repair is queued for M1 and is a two-line change.
+Second, admissibility is a measured fact about the fold **as built**; it is not a claim
+about a re-engineered route that has never been measured.
+
+---
+
+## v2.6 λ DIES — both sides collapsed, and it is the HOSTILE branch (B4 / rank-4)
+
+v1 collapsed **our** `C` to its analytical part and left the incumbent's at
+`222.405357e9`. Under λ-dies the incumbent's residual term is deleted too. Three
+figures for the same quantity, in repair order:
+
+| pricing | fold-vs-incumbent `C` ratio | relative to v1 |
+|---|---:|---:|
+| v1: `126.7 / 222.405357` (incumbent uncollapsed) | `0.56968` | `1.0000x` |
+| collapse the incumbent only: `126.7 / 203.590357` | `0.62233` | `1.0924x` |
+| **v2: measured analytical ratio, both sides same scale** | **`0.71205`** | **`1.2499x`** |
+
+v1's λ-dies branch was flattered by **9.2%** from the one-sided collapse and by
+**25.0%** once the local-scale `126.7e9` absolute is replaced by the measured
+analytical ratio against the same-run parent.
+
+`python -B designation_repricing.py --lambda-mode dies --floor 0.1`
+
+| candidate | C (this scale) | C/B | score | vs incumbent | vs unfolded kerdock_v3 |
+|---|---:|---:|---:|---:|---:|
+| incumbent row_blocked | 173.794B | 0.6389 | 2.1218e-7 | 1.0000x | 1.3105x |
+| fold | 123.749B | 0.4550 | 1.5108e-7 | 0.7120x | 0.9331x |
+| fold + 129 @ raw-MSE 0.78 | 126.696B | 0.4658 | 1.2065e-7 | 0.5686x | 0.7452x |
+| fold + 129 @ raw-MSE 0.86 | 126.696B | 0.4658 | 1.3302e-7 | 0.6269x | 0.8216x |
+| fold + 129 @ raw-MSE 0.93 | 126.696B | 0.4658 | 1.4385e-7 | 0.6780x | 0.8885x |
+
+```
+break-even raw-MSE ratio at which fold+129 matches unfolded kerdock_v3 (1.6191e-7): r* = 1.04676
+  amended pre-registered band [0.78, 0.93]; falsifier > 0.95
+  -> r* is above the band's upper edge: the stack wins across the whole band
+```
+
+`python -B designation_repricing.py --lambda-mode dies --floor 0.5`
+
+| candidate | C (this scale) | C/B | score | vs incumbent | vs unfolded kerdock_v3 |
+|---|---:|---:|---:|---:|---:|
+| incumbent row_blocked | 173.794B | 0.6389 | 2.1218e-7 | 1.0000x | 1.3105x |
+| fold | 123.749B | 0.4550 (floored) | 1.6604e-7 | 0.7825x | 1.0255x |
+| fold + 129 @ raw-MSE 0.78 | 126.696B | 0.4658 (floored) | 1.2951e-7 | 0.6104x | 0.7999x |
+| fold + 129 @ raw-MSE 0.86 | 126.696B | 0.4658 (floored) | 1.4279e-7 | 0.6730x | 0.8819x |
+| fold + 129 @ raw-MSE 0.93 | 126.696B | 0.4658 (floored) | 1.5441e-7 | 0.7278x | 0.9537x |
+
+```
+break-even raw-MSE ratio at which fold+129 matches unfolded kerdock_v3 (1.6191e-7): r* = 0.97514
+  amended pre-registered band [0.78, 0.93]; falsifier > 0.95
+  -> r* is above the band's upper edge: the stack wins across the whole band
+```
+
+Under λ-dies the `fold + 129` stack beats the unfolded `kerdock_v3` candidate across
+the whole amended band at either floor, which is the one branch where v1's designation
+ordering survives the re-price intact. The reason is mechanical rather than favourable:
+deleting the residual term removes the fold's only measured **cost**, and the fold's
+analytical win is the half that transfers.
+
+v1 reported `1.2088e-7` and `1.2975e-7` for the fold on these two leaves. The repaired
+figures are `1.5108e-7` and `1.6604e-7`. The floor still binds at `0.5`, and the 129
+lever still pays its full ratio under the floor because the floor caps the multiplier
+rather than the MSE. One correction to v1's confidence about it: the score law applies
+`max(FLOOR, C_i/B)` **per network**, so under λ-dies at floor 0.5 some networks bind and
+others do not. The aggregate test above is an approximation and only M1's per-network
+receipt settles it. [D]
+
+### The rival-response caveat, which v1 has no column for
+
+**λ-dies is the hostile branch, not the friendly one.** The fold is a pure compute
+lever: `rel_dev_vs_incumbent = 1.0189e-07` and `output_ratio_vs_incumbent =
+1.0000000026` on `floor_L4`, i.e. MSE parity to seven digits [O, pending round-4 bill
+repair re-run]. Its entire value is the multiplier. A rules change that deletes or
+floors the compute term therefore **deletes our lever and leaves the MSE-lever rivals
+untouched**, and Puffi, at the declared front, has already published a MUB-129
+ablation, which is a design lever of exactly the kind λ-dies preserves. [R]
+
+Two consequences for how this branch may be read:
+
+1. **No cross-regime comparison is admissible.** Every λ-dies score in v1 was computed
+   for us alone and then compared against a rival front declared under the current
+   rules. If λ changes, it changes for everyone. v1 §2.2's sentence "at 9.4e-8 slot 1
+   would sit at or ahead of the declared front" is **withdrawn**; v2's λ-dies tables
+   carry ratios against our own incumbent and nothing else.
+2. **The pre-commitment in `CONTINUATION_PLAN` §0c to λ-dies as the primary branch is a
+   bet on a branch adverse to our candidate class.** It is retained as a plan, not as a
+   preference.
+
+---
+
+## v2.7 The host fork is now the decision, not a tiebreak
+
+The fold's win is carrier-free at the operator (metered `flops_ratio 0.6524` at
+(4096,256,256) and `0.7145` at (256,256,256), FlopScope's own measurement [O]), while
+its residual **cost** scales with the host's residual base. `kerdock_v3` carries a
+residual base of `0.080 s/net` against `row_blocked`'s `0.160585`, a residual share of
+`4.48%` of `C` against `8.46%`, so the same measured half-ratios buy more there:
+
+| host | suite-scale `C` ratio from the same measured halves | folded score | admissible at `tau` |
+|---|---:|---:|---|
+| `row_blocked` | `0.8471` [D] | `1.7973e-7` | `tau >= 0.3711` only |
+| `kerdock_v3` | **`0.7836`** [D, portability [A]] | **`1.2687e-7`** | `tau >= 0.2000` |
+
+`python -B designation_repricing.py --lambda-mode survives --host kerdock_v3 --suite-scale`
+
+| candidate | C (this scale) | C/B | score | vs incumbent | vs unfolded kerdock_v3 |
+|---|---:|---:|---:|---:|---:|
+| incumbent kerdock_v3 | 178.463B | 0.6561 | 1.6191e-7 | 1.0000x | 1.0000x |
+| fold | 139.847B | 0.5141 | 1.2687e-7 | 0.7836x | 0.7836x |
+| fold + 129 @ raw-MSE 0.78 | 143.176B | 0.5264 | 1.0132e-7 | 0.6258x | 0.6258x |
+| fold + 129 @ raw-MSE 0.86 | 143.176B | 0.5264 | 1.1171e-7 | 0.6900x | 0.6900x |
+| fold + 129 @ raw-MSE 0.93 | 143.176B | 0.5264 | 1.2080e-7 | 0.7461x | 0.7461x |
+
+```
+break-even raw-MSE ratio at which fold+129 matches unfolded kerdock_v3 (1.6191e-7): r* = 1.24646
+  amended pre-registered band [0.78, 0.93]; falsifier > 0.95
+  -> r* is above the band's upper edge: the stack wins across the whole band
+```
+
+> **CORRECTED 2026-08-19 (hostile verify).** This block previously read `r* = 1.16447`,
+> which is the output of `--host kerdock_v3` *without* `--suite-scale`; the command
+> quoted above emits `1.24646`. The table above it was always the `--suite-scale` run.
+> The line is struck either way (see below), so no designation moved; the authoring
+> verifier missed it because its skip list excluded every `break-even` line. [O]
+
+**Read only the `fold` row of that table.** The script applies the 129 band to whatever
+host it is given; on this host the three 129 rows are **inapplicable and are struck**,
+because the completion's MSE lane is measured dead on Kerdock (`~0.176%`, s11 plus the
+dual-witness certificate). That is the whole reason the cell was built for the Haar
+carrier, where `A_4` is `128/3` larger. The `r* = 1.24646` line is struck with them.
+
+On the surviving row the folded `kerdock_v3` candidate at `1.2687e-7` beats **every**
+`row_blocked` candidate in the λ-survives branch, including `fold + 129` at the band's
+optimistic edge (`1.4212e-7`).
+
+**This is [A] on one link and must not be designated until that link is [O]:** the
+`0.712046` analytical ratio is assumed to port to `kerdock_v3`'s deployed route. The
+settling check is a source read of minutes, of exactly the kind Phase 1 did for
+`row_blocked` (`row_blocked_winograd.py:88` gave `owned_batched` at `471,711,744`/call).
+Until it exists, the kerdock rows above are a projection.
+
+The second-order point is that this pair is genuinely decorrelated in W1's sense (a
+different carrier, a different MSE lane, a different admissibility profile), which is
+what v1's slot 2 ("fold alone") is not: it shares carrier, compute mechanism and suite
+draw with v1's slot 1, the `rho = 1` shape W1 prices at zero.
+
+---
+
+## v2.8 What the re-price does to §2's leaves
+
+Only two leaf answers move. The slot doctrine, W1-W3 and §2.5's standing rules are
+unchanged.
+
+| leaf | v1 answer | v2 answer | why it moved |
+|---|---|---|---|
+| **2.1** λ survives, 2 slots | Slot 1 `fold + 129`; slot 2 `fold alone` | Slot 1 `fold + 129` **conditional on the cell returning `r <= 0.8886`**; slot 2 the folded `kerdock_v3` host once its route read lands, else the unfolded `kerdock_v3` | `fold alone` at `1.780e-7` loses to a candidate already held, so it is not a slot-2 candidate on score, and it is not decorrelated from slot 1 either |
+| **2.1** λ survives, 1 slot | `fold + 129`, else `fold alone` | `fold + 129` if the cell clears **and** `r <= 0.8886`; otherwise **unfolded `kerdock_v3`**, not `fold alone` | same arithmetic |
+| **2.4** λ capped | incumbent at `tau < 0.3212` | incumbent at `tau < 0.3711` on the `row_blocked` host; for `0.2000 <= tau < 0.3711` the folded `kerdock_v3` is the admissible candidate if its route read lands | the fold as built breaches `0.3212` by measurement |
+| 2.2 / 2.3 λ dies | unchanged ordering | unchanged ordering, re-priced numbers, cross-regime comparisons deleted | the 129 lever keeps paying under the floor; only the magnitudes moved |
+
+**Unchanged and re-affirmed:** nothing is designated on an unrun cell; never two
+correlated slots; `R` is chosen last in September from the position actually held;
+FlopScope-mandatory adds a metered port to every candidate. v1 §2.5's claim that
+FlopScope-mandatory "changes the schedule, not the ranking" is **withdrawn**: the fold's
+win is a metered-FLOP win whose `m` is set by batched leaf dispatch in native numpy, and
+a mandatory port re-serializes exactly that dispatch, so under that rule `m` is
+re-measured from scratch. It is an axis this tree does not have, and the Ψ response
+applies to it.
+
+---
+
+## v2.9 Pre-committed M1 interpretation bands (F9) — filed before the run, JSON only
+
+Filed before M1 lands so that the reading of the measurement cannot be re-narrated
+after the fact. Verbatim from the pre-commitment; no prose paraphrase is authoritative.
+
+```json
+{
+  "predeclaration": "M1 interpretation bands and crowning rule",
+  "filed": "2026-08-19, before the one Public100 measurement",
+  "reported_as": "paired child/parent ratios on the same Public100 run",
+  "bands": {
+    "FULL_TRANSFER": {
+      "condition": "FLOP ratio <= 0.65 AND C ratio <= 0.78",
+      "meaning": "the suite ladder's savings carried to the Haar host; the analytical anchor holds",
+      "disposition": "crown at the headline"
+    },
+    "PARTIAL_NON_TRANSFER": {
+      "condition": "FLOP ratio 0.69-0.75 with C ratio 0.80-0.88",
+      "meaning": "this is what every committed measurement predicts",
+      "disposition": "crown WITH mechanical attribution: decompose the realized analytical bill against the fold's own closed form (sum realized_candidate_bill over the predict's dispatches; deterministic, host-independent, no extra run) and attribute the residue to the Kerdock-lineage suite tiers BY NAME. If realized non-transfer exceeds the declared 1.55%, the manuscript is CORRECTED, not re-described."
+    },
+    "MARGINAL": {
+      "condition": "C ratio 0.88-0.95",
+      "meaning": "still a win under Gate B's 0.98 clause",
+      "disposition": "crown as verified win, headline WITHDRAWN"
+    },
+    "FAILURE": {
+      "condition": "C ratio > 0.98 OR per-net |MSE ratio - 1| > 5e-4 OR aggregate |MSE ratio - 1| > 1e-4",
+      "disposition": "no crown; a parity breach voids the candidate"
+    }
+  },
+  "crowning_rule": {
+    "pairing": "crown only on the paired end-to-end C ratio from ONE run",
+    "incumbent_measured_twice": "the incumbent is measured TWICE in that same run, A-B-A, before and after the child routes; report m against both, and the spread between the two A blocks is the in-run measurement of the environment component",
+    "never_mix_scales": "never combine the local synthetic analytical incumbent with the record analytical incumbent inside one ratio; the superseded 126.7 + 18.815m curve did exactly that and it is the sole source of the -26% headline",
+    "companion_witness": "record process_time alongside perf_counter per rep and store wall - cpu, to separate descheduling from clock throttling"
+  },
+  "standing_note": "the committed paired measurement (effective_C_ratio 0.8388/0.8447) already sits inside PARTIAL_NON_TRANSFER, so the predicted disposition is crown-with-attribution, not crown-at-headline"
+}
+```
+
+The last line is the one that binds hardest: **on the measurement already in hand, the
+pre-committed reading of M1 is PARTIAL, and PARTIAL means the headline is not crowned.**
+
+---
+
+## v2.10 Reproduction, and what v2 does not settle
+
+**Reproduction.** Every v2 table is the output of `core/designation_repricing.py`
+(exact `Fraction` arithmetic, stdlib only, run with `-B`). Parameters, per C13:
+`(lambda_mode, floor, B, residual_constant, suite_size, host, C_ratio)`, plus `--basis`
+to select the measured net and `--suite-scale` to project the measured half-ratios onto
+the deployed suite's split. The hour the Phase-2 rules post, the response is a script
+run rather than a re-derivation: a change to the floor, to `B`, to the residual
+conversion constant, to the private suite size, or to the host is a flag.
+
+`python -B designation_repricing.py --selfcheck` runs four discriminating checks:
+
+```
+[ok] 1/floor_L4_net0: flops + 1e11*residual == effective_C, rel=1.77e-16
+[ok] 1/floor_L4_net1: flops + 1e11*residual == effective_C, rel=1.52e-15
+[ok] 2: v1 curve reproduces its 1.5677e-7 headline -> 1.5677e-7 at C/B ratio 0.738876
+[ok] 3: product form 2.1564e-7 vs recorded 2.1218e-7, bias +1.633%
+[ok] 4: aggregate score ratio 0.763084382 vs T4 printed mean-ratio column 0.763084382 (IDENTITY, transcription check only)
+SELFCHECK PASS
+```
+
+Check 2 is the discriminating one: if v2's model of v1 were wrong, the replaced
+headline would not reproduce. **Check 4 is not discriminating** — see the withdrawal in
+v2.1; it was relabelled in the script on 2026-08-19 so the output states its own status.
+
+**What v2 does not settle.**
+
+- **The round-4 re-run.** Every `full.json`-derived number carries the standing caveat.
+  The repaired bill changes route selection, so `0.8388`, `0.8447`, both `m` values and
+  the admissibility table can all move. No designation may cite them until the sweep is
+  re-run on the repaired bill.
+- **The local-to-hosted map.** The campaign owns two calibrations that disagree by a
+  factor of 1.87 in opposite directions (`gm_c1_bound` at `R = 1.65 [1.04, 2.42]`
+  against the one paired graded anchor at `R = 0.884`, with Codex's median test
+  independently reaching parity). Every "we would sit at X against the front" sentence
+  in the record silently assumes 1:1. v2 states no position against any rival for that
+  reason, and the divergence map is the settling check.
+- **M3.** Whether the `43/42` point-count factor applies to the whole of `C` or to its
+  analytical half alone.
+- **The kerdock route read.** v2.7's host rows are [A] on portability until the source
+  read lands.
+- **The Phase-2 rules text.** No Phase-2 rules or criteria document exists anywhere in
+  the corpus; the only rules texts are eleven days old and Phase 1. The λ axis, the
+  floor axis, FlopScope-mandatory, the seed protocol, the submission limit and the
+  private suite size are all decided by that text and by nothing computable here.
+- **The aggregate-ratio approximation itself.** v2's ratios reproduce a true paired
+  ratio to nine digits on the one pair where both are recorded (`--selfcheck` 4). That
+  is one pair, not a theorem. Any candidate whose per-network `C` distribution differs
+  in shape from the incumbent's, the floored λ-dies leaves in particular, needs the
+  per-network receipt rather than the aggregate.

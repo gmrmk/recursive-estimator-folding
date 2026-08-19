@@ -9381,3 +9381,126 @@ fold3_only control arm is safe under USE_FLOOR=False; D-F6 A-B-A incumbent re-me
 wall-vs-cpu witness in check_end_to_end; D-F7 regenerate estimator.py's docstring table
 from the committed full.json; A.7 mutant demonstration is a VERIFIER duty (delete the
 copy-out in scratch, watch item 8 fail, record verbatim).
+
+## [2026-08-19 08:23 UTC] fable -> all: ULTRAMATH five-lane deliberation synthesized — ranked slate deposited
+
+Deposited: corpus/whestbench/core/ULTRAMATH_SLATE_20260819.md — 14 ranked entries,
+dropped/refuted register, disagreement ledger, ladder plan. All inputs exact-rational
+or deterministic (0 billed FLOPs, no harness time). fold_floor_splice and
+frame_completion_129 untouched.
+
+Headlines, in slate order:
+1. DEG-4 EXCLUSIVITY (three lanes converged, one self-refutation): carrier swap,
+   129-completion, and deg-4 proxy selection spend ONE ~16% channel on the Haar host
+   — rank, never sum. Post-completion selection signal is EXACTLY zero (A4 is a
+   squared norm). Predeclared: swap 0.797 score, completion 0.842, selection 0.89-0.93.
+2. TWO ZERO-COST READS GATE THE ECONOMICS: MSE (not defects) at the recorded
+   one-frame/four-frame bases (idx 269-271) identifies the size-independent MSE share
+   AND the design-share conversion; the s11 denominator read separates the three
+   readings (0.391/0.906/1.000) that price the sealed 129 cell at 7%/16%/18% of MSE.
+   The 0.3911 conversion is DEAD (withdrawn by its own lane; three refutations).
+3. CARRIER+FOLD STACK is the headline actionable: structured carrier into the fold
+   pipeline at identical line count = 0.845 MSE x 0.942 C = 0.796 score predicted
+   (three independent variance routes agree to 0.16pp). Consistent with RANK-1: the
+   fork IS the decision, and the stack is the only path beating both held lineages.
+   Gates are free (one Gram assertion on the deployed carrier; the known
+   keyword-vs-positional sample-hook TypeError, a two-line fix).
+4. FLATNESS THEOREM REFUTED (its own lane conceded): score slope along carrier size
+   = beta - phi exactly; phi in [4.1e-4, 0.165], beta <= 0.258 and unbounded below.
+   Largest undetermined sign in the campaign; both settling checks are reads.
+   Trim/prune lineages are over-credited by up to ~12% of score per halving under
+   the wide reading.
+5. UNCONDITIONAL CLOSURE: MUB/Kerdock carrier is the exact global variance minimizer
+   over frame unions for EVERY absolutely monotone kernel (w* threshold retired as
+   vacuous). Synthesizer adjudications: deg-4 "half-cost door" CLOSED (rank bound
+   counts lines; completion sits 128 lines above an unattainable floor); deg-6 wall
+   corrected to ~44x (points-vs-lines); Lane 2's leaf-lane erratum against Lane 3
+   REFUTED (misparse — two lanes confirm the formula and value, fold bills stand).
+6. Sealed cheap arms queued behind the round-4 measurement: block-Gram spectrometer
+   on kerdock_v3 (negative marginal FLOPs; hostile input to the closure theorem AND
+   a 32%-separation meter for the disputed deg-4 share), the never-measured deg-4
+   ladder rung with an EXACT-ZERO predeclaration on a completed carrier, and two
+   integer counters (pool-pin carve counter, left-tree signature counter) riding the
+   next fold predict for the 5.15%-of-B route-entry lever.
+7. Retirements filed with corrected reasons: F8/GLS (uniform weights forced;
+   scalar mixtures always lose), the antithetic ladder (its floor is the completion
+   index; the -0.027 was a different object), high-degree carrier ladder (null lever
+   beyond deg 12, five-signal), owner's "factorializing" seed (closed-form
+   double-factorial identity + Kronecker closure).
+
+Owner attention flags: (a) the slate's entry 2 reads should land BEFORE the 129
+seeds are consumed — they decide how that cell's result is read (the band question
+already open in this channel is untouched); (b) entry 3's two-line sample-hook
+signature fix needs an owner nod since it touches operator source; (c) the F7 proxy
+family is predicted DEAD post-swap — do not fund it and the swap in the same round.
+
+## 2026-08-19T08:41:38Z — THREE OWNER RULINGS + TRIPLE HARVEST (round-4, repricing, ultramath): the fold lineage HALTS, the 129 cell runs, the manuscript is the track
+
+OWNER RULINGS (AskUserQuestion, this session):
+1. 129 CELL: "Repair + run" — repair spec.json's band to the amended [0.78, 0.93]
+   (channel commit 0486668 text, verbatim), correct the unsupported "12% of C" prose in
+   the same pass, re-hash, run the arm-C Tier-1 pre-flight, then predeclare and RUN.
+2. PIPELINE LAW: "RE-PLAN NOW." The fold lineage HALTS per the strict three-red-loops
+   law. The designation pivots to unfolded kerdock_v3 vs incumbent row_blocked, and the
+   compute effort goes into the contribution manuscript. M1 (the fold Public100) is
+   CANCELLED. P1's pre-registration disposition: WITHDRAWN BY GOVERNANCE before
+   measurement — never run, therefore never falsified; recorded as such, not erased.
+3. RULES: nothing has arrived. The designation is filed against a NAMED DEFAULT
+   (Phase-1 rules as analyzed in RULES_V12_ANALYSIS_20260808); designation_repricing.py
+   is the hour-of-posting response when the real text lands.
+
+ROUND-4 DISPOSITION (wf_27e7a983-7fa, complete — recorded for the archive under the
+halt): fix COMPLETE — D-A3a priced (fallback total = frozen bill + m*n; 42 shapes
+metered, 0 delta, 0 above direct), D-A3b structural (plain product seeds the search;
+direct_owned unreachable and gone; selfcheck items 7/8 moved onto the still-reachable
+fallback class); production bills UNCHANGED byte-for-byte (35 operator products traced,
+0 reroutes — the defect was swept-visible but never touched a shipped product);
+parity unchanged (worst Frobenius 1.462611e-05 vs 2e-5). Verifier verdict
+APPROVED_PENDING_CEILING: D-A6 discharged by the 06:12Z owner 1-GiB ruling (peak
+615.87 median / 616.27 max, instrument validated at +0.89% on the incumbent's
+receipt); D-M1 administrative only (gate manifest still names the round-3
+depth6_winograd bytes 6ee49e57...; on-disk round-4 bytes 88f8b787... — re-freeze
+required only if an archive is ever cut). THE FOLD THEREFORE RETIRES GATE-GREEN:
+the operator-level metered FLOP win (0.6524 at 4096x256x256, 0.7145 at 256x256x256)
+and the per-call floor stand as contribution artifacts; the estimator-level fold is
+not a designation candidate (measured paired C ratio 0.8388 -> 1.780e-7, losing 9.9%
+to unfolded kerdock_v3 1.6190838e-7).
+
+REPRICING SWARM (wf_b325115d-acd): verifier APPROVED. DESIGNATION_POLICY_20260819.md
+now carries the v2 revision block (907 lines; v1 byte-intact under a supersession
+banner); designation_repricing.py parameterizes (lambda_mode, floor, B,
+residual_constant, suite_size, host, C_ratio) with a 4-check selfcheck; the
+divergence map retires R=1.65 (honest map R ~= 1, anchor 13% adverse); the
+row_blocked frozen-scalars disclosure exists with its mechanical verifier. Decision
+number recorded: r* (fold+129 vs unfolded kerdock_v3) = 0.8886/0.8823/0.8799 across
+bases. UNFOLDED-host arithmetic for the 129 judge: r x 1.0238 x 2.121762464e-7 beats
+1.6190838e-7 only at r < 0.7453 — BELOW the pre-registered PASS band, so the cell's
+outcome is scientific (theorem test, manuscript P2) and host-fork evidence, not an
+immediate designation flip. Pre-stated here so the verdict cannot be re-narrated.
+
+ULTRAMATH DELIBERATION (wf_01a886a8-2ad, 11 agents, slate at
+core/ULTRAMATH_SLATE_20260819.md): the design axis is now CLOSED BY THEOREM.
+- DEG-6 DYADIC TAX [D, exact]: A_l_mub(k)/A_l_haar(k) = 1 + (k-1)X_l/S_l with
+  X_4/S_4 = -1/128 and X_6/S_6 = +1/4096 exactly. The A4 theorem falls out (zero at
+  k=129); at degree 6 the Kerdock family is 3.05% WORSE than Haar (4221/4096 at
+  k=126; 33/32 at 129). Gain/tax slope ratio exactly 32.
+- EXTERNAL ANCHOR: closed forms predict A4_haar(1)=0.003951848, A6_haar(1)=0.003905370;
+  the k32 cells (ledger 269-271) independently MEASURED 0.0039518 / 0.0039054 — all
+  five digits, different agent, different cell, different code path.
+- CARRIER OPTIMALITY THEOREM [D]: for any union of orthonormal bases, E[t^2]=1/d
+  exactly, so the design freedom at degree l is the single moment <Q_l>; Jensen +
+  Cauchy-Schwarz make mutual unbiasedness the UNIQUE degree-4 minimizer, and the
+  GLOBAL minimizer of the weighted objective iff E6/E4 < 19.71 (measured implied
+  0.6975 — margin 28x; adversarial floor 3.9x even if ALL >=6 energy were degree 6).
+- DELSARTE FLOOR [D]: degree-6 exactness needs >= 2,861,696 directions — 88.7x out of
+  budget; the 129-completion is a near-tight antipodal 4-design, 0.389% above the
+  absolute degree-4 floor. Nothing cheaper exists at any k.
+- CONSEQUENCE: the deg-6 lane is closed on two independent axes (carrier route by
+  theorem, control route by the deg6 cell's measured 0.0019-0.0038 capture); the 129
+  completion buys deg-4 zero at a priced 33/32 deg-6 tax — the cell's band already
+  brackets the net.
+
+IN FLIGHT AFTER THIS ENTRY: the 129 execution chain (repair -> pre-flight ->
+predeclare -> ONE run -> judge, per ruling 1) and the manuscript integration
+(ultramath theorems + fold governance disposition + P1 withdrawal, hostile-verified).
+mi-solve (wf_77a537c1-bec) still deliberating. Monitor b7010mqdr + crons live.

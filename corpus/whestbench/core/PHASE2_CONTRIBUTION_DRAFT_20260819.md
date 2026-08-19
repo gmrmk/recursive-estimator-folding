@@ -1,6 +1,11 @@
-# Phase-2 Algorithmic Contribution writeup — draft v1
+# Phase-2 Algorithmic Contribution writeup — draft v1.1
 
-Status: DRAFT v1, 2026-08-19. **First assembly.** This document collects the ten
+Status: DRAFT v1.1, 2026-08-19. **First assembly, hostile-reviewed, editorially
+revised.** v1 was returned NEEDS_WORK by a hostile verifier with four punctures; this
+revision closes all four — carrier-lineage qualifiers on every compute claim (§0, §4,
+§9, §10), the named denominator for §4's percentages, the pre-registration amendment
+of §11 and §13, and lineage statements on the eight cells — and upgrades the `128/3`
+open item of §11 from a flagged coincidence to a theorem. This document collects the ten
 Phase-2 artifacts into one argument. It supersedes nothing: the Phase-1 filing of
 2026-08-17 (short form, 3,451 words, sent ~21:36 UTC to arc-whestbench@aicrowd.com,
 Gmail message id `1a011a886c288f40`) stands as filed, and every erratum E1–E13 it
@@ -35,6 +40,22 @@ path, or a channel timestamp. Cells are the sealed-gate experiments under
 `GATE_TOKEN.consumed`, a `report.json` whose SHA-256 is recorded in `verdict.json`,
 and the git commit at which the gate was sealed **before** the value existed.
 Ledger records are the 276 entries in `corpus/whestbench/headroom/fold_ledger.json`.
+
+**A carrier-lineage convention, because §1's own doctrine demands it of us and not
+only of competitors.** Two estimator lineages run in this corpus and they do not share
+a design carrier. `row_blocked` (ledger id `row_blocked_winograd_production`) builds
+**Haar-random** orthonormal frames and therefore carries full iid degree-4 strength;
+`kerdock_v3` (ledger id `t4_kerdock_v3_descriptive_rescore`) builds the **126
+phased-Hadamard (Kerdock) frames** and suppresses degree 4 by the exact factor §11
+derives. The winner fold currently hosts on `row_blocked`; the leaderboard score this
+document reports for itself in §12 was earned by `kerdock_v3`, as submission #326094
+**[R, `core/KILL_CONTEXT_INDEX_20260819.md`; `core/CODEX_HANDOFF_20260810.md:270`]**.
+That split is the **host fork**, it is the campaign's largest open strategic question,
+and it is not resolved here. Every measured section below states which lineage its
+numbers were taken on, or states that the measurement is carrier-free; where a result
+is carrier-indexed and its transfer to the other lineage is unmeasured, that is said in
+the same breath rather than left for a reader to discover by cross-reading §4 against
+§11.
 
 **A citation-hygiene erratum, stated first because it affects how to read Phase-1.**
 Phase-1 cites ledger records by position ("ledger record 202", "ledger 241",
@@ -75,6 +96,12 @@ not a softening. It is what makes the kill field searchable: every kill record
 already carries a `kill_condition` and a premise-change field, and the doctrine says
 those fields are search coordinates rather than epitaphs.
 
+The rule binds this document's own results first. §0's carrier-lineage convention names
+the lineage of every measured section below, and §4, §9 and §10 carry the consequence
+that the largest numbers in the compute programme are Kerdock-carrier quantities while
+the estimator that ships is on Haar. A hostile reader who put §4 next to §11 would have
+found that in a minute; it is stated here instead.
+
 The refinement is not an assertion of convenience. It was validated on the sharpest
 public disagreement in this competition. Three independent parties measured the same
 intervention — completing a 126-frame design to 129 frames — and reported gains of
@@ -97,6 +124,16 @@ full-covariance recurrence, propagated through all 32 layers and metered at
 is `2.818e-7`. The like-for-like ratio, raw against raw, is **340.86x**
 **[D, recomputed this session: 9.6055e-5 / 2.818e-7 = 340.86]**. Making the covariance
 exact rather than diagonal buys a factor of ~7.5 (diagonal closure `7.18e-4`).
+
+**Lineage of the ratio, and why the law outlives it.** The sampler side of that ratio is
+the hosted graded champion, submission #326094, which is the **`kerdock_v3`** lineage and
+not the deployed `row_blocked` carrier **[R, `core/CODEX_HANDOFF_20260810.md:270`; raw
+final-layer MSE `2.818e-7` from `s11_results.json`]**. The closure side is analytic and
+carrier-free. The number `340.86` is therefore indexed to that sampler. The *law* is not:
+the regime audit of 2026-08-19 classifies closures as one of eight **regime-universal**
+families, whose kills do not move with the carrier axis **[R, channel 2026-08-19 ~02:1x
+UTC]**, and the mechanism is why — a Gaussian-closure predictor's bias is set by the
+network, and no design change on the estimator side touches it.
 
 **Scope, unchanged from Phase-1 and repeated because it is easy to inflate.** This
 kills *this implementation* as a competitive estimator. It is not a theorem that no
@@ -195,6 +232,19 @@ their degree-4 defects differ by 4x (`3.9518e-3` against `9.8823e-4`), and the
 degree-energy separation at degree ≥ 6 is 0.278 against 0.006, so the perturbation
 lived exactly where the mechanism required.
 
+**Lineage, stated because the doctrine binds our own cells [O, predeclarations read this
+session].** Neither k32 cell ran on a deployed carrier. The networks are synthetic
+width-256 challenge-family He nets standing in for a hand-built original that exists
+nowhere on this machine, and both bases were constructed for the cell: `base1` is a
+single complete frame, `base2` a union of four distinct phased-Hadamard frames, chosen so
+that the two agree exactly at degree 2 and differ only from degree 4 up. All three
+premise shifts are declared in the predeclaration rather than discovered later. One
+consequence worth recording: `base1`'s measured defect `A_4 = 0.0039518` is the
+one-block value of the closed form proved in §11 (`3.951848e-3`), so the k32 instrument
+sat at exactly full iid degree-4 strength, and that measurement is a fourth independent
+anchor of the A_4 law. The DGFL figures are on the partner agent's F0.75 networks — a
+third network family again, and one whose bytes are still missing.
+
 **The corollary [D].** DGFL died on cross-network coefficient heterogeneity; k32
 died on cross-base coefficient transport. One restriction covers both: **only
 theorem-fixed coefficients transport.** A coefficient obtained by fitting — to
@@ -251,9 +301,18 @@ boundary, where the first nonlinearity's odd channel is still linear in
 Hadamard-structured inputs.** That is the lemma, constructively: one nonlinearity,
 no more.
 
-**The arithmetic, and what survived hostile verification.**
+**The arithmetic, its denominator, and what survived hostile verification.** The shares
+below are shares of the **fringe-priced champion suite bill**, which is
+`504 × 418,238,464 = 210,792,185,856` FLOPs per net — 32 layers at 15.75 tiles each,
+priced at the fringe per-call route. That denominator is named here because v1 printed
+the percentages without it **[D, recomputed this session; the 15.75-tile layer bill and
+the tile price are the judge op-count in `headroom/FWHT_SPLICE_STAGED_20260818.md`]**.
+Numerator and denominator are priced on the same route, so the column is internally
+consistent. It is *not* a share of the `152,760,682,368` suite baseline of §9, which
+prices the same 504 tiles at the crowned per-call route `303,096,592`; the two bills
+differ by exactly that per-tile factor **[D: 152,760,682,368 = 504 × 303,096,592]**.
 
-| splice | per-net saving | share of suite bill |
+| splice | per-net saving | share of the fringe-priced suite bill (210,792,185,856) |
 |---|---:|---:|
 | FWHT layer-1 design evaluation (88.6x on layer 1) | 6.513e9 | 3.09% |
 | CReLU odd-channel layer 2 (6.587e9 → 3.402e9) | 3.186e9 | 1.511% |
@@ -265,6 +324,25 @@ protocol; nothing was adopted on judge arithmetic alone. The FWHT tier was
 its `1/16` normalization — one of exactly two exactness rejections in the whole suite
 ladder **[insight 160; channel 2026-08-18 ~17:0x UTC]**. CReLU at layer 2 is the
 first win in the crowned suite arc.
+
+**Which carrier these wins are valid on — the qualifier this document owes its own
+doctrine.** Both splices are exact on a **phased-Hadamard (Kerdock) design**, and only
+there. The FWHT identity's premise is stated in the first line of its own staging
+document — "the design IS 126 phased-Hadamard frames, so the FIRST-LAYER evaluation of
+the whole design admits the fast Walsh–Hadamard transform" — and the CReLU odd channel
+rides the same frame algebra one layer up. On the deployed `row_blocked` (Haar) lineage
+of §11 the odd channel is not a butterfly, and our own shipped code says so:
+`USE_CRELU_SPLIT` in
+`experiments/fold_floor_splice/candidate_source/fold3_estimator.py` is "DEFAULT OFF, and
+the reason is measured rather than assumed: the suite's win comes from `o` being a
+phased-WHT butterfly, which needs the Kerdock design. On this lineage's Haar-QR frames
+`o` is a real half-height product … That is a small loss, so the flag ships off"
+**[O, read at HEAD this session]**. The `4.601%` is therefore a **Kerdock-carrier**
+quantity. What part of it transfers to the deployed carrier is a separate question with
+a partial measured answer, and §9 states it rather than assuming it. The *lemma* is
+carrier-free — it is a statement about ReLU and exact input structure, and it would hold
+for any exactly-structured design — but the compute the lemma buys is carrier-indexed,
+which is the same distinction §1 draws for kills.
 
 **Also swept, and closed with keys rather than corpses.** Smooth ReLU surrogates
 (softplus/GELU) fall to the M181 smoothing kill (bias 4–6x baseline MSE); the key is
@@ -284,8 +362,13 @@ content is the *entry-layer kink tail*, transported forward with its shape intac
 
 The measurement is `deg_ladder_own_axis_capture_v2` (gate `e605f2b` sealed before
 the value; production seeds 20260904–06; wall 398.0 s of a 600 s cap;
-`report.json` SHA-256 `eab0a2f6…41aba7`). Own-axis captured energy at the readout,
-as a fraction of the degree-≥3 residual energy, by harmonic degree:
+`report.json` SHA-256 `eab0a2f6…41aba7`). **Lineage: carrier-free [O, predeclaration].**
+This is a function-side measurement — the object is the network's own harmonic content on
+synthetic width-256 challenge-family networks, read through network-adaptive axis pools
+against matched random-axis floors — so no estimator design carrier enters it, and the
+axis that would make it topical again is the network family or the depth, not the
+carrier. Own-axis captured energy at the readout, as a fraction of the degree-≥3 residual
+energy, by harmonic degree:
 
 | degree n | ρ_own | random-axis floor | own/floor | ratio to degree 6 | λ_n²/λ_6² (exact) |
 |---:|---:|---:|---:|---:|---:|
@@ -375,7 +458,11 @@ non-vanishing residue for the remaining twenty-four.
 
 Notably, the network-**adaptive** basis at depth 32 lands at 0.19% — the same order
 as m191's **fixed** 24-function basis at 0.23–0.29%. Adaptivity does not beat the
-dispersion at depth; it only survives it.
+dispersion at depth; it only survives it. That comparison crosses a lineage boundary and
+is quoted at order-of-magnitude strength for exactly that reason: this cell is
+carrier-free while m191 was measured on the **Kerdock** lineage **[R, regime audit,
+channel 2026-08-19 ~02:1x UTC]**, so the two agree on the order and nothing finer is
+claimed from the pair.
 
 **Ridge collinearity — a harmonic-free instrument [O,
 `deg_ladder_own_axis_capture_v2`, `metrics.ridge_collinearity`].** A function
@@ -421,6 +508,13 @@ surfaced blocker B, which sits upstream of it: `gm_m179_m199`'s reachability kil
 where the production-width covariance crosses the M198 variance floor mid-trace and
 the fail-closed guard refuses. A perfect provider cannot run past a guard that has
 already fired **[channel 2026-08-18 03:5x UTC]**.
+
+**Lineage: no spherical carrier at all.** The covariance recurrence is a property of
+He-initialized weights and of the arc-cosine ReLU map, and the kill-context index records
+that the whole `m141`–`m207` analytic block names no spherical carrier on any record
+**[R, `core/KILL_CONTEXT_INDEX_20260819.md`]**; the regime audit classifies the spine as
+regime-universal. The axis that does bind here is precision, and it is named in the
+terminal logic below: the closure is f64-specific.
 
 **m207 — the mechanism is not what the record assumed [O,
 `m207_reachability_v1`, gate `21bd94f`, seeds 20260823–24, widths 64/128/256].**
@@ -518,6 +612,12 @@ spectral energy, `y_4 = 16637/555357`, `y_6 = 538720/555357`, satisfying
 `y_4 G_4(1/16) + y_6 G_6(1/16) = 0` exactly and checkable by hand in four lines.
 Primal value 1, dual value 1, gap 0.
 
+The degree-4 line has since acquired a structural reading it did not have when the
+certificate was written: §11 proves that `R_4(k)` **is** the `k`-block degree-4 design
+defect multiplied by the compute factor `k/126`, exactly, for every `k` from 1 to 129.
+The affine shape of `R_4` is therefore not an artifact of the payoff convention; it is
+the design defect itself, and the payoff convention only rescales it.
+
 **The claim, at exactly its proven strength — and the boundary, stated because the
 first draft overstepped it.** A hostile verifier rejected one prose paragraph (§5.1
 Consequence) as claiming more than the LP delivers, and the judge narrowed it. The
@@ -589,6 +689,15 @@ prints `total: 303096592`, strategy `winograd_l6_inplaceleaf`, and the full dept
 table with the L=6 argmin **[O]**. The same integer appears independently in
 `experiments/fold_floor_splice/full.json` as `selfchecks.tier07_floor_4096_256_256`.
 
+**Carrier: none, and this is the one large compute number here that is carrier-free.**
+The per-call ladder optimizes the schedule of a fixed `4096 × 256 × 256` matmul by exact
+identities on the matmul alone. The design vocabulary that the suite ladder runs on —
+`kerdock`, `phased`, `hadamard` — appears **zero** times across all eight per-call tier
+scripts **[O, grepped this session]**, and the kill-context index independently records
+that the fold's schedule route applies to both lineages' deep layers **[R,
+`core/KILL_CONTEXT_INDEX_20260819.md`]**. Whichever way the host fork of §0 settles,
+`303,096,592` is the floor.
+
 **The proof that it is a floor [O].** Three consecutive dry tiers, each carrying its
 own arithmetic: tier 8 shut the cost-reweighting door with the only remaining money;
 tier 9 shut weighted redistribution elementwise, with the 1.07% transform-lane slack
@@ -615,6 +724,24 @@ Verified this session by running the lineage files from the repository root:
 docstring prices the last term it took — the odd channel's normalization, 65,536
 FLOPs, or 0.0000452% of the whole bill — which is what an exhausted ladder looks
 like from the inside.
+
+**Carrier: Kerdock — and the transfer is partly measured, partly open.** The suite ladder
+prices layer-1 design evaluation as a phased-WHT butterfly from tier 01 onward, so
+`144,867,083,088` is a **Kerdock-carrier** floor, not a floor for the deployed Haar
+route. Every one of the 23 adjudicated suite tier scripts names the phased/butterfly
+algebra; the per-call tiers name it nowhere **[O, grepped this session]**. The campaign's
+own transfer analysis, filed 2026-08-18 ~19:0x UTC, partitions the suite delta against
+the deployed `row_blocked` route into class A (real route changes) `5.76e9` plus a
+`2.01e9` butterfly port, class B (already deployed, no re-bankable value) `2.36e9`, and
+class C (model-only) `8.3e6`, and records **non-transferring `2.37e9`, or 1.55%**
+(quoted as filed, not re-derived from the class totals); the same
+entry records that tier-14's butterfly is class B on `kerdock_v3` — already inside its
+bill — while on `row_blocked` layer 1 is a real Winograd matmul **[R, channel
+2026-08-18 ~19:0x UTC]**. That partition and §4's shipped-off `USE_CRELU_SPLIT` flag are
+two statements about the same transfer taken at different times, and this document does
+not reconcile them **[GAP]**. The settling check is named and running: the itemized
+FlopScope receipt from the Public100 fold measurement pre-registered as P1 in §13 bills
+the deployed route line by line, which is the only instrument that resolves it.
 
 **Two false endings, both caught.** The first stop fired on one genuine dry plus two
 API-529 infrastructure failures the script had counted as dry. The judge ruled it
@@ -674,8 +801,21 @@ deeper route realises against the deployed `0.1606` s/net. The increment
 `r_inc = 0.18815` s is exact. Every score ratio and break-even below is taken against
 the incumbent's own Public100 receipt, `C = 222.405B` **[R, channel 2026-08-18 ~18:1x
 UTC]**; that denominator is what makes `m* = (222.405 − 126.7)/18.815 = 5.09` and the
-`C ≥ 200B` falsifier line `m ≥ 3.896`. Four derivations of the same curve, arrived at
-separately:
+`C ≥ 200B` falsifier line `m ≥ 3.896`.
+
+**Carrier, stated where it bites.** The measured half of this curve is on the deployed
+`row_blocked` (Haar) lineage: the fold's candidate source is a fork of
+`row_blocked_production/candidate_source/fold3_estimator.py` **[O, file header read this
+session]**, so the `flops_ratio` of 0.712–0.726 and every residual second below are
+deployed-carrier measurements. The analytical constant `126.7e9` inherits §9's transfer
+question, since it folds banked splices whose Kerdock-carrier share the A/B/C partition
+bounds at `2.37e9` non-transferring. Discounting that share in full moves `C_post` to
+`129.07e9 + 18.815e9·m`, which moves the break-even from `m* = 5.09` to `4.96` and the
+falsifier line from `m ≥ 3.896` to `m ≥ 3.77` **[D, recomputed this session]** — both
+still far above the measured band below, so the conclusion is insensitive to the whole
+open transfer question even at its worst.
+
+Four derivations of the same curve, arrived at separately:
 
 1. **Graph adjudicator** — applied the ladder's `0.69` route constant to total `C`:
    predicted `C = 153.5B`, score `1.4640e-7`, a 31.0% cut in `C` against the 222.405B
@@ -713,7 +853,12 @@ working-tree revision of that same file, regenerated at 23:11 on 2026-08-18 and
 0.7121 / 0.7253 committed and 0.7120 / 0.7257 in the working tree, so the metered
 half reproduces across all three runs and only the residual channel moves.
 Residual seconds are machine-load dependent and the three runs disagree. **We state
-the union: `m` measured in `[1.86, 2.64]` across three hostile-verify runs.** At
+the union: `m` measured in `[1.86, 2.64]` across three hostile-verify runs.** From
+committed evidence alone the band is `[1.86, 2.26]`; we carry the union because the
+wider band is the conservative one against the falsifier and because the third run is a
+real measurement that happens not to be committed yet. Committing that regeneration
+before any filing is an open item, and it is the only way the narrower band becomes the
+honest one. At
 `m = 2` the predicted score ratio is `0.7389`; at `m = 2.64` it is `0.7930`
 **[D, recomputed this session]**. Both sit under the falsifier line, which trips at
 `C ≥ 200B`, i.e. `m ≥ 3.896`, and well under the break-even against the incumbent at
@@ -751,24 +896,79 @@ the *Kerdock* carrier and over-generalized to the deployed one. The m81/s11
 break-even does not bind the deployed carrier
 [`m81_full129_pareto`, `s11_full129_reopen_measured_breakeven`, both killed].
 
-**A numerical identity we cannot yet derive [O for both sides, D for the equality,
-flagged as open].** The certificate's degree-4 penalty line is `R_4(k) = (129−k)/3`,
-which at `k = 1` — a single block, no mutual unbiasedness, no design strength —
-equals `128/3`. The Haar-to-Kerdock degree-4 defect ratio is also `128/3`, and it is
-not merely a numerical near-match: the sealed `frame_completion_129` cell asserts it
-as an exact structural constant and exits nonzero if it moves
-(`experiments/frame_completion_129/runner_fc129.py` docstring, "a factor of exactly
-128/3"; `spec.json` second-signal (a), which makes a departure a protocol kill rather
-than a result). So the equality is between two exact rationals. What is open is
-whether anything *derives* it: the two quantities are not the same object — one is an
-adjusted-score ratio at a fixed degree, the other a ratio of design defects — and we
-have no argument connecting them. **Settling check, named and not run:** evaluate
-`A_4` exactly for `k`-block MUB mixtures at `k = 1 … 129` and check whether
-`A_4(k)/A_4(126) = R_4(k) · 126/k` holds identically rather than only at the two
-endpoints the cell pins. That is a pure-rational computation of the same class as the
-certificate's own script, and it costs minutes.
+**Theorem — the A_4 law in closed form, and the derivation the first draft did not have
+[D, exact rational arithmetic].** v1 of this document flagged an unexplained identity:
+the certificate's degree-4 penalty line `R_4(k) = (129−k)/3` equals `128/3` at `k = 1`,
+the Haar-to-Kerdock degree-4 defect ratio is also `128/3`, and no argument connected an
+adjusted-score ratio to a ratio of design defects. The settling check named there — an
+exact-rational `A_4(k)` sweep over `k = 1 … 129` — has since been written and run
+(`papers/a4_ratio_settling_check.py`, committed `89d44cb`). It closes the item, and what
+it returns is stronger than what was asked for.
 
-**The pre-registered law [H1, filed 2026-08-19 ~01:0x UTC, BEFORE the cell runs].**
+For a union of `k` orthonormal frames in `R^256`, antipodally doubled, with `Q_4` the
+degree-4 Gegenbauer normalized to `Q_4(1) = 1`, and with every cross-block inner product
+equal to `±1/16` in the MUB case:
+
+```
+Q_4(0) = 1/21845                Q_4(1/16) = −65/2105344            (exact)
+A_4,haar(k) = [1 + 255·Q_4(0)] / (256 k)
+A_4,mub(k)  = A_4,haar(k) + (k−1)·Q_4(1/16)/k  =  |Q_4(1/16)| · (129 − k) / k
+```
+
+The closed form on the right follows in three lines: `k·A_4,mub(k)` is affine in `k` with
+slope `Q_4(1/16)`, so its root is `1 − A_4,haar(1)/Q_4(1/16) = 1 + 128 = 129`
+**[D, re-derived by hand this session and independently in `Fraction` arithmetic]**.
+
+**One asymmetry between the two lines, stated before the consequences that rest on it.**
+The MUB line is exact per instance: every cross-block inner product *is* `±1/16`, so
+`A_4,mub(k)` is a property of the design and not of a draw. The Haar line is an
+expectation over the frame draw — cross-frame zonal terms have mean zero rather than
+being identically zero, which is what makes `A_4,haar` the iid-strength reference in the
+first place. Consequences 1 and 3 below are therefore per-instance exact; consequence 2
+is an exact identity between the *expected* iid defect and the exact design defect, which
+is the sense in which the carrier discovery's `42.67x` was always meant and measured.
+
+Three consequences, all exact rather than numerical, in the two senses just
+distinguished:
+
+1. **`A_4,mub(129) = 0` identically.** The completion annihilates degree 4 as an
+   algebraic fact. It had been a measured zero; it is now a proved one.
+2. **`A_4,haar(126) / A_4,mub(126) = 128/3` exactly.** The `42.67x` of the carrier
+   discovery is a rational identity, not a seven-digit near-match — which also disposes
+   of the obvious rival reply, that a rounded `3.136387e-05` was compared against `128/3`
+   and the agreement called striking.
+3. **The certificate's payoff line is the design defect, scaled by compute.** For every
+   `k = 1 … 129`, `A_4,mub(k) / A_4,mub(126) = R_4(k) · 126/k` holds **identically** in
+   exact rationals **[O, all 129 values checked this session; zero failures]**.
+   Equivalently `R_4(k) = (k/126) · A_4,mub(k) / A_4,mub(126)`, where `k/126` is exactly
+   the "compute proportional to block count" premise Theorems 3–5 are stated under. At
+   `k = 1` a single block has no cross-block terms, so `A_4,mub(1) = A_4,haar(1) =
+   126·A_4,haar(126)`; the compute factor cancels the `1/k` scaling of the iid part; and
+   `R_4(1)` collapses to `A_4,haar(126)/A_4,mub(126) = 128/3`. That is the connecting
+   argument. The two quantities were never two objects.
+
+**Four independent anchors, none of them fitted.** `A_4,haar(126) = 3.136387499227966e-5`
+against the source-read `3.136387e-05` of the discovery above; `A_4,mub(126) =
+7.350908201315546e-7` against the design document's exact-rational census;
+`A_4,mub(128) = 2.4120167535566633e-7` against m191's measured value; and
+`A_4,mub(1) = 3.951848e-3` against the `base1` design defect `0.0039518` measured by the
+k32 instrument of §3 **[O, `cells/k32_base_sensitivity_v3/report.json`,
+`metrics.second_signal_design_defects.base1.A4`]**. Four measurements taken for four
+unrelated purposes land on one closed form with no fitted parameters in it — `Q_4(0)` and
+`Q_4(1/16)` are both forced by the dimension and the design's inner-product set.
+
+**What the theorem buys, and what it does not.** It settles the design-defect side of the
+completion question as mathematics, and it confirms that the sealed cell's exactness
+assertion is correct rather than approximate (`runner_fc129.py` docstring, "a factor of
+exactly 128/3"; `spec.json` second-signal (a), which makes a departure a protocol kill
+rather than a result). It does **not** settle the MSE gain. `A_4` is a property of the
+design; the gain is a property of how much of a given carrier's estimator error lives at
+degree 4, and that is precisely the quantity the amendment below says is unreconciled and
+the 129 cell measures. Promoting the theorem into a gain prediction is the one move this
+section refuses to make.
+
+**The pre-registered law [H1, filed 2026-08-19 ~01:0x UTC, BEFORE the cell runs; its
+A_4 leg is now [D] closed form by the theorem above, its gain leg still unmeasured].**
 The Puffi-19% / ely2sh-0.9% / ours-0.45% discrepancy is not a contradiction. It is
 two regimes of one quantitative law:
 
@@ -780,9 +980,32 @@ Kerdock-regime carriers (`A_4 ≈ 7.35e-7`) see sub-1% gains — that is ely2sh,
 that is our own m81/s11 breakeven. iid-regime carriers (`A_4 ≈ 3.14e-5`, 42.7x) see
 19%-class gains — that is Puffi. Our deployed carrier is in the iid regime.
 
-**The prediction, and the falsifier.** On our carrier, the 126-Haar → 129-MUB swap
-yields an MSE ratio in the band **[0.78, 0.86]** — 19%-class — and **not** the
-0.995-class the Kerdock-regime numbers implied. A second arm (H2) adds Kerdock-126
+**The prediction, its amendment, and the falsifier.** On our carrier, the 126-Haar →
+129-MUB swap yields an MSE ratio in the band **[0.78, 0.93]** — 19%-class — and **not**
+the 0.995-class the Kerdock-regime numbers implied. The band was pre-registered at
+`[0.78, 0.86]` at ~01:0x UTC and **widened to `[0.78, 0.93]` at ~02:1x UTC, still before
+the cell ran**, when the regime audit found three unreconciled quantifications of the
+Kerdock-versus-iid degree-4 suppression: m191 measured degree-4 error at 0.098–0.107 of
+iid (~9.1x); `m81_full129_pareto` records `A_4 = 0.047` (~21x); and the A_4 law uses the
+defect ratio `128/3` (42.7x), now exact by the theorem above. Those may measure three
+different objects — a design defect, an MSE suppression, and a per-block `A_4` — and
+which of them governs MSE gain sets the magnitude. What survives all three is the
+direction: our carrier sits in the strong-gain regime. This document prints the amended
+band, and the reconciliation is required reading for the verdict when the cell lands
+**[R, channel 2026-08-19 ~02:1x UTC, committed as `0486668`, whose message reads "band
+widened honestly"]**.
+
+**A corpus inconsistency, recorded rather than smoothed over [O, read this session].**
+The channel entry filing that amendment ends "The seal-time spec carries this amendment
+verbatim." It does not:
+`experiments/frame_completion_129/spec.json` still carries the 0.78-to-0.86 band and no
+amendment text. The cell is sealed but unrun, so the repair is free and belongs before
+predeclaration; until it lands, the amended band lives in the channel entry and the spec
+is behind it. We print the wider band because it is the one that was filed with a
+timestamp before any data existed, which is the only property that makes a
+pre-registration worth anything.
+
+A second arm (H2) adds Kerdock-126
 as a third condition from the shipped `kerdock_phases.npz`, and predicts that most
 of the gain comes from design *quality* (Haar → structured), with the 126→129
 completion increment small. That would reconcile the dual-witness certificate —
@@ -843,7 +1066,15 @@ of corroboration that carries weight.
 credible.** On publicly declared adjusted scores we are approximately 7th, not
 leading: ednacob 1.845e-8, Puffi 9.10e-8, ely2sh 1.196e-7, pranay212 1.23e-7,
 mliston 1.334e-7, baltsat 1.439e-7, SOX 1.551e-7, us 1.83e-7 **[R, sweep of 34
-write-ups, 2026-08-18 ~16:0x UTC]**. The structural read is that every declared gain
+write-ups, 2026-08-18 ~16:0x UTC]**. Our `1.83e-7` carries a lineage qualifier like
+everything else here: it is submission #326094, which is the **`kerdock_v3`** lineage,
+while the compute programme of §9–§10 is priced and measured on **`row_blocked`**, whose
+local adjusted score is `2.1218e-7` against `kerdock_v3`'s local `1.619e-7` **[R,
+`core/KILL_CONTEXT_INDEX_20260819.md`, ledger ids `row_blocked_winograd_production` and
+`t4_kerdock_v3_descriptive_rescore`]**. Local and hosted scores are different
+instruments and are not comparable across that boundary, so no regression should be read
+into the pair; what the pair does say is that the host fork of §0 is unresolved inside
+our own standing line. The structural read is that every declared gain
 ahead of us is prediction-preserving arithmetic — a compute multiplier — rather than
 accuracy. That is consistent with this document's thesis, and it is also the reading
 most favourable to us, which is why we state it as a reading rather than a finding.
@@ -857,12 +1088,21 @@ build on it.
 ### 13. Pre-registered predictions, with their filed falsifiers
 
 Neither of these is a result. Both were filed before the measurement that would
-settle them.
+settle them, both name the carrier lineage they are filed against, and P2's band was
+amended once — before its cell ran — in the direction that makes it harder to claim a
+hit. The amendment is in the table, not in a footnote.
 
 | # | prediction | filed | falsifier |
 |---|---|---|---|
-| P1 | Public100 re-measurement of the folded floor lands at `C ∈ [150B, 165B]`, score `∈ [1.45e-7, 1.53e-7]`; equivalently `C_post = 126.7e9 + 18.815e9·m` with measured `m ∈ [1.86, 2.64]` | 2026-08-18 ~18:2x UTC (judge), ~19:0x UTC (revised law) | `C ≥ 200B` (i.e. `m ≥ 3.896`) kills the thesis; wall multiplier `≥ 7.58` under a surviving λ holds deployment; per-net `\|MSE ratio − 1\| > 5e-4` or aggregate `> 1e-4` breaks exactness |
-| P2 | The 126-Haar → 129-MUB swap on the deployed carrier yields MSE ratio in `[0.78, 0.86]`; the Kerdock-126 third arm shows most of the gain in Haar→structured, with the 126→129 increment small | 2026-08-19 ~01:0x UTC | MSE ratio above `0.95` on our carrier kills H1 and reopens the 20x discrepancy |
+| P1 | Public100 re-measurement of the folded floor **on the deployed `row_blocked` (Haar) carrier** lands at `C ∈ [150B, 165B]`, score `∈ [1.45e-7, 1.53e-7]`; equivalently `C_post = 126.7e9 + 18.815e9·m` with measured `m ∈ [1.86, 2.64]` (committed evidence alone: `[1.86, 2.26]`) | 2026-08-18 ~18:2x UTC (judge), ~19:0x UTC (revised law) | `C ≥ 200B` (i.e. `m ≥ 3.896`) kills the thesis; wall multiplier `≥ 7.58` under a surviving λ holds deployment; per-net `\|MSE ratio − 1\| > 5e-4` or aggregate `> 1e-4` breaks exactness |
+| P2 | The 126-Haar → 129-MUB swap on the deployed `row_blocked` (Haar) carrier yields MSE ratio in **`[0.78, 0.93]`** — filed at `[0.78, 0.86]` and **widened before the run** when three quantifications of the degree-4 suppression (m191 ~9.1x, `m81_full129_pareto` ~21x, the exact defect ratio `128/3` = 42.7x) proved unreconciled; the Kerdock-126 third arm shows most of the gain in Haar→structured, with the 126→129 increment small | 2026-08-19 ~01:0x UTC, amended ~02:1x UTC (commit `0486668`, "band widened honestly") | MSE ratio above `0.95` on our carrier kills H1 and reopens the 20x discrepancy — unchanged by the amendment |
+
+The A_4 leg that puts our carrier in the strong-gain regime is no longer a modelling
+assumption: §11 proves it in closed form, and the theorem holds for the design defect on
+every block count from 1 to 129. What the amendment concerns is only the **magnitude** of
+the MSE gain that defect buys, which no theorem in this corpus fixes and the cell
+measures. The sealed spec still carries the pre-amendment band, which §11 records as an
+open repair.
 
 A third item is designed and unrun, and is listed so that it is not mistaken for a
 finding later: the mub129 **powered rerun**. The existing 126→129 kill on our own
@@ -894,6 +1134,18 @@ measured zero, and P2's cell is the powered instrument that replaces it.
 - **No transfer of the k32 or DGFL kills outside their measured regimes.** Both are
   regime-indexed per §1, and the axis changes that would make them topical are
   recorded on their records.
+- **No carrier-free compute claim.** The suite floor of §9 and the splice pair of §4
+  are priced on a phased-Hadamard (Kerdock) carrier and our own shipped code disables
+  the CReLU split on the deployed Haar lineage; the per-call floor of §9 is
+  carrier-free; the m-curve of §10 is measured on the deployed Haar carrier with an
+  analytical component that inherits the Kerdock question. The transfer between the two
+  lineages is bounded by a committed A/B/C partition at 1.55% non-transferring and is
+  **not** itself a measurement in this document. Under the worst reading of that gap the
+  §10 conclusion is unchanged, which is stated in §10 with the arithmetic.
+- **No claim that the A_4 theorem predicts an MSE gain.** §11 proves a design-defect
+  law. The step from a defect to a score is exactly what P2 measures, and the three
+  unreconciled suppression quantifications are why its band was widened rather than
+  narrowed.
 - **The exact-control spine's closure is f64-specific.** The mixed-precision exit was
   closed by argument, not measurement (§7, [GAP]).
 
@@ -918,7 +1170,15 @@ python corpus/whestbench/headroom/compute_lineage/suite_00_incumbent.py
     -> uniform_t7_suite 152760682368
 python corpus/whestbench/headroom/compute_lineage/suite_19_the_odd_channels_scalar_is_already_on_layer_ones_matrix.py
     -> TOTAL (per net) 144867083088
+python corpus/whestbench/papers/a4_ratio_settling_check.py
+    -> Q4(0) = 1/21845 ; Q4(1/16) = -65/2105344 ; ratio exact = 128/3 ; IDENTICAL: True
+    -> A4_mub(129) = 0.000000000e+00   (exact zero in Fraction arithmetic)
 ```
+
+The A_4 theorem of §11 was additionally re-derived twice against that script: by hand
+from the affine form of `k·A_4,mub(k)`, and by an independent `Fraction` sweep over all
+`k = 1 … 129` checking `A_4,mub(k)/A_4,mub(126) = R_4(k)·126/k`, which returned zero
+failures **[O, this session]**.
 
 Cell artifacts read directly: `cells/{ajpre1_w0_wi_precondition,
 clone_l2fringe_flop_recompute_v2, k32_base_sensitivity_v1, k32_base_sensitivity_v3,
@@ -955,3 +1215,20 @@ companion papers were written by LLMs. Every verdict in this document was produc
 by a predeclared gate sealed in git before the value existed, every cell carries a
 report hash, and the corrections in §2, §3, §5, §6, and §10 were found by our own
 machinery pointed at ourselves while assembling this draft.
+
+**What the hostile review changed, listed so the diff is not silent.** v1 of this
+document was returned NEEDS_WORK. Thirteen defects were repaired in place by the
+reviewer — numeric slips, dangling cross-references to Phase-1 sections that exist only
+in the unfiled v13 long draft, an agreement claim in §5 stated one level above its
+per-seed support, and the provenance mislabel on §10's residual band. Four survived for
+this editorial round and are closed here: the missing carrier qualifiers on §4, §9 and
+§10 (the document banked a saving its own shipped code disables on the deployed
+lineage); the missing denominator behind §4's three percentages; the pre-registration
+amendment of §11 and §13, which v1 omitted and which is the one item that would have
+read as bad faith rather than as error; and the absent lineage statements on the eight
+cells, which is the asymmetry of applying §1's own doctrine to competitors and not to
+ourselves. Two further inconsistencies were found while making those repairs and are
+recorded at their sites rather than fixed quietly: the sealed 129 spec disagrees with the
+channel entry that claims it carries the amendment verbatim (§11), and our declared
+standing line reports a `kerdock_v3` submission while the compute programme is measured
+on `row_blocked` (§12).

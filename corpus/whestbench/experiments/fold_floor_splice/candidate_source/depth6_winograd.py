@@ -933,6 +933,31 @@ def _selfcheck() -> None:
     assert {"direct", "winograd_batched_owned"} <= routes, sorted(routes)
     assert any(name.startswith("realized_l") for name in routes), sorted(routes)
 
+    # (10) Clause A.3, first half, on the two routes items (5) and (6) do not
+    #      reach.  Those pin measured-equals-billed on the depth route; this is
+    #      the fallback branch and the plain-product branch, which is where the
+    #      round-3 bill was wrong in both directions -- the fallback spent an
+    #      unpriced ``m*n`` copying out of the frozen operator's shared buffer,
+    #      and the direct branch was charged an ``m*k`` operand copy it never
+    #      performs.  ``m = 510`` is 2 (mod 4), so no depth is lawful and the
+    #      fallback's one-level core route wins; ``m = 511`` is odd, so the
+    #      frozen operator has no route either and ``a @ b`` is what runs.
+    with flops.BudgetContext(flop_budget=10 ** 12) as budget:
+        op = DepthWinograd(512, 64, workspace_mib=8.0, max_levels=4)
+        for m, k, n, route in ((510, 64, 64, "winograd_batched_owned"),
+                               (511, 64, 64, "direct")):
+            a = fnp.zeros((m, k), dtype=fnp.float32)
+            b = fnp.zeros((k, n), dtype=fnp.float32)
+            op.multiply(a, b)              # build any lazy workspace first
+            assert op.last_strategy == route, op.last_strategy
+            start = budget.flops_used
+            op.multiply(a, b)
+            spent = budget.flops_used - start
+            billed = realized_candidate_bill(m, k, n, op.max_levels).total
+            assert spent == billed, (
+                f"{route} at {(m, k, n)} measured {spent} FLOPs, closed form "
+                f"says {billed}")
+
 
 if __name__ == "__main__":
     _selfcheck()
