@@ -205,15 +205,17 @@ post. All prior operational contracts remain in force beneath this goal.
   APPROVED.
 
 ## Next action (exactly ONE — overwrite, never a list)
-Harvest Wave 0 (mi_graph + DESIGNATION_POLICY were mid-edit during the v1.3 pass and are
-owned by that wave), then close the designation memo: v3.1 slot-1 stands unchanged,
-because the 129 host arithmetic did **not** settle — raw-MSE CI upper 0.7711 exceeds
-r* 0.7453, the arm-B memory increment is undischarged, the custody is burned-Public100
-descriptive-only, and the PASS is INSTRUMENT-SUSPECT. Two open items are filed against
-us in the manuscript and neither is scheduled: the smoke's unexplained sign flip
-(5-net pilot 1.0518 vs 100-net production 0.68166, a 5.15-smoke-SE gap — a candidate new
-cell), and the defect-to-MSE conversion, whose settling check is the **post-control**
-per-degree energy table (an artifact read, not a run).
+Harvest the G-B settlement (wf_f2d62778-741: idx-69 pairing resolution + honest-basis
+residual gate at both +227.2/+508.8 dispatch deltas + CI95 helper off-by-one fix) —
+it decides the last design door (fringe leg; strict is CLOSED_GA per D6, point
+estimate 6.06% under the 9% bar). Prior state all harvested and pushed through
+94ff30b: Wave 0 APPROVED (v3.1 annex, memory tiers OBSERVED, MI rebuild fragility
+gate HELD, ownership axis honestly unmeasurable at 8/276 stated), manuscript v1.3
+audited (P2 two-layer disposition + H2 reversal + theorem scorecard), static gates
+G-A CONFIRMED by 140/140 hand re-derivation with door HELD. On the settlement
+verdict the campaign is at steady state; externals: rules email (owner inbox), X5
+k=1 re-instrumentation (owner-scheduled quiet machine), the smoke sign-flip and
+defect-to-MSE conversion open items (filed in the manuscript, unscheduled).
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
