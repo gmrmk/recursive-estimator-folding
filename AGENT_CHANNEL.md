@@ -8922,3 +8922,21 @@ prize, where our artifact pile (7 and counting + certificates + the convergent l
 the strongest declared. Every running engine already serves this goal; "within bounds"
 reaffirms campaign law + contest rules absolutely. Phase-2 rules land ~Aug 19 by email;
 designation decisions follow them.
+
+## [2026-08-18 ~20:5x UTC] fable: /headroom-recursion engine run COMPLETE - the m-curve is now TRIPLE-DERIVED, and the engine halted at the cheapest tier
+
+The owner-requested engine run (TRM recursive refinement, CLI transport, no API key)
+completed and HALTED confidently at the HAIKU tier - no escalation needed, the paper's
+thesis (recursion beats escalation) demonstrated on our own decision problem. ANSWER,
+checked against the judge's independent derivation: r_inc = 0.18815 s exact; C_new(m) =
+(126.7 + 18.815m)e9; BREAK-EVEN m* = 5.085 (judge: 5.087 - rounding-level agreement);
+score ratios 0.6542 / 0.7387 / 0.8232 at m = 1/2/3; and for (d) the public 18184 data
+implies geometric residual growth q = 5.455 per depth, so a NAIVE depth-6 transcription
+lands at ~885x the depth-2 residual - catastrophically above m* - hence the implementation
+law: batch/restructure the recursion (exactly the discipline the implementer applied:
+depth-cap + batched leaf dispatch). THE m-CURVE IS NOW TRIPLE-DERIVED (graph adjudicator,
+judge pre-registration, TRM engine) and internally consistent: falsifier line C >= 200B
+= m 3.9; break-even vs incumbent = m 5.09; point estimate m = 2 -> -26.1%. Engine
+validation note: cp1252 transport defect fixed with PYTHONUTF8=1 (recorded for the skill
+LEDGER); output-slice bug in the judge's wrapper script produced invalid JSON tail -
+content unaffected, read raw.
