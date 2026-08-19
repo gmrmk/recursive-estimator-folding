@@ -9590,3 +9590,43 @@ Manuscript state: 1,986 lines, sections 0-10, 10b, 11, 11b, 12-15, v1.2 changelo
 with the audit pass as item 7 ("five of seven are corrections to our own work").
 The 129 chain is mid-run (its dirty files under experiments/frame_completion_129 are
 its own; the judge commits them).
+
+## 2026-08-19T09:22:41Z — MI-SOLVE COMPLETE (wf_77a537c1-bec, 14 agents): the winning solve is in the pricing, not the trying; Wave 0 launches
+
+Full deliverable: core/MI_SOLVE_20260819.md + headroom/mi_graph/ (deterministic
+build_mi_graph.py, 200-shuffle permutation nulls, 1,457 door edges, committed now).
+
+THE MEASURED SOLVE: all four design axes together carry ~2% of the 0.7971-bit
+survival entropy. The only single axis clearing the null on lived/died (carrier,
+p=0.0199) is ENTIRELY the zonal_harmonic dead cell (2/33 lived, lift 0.25) and dies
+under leave-one-win-out — carrier MI must never rank a door. Precision is NEGATIVE
+after null correction: dtype carries no survival information. Convention (which wall
+priced the verdict) is the strongest real axis on the 5-class outcome (0.0874 adj
+bits, p=0.005) yet null on lived/died: THE LEDGER KNOWS WHICH WALL A CANDIDATE HIT,
+NOT WHETHER THE IDEA WAS GOOD. At Hamming-0, 140/257 decided records sit in cells
+containing both outcomes; idx 71 vs idx 72 — identical on all four axes, opposite
+fates — are separated by BUFFER OWNERSHIP alone, the axis the instrument cannot see.
+
+SEVEN DOORS SURVIVED the gated Ralph rounds (refuted set preserved, doors-not-
+corpses). Banked/settled this round at zero compute:
+- v3.1 INHERITS the campaign-best local adjusted 1.6190837992e-7 and DOMINATES
+  idx 183 (idx 206 premise upgraded to OBSERVED: the settling scan ran — 12,128
+  numeric leaves, zero non-finite, zero tracebacks across all 100 public nets; the
+  guards provably never fired). The designation's slot-1 candidate improves for free.
+- MEMORY IS POLICY, NOT ENFORCEMENT (double-sourced: idx 264's surviving surface +
+  uf1_mem_verdict.json): the only mechanical limit is 65,536 MiB. kerdock_v3's
+  1.445-MiB OOM risk retires under the ruled tiers; ten stale executable 512-MiB
+  predicates inventoried for deliberate retirement.
+- The k=5 hostile-residual projection re-prices to measured k=1: C_k1 = 210.352e9
+  vs the 258.4e9 gate — the M157 family (idx 143/151/155/158) killed at that wall
+  is re-priceable evidence. Governance para mandatory (internal convention
+  correction, categorically NOT the organizer's lambda gap — AIcrowd 18108).
+- ONE design door remains: the Kerdock-host depth-2 schedule pass (idx 59 operator /
+  idx 268 route), behind two STATIC gates (G-A eligibility < 9% share = closed;
+  G-B residual projection from idx 69's measured 0.194269 s) before any run.
+- Methodological governor: convention flips are EVIDENCE moves; carrier/mechanism
+  flips are DESIGN moves — different currencies, never conflated.
+
+WAVE 0 LAUNCHES NOW (zero compute, parallel to the running 129 chain): v3.1 memo,
+memory-tier retirement, MI instrument repair + ownership-axis coding under the
+null_MAX fragility gate, small settlements (W0.6/W0.9/W0.10), hostile verify.
