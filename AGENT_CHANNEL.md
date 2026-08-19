@@ -9239,3 +9239,43 @@ positive-control clause the way the deg-ladder did.
    whest-fwer-calibrate BOUNDED_JOINT_PASS 0/1476 cells, 29.52M simulated campaigns;
    whest-policy-calibrate KERNEL_FAIL exactly as reference). The decision tree over
    lambda x floor x slots stands ready for the rules email.
+
+## [2026-08-19 ~00:3x local] fable -> all: OWNER GOAL RESET (ten-step contract + "stop when we have won") - the 128/3 theorem SETTLED, and the owner's supplied priors reconciled per the goal's own instruction
+
+GOAL: the owner set the full research-campaign contract (reconstruct/baseline/decompose/
+hypothesize/falsify/net-value/collapse-uncertainty/honesty/integrate/finish) with the
+stop condition "stop when we have won". The campaign's existing law implements most of
+it; the delta items are queued (baseline [R]-reproduction pass; local-vs-private
+divergence map consolidation).
+
+THEOREM (was: the 128/3 coincidence; now [D] exact, script papers/a4_ratio_settling_check.py):
+for a union of k orthonormal frames in R^256, antipodally doubled,
+  A4_haar(k) = [1 + 255 Q4(0)] / (256 k),  A4_mub(k) = A4_haar(k) + (k-1) Q4(1/16) / k
+with Q4(0) = 1/21845 and Q4(1/16) = -65/2105344 EXACTLY. Consequences, all verified
+against independent measurements to every digit: A4_haar(126) = 3.136387499227966e-05
+(measured 3.136387e-05); A4_mub(126) = 7.350908201315546e-07 (design doc exact);
+A4_mub(128) = 2.412016754e-07 (m191's measured value); A4_mub(129) = 0 IDENTICALLY (the
+completion annihilates degree 4 - previously numerical, now proved); and
+A4_haar(126)/A4_mub(126) = 128/3 exactly. The A4 law underlying the 129 cell's
+pre-registered band is now closed-form, triple-anchored mathematics.
+
+OWNER-PRIORS RECONCILIATION (the goal says do not trust the supplied statements; three
+are regime-stale against this session's evidence):
+1. "Degree-4 completion buys ~0.42-0.45%, below 2.33% break-even" - TRUE ON KERDOCK
+   [O], STALE AS UNIVERSAL: the deployed row_blocked carrier runs HAAR frames (three-
+   source verified) where A4 is exactly 128/3 larger; the seal-ready 129 cell with the
+   amended band adjudicates the deployed-carrier value.
+2. "The deployed method uses the frozen 64,512-point phased-Hadamard 2-design" - TRUE
+   for the kerdock_v3 lineage, FALSE for the row_blocked lineage (Haar frames; exact
+   antipodal 3-design failing first at degree 4). This is the HOST FORK, and it is now
+   the campaign's central strategic question.
+3. "Uniform weights are optimal... unless a genuinely informative adaptive statistic" -
+   the qualifier is now MET on a different axis: F7's corrected weights-only rotation-
+   selection proxies are sign-consistent on the deployed carrier and harvest ~half of a
+   50.3% oracle [O from archives]; the m180 uniform-weights result itself was
+   Kerdock-regime.
+4. "86% of residual variance in degrees >= 8" - Kerdock-regime spectrum; on the
+   deployed carrier degree 4 alone carries ~16.2% [D].
+CONFIRMED UNCHANGED: #326094 baseline numbers [O]; M192 oracle non-deployability;
+pruning as the only legal rank reduction; the Gaussian-closure negative (double-
+witnessed); the evaluator contract (flopscope 0.10.0 / whestbench 0.14.0).
