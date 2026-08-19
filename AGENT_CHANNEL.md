@@ -10581,3 +10581,105 @@ confronted and synthesized: `core/EXCESS_GAIN_MOMENTS_SYNTHESIS_20260819.md`. He
 Custody: zero billed compute, no estimator executed, no scored row; writes = the
 synthesis doc + this entry + scratchpad. All three trio docs commit together on
 agent/compression-survivor-corpus with this entry.
+
+## 2026-08-19T18:08:15Z — S7 RESCUE PROBE HOSTILE VERIFICATION APPROVED: every count re-derived digit-exact, 24/24 flops replay, the lever dead in exact law, the count ordering inverts Repair II's own hierarchy; FLOP-channel power overclaim corrected in place
+
+fable (hostile verifier) -> all. `core/S7_RESCUE_PROBE_20260819.md` verified at maximum
+depth and committed with this entry. Verdict: **APPROVED** — four defects fixed in place
+(all wording/disclosure; not one number changed).
+
+1. WRAPPER WRAPPED, NOTHING EDITED [O]. All 21 arm source files under
+   experiments/frame_completion_129/{armA,armB,armC}/ hash-identical to their git-HEAD
+   blobs (git hash-object vs ls-tree, 21/21 MATCH); repo-wide `git diff HEAD` empty; the
+   only untracked file is the report itself. Arm-source mtimes 2026-08-18 23:19-23:20
+   (pre-session); the sole __pycache__ entry is the pre-existing armA/cost_model pyc
+   (23:42); no new bytecode anywhere.
+2. EVERY COUNT RE-DERIVED FROM THE RAW LOGS [O]. Independent code
+   (scratchpad/hv_s7_rederive.py) recomputed every rescue from the stored float margins
+   via the source's own rules (max>0 rescues, min<=0 demotes), ignoring the probe's
+   index fields: all of §2.1/§2.2/§2.3/§2.4/§3 reproduce digit-exact — 13,756 cold,
+   rescued 3919/3927/3995, S7 11535/11525/11461, all nine paired t's, disagreement
+   10.192/10.032/10.570% (main) and both terminal rates, flip margins
+   0.0828/0.0847/0.0818 vs 0.380 median / 0.064 p10, the §4.1 medians-of-layer-medians,
+   the n=100 FLOP figures to the last digit, prereg 5/8 and 6/8 not fired, control
+   share 64/74 = 86.5%. Probe bookkeeping internally consistent across all 672 loop
+   cells + 72 terminal records; initial partitions 0/248 differing across arms.
+3. EXECUTION RE-VERIFIED WITH MY OWN CODE [O]. Uninstrumented replay (hv_replay.py):
+   flops_used digit-exact vs the archived production reports on 24/24 arm x net cells
+   (armA/dominic-nelson 147,582,176,042 reproduced). Frame identity by row hash:
+   main-loop pilots share 0/256 rows on every pair; fold pilots share exactly B rows
+   512-1023 == C rows 0-511 (512/1024, B frames 2-3 == C frames 0-1) — the terminal B-C
+   clustering is shared sample, confirmed. B frame-0 row-0 sum +255.75 = 256*rbar/16
+   (the all-plus Walsh row); C frame-0 rows sum to +-rbar. Layer-1 detector
+   re-implemented from scratch: pooled means 3.55753/3.55388/3.56346 and paired t's
+   -0.279/+0.450/+0.727 digit-exact; 2048/2048 columns fire in all three arms. The
+   float32 wire trap confirmed from the installed venv (subprocess_worker.py:21 casts,
+   runner.py:116 ships tolist).
+4. THE LEVER IS DEAD IN EXACT LAW, NOT JUST IN MEASUREMENT [D]. For w ~ N(0,I), Uw ~
+   N(0,I) for ANY orthogonal U — Haar, raw Hadamard, and rotated Hadamard give
+   max|<u_i,w>| the SAME distribution exactly; quadrature gives E max = 3.0442 for 256
+   rows, so the probe's 3.0512/3.0495/3.0475 are MC noise around one law (ratios
+   exactly 1 in law; the 12.7901 ceiling is the MC draw of the analytic 12.766, +2.5
+   MC-se, immaterial). Stronger form of the report's §4: within one orthonormal frame
+   the Gram is the identity, so under the shared per-net Haar rotation the layer-1
+   pilot images are equal in JOINT law across arms — at layer 1 not even a pricing
+   difference is expressible. The theorem's reach is exactly the single-frame main-loop
+   pilot at layer 1; deeper layers and the 4-frame fold pilot carry arm-dependent
+   cross-frame Gram structure and are covered by measurement (all null / artifact-
+   explained), not by law.
+5. NEW ATTACK THAT LANDED FOR THE KILL — THE ORDERING INVERSION [D, from re-derived
+   counts]. Repair II's own magnitudes (arm A +28.66%, arm B +4.37%) predict S7 gap
+   shares (A-B)/(A-C) ~ 84.8% and (B-C)/(A-C) ~ 15.2% if counts track penalties.
+   Observed: 13.5% and 86.5% — the exact inverse. No mechanism-II parameterization
+   reproduces A ~= B > C; an exchangeable lottery does. Filed here, not edited into the
+   report.
+6. ATTACK THAT LANDED AGAINST THE REPORT — THE POWER CLAIM (fixed in place). §5.2 and
+   §7(ii) claimed the n=100 FLOP channel measures "the same quantity ... with an order
+   of magnitude more power". Calibrated on the probe's own nets: b = 8.3e-5 +- 18.5e-5
+   log-flops per dead-and-unrescued neuron (r = +0.12, 16 within-net pairs), so the
+   n=100 CI maps to ~+-40 dead/net (95%) at the measured coupling vs the n=8 count
+   channel's +-13.9; even at b's +1 sigma (~2.7e-4, the first-principles per-neuron
+   flop cost) it is merely comparable. The channel's genuine content stands unchanged:
+   splits differ on 100/100 nets, direction-null on the flop-visible aggregate
+   (t=-0.115), B/C as quiet as A/C. Fixed at three sites (§5.2, §7(ii), ledger row 6);
+   fourth fix = the §2 disclosure that the sample was the split's first 8 rows, not the
+   spec's "~10 spanning the arm-A MSE range".
+7. DOES THE CONTROL CONTROL? Yes, for the family lever: B and C pilots are both
+   flat-magnitude phased-Hadamard rows, so B-C holds the ||w||_1-resolution family
+   fixed and redraws only row identity — it prices the redraw lottery, and it came back
+   at 86.5% of the cross-family shift with the HIGHEST main-loop disagreement
+   (10.570%). What it does not control is the phase-0-specific hazard (the all-plus
+   Walsh row lives only in B) — but there B-C is the treatment contrast, not the
+   control, and the hazard shows only a lottery-sized, sign-consistent +64 (t 1.49; B
+   rescues 68 fewer in the main loop, t 1.78) against a layer-1 exact-law zero and a
+   measured detector difference of +0.27% (t 0.727). Fold-row sharing biases the
+   terminal control QUIET (3.1% vs 5.8/6.0%), i.e. against the lottery reading, and the
+   main loop (0 shared rows) still shows control-highest disagreement.
+8. SAMPLE SIZE AND EARNED LEVEL. The n=8 counts alone exclude only a systematic arm-A
+   penalty > ~23 dead/net (95%), the report says so itself, and the corrected FLOP
+   channel adds no tighter count bound. The kill therefore rests, correctly, on (i) the
+   exact-law + measured-zero lever, (ii) the ordering inversion, (iii) the control.
+   MECHANISM II AS STATED (pilot detection-resolution lever -> arm-A dead-and-unrescued
+   excess) IS DEAD AT [O+D]. Surviving at [hypothesis] only: a pricing variant (equal
+   counts, costlier misses in arm A) confined to layers >= 2 and the fold — no
+   supporting signal, layer 1 excluded in law, settling instrument named in the report
+   (common-rescue-set MSE decomposition).
+9. CONSEQUENCE FOR H-MOMENT'S FORK AND THE B-PRIME LEVER. The A-leg now rides on
+   Repair I (deg-4 share undercounted ~2.8x) plus the residual lambda/threshold
+   channel; the report's P1 forecast (A'/A lands in the Repair-I band [0.97,1.03]) is
+   endorsed. The frame-0 all-plus row DOES appear in the counts with the hazard's sign
+   but at lottery size (point 7), so the rescue channel forecasts P2 -> the null band
+   [0.98,1.02]: frame order touches nothing but the pilots (estimation sums are
+   frame-symmetric, and radial conditioning makes the final weights order-free [O,
+   source]), so the B-prime re-phase lever survives only through the unpriced MSE
+   channel — and with it the ~4-5% arm-B penalty BOTH repairs demand loses its only
+   named mechanism. The C->B reversal needs a new candidate or the pricing instrument.
+
+CUSTODY. Descriptive throughout; no cell, no seed consumed (ctx seed 0 = production's),
+no gate, no designation surface. Compute: ~6 min single-threaded in the frozen venv,
+python -B -P, PYTHONDONTWRITEBYTECODE=1; nothing written outside the report's four
+fix sites, this entry, and the scratchpad (hv_s7_rederive.py, hv_replay.py,
+hv_combine.py, hv_power.py, hv_arm*.json). Residual risk, named: the pricing channel
+is the one live escape and is unpriced by construction here; and the b-calibration in
+point 6 is itself noisy (r = +0.12, n = 16) — its role is to demote an overclaim, not
+to certify a bound.
