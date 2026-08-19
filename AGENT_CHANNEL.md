@@ -9075,3 +9075,40 @@ for each major killed mechanism, name the axes it was measured under and which s
 axis-change would make it topical - the kill field becomes a searchable context index
 instead of a graveyard. The H5 splice recheck (running) covers the 25 atlas pairs; the
 audit covers the rest of the 276-record field.
+
+## [2026-08-19 ~02:1x UTC] fable: REGIME AUDIT LANDED + PRE-REGISTRATION AMENDMENT (filed before the 129 run, as integrity requires)
+
+AMENDMENT to the H1 pre-registration: the audit found THREE unreconciled quantifications
+of the Kerdock-vs-iid degree-4 suppression - m191 measured deg-4 at 0.098-0.107 of iid
+(~9.1x) and deg-6 at 0.35-0.43 (~2.4x); m81_full129_pareto records A4 = 0.047 (~21x);
+the A_4 law I pre-registered used 42.7x (128/3, the defect ratio). These may measure
+DIFFERENT OBJECTS (design defect vs MSE suppression vs per-block A4) and the 0.78-0.86
+band depends on which governs. AMENDED PREDICTION, honest: the direction (our carrier
+in the strong-gain regime) stands on all three quantifications; the MAGNITUDE band
+widens to 0.78-0.93 pending reconciliation; the falsifier stays >0.95. The
+reconciliation (which ratio governs MSE gain) is REQUIRED READING for the 129 verdict
+and will be judged from the cell's own three-arm data. The seal-time spec carries this
+amendment verbatim.
+
+AUDIT HEADLINES (full table in the task output; 20 families classified):
+- THE ONE-CARRIER ASSUMPTION, named: m191/m180/m181/s6/s11/s15/n8a/n8c/m192-197/gen8
+  all measured on KERDOCK lineage; the named winner deploys on ROW_BLOCKED (Haar).
+  Systematic re-read queued: partition all 276 records by measured lineage; the
+  write-up draft MUST carry lineage qualifiers (judge will enforce at review).
+- TOPICAL-NOW #1 (F15): integrated_batched_winograd died SOLELY on the incumbent's
+  self-declared 512 MiB at 667.328 MiB with 7/8 gates passed and C ratio 0.941206 -
+  under the competition-real 1 GiB ceiling it passes. Likely SUPERSEDED by our fold
+  (0.72 << 0.941) but it is the READY-NOW fallback if round 3 fails its gate, and its
+  precedent directly supports the successor-gate memory reasoning.
+- TOPICAL-NOW #2 (F7): the 61.6% rotation-selection oracle (gen3_p2, CI [48.8, 66.8])
+  is the largest unharvested number in the field; its closing proxies (p2b, rho -0.14
+  to +0.09) were deg-4 statistics measured where deg-4 was 9x-suppressed. On the
+  deployed Haar carrier the channel is at full strength. Falsifier costs ZERO forward
+  passes (recompute proxies on the existing row_blocked draw archive). DISPATCHED.
+  Honest counter carried: p2b's stated kill cause was the dispersion theorem
+  (function-side, carrier-independent) - the recompute adjudicates.
+- TOPICAL-NOW #3 (F8): m192 cross-frame GLS oracle 12.6% on Kerdock, deployable arms
+  missed a 10% bar by 2-8 points; iid frames enlarge the estimable heterogeneity.
+  Queued behind F7.
+- REGIME-UNIVERSAL confirmed for: closures, fitted correctors, Stein (algebraic),
+  facet/Crofton (proved), tensor-train (10^4 over), MLMC, RQMC-vs-frames, the spine.
