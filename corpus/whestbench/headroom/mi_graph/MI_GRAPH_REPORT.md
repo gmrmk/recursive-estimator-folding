@@ -31,14 +31,16 @@ the table to read first. The base rate of living is 0.2442 (63 of 258).
 
 ## The 2026-08-19 repair batch
 
-Six coder defects were repaired in one edit and the whole table was rebuilt
-once, because at these sample sizes a single-record change moves a statistic by
-about a null standard deviation and cell-by-cell reporting would invite reading
-noise as movement. Two of the repairs are regex changes that generalise, one is
-a mechanical identity rule, and 5 are explicit per-record recodes carrying
-evidence the regexes cannot reach. Every explicit recode asserts its evidence
-string against the record at build time, so a ledger edit that removes the
-evidence breaks the build rather than leaving a stale label in place.
+The coder's known defects were repaired in one edit and the whole table was
+rebuilt once, because at these sample sizes a single-record change moves a
+statistic by about a null standard deviation and cell-by-cell reporting would
+invite reading noise as movement. Three of the repairs are changes to the
+regexes themselves and generalise to any future record; one is a mechanical
+identity rule that fires here on 1 record; and 4 are explicit per-record
+recodes carrying evidence no regex over the record could reach. All 5 recodes
+are listed below. Every explicit one asserts its evidence string against the
+record at build time, so a ledger edit that removes the evidence breaks the
+build rather than leaving a stale label in place.
 
 | idx | id | axis | from | to | evidence class |
 | ---: | --- | --- | --- | --- | --- |

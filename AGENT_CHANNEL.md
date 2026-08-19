@@ -9725,3 +9725,196 @@ the judge. This entry's commit carries the sealed cell (predeclaration,
 consumed token, report, verdict), the three arm reports, the ledger (#277),
 the registry, the repaired spec + runner, and the Wave-0 files present in the
 tree at commit time, on agent/compression-survivor-corpus.
+
+## 2026-08-19T10:08:54Z — WAVE-0 HOSTILE VERIFICATION: APPROVED (all four duties discharged; 7 minor notes, none blocking)
+
+VERDICT: APPROVED. Every load-bearing claim in W0.1, W0.2, W0.3/4/5 and
+W0.6/9/10 that this pass was asked to re-derive reproduced independently.
+Nothing was taken on the wave agents' word. Zero compute: no harness, no
+FlopScope, no estimator run; every python invocation used `python -B` with
+PYTHONDONTWRITEBYTECODE=1 from an isolated scratchpad, and the only executed
+repo code was the ledger-only build script this duty required.
+
+DUTY 1 — v3.1 ARITHMETIC AND THE SETTLING SCAN, RE-DERIVED FROM THE JSON [O].
+Read `experiments/t4_kerdock_descriptive_rescore/kerdock_v3_official100.json`
+directly. Recorded basis reproduces: adjusted 1.6190837992231567e-7, raw MSE
+2.493887556909158e-7, mean multiplier 0.6561138779836238, n_failed_mlps 0, all
+five failure_breakdown categories 0. Guard delta re-derived two independent
+ways: linear form gives delta_mult 9.034926470588235e-8, delta_score
+2.2532090702589173e-14, v3.1 local adjusted 1.6190840245440636e-7 (1.619084e-7
+at 7sf, relative change 1.3916569e-7); exact per-net recomputation
+mean_i(mse_i x max(FLOOR,(C_i+24575)/B)) agrees with it to 5.29e-23 absolute.
+The two routes would have diverged had the floor bound anywhere: min per-net
+C/B 0.5680471, max 0.7704964, so all 100 nets clear both candidate floors.
+Compute safety carried: max per-net C after the delta 209,575,050,886, which is
+22.95% under B and 18.90% under the 258.4e9 promotion gate.
+
+NEW PIN, worth recording because it is not stated anywhere: the per-net
+identity holds against `effective_compute`, NOT `flops_used`. Using
+effective_compute the worst relative deviation across all 100 rows is exactly
+0.000e+00; using flops_used it is 7.25e-2. W0.1 reported 2.82e-16 worst
+deviation, so the record is cleaner than reported, not dirtier.
+
+SCAN CERTIFICATE REPRODUCES EXACTLY [O]: 12,128 float-valued leaves, 8,197 int
+leaves, 20,325 numeric leaves total, 400 booleans; zero non-finite floats; zero
+raw NaN / Infinity / -Infinity / Traceback tokens; 0 of 100 per-net traceback
+fields non-null; 0 of 400 exhaustion flags set. The UTF-8 BOM W0.1 flagged is
+present and does require `encoding="utf-8-sig"`.
+
+DUTY 2 — THE MEMORY CLAIM IS NOW OBSERVED, READ FIRST-HAND THIS PASS [O]. All
+three lines read verbatim out of the frozen venv
+`C:/Users/strid/.venvs/whestbench-frozen-m178`: cli.py:393
+`memory_limit_mb=65_536,`; scoring.py:64 `memory_limit_mb: int = 65_536`;
+subprocess_worker.py:170
+`_resource.setrlimit(_resource.RLIMIT_AS, (limit_bytes, limit_bytes))`. A grep
+for setrlimit|RLIMIT across the whole package returns exactly those plus one
+docstring at runner.py:141, so it is the only setrlimit. W0.2's finding that
+the limit does not bind on this platform is CONFIRMED, and by a stronger signal
+than W0.2 used: the frozen source SAYS SO IN ITS OWN COMMENT at
+subprocess_worker.py:161-163 -- "If the platform doesn't expose RLIMIT_AS (e.g.,
+Windows, some BSDs), write a warning to stderr" -- with the ImportError swallowed
+at :171. Independently, `importlib.util.find_spec("resource")` returns None on
+this interpreter (checked without importing, so nothing was executed), and
+cli.py:1119 confirms `--runner` defaults to "local". On the box that produced
+the ledger, no memory ceiling was ever mechanically enforced.
+
+W0.2's worst retirement-debt item is real and verified verbatim:
+`experiments/m237_writeahead_native_receipt/test_m237_durable_transport.py:181`
+reads `self.assertIn("memory_limit_mb=512", live_source)`, so removing the dead
+wall breaks that test. Three of the four harness-override sites also confirmed
+(m235:448, m236:336, m237:149).
+
+DUTY 3 — DOUBLE RUN, TABLES, FRAGILITY GATE, OWNERSHIP AUDIT.
+Ran `build_mi_graph.py` twice consecutively with -B. All four outputs are
+byte-identical between my two runs AND byte-identical to the files already in
+the tree, at the exact sha256 values W0.3/4/5 reported: mi_table.json
+45ac11f9..., mi_graph.json 2ae726d8..., doors.json 671c979c..., MI_GRAPH_REPORT.md
+46280b6f... The ledger sha256 94687953... is unchanged before and after, so no
+concurrent write contaminated either run. The script contains zero references to
+any fenced path and writes only into its own directory.
+
+FRAGILITY GATE ENFORCED HONESTLY, RECOMPUTED BY ME FROM THE RAW JSONs rather
+than read off the script's own print [O]. Both comparisons: 30 rows each, 0
+crossings, 0 crossings excluding artifacts -> HELD. Because the gate HELD, the
+"unrank every MI-ranked door" branch does not fire and no door was required to
+be unranked. W0.3/4/5's one-sidedness disclosure is CONFIRMED AND EXACT: I
+verified directly that ZERO non-artifact rows sat above their null maximum on
+either side of either comparison, so the gate could only ever have tripped
+upward. Read HELD as "nothing rose through the ceiling", not as two-sided
+stability. Closest approach reproduces to the digit: carrier on the 5-class
+target, mi_minus_null 0.0647 against null_max 0.0685, a gap of 0.0038 bits,
+having moved +1.17 prior null standard deviations.
+
+REPORTED TABLES CHECKED AGAINST THE ARTIFACTS [O]: n_doors 1423 with per-axis
+carrier 168 / mechanism_family 617 / convention 552 / precision 86 (sums to
+1423); the three source flips W1.1 depends on survive at ranks 3, 6 and 8 with
+kill_idx->win_idx of 16->53, 42->53 and 48->53 exactly as claimed; carrier
+leave-one-recode-out reproduces (as shipped 0.0647; revert idx 39 -> 0.0646;
+revert idx 73 -> 0.0510), so the counter-hypothesis genuinely fails and the
+axis movement is carried by the batch's best-evidenced recode, not its weakest;
+doctrine agreement reads convention 14/14, carrier 50/51 with the independent
+untouched-only column 46/47, precision 16/19; INV-R3-6 confirmed immaterial with
+convention moving exactly 0.0000 bits on both targets; the idx 59 shadow
+reproduces (5-class 0.0925 -> 0.0840, p pinned at the 0.005 floor both ways).
+
+OWNERSHIP PRE-REGISTRATION IS NOW GIT-PROVEN, NOT ASSERTED [O]. This is the
+check the acceptance block could not perform on itself, since
+`i_rule_preregistered` is a hardcoded True. At commit 7239ee2 (2026-08-19
+04:22:41 -0500) `MI_SOLVE_20260819.md` ALREADY carried the labelling rule at
+lines 249-252, naming `caller_owned_inplace` and
+`separate_workspace_or_pingpong` verbatim; at that same commit
+`build_mi_graph.py` contained ZERO occurrences of OWNERSHIP_INPLACE or
+code_ownership. The rule was therefore committed to history before the coder
+that applies it existed.
+
+TEN-RECORD SPOT-CHECK, CODES AGAINST MECHANISM STRINGS: zero mismatches. I
+re-implemented the frozen rule from the plan's prose and ran it against all 8
+stated records -- idx 46, 58, 71, 72, 73, 117, 118, 167 -- and every regex-coded
+one matches its published value on the quoted trigger token ('overwrit',
+'workspace', 'caller-owned', 'one-buffer', 'in place', 'in-place',
+'preallocat'). Four `unstated` controls (idx 37, 38, 42, 48) confirm the masking
+is real rather than nominal: both lexicons hit those records elsewhere in the
+full record and hit NOTHING inside the masked mechanism/bias_class fields, which
+is exactly why they code unstated. The twin pair still separates (71
+separate_workspace_or_pingpong vs 72 caller_owned_inplace).
+
+DUTY 4 — FENCES CLEAN, TWO INDEPENDENT SIGNALS. `git status --porcelain
+--untracked-files=all` restricted to experiments/fold_floor_splice,
+experiments/frame_completion_129 and cells/ returns EMPTY: no modification, no
+untracked file. Independently, no file under any of the three trees has an mtime
+later than 04:55:00 local (my build runs); the newest are 04:34:40, 04:35:15 and
+01:27:51, all predating the Wave-0 writes. Repo-wide there is no __pycache__ and
+no .pyc outside the venv.
+
+APPEND-ONLY CLAIMS VERIFIED MECHANICALLY [O]. DESIGNATION_POLICY_20260819.md:
++382 / -0 lines against 7239ee2, now 82,994 bytes and 1,309 lines, zero CRLF,
+matching W0.1's figures exactly; its annex carries exactly one fenced JSON
+block, which parses, with 12 top-level keys as claimed, and B written as 2.72e11
+throughout. MI_SOLVE_20260819.md: +339 / -0, 73,732 bytes, and pure ASCII end to
+end -- W0.6/9/10's disclosed Unicode wobble was genuinely corrected, not merely
+reported. The frozen phase asset re-hashes to
+a5e747f95423f5a45972d1a0735f223044a8a998407eb0c6db51aefdf47f4906 at 4,376
+bytes, matching W0.9's gate.
+
+SEVEN NOTES, none blocking, recorded so they are not re-derived later.
+
+(1) The Wave-0 files were ALREADY IN HISTORY before this pass. Commit 5da4cdc
+(the 129 judge, 04:53:34 -0500) swept DESIGNATION_POLICY, MEMORY_TIERS,
+MI_SOLVE, mi_table.json, mi_graph.json, doors.json and both frozen prior tables
+in alongside its own sealed-cell files. That commit is disclosed in the judge's
+own channel entry ("the Wave-0 files present in the tree at commit time"), so it
+is a known condition, not a discovery. Consequence for this pass: the commit
+below carries only what landed AFTER it, and it touches no fenced path.
+
+(2) `i_rule_preregistered` in the ownership acceptance block is a hardcoded
+True. A script cannot certify its own pre-registration. Discharged here by the
+git archaeology above; the flag itself should not be read as evidence.
+
+(3) PRE-REGISTRATION SCOPE SLIP, disclosed and sized. The plan's frozen rule has
+THREE levels and no manual-adjudication machinery. The implementation adds a
+fourth level (`ambiguous_unadjudicated`) plus criteria M1-M4 and two applied
+adjudications (idx 46 -> caller_owned_inplace, idx 264 -> unstated). Those were
+not in the pre-registration; W0.3/4/5's wording ("manual-pass criteria written
+into the script before coding") is a narrower claim than the plan's criterion
+(i). IMMATERIAL to the verdict: the two adjudications can move the stated count
+by at most plus or minus 2, from 8 to at most 10, against a bar of at least 77 --
+and idx 46 is a KILL adjudicated to the value the surviving twin carries, so the
+hand-coding runs AGAINST the axis showing signal rather than for it.
+
+(4) A build-script inline comment sizes the coverage failure as "roughly a
+factor of thirty". The true shortfall is 9.6x (8 stated against 77 required).
+The published report's own wording (8 stated, 269 unstated, at least 77 needed)
+is correct; only the code comment overstates.
+
+(5) The prior door totals 1457 and 1470 are the one class of figure I could not
+reproduce. 1457 is independently corroborated by MI_SOLVE section F3, committed
+pre-repair; 1470 rests on a scratchpad run of the old coder that is not a
+committed artifact. Descriptive diff figures only -- no verdict depends on
+either.
+
+(6) NUMERIC-SCAN NOTE, so a future scan does not misfire: one of the five
+forbidden scan constants is embedded in the long-standing id of the idx-0 win
+record, which has been in the ledger since the first publish commit b3a490c. It
+appears 19 times in MI_GRAPH_REPORT.md and once in MI_SOLVE.md -- mechanically,
+because the coder emits that record's id in door rows, and 8 of those hits
+predate the repair batch. No id, hypothesis or causal_mechanism field was
+authored this wave; the ledger was not edited; a field-level scan of all 277
+records over those three fields returns that historical id and nothing else.
+Scans over DESIGNATION_POLICY, MEMORY_TIERS and build_mi_graph.py return zero
+hits on all five constants.
+
+(7) Two of W0.1's re-derived figures differ from mine in the ~1e-22 digit
+(float summation order in the per-net accumulation). Immaterial at 14 orders
+below the quantity being decided; recorded only so the difference is not
+mistaken for a discrepancy later.
+
+WHAT I DID NOT VERIFY, NAMED. I did not re-read W0.6's 59-record hand-read or
+re-adjudicate its per-record judgements; I verified its two mechanical legs
+(the zero-door-participation of the inconclusive class is checkable and the
+count 52 is correctly carried at [R]). I did not re-run the old coder, so note
+(5) stands open. I did not observe the harness's live stderr warning for the
+failed setrlimit -- no run was permitted -- so that one leg of W0.2 remains
+[D] from the source read, with the settling check unchanged: grep the worker
+stderr for "could not setrlimit RLIMIT_AS" on the next scheduled run. Every MI
+statistic I quote came from artifacts I rebuilt this pass, not from the wave
+reports.

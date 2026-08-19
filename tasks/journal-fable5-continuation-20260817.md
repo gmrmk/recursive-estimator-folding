@@ -180,16 +180,17 @@ post. All prior operational contracts remain in force beneath this goal.
   measurement recorded as Fork-1 intel).
 
 ## Next action (exactly ONE — overwrite, never a list)
-Execute the 129 cell per the owner's "Repair + run" ruling: repair spec.json's band to
-the amended [0.78, 0.93] + the "12% of C" prose (free while unpredeclared), arm-C
-Tier-1 pre-flight (seed 424242, n-mlps 1), then predeclare via scripts/fold_search.py
-and the ONE production run, judged with the pre-registered additions (se_log PASS
-condition 0.019-0.03, achieved-size ~7% note, leg splits, arm-C decomposition) and the
-pre-stated unfolded-host arithmetic (beats kerdock_v3 only at r < 0.7453, below the
-PASS band — scientific/host-fork value, not a designation flip). CONTEXT: fold lineage
-HALTED by owner re-plan ruling (round-4 retired gate-green, archived; M1 cancelled; P1
-withdrawn by governance); designation = unfolded kerdock_v3 vs incumbent row_blocked
-under the Phase-1-default rules; manuscript integration runs in parallel.
+Write P2's outcome into the manuscript (v1.3, workflow launched): 129 cell ran —
+mechanical PASS at margin_t -4.705 (score ratio 0.6817, raw MSE 0.6662, BELOW the
+0.78 band edge), disposition INSTRUMENT-SUSPECT per the pre-registered se_log honour
+rule (0.0705 vs [0.019, 0.03]); H2 REVERSED THE SUBJECT: design-quality leg (Haar->
+Kerdock, same 126 count) carries 103.7% of the log gain, completion leg 126->129 is a
+small net LOSS (1.0332, CI straddles 1) — what pays is leaving the Haar family; all
+exact theorem assertions hold in-cell (A4_mub(129)=0.0, 128/3 exact, dyadic tax exact)
+but the defect->MSE conversion under-predicts (~2.8 SE). Ledger #277 (5da4cdc, pushed
+by the judge). Behind it: harvest Wave 0 (running, mi_graph mid-edit), then the
+designation memo final (v3.1 slot-1 stands — the 129 host arithmetic did NOT settle:
+CI upper 0.771 > r* 0.745, memory undischarged, descriptive-only custody).
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).

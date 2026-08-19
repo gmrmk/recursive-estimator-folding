@@ -570,6 +570,9 @@ def code_ownership(rec, idx):
     a = bool(OWNERSHIP_INPLACE.search(txt))
     b = bool(OWNERSHIP_WORKSPACE.search(txt))
     if a and b:
+        # Deliberately a visible level rather than a silent tie-break: manual-pass
+        # criterion M1 says a both-families record must be adjudicated by hand, so a
+        # future one surfaces in the distribution instead of being guessed at.
         return "ambiguous_unadjudicated", "both_families"
     if a:
         return "caller_owned_inplace", "regex"
@@ -986,8 +989,8 @@ def main():
         return row
 
     own_rows = [
-        _own_mi(own_decided, "all decided records"),
-        _own_mi([n for n in own_decided if n["idx"] not in (71, 72)],
+        _own_mi(decided, "all decided records"),
+        _own_mi([n for n in decided if n["idx"] not in (71, 72)],
                 "twin pair dropped (the two records that motivated the axis)"),
     ]
     # The bar the plan set: not merely above the null sd, above the null MAXIMUM,
@@ -1046,7 +1049,6 @@ def main():
                           != next(n["ownership"] for n in nodes if n["idx"] == 72)),
         },
     }
-    _ = y_dec
 
     # ------------- attribution: which recode moved the carrier axis? ------------
     # The carrier axis is the one the repair batch touched most, and the standing
@@ -1413,15 +1415,20 @@ def write_report(meta, mi_rows, nodes, doors, top10, door_axis_counts,
     A("")
     A("## The 2026-08-19 repair batch")
     A("")
-    A("Six coder defects were repaired in one edit and the whole table was rebuilt")
-    A("once, because at these sample sizes a single-record change moves a statistic by")
-    A("about a null standard deviation and cell-by-cell reporting would invite reading")
-    A("noise as movement. Two of the repairs are regex changes that generalise, one is")
-    A("a mechanical identity rule, and %d are explicit per-record recodes carrying"
+    _n_mech = sum(1 for r in recode_log if r["rule"] == "R5")
+    _n_expl = len(recode_log) - _n_mech
+    A("The coder's known defects were repaired in one edit and the whole table was")
+    A("rebuilt once, because at these sample sizes a single-record change moves a")
+    A("statistic by about a null standard deviation and cell-by-cell reporting would")
+    A("invite reading noise as movement. Three of the repairs are changes to the")
+    A("regexes themselves and generalise to any future record; one is a mechanical")
+    A("identity rule that fires here on %d record; and %d are explicit per-record"
+      % (_n_mech, _n_expl))
+    A("recodes carrying evidence no regex over the record could reach. All %d recodes"
       % len(recode_log))
-    A("evidence the regexes cannot reach. Every explicit recode asserts its evidence")
-    A("string against the record at build time, so a ledger edit that removes the")
-    A("evidence breaks the build rather than leaving a stale label in place.")
+    A("are listed below. Every explicit one asserts its evidence string against the")
+    A("record at build time, so a ledger edit that removes the evidence breaks the")
+    A("build rather than leaving a stale label in place.")
     A("")
     A("| idx | id | axis | from | to | evidence class |")
     A("| ---: | --- | --- | --- | --- | --- |")
