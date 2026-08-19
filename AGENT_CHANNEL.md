@@ -10408,3 +10408,133 @@ two filed open items (defect-to-MSE conversion under-predicting the measured gai
 ~2.8-3.4 SE, i.e. UNEXPLAINED EXCESS accuracy physics in leaving the Haar family; the
 smoke sign-flip) are the seeds; (3) the Phase-1 private re-run is grading our locked
 slots as this is written.
+
+## 2026-08-19T17:02:42Z — CENTRAL-MOMENT LADDER HOSTILE VERIFICATION: APPROVED (one attack landed, sign leg corrected; six defect sites fixed in place)
+
+VERDICT: APPROVED. `core/CENTRAL_MOMENT_LADDER_20260819.md` (inferential/constructive
+lane) survives independent re-derivation on every load-bearing claim; one attack landed
+against the §3.b order-4 sign sub-claim and the document now carries the corrected
+result; six numeric/citation defect sites were fixed in place. The verdict line
+`lawful_construction_verdict = CLOSED-BY-DERIVATION` stands, as does the rung-2k
+instrument law and its prescription.
+
+RE-DERIVED INDEPENDENTLY (route named; all exact-rational under `python -B -P`,
+`PYTHONDONTWRITEBYTECODE=1`, scratchpad only).
+(1) Var(s^2) = (1/n)[mu4 - ((n-3)/(n-1))mu2^2] confirmed EXACTLY by brute-force tuple
+enumeration over an asymmetric 3-point law at n = 2,3,4,5,7 (a route independent of the
+document's algebra), including the kurtosis form and the known-mean variant (kappa-1)/n
+used by §2.5. The §2.2 asymptotic 1/n coefficient of Var(m_k-hat) was recovered exactly
+for k = 2 and k = 3 by rational polynomial fits to enumerated exact variances (k=3
+coefficient mu6 - mu3^2 - 6 mu2 mu4 + 9 mu2^3 reproduced as 482873/82944 on the test
+law).
+(2) Fisher machinery: E[k2]=mu2, E[k3]=mu3, E[k4]=mu4-3mu2^2, E[h4]=mu4,
+E[m2]=((n-1)/n)mu2 all confirmed exactly by enumeration at n = 4,5,6 — the §3.0 printed
+coefficients are the classical ones. FLOP pricing re-done from scratch:
+8,110,592 = 2*256*511*31; 41,148,672 = 2*64512*256 + (2*256^2*31 + 256*511*31);
+dC/C = 3.6468e-5 / 1.8502e-4 against C = 222.405e9; C/B = 0.81767; -256 => -1.151e-9.
+(1-lambda)^2 and (1-lambda)^2/lambda^2 match to the last printed digit. The lambda*
+variance identity verified exactly on a 3-point joint law at three lambda values.
+(3) Source quotes: every quoted line of fold3_estimator.py, orthogonal_fold3.py,
+base_estimator.py, estimator.py, fold_estimator.py (candidate_source) matches
+token-for-token — the centring block, the tangent loop, the regime blocks,
+_refine_dead/_refine_on, the radial-branch literals (257.0, 66563.0, 2600.0/537689.0
+with the code's minus sign = a<0, 3.0/537689.0), the MRO, and all six deployed values.
+_diagonal_gaussian_pass confirmed to read only mlp.weights.
+(4) Radial theorem-fix: the 2x2 normal-equation solve was re-run from the chi-square
+recurrence E[S^{k+1}] = (d+2k)E[S^k] and returns a = -2600/537689, b = 3/537689
+exactly; stationarity E[w q1 S] = E[w q2 S] = 0 exactly; E[w^2 S]/E[S] = 536640/537689.
+The document's Var(R) = 0.4995107674248603 and Var(wR) = 0.0000696406768702994 are
+correct to ALL printed digits — settled by a 30-digit integer computation
+E[R]^2 = 2*pi*(256!/(2^256*128!*127!))^2 = 255.5004892325751396..., which also exposed
+my own float-route lgamma noise at digit 11; factor 7172.68685 -> "7172.687" correctly
+rounded. Gegenbauer values triple-routed (closed form, Gamma/binomial, exact
+Gram-Schmidt): Q4(0)=1/21845, Q6(0)=-1/1131571, A4=65/2072448 (16-digit decimal exact),
+A6=16637/536764032 (printed decimal is the correct 16-digit rounding), 128/3 ratio
+reproduces, A2 frame-vanishing confirmed.
+
+THE ATTACK THAT LANDED (duty 4, the load-bearing bridge). §3.b's sign leg claimed the
+leading order-4 cross-degree sign is Q4(0)*Q6(0) < 0. Exact rational computation in the
+canonical zonal single-neuron case (d = m = 256, frame projections = coordinates of a
+uniform vector, all 15 slot partitions summed with exact joint sphere moments):
+Cov(S4^2, S6^2) = 51989825798144/6048658608830842617174904419 = +8.595e-15, POSITIVE —
+the coincident-row term (+8.611e-15), which no Q_l(0) factor suppresses, dominates the
+negative pair channels ((44)(66): -1.426e-16; (46)(46): -7.272e-17) by ~50x. The sign
+leg is therefore false as stated and the document now carries the corrected paragraph,
+verdict line ("neither the order nor the magnitude"; sign leg withdrawn with the
+correction recorded inline), and §4 table row. THE BRIDGE HOLDS: the same machinery
+reproduced E[S4 S6] = 0 exactly (order-2 Schur diagonality in miniature — the leg the
+bridge actually rests on) and the A_l frame-variance formula; the 1/k^3 ensemble
+suppression was verified exactly at k = 2,3,4 on a non-degenerate law; 1/126^3 =
+4.99906e-07 and Q4(0)Q6(0) = -1/24719168495 = -4.0454e-11 as printed. Also priced and
+added to the bridge: the completion moves A6 by exactly (126/129)*(4224/4096) = 693/688
+= +0.727% (PHASE2 §11b dyadic tax), immaterial against the 17-26% excess and in the
+anti-excess direction — the three-place exhaustiveness stands materially.
+
+SECOND FORMULA DEFECT FOUND AND FIXED: §2.4's skew(log X) coefficient omitted the
++gamma^2 from the Var^{3/2} normalisation. Correct form:
+skew = gamma - (3/2)(kappa - 1 - gamma^2) c + O(c^2). Settled mechanically: on an exact
+three-point law the empirical coefficient converges to -1.5199
+(= -(3/2)(kappa-1-gamma^2)) excluding the printed -1.5556 (= -(3/2)(kappa-1)); a
+two-point law (kappa-1 = gamma^2 identically, monotone transforms preserve two-point
+skew exactly) confirms the corrected form. The lognormal consistency check updates
+-24s^3 -> -(21/2)s^3, still zero to leading order. All downstream uses had gamma = 0,
+where the correction vanishes: the "~ -3c" headline, the ratio sign rule, and the
+Lens-A prediction are unchanged.
+
+DEFECTS FIXED IN PLACE (all re-verified against fresh computation before editing):
+D1 §2.3 honour window: [0.005782, 0.031921]/[0.3067, 1.6933] ->
+[0.005788, 0.031912]/[0.3070, 1.6930] (exact: 0.0188500530*[1 +- 1.96*0.35355339]).
+§2.6's [0.0058, 0.0319] was already consistent with the corrected values.
+D2 §1.4(e): three table cells and two echoes were computed with e^(-qr) instead of the
+stated exact (1-Phi(-alpha))^r: stays-dead 8.736e-06 -> 7.636e-06 (512 rows) and
+5.824e-21 -> 3.400e-21 (2048 rows); survival at alpha=3 0.0630 -> 0.0629;
+alpha50(512) 2.9991 -> 2.9993; "1 - 5.8e-21" -> "1 - 3.4e-21"; §5 item 4 echoes
+updated. alpha95(512)=3.7186, alpha50(2048)=3.3988, alpha95(2048)=4.0552, the
+truncation table, and the ~3.40 / 6.3% / 93.7% readings all reproduce exactly and
+stand.
+D3 §2.4 skew formula + lognormal check (above). D4 §3.c quantile citation :700-710 ->
+:695 (the q50/q90/q99 line sits at PHASE2:695). D5 §3.b sign paragraph/verdict/§4 row
+(above). D6 §3.b bridge now prices the A6 completion tax explicitly.
+
+SIBLING CROSS-CHECK (duty 1; EXCESS_GAIN_MOMENTS_DATA_20260819.md exists and was read,
+not duplicated). The data lane MEASURED per-net log-space excess kurtosis NEGATIVE in
+all three arms (-0.7111/-0.4510/-0.4505) and the A/C log-ratio
+Gaussian-indistinguishable (g2 = -0.1475) — which confirms the ladder document's
+PRIMARY reading (the se_log miss is a rung-2 sampling failure, 1.3132 sigma under
+normality, heavy tails not needed) and leaves its kappa = 4.811497995504496 strictly as
+the labelled inversion ("kurtosis at which the miss is exactly 1 sigma"), not a
+measured value. The two lanes are consistent; no collision. The sibling's §5c (kurtosis
+enters Var(log xbar) at O(n^-3)) concerns the production-mean object, orthogonal to the
+ladder's pilot-variance object; both are right in their frames.
+
+CITATIONS AND LAW. All [R] anchors verified against the cited files/lines: 340.9x
+(PHASE1 DRAFT:364,748; SHORT:276), se_log window and achieved value
+(PHASE2:1876-1890, 2278-2281), 0.6661955563966138/0.78/0.842 (:1854-1868),
+C=222.405B (:1002), y4=16637/555357 (:754), 2.1-3.7x (:797), A4 carrier discovery
+(:1215-1260), lottery quantiles (:695), S = MSE*max(0.1, C/B) (CODEX_HANDOFF:219),
+deg-6 kappa~2e4 + 0.758/0.734 + 8192/32768/4096 (deg6 predeclaration.json, verbatim),
+Q=H*D flag (SECTION_...ROW_BLOCKED:78-79), "six scalars, one switch, one structural
+integer" and the radial-branch "present, unreachable"/chi-square-at-257 attribution
+(:124, :181-191). The k32 death law was checked against its actual ledger records
+(fold_ledger candidates 269-271, k32_base_sensitivity_v1-v3: fitted beta does not
+transport — cosines -0.066/-0.559/-0.237, zero of three seeds preserving signs) and the
+slate's two invocations ("theorem-fixed, nothing fitted"; "requires any negation to be
+network-independent"): the document's binding paragraph and the §3.a.3/§3.a.4
+applications are faithful to that text.
+
+COMPLIANCE. Zero billed compute: no harness, no estimator import, no scored row, no
+seed consumed. Four verification scripts ran `python -B -P` with
+PYTHONDONTWRITEBYTECODE=1 from the session scratchpad; deployed sources under
+experiments/row_blocked_production/candidate_source/ and
+experiments/v31_guards/package_source/ opened read-only; nothing written outside
+corpus/whestbench/core/CENTRAL_MOMENT_LADDER_20260819.md, this channel, and the
+scratchpad. The sibling lane's two EXCESS_GAIN files remain untracked for its own
+commit. Residual risk, named: the §6 ledger's [A]/[GAP] rows stand unchanged (largest:
+exact O(d)-invariance of the LAPACK-QR configuration, which the corrected §3.b still
+assumes for the order-2 theorem; the antipodal doubling argument covers the marginal
+law but not the joint pair law). Scope of the sign correction, labelled: the exact
+computation covers the single-axis zonal case; the multi-axis case needs the
+orthonormal-pair moment oracle (Weingarten) and was not run — that is its settling
+check, exact and offline. What is proven stands on its own: in the canonical case the
+coincident-row term is positive and dominates, and every cross-row channel carries a
+Q_l(0) suppression factor the coincident term does not.
