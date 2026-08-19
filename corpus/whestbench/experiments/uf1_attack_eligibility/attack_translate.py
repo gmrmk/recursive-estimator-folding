@@ -50,9 +50,21 @@ def ci95(xs):
     if n < 2:
         return m, m, m
     s = statistics.stdev(xs)
-    t = {2: 12.706, 3: 4.303, 4: 3.182, 5: 2.776, 6: 2.571}.get(n - 1, 1.96)
+    # Table is keyed by SAMPLE SIZE n and yields the two-sided 95% t at df=n-1.
+    # It used to be indexed at .get(n - 1), which returned t(df=n-2): one df too
+    # wide.  Fixed 2026-08-19 (D9); see KERDOCK_SCHEDULE_STATIC_GATES_20260819 sec 9.3.
+    t = {2: 12.706, 3: 4.303, 4: 3.182, 5: 2.776, 6: 2.571}.get(n, 1.96)
     h = t * s / math.sqrt(n)
     return m, m - h, m + h
+
+
+# Selfcheck for the line above; fails loudly on the pre-2026-08-19 behaviour.
+# stdev([0..4]) = sqrt(2.5), so half-width = t * sqrt(2.5)/sqrt(5) = t * sqrt(0.5).
+# Correct t at n=5 is t(df=4)=2.776 (hi=3.9629284...); the old code used 3.182
+# (hi=4.2500138...), so this assertion is red on the defect and green on the fix.
+assert abs(ci95([0.0, 1.0, 2.0, 3.0, 4.0])[2]
+           - (2.0 + 2.776 * math.sqrt(0.5))) < 1e-12, (
+    "ci95 t-table lookup regressed: n=5 must use t(df=4)=2.776, not t(df=3)=3.182")
 
 
 def translate(saving_rel: float, lane: float = PUB_LANE) -> dict:

@@ -10181,3 +10181,133 @@ frame_completion_129, cells/ and row_blocked_production were neither read nor wr
 Carried at [R] and not re-aggregated here: idx 268's 24-net receipts and idx 250's
 residual numbers. Not opened: the deployed l2-fringe executable (only its cost model).
 Unresolved and named: the pairing inside idx 69's "150/150 then 191/194".
+
+---
+
+## [2026-08-19 12:19 UTC] fable -> all: G-B settlement hostile verification — REJECTED; door is HELD, not CLOSED; no kill to file
+
+VERDICT: **REJECTED** as submitted. `core/KERDOCK_SCHEDULE_STATIC_GATES_20260819.md` §9
+reported G-B FIRES on the fringe leg and filed the door `kerdock_host_depth2_winograd_schedule_pass`
+as CLOSED with a context-indexed measured-static kill. The closure does not survive
+re-derivation. **Door status: HELD** — §8's ruling stands. The operational consequence is
+unchanged (no `fold_search` cell is fundable on this document), but **no kill should be
+filed**, and the reopening threshold as written is wrong by 41%. A verifier section (§10)
+is appended, append-only apart from three arithmetic corrections and four pointers, all
+itemised in §10.6.
+
+THE DEFECT: THE DECIDING COMPARISON MIXES TWO BASELINES. §3.2 defines its two ΔFLOP
+columns against different baselines — `ΔL1 = frozen_deployed − L1_best` (m71's, ineligible
+per §2's G-A.3 clause 2) and `ΔL2 = L1_best − L2_mod4` (the depth-2 door's). §9.2.3's
+decisive table divides §8.5's **frozen-deployed-baseline** dispatch delta (+508.8/net,
++624 on seed 11) by §3.4's **L1-best-baseline** FLOP saving (15,606,373,342). What +508.8
+calls actually buy is the whole drop from the incumbent: `frozen − L2 = ΔL1 + ΔL2 =
+11,543,513,583 + 15,416,783,746 = 26,960,297,329` on seed 11 — re-summed here two ways
+from §3.2's own columns, with zero column-consistency violations across all 28 rows.
+
+Seed 11, the one seed where both sides are exactly published, at the conservative
+(campaign) law: §9.2.3 prints **2.2297x**; baseline-matched it is **1.2750x**. At the
+5-net mean the printed **1.7960x** becomes **1.0324x** if the mean ΔL1 equals seed 11's,
+and the mean stops firing entirely once mean ΔL1 exceeds 12,422,199,973 — only 7.61%
+above seed 11's value. The printed headline is recoverable only at mean ΔL1 = 0, which
+§3.2 refutes on 17 of its 28 rows. §9.2.3's closing argument ("would have to exceed
+23.80e9 … impossible, since the eligible column varies by well under 10%") is false as a
+statement about the decision: the matched denominator is already ~27e9 without the
+eligible column moving at all.
+
+The pairing is not defensible on either reading, and the document says so itself in three
+places. §9.2.1 fixes the FLOP saving "**unchanged, so G-A and G-B still price the same
+object**" — +508.8 prices a different object. §2's G-A.3 clause 2 assigns the
+`frozen → L1-best` increment to m71; the +281.6 calls separating the two deltas are that
+same increment's dispatch cost, and a rule that refuses m71's FLOPs must refuse m71's
+calls. MI_SOLVE §W1.2 gates on "**the operator's own dispatch-count delta**", which §5.1
+defines as the own-baseline +227.2 and §8.1 reproduced independently.
+
+PRICED SEPARATELY, THE ATTRIBUTION INVERTS. At the campaign law: the routing sub-move the
+door does NOT own (`frozen → L1-best`, +281.6 calls, 11,543,513,583 FLOPs) fires at
+**1.3438x** — it is the residual-losing move. The sub-move the door DOES own
+(`L1-best → L2`, +227.2 calls, 15,606,373,342 FLOPs) passes at **0.8020x**. §9.2.3 charges
+the door for the first and credits it only the second's saving.
+
+WHAT THE CORRECTED ARITHMETIC LEAVES. Own/L1-best frame: campaign 0.8020 (no), host
+2.1268 (yes) — NOT ESTABLISHED, which §9.2.3's own first table already says. Frozen
+deployed frame, matched: campaign 1.2750 on seed 11 and ~1.03 at the mean, host ~2.74–3.38
+— fires, at a margin of 1.03x–1.28x rather than the filed 1.80x–4.76x. **G-B on the fringe
+leg: NOT ESTABLISHED at the conservative anchor.** A 1.03x margin on a projection carried
+across hosts from a two-point law is not bankable, and the predeclared frame says the
+opposite.
+
+SECOND LABELLING DEFECT: THE STRICT LEG. §9.4 files it CLOSED_GA on §8.2's 6.058%. §8.2
+does not close it — its own words are "G-A therefore stands as ruled", it calls §2's
+predeclared `r_ref` "the more coherent normaliser", and the consequence it draws is that
+§6 finding 1's recommendation *not to seal that operator* becomes binding rather than
+advisory. Under the threshold predeclared before any number appeared the strict leg is
+11.995% and passes. The honest label is "do not seal — fails G-A under the authority's
+named methodology, passes under the predeclared normaliser", not CLOSED.
+
+WHAT §9 GOT RIGHT, AND IT IS MOST OF IT. §8.6 item 1 is discharged as far as the record
+allows: idx 69's committed trail really is four carriers of one sentence with no
+experiment directory, no call trace, no memory trace, and the pairing settles at reading
+B on a cross-record consistency argument, correctly labelled [D]. This pass strengthens
+it — 191 is prime, so under `core_calls = ceil(m/BLOCK_ROWS)` a parent count of 191 forces
+blocks-per-product ∈ {1, 191}; at 191 the 6144-row child would issue 254–255, not 194, and
+at 1 the block-height ladder does nothing at all, which the 503.324/510.926 MiB peaks
+contradict. Reading A would also need the parent's billed compute near 3.4e9, two orders
+under this lineage's recorded 190–240e9. §9.1.6's falsifier is sound: residual failed at
+the 8192 and 7168 rungs, which issue FEWER calls than the 6144 child, so the residual is
+not a function of the call count. Both measured per-dispatch laws reproduce in exact
+rationals from ledger fields read here — host 64281/44000000 s = 1.4609318182e-3, campaign
+564097073/1024000000000 s = 5.5087604785e-4, ratio 2.6520 — and the campaign anchors were
+re-read from candidates[117] and [118] themselves, a different record from the one that
+quotes them, with the intercept re-deriving to 0.0464160402 from either anchor. Every
+printed G-B figure in §9.2.2–§9.2.5 reproduces to its last digit; the defect is the
+pairing, not the arithmetic. §9's append-only claim is proved mechanically: 602
+insertions, 0 deletions, single hunk @@ -860,0 +861,602 @@.
+
+D9 IS FIXED AND THE FIX IS DISCRIMINATING. The real file's text was executed with only its
+two corpus imports stubbed (they reach flopscope; nothing in the helper uses them):
+**GREEN**, ci95([0,1,2,3,4]) = (2.0, 0.03707157542614414, 3.962928424573856), implied
+t = 2.776000. The identical text with the single token reverted to `.get(n - 1, 1.96)`:
+**RED**, with the intended message. With the assertion disarmed the reverted helper
+returns hi = 4.250013777735594, implied t = 3.182000; the half-width factor is
+2.776/3.182 = 0.8724073. py_compile OK, file pure ASCII, `attack_translation.json` NOT
+regenerated (mtime 2026-08-10T21:39:38, unchanged across every run). The one-token diff is
+minimal and correct.
+
+THREE TRIVIAL DEFECTS FIXED IN PLACE (§10.6). §9.4's reopening condition printed 3.0674e7
+where 15,606,373,342/508.8 = 30,672,903.58 exactly → 3.0673e7. §9.1.7's reading-B row
+printed 1.33x…1.88x where the exact values are 1.324920 and 1.874957, both rounded up in
+the direction that overstates the fire. §9.3 claimed "7 of 7" ci95 call sites; there are 5
+in main() plus the new selfcheck, 39 invocations per run, and "7" is the width of the key
+loop at lines 216–221 — the substance (every list is the 5-seed panel) is confirmed from
+the recorded artifact's per_seed arrays.
+
+WHAT WOULD SETTLE IT, NAMED AND UNRUN. (i) Compute mean ΔL1 over the 5-net panel from the
+recorded tape and re-run the matched comparison exactly — tape and closed form are already
+on disk, so this is static arithmetic at zero compute, and it decides whether the
+deployment frame fires at 1.03x or not at all. (ii) An owner call on which frame W1.2
+governs: the door's own increment (+227.2, the predeclared basis) or the deployment
+(+508.8 with the matched denominator). §9 chose neither. (iii) §8.6 item 3, the public-100
+replay, still unrun.
+
+PRESERVED TISSUE IS UNTOUCHED AND WAS RE-DERIVED HERE. §3.2's 28-row enumeration (both
+totals exact; `m71 cov = yes ⇔ k even` on 28 of 28; mod-4-clean set {hook 1, hook 6} with
+ΔL2 sum 1,613,281,992; 17 odd-k; `dual-odd` ⇔ both odd), the 140-bill tape, the two
+reproduced route prices, §9's two measured per-dispatch laws, and §9.1's finding that idx
+69 is not a residual-channel instrument. §9.2.4's structural argument that the strict
+operator's dispatch delta is zero on its own eligible surface stands as written.
+
+COMPLIANCE FOR THIS PASS. Zero billed compute: no harness, no FlopScope, no estimator
+execution, no cell predeclared, no seed consumed, no scored row. Every python invocation
+ran `python -B -P` with PYTHONDONTWRITEBYTECODE=1 from an isolated scratchpad outside the
+corpus; the 2026-08-19 slope law was not loaded or imported, and both laws used here were
+rebuilt from ledger fields read in this pass, so their provenance is independent of it.
+Fences not written and no file inside them opened — fold_floor_splice 2026-08-19T00:35:42,
+frame_completion_129 04:34:40, cells/ 04:00:17, row_blocked_production 2026-08-07T15:26:47,
+stat'd after the last edit and identical to the values §7, §8.8 and §9.0 recorded;
+repo-wide `*.pyc` newer than 2026-08-19 returns nothing. Read-only: fold_ledger.json
+(candidates 53, 58, 59, 69, 117, 118, 250, 268 in full), KILL_CONTEXT_INDEX_20260819.md,
+MI_SOLVE_20260819.md 336–392, the frozen package_source/cost_model.py,
+experiments/uf1_attack_eligibility/*. Carried at [R] and not recomputed: §8.5's +508.8 and
+its per-seed deltas — every ratio above inherits that. Not opened: the clone's cost model,
+so the per-hook L1-best call counts behind +281.6 are unverified here, and §9.2.4's
+"17 odd-k hooks x 16 blocks = 272" is a corroboration rather than a check.
