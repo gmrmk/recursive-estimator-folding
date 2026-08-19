@@ -205,17 +205,16 @@ post. All prior operational contracts remain in force beneath this goal.
   APPROVED.
 
 ## Next action (exactly ONE — overwrite, never a list)
-Harvest the G-B settlement (wf_f2d62778-741: idx-69 pairing resolution + honest-basis
-residual gate at both +227.2/+508.8 dispatch deltas + CI95 helper off-by-one fix) —
-it decides the last design door (fringe leg; strict is CLOSED_GA per D6, point
-estimate 6.06% under the 9% bar). Prior state all harvested and pushed through
-94ff30b: Wave 0 APPROVED (v3.1 annex, memory tiers OBSERVED, MI rebuild fragility
-gate HELD, ownership axis honestly unmeasurable at 8/276 stated), manuscript v1.3
-audited (P2 two-layer disposition + H2 reversal + theorem scorecard), static gates
-G-A CONFIRMED by 140/140 hand re-derivation with door HELD. On the settlement
-verdict the campaign is at steady state; externals: rules email (owner inbox), X5
-k=1 re-instrumentation (owner-scheduled quiet machine), the smoke sign-flip and
-defect-to-MSE conversion open items (filed in the manuscript, unscheduled).
+The campaign is at STEADY STATE (2026-08-19 ~12:4x UTC). All swarm work complete,
+harvested, pushed through a6481ab. The last design door is CLOSED (final, verifier-
+approved, no-successor: mean dL1 8,269,535,869 vs boundary 12,422,199,973; deployment-
+frame fires at both laws 5/5 seeds, mean 1.1739x campaign / 3.1133x host; fringe leg
+CLOSED_GB, strict leg HELD do-not-seal; reopening conditions quantified in Section 11).
+Designation ready: v3.1 slot-1 (policy v3 annex) against the stated Phase-1 default.
+Manuscript v1.3 hostile-audited. Ledger 277. NEXT: on the rules email (owner inbox) run
+designation_repricing.py against the real text and file; on an owner-scheduled quiet
+machine run X5 k=1 re-instrumentation; optional unscheduled science: the smoke sign-flip
+cell and the defect-to-MSE conversion (post-control energy table read).
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
