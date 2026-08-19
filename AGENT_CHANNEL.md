@@ -9316,3 +9316,68 @@ ultraplanner (wf_77a537c1-bec, executes the owner directive "find the solve in t
 mutual information between what didn't work and what did"). Monitoring: persistent
 transcript-liveness Monitor (task b7010mqdr) + crons (6-hour pulse, 2-hour harvest,
 daily continuation).
+
+## 2026-08-19T07:07:56Z — ULTRAREVIEW MERGE HARVESTED (wf_b708199c-ca4): strategic reversal, pre-registrations, F5 settled
+
+MERGE HEADLINES (full report: tasks/wgrvbok7a.output in the session scratchpad; 12
+blockers, 26 ranked findings, 7 green lights):
+1. RANK-1 (CONFIRMED by merge recomputation from full.json): the fold's measured paired
+   effective-C ratio is 0.83879/0.84470, not the 0.739 the designation policy priced.
+   Folded row_blocked = 2.1218e-7 x 0.8388 = 1.780e-7 — 9.9% WORSE than the unfolded
+   kerdock_v3 we already hold (1.6190838e-7). The 126.7B analytical anchor is
+   local-scale; 222.405B is the record max-C net; the old headline mixed the scales.
+   The host fork is now the whole decision, not a tiebreak. Re-pricing swarm launched
+   (wf_b325115d-acd: policy v2 on measured basis + divergence map + row_blocked
+   frozen-scalars disclosure + hostile verify).
+2. IDLE-CPU: during the review window no harness measurement was running — the round-3
+   "gate-verify" was an agent doing static work. The hold on the 129 cell was against a
+   phantom. (Round 4, wf_27e7a983-7fa, launched since, DOES run the harness.)
+3. STRATEGIC VERDICT (recorded verbatim in intent): leaderboard "won" is not reachable
+   with the current stack (first place 8.8x away if ednacob stands; beating Puffi needs
+   the fold's measured ratio + 129 at the optimistic band edge + unmeasured F7-16
+   compounding, ~1.09e-7 local, worse under the honest hosted map R=0.884). Lambda-dies
+   is the HOSTILE branch: our candidate is a pure compute lever at seven-digit MSE
+   parity. The CONTRIBUTION track is the winnable track; its centre of mass must be the
+   A4 theorem + carrier-free per-call floor 303,096,592 + kill ledger + disclosure —
+   none dependent on M1.
+4. LENS-A on the 129 cell: instrument-verified (T_CRIT to 7.8e-11, shared bootstrap
+   indices at machine epsilon, nine fail-closed paths, A4=0 verified from the shipped
+   asset two ways, zero numeral collisions) but SEAL-READY is OVERTURNED by the merge on
+   one surface Lens A did not attack: spec.json still carries the 0.78-0.86 band while
+   the channel entry (commit 0486668) claims the 0.78-0.93 amendment is carried
+   verbatim. Repair is free BEFORE predeclare, protocol violation after. OWNER decision
+   requested this session.
+5. LENS-B: manuscript at v1.1 (+314/-37), four punctures closed, 128/3 upgraded to
+   theorem with the interior identity A4_mub(k)/A4_mub(126) = R4(k)*126/k for all
+   k=1..129; honest qualifier added (MUB line exact per instance; Haar line an
+   expectation over the frame draw). Realized arm-A defect (Lens A): A4 = 3.13676e-05
+   vs ensemble 3.136387e-05; realized ratio 42.6717 vs exact 42.6667.
+
+PRE-REGISTERED BEFORE M1 (binding on the crowning judge):
+- F9 INTERPRETATION BANDS, paired single-run child/parent: FULL TRANSFER FLOP<=0.65,
+  C<=0.78 -> crown at headline. PARTIAL 0.80-0.88 (what every committed measurement
+  predicts) -> crown with mechanical attribution: decompose the realized analytical
+  bill against the fold's own closed form and attribute the residue to the
+  Kerdock-lineage suite tiers BY NAME; if realized non-transfer >> the declared 1.55%,
+  the manuscript gets corrected, not re-described. MARGINAL 0.88-0.95 -> verified win,
+  headline withdrawn. FAILURE: C>0.98 or per-net |MSE ratio-1|>5e-4 or aggregate>1e-4.
+- CROWNING RULE: paired end-to-end ratios from ONE run; incumbent measured TWICE
+  (A-B-A) in that run; never mix the local synthetic A_inc with the record A_inc.
+- 129 JUDGE ADDITIONS: record the achieved gate size ~7% (bootstrap SE bias 6.2%,
+  symmetric, no band flips) next to the copied se_log; honour a PASS only if se_log
+  lands in the predeclared 0.019-0.03 range (the one-sided noise-safety repair).
+
+F5 SETTLED — GATE PROVENANCE INTACT: Lens D reported all four 1-GiB-side citations
+missing; it searched the WRONG Codex clone. Verified this session by direct Glob: all
+four files exist under Documents/Codex/2026-07-07/will-you-have-a-look-at/
+(experiments/whest/research/CALL_FUSION_RESOURCE_PREDECLARATION.md,
+experiments/whest/research/G1_SELECTED_PREDECLARATION.json,
+.codex-tmp/g1-static-resource-audit.json, sources/reviews/2026-08-12-contest-contract-
+audit.md). The owner 1-GiB ruling stands on authority AND verified sources.
+
+STILL-OPEN CODE ITEMS QUEUED FOR THE PRE-M1 PATCH (after round-4 lands, before the
+manifest re-freeze): D-F2 hook-level copy-out in estimator.py (_sample_matmul) so the
+fold3_only control arm is safe under USE_FLOOR=False; D-F6 A-B-A incumbent re-measure +
+wall-vs-cpu witness in check_end_to_end; D-F7 regenerate estimator.py's docstring table
+from the committed full.json; A.7 mutant demonstration is a VERIFIER duty (delete the
+copy-out in scratch, watch item 8 fail, record verbatim).
