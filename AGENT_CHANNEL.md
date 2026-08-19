@@ -9061,3 +9061,17 @@ measurement (the gain is ENTERING the game, not completing it). Falsifier: MSE r
 above 0.95 on our carrier kills H1 and re-opens the discrepancy. The 129 cell's
 transcription should add the third arm (one extra harness run) with this amendment
 note cited.
+
+## [2026-08-19 ~01:3x UTC] fable: OWNER DOCTRINE - kills are CONTEXT-INDEXED; regime audit of the kill field launched
+
+The owner's second refinement of the possibility doctrine, adopted as campaign law:
+a kill is final in the REGIME it was measured in - carrier, design family, A_l regime,
+precision, depth, payoff convention are context axes; an axis change is a premise change.
+Tonight validated it end to end (the completion-breakeven, the deg-4 kills, and the
+Puffi/ely2sh split were all regime verdicts, unified by the A_4 law). OPERATIONAL
+CHANGES: (1) future spec provenance names context axes explicitly; (2) dead-ID
+comparisons include regime qualifiers; (3) a REGIME AUDIT now runs over the kill field:
+for each major killed mechanism, name the axes it was measured under and which single
+axis-change would make it topical - the kill field becomes a searchable context index
+instead of a graveyard. The H5 splice recheck (running) covers the 25 atlas pairs; the
+audit covers the rest of the 276-record field.

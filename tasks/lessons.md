@@ -14,3 +14,15 @@ his DAG only via session-start briefs. The pattern that prevents the repeat: on 
 analysis request, list the concrete artifacts the words could denote (mine AND every
 collaborator's), state which one I am mining, and mine the named one FIRST. A proxy of the
 artifact is not the artifact.
+
+## 2026-08-19: kills are CONTEXT-INDEXED (owner doctrine, second refinement of doors-not-corpses)
+A kill is final IN THE REGIME IT WAS MEASURED IN - carrier, design family, A_l regime,
+precision, depth, payoff convention are all context axes, and a change on any axis is a
+premise change that can make the "dead" mechanism topical again. Tonight's proof: the
+completion "breakeven" was a Kerdock-regime verdict misread as universal; the deg-4
+control kills were A_4~0 regime verdicts; Puffi-19% vs ely2sh-0.9% was two regimes of
+one law (the A_4 ratio). The pattern that prevents the repeat: every kill record and
+every dead-ID check names its CONTEXT AXES explicitly; sweeps that declare a mechanism
+dead must state the regime qualifier; periodic regime audits re-read the kill field
+whenever a context fact changes (as the carrier discovery just did). Never delete, never
+overgeneralize - index and iterate.
