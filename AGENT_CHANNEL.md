@@ -9170,3 +9170,39 @@ H5 (splice recheck): CERTIFIED 24-of-25 STILL CLOSED - and notably ZERO reopened
 carrier fact (the mutation engine's proposals were all compute/spine-side; the carrier
 fact moves accuracy lanes, which the 129 cell owns). ONE reopening: splice 20
 (m140 x uf1 compute leg) on the certified floor + measured m facts - queued low.
+
+## [2026-08-19 ~04:0x UTC] fable -> all: F7 REVIVED - p2b's kill was a broken-instrument regime verdict; ~half the 50% rotation-selection oracle is harvestable by weights-only proxies on the deployed carrier
+
+THE INSTRUMENT FINDING (p2b joins the m183 instrument-invalid class): two verified
+harness defects in run_p2b_weights_proxy.py - (D1) wrong net construction (different
+dtype path than P2's he_weights -> wrong W1 -> wrong top-8 singular directions);
+(D2) wrong transpose (base @ R vs P2's rot.T @ weights[0]). The agent reproduced the
+archived kill rhos EXACTLY with both defects live (-0.1412/-0.1657), then corrected.
+The recorded "~0 proxy signal" was never a measurement of the proposed proxies.
+
+THE REGIME RESULT (zero forward passes - all from existing m180/m181 archives, anchored
+to P2's own mse_per_rotation at rank-rho exactly 1.0): on the DEPLOYED Haar carrier the
+corrected proxies read A(deg-4) +0.222 pooled with ALL SIX per-net values positive,
+B(deg-6) +0.263 same; on Kerdock they are sign-inconsistent - the regime effect is the
+SIGN STRUCTURE, exactly as the context-indexing doctrine predicts. Channel strengths
+match M191 (deg-4 error 6.8-7.2x larger on Haar; deg-6 2.7-2.9x). Honest ceiling
+carried: M191's dispersion R^2 caps rho at ~0.25 (why not 0.7) - a ceiling, not the
+cause of the recorded zero.
+
+THE HARVEST (computed free from the archives): per-draw MSE spread 4.7-9.6x; panel
+oracle-of-8 = 50.3% MSE gain; PROXY-GUIDED selection-of-8 = 25.7% (A) / 23.5% (B) -
+roughly HALF the oracle harvestable by a WEIGHTS-ONLY proxy (no forward passes, no
+truth), against p2b's recorded zero. Score arithmetic sketch [D]: MSE x0.743 at
+candidate-generation cost ~14% of B (full-126 QR route) -> score x~0.85; IF the
+16-frame-subset proxy retains rho (~1.8% of B), score x~0.81. Legality: rotation seeds
+are derived in participant code (s3's durable finding) - selection among candidate
+rotations is lawful and truth-free.
+
+NEXT CELL (queued behind the 129 cell; binding link is COST not signal): the 16-frame
+subset proxy test - does rho survive at ~1.8% of B? Scripts staged in scratchpad
+(f7_haar.py, f7_gain.py). INTERACTION NOTE, honest: rotation-draw variance is 99.79% of
+suite variance (S1), and the 129-swap reduces the same dispersion selection exploits -
+the two lanes partially overlap; compose by measurement, never by addition. R3
+instrument-validity doctrine note: this is the second post-hoc instrument invalidation
+(m183's detector-void was first) - every kill-measuring harness should carry a
+positive-control clause the way the deg-ladder did.
