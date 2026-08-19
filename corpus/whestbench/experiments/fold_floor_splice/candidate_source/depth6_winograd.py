@@ -214,6 +214,18 @@ class DepthWinograd:
     cannot beat -- odd or small contracted widths, fringes that cost more than
     they save -- fall through to the frozen ``RowBlockedBatchedWinograd``
     incumbent, which this class never modifies.
+
+    ``multiply`` returns a freshly allocated result on *both* routes, so a
+    caller may hold several products live at once and add them.  That is the
+    contract the terminal fold needs and the frozen fallback does not offer;
+    see ``multiply`` and ``_selfcheck`` item (8).
+
+    That fallback owns a 91.4375 MiB workspace at production geometry, and it
+    used to be built in ``__init__`` underneath this operator's own pools, so
+    the declared 192 MiB envelope was really 283.4 MiB and every shipped
+    predict carried the larger of the two operators it did not use.  It is now
+    built on first fallback dispatch, so a run that never leaves the depth
+    route never pays for it.
     """
 
     def __init__(self, max_m: int, width: int,
@@ -229,13 +241,7 @@ class DepthWinograd:
         self.block_rows = int(block_rows)
         self.workspace_mib = float(workspace_mib)
         self.dtype = dtype
-        # The frozen fallback requires even workspace dimensions.  Rounding up
-        # only widens its scratch, so the incumbent operator it wraps is used
-        # exactly as shipped while odd construction dimensions stop being a
-        # constructor crash (found by the hostile shape battery at (255,256,256)).
-        self.fallback = RowBlockedBatchedWinograd(
-            max_m + max_m % 2, width + width % 2, BLOCK_ROWS
-        )
+        self._fallback = None
         self._row_plans: dict = {}
         self._right_plans: dict = {}
         # suite_03: the right-hand operand stack is a pure function of the
@@ -252,6 +258,32 @@ class DepthWinograd:
         self.last_strategy = "unused"
         self.last_native_calls = 0
         self.last_right_hoisted = False
+
+    @property
+    def fallback(self):
+        """The frozen incumbent operator, built on the first dispatch to it.
+
+        Its workspace is 91.4375 MiB at production geometry and is dead weight
+        on any run the depth sweep never leaves, so it is not allocated until a
+        shape actually needs it.  The frozen operator requires even workspace
+        dimensions; rounding up only widens its scratch, so it is used exactly
+        as shipped while odd construction dimensions stop being a constructor
+        crash (found by the hostile shape battery at (255,256,256)).
+        """
+        if self._fallback is None:
+            self._fallback = RowBlockedBatchedWinograd(
+                self.max_m + self.max_m % 2,
+                self.width + self.width % 2,
+                BLOCK_ROWS,
+            )
+        return self._fallback
+
+    @property
+    def workspace_bytes(self) -> int:
+        """Resident operator workspace: pooled scratch plus any built fallback."""
+        pooled = sum(int(pool.nbytes) for pool in self._pools.values())
+        inner = 0 if self._fallback is None else int(self._fallback.buffer_bytes)
+        return pooled + inner
 
     # -- geometry -----------------------------------------------------------
 
@@ -287,22 +319,45 @@ class DepthWinograd:
         rows = min(rows, self.max_m)
         return max(block, rows - rows % block)
 
-    def _carve(self, name: str, shape) -> object:
-        """A view of the named pool with the given shape, growing it if needed."""
+    def _carve(self, name: str, shape, reserve: int = 0) -> object:
+        """A view of the named pool with the given shape, resized if needed.
+
+        The pool grows when the request does not fit and shrinks when the
+        request fits in less than half of it.  Growth alone was the original
+        rule, and it made the pools a high-water mark: the estimator's first
+        products are full width, the terminal fold's are roughly half of it,
+        and the pools held the difference -- about 106 MiB at production
+        geometry -- through exactly the phase where three folded legs are live
+        at once and the process peak is set.  The factor-of-two hysteresis is
+        what keeps an alternating shape sequence from reallocating on every
+        call, which is the trade this pool exists to avoid.
+
+        ``reserve`` is the size the *widest* block of the current product needs.
+        Without it the short remainder block at the end of every row sweep
+        would look like a shrink and hand the next product a pool it has to
+        grow again -- two reallocations and a replanned lane per call, which is
+        the same trade under a different name.
+        """
         count = 1
         for extent in shape:
             count *= extent
+        need = max(count, int(reserve))
         pool = self._pools.get(name)
-        if pool is None or int(pool.shape[0]) < count:
-            self._pools[name] = fnp.empty((count,), dtype=self.dtype)
+        size = 0 if pool is None else int(pool.shape[0])
+        if pool is None or size < need or 2 * need <= size:
             # Views into the discarded pool are stale, so drop exactly the
             # plans that hold them -- clearing both sides here would make the
-            # three pools of the first product evict each other's plans.
+            # three pools of the first product evict each other's plans.  The
+            # drop happens before the replacement is allocated, so the old and
+            # new pools are never resident at the same time.
             if name == "right":
                 self._right_plans.clear()
                 self._hoisted = None
             else:
                 self._row_plans.clear()
+            pool = None
+            self._pools[name] = None
+            self._pools[name] = fnp.empty((need,), dtype=self.dtype)
             pool = self._pools[name]
         return fnp.reshape(pool[:count], tuple(shape))
 
@@ -346,8 +401,14 @@ class DepthWinograd:
         self._right_plans[key] = plan
         return plan
 
-    def _plan_rows(self, levels: int, rows: int, k: int, n: int):
-        """Row-side buffers and the two split views the loads write through."""
+    def _plan_rows(self, levels: int, rows: int, k: int, n: int,
+                   block_rows: int = 0):
+        """Row-side buffers and the two split views the loads write through.
+
+        ``block_rows`` is the sweep's full row block; the last block of a sweep
+        is shorter, and sizing the pools from it alone would make every product
+        reallocate.
+        """
         key = (levels, rows, k, n)
         plan = self._row_plans.get(key)
         if plan is not None:
@@ -355,8 +416,11 @@ class DepthWinograd:
         if len(self._row_plans) > 8:
             self._row_plans.clear()
         ml, kl, nl = rows >> levels, k >> levels, n >> levels
-        left = self._carve("left", (7,) * levels + (ml, kl))
-        prod = self._carve("prod", (7,) * levels + (ml, nl))
+        widest = max(int(block_rows), rows) >> levels
+        left = self._carve("left", (7,) * levels + (ml, kl),
+                           7 ** levels * widest * kl)
+        prod = self._carve("prod", (7,) * levels + (ml, nl),
+                           7 ** levels * widest * nl)
 
         def root(buf, lo):
             return buf[tuple(slice(lo, lo + 4) for _ in range(levels))]
@@ -481,8 +545,18 @@ class DepthWinograd:
         bill = realized_candidate_bill(m, k, n, self.max_levels)
         self.last_strategy = bill.strategy
         if not bill.strategy.startswith("realized_l"):
-            out = self.fallback.multiply(left, right)
+            # The frozen fallback hands back a view of its one preallocated
+            # output, so two consecutive dispatches to it alias.  The terminal
+            # fold holds two and three products live at once and adds them
+            # (``fold3_estimator`` pre31, pre32), which turned such a sum into a
+            # multiple of its last term.  ``multiply_at_depth`` already returns
+            # a freshly allocated result per product; copying out here makes the
+            # contract the same on both routes, for one write per output
+            # element.  The frozen module is not touched.
+            shared = self.fallback.multiply(left, right)
             self.last_native_calls = self.fallback.last_total_matmul_calls
+            out = fnp.empty(shared.shape, dtype=shared.dtype)
+            fnp.copyto(out, shared)
             return out
         return self.multiply_at_depth(left, right,
                                       int(bill.strategy.split("_")[1][1:]))
@@ -518,15 +592,26 @@ class DepthWinograd:
 
         for start in range(0, m, rows):
             stop = min(start + rows, m)
-            plan = self._plan_rows(levels, stop - start, core_k, core_n)
+            plan = self._plan_rows(levels, stop - start, core_k, core_n, rows)
             calls += self._core(left[start:stop, :core_k], b_ready,
                                 out[start:stop, :core_n], plan)
 
         if core_k < k:
-            head = out[:, :core_n]
-            fnp.add(head, fnp.matmul(left[:, core_k:], right[core_k:, :core_n]),
-                    out=head)
-            calls += 2
+            # The odd-k correction is streamed on the same row window as the
+            # core.  Written whole it materializes an m x core_n float32
+            # temporary -- 59 MiB at production geometry, and the single
+            # largest transient in a traced predict, larger than the pooled
+            # workspace it sits beside.  Both terms are exactly linear in rows
+            # (`direct_cost` is m*n*(2k-1) and the add is one write per
+            # element), so blocking reproduces the unsplit bill term for term
+            # and no output element's dot product changes.
+            tail = right[core_k:, :core_n]
+            for start in range(0, m, rows):
+                stop = min(start + rows, m)
+                head = out[start:stop, :core_n]
+                fnp.add(head, fnp.matmul(left[start:stop, core_k:], tail),
+                        out=head)
+                calls += 2
         if core_n < n:
             fnp.matmul(left, right[:, core_n:], out=out[:, core_n:])
             calls += 1
@@ -670,12 +755,93 @@ def _selfcheck() -> None:
         f"the hoist saved {warm - hoisted}, the weight lane is "
         f"{realized_right_lane_bill(k, n, 3)}")
 
+    # (6) The same measured-equals-billed equality on a doubly fringed shape
+    #     spread over more than one row block.  This is the route whose odd-k
+    #     correction is streamed on the core's row window instead of being
+    #     materialized whole, and both of its terms are linear in rows only if
+    #     the split is exact -- so a wrong split shows up here as a bill
+    #     mismatch rather than as a silent memory-for-arithmetic trade.
+    with flops.BudgetContext(flop_budget=10 ** 14) as budget:
+        m, k, n = 512, 67, 70
+        op = DepthWinograd(m, max(k, n), workspace_mib=0.77, max_levels=3)
+        assert 2 * op._rows_per_block(3) <= m, (
+            f"fringe check needs several row blocks, got "
+            f"{op._rows_per_block(3)} rows of {m}")
+        a = fnp.zeros((m, k), dtype=fnp.float32)
+        b = fnp.zeros((k, n), dtype=fnp.float32)
+        other = fnp.zeros((k, n), dtype=fnp.float32)
+        op.multiply_at_depth(a, b, 3)          # pay the one-time plan cost
+        start = budget.flops_used
+        op.multiply_at_depth(a, other, 3)      # fresh weight: the full bill
+        fringed = budget.flops_used - start
+    expected = realized_depth_bill(m, k, n, 3)
+    assert expected is not None and "fringe" in expected.strategy, expected
+    assert fringed == expected.total, (
+        f"fringed route measured {fringed} FLOPs, closed form says "
+        f"{expected.total}")
+
+    # (7) The frozen fallback's 91.4375 MiB workspace is dead weight on a run
+    #     that never leaves the depth route, so it must not exist until a shape
+    #     actually dispatches to it.
+    with flops.BudgetContext(flop_budget=10 ** 14):
+        op = DepthWinograd(512, 64, workspace_mib=64.0, max_levels=3)
+        assert op._fallback is None
+        op.multiply(fnp.zeros((512, 64), dtype=fnp.float32),
+                    fnp.zeros((64, 64), dtype=fnp.float32))
+        assert op.last_strategy.startswith("realized_l")
+        assert op._fallback is None, "the depth route built the fallback"
+        assert op.workspace_bytes == sum(
+            int(pool.nbytes) for pool in op._pools.values())
+        op.multiply(fnp.zeros((511, 64), dtype=fnp.float32),   # odd m: direct
+                    fnp.zeros((64, 64), dtype=fnp.float32))
+        assert not op.last_strategy.startswith("realized_l")
+        assert op._fallback is not None, "the fallback route never built it"
+
+    # (8) Two products of one sum, both dispatching to the frozen fallback.
+    #     The fallback returns a view of its single preallocated output, so the
+    #     second dispatch overwrites the first and a caller that holds both --
+    #     which is exactly what ``fold3_estimator`` pre31 (`product + second`)
+    #     and pre32 (three legs) do -- summed the last term with itself.  The
+    #     operands are integers and the arbiter is the triple loop, so the
+    #     check is literal equality rather than a tolerance; it fails on the
+    #     aliased build by a relative error of order 1, not of order eps.
+    with flops.BudgetContext(flop_budget=10 ** 14):
+        m, n, contracted = 24, 20, (20, 16)    # two widths, as pre31 has
+        op = DepthWinograd(m, max(n, *contracted), workspace_mib=8.0,
+                           max_levels=4)
+        rng = _np.random.default_rng(20260819)
+        pairs = []
+        for k in contracted:
+            a = rng.integers(-9, 10, size=(m, k)).astype(_np.float32)
+            b = rng.integers(-9, 10, size=(k, n)).astype(_np.float32)
+            pairs.append((a, b))
+        held = []
+        for a, b in pairs:
+            held.append(op.multiply(fnp.array(a), fnp.array(b)))
+            assert not op.last_strategy.startswith("realized_l"), (
+                f"the regression needs the fallback route, got "
+                f"{op.last_strategy}")
+            # ... and the *view-returning* branch of it, not its direct escape.
+            assert op.fallback.last_core_calls > 0, (
+                "the fallback took its direct branch, which allocates and so "
+                "cannot alias -- this shape does not exercise the defect")
+        got = _np.asarray(held[0]) + _np.asarray(held[1])
+    want = sum(
+        _np.asarray(_integer_reference(a.tolist(), b.tolist()),
+                    dtype=_np.float32)
+        for a, b in pairs
+    )
+    assert _np.array_equal(got, want), (
+        "two fallback dispatches aliased: the folded sum is a multiple of its "
+        "last term")
+
 
 if __name__ == "__main__":
     _selfcheck()
     print("selfcheck: digit-assignment obstruction, tier-7 depth table, "
-          "realized closed form, integer exactness at depths 1-3, and "
-          "measured-equals-billed all pass")
+          "realized closed form, integer exactness at depths 1-3, "
+          "measured-equals-billed, lazy fallback construction and "
+          "two-fallback-operand sum exactness all pass")
     for shape in ((4096, 256, 256), (64512, 256, 256), (4096, 256, 200)):
         floor = floor_candidate_bill(*shape)
         real = realized_candidate_bill(*shape)

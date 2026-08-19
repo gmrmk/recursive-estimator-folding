@@ -1,68 +1,100 @@
 """One command that re-runs every claim made for the fold-floor splice.
 
-    python verify_fold_floor.py            # checks (a) and (b), ~30 s
-    python verify_fold_floor.py --full     # adds the 2-net end-to-end, ~6 min
+    python -B verify_fold_floor.py         # checks (a) and (b), ~30 s
+    python -B verify_fold_floor.py --full  # adds (c) and (d), ~7 min
 
 (a) every ported tier's integer selfcheck constant, by running the modules'
-    own ``_selfcheck``;
+    own ``_selfcheck`` -- including ``phased_wht``, which is priced but not
+    deployed and therefore lives in ``priced_artifacts/`` rather than in the
+    shipped package;
 (b) small-shape parity: the depth route against the frozen owned_batched
     fallback on random (256,256)x(256,256) and (4096,256,256), reported as max
     absolute and max relative deviation with the f64 product as arbiter;
-(c) a 2-net end-to-end against a READ-ONLY import of the incumbent package.
+(c) a 2-net end-to-end against a READ-ONLY import of the incumbent package;
+(d) the production gate's ReLU clause: the fraction of post-ReLU sign flips
+    between the fold route and the incumbent operator, propagated through the
+    same synthetic depth-32 battery, against the frozen ceiling of ``2e-4``.
 
-Nothing here writes to ``row_blocked_production``; the incumbent is imported
-from its own directory and never opened for writing.
+CUSTODY.  Nothing here writes to ``row_blocked_production``.  The incumbent is
+imported from its own directory, and ``sys.dont_write_bytecode`` is set below
+before the first import so the import cannot drop ``__pycache__/*.pyc`` into
+that tree -- which is exactly what an earlier run of this harness did.  Running
+the file by any other route (``runpy``, an IDE, a wrapper) should set
+``PYTHONDONTWRITEBYTECODE=1`` in the environment or pass ``-B``, so the
+protection does not depend on this module being the entry point.
+
+PACKAGE HYGIENE.  Gate A.7 forbids undeclared binary payload in the archive, so
+``main`` fails if any ``__pycache__/*.pyc`` exists in the experiment directory
+or in the three package trees by the end of the run.  Git already ignores
+``__pycache__/`` and ``*.py[cod]`` repo-wide; this assertion is what stops a
+stale ``.pyc`` -- one dropped by running a module directly without ``-B``,
+including a compiled copy of a module since removed -- from riding along in a
+tarred package that Git never sees.  It is deliberately loud: this repo is
+worked on by concurrent processes, and one of them dropped a ``.pyc`` into
+``candidate_source`` during a verify run on 2026-08-19.
 """
 
 from __future__ import annotations
 
-import importlib
-import json
-import statistics
 import sys
-import time
-from pathlib import Path
 
-import numpy as _np
+# Must precede every import of a candidate package: the incumbent tree is
+# read-only custody, and a stray .pyc there is a write to it.
+sys.dont_write_bytecode = True
+
+import importlib                                                 # noqa: E402
+import json                                                      # noqa: E402
+import statistics                                                # noqa: E402
+import time                                                      # noqa: E402
+from pathlib import Path                                         # noqa: E402
+
+import numpy as _np                                              # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 FORK = HERE / "candidate_source"
+PRICED = HERE / "priced_artifacts"
 INCUMBENT = HERE.parent / "row_blocked_production" / "candidate_source"
+
+#: the frozen ceiling of production-gate clause A.5
+RELU_MISMATCH_GATE = 2e-4
 
 MODULES = [
     "estimator", "orthogonal_fold3", "fold3_estimator", "base_estimator",
     "fold_estimator", "row_blocked_winograd", "cost_model",
-    "depth6_winograd", "phased_wht",
+    "depth6_winograd",
 ]
 
+PRICED_MODULES = ["phased_wht"]
 
-def _load(root: Path):
+
+def _load(root: Path, names=None):
     """Import a candidate package in isolation and hand back its modules."""
-    saved = {name: sys.modules.pop(name, None) for name in MODULES}
+    names = MODULES if names is None else names
+    saved = {name: sys.modules.pop(name, None) for name in names}
     sys.path.insert(0, str(root))
     try:
         loaded = {}
-        for name in MODULES:
+        for name in names:
             try:
                 loaded[name] = importlib.import_module(name)
             except ModuleNotFoundError:
                 pass
     finally:
         sys.path.remove(str(root))
-        for name in MODULES:
+        for name in names:
             sys.modules.pop(name, None)
             if saved[name] is not None:
                 sys.modules[name] = saved[name]
     return loaded
 
 
-def check_selfchecks(fork) -> dict:
+def check_selfchecks(fork, priced) -> dict:
     fork["cost_model"]  # imported for its constants below
     fork["depth6_winograd"]._selfcheck()
-    fork["phased_wht"]._selfcheck()
+    priced["phased_wht"]._selfcheck()
     cm = fork["cost_model"]
     dw = fork["depth6_winograd"]
-    pw = fork["phased_wht"]
+    pw = priced["phased_wht"]
     return {
         "tier07_floor_4096_256_256": cm.floor_candidate_bill(4096, 256, 256).total,
         "tier07_strategy": cm.floor_candidate_bill(4096, 256, 256).strategy,
@@ -144,6 +176,103 @@ def check_small_shape_parity(fork) -> dict:
                                 / entry["owned_batched_fallback"]["flops"])
         report[f"{m}x{k}x{n}"] = entry
     return report
+
+
+def check_relu_mismatch(fork, incumbent, rows: int = 16384,
+                        count: int = 2) -> dict:
+    """Production-gate clause A.5: post-ReLU sign flips, fold vs incumbent.
+
+    The gate asks for a *fraction of ReLU gate mismatches* on the synthetic
+    parent/child battery, ``<= 2e-4``; the incumbent's own receipt reported
+    ``1 / 4,194,304 = 2.38419e-7`` for its depth-32 propagation, and the fold
+    splice had never measured the clause at all.
+
+    The battery is the same synthetic width-256 depth-32 He nets the end-to-end
+    check uses (seeds 1000..), entered the way the estimator enters them: a
+    Gaussian half-stack through ``weights[0]``, antipodally doubled by
+    ``[relu(z); relu(-z)]``, then propagated ``x = max(x @ W, 0)`` through
+    every remaining layer.  One propagation uses the shipped depth route at the
+    shipped depth cap and workspace; the other uses the incumbent's own
+    ``RowBlockedBatchedWinograd``, imported from the incumbent tree.  A gate
+    mismatch is a position where the two disagree on ``x > 0`` after the same
+    layer, counted over every hidden layer rather than only the last, so the
+    denominator is ``count * (depth - 1) * rows * width``.
+    """
+    import flopscope as flops
+    import flopscope.numpy as fnp
+
+    est = fork["estimator"]
+    dw = fork["depth6_winograd"]
+    rbw = incumbent["row_blocked_winograd"]
+
+    width, depth = 256, 32
+    mismatches = 0
+    gates = 0
+    per_net = []
+    worst_rel = 0.0
+    with flops.BudgetContext(flop_budget=10 ** 15):
+        for index in range(count):
+            rng = _np.random.default_rng(1000 + index)
+            weights = [
+                (rng.standard_normal((width, width))
+                 * _np.sqrt(2.0 / width)).astype(_np.float32)
+                for _ in range(depth)
+            ]
+            seed = _np.random.default_rng(20260818 + index).standard_normal(
+                (rows // 2, width)).astype(_np.float32)
+            first = fnp.array(seed) @ fnp.array(weights[0])
+            start = fnp.concatenate(
+                (fnp.maximum(first, 0.0), fnp.maximum(-first, 0.0)), axis=0)
+
+            floor_op = dw.DepthWinograd(
+                rows, width,
+                workspace_mib=est.FLOOR_WORKSPACE_MIB,
+                max_levels=est.FLOOR_MAX_LEVELS)
+            base_op = rbw.RowBlockedBatchedWinograd(rows, width, rbw.BLOCK_ROWS)
+
+            x_floor = start
+            x_base = start
+            net_flips = 0
+            for layer in range(1, depth):
+                weight = fnp.array(weights[layer])
+                x_floor = fnp.maximum(floor_op.multiply(x_floor, weight), 0.0)
+                x_base = fnp.maximum(base_op.multiply(x_base, weight), 0.0)
+                left = _np.asarray(x_floor) > 0.0
+                right = _np.asarray(x_base) > 0.0
+                net_flips += int(_np.count_nonzero(left != right))
+                gates += left.size
+            final_floor = _np.asarray(x_floor, dtype=_np.float64)
+            final_base = _np.asarray(x_base, dtype=_np.float64)
+            denominator = _np.linalg.norm(final_base)
+            relative = float(_np.linalg.norm(final_floor - final_base)
+                             / denominator) if denominator else 0.0
+            worst_rel = max(worst_rel, relative)
+            mismatches += net_flips
+            per_net.append({
+                "net": index,
+                "flips": net_flips,
+                "gates": (depth - 1) * rows * width,
+                "fraction": net_flips / ((depth - 1) * rows * width),
+                "final_relative_frobenius": relative,
+                "final_finite": bool(_np.isfinite(final_floor).all()),
+            })
+            del floor_op, base_op, x_floor, x_base, start, weights
+
+    fraction = mismatches / gates
+    return {
+        "rows": rows,
+        "nets": count,
+        "depth": depth,
+        "levels": int(est.FLOOR_MAX_LEVELS),
+        "workspace_mib": float(est.FLOOR_WORKSPACE_MIB),
+        "gate_mismatches": mismatches,
+        "gates_compared": gates,
+        "mismatch_fraction": fraction,
+        "gate_ceiling": RELU_MISMATCH_GATE,
+        "pass": bool(fraction <= RELU_MISMATCH_GATE),
+        "worst_final_relative_frobenius": worst_rel,
+        "per_net": per_net,
+    }
 
 
 def check_end_to_end(fork, incumbent, reps: int = 3) -> dict:
@@ -255,13 +384,43 @@ def check_end_to_end(fork, incumbent, reps: int = 3) -> dict:
 
 def main() -> None:
     fork = _load(FORK)
+    priced = _load(PRICED, PRICED_MODULES)
     report = {
-        "selfchecks": check_selfchecks(fork),
+        "bytecode_hygiene": None,        # filled in last: see below
+        "selfchecks": check_selfchecks(fork, priced),
         "small_shape_parity": check_small_shape_parity(fork),
     }
     if "--full" in sys.argv:
-        report["end_to_end"] = check_end_to_end(fork, _load(INCUMBENT))
+        incumbent = _load(INCUMBENT)
+        report["relu_mismatch"] = check_relu_mismatch(fork, incumbent)
+        report["end_to_end"] = check_end_to_end(fork, incumbent)
+    # Measured after every import this run performs, so it catches a .pyc this
+    # harness drops as well as one that shipped with the tree.
+    def _compiled(root: Path):
+        return sorted(f"{root.name}/__pycache__/{item.name}"
+                      for item in (root / "__pycache__").glob("*.pyc"))
+
+    # The payload the clause forbids is the compiled file, not the directory:
+    # an emptied ``__pycache__`` left behind by another process carries none.
+    stray = [name for root in (HERE, FORK, PRICED, INCUMBENT)
+             for name in _compiled(root)]
+    report["bytecode_hygiene"] = {
+        "sys_dont_write_bytecode": bool(sys.dont_write_bytecode),
+        "incumbent_pyc": _compiled(INCUMBENT),
+        "fork_pyc": _compiled(FORK),
+        "priced_pyc": _compiled(PRICED),
+        "harness_pyc": _compiled(HERE),
+        "stray_pyc_count": len(stray),
+    }
     print(json.dumps(report, indent=1, default=float))
+    assert not stray, (
+        f"compiled bytecode present: {stray}.  Gate A.7 forbids undeclared "
+        f"binary payload in the archive.  Delete it and re-run with -B.")
+    if "--full" in sys.argv:
+        clause = report["relu_mismatch"]
+        assert clause["pass"], (
+            f"ReLU mismatch fraction {clause['mismatch_fraction']:.6e} exceeds "
+            f"the frozen gate {RELU_MISMATCH_GATE:.1e}")
 
 
 if __name__ == "__main__":

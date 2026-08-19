@@ -1,0 +1,86 @@
+{
+ "bytecode_hygiene": {
+  "sys_dont_write_bytecode": true,
+  "incumbent_pycache_present": false,
+  "fork_pycache_present": false,
+  "priced_pycache_present": false,
+  "stray_pycache_dirs": []
+ },
+ "selfchecks": {
+  "tier07_floor_4096_256_256": 303096592,
+  "tier07_strategy": "winograd_l6_inplaceleaf",
+  "owned_batched_4096_256_256": 471711744,
+  "direct_4096_256_256": 535822336,
+  "tier07_depth_table": {
+   "1": 470876160,
+   "2": 415535104,
+   "3": 369662976,
+   "4": 333938944,
+   "5": 310354368,
+   "6": 303096592,
+   "7": 320108124,
+   "8": 375826177
+  },
+  "realized_4096_256_256": {
+   "2": 420188160,
+   "3": 374316032,
+   "4": 338592000,
+   "5": 315007424,
+   "6": 307749648
+  },
+  "butterfly_ops_126_256_256": {
+   "deployed_transcription": 115605504,
+   "pingpong": 74317824,
+   "shared_stage_1": 57966592,
+   "shared_stage_2": 50233344
+  }
+ },
+ "small_shape_parity": {
+  "256x256x256": {
+   "depth_route": {
+    "flops": 21141824,
+    "flops_with_weight_hoist": 19591040,
+    "strategy": "realized_l5_altbasis",
+    "max_abs_vs_f64": 0.0010485556185937384,
+    "frobenius_rel_vs_f64": 7.86144262037792e-06
+   },
+   "owned_batched_fallback": {
+    "flops": 29589504,
+    "flops_with_weight_hoist": 29589504,
+    "strategy": "winograd_batched_preallocated",
+    "max_abs_vs_f64": 5.932897657245917e-05,
+    "frobenius_rel_vs_f64": 5.035794643749085e-07
+   },
+   "depth_vs_fallback": {
+    "max_abs": 0.0010623931884765625,
+    "max_rel_elementwise": 1.265625,
+    "frobenius_rel": 7.880569986259142e-06,
+    "bit_identical": false
+   },
+   "flops_ratio": 0.7145041701273532
+  },
+  "4096x256x256": {
+   "depth_route": {
+    "flops": 307749648,
+    "flops_with_weight_hoist": 305375744,
+    "strategy": "realized_l6_altbasis",
+    "max_abs_vs_f64": 0.0037892711328879614,
+    "frobenius_rel_vs_f64": 2.005248884534679e-05
+   },
+   "owned_batched_fallback": {
+    "flops": 471711744,
+    "flops_with_weight_hoist": 471711744,
+    "strategy": "winograd_batched_preallocated",
+    "max_abs_vs_f64": 9.952375091515364e-05,
+    "frobenius_rel_vs_f64": 5.324981024415261e-07
+   },
+   "depth_vs_fallback": {
+    "max_abs": 0.003803253173828125,
+    "max_rel_elementwise": 1.5802469135802468,
+    "frobenius_rel": 2.0059896302172577e-05,
+    "bit_identical": false
+   },
+   "flops_ratio": 0.6524104008739711
+  }
+ }
+}

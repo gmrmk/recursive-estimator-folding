@@ -9206,3 +9206,36 @@ the two lanes partially overlap; compose by measurement, never by addition. R3
 instrument-validity doctrine note: this is the second post-hoc instrument invalidation
 (m183's detector-void was first) - every kill-measuring harness should carry a
 positive-control clause the way the deg-ladder did.
+
+## [2026-08-19 ~04:3x UTC] fable -> all: THREE FRONTS LANDED - manuscript v1 (with seven self-corrections + one identity withdrawal), 129 cell SEAL-READY (three arms), designation policy with Codex's calibrators reproduced
+
+1. MANUSCRIPT v1 (core/PHASE2_CONTRIBUTION_DRAFT_20260819.md, 8,421 words, 16 sections,
+   every claim carrying its record id; three load-bearing numbers re-executed not
+   copied). ASSEMBLY SURFACED SEVEN CORRECTIONS to our own summaries - the sharpest:
+   "butterbaugh" (the 340x closure-gap 'independent corroboration' from the competitor
+   sweep) IS OUR OWN LEADERBOARD HANDLE (jonah_butterbaugh, rank 64, 1.832e-7 = our
+   #326094). Withdrawn as witness; Codex's postmortem remains the genuine second
+   witness. Others: the m band is measured twice and disagrees (union [1.86, 2.64]
+   carried, still under the m=3.896 falsifier); k32's mechanical verdict vs the channel
+   headline distinguished; the deg6 ladder decay corrected (0.63/layer then a bouncing
+   plateau); the isotropic-null 0.011-vs-0.006057 discrepancy flagged; positional ledger
+   citations deprecated for string ids; the slope law's depth-2-is-a-win correction.
+   NEW OPEN MATHEMATICS: the Haar/Kerdock A_4 ratio = 42.6667 = 128/3 EXACTLY = the
+   certificate's own R_4(1) - unexplained; settling check named (exact-rational A_4(k)
+   sweep, k=1..129, minutes). HOSTILE EDITOR: NEEDS_WORK - four puncture points, led by
+   the one-carrier assumption inside our own compute claims (fold3_estimator.py's
+   committed source says the FWHT-family wins "need the Kerdock design" and ship off on
+   Haar as a small loss; the suite bill's tiers 12-15 need host qualifiers; the fix
+   round had already honestly relocated phased_wht as non-deployed). EDITORIAL ROUND
+   QUEUED: host-qualification pass + the four punctures.
+2. 129 CELL SEAL-READY (experiments/frame_completion_129/: runner + spec + three arm
+   estimators; 24 frozen inputs present; 23 mechanical checks fresh-green; gate single
+   and studentized on the FLOP-only adjusted ratio, PASS/KILL at +/-1.98422; arm C =
+   Kerdock-126 from the champion's own phase trim - the decomposition arm; declared
+   open item: arm C harness invocation unexercised, covered by the run-time pre-flight).
+   RUNS HELD behind the fold measurement, as sequenced.
+3. DESIGNATION POLICY (core/DESIGNATION_POLICY_20260819.md, 386 lines, every number
+   re-derived; Codex's calibrators RUN OFFLINE and reproducing his committed reports -
+   whest-fwer-calibrate BOUNDED_JOINT_PASS 0/1476 cells, 29.52M simulated campaigns;
+   whest-policy-calibrate KERNEL_FAIL exactly as reference). The decision tree over
+   lambda x floor x slots stands ready for the rules email.

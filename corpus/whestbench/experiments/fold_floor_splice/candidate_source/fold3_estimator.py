@@ -1,9 +1,13 @@
 """Three-terminal-layer dead/on/kink folding estimator, fold-floor fork.
 
 Forked from ``row_blocked_production/candidate_source/fold3_estimator.py``.
-Four changes, each behind a named flag, each exact up to reassociation:
+Four flags, all off but one: the production gate admits **exactly one**
+changed mechanism per child, so the shipped diff against the incumbent is
+``FOLD_PRODUCTS_THROUGH_OPERATOR`` alone.  The other three are ported, priced
+and default-off, so turning any of them on creates a different child that has
+to be gated separately.
 
-``FOLD_PRODUCTS_THROUGH_OPERATOR``
+``FOLD_PRODUCTS_THROUGH_OPERATOR``  (SHIPPED -- the one mechanism)
     The incumbent routes only the two sample-path products through the
     Winograd hook and leaves the fold's own full-height products (``x @
     weight30``, ``pre31``, ``pre32``, and the three weighted means) on the
@@ -17,6 +21,23 @@ Four changes, each behind a named flag, each exact up to reassociation:
     or four times, once per regime's column set.  Their column sets partition
     the width, so evaluating them once at full width and slicing computes the
     same entries and drops the duplicate evaluations.
+
+    DEFAULT OFF, and off means off: both ``folded30_to31`` and ``kink30_to31``
+    evaluate what the incumbent evaluates, once per call site, and ``legs``
+    gathers ``weight32[on31, :][:, columns]`` twice as the incumbent does.  An
+    earlier build left 766,848 FLOPs of the hoist outside the flag and quoted
+    only the remainder as its price.  It is exact and it is a real saving, but
+    it is a *second* estimator mechanism and the gate's invariant is one.  Its
+    price is small enough that shipping it separately costs almost nothing: on
+    the isolated full-geometry probe (``peak_probe.py floor_on``, width 256,
+    depth 32, n_base 32256) the analytical bill is 123,339,990,315 FLOPs with
+    the hoist on and 123,347,428,317 with it off -- 7,438,002 FLOPs, 0.0060%
+    of the call.
+    The weight-side hoist that does ship is the operator's own:
+    ``depth6_winograd`` reuses the right-hand operand tree across consecutive
+    products against the same array object (``DepthWinograd._hoisted``), which
+    is schedule inside one operator rather than a change to what the estimator
+    computes.  Set this flag to ``True`` only as a separately gated child.
 
 ``USE_CRELU_SPLIT``  (suite_02 / suite_08: direct-top, subtracted antipode)
     The design is antipodally doubled and the net is bias-free, so the first
@@ -55,8 +76,8 @@ from base_estimator import (
 from fold_estimator import _initial_regimes, _refine_dead, _refine_on
 
 
-FOLD_PRODUCTS_THROUGH_OPERATOR = True
-HOIST_FOLDED_WEIGHT_STACK = True
+FOLD_PRODUCTS_THROUGH_OPERATOR = True     # the single shipped mechanism
+HOIST_FOLDED_WEIGHT_STACK = False         # exact, priced, second mechanism
 USE_CRELU_SPLIT = False
 USE_PRECOMPUTED_CM = False
 
@@ -138,7 +159,12 @@ class Estimator(_BaseEstimator):
             final_weights = fnp.concatenate((base_weights, base_weights), axis=0)
 
         first_pre = self._first_sample_matmul(z, mlp.weights[0])
-        self._first_preactivation = first_pre
+        if USE_CRELU_SPLIT:
+            # 31.5 MiB at production geometry, and its only reader is
+            # ``_crelu_layer_product``.  The runner reuses one Estimator across
+            # networks, so retaining it unconditionally kept the previous net's
+            # first preactivation co-resident with the current net's.
+            self._first_preactivation = first_pre
         x = fnp.concatenate(
             (fnp.maximum(first_pre, 0.0), fnp.maximum(-first_pre, 0.0)), axis=0
         )
@@ -228,17 +254,25 @@ class Estimator(_BaseEstimator):
         weight31 = mlp.weights[layer31]
 
         # suite_03: one weight-side array per layer, not one per column set.
+        # With the flag off, *both* accessors evaluate exactly what the
+        # incumbent evaluates, once per call site: no fragment of the hoist
+        # ships under a False flag, so the OFF branch is the incumbent's
+        # computation shape and the flag's price is the whole 7,438,002 FLOPs.
         if HOIST_FOLDED_WEIGHT_STACK:
             folded30_full = weight30[:, on30] @ weight31[on30, :]
             kink30_to31_full = weight31[kink30, :]
 
             def folded30_to31(columns):
                 return folded30_full[:, columns]
+
+            def kink30_to31(columns):
+                return kink30_to31_full[:, columns]
         else:
             def folded30_to31(columns):
                 return weight30[:, on30] @ weight31[on30, :][:, columns]
 
-            kink30_to31_full = weight31[kink30, :]
+            def kink30_to31(columns):
+                return weight31[kink30, :][:, columns]
 
         def pre31(columns, pilot: bool):
             left = pilot_x29 if pilot else x
@@ -249,9 +283,9 @@ class Estimator(_BaseEstimator):
                 else left @ folded30_to31(columns)
             )
             second = (
-                self._fold_matmul(middle, kink30_to31_full[:, columns])
+                self._fold_matmul(middle, kink30_to31(columns))
                 if not pilot
-                else middle @ kink30_to31_full[:, columns]
+                else middle @ kink30_to31(columns)
             )
             return product + second
 
@@ -277,7 +311,7 @@ class Estimator(_BaseEstimator):
         )
         weight32 = mlp.weights[layer32]
         folded29_to31_on = folded30_to31(on31)
-        kink30_to31_on = kink30_to31_full[:, on31]
+        kink30_to31_on = kink30_to31(on31)
         if HOIST_FOLDED_WEIGHT_STACK:
             weight32_from_on31 = weight32[on31, :]
             left32_full = folded29_to31_on @ weight32_from_on31
@@ -289,8 +323,11 @@ class Estimator(_BaseEstimator):
                         kink31_to32_full[:, columns])
         else:
             def legs(columns):
-                tail = weight32[on31, :][:, columns]
-                return (folded29_to31_on @ tail, kink30_to31_on @ tail,
+                # Two separate gathers, as the incumbent writes it.  Sharing
+                # one ``tail`` between the two legs is part of the hoist and
+                # belongs behind the flag.
+                return (folded29_to31_on @ weight32[on31, :][:, columns],
+                        kink30_to31_on @ weight32[on31, :][:, columns],
                         weight32[kink31, :][:, columns])
 
         def pre32(columns, pilot: bool):
