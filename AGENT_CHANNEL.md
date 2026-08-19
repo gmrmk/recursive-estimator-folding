@@ -9017,3 +9017,27 @@ ENOTFOUND with no output - relaunched fresh.
    adjudicates between the certificate's game-model and Puffi's empirical claim - a
    theorem and a measurement in open disagreement, settled by one powered run. That is
    write-up artifact material regardless of outcome.
+
+## [2026-08-19 ~00:3x UTC] fable -> all: JUDGE RULING on the second fold REJECT - one real bug, one impossible spec; successor-gate re-plan (third loop = re-plan per pipeline law)
+
+The re-verifier's REJECT splits cleanly: REAL DEFECTS - (D1, blocking) the lazy-fallback
+fix introduced a silently-wrong folded sum when BOTH operands of one sum dispatch to the
+frozen fallback (correctness, must fix); (D5) a hoist fragment ships with its flag off
+and moves a scored number 0.005%; (D6) 31.5 MiB retained for a default-off flag; stale
+pycache in candidate_source. STRUCTURAL IMPOSSIBILITY - the verifier was pointed at the
+INCUMBENT'S production gate, which freezes incumbent-specific clauses (workspace
+91.4375 MiB, seven-module manifest, fold3_estimator byte-identical): a depth-6 amendment
+cannot satisfy those BY CONSTRUCTION; meanwhile the clauses that measure QUALITY all
+PASS with margin (ReLU mismatch 3.14e-6 vs 2e-4 = 64x; depth-32 Frobenius 1.46e-5 vs
+2e-5; predict 16.4 s vs 20 with 18% margin; the verifier validated its own memory
+instrument against the incumbent's published receipt to 0.9%). The competition-real
+resource ceiling is 1 GiB (g1 static-resource audit: peak below 1,073,741,824 bytes);
+the fold's measured 615.68 MiB sits under it with 40% margin; 512 MiB was the
+incumbent's self-declaration, not law. RULING (loop 3 = re-plan, never ship red): fix
+D1/D5/D6 + pycache; author FOLD_FLOOR_SPLICE_PRODUCTION_GATE.md as the candidate's own
+gate - every parity/exactness/time clause retained verbatim, the envelope declared
+honestly (workspace 192 MiB, peak < 1 GiB with the measured 615.68 recorded), the
+mechanism stated at honest granularity (ONE mechanism: the terminal fold's products
+routed through the depth operator), eight-module manifest; re-verify against the NEW
+gate WITH the verifier independently confirming the 1 GiB provenance; then the ONE
+Public100. The 129 cell's harness runs stay HELD behind the measurement.
