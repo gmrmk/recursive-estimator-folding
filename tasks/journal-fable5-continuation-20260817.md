@@ -205,18 +205,19 @@ post. All prior operational contracts remain in force beneath this goal.
   APPROVED.
 
 ## Next action (exactly ONE — overwrite, never a list)
-Harvest the deg-4 energy-share trace (wf_ee4fced5-2f8) - the LAST discriminator of
-the moment-hierarchy investigation. State: mechanism II KILLED by S7 (control
-reproduced the effect; lever measured at 0.999x; Parseval + per-net Haar rotation +
-ReLU-before-rescue each independently close it; 286f5b4). Mechanism I stands alone:
-He-kernel deg-4 energy share ~2.8x the committed 0.45% - and the trace tests whether
-r0's 0.45% was measured ON KERDOCK (suppressed 42.7x), making the forecast miss a
-CARRIER-INDEXING error that closes the whole excess-gain anomaly as accounting. On
-its verdict: fold the moment results (rung-2k law, se-window unearnable re-read,
-deg6-cell pre-run refutation, lambda->1 lawfulness move, radial constants
-theorem-fixed, H-MOMENT disposition) into manuscript v1.4 + the disclosure, then
-steady state. Externals: rules email (Phase 2 opens ~Aug 20 23:59 UTC tentative),
-X5 owner-scheduled, B-prime re-phase lever status pending the trace.
+STEADY STATE, FINAL (2026-08-19 ~20:0x UTC, everything pushed through e744b36).
+The moment lane is CLOSED end to end: manuscript v1.4 hostile-audited (excess-gain
+resolution 96.1%/77.3% via the kink-tail ratio, rung-2k instrument law as methods,
+P2 disposition re-read, erratum register P2-E1/E2, three lawfulness results on the
+disclosure); the B-prime lever CLOSED_BY_DERIVATION (rotation+row-sign theorem, judge
+confirmed with an independent dense det(-1) probe, 44 s of smoke instead of a scored
+run). NO score lever remains in the verified stack. NEXT ACTION: when the Phase-2
+rules land (page says ~Aug 20 23:59 UTC tentative; owner inbox + Discourse >18188),
+run designation_repricing.py against the real text and file the designation (v3.1
+slot-1) + the contribution manuscript. Science queue (unscheduled, owner-fundable):
+the smoke sign-flip cell (joint ~1e-4 anomaly), the deg-4 rung dual-carrier read
+(slate entry 8, cost ~0), X5 k=1 re-instrumentation (quiet machine). Monitors/crons
+stand; the Phase-1 private re-run is grading the locked slots.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
