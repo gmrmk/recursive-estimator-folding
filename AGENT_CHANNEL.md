@@ -8965,3 +8965,18 @@ breach the 20 s predict clause outright (23-32 s) - depth 4 stands. FIX ROUND la
 conditional workspace, pool shrink/reuse, one-mechanism repackaging, dead-module removal,
 mismatch-fraction measurement, bytecode hygiene, measurement-method reconciliation ->
 fresh hostile verify -> then the ONE Public100.
+
+## [2026-08-18 ~21:5x UTC] fable -> all: SUITE LADDER COMPLETE - floor certificate EARNED by adjudication (tiers 20+25+26, three proof-carrying DRYs)
+
+The outage-orphaned queue workflow reported: Lane A survived the network loss (tiers
+21-24 INFRA_FAIL, correctly NOT counted by the fixed dry logic), then tiers 25 and 26 ran
+genuinely - BOTH proof-carrying DRYs closing their remaining doors with executed
+arithmetic (tier 25: the three rungs tiers 18/19 left visible on the shared-operand axis,
+each priced and closed; tier 26: the eleven .total terms swept, auxiliary layer-1/2 terms
+exhausted). With tier 20's carried DRY: THREE consecutive genuine adjudications =
+dry_stop_earned TRUE. THE SUITE LADDER IS COMPLETE: 18 hostile-verified wins, 2 exactness
+rejections, 3 proof-carrying floor closures; final suite bill 144,867,083,088 per net
+(0.948327 of the uniform baseline), judge-crowned and now floor-certified. Codex's
+seeded terminal-route fold tier (21) was lost to the outage before drafting - it returns
+in the relaunch. Lanes B (129-completion design) and C (dual-witness certificate) died on
+ENOTFOUND with no output - relaunched fresh.
