@@ -180,15 +180,14 @@ post. All prior operational contracts remain in force beneath this goal.
   measurement recorded as Fork-1 intel).
 
 ## Next action (exactly ONE — overwrite, never a list)
-On API capacity returning (or next wake): re-run the suite-ladder completion
-(scripts/suite-ladder-completion-wf_3680b4cb-35a.js fresh, or resume) to EARN the floor
-certificate (needs 2 more genuine adjudications; tier-20 DRY carries as 1; incumbent
-crowned 144,867,083,088). Behind it, in strict order: (1) OWNER KEY decision on the named
-WINNER (fold floor+splices into row_blocked_production, predicted 1.4640e-7, -31%,
-falsifiers predeclared — implementation campaign staged); (2) rules stamp on the
-organizers' email/post (watch: forum id > 18186 + inbox); (3) the 129-completion powered
-paired run on our carrier (settles Puffi-19%/ely2sh-0.9%/our-breakeven, the mub129 key,
-and splice #1); (4) the remaining sweep splices + terminal-route fold tier.
+Await the fold round-4 verdict (wf_27e7a983-7fa: D-A3a/D-A3b cost-model fixes + hostile
+re-verify vs FOLD_FLOOR_SPLICE_PRODUCTION_GATE.md). On APPROVED or
+APPROVED_PENDING_CEILING: A.6 is already discharged by the 2026-08-19T06:12Z owner
+1 GiB ruling (channel + gate addendum) → run the ONE Public100 measurement and crown
+against the pre-filed frame (m-band [1.86, 2.64], slope 0.35 s prediction, C falsifier
+200B, parity law). Immediately behind it: seal+run the 129 cell, then F7 16-frame.
+Meanwhile harvest ultrareview (wf_b708199c-ca4), ultramath (wf_01a886a8-2ad), and
+mi-solve (wf_77a537c1-bec) as they land; Monitor b7010mqdr + crons cover liveness.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).

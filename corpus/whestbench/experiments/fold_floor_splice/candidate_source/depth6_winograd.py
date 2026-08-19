@@ -78,6 +78,7 @@ import flopscope.numpy as fnp
 
 from cost_model import (
     Bill,
+    batched_candidate_bill,
     direct_cost,
     floor_candidate_bill,
     inplace_depth_core_cost,
@@ -189,8 +190,42 @@ def realized_depth_bill(m: int, k: int, n: int, levels: int):
 
 
 def realized_candidate_bill(m: int, k: int, n: int, max_levels: int = MAX_LEVELS):
-    """Cheapest executable route: depth sweep against the frozen fallback."""
-    best = owned_batched_candidate_bill(m, k, n)
+    """Cheapest executable route, seeded with the plain product itself.
+
+    Three routes compete -- ``a @ b``, the frozen fallback, and the depth sweep
+    -- and the plain product is the seed, so a route has to be *strictly*
+    cheaper than ``a @ b`` to be selected and the returned bill is never above
+    ``direct_cost`` by construction.
+
+    The seed used to be ``owned_batched_candidate_bill``, which is the tier-7
+    analytical model of a caller-owned in-place operator and prices an ``m*k``
+    operand copy this schedule never performs.  That put an inflated direct on
+    the floor of the comparison, so no route was ever compared against true
+    direct cost: 18,290 of the 262,144 shapes in the production band
+    (``m`` in {256, 8192, 32256, 64512}, ``1 <= k, n <= 256``) selected a route
+    above the plain product, worst ratio 2.0 at (256, 1, 1).  That model is
+    still what ``cost_model.floor_candidate_bill`` builds its analytical floor
+    from, and it is left alone; what belongs here is the bill of the route this
+    operator executes.
+
+    The fallback route's bill is the frozen operator's own bill plus ``m*n``.
+    ``multiply`` copies the result out of the fallback's single preallocated
+    output so that every route returns an owned buffer (the D1 contract), and
+    that copy is one metered write per output element.  Folding it into
+    ``output_tail`` keeps the field identity
+    ``core + inner_correction + inner_add + output_tail == total``.
+    """
+    direct = direct_cost(m, k, n)
+    best = Bill("direct", m, k, n, 0, 0, 0, 0, 0, 0, direct, direct, 1)
+    inner = batched_candidate_bill(m, k, n)
+    if inner.strategy != "direct":
+        total = inner.total + m * n
+        if total < best.total:
+            best = Bill(
+                "winograd_batched_owned", m, k, n, inner.core_k, inner.core_n,
+                inner.core, inner.inner_correction, inner.inner_add,
+                inner.output_tail + m * n, total, direct, inner.call_count,
+            )
     levels = 2
     while levels <= max_levels and (1 << levels) <= min(m, k, n):
         route = realized_depth_bill(m, k, n, levels)
@@ -210,12 +245,15 @@ def _full(count: int):
 class DepthWinograd:
     """Depth-swept alternative-basis Winograd over a bounded row window.
 
-    ``multiply`` reproduces ``a @ b`` up to Winograd reassociation.  Shapes it
-    cannot beat -- odd or small contracted widths, fringes that cost more than
-    they save -- fall through to the frozen ``RowBlockedBatchedWinograd``
-    incumbent, which this class never modifies.
+    ``multiply`` reproduces ``a @ b`` up to Winograd reassociation.  It picks
+    the cheapest of three routes: the depth sweep, the frozen
+    ``RowBlockedBatchedWinograd`` incumbent (which this class never modifies),
+    and the plain product.  Shapes the sweep cannot beat -- odd or small
+    contracted widths, fringes that cost more than they save -- go to the
+    fallback, and shapes neither of them beats go to ``a @ b`` itself, so the
+    bill is never above ``direct_cost``.
 
-    ``multiply`` returns a freshly allocated result on *both* routes, so a
+    ``multiply`` returns a freshly allocated result on *every* route, so a
     caller may hold several products live at once and add them.  That is the
     contract the terminal fold needs and the frozen fallback does not offer;
     see ``multiply`` and ``_selfcheck`` item (8).
@@ -544,22 +582,32 @@ class DepthWinograd:
 
         bill = realized_candidate_bill(m, k, n, self.max_levels)
         self.last_strategy = bill.strategy
-        if not bill.strategy.startswith("realized_l"):
-            # The frozen fallback hands back a view of its one preallocated
-            # output, so two consecutive dispatches to it alias.  The terminal
-            # fold holds two and three products live at once and adds them
-            # (``fold3_estimator`` pre31, pre32), which turned such a sum into a
-            # multiple of its last term.  ``multiply_at_depth`` already returns
-            # a freshly allocated result per product; copying out here makes the
-            # contract the same on both routes, for one write per output
-            # element.  The frozen module is not touched.
-            shared = self.fallback.multiply(left, right)
-            self.last_native_calls = self.fallback.last_total_matmul_calls
-            out = fnp.empty(shared.shape, dtype=shared.dtype)
-            fnp.copyto(out, shared)
-            return out
-        return self.multiply_at_depth(left, right,
-                                      int(bill.strategy.split("_")[1][1:]))
+        if bill.strategy.startswith("realized_l"):
+            return self.multiply_at_depth(left, right,
+                                          int(bill.strategy.split("_")[1][1:]))
+        if bill.strategy == "direct":
+            # The plain product is a route, not a floor to be undercut on
+            # paper.  Routing a shape through the fallback when ``a @ b`` is
+            # cheaper buys nothing and costs the copy below, so the selector
+            # takes it here and the operator spends exactly ``direct_cost``.
+            # ``matmul`` allocates its own output, so the owned-result contract
+            # holds on this route without a copy.
+            self.last_native_calls = 1
+            return fnp.matmul(left, right)
+        # The frozen fallback hands back a view of its one preallocated output,
+        # so two consecutive dispatches to it alias.  The terminal fold holds
+        # two and three products live at once and adds them
+        # (``fold3_estimator`` pre31, pre32), which turned such a sum into a
+        # multiple of its last term.  ``multiply_at_depth`` already returns a
+        # freshly allocated result per product; copying out here makes the
+        # contract the same on every route, for one write per output element.
+        # That write is m*n and ``realized_candidate_bill`` prices it.  The
+        # frozen module is not touched.
+        shared = self.fallback.multiply(left, right)
+        self.last_native_calls = self.fallback.last_total_matmul_calls
+        out = fnp.empty(shared.shape, dtype=shared.dtype)
+        fnp.copyto(out, shared)
+        return out
 
     def multiply_at_depth(self, left, right, levels: int):
         """The depth-``levels`` route, bypassing the sweep.  Exactness of one
@@ -792,9 +840,21 @@ def _selfcheck() -> None:
         assert op._fallback is None, "the depth route built the fallback"
         assert op.workspace_bytes == sum(
             int(pool.nbytes) for pool in op._pools.values())
-        op.multiply(fnp.zeros((511, 64), dtype=fnp.float32),   # odd m: direct
+        # Odd m: no depth is lawful and the fallback has no route either, so
+        # the plain product wins and the 91.4375 MiB workspace is still not
+        # built.  Before the direct route existed this shape dispatched to the
+        # fallback's own direct escape and then copied out of it -- a bill of
+        # direct + m*n for a product worth direct.
+        op.multiply(fnp.zeros((511, 64), dtype=fnp.float32),
                     fnp.zeros((64, 64), dtype=fnp.float32))
-        assert not op.last_strategy.startswith("realized_l")
+        assert op.last_strategy == "direct", op.last_strategy
+        assert op._fallback is None, "the plain-product route built the fallback"
+        # m = 2 (mod 4): every depth is unlawful, but the fallback's one-level
+        # core route plus the copy-out still beats the plain product, so this
+        # is the shape class that does dispatch to the frozen operator.
+        op.multiply(fnp.zeros((510, 64), dtype=fnp.float32),
+                    fnp.zeros((64, 64), dtype=fnp.float32))
+        assert op.last_strategy == "winograd_batched_owned", op.last_strategy
         assert op._fallback is not None, "the fallback route never built it"
 
     # (8) Two products of one sum, both dispatching to the frozen fallback.
@@ -806,7 +866,11 @@ def _selfcheck() -> None:
     #     check is literal equality rather than a tolerance; it fails on the
     #     aliased build by a relative error of order 1, not of order eps.
     with flops.BudgetContext(flop_budget=10 ** 14):
-        m, n, contracted = 24, 20, (20, 16)    # two widths, as pre31 has
+        # m = 2 (mod 4) puts every depth out of reach, and both contracted
+        # widths are wide enough that the fallback's core route beats the plain
+        # product even after the copy-out, so both products land on the
+        # view-returning branch this item exists to test.
+        m, n, contracted = 126, 64, (48, 64)   # two widths, as pre31 has
         op = DepthWinograd(m, max(n, *contracted), workspace_mib=8.0,
                            max_levels=4)
         rng = _np.random.default_rng(20260819)
@@ -835,13 +899,48 @@ def _selfcheck() -> None:
         "two fallback dispatches aliased: the folded sum is a multiple of its "
         "last term")
 
+    # (9) Production-gate clause A.3, second half: the selected bill is never
+    #     above the plain product.  Swept rather than spot-checked, because the
+    #     defect this pins was invisible on every shape the estimator happens to
+    #     use and showed up only on a sweep -- 18,290 of 262,144 shapes in the
+    #     production band selected above direct, worst ratio 2.0 at (256, 1, 1),
+    #     which is pinned here by name.  ``m = 510`` is in the band because
+    #     ``m = 2 (mod 4)`` is the only class that reaches the fallback route
+    #     with every depth unlawful.  The fallback's bill is checked against the
+    #     frozen operator's own bill plus the copy-out, which is the equality
+    #     the metered FlopScope reading has to reproduce.
+    routes = set()
+    for m in (256, 510, 8192, 64512):
+        for k in range(1, 49):
+            for n in range(1, 49):
+                bill = realized_candidate_bill(m, k, n)
+                truth = direct_cost(m, k, n)
+                assert bill.total <= truth, (
+                    f"selected {bill.strategy} at {(m, k, n)} bills "
+                    f"{bill.total}, above direct {truth}")
+                assert bill.direct == truth, (m, k, n, bill.strategy)
+                assert (bill.core + bill.inner_correction + bill.inner_add
+                        + bill.output_tail in (0, bill.total)), bill.strategy
+                if bill.strategy == "winograd_batched_owned":
+                    frozen = batched_candidate_bill(m, k, n)
+                    assert bill.total == frozen.total + m * n, (
+                        f"the fallback route at {(m, k, n)} bills {bill.total}, "
+                        f"but the frozen operator spends {frozen.total} and the "
+                        f"copy-out is {m * n}")
+                routes.add(bill.strategy.split("_mod")[0])
+    assert realized_candidate_bill(256, 1, 1).strategy == "direct"
+    assert realized_candidate_bill(256, 1, 1).total == direct_cost(256, 1, 1)
+    assert {"direct", "winograd_batched_owned"} <= routes, sorted(routes)
+    assert any(name.startswith("realized_l") for name in routes), sorted(routes)
+
 
 if __name__ == "__main__":
     _selfcheck()
     print("selfcheck: digit-assignment obstruction, tier-7 depth table, "
           "realized closed form, integer exactness at depths 1-3, "
-          "measured-equals-billed, lazy fallback construction and "
-          "two-fallback-operand sum exactness all pass")
+          "measured-equals-billed, lazy fallback construction, "
+          "two-fallback-operand sum exactness and selected-never-above-direct "
+          "all pass")
     for shape in ((4096, 256, 256), (64512, 256, 256), (4096, 256, 200)):
         floor = floor_candidate_bill(*shape)
         real = realized_candidate_bill(*shape)

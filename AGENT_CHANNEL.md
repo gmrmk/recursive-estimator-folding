@@ -9279,3 +9279,40 @@ are regime-stale against this session's evidence):
 CONFIRMED UNCHANGED: #326094 baseline numbers [O]; M192 oracle non-deployability;
 pruning as the only legal rank reduction; the Gaussian-closure negative (double-
 witnessed); the evaluator contract (flopscope 0.10.0 / whestbench 0.14.0).
+
+## 2026-08-19T06:12:13Z — OWNER RULING: campaign memory ceiling re-declared at 1 GiB + round-3 disposition + swarm state
+
+OWNER RULING (AskUserQuestion, this session): the campaign memory ceiling is re-declared
+at 1 GiB (1,073,741,824 bytes), superseding the retained 512 MiB standing gate. Basis:
+the round-3 gate verifier's D-CEILING finding — the contest advertises 64 GB with NO
+memory ceiling (contest-contract audit 2026-08-12; HOSTED_INTEL_20260808; Codex's
+CALL_FUSION_RESOURCE_PREDECLARATION gate 6 calls 1 GiB "a deliberately tight local
+engineering ceiling" that "replaces no contest rule"). The owner chose 1 GiB over both
+holding 512 MiB and dropping to contest-real 64 GB.
+
+CONSEQUENCE: FOLD_FLOOR_SPLICE_PRODUCTION_GATE.md clause A.6 binds at 1 GiB via its
+named upgrade path; the candidate's measured 616.02 MiB median (616.95 max, n=5,
+method A single-thread) PASSES A.6 under this ruling. D-A6 is discharged BY RULING,
+not by measurement change. D-A3a and D-A3b (cost-model static-vs-metered divergence on
+the fallback branch; selected-above-direct on 18,290 swept shapes) remain blocking and
+are in round 4 (wf_27e7a983-7fa: fixer + hostile re-verifier against the authored gate).
+The ONE Public100 measurement stays HELD on the round-4 verdict.
+
+ROUND-3 DISPOSITION (wf_d6440c2b-55a, complete): fix=COMPLETE (D1 aliasing fixed at the
+operator with a discriminating regression selfcheck that fails on the reverted build;
+D5 OFF-branch restored to incumbent shape, hoist re-priced 7,438,002 FLOPs; D6 buffer
+retention gated; pycache purged + harness-gated). gate=REJECTED on D-CEILING/D-A6/
+D-A3a/D-A3b; D-PARENT and D-WALL recorded. measured=false — correctly held.
+
+PROTOCOL FINDING (from the round-3 fixer): an EXTERNAL process wrote .pyc into custody
+trees mid-run (04:22/04:31/~04:5x UTC; cost_model, compute_lineage suites,
+dual_witness_certificate). All agents running python against repo trees MUST use -B /
+PYTHONDONTWRITEBYTECODE=1; verify_fold_floor.py now hard-fails on stray bytecode.
+
+SWARMS IN FLIGHT: ultrareview (wf_b708199c-ca4, 4 lenses + adversarial merge),
+ultramath deliberation (wf_01a886a8-2ad, 5 lanes x 2 rounds + Fable synthesizer),
+fold round-4 (wf_27e7a983-7fa), MI kill/win graph + gated Ralph loops + Fable
+ultraplanner (wf_77a537c1-bec, executes the owner directive "find the solve in the
+mutual information between what didn't work and what did"). Monitoring: persistent
+transcript-liveness Monitor (task b7010mqdr) + crons (6-hour pulse, 2-hour harvest,
+daily continuation).
