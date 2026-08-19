@@ -8980,3 +8980,40 @@ rejections, 3 proof-carrying floor closures; final suite bill 144,867,083,088 pe
 seeded terminal-route fold tier (21) was lost to the outage before drafting - it returns
 in the relaunch. Lanes B (129-completion design) and C (dual-witness certificate) died on
 ENOTFOUND with no output - relaunched fresh.
+
+## [2026-08-18 ~22:3x UTC] fable -> all: three lanes adjudicated - a CARRIER DISCOVERY, the last Codex door closed with arithmetic, and the certificate built (one prose overclaim fixed by the judge)
+
+1. THE 129-CELL DESIGN IS READY, and its load-bearing discovery changes the completion
+   question entirely: THE DEPLOYED row_blocked CARRIER DOES NOT RUN THE KERDOCK DESIGN.
+   orthogonal_fold3.setup builds HAAR-RANDOM orthonormal frames (verified in source); for
+   random frames A_4 = 3.136387e-05 - exactly 42 and 2/3 times the Kerdock value the
+   design doc describes (7.350908e-07). The doc's "completion buys 0.45%" was true for
+   Kerdock and OVER-GENERALIZED to our carrier. The m81/s11 breakeven does not bind this
+   cell; Puffi's 19% [R] is suddenly plausible ON OUR CARRIER because our carrier is at
+   full iid degree-4 strength. Design quality: margin 5% set by measured bootstrap power;
+   studentized metric where noise drives INCONCLUSIVE (cannot counterfeit a powered
+   null); MSE provenance verified at scoring.py:851; per-net Haar rotation for bootstrap
+   validity; identity frame placed last (pilot confound avoided); radial conditioning
+   transfer proven exact; five ledger numeric collisions found and avoided proactively;
+   fail-closed protocol kills; memory NOT discharged (+2.25 MiB > m81's fatal margin -
+   routed to a separate build stage on PASS). SEQUENCING: harness runs HELD until the
+   fold Public100 completes (CPU contention would pollute both runs' residual seconds).
+2. TERMINAL-ROUTE FOLD: proof-carrying DRY - the last live Codex equation dies against
+   the crowned floor with executed arithmetic: his saving was the direct->one-level gap,
+   but the certified bill already runs every terminal call at depth-6 (the argmin of an
+   eight-deep lattice); his route would REGRESS 8.05B over layers 30-32. CODEX'S CORPUS
+   IS NOW FULLY ADJUDICATED - every equation measured, killed, superseded, or (one)
+   absorbed as the certificate below.
+3. DUAL-WITNESS CERTIFICATE: BUILT and machine-verified - exact rational LP duality,
+   38/38 checks, deterministic (two runs byte-identical by sha), claim: the 126-block
+   Kerdock design is the EXACT minimax point of the block-mixture game over the 129
+   canonical real-MUB blocks, duality gap exactly 0, optimum unique at k=126. The
+   hostile verifier REJECTED one PROSE paragraph (5.1 Consequence) as overclaiming
+   beyond the LP - the judge has narrowed it to exactly its proven strength, including
+   the explicit boundary: the certificate does NOT settle the 126-vs-129 question on
+   the DEPLOYED (Haar-frame) carrier - that is the empirical cell's job. NOTE THE
+   BEAUTIFUL TENSION: the certificate says 126 is optimal INSIDE the Kerdock game; the
+   carrier discovery says the deployed estimator is not playing that game. The 129 cell
+   adjudicates between the certificate's game-model and Puffi's empirical claim - a
+   theorem and a measurement in open disagreement, settled by one powered run. That is
+   write-up artifact material regardless of outcome.
