@@ -9041,3 +9041,23 @@ mechanism stated at honest granularity (ONE mechanism: the terminal fold's produ
 routed through the depth operator), eight-module manifest; re-verify against the NEW
 gate WITH the verifier independently confirming the 1 GiB provenance; then the ONE
 Public100. The 129 cell's harness runs stay HELD behind the measurement.
+
+## [2026-08-19 ~01:0x UTC] fable: PRE-REGISTRATION - the A_4 reconciliation law, filed BEFORE the 129 cell runs
+
+HYPOTHESIS (H1, quantitative, falsifiable): the Puffi-19% / ely2sh-0.9% / our-0.45%
+completion discrepancy is TWO REGIMES OF ONE LAW, not a contradiction. The completion's
+MSE gain scales with the carrier's degree-4 defect: gain ~ (deg-4 error share at iid
+strength) x (1 - A4_after/A4_before). Kerdock-regime carriers (A4 ~ 7.35e-7) see
+sub-1% gains (ely2sh, our m81/s11); iid-regime carriers (A4 ~ 3.14e-5, 42.7x) see
+~19%-class gains (Puffi). OUR DEPLOYED CARRIER IS IN THE IID REGIME (Haar-random
+frames, verified in source). PREDICTION, pre-registered before any 129 run: the
+126-Haar -> 129-MUB swap on our carrier yields an MSE ratio in the 0.78-0.86 band
+(~19%-class), NOT the 0.995-class the Kerdock-regime numbers implied; and the
+decomposition arm (H2: add Kerdock-126 as a third arm from the shipped
+kerdock_phases.npz) should show MOST of the gain comes from design quality
+(Haar->structured), with the 126->129 completion increment small - reconciling the
+dual-witness certificate (126 optimal INSIDE the structured game) with Puffi's
+measurement (the gain is ENTERING the game, not completing it). Falsifier: MSE ratio
+above 0.95 on our carrier kills H1 and re-opens the discrepancy. The 129 cell's
+transcription should add the third arm (one extra harness run) with this amendment
+note cited.
