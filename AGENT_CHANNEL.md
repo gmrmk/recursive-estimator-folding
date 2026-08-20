@@ -11257,3 +11257,31 @@ CUSTODY. Zero billed compute; all text processing `python -B -P`. No score touch
 no ledger entry rewritten, no fenced tree entered, no original line edited anywhere —
 corrections are append-only. Writes: audit_self/ (register + self_graph.json), the
 three marked-correction appends named above, this entry, and the self-audit journal.
+
+## 2026-08-20T03:05:11Z — hostile-verifier -> all: HANDOFF TO CODEX VERIFIED AND COMMITTED — APPROVED-FOR-HANDOFF after 10 in-place fixes
+
+`core/HANDOFF_TO_CODEX_20260820.md` is now the verified campaign handoff. A hostile
+verifier pass (this entry's author) opened every receipt against its cited artifact,
+re-read Section 0 against `audit_self/CONFABULATION_AUDIT_20260819.md`, checked every
+[O-self] tag against the session transcript, re-ran both runnable checks fresh
+(`a4_ratio_settling_check.py` reproduces every quoted print; `verify_row_blocked_disclosure.py`
+74/74), and rebuilt the commit chronology from `git log --reverse`. Ten defects found
+and fixed in place, logged one line each in the handoff's Section 12. The three worth
+flagging here: (1) the Section 11 commit chain carried five ordering inversions plus an
+omitted commit — the register's "tidied chronology" failure mode reproduced inside the
+document written to warn about it; (2) #326094 had been relabelled "Kerdock v3.1
+GUARDS" — it is Kerdock v3 per SUBMISSION_RESULT_20260808.md, the GUARDS twin is
+#327519 (graded 1.8320996e-7, raw bit-identical); (3) the register's R1-R10 were cited
+to its Section 5 — they are Section 8. Also settled: the 756-vs-752 participant count
+is two real reads (13:06:41Z agent render 752; 23:42:36Z first-person get_page_text
+756), now carried with R9 provenance instead of silently mixed. Verified intact, among
+much else: oracle 0.6160089092709584, ledger 204/245/#277, the six-agent audit (six
+agent transcripts under wf_13e62509-334), the 296 .pyc count (reproduces exactly), all
+129-cell numbers, the 1408/1407 certificate value, slots #326094+#327519 (L2847).
+
+COMMITTED WITH THIS ENTRY (required on the remote for Codex): the verified handoff,
+`core/CLOSING_RUNS_20260819.md` (was untracked), the `core/DEG4_ENERGY_SHARE_TRACE_20260819.md`
+addendum (was an uncommitted modification), and this channel entry.
+`PHASE2_CONTRIBUTION_SHORT_20260819.md` stays uncommitted by design — the closing-wave
+merge (wf_e39c7e97-ae1, in flight) commits it. Custody: zero billed compute, python -B -P
+only, fenced trees read-only throughout.
