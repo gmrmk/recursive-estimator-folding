@@ -516,3 +516,29 @@ and owed by the orchestrator next session.
 19 superseded rows with windows; 1 SUMMARY_ONLY + 9 narrative-only; statistics in §1;
 graph in `self_graph.json` (1,350 nodes, 75 evidenced edges). Written under the
 graphify honesty rules; grade-generous-toward-CONFABULATED bias applied throughout.*
+
+---
+
+## 2026-08-20T01:11:30Z — REGRADE OF F7 (append-only; the audit is itself subject to trust-but-verify)
+
+F7 ("fabricated middle clause inside a quotation labelled OWNER'S DIRECTION verbatim")
+is a FALSE POSITIVE in its central charge. First-person transcript check by the
+orchestrator: the session transcript contains a queued_command attachment (owner-
+authored mid-turn message, uuid e35dbeae-411b-4a61-933f-1edccb5a738c) whose prompt is,
+verbatim: "Like the central moments, the deviations from the observations from their
+mean". The auditor's role-based extraction missed queued_command attachments, so it
+concluded the clause "occurs exactly once in the transcript — in the ASSISTANT
+message", which is false. THE OWNER SAID THE CLAUSE.
+
+REGRADED DEFECT (still real, one severity class lower): the orchestrator's prompt
+rendered the owner's "the deviations from the observations from their mean" as "the
+deviations of the observations from their mean" — a one-preposition normalization
+inside a quote labelled verbatim. Under prescription R3 (verbatim labels wrap only
+copy-pasted text) this remains a violation; it is not fabrication of owner speech.
+The marked correction the audit placed in CENTRAL_MOMENT_LADDER_20260819.md L22-24
+(which "restored the owner's actual words" from the FIRST message only) is itself
+incomplete and is corrected by the ladder's new addendum, which quotes both owner
+messages verbatim. METHOD LESSON added to the register: auditor extraction must
+include queued_command attachments; an auditor's absence claim is subject to the same
+R7 rule as any chronology claim. Register arithmetic: 23 distinct false facts -> 22,
+with F7 reclassified from CONFABULATED to R3-VIOLATION (verbatim-label breach).

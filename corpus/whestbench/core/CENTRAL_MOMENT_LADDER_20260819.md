@@ -980,3 +980,18 @@ F7) and `audit_self/self_graph.json`. Stamp: 2026-08-20T01:04:31Z.
    finding itself is real and is independently derived in §2.4 above; wherever this
    document's "Lens A" citations are consumed, cite the carrying artifact or dated
    channel entry instead.
+
+---
+
+## ADDENDUM 2026-08-20T01:11:30Z — the owner's directive, quoted verbatim from the transcript (correcting the audit's correction)
+
+The confabulation audit's marked correction at L22-24 removed the clause "the central
+moments, the deviations of the observations from their mean" as fabricated. A
+first-person transcript check shows the owner DID send it, as a queued mid-turn
+message the audit's extraction missed. The owner's two messages, copy-pasted verbatim:
+1. "What about moments about the mean because we are looking at the Kurtosis what
+   about the other elements and the inference between them"
+2. "Like the central moments, the deviations from the observations from their mean"
+The original prompt's defect was a one-preposition smoothing ("of" for "from") inside
+a verbatim label — an R3 violation, not fabrication. Full regrade:
+audit_self/CONFABULATION_AUDIT_20260819.md, dated 2026-08-20T01:11:30Z.
