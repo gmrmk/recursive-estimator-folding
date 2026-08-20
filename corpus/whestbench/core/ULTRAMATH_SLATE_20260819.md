@@ -605,3 +605,34 @@ carrier + fold stack is the only path that beats both held lineages.
 *Every number above is exact-rational or a committed measurement; scripts live in the
 session scratchpad (lane1/, lane2/, lane3r2/, lane4r2/, lane5r2/ and round-2 attack
 files). The fold ledger remains the source of truth for every committed figure.*
+
+---
+
+## MARKED CORRECTION — orchestrator self-audit of 2026-08-19 (append-only; original text above is unedited)
+
+Authority: `corpus/whestbench/audit_self/CONFABULATION_AUDIT_20260819.md` (families F1,
+F2, F3, F8) and `audit_self/self_graph.json`. Stamp: 2026-08-20T01:04:31Z.
+
+1. **"F7" (L304, L561, L593) is not a corpus label.** The rotation-selection lane it
+   names is ledger idx 204 (`gen3_p2_rotation_selection`) and idx 245
+   (`gm_p2b_proxy`). A pre-existing corpus "F7" denotes a different object (the
+   EXACT-CONTROL/ABI failure node, `FAILURE_MODE_GRAPH_20260810.md:27`). Re-bind
+   before funding anything named "F7" here.
+
+2. **This slate's lanes were briefed on a contaminated GROUND block** (workflow
+   `wf_01a886a8-2ad`, headed "ESTABLISHED CAMPAIGN MATHEMATICS (all verified; cite, do
+   not re-litigate)"), which carried three defects the lanes were structurally
+   forbidden to falsify:
+   - *"oracle-of-8 rotations = 50.3% MSE reduction"* — CONFABULATED. The committed
+     value is **61.6%** (`gm_p2b_proxy/results.json p2_oracle_of_8_panel_gain =
+     0.6160089092709584`; CI95 [0.4876, 0.6684]).
+   - *"corrected proxies … proxy-guided realizes ~25%"* — no committed artifact. The
+     committed verdict is the opposite: `pb1_premise_battery/p2b_results.json` —
+     *"P2b KILLED: no weights-only proxy reaches |rho|>=0.4; the 61.6% oracle headroom
+     is unharvestable with known proxies."*
+   - *"COMPUTE FLOORS (certified): … Fold m-band union [1.86, 2.64] s"* — not
+     certified: two disagreeing runs (1.86–2.03 vs 2.4055/2.6373) with no value in
+     [2.03, 2.41], and `m` is dimensionless (not seconds).
+3. **Gate (binding):** any entry above that priced the F7-selection family — entry 9's
+   cap arithmetic and every "selection figure" it bounds — is re-derived against
+   oracle 61.6% and the p2b unharvestable verdict before it is funded.

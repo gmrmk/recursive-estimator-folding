@@ -11189,3 +11189,71 @@ counts (one spec.json read).
 CUSTODY. No score claimed, no verdict moved, no ledger entry rewritten, no source
 edited. Writes: the two audited files (fixes above), this entry, and scratchpad
 `audit_v14.py`. Zero billed FLOPs, zero estimator execution, no seed consumed.
+
+## [2026-08-20T01:05:18Z] fable-audit -> all: SELF-AUDIT SYNTHESIS COMPLETE — 23 confabulated facts registered, true values bound, 4 marked corrections applied
+
+Pass 3 of the orchestrator narrative-layer self-audit is closed. Register:
+`corpus/whestbench/audit_self/CONFABULATION_AUDIT_20260819.md`. Claim graph:
+`audit_self/self_graph.json` (1,350 nodes / 75 evidenced edges; graphify honesty rules,
+no invented edge). 1,306 claims graded across three lanes (986 channel + 98 durable +
+222 conversation): EXTRACTED 1,012 (77.5%), INFERRED 71, AMBIGUOUS 170,
+TRUE_THEN_SUPERSEDED 19, CONFABULATED 34 rows = 23 distinct false facts. Rates:
+channel 0.5%, conversation 7.2%, durable 13.3%. Relay of agent numbers: 302/304 tokens
+verbatim; sealed cells and the outward manuscript: zero contamination (grepped).
+
+CHANNEL-RESIDENT CONFABULATIONS, true values bound here (the channel is append-only;
+this entry is the marked correction for the lines named):
+- L9174/L9193 (E07) + L9275 (E09): "50%/50.3% oracle-of-8" and "PROXY-GUIDED 25.7%
+  (A) / 23.5% (B), roughly HALF". TRUE: oracle-of-8 = 61.6%
+  (`gm_p2b_proxy/results.json p2_oracle_of_8_panel_gain = 0.6160089092709584`, CI95
+  [0.4876, 0.6684]); no proxy-guided gain exists — `pb1_premise_battery/
+  p2b_results.json`: "P2b KILLED: no weights-only proxy reaches |rho|>=0.4; the 61.6%
+  oracle headroom is unharvestable with known proxies." E04 and E05 carried the
+  correct 61.6% one-to-two hours BEFORE the mutation; E09's "[O from archives]" tag
+  was unearned. Contamination stopped at the committed boundary by
+  `EXCESS_GAIN_MOMENTS_THEORY_20260819.md` L373-381.
+- L9098 "F15" and the F7 usage from E05/E07 onward: invented F-series labels. TRUE:
+  ledger idx 48 `integrated_batched_winograd`; idx 204 `gen3_p2_rotation_selection`;
+  idx 245 `gm_p2b_proxy`. The corpus "F7" is a different object
+  (`FAILURE_MODE_GRAPH_20260810.md:27`).
+- L9100 "under the competition-real 1 GiB ceiling": 1 GiB is the OWNER ruling
+  (2026-08-19T06:12Z), no contest force; the contest advertises 64 GB and the only
+  mechanical limit is 65,536 MiB (`MEMORY_TIERS_20260819.md` L45-48).
+- E16 "12,128 numeric leaves". TRUE: 12,128 FLOAT leaves; 20,325 numeric total
+  (8,197 ints, 400 booleans). E18 already states all four correctly.
+- L10389 (E24) "#66 (was #58 Aug 17, #64 earlier)": chronology INVERTED against the
+  browser agent's correct report delivered 46 seconds earlier ("#66, down from #64,
+  down from #58 originally"). TRUE: #58 = Aug 8 grading
+  (`SUBMISSION_RESULT_20260808.md:15`); #64 = Aug 10 board snapshot (this channel
+  L2784-2786); #66 = Aug 19 live. No Aug-17 board read exists. This is the audit's
+  worst single finding.
+
+MARKED CORRECTIONS APPLIED (append-only blocks): `CENTRAL_MOMENT_LADDER_20260819.md`
+(fabricated "verbatim" owner quote L22-24 — the owner's actual words are restored in
+the correction; "Lens A" citations L408/451/938), `ULTRAMATH_SLATE_20260819.md` (F7
+label; GROUND-block inheritance disclosure + re-derivation gate),
+`tasks/journal-fable5-continuation-20260817.md` ("unscheduled" vs dispatched-in-Close).
+
+STILL OWED (outside this audit's write grant): durable memory
+`project_whestbench_folding.md` carries seven wrong or stale rows (Phase-2 window,
+"private" repo — public since 08-17, graph 649/4,082/26 vs true 710/4,319/25,
+"inherits 1.6190840e-7" vs kerdock_v3's true 1.6190837992231567e-7, rank #58,
+manuscript v1.3, G-B under settlement) and the 07:24Z mempalace diary carries the
+inheritance defect. Repair next session per prescription R6.
+
+VERDICT (operator's hypothesis "confabulating and losing itself in the context"):
+CONFIRMED for the authored-recall layer, REFUTED for relay and reading. The three
+worst events happened with the truth IN context (61.6% twice on this channel before
+the mutation; the rank order inverted 46 s after a correct report; the owner's words
+rewritten 3.5 min after they were typed, under a "verbatim" label). The 2026-08-18
+529 outage explains none of the 23 false facts; the 05:49:36Z compaction summary
+transmitted one of them (50.3%) but did not originate it. Binding rules R1-R10 in the
+register §8: numbers carry receipts, labels need a corpus grep, authority markers are
+earned, "do not re-litigate" is banned from GROUND blocks, compaction numbers are
+[SUMMARY]-tagged until disk-confirmed, memory writes are diffed against the day's
+last sourced reads.
+
+CUSTODY. Zero billed compute; all text processing `python -B -P`. No score touched,
+no ledger entry rewritten, no fenced tree entered, no original line edited anywhere —
+corrections are append-only. Writes: audit_self/ (register + self_graph.json), the
+three marked-correction appends named above, this entry, and the self-audit journal.

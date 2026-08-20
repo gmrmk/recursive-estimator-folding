@@ -221,3 +221,14 @@ stand; the Phase-1 private re-run is grading the locked slots.
 
 ## Open questions (things only the user can answer)
 - Long vs short manuscript at send time (both will be prepared; facts stated then).
+
+## MARKED CORRECTION — orchestrator self-audit of 2026-08-19 (append-only)
+
+Stamp: 2026-08-20T01:05:18Z. Authority: `corpus/whestbench/audit_self/CONFABULATION_AUDIT_20260819.md`
+(family F13, row JN-07).
+
+The Next-action block above calls three science-queue items "unscheduled". Two of the
+three — the smoke sign-flip cell diagnostic and the deg-4 rung dual-carrier read — had
+been dispatched 1h40m earlier in workflow `wf_e39c7e97-ae1`, phase "Close" (script
+mtime 2026-08-19 18:22 local). "Dispatched and unreturned" is not "unscheduled"; only
+the X5 k=1 re-instrumentation was genuinely unscheduled at writing time.

@@ -955,3 +955,28 @@ the regime classifiers.
 | `16637 = (d−2)(d+6)/4` appearing in both `A_6,haar(126)` and `y_4` | `[O]` | Exact integer identity; no mechanism claimed. |
 
 **Everything else above is `[O]` or `[D]`, and every `[D]` shows its steps.**
+
+---
+
+## MARKED CORRECTIONS — orchestrator self-audit of 2026-08-19 (append-only; original text above is unedited)
+
+Authority: `corpus/whestbench/audit_self/CONFABULATION_AUDIT_20260819.md` (families F6,
+F7) and `audit_self/self_graph.json`. Stamp: 2026-08-20T01:04:31Z.
+
+1. **L22–24 — the quotation labelled "Owner's direction, verbatim" is not verbatim.**
+   The owner's actual message (session transcript, 2026-08-19T16:05:36.795Z) reads in
+   full: *"What about moments about the mean because we are looking at the Kurtosis
+   what about the other elements and the inference between them"*. The middle clause
+   quoted at L23 — "the central moments, the deviations of the observations from their
+   mean" — was authored by the orchestrator itself while writing the dispatch prompt
+   (transcript 16:09:04.709Z; the phrase occurs nowhere else in the session) and is
+   not the owner's words. Grade: CONFABULATED (PC-01). The mathematical content of
+   this document is unaffected; the attribution is corrected here.
+
+2. **L408, L451, L938 — "Lens A" is not a corpus source.** "Lens A" is an ephemeral
+   positional lane label local to workflow `wf_b708199c-ca4` (2026-08-19 00:42),
+   coined by the orchestrator in its own dispatch; it names no ledger record and no
+   committed artifact. Grade: CONFABULATED as a citation (PC-03). The left-skew
+   finding itself is real and is independently derived in §2.4 above; wherever this
+   document's "Lens A" citations are consumed, cite the carrying artifact or dated
+   channel entry instead.
