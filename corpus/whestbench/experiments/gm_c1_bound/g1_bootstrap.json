@@ -1,0 +1,79 @@
+{
+ "n_completed": 22,
+ "n_excluded": 3,
+ "mean22": 1.0686276000992886e-06,
+ "sd22_ddof1": 1.1060968297993356e-06,
+ "H_hosted_ref": 6.47e-07,
+ "R_point": 1.6516655333837535,
+ "se_R_local_only": 0.36448320938468015,
+ "boot_run_A": {
+  "seed": 20260810,
+  "bitgen": "PCG64",
+  "B": 200000,
+  "ci95": [
+   1.0370168959084436,
+   2.419107276364875
+  ],
+  "boot_mean_R": 1.652069429027269,
+  "boot_sd_R": 0.35559093125233004,
+  "p16": 1.2961977676020937,
+  "p84": 2.0083200205923233,
+  "frac_inside_band": 0.68264
+ },
+ "boot_run_B": {
+  "seed": 77,
+  "bitgen": "Philox",
+  "B": 200000,
+  "ci95": [
+   1.0354474177175943,
+   2.42693796641751
+  ],
+  "boot_mean_R": 1.6524511262835802,
+  "boot_sd_R": 0.35729017731138085,
+  "p16": 1.2955297644037023,
+  "p84": 2.009589530916174,
+  "frac_inside_band": 0.68133
+ },
+ "two_stream_endpoint_agreement_within_0.01": true,
+ "CI95_percentile_bootstrap": [
+  1.036232156813019,
+  2.4230226213911923
+ ],
+ "one_sigma_R_bootstrap": 0.35559093125233004,
+ "CI95_normal_analytic": [
+  0.9372784429897805,
+  2.3660526237777266
+ ],
+ "CI95_student_t21_analytic": [
+  0.8936812049765949,
+  2.4096498617909123
+ ],
+ "median_A": 6.473545958232132e-07,
+ "max_A": 4.8650492612031675e-06,
+ "min_A": 2.1704359940460778e-07,
+ "R_median_imputed": 1.5735314367637703,
+ "R_max_imputed": 2.355793198503484,
+ "R_min_imputed_reference_only": 1.4937210510292533,
+ "exclusion_bias_is_upward": true,
+ "R_band_claims_unchanged": [
+  1.3705820105820103,
+  2.1415343915343907
+ ],
+ "bootstrap_prob_R_inside_band": 0.68264,
+ "Kerdock_hosted_at_R_point": 9.802226705567731e-08,
+ "Kerdock_hosted_at_CI_lo": 1.5623911971418748e-07,
+ "Kerdock_hosted_at_CI_hi": 6.681737040781079e-08,
+ "parity_ratio_at_R_point": 1.0372726672558445,
+ "parity_ratio_at_CI_lo": 1.65332401813955,
+ "parity_ratio_at_CI_hi": 0.7070621207175745,
+ "parity_ratio_at_R_max_imputed": 0.7272401984672676,
+ "Kerdock_hosted_at_R_max_imputed": 6.87241987551568e-08,
+ "G1_kill": false,
+ "G1_verdict": "REVIVED_PASS",
+ "G2_mined_reproduction": {
+  "ci_lo_vs_mined": 0.003767843186980979,
+  "ci_hi_vs_mined": 0.0030226213911923594,
+  "maximp_vs_mined": 0.004206801496515755,
+  "pass": true
+ }
+}

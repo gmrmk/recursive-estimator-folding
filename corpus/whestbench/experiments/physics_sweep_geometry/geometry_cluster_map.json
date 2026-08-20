@@ -1,0 +1,37 @@
+{
+  "cluster": "geometry",
+  "date": "2026-08-10",
+  "mode": "read-only mapping; no estimator executed, no measurement taken, no git",
+  "ledger_read": "corpus/whestbench/headroom/fold_ledger.json (265 candidates)",
+  "headline": "Every geometry concept in this cluster collapses onto exactly one of two already-closed objects: (1) a FIXED DIRECTION SET, capped by the S11/gen8 near-optimality ceiling at <=0.0233% (positive weights) / <=6.29% (negative weights) improvement over Kerdock; or (2) a BOUNDARY/SURFACE INTEGRAL over the ReLU kink set K, measured between 36x and 1.24e86x too expensive across five independent realizations. The only divergence-form identity that avoids K is Euler/radial homogeneity, and that is already the champion's exact chi-mean radial conditioning.",
+  "sharp_question_answer": {
+    "question": "Is there a surface-integral or divergence-form identity OTHER than S9 that converts the sphere-mean into a cheaper-to-sample object?",
+    "answer": "No. Divergence-form rewrites of a positively 1-homogeneous CPWL f partition into exactly two classes by where they deposit the mass.",
+    "class_off_K": {
+      "identity": "x.grad f = f (Euler) with no IBP; E_g[f(g)] = E[chi_256] * E_u[f(u)]",
+      "verdict": "ALREADY-IN-CHAMPION",
+      "source": "experiments/v31_guards/package_source/kerdock_v3_estimator.py (radial_conditioning = True; MEAN_CHI_256; _radial_covariance = MEAN_CHI_256^2 / width)",
+      "value": "wc1_winner_ablation_map: radial conditioning 2.141x MSE if removed [1.509,3.042]"
+    },
+    "class_on_K": [
+      {"realization": "Euler x Stein Gaussian IBP + Crofton line transects", "record": "s9_crofton_kink_transect_identity", "number": "identity 6.7e-16; estimator 176,860x worse variance-per-FLOP (CI 133k-237k)"},
+      {"realization": "distributional spherical Laplacian / coarea, exact facet enumeration", "record": "m86_boundary_laplace_coarea", "number": "Phase A exact 3.33e-16; Phase B lower bound 1.2408797549e86 FLOPs vs 272B budget; 2^263 first-layer facet cells"},
+      {"realization": "Palm / Horvitz-Thompson facet sampling", "record": "m95_palm_coarea_sampler", "number": "efficiency ratios 39.503 / 39.817 / 556.709; oracle-merged 36.177-111.878"},
+      {"realization": "per-gate reached-prefix-cone Rao-Blackwell", "record": "direction_only_facet_raoblackwell", "number": "equal-cost MSE ratio 556.305, one-sided 95% upper 1126.452; also biased (missing cross-cell pushforward normalization)"},
+      {"realization": "signed facet SMC", "record": "m202_signed_facet_smc_no_go", "number": "no-go"},
+      {"realization": "Laplace-Beltrami / heat-Poisson group control", "record": "compact_group_laplacian_control", "number": "Delta_S f = -(d-1) f + facet jumps, so a.e. AD returns -255f and is not zero-mean; smooth surrogate cannot cover 64,512 nodes under 35.995B"}
+    ],
+    "structural_reason": "Any Stokes/divergence rewrite that is not the pure radial one moves the mean onto the codimension-1 kink set K. K carries ~300 signed O(0.1-1) jump terms per random line that cancel to a ~0.03 mean (S9's 196x cancellation-variance factor alone kills at zero enumeration cost), and exact traversal of K is combinatorially forbidden (M86). Also: a PARTIAL surface identity is not available -- S9's addendum shows first-layer-only does NOT close the identity (layer-1 share 0.17-0.49, sign-varying; 20-net mean [-0.54, 0.45, 1.09])."
+  },
+  "stokes_plus_fourier_loop": {
+    "mechanism": "Represent ReLU by a frequency-domain/contour representation and close the sphere-mean as a loop integral over frequency: mean ReLU(Z) = E[Z]/2 + (1/pi) * integral (1 - Re phi_Z(t)) / t^2 dt.",
+    "verdict": "ALREADY-KILLED at theorem level",
+    "records": [
+      {"id": "bounded_characteristic_function_mixture", "finding": "Exact CF inversion satisfies (2/pi) int (1-Re phihat(t))/t^2 dt = mean|Z|, so adding the sample mean gives exactly mean ReLU(Z) -- i.e. the Fourier loop is DIRECT MC WRITTEN IN FOURIER NOTATION, a measure-preserving relabelling with zero variance change. Any finite frequency grid is non-identifying even with moments 0..4 (explicit six-support counterexample agreeing at all frozen frequencies and moments 0..4 whose positive-part means differ by 0.4*sqrt(2))."},
+      {"id": "quadratic_chaos_fourier_resummation", "finding": "Exact Fourier resummation MSE 5.389991258e-5 vs native Q2 Edgeworth 5.388358479e-5, ratio 1.000303 -- killed."},
+      {"id": "s16_residual_norm_decomposition_confirm", "finding": "The odd/even Stokes-style split ReLU(z)=z/2+|z|/2 is BIT-IDENTICAL (dev 0.0 on 8.26M entries/net x3, MSE ratio 1.000000) to the already-promoted antipodal pairing (the 1.91x pillar)."}
+    ]
+  },
+  "untested_survivors": [],
+  "survivor_note": "Zero. Every geometric mechanism reached either the fixed-direction ceiling (gen8_rival_5design_adjudication: Kerdock within 0.0233% of optimal among positive-weight fixed rules, <=6.29% with negative weights; m180_design_strength_g0: all design mutations 1.196-1.488x worse), the kink-set cost wall (S9/M86/M95/direction_only_facet_raoblackwell), the flatness theorem (s6_bloch_design_bragg_spectrum: participation rank 32,266 ~ N, top-100 eigs 0.32% of tr(D^2)), or the three independent blindness results (M191 harmonic +0.83%, S5 kink 0.978-1.007 decile ratio, S15 covariate 1.56%)."
+}

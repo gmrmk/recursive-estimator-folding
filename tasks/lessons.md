@@ -1,0 +1,28 @@
+
+## 2026-08-18: kills are doors with keys, not corpses (owner correction)
+The pattern that prevents the repeat: every time a verdict lands, write BOTH lines in the
+same breath - the kill as stated, AND the premise-change key as a live search coordinate.
+Never summarize a register as "terminal/closed" without re-stating each entry's key; the
+rhetoric of finality steers the next search away from the tissue. Tonight's proof: the
+deg-6 network-axis hypothesis was invisible under "TERMINAL - infeasible" and obvious
+under doors-with-keys (it is the splice of two same-night failures).
+
+## 2026-08-18: when the owner names an artifact, mine THAT artifact (owner correction, repeated ask)
+The owner asked for Codex's DAG multiple times ("use graph engineering and DAG", "use all
+the data Codex and you have gathered"); I mined MY evidence graph as a proxy and absorbed
+his DAG only via session-start briefs. The pattern that prevents the repeat: on any mining/
+analysis request, list the concrete artifacts the words could denote (mine AND every
+collaborator's), state which one I am mining, and mine the named one FIRST. A proxy of the
+artifact is not the artifact.
+
+## 2026-08-19: kills are CONTEXT-INDEXED (owner doctrine, second refinement of doors-not-corpses)
+A kill is final IN THE REGIME IT WAS MEASURED IN - carrier, design family, A_l regime,
+precision, depth, payoff convention are all context axes, and a change on any axis is a
+premise change that can make the "dead" mechanism topical again. Tonight's proof: the
+completion "breakeven" was a Kerdock-regime verdict misread as universal; the deg-4
+control kills were A_4~0 regime verdicts; Puffi-19% vs ely2sh-0.9% was two regimes of
+one law (the A_4 ratio). The pattern that prevents the repeat: every kill record and
+every dead-ID check names its CONTEXT AXES explicitly; sweeps that declare a mechanism
+dead must state the regime qualifier; periodic regime audits re-read the kill field
+whenever a context fact changes (as the carrier discovery just did). Never delete, never
+overgeneralize - index and iterate.

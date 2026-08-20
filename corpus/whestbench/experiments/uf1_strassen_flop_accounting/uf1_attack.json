@@ -1,0 +1,93 @@
+{
+  "attack1_no_free_lunch": {
+    "rows": [
+      {
+        "shape": "(256x64)@(64x64)",
+        "direct_charged": 2080768,
+        "classical_2x2_blocked_charged": 2080768,
+        "ratio": 1.0,
+        "formula_direct": 2080768,
+        "exploit_present": false
+      },
+      {
+        "shape": "(1024x128)@(128x128)",
+        "direct_charged": 33423360,
+        "classical_2x2_blocked_charged": 33423360,
+        "ratio": 1.0,
+        "formula_direct": 33423360,
+        "exploit_present": false
+      },
+      {
+        "shape": "(2048x256)@(256x256)",
+        "direct_charged": 267911168,
+        "classical_2x2_blocked_charged": 267911168,
+        "ratio": 1.0,
+        "formula_direct": 267911168,
+        "exploit_present": false
+      }
+    ],
+    "verdict": "no free lunch: classical 2x2 blocking prices EXACTLY equal to the direct call, so r(d)<1 is attributable to Strassen's 7-vs-8, not to the -m*n discount"
+  },
+  "attack2_depth32_chain": {
+    "rows": 512,
+    "width": 256,
+    "layers": 32,
+    "reference": "float64 classical",
+    "results": {
+      "d0": {
+        "relative_final_error": 1.507809911242194e-06,
+        "gate_mismatches": 2,
+        "gate_total": 4194304,
+        "gate_mismatch_fraction": 4.76837158203125e-07,
+        "passes_rel_gate_2e-5": true,
+        "passes_gate_fraction_2e-4": true,
+        "seconds": 0.01
+      },
+      "d1": {
+        "relative_final_error": 2.594122620662093e-06,
+        "gate_mismatches": 1,
+        "gate_total": 4194304,
+        "gate_mismatch_fraction": 2.384185791015625e-07,
+        "passes_rel_gate_2e-5": true,
+        "passes_gate_fraction_2e-4": true,
+        "seconds": 0.07
+      },
+      "d2": {
+        "relative_final_error": 4.719633553194199e-06,
+        "gate_mismatches": 5,
+        "gate_total": 4194304,
+        "gate_mismatch_fraction": 1.1920928955078125e-06,
+        "passes_rel_gate_2e-5": true,
+        "passes_gate_fraction_2e-4": true,
+        "seconds": 0.1
+      },
+      "d3": {
+        "relative_final_error": 8.849393768160291e-06,
+        "gate_mismatches": 10,
+        "gate_total": 4194304,
+        "gate_mismatch_fraction": 2.384185791015625e-06,
+        "passes_rel_gate_2e-5": true,
+        "passes_gate_fraction_2e-4": true,
+        "seconds": 0.14
+      },
+      "d4": {
+        "relative_final_error": 1.670487023270332e-05,
+        "gate_mismatches": 12,
+        "gate_total": 4194304,
+        "gate_mismatch_fraction": 2.86102294921875e-06,
+        "passes_rel_gate_2e-5": true,
+        "passes_gate_fraction_2e-4": true,
+        "seconds": 0.54
+      },
+      "d5": {
+        "relative_final_error": 3.860324994750777e-05,
+        "gate_mismatches": 26,
+        "gate_total": 4194304,
+        "gate_mismatch_fraction": 6.198883056640625e-06,
+        "passes_rel_gate_2e-5": false,
+        "passes_gate_fraction_2e-4": true,
+        "seconds": 2.8
+      }
+    }
+  }
+}

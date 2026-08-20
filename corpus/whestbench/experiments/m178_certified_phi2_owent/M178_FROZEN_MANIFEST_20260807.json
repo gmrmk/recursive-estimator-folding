@@ -1,0 +1,60 @@
+{
+  "mutation": "m178_certified_phi2_owent",
+  "frozen": "2026-08-07",
+  "predeclaration_commit": "b72a3ffbec2b6c48ec548023df80766812951af6",
+  "branch": "agent/compression-survivor-corpus",
+  "governing_spec": "corpus/whestbench/handoff/FABLE5_ASCII_RESUME_PROMPT_20260807.txt sections 7, 8, 11",
+  "protocol_sha256": "f6a0a569227607eabac7eccf2bb04ecf373d92351f00b36d2e741b8b692859f7",
+  "inputs": {
+    "m177_interface_evidence": {
+      "m177_bivariate_relu_primitive.py": "a725136d6b7caf59550606a0a00a762403322ac7e5cdc17219bda42161c313e7",
+      "test_m177_bivariate_relu_primitive.py": "4f5d807796cc87a205d4e8bd8d6e459a03b0460674131bed04c73c3a7b577fa5",
+      "verify_m177_static.py": "ea770ff8a882fd1e4ec6cca632d237d019318ec76c22de4227877ea3829546c3"
+    },
+    "normalized_domain": "finite binary64 (a,b), |rho| <= 1 - 2^-52; all other strata refused (M177 owns them)"
+  },
+  "random_seed_policy": "none; no random test generator is used; hostile grid is a deterministic closed-form list",
+  "packages": {
+    "python": "3.14.4",
+    "numpy": "2.4.6",
+    "whestbench": "0.14.0",
+    "flopscope": "0.10.0",
+    "mpmath": "1.3.0",
+    "venv": "C:/Users/strid/.venvs/whestbench-frozen-m178 (isolated; pinned competition environment never mutated in place)"
+  },
+  "no_api_condition": "no network, no API, no hosted model at build or test time; references are locally computed mpmath dps=50 internal mathematical constants",
+  "response_free_firewall": "no challenge instance, target, truth, scorer, evaluator internals, leaderboard, public row, model loop, submission, champion artifact, or sealed efficacy/outcome cell is read or written",
+  "scope_exclusions": "no BackgroundArchive producer, no B=8 carrier, no Source211->TangentState conversion, no sampler, no estimator, no score/efficacy/rank/win claim; pass opens only M176 response-free producer work",
+  "predicted_result": "A scale-normalized finite-stratum Phi2/Owen-T evaluator returns value and first-derivative enclosures containing dps=50 references over the declared hostile grid including near-rank SPD points, with a fixed statically bounded inclusive FLOP count and deterministic fail-closed behavior; a numerical-provider component only",
+  "numerical_contract": {
+    "value_enclosure_half_width": "<= 2e-8 absolute (V in [0,1])",
+    "derivative_contract": "|err| <= 2e-7 + 2e-7*|D| for dV/da, dV/db, dV/drho",
+    "tolerance_provenance": "locked M147/M173 campaign tolerances (2e-8 value, 2e-7 tangent)",
+    "op_model": "IEEE binary64 correct rounding for +,-,*,/,sqrt (u=2^-53); numpy exp/arctan faithful within 2 ulp (declared assumption, grid-validated)"
+  },
+  "cost_contract": {
+    "cost_basis": "installed FlopScope 0.10.0 measured table: add/sub/mul/div/sqrt/abs/max/compare=2, where=8, exp/log/arctan=32 per element",
+    "F_M178_ceiling": 20000,
+    "structure": "fixed dispatch tree <= 32 leaves, every leaf a static operation count; erf Taylor exactly 52 terms; Owen-T Gauss-Legendre exactly 20 nodes; no adaptive subdivision, retry, tolerance loop, cache, or data-dependent count",
+    "forbidden": "flopscope.stats.norm.cdf, scipy, math.erf, any opaque or unmetered special function, zero-charging the Phi2/Owen-T work"
+  },
+  "kill_gates": [
+    "1: nonfinite/nondeterministic output, non-PSD acceptance, clipping/ridge/floor, generic zero-face or rank-face JVP without declared feasible path",
+    "2: missing line-by-line value or derivative remainder proof on any claimed SPD chart, any reference outside its claimed enclosure, or elementary-function assumption violated on the grid",
+    "3: input-dependent/adaptive operation count, retry, opaque numerical CDF, unmetered work, or missing inclusive F_M178 accounting",
+    "4: positive scale homogeneity, symmetry, endpoint classification, or near-endpoint-SPD-vs-rank-one distinctness failure",
+    "5: hash/test/manifest failure, resource failure, or any scope violation"
+  ],
+  "deliverables": [
+    "m178_certified_phi2_owent.py",
+    "test_m178_certified_phi2_owent.py",
+    "run_m178_static_audit.py",
+    "verify_m178_static.py",
+    "M178_PREDECLARED_PROTOCOL_20260807.md",
+    "M178_RESULTS_20260807.json",
+    "M178_REPORT_20260807.md",
+    "M178_FROZEN_MANIFEST_20260807.json",
+    "M178_SHA256SUMS_20260807.txt"
+  ],
+  "failure_disposition": "PASS opens only M176 response-free work; FORMAL_NO_GO preserves proven charts and states the first broken link; KILLED_IMPLEMENTATION on any kill gate; no iteration inside M178 (a new specification is M179 only)"
+}

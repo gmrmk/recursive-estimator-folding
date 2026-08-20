@@ -1,0 +1,75 @@
+{
+  "candidate_id": "M158",
+  "date": "2026-08-07",
+  "scope": "source-only generic noncentral trivariate-normal endpoint primitive feasibility audit",
+  "request": {
+    "value_absolute_certificate": 2e-08,
+    "tangent_absolute_certificate": 2e-07,
+    "domain": "all PSD strata under the existing float64 local-provider ABI",
+    "residual_allowance_ops": 2407464960,
+    "coefficient_calls": 3968,
+    "ops_per_coefficient": 606720
+  },
+  "mechanisms_audited": [
+    "Plackett correlation reduction",
+    "Tallis exponential tilt/truncated moments",
+    "Price covariance differentiation",
+    "Owen normal-integral identities",
+    "Genz-style conditional transforms",
+    "interval/rational approximation prospect"
+  ],
+  "decisive_counterexample": {
+    "state": "mean=0, covariance=1024^2 * 11^T",
+    "covariance_rank": 1,
+    "covariance_psd": true,
+    "positive_marginal_variances": true,
+    "coefficient": "C_211 defect = cumulant - tree",
+    "exact_formula": "g^4 * ((3*pi^2-4*pi-6)/(4*pi^2) - 12*(pi-1)^3/pi^4)",
+    "nearest_float64_error": "0.00002758595881562476133207633379",
+    "float64_ulp": "0.0001220703125",
+    "requested_value_tolerance": "0.00000002",
+    "conclusion": "no binary64 value meets the requested absolute tolerance"
+  },
+  "consequences": {
+    "value_certificate_possible": false,
+    "combined_value_and_tangent_provider_possible": false,
+    "additional_flops_or_calls_can_repair": false,
+    "m149_fixed_outer_rule_used": false,
+    "higher_fixed_order_used": false,
+    "ridge_or_clip_used": false,
+    "retry_used": false
+  },
+  "verification": {
+    "red_test_observed_before_implementation": "ModuleNotFoundError for M158 falsifier",
+    "green_test_command": "work/headroom-recursion/.venv/Scripts/python.exe -m unittest work/scorefloor_generation/m158_generic_orthant_falsifier/test_m158_generic_orthant_falsifier.py -v",
+    "tests": 4,
+    "tests_passed": 4,
+    "py_compile": "passed",
+    "runtime_static_scan": {
+      "forbidden_runtime_identifiers": [],
+      "uses_m149": false,
+      "uses_outer_conditional_rule": false
+    }
+  },
+  "disposition": "KILL_LITERAL_ALL_PSD_FLOAT64_ABSOLUTE_CERTIFICATE",
+  "preserved": [
+    "exact common-factor C_211 defect formula",
+    "positive-gauge float64 spacing counterexample",
+    "exact 606720-operation-per-coefficient allowance arithmetic",
+    "conditional future path requiring scale-normalized domain/output authority"
+  ],
+  "firewall": {
+    "response_cells": false,
+    "network_truth": false,
+    "efficacy_oracle": false,
+    "leaderboard": false,
+    "scorer": false,
+    "submission": false,
+    "champion_change": false
+  },
+  "artifact_sha256": {
+    "m158_generic_orthant_falsifier.py": "4283e3f72b43fb8840d113ee6e7348d496edacd6981c255815b788f81ea3e5d4",
+    "test_m158_generic_orthant_falsifier.py": "159d8bdec6969addce208ed88b10871ef68b9aa9ee6e33825cd44a061a220b1f",
+    "M158_GENERIC_ORTHANT_REPORT_20260807.md": "b4703ca96224469ef18cb8672d4ce935f80394b6d4353b0f390599bb0f08cb18"
+  }
+}

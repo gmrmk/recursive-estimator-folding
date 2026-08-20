@@ -1,0 +1,55 @@
+{
+  "candidate": "M205_rankone_complete_physical_owner",
+  "date": "2026-08-09",
+  "scope": "generated-only response-free exact algebra and static accounting",
+  "status": "PHYSICAL_OWNER_COMPONENT_PASS_BLOCKED_PHYSICAL_COLLISION_PROVIDER_AND_NATIVE_COST",
+  "frozen_loading": {
+    "rule": "u_i=sqrt(V_ii)/sqrt(m) on m positive diagonal coordinates; u=0 when m=0",
+    "rank": 1,
+    "nodes": 49,
+    "retuning": false
+  },
+  "tests": {
+    "command": "python -B -m unittest discover -s corpus/whestbench/experiments/m205_rankone_complete_physical_owner -p test_m205_*.py -v",
+    "passed": 6,
+    "failed": 0,
+    "widths": [3, 4, 5],
+    "fixtures": "fixed NumPy Philox generated algebra fixtures",
+    "distinct_delta_tilde_max_abs": 2.6645352591003757e-15,
+    "compiled_aaaa_aaab_aabb_max_abs": 6.821210263296962e-13,
+    "physical_owner_source_max_abs": 5.684341886080802e-14,
+    "complete_owner_source_reconstruction_max_abs": 5.258016244624741e-13
+  },
+  "physical_owner_coverage": {
+    "K4": "T[i,i,i]=K4[i]/6",
+    "K31": "T[i,i,j]=T[i,j,i]=K31[i,j]/3; directed K31 preserved",
+    "K22": "T[i,j,j]=T[j,i,i]=K22[i,j]/2; symmetric K22 required",
+    "C211": "T[i,j,k]=Delta211[i,j,k] for all distinct labels, singleton-pair symmetric",
+    "collision_target": "physical and nonzero; never M156-zeroed"
+  },
+  "invariances": [
+    "hidden source-label permutation",
+    "positive ReLU gauge: W_i -> W_i/g_i, mu_i -> g_i mu_i, V_ij -> g_i g_j V_ij",
+    "zero mean and all-zero covariance totality"
+  ],
+  "static_cost": {
+    "one_f64_square_raw_31_layers": 2076311552,
+    "one_f64_square_protected": 2595389440,
+    "strict_composed_headroom": 1986871472,
+    "m151_booking": "unexecuted source-emission allowance only; no arithmetic-identical M179/M125b call has been shown",
+    "native_replacement_credit": 0
+  },
+  "open_blockers": [
+    "No layer-bound native provider for physical K4/K31/K22 coefficients.",
+    "No complete-domain proposal, collision residual event accounting, or native occurrence trace.",
+    "No integrated trace for M198 conversion, terminal path, allocations, copies, or residual wall time.",
+    "M179/M151 overlap is not a reusable arithmetic call absent same operands, dtype, result, lifetime, and billed-call evidence."
+  ],
+  "not_claimed": [
+    "source variance",
+    "response behavior",
+    "MSE or leaderboard score",
+    "cost feasibility",
+    "contest-instance evaluation"
+  ]
+}

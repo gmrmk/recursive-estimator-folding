@@ -1,0 +1,115 @@
+{
+ "tag": "ref_hp2",
+ "group": 1,
+ "block_rows": 4096,
+ "dispatch_plan_per_layer": [
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   4096
+  ],
+  [
+   1,
+   3072
+  ]
+ ],
+ "dispatches_per_layer": 16,
+ "full_prediction_matmul_calls": 512,
+ "billed_flops": 189738221568,
+ "expected_bill_frozen": 189738221568,
+ "independently_expanded_bill": 189738221568,
+ "bill_matches_frozen": true,
+ "bill_matches_independent_expansion": true,
+ "hook_billed_flops": 5912804352,
+ "hook_core_calls_b4096": 16,
+ "wall_limit_used_s": 300.0,
+ "process_priority": "NORMAL",
+ "setup_s": 0.3463325999910012,
+ "predict_wall_s": 35.09745960001601,
+ "residual_s": 0.857333101099357,
+ "flopscope_backend_time_s": 29.984067302633775,
+ "flopscope_overhead_time_s": 4.2560478962550405,
+ "wall_time_s": 35.09744829998817,
+ "workspace_bytes": 67809280,
+ "workspace_mib": 64.66796875,
+ "peak_working_set_mib_after_prediction": 188.75,
+ "peak_working_set_mib_at_exit": 204.51953125,
+ "finite": true,
+ "failure": null,
+ "state_sha256": "ed59595dac93a6e20e362266306530c48045798126c6cec0a027b382ab5b1e70",
+ "state_dump": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\gm_m116_streams\\state_ref_hp2.npy",
+ "gates": {
+  "residual_le_0.170": false,
+  "peak_le_464_mib": true,
+  "wall_lt_20": false,
+  "bill_exact": true,
+  "finite": true
+ },
+ "runtime_identity": {
+  "python": "3.14.4",
+  "executable": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Scripts\\python.exe",
+  "numpy": "2.4.6",
+  "flopscope": "0.10.0+np2.4.6",
+  "threads": {
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "NUMEXPR_NUM_THREADS": "1"
+  }
+ }
+}

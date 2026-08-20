@@ -1,0 +1,32 @@
+{
+  "candidate": "M209 layer-batched depth-3 recursive Gram control compiler",
+  "date": "2026-08-09",
+  "response_free": true,
+  "changed_mechanism": "replace M205 dense symmetric Gram with fixed depth-3 upper-block recursion batched across 31 layers",
+  "width": 256,
+  "layers": 31,
+  "dtype": "float64",
+  "depth": 3,
+  "predicted_matmul_calls": 15,
+  "predicted_matmul_bill": 1167925248,
+  "predicted_mirror_copy_bill": 1777664,
+  "strict_no_replacement_headroom": 1986871472,
+  "algebra_integer_widths": [8, 16],
+  "algebra_float_widths": [8, 16, 32],
+  "generated_native_seeds": [209700001, 209700002, 209700003, 209700004, 209700005],
+  "forbidden_inputs": [
+    "challenge weights",
+    "truth",
+    "scorer",
+    "leaderboard",
+    "submission",
+    "cached response or efficacy records"
+  ],
+  "no_credit": [
+    "physical Source211 coefficient provider",
+    "M198 conversion or terminal response cost",
+    "source variance",
+    "MSE",
+    "winner or champion"
+  ]
+}

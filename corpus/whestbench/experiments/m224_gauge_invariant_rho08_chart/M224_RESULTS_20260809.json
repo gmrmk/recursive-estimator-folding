@@ -1,0 +1,102 @@
+{
+  "mutation": "m224_gauge_invariant_rho08_chart",
+  "generation": 9,
+  "status": "VALIDATED_NUMERICAL_COMPONENT",
+  "artifact_hashes_sha256": {
+    "m224_gauge_invariant_rho08_chart.py": "6ABA2D0AB618FF5D678977CC07FC89962C09092B537AAFFC282E069C10DFDA7B",
+    "test_m224_gauge_invariant_rho08_chart.py": "25C44CF6FDBF00D1AA9D35722D10FEC4A26785CE89885AD58844580EBC403D26",
+    "M224_FROZEN_MANIFEST_20260809.json": "D21F68145E4FCEA8864B6AABB4216DB76CA89238D05417B228DBB45ABC3DE5F7"
+  },
+  "one_changed_mechanism": "gauge-invariant normalized chart with abs(rho)<=0.08",
+  "estimator_algebra_changed": false,
+  "plackett_proof": {
+    "panels": 32,
+    "abs_rho_max": 0.08,
+    "abs_alpha_max": 0.8,
+    "log_derivative_bounds": [
+      0.8366589652033887,
+      2.6631972313064765,
+      5.850565827883243,
+      29.69789486724254
+    ],
+    "phi2_bound": 0.15966669664112393,
+    "fourth_derivative_bound": 13.129530458086979,
+    "simpson_remainder_bound": 2.2794323711956567e-13,
+    "phi2_radius": 2.5e-12,
+    "pass": true
+  },
+  "numerical_gate": {
+    "pass": true,
+    "total_frozen_and_fresh_cell_events": 25300,
+    "max_radius_ratio": 1e-8,
+    "original_census": {
+      "event_count": 2730,
+      "fallback_count": 0,
+      "max_midpoint_error": 4.163336342344337e-15,
+      "parent_interval_pass": true,
+      "returned_interval_pass": true,
+      "chart_extrema": {
+        "abs_rho": 0.03699384457006432,
+        "abs_alpha": 0.7185893306621687,
+        "abs_t": 0.7187636279240196,
+        "abs_repeated_standardized": 7.781159666945674,
+        "scale_ratio_min": 0.9993147417031886,
+        "scale_ratio_max": 0.9999999647653859
+      }
+    },
+    "fresh_census": {
+      "event_count": 2730,
+      "state_seeds": [224700003, 224700004, 224700005, 224700006, 224700007],
+      "fallback_count": 0,
+      "max_midpoint_error": 7.077671781985373e-15,
+      "parent_interval_pass": true,
+      "returned_interval_pass": true,
+      "chart_extrema": {
+        "abs_rho": 0.0398054123553385,
+        "abs_alpha": 0.6734986250972753,
+        "abs_t": 0.6744997580142549,
+        "abs_repeated_standardized": 7.773495715552703,
+        "scale_ratio_min": 0.9992203322643357,
+        "scale_ratio_max": 0.9999999980787273
+      }
+    },
+    "m221_native_cells": {
+      "event_count": 19840,
+      "outer_seeds": [221720001, 221720002, 221720003, 221720004, 221720005],
+      "fallback_count": 0,
+      "per_seed_fallback_count": [0, 0, 0, 0, 0],
+      "max_abs_rho": 0.07885550264503906,
+      "pass": true
+    },
+    "invariance": {
+      "probe_count": 90,
+      "baseline_fallback_count": 0,
+      "gauge_fallback_count": 0,
+      "permutation_fallback_count": 0,
+      "chart_membership_mismatch_count": 0,
+      "max_normalized_coordinate_error": 1.665341651575243e-16,
+      "max_gauge_scaled_error": 3.3113030210003974e-16,
+      "max_permutation_scaled_error": 4.39478426064967e-17,
+      "pass": true
+    },
+    "high_precision": {
+      "probe_count": 32,
+      "fallback_count": 0,
+      "max_oracle_gap": 0.0,
+      "max_midpoint_error": 3.3410774147313305e-15,
+      "min_radius": 1.0000468085611192e-8,
+      "min_radius_margin": 1.0000468084506661e-8,
+      "pass": true
+    }
+  },
+  "tests": {
+    "red_phase": "FileNotFoundError before implementation",
+    "green_phase": "7/7 passed",
+    "runtime_seconds": 6.481
+  },
+  "native_speed_gate_run": false,
+  "native_speed_status": "INHERITED_FAILED_FROM_M221",
+  "variance_gate_run": false,
+  "forbidden_inputs_used": [],
+  "disposition": "Promote the gauge-invariant rho-.08 numerical chart as a validated component only. The full estimator remains blocked by M221's inherited native speed failure; call optimization and variance require separate predeclared children."
+}

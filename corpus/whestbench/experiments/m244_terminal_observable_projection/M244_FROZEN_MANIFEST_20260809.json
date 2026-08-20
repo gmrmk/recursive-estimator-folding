@@ -1,0 +1,100 @@
+{
+  "candidate": "m244_terminal_observable_projection",
+  "date": "2026-08-09",
+  "execution_authorized": false,
+  "initial_status": "PREDECLARED_G0A_COMPONENT_ONLY",
+  "mutation_count": 1,
+  "sole_mutation": "replace the corrected M200 full terminal covariance/Jacobian/tangent stage by exact marginal quadratic-form evaluation of the final baseline and first-order mean response",
+  "bias_class": "exact on c>0 and on c=0,a!=0; ABI parity only under the inherited M179 zero-subgradient convention at a=c=0",
+  "forbidden_credit": [
+    "M151",
+    "M172",
+    "M198",
+    "M243",
+    "legacy_background_replacement_7.736750160B",
+    "efficacy",
+    "source_variance",
+    "response",
+    "truth",
+    "scorer",
+    "challenge_weights",
+    "submission",
+    "leaderboard"
+  ],
+  "generic_fixtures": {
+    "widths": [1, 2, 3, 5, 7],
+    "seeds": {
+      "1": [244001000, 244001001, 244001002, 244001003],
+      "2": [244002000, 244002001, 244002002, 244002003],
+      "3": [244003000, 244003001, 244003002, 244003003],
+      "5": [244005000, 244005001, 244005002, 244005003],
+      "7": [244007000, 244007001, 244007002, 244007003]
+    },
+    "rng": "numpy.random.Generator(numpy.random.Philox(seed))",
+    "retry_or_redraw": false
+  },
+  "ill_conditioned_fixtures": {
+    "widths": [2, 5, 7],
+    "seeds": [244102002, 244105005, 244107007],
+    "full_reference_max_abs_rho": 0.90
+  },
+  "target": {
+    "width": 256,
+    "dtype": "float64",
+    "runtime": "work/whest-v014",
+    "flopscope_distribution": "0.10.0",
+    "flopscope_runtime": "0.10.0+np2.4.6",
+    "native_seeds": [244256001, 244256002, 244256003, 244256004, 244256005],
+    "arithmetic_cap": 150000000,
+    "inclusive_cap": 500000000,
+    "incremental_rss_cap_bytes": 16777216,
+    "warmups": 10,
+    "timed_iterations": 101,
+    "wall_statistic": "higher-method p95"
+  },
+  "dense_floor": {
+    "square_gemms": 2,
+    "row_gemms": 2,
+    "multiply_calls": 2,
+    "axis0_sum_calls": 2,
+    "billed_flops": 135002112
+  },
+  "parity": {
+    "absolute_tolerance": 5e-12,
+    "relative_tolerance": 5e-11,
+    "reference_dps": 100,
+    "bitwise_required": false,
+    "zero_kink_bitwise_abi_only": true
+  },
+  "parent_sha256": {
+    "corpus/whestbench/experiments/m125_source_batched_forward_tangent/m125_forward_tangent.py": "fbc9fe32357801b22f0313d4043022e81e2764ff3bf4be94f0dfe3ddb3d1ed32",
+    "corpus/whestbench/experiments/m125_source_batched_forward_tangent/PRETHEORY.md": "5a6b5b96c74093b5fd90bdd475e86d5aaac68df4770ca807fae41bce33b7ad9c",
+    "corpus/whestbench/experiments/m178_certified_phi2_owent/m178_certified_phi2_owent.py": "fa3614a22c2250f69f4d891834cc1e7ca6bd8874d67575b87c7d3fa8598f1c5c",
+    "corpus/whestbench/experiments/m179_background_archive_producer/m179_jacobian_archive.py": "29da770375f6cb15cf70b0f797b09d4775652178ff86ff5b44ccdaaefd3e01de",
+    "corpus/whestbench/experiments/m179_background_archive_producer/m179_background_producer.py": "a74a6b0b2807c2b1bc0e38777ba542e3fda196d45f7f436ce12e44fd5cfa4012",
+    "corpus/whestbench/experiments/m179_background_archive_producer/m179_relu_pair_assembly.py": "5f229e2993bf82f014735d3bab7f72091068e1acb6d513a4209b089a01417a00",
+    "corpus/whestbench/experiments/m179_background_archive_producer/m179_metering.py": "ab5db34dd5b3eb4d62b7855515e7a19b8134a99ba3261f82cb93ed1650bbca07",
+    "corpus/whestbench/experiments/m179_background_archive_producer/M179_FROZEN_MANIFEST_20260807.json": "b1eed31f44be55ac3b1d2ce5882346537aa96d2fe4edabbb9467aff971153eb0",
+    "corpus/whestbench/experiments/m199_composed_cost_reconciliation/m199_cost_ledger.json": "b853e494f2f507dede144c58149db7d0c05424745eb21cc3ad7f23a4d551f363",
+    "corpus/whestbench/experiments/m199_composed_cost_reconciliation/M199_RESULTS_20260809.md": "9030ddb1e41c07ecdbae442df436268250c9500909b0195a30f65afcb7f1963e",
+    "corpus/whestbench/experiments/m200_streaming_overlap_fixture/m200_streaming_overlap.py": "b26207625f0a2b7b72a46e8694ef53030f1e887b5e06b35efd897fd410fadfee",
+    "corpus/whestbench/experiments/m200_streaming_overlap_fixture/M200_FROZEN_INDEX_ERRATUM_20260809.md": "c87677935c45305c4c2085eb30d66b133f60bf73eb2414b70c062c5d8410ebfd",
+    "corpus/whestbench/experiments/m200_streaming_overlap_fixture/M200_FROZEN_MANIFEST_20260809.json": "a39773814c57ed7a9d52e778ebea218023e5141643273dcc45e21b14a19a1e7d",
+    "corpus/whestbench/experiments/m206_m204_native_replacement_audit/M206_POSTHOC_ADVERSARIAL_AUDIT_20260809.md": "11c9bc785a57e77852358bfa367928198fb50e84b731e84e5fe526f675893ca7",
+    "corpus/whestbench/experiments/m243_event_local_q4_source_premise/M243_DISPOSITION_20260809.md": "238e7bfb70a86ca8c8a66a1a737d3376d4f4efa0a12e15d484acbcb442af3667"
+  },
+  "runtime_sha256": {
+    "work/whest-v014/Lib/site-packages/flopscope/_flops.py": "bbdad83348b7ce7b63c9d8da66512c40c69e055c653d24687e62132bd34220c2",
+    "work/whest-v014/Lib/site-packages/flopscope/numpy/__init__.py": "33edacfc6ca01866d4f558e3a43f8fadfd6a2c0efdbc4e4712acc1d839ad4e2f",
+    "work/whest-v014/Lib/site-packages/flopscope/_dtype_billing.py": "a73a31f495010b462b2053ef4a9881376fcde1d29a2cd488c8adcf9719d46572",
+    "work/whest-v014/Lib/site-packages/flopscope/_pointwise.py": "568414bbdb5a5eccb4091c074dde1efd47c823b53e7b3a9253b997617a0a43f9"
+  },
+  "execution_order": [
+    "commit predeclaration manifest and checksum receipt",
+    "independent read-only preimplementation PASS",
+    "missing-module RED",
+    "generated algebra and poisoned-topology GREEN",
+    "target FlopScope and native resource gate",
+    "stop without integrated M199 credit"
+  ]
+}

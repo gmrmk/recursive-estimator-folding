@@ -1,0 +1,154 @@
+{
+  "protocol": "M145/M148-style independent randomized-Haar cross-reference risk screen",
+  "status": "FROZEN_ZERO_OUTCOME_RECOMMENDED_NEXT_DESCENDANT_AWAITING_INDEPENDENT_AUDIT_AND_IMPLEMENTATION",
+  "date": "2026-08-07",
+  "execution_authorized": false,
+  "outcome_opened": false,
+  "efficacy_run_count": 0,
+  "submission_authorized": false,
+  "candidate_mutation_after_execution": false,
+  "separation_from_existing_protocol": {
+    "rule": "This is a new protocol. It neither replaces nor edits the sealed two-stream 1e9-path protocol.",
+    "sealed_protocol": "M145_GENERATED_EFFICACY_PROTOCOL_20260807.json",
+    "sealed_protocol_sha256": "68ea6625322df0870fc5c19f4667597eb883c667d834cdc443f0a924a8977a41",
+    "sealed_seed_table_sha256": "f631c62a30326817148b4f525e8801b8f927b89a745bfb833fcb7a8c83c73f97"
+  },
+  "estimand": {
+    "dimension": 256,
+    "network_law": "the same 24 generated width-256, depth-32, bias-free ReLU networks and network/setup seeds frozen by the sealed protocol",
+    "per_output_target": "I_j(W) = E_x[f_j(x;W)] for x distributed N(0,I_256)",
+    "exact_radialization": "I_j(W) = rho256 * E_u[f_j(u;W)], u uniform on S^255, by positive one-homogeneity",
+    "rho256": 15.984382666608527,
+    "rho256_definition": "sqrt(2)*Gamma(128.5)/Gamma(128)",
+    "risk": "MSE(A|W) = ||A-I(W)||_2^2/256"
+  },
+  "reference_rule": {
+    "name": "independently Haar-rotated 126-basis antipodal Kerdock reference",
+    "basis_selection": "the 126 Hadamard/Kerdock phase bases with phase indices 2 through 127; no coordinate basis",
+    "line_count": 32256,
+    "antipodal_path_count": 64512,
+    "point_law": "for every fixed unit design line d, Qd and -Qd are evaluated, where Q is a fresh Haar draw on O(256); each point is marginally uniform on S^255 although points within one reference are deliberately dependent",
+    "haar_construction": "draw a 256x256 float64 standard-normal matrix, compute QR, and multiply each Q column by sign(diag(R)), taking sign(0)=+1; do not force determinant +1",
+    "estimate": "R_j = rho256/(2*32256) * sum over design lines d of [f_j(Qd;W)+f_j(-Qd;W)]",
+    "forward": "direct, unpruned, unfurled evaluation of all 32 affine/ReLU layers; no candidate fold, rescue, tangent, analytic closure, learned proposal, or shared estimator state",
+    "accumulation": "evaluate float64 unit directions with the frozen float32 weights interpreted as exact input constants; accumulate each 256-vector by deterministic pairwise float64 reduction",
+    "unbiasedness_scope": "The randomized cubature identity is exact for the mathematical fixed network. The implementation must report float64 numerical diagnostics separately; floating-point roundoff is not asserted to be stochastic or exactly unbiased.",
+    "independence": "R1 and R2 use distinct rotations and RNG instances and are independent of each other, the network generator, the candidate/comparator setup RNGs, and estimator execution/timing. The same realized R1,R2 pair is reused for A and B."
+  },
+  "reference_assets": {
+    "directory": "../design8_reconstruction",
+    "kerdock_phases.npz": "a5e747f95423f5a45972d1a0735f223044a8a998407eb0c6db51aefdf47f4906",
+    "design8.py": "e151f3b44b2f10f4ac9fde822ad2091f28172cc174e9c510da7930e384652c83",
+    "build_asset.py": "70e8b2cb9e1bd46fce6d411832349215c5cc585563bc0694332cc301fd84337a",
+    "estimator.py": "99bff8d044b291206ee7b1ff660ef6c721f6b714f10df79dedc88402f4641f9b",
+    "estimator_pure_dense.py": "5d90ddfbd2093fe20385e214dc62bed0599aa1f1c23d409b311d21e2c67015b5",
+    "asset_use_limit": "The listed source is provenance only. A new standalone direct-reference evaluator must be implemented and independently audited before execution; candidate estimator code may not be reused in the reference path."
+  },
+  "reference_replicates": {
+    "pairs_per_network": 8,
+    "reference_vectors_per_network": 16,
+    "canonical_seed_table_encoding": "UTF-8 lines 'network_index|pair_index|r1_rotation_seed|r2_rotation_seed\\n' in lexicographic network_index then pair_index order, including the final newline",
+    "seed_formula": {
+      "network_index": "i in [0,23]",
+      "pair_index": "k in [0,7]",
+      "r1_rotation_seed": "145500000 + 100*i + k",
+      "r2_rotation_seed": "145600000 + 100*i + k"
+    },
+    "seed_table_sha256": "908782ec1f4bd5ffa825d0320b372e6d68ecec4caf59f954aeefd0962d65b1cb",
+    "seed_table_byte_count": 4720,
+    "rng": "a fresh NumPy PCG64 generator per recorded seed; no generator or QR factor may be reused across references",
+    "theory_vs_prng": "The proof treats the rotations as independent Haar variables. Seed-domain separation is the frozen deterministic implementation of that sampling assumption, not a cryptographic proof of independence."
+  },
+  "cross_risk_statistics": {
+    "per_pair_candidate": "risk_A[i,k] = dot(A_i-R1_i_k, A_i-R2_i_k)/256",
+    "per_pair_comparator": "risk_B[i,k] = dot(B_i-R1_i_k, B_i-R2_i_k)/256",
+    "per_pair_paired_difference": "diff[i,k] = risk_A[i,k]-risk_B[i,k] using exactly the same R1_i_k,R2_i_k",
+    "network_aggregate": "arithmetic mean over all eight pair replicates; retain every replicate",
+    "adjusted_difference": "mult_A[i]*risk_A[i,k] - mult_B[i]*risk_B[i,k], where each multiplier is measured independently of the references and frozen before reference generation",
+    "algebraic_cancellation": "diff = (||A||^2-||B||^2-(A-B) dot (R1+R2))/256; the R1 dot R2 term cancels exactly",
+    "finite_sample_sign": "risk_A, risk_B, their network means, and bootstrap draws may be negative. Never clip, truncate, absolute-value, winsorize, replace, or discard them.",
+    "nonfinite_rule": "any nonfinite prediction, reference, dot product, multiplier, or bootstrap statistic invalidates the complete screen"
+  },
+  "conditional_unbiasedness_proof": {
+    "conditioning": "Fix W and A, and condition on any candidate randomness and multiplier values. Let delta=A-I, R1=I+e1, R2=I+e2.",
+    "assumptions": "E[e1|W]=E[e2|W]=0; e1 and e2 are conditionally independent; both are independent of A and B given W.",
+    "expansion": "dot(A-R1,A-R2)=||delta||^2-delta dot (e1+e2)+e1 dot e2.",
+    "result": "E[dot(A-R1,A-R2)/256 | W,A] = ||A-I||^2/256 because both linear terms have zero mean and E[e1 dot e2|W]=0.",
+    "paired_result": "Applying the identity to A and B with the same references gives E[diff|W,A,B]=MSE(A|W)-MSE(B|W). Multiplication by reference-independent frozen cost multipliers preserves unbiasedness for the adjusted-risk difference.",
+    "random_estimator_extension": "If A or B is randomized, take the outer expectation after conditioning on its realized output; reference independence is mandatory."
+  },
+  "variance_identity": {
+    "absolute": "For conditional reference covariances Sigma1,Sigma2, Var(risk_A|W,A) = [delta^T(Sigma1+Sigma2)delta + tr(Sigma1 Sigma2)]/256^2 when the two reference errors are independent.",
+    "paired_difference": "For Delta=A-B, Var(diff|W,A,B) = Delta^T(Sigma1+Sigma2)Delta/256^2; the tr(Sigma1 Sigma2) cross-product variance is removed by shared references.",
+    "interpretation": "The paired difference is the primary inferential statistic. Absolute cross-risk is retained because it is unbiased but can be noisier and negative."
+  },
+  "implementation_gates": {
+    "design": [
+      "asset SHA-256 values match before any reference is generated",
+      "all 126 bases have 256 unit rows and the frozen phase-index selection",
+      "antipodal closure contains exactly 64512 evaluations per reference",
+      "float64 QR orthogonality and row-norm defects are recorded; any defect above 2e-12 invalidates the screen"
+    ],
+    "independence": [
+      "all 384 rotation seeds are unique and match the canonical seed-table hash",
+      "reference seeds are disjoint from network/setup/truth/bootstrap seeds",
+      "R1 and R2 rotations and buffers are generated in separate processes or separately initialized RNG instances",
+      "neither estimator can access a reference vector, seed, QR factor, or partial reduction before its prediction is hash-sealed"
+    ],
+    "numerics": [
+      "direct float64 forward only, pairwise float64 accumulation, and no fast-math contraction whose behavior is unrecorded",
+      "for the first network and first pair, a second independently coded direct evaluator must agree within 2e-11 relative RMS and 2e-10 maximum absolute output",
+      "reference outputs, code/runtime versions, seeds, counts, and SHA-256 values are retained"
+    ],
+    "estimator": [
+      "candidate and comparator retain the same frozen network/setup coupling, replay, memory, cost, and failure gates as the sealed protocol",
+      "any post-outcome parameter change, network filtering, seed substitution, retry replacement, or hidden pilot invalidates the screen"
+    ]
+  },
+  "reference_diagnostics": {
+    "retain": "all R1 and R2 256-vectors and all eight risk_A, risk_B, raw diff, and adjusted diff values for every network",
+    "replicate_checks": [
+      "per-network R1-R2 RMS and maximum component difference for every pair",
+      "between-pair variance and covariance of absolute and paired risk statistics",
+      "leave-one-pair-out network means for k=0 through 7",
+      "counts and locations of negative finite absolute-risk estimates",
+      "R1/R2 output hashes, rotation hashes, design hash, and seed/hash independence checks"
+    ],
+    "no_posthoc_response": "large variance or negative estimates may make the result ambiguous, but cannot justify adding replicates, changing the rule, clipping, or rerunning this frozen cell for promotion"
+  },
+  "joint_hierarchical_bootstrap": {
+    "draws": 100000,
+    "rng": "NumPy PCG64",
+    "seed": 145630001,
+    "network_resampling": "sample 24 network indices with replacement in every draw",
+    "reference_resampling": "within each selected network occurrence, sample eight of its pair indices with replacement and average them",
+    "coupling": "use the identical sampled network occurrences and pair indices for candidate, comparator, raw difference, adjusted difference, and all ratios",
+    "reported_percentiles": [10, 50, 90],
+    "primary": "bootstrap the ensemble mean paired adjusted-risk difference",
+    "ratio_rule": "ratios are formed only from aggregate bootstrap mean risks, never from per-network or per-pair ratios. If any comparator aggregate denominator is nonpositive, ratio-based promotion is ambiguous and fails; values are not clipped.",
+    "absolute_rule": "bootstrap the candidate ensemble mean adjusted cross-risk using the same hierarchical draws"
+  },
+  "predeclared_decision": {
+    "promote_only_if_all": [
+      "mean candidate/comparator adjusted cross-risk ratio <= 0.80",
+      "joint-bootstrap adjusted-risk ratio upper-90 < 0.90",
+      "every joint-bootstrap comparator adjusted-risk denominator is positive",
+      "candidate adjusted cross-risk upper-90 < 2.05e-7 sealed M71 proxy",
+      "paired adjusted-risk-difference upper-90 < 0",
+      "zero failures and every asset, direct-forward, independence, replay, numerical, resource, and coupling gate passes"
+    ],
+    "otherwise": "retain M145 as a failed or ambiguous recursive component; do not call it effective, winning, ranked, submitted, or promoted, and do not tune this frozen cell from its outcomes"
+  },
+  "compute_feasibility": {
+    "dense_matmul_bill_per_reference": 270054457344,
+    "activation_element_ops_per_reference": 528482304,
+    "dense_plus_activation_lower_bound_per_reference": 270582939648,
+    "references_per_network": 16,
+    "dense_plus_activation_lower_bound_per_network": 4329327034368,
+    "dense_plus_activation_lower_bound_all_24_networks": 103903848824832,
+    "memory_plan": "stream one 256-line basis and its antipodes at a time through two float64 activation buffers; never materialize 64512x256x32 activations",
+    "scope": "reference generation is offline validation compute, not part of either submitted estimator and not charged to its contest score; wall time and storage must be dry-run audited before authorization",
+    "comparison": "This is about 24.8 million full-network reference paths across the campaign, far below the sealed 48 billion truth paths, but it remains a substantial approximately 103.9-teraflop dense campaign before overhead."
+  },
+  "firewall": "No reference evaluator has been implemented or run; no network output, reference output, truth, MSE, risk, adjusted score, rank, leaderboard row, submission, designation, champion replacement, or efficacy outcome is authorized or present."
+}

@@ -1,0 +1,121 @@
+{
+  "aggregate": {
+    "hostile_fail_count": 2,
+    "hostile_overage_max": 9130082.47714591,
+    "hostile_pass_count": 3,
+    "hostile_projection_max": 1996001554.477146,
+    "peak_rss_mib": 167.3515625,
+    "persistent_mib": 93.36328125,
+    "residual_max_ms": 1.5386998129542917,
+    "residual_mean_ms": 1.38899993035011,
+    "residual_p99_linear_ms": 1.538231826853007
+  },
+  "candidate": "M209 layer-batched depth-3 recursive Gram control compiler",
+  "disposition": {
+    "next_mutation": "fuse same-level tree nodes into one batch call under a separately frozen candidate; do not rewrite M209",
+    "no_credit": [
+      "physical Source211 provider",
+      "M198 or terminal cost",
+      "source variance or MSE",
+      "winner or champion"
+    ],
+    "preserved": "exact symmetric recursive Gram algebra, source parity, 1.226651648B inclusive bill, 15-call layer batch, layer binding, and 760.219824M arithmetic margin",
+    "schedule": "killed without depth retuning because two of five hostile five-times residual projections exceed the strict component headroom"
+  },
+  "firewall": "generated matrices only; no response, truth, scorer, challenge weight, leaderboard, submission, or champion access",
+  "gates": {
+    "constant_exact_inclusive_bill": true,
+    "every_hostile_five_x_projection_fits": false,
+    "exact_matmul_bill": true,
+    "exact_matmul_calls": true,
+    "finite_no_failures": true,
+    "five_exact_frozen_seeds": true,
+    "inclusive_bill_below_headroom": true,
+    "no_rank3_coefficients": true,
+    "no_reshape": true,
+    "rss_below_512_mib": true
+  },
+  "records": [
+    {
+      "billed_flops": 1226651648,
+      "failure": null,
+      "finite": true,
+      "hostile_five_x_effective_component": 1890101635.769127,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 15,
+      "no_reshape": true,
+      "peak_working_set_mib": 167.3515625,
+      "persistent_mib": 93.36328125,
+      "private_mib": 591.12890625,
+      "rank3_coefficient_arrays": 0,
+      "remaining_after_compiler": 760219824,
+      "residual_s": 0.0013268999755382538,
+      "seed": 209700001
+    },
+    {
+      "billed_flops": 1226651648,
+      "failure": null,
+      "finite": true,
+      "hostile_five_x_effective_component": 1996001554.477146,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 15,
+      "no_reshape": true,
+      "peak_working_set_mib": 167.23046875,
+      "persistent_mib": 93.36328125,
+      "private_mib": 591.0859375,
+      "rank3_coefficient_arrays": 0,
+      "remaining_after_compiler": 760219824,
+      "residual_s": 0.0015386998129542917,
+      "seed": 209700002
+    },
+    {
+      "billed_flops": 1226651648,
+      "failure": null,
+      "finite": true,
+      "hostile_five_x_effective_component": 1990151728.2110882,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 15,
+      "no_reshape": true,
+      "peak_working_set_mib": 167.171875,
+      "persistent_mib": 93.36328125,
+      "private_mib": 591.0546875,
+      "rank3_coefficient_arrays": 0,
+      "remaining_after_compiler": 760219824,
+      "residual_s": 0.0015270001604221761,
+      "seed": 209700003
+    },
+    {
+      "billed_flops": 1226651648,
+      "failure": null,
+      "finite": true,
+      "hostile_five_x_effective_component": 1894451552.4768512,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 15,
+      "no_reshape": true,
+      "peak_working_set_mib": 167.25,
+      "persistent_mib": 93.36328125,
+      "private_mib": 590.86328125,
+      "rank3_coefficient_arrays": 0,
+      "remaining_after_compiler": 760219824,
+      "residual_s": 0.0013355998089537024,
+      "seed": 209700004
+    },
+    {
+      "billed_flops": 1226651648,
+      "failure": null,
+      "finite": true,
+      "hostile_five_x_effective_component": 1835051594.941063,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 15,
+      "no_reshape": true,
+      "peak_working_set_mib": 167.10546875,
+      "persistent_mib": 93.36328125,
+      "private_mib": 590.84765625,
+      "rank3_coefficient_arrays": 0,
+      "remaining_after_compiler": 760219824,
+      "residual_s": 0.0012167998938821256,
+      "seed": 209700005
+    }
+  ],
+  "status": "KILLED_HOSTILE_FIVE_X_WALL_PRESERVE_EXACT_GRAM_RESOURCE_COMPONENT"
+}

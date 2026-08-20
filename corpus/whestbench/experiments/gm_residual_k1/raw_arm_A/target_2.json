@@ -1,0 +1,4905 @@
+{
+  "affinity_mask": "0x3",
+  "assertions": {
+    "cached_q0_reused": true,
+    "first_bank_exactly_restored": true,
+    "first_completed": true,
+    "first_finite": true,
+    "no_dense_proposal_pilot": true,
+    "proposal_frozen_before_main_first": true,
+    "proposal_frozen_before_main_second": true,
+    "replay_prediction_bitwise_equal": true,
+    "second_bank_exactly_restored": true,
+    "second_completed": true,
+    "second_finite": true
+  },
+  "case": "target",
+  "driver_wall_s": 287.2825511999836,
+  "firewall": "generated 256x32 weights only; no truth, labels, reference, MSE, score, leaderboard, submission, or champion mutation",
+  "first_predict": {
+    "backend_s": 29.955411699716933,
+    "billed_flops": 193371731851,
+    "dispatch_records": [
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          256,
+          256
+        ],
+        "shape_bill": 118013952,
+        "stage": "selfhost:formal:first:pilot"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          256,
+          256
+        ],
+        "shape_bill": 235913216,
+        "stage": "selfhost:formal:layer2:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          256,
+          5
+        ],
+        "stage": "selfhost:formal:rescue:layer3"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          256,
+          255
+        ],
+        "shape_bill": 235123840,
+        "stage": "selfhost:formal:layer3:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          255,
+          22
+        ],
+        "stage": "selfhost:formal:rescue:layer4"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          255,
+          252
+        ],
+        "shape_bill": 262692864,
+        "stage": "selfhost:formal:layer4:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          252,
+          16
+        ],
+        "stage": "selfhost:formal:rescue:layer5"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          252,
+          248
+        ],
+        "shape_bill": 224998200,
+        "stage": "selfhost:formal:layer5:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          248,
+          34
+        ],
+        "stage": "selfhost:formal:rescue:layer6"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          248,
+          246
+        ],
+        "shape_bill": 219648268,
+        "stage": "selfhost:formal:layer6:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          246,
+          36
+        ],
+        "stage": "selfhost:formal:rescue:layer7"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          246,
+          248
+        ],
+        "shape_bill": 219641100,
+        "stage": "selfhost:formal:layer7:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          248,
+          36
+        ],
+        "stage": "selfhost:formal:rescue:layer8"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          248,
+          240
+        ],
+        "shape_bill": 214312672,
+        "stage": "selfhost:formal:layer8:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          240,
+          42
+        ],
+        "stage": "selfhost:formal:rescue:layer9"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          240,
+          232
+        ],
+        "shape_bill": 200514720,
+        "stage": "selfhost:formal:layer9:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          232,
+          53
+        ],
+        "stage": "selfhost:formal:rescue:layer10"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          232,
+          223
+        ],
+        "shape_bill": 186460180,
+        "stage": "selfhost:formal:layer10:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          223,
+          68
+        ],
+        "stage": "selfhost:formal:rescue:layer11"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          223,
+          217
+        ],
+        "shape_bill": 197765120,
+        "stage": "selfhost:formal:layer11:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          217,
+          55
+        ],
+        "stage": "selfhost:formal:rescue:layer12"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          217,
+          221
+        ],
+        "shape_bill": 195979264,
+        "stage": "selfhost:formal:layer12:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          221,
+          52
+        ],
+        "stage": "selfhost:formal:rescue:layer13"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          221,
+          221
+        ],
+        "shape_bill": 199600128,
+        "stage": "selfhost:formal:layer13:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          221,
+          61
+        ],
+        "stage": "selfhost:formal:rescue:layer14"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          221,
+          219
+        ],
+        "shape_bill": 197793792,
+        "stage": "selfhost:formal:layer14:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          219,
+          54
+        ],
+        "stage": "selfhost:formal:rescue:layer15"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          219,
+          219
+        ],
+        "shape_bill": 195999744,
+        "stage": "selfhost:formal:layer15:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          219,
+          45
+        ],
+        "stage": "selfhost:formal:rescue:layer16"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          219,
+          232
+        ],
+        "shape_bill": 207634432,
+        "stage": "selfhost:formal:layer16:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          232,
+          62
+        ],
+        "stage": "selfhost:formal:rescue:layer17"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          232,
+          211
+        ],
+        "shape_bill": 176477452,
+        "stage": "selfhost:formal:layer17:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          211,
+          73
+        ],
+        "stage": "selfhost:formal:rescue:layer18"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          211,
+          210
+        ],
+        "shape_bill": 181063680,
+        "stage": "selfhost:formal:layer18:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          210,
+          60
+        ],
+        "stage": "selfhost:formal:rescue:layer19"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          210,
+          224
+        ],
+        "shape_bill": 169426320,
+        "stage": "selfhost:formal:layer19:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          224,
+          60
+        ],
+        "stage": "selfhost:formal:rescue:layer20"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          224,
+          214
+        ],
+        "shape_bill": 172689328,
+        "stage": "selfhost:formal:layer20:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          214,
+          56
+        ],
+        "stage": "selfhost:formal:rescue:layer21"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          214,
+          220
+        ],
+        "shape_bill": 169584086,
+        "stage": "selfhost:formal:layer21:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          220,
+          52
+        ],
+        "stage": "selfhost:formal:rescue:layer22"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          220,
+          226
+        ],
+        "shape_bill": 179071970,
+        "stage": "selfhost:formal:layer22:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          226,
+          55
+        ],
+        "stage": "selfhost:formal:rescue:layer23"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          226,
+          220
+        ],
+        "shape_bill": 179093474,
+        "stage": "selfhost:formal:layer23:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          220,
+          60
+        ],
+        "stage": "selfhost:formal:rescue:layer24"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          220,
+          211
+        ],
+        "shape_bill": 167349202,
+        "stage": "selfhost:formal:layer24:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          211,
+          67
+        ],
+        "stage": "selfhost:formal:rescue:layer25"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          211,
+          205
+        ],
+        "shape_bill": 176752640,
+        "stage": "selfhost:formal:layer25:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          205,
+          61
+        ],
+        "stage": "selfhost:formal:rescue:layer26"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          205,
+          212
+        ],
+        "shape_bill": 177577984,
+        "stage": "selfhost:formal:layer26:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          212,
+          73
+        ],
+        "stage": "selfhost:formal:rescue:layer27"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          212,
+          201
+        ],
+        "shape_bill": 153661912,
+        "stage": "selfhost:formal:layer27:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          201,
+          94
+        ],
+        "stage": "selfhost:formal:rescue:layer28"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          201,
+          192
+        ],
+        "shape_bill": 157679616,
+        "stage": "selfhost:formal:layer28:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          192,
+          78
+        ],
+        "stage": "selfhost:formal:rescue:layer29"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          192,
+          194
+        ],
+        "shape_bill": 134250144,
+        "stage": "selfhost:formal:layer29:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          83
+        ],
+        "stage": "selfhost:formal:fold30:refine_dead"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          64
+        ],
+        "stage": "selfhost:formal:fold30:refine_on"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          140
+        ],
+        "stage": "selfhost:formal:fold30:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          194,
+          55,
+          256
+        ],
+        "stage": "selfhost:formal:fold30_to31"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          77
+        ],
+        "stage": "selfhost:formal:pre31:refine_dead:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          77
+        ],
+        "stage": "selfhost:formal:pre31:refine_dead:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          58
+        ],
+        "stage": "selfhost:formal:pre31:refine_on:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          58
+        ],
+        "stage": "selfhost:formal:pre31:refine_on:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:pilot:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:pilot:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          194,
+          52,
+          256
+        ],
+        "stage": "selfhost:formal:fold29_to32"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          140,
+          52,
+          256
+        ],
+        "stage": "selfhost:formal:fold30_to32"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          85
+        ],
+        "stage": "selfhost:formal:pre32:refine_dead:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          85
+        ],
+        "stage": "selfhost:formal:pre32:refine_dead:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          149,
+          85
+        ],
+        "stage": "selfhost:formal:pre32:refine_dead:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          64
+        ],
+        "stage": "selfhost:formal:pre32:refine_on:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          64
+        ],
+        "stage": "selfhost:formal:pre32:refine_on:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          149,
+          64
+        ],
+        "stage": "selfhost:formal:pre32:refine_on:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_pilot:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_pilot:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_pilot:right"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 8,
+        "shape": [
+          31232,
+          256,
+          256
+        ],
+        "shape_bill": 3596042240,
+        "stage": "selfhost:formal:first:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          256
+        ],
+        "stage": "formal:selfhost_first_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          62464,
+          256
+        ],
+        "stage": "formal:selfhost_first_mean:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          256,
+          256
+        ],
+        "shape_bill": 7191969792,
+        "stage": "selfhost:formal:layer2:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          256,
+          255
+        ],
+        "shape_bill": 7167920256,
+        "stage": "selfhost:formal:layer3:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          255,
+          252
+        ],
+        "shape_bill": 8012132352,
+        "stage": "selfhost:formal:layer4:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          252,
+          248
+        ],
+        "shape_bill": 6859218744,
+        "stage": "selfhost:formal:layer5:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          248,
+          246
+        ],
+        "shape_bill": 6696122636,
+        "stage": "selfhost:formal:layer6:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          246,
+          248
+        ],
+        "shape_bill": 6695904012,
+        "stage": "selfhost:formal:layer7:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          248,
+          240
+        ],
+        "shape_bill": 6533463776,
+        "stage": "selfhost:formal:layer8:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          240,
+          232
+        ],
+        "shape_bill": 6112824480,
+        "stage": "selfhost:formal:layer9:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          232,
+          223
+        ],
+        "shape_bill": 5684376596,
+        "stage": "selfhost:formal:layer10:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          223,
+          217
+        ],
+        "shape_bill": 6031836160,
+        "stage": "selfhost:formal:layer11:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          217,
+          221
+        ],
+        "shape_bill": 5977367552,
+        "stage": "selfhost:formal:layer12:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          221,
+          221
+        ],
+        "shape_bill": 6087803904,
+        "stage": "selfhost:formal:layer13:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          221,
+          219
+        ],
+        "shape_bill": 6032710656,
+        "stage": "selfhost:formal:layer14:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          219,
+          219
+        ],
+        "shape_bill": 5977992192,
+        "stage": "selfhost:formal:layer15:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          219,
+          232
+        ],
+        "shape_bill": 6332850176,
+        "stage": "selfhost:formal:layer16:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          232,
+          211
+        ],
+        "shape_bill": 5380047116,
+        "stage": "selfhost:formal:layer17:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          211,
+          210
+        ],
+        "shape_bill": 5522442240,
+        "stage": "selfhost:formal:layer18:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          210,
+          224
+        ],
+        "shape_bill": 5165074320,
+        "stage": "selfhost:formal:layer19:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          224,
+          214
+        ],
+        "shape_bill": 5264549808,
+        "stage": "selfhost:formal:layer20:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          214,
+          220
+        ],
+        "shape_bill": 5169884118,
+        "stage": "selfhost:formal:layer21:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          220,
+          226
+        ],
+        "shape_bill": 5459128290,
+        "stage": "selfhost:formal:layer22:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          226,
+          220
+        ],
+        "shape_bill": 5459784162,
+        "stage": "selfhost:formal:layer23:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          220,
+          211
+        ],
+        "shape_bill": 5101765586,
+        "stage": "selfhost:formal:layer24:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          211,
+          205
+        ],
+        "shape_bill": 5390955520,
+        "stage": "selfhost:formal:layer25:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          205,
+          212
+        ],
+        "shape_bill": 5416128512,
+        "stage": "selfhost:formal:layer26:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          212,
+          201
+        ],
+        "shape_bill": 4684499416,
+        "stage": "selfhost:formal:layer27:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          201,
+          192
+        ],
+        "shape_bill": 4809228288,
+        "stage": "selfhost:formal:layer28:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          192,
+          194
+        ],
+        "shape_bill": 4092706464,
+        "stage": "selfhost:formal:layer29:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          62464,
+          194,
+          140
+        ],
+        "stage": "selfhost:formal:fold30:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_0_4096:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_0_4096:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_0_4096:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_0_4096:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_0_4096:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_0_4096"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_0_4096"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_4096_8192:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_4096_8192:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_4096_8192:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_4096_8192:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_4096_8192:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_4096_8192"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_4096_8192"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_8192_12288:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_8192_12288:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_8192_12288:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_8192_12288:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_8192_12288:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_8192_12288"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_8192_12288"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_12288_16384:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_12288_16384:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_12288_16384:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_12288_16384:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_12288_16384:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_12288_16384"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_12288_16384"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_16384_20480:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_16384_20480:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_16384_20480:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_16384_20480:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_16384_20480:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_16384_20480"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_16384_20480"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_20480_24576:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_20480_24576:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_20480_24576:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_20480_24576:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_20480_24576:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_20480_24576"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_20480_24576"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_24576_28672:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_24576_28672:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_24576_28672:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_24576_28672:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_24576_28672:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_24576_28672"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_24576_28672"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_28672_32768:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_28672_32768:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_28672_32768:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_28672_32768:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_28672_32768:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_28672_32768"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_28672_32768"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_32768_36864:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_32768_36864:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_32768_36864:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_32768_36864:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_32768_36864:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_32768_36864"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_32768_36864"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_36864_40960:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_36864_40960:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_36864_40960:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_36864_40960:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_36864_40960:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_36864_40960"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_36864_40960"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_40960_45056:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_40960_45056:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_40960_45056:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_40960_45056:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_40960_45056:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_40960_45056"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_40960_45056"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_45056_49152:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_45056_49152:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_45056_49152:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_45056_49152:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_45056_49152:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_45056_49152"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_45056_49152"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_49152_53248:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_49152_53248:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_49152_53248:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_49152_53248:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_49152_53248:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_49152_53248"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_49152_53248"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_53248_57344:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_53248_57344:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_53248_57344:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_53248_57344:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_53248_57344:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_53248_57344"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_53248_57344"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_57344_61440:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_57344_61440:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_57344_61440:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_57344_61440:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_57344_61440:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_57344_61440"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_57344_61440"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_61440_62464:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_61440_62464:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_61440_62464:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_61440_62464:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_61440_62464:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          1024,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_61440_62464"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          1024,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_61440_62464"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          194
+        ],
+        "stage": "formal:selfhost_terminal_x_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          62464,
+          194
+        ],
+        "stage": "formal:selfhost_terminal_x_mean:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          140
+        ],
+        "stage": "formal:selfhost_terminal_x30_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          62464,
+          140
+        ],
+        "stage": "formal:selfhost_terminal_x30_mean:main"
+      }
+    ],
+    "effective_compute": 282529771690.8219,
+    "event_log": [
+      "formal_q0_pilot_materialized",
+      "proposal_frozen_from_formal_q0_only",
+      "main_transport_applied_after_proposal",
+      "formal_main_with_cached_q0_entered",
+      "formal_main_with_cached_q0_complete",
+      "main_transport_restored_and_canonicalized"
+    ],
+    "failure": null,
+    "first_early_pruned_width": 256,
+    "flopscope_matmul_calls": 1041,
+    "frame_bank_sha256": "4fc4c98abe410b527342c2556418d2df88c028024db4fa38ac74bc4734a2938c",
+    "hostile_effective_compute_5x_residual": 639161931050.1094,
+    "matmul_dispatch_calls": 664,
+    "overhead_s": 4.787746801885078,
+    "prediction_finite": true,
+    "prediction_sha256": "d3f227c7689ace9c0583213446263f7b9f998a9775da87eb49cf37e6f27ca1bf",
+    "prediction_shape": [
+      32,
+      256
+    ],
+    "proposal_order_event_log": true,
+    "proposal_order_measured": true,
+    "proposal_timing_s": {
+      "first_transport_apply_s": 8.530725399992662,
+      "formal_main_complete_s": 35.50899329999811,
+      "formal_main_start_s": 9.494535599980736,
+      "formal_q0_complete_s": 3.565714199998183,
+      "formal_q0_start_s": 0.1460017999925185,
+      "proposal_fit_start_s": 3.5657256999984384,
+      "proposal_frozen_s": 8.424721899995347
+    },
+    "residual_s": 0.8915803983982187,
+    "reuse_summary": {
+      "cached_q0_reused_after_proposal": true,
+      "dense_proposal_pilot_dispatches": 0,
+      "formal_q0_dispatches": 39
+    },
+    "transport": {
+      "bad_weight_count": 0,
+      "fallback": null,
+      "label_acg_count": 25,
+      "proposal_kink_count": 129,
+      "proposal_signature_shape": [
+        1024,
+        129
+      ],
+      "proposal_source": "formal_kink_even_q0",
+      "rank": 16,
+      "seed_tree": {
+        "children": {
+          "acg_latents": {
+            "seed": 4174529407804131837,
+            "spawn_key": [
+              2
+            ]
+          },
+          "main_qr": {
+            "seed": 7323902355700570686,
+            "spawn_key": [
+              1
+            ]
+          },
+          "mixture_labels": {
+            "seed": 11285395043422205963,
+            "spawn_key": [
+              0
+            ]
+          },
+          "pilot_qr": {
+            "seed": 15279913311727975950,
+            "spawn_key": [
+              0
+            ]
+          },
+          "uniform_anchors": {
+            "seed": 874794573310773386,
+            "spawn_key": [
+              1
+            ]
+          }
+        },
+        "mlp_seed": 160320002,
+        "protocol_tag": 1295070261,
+        "setup_seed": 160310002
+      },
+      "weight_max": 1.167689323425293,
+      "weight_min": 0.26038897037506104
+    },
+    "wall_s": 35.64753550000023
+  },
+  "initial_bank_sha256": "4fc4c98abe410b527342c2556418d2df88c028024db4fa38ac74bc4734a2938c",
+  "memory_after_first_predict": {
+    "peak_private_mib": 831.15625,
+    "peak_rss_mib": 381.58984375,
+    "private_mib": 694.71875,
+    "rss_mib": 244.46875
+  },
+  "memory_after_second_predict": {
+    "peak_private_mib": 836.203125,
+    "peak_rss_mib": 386.1171875,
+    "private_mib": 700.6171875,
+    "rss_mib": 250.26171875
+  },
+  "memory_after_setup": {
+    "peak_private_mib": 788.8828125,
+    "peak_rss_mib": 288.23828125,
+    "private_mib": 686.625,
+    "rss_mib": 110.77734375
+  },
+  "runtime": {
+    "flopscope": "0.10.0+np2.4.6",
+    "numpy": "2.4.6",
+    "pinned_site_packages": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Lib\\site-packages",
+    "python": "3.11.15 (main, Jun  2 2026, 22:29:49) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\strid\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\python.exe",
+    "temporary_cp311_numpy": "C:\\tmp\\m160-cp311-deps"
+  },
+  "second_predict": {
+    "backend_s": 17.702008698921418,
+    "billed_flops": 193371731851,
+    "dispatch_records": [
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          256,
+          256
+        ],
+        "shape_bill": 118013952,
+        "stage": "selfhost:formal:first:pilot"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          256,
+          256
+        ],
+        "shape_bill": 235913216,
+        "stage": "selfhost:formal:layer2:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          256,
+          5
+        ],
+        "stage": "selfhost:formal:rescue:layer3"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          256,
+          255
+        ],
+        "shape_bill": 235123840,
+        "stage": "selfhost:formal:layer3:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          255,
+          22
+        ],
+        "stage": "selfhost:formal:rescue:layer4"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          255,
+          252
+        ],
+        "shape_bill": 262692864,
+        "stage": "selfhost:formal:layer4:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          252,
+          16
+        ],
+        "stage": "selfhost:formal:rescue:layer5"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          252,
+          248
+        ],
+        "shape_bill": 224998200,
+        "stage": "selfhost:formal:layer5:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          248,
+          34
+        ],
+        "stage": "selfhost:formal:rescue:layer6"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          248,
+          246
+        ],
+        "shape_bill": 219648268,
+        "stage": "selfhost:formal:layer6:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          246,
+          36
+        ],
+        "stage": "selfhost:formal:rescue:layer7"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          246,
+          248
+        ],
+        "shape_bill": 219641100,
+        "stage": "selfhost:formal:layer7:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          248,
+          36
+        ],
+        "stage": "selfhost:formal:rescue:layer8"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          248,
+          240
+        ],
+        "shape_bill": 214312672,
+        "stage": "selfhost:formal:layer8:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          240,
+          42
+        ],
+        "stage": "selfhost:formal:rescue:layer9"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          240,
+          232
+        ],
+        "shape_bill": 200514720,
+        "stage": "selfhost:formal:layer9:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          232,
+          53
+        ],
+        "stage": "selfhost:formal:rescue:layer10"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          232,
+          223
+        ],
+        "shape_bill": 186460180,
+        "stage": "selfhost:formal:layer10:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          223,
+          68
+        ],
+        "stage": "selfhost:formal:rescue:layer11"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          223,
+          217
+        ],
+        "shape_bill": 197765120,
+        "stage": "selfhost:formal:layer11:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          217,
+          55
+        ],
+        "stage": "selfhost:formal:rescue:layer12"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          217,
+          221
+        ],
+        "shape_bill": 195979264,
+        "stage": "selfhost:formal:layer12:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          221,
+          52
+        ],
+        "stage": "selfhost:formal:rescue:layer13"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          221,
+          221
+        ],
+        "shape_bill": 199600128,
+        "stage": "selfhost:formal:layer13:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          221,
+          61
+        ],
+        "stage": "selfhost:formal:rescue:layer14"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          221,
+          219
+        ],
+        "shape_bill": 197793792,
+        "stage": "selfhost:formal:layer14:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          219,
+          54
+        ],
+        "stage": "selfhost:formal:rescue:layer15"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          219,
+          219
+        ],
+        "shape_bill": 195999744,
+        "stage": "selfhost:formal:layer15:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          219,
+          45
+        ],
+        "stage": "selfhost:formal:rescue:layer16"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          219,
+          232
+        ],
+        "shape_bill": 207634432,
+        "stage": "selfhost:formal:layer16:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          232,
+          62
+        ],
+        "stage": "selfhost:formal:rescue:layer17"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          232,
+          211
+        ],
+        "shape_bill": 176477452,
+        "stage": "selfhost:formal:layer17:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          211,
+          73
+        ],
+        "stage": "selfhost:formal:rescue:layer18"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          211,
+          210
+        ],
+        "shape_bill": 181063680,
+        "stage": "selfhost:formal:layer18:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          210,
+          60
+        ],
+        "stage": "selfhost:formal:rescue:layer19"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          210,
+          224
+        ],
+        "shape_bill": 169426320,
+        "stage": "selfhost:formal:layer19:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          224,
+          60
+        ],
+        "stage": "selfhost:formal:rescue:layer20"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          224,
+          214
+        ],
+        "shape_bill": 172689328,
+        "stage": "selfhost:formal:layer20:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          214,
+          56
+        ],
+        "stage": "selfhost:formal:rescue:layer21"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          214,
+          220
+        ],
+        "shape_bill": 169584086,
+        "stage": "selfhost:formal:layer21:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          220,
+          52
+        ],
+        "stage": "selfhost:formal:rescue:layer22"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          220,
+          226
+        ],
+        "shape_bill": 179071970,
+        "stage": "selfhost:formal:layer22:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          226,
+          55
+        ],
+        "stage": "selfhost:formal:rescue:layer23"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          226,
+          220
+        ],
+        "shape_bill": 179093474,
+        "stage": "selfhost:formal:layer23:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          220,
+          60
+        ],
+        "stage": "selfhost:formal:rescue:layer24"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          220,
+          211
+        ],
+        "shape_bill": 167349202,
+        "stage": "selfhost:formal:layer24:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          211,
+          67
+        ],
+        "stage": "selfhost:formal:rescue:layer25"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          211,
+          205
+        ],
+        "shape_bill": 176752640,
+        "stage": "selfhost:formal:layer25:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          205,
+          61
+        ],
+        "stage": "selfhost:formal:rescue:layer26"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          205,
+          212
+        ],
+        "shape_bill": 177577984,
+        "stage": "selfhost:formal:layer26:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          212,
+          73
+        ],
+        "stage": "selfhost:formal:rescue:layer27"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 2,
+        "shape": [
+          2048,
+          212,
+          201
+        ],
+        "shape_bill": 153661912,
+        "stage": "selfhost:formal:layer27:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          201,
+          94
+        ],
+        "stage": "selfhost:formal:rescue:layer28"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          201,
+          192
+        ],
+        "shape_bill": 157679616,
+        "stage": "selfhost:formal:layer28:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          512,
+          192,
+          78
+        ],
+        "stage": "selfhost:formal:rescue:layer29"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          192,
+          194
+        ],
+        "shape_bill": 134250144,
+        "stage": "selfhost:formal:layer29:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          83
+        ],
+        "stage": "selfhost:formal:fold30:refine_dead"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          64
+        ],
+        "stage": "selfhost:formal:fold30:refine_on"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          140
+        ],
+        "stage": "selfhost:formal:fold30:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          194,
+          55,
+          256
+        ],
+        "stage": "selfhost:formal:fold30_to31"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          77
+        ],
+        "stage": "selfhost:formal:pre31:refine_dead:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          77
+        ],
+        "stage": "selfhost:formal:pre31:refine_dead:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          58
+        ],
+        "stage": "selfhost:formal:pre31:refine_on:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          58
+        ],
+        "stage": "selfhost:formal:pre31:refine_on:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:pilot:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:pilot:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          194,
+          52,
+          256
+        ],
+        "stage": "selfhost:formal:fold29_to32"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          140,
+          52,
+          256
+        ],
+        "stage": "selfhost:formal:fold30_to32"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          85
+        ],
+        "stage": "selfhost:formal:pre32:refine_dead:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          85
+        ],
+        "stage": "selfhost:formal:pre32:refine_dead:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          149,
+          85
+        ],
+        "stage": "selfhost:formal:pre32:refine_dead:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          64
+        ],
+        "stage": "selfhost:formal:pre32:refine_on:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          64
+        ],
+        "stage": "selfhost:formal:pre32:refine_on:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          149,
+          64
+        ],
+        "stage": "selfhost:formal:pre32:refine_on:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_pilot:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_pilot:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          2048,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_pilot:right"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 8,
+        "shape": [
+          31232,
+          256,
+          256
+        ],
+        "shape_bill": 3596042240,
+        "stage": "selfhost:formal:first:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          256
+        ],
+        "stage": "formal:selfhost_first_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          62464,
+          256
+        ],
+        "stage": "formal:selfhost_first_mean:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          256,
+          256
+        ],
+        "shape_bill": 7191969792,
+        "stage": "selfhost:formal:layer2:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          256,
+          255
+        ],
+        "shape_bill": 7167920256,
+        "stage": "selfhost:formal:layer3:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          255,
+          252
+        ],
+        "shape_bill": 8012132352,
+        "stage": "selfhost:formal:layer4:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          252,
+          248
+        ],
+        "shape_bill": 6859218744,
+        "stage": "selfhost:formal:layer5:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          248,
+          246
+        ],
+        "shape_bill": 6696122636,
+        "stage": "selfhost:formal:layer6:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          246,
+          248
+        ],
+        "shape_bill": 6695904012,
+        "stage": "selfhost:formal:layer7:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          248,
+          240
+        ],
+        "shape_bill": 6533463776,
+        "stage": "selfhost:formal:layer8:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          240,
+          232
+        ],
+        "shape_bill": 6112824480,
+        "stage": "selfhost:formal:layer9:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          232,
+          223
+        ],
+        "shape_bill": 5684376596,
+        "stage": "selfhost:formal:layer10:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          223,
+          217
+        ],
+        "shape_bill": 6031836160,
+        "stage": "selfhost:formal:layer11:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          217,
+          221
+        ],
+        "shape_bill": 5977367552,
+        "stage": "selfhost:formal:layer12:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          221,
+          221
+        ],
+        "shape_bill": 6087803904,
+        "stage": "selfhost:formal:layer13:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          221,
+          219
+        ],
+        "shape_bill": 6032710656,
+        "stage": "selfhost:formal:layer14:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          219,
+          219
+        ],
+        "shape_bill": 5977992192,
+        "stage": "selfhost:formal:layer15:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          219,
+          232
+        ],
+        "shape_bill": 6332850176,
+        "stage": "selfhost:formal:layer16:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          232,
+          211
+        ],
+        "shape_bill": 5380047116,
+        "stage": "selfhost:formal:layer17:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          211,
+          210
+        ],
+        "shape_bill": 5522442240,
+        "stage": "selfhost:formal:layer18:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          210,
+          224
+        ],
+        "shape_bill": 5165074320,
+        "stage": "selfhost:formal:layer19:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          224,
+          214
+        ],
+        "shape_bill": 5264549808,
+        "stage": "selfhost:formal:layer20:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          214,
+          220
+        ],
+        "shape_bill": 5169884118,
+        "stage": "selfhost:formal:layer21:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          220,
+          226
+        ],
+        "shape_bill": 5459128290,
+        "stage": "selfhost:formal:layer22:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          226,
+          220
+        ],
+        "shape_bill": 5459784162,
+        "stage": "selfhost:formal:layer23:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          220,
+          211
+        ],
+        "shape_bill": 5101765586,
+        "stage": "selfhost:formal:layer24:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          211,
+          205
+        ],
+        "shape_bill": 5390955520,
+        "stage": "selfhost:formal:layer25:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          205,
+          212
+        ],
+        "shape_bill": 5416128512,
+        "stage": "selfhost:formal:layer26:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 17,
+        "shape": [
+          62464,
+          212,
+          201
+        ],
+        "shape_bill": 4684499416,
+        "stage": "selfhost:formal:layer27:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          201,
+          192
+        ],
+        "shape_bill": 4809228288,
+        "stage": "selfhost:formal:layer28:main"
+      },
+      {
+        "kind": "winograd_batched_preallocated",
+        "matmul_calls": 16,
+        "shape": [
+          62464,
+          192,
+          194
+        ],
+        "shape_bill": 4092706464,
+        "stage": "selfhost:formal:layer29:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          62464,
+          194,
+          140
+        ],
+        "stage": "selfhost:formal:fold30:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_0_4096:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_0_4096:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_0_4096:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_0_4096:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_0_4096:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_0_4096"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_0_4096"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_4096_8192:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_4096_8192:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_4096_8192:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_4096_8192:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_4096_8192:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_4096_8192"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_4096_8192"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_8192_12288:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_8192_12288:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_8192_12288:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_8192_12288:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_8192_12288:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_8192_12288"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_8192_12288"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_12288_16384:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_12288_16384:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_12288_16384:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_12288_16384:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_12288_16384:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_12288_16384"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_12288_16384"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_16384_20480:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_16384_20480:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_16384_20480:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_16384_20480:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_16384_20480:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_16384_20480"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_16384_20480"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_20480_24576:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_20480_24576:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_20480_24576:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_20480_24576:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_20480_24576:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_20480_24576"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_20480_24576"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_24576_28672:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_24576_28672:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_24576_28672:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_24576_28672:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_24576_28672:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_24576_28672"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_24576_28672"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_28672_32768:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_28672_32768:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_28672_32768:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_28672_32768:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_28672_32768:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_28672_32768"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_28672_32768"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_32768_36864:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_32768_36864:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_32768_36864:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_32768_36864:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_32768_36864:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_32768_36864"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_32768_36864"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_36864_40960:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_36864_40960:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_36864_40960:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_36864_40960:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_36864_40960:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_36864_40960"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_36864_40960"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_40960_45056:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_40960_45056:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_40960_45056:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_40960_45056:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_40960_45056:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_40960_45056"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_40960_45056"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_45056_49152:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_45056_49152:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_45056_49152:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_45056_49152:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_45056_49152:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_45056_49152"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_45056_49152"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_49152_53248:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_49152_53248:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_49152_53248:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_49152_53248:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_49152_53248:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_49152_53248"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_49152_53248"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_53248_57344:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_53248_57344:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_53248_57344:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_53248_57344:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_53248_57344:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_53248_57344"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_53248_57344"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_57344_61440:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_57344_61440:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_57344_61440:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_57344_61440:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          4096,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_57344_61440:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_57344_61440"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          4096,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_57344_61440"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          194,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_61440_62464:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          140,
+          149
+        ],
+        "stage": "selfhost:formal:pre31:main_block_61440_62464:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          194,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_61440_62464:left"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          140,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_61440_62464:middle"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1024,
+          149,
+          129
+        ],
+        "stage": "selfhost:formal:pre32:kink_main_61440_62464:right"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          1024,
+          129
+        ],
+        "stage": "selfhost:formal:terminal_kink_mean:main_61440_62464"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          1024,
+          149
+        ],
+        "stage": "selfhost:formal:terminal_x31_mean:main_61440_62464"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          194
+        ],
+        "stage": "formal:selfhost_terminal_x_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          62464,
+          194
+        ],
+        "stage": "formal:selfhost_terminal_x_mean:main"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          2048,
+          140
+        ],
+        "stage": "formal:selfhost_terminal_x30_mean:pilot"
+      },
+      {
+        "kind": "direct",
+        "matmul_calls": 1,
+        "shape": [
+          1,
+          62464,
+          140
+        ],
+        "stage": "formal:selfhost_terminal_x30_mean:main"
+      }
+    ],
+    "effective_compute": 241814031744.9408,
+    "event_log": [
+      "formal_q0_pilot_materialized",
+      "proposal_frozen_from_formal_q0_only",
+      "main_transport_applied_after_proposal",
+      "formal_main_with_cached_q0_entered",
+      "formal_main_with_cached_q0_complete",
+      "main_transport_restored_and_canonicalized"
+    ],
+    "failure": null,
+    "first_early_pruned_width": 256,
+    "flopscope_matmul_calls": 1041,
+    "frame_bank_sha256": "4fc4c98abe410b527342c2556418d2df88c028024db4fa38ac74bc4734a2938c",
+    "hostile_effective_compute_5x_residual": 435583231320.704,
+    "matmul_dispatch_calls": 664,
+    "overhead_s": 2.398573802143801,
+    "prediction_finite": true,
+    "prediction_sha256": "d3f227c7689ace9c0583213446263f7b9f998a9775da87eb49cf37e6f27ca1bf",
+    "prediction_shape": [
+      32,
+      256
+    ],
+    "proposal_order_event_log": true,
+    "proposal_order_measured": true,
+    "proposal_timing_s": {
+      "first_transport_apply_s": 4.723162100010086,
+      "formal_main_complete_s": 20.29200449999189,
+      "formal_main_start_s": 4.851472499984084,
+      "formal_q0_complete_s": 1.4190837999922223,
+      "formal_q0_start_s": 0.158257400005823,
+      "proposal_fit_start_s": 1.4190946999879088,
+      "proposal_frozen_s": 4.697740100004012
+    },
+    "residual_s": 0.484422998939408,
+    "reuse_summary": {
+      "cached_q0_reused_after_proposal": true,
+      "dense_proposal_pilot_dispatches": 0,
+      "formal_q0_dispatches": 39
+    },
+    "transport": {
+      "bad_weight_count": 0,
+      "fallback": null,
+      "label_acg_count": 25,
+      "proposal_kink_count": 129,
+      "proposal_signature_shape": [
+        1024,
+        129
+      ],
+      "proposal_source": "formal_kink_even_q0",
+      "rank": 16,
+      "seed_tree": {
+        "children": {
+          "acg_latents": {
+            "seed": 4174529407804131837,
+            "spawn_key": [
+              2
+            ]
+          },
+          "main_qr": {
+            "seed": 7323902355700570686,
+            "spawn_key": [
+              1
+            ]
+          },
+          "mixture_labels": {
+            "seed": 11285395043422205963,
+            "spawn_key": [
+              0
+            ]
+          },
+          "pilot_qr": {
+            "seed": 15279913311727975950,
+            "spawn_key": [
+              0
+            ]
+          },
+          "uniform_anchors": {
+            "seed": 874794573310773386,
+            "spawn_key": [
+              1
+            ]
+          }
+        },
+        "mlp_seed": 160320002,
+        "protocol_tag": 1295070261,
+        "setup_seed": 160310002
+      },
+      "weight_max": 1.167689323425293,
+      "weight_min": 0.26038897037506104
+    },
+    "wall_s": 20.592140299995663
+  },
+  "seeds": {
+    "generated_mlp": 160320002,
+    "setup": 160310002
+  },
+  "setup_s": 227.09489290000056,
+  "status": "M160_CPYTHON311_HOSTILE_WORKER_PASS_NO_EFFICACY",
+  "subprocess_returncode": 0,
+  "subprocess_stderr": "[pin_launch] affinity=0x3",
+  "workspace_bytes": 79101952
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "dgfl1-f0-source-contract-result-v1",
+  "recorded_local": "2026-08-11T18:25:36.5378940-05:00",
+  "status": "PASS_SOURCE_CONTRACT_SLICE_ONLY",
+  "preexecution_manifest_sha256": "71BD5DB7B882FFD1632DD9F767C0F9834B997DE2AF87E7466E9EC704CAEA65AC",
+  "source_sha256": "BE3F9B9E664201F8BFDF7F085188317800B5E416EFBAC8AD2C33B82296222556",
+  "tests_sha256": "8E3D543B45DD95268F2DFB7ADD7D27868FD5DB53DE122AB8B58771E224F728DD",
+  "transcript_sha256": "B4509F60AB32AAF8434034CB5B01584845F0A46C8454ABC02DC0428F13A5A715",
+  "execution": {
+    "tests_run": 16,
+    "passes": 16,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "process_exit_code": 0,
+    "unittest_reported_seconds": 1.539,
+    "timing_claim": "none; duration is provenance only",
+    "generated_networks": 0,
+    "truth_or_scorer_reads": 0,
+    "provider_predictions": 0,
+    "worker_processes_spawned": 0
+  },
+  "verified": [
+    "immutable GUARDS parent hashes",
+    "the production and guard Q construction sites both dispatch through self._haar_rotation",
+    "two pinned real Q constructions are byte-identical float64 arrays and each bills 45921196",
+    "the first Q object is retained while a byte-identical guard regeneration cannot replace it",
+    "invocation-local Q state is cleared between sequential worker requests",
+    "healthy, M186, and M187 complete returns all require a complete post-Q correction",
+    "a post-Q failure cannot silently return W0",
+    "32 fixed positive rows occupy distinct MUB frames and their 32 antipodes follow parent bank order",
+    "selected physical rows and the absorbed generator use the correct row-weight coordinate transform",
+    "closed replay component subtotals equal 556694912, 556711296, and 1096579840 for the three typed orientations",
+    "open Pilot-A, W0-prefix, wall, RSS, and Phase-2 rules fail closed"
+  ],
+  "independent_break_even_orientation": {
+    "base_w0_witness": 259700821492,
+    "retained_primal_tangent_only_increment": 267911168,
+    "retained_primal_tangent_only_required_R2_percent": 0.10305515023238872,
+    "primal_replay_tangent_increment": 535822336,
+    "primal_replay_tangent_required_R2_percent": 0.2058981118562783,
+    "closed_mixed_subtotal": 556711296,
+    "closed_mixed_required_R2_percent": 0.213907851210395,
+    "closed_float64_subtotal": 1096579840,
+    "closed_float64_required_R2_percent": 0.42047191973513315,
+    "scope": "necessary orientation against a non-upper-bound W0 witness; excludes positive open items and is not a score or budget pass"
+  },
+  "unearned": [
+    "a complete F0-S provider source",
+    "Pilot-A construction or independence in deployed source",
+    "complete success and failure path upper bounds",
+    "allocator, wall, RSS, residual, or subprocess evidence",
+    "generated-network behavior",
+    "variance reduction or covariance signal",
+    "MSE, official score, ranking, promotion, package, or submission"
+  ]
+}

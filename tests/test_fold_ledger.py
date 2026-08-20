@@ -13,6 +13,18 @@ SPEC.loader.exec_module(MODULE)
 
 
 class FoldLedgerTests(unittest.TestCase):
+    def test_canonical_and_explicit_legacy_status_namespaces(self):
+        self.assertTrue(MODULE.status_is_allowed("screened"))
+        self.assertTrue(MODULE.status_is_allowed("blocked"))
+        self.assertTrue(MODULE.status_is_allowed(
+            "repair_source_interface_carrier_blocked"
+        ))
+        self.assertTrue(MODULE.status_is_allowed(
+            "killed_preexecution_static_cost"
+        ))
+        self.assertFalse(MODULE.status_is_allowed("totally_made_up_status"))
+        self.assertFalse(MODULE.status_is_allowed("validated somehow"))
+
     def valid_payload(self):
         return {
             "schema_version": 1,
@@ -58,4 +70,3 @@ class FoldLedgerTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

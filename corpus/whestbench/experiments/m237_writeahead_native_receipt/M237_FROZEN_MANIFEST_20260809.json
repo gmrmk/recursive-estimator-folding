@@ -1,0 +1,40 @@
+{
+  "candidate": "M237 durable write-ahead receipt for frozen B=8 compiler",
+  "date": "2026-08-09",
+  "status": "PREDECLARED_NO_CODE_NO_TEST_NO_INTENT_NO_RESULT",
+  "parent": "M236 KILLED_FROZEN_NATIVE_RECEIPT_UNOBSERVABLE",
+  "one_changed_mechanism": "durable host-side launch intent plus atomic complete native result persistence before scratch cleanup",
+  "preserved": {
+    "compiler_sha256": "6C9E9AF9727722CB6ADE5E1CDA56D3F7A0E7BF82EF35EBDAEFA8AA883A854B75",
+    "entrypoint_sha256": "18D60E0FC02D034CC0E0006CFEDFA15E9188F59697C21294BD53B501AA9BFB25",
+    "m236_runner_reference_sha256": "CFC797EFE73CF5CD16D022E60983BBC84FDB707907D01FE035DDCD5997DCF675",
+    "setup_seed": 0,
+    "sequence": ["A", "B", "A"],
+    "source_seeds": {"A": 227700001, "B": 227710001},
+    "m212_bill": 1249253376,
+    "m235_bill": 864960512,
+    "combined_bill": 2114213888,
+    "rss_strict_lt_mib": 496.0,
+    "worker_limit_mib": 512
+  },
+  "durable_paths": {
+    "intent": "M237_LAUNCH_INTENT_20260809.json",
+    "result": "M237_NATIVE_ONE_PROCESS_RESULT_20260809.json"
+  },
+  "transaction": [
+    "reject preexisting intent result and fixed temporary path",
+    "exclusive-create flush fsync reopen intent before worker start",
+    "exactly one official same-worker A-B-A invocation",
+    "write flush fsync atomic-install reopen parse result before scratch cleanup",
+    "forward whole shell return and independently reopen hash durable result"
+  ],
+  "forbidden": [
+    "editing or rerunning M236",
+    "overwriting any durable path",
+    "second M237 worker",
+    "result only on stdout or temporary scratch",
+    "aggregate or G0 before verified one-worker pass",
+    "estimator algebra topology bill call seed threshold or resource change"
+  ],
+  "credit": "predeclaration only; no native memory source-efficiency MSE score submission leaderboard or prize credit"
+}

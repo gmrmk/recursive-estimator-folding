@@ -1,0 +1,143 @@
+{
+  "block_rows_sweep": [
+    {
+      "block_rows": 4096,
+      "billed_flops": 7427768320,
+      "core_calls": 16,
+      "total_matmul_calls": 16,
+      "buffer_bytes": 19349504,
+      "level_stack_bytes": 15138816,
+      "level_stack_MiB": 14.4375,
+      "wall_s": 0.243808800001716,
+      "relative_frobenius": 5.355172651766537e-07,
+      "checksum": -76421.54155362397
+    },
+    {
+      "block_rows": 2048,
+      "billed_flops": 7427768320,
+      "core_calls": 32,
+      "total_matmul_calls": 32,
+      "buffer_bytes": 9904128,
+      "level_stack_bytes": 7798784,
+      "level_stack_MiB": 7.4375,
+      "wall_s": 0.31423630000062985,
+      "relative_frobenius": 5.116295535988431e-07,
+      "checksum": -76421.54164065327
+    },
+    {
+      "block_rows": 512,
+      "billed_flops": 7427768320,
+      "core_calls": 126,
+      "total_matmul_calls": 126,
+      "buffer_bytes": 2820096,
+      "level_stack_bytes": 2293760,
+      "level_stack_MiB": 2.1875,
+      "wall_s": 0.7508498999995936,
+      "relative_frobenius": 4.833971729424836e-07,
+      "checksum": -76421.67043805448
+    },
+    {
+      "block_rows": 240,
+      "billed_flops": 7427768320,
+      "core_calls": 269,
+      "total_matmul_calls": 269,
+      "buffer_bytes": 1565632,
+      "level_stack_bytes": 1318912,
+      "level_stack_MiB": 1.2578125,
+      "wall_s": 0.8998558000021148,
+      "relative_frobenius": 5.256217022038269e-07,
+      "checksum": -76421.49020024203
+    },
+    {
+      "block_rows": 128,
+      "billed_flops": 7427768320,
+      "core_calls": 504,
+      "total_matmul_calls": 504,
+      "buffer_bytes": 1049088,
+      "level_stack_bytes": 917504,
+      "level_stack_MiB": 0.875,
+      "wall_s": 1.309983099999954,
+      "relative_frobenius": 5.188456685616426e-07,
+      "checksum": -76421.44693247369
+    }
+  ],
+  "bill_is_block_rows_invariant": true,
+  "checksum_identical": false,
+  "measured_d1_stack_bytes_vs_closed_form": {
+    "4096": {
+      "measured": 15138816,
+      "closed_form": 15138816,
+      "agree": true
+    },
+    "2048": {
+      "measured": 7798784,
+      "closed_form": 7798784,
+      "agree": true
+    },
+    "512": {
+      "measured": 2293760,
+      "closed_form": 2293760,
+      "agree": true
+    },
+    "240": {
+      "measured": 1318912,
+      "closed_form": 1318912,
+      "agree": true
+    },
+    "128": {
+      "measured": 917504,
+      "closed_form": 917504,
+      "agree": true
+    }
+  },
+  "fit_under_512MiB": {
+    "measured_champion_peak_bytes": 474284032,
+    "measured_champion_peak_MiB": 452.3125,
+    "champion_d1_stack_bytes": 15138816,
+    "headroom_for_stacks_bytes": 77725696,
+    "headroom_for_stacks_MiB": 74.125,
+    "by_depth": {
+      "d1": {
+        "max_block_rows_under_512MiB": 4096,
+        "stack_bytes_at_max": 15138816,
+        "stack_MiB_at_max": 14.4375,
+        "row_blocks_at_max": 16,
+        "stack_MiB_at_4096": 14.4375
+      },
+      "d2": {
+        "max_block_rows_under_512MiB": 4096,
+        "stack_bytes_at_max": 41631744,
+        "stack_MiB_at_max": 39.703125,
+        "row_blocks_at_max": 16,
+        "stack_MiB_at_4096": 39.703125
+      },
+      "d3": {
+        "max_block_rows_under_512MiB": 3600,
+        "stack_bytes_at_max": 77661696,
+        "stack_MiB_at_max": 74.06396484375,
+        "row_blocks_at_max": 18,
+        "stack_MiB_at_4096": 83.91796875
+      },
+      "d4": {
+        "max_block_rows_under_512MiB": 1808,
+        "stack_bytes_at_max": 77517440,
+        "stack_MiB_at_max": 73.9263916015625,
+        "row_blocks_at_max": 36,
+        "stack_MiB_at_4096": 161.2939453125
+      },
+      "d5": {
+        "max_block_rows_under_512MiB": 896,
+        "stack_bytes_at_max": 75421696,
+        "stack_MiB_at_max": 71.927734375,
+        "row_blocks_at_max": 72,
+        "stack_MiB_at_4096": 296.701904296875
+      }
+    }
+  },
+  "final_memprobe": {
+    "working_set_bytes": 120868864,
+    "peak_working_set_bytes": 657694720,
+    "commit_bytes": 575533056,
+    "peak_commit_bytes": 1118388224
+  }
+}

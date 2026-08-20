@@ -1,0 +1,134 @@
+{
+  "lambda": 100000000000.0,
+  "shape": [
+    64512,
+    256,
+    256
+  ],
+  "repeats": 3,
+  "flopscope": "0.10.0+np2.4.6",
+  "arms": {
+    "champ_d1_frozen": {
+      "flops": 7427768320,
+      "flops_bitwise_stable": true,
+      "operations": 0,
+      "residual_s_median": 0.009817100002692314,
+      "residual_s_min": 0.00621159998991061,
+      "residual_s_all": [
+        0.00621159998991061,
+        0.011483399950520834,
+        0.009817100002692314
+      ],
+      "wall_s_median": 0.16828460000033374,
+      "effective_compute_median": 8409478320.269232,
+      "effective_compute_at_min_residual": 8048928318.991061,
+      "rel_fro_vs_f64": 5.355172651766537e-07
+    },
+    "d0_direct": {
+      "flops": 8439201792,
+      "flops_bitwise_stable": true,
+      "operations": 0,
+      "residual_s_median": 0.006020700002409285,
+      "residual_s_min": 4.280000212020241e-05,
+      "residual_s_all": [
+        4.280000212020241e-05,
+        0.006988599998294376,
+        0.006020700002409285
+      ],
+      "wall_s_median": 0.038311099997372366,
+      "effective_compute_median": 9041271792.240929,
+      "effective_compute_at_min_residual": 8443481792.21202,
+      "rel_fro_vs_f64": 2.8476326063822205e-07
+    },
+    "sw_d1": {
+      "flops": 7415332864,
+      "flops_bitwise_stable": true,
+      "operations": 0,
+      "residual_s_median": 0.0032003000014810823,
+      "residual_s_min": 0.0007667999998375308,
+      "residual_s_all": [
+        0.0007667999998375308,
+        0.0032003000014810823,
+        0.004341600000770995
+      ],
+      "wall_s_median": 0.14286300000094343,
+      "effective_compute_median": 7735362864.1481085,
+      "effective_compute_at_min_residual": 7492012863.983753,
+      "rel_fro_vs_f64": 5.42807768330513e-07
+    },
+    "sw_d2": {
+      "flops": 6548406272,
+      "flops_bitwise_stable": true,
+      "operations": 0,
+      "residual_s_median": 0.0056872999884944875,
+      "residual_s_min": 0.004061499999806983,
+      "residual_s_all": [
+        0.004061499999806983,
+        0.007406899992929539,
+        0.0056872999884944875
+      ],
+      "wall_s_median": 0.30493829999977606,
+      "effective_compute_median": 7117136270.849449,
+      "effective_compute_at_min_residual": 6954556271.980699,
+      "rel_fro_vs_f64": 1.0301667991104004e-06
+    },
+    "sw_d3": {
+      "flops": 5840523264,
+      "flops_bitwise_stable": true,
+      "operations": 0,
+      "residual_s_median": 0.024317800045537297,
+      "residual_s_min": 0.022593300076550804,
+      "residual_s_all": [
+        0.022593300076550804,
+        0.024317800045537297,
+        0.026413799940200988
+      ],
+      "wall_s_median": 0.7702860000026703,
+      "effective_compute_median": 8272303268.55373,
+      "effective_compute_at_min_residual": 8099853271.655081,
+      "rel_fro_vs_f64": 2.0012759753584398e-06
+    },
+    "sw_d4": {
+      "flops": 5309811712,
+      "flops_bitwise_stable": true,
+      "operations": 0,
+      "residual_s_median": 0.13026499989064177,
+      "residual_s_min": 0.11326640014158329,
+      "residual_s_all": [
+        0.13026499989064177,
+        0.11326640014158329,
+        0.13161359974037623
+      ],
+      "wall_s_median": 2.1167098000005353,
+      "effective_compute_median": 18336311701.06418,
+      "effective_compute_at_min_residual": 16636451726.158329,
+      "rel_fro_vs_f64": 4.0418766912709434e-06
+    }
+  },
+  "delta_vs_champion": {
+    "d1": {
+      "flop_delta_vs_champion": -12435456,
+      "residual_charge_delta": -661680000.1211232,
+      "net_effective_delta": -674115456.1211233,
+      "net_effective_delta_at_min_residual": -556915455.007308
+    },
+    "d2": {
+      "flop_delta_vs_champion": -879362048,
+      "residual_charge_delta": -412980001.41978264,
+      "net_effective_delta": -1292342049.4197826,
+      "net_effective_delta_at_min_residual": -1094372047.0103626
+    },
+    "d3": {
+      "flop_delta_vs_champion": -1587245056,
+      "residual_charge_delta": 1450070004.2844982,
+      "net_effective_delta": -137175051.7155018,
+      "net_effective_delta_at_min_residual": 50924952.664019585
+    },
+    "d4": {
+      "flop_delta_vs_champion": -2117956608,
+      "residual_charge_delta": 12044789988.794947,
+      "net_effective_delta": 9926833380.794947,
+      "net_effective_delta_at_min_residual": 8587523407.167268
+    }
+  }
+}

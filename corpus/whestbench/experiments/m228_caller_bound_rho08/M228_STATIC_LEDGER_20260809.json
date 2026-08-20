@@ -1,0 +1,10 @@
+{
+  "mutation": "m228_caller_bound_rho08",
+  "status": "FROZEN_BEFORE_CODE_AND_TESTS",
+  "parent_math": "m224_gauge_invariant_rho08_chart",
+  "one_changed_mechanism": "caller-owned setup binding for marginal singleton-sigma columns",
+  "kernel_setup": {"float64_elements": "268*N", "bool_elements": "2*N", "bytes": "2146*N", "empty_calls": 2},
+  "caller_setup": {"columns": 20, "new_float64_elements": "2*N", "new_bytes": "16*N", "must_finish_before_binding": true, "event_dependent_preprocessing": true, "integrated_cost_credit": 0},
+  "runtime": {"calls": 171, "bill": "5467*N", "target_events": 3968, "target_bill": 21693056, "forbidden_operations": ["empty", "copyto", "sum", "max", "reshape"], "source_attributed_allocation_bytes": 0},
+  "gates": {"raw_wall_strict_max_s": 0.016133916999970098, "raw_speedup_strict_min": 100.0, "component_ceiling": 6824272176, "variance_gate_authorized": false}
+}

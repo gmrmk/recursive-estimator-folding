@@ -1,0 +1,21 @@
+{
+  "candidate": "M200 streaming M179 to M198 to M125b overlap fixture",
+  "date": "2026-08-09",
+  "status": "PREDECLARED_NOT_EXECUTED",
+  "predeclaration": "M200_PREDECLARATION_20260809.md",
+  "predeclaration_sha256": "e1fd5214cc3282bebd2a8d5b4cc1ebac48581827eecfc621d0bc320bc19f2ce3",
+  "index_erratum": "M200_FROZEN_INDEX_ERRATUM_20260809.md",
+  "index_erratum_sha256": "c87677935c45305c4c2085eb30d66b133f60bf73eb2414b70c062c5d8410ebfd",
+  "widths": [2, 3, 4, 5, 6, 7],
+  "source_relu_layers_h": [3, 4, 5, 6],
+  "total_weight_count": "H+1",
+  "seeds_per_cell": 2,
+  "parity_max_abs": 2e-12,
+  "allowed_disposition": "STREAMING_SEMANTIC_PASS_NATIVE_COST_BLOCKED",
+  "forbidden": [
+    "physical Source211 provider credit",
+    "native target cost or overlap-replacement credit",
+    "variance, MSE, score, promotion, or winning-entry credit",
+    "contest model, truth, response, scorer, leaderboard, submission, champion, or private-data access"
+  ]
+}

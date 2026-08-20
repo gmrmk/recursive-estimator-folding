@@ -1,0 +1,50 @@
+{
+  "schema": 2,
+  "manifest_status": "OPERATIONAL_SEALED",
+  "protocol_id": "M120C-EXACT-PREEXEC-v1",
+  "fixed_output_path": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\scorefloor_generation\\m120_price_normal_ordered_adjoint\\out\\M120C_EXACT_GENERATED_OUTCOME\\m120c_binding_result.json",
+  "execution_mode": "OPERATIONAL_AWAITING_EXTERNAL_MANIFEST",
+  "atomic_no_retry_claim": true,
+  "binding_grid": {
+    "widths": [8, 12, 16],
+    "depths": [2, 3, 4],
+    "replicas_per_cell": 3,
+    "network_bit_generator": "Philox",
+    "direction_bit_generator": "Philox",
+    "direction_count": 4,
+    "global_mean_limit": 0.05,
+    "cell_worst_output_limit": 0.1,
+    "fail_closed_floor": 1e-10
+  },
+  "firewall": [
+    "generated networks only",
+    "no correction oracle",
+    "no source construction",
+    "no public or contest outcomes",
+    "no targets",
+    "no scorer",
+    "no champion access",
+    "no target-shape efficacy execution"
+  ],
+  "runtime_identity": {
+    "python_executable": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Scripts\\python.exe",
+    "python_sha256": "4b8c3912806b3c1591ba3cb403bff77ad309c3fe5756f87c20b7a6f8f0174262",
+    "python_version": "3.14.4",
+    "numpy_path": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Lib\\site-packages\\numpy\\__init__.py",
+    "numpy_sha256": "65d5e777b6d662ba19cb80800bef3eb999eda7aee51eea62c308feabf679dba4",
+    "numpy_version": "2.4.6"
+  },
+  "source_sha256": {
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/m120c_protocol_config.py": "492ede62bfd0b98ef26c4d6ea59a0237bc606a07e023dcd1f52479334582a119",
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/m120c_protocol_harness.py": "cbf75ed3f392f0c29bfd9b2ece13b580d2a9068a930d8dc05d251a74d69201de",
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/run_m120c_protocol.py": "9a7ea97be5a632c89a23fbdaee78a66a688ab5f2250fc26cd8deb839c35cd10d",
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/m120c_analytic_dense_reference.py": "f5e34f8ebc8ff2cafad63ccf55101155c802b01a36828bfc03edc820ad4a65f8",
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/corrected_cp_jacobian.py": "9bd61a90e53c1339a2717dcb3592865f75ff7a007db53952f3c9814d5d427f13",
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/test_m120c_protocol.py": "fdc1c5c88a19ec0a3a4a180fe3d95579d2da1a4e928edb9b113ef9402bd43e02",
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/test_m120c_operational_harness.py": "6c050d6a9096dd892ee6ed6cb3cd37afd1ff53e190b82f49d93409f61432174d",
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/test_m120c_analytic_dense_reference.py": "09c5d12e7534683cdee907b8d61b21af437678604621bd9f0f7eb7b9d9cf5f1f",
+    "scorefloor_generation/m120_price_normal_ordered_adjoint/test_corrected_cp_jacobian.py": "8981f955c24f6502a9a6945d96c66cf899430b1d46f43a9ea2fa1259a2a8df5d",
+    "scorefloor_generation/fullcov_gaussian_mm/fullcov.py": "091989fbb2249f792f595020e2a475982fd6c5605e51b83065a1837cf51492f6",
+    "scorefloor_generation/adjoint_cumulant/adjoint_born.py": "f83a5299de16131a435598a74fd2d6f9c56af6c19b4e7505ae481f4f38ae08bd"
+  }
+}

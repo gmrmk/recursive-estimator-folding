@@ -1,0 +1,156 @@
+{
+  "candidate": "M143 composite source-scale plus sign-scrambled diagonal-suffix-energy proposal",
+  "status": "PREDECLARED_NOT_AUTHORIZED_TO_RUN",
+  "scope": "fresh generated-only exact-[2,1,1] proposal-variance diagnostic; no contest model, truth, scorer, leaderboard, submission, or champion artifact",
+  "parent": "M133 factored exact [2,1,1] Hansen-Hurwitz proposal",
+  "changed_mechanisms": {
+    "preserved_m139_component": "physical s_i=sqrt(Var(ReLU(Z_i))) source scale",
+    "new_m143_component": "p^2-gated sign-scrambled downstream row energy E_i",
+    "candidate_strength": "tau_i=s_i*sqrt(E_i)",
+    "attribution_arm": "tau_scale_i=s_i*||W_i||",
+    "original_m133_arm": "tau_m133_i=||W_i||"
+  },
+  "index_contract": {
+    "weight": "W[r] maps post-ReLU activation r to pre-ReLU coordinates r+1",
+    "probability": "p[r]=Phi(alpha[r+1]) is the ReLU mean derivative after W[r]",
+    "terminal": "E[R+1]=ones(width)",
+    "gate": "G[r]=p[r]^2 elementwise-multiplied by E[r+1]",
+    "row_energy": "E[r]=(W[r]^2) @ G[r]",
+    "strength": "tau[r]=s[r]*sqrt(E[r])",
+    "sampler": "q=.95*h/sum(h)+.05/[n(n-1)(n-2)] on ordered distinct triples, with all-zero h interpreted as exact uniform"
+  },
+  "unchanged_invariants": [
+    "M131 exact sampled conditional-boundary coefficient",
+    "M133 five rectangular products",
+    "fixed K=2*width per layer",
+    "5 percent exact uniform-rescue mass",
+    "independent HH draw stream after proposal construction",
+    "ordered-singleton factor 1/(2*K*q)",
+    "proposal frozen for source/background Frechet tangent at fixed weights"
+  ],
+  "source_scale": {
+    "definition": "sqrt(E[ReLU(Z)^2]-E[ReLU(Z)]^2) from the same frozen Gaussian background",
+    "domain": "finite mean and strictly positive finite preactivation variance",
+    "failure": "fail closed if computed ReLU variance is nonpositive or nonfinite; no floor",
+    "positive_gauge": "s[r] transforms as D[r]*s[r]"
+  },
+  "tangent_scope": {
+    "implemented_and_inherited": "fixed network weights, source/background tangent: E_q0[Delta_dot*F/(2*q0)]",
+    "weight_tangent": "prohibited in M143; would require E_q0[(Delta_dot*F+Delta*F_dot)/(2*q0)] and a separate tested implementation",
+    "never_include": "qdot or a score-function term"
+  },
+  "generated_protocol": {
+    "runner": "run_m143_generated.py",
+    "chain": {
+      "depth": 3,
+      "covariance": "(I+.020*G)(I+.020*G)^T+.45*I",
+      "mean": ".16*sigma*normal",
+      "families": {
+        "diagonal": ".82*I+.035*normal",
+        "iid_he": "normal(0,2/width), zero diagonal privilege"
+      },
+      "family_rule": "both families are frozen before execution; primary and attribution gates must pass in each family and pooled; an M131 certification failure in either family fails target extrapolation and receives no retry"
+    },
+    "rng": {
+      "algorithm": "numpy.random.Generator(PCG64DXSM)",
+      "master_seed": 143000007,
+      "child_derivation": "SeedSequence([master,split_code,family_code,width,cell_seed,method_code,repetition,layer,purpose_code])",
+      "background_purpose": "0xBACC",
+      "draw_purpose": "0xD2A",
+      "method_codes": {"m133": 11, "scale_only": 23, "m143": 37},
+      "family_codes": {"diagonal": 307, "iid_he": 401},
+      "common_random_numbers_across_methods": false,
+      "bootstrap_key": "[master,split_code,0xB007,predeclared_ratio_scope_code]"
+    },
+    "q_snapshot": "one deep read-only snapshot per (split,width,cell_seed,layer,method), constructed before any exact coefficient and checked by SHA-256 after every draw",
+    "hh_conditionality": "draws are independent child-stream variates after q construction; they are conditional on the frozen background and are never reused to adapt q",
+    "exact_coefficient": {
+      "oracle": "M131 conditional_collision211_defect_dot",
+      "coarse_order": 32,
+      "fine_order": 48,
+      "series_terms": 24,
+      "max_value_disagreement": 0.00004
+    },
+    "response_ownership": {
+      "local": "complete linear M121 one-delay conversion for the [2,1,1] k4 component only; k3 and every other source family are zero",
+      "carrier": "M125b inhomogeneous coalescing through the same frozen generated Gaussian chain",
+      "reference": "exhaustive exact local [2,1,1] table at every layer propagated through the identical response",
+      "claim": "proposal diagnostic only; not a target-ready integrated estimator"
+    },
+    "repetitions": 64,
+    "k_per_layer": "2*width",
+    "development": {"widths": [5, 6], "seeds": [143701, 143702]},
+    "confirmation_unopened": {"widths": [7, 8], "seeds": [143811]},
+    "bootstrap": {
+      "resamples": 10000,
+      "one_sided_quantile": 0.9,
+      "unit": "paired (cell,repetition) per-output response-MSE record",
+      "procedure": "resample record indices with replacement and recompute ratio of mean numerator error to mean denominator error"
+    }
+  },
+  "predeclared_gates": {
+    "primary_m143_vs_original_m133": {
+      "pooled_mse_ratio_max": 0.75,
+      "one_sided_bootstrap_upper90_strict_max": 0.9,
+      "largest_width_mean_ratio_no_more_than_smallest": true,
+      "stratification": "the same three thresholds must hold pooled and separately in diagonal and iid_he families"
+    },
+    "causal_attribution_m143_vs_scale_only": {
+      "pooled_mse_ratio_max": 0.9,
+      "one_sided_bootstrap_upper90_strict_max": 1.0,
+      "largest_width_mean_ratio_no_more_than_smallest": true,
+      "stratification": "the same three thresholds must hold pooled and separately in diagonal and iid_he families"
+    },
+    "scale_only_vs_m133": "report-only diagnostic; cannot be selected or promoted alone in this protocol",
+    "kill": "kill this composite implementation if either primary or attribution gate fails; do not open confirmation"
+  },
+  "firewall": {
+    "authorization_common": {
+      "required_bindings": [
+        "candidate M143",
+        "exact split",
+        "current manifest SHA-256",
+        "current runner SHA-256",
+        "absolute authorized output path",
+        "canonical authorization_id = m143-SHA256(nonce), making identifier reuse equivalent to nonce reuse",
+        "16-128 character nonce",
+        "canonical absolute consumption receipt path derived from SHA-256(nonce) in the fixed M143 receipt ledger"
+      ],
+      "one_shot": "before any response construction, runner atomically creates the nonce-keyed receipt with O_CREAT|O_EXCL; an existing receipt rejects reuse even after crash, output deletion, authorization-file change, or output-path change; confirmation validates the receipt's exact canonical payload, not merely its existence or claimed digest",
+      "result_provenance": "result records authorization-file absolute path/SHA-256, authorization_id, nonce, split, authorized output path, receipt path, and receipt SHA-256",
+      "output": "CLI output must be the exact bound absolute path; its parent must exist; runner writes with exclusive mode and refuses overwrite"
+    },
+    "development": "requires a separate one-shot root authorization satisfying every common binding",
+    "confirmation": {
+      "authorization_binding": "second one-shot authorization binds current artifacts/output plus exact absolute development result path/SHA-256 and development authorization path/SHA-256",
+      "identity_validation": "candidate M143, development split, current manifest SHA-256, current runner SHA-256, exact frozen CONFIG, and exact development authorization/receipt provenance",
+      "completeness_validation": "no protocol failures; exact two families, widths, seeds, cells, 64 repetitions, all three method MSEs, and proposal snapshot hashes",
+      "independent_gate_recomputation": "rebuild pooled and per-family primary and attribution ratios, deterministic 10000-resample upper-90 bounds, and width trends from stored records; asserted gate booleans are ignored until checked against recomputation",
+      "opening_rule": "confirmation opens only when independently recomputed primary and attribution gates pass pooled and in both families"
+    }
+  },
+  "dtype_and_cost": {
+    "generated_reference_dtype": "float64",
+    "target_proposal_dtype": "float32",
+    "static_incremental_path_energy_bound": 7777280,
+    "m133_complete_k512_protected_base": 94940940240,
+    "m133_proposal_setup_to_replace_not_add": 121896960,
+    "native_trace": "M143_FLOPSCOPE_STRUCTURAL_TRACE_20260807.json from trace_m143_flopscope.py; target-shaped n=256,L=31,K=512 structural proposal-only trace and residual timing",
+    "native_full_proposal_billed": 67900646,
+    "native_full_proposal_protected_1_25": 84875808,
+    "complete_nonoverlap_protected": 94903919088,
+    "native_residual_seconds": 0.013532000128179789,
+    "nonoverlap_rule": "new complete crosswalk = M133 complete - old proposal_setup + native M143 proposal billed work; retain the existing 10B whole-estimator wall reserve and do not add standalone trace residual twice"
+  },
+  "execution_artifact_hashes": {
+    "m143_output_aware_proposal.py": "5dab449d9ceff7099e04f4521415e781592e6eec260636dd4e81688c9dc6d9bb",
+    "run_m143_generated.py": "1f0d31ec7e28d98cd84fc64fac3bc3a67293f6060d14f085f8f0005c92a9a81c",
+    "../m120_price_normal_ordered_adjoint/m120c_analytic_dense_reference.py": "f5e34f8ebc8ff2cafad63ccf55101155c802b01a36828bfc03edc820ad4a65f8",
+    "../m125_source_batched_forward_tangent/m125_forward_tangent.py": "fbc9fe32357801b22f0313d4043022e81e2764ff3bf4be94f0dfe3ddb3d1ed32",
+    "../m126_repeated_output_source_contraction/m126_repeated_output_contractions.py": "f0462b96e7f898812d39b7a39f458f965835523f2a4c7a509c43f62dc7c1011c",
+    "../m129_source_frechet_tangent/m129_source_frechet.py": "b7b9d4b0228331972f7fd7b5bd2fb6081ba3053d25daf64f3f8dd0f84e31a6bf",
+    "../m131_trivariate_boundary_stream/m131_trivariate_boundary_stream.py": "1bb1912b82f8d7b7a204bc19d0d260a9050f02e83b8e87d322188632882ecac3",
+    "../m133_ht_hidden_edge/m133_ht_hidden_edge.py": "c296c95ede532c1451e0444b9d56b51e96287ef251b11de9cacee0df7d1ea6b1"
+  },
+  "root_reaudit_required_before_any_response_execution": true
+}

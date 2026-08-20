@@ -1,0 +1,18 @@
+{
+  "candidate": "M140 quadratic [2,1,1] control-variate partition",
+  "date": "2026-08-07",
+  "scope": "theory and generated-array algebra only",
+  "bias_class": "exact source partition if both deterministic jet and frozen-proposal residual are included",
+  "mechanism": "D_211 = J2_211 + (D_211-J2_211); contract J2 deterministically and Hansen-Hurwitz sample only the residual at a fixed full-support proposal",
+  "ownership": "only canonical [2,1,1] i;i,j,k with j<k; [4], [3,1], [2,2], and all-distinct source populations remain untouched",
+  "required_tables": ["k4_aaaa", "k4_aaab", "k4_aabb"],
+  "target_cost_constraint": "incremental protected cost <= 5,000,000,000",
+  "preexecution_kill_conditions": [
+    "any required M121 repeated table is incomplete",
+    "optimistic protected incremental worksheet exceeds 5,000,000,000",
+    "proposal is differentiated instead of frozen",
+    "collision ownership changes without an exhaustive partition proof"
+  ],
+  "outcome_screen_authorized": false,
+  "contest_data_accessed": false
+}

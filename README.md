@@ -31,6 +31,18 @@ remains authoritative.
 - `corpus/whestbench/` — the private WHestBench estimator-research corpus,
   evidence graph, recursion packets, negative-result reports, and source ledger.
 
+## Fable 5 continuation
+
+The current private continuation packet is at
+`corpus/whestbench/handoff/README.md`. It includes the standing goal, a strict
+ASCII resume prompt, resource and test provenance, a bundle checksum manifest,
+the M120-M197 reproducibility bank, the Generation-5 oracle/no-go autopsy, and
+the updated audited graph. Verify it before use:
+
+```bash
+python scripts/verify_whestbench_handoff.py
+```
+
 ## Install for Claude Code
 
 Clone the repository, then copy or link the repository directory to:

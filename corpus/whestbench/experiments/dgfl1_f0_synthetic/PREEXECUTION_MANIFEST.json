@@ -1,0 +1,104 @@
+{
+  "schema_version": "dgfl1-f0-synthetic-preexecution-v3",
+  "created_local": "2026-08-11T17:53:09.1320094-05:00",
+  "status": "PREEXECUTION_F0_SYNTHETIC_MATH_ONLY",
+  "authority": {
+    "user_request": "I want to test it",
+    "authorized_scope": "deterministic synthetic tests of the dipole-Fourier rotational-Stein mathematics and reduction schedule",
+    "excluded_scope": [
+      "generated or challenge networks",
+      "challenge truth or scorer access",
+      "hosted or provider execution",
+      "W0 estimator execution",
+      "efficacy, MSE, score, ranking, or promotion claims",
+      "real multiprocessing, wall-time, RSS, or Phase-2 legality claims"
+    ]
+  },
+  "source_construction_base_head": "8eabf709a61040ad1c778360f4962b7c458868a8",
+  "bound_artifacts": {
+    "proposal": {
+      "path": "../../core/CODEX_DGFL1_DIPOLE_FOURIER_LADDER_PROPOSAL_20260811.md",
+      "sha256": "47F9BD3EF003833900ACCAB8EFD00C85B869553D14A02C46996534CDF6D099BA"
+    },
+    "source": {
+      "path": "dgfl1_f0.py",
+      "sha256": "2D8DE711FAF66C986F6C087A052BC828EDA4DFB0D81D994C6A217D7822CA0939"
+    },
+    "tests": {
+      "path": "test_dgfl1_f0.py",
+      "sha256": "0A05C5D22AF38F0E77528F1191F47EBE363CA7C99F9DB2C71441C9706EECFBDE"
+    },
+    "resource_snapshot": {
+      "path": "RESOURCE_SNAPSHOT.json",
+      "sha256": "6D72B82AB111C288BB9DDE72035D5C1060F8E227064341DAF7F22D4E81C32B60"
+    }
+  },
+  "runtime": {
+    "python_executable": "C:\\Users\\strid\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "python_executable_sha256": "3C6A206B7D93CCA823934A83732220DCFFD413FD1036D9FB82EEBB64599CF7F3",
+    "python_version": "3.12.13",
+    "numpy_version": "2.3.5",
+    "environment": {
+      "PYTHONHASHSEED": "0",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "bytecode_policy": "python -B; no __pycache__ or .pyc artifacts permitted"
+  },
+  "execution": {
+    "working_directory": "corpus/whestbench/experiments/dgfl1_f0_synthetic",
+    "powershell_command": "$env:PYTHONHASHSEED='0'; $env:OMP_NUM_THREADS='1'; $env:OPENBLAS_NUM_THREADS='1'; $env:MKL_NUM_THREADS='1'; & 'C:\\Users\\strid\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe' -B -m unittest -v test_dgfl1_f0.py",
+    "expected_test_count": 20,
+    "expected_failures": 0,
+    "expected_errors": 0,
+    "post_run_transcript_path": "F0_TEST_TRANSCRIPT.txt",
+    "normative_execution": "serial",
+    "shard_test_scope": "deterministic ownership and adversarial completion-order simulation only; no processes spawned and no speed claim"
+  },
+  "tests": [
+    "ProductRuleTests.test_both_dipole_signs_match_orbit_product_derivatives",
+    "ProductRuleTests.test_controls_reject_malformed_geometry",
+    "ProductRuleTests.test_fourier_lie_term_vanishes_when_axis_is_in_kernel_of_J",
+    "ProductRuleTests.test_fourier_rung_includes_the_signed_product_rule_term",
+    "ProductRuleTests.test_fourier_rung_rejects_a_nonunit_pilot_axis",
+    "ProductRuleTests.test_fused_control_equals_weighted_sum_of_separate_rungs",
+    "RotationGeneratorTests.test_generator_rejects_nonunit_or_nonorthogonal_pairs",
+    "RotationGeneratorTests.test_nontrivial_four_dimensional_generator_matches_projector_reference",
+    "RotationGeneratorTests.test_rank_two_generator_has_the_frozen_dipole_orientation",
+    "SharedJVPTests.test_deep_jvp_matches_centered_directional_difference_away_from_gates",
+    "SharedJVPTests.test_deep_jvp_matches_independently_constructed_full_jacobian",
+    "SharedJVPTests.test_physical_orbit_tangent_includes_the_input_radius",
+    "SharedJVPTests.test_relu_at_zero_uses_strict_positive_jvp_and_exposes_both_one_sided_derivatives",
+    "SharedJVPTests.test_whest_row_weights_and_absorbed_q_transport_match_physical_coordinates",
+    "WeakCenteringAndScheduleTests.test_antipodal_average_selects_even_and_odd_network_parts",
+    "WeakCenteringAndScheduleTests.test_bank_path_scales_the_physical_input_and_tangent_by_radius",
+    "WeakCenteringAndScheduleTests.test_canonical_pairwise_mean_rejects_empty_or_nonfinite_leaves",
+    "WeakCenteringAndScheduleTests.test_each_control_has_near_zero_full_orbit_mean_on_a_cpwl_network",
+    "WeakCenteringAndScheduleTests.test_two_shards_preserve_canonical_leaves_mean_and_one_jvp_per_row",
+    "WeakCenteringAndScheduleTests.test_uneven_shards_are_bitwise_invariant_to_adversarial_completion_order"
+  ],
+  "frozen_numerics": {
+    "dtype": "numpy.float64",
+    "physical_bank_input": "x = radius*u and dx = J@x with finite positive radius",
+    "whest_weight_mapping": "W_col = W_row.T; absorbed first weight is Q.T@W_row and transported generator is Q.T@J@Q",
+    "vector_unit_and_orthogonality_absolute_tolerance": 1e-13,
+    "skew_and_frozen_generator_absolute_tolerance": 1e-13,
+    "row_unit_norm_absolute_tolerance": 2e-13,
+    "relu_jvp_at_zero": "strict-positive derivative 0",
+    "full_orbit_quadrature": "64-point Gauss-Legendre within each exact CPWL cell interval",
+    "full_orbit_mean_absolute_tolerance": 2e-14,
+    "schedule_equality": "byte equality after global-index sort and canonical binary-tree reduction"
+  },
+  "claim_boundary": {
+    "a_pass_may_establish": "the bound deterministic synthetic mathematical contracts pass in the bound runtime",
+    "a_pass_may_not_establish": [
+      "a complete source-contract F0 pass",
+      "production-Q independence or coordinate transport",
+      "d=256 or 32-layer provider behavior",
+      "post-Q totality or inherited guard behavior",
+      "complete FLOP, wall, RSS, or multiprocessing accounting",
+      "variance reduction, MSE reduction, score improvement, or contest credit"
+    ]
+  }
+}

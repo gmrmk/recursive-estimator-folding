@@ -1,0 +1,329 @@
+{
+  "counterexample": {
+    "interval_width": 0.21132486540518708,
+    "normal_relu": 0.3989422804014327,
+    "symmetric_lower_sharp": 0.2886751345948129,
+    "symmetric_upper_supremum": 0.5,
+    "three_atom_relu": 0.2886751345948129
+  },
+  "diagnostics": {
+    "certified_interval_reference_coverage_mean": 1.0,
+    "edgeworth_density_nonnegative_fraction_mean": 0.25,
+    "maxent_feasible_fraction_mean": 1.0,
+    "mean_abs_excess_kurtosis_bank_drift": 0.07129323762798545,
+    "mean_abs_skewness_bank_drift": 0.008855617984423974,
+    "two_gaussian_mixture_feasible_fraction_mean": 1.0
+  },
+  "frozen_config": {
+    "bootstrap_reps": 20000,
+    "chunk": 32768,
+    "depth": 32,
+    "independent_reference_samples_per_network": 1048576,
+    "moment_samples_per_network": 1048576,
+    "networks": 12,
+    "seeds": {
+      "bootstrap": 53700,
+      "moment_base": 23700,
+      "network_base": 13700,
+      "reference_base": 43700,
+      "stability_base": 33700
+    },
+    "stability_samples_per_network": 131072,
+    "width": 8
+  },
+  "generated_only": true,
+  "methods": {
+    "certified_interval_midpoint": {
+      "bootstrap_mse_ci95": [
+        3.6350345108986974e-08,
+        1.4758380076854563e-05
+      ],
+      "bootstrap_ratio_ci95": [
+        6.963498970862247,
+        434.52118072433376
+      ],
+      "network_mean_mse": 6.214022709497583e-06,
+      "network_median_mse": 2.2759715253166443e-08,
+      "ratio_to_edgeworth": 15.296847003564102
+    },
+    "edgeworth_k4_second": {
+      "bootstrap_mse_ci95": [
+        1.0632496658596058e-09,
+        1.1728667557685389e-06
+      ],
+      "bootstrap_ratio_ci95": [
+        1.0,
+        1.0
+      ],
+      "network_mean_mse": 4.062289900689823e-07,
+      "network_median_mse": 3.5890258140826764e-10,
+      "ratio_to_edgeworth": 1.0
+    },
+    "gaussian": {
+      "bootstrap_mse_ci95": [
+        8.150822146495424e-08,
+        9.731176226858274e-05
+      ],
+      "bootstrap_ratio_ci95": [
+        37.649825593731684,
+        3090.5438983675945
+      ],
+      "network_mean_mse": 4.1615141520893996e-05,
+      "network_median_mse": 6.185563011559192e-08,
+      "ratio_to_edgeworth": 102.44256943313492
+    },
+    "maxent_quartic_or_gaussian": {
+      "bootstrap_mse_ci95": [
+        4.434823638450187e-09,
+        5.065509648370573e-06
+      ],
+      "bootstrap_ratio_ci95": [
+        1.176045610554737,
+        189.97286209851936
+      ],
+      "network_mean_mse": 1.9838321173962233e-06,
+      "network_median_mse": 2.4250699107134557e-09,
+      "ratio_to_edgeworth": 4.883531618605915
+    },
+    "two_gaussian_mixture_or_gaussian": {
+      "bootstrap_mse_ci95": [
+        7.886641530787048e-09,
+        9.494157158806806e-06
+      ],
+      "bootstrap_ratio_ci95": [
+        2.3099219852860124,
+        347.0292553974953
+      ],
+      "network_mean_mse": 3.7441536520959503e-06,
+      "network_median_mse": 4.545718957199747e-09,
+      "ratio_to_edgeworth": 9.216854886354
+    }
+  },
+  "no_contest_data_or_targets": true,
+  "per_network": [
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.036621671314363446,
+      "mean_abs_skew_bank_drift": 0.001745810303590889,
+      "mean_abs_skewness": 2.443556519955285,
+      "mean_excess_kurtosis": 7.1855327821849535,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 7.570492254279185e-08,
+        "edgeworth_k4_second": 2.5884916574145016e-11,
+        "gaussian": 1.6983823297474665e-07,
+        "maxent_quartic_or_gaussian": 8.54610384146599e-09,
+        "two_gaussian_mixture_or_gaussian": 1.4054032238137162e-08
+      },
+      "network_index": 0
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.06144073787933746,
+      "mean_abs_skew_bank_drift": 0.011812283500323095,
+      "mean_abs_skewness": 2.104371240919699,
+      "mean_excess_kurtosis": 5.252492666739064,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 3.133745807312444e-05,
+        "edgeworth_k4_second": 4.514762292027752e-06,
+        "gaussian": 0.00016983626216722397,
+        "maxent_quartic_or_gaussian": 5.299627965616806e-06,
+        "two_gaussian_mixture_or_gaussian": 1.0411711111935947e-05
+      },
+      "network_index": 1
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.1437905222880943,
+      "mean_abs_skew_bank_drift": 0.015037489498349155,
+      "mean_abs_skewness": 1.7876321242013957,
+      "mean_excess_kurtosis": 4.281215674139844,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 1.2557140045779697e-08,
+        "edgeworth_k4_second": 3.117205895764236e-10,
+        "gaussian": 1.628820024350205e-08,
+        "maxent_quartic_or_gaussian": 5.865000150639144e-10,
+        "two_gaussian_mixture_or_gaussian": 1.3968780554832523e-09
+      },
+      "network_index": 2
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 1.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.0,
+      "mean_abs_skew_bank_drift": 0.0,
+      "mean_abs_skewness": 0.0,
+      "mean_excess_kurtosis": -3.0000000000000004,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 0.0,
+        "edgeworth_k4_second": 0.0,
+        "gaussian": 0.0,
+        "maxent_quartic_or_gaussian": 0.0,
+        "two_gaussian_mixture_or_gaussian": 0.0
+      },
+      "network_index": 3
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 1.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.0,
+      "mean_abs_skew_bank_drift": 0.0,
+      "mean_abs_skewness": 0.0,
+      "mean_excess_kurtosis": -3.0000000000000004,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 0.0,
+        "edgeworth_k4_second": 0.0,
+        "gaussian": 0.0,
+        "maxent_quartic_or_gaussian": 0.0,
+        "two_gaussian_mixture_or_gaussian": 0.0
+      },
+      "network_index": 4
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 1.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.0,
+      "mean_abs_skew_bank_drift": 0.0,
+      "mean_abs_skewness": 0.0,
+      "mean_excess_kurtosis": -3.0000000000000004,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 0.0,
+        "edgeworth_k4_second": 0.0,
+        "gaussian": 0.0,
+        "maxent_quartic_or_gaussian": 0.0,
+        "two_gaussian_mixture_or_gaussian": 0.0
+      },
+      "network_index": 5
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.06765583336099357,
+      "mean_abs_skew_bank_drift": 0.006189743096269296,
+      "mean_abs_skewness": 1.9386455186736575,
+      "mean_excess_kurtosis": 4.170151502708847,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 2.3453706473885574e-08,
+        "edgeworth_k4_second": 3.933371689880275e-11,
+        "gaussian": 7.436436735156976e-08,
+        "maxent_quartic_or_gaussian": 2.643214975332807e-09,
+        "two_gaussian_mixture_or_gaussian": 4.9141537464800905e-09
+      },
+      "network_index": 6
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.118220444985422,
+      "mean_abs_skew_bank_drift": 0.016961453782899094,
+      "mean_abs_skewness": 1.4358976206032463,
+      "mean_excess_kurtosis": 2.703063162607476,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 3.997758900510709e-05,
+        "edgeworth_k4_second": 8.945227587391236e-08,
+        "gaussian": 0.000285064302854835,
+        "maxent_quartic_or_gaussian": 1.7527949928122782e-05,
+        "two_gaussian_mixture_or_gaussian": 3.201987120132043e-05
+      },
+      "network_index": 7
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.073186864848368,
+      "mean_abs_skew_bank_drift": 0.006655350342780114,
+      "mean_abs_skewness": 2.106245963716099,
+      "mean_excess_kurtosis": 5.084827625322073,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 2.2065724032447313e-08,
+        "edgeworth_k4_second": 4.0608457324011174e-10,
+        "gaussian": 4.934689287961407e-08,
+        "maxent_quartic_or_gaussian": 2.206924846094104e-09,
+        "two_gaussian_mixture_or_gaussian": 4.177284167919405e-09
+      },
+      "network_index": 8
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.18400228291577125,
+      "mean_abs_skew_bank_drift": 0.028276694186886386,
+      "mean_abs_skewness": 2.4079385693063275,
+      "mean_excess_kurtosis": 8.023658966995516,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 9.679773615936496e-08,
+        "edgeworth_k4_second": 3.802359696386805e-09,
+        "gaussian": 2.1630599536335163e-07,
+        "maxent_quartic_or_gaussian": 1.3956237162745073e-08,
+        "two_gaussian_mixture_or_gaussian": 2.4549366559493202e-08
+      },
+      "network_index": 9
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.11559980347835874,
+      "mean_abs_skew_bank_drift": 0.015342076245389163,
+      "mean_abs_skewness": 1.5334495358491678,
+      "mean_excess_kurtosis": 2.527778439470593,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 3.007951537015613e-06,
+        "edgeworth_k4_second": 2.641141576526094e-07,
+        "gaussian": 4.3928578522471556e-05,
+        "maxent_quartic_or_gaussian": 9.498016749996173e-07,
+        "two_gaussian_mixture_or_gaussian": 2.4476933463915157e-06
+      },
+      "network_index": 10
+    },
+    {
+      "certified_interval_reference_coverage": 1.0,
+      "edgeworth_nonnegative_fraction": 0.0,
+      "maxent_feasible_fraction": 1.0,
+      "mean_abs_excess_kurtosis_bank_drift": 0.055000690465116575,
+      "mean_abs_skew_bank_drift": 0.004246514856600492,
+      "mean_abs_skewness": 2.226417897579025,
+      "mean_excess_kurtosis": 6.1714742381368595,
+      "mixture_feasible_fraction": 1.0,
+      "mse": {
+        "certified_interval_midpoint": 1.4694669469571897e-08,
+        "edgeworth_k4_second": 1.8337717808373252e-09,
+        "gaussian": 2.6411017384716984e-08,
+        "maxent_quartic_or_gaussian": 6.668591747743326e-10,
+        "two_gaussian_mixture_or_gaussian": 1.4764507360047985e-09
+      },
+      "network_index": 11
+    }
+  ],
+  "promotion_gate": {
+    "promoted": [],
+    "proper_law_required": true,
+    "relative_to_edgeworth": "mean MSE <= 0.1 and upper 95% bootstrap ratio < 0.2",
+    "status": "KILL_AS_TERMINAL_LAW_ESCAPE"
+  },
+  "saddlepoint": "K(t) truncated at k4 is not a globally valid probability law unless k3=k4=0 (Marcinkiewicz); no saddlepoint closure was admitted.",
+  "seconds": 53.0501061999239
+}

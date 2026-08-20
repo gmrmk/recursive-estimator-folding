@@ -1,0 +1,266 @@
+{
+  "aggregate": {
+    "combined_m212_m215_arithmetic_bill": 6695761920,
+    "hostile_margin_min": 721563626.6763744,
+    "hostile_projection_max": 6102708549.323626,
+    "incremental_bill": 5446508544,
+    "incremental_collision_mib": 62.0,
+    "peak_rss_mib": 253.46484375,
+    "persistent_mib": 164.08203125,
+    "raw_incremental_cap": 6824272176,
+    "raw_margin": 1377763632,
+    "residual_max_ms": 1.3124000106472522,
+    "residual_mean_ms": 1.1329600412864238
+  },
+  "algebra_gate": {
+    "collision_max_abs_error": 6.661338147750939e-16,
+    "hidden_permutation": "pass",
+    "positive_relu_gauge": "pass",
+    "strict_distinct_max_abs_error": 1.3877787807814457e-15,
+    "widths": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "zero_factor_exact_zero": "pass"
+  },
+  "candidate": "M215 exact noncubic rank-one collision correction",
+  "disposition": {
+    "legacy_collision_consequence": "already-paid physical K4/K31/K22 owners can remain injected; M215 does not recreate them",
+    "promoted_component": "exact M212-complete to M151-strict collision subtraction using A/t/E/D",
+    "still_blocked": [
+      "physical distinct C211 residual provider and proposal binding",
+      "M179-to-M212 factor lifecycle in the actual two-phase caller",
+      "M198 next-context conversion and terminal response",
+      "full replacement-DAG allocation/copy and integrated wall trace",
+      "source variance, MSE, score, submission, and winner evidence"
+    ]
+  },
+  "equations": {
+    "A": "(S^2)^T S",
+    "Ccol_aaab": "-18 diag(p)A -6 t p^T -12 diag(rho)B +24E",
+    "Ccol_aabb": "-12[A diag(p)+diag(p)A^T] -4 rho rho^T -8(B hadamard B)+24D",
+    "D": "(S^2)^T S^2 = (W^2)^T diag(u^4) (W^2)",
+    "E": "(S^3)^T S",
+    "strict": "M212 complete-domain source minus Ccol",
+    "t": "(S^3)^T 1"
+  },
+  "firewall": "generated-only response-free algebra and resource audit",
+  "gates": {
+    "aabb_symmetric_to_1e_15": true,
+    "combined_m212_m215_arithmetic_bill": true,
+    "constant_exact_incremental_bill": true,
+    "every_isolated_hostile_five_x_projection_fits": true,
+    "exact_five_matmul_calls": true,
+    "exact_four_reshape_calls": true,
+    "exact_matmul_bill": true,
+    "exact_reshape_bill": true,
+    "finite_no_failures": true,
+    "five_frozen_isolated_processes": true,
+    "flopscope_0_10_0": true,
+    "incremental_planes_exactly_62_mib": true,
+    "persistent_memory_ledger_complete": true,
+    "rss_below_512_mib": true
+  },
+  "parallel_stress": {
+    "constraint": "do not co-launch independent M215 compilers; integrated official trace remains mandatory",
+    "failures_over_cap": 3,
+    "protocol_status": "preserved_noncanonical_concurrent_launch_stress_not_used_as_single_process_gate",
+    "records": [
+      {
+        "aabb_max_asymmetry": 4.336808689942018e-19,
+        "billed_flops": 5446508544,
+        "combined_arithmetic_bill": 6695761920,
+        "failure": null,
+        "finite": true,
+        "hostile": 6825608582.320757,
+        "incremental_collision_mib": 62.0,
+        "matmul_bill": 5320548352,
+        "matmul_calls": 5,
+        "peak_working_set_mib": 253.06640625,
+        "persistent_mib": 163.9609375,
+        "reshape_bill": 16252928,
+        "reshape_calls": 4,
+        "residual_s": 0.002758200076641515,
+        "runtime": {
+          "flopscope": "0.10.0+np2.4.6",
+          "numpy": "2.4.6"
+        },
+        "seed": 215700002
+      },
+      {
+        "aabb_max_asymmetry": 4.336808689942018e-19,
+        "billed_flops": 5446508544,
+        "combined_arithmetic_bill": 6695761920,
+        "failure": null,
+        "finite": true,
+        "hostile": 6830008601.272614,
+        "incremental_collision_mib": 62.0,
+        "matmul_bill": 5320548352,
+        "matmul_calls": 5,
+        "peak_working_set_mib": 253.21484375,
+        "persistent_mib": 163.9609375,
+        "reshape_bill": 16252928,
+        "reshape_calls": 4,
+        "residual_s": 0.002767000114545226,
+        "runtime": {
+          "flopscope": "0.10.0+np2.4.6",
+          "numpy": "2.4.6"
+        },
+        "seed": 215700003
+      },
+      {
+        "aabb_max_asymmetry": 8.673617379884035e-19,
+        "billed_flops": 5446508544,
+        "combined_arithmetic_bill": 6695761920,
+        "failure": null,
+        "finite": true,
+        "hostile": 6761258514.333651,
+        "incremental_collision_mib": 62.0,
+        "matmul_bill": 5320548352,
+        "matmul_calls": 5,
+        "peak_working_set_mib": 253.09375,
+        "persistent_mib": 163.9609375,
+        "reshape_bill": 16252928,
+        "reshape_calls": 4,
+        "residual_s": 0.0026294999406673014,
+        "runtime": {
+          "flopscope": "0.10.0+np2.4.6",
+          "numpy": "2.4.6"
+        },
+        "seed": 215700004
+      },
+      {
+        "aabb_max_asymmetry": 4.336808689942018e-19,
+        "billed_flops": 5446508544,
+        "combined_arithmetic_bill": 6695761920,
+        "failure": null,
+        "finite": true,
+        "hostile": 6889158542.352863,
+        "incremental_collision_mib": 62.0,
+        "matmul_bill": 5320548352,
+        "matmul_calls": 5,
+        "peak_working_set_mib": 253.2265625,
+        "persistent_mib": 163.9609375,
+        "reshape_bill": 16252928,
+        "reshape_calls": 4,
+        "residual_s": 0.002885299996705726,
+        "runtime": {
+          "flopscope": "0.10.0+np2.4.6",
+          "numpy": "2.4.6"
+        },
+        "seed": 215700005
+      }
+    ]
+  },
+  "records": [
+    {
+      "aabb_max_asymmetry": 4.336808689942018e-19,
+      "billed_flops": 5446508544,
+      "combined_arithmetic_bill": 6695761920,
+      "failure": null,
+      "finite": true,
+      "hostile": 6017058508.322708,
+      "incremental_collision_mib": 62.0,
+      "matmul_bill": 5320548352,
+      "matmul_calls": 5,
+      "peak_working_set_mib": 253.078125,
+      "persistent_mib": 164.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.001141099928645417,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 215700001
+    },
+    {
+      "aabb_max_asymmetry": 4.336808689942018e-19,
+      "billed_flops": 5446508544,
+      "combined_arithmetic_bill": 6695761920,
+      "failure": null,
+      "finite": true,
+      "hostile": 5976508665.2162895,
+      "incremental_collision_mib": 62.0,
+      "matmul_bill": 5320548352,
+      "matmul_calls": 5,
+      "peak_working_set_mib": 253.04296875,
+      "persistent_mib": 164.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0010600002424325794,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 215700002
+    },
+    {
+      "aabb_max_asymmetry": 4.336808689942018e-19,
+      "billed_flops": 5446508544,
+      "combined_arithmetic_bill": 6695761920,
+      "failure": null,
+      "finite": true,
+      "hostile": 6102708549.323626,
+      "incremental_collision_mib": 62.0,
+      "matmul_bill": 5320548352,
+      "matmul_calls": 5,
+      "peak_working_set_mib": 253.1875,
+      "persistent_mib": 164.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0013124000106472522,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 215700003
+    },
+    {
+      "aabb_max_asymmetry": 8.673617379884035e-19,
+      "billed_flops": 5446508544,
+      "combined_arithmetic_bill": 6695761920,
+      "failure": null,
+      "finite": true,
+      "hostile": 5975158480.313741,
+      "incremental_collision_mib": 62.0,
+      "matmul_bill": 5320548352,
+      "matmul_calls": 5,
+      "peak_working_set_mib": 253.46484375,
+      "persistent_mib": 164.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0010572998726274818,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 215700004
+    },
+    {
+      "aabb_max_asymmetry": 4.336808689942018e-19,
+      "billed_flops": 5446508544,
+      "combined_arithmetic_bill": 6695761920,
+      "failure": null,
+      "finite": true,
+      "hostile": 5993508620.039694,
+      "incremental_collision_mib": 62.0,
+      "matmul_bill": 5320548352,
+      "matmul_calls": 5,
+      "peak_working_set_mib": 253.28515625,
+      "persistent_mib": 164.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0010940001520793885,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 215700005
+    }
+  ],
+  "status": "EXACT_STRICT_DISTINCT_OWNERSHIP_BRIDGE_RESOURCE_COMPONENT_PASS_INTEGRATED_DAG_BLOCKED"
+}

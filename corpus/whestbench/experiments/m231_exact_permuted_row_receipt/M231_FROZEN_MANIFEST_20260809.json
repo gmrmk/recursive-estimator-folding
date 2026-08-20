@@ -1,0 +1,101 @@
+{
+  "candidate": "M231 exact permuted row receipt for M227 algebra",
+  "date": "2026-08-09",
+  "status": "PREDECLARED_NO_IMPLEMENTATION_NO_TEST_NO_RESULT",
+  "firewall": "generated-only response-free primitive, algebra, resource, then source-efficiency ladder",
+  "parent": "M227",
+  "one_changed_mechanism": "replace float64 priority+argsort+tie detection by one exact per-layer Generator.permuted integer-label receipt",
+  "preserved": {
+    "width": 256,
+    "layers": 31,
+    "subset_rows": 32,
+    "exact_live_objects": ["p", "B", "rho"],
+    "sampled_totals": ["t", "A", "E", "D"],
+    "residual": "M151 fixed-q0 K=128 independent strict residual",
+    "algebra_tolerance": 2e-10,
+    "replacement_credit": false
+  },
+  "primitive": {
+    "runtime": "FlopScope 0.10.0+np2.4.6 / NumPy 2.4.6",
+    "label_bank": "broadcast view of arange(256,int64) to (31,256)",
+    "operation": "random.Generator.permuted(bank,axis=1)",
+    "law": "each layer slice independently permuted; first 32 form exact SRSWOR",
+    "domain": "M231_ROW_PERMUTED_V1",
+    "tie_state_exists": false,
+    "host_uniqueness_check": false,
+    "pathwise_covariance": "receipt labels and hidden rows co-permute",
+    "source_hashes": {
+      "flopscope_registry": "D735DA7D36ECF05BA7B927452DB126FE297E33398F3903C59B886E1BC1228795",
+      "flopscope_random_cost_formulas": "D14D86A2CA0700C0899318A9C7CD3F08E91AC80948682225D383D71E2D628F8F",
+      "flopscope_counted_classes": "6D7AA1E9C4F7A135EF7487FAF6B645AEA61C74983FA780DAFFB68240C6DA3F0D",
+      "numpy_generator_binary": "69C5AA9B41C0A60EE8600A4C1434C86FA96DFC00F4CD3171AED9729AACAA549B"
+    }
+  },
+  "predicted_operations": {
+    "arange_calls": 1,
+    "arange_bill": 1024,
+    "broadcast_to_calls": 1,
+    "broadcast_to_bill": 0,
+    "permuted_calls": 1,
+    "permuted_bill": 31744,
+    "gather_calls": 1,
+    "gather_bill": 2031616,
+    "matmul_calls": 2,
+    "matmul_product_equivalents": 3,
+    "matmul_bill": 767950848,
+    "multiply_calls": 16,
+    "multiply_bill": 57901056,
+    "add_calls": 9,
+    "add_bill": 36569088,
+    "sum_calls": 1,
+    "sum_bill": 492032,
+    "copy_calls": 1,
+    "copy_bill": 15872,
+    "reshape_calls": 0,
+    "inclusive_bill": 864993280
+  },
+  "cost_envelope": {
+    "m212_bill": 1249253376,
+    "m231_bill": 864993280,
+    "combined_bill": 2114246656,
+    "retired_compiler_envelope": 3727757440,
+    "raw_remainder": 1613510784,
+    "combined_hostile_wall_cap_ms": 3.227021568,
+    "m212_frozen_max_wall_ms": 1.2018998677376658,
+    "m231_wall_left_ms": 2.025121700262334,
+    "conditional_full_branch_bill": 88095125456,
+    "conditional_savings": 1613510784,
+    "replacement_credit": "denied pending integrated ABI retirement trace"
+  },
+  "memory_mib": {
+    "incremental_persistent": 36.873046875,
+    "transient_label_base": 0.001953125,
+    "incremental_nominal_peak": 36.875,
+    "m212_m231_persistent": 138.955078125,
+    "rss_cap": 512.0
+  },
+  "native_seeds": [227700001, 227700002, 227700003, 227700004, 227700005],
+  "gate_order": ["primitive_receipt", "algebra", "native_five_process", "G0", "G1", "holdout"],
+  "source_efficiency": {
+    "g0_bootstrap_seed": 2270001,
+    "bootstrap_resamples": 20000,
+    "upper90_ratio_lt": 0.99,
+    "every_cell_ratio_lt": 1.0,
+    "p99_ratio_lte": 1.25,
+    "g1_state_seeds": [22732001, 22732002, 22732003, 22732004, 22732101, 22732102, 22732103, 22732104],
+    "g1_events_per_cell": 16384,
+    "g1_bootstrap_seed": 22730001,
+    "holdout_state_seeds": [22732201, 22732202, 22732203, 22732204, 22732205, 22732206, 22732207, 22732208, 22732301, 22732302, 22732303, 22732304, 22732305, 22732306, 22732307, 22732308]
+  },
+  "prohibited": [
+    "float priority or argsort",
+    "tie detection or deterministic tie break",
+    "unmetered uniqueness scan",
+    "choice loop or 31 permutation calls",
+    "sketched p/B/rho or fourth Bhat product",
+    "adaptive k, threshold drift, or seed substitution",
+    "G0 before primitive, algebra, and native pass",
+    "challenge weights, response, truth, scorer, leaderboard, submission, champion"
+  ],
+  "credit": "predeclared exact-receipt child only; no implementation, test, trace, source result, MSE, score, submission, or winner"
+}

@@ -1,0 +1,70 @@
+{
+ "attack": "post-hoc, not predeclared; see VERDICT.md Deviation 2",
+ "A1_lognormal_admissibility": {
+  "mu_log_mle": -0.15360284816328176,
+  "sd_log_mle": 0.5469056843205202,
+  "ks_stat_observed": 0.0976021392544163,
+  "parametric_bootstrap_p_value": 0.2998,
+  "n_bootstrap": 20000,
+  "ks_boot_p95": 0.1274947643479851,
+  "lognormal_admissible_at_0p05": true,
+  "caveat": "the 48 values are 3 nets x 16 rotations, each block normalised to its own mean, so they are not strictly iid; the same caveat applies to the committed empirical-48 pool itself."
+ },
+ "A2_which_tail_does_the_work": {
+  "full_lognormal": {
+   "p5": 8.593225370908035,
+   "p50": 13.93419105706108,
+   "p95": 26.04032148842059,
+   "p_ge_obs": 0.3767,
+   "brackets": true
+  },
+  "lognormal_lower_clipped_at_empirical_min": {
+   "p5": 8.28624446832276,
+   "p50": 11.931595478126678,
+   "p95": 19.123777471231172,
+   "p_ge_obs": 0.1624,
+   "brackets": true
+  },
+  "lognormal_upper_clipped_at_empirical_max": {
+   "p5": 8.336228512023517,
+   "p50": 11.977241928356612,
+   "p95": 19.15778269239283,
+   "p_ge_obs": 0.1678,
+   "brackets": true
+  },
+  "lognormal_clipped_both_ends": {
+   "p5": 8.187611864641836,
+   "p50": 10.793222157206635,
+   "p95": 11.84139054852559,
+   "p_ge_obs": 0.0,
+   "brackets": false
+  },
+  "empirical_min": 0.25824767681137656,
+  "empirical_max": 2.859626681361194,
+  "gate_interval": [
+   0.2,
+   0.9
+  ]
+ },
+ "A3_closed_form_suite_sd_consequence": {
+  "vF_empirical48": 0.3641995628656461,
+  "vF_lognormal_ext": 0.34862303608014233,
+  "vD_old_committed": 0.0007568879454111777,
+  "sd_50net": {
+   "committed_old_model (vD 7.57e-4, empirical F)": 1.564049749889201e-08,
+   "PASSING ALTERNATIVE (vD 7.57e-4, lognormal F)": 1.5303085290456798e-08,
+   "s1b headline s17_low (vD 0.0814, empirical F)": 1.784020376798548e-08,
+   "s1b headline s17_high (vD 0.1220, empirical F)": 1.8853183129561672e-08
+  },
+  "committed_bootstrap_sd_50net_old_control": 1.562588338576902e-08,
+  "committed_bootstrap_sd_50net_s17_low": 1.7857899609791868e-08,
+  "committed_bootstrap_sd_50net_s17_high": 1.887559088748294e-08,
+  "difficulty_share_R1": {
+   "PASSING ALTERNATIVE (vD 7.57e-4, lognormal F)": 0.0021647401196082977,
+   "s1b headline s17_low": 0.17121462773012894,
+   "s1b headline s17_high": 0.2299653342192057
+  },
+  "note": "closed form only; the identity was empirically validated against the bootstrap in S1b two-signal item 2 to ratio [0.999, 1.002]."
+ },
+ "observed_spread": 15.531671197493653
+}

@@ -1,0 +1,103 @@
+{
+  "candidate": "M235_SETUP_SHARED_PHILOX_ROW_RECEIPT",
+  "firewall": "generated f32 fixtures only; no response, truth, scorer, challenge weights, leaderboard, submission, or champion access",
+  "g0_opened": false,
+  "native_aggregate_opened": false,
+  "status": "KILLED_FROZEN_NATIVE_RSS",
+  "failure": "official same-worker peak RSS exceeded the frozen 512 MiB cap on predictions 2 and 3",
+  "topology": {
+    "official_start": "pinned SubprocessRunner.start through successful worker response",
+    "prediction_order": ["A", "B", "A"],
+    "same_worker": true,
+    "transport": "Win32 ReadProcessMemory against manifest os.getpid(), not venv launcher PID",
+    "setup_seed": 0,
+    "source_seeds": {
+      "A": 227700001,
+      "B": 227710001
+    }
+  },
+  "setup": {
+    "official_start_response_s": 1.6449812000209931,
+    "bill": 32768,
+    "empty_calls": 18,
+    "receipt_stable": true,
+    "workspace_identity_stable": true
+  },
+  "predictions": [
+    {
+      "label": "A",
+      "m212_bill": 1249253376,
+      "m235_bill": 864960512,
+      "combined_bill": 2114213888,
+      "m212_residual_s": 0.0008437999349553138,
+      "m235_residual_s": 0.0006488999060820788,
+      "combined_residual_s": 0.0015516998246312141,
+      "peak_worker_rss_mib": 468.61328125,
+      "exact_calls": true,
+      "finite": true,
+      "symmetric": true,
+      "identity_stable": true,
+      "wall_gates_pass": true,
+      "rss_gate_pass": true
+    },
+    {
+      "label": "B",
+      "m212_bill": 1249253376,
+      "m235_bill": 864960512,
+      "combined_bill": 2114213888,
+      "m212_residual_s": 0.001444000081392005,
+      "m235_residual_s": 0.00047369999811053276,
+      "combined_residual_s": 0.001985300099477172,
+      "peak_worker_rss_mib": 554.625,
+      "exact_calls": true,
+      "finite": true,
+      "symmetric": true,
+      "identity_stable": true,
+      "wall_gates_pass": true,
+      "rss_gate_pass": false
+    },
+    {
+      "label": "A",
+      "m212_bill": 1249253376,
+      "m235_bill": 864960512,
+      "combined_bill": 2114213888,
+      "m212_residual_s": 0.0012132999836467206,
+      "m235_residual_s": 0.00040339992847293615,
+      "combined_residual_s": 0.0016703999135643244,
+      "peak_worker_rss_mib": 557.64453125,
+      "exact_calls": true,
+      "finite": true,
+      "symmetric": true,
+      "identity_stable": true,
+      "wall_gates_pass": true,
+      "rss_gate_pass": false
+    }
+  ],
+  "exact_operation_calls": {
+    "m212": {
+      "add": 3,
+      "copyto": 25,
+      "diagonal": 2,
+      "matmul": 4,
+      "multiply": 11,
+      "reshape": 4,
+      "stack": 2,
+      "sum": 1,
+      "swapaxes": 8,
+      "transpose": 8
+    },
+    "m235": {
+      "add": 9,
+      "copyto": 1,
+      "matmul": 2,
+      "multiply": 16,
+      "sum": 1,
+      "take_along_axis": 1
+    }
+  },
+  "bitwise_replay": {
+    "A1_equals_A2": true,
+    "full_source_slots": ["aaaa", "aaab", "aabb"]
+  },
+  "stop_rule": "No ten-process aggregate and no G0 after one frozen native resource failure."
+}

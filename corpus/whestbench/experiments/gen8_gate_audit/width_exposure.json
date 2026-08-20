@@ -1,0 +1,1308 @@
+{
+ "ledger_snapshot": {
+  "path": "corpus\\whestbench\\headroom\\fold_ledger.json",
+  "sha256": "60c9c72a4aa64caebfe208ef63ca62906e0dc7dace48de81eed9846fac8189be",
+  "bytes": 546363,
+  "n_candidates": 263,
+  "note": "the ledger grew from 261 to 263 candidates during this audit; a parallel session is appending gen8_* records. All Task-2 counts below are pinned to this snapshot."
+ },
+ "production_shape": {
+  "width": 256,
+  "depth": 32,
+  "source": "fold_ledger invariants.objective"
+ },
+ "n_promotion_eligible_records": 60,
+ "n_with_no_width_parameter": 35,
+ "n_exposed_measured_below_256": 9,
+ "n_would_fail_two_width_clause": 14,
+ "rows": [
+  {
+   "id": "h4_random32256",
+   "status": "promoted",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "latent_randomized_radial",
+   "status": "screened",
+   "widths_named_in_record_text": [
+    64,
+    128
+   ],
+   "widths_measured_in_artifacts": [
+    4,
+    8,
+    64,
+    128,
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    64,
+    128,
+    256
+   ],
+   "matched_report_files": [
+    "LATENT_RANDOMIZED_RADIAL_DEVELOPMENT100_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_GATE.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_JUDGE.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_N128_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_PRODUCTION_PORT_SPEC.md",
+    "LATENT_RANDOMIZED_RADIAL_REPORT.md",
+    "RANDOMIZED_RADIAL_DUAL_OBSERVABLE_REPORT.md",
+    "RANDOMIZED_RADIAL_INVERSE_RESIDUAL_REPORT.md",
+    "RANDOMIZED_RADIAL_SUSCEPTIBILITY_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\latent_randomized_radial",
+    "scorefloor_generation\\latent_randomized_radial_fp32_port",
+    "scorefloor_generation\\latent_randomized_radial_n128"
+   ],
+   "best_measured_width_set": [
+    4,
+    8,
+    64,
+    128,
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "latent_randomized_radial_n128",
+   "status": "screened",
+   "widths_named_in_record_text": [
+    128
+   ],
+   "widths_measured_in_artifacts": [
+    64,
+    128,
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    64,
+    128,
+    256
+   ],
+   "matched_report_files": [
+    "LATENT_RANDOMIZED_RADIAL_DEVELOPMENT100_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_GATE.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_JUDGE.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_N128_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_PRODUCTION_PORT_SPEC.md",
+    "LATENT_RANDOMIZED_RADIAL_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\latent_randomized_radial",
+    "scorefloor_generation\\latent_randomized_radial_n128"
+   ],
+   "best_measured_width_set": [
+    64,
+    128,
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "latent_randomized_radial_flopscope",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    64,
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    64,
+    128,
+    256
+   ],
+   "matched_report_files": [
+    "LATENT_RANDOMIZED_RADIAL_DEVELOPMENT100_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_GATE.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_JUDGE.md",
+    "LATENT_RANDOMIZED_RADIAL_FP32_PORT_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_N128_REPORT.md",
+    "LATENT_RANDOMIZED_RADIAL_PRODUCTION_PORT_SPEC.md",
+    "LATENT_RANDOMIZED_RADIAL_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\latent_randomized_radial"
+   ],
+   "best_measured_width_set": [
+    64,
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "conditional_corr_spectrum",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    16
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    256
+   ],
+   "matched_report_files": [
+    "CONDITIONAL_CORR_SPECTRUM_REPORT.md",
+    "CONDITIONAL_RESIDUAL_CUMULANT_SPECTRUM_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [
+    256
+   ],
+   "artifact_dirs": [
+    "scorefloor_generation\\conditional_corr_spectrum",
+    "scorefloor_generation\\conditional_corr_spectrum_response_gram"
+   ],
+   "best_measured_width_set": [
+    16
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "conditional_response_gram",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    16,
+    64,
+    256
+   ],
+   "matched_report_files": [
+    "CONDITIONAL_RESPONSE_GRAM_REPORT.md",
+    "LATENT_GATE_RESPONSE_GRAM_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [
+    16,
+    64,
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "conditional_residual_cumulant_spectrum",
+   "status": "screened",
+   "widths_named_in_record_text": [
+    256
+   ],
+   "widths_measured_in_artifacts": [
+    8,
+    16
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    256
+   ],
+   "matched_report_files": [
+    "CONDITIONAL_RESIDUAL_CUMULANT_SPECTRUM_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [
+    256
+   ],
+   "artifact_dirs": [
+    "scorefloor_generation\\conditional_residual_cumulant_spectrum"
+   ],
+   "best_measured_width_set": [
+    8,
+    16
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "conditional_residual_covariance_algebra",
+   "status": "screened",
+   "widths_named_in_record_text": [
+    16
+   ],
+   "widths_measured_in_artifacts": [
+    8,
+    16
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    8,
+    16,
+    256
+   ],
+   "matched_report_files": [
+    "CONDITIONAL_RESIDUAL_COVARIANCE_ALGEBRA_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [
+    256
+   ],
+   "artifact_dirs": [
+    "scorefloor_generation\\conditional_residual_covariance_algebra"
+   ],
+   "best_measured_width_set": [
+    8,
+    16
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "jspace_workspace_distillation",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    16,
+    256
+   ],
+   "matched_report_files": [
+    "JSPACE_WORKSPACE_ADAPTER_GATE.md",
+    "JSPACE_WORKSPACE_ADAPTER_JUDGE.md",
+    "JSPACE_WORKSPACE_ADAPTER_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [
+    16,
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "cumulant_polynomial_quotient",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    8,
+    16
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    256
+   ],
+   "matched_report_files": [
+    "CUMULANT_POLYNOMIAL_QUOTIENT_GATE.md",
+    "CUMULANT_POLYNOMIAL_QUOTIENT_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\cumulant_polynomial_quotient"
+   ],
+   "best_measured_width_set": [
+    8,
+    16
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "row_blocked_winograd",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    256
+   ],
+   "matched_report_files": [
+    "ROW_BLOCKED_WINOGRAD_GATE.md",
+    "ROW_BLOCKED_WINOGRAD_GATE_A_DECISION.md",
+    "ROW_BLOCKED_WINOGRAD_PACKAGING_FAILURE.md",
+    "ROW_BLOCKED_WINOGRAD_PRODUCTION_GATE.md",
+    "ROW_BLOCKED_WINOGRAD_PRODUCTION_REPORT.md",
+    "ROW_BLOCKED_WINOGRAD_REPORT.md",
+    "ROW_BLOCKED_WINOGRAD_RUN_LAUNCH_FAILURE.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\row_blocked_winograd"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "ple_flash_sidecar",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    256
+   ],
+   "matched_report_files": [
+    "PLE_FLASH_SIDECAR_FACTORIZED_GATE.md",
+    "PLE_FLASH_SIDECAR_GATE.md",
+    "PLE_FLASH_SIDECAR_REPORT.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\ple_flash_sidecar"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "row_blocked_winograd_production",
+   "status": "promoted",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [
+    256
+   ],
+   "matched_report_files": [
+    "ROW_BLOCKED_WINOGRAD_GATE.md",
+    "ROW_BLOCKED_WINOGRAD_GATE_A_DECISION.md",
+    "ROW_BLOCKED_WINOGRAD_PACKAGING_FAILURE.md",
+    "ROW_BLOCKED_WINOGRAD_PRODUCTION_GATE.md",
+    "ROW_BLOCKED_WINOGRAD_PRODUCTION_REPORT.md",
+    "ROW_BLOCKED_WINOGRAD_REPORT.md",
+    "ROW_BLOCKED_WINOGRAD_RUN_LAUNCH_FAILURE.md"
+   ],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\row_blocked_winograd"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "two_axis_fused_winograd",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "two_axis_fused_winograd_production",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m71_kerdock126_one_buffer_owned_l1",
+   "status": "screened_survivor",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m76_validator_fallback_v3",
+   "status": "package_validated",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m80_kerdock_tangent_factorial",
+   "status": "screened/uncertain",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [
+    256
+   ],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\m80_kerdock_tangent_factorial"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "m82_kerdock_vs_haar_variance",
+   "status": "screened/unresolved",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "scorefloor_generation\\m82_kerdock_vs_haar_variance"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "m86_boundary_laplace_coarea",
+   "status": "phase_a_pass_phase_b_unresolved",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    4,
+    16
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [
+    256
+   ],
+   "artifact_dirs": [
+    "scorefloor_generation\\m86_boundary_laplace_coarea"
+   ],
+   "best_measured_width_set": [
+    4,
+    16
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m126_repeated_output_source_contraction",
+   "status": "repair_blocked_independent_component_pass",
+   "widths_named_in_record_text": [
+    64
+   ],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m126_repeated_output_source_contraction",
+    "scorefloor_generation\\m126_repeated_output_source_contraction"
+   ],
+   "best_measured_width_set": [
+    64
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m147_endpoint_safe_pair_bridge",
+   "status": "pair_component_pass_generic_nested_endpoint_open",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m154_rankone_analytic_endpoint_partition",
+   "status": "rankone_pass_generic_provider_killed",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m156_extended_domain_star_control",
+   "status": "compiler_resource_pass_source_variance_open",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m156_extended_domain_star_control",
+    "scorefloor_generation\\m156_extended_domain_star_control"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "m165_rank_face_subtraction",
+   "status": "rankone_survivor_generic_provider_open",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m165_rank_face_subtraction",
+    "scorefloor_generation\\m165_rank_face_subtraction"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m167_collision_owner_unification",
+   "status": "owner_algebra_pass_relabelling_rejected",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m167_collision_owner_unification",
+    "scorefloor_generation\\m167_collision_owner_unification"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m168_transverse_rank2_anchor",
+   "status": "rank2_face_survivor_generic_provider_killed",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m169_m163_two_axis_call_fusion",
+   "status": "resource_survivor_conditional_staging_interface",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m172_selective_22_owner_fusion",
+   "status": "static_owner_algebra_pass_development_blocked_m174_unlawful_caller_abi",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m172_selective_22_owner_fusion",
+    "scorefloor_generation\\m172_selective_22_owner_fusion"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "m173_parameter_scaled_boundary_layer",
+   "status": "screened_hostile_transverse_rank2_layer_certificate_only",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m173_parameter_scaled_boundary_layer",
+    "scorefloor_generation\\m173_parameter_scaled_boundary_layer"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m178_certified_phi2_owent_provider",
+   "status": "component_pass_certified_bounded_cost_phi2_owent_provider",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m178_certified_phi2_owent"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m179_exact_background_archive_producer",
+   "status": "component_pass_exact_metered_labelled_background_archive_producer",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "t1_l2_promotion_verification",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "dpm_victory_postmortem_redteamed",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "dac_prize_report_extension_v2",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\dac_prize_report_extension"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "t3_fold3_deterministic_cap",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\t3_fold3_deterministic_cap"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "t4_kerdock_v3_descriptive_rescore",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "t5_submission_dossier_runbook",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "c1_local_vs_hosted_calibration",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "a3_kill_heterogeneity_reaudit",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "a4_hostile_inputs_battery",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m191_harmonic_spectrum_g0a",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "wc1_winner_ablation_map",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\wc1_winner_ablation"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "v31_guards_m186_m187",
+   "status": "validated",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [
+    256
+   ],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\v31_guards"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "m192_cross_output_frame_gls_oracle",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m198_source211_delay_one_adapter",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [
+    4
+   ],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m198_source211_delay_one_adapter"
+   ],
+   "best_measured_width_set": [
+    4
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m200_streaming_overlap_fixture",
+   "status": "component_pass_streaming_semantics",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    4,
+    7
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m200_streaming_overlap_fixture"
+   ],
+   "best_measured_width_set": [
+    4,
+    7
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "m207_zero_variance_rank_one_guard",
+   "status": "component_pass_boundary_guard",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\m207_zero_variance_rank_one_guard"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "s1_suite_risk_bootstrap",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\s1_suite_risk"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "s4_designation_portfolio_bootstrap",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "s7_wavepacket_speckle_correlation",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "s8_tdse_layer_defect_profile",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "s12_finite_width_kernel_capstone",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\s12_finite_width_kernel"
+   ],
+   "best_measured_width_set": [
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "s16_residual_norm_decomposition_confirm",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "s17_information_complexity_lower_bound",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "recursion_convergence_certificate",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "gm_c1_bound",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\gm_c1_bound"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "gm_u3_grid",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [
+    48
+   ],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\gm_u3_grid"
+   ],
+   "best_measured_width_set": [
+    48
+   ],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  },
+  {
+   "id": "gm_rankone_bill",
+   "status": "screened",
+   "widths_named_in_record_text": [
+    16,
+    64,
+    128,
+    256
+   ],
+   "widths_measured_in_artifacts": [
+    4,
+    8,
+    16,
+    32,
+    48,
+    64,
+    128,
+    256
+   ],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\gm_rankone_bill"
+   ],
+   "best_measured_width_set": [
+    4,
+    8,
+    16,
+    32,
+    48,
+    64,
+    128,
+    256
+   ],
+   "measured_at_256": true,
+   "measured_at_2plus_widths": true,
+   "gate_clause1_two_widths": true,
+   "gate_clause2_reaches_256": true
+  },
+  {
+   "id": "gm_u9_s4_d2",
+   "status": "screened",
+   "widths_named_in_record_text": [],
+   "widths_measured_in_artifacts": [],
+   "widths_in_harness_source": [],
+   "widths_in_matched_reports": [],
+   "matched_report_files": [],
+   "widths_modelled_only_in_artifacts": [],
+   "artifact_dirs": [
+    "experiments\\gm_u9_s4_d2"
+   ],
+   "best_measured_width_set": [],
+   "measured_at_256": false,
+   "measured_at_2plus_widths": false,
+   "gate_clause1_two_widths": false,
+   "gate_clause2_reaches_256": false
+  }
+ ]
+}

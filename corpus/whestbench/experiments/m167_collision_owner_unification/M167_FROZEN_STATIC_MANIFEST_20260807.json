@@ -1,0 +1,26 @@
+{
+  "candidate": "M167 complete-domain physical collision-owner unification",
+  "date": "2026-08-07",
+  "scope": "response-free algebra/static audit only",
+  "mechanism": "replace M156's final collision-zero target convention with real [4], [3,1], and [2,2] physical fourth-cumulant ownership in the same complete [2,1,1] coefficient table, while retiring the prior separate owners",
+  "exact_mapping": {
+    "iii_to_4": "T[i,i,i] = K4[i]/6",
+    "iik_iji_to_31": "T[i,i,j] = T[i,j,i] = K31[i,j]/3 for i != j",
+    "ijj_to_22": "T[i,j,j] = K22[i,j]/2 for i != j; T[j,i,i] supplies the paired representative"
+  },
+  "required_tests": [
+    "exhaustive generated widths 2..6 against an independent dense physical fourth-tensor contraction",
+    "M156 and M163 complete-domain conservation at widths 3..6",
+    "permutation and positive-gauge covariance",
+    "retired-owner no-double-count check",
+    "generated exact M122 [2,2] comparison against the coefficient required to relabel M163 ijj control",
+    "static call/cost ledger with no unpriced credit"
+  ],
+  "m163_ijj_hypothesis": "Relabelling M163 ijj as the physical [2,2] owner would require K22[i,j] = -4 A[i,j]^2. M167 must reject the relabelling unless this identity is proved; support overlap alone is insufficient.",
+  "forbidden": [
+    "network response, truth, scorer, contest artifact, leaderboard, submission, or champion access",
+    "source variance or efficacy execution",
+    "claiming the existing Khatri--Rao [2,2] formation/transport obstruction is solved",
+    "cost or call credit beyond the already-accounted M156/M163 compiler"
+  ]
+}

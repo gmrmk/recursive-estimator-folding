@@ -1,0 +1,51 @@
+{
+  "scope": "generated response-free mathematics only",
+  "predeclaration": {
+    "target_coverage": "all PSD local 3x3 states under the M159 dyadic carrier",
+    "rule": "one 10-node fixed Gauss-Legendre interior panel after connected-first rank-face subtraction",
+    "normalized_value_tolerance": "2e-8",
+    "normalized_tangent_tolerance": "2e-7 (current locked M147 source certificate)",
+    "billed_ops_prediction": 571904,
+    "billed_ops_ceiling": 606720
+  },
+  "analytic_subtraction": "D(e)=D0+e*DB+2e*integral_0^1 v*(G(e*v^2)-DB)dv",
+  "uniform_error_enclosure": {
+    "kind": "exact Gauss-Legendre 20th-derivative remainder obstruction",
+    "hostile_transverse_rank2_factor": [["1", "0"], ["1", "1/10"], ["0", "1"]],
+    "hermite_19_at_1": 182135008,
+    "phi_1_strict_lower_bound": "1/5",
+    "gl10_unit_interval_coefficient": "1/1743978047317826790650019840000",
+    "remainder_envelope_floor": "675537109375000/323419945960784673",
+    "floor_decimal": "0.0020887305121772243757962514",
+    "normalized_value_tolerance": "0.00000002",
+    "certificate_closes": false,
+    "meaning": "the stated fixed-panel derivative enclosure cannot prove the tolerance; this does not assert actual quadrature error equals the enclosure"
+  },
+  "stratum_actions": {
+    "rank1_positive_marginals": "preserve M154 exact anchor and M165 subtraction",
+    "rank2_transverse_positive_marginals": "preserve M168 anchor only; GL10 provider killed",
+    "rank2_nontransverse": "refuse",
+    "rank3_spd": "unresolved after rank2 fixed-rule obstruction",
+    "zero_marginal_psd_face": "refuse pending deterministic reduction and one-sided conic tangent",
+    "outward_psd_tangent": "refuse"
+  },
+  "cost": {
+    "bookkeeping_prediction": 571904,
+    "within_606720": true,
+    "native_bill_proved": false,
+    "credit": "none"
+  },
+  "tests": {
+    "m171_passed": 7,
+    "m154_m159_m165_m168_passed": 20,
+    "response_free_only": true
+  },
+  "disposition": "KILL_FIXED10_ALL_PSD_RANK_STRATIFIED_PROVIDER; PRESERVE_M154_M165_M168_ALGEBRA; REFUSE_NONTRANSVERSE_RANK2_AND_ZERO_MARGINAL_FACES; NO_PROVIDER_OR_606720_COST_CREDIT.",
+  "firewall": {
+    "network_response": false,
+    "truth_or_scorer": false,
+    "leaderboard_or_submission": false,
+    "adaptive_retry": false,
+    "opaque_library_cdf": false
+  }
+}

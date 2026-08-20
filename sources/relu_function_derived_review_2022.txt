@@ -1,0 +1,342 @@
+SHS Web of Conferences 144, 02006 (2022)                                                            https://doi.org/10.1051/shsconf/202214402006
+STEHF 2022
+
+
+
+
+         RELU-Function and Derived Function Review
+         Yuhan Bai*
+         1networking academy, Haikou University of Economics, Hainan, China, 571127
+
+
+
+
+                      ABSTRACT: The activation function plays an important role in training and improving performance in deep
+                      neural networks (dnn). The rectified linear unit (relu) function provides the necessary non-linear properties
+                      in the deep neural network (dnn). However, few papers sort out and compare various relu activation functions.
+                      Most of the paper focuses on the efficiency and accuracy of certain activation functions used by the model,
+                      but does not pay attention to the nature and differences of these activation functions. Therefore, this paper
+                      attempts to organize the RELU-function and derived function in this paper. And compared the accuracy of
+                      different relu functions (and its derivative functions) under the Mnist data set. From the experimental point
+                      of view, the relu function performs the best, and the selu and elu functions perform poorly.
+
+
+
+                                                                             differential epochs [22, 23, 5, 4, 11, 13]. It is expected that
+      1. INTRODUCTION                                                        this study can point out a direction for the improvement of
+                                                                             activation functions in the future.
+      In recent years, deep learning has become a research
+      direction with the most potential and development
+      momentum in the field of artificial intelligence and even              2. ANALYSIS
+      in the entire computer field [1, 25, 26]. The convolutional
+      neural network in deep learning is a very important part of
+                                                                             2.1. Relu activation function
+      it [24]. It can be seen everywhere in our daily life, such as
+      in picture classification, natural language processing,                The proposal and application of the activation function
+      speech recognition, and text classification fields play an             ReLU solves the problem of "expansion and
+      important role [19, 20, 21].                                           disappearance" in the sigmoid and tanh functions [6].
+           In the early days of deep learning research, the sigmoid                                                            x if x 0
+      and tanh functions were widely utilized in volume integral             ReLu publicizes as follows：ReLU x                              .
+                                                                                                                               0 if x 0
+      models. And both of them are S-type saturation functions,              The ReLU formula shows that if the input x is less than 0,
+      and the problem of gradient dispersion is prone to occur               the output is equal to 0; if the input x is greater than 0, the
+      during the training process. Kr-izhevsky et al. employed               output is equal to the input.
+      the linear unit rectifier linear unit as the activation function           The differential equation of ReLU is: ReLU
+      for the first time in the 2012 ImageNet ILSVRC                           1 if x 0
+                                                                                            . If the input x is greater than 0, the output is
+      competition [1, 2]. Relu function has good sparsity, fast                0 if x 0
+      convergence speed, simple calculation, and effectively                 equal to 1; If the input is less than or equal to 0, the output
+      solves the gradient dispersion problem caused by sigmoid               becomes 0.
+      and tanh. Since the gradient of relu is always zero at                     When adopting the ReLU activation function, we will
+      negative values, neurons may "dead" during training [3].               not get very small values. Instead, it is either 0 (causing
+      From 2013 to 2015, some scholars proposed improved                     some gradients to return nothing) or 1. When we
+      functions such as Leaky Relu, ELU, and PRelu to alleviate              introduced the ReLU function into the neural network, we
+      the problem of neuron "dead"[4, 6, 5]. ELU will have                   also introduced a lot of sparsity [17]. In a neural network,
+      gradient dispersion, and the derivative calculation                    this means that the activated matrix contains many zeros.
+      complexity is exponential; Leaky Relu and PRelu                        When a certain percentage (such as 50%) of activation is
+      introduce additional hyperparameter α, which needs to be               saturated, we call this neural network sparse. This can
+      adjusted differently according to the classification                   improve efficiency in terms of time and space complexity
+      scenario, which increases the difficulty of model training.            (constant values usually require less space and lower
+      In this article, a brief review of the Rule function and its           computational cost) [18]. Yoshua Bengio et al. found that
+      derivative functions is carried out, and compare their                 this component of ReLU can actually make neural
+      differences in form and their pros and cons.                           networks perform better, and it also has the
+           At the same time, this study uses sigmoid, relu, elu,             aforementioned efficiency in terms of time and space [7].
+      leaky-relu, selu, gelu to conduct comparative experiments                  ReLU can also be extended to Noisy Relu including
+      on the MNIST dataset to observe their accuracy at                      Gaussian noise. It is utilized in the restricted Boltzmann
+
+         *Corresponding author: gaoming@cas-harbour.org
+
+© The Authors, published by EDP Sciences. This is an open access article distributed under the terms of the Creative Commons Attribution License 4.0
+(http://creativecommons.org/licenses/by/4.0/).
+SHS Web of Conferences 144, 02006 (2022)                                                            https://doi.org/10.1051/shsconf/202214402006
+STEHF 2022
+
+      machine to solve computer vision task [8]. Although the               LRELU formula is as follows:
+      sparsity of the ReLU function solves the problem of the                                            x    if x 0
+                                                                                          LRELU χ                     。
+      disappearance of the gradient caused by the "S-shaped"                                             αx if x 0
+      soft saturation activation function. However, the hard                                               1    if x 0
+                                                                                           LRELU′ x
+      saturation of the negative half axis of ReLU is set to 0,                                            α if x 0
+      which may lead to "neuronal dead" and also make its data                  Similar to ELU, Leaky ReLU can also avoid the dead
+      distribution non-zero mean. The model may experience                  ReLU problem because it allows a smaller gradient when
+      neuronal "dead" during the training process.                          calculating the derivative. Because it does not include
+                                                                            exponential calculations, the calculation speed is faster
+                                                                            than ELU. But Leaky Relu also cannot avoid the problem
+      2.2. ELU activation function                                          of gradient explosion, and the neural network cannot learn
+                                                                            the alpha value.
+      Exponential linear unit ELU was first proposed by Djork-
+      Arné Clevert et al. [5]. ELU speeds up the learning speed
+      of deep neural networks and improves the accuracy of                  2.4. PReLu activation function
+      function classification, just like rectified linear unit, Leaky
+      RELU, and parametrized RELUs, ELU uses positive                       Parametric Relu was first proposed by Kaiming He in
+      identities to solve the problem of vanishing gradients [9].           2015. The earliest analysis shows that the biggest
+      Compared with other activation functions, ELU has better              disadvantage of ReLU is that the part of x<0 will cause
+      learning characteristics. Compared with RELU, ELU has                 neuron death [6]. If you want the neuron to not die, you
+      a negative value, which will allow them to push the                   must make this part of the function produce gradients, that
+      average unit activation value closer to 0, just like batch            is, this part of the function needs to be transformed.
+      normalization, but it has lower computational complexity.             PRELU is another attempt to fix the "dying relu" problem.
+      ELU formula is as follows:                                            It gives a relu function with a negative slope α, when x≥0,
+                                     𝑥      𝑖𝑓 𝑥 0                          the function is not 0, but a small negative slope, where α
+               𝐸𝐿𝑈 𝑥                                                        is a learnable parameter. If its α is constant, it is also called
+                              𝑎 𝑒      1 𝑖𝑓 𝑥 0
+                                                                            Leaky relu. PReLU algorithm converges faster and has
+          A mean close to zero will bring the normal gradient
+                                                                            lower training error, In addition, the introduction of
+      closer to the natural unit gradient, reducing bias effects
+                                                                            parameter α into the activation function will not lead to
+      and thus speeding up learning.
+                                                                            overfitting [6]. In the experiment of Wei QingJie, deep
+          Although LRELU and PRELU also have negative
+                                                                            convolutional network combined with regularization and
+      values, they cannot ensure a noise-robust deactivation
+                                                                            PReLU activation function is adopted for image retrieval,
+      state.
+                                                                            which Improves image retrieval accuracy and resolves
+          But so far ELU also has several problems:
+                                                                            overfitting issues [29].
+          Since it contains exponential calculations, the
+                                                                                 Based on the learnable activation and advanced
+      calculation time will be longer.
+                                                                            initialization. Kaiming He et al. achieved 4.94% of the top
+          It cannot avoid the problem of gradient explosion.
+                                                                            five tests on the ImageNet 2012 classification data set,
+          The neural network cannot learn the value of a by
+                                                                            which is 26% higher than the ILSVRC 2014 winners
+      itself.
+                                                                            (GoogleNet, 6.66%) [16]. This result is the first time that
+                                                                            this data set exceeds the level reported by humans (5.1%).
+      2.3. Leaky RELU activation function                                       The PRelu segment is expressed as: prelu x
+                                                                              x     if x 0
+      Leaky RELU was first proposed by Andrew L. Maas. from                                 . As long as α is not equal to 1, this not only
+                                                                             αx if x 0
+      the Department of Computer Science at Stanford                        guarantees non-linearity, but also guarantees that neurons
+      University [10]. Research shows that adopting a deep                  will not die. The α here can be learned, but generally set a
+      rectification network as an acoustic model for 300-hour               relatively small number directly.
+      exchange conversation speech recognition tasks, adopting
+      a simple training program without pre-training, leaky relu
+      has a 2% reduction in word error rate than its s-type                 2.5. Randomized ReLU activation function
+      network. It can be seen from the experiments in He, K.                Random Rectified Linear Unit was first proposed and used
+      that leaky ReLU can achieve better results than ReLU and              in the Kaggle National Data Science Bowl (NDSB)
+      PReLU, but few people actually employ it [6].                         competition [28]. As mentioned earlier, the slope of the
+          In recent years, dnn with Leaky relu has proven to be             negative part is set as a constant in the LReLU activation
+      a good acoustic model in speech. Zeiler et al. (2013) used            function and as a learnable parameter in the PReLU
+      up to 12 hidden layers to train rectifier networks on a               activation function, while in RReLU a given range is
+      proprietary voice search dataset containing hundreds of               randomized during training and then fixed during testing.
+      hours of training data. Recognition [14]. After supervised            The core idea is that in the training process, α is randomly
+      training, the performance of rectifier dnn is significantly           derived from a Gaussian distribution U(l,u), and then
+      better than s-type dnn. Dahl et al. (2013) applied rectifier          corrected during the test. And the experimental results
+      nonlinearities and dropout regularization to dnn with                 show that RReLU outperforms ReLU, LReLU and
+      broadcast news LVCSR task with 50 hours of training data              PReLU in specific experiments.
+      [15]. The rectifier dnns with dropout is better than the s-                 x      if x    0
+                                                                            𝒴
+      type network without dropout.                                                a x    if x   0，where a ～U l，u ，l     u and l，u ∈ 0，1
+
+
+
+
+                                                                        2
+SHS Web of Conferences 144, 02006 (2022)                                                         https://doi.org/10.1051/shsconf/202214402006
+STEHF 2022
+
+                                                                         2.8. GELU activation function
+                                                                         Gaussian error linear units (gelus) were first proposed by
+                                                                         Dan Hendrycks et al. [13]. The GELUS function seems to
+                                                                         be the optimal technique in NLP, especially the
+                                                                         Transformer model, which avoids the vanishing gradient
+                                                                         problem. The GELU function expression is GELU x
+                                                                         0.5x 1 tanh 2/π x 0.044715x   . Its derivative is GELU′ x
+                                                                         0.5tanh 0.0356774x   0.797885x    0.0535161x
+                                                                         0.398942x sech 0.0356774x    0.797885x   0.5
+
+
+
+                                                                         2.9. signrelu activation function
+           Figure 1: The graphic depiction of RReLU function             The signrelu function was first proposed by Guifang Lin
+                                                                         and Wei Shen et al. in 2018[27]. Signrelu is a new type of
+      2.6. SELU activation function                                      unsaturated segment neuron activation function proposed
+                                                                         based on the characteristics of relu and softsign functions.
+      Self-normalizing neural networks (SELU) was first                  When the data is greater than zero, it utilizes the
+      proposed by Klambauer, G et al. [11]. The SELU function            computing power of the relu function. When the data is
+      can be expressed as：                                               less than zero, the softsign function is utilized for
+                                   x         if x 0                      calculation, which retains its secondary axis information
+                   SELU x       λ                                        and corrects the data distribution, making it more fault-
+                                   αe     α if x 0
+                                     1     if x 0                        tolerant. The expression for signrelu is SignReLu x
+                    SELU′ x       λ
+                                     αe    if x 0                              x     if x 0
+      α 1.6732632423543772848170429916717                                  a| |     if x 0
+      λ 1.0507009873554804934193349852946
+                                                                             Based on the traditional convolutional neural network,
+          SELU function induces self-normalizing properties.
+                                                                         signrelu enhances the data, enhances the normalization of
+      The paper shows [11] that the activations that are close to
+                                                                         local responses, and adopts methods such as maximum
+      zero mean and unit variance propagated through many
+                                                                         pooling. The signrelu function is put into the CIFAR-10
+      network layers will converge to zero mean and unit
+                                                                         dataset to train and evaluate the model. The experimental
+      variance, even in the presence of noise and disturbance,
+                                                                         results show that this function has a good effect on image
+      this activation function performs well in standard
+                                                                         classification, the convergence speed is faster, and the
+      feedforward neural networks (fnn), and the vanishing or
+                                                                         problem of the gradient diffusion model is effectively
+      exploding gradient problem is impossible according to
+                                                                         alleviated. Improve the image recognition accuracy of
+      theorems 2 and 3 in the paper [11]. However, this
+                                                                         neural network.
+      activation function is relatively new, and more papers are
+      needed to comparatively explore its application in
+      architectures such as CNN and RNN.                                 3. COMPARATIVE ANALYSIS OF
+                                                                         DIFFERENT ACTIVATION FUNCTIONS
+      2.7. SerLU activation function
+                                                                         In this paper, we conduct experiments with deep
+      SerLU was first proposed in Guoqiang. Zhang's paper [12].          convolutional neural networks, adopting the MNIST
+      The function retains its normalization property on the             dataset for testing. Its structure includes two 3*3
+      basis of selu, but breaks its monotonicity. It has a peak in       convolutional layers and two 2*2 maximum pooling
+      the negative part, but for larger negative input, the output       layers, with a stride of 1 pixel and a full link method.
+      value is close to 0, so the mean is the same as selu also          During training, we fixed grayscale images of size 28*28
+      tends to zero. SERLU is defined as SERLU x                         on the input of our MNIST, employing the Adam selector,
+          x          x 0                                                 with batch_size selected as 128, dropout_rate set to 0.2,
+                               . At the same time, in order to
+       α     xe otherwise                                                utilizing the cross-entropy loss function, and iterating 100
+      prevent overfitting, the author designed a dropout scheme          times. The SeLU function is special, we need to use the
+      suitable for SERLU: shift-dropout.                                 kernel initializer 'lecun_normal' and a special form of
+                                                                         dropout AlphaDropout(), everything else remains as
+                                                                         normal. Finally we can get the history plot from model.fit()
+                                                                         and plot the change in loss and accuracy results for each
+                                                                         activation function.
+
+
+
+
+                                                                     3
+SHS Web of Conferences 144, 02006 (2022)                                                         https://doi.org/10.1051/shsconf/202214402006
+STEHF 2022
+
+
+
+
+                     Figure 2: Classification accuracy of different activation functions in different iterations in MNIST
+
+
+
+
+                        Figure 3: Classification loss of different activation functions in different iterations in MNIST
+
+                                                                          paper, and further investigation and analysis are needed to
+      4. CONCLUSION                                                       improve the views of this paper.
+      This paper reviews the definitions, advantages,
+      disadvantages and experimental effects of several                   REFERENCES
+      derivative functions of ReLU functions. The ReLU
+      function solves the gradient vanishing problem, but it is           1.   Krizhevsky, A., Sutskever, I. & Hinton, G. E. (2012).
+      also prone to the Dead ReLU Problem. ELU, LReLU,                         ImageNet Classification with Deep Convolutional
+      RReLU, SeLU, and GeLU can all solve the Dead ReLU                        Neural Networks. In F. Pereira, C. J. C. Burges, L.
+      Problem, but ELU includes exponential calculation, which                 Bottou & K. Q. Weinberger (ed.), Advances in Neural
+      will increase the amount of calculation, LReLU cannot                    Information Processing Systems 25 (pp. 1097--1105).
+      learn a value, and PReLU needs more future                               Curran Associates, Inc..
+      development research. In recent years, the development of           2.   Nair, V. & Hinton, G. E. (2010). Rectified Linear
+      deep neural network is very fast, especially in image                    Units Improve Restricted Boltzmann Machines. In J.
+      classification and natural language processing, the number               Fürnkranz & T. Joachims (eds.), Proceedings of the
+      of network layers is getting deeper and deeper, which                    27th International Conference on Machine Learning
+      makes people pay more attention to the training efficiency               (ICML-10) (p./pp. 807-814).
+      and accuracy of the network. The occurrence of this                 3.   Dolezel, P., Skrabanek, P., & Gago, L. (2016).
+      phenomenon has greatly stimulated the development of                     Weight Initialization Possibilities for Feedforward
+      activation functions and a variety of new activation                     Neural Network with Linear Saturated Activation
+      functions have emerged. But there are also some                          Functions. IFAC-PapersOnLine, Volume 49, Issue 25,
+      activation functions that have not been studied in this                  49-54. https://doi.org/10.1016/j.ifacol.2016.12.009.
+
+
+
+
+                                                                      4
+SHS Web of Conferences 144, 02006 (2022)                                                   https://doi.org/10.1051/shsconf/202214402006
+STEHF 2022
+
+      4.  Maas, A. L., Hannun, A. Y., & Ng, A. Y. (2013, June).            of the IEEE/CVF Conference on Computer Vision
+          Rectifier nonlinearities improve neural network                  and Pattern Recognition (pp. 12569-12577).
+          acoustic models. In Proc. icml (Vol. 30, No. 1, p. 3).       19. Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012).
+      5. Clevert, D. A., Unterthiner, T., & Hochreiter, S.                 Imagenet classification with deep convolutional
+          (2015). Fast and accurate deep network learning by               neural networks. Advances in neural information
+          exponential linear units (elus). arXiv preprint                  processing systems, 25, 1097-1105.
+          arXiv:1511.07289.                                            20. Wen, T. H., Gasic, M., Mrksic, N., Su, P. H., Vandyke,
+      6. He, K., Zhang, X., Ren, S., & Sun, J. (2015). Delving             D., & Young, S. (2015). Semantically conditioned
+          deep into rectifiers: Surpassing human-level                     lstm-based natural language generation for spoken
+          performance on imagenet classification. In                       dialogue systems. arXiv preprint arXiv:1508.01745.
+          Proceedings of the IEEE international conference on          21. Chorowski, J., Bahdanau, D., Serdyuk, D., Cho, K.,
+          computer vision (pp. 1026-1034).                                 & Bengio, Y. (2015). Attention-based models for
+      7. Arpit, D., & Bengio, Y. (2019). The benefits of over-             speech recognition. arXiv preprint arXiv:1506.07503.
+          parameterization at initialization in deep ReLU              22. Deng, L. (2012). The mnist database of handwritten
+          networks. arXiv preprint arXiv:1901.03611.                       digit images for machine learning research [best of
+      8. Gulcehre, C., Moczulski, M., Denil, M., & Bengio, Y.              the web]. IEEE Signal Processing Magazine, 29(6),
+          (2016, June). Noisy activation functions. In                     141-142.
+          International conference on machine learning (pp.            23. Mount, J. (2011). The equivalence of logistic
+          3059-3068). PMLR.                                                regression and maximum entropy models. URL:
+      9. Wang, T., Qin, Z., & Zhu, M. (2017, November). An                 http://www.                                win-vector.
+          ELU network with total variation for image denoising.            com/dfiles/LogisticRegressionMaxEnt. pdf.
+          In International Conference on Neural Information            24. Lawrence, S., Giles, C. L., Tsoi, A. C., & Back, A. D.
+          Processing (pp. 227-237). Springer, Cham.                        (1997). Face recognition: A convolutional neural-
+      10. Maas, A. L., Hannun, A. Y., & Ng, A. Y. (2013, June).            network approach. IEEE transactions on neural
+          Rectifier nonlinearities improve neural network                  networks, 8(1), 98-113.
+          acoustic models. In Proc. icml (Vol. 30, No. 1, p. 3).       25. Goodfellow, I., Bengio, Y., & Courville, A. (2016).
+      11. Klambauer, G., Unterthiner, T., Mayr, A., &                      Deep learning. MIT press.
+          Hochreiter, S. (2017, December). Self-normalizing            26. LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep
+          neural networks. In Proceedings of the 31st                      learning. nature, 521(7553), 436-444.
+          international conference on neural information
+                                                                       27. Lin, G., & Shen, W. (2018). Research on
+          processing systems (pp. 972-981).
+                                                                           convolutional neural network based on improved
+      12. Zhang, G., & Li, H. (2018). Effectiveness of scaled              Relu piecewise activation function. Procedia
+          exponentially-regularized linear units (SERLUs).                 computer science, 131, 977-984.
+          arXiv preprint arXiv:1807.10117.
+                                                                       28. Xu, B., Wang, N., Chen, T., & Li, M. (2015).
+      13. Hendrycks, D., & Gimpel, K. (2016). Gaussian error               Empirical evaluation of rectified activations in
+          linear units (gelus). arXiv preprint arXiv:1606.08415.           convolutional       network.       arXiv       preprint
+      14. Zeiler, M. D., Ranzato, M., Monga, R., Mao, M.,                  arXiv:1505.00853.
+          Yang, K., Le, Q. V., ... & Hinton, G. E. (2013, May).        29. QingJie, W., & WenBin, W. (2017, June). Research
+          On rectified linear units for speech processing. In              on image retrieval using deep convolutional neural
+          2013 IEEE International Conference on Acoustics,                 network combining L1 regularization and PRelu
+          Speech and Signal Processing (pp. 3517-3521). IEEE.              activation function. In IOP Conference Series: Earth
+      15. Dahl, G. E., Sainath, T. N., & Hinton, G. E. (2013,              and Environmental Science (Vol. 69, No. 1, p.
+          May). Improving deep neural networks for LVCSR                   012156). IOP Publishing.
+          using rectified linear units and dropout. In 2013 IEEE
+          international conference on acoustics, speech and
+          signal processing (pp. 8609-8613). IEEE.
+      16. Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S.,
+          Anguelov, D., ... & Rabinovich, A. (2015). Going
+          deeper with convolutions. In Proceedings of the IEEE
+          conference on computer vision and pattern
+          recognition (pp. 1-9).
+      17. Wen, W., Wu, C., Wang, Y., Chen, Y., & Li, H.
+          (2016). Learning structured sparsity in deep neural
+          networks. Advances in neural information processing
+          systems, 29, 2074-2082.
+      18. Kim, H., Khan, M. U. K., & Kyung, C. M. (2019).
+          Efficient neural network compression. In Proceedings
+
+
+
+
+                                                                   5
+

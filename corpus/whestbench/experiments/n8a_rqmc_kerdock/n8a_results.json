@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-08",
+  "firewall": "synthetic He nets only; frozen v3 untouched; only shipped sampling asset kerdock_phases.npz read; no dataset/truth/scorer/submission; single process",
+  "gates": {
+    "g0": {
+      "aggregate_ratio_geomean": 2.1060941031002978,
+      "bootstrap_ci_95": [
+        1.644784800899286,
+        2.6451166611645562
+      ],
+      "kill_ratio": 0.83,
+      "n_base": 32256,
+      "net_rows": [
+        {
+          "diag_kerdock_over_mc": 0.3546719020416934,
+          "diag_lattice_over_mc": 0.7749490870299973,
+          "net_seed": 101,
+          "ratio_lattice_over_kerdock": 2.1849745710583472,
+          "var_kerdock": 2.0348826775419162e-07,
+          "var_lattice": 4.4461669055162097e-07,
+          "var_mc_radial_diagnostic": 5.737366466945853e-07,
+          "wall_s": 114.0
+        },
+        {
+          "diag_kerdock_over_mc": 0.49223770921894583,
+          "diag_lattice_over_mc": 0.7041456439291824,
+          "net_seed": 202,
+          "ratio_lattice_over_kerdock": 1.4304991891955612,
+          "var_kerdock": 5.690115914331209e-07,
+          "var_lattice": 8.139706201879553e-07,
+          "var_mc_radial_diagnostic": 1.1559691197490646e-06,
+          "wall_s": 113.5
+        },
+        {
+          "diag_kerdock_over_mc": 0.31184805793632453,
+          "diag_lattice_over_mc": 0.9320567527184792,
+          "net_seed": 303,
+          "ratio_lattice_over_kerdock": 2.988816922210218,
+          "var_kerdock": 2.1781183151096933e-07,
+          "var_lattice": 6.509996878775859e-07,
+          "var_mc_radial_diagnostic": 6.984549878307845e-07,
+          "wall_s": 113.6
+        }
+      ],
+      "pass": false,
+      "per_net_ratios": [
+        2.1849745710583472,
+        1.4304991891955612,
+        2.988816922210218
+      ],
+      "replicates": 16,
+      "sampler_finding": "v3 width-256 sampler is a deterministic structured spherical set: 126 phased-Hadamard (Kerdock) frames x 256 rows = 32,256 directions of exact radius mean_chi(256)=15.9844, antipodally doubled to 64,512, randomized only by a per-net Haar rotation. Structured branch of G0 applies."
+    }
+  },
+  "predeclaration": "N8A_PREDECLARATION.md",
+  "verdict": "KILL at G0: the frozen Kerdock v3 sampler is already a structured spherical construction and the antithetic Kronecker+CP lattice does not deliver the predeclared >=1.2x paired variance gain over it (aggregate ratio 2.1061 > 0.83). First broken link: the N8a premise."
+}

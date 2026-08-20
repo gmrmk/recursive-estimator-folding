@@ -1,0 +1,57 @@
+{
+  "candidate": "M243",
+  "status": "PREDECLARED_G0_ONLY_FINAL_AUTHORITY",
+  "authority_order": [
+    "M243_PREDECLARATION_20260809.md",
+    "M243_FROZEN_MANIFEST_20260809.json",
+    "M243_PREIMPLEMENTATION_ERRATUM_20260809.md",
+    "M243_FROZEN_MANIFEST_V2_20260809.json",
+    "M243_PREIMPLEMENTATION_ERRATUM2_20260809.md",
+    "M243_FROZEN_MANIFEST_V3_20260809.json",
+    "M243_PREIMPLEMENTATION_ERRATUM3_20260809.md",
+    "M243_FROZEN_MANIFEST_V4_20260809.json",
+    "M243_SHA256SUMS_V2_20260809.txt"
+  ],
+  "durable_helper": {
+    "path": "corpus/whestbench/experiments/m237_writeahead_native_receipt/m237_durable_native_receipt.py",
+    "sha256": "774cef483c33b149524121144a4c5ede9141f094aa6fe5037414e31bddac873c",
+    "allowed_symbols": ["canonical_json_bytes", "write_launch_intent_exclusive", "publish_native_result"]
+  },
+  "sampled_manifest": {
+    "owner": "Codex",
+    "authorized_after": "G0A_PASS",
+    "launches": 1,
+    "wall_seconds": 60,
+    "rss_bytes": 536870912,
+    "intent": "M243_G0B_SAMPLE_INTENT_20260809.json",
+    "temp": ".M243_G0B_SAMPLED_EVENTS_20260809.json.tmp",
+    "final": "M243_G0B_SAMPLED_EVENTS_20260809.json",
+    "contains_oracle_or_response_values": false,
+    "failure_on_second_intent_or_partial": true
+  },
+  "numerical_reference": {
+    "Delta_ref": "independent_100d_direct_outer_mean_after_80_100_agreement",
+    "tree": "independent_mpmath_reimplementation_of_M122_M126_polynomial",
+    "M147_role": "separate_binary64_certificate_crosscheck",
+    "conditional_b_radius_uses": ["w_value", "w_da", "w_db", "w_drho", "unary_center_rounding", "product_rounding"],
+    "quad_error": "sum_abs_error<=1e-11*(1+abs(panel_sum))",
+    "quad_error_api": "mp.quad(error=True,method=tanh-sinh,maxdegree=12)"
+  },
+  "m196_forbidden_precise": [
+    "B1CanonicalState",
+    "dtilde",
+    "M196_residual_H_e_equals_Delta_minus_dtilde",
+    "V_H",
+    "M196_24_cells_or_seeds"
+  ],
+  "m243_hermite_Htilde_allowed": true,
+  "execution_order": [
+    "authority_commit_and_final_reaudit",
+    "missing_module_RED",
+    "G0A",
+    "Codex_sampled_manifest_only_after_G0A_PASS",
+    "four_Fable_shards",
+    "Codex_aggregation"
+  ],
+  "evidence_executed_at_creation": false
+}

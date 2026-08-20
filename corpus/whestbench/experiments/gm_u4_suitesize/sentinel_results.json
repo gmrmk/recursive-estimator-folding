@@ -1,0 +1,128 @@
+{
+ "true_positives": [
+  {
+   "sentence": "The Private Re-evaluation is run on a fresh, never-seen suite of 100 MLPs generated from private seeds.",
+   "signalA": [
+    "A1_private_then_count",
+    "A2_count_then_private",
+    "A3_suite_size_literal"
+   ],
+   "signalB_numbers": [
+    100
+   ]
+  },
+  {
+   "sentence": "Rules v12 5.4: the private re-evaluation suite contains 50 MLPs.",
+   "signalA": [
+    "A1_private_then_count",
+    "A3_suite_size_literal"
+   ],
+   "signalB_numbers": [
+    4,
+    5,
+    50
+   ]
+  },
+  {
+   "sentence": "Each designated submission is rerun on 100 fresh unseen networks.",
+   "signalA": [
+    "A1_private_then_count"
+   ],
+   "signalB_numbers": [
+    100
+   ]
+  },
+  {
+   "sentence": "the private rerun uses a 100-net suite",
+   "signalA": [
+    "A1_private_then_count",
+    "A4_n_net_suite"
+   ],
+   "signalB_numbers": [
+    100
+   ]
+  },
+  {
+   "sentence": "Number of nets in the private re-evaluation: 100.",
+   "signalA": [
+    "A5_number_of_nets"
+   ],
+   "signalB_numbers": [
+    100
+   ]
+  },
+  {
+   "sentence": "suite size for the September re-run is 50",
+   "signalA": [
+    "A3_suite_size_literal"
+   ],
+   "signalB_numbers": [
+    50
+   ]
+  },
+  {
+   "sentence": "The held-out re-evaluation set comprises 200 MLPs.",
+   "signalA": [
+    "A1_private_then_count"
+   ],
+   "signalB_numbers": [
+    200
+   ]
+  },
+  {
+   "sentence": "prize ranking comes from a rerun over 100 private MLPs",
+   "signalA": [
+    "A1_private_then_count"
+   ],
+   "signalB_numbers": [
+    100
+   ]
+  }
+ ],
+ "near_misses": [
+  {
+   "sentence": "Phase-end standings use all 100 MLPs (50 public + 50 private).",
+   "signalA": [
+    "A2_count_then_private"
+   ],
+   "signalB_numbers": [
+    50,
+    100
+   ]
+  },
+  {
+   "sentence": "the live score is only the 50-MLP public half",
+   "signalA": [],
+   "signalB_numbers": [
+    50
+   ]
+  },
+  {
+   "sentence": "This re-run produces the final (private) leaderboard on a separate, fresh, never-seen test suite generated from private seeds.",
+   "signalA": [],
+   "signalB_numbers": []
+  },
+  {
+   "sentence": "Fresh private rerun of each team's up to two nominated submissions.",
+   "signalA": [],
+   "signalB_numbers": []
+  }
+ ],
+ "misses": [],
+ "ondisk_sentinel": {
+  "path": "corpus\\whestbench\\experiments\\gm_u4_suitesize\\SENTINEL_SYNTHETIC.md",
+  "signalA_patterns_fired": [
+   "A2_count_then_private",
+   "A3_suite_size_literal"
+  ],
+  "signalA_matches": [
+   "137 MLPs generated from private",
+   "suite of 137"
+  ],
+  "signalB_found_137": true,
+  "detected": true
+ },
+ "all_true_positives_detected": true,
+ "n_true_positives": 8,
+ "n_missed": 0
+}

@@ -1,0 +1,60 @@
+{
+ "premise": "wall-priced sample scaling",
+ "truth_samples": 8000000,
+ "results": [
+  {
+   "n_samples": 64512,
+   "mse_mean_of_3": 5.333917194710973e-07,
+   "mse_reps": [
+    5.684867391283186e-07,
+    3.815917238188619e-07,
+    6.500966954661113e-07
+   ],
+   "wall_s_min": 1.6556898999988334,
+   "v_implied": 0.034410166606519424
+  },
+  {
+   "n_samples": 129024,
+   "mse_mean_of_3": 3.6957877100506356e-07,
+   "mse_reps": [
+    4.3131025659988074e-07,
+    2.034215735669706e-07,
+    4.740044828483393e-07
+   ],
+   "wall_s_min": 3.2718427999989217,
+   "v_implied": 0.04768453135015732
+  },
+  {
+   "n_samples": 258048,
+   "mse_mean_of_3": 3.051281184554814e-07,
+   "mse_reps": [
+    5.130685897045024e-07,
+    5.4859915936429055e-08,
+    3.474558497255127e-07
+   ],
+   "wall_s_min": 6.347603600001094,
+   "v_implied": 0.07873770071120006
+  },
+  {
+   "n_samples": 516096,
+   "mse_mean_of_3": 1.2529391478885673e-07,
+   "mse_reps": [
+    7.924240848605036e-08,
+    1.058460431389344e-07,
+    1.9079329274158545e-07
+   ],
+   "wall_s_min": 12.708162499999162,
+   "v_implied": 0.0646636882468698
+  }
+ ],
+ "v_ratio_max_over_min": 2.2882103888529923,
+ "scaling_1_over_N_holds": false,
+ "deterministic_fixed_seed": true,
+ "champion_variance_projection_raw_mse": {
+  "N=64,512": 3.084697420634921e-07,
+  "N=258,048": 7.711743551587302e-08,
+  "N=516,096": 3.855871775793651e-08,
+  "N=1,032,192": 1.9279358878968255e-08
+ },
+ "note": "local wall is a LOWER bound on grading throughput (16 vCPU); projection to leaders' altitude needs N>=4x champion plus existing controls; production candidate carries disclosure"
+}

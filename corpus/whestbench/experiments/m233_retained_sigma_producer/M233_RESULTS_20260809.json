@@ -1,0 +1,45 @@
+{
+  "mutation": "m233_retained_sigma_producer",
+  "status": "KILLED_INCLUSIVE_EXECUTION_AND_ALLOCATION_BOUNDARY",
+  "one_changed_mechanism": "owned retained sigma producer from 31x256 live covariance diagonals plus charged gather into M228 kernel",
+  "m224_code_sha256": "6ABA2D0AB618FF5D678977CC07FC89962C09092B537AAFFC282E069C10DFDA7B",
+  "artifact_hashes_sha256": {
+    "m233_retained_sigma_producer.py": "0AF31D8E656A9C3C00193E8C1EE6232C4F91B8F680A0AF210728072996839928",
+    "run_m233_native_trace.py": "AFE07DC6716BC441B524E800270EABEF943CD8AA67DC8AF28AC1FCE91C131114",
+    "test_m233_retained_sigma_producer.py": "EEA9BDD1F6B2EA099E91E918B0D3CFE0C7B4AD69A58D6C30D7E026DE95B7B6CD",
+    "M233_PREDECLARATION_20260809.md": "8B8D2293E9610D98D002B32408D386730076B0262AF3D3A93E0C5D4BA85F3000",
+    "M233_STATIC_LEDGER_20260809.json": "67833FAE97DD4A16514A9E6BBDCBA5D9A4999860EC7C16C8680D8689DF89C815"
+  },
+  "red_green": {"red_missing_module_reproduced": true, "green_tests": "4/4 passed"},
+  "static_semantics": {"m205_factor_zero_parity": true, "m224_value_parity": true, "m224_radius_parity": true, "gauge": true, "permutation": true, "copy_epoch_conditional_refusal": true},
+  "first_binding_trace": {
+    "seed": 221720001,
+    "layers": 31,
+    "width": 256,
+    "events": 3968,
+    "billed_flops": 21867648,
+    "producer_billed_flops": 174592,
+    "kernel_billed_flops": 21693056,
+    "calls_total": 180,
+    "kernel_calls": 171,
+    "operation_calls": {"abs":7,"add":38,"copyto":1,"divide":15,"exp":3,"greater":2,"greater_equal":2,"isfinite":1,"less_equal":6,"logical_and":9,"matmul":1,"maximum":6,"multiply":76,"reshape":1,"sqrt":4,"subtract":6,"sum":1,"take":1},
+    "buffer_bytes": 8841200,
+    "wall_s": 0.018994799989741296,
+    "raw_speedup_vs_m216": 84.93859903070154,
+    "raw_wall_limit_s": 0.016133916999970098,
+    "strict_speedup_min": 100.0,
+    "residual_wall_s": 0.0008830999431665987,
+    "hostile_component": 463417619.58329934,
+    "value_parity_max_abs": 3.8163916471489756e-16,
+    "radius_parity_max_abs": 3.308722450212111e-24,
+    "fallback_count": 0,
+    "chart_mismatch_count": 0
+  },
+  "kill_reasons": [
+    "raw wall exceeds frozen threshold and raw speedup is below strict 100x",
+    "producer workspace allocation occurs before BudgetContext/raw timer, so the requested no-free-setup accounting boundary is not met"
+  ],
+  "six_process_gate": {"started": true, "completed": false, "reason": "FAIL_CLOSED_AFTER_FIRST_BINDING_TRACE"},
+  "integration_status": "new producer prototype only; M212/full-caller integration remains separate",
+  "variance_gate_run": false
+}

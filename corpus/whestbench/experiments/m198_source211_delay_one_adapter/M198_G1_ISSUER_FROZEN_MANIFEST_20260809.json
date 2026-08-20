@@ -1,0 +1,16 @@
+{
+  "candidate": "M198-G1 issuer-backed source and carrier receipts",
+  "date": "2026-08-09",
+  "status": "PREDECLARED_NOT_EXECUTED",
+  "predeclaration": "M198_G1_ISSUER_PREDECLARATION_20260809.md",
+  "predeclaration_sha256": "ced54ee05a17070ddf93da7f89137ded99bac73aaaa7a42328af60f4ff061d1f",
+  "independent_oracle_max_abs": 2e-10,
+  "carrier_parity_max_abs": 2e-12,
+  "ownership_conservation_max_abs": 5e-10,
+  "forbidden": [
+    "target-width source-provider credit",
+    "native cost, variance, or efficacy credit",
+    "contest truth, response, scorer, leaderboard, submission, or champion access",
+    "reference-only receipt entering the production carrier"
+  ]
+}

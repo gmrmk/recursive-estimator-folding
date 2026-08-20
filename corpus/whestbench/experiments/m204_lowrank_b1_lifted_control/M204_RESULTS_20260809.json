@@ -1,0 +1,27 @@
+{
+  "candidate": "M204 lifted rank-one B=1 Rademacher control",
+  "scope": "generated response-free algebra and static cost premise only",
+  "rank": 1,
+  "active_nodes": 2,
+  "padded_nodes": 49,
+  "source_compiler": "one f64 square output contraction per source layer",
+  "strict_cost_premise": {
+    "headroom": 1986871472,
+    "protected_one_product": 2595389440,
+    "replacement_proved": false,
+    "status": "BLOCKED_COST_PREMISE"
+  },
+  "algebra_test_status": "PASS_7_OF_7_GENERATED_RESPONSE_FREE",
+  "algebra_checks": [
+    "rank-factor Schur identity",
+    "rank-one Rademacher dtilde identity",
+    "lifted aaaa/aaab/aabb parity against complete ordered triples",
+    "hidden-label permutation covariance",
+    "positive-ReLU-gauge covariance",
+    "complete-domain full-support conservation",
+    "strict cost accounting without replacement credit"
+  ],
+  "source_variance_status": "NOT_CREATED_OR_EXECUTED",
+  "efficacy_credit": "NONE",
+  "firewall": "No contest model, truth, scorer, leaderboard, submission, response, MSE, or source-variance execution."
+}

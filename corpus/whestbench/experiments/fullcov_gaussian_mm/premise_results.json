@@ -1,0 +1,76 @@
+{
+  "date": "2026-08-06",
+  "scope": "public development indices below 100 only",
+  "dataset": "work/whest-full",
+  "dataset_sha256": "5b00938b6bd809fe80acef08772c5654edf467863225ca9e304b76c779ecf433",
+  "whestbench": "0.14.0",
+  "flopscope": "0.10.0",
+  "paper": "https://arxiv.org/abs/2601.22307v2",
+  "method": "full covariance Gaussian moment matching after every ReLU; fixed 10-point Plackett/Gauss-Legendre Phi2",
+  "formula_validation": {
+    "unit_tests": 7,
+    "noncentral_relu_reference": "independent scipy.integrate.quad conditional integral",
+    "controlled_phi2_grid": {
+      "n_cases": 175,
+      "alpha_values": [-3.0, -1.5, 0.0, 1.5, 3.0],
+      "rho_values": [-0.95, -0.8, -0.5, 0.0, 0.5, 0.8, 0.95],
+      "mean_absolute_error": 6.385025993436304e-8,
+      "p95_absolute_error": 1.7346848918409208e-7,
+      "p99_absolute_error": 1.441486550342926e-6,
+      "max_absolute_error": 2.876720522314302e-6,
+      "worst_case": [0.0, 0.0, -0.95]
+    },
+    "flopscope_vs_numpy_index0_max_absolute_difference": 1.3766765505351941e-14,
+    "quadrature_order_audit_index0": {
+      "orders": [10, 20, 32, 48, 64, 96],
+      "mse_at_10": 7.586523545556977e-5,
+      "mse_at_96": 7.586523552097633e-5,
+      "max_final_prediction_difference_10_vs_20": 1.327769699743797e-10,
+      "interpretation": "failure is Gaussian re-closure, not Phi2 quadrature"
+    }
+  },
+  "official_subprocess_indices_0_4": {
+    "full_covariance": {
+      "raw_mse": 5.428153453976847e-5,
+      "adjusted_score": 5.428153453976848e-6,
+      "all_layers_mse": 4.8457266530022025e-5,
+      "mean_score_multiplier": 0.1,
+      "flops_used_per_network": 6189400128,
+      "mean_effective_compute": 16140995982.94548,
+      "failures": 0,
+      "per_index_raw_mse": [
+        7.58650858188048e-5,
+        4.188322418485768e-5,
+        6.63111568428576e-5,
+        5.526362656382844e-5,
+        3.208457928849384e-5
+      ]
+    },
+    "diagonal_baseline": {
+      "raw_mse": 9.364165016449988e-4,
+      "adjusted_score": 9.36416501644999e-5,
+      "all_layers_mse": 7.738287327811122e-4,
+      "mean_score_multiplier": 0.1,
+      "flops_used_per_network": 20069632,
+      "mean_effective_compute": 463563462.9714198,
+      "failures": 0,
+      "per_index_raw_mse": [
+        5.492497584782541e-4,
+        8.663401822559536e-4,
+        2.3722792975604534e-3,
+        6.202928489074111e-4,
+        2.739204210229218e-4
+      ]
+    }
+  },
+  "residual_control_gate": {
+    "parent_raw_mse": 1.568725850117771e-7,
+    "fullcov_minus_parent_error_cosine": -0.018325268398520358,
+    "fullcov_minus_diagonal_error_cosine": -0.04596319730183395,
+    "best_in_sample_relative_mse_change": -0.002112615506207338,
+    "best_leave_one_network_out_relative_mse_change": 0.02807462632213409,
+    "interpretation": "no stable cost-positive control signal"
+  },
+  "promotion_gate_raw_mse": 1.4e-6,
+  "decision": "kill_accuracy_and_control"
+}

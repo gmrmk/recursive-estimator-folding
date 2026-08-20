@@ -1,0 +1,25 @@
+{
+  "mutation": "M176_exact_labelled_flopscope_background_archive_producer",
+  "scope": "response-free static interface audit only",
+  "disposition": "NO_GO_FIRST_LINK_REMAINS_BROKEN",
+  "first_broken_link": "endpoint-complete, exact-or-certified bivariate ReLU value-and-Jacobian primitive is absent from the installed FlopScope path",
+  "forbidden_in_this_mutation": [
+    "Source211_to_TangentState_conversion",
+    "source_efficacy",
+    "truth_or_scorer_access",
+    "leaderboard_or_submission_change",
+    "champion_change"
+  ],
+  "fixed_blocks": [8, 8, 8, 7],
+  "validation": {
+    "direct_test_command": "python -c \"import sys; sys.path.insert(0, r'work\\\\scorefloor_generation\\\\m176_background_archive_producer'); import test_m176_static; test_m176_static.test_m176_static_no_go()\"",
+    "result": "PASS",
+    "pytest_status": "unavailable in C:\\Python314; direct test invoked instead"
+  },
+  "hashes": {
+    "README.md": "d6fd635729065fdd9cdf09ab54fd5b3841aa5db5c1a9a506e63606c01dc51430",
+    "M176_EXACT_BACKGROUND_ARCHIVE_NO_GO_20260807.md": "d0aa6a336138436a3da0aaaba28f7758ddb04eba036fe815088ef6a4fc3ac54c",
+    "verify_m176_static.py": "a65ee2b5dd58ea742eeda02a7c4ced3504abca4ae0fa08859e5129867cfe3bcc",
+    "test_m176_static.py": "1b3cec26257b5e1b240c973fd66177178d19070e357b9508214aa4b224287820"
+  }
+}

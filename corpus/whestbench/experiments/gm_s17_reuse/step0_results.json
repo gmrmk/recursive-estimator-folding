@@ -1,0 +1,79 @@
+{
+  "gate": "step0_reproduce_s17_sectionA",
+  "per_net": {
+    "101": {
+      "sigma2_var(ybar)": 0.0079004722096335,
+      "sigma2_mean(r_global^2)": 0.0079004722096335,
+      "sigma2_two_way_rel_diff": 0.0,
+      "iid_floor_sigma2_over_64512": 1.2246515701936849e-07,
+      "dir_floor_sigma2_over_32256": 2.4493031403873697e-07,
+      "ratio_champ_over_costfloor": 1.6308265471219099,
+      "ratio_champ_over_dirfloor": 0.8154132735609549,
+      "N_eff_sigma2_over_champ": 39557.8549502098,
+      "ref_ratio_champ_over_costfloor": 1.6308265471219099,
+      "rel_err_ratio_costfloor": 0.0,
+      "rel_err_sigma2": 0.0,
+      "bitwise_sigma2": true,
+      "bitwise_ratio": true
+    },
+    "202": {
+      "sigma2_var(ybar)": 0.016002145106185965,
+      "sigma2_mean(r_global^2)": 0.016002145106185965,
+      "sigma2_two_way_rel_diff": 0.0,
+      "iid_floor_sigma2_over_64512": 2.48049124289837e-07,
+      "dir_floor_sigma2_over_32256": 4.96098248579674e-07,
+      "ratio_champ_over_costfloor": 2.367307933629177,
+      "ratio_champ_over_dirfloor": 1.1836539668145885,
+      "N_eff_sigma2_over_champ": 27251.20762008369,
+      "ref_ratio_champ_over_costfloor": 2.367307933629177,
+      "rel_err_ratio_costfloor": 0.0,
+      "rel_err_sigma2": 0.0,
+      "bitwise_sigma2": true,
+      "bitwise_ratio": true
+    },
+    "303": {
+      "sigma2_var(ybar)": 0.011124831593729415,
+      "sigma2_mean(r_global^2)": 0.011124831593729415,
+      "sigma2_two_way_rel_diff": 0.0,
+      "iid_floor_sigma2_over_64512": 1.724459262420854e-07,
+      "dir_floor_sigma2_over_32256": 3.448918524841708e-07,
+      "ratio_champ_over_costfloor": 1.3739080295883108,
+      "ratio_champ_over_dirfloor": 0.6869540147941554,
+      "N_eff_sigma2_over_champ": 46955.10806449753,
+      "ref_ratio_champ_over_costfloor": 1.3739080295883108,
+      "rel_err_ratio_costfloor": 0.0,
+      "rel_err_sigma2": 0.0,
+      "bitwise_sigma2": true,
+      "bitwise_ratio": true
+    }
+  },
+  "checks": {
+    "worst_rel_err_ratio": 0.0,
+    "all_bitwise": true
+  },
+  "pooled_reproduced": {
+    "mean": 1.7906808367797993,
+    "sd": 0.515631542652912,
+    "se": 0.29770000995332074,
+    "t95_ci": [
+      0.5096776939506602,
+      3.071683979608938
+    ]
+  },
+  "pooled_reference": {
+    "mean": 1.7906808367797993,
+    "sd": 0.515631542652912,
+    "se": 0.29770000995332074,
+    "t95_ci": [
+      0.5096776939506602,
+      3.071683979608938
+    ],
+    "per_net": [
+      1.6308265471219099,
+      2.367307933629177,
+      1.3739080295883108
+    ]
+  },
+  "rel_err_pooled": 0.0,
+  "verdict": "STEP0_PASS"
+}

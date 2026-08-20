@@ -1,0 +1,84 @@
+{
+  "candidate": "M145 repaired defensive ACG conditional-Haar-frame transport",
+  "status": "REPAIRED_PREEXECUTION_AWAITING_SECOND_HOSTILE_AUDIT",
+  "execution_authorized": false,
+  "outcome_opened": false,
+  "champion_mutation_authorized": false,
+  "date": "2026-08-07",
+  "parent_audit": "M145_INDEPENDENT_HOSTILE_AUDIT_20260807.md",
+  "objective": "Reduce the adjusted score of the exact Formal-L1 row-blocked estimator while preserving its radial, antipodal, pruning, fold3, tangent, and all-output semantics.",
+  "bias_class": "The ACG change of measure and centered complete-frame correction are conditionally unbiased in real arithmetic. Float32 uses a log-domain full-mixture weight with a proved normal-range envelope. The remaining approximation class is exactly Formal L1's frozen pruning/fold/tangent class.",
+  "primary_cell": {
+    "pilot_lines": 1024,
+    "rank": 16,
+    "pilot_frames": 4,
+    "main_frames": 122,
+    "epsilon": 0.8
+  },
+  "proposal": {
+    "family": "0.8 Uniform + 0.2 ACG(I + V diag(lambda-1) V^T)",
+    "spectral_construction": "full symmetric float32 scatter plus full eigh; selected covariance is a spectral matrix function",
+    "boundary_tie_rule": "if eig[r]-eig[r+1] <= 128*eps32*max(1,abs(boundary eigenvalues)), return the uniform proposal",
+    "lambda_box": [0.25, 1.75],
+    "pilot_statistic": "mean over all outputs of ((f_surrogate(u)+f_surrogate(-u))/2)^2",
+    "grid_or_selection": false
+  },
+  "seed_tree": {
+    "namespace": 1295070261,
+    "setup_children": ["pilot_qr", "main_qr"],
+    "predict_children": ["mixture_labels", "uniform_anchors", "acg_latents"],
+    "predict_key": ["protocol namespace", "setup seed", "mlp.seed", 1],
+    "overlap_allowed": false
+  },
+  "formal_l1_base": {
+    "tar_sha256": "bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36",
+    "mean_adjusted_score": 2.121762463528797e-7,
+    "mean_raw_mse": 3.089460087224438e-7,
+    "mean_effective_compute": 189852556000.0,
+    "maximum_effective_compute": 222405357000.0,
+    "sealed_m71_adjusted_proxy": 2.05e-7
+  },
+  "integration": {
+    "random_unit": "one complete 256-line Haar frame with both antipodes",
+    "setup": "build four pilot and 122 main QR frames from disjoint child seeds and store one in-place row-frame bank",
+    "predict": "run the four pilot frames first to freeze Formal-L1 active/fold regimes and proposal; tilt 122 stored main frames in place; use complete-frame coefficients in every sample mean and first-layer moment residual; restore frames with the same reflectors",
+    "radial_factor": "unchanged Formal-L1 E[chi_256] scaling",
+    "antipodal_order": "line coefficients duplicated in the exact [positive block, negative block] order",
+    "forbidden": "pointwise ACG weights on dependent frame or MUB/Kerdock nodes"
+  },
+  "native_trace": {
+    "kind": "target-shaped sidecar structural trace only; no MSE or truth",
+    "flopscope_version": "0.10.0+np2.4.6",
+    "dtype": "float32",
+    "billed_flops": 357099678,
+    "residual_wall_seconds": 0.022555597592145205,
+    "effective_compute_at_1e11_per_second": 2612659437.2145205,
+    "setup_qr_seconds": 1.3141004999633878,
+    "sidecar_wall_seconds": 0.13176020001992583,
+    "frame_bank_bytes": 33030144,
+    "process_peak_working_set_bytes": 300863488,
+    "restored_frame_max_abs_defect": 8.940696716308594e-8,
+    "weight_range": [0.9419268369674683, 1.033163070678711],
+    "zero_or_nonfinite_weights": 0
+  },
+  "promotion_gate": {
+    "unit": "whole independently generated target-shaped network",
+    "primary": "paired per-network official adjusted score candidate/formal-L1 ratio",
+    "primary_mean_ratio_at_most": 0.8,
+    "primary_bootstrap_upper90_strictly_below": 0.9,
+    "sealed_m71_proxy": "candidate adjusted-score bootstrap upper90 must be below 2.05e-7",
+    "raw_mse_ratio": "secondary diagnostic only; it cannot promote the candidate",
+    "resource": "zero failures; every candidate C below 258.4B safety line and 272B cliff; setup<4s; predict<20s; peak<512MiB",
+    "same_backend": "Formal L1 and M145 must use the same generated networks, seed root, row-blocked backend, runner, radialization, and scoring function",
+    "no_champion_mutation": true
+  },
+  "firewall": "No target efficacy run until second hostile audit. No contest weights, truths, public/private rows, scorer outputs, leaderboard data, submission, or champion replacement.",
+  "preexecution_kills": [
+    "generic input-permutation covariance or boundary-tie fallback fails",
+    "any float32 full-mixture weight is zero, nonfinite, or above 1.25",
+    "pilot/main/QR/ACG seed child ownership overlaps",
+    "Formal-L1 source hashes or crosswalk hooks do not match",
+    "native sidecar loses frame restoration, setup, wall, peak-memory, or safety gates",
+    "any cell other than P1024/r16/M122 is executed"
+  ]
+}

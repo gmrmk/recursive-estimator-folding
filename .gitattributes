@@ -2,3 +2,7 @@
 SKILL.md -text
 references/operator-catalog.md -text
 scripts/fold_ledger.py -text
+*.pdf binary
+
+# Preserve the V31-G4 manifest-bound evidence bytes on every platform.
+corpus/whestbench/experiments/v31_g4_call_fusion/** -text

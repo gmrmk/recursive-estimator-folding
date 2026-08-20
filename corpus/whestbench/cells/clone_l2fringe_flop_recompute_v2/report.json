@@ -1,0 +1,31 @@
+{
+  "cell_id": "clone_l2fringe_flop_recompute_v2",
+  "environment": {
+    "argv": [
+      "python",
+      "corpus/whestbench/experiments/clone_l2fringe_recompute/runner_recompute.py"
+    ],
+    "git_head": "96ce7b4f291daed04c1cc82429f9f9973be4dd4c",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "evidence_role": "development",
+  "exit_code": 0,
+  "metrics": {
+    "candidate_matmul_share": 0.966939,
+    "cost_model_route_ratio_4096x256x256": 0.88664,
+    "effective_compute_ratio": 0.949914,
+    "flop_only_ratio": 0.914492,
+    "matmul_only_ratio": 0.89951,
+    "n_nets": 24,
+    "reported_effective_compute_point": 0.949316
+  },
+  "outcome": "COMPLETED",
+  "predeclaration_sha256": "9a65f6a29b0519a40793eb5ae3fcb3f96e59a113cd2a888bb94acea4548863c4",
+  "ran_at_utc": "2026-08-18T00:07:06.650320+00:00",
+  "report_sha256": "6aa9150c7e6eb107d8cb4e01abb3a4aafbea41af55c5d994e551f2634bfbdc5b",
+  "stdout_last_line": "{\"flop_only_ratio\": 0.914492, \"effective_compute_ratio\": 0.949914, \"matmul_only_ratio\": 0.89951, \"cost_model_route_ratio_4096x256x256\": 0.88664, \"n_nets\": 24, \"candidate_matmul_share\": 0.966939, \"reported_effective_compute_point\": 0.949316}",
+  "terminal_no_mutation": false,
+  "wall_seconds_budget": 120,
+  "wall_seconds_used": 0.113
+}

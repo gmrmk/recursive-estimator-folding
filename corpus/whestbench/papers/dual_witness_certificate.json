@@ -1,0 +1,750 @@
+{
+  "artifact": "DUAL_WITNESS_CERTIFICATE_20260818",
+  "discharges": "rank-10 OFFLINE_CERTIFICATE, 2026-08-13 Schauder/Kerdock theorem map",
+  "setting": {
+    "d": 256,
+    "blocks": 129,
+    "champion_block_count": 126,
+    "points_per_block": 512,
+    "cross_block_inner_product": "+-1/16",
+    "score_formula": "MSE * max(0.1, (billed_FLOPs + 1e11*residual_s)/2.72e11)"
+  },
+  "check_A_d4_bruteforce": {
+    "1": {
+      "odd_all_zero": true
+    },
+    "2": {
+      "closed_form_matches_bruteforce": true,
+      "Q_uniform_3_blocks": "0"
+    },
+    "3": {
+      "odd_all_zero": true
+    },
+    "4": {
+      "closed_form_matches_bruteforce": true,
+      "Q_uniform_3_blocks": "0"
+    },
+    "5": {
+      "odd_all_zero": true
+    },
+    "6": {
+      "closed_form_matches_bruteforce": true,
+      "Q_uniform_3_blocks": "1/7"
+    },
+    "7": {
+      "odd_all_zero": true
+    },
+    "8": {
+      "closed_form_matches_bruteforce": true,
+      "Q_uniform_3_blocks": "1/9"
+    },
+    "is_5_design": true,
+    "degree_6_nonzero": true
+  },
+  "check_B_corpus": {
+    "p4_exact_rationals": {
+      "G4_at_0": "1/21845",
+      "G4_at_1_16": "-65/2105344",
+      "G6_at_0": "-1/1131571",
+      "G6_at_1_16": "16637/17449091072"
+    },
+    "r0_lam_top_doubled": [
+      {
+        "l": 4,
+        "mine": "7.350908201315546e-07",
+        "R0": "7.350908201315546e-07",
+        "identical": true
+      },
+      {
+        "l": 6,
+        "mine": "3.194089008420301e-05",
+        "R0": "3.194089008420301e-05",
+        "identical": true
+      },
+      {
+        "l": 8,
+        "mine": "3.097244080614878e-05",
+        "R0": "3.097244080614878e-05",
+        "identical": true
+      },
+      {
+        "l": 10,
+        "mine": "3.10030054867258e-05",
+        "R0": "3.10030054867258e-05",
+        "identical": true
+      },
+      {
+        "l": 12,
+        "mine": "3.100194567505615e-05",
+        "R0": "3.100194567505615e-05",
+        "identical": true
+      },
+      {
+        "l": 14,
+        "mine": "3.100198565425625e-05",
+        "R0": "3.100198565425625e-05",
+        "identical": true
+      },
+      {
+        "l": 16,
+        "mine": "3.100198406664379e-05",
+        "R0": "3.100198406664379e-05",
+        "identical": true
+      },
+      {
+        "l": 18,
+        "mine": "3.100198412902007e-05",
+        "R0": "3.100198412902007e-05",
+        "identical": true
+      },
+      {
+        "l": 20,
+        "mine": "3.100198412696821e-05",
+        "R0": "3.100198412696821e-05",
+        "identical": true
+      }
+    ],
+    "mub129_design_defect": [
+      {
+        "l": 2,
+        "m": 126,
+        "mine": "0.0",
+        "MUB129": "0.0",
+        "identical": true
+      },
+      {
+        "l": 2,
+        "m": 128,
+        "mine": "0.0",
+        "MUB129": "0.0",
+        "identical": true
+      },
+      {
+        "l": 2,
+        "m": 129,
+        "mine": "0.0",
+        "MUB129": "0.0",
+        "identical": true
+      },
+      {
+        "l": 4,
+        "m": 126,
+        "mine": "7.350908201315546e-07",
+        "MUB129": "7.350908201315546e-07",
+        "identical": true
+      },
+      {
+        "l": 4,
+        "m": 128,
+        "mine": "2.4120167535566633e-07",
+        "MUB129": "2.4120167535566633e-07",
+        "identical": true
+      },
+      {
+        "l": 4,
+        "m": 129,
+        "mine": "0.0",
+        "MUB129": "0.0",
+        "identical": true
+      },
+      {
+        "l": 6,
+        "m": 126,
+        "mine": "3.194089008420301e-05",
+        "MUB129": "3.194089008420301e-05",
+        "identical": true
+      },
+      {
+        "l": 6,
+        "m": 128,
+        "mine": "3.145671147984825e-05",
+        "MUB129": "3.145671147984825e-05",
+        "identical": true
+      },
+      {
+        "l": 6,
+        "m": 129,
+        "mine": "3.122025216144244e-05",
+        "MUB129": "3.122025216144244e-05",
+        "identical": true
+      }
+    ],
+    "g_l_sign_pattern": {
+      "4": -1,
+      "6": 1,
+      "8": -1,
+      "10": 1,
+      "12": -1,
+      "14": 1,
+      "16": -1,
+      "18": 1,
+      "20": -1,
+      "22": -1,
+      "24": 1,
+      "26": -1,
+      "28": 1,
+      "30": -1,
+      "32": 1,
+      "34": -1,
+      "36": 1,
+      "38": -1,
+      "40": 1
+    },
+    "g_l_sign_alternation_defect_at": [
+      20
+    ],
+    "B_tail_upper_bound": 6.340478937938558e-26,
+    "g_l_monotone_decay_above_8": true,
+    "alpha_limit_1_over_256": 0.00390625,
+    "alpha_4_over_g_4": "-129",
+    "alpha_6_over_g_6": "4095"
+  },
+  "game": {
+    "falsifier_price": {
+      "champion_compute_flops": 178462975000.0,
+      "completion_nominal_compute_flops": 182712093452.38095,
+      "completion_breakeven_compute_flops": 182582326340.554,
+      "required_saving_flops": 129767111.82696533,
+      "identity_frame_walsh_saving_flops": 524288.0,
+      "safety_factor": 247.51112332718913
+    },
+    "break_even_cost_ratio": "2881/2816",
+    "break_even_cost_ratio_float": 1.0230823863636365,
+    "nominal_cost_ratio_129_over_126": "43/42",
+    "worst_case_margin": "1408/1407",
+    "worst_case_margin_float": 1.0007107320540156,
+    "closed_form_degree4": "R_4(k) = (129 - k)/3",
+    "closed_form_degree6": "R_6(k) = (4095 + k)/4221",
+    "primal_value": "1",
+    "primal_argmin_k": 126,
+    "primal_binding_degree_at_optimum": 40,
+    "dual_value": "1",
+    "dual_argmin_k": 1,
+    "duality_gap": "0",
+    "dual_witness": {
+      "support_degrees": [
+        4,
+        6
+      ],
+      "y_4": "16637/555357",
+      "y_6": "538720/555357",
+      "y_4_float": 0.029957306741429386,
+      "y_6_float": 0.9700426932585706,
+      "B_y = sum_l y_l G_l(1/16)": "0",
+      "g_4 = G_4(1/16)": "-65/2105344",
+      "g_6 = G_6(1/16)": "16637/17449091072"
+    },
+    "worst_case_ratio_by_k": {
+      "1": {
+        "value": "128/3",
+        "float": 42.666666666666664,
+        "binding_degree": 4
+      },
+      "8": {
+        "value": "121/3",
+        "float": 40.333333333333336,
+        "binding_degree": 4
+      },
+      "13": {
+        "value": "116/3",
+        "float": 38.666666666666664,
+        "binding_degree": 4
+      },
+      "55": {
+        "value": "74/3",
+        "float": 24.666666666666668,
+        "binding_degree": 4
+      },
+      "96": {
+        "value": "11",
+        "float": 11.0,
+        "binding_degree": 4
+      },
+      "112": {
+        "value": "17/3",
+        "float": 5.666666666666667,
+        "binding_degree": 4
+      },
+      "125": {
+        "value": "4/3",
+        "float": 1.3333333333333333,
+        "binding_degree": 4
+      },
+      "126": {
+        "value": "1",
+        "float": 1.0,
+        "binding_degree": 40
+      },
+      "127": {
+        "value": "4222/4221",
+        "float": 1.0002369106846718,
+        "binding_degree": 6
+      },
+      "128": {
+        "value": "4223/4221",
+        "float": 1.0004738213693438,
+        "binding_degree": 6
+      },
+      "129": {
+        "value": "1408/1407",
+        "float": 1.0007107320540156,
+        "binding_degree": 6
+      }
+    },
+    "degree4_penalty_below_126": {
+      "1": "128/3",
+      "8": "121/3",
+      "13": "116/3",
+      "55": "74/3",
+      "96": "11",
+      "112": "17/3",
+      "125": "4/3"
+    },
+    "degree6_penalty_above_126": {
+      "127": "4222/4221",
+      "128": "4223/4221",
+      "129": "1408/1407"
+    }
+  },
+  "kkt_equal_compute": {
+    "per_degree": [
+      {
+        "l": 4,
+        "nu_star": "2795/44212224",
+        "primal": "65/88424448",
+        "dual": "65/88424448",
+        "gap": "0"
+      },
+      {
+        "l": 6,
+        "nu_star": "1081405/17449091072",
+        "primal": "1114679/34898182144",
+        "dual": "1114679/34898182144",
+        "gap": "0"
+      },
+      {
+        "l": 8,
+        "nu_star": "108435124633/1748817703600128",
+        "primal": "108330305611/3497635407200256",
+        "dual": "108330305611/3497635407200256",
+        "gap": "0"
+      },
+      {
+        "l": 10,
+        "nu_star": "16899575210815/272556477657382912",
+        "primal": "16900139944509/545112955314765824",
+        "dual": "16900139944509/545112955314765824",
+        "gap": "0"
+      },
+      {
+        "l": 12,
+        "nu_star": "687880646865961813/11094138866566114050048",
+        "primal": "687879780905623423/22188277733132228100096",
+        "dual": "687879780905623423/22188277733132228100096",
+        "gap": "0"
+      },
+      {
+        "l": 14,
+        "nu_star": "1959084044284162562299/31596107491980292814536704",
+        "primal": "67554625599773207141/2179041895998640883761152",
+        "dual": "67554625599773207141/2179041895998640883761152",
+        "gap": "0"
+      },
+      {
+        "l": 16,
+        "nu_star": "22485060623478133767755345/362639057721288480730042597376",
+        "primal": "607704339968546029682871/19602111228177755715137437696",
+        "dual": "607704339968546029682871/19602111228177755715137437696",
+        "gap": "0"
+      },
+      {
+        "l": 18,
+        "nu_star": "48747611429698760917743870153/786201477139753426222732351111168",
+        "primal": "48747611432997540749577911771/1572402954279506852445464702222336",
+        "dual": "48747611432997540749577911771/1572402954279506852445464702222336",
+        "gap": "0"
+      },
+      {
+        "l": 20,
+        "nu_star": "524134318093224868023346985187005/8453238282206628838746818239147278336",
+        "primal": "524134318092899841371084241323447/16906476564413257677493636478294556672",
+        "dual": "524134318092899841371084241323447/16906476564413257677493636478294556672",
+        "gap": "0"
+      },
+      {
+        "l": 22,
+        "nu_star": "11980212984986650102805384133206923/193216875021865802028498702609080647680",
+        "primal": "413110792585640865418085348897237/13325301725645917381275772593729699840",
+        "dual": "413110792585640865418085348897237/13325301725645917381275772593729699840",
+        "gap": "0"
+      },
+      {
+        "l": 24,
+        "nu_star": "141590143865229742962755551822637868771/2283565840258424625574149999902521148047360",
+        "primal": "141590143865236028385987677822465114921/4567131680516849251148299999805042296094720",
+        "dual": "141590143865236028385987677822465114921/4567131680516849251148299999805042296094720",
+        "gap": "0"
+      },
+      {
+        "l": 26,
+        "nu_star": "379235041328631227940790032355797449017115/6116302746548164517137803359738912642930049024",
+        "primal": "10249595711584568508015198809358739395389/330610959272873757683124505931833115834056704",
+        "dual": "10249595711584568508015198809358739395389/330610959272873757683124505931833115834056704",
+        "gap": "0"
+      },
+      {
+        "l": 28,
+        "nu_star": "3031183548112935148770967540980334867301959381/48886928263965418078313891387353157764646222954496",
+        "primal": "3031183548112937262243551004064869436831574527/97773856527930836156627782774706315529292445908992",
+        "dual": "3031183548112937262243551004064869436831574527/97773856527930836156627782774706315529292445908992",
+        "gap": "0"
+      },
+      {
+        "l": 30,
+        "nu_star": "315521818525410812746807352430072151917178827075/5088735889177825587554144832228393065708462012366848",
+        "primal": "315521818525410786783440464954259886191708697161/10177471778355651175108289664456786131416924024733696",
+        "dual": "315521818525410786783440464954259886191708697161/10177471778355651175108289664456786131416924024733696",
+        "gap": "0"
+      },
+      {
+        "l": 32,
+        "nu_star": "11725197901331395362850646931617968915889584505213/189103991752672744414915317636358348764391878653116416",
+        "primal": "11725197901331395476677583544953802170383869855223/378207983505345488829830635272716697528783757306232832",
+        "dual": "11725197901331395476677583544953802170383869855223/378207983505345488829830635272716697528783757306232832",
+        "gap": "0"
+      },
+      {
+        "l": 34,
+        "nu_star": "640977485272782946513505457770985452804078942073209/10337684882479443361348704030787589732453422699703697408",
+        "primal": "640977485272782945773534967386489763549654687242219/20675369764958886722697408061575179464906845399407394816",
+        "dual": "640977485272782945773534967386489763549654687242219/20675369764958886722697408061575179464906845399407394816",
+        "gap": "0"
+      },
+      {
+        "l": 36,
+        "nu_star": "11158136063628605532881654707563804827927236326420480085/179958418434202150034358239767950362062549182356441964478464",
+        "primal": "11158136063628605534429214716658865028588303500572120703/359916836868404300068716479535900724125098364712883928956928",
+        "dual": "11158136063628605534429214716658865028588303500572120703/359916836868404300068716479535900724125098364712883928956928",
+        "gap": "0"
+      },
+      {
+        "l": 38,
+        "nu_star": "119939192282401690361199507580807746839135212744618961369/1934379293130574462145379689243142115761146423476194706980864",
+        "primal": "11634101651392963964840799334871752485356778450748555441451/375269582867331445656203659713169570457662406154381773154287616",
+        "dual": "11634101651392963964840799334871752485356778450748555441451/375269582867331445656203659713169570457662406154381773154287616",
+        "gap": "0"
+      },
+      {
+        "l": 40,
+        "nu_star": "48480594259315746727190252276232319152806482274363055096257655/781895024214244363216125669660150642802453937800774112243244597248",
+        "primal": "48480594259315746727289404054886506664287740881833786423925221/1563790048428488726432251339320301285604907875601548224486489194496",
+        "dual": "48480594259315746727289404054886506664287740881833786423925221/1563790048428488726432251339320301285604907875601548224486489194496",
+        "gap": "0"
+      }
+    ],
+    "w_star": "uniform, 1/126",
+    "mu_star": "0"
+  },
+  "frozen_spectrum": {
+    "floor_regime": {
+      "champion_effective_compute_e9": 178.462975,
+      "per_block_compute_e9": 1.4163728174603174,
+      "largest_k_on_the_0.1_floor": 19,
+      "rows": {
+        "8": {
+          "effective_compute_e9": 11.33098253968254,
+          "multiplier": 0.1,
+          "on_floor": true,
+          "score_ratio_vs_champion": 2.8148250934779093
+        },
+        "13": {
+          "effective_compute_e9": 18.412846626984127,
+          "multiplier": 0.1,
+          "on_floor": true,
+          "score_ratio_vs_champion": 1.7213962199098152
+        },
+        "19": {
+          "effective_compute_e9": 26.91108353174603,
+          "multiplier": 0.1,
+          "on_floor": true,
+          "score_ratio_vs_champion": 1.1689268943175148
+        },
+        "20": {
+          "effective_compute_e9": 28.327456349206347,
+          "multiplier": 0.10414506010737629,
+          "on_floor": false,
+          "score_ratio_vs_champion": 1.1550479196501966
+        },
+        "55": {
+          "effective_compute_e9": 77.90050496031746,
+          "multiplier": 0.2863989152952848,
+          "on_floor": false,
+          "score_ratio_vs_champion": 1.103852852189844
+        },
+        "96": {
+          "effective_compute_e9": 135.97179047619045,
+          "multiplier": 0.49989628851540613,
+          "on_floor": false,
+          "score_ratio_vs_champion": 1.0438814874505735
+        },
+        "112": {
+          "effective_compute_e9": 158.63375555555555,
+          "multiplier": 0.5832123366013071,
+          "on_floor": false,
+          "score_ratio_vs_champion": 1.0204780280401264
+        },
+        "126": {
+          "effective_compute_e9": 178.462975,
+          "multiplier": 0.6561138786764706,
+          "on_floor": false,
+          "score_ratio_vs_champion": 1.0000000010559857
+        },
+        "129": {
+          "effective_compute_e9": 182.71209345238094,
+          "multiplier": 0.671735637692577,
+          "on_floor": false,
+          "score_ratio_vs_champion": 0.9956118524165268
+        }
+      },
+      "best_small_mixture": {
+        "k": 20,
+        "score_ratio": 1.1550479196501966
+      }
+    },
+    "A_collision_coefficient": 0.0014823058582443733,
+    "B_constant_coefficient": -1.830776579922135e-06,
+    "V_champion_zonal_MSE_over_sigma2": 9.933555628366543e-06,
+    "R0_implied_MSE_over_sigma2": 9.93355562836654e-06,
+    "theta_collision_share": 1.184302242662649,
+    "s4_degree4_error_share": 0.004484080111714601,
+    "R0_committed_deg4_share": 0.0044840801117146025,
+    "a_tail_even_mass_above_L40": 0.07423014809301952,
+    "delta_proportional_cost": 0.004388148634824977,
+    "delta_bracket_over_committed_cost_range": [
+      -0.03323671784118454,
+      0.004388148634825062
+    ],
+    "cost_ratio_bracket": [
+      1.0238095238095237,
+      1.0625
+    ],
+    "score_ratio_129_over_126_predicted": 0.995611851365175,
+    "measured_16_fresh_net_ratio": 1.00087,
+    "measured_16_fresh_net_CI": [
+      0.9825,
+      1.0196
+    ],
+    "measured_CI_half_width": 0.01855000000000001,
+    "prediction_inside_measured_CI": true,
+    "adjusted_score_frontier_over_k": {
+      "8": 1.1726005129697825,
+      "13": 1.1652869319117407,
+      "55": 1.1038528510241912,
+      "96": 1.0438814863482497,
+      "112": 1.0204780269625167,
+      "126": 1.0,
+      "127": 0.9985372837883917,
+      "128": 0.9970745675767834,
+      "129": 0.995611851365175
+    },
+    "delta_under_four_independent_deg4_share_estimates": {
+      "kernel_derivation": 0.00440106852311038,
+      "m191_cv_deg4": 0.0041040685231103794,
+      "r0_harmonic_spectrum_inadmissible": 0.00440406852311038,
+      "s11_matched_control_upper_bound": 0.0016640685231103796
+    }
+  },
+  "checks": [
+    {
+      "name": "d=4 brute force: closed-form block summaries reproduce all 24x24 pairs, l=1..8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "d=4: complete 3-MUB union is an exact 5-design (Q_2 = Q_4 = 0) and fails at 6",
+      "pass": true,
+      "detail": "Q_6(3 blocks) = 1/7"
+    },
+    {
+      "name": "P4 exact Gegenbauer rationals reproduced (G4/G6 at 0 and 1/16)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R0 lam_top_doubled_64512_set reproduced bit-for-bit at 9 even degrees",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "R0 commits zero error at every odd degree on the doubled set",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "MUB129 exact-rational design defect reproduced at all 9 (degree, m) cells",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Q_4(129 blocks) = 0 exactly (complete real-MUB union is a 5-design)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Q_2(k) = 0 exactly for every k (every orthonormal frame is a 2-design)",
+      "pass": true,
+      "detail": "alpha_2 = 0, g_2 = 0"
+    },
+    {
+      "name": "Q_4(126) = 65/88424448 exactly (P4 section 3.6)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "alpha_l > 0 at all 19 even degrees 4..40 (strict convexity in ||w||^2)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "alpha_2 = 0 exactly - the proved degree-2 free direction (P4 draft-2 erratum)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "|G_l(1/16)| decreases strictly over even l in [8, 40] (justifies the tail bound)",
+      "pass": true,
+      "detail": "|g_8| = 2.997e-08 down to |g_40| = 6.340e-26"
+    },
+    {
+      "name": "Tail bound |B_tail| <= |g_40| < 1e-25, so setting g_tail = 0 is below f64 resolution",
+      "pass": true,
+      "detail": "|g_40| = 6.340e-26"
+    },
+    {
+      "name": "alpha_4 = -129 * G_4(1/16) exactly (degree-4 exactness of the 129 union)",
+      "pass": true,
+      "detail": "alpha_4 = 8385/2105344, g_4 = -65/2105344"
+    },
+    {
+      "name": "alpha_6 = 4095 * G_6(1/16) exactly",
+      "pass": true,
+      "detail": "alpha_6/g_6 = 4095"
+    },
+    {
+      "name": "Q_6(126) = (67/2) * G_6(1/16) exactly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Block reduction is lossless: block formula = constant row sum / point count, so uniform-on-k minimises over the full 512k-point simplex",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Sion minimax: primal value = dual value exactly (zero duality gap)",
+      "pass": true,
+      "detail": "primal = dual = 1"
+    },
+    {
+      "name": "Primal optimum is the champion's block count k = 126",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Minimax value is exactly 1 - no block mixture improves in the worst case",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Dual witness is admissible: y >= 0 and sum_l y_l G_l(1/16) = 0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Under the dual witness the adjusted score is flat in k at every k = 1..129",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Every block count k != 126 has worst-case ratio strictly > 1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Closed form: degree-4 adjusted penalty of a k-block mixture = (129 - k)/3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Closed form: degree-6 adjusted penalty of a k-block mixture = (4095 + k)/4221",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Both closed forms equal 1 at k = 126 and only there",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Cheapest admissible compute ratio 129/126 exceeds the break-even ratio",
+      "pass": true,
+      "detail": "c* = 2881/2816 = 1.0230823864 < 129/126 = 1.0238095238"
+    },
+    {
+      "name": "Worst-case margin equals the degree-6 penalty 1408/1407 exactly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Flipping the certificate needs a compute saving >> the only identified one (the identity frame's absent Walsh butterfly)",
+      "pass": true,
+      "detail": "required 1.2977e+08 FLOPs vs Walsh saving 5.2429e+05 FLOPs = 247.5x"
+    },
+    {
+      "name": "KKT: primal = dual exactly at all 19 active degrees, equal-compute problem",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Frozen spectrum: A/126 + B reproduces R0's implied MSE to < 1e-12 relative",
+      "pass": true,
+      "detail": "mine 9.933555628366543e-06 vs R0 9.93355562836654e-06, rel diff 3.411e-16"
+    },
+    {
+      "name": "theta > 1 exactly when B < 0, i.e. when sum_l a_l G_l(1/16) < 0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Identity delta = s_4 - (1/42) sum_{l>=6} a_l G_l(1/16)/V holds to 1e-15",
+      "pass": true,
+      "detail": "delta 0.004388148634824977 vs s4 - corr 0.0043881486348249805"
+    },
+    {
+      "name": "Cost bracket read from MUB129 is [129/126, 17/16]",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Frontier formula agrees with delta at k = 129",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Predicted 129/126 score ratio lies inside MUB129's 16-fresh-net measured CI",
+      "pass": true,
+      "detail": "predicted 0.995611851365175 in [0.9825, 1.0196]"
+    },
+    {
+      "name": "T4's committed champion multiplier equals C/B to the report's printed precision",
+      "pass": true,
+      "detail": "C/B = 0.6561138786764706 vs committed 0.6561138779836238"
+    },
+    {
+      "name": "Even with compute free on the 0.1 floor, no small block mixture beats the champion",
+      "pass": true,
+      "detail": "best small mixture k = 20 at ratio 1.155048"
+    }
+  ],
+  "all_checks_pass": true
+}

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 
@@ -17,7 +18,28 @@ REQUIRED_INVARIANTS = {
     "holdout_split",
     "champion_hash",
 }
-ALLOWED_STATUS = {"proposed", "killed", "screened", "validated", "promoted"}
+ALLOWED_STATUS = {
+    "proposed", "blocked", "killed", "screened", "validated", "promoted"
+}
+# Records M72--M177 predate the canonical five-state schema and intentionally
+# carry compound scientific dispositions. Keep that append-only provenance
+# audit-valid under an explicit namespace; all newly emitted records should
+# use ALLOWED_STATUS. Legacy labels never inherit validated/promoted rules.
+LEGACY_STATUS_PREFIXES = {
+    "abi_", "compiler_", "component_", "exact_", "formal_", "killed_",
+    "no_go_", "owner_", "package_", "pair_", "passed_", "phase_",
+    "preserved_", "proved_", "rank", "repair_", "resource_", "screened_",
+    "screened/", "static_",
+}
+SAFE_STATUS = re.compile(r"^[a-z0-9_/]+$")
+
+
+def status_is_allowed(status: object) -> bool:
+    if status in ALLOWED_STATUS:
+        return True
+    if not isinstance(status, str) or not SAFE_STATUS.fullmatch(status):
+        return False
+    return any(status.startswith(prefix) for prefix in LEGACY_STATUS_PREFIXES)
 
 
 def load(path: Path) -> dict:
@@ -49,7 +71,7 @@ def audit(payload: dict) -> list[str]:
         if not cid or cid in seen:
             errors.append(f"{label}: id is missing or duplicated")
         seen.add(cid)
-        if candidate.get("status") not in ALLOWED_STATUS:
+        if not status_is_allowed(candidate.get("status")):
             errors.append(f"{label}: invalid status")
         for key in ("mechanism", "bias_class", "prediction", "kill_condition"):
             if not candidate.get(key):

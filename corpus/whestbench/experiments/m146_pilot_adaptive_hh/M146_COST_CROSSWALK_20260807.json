@@ -1,0 +1,86 @@
+{
+  "candidate": "M146 defensive pilot-adaptive Hansen-Hurwitz [2,1,1] source proposal",
+  "date": "2026-08-07",
+  "disposition": "KILL_M146_DEPLOYMENT_CONFIGURATION_PRESERVE_ADAPTIVE_HH_THEOREM",
+  "scope": "paired target-shaped native structural delta only; no generated state, M131 coefficient call, response, contest model, truth, scorer, leaderboard, champion, or submission",
+  "trace_artifact": "M146_FLOPSCOPE_STRUCTURAL_TRACE_20260807.json",
+  "shape": {
+    "width": 256,
+    "source_layers": 31,
+    "total_draws_per_layer": 512,
+    "pilot_draws_per_layer": 64,
+    "main_draws_per_layer": 448,
+    "main_base_component": 112,
+    "main_adaptive_component": 336,
+    "dtype": "float32"
+  },
+  "frozen_gates": {
+    "incremental_billed_max": 251412480,
+    "incremental_residual_seconds_max": 0.025,
+    "complete_nonoverlap_protected_max": 100000000000
+  },
+  "paired_native_measurement": {
+    "repeats": 3,
+    "baseline_replaced_billed": 164045379,
+    "candidate_replacement_billed": 533208010,
+    "incremental_billed": 369162631,
+    "protected_incremental_arithmetic_1_25": 461453289,
+    "paired_nonnegative_incremental_residual_seconds": [
+      0.2423621106427163,
+      0.2621821858920157,
+      0.2476497027091682
+    ],
+    "max_incremental_residual_seconds": 0.2621821858920157,
+    "protected_incremental_residual_bill": 26218218589.20157,
+    "m133_complete_protected": 94940940240,
+    "complete_nonoverlap_protected": 121620612118.20157,
+    "cost_ratio_to_m133": 1.2810133522035738
+  },
+  "gate_results": {
+    "incremental_billed_pass": false,
+    "incremental_residual_pass": false,
+    "complete_branch_ceiling_pass": false,
+    "deployment_survives": false
+  },
+  "worst_observed_official_to_local_residual_projection": {
+    "factor": 5.0,
+    "projected_incremental_residual_seconds": 1.3109109294600785,
+    "projected_incremental_residual_bill": 131091092946.00784,
+    "projected_complete_nonoverlap_protected": 226493486475.00784,
+    "projected_cost_ratio_to_m133": 2.385625062301446,
+    "projected_overage_above_100b_branch_ceiling": 126493486475.00784,
+    "remaining_headroom_below_272b_official_cliff": 45506513524.99216,
+    "branch_efficiency_and_headroom_survive": false
+  },
+  "included": [
+    "M133 replacement baseline proposal banks, target-sized categorical scans, and sampled-q gathers",
+    "M146 q0 and pilot categorical scans",
+    "batched O(n) pilot F31/F22 Gram norm",
+    "fixed-index fading scores and node/edge bincount states",
+    "role-aware q_ad banks and exact normalizer",
+    "25/75 defensive main-component scans",
+    "sampled q0/q_ad mass, q1 evaluation, heterogeneous phase-scale concatenation",
+    "serial pilot-before-main Python, call, and allocation barrier"
+  ],
+  "excluded_unchanged": [
+    "the same 512 M131 coefficient evaluations already reserved by M133",
+    "the same five rectangular source products",
+    "M125b carrier/background and hard path/[2,2] samplers"
+  ],
+  "endpoint_boundary": {
+    "generated_state_construction": "blocked pending M147 endpoint-safe provider",
+    "exact_coefficient_certification": "blocked pending M147 endpoint-safe provider",
+    "integrated_endpoint_trace": false,
+    "effect_on_disposition": "not needed to kill this deployment configuration because every frozen structural cost gate already failed"
+  },
+  "efficacy_run": false,
+  "authorization_consumed": false,
+  "salvage": [
+    "conditional-unbiasedness and martingale theorem",
+    "typed endpoint-safe provider boundary",
+    "role-aware exact three-bank proposal and sampler",
+    "heterogeneous five-product phase-scale API",
+    "exact R_main, p99, completeness, and bootstrap gate machinery"
+  ],
+  "prohibition": "do not optimize, retune, retry, open the generated premise, open confirmation, or mutate champion/submission state under M146"
+}

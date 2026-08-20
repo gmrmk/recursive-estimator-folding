@@ -1,0 +1,68 @@
+{
+  "candidate": "M145 independent-Haar cross-reference risk screen",
+  "status": "ZERO_OUTCOME_PREEXECUTION_ONLY_RECOMMENDED_NEXT_DESCENDANT",
+  "date": "2026-08-07",
+  "execution_authorized": false,
+  "reference_evaluator_implemented": false,
+  "reference_dry_run_completed": false,
+  "independent_audit_completed": false,
+  "outcome_opened": false,
+  "efficacy_run_count": 0,
+  "submission_authorized": false,
+  "rank_claim_authorized": false,
+  "champion_mutation_authorized": false,
+  "sealed_inputs": {
+    "cross_reference_protocol": {
+      "file": "M145_CROSS_REFERENCE_RISK_PROTOCOL_20260807.json",
+      "sha256": "27f1acd19e7a09b1b1d88fec37569eb24601aa6baee92b16227d4b2cbce250eb"
+    },
+    "mathematical_derivation": {
+      "file": "M145_CROSS_REFERENCE_RISK_DERIVATION_20260807.md",
+      "sha256": "bfae8a2a31c5e65b1f4380e4d864ddf55d3b4494abeb8a5c6271a752ecf257f3"
+    },
+    "unchanged_two_stream_truth_protocol": {
+      "file": "M145_GENERATED_EFFICACY_PROTOCOL_20260807.json",
+      "sha256": "68ea6625322df0870fc5c19f4667597eb883c667d834cdc443f0a924a8977a41",
+      "seed_table_sha256": "f631c62a30326817148b4f525e8801b8f927b89a745bfb833fcb7a8c83c73f97"
+    },
+    "integrated_estimator_manifest": "M145_INTEGRATED_PREEXECUTION_MANIFEST_20260807.json"
+  },
+  "frozen_experiment": {
+    "whole_network_count": 24,
+    "reference_pairs_per_network": 8,
+    "reference_vectors_per_network": 16,
+    "paths_per_reference": 64512,
+    "reference_rotation_seed_table_sha256": "908782ec1f4bd5ffa825d0320b372e6d68ecec4caf59f954aeefd0962d65b1cb",
+    "bootstrap_draws": 100000,
+    "bootstrap_seed": 145630001,
+    "primary_statistic": "joint-hierarchical-bootstrap ensemble mean paired adjusted cross-risk difference",
+    "negative_estimates": "valid finite outcomes; retained without clipping",
+    "candidate_cell": "P1024-r16-4pilot-122main-epsilon0.8-lambda[0.25,1.75]",
+    "comparator": "transport-disabled matched Formal-L1 split path on the same provisional bank"
+  },
+  "proof_obligation": {
+    "identity": "E[(A-R1) dot (A-R2)/256 | W,A] = ||A-I(W)||^2/256",
+    "requirements": [
+      "R1 and R2 are each unbiased under independent Haar rotations",
+      "R1 and R2 are conditionally independent given W",
+      "both references are independent of candidate/comparator randomness and cost multipliers",
+      "the same R1,R2 are reused for A and B",
+      "direct numerical evaluation passes the separately predeclared float64 audit"
+    ],
+    "paired_cancellation": "the R1 dot R2 term cancels exactly from risk_A-risk_B"
+  },
+  "compute_boundary": {
+    "dense_plus_activation_lower_bound_per_reference": 270582939648,
+    "dense_plus_activation_lower_bound_campaign": 103903848824832,
+    "submitted_estimator_charge": false,
+    "required_before_execution": "implement streamed standalone reference evaluator, measure wall/storage on a truth-free dry run, bind its code/runtime hashes, and obtain an independent hostile audit"
+  },
+  "blocked_actions": [
+    "generate or inspect any R1 or R2 vector",
+    "evaluate any candidate/comparator error, MSE, risk, score, or rank",
+    "alter the frozen estimator or protocol after seeing an outcome",
+    "submit, designate, promote, or replace a champion"
+  ],
+  "next_gate": "independent audit followed by a separately authorized implementation-only descendant; this manifest does not authorize the campaign",
+  "firewall": "This file contains design, proof, seeds, hashes, and cost arithmetic only. It contains zero reference or efficacy outcomes."
+}

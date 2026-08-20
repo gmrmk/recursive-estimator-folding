@@ -1,0 +1,27 @@
+{
+ "net": {
+  "width": 24,
+  "depth": 8
+ },
+ "batches": 600,
+ "batch_N": 1024,
+ "R2_layer1_only": 0.23507643578696358,
+ "R2_layers_1_2": 0.2481268961545513,
+ "R2_all_layers": 0.2869455539516601,
+ "resid_var_ratio_multilevel_over_layer1": 0.9321904558946877,
+ "implied_v_cut_factor": 1.0727421565802566,
+ "beta_layer1": [
+  1.0484729529005938
+ ],
+ "beta_all": [
+  0.9996562401106361,
+  -0.1381356815412134,
+  0.06887889209348089,
+  0.06914438775014359,
+  0.10474780023521355,
+  -0.057635014309547115,
+  -0.004165834713142552,
+  0.011369797146797762
+ ],
+ "caveat": "first-order mean-tangent, diagonal closure, small net; a positive result is necessary-not-sufficient (real control gated at M172); a null strongly caps multilevel headroom"
+}

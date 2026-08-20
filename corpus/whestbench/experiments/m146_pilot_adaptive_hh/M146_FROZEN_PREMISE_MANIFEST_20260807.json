@@ -1,0 +1,272 @@
+{
+  "candidate": "M146 defensive pilot-adaptive Hansen-Hurwitz [2,1,1] source proposal",
+  "date": "2026-08-07",
+  "status": "KILLED_DEPLOYMENT_CONFIGURATION_PRESERVE_COMPONENTS_NO_EXECUTION",
+  "scope": "repaired exact-[2,1,1] proposal algebra plus fresh-synthetic native target-shape structural trace; generated premise closed; no contest model, truth, scorer, leaderboard, submission, champion mutation, or response efficacy",
+  "execution_authorized": false,
+  "promotion_authorized": false,
+  "confirmation_authorized": false,
+  "parent": {
+    "source": "M131 exact conditional-boundary connected-minus-tree coefficient",
+    "estimator": "M133 ordered-singleton Hansen-Hurwitz source with five rectangular products",
+    "causal_base": "gauge-completed scale-only M133 tree law",
+    "nonparents": [
+      "M139 rank-4 positive partial-correlation envelope",
+      "M143 sign-scrambled output-path-energy proposal"
+    ]
+  },
+  "formal_champion_untouched": {
+    "archive": "submission_formal_local_champion_l1_20260806.tar.gz",
+    "sha256": "bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36",
+    "public100_raw_mse": 3.089460087224438e-7,
+    "public100_adjusted_score": 2.121762463528797e-7,
+    "failures": 0
+  },
+  "objective_and_accounting": {
+    "official_score": "MSE_final * max(0.1, effective_compute/272000000000)",
+    "effective_compute": "billed_FLOPs + 1e11*residual_wall_seconds",
+    "branch_protected_ceiling": 100000000000,
+    "target_width": 256,
+    "target_source_layers": 31,
+    "target_total_draws_per_layer": 512,
+    "target_pilot_draws_per_layer": 64,
+    "target_main_draws_per_layer": 448,
+    "bias_class": "exactly unbiased for the same finite-population source total in real arithmetic, conditional on M131 numerical coefficient certification"
+  },
+  "fixed_constants": {
+    "pilot_fraction": 0.125,
+    "fading_rho": 0.96875,
+    "neutral_pseudocount": 1.0,
+    "log_score_span": "log(16)",
+    "factor_log_cap": "log(2)",
+    "factor_range": [0.5, 2.0],
+    "uniform_rescue": 0.05,
+    "uniform_rescue_semantics": "exact 5% for every nondegenerate component; exact 100% uniform fallback when that component normalizer is zero; therefore effective rescue is at least 5%",
+    "defensive_base_mixture": 0.25,
+    "positive_floor_relative_to_pilot_max": 5.960464477539063e-8,
+    "adaptation_rounds": 1,
+    "adaptive_stopping": false,
+    "self_normalized_estimator": false
+  },
+  "base_law": {
+    "bridge": "S_uv=abs(B_uv) off diagonal and zero on diagonal",
+    "strength": "tau_v=sqrt(Var(ReLU(Z_v)))*norm(W_v,2)",
+    "mass": "h0(i,j,k)=tau_i^2*tau_j*tau_k*(S_ij*S_ik+S_ij*S_jk+S_ik*S_jk)",
+    "probability": "q0=.95*h0/sum(h0)+.05/[n(n-1)(n-2)], with exact uniform fallback"
+  },
+  "pilot_observable": {
+    "exact_coefficient": "Delta_e from M131 paired conditional-boundary evaluator; the same value is reused in the returned pilot HH term",
+    "feature_norm": "sqrt(||F31_e||_F^2+||F22_e||_F^2), evaluated in O(n) from rank-one Gram identities without a dense per-triple matrix",
+    "magnitude": "A_e=abs(Delta_e)*feature_norm_e",
+    "ideal_source_proposal": "q_star(e) proportional to A_e",
+    "log_correction": "ell_t=log(max(A_t,2^-24*max_pilot_A)/q0(e_t)); weighted-centre with rho^(P-t); r_t=clip((ell_t-ell_bar)/log(16),-1,1)",
+    "all_zero_rule": "all factors are exactly neutral and q_ad=q0 if all pilot magnitudes are zero"
+  },
+  "fading_fields": {
+    "repeated_node": "g_R(v)=fading signed-score incidence average with pseudocount 1",
+    "singleton_node": "g_S(v)=fading signed-score singleton-incidence average with pseudocount 1",
+    "repeated_singleton_edge": "g_RS(u,v)=fading signed-score repeated-singleton-edge incidence average with pseudocount 1",
+    "singleton_singleton_edge": "g_SS(u,v)=fading signed-score singleton-edge incidence average with pseudocount 1",
+    "unseen_state": 0.0,
+    "multipliers": "a_R,a_S,c_RS,c_SS=exp(log(2)*corresponding_g)"
+  },
+  "adapted_law": {
+    "definitions": "R_i=tau_i*a_R(i), U_j=tau_j*a_S(j), X_uv=S_uv*c_RS(u,v), Y_uv=S_uv*c_SS(u,v)",
+    "mass": "h1(i,j,k)=R_i^2*U_j*U_k*(X_ij*X_ik+X_ij*Y_jk+X_ik*Y_jk)",
+    "factorization": "three positive role-aware tree banks with exact O(n^2) normalizers and samplers",
+    "adaptive_probability": "q_ad=.95*h1/sum(h1)+.05/uniform_population, with exact uniform fallback",
+    "main_probability": "q1=.25*q0+.75*q_ad",
+    "support_bounds": [
+      "q1(e)>=.25*q0(e)",
+      "q1 retains at least .05 uniform mass; a degenerate component has exact 100% uniform fallback"
+    ]
+  },
+  "returned_estimator": {
+    "target": "T=(1/2)*sum_ordered_distinct_e Delta_e*F_e",
+    "formula": "T_hat=(1/K)*(sum_pilot Delta_e*F_e/[2*q0(e)] + sum_main Delta_e*F_e/[2*q1(e|pilot)])",
+    "combination_weights": "deterministic P/K and (K-P)/K only",
+    "batched_products": 5,
+    "batching_rule": "concatenate pilot and main rows with phase-specific scale vectors before the same five M133 products",
+    "unbiasedness_condition": "q1 is a deterministic function of the completed pilot and every main draw is conditionally drawn from the exact q1 in its denominator"
+  },
+  "strict_prohibitions": [
+    "no retroactive q1 denominator on pilot draws",
+    "no self-normalization of HH weights",
+    "no pilot-dependent mixture weight in the returned estimator",
+    "no main draw used to fit the proposal that scores that draw",
+    "no adaptive P, K, stopping time, seed retry, or pilot rejection",
+    "no qdot or score-function term in a frozen-proposal tangent",
+    "no weight tangent until Delta*Fdot ownership is separately implemented and tested"
+  ],
+  "variance_contract": {
+    "fixed_q_variance": "V(q)=sum_e ||Delta_e*F_e||_F^2/[4*q(e)]-||T||_F^2",
+    "adaptive_variance": "Var(T_hat)=[P*V(q0)+(K-P)*E_pilot V(q1)]/K^2",
+    "ratio_identity": "R_total=1/8+(7/8)*R_main",
+    "main_ratio_needed_for_total_0_75": 0.7142857142857143,
+    "main_ratio_needed_to_erase_m133_width32_p8_deficit": 0.791613129307324,
+    "main_ratio_needed_for_k3_equivalence": 0.6190476190476191,
+    "no_improvement_theorem_claimed": true
+  },
+  "invariance": {
+    "positive_relu_gauge": "source scale and downstream row weights cancel in tau; Delta and F have inverse homogeneous degrees; A, q0, learned fields, q1, and HH contributions are invariant",
+    "hidden_label_permutation": "all arrays and pilot incidences relabel covariantly; no top-index pivots or label-order tie breaking",
+    "singleton_exchange": "j and k are exactly symmetric in states, mass, probability, and ordered ownership"
+  },
+  "rng": {
+    "algorithm": "numpy.random.Generator(PCG64DXSM)",
+    "master_seed": 146000007,
+    "child_key": "[master,split_code,family_code,width,cell_seed,method_code,repetition,layer,phase_code,purpose_code]",
+    "purpose_codes": {
+      "pilot_draw": "0x14601",
+      "score_shuffle": "0x14602",
+      "main_draw": "0x14603",
+      "bootstrap": "0x14604"
+    },
+    "pilot_snapshot": "deep read-only triples, exact coefficients, feature norms, q0 values, ordered scores, and SHA-256 before fitting",
+    "attribution_coupling": "M146 and score-shuffle share exactly one pilot snapshot; the shuffle and both main streams are separately owned",
+    "other_method_streams": "disjoint method codes; no seed retry"
+  },
+  "native_structural_cost_falsifier": {
+    "m133_protected_complete": 94940940240,
+    "frozen_gates": {
+      "incremental_billed_max": 251412480,
+      "incremental_residual_seconds_max": 0.025,
+      "complete_nonoverlap_protected_max": 100000000000
+    },
+    "paired_target_shape_trace": {
+      "dtype": "float32",
+      "repeats": 3,
+      "baseline_replaced_billed": 164045379,
+      "m146_replacement_billed": 533208010,
+      "incremental_billed": 369162631,
+      "protected_incremental_arithmetic_1_25": 461453289,
+      "paired_nonnegative_incremental_residual_seconds": [0.2423621106427163, 0.2621821858920157, 0.2476497027091682],
+      "max_incremental_residual_seconds": 0.2621821858920157,
+      "complete_nonoverlap_protected": 121620612118.20157,
+      "cost_ratio_to_m133": 1.2810133522035738
+    },
+    "gate_results": {
+      "incremental_billed_pass": false,
+      "incremental_residual_pass": false,
+      "complete_branch_ceiling_pass": false,
+      "deployment_survives": false
+    },
+    "worst_observed_official_to_local_residual_projection": {
+      "factor": 5.0,
+      "projected_incremental_residual_seconds": 1.3109109294600785,
+      "projected_complete_nonoverlap_protected": 226493486475.00784,
+      "projected_cost_ratio_to_m133": 2.385625062301446,
+      "projected_overage_above_100b_branch_ceiling": 126493486475.00784,
+      "remaining_headroom_below_272b_official_cliff": 45506513524.99216,
+      "branch_efficiency_and_headroom_survive": false
+    },
+    "disposition": "KILL_M146_DEPLOYMENT_CONFIGURATION_PRESERVE_ADAPTIVE_HH_THEOREM"
+  },
+  "generated_premise": {
+    "status": "CLOSED_NOT_RUN_AFTER_STRUCTURAL_COST_KILL",
+    "execution_occurred": false,
+    "authorization_consumed": false,
+    "claim_level": "historical frozen source-level falsifier definition only; no measurements exist and it cannot now be opened under M146",
+    "chain_depth": 3,
+    "families": {
+      "diagonal": "W=.82*I+.035*normal",
+      "iid_he": "W_ij~N(0,2/width), no diagonal privilege"
+    },
+    "gaussian_background": "fresh generated finite means and positive-definite covariances; no challenge instance",
+    "exact_reference": "exhaustive M131 [2,1,1] source total cached once per generated cell",
+    "coarse_quadrature_order": 32,
+    "fine_quadrature_order": 48,
+    "series_terms": 24,
+    "max_value_disagreement": 0.00004,
+    "methods": [
+      "q0_scale_only",
+      "m133_original",
+      "m146",
+      "m146_score_shuffle"
+    ],
+    "repetitions": 96,
+    "draws_per_layer": "K=2*width",
+    "pilot_draws": "P=floor(K/8); fail closed unless 1<=P<K",
+    "development": {
+      "widths": [12, 16, 24, 32],
+      "seeds": [146701, 146702]
+    },
+    "confirmation_unopened": {
+      "widths": [20, 28, 36],
+      "seeds": [146811],
+      "repetitions": 128
+    },
+    "bootstrap": {
+      "resamples": 10000,
+      "one_sided_quantile": 0.9,
+      "unit": "paired generated (cell,repetition) source-Frobenius squared error record"
+    }
+  },
+  "predeclared_gates": {
+    "structural_cost_gate_fired_before_efficacy": true,
+    "structural_cost_gate_result": "FAIL on incremental billed, incremental residual, and complete 100B branch ceiling",
+    "scope": "every primary and attribution gate must pass pooled and separately in diagonal and iid_he families",
+    "primary_m146_vs_q0": {
+      "total_source_mse_ratio_max": 0.75,
+      "one_sided_bootstrap_upper90_strict_max": 0.9,
+      "estimated_adapted_main_variance_ratio_max": 0.7142857142857143,
+      "largest_width_mean_ratio_no_more_than_smallest": true,
+      "p99_squared_hh_contribution_ratio_max": 1.25
+    },
+    "causal_m146_vs_score_shuffle": {
+      "source_mse_ratio_max": 0.9,
+      "one_sided_bootstrap_upper90_strict_max": 1.0,
+      "largest_width_mean_ratio_no_more_than_smallest": true
+    },
+    "m146_vs_m133": "report-only in the premise; q0 is the direct causal parent",
+    "failures_allowed": 0,
+    "kill": "kill this complete configuration if any pooled or per-family gate, width gate, certificate, invariance, finiteness, cost, or protocol condition fails; do not open confirmation"
+  },
+  "closed_actions": [
+    "no M146 generated source efficacy run",
+    "no M146 response protocol",
+    "no M146 confirmation",
+    "no M146 contest evaluation, champion mutation, or submission",
+    "no parameter retuning, optimization, seed retry, or endpoint-family substitution under the M146 identifier"
+  ],
+  "salvage_only": [
+    "conditional pilot-to-main Hansen-Hurwitz unbiasedness theorem",
+    "fixed-round martingale generalization",
+    "typed endpoint-safe provider interface",
+    "role-aware exact three-bank proposal and sampler",
+    "heterogeneous five-product phase-scale API",
+    "exact Gram norm, R_main, p99, completeness, and bootstrap gate machinery"
+  ],
+  "endpoint_boundary": {
+    "provider_protocol_present": true,
+    "provider_constructor_present": false,
+    "generated_state_construction": "blocked pending independently audited M147 endpoint-safe provider",
+    "exact_m131_coefficient_certification": "blocked pending independently audited M147 endpoint-safe provider",
+    "integrated_endpoint_trace": false,
+    "m143_lineage": "M143 implementation terminated before efficacy when generated Gaussian bridge endpoint certification failed; this is not a negative efficacy result"
+  },
+  "firewall": {
+    "algebra_implementation_present": true,
+    "unit_tests_present": true,
+    "structural_trace_runner_present": true,
+    "generated_premise_runner_present": false,
+    "authorization_file_present": false,
+    "result_file_present": false,
+    "efficacy_executed": false,
+    "rule": "the frozen structural cost kill closes M146; preserved components may be reused only by a genuinely changed, separately identified and audited descendant"
+  },
+  "evidence_hashes": {
+    "theory_audit": "a497b61c8c42f22ef9ed153256d28d3850e13c30d02f5bd13349ebf80ff904a7",
+    "m131_trivariate_boundary_stream.py": "1bb1912b82f8d7b7a204bc19d0d260a9050f02e83b8e87d322188632882ecac3",
+    "m133_ht_hidden_edge.py": "c296c95ede532c1451e0444b9d56b51e96287ef251b11de9cacee0df7d1ea6b1",
+    "m139_trivariate_proposal.py": "291e72eac67526da1dfc48bb22f278b4a2f29830f188cf0a93b1a7524dba3832",
+    "m143_output_aware_proposal.py": "5dab449d9ceff7099e04f4521415e781592e6eec260636dd4e81688c9dc6d9bb",
+    "m143_development_failure": "66fb3b5ad00162004db8574e6ff229f1a9510c399614b3d81de789f9688dfee9",
+    "independent_hostile_preexecution_audit": "95019883b42374a5098dbb9828c4d395fbdf008627df68921b6253ba75e54f82",
+    "m146_pilot_adaptive_hh.py": "e230c237794247c20523ca087a1fc1e4c4d7c17ce705f750f7d0b40fd2fa3d2d",
+    "test_m146_pilot_adaptive_hh.py": "fca750a64163080165c1baac723844872d04c3350a6b165f696674d065ac560e",
+    "trace_m146_flopscope.py": "6ab04d775b1aa71b42c40f8a18c3ea927cabbd4e07aab6fae9c05335bbe24476",
+    "M146_FLOPSCOPE_STRUCTURAL_TRACE_20260807.json": "03939a0efcb1beaf631c01cc35ef092f0dc750cb576a5c95d77a5f85b76e2755",
+    "M146_COST_CROSSWALK_20260807.json": "031c04b128c2a98b14e8f9edfebd331ca90251770257e32498bd08b0b6113ca4"
+  }
+}

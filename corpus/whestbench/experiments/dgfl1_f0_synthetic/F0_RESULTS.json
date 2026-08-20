@@ -1,0 +1,56 @@
+{
+  "schema_version": "dgfl1-f0-synthetic-result-v2",
+  "recorded_local": "2026-08-11T17:54:42.4529718-05:00",
+  "status": "PASS_SYNTHETIC_MATH_ONLY",
+  "preexecution_manifest_sha256": "85CA3CCF5F6BE7E1E3DBF7F417E5CF1138F55B737F22B5A3F47BA9F5E7F4821B",
+  "resource_snapshot_sha256": "6D72B82AB111C288BB9DDE72035D5C1060F8E227064341DAF7F22D4E81C32B60",
+  "source_sha256": "2D8DE711FAF66C986F6C087A052BC828EDA4DFB0D81D994C6A217D7822CA0939",
+  "tests_sha256": "0A05C5D22AF38F0E77528F1191F47EBE363CA7C99F9DB2C71441C9706EECFBDE",
+  "runtime": {
+    "python_executable_sha256": "3C6A206B7D93CCA823934A83732220DCFFD413FD1036D9FB82EEBB64599CF7F3",
+    "python_version": "3.12.13",
+    "numpy_version": "2.3.5",
+    "pythonhashseed": "0",
+    "numeric_thread_limits": 1
+  },
+  "execution": {
+    "command": "$env:PYTHONHASHSEED='0'; $env:OMP_NUM_THREADS='1'; $env:OPENBLAS_NUM_THREADS='1'; $env:MKL_NUM_THREADS='1'; & 'C:\\Users\\strid\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe' -B -m unittest -v test_dgfl1_f0.py",
+    "tests_run": 20,
+    "passes": 20,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "process_exit_code": 0,
+    "unittest_reported_seconds": 0.186,
+    "timing_claim": "none; the reported duration is provenance only",
+    "combined_test_transcript": {
+      "path": "F0_TEST_TRANSCRIPT.txt",
+      "sha256": "B3D9DB8DA851C5D92FA7A4D22D42F392C76D422EDB1348BD8D8892B2C13DB7D0"
+    },
+    "cache_artifacts_after_run": 0,
+    "processes_spawned_by_test_harness": 0
+  },
+  "covered_contracts": [
+    "rank-two skew-generator orientation and a nontrivial four-dimensional projector identity",
+    "fail-closed rejection of nonunit and nonorthogonal generator pairs, nonorthogonal dipole pairs, nonunit Fourier axes, nonskew Fourier generators, mismatched fused y/dy shapes, and empty or nonfinite reduction leaves",
+    "two-layer hand-network JVP agreement with centered finite differences away from gates",
+    "two-layer hand-network JVP agreement with an independently constructed full Jacobian",
+    "strict-positive ReLU JVP convention at an exact gate",
+    "physical input radius applied to both primal input and rotational tangent",
+    "WHest row-weight convention W_col=W_row.T and absorbed-Q/J coordinate transport",
+    "both dipole product-rule signs and the Fourier Lie term",
+    "Ja=0 Fourier edge case",
+    "linear fusion equivalence for the dipole-Fourier bank",
+    "antipodal even/odd parity selection",
+    "weak full-orbit centering on a hand-built CPWL network with exact cell splitting",
+    "canonical binary reduction and byte invariance under uneven adversarial shard emission"
+  ],
+  "unearned": [
+    "production-Q independence and live source transport",
+    "d=256 or 32-layer estimator behavior",
+    "generated-network or challenge-distribution behavior",
+    "post-Q totality and inherited guard behavior",
+    "complete FLOP, wall, RSS, IPC, or multiprocessing accounting",
+    "variance reduction, MSE reduction, official score, ranking, promotion, or hosted evidence"
+  ]
+}

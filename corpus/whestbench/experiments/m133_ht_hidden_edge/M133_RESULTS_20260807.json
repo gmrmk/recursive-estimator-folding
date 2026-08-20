@@ -1,0 +1,79 @@
+{
+  "scope": "generated-only; no contest model, truth, scorer, leaderboard, submission, or champion access",
+  "frozen_screen": {
+    "widths": [12, 16, 24, 32],
+    "seeds_per_width": 4,
+    "replicates_per_cell": 128,
+    "collision": "quadratic [2,1,1] jet",
+    "uniform_rescue_probability": 0.05,
+    "baseline": "eight M129 hollow Rademacher probes",
+    "factored_hh_equal_arithmetic_mse_ratio_by_width": {
+      "12": 0.6751441791428272,
+      "16": 0.6741157683963915,
+      "24": 0.8909402637249952,
+      "32": 1.0470997948021135
+    },
+    "factored_hh_kappa4_mse_ratio_by_width": {
+      "12": 0.38742732358011756,
+      "16": 0.3922575155727229,
+      "24": 0.5232564148790252,
+      "32": 0.6113080954587989
+    },
+    "pooled_factored_hh_kappa4_mse_ratio": 0.532590566227729,
+    "oracle_exact_norm_ht_pooled_ratio": 0.6371933105176304,
+    "full_catalog_upper_norm_ht_pooled_ratio": 0.6910862037185594
+  },
+  "independent_edge_screen_inherited": {
+    "width": 64,
+    "seeds": 12,
+    "matched_edge_samples_per_family": 410,
+    "cheap_proxy_mse_ratio_range": [0.169, 0.364],
+    "cheap_proxy_median": 0.216,
+    "balanced_target_samples_per_family": 640,
+    "reason": "0.390625 of matched P8 edge arithmetic; worst generated ratio rescales to about 0.932"
+  },
+  "balanced_first_order_envelope_billions": {
+    "common": {
+      "m126_p0_plus_exact_m125b": 52.96387528,
+      "batched_path_and_22_k640": 16.2402304,
+      "proposal_setup": 0.12189696,
+      "new_gather_symmetry_allocation_reserve": 1.0,
+      "residual_wall_reserve_100ms": 10.0
+    },
+    "kappa2": {
+      "triple_samples_per_layer": 512,
+      "five_batched_products": 12.9896448,
+      "exact_coefficient_quadrature_reserve": 1.6252928,
+      "protected_total": 94.94094024,
+      "width32_mse_ratio_scaled_from_kappa4": 1.2226161909175978,
+      "cost_gate": "pass",
+      "variance_gate": "fail"
+    },
+    "kappa3": {
+      "triple_samples_per_layer": 768,
+      "five_batched_products": 19.490816,
+      "exact_coefficient_quadrature_reserve": 2.4379392,
+      "protected_total": 102.25475784,
+      "width32_mse_ratio_scaled_from_kappa4": 0.8150774606117318,
+      "cost_gate": "fail",
+      "variance_gate": "screen_pass_but_worsening_width_trend"
+    },
+    "kappa4": {
+      "triple_samples_per_layer": 1024,
+      "five_batched_products": 25.9919872,
+      "exact_coefficient_quadrature_reserve": 3.2505856,
+      "protected_total": 109.56857544,
+      "width32_mse_ratio": 0.6113080954587989,
+      "cost_gate": "fail",
+      "variance_gate": "screen_pass_but_worsening_width_trend"
+    }
+  },
+  "second_order": {
+    "edge_tangent_increment_k640_billions": 29.23241472,
+    "triple_tangent_increment_equals_primal_batched_products": true,
+    "kappa4_static_status": "killed_over_budget",
+    "kappa3_complete_status": "killed_over_budget_after_edge_and_coefficient_dot",
+    "proposal_probability_derivative_required": false
+  },
+  "disposition": "repair component preserved; no complete first-order allocation passes both protected-cost and frozen variance gates; no efficacy or contest run authorized"
+}

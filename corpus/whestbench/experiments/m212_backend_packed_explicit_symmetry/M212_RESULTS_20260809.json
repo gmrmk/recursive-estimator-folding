@@ -1,0 +1,113 @@
+{
+  "aggregate": {
+    "hostile_margin_min": 136668162.13116717,
+    "hostile_projection_max": 1850203309.8688328,
+    "inclusive_bill": 1249253376,
+    "peak_rss_mib": 161.39453125,
+    "persistent_mib": 102.08203125,
+    "residual_max_ms": 1.2018998677376658,
+    "residual_mean_ms": 1.1606999789364636,
+    "strict_component_arithmetic_margin": 737618096
+  },
+  "candidate": "M212 backend-packed matmul with explicit symmetry scratch",
+  "disposition": {
+    "promoted": "shape-billed four-matmul exact-real resource component with caller-owned symmetry scratch",
+    "still_blocked": [
+      "M179-bound factor lifecycle and immediate M198 consumption",
+      "physical K4/K31/K22/C211 provider and residual proposal",
+      "full integrated replacement and terminal trace",
+      "source variance, MSE, score, and winner evidence"
+    ]
+  },
+  "firewall": "generated matrices only; no response, truth, scorer, challenge weight, leaderboard, submission, or champion access",
+  "gates": {
+    "constant_exact_bill": true,
+    "every_hostile_five_x_projection_fits": true,
+    "exact_four_matmul_calls": true,
+    "exact_four_reshape_calls": true,
+    "exact_matmul_bill": true,
+    "exact_reshape_bill": true,
+    "finite_no_failures": true,
+    "five_frozen_seeds": true,
+    "no_user_full_plane_temporary": true,
+    "rss_below_512_mib": true
+  },
+  "records": [
+    {
+      "billed_flops": 1249253376,
+      "failure": null,
+      "finite": true,
+      "hostile": 1850203309.8688328,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 161.21484375,
+      "persistent_mib": 102.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0012018998677376658,
+      "seed": 212700001,
+      "user_full_plane_temporaries": 0
+    },
+    {
+      "billed_flops": 1249253376,
+      "failure": null,
+      "finite": true,
+      "hostile": 1818353387.4893541,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 161.17578125,
+      "persistent_mib": 102.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0011382000229787081,
+      "seed": 212700002,
+      "user_full_plane_temporaries": 0
+    },
+    {
+      "billed_flops": 1249253376,
+      "failure": null,
+      "finite": true,
+      "hostile": 1815353510.1650262,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 161.39453125,
+      "persistent_mib": 102.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0011322002683300525,
+      "seed": 212700003,
+      "user_full_plane_temporaries": 0
+    },
+    {
+      "billed_flops": 1249253376,
+      "failure": null,
+      "finite": true,
+      "hostile": 1848853314.141182,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 161.07421875,
+      "persistent_mib": 102.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0011991998762823641,
+      "seed": 212700004,
+      "user_full_plane_temporaries": 0
+    },
+    {
+      "billed_flops": 1249253376,
+      "failure": null,
+      "finite": true,
+      "hostile": 1815253305.6767638,
+      "matmul_bill": 1167925248,
+      "matmul_calls": 4,
+      "peak_working_set_mib": 161.23828125,
+      "persistent_mib": 102.08203125,
+      "reshape_bill": 16252928,
+      "reshape_calls": 4,
+      "residual_s": 0.0011319998593535274,
+      "seed": 212700005,
+      "user_full_plane_temporaries": 0
+    }
+  ],
+  "status": "METER_LAWFUL_RESOURCE_COMPONENT_PASS_PROVIDER_AND_STREAM_BLOCKED"
+}

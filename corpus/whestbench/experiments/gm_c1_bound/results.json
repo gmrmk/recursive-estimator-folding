@@ -1,0 +1,187 @@
+{
+ "ledger_id": "c1_local_vs_hosted_calibration",
+ "worker": "gm_c1_bound",
+ "date_utc": "2026-08-10",
+ "source_of_truth": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\c1_local_mc_calibration\\c1_local_mc25.json",
+ "compute": "committed-JSON arithmetic + numpy RNG only; zero estimator compute",
+ "G0_reproduction": {
+  "mean_all25_recomputed": 0.09778592927244556,
+  "committed_results_adjusted_final_layer_score": 0.09778592927244555,
+  "relative_error": 1.4192008923031207e-16,
+  "mean22_recomputed": 1.0686276000992886e-06,
+  "published_mean22": 1.0686e-06,
+  "R_point_recomputed": 1.6516655333837535,
+  "published_R": 1.652,
+  "pass": true
+ },
+ "dispersion_of_the_22": {
+  "sd_ddof1": 1.1060968297993356e-06,
+  "CV_of_mean": 0.2206761611341289,
+  "relative_variance": 1.0713552980437124,
+  "max_over_min": 22.41507823565832,
+  "min": 2.1704359940460778e-07,
+  "median": 6.473545958232132e-07,
+  "max": 4.8650492612031675e-06
+ },
+ "G0b_step0_kill_gate": {
+  "CV_kill_threshold": 0.08691320026992318,
+  "CV_observed": 0.2206761611341289,
+  "normal_interval": [
+   0.9374682443405812,
+   2.3665317556594183
+  ],
+  "killed": false
+ },
+ "G1_main_gate": {
+  "R_point": 1.6516655333837535,
+  "CI95_percentile_bootstrap_B200k": [
+   1.036232156813019,
+   2.4230226213911923
+  ],
+  "one_sigma_bootstrap": 0.35559093125233004,
+  "SE_analytic_local_only": 0.36448320938468015,
+  "CI95_normal_analytic": [
+   0.9372784429897805,
+   2.3660526237777266
+  ],
+  "CI95_student_t21_analytic": [
+   0.8936812049765949,
+   2.4096498617909123
+  ],
+  "jackknife_SE_R_no_RNG": 0.36448320938468,
+  "two_RNG_streams_agree_within_0.01": true,
+  "R_band_claims_unchanged": [
+   1.3705820105820103,
+   2.1415343915343907
+  ],
+  "bootstrap_prob_R_inside_band": 0.68264,
+  "CI_inside_band": false,
+  "CI_width_over_band_width": 1.7988017144003496,
+  "bootstrap_tail_probabilities_two_streams": {
+   "A": {
+    "P_R_gt_1.25": 0.876255,
+    "P_R_gt_0.8": 0.99909,
+    "P_R_lt_1.3706": 0.22446,
+    "P_R_gt_2.1415": 0.09293
+   },
+   "B": {
+    "P_R_gt_1.25": 0.87511,
+    "P_R_gt_0.8": 0.999015,
+    "P_R_lt_1.3706": 0.225225,
+    "P_R_gt_2.1415": 0.09348
+   }
+  },
+  "verdict": "REVIVED_PASS"
+ },
+ "exclusion_bias": {
+  "n_excluded": 3,
+  "excluded_names": [
+   "dustin-merritt",
+   "riley-king",
+   "daniel-miller"
+  ],
+  "excluded_effective_compute": [
+   273167580175.6509,
+   272455470186.2516,
+   274116370181.72855
+  ],
+  "completed_max_effective_compute": 271345370166.96497,
+  "completed_mean_effective_compute": 265024732897.3381,
+  "excluded_are_top3_effective_compute": true,
+  "R_median_imputed": 1.5735314367637703,
+  "R_max_imputed": 2.355793198503484,
+  "predeclared_bias_up_test_R_max_imp_gt_R": true,
+  "DIRECTION_NOT_SUPPORTED_BY_DATA": {
+   "spearman_effcompute_vs_adjusted_within_22": 0.06945228684359118,
+   "permutation_p_two_sided_runA": 0.7609,
+   "permutation_p_two_sided_runB": 0.75654,
+   "pearson": -0.08295300271978763,
+   "spearman_flops_vs_adjusted": -0.2919254658385093,
+   "note": "median-imputed R = 1.5735 is BELOW the point R = 1.6517; the mined '1.652 is a lower bound' reading is an assumption, not a measurement"
+  }
+ },
+ "attack_outlier_robustness": {
+  "attack_lands": false,
+  "drop_top1_n21": {
+   "R": 1.3722497932568765,
+   "ci95": [
+    0.9347329118712836,
+    1.869762533457741
+   ]
+  },
+  "drop_top2_n20": {
+   "R": 1.2276376757923873,
+   "ci95": [
+    0.8564170799233621,
+    1.6507423317184158
+   ]
+  },
+  "trim_min_max_n20": {
+   "R": 1.4240892072315745,
+   "ci95": [
+    0.9715783199066047,
+    1.9391083242539515
+   ]
+  }
+ },
+ "downstream_propagation": {
+  "kerdock_v3": {
+   "local_adjusted": 1.619e-07,
+   "hosted_at_R_point": 9.802226705567731e-08,
+   "hosted_band_from_CI": [
+    6.681737040781079e-08,
+    1.5623911971418748e-07
+   ],
+   "hosted_at_R_max_imputed": 6.87241987551568e-08,
+   "hosted_at_R_median_imputed": 1.028895872159849e-07
+  },
+  "two_axis_L2": {
+   "local_adjusted": 2.102e-07,
+   "hosted_at_R_point": 1.272654758190449e-07,
+   "hosted_band_from_CI": [
+    8.675115046153075e-08,
+    2.0285029625646827e-07
+   ],
+   "hosted_at_R_max_imputed": 8.92268473028657e-08,
+   "hosted_at_R_median_imputed": 1.335848748165536e-07
+  },
+  "L1_champion": {
+   "local_adjusted": 2.122e-07,
+   "hosted_at_R_point": 1.2847637473264191e-07,
+   "hosted_band_from_CI": [
+    8.757656578466616e-08,
+    2.047803656785089e-07
+   ],
+   "hosted_at_R_max_imputed": 9.00758182572222e-08,
+   "hosted_at_R_median_imputed": 1.3485590121823347e-07
+  }
+ },
+ "parity_claim": {
+  "oabuod_adjusted": 9.45e-08,
+  "parity_band_from_C1_own_predeclaration": [
+   0.8,
+   1.25
+  ],
+  "P_at_R_point": 1.0372726672558445,
+  "P_at_CI_lo": 1.65332401813955,
+  "P_at_CI_hi": 0.7070621207175745,
+  "claim_holds_across_CI": false
+ },
+ "G2_mined_reproduction": {
+  "ci_lo_vs_mined": 0.003767843186980979,
+  "ci_hi_vs_mined": 0.0030226213911923594,
+  "maximp_vs_mined": 0.004206801496515755,
+  "pass": true
+ },
+ "mined_expectations": {
+  "CI": [
+   1.04,
+   2.42
+  ],
+  "one_sigma": 0.36,
+  "R_max_imputed": 2.36,
+  "relative_variance": 1.07,
+  "max_over_min": 22.4
+ },
+ "GATE_RESULT": "REVIVED_PASS"
+}

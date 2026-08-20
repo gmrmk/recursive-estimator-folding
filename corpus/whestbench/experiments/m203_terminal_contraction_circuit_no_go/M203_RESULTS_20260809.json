@@ -1,0 +1,28 @@
+{
+  "candidate": "M203 exact terminal-contraction circuit",
+  "status": "KILLED_STANDARD_EXACT_TERMINAL_FUSION_COST",
+  "exact_circuit": "two rectangular contractions with inner dimensions 3n and 2n",
+  "channel_rank_minors": {"aaab": 2, "aabb": 2},
+  "protected_target_billions": {
+    "depth3_terminal": 9.069419520,
+    "depth4_terminal": 8.320856320,
+    "depth5_terminal": 7.963587520,
+    "depth6_terminal": 8.171994320,
+    "ideal_triangular_projection": 2.580192000,
+    "best_combined_depth5": 10.543779520,
+    "m151_slot": 10.291363760,
+    "strict_composed_headroom": 1.986871472,
+    "conditional_replacement_headroom": 9.723621632
+  },
+  "preserved": [
+    "exact two-rectangle packing identity",
+    "depth-5 standard Winograd cost upper bound",
+    "reopening for an explicit nonstandard simultaneous bilinear decomposition"
+  ],
+  "not_claimed": [
+    "unconditional direct-sum matrix multiplication lower bound",
+    "physical Source211 provider",
+    "variance, MSE, score, rank, or winning-entry result"
+  ],
+  "firewall": "Generated response-free algebra and static bill only; no contest model, truth, scorer, leaderboard, submission, or private artifact accessed."
+}

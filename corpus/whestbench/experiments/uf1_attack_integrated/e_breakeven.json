@@ -1,0 +1,145 @@
+{
+  "call_counts": {
+    "champion_d1_rowblocked": 247,
+    "sw_d1": 22,
+    "sw_d2": 169,
+    "sw_d3": 1198,
+    "sw_d4": 8401,
+    "sw_d5": 58822
+  },
+  "measured_residual_rates_us_per_call": {
+    "corpus_full_entry_audit_2026_08_06": 3.0750000000000686,
+    "bare_loop_floor_elementwise": 4.677849985455396,
+    "bare_loop_floor_matmul": 9.704800140752923,
+    "this_session_champion_frozen_kernel": 14.641700589511853,
+    "this_session_sw_d1": 27.30454566930844,
+    "this_session_sw_d2": 27.407100648046114,
+    "this_session_sw_d3": 11.343656108682183,
+    "this_session_sw_d4": 12.669872626001233
+  },
+  "audit_inputs": {
+    "delta_residual_s": 0.0007380000000000164,
+    "extra_calls": 240
+  },
+  "breakeven": {
+    "d1": {
+      "flop_saving_vs_champion_d1": 12435456,
+      "extra_flopscope_calls": -225,
+      "residual_seconds_affordable": 0.00012435456,
+      "breakeven_us_per_extra_call": null,
+      "verdict_at_corpus_audit_rate": "win"
+    },
+    "d2": {
+      "flop_saving_vs_champion_d1": 879362048,
+      "extra_flopscope_calls": -78,
+      "residual_seconds_affordable": 0.00879362048,
+      "breakeven_us_per_extra_call": null,
+      "verdict_at_corpus_audit_rate": "win"
+    },
+    "d3": {
+      "flop_saving_vs_champion_d1": 1587245056,
+      "extra_flopscope_calls": 951,
+      "residual_seconds_affordable": 0.01587245056,
+      "breakeven_us_per_extra_call": 16.690273985278655,
+      "verdict_at_corpus_audit_rate": "win"
+    },
+    "d4": {
+      "flop_saving_vs_champion_d1": 2117956608,
+      "extra_flopscope_calls": 8154,
+      "residual_seconds_affordable": 0.02117956608,
+      "breakeven_us_per_extra_call": 2.597444944812362,
+      "verdict_at_corpus_audit_rate": "LOSS"
+    },
+    "d5": {
+      "flop_saving_vs_champion_d1": 2427128576,
+      "extra_flopscope_calls": 58575,
+      "residual_seconds_affordable": 0.02427128576,
+      "breakeven_us_per_extra_call": 0.41436253965002134,
+      "verdict_at_corpus_audit_rate": "LOSS"
+    }
+  },
+  "net_per_hook_at_each_rate": {
+    "d1": {
+      "d_flops": -12435456,
+      "corpus_audit_rate": {
+        "d_residual_s": -0.0006918750000000154,
+        "net_d_effective": -81622956.00000153
+      },
+      "bare_loop_floor": {
+        "d_residual_s": -0.0010173275956403814,
+        "net_d_effective": -114168215.56403814
+      },
+      "this_session_measured": {
+        "d_residual_s": -0.003015800040884642,
+        "net_d_effective": -314015460.0884642
+      }
+    },
+    "d2": {
+      "d_flops": -879362048,
+      "corpus_audit_rate": {
+        "d_residual_s": -0.00023985000000000532,
+        "net_d_effective": -903347048.0000005
+      },
+      "bare_loop_floor": {
+        "d_residual_s": -0.0001185517412559422,
+        "net_d_effective": -891217222.1255943
+      },
+      "this_session_measured": {
+        "d_residual_s": 0.0010152999639103655,
+        "net_d_effective": -777832051.6089635
+      }
+    },
+    "d3": {
+      "d_flops": -1587245056,
+      "corpus_audit_rate": {
+        "d_residual_s": 0.0029243250000000652,
+        "net_d_effective": -1294812555.9999936
+      },
+      "bare_loop_floor": {
+        "d_residual_s": 0.006172879239435132,
+        "net_d_effective": -969957132.0564867
+      },
+      "this_session_measured": {
+        "d_residual_s": 0.009973199972591829,
+        "net_d_effective": -589925058.7408172
+      }
+    },
+    "d4": {
+      "d_flops": -2117956608,
+      "corpus_audit_rate": {
+        "d_residual_s": 0.02507355000000056,
+        "net_d_effective": 389398392.0000558
+      },
+      "bare_loop_floor": {
+        "d_residual_s": 0.05021289610427266,
+        "net_d_effective": 2903333002.427266
+      },
+      "this_session_measured": {
+        "d_residual_s": 0.10282309988542693,
+        "net_d_effective": 8164353380.542692
+      }
+    },
+    "d5": {
+      "d_flops": -2427128576,
+      "corpus_audit_rate": {
+        "d_residual_s": 0.18011812500000401,
+        "net_d_effective": 15584683924.0004
+      },
+      "bare_loop_floor": {
+        "d_residual_s": 0.35849301415813534,
+        "net_d_effective": 33422172839.81353
+      }
+    }
+  },
+  "wall_time_consequence": {
+    "champion_measured_predict_wall_s_mlp0": 2.752767900001345,
+    "eligible_full_width_equivalent_hooks": 12.264357788050148,
+    "d1_added_wall_s_per_mlp": -0.07262707397867921,
+    "d2_added_wall_s_per_mlp": 2.298767449110774,
+    "d3_added_wall_s_per_mlp": 4.746196084747931,
+    "d4_added_wall_s_per_mlp": 19.383719369162712,
+    "d4_projected_predict_wall_s": 22.136487269164057,
+    "frozen_campaign_gate_s": 20.0,
+    "harness_wall_time_limit_s": 60.0
+  }
+}

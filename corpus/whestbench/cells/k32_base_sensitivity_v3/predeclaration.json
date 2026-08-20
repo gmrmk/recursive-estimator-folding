@@ -1,0 +1,52 @@
+{
+  "bias_class": "exact",
+  "budgets": {
+    "billed_flops_declared": 0,
+    "memory_mib_declared": 2048,
+    "wall_seconds": 900
+  },
+  "causal_mechanism": "The ridge normal equations weight each rung by the base's empirical resolution of its harmonic content. The one-frame base and the multi-frame base share the exact degree-two design condition but differ at the degree-four defect, so the Gram matrix and cross-vector shift between bases exactly where the rung energy lives (the k-high rungs carry roughly a quarter of their Hermite energy at degree six and above, versus effectively none for the k-low contrast arm), rotating beta even though the control stays exactly conditionally mean-zero under BOTH bases (DGFL Proposition 1 applies row-by-row to any fixed row set, so centering is never at risk -- only the fitted coefficient is).",
+  "cheapest_falsifier": "Fit beta on the one-frame base and on the four-frame base with identical synthetic nets, pilots, and rotation fixtures (fit nets zero and one only, per the channel free-test protocol), after a per-seed power screen establishes the phenomenon exists; if the coefficient cosine stays above the bar with all four signs preserved (metric at or below the pass threshold), base-insensitivity is demonstrated and the hypothesis dies -- reopening the accuracy frontier.",
+  "confidence": {
+    "compliance": 0.95,
+    "generalization": 0.5,
+    "implementation": 0.75,
+    "mechanism": 0.7
+  },
+  "equal_budget_baseline": "The k-low contrast arm (the frequency family the channel reports failing transfer) fitted and transported under the identical nets, rotations, and bases -- the same computation with the only change being the frozen frequency.",
+  "evidence_role": "development",
+  "frozen_inputs": [
+    {
+      "path": "C:/Users/strid/.claude/skills/recursive-estimator-folding/corpus/whestbench/experiments/k32_base_sensitivity/runner_k32base.py",
+      "sha256": "8f59093564136717f964f693c80d0476e813aba20921329d383c2050d7e37e86"
+    }
+  ],
+  "hypothesis": "The four surviving high-frequency Fourier-Stein rung coefficients are base-dependent: refit under an exact-two-design base whose degree-four defect differs several-fold from the one-frame base, the ridge solution rotates away from its one-frame value and the transport gate (all rung signs preserved and coefficient cosine above the channel bar) FAILS -- the k-high arm's celebrated cross-network transfer was conditioned on the single-frame base it was fitted against, not on base-free high-degree structure.",
+  "id": "k32_base_sensitivity_v3",
+  "inconclusive_band_note": "Metric strictly between the pass and kill thresholds = real but degraded transport, insufficient to either reopen the accuracy frontier or certify its closure. The forced mid-band value 0.25 = phenomenon absent (the per-seed power screen failed), which says nothing about transport at all. Either way the accuracy-frontier decision defers to the compute lane and the closure argument rests on the existing kill field, not on this cell.",
+  "predeclared_at_utc": "2026-08-18T02:55:42.531889+00:00",
+  "predicted_signature": "V1-INFORMED PRIORS (v1 completed scientifically before dying on a metric-name plumbing mismatch; its authenticated report was observed before this predeclaration and the priors below reflect that): modal outcome is the honest phenomenon-absent forced value (probability ~0.7) -- on fresh seeds the k-high control again produces no positive held variance reduction on width-256 challenge-family nets (v1 observed per-seed paired t of -1.87 / -2.04 / +0.32 and inconsistent rung signs across seeds). Conditional on the phenomenon appearing, transport breaks (kill band) at ~0.8 (v1 observed cosines -0.066 / -0.559 / -0.237 with zero of three seeds preserving signs, i.e. noise-fit coefficients do not transport). The recognizable failure signature of the whole reading remains: metric at or below the pass threshold with all four signs preserved on every seed -- base-insensitivity, reopening the accuracy frontier. Degree-energy and design-defect second signals must reproduce v1 (hi arm ~0.28 of energy at degree >= 6 vs lo ~0.005; A2 machine zero both bases, A4 contrast ~4x).",
+  "provenance": "Cross-checked reimplementation from primary sources only: DGFL_ROTATIONAL_STEIN_FOURIER_LADDER_20260811.md (operator family lines 383-403, Proposition 1 lines 247-281, ridge protocol lines 440-473) and AGENT_CHANNEL.md (free-test protocol 6988-6992, corrected 7120-7135; frozen rung list and beta 6873-6885; GUARDS126 contrast 7214-7215). No implementation bytes exist anywhere on this machine (exhaustive hunt, 2026-08-18): the frozen production beta [0.010775500390224034, -0.005378503176404927, -0.006768684712987893, -0.0066378281140845] recovered from channel line 6879 is the object whose MECHANISM CLASS this cell tests; it is not re-fit here. PREMISE SHIFTS, all declared: (1) synthetic width-256 challenge-family nets replace the hand-built Lens-1 network; (2) base2 is a union of four complete distinct phased-Hadamard frames substituted for the dead MUB129 arm named in the original free-test text, constructed so both bases are exact 2-designs differing only at degree >= 4 (hostile-review requirement -- the naive row-subsample base2 broke the degree-two condition and was rejected); (3) anchors are Gram-Schmidt-deflated deep pullbacks at layers 8/16/24/32 -- the layer-prefix reading and the deflation are declared assumptions A1/A3; raw pullbacks align 0.42-0.95 pairwise at width 256 (measured in hostile review and confirmed in smoke), which is itself a finding about deep ReLU backward-feature alignment. SEAL CUSTODY: this cell is synthetic and development-only; it can neither discharge, amend, nor authorize opening sealed held networks under the Lens-1 manifest 55EBEBBB98716DA79B05728D9AECC3A308BB21D0AC46DC182F56FC186797FE93; a PASS here is necessary groundwork, never sufficient authority, for any seal decision. Drafted by an Opus ladder (run wf_582761b2-420), REJECTED by hostile Opus review on nine blocking findings, all fixes applied and smoke-verified on an off-protocol seed before predeclaration; the production seeds were never run before the gate was sealed. V2 NOTE: v1 (seeds 20260817-19, gate sealed a70464d before value) ran to scientific completion but was mechanically PROTOCOL_KILLed because the spec named threshold metric one_minus_median_signed_cos_hi while the runner emitted the key 'metric' -- a spec-plumbing defect introduced by the judge after hostile review, caught by the harness's malformed-metrics gate exactly as designed. The v1 report is authenticated (hash chain verified by the verdict path before the outcome check) and its content was OBSERVED before this v2 predeclaration; v2 therefore uses FRESH seeds and v1-informed priors, and its only code change is emitting the metric under the declared name. Re-running the v1 seeds would have been predeclaration theater and was refused. V3 NOTE: v2's runner still hardcoded the v1 seeds while its spec declared fresh ones -- the harness does not inject spec.seeds, runners own them -- so v2 was a bit-identical deterministic rerun of the observed v1 data, not a replication; it is recorded as such and carries no independent weight. Before v3, verdict() gained a structural seed-agreement check (spec.seeds vs the runner-reported metrics.config.seeds; contradiction = protocol kill), with three new tests, suite 76/76. v3's runner constant now holds the declared fresh seeds and the hardened harness verifies the agreement mechanically.",
+  "runner": {
+    "argv": [
+      "python",
+      "corpus/whestbench/experiments/k32_base_sensitivity/runner_k32base.py"
+    ],
+    "cwd": "C:/Users/strid/.claude/skills/recursive-estimator-folding",
+    "readable_roots": [
+      "C:/Users/strid/.claude/skills/recursive-estimator-folding/corpus/whestbench/experiments/k32_base_sensitivity"
+    ]
+  },
+  "second_signal": "Two in-run signals independent of the fit pipeline: (a) empirical-vs-analytic Hermite degree-energy profiles per base per arm (smoke-verified: hi arm 0.2747 of energy at degree >= 6 vs lo arm 0.0051); (b) Gegenbauer design defects of both bases -- A2 must be machine zero for both (exact 2-designs; smoke: 0.0 and 0.0) while A4 differs ~4x (smoke: 3.9518e-3 one-frame vs 9.8823e-4 four-frame). These certify the perturbation lives at degree four and above with degree two held fixed -- the mechanism-fidelity requirement from hostile review.",
+  "seeds": [
+    20260820,
+    20260821,
+    20260822
+  ],
+  "terminal": false,
+  "thresholds": {
+    "kill_when_gte": 0.4,
+    "metric": "one_minus_median_signed_cos_hi",
+    "pass_when_lte": 0.1
+  }
+}

@@ -1,0 +1,70 @@
+{
+ "tag": "fused_a",
+ "group": 4,
+ "block_rows": 4096,
+ "dispatch_plan_per_layer": [
+  [
+   4,
+   4096
+  ],
+  [
+   4,
+   4096
+  ],
+  [
+   4,
+   4096
+  ],
+  [
+   3,
+   4096
+  ],
+  [
+   1,
+   3072
+  ]
+ ],
+ "dispatches_per_layer": 5,
+ "full_prediction_matmul_calls": 160,
+ "billed_flops": 189738221568,
+ "expected_bill_frozen": 189738221568,
+ "independently_expanded_bill": 189738221568,
+ "bill_matches_frozen": true,
+ "bill_matches_independent_expansion": true,
+ "hook_billed_flops": 5912804352,
+ "hook_core_calls_b4096": 16,
+ "wall_limit_used_s": 300.0,
+ "setup_s": 0.3635886000120081,
+ "predict_wall_s": 42.05383650001022,
+ "residual_s": 0.46661230103927664,
+ "flopscope_backend_time_s": 39.24307849863544,
+ "flopscope_overhead_time_s": 2.344126400334062,
+ "wall_time_s": 42.05381720000878,
+ "workspace_bytes": 263237632,
+ "workspace_mib": 251.04296875,
+ "peak_working_set_mib_after_prediction": 365.91796875,
+ "peak_working_set_mib_at_exit": 381.6875,
+ "finite": true,
+ "failure": null,
+ "state_sha256": "ed59595dac93a6e20e362266306530c48045798126c6cec0a027b382ab5b1e70",
+ "state_dump": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\gm_m116_streams\\state_fused_a.npy",
+ "gates": {
+  "residual_le_0.170": false,
+  "peak_le_464_mib": true,
+  "wall_lt_20": false,
+  "bill_exact": true,
+  "finite": true
+ },
+ "runtime_identity": {
+  "python": "3.14.4",
+  "executable": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\whest-v014\\Scripts\\python.exe",
+  "numpy": "2.4.6",
+  "flopscope": "0.10.0+np2.4.6",
+  "threads": {
+   "OPENBLAS_NUM_THREADS": "1",
+   "OMP_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "NUMEXPR_NUM_THREADS": "1"
+  }
+ }
+}

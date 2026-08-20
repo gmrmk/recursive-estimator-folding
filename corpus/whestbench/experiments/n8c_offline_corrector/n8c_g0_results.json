@@ -1,0 +1,150 @@
+{
+  "constants": {
+    "kill_bias_share": 0.25,
+    "n_truth": 3500000,
+    "net_seeds": [
+      101,
+      202,
+      303
+    ],
+    "replicates": 16,
+    "rotation_seed_formula": "900000 + net_seed*1000 + r (ties to N8a)",
+    "scope": "final-layer row (benchmark primary score)"
+  },
+  "date": "2026-08-08",
+  "firewall": "synthetic He nets only; frozen v3 imported read-only; only its shipped sampling asset touched; no dataset/truth/scorer/submission; single process",
+  "gates": {
+    "g0": {
+      "arm_notes": {
+        "full_estimator": "GOVERNING arm: frozen v3 fold3 pipeline replicated over its own Haar-rotation randomization (mlp.seed); deliberate pilot-rescue/tangent bias included -- the corrector's actual target.",
+        "plain_downstream": "Cross-check only (same deviation as N8a): positively homogeneous no-bias ReLU net + fixed-radius Haar-rotated spherical set is exactly unbiased in expectation, so this arm's bias share is ~0 by construction and cannot falsify the premise alone."
+      },
+      "bootstrap_ci_95_mean_share_full": [
+        -0.030873287209896887,
+        0.0970966072071896
+      ],
+      "kill_threshold": 0.25,
+      "mean_bias_share_full_estimator": -0.03357178505994402,
+      "mean_bias_share_plain_downstream": -0.05341924035179325,
+      "nets": [
+        {
+          "all_layers_diagnostic": {
+            "bias2": 0.0006894669196672578,
+            "bias2_ddof0_variant": 0.0006894673071719153,
+            "bias_share": 0.9999337790164488,
+            "mse": 0.0006895125798684677,
+            "truth_noise": 3.94601266899427e-08,
+            "variance_ddof0": 5.812569862339598e-09,
+            "variance_ddof1": 6.2000745198289055e-09,
+            "variance_of_seed_mean": 3.875046574893066e-10
+          },
+          "full_estimator": {
+            "bias2": -1.2020637960449366e-08,
+            "bias2_ddof0_variant": 3.7951107900295694e-10,
+            "bias_share": -0.06049809818740238,
+            "billed_flops_mean": 181662060638.125,
+            "mse": 1.9869447669600372e-07,
+            "truth_noise": 1.2312730025215626e-08,
+            "variance_ddof0": 1.8600223559178513e-07,
+            "variance_ddof1": 1.9840238463123746e-07,
+            "variance_of_seed_mean": 1.2400149039452341e-08,
+            "wall_s": 85.7
+          },
+          "net_seed": 101,
+          "plain_downstream": {
+            "bias2": -1.827163707423926e-08,
+            "bias2_ddof0_variant": -5.553620339602264e-09,
+            "bias_share": -0.09250086675221654,
+            "mse": 1.9752936070516798e-07,
+            "truth_noise": 1.2312730025215626e-08,
+            "variance_ddof0": 1.9077025101955462e-07,
+            "variance_ddof1": 2.0348826775419162e-07,
+            "variance_of_seed_mean": 1.2718016734636976e-08,
+            "wall_s": 49.8
+          },
+          "truth_noise_final": 1.2312730025215626e-08,
+          "truth_wall_s": 495.6
+        },
+        {
+          "all_layers_diagnostic": {
+            "bias2": 0.001020794425033346,
+            "bias2_ddof0_variant": 0.001020795490351542,
+            "bias_share": 0.9999322806061355,
+            "mse": 0.0010208635572946643,
+            "truth_noise": 5.208717017972768e-08,
+            "variance_ddof0": 1.5979772942586812e-08,
+            "variance_ddof1": 1.7045091138759264e-08,
+            "variance_of_seed_mean": 1.065318196172454e-09
+          },
+          "full_estimator": {
+            "bias2": -3.464829352884882e-08,
+            "bias2_ddof0_variant": -5.581112516401509e-10,
+            "bias_share": -0.0650069791196787,
+            "billed_flops_mean": 169840301909.375,
+            "mse": 5.329934415974145e-07,
+            "truth_noise": 2.2198818690923823e-08,
+            "variance_ddof0": 5.113527341581308e-07,
+            "variance_ddof1": 5.454429164353395e-07,
+            "variance_of_seed_mean": 3.409018227720872e-08,
+            "wall_s": 80.5
+          },
+          "net_seed": 202,
+          "plain_downstream": {
+            "bias2": -4.041575699140296e-08,
+            "bias2_ddof0_variant": -4.8525325268328875e-09,
+            "bias_share": -0.07337717743180432,
+            "mse": 5.507946531326417e-07,
+            "truth_noise": 2.2198818690923823e-08,
+            "variance_ddof0": 5.334483669685508e-07,
+            "variance_ddof1": 5.690115914331209e-07,
+            "variance_of_seed_mean": 3.5563224464570054e-08,
+            "wall_s": 49.6
+          },
+          "truth_noise_final": 2.2198818690923823e-08,
+          "truth_wall_s": 491.3
+        },
+        {
+          "all_layers_diagnostic": {
+            "bias2": 0.0006600761475873715,
+            "bias2_ddof0_variant": 0.0006600765757340827,
+            "bias_share": 0.9999301028180351,
+            "mse": 0.0006601222882750741,
+            "truth_noise": 3.929034032421774e-08,
+            "variance_ddof0": 6.4222006672562885e-09,
+            "variance_ddof1": 6.850347378406709e-09,
+            "variance_of_seed_mean": 4.281467111504193e-10
+          },
+          "full_estimator": {
+            "bias2": 5.954486244686766e-09,
+            "bias2_ddof0_variant": 1.965518100115863e-08,
+            "bias_share": 0.024789722127249007,
+            "billed_flops_mean": 164775125431.8125,
+            "mse": 2.4019979788888236e-07,
+            "truth_noise": 1.503419554064577e-08,
+            "variance_ddof0": 2.0551042134707795e-07,
+            "variance_ddof1": 2.1921111610354982e-07,
+            "variance_of_seed_mean": 1.3700694756471864e-08,
+            "wall_s": 42.6
+          },
+          "net_seed": 303,
+          "plain_downstream": {
+            "bias2": 1.3160666309752882e-09,
+            "bias2_ddof0_variant": 1.4929306100410845e-08,
+            "bias_share": 0.005620323128641106,
+            "mse": 2.341620936825904e-07,
+            "truth_noise": 1.503419554064577e-08,
+            "variance_ddof0": 2.0419859204153377e-07,
+            "variance_ddof1": 2.1781183151096933e-07,
+            "variance_of_seed_mean": 1.3613239469435583e-08,
+            "wall_s": 31.7
+          },
+          "truth_noise_final": 1.503419554064577e-08,
+          "truth_wall_s": 440.9
+        }
+      ],
+      "pass": false
+    }
+  },
+  "predeclaration": "N8C_PREDECLARATION.md",
+  "verdict": "KILL at G0: sampling variance dominates the Kerdock v3 estimator's final-layer error on synthetic He nets (mean bias^2 share -0.034 < 0.25 across nets); an offline corrector's ceiling is below the predeclared 1.33x bar. First broken link: the N8c premise."
+}

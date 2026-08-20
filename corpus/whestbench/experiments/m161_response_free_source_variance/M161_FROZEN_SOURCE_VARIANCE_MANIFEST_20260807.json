@@ -1,0 +1,46 @@
+{
+  "candidate": "M161 response-free M156 complete-domain covariance-star variance premise",
+  "date": "2026-08-07",
+  "scope": "generated Gaussian-background coefficient and complete pre-transport source-slot proxy only",
+  "mechanism": "retain c_ijk=-2 V_ij V_ik on all ordered triples, where V is the already-present preactivation covariance; sample exact distinct target minus c under one frozen two-stratum q0",
+  "target": "M147 certified noncentral [2,1,1] defect on pairwise-distinct labels; exactly zero target on collisions",
+  "cells": [
+    ["isotropic_w4", 4, 1610401, 0.20],
+    ["factor_w4", 4, 1610402, 0.52],
+    ["isotropic_w5", 5, 1610501, 0.20],
+    ["factor_w5", 5, 1610502, 0.52],
+    ["isotropic_w6", 6, 1610601, 0.20],
+    ["factor_w6", 6, 1610602, 0.52]
+  ],
+  "proposal": {
+    "name": "fixed target-mass two-stratum uniform q0",
+    "target_width": 256,
+    "collision_mass": 0.011688232421875,
+    "distinct_mass": 0.988311767578125,
+    "adaptive": false
+  },
+  "provider": {
+    "module": "m147_endpoint_safe_bridge",
+    "coarse_order": 48,
+    "fine_order": 64,
+    "value_certificate": 2e-08,
+    "tangent_certificate": 2e-07,
+    "endpoint_policy": "all frozen cells must remain strictly SPD with maximum absolute off-diagonal correlation below 0.60; any certification refusal blocks without substitution"
+  },
+  "primary_gate": {
+    "source_residual_to_raw_upper90_lt": 0.25,
+    "source_p99_ratio_lte": 1.25,
+    "collision_p99_ratio_lte": 1.25,
+    "source_width_slope_lte": 0.0
+  },
+  "proxies": {
+    "coefficient": "scalar HH coefficient contribution; diagnostic only",
+    "source": "full flattened M156 aaaa, aaab, aabb source slots; pre-transport proxy",
+    "not_claimed": "no complete final-output M125b source-to-output carrier is instantiated"
+  },
+  "forbidden": [
+    "retuning eta, q0, cells, K, control coefficient, provider order, or gates after execution",
+    "truth, scorer, contest/public/private model, leaderboard, submission, or champion access",
+    "treating either proxy as end-to-end efficacy"
+  ]
+}

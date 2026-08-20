@@ -1,0 +1,69 @@
+{
+ "m183_f64_detector": {
+  "hit": "M183 run_m183_falsifier.py:58 getattr(op,'dtypes',None) or ()",
+  "fixture": "100% float64 program, 2 chained 256x256 matmuls inside BudgetContext",
+  "n_ops": 5,
+  "resolved_dtypes_present_in_fixture": [
+   "float64"
+  ],
+  "oprecord_has_dtypes_attr": false,
+  "oprecord_has_name_attr": false,
+  "total_billed": 133955584.0,
+  "SUSPECT_f64_billed": 0.0,
+  "SUSPECT_f64_share": 0.0,
+  "SUSPECT_top_ops": {},
+  "CORRECTED_f64_billed": 133955584.0,
+  "CORRECTED_f64_share": 1.0,
+  "detector_fires_on_positive_fixture": false,
+  "verdict": "STRUCTURALLY VOID: returns 0.00% on a program that is 100% float64 by construction"
+ },
+ "gm_a4_bytecode_needle_scan": {
+  "hit": "gm_a4_constraint/verify_two_signal.py:64 scan_code needle scan",
+  "fixture": "corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\capped_fold3.py",
+  "needles": [
+   "_tally",
+   "budget_summary_dict",
+   "get_data",
+   "summary_dict"
+  ],
+  "needles_present_in_fixture_text": [
+   "_tally",
+   "budget_summary_dict",
+   "summary_dict"
+  ],
+  "detector_hits_on_positive_fixture": [
+   "_tally"
+  ],
+  "detector_fires_on_positive_fixture": true,
+  "verdict": "fires -- published [] is a genuine negative"
+ },
+ "gm_m179_legacy_tag_scan": {
+  "hit": "gm_m179_m199/run_depth32_identity_trace.py:134 legacy tag scan",
+  "fixture": "real observed operation histogram + one injected legacy op",
+  "n_real_operations_observed": 21,
+  "scan_on_real_ops": [],
+  "scan_on_positive_fixture": [
+   "m200.legacy_rebuild.full_archive"
+  ],
+  "detector_fires_on_positive_fixture": true,
+  "independent_positive_capable_instrument": "LegacyCallCounter (monkeypatch counter)",
+  "verdict": "fires -- published [] is a genuine negative"
+ },
+ "m184_certain_on_detector": {
+  "hit": "m184_trichotomy_upward/run_m184_g0.py certain-on detector",
+  "reported_statistic": {
+   "geomean_reduction": 0.0,
+   "min_reduction": 0.0,
+   "per_net_reduction": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "max_certain_on_count_observed": 39,
+  "max_certain_dead_count_observed": 37,
+  "n_layer_cells": 84,
+  "detector_fires_somewhere": true,
+  "verdict": "NOT the M183 class -- the same detector produces nonzero certain-on (39) and certain-dead (37) counts at other layers, so its 0.00% reduction is a measured negative, not a structural one"
+ }
+}

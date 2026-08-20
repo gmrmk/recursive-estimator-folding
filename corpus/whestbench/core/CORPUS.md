@@ -8,7 +8,7 @@ evidence merely because it is aesthetically appealing.
 In this corpus, `HARD KILL` is local to one specified implementation and gate.
 It preserves proved identities, useful operators, measurements, and unresolved
 families for causally different reimplementations. See
-`SALVAGE_MAP_20260806.md` for the living operator bank.
+`../SALVAGE_MAP_20260806.md` for the living operator bank.
 
 ## Objective and constraints
 
@@ -845,6 +845,198 @@ whole-row/ragged formulas. The next causal child must use preallocated `out=`
 buffers or a different Winograd reconstruction and cut L1 residual below
 about.00987s merely for parity. Source:
 `../exact_sampler_compression/REPORT.md`.
+
+### H36: amplitude-coded probes expose the physical quotient
+
+Change only H34's constant-modulus probe law to128 normalized-Gaussian sphere
+lines. The trace-free diagonal response becomes material in every nontrivial
+cell, with RMS.06967-.18121, zero duplicate lines, and permutation/orthogonal
+defects below4.09e-15. Literal core rank remains64/84 for k3 and58/78 for k4,
+so the frozen full-coordinate gate fails. This is not missing physical signal:
+linear-times-quadratic and quadratic-times-quadratic coefficient arrays map to
+homogeneous cubic/quartic polynomials, and both coordinate systems contain a
+20D symmetrization gauge. Exact physical cores recover below5.66e-15 relative
+error despite that gauge. Nonzero conditions are below30.35/52.54;
+combined/correction fidelity is.980382/.991939 with97/98 signs; free-response
+cost is12.342916B. Kill the redundant parameterization, preserve amplitude
+geometry. The next rung freezes a deterministic64D/58D quotient basis while a
+separate Price/Hermite branch attacks the still-missing weights-only response.
+Source: `../amplitude_coded_cumulant_probes/REPORT.md`.
+
+### H37: the cumulant quotient is exact gauge removal
+
+The frozen amplitude design, a complete ordinary-monomial coefficient map,
+and a response-free SVD quotient agree in all144 cells. For141 nontrivial
+cells the cubic coefficients reduce84->64 and the quartic coefficients
+reduce78->58; the missing20 dimensions are exactly the kernels of full
+symmetrization. Maximum reduced conditions are30.3514/52.5370. Responses,
+physical cores, and coordinate equivariance reproduce below9.82e-15, while
+combined/correction fidelity remains.980382/.991939 with97/98 signs. This
+certifies physical coefficient savings of23.81%/25.64%, but does not yet cut
+dominant runtime because the response-free SVD remains charged. Quotienting
+removes gauge; it does not create the missing weights-only directional k3/k4
+right-hand side. Source: `../cumulant_polynomial_quotient/REPORT.md`.
+
+### H38: Price--Hermite Q2 transports signal but cannot form the RHS
+
+From conditional means and diagonal-plus-rank4 covariance, exact ReLU Price
+coefficients define a linear-plus-quadratic Gaussian chaos. Its connected
+Wick identities compute k3/k4 by small trace contractions without dense
+cumulant tensors. Fast and dense formulas agree below2.42e-16; permutation
+and positive-gauge defects stay below6.3e-16; the conservative total envelope
+is61.286B. On the frozen suite, transported totals improve from the
+zero-conditional baseline to.90194 combined,.96478 final-correction fidelity,
+and60/61 signs. The direct within-cell RHS fails: conditional k3/k4/combined
+fidelity is.67069/.16234/.28234, and41.75% of factor rows clip. Thus the
+operator is useful compressed transport, but moments through2 do not identify
+the missing signed conditional energy. Preserve Price coefficients and trace
+algebra; change only H2->H4 connected Wick response order inside H37's
+physical quotient. Source:
+`../price_hermite_higher_moment_response/REPORT.md`.
+
+### H39: preallocation repairs residual cost, not small-GEMM throughput
+
+Three separately frozen Winograd mutations isolate the exact-compute wall.
+Sequential preallocation, one batched seven-product matmul, and contiguous
+packing all pass billed/effective score proxies at.88206-.88615x direct,
+residual time.263-.527ms, float32 relative error about6.04e-7, depth32 error
+below2.96e-6 with at most2/4194304 gate flips, and conservative peak memory
+below481MiB. The batched child is strongest: billed/effective ratios
+.880151/.885099 and a score break-even raw-MSE ratio1.129817. Yet frozen
+total-wall ratios are1.55874/1.54559/1.70148, all above1.5. Packing worsens
+the result. Allocation/reconstruction is no longer the failed link; one-core
+half-width BLAS throughput plus Winograd memory traffic is. Preserve the
+score-side batched operator, but do not modify the champion without a
+genuinely new kernel mechanism and an estimator-level gate. Source:
+`../preallocated_strassen_compression/REPORT.md`.
+
+### H40: independent compression judge narrows the honest upside
+
+The score product law is per-network; aggregate ratios require score-weighted
+paired products. The ideal unchanged-prediction floor gain is7.3056x, not the
+mean-multiplier ratio7.4368x. Mutation B's.885099x result is one full-product
+proxy. Even granting it to all184.822B matmul work inside202.282B mean cost
+gives only.8950165x whole-entry cost, an optimistic10.50% ceiling and about
+2.0201e-7 adjusted score under unchanged uniform predictions. Actual eligible
+fraction, integrated residual, live memory, and MSE parity are unmeasured.
+Therefore validated deployable compression gain is0%; optimistic exact upside
+is0-10.5%. Amplitude/quotient results remain oracle-RHS geometry, and Q2
+correction uses supplied conditional state plus exact downstream mean/variance
+for isolation. Source: `../compression_judge/JUDGE.md`.
+
+### H41: Q4 finds higher-moment signal but explodes the contraction
+
+Holding the Q2 state fixed and adding exact ReLU coefficients through order4
+raises isolated conditional k3/k4/combined fidelity from
+.670685/.162341/.282335 to.732135/.655277/.673419. Transported
+combined/correction reaches.931300/.979659 with60/61 signs. Exact
+graph/automorphism folding, symmetric-power identities, Q2 reduction,
+permutation, and positive-gauge tests pass below2.075e-14. The child still
+misses every.8 isolated energy gate, while40 cubic and428 quartic folded
+terms cost a conservative35.115T,438.94x the80B ceiling. Preserve the exact
+operators; do not try Q6. Condition on the rank4 common factor and integrate
+the exact independent conditional response over four dimensions instead.
+Source: `../price_hermite_q4_response/REPORT.md`.
+
+### H42: relative wall was a campaign gate, not a score term
+
+Local source tracing proves effective compute is billed FLOPs plus1e11 times
+residual user time. Counted NumPy/BLAS backend time and FlopScope overhead are
+reported separately and excluded from residual. Total wall binds only through
+absolute limits:30s host response and60s worker context locally. Thus the
+preallocated branch's1.5x parent-relative wall gate cannot be retroactively
+passed, but its failure does not kill score viability. A pessimistic median
+29-full-call extrapolation is about6.67s, not a bound. Open a causally new
+full-entry synthetic Batched-B trace with setup<4s,predict<20s,complete C,
+memory liveness,eligible shapes,and prediction parity before any data row.
+Source: `../wall_rule_audit/AUDIT.md`.
+
+### H43: full-entry Batched-B saves score cost and fails only liveness
+
+The actual fresh synthetic random32,256 fold3 geometry ran atn_base32256 with
+no extrapolation. Batched Winograd selected16/29 hooks covering57.416% of
+their direct bill. Analytical/effective work fell170.531B->159.493B and
+186.485B->175.521B, ratio.941206. Prediction parity is4.56e-8 relative;
+depth32 error2.49e-6 with1/4194304 gate change; setup.646s,predict4.427s;
+dispatch and explicit full/even/odd/ragged probes pass. The only failed gate
+is measured peak working set667.328MiB versus512MiB, while end set478.883MiB
+proves transient workspace/activation overlap. Preserve the 5.88% effective
+cost reduction. Row-block the left/products at fixed8192 rows, pack right
+operands once, and reconstruct directly into the final output; every billed
+term is linear in row count. Source:
+`../integrated_batched_winograd/REPORT.md`.
+
+### H44: common-factor conditioning compresses Q4 by472x but exposes prior error
+
+Conditioning the rectified-Gaussian copula on its rank4 common factor makes
+coordinates independent and analytically resums every Hermite order. A fixed
+49-node four-dimensional Smolyak rule reduces the conservative envelope from
+35.115T to74.427B and keeps transported combined/correction fidelity
+.935843/.979747. Direct response remains wrong: isolated k3/k4/combined is
+.72739/.52036/.56923, while the201-node reference reaches only
+.72658/.69626/.70341. The49-node rule also fails convergence(.12403 squared
+discrepancy) and arbitrary factor rotation(.19931). Preserve exact conditional
+moments and total-cumulance integration. Canonicalization can repair grid
+gauge, but no Gaussian quadrature creates the missing signed within-cell
+non-Gaussian state; a per-layer innovation observable is the next information
+link. Source: `../latent_copula_resummation/REPORT.md`.
+
+### H45: fixed8192-row streaming clears the exact-compute engineering gates
+
+The integrated Winograd score operator was preserved while only its transient
+liveness graph changed. Streaming the seven left/product stacks in fixed8192
+row blocks reduces operator workspace from283.9375MiB to91.4375MiB and peak
+working set from667.328MiB to474.301MiB. On the actual n_base32256 synthetic
+geometry, analytical work falls170.531B->159.493B and effective compute falls
+188.819B->175.926B, ratio.931714, with exactly11.037909953B FLOPs saved.
+Whole-prediction relative drift is4.282e-8; depth drift is2.486e-6 with one
+gate change in4194304; static and ragged billing audits have zero mismatches.
+All frozen synthetic gates and five tests pass. This is a screened engineering
+survivor, not yet a champion: the next rung is an immutable production port
+and separately frozen paired score on permitted development rows. Source:
+`../row_blocked_winograd/REPORT.md`.
+
+### H46: factor gauge is repaired, but the Gaussian copula prior still fails
+
+Canonicalizing the rank-four factor through eigenspaces/projectors of B^T B
+reduces equivalent-rotation defect from.19931 to1.68e-26 and49/201 discrepancy
+from.12403 to.07386. Transported combined fidelity remains.93083 and cost is
+74.5661B. Yet isolated k3/k4/combined is only.72568/.64447/.66364, and the
+canonical201-node combined result is.67573; one of96 cells also triggers the
+forbidden projector fallback. Thus arbitrary sparse-grid orientation was a
+real numerical defect, but not the information bottleneck. Preserve the
+canonical gauge operator; another grid cannot create missing signed
+higher-order layer state. Source: `../canonical_latent_copula/REPORT.md`.
+
+### H47: a clean-room PLE pattern compresses static analytic response tables
+
+The Gemma4 PLE architectural separation was translated without model weights,
+outputs, downloads, or APIs. Exact layer invariance factors a duplicated
+2,097,536-byte Phi/phi response atlas into one65,672-byte shared atlas plus
+descriptors/schedules; the complete package is66,632 bytes and maximum
+expanded-response error is1.994e-7. Five fresh subprocesses give a.763 median
+factorized/parent warm-latency ratio and eight tests pass. Conservative lookup
+accounting is41 operations/query versus56 for the known float64-promoted path,
+but loses to a hypothetical native-float3228-operation lower bound. Flash is
+cold immutable storage; setup preloads65.5KiB and CPU/RAM performs the math.
+Preserve the sidecar/locality mechanism, but do not fold it into the champion
+until a fused whole-estimator cost gate passes. Source:
+`../ple_flash_sidecar/REPORT.md`.
+
+### H48: production row-blocked Winograd is the new validated local champion
+
+The exact fixed8192-row survivor was ported into an immutable seven-module
+descendant of random32,256 fold3. It passed131072 shape-bill checks,96768 row
+partitions, package validation, synthetic parity/depth/memory gates, and stable
+source hashes before any score. On the one frozen paired run over already-used
+public rows0..99, adjusted score falls2.257079776e-7->2.121762464e-7,
+ratio.940047616 (-5.99524%). Raw MSE ratio is.999982962; mean effective compute
+ratio is.938554853; max child C is222.405357B; failures are0/100 and the child
+wins100/100. A one-million paired network bootstrap gives score-ratio95% CI
+[.936501313,.943475999]. The validated tar contains exactly seven Python
+modules plus manifest and remains unsubmitted. This is the new local champion,
+not a guaranteed private-suite winner. Source:
+`../row_blocked_production/REPORT.md`.
 
 ## Current non-working translations
 

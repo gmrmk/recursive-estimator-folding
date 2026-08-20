@@ -1,0 +1,138 @@
+{
+  "candidate": "M145 isolated integrated defensive ACG Formal-L1 descendant",
+  "status": "INTEGRATED_STRUCTURAL_ONLY_AWAITING_THIRD_HOSTILE_AUDIT",
+  "execution_authorized": false,
+  "outcome_opened": false,
+  "efficacy_run_count": 0,
+  "submission_authorized": false,
+  "champion_mutation_authorized": false,
+  "formal_l1_champion_touched": false,
+  "date": "2026-08-07",
+  "parent_audit": {
+    "file": "M145_SECOND_HOSTILE_AUDIT_20260807.md",
+    "sha256": "665eece5647eac8b8f8c94af1f30b4d4d340d7c25681b5372bebce6f937aa2da",
+    "decision": "REPAIR / INTEGRATION-ONLY -- DO NOT RUN AN EFFICACY SCREEN"
+  },
+  "frozen_cell": {
+    "pilot_lines": 1024,
+    "rank": 16,
+    "pilot_frames": 4,
+    "main_frames": 122,
+    "epsilon": 0.8,
+    "lambda_box": [0.25, 1.75],
+    "selection_grid": false
+  },
+  "integrated_path": {
+    "setup_geometry": "four pilot and 122 main raw fnp.linalg.qr frames from disjoint frozen seed children; no R-diagonal sign normalization; every stored row scaled by rho256",
+    "matched_comparator": "same setup seed and bitwise-identical provisional frame bank; transport disabled; ordinary all-126-frame coefficients",
+    "pilot": "exact raw 32-layer forward pass over 1024 radius-scaled lines and their antipodes; materialize the 1024x256 even final activation before fitting",
+    "proposal": "full float32 symmetric scatter/eigh with boundary-tie uniform fallback and log-domain full-mixture weights",
+    "main": "freeze proposal, right-Householder each of 122 main frames toward rho256 times its sampled anchor, then execute the Formal path as separate pilot/main streams",
+    "formal_semantics": "the first-256 rescue, 1024-line fold refinement, dead/on/kink regimes, terminal folding, all-output assembly, and moment tangent are preserved; only linear sample means receive the frozen complete-frame coefficients",
+    "memory_schedule": "single 4096-row owned Winograd workspace, streamed direct dispatch, streamed layer31/terminal kink reductions",
+    "restore": "self-inverse reflectors run in reverse in finally, followed by a charged copy from the immutable provisional-main bank; repeat restore and prediction are bitwise exact"
+  },
+  "formal_l1_dependencies": {
+    "directory": "../row_blocked_production/candidate_source",
+    "tar_sha256": "bc2ec39558c76a67b12b587ca4ee70bb1e8921489643d83707e052d086e8ae36",
+    "files": {
+      "estimator.py": "d32de9fb7fa8f953fc873eec91a39e66778215f8607fb03bebbbe1292ca5d432",
+      "orthogonal_fold3.py": "24f2eebb1adf37f6be1392de57611c52cbaac7b04e319ff771533da54257796a",
+      "fold3_estimator.py": "6952abc0a617e1fb32c64a4483f1539b79933c049f9190984460266bf357e116",
+      "row_blocked_winograd.py": "876ac0f042239c88bb48205585d7175da1f956ed0c4b96d8d6f95f5be5ea74b5",
+      "cost_model.py": "21b077a7bcdf244b9480e891a8b63ecee05427d2725ea30ef5d2fc016bc03023"
+    }
+  },
+  "bound_integrated_artifacts": {
+    "m145_defensive_acg.py": "da15e9b162d0e9b1d3e7f365239093d696db351674f828e3ccf5f2cde21a4cc2",
+    "m145_flopscope_sidecar.py": "6384b87dbf14b5a37108611a3b97b05edbabd43d432f3fb69c1872c33f5beeeb",
+    "m145_integrated_estimator.py": "83e38cab70d4a63f273458bd808f38f01d7805d0fb600c7785c707feb5a24367",
+    "run_m145_integrated_structural_trace.py": "5a38ec7b99dc1cda085d48abccf5c4cf9ff47ecf9843cb2ce253e01ad447ab1c",
+    "run_m145_formal_parity.py": "2830231561ddc09c8c965575951163cd87f858521414ff0f5467feb55d05d3c1",
+    "test_m145_defensive_acg.py": "a7c5acc6b139f2c9a34a15571ffc08f6b6dd4a4e591452ba2e43a2098b03596f",
+    "test_m145_integrated.py": "cee419a07c36ff54580f2406bd2cf6db1985409b83b5a636a12203ae0327020f",
+    "M145_INTEGRATED_STRUCTURAL_TRACE_20260807.json": "b39ef320a21fc4116c727aed59828f5d26b359a90d421f12ecb0d2efc2c9cf60",
+    "M145_MATCHED_COMPARATOR_STRUCTURAL_TRACE_20260807.json": "89e1da234b0095468a7ee092182fc2672dd96d6faf9405737403d10683671dc0",
+    "M145_FORMAL_PARITY_20260807.json": "bf946ebd9f9023a51f4f1b953cac360fb80f424e7e17f4c371c65b403bca2005",
+    "M145_GENERATED_EFFICACY_PROTOCOL_20260807.json": "68ea6625322df0870fc5c19f4667597eb883c667d834cdc443f0a924a8977a41",
+    "M145_CROSS_REFERENCE_RISK_PROTOCOL_20260807.json": "27f1acd19e7a09b1b1d88fec37569eb24601aa6baee92b16227d4b2cbce250eb",
+    "M145_CROSS_REFERENCE_RISK_DERIVATION_20260807.md": "bfae8a2a31c5e65b1f4380e4d864ddf55d3b4494abeb8a5c6271a752ecf257f3",
+    "M145_CROSS_REFERENCE_RISK_PREEXECUTION_MANIFEST_20260807.json": "77384b10152a85be9a4b8cfda1724aaef90eda13c40cb95f6a38a7000e346435",
+    "M145_INTEGRATED_REPAIR_REPORT_20260807.md": "23728296bb25f0d3532c669587134ffba764e7c1f674fe528af6056aa97c50e3"
+  },
+  "locked_structural_evidence": {
+    "runtime": "FlopScope 0.10.0+np2.4.6, NumPy 2.4.6, float32 estimator",
+    "generated_mlp_seed": 145310002,
+    "setup_seed": 145310001,
+    "candidate": {
+      "billed_flops": 184270895262,
+      "residual_wall_seconds": 0.14011560566723347,
+      "effective_compute": 198282455828.72336,
+      "matmul_calls": 1078,
+      "peak_working_set_mib": 481.9765625,
+      "rank": 16,
+      "weight_range": [0.6631038784980774, 1.1554033756256104],
+      "bad_weights": 0,
+      "restore_defect_first": 0.0,
+      "restore_defect_second": 0.0,
+      "repeat_prediction_max_abs": 0.0
+    },
+    "matched_comparator": {
+      "billed_flops": 176455830878,
+      "residual_wall_seconds": 0.12165371491573751,
+      "effective_compute": 188621202369.57376,
+      "matmul_calls": 798,
+      "peak_working_set_mib": 448.5234375,
+      "restore_defect": 0.0,
+      "second_predict": null,
+      "second_predict_reason": "intentional single-run comparator: transport is disabled and no persistent frame mutation occurs; the candidate alone receives the mandatory two-call replay"
+    },
+    "paired_delta": {
+      "billed_flops": 7815064384,
+      "residual_wall_seconds": 0.01846189075149596,
+      "effective_compute": 9661253459.1496
+    }
+  },
+  "protected_cliff_math": {
+    "formal_l1_measured_mean_effective_compute": 189852556000.0,
+    "formal_l1_measured_max_effective_compute": 222405357000.0,
+    "paired_integrated_effective_delta": 9661253459.1496,
+    "protected_mean_effective_compute": 199513809459.1496,
+    "protected_max_effective_compute": 232066610459.1496,
+    "below_258_4B_safety": true,
+    "below_272B_cliff": true,
+    "protected_max_headroom_to_258_4B": 26333389540.8504,
+    "mean_cost_ratio": 1.05088819272546,
+    "raw_ratio_required_for_adjusted_ratio_0_8": 0.761260813032081
+  },
+  "formal_parity": {
+    "same_generated_network_and_bank": true,
+    "both_finite": true,
+    "max_abs_difference": 1.2474600539214009e-05,
+    "rms_difference": 4.282708093218796e-07,
+    "max_relative_to_output_scale": 2.5947432254874144e-06,
+    "interpretation": "truth-free float32 reassociation parity, not efficacy"
+  },
+  "generated_efficacy_protocol": {
+    "file": "M145_GENERATED_EFFICACY_PROTOCOL_20260807.json",
+    "sha256": "68ea6625322df0870fc5c19f4667597eb883c667d834cdc443f0a924a8977a41",
+    "execution_authorized": false,
+    "whole_network_count": 24,
+    "seed_table_sha256": "f631c62a30326817148b4f525e8801b8f927b89a745bfb833fcb7a8c83c73f97"
+  },
+  "recommended_unbiased_cross_reference_protocol": {
+    "file": "M145_CROSS_REFERENCE_RISK_PROTOCOL_20260807.json",
+    "sha256": "27f1acd19e7a09b1b1d88fec37569eb24601aa6baee92b16227d4b2cbce250eb",
+    "derivation_file": "M145_CROSS_REFERENCE_RISK_DERIVATION_20260807.md",
+    "derivation_sha256": "bfae8a2a31c5e65b1f4380e4d864ddf55d3b4494abeb8a5c6271a752ecf257f3",
+    "preexecution_manifest": "M145_CROSS_REFERENCE_RISK_PREEXECUTION_MANIFEST_20260807.json",
+    "preexecution_manifest_sha256": "77384b10152a85be9a4b8cfda1724aaef90eda13c40cb95f6a38a7000e346435",
+    "status": "separate frozen zero-outcome descendant; reference evaluator not implemented; execution unauthorized",
+    "reference_pairs_per_network": 8,
+    "reference_seed_table_sha256": "908782ec1f4bd5ffa825d0320b372e6d68ecec4caf59f954aeefd0962d65b1cb",
+    "key_identity": "E[(A-R1) dot (A-R2)/256 | W,A] = MSE(A|W); common R1,R2 cancel the quadratic reference-noise term in A-minus-B",
+    "sealed_protocol_unchanged": true
+  },
+  "next_gate": "independent third hostile pre-execution audit of integrated code, traces, parity, protocol, tests, and hashes",
+  "firewall": "No truth, MSE, adjusted score, contest row, leaderboard mechanism, submission, designation, champion replacement, or efficacy execution was opened or authorized."
+}

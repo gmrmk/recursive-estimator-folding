@@ -1,0 +1,92 @@
+{
+  "candidate_id": "M173",
+  "date": "2026-08-07",
+  "scope": "response-free parameter-scaled matched-asymptotic repair of M171's hostile transverse rank-two Phi(u/eta) fixed-panel failure",
+  "parent_artifacts_inspected": {
+    "M159": {
+      "component": "uniform dyadic scale carrier, frozen tangent convention, zero-face refusal",
+      "report_sha256": "d19404ef54f60d3b2f86bfd66a5b2f6cb54ccddff41b4039db354acd42abf152"
+    },
+    "M165": {
+      "component": "connected cumulant-minus-tree assembly before rank-face subtraction",
+      "report_sha256": "ccee38ad746753086866c22757e0e52540517d335700506b61234a79ba611eb0"
+    },
+    "M168": {
+      "component": "positive-marginal transverse rank-two planar anchor and one-sided cone tangent",
+      "report_sha256": "c97c9338008a166cef1b2c594bb2fb736092b33e53d1149450a40e025262b7c9"
+    },
+    "M171": {
+      "component": "failed direct GL10 derivative enclosure and 571904-operation bookkeeping baseline",
+      "module_sha256": "470d8a5f1ff290d5d1a2d57e60a720ea5760c3c3a7e85c234cc499ceb368fe59"
+    }
+  },
+  "changed_mechanism_only": {
+    "old": "direct ten-node Gauss-Legendre derivative enclosure in physical u for Phi((u-u_star)/eta)",
+    "new": "exact step plus parameter-scaled u=u_star+eta*t layer; degree-nine analytic jet on |t|<=8 and rational Gaussian-tail enclosure outside",
+    "preserved": [
+      "M159 dyadic carrier and frozen primal tangent convention",
+      "M165 connected-first cumulant-minus-M129-tree subtraction",
+      "M168 transverse rank-two anchor and cone-tangent domain",
+      "no adaptive retry"
+    ]
+  },
+  "predeclared_contract": {
+    "eta_range": "all real 0 < eta <= 1/10 from a frozen ordered-pair chart X_i=U, X_j=U+eta V or sign-reflected equivalent",
+    "partition": "u_star-8eta, u_star, u_star+8eta with analytic tails",
+    "value_tolerance": "2e-8",
+    "tangent_tolerance": "2e-7 current locked M147 source certificate",
+    "regular_node_allocation": 10,
+    "boundary_layer_nodes": 0,
+    "total_operation_prediction": 561152,
+    "billed_operation_ceiling": 606720,
+    "prohibited": ["adaptive retry", "ridge", "clipping", "opaque library CDF", "response-derived selection"]
+  },
+  "uniform_enclosure": {
+    "amplitude_caps": "sup|F|<=1e6, sup|F'|<=1e6, sup|F^(10)|<=3e6, sup|Fdot|<=1e6, sup|K^(10)|<=3e6, |etadot|<=1, |u_star_dot|<=1",
+    "layer_moment_upper": "10396/11",
+    "phi_8_upper": "1/150000000000000",
+    "value_at_eta_1_10": "76063/8316000000000 < 2e-8",
+    "tangent_at_eta_1_10": "12253/129937500000 < 2e-7",
+    "uniformity": "both monotone upper bounds attain their maximum at eta=1/10",
+    "proof_type": "analytic Taylor remainder plus rational Gaussian-tail bounds; not numerical probes"
+  },
+  "stratum_dispatch": {
+    "positive_marginal_transverse_rank2_near_parallel": "conditionally certified hostile channel only, after ordered-pair chart and connected amplitude-envelope proof",
+    "transverse_rank2_outside_eta_range": "refuse",
+    "spd": "refuse: no lawful continuation from this layer result",
+    "nontransverse_rank2": "refuse: eta=0 invalidates coordinate",
+    "zero_marginal_psd": "refuse: retain M159 deterministic/conic route",
+    "outward_psd_tangent": "refuse"
+  },
+  "cost": {
+    "legacy_m171_bookkeeping": 571904,
+    "m173_bookkeeping": 561152,
+    "within_ceiling": true,
+    "maximum_nodes_per_channel": 10,
+    "native_billed_operation_trace_proved": false,
+    "provider_credit": false
+  },
+  "verification": {
+    "test_command": "python -m unittest -v test_m173_parameter_scaled_boundary_layer.py",
+    "tests": 7,
+    "tests_passed": 7,
+    "static_audit": "run_m173_static_audit.py",
+    "response_free_only": true
+  },
+  "disposition": "SCREENED_HOSTILE_TRANSVERSE_RANK2_LAYER_CERTIFICATE_ONLY; PRESERVE_M154_M165_M168_CONNECTED_FIRST_ANCHORS; NO_SPD_NONTRANSVERSE_ZERO_FACE_OR_NATIVE_PROVIDER_CREDIT",
+  "firewall": {
+    "network_response": false,
+    "truth_or_scorer": false,
+    "leaderboard_or_submission": false,
+    "champion_change": false,
+    "adaptive_retry": false,
+    "opaque_library_cdf": false
+  },
+  "artifact_sha256": {
+    "m173_parameter_scaled_boundary_layer.py": "9d4c6809c6f4207d3cb332e40fe3ceed7979a7279f5ab85cddcbaed5c14b30f7",
+    "test_m173_parameter_scaled_boundary_layer.py": "16fbb63d3f737414f3580833181421633be7addb4dcbdf2a24836c72b9d10bb5",
+    "run_m173_static_audit.py": "8c65c9d521f92bb67fef967de52428e544306dc630691ae6d7852d6de7f4ed68",
+    "M173_PARAMETER_SCALED_BOUNDARY_LAYER_REPORT_20260807.md": "81c37eccced95eae57604141cc8a541bb8ea64674f326366c05d09dc53ab300f",
+    "M173_STATIC_AUDIT_20260807.json": "3ce8a174c72076da79ca0180802c9e74c262b4767439f7845a67ed0d6b5517b4"
+  }
+}

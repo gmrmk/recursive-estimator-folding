@@ -1,0 +1,36 @@
+{
+  "scope": "generated-only; no contest model, truth, scorer, leaderboard, submission, or champion access",
+  "mutation": "systematic mixture/centre balancing plus randomized conditional OA/Latin coupling; parent factored q and 5% uniform rescue unchanged",
+  "screen": {
+    "widths": [12, 16, 24, 32],
+    "development_seeds": [1338101, 1338102, 1338103, 1338104],
+    "response_replicates_per_cell": 16,
+    "fixed_triple_samples_per_layer": 512,
+    "chain_depth": 4,
+    "metric": "final mean-output MSE after complete M121 one-delay mean/covariance conversion and M125b coalescing",
+    "no_common_random_cancellation": true,
+    "balanced_over_iid_output_mse_by_width": {
+      "12": 0.6869369519183449,
+      "16": 1.0869372961477701,
+      "24": 0.9281487238587566,
+      "32": 1.002476245670114
+    },
+    "width32_antithetic_oa_variant_ratio": 1.0989247744961899
+  },
+  "predeclared_gate": {
+    "ratio_at_most": 0.75,
+    "upper90_below": 0.9,
+    "no_adverse_width_trend": true,
+    "protected_total_billion_less_than": 100.0
+  },
+  "cost": {
+    "balanced_operator_raw": 228556800,
+    "balanced_operator_protected": 285696000,
+    "inherited_m133_kappa2_complete_protected_billion": 94.94094024,
+    "balanced_complete_protected_billion": 95.22663624,
+    "additional_rectangular_products": 0,
+    "full_triple_catalog_entries": 0
+  },
+  "disposition": "killed_implementation_preserved_balancing_operator; full development and disjoint confirmation not opened after premise gate failure",
+  "contest_data_accessed": false
+}

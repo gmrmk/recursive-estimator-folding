@@ -1,0 +1,19 @@
+{
+  "contract": {
+    "generated_only": true,
+    "not_a_contest_state": true,
+    "fresh_dense_gaussian_closure_chain": true,
+    "width": 256,
+    "depth": 4
+  },
+  "generic_dimension_lower_bound_for_factor_rank": 234,
+  "isotropic_diagonal_plus_eigenfactor_diagnostics": [
+    {"rank": 2, "residual_frobenius_fraction": 0.8750724436142542, "residual_trace_fraction": 0.9035667927872468, "exact_density_ratio_log_second_moment": "Infinity"},
+    {"rank": 16, "residual_frobenius_fraction": 0.4623562572903014, "residual_trace_fraction": 0.523450593827191, "exact_density_ratio_log_second_moment": "Infinity"},
+    {"rank": 64, "residual_frobenius_fraction": 0.10633992306669783, "residual_trace_fraction": 0.13036316893132685, "exact_density_ratio_log_second_moment": "Infinity"},
+    {"rank": 128, "residual_frobenius_fraction": 0.021409898062216104, "residual_trace_fraction": 0.023105364914795114, "exact_density_ratio_log_second_moment": "Infinity"},
+    {"rank": 234, "residual_frobenius_fraction": 8.385550009768865e-05, "residual_trace_fraction": 3.902804099305035e-05, "exact_density_ratio_log_second_moment": "Infinity"},
+    {"rank": 255, "residual_frobenius_fraction": 1.91745820765339e-15, "residual_trace_fraction": -7.938601477319827e-17, "exact_density_ratio_log_second_moment": 5.325091478880495e-10}
+  ],
+  "disposition": "small-rank exact factorization and density-ratio correction do not pass the generic generated-state gate"
+}

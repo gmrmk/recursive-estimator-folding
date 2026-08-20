@@ -1,0 +1,73 @@
+{
+  "candidate": "M200 streaming overlap event/liveness ledger",
+  "scope": "generated-only response-free fixture",
+  "event_schema": [
+    "operation",
+    "dtype",
+    "shape",
+    "logical_buffer_id",
+    "digest",
+    "birth_order",
+    "death_order",
+    "alias_class",
+    "native_cost_status"
+  ],
+  "runtime_emitter": "m200_streaming_overlap.EventLedger",
+  "per_case_required_operations": {
+    "background_steps": "H source/ReLU M179 steps only",
+    "fixture_packets_conversions_injections": "H each; Source211 fixture provider marked explicitly unknown",
+    "internal_transports": "H-1, W_k/J_k for k=2..H",
+    "terminal_response": "one W_(H+1)/J_(H+1) stage with no Source211 injection",
+    "background_rebuilds_inside_stream": 0
+  },
+  "liveness_contract": {
+    "allowed_max_live_named_objects": 5,
+    "allowed": [
+      "previous background",
+      "current background",
+      "one tangent",
+      "one fixture packet",
+      "current scratch"
+    ],
+    "retained_after_stream": 0,
+    "forbidden_retained": [
+      "full archive",
+      "dense rank-3 distinct_211",
+      "per-source suffix states"
+    ]
+  },
+  "case_count": 48,
+  "count_ranges": {
+    "background_steps": [
+      3,
+      6
+    ],
+    "source_packets": [
+      3,
+      6
+    ],
+    "conversions": [
+      3,
+      6
+    ],
+    "injections": [
+      3,
+      6
+    ],
+    "transports": [
+      2,
+      5
+    ],
+    "terminal_responses": [
+      1,
+      1
+    ],
+    "background_rebuilds_inside_stream": [
+      0,
+      0
+    ]
+  },
+  "max_live_named_objects": 5,
+  "all_final_retained_counts_zero": true,
+  "native_cost_disposition": "UNKNOWN_NOT_TARGET_METERED; fixture provider explicitly unknown"
+}

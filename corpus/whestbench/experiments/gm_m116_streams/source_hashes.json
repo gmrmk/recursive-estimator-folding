@@ -1,0 +1,41 @@
+{
+ "frozen_sources_after_run": {
+  "m116b_inplace_l3_draft/inplace_l3.py": {
+   "expected": "114d19664317409a170ff937de72ad4527d657ea31ab0500ca76f79cf6d99e83",
+   "expected_source": "M116B frozen manifest / result judge",
+   "observed": "114d19664317409a170ff937de72ad4527d657ea31ab0500ca76f79cf6d99e83",
+   "unchanged": true,
+   "mtime_utc": "2026-08-07T11:30:52.758913Z"
+  },
+  "m116c_inplace_l3_b4096_draft/inplace_l3.py": {
+   "expected": "114d19664317409a170ff937de72ad4527d657ea31ab0500ca76f79cf6d99e83",
+   "expected_source": "same operator bytes as M116b",
+   "observed": "114d19664317409a170ff937de72ad4527d657ea31ab0500ca76f79cf6d99e83",
+   "unchanged": true,
+   "mtime_utc": "2026-08-07T11:30:52.758913Z"
+  },
+  "m116b_inplace_l3_draft/cost_model.py": {
+   "expected": "c2d683adea20582d7d85a740f8109cbb83cb9ac2bc9351c4685f8985dab595ed",
+   "expected_source": "M116B result judge (BLOCK_ROWS=2048)",
+   "observed": "c2d683adea20582d7d85a740f8109cbb83cb9ac2bc9351c4685f8985dab595ed",
+   "unchanged": true,
+   "mtime_utc": "2026-08-07T11:27:57.258416Z"
+  },
+  "m116c_inplace_l3_b4096_draft/cost_model.py": {
+   "expected": "ee1d0dc3f9f15239cc7561c6437545c5c316f8148d9b70060217488428c6a2e3",
+   "expected_source": "M116C variant (BLOCK_ROWS=4096) - the one imported here",
+   "observed": "ee1d0dc3f9f15239cc7561c6437545c5c316f8148d9b70060217488428c6a2e3",
+   "unchanged": true,
+   "mtime_utc": "2026-08-07T12:18:50.874456Z"
+  },
+  "m116b_inplace_l3_draft/campaign_worker.py": {
+   "expected": "19497a13551592725c8329b01e74fe9c4dc92ffc6b86ae18467b26cff21cefe1",
+   "expected_source": "M116B_INDEPENDENT_RESULT_JUDGE frozen table (NOT the superseded 893caf94 pre-repair value)",
+   "observed": "19497a13551592725c8329b01e74fe9c4dc92ffc6b86ae18467b26cff21cefe1",
+   "unchanged": true,
+   "mtime_utc": "2026-08-07T11:59:49.097323Z"
+  }
+ },
+ "all_unchanged": true,
+ "note": "imported read-only and subclassed; never opened for writing. mtimes all predate 2026-08-10."
+}

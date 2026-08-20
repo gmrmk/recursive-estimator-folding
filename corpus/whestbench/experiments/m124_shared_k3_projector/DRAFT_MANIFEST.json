@@ -1,0 +1,129 @@
+{
+  "boundary_gap_relative": 1.4551915228366852e-11,
+  "candidate": "M124_SHARED_K3_PROJECTOR",
+  "carrier_prerequisite": {
+    "artifact_hash": null,
+    "candidate": "M125_FORWARD_DENSE_TANGENT",
+    "effective_compute": null,
+    "maximum_nonoverlap_effective_compute": 53165702400,
+    "required_status_before_source_grid": "PASSED_AND_HASH_LOCKED",
+    "status": "UNRESOLVED"
+  },
+  "cases": [
+    {
+      "alpha_scale": 0.15,
+      "seed": 1240801,
+      "width": 8
+    },
+    {
+      "alpha_scale": 0.35,
+      "seed": 1240802,
+      "width": 8
+    },
+    {
+      "alpha_scale": 0.65,
+      "seed": 1240803,
+      "width": 8
+    },
+    {
+      "alpha_scale": 0.15,
+      "seed": 1241201,
+      "width": 12
+    },
+    {
+      "alpha_scale": 0.35,
+      "seed": 1241202,
+      "width": 12
+    },
+    {
+      "alpha_scale": 0.65,
+      "seed": 1241203,
+      "width": 12
+    },
+    {
+      "alpha_scale": 0.15,
+      "seed": 1241601,
+      "width": 16
+    },
+    {
+      "alpha_scale": 0.35,
+      "seed": 1241602,
+      "width": 16
+    },
+    {
+      "alpha_scale": 0.65,
+      "seed": 1241603,
+      "width": 16
+    }
+  ],
+  "cost_ledger": {
+    "carrier_allowance_below_ceiling": 53165702400,
+    "effective_components": {
+      "analytic_collision_source_scalars": 5000000000,
+      "collision_cores": 7500000000,
+      "copies_allocation_reserve": 2000000000,
+      "dense_defect_cp_pairing": 20801250000,
+      "g3_factor_and_eigensolve": 70075514880,
+      "nonzero_star_cores": 200000000,
+      "response_scalar_reserve": 2000000000,
+      "source_transports": 40632320,
+      "tree_path_cores": 14018150400
+    },
+    "headroom": 30364452400,
+    "incremental_ceiling": 152000000000,
+    "incremental_total": 121635547600,
+    "raw_components": {
+      "analytic_collision_source_scalars": 4000000000,
+      "collision_cores": 6000000000,
+      "copies_allocation_reserve": 1600000000,
+      "dense_defect_cp_pairing": 16641000000,
+      "g3_factor_and_eigensolve": 56060411904,
+      "nonzero_star_cores": 160000000,
+      "response_scalar_reserve": 1600000000,
+      "source_transports": 32505856,
+      "tree_path_cores": 11214520320
+    },
+    "raw_total": 97308438080,
+    "safety_factor_once": 1.25,
+    "source_component_names": [
+      "g3_factor_and_eigensolve",
+      "tree_path_cores",
+      "nonzero_star_cores",
+      "collision_cores",
+      "source_transports",
+      "analytic_collision_source_scalars",
+      "copies_allocation_reserve"
+    ],
+    "source_only_effective": 98834297600,
+    "source_only_raw": 79067438080,
+    "square_f32_bill": 33488896,
+    "square_float64_bill": 66977792
+  },
+  "execution_authorized": false,
+  "firewall": "generated Philox Gaussian backgrounds only; no contest/public/private data, scorer, champion, or submission",
+  "gates": {
+    "algebra_relative_max": 1e-10,
+    "combined_source_fidelity_min_every_cell": 0.8,
+    "combined_source_plus_carrier_compute_max": 152000000000,
+    "correction_ratio_to_zero_max_every_cell": 0.5,
+    "finite_every_cell": true,
+    "permutation_projector_and_correction_relative_max": 1e-10,
+    "positive_gauge_projector_and_correction_relative_max": 1e-10,
+    "repeated_output_k4_relative_max_every_cell": 0.5,
+    "source_fidelity_min_each_order_every_cell": 0.8,
+    "source_only_effective_compute_max": 99000000000,
+    "zero_resource_failures": true
+  },
+  "no_retry": true,
+  "outcome_state": "UNOPENED",
+  "rank": 4,
+  "rank_provenance": "frozen from M85 before M124",
+  "schema": 1,
+  "source_hashes": {
+    "m124_protocol.py": "f967a8e196a422a875728ccddd6931fdd6bd548bdcf8fa128aa40aae0e7bc1f1",
+    "m124_shared_projector.py": "455d48c32524cd56ec983d652e9e151964d05003bb276704a2b13dc16eddf767",
+    "run_m124_falsifier.py": "d9b843fffb13a7fc5f2d07de206d691997a5f4112e36e6de53e248685520bb3f",
+    "test_m124_shared_projector.py": "390ca199ae014b3bf4d0da37dbd0aad0394f6a694b489201215153ae0a1194e2"
+  },
+  "status": "DRAFT_NOT_FROZEN"
+}

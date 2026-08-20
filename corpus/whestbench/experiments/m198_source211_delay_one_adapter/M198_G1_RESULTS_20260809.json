@@ -1,0 +1,39 @@
+{
+  "candidate": "M198-G1 Source211 delay-one semantic adapter",
+  "date": "2026-08-09",
+  "disposition": "SCREENED_COMPONENT_SEMANTIC_PASS__COOPERATIVE_INTEGRITY_CONVENTION__SAME_PROCESS_AUTHORITY_NO_GO__NO_PROVIDER_COST_OR_EFFICACY_CREDIT",
+  "frozen_predeclaration_sha256": "ced54ee05a17070ddf93da7f89137ded99bac73aaaa7a42328af60f4ff061d1f",
+  "test_count": 11,
+  "test_failures": 0,
+  "generated_widths": [2, 3, 4, 5, 6, 7],
+  "independent_oracle_max_abs_error": 9.227969950675874e-15,
+  "independent_oracle_threshold": 2e-10,
+  "oracle_fixture_semantic_regeneration_equal": true,
+  "oracle_case_ids": ["rank1_n2_pos", "rank1_n3_neg", "rank1_n4_pos", "rank1_n5_neg"],
+  "max_richardson_fine_correction_proxy": 2.3559001044978396e-10,
+  "public_boundary": {
+    "reference_source_to_production": "rejected",
+    "forged_labelled_tangent": "rejected",
+    "forged_carrier_map": "rejected",
+    "post_issue_source_tamper": "rejected",
+    "post_issue_map_tamper": "rejected",
+    "carrier_rederives_delay_one_state": true,
+    "m172_source_conservation_recomputed": true
+  },
+  "hostile_in_process_boundary": {
+    "private_issuer_call_forgery": "accepted",
+    "mutable_registry_forgery": "possible",
+    "unbound_source_weight_and_covariance": "accepted",
+    "verdict": "no authority or cryptographic provenance claim is permitted inside the same Python process"
+  },
+  "credits_denied": [
+    "target-width physical Source211 provider",
+    "source-weight binding to the M179 trace",
+    "native FlopScope cost",
+    "bounded target liveness",
+    "source variance reduction",
+    "whole-estimator MSE",
+    "private generalization",
+    "leaderboard or winning-entry status"
+  ]
+}

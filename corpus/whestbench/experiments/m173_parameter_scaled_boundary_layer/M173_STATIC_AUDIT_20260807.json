@@ -1,0 +1,81 @@
+{
+  "scope": "generated response-free mathematics only",
+  "coordinate_identity": "int F(u) Phi((u-u_star)/eta) du = int_(u_star)^inf F(u) du + eta int F(u_star+eta*t)(Phi(t)-1{t>0})dt",
+  "predeclaration": {
+    "target_scope": "the Phi((u-u_star)/eta) channel of a connected-first, positive-marginal, transverse rank-two M168 wedge; no all-PSD provider claim",
+    "eta_range": "all real 0 < eta <= 1/10, with eta from the frozen ordered-pair chart X_i=U, X_j=U+eta*V (or its sign-reflected equivalent)",
+    "coordinate": "u = u_star + eta*t inside |t| <= 8",
+    "deterministic_partition": "(-infinity,u_star-8*eta], [u_star-8*eta,u_star], [u_star,u_star+8*eta], [u_star+8*eta,infinity); no adaptive subdivision",
+    "connected_first_requirement": "assemble cumulant minus M129 tree before deriving amplitude envelopes",
+    "regular_node_allocation": 10,
+    "layer_node_allocation": 0,
+    "taylor_degree": 9,
+    "normalized_value_tolerance": "2e-8",
+    "normalized_tangent_tolerance": "2e-7 (current locked M147 source certificate)",
+    "amplitude_envelope": "sup|F|<=1e6, sup|F'|<=1e6, sup|F^(10)|<=3e6, sup|Fdot|<=1e6, sup|K^(10)|<=3e6, |etadot|<=1, |u_star_dot|<=1",
+    "cost_prediction": 561152,
+    "billed_ops_ceiling": 606720,
+    "kill_gates": [
+      "eta must lie in the predeclared open transverse range 0<eta<=1/10",
+      "connected-first symbolic amplitude and tangent envelopes must meet every stated cap",
+      "the exact layer plus tail enclosure must be <=2e-8 for value and <=2e-7 for tangent",
+      "nontransverse rank-two, zero-marginal, outward-cone, and SPD states must refuse",
+      "no adaptive retry, ridge, clipping, opaque CDF, response-derived selection, or native-bill inference"
+    ]
+  },
+  "uniform_enclosure_at_eta_max": {
+    "eta": "1/10",
+    "value_interior": "2599/332640000000",
+    "value_tail": "1/750000000",
+    "value_total": "76063/8316000000000",
+    "value_closes": true,
+    "tangent_interior": "2599/33264000000",
+    "tangent_tail": "97/6000000000",
+    "tangent_total": "12253/129937500000",
+    "tangent_closes": true
+  },
+  "uniformity": "monotone endpoint bound covers every real 0<eta<=1/10 under frozen envelopes",
+  "cost_prediction": {
+    "setup_and_tree_ops": 4096,
+    "boundary_ops": 12288,
+    "wedge_cells": 7,
+    "regular_components": 30,
+    "regular_nodes_per_component": 10,
+    "regular_component_ops": 256,
+    "singular_channels": 7,
+    "singular_channel_layer_ops": 1024,
+    "predicted_ops": 561152,
+    "legacy_m171_prediction": 571904,
+    "maximum_nodes_per_channel": 10,
+    "under_ceiling": true,
+    "native_bill_proved": false,
+    "credit": "bookkeeping only: M173 has no native billed trace and no endpoint-provider credit"
+  },
+  "exclusions": {
+    "spd": {
+      "action": "spd-not-licensed-by-rank2-boundary-layer",
+      "reason": "an SPD continuation needs its own connected interval kernel and certified operation trace"
+    },
+    "nontransverse_rank2": {
+      "action": "rank2-nontransverse-refuse",
+      "reason": "eta=0 destroys the transverse pair coordinate; a separate coincident-kink analysis is required"
+    },
+    "zero_marginal_psd_face": {
+      "action": "zero-marginal-deterministic-conic-route-required",
+      "reason": "M159 requires deterministic reduction and an explicit one-sided conic tangent"
+    },
+    "outward_psd_tangent": {
+      "action": "outward-psd-cone-refuse",
+      "reason": "the tangent points outside the PSD cone"
+    }
+  },
+  "disposition": "SCREENED_HOSTILE_TRANSVERSE_RANK2_LAYER_CERTIFICATE_ONLY; PRESERVE_M154_M165_M168_CONNECTED_FIRST_ANCHORS; NO_SPD_NONTRANSVERSE_ZERO_FACE_OR_NATIVE_PROVIDER_CREDIT",
+  "firewall": {
+    "network_response": false,
+    "truth_or_scorer": false,
+    "leaderboard_or_submission": false,
+    "champion_change": false,
+    "adaptive_retry": false,
+    "opaque_library_cdf": false
+  }
+}

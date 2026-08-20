@@ -1,0 +1,110 @@
+{
+  "mutation": "m226_preallocated_fused_rho08",
+  "generation": 10,
+  "status": "VALIDATED_EXECUTION_CHILD",
+  "artifact_hashes_sha256": {
+    "m226_preallocated_fused_rho08.py": "A52CE3B016CBE23B15C1061354D64CD78E405A37461EA727FCE119F7EBCE3571",
+    "test_m226_preallocated_fused_rho08.py": "5F10A2FADDA914CA8B687189FEFCD46148801C3A56EC8AFB1C6E259753F9725B",
+    "run_m226_native_trace.py": "B2E9D8CC529D95CCBA2FA57D103030DBB5F26EA44966FE757010EBA1955C304D",
+    "M226_FROZEN_MANIFEST_20260809.json": "B3068266C9B019D59B5557336C25FB0104B889B4514534E4D941F46E3C1EED86"
+  },
+  "one_changed_mechanism": "execution topology only",
+  "m224_math_changed": false,
+  "static_gate": {
+    "pass": true,
+    "probe_event_counts": [3, 9],
+    "calls_each": 171,
+    "bill_per_event": 5467,
+    "setup_bytes_per_event": 2146,
+    "forbidden_runtime_operations_seen": [],
+    "max_m224_value_error": 4.092863201132779e-18
+  },
+  "native_gate": {
+    "pass": true,
+    "all_five_processes_pass": true,
+    "seeds": [221720001, 221720002, 221720003, 221720004, 221720005],
+    "event_count_each": 3968,
+    "billed_flops_each": [21693056, 21693056, 21693056, 21693056, 21693056],
+    "setup_bytes_each": [8515328, 8515328, 8515328, 8515328, 8515328],
+    "runtime_calls_each": [171, 171, 171, 171, 171],
+    "runtime_user_allocation_bytes_each": [0, 0, 0, 0, 0],
+    "fallback_count_each": [0, 0, 0, 0, 0],
+    "chart_mismatch_count_each": [0, 0, 0, 0, 0],
+    "wall_s": [
+      0.014485799998510629,
+      0.01499529997818172,
+      0.013596099975984544,
+      0.015446500008692965,
+      0.01470800000242889
+    ],
+    "raw_speedup_vs_m216": [
+      111.37746621953168,
+      107.59315934622897,
+      118.6657720115932,
+      104.45030907254244,
+      109.6948395247874
+    ],
+    "residual_wall_s": [
+      0.0007416997977998108,
+      0.000789100187830627,
+      0.0007351997483056039,
+      0.0008160001307260245,
+      0.0007750000804662704
+    ],
+    "hostile_component": [
+      392542954.8999054,
+      416243149.9153135,
+      389292930.15280193,
+      429693121.36301225,
+      409193096.2331352
+    ],
+    "rss_bytes": [56926208, 56987648, 56975360, 56848384, 56860672],
+    "wall_summary_s": {
+      "min": 0.013596099975984544,
+      "median": 0.01470800000242889,
+      "max": 0.015446500008692965
+    },
+    "speedup_summary": {
+      "min": 104.45030907254244,
+      "median": 109.6948395247874,
+      "max": 118.6657720115932
+    },
+    "hostile_component_summary": {
+      "min": 389292930.15280193,
+      "median": 409193096.2331352,
+      "max": 429693121.36301225
+    },
+    "raw_wall_limit_s": 0.016133916999970098,
+    "worst_wall_margin_s": 0.000687416991277133,
+    "worst_speedup_margin_over_100x": 4.450309072542439,
+    "worst_hostile_ceiling_fraction": 0.06296541378788821,
+    "max_value_parity_abs": 3.8163916471489756e-16,
+    "max_value_parity_enclosure_ratio": 3.751478165824106e-8,
+    "max_radius_parity_abs": 4.963083675318166e-24,
+    "max_rss_bytes": 56987648,
+    "operation_calls_each": {
+      "abs": 7,
+      "add": 37,
+      "divide": 14,
+      "exp": 3,
+      "greater": 1,
+      "greater_equal": 2,
+      "isfinite": 1,
+      "less_equal": 6,
+      "logical_and": 9,
+      "matmul": 1,
+      "maximum": 6,
+      "multiply": 76,
+      "sqrt": 2,
+      "subtract": 6
+    }
+  },
+  "tdd": {
+    "red_missing_module": true,
+    "red_operand_shape_bill_mismatch_reproduced": true,
+    "green_tests": "5/5 passed"
+  },
+  "variance_gate_run": false,
+  "forbidden_inputs_used": [],
+  "disposition": "Promote M226's execution topology together with M224's frozen chart as a validated child. The >100x gate passes in all five processes, but the minimum margin is only 4.45x percentage points; retain strict setup and runner controls. Variance remains a separately predeclared next generation."
+}

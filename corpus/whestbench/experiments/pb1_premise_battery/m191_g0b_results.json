@@ -1,0 +1,230 @@
+{
+  "config": {
+    "basis": "top-8 input-space singular directions of W_1 (f64 SVD of weights[0], columns of U) + 4 fixed He-random controls (seed 191042); p4 = (a.u)^4 - 3/(n(n+2)), p6 = (a.u)^6 - 15/(n(n+2)(n+4)), unit sample-std",
+    "bootstrap_draws": 4000,
+    "depth": 32,
+    "kill_reduction": 0.1,
+    "n_total_antipodal": 64512,
+    "net_seeds": [
+      101,
+      202,
+      303
+    ],
+    "promote_reduction": 0.15,
+    "replicates": 16,
+    "rotation_seed_formula": "900000 + net_seed*1000 + rep",
+    "split": "uniform random permutation of all 64512 samples, halves 32256/32256, seed 777000+net*1000+rep; beta = cov/var per k (univariate, predeclared form); symmetrized swap-halves average",
+    "truth": "m181_truth_net*.npz (3.5M iid MC, cached, read-only), measured noise floor subtracted",
+    "width": 256
+  },
+  "date": "2026-08-08",
+  "firewall": "synthetic He nets only; kerdock_phases.npz + m181 caches read-only; frozen sources imported unmodified; writes confined to pb1_premise_battery; plain numpy (sanctioned G0 deviation); no dataset/scorer/submission; no git",
+  "g0b": {
+    "floored_draws": 0,
+    "gate": "KILL",
+    "gate_arm": "cv_both",
+    "m181_arm0_crosscheck": {
+      "101": 0.0,
+      "202": 0.0,
+      "303": 0.0
+    },
+    "net_rows": [
+      {
+        "baseline": {
+          "bias2": -1.606344002999341e-08,
+          "bias_share_of_raw_mse": -0.08042980831345904,
+          "mse_noise_subtracted": 1.8742528104140555e-07,
+          "mse_raw": 1.9971998400629498e-07,
+          "variance_ddof1": 2.0348872107139897e-07
+        },
+        "cv_both": {
+          "bias2": -1.5946610025919005e-08,
+          "bias_share_of_raw_mse": -0.0808389811633828,
+          "mse_noise_subtracted": 1.849691640015866e-07,
+          "mse_raw": 1.9726386696647603e-07,
+          "ratio_vs_baseline_noise_subtracted": 0.9868954869579395,
+          "variance_ddof1": 2.0091577402750562e-07
+        },
+        "cv_both_nosplit": {
+          "bias2": -1.639106867861453e-08,
+          "bias_share_of_raw_mse": -0.08384313574757651,
+          "mse_noise_subtracted": 1.8320214400374645e-07,
+          "mse_raw": 1.9549684696863587e-07,
+          "ratio_vs_baseline_noise_subtracted": 0.9774676232886312,
+          "variance_ddof1": 1.99593212682361e-07
+        },
+        "cv_deg4": {
+          "bias2": -1.5838323000679515e-08,
+          "bias_share_of_raw_mse": -0.07914705507351087,
+          "mse_noise_subtracted": 1.878178973835261e-07,
+          "mse_raw": 2.0011260034841553e-07,
+          "ratio_vs_baseline_noise_subtracted": 1.0020947886002307,
+          "variance_ddof1": 2.0365622038420563e-07
+        },
+        "cv_deg6": {
+          "bias2": -1.614236315145555e-08,
+          "bias_share_of_raw_mse": -0.0820760414543987,
+          "mse_noise_subtracted": 1.843810000223729e-07,
+          "mse_raw": 1.9667570298726233e-07,
+          "ratio_vs_baseline_noise_subtracted": 0.9837573618557888,
+          "variance_ddof1": 2.0052336317382847e-07
+        },
+        "net_seed": 101,
+        "truth_noise_final": 1.2294702964889415e-08
+      },
+      {
+        "baseline": {
+          "bias2": -3.987874767742572e-09,
+          "bias_share_of_raw_mse": -0.006791230864275849,
+          "mse_noise_subtracted": 5.650243546943567e-07,
+          "mse_raw": 5.872094245418941e-07,
+          "variance_ddof1": 5.690122294620992e-07
+        },
+        "cv_both": {
+          "bias2": -6.8627956643567835e-09,
+          "bias_share_of_raw_mse": -0.01154984627976429,
+          "mse_noise_subtracted": 5.720042810861305e-07,
+          "mse_raw": 5.94189350933668e-07,
+          "ratio_vs_baseline_noise_subtracted": 1.0123533195229248,
+          "variance_ddof1": 5.788670767504873e-07
+        },
+        "cv_both_nosplit": {
+          "bias2": -2.7931992141905096e-09,
+          "bias_share_of_raw_mse": -0.004685404311271816,
+          "mse_noise_subtracted": 5.739639556422857e-07,
+          "mse_raw": 5.961490254898232e-07,
+          "ratio_vs_baseline_noise_subtracted": 1.015821620561409,
+          "variance_ddof1": 5.767571548564762e-07
+        },
+        "cv_deg4": {
+          "bias2": -5.8673003369681345e-09,
+          "bias_share_of_raw_mse": -0.009954253715055613,
+          "mse_noise_subtracted": 5.672413708402217e-07,
+          "mse_raw": 5.894264406877592e-07,
+          "ratio_vs_baseline_noise_subtracted": 1.0039237532461134,
+          "variance_ddof1": 5.731086711771898e-07
+        },
+        "cv_deg6": {
+          "bias2": -4.988586700655774e-09,
+          "bias_share_of_raw_mse": -0.008431807387725658,
+          "mse_noise_subtracted": 5.694540024488428e-07,
+          "mse_raw": 5.916390722963803e-07,
+          "ratio_vs_baseline_noise_subtracted": 1.0078397465838127,
+          "variance_ddof1": 5.744425891494985e-07
+        },
+        "net_seed": 202,
+        "truth_noise_final": 2.2185069847537503e-08
+      },
+      {
+        "baseline": {
+          "bias2": 4.070519354495874e-09,
+          "bias_share_of_raw_mse": 0.017180587182083717,
+          "mse_noise_subtracted": 2.218829616330691e-07,
+          "mse_raw": 2.369255085030329e-07,
+          "variance_ddof1": 2.1781244227857324e-07
+        },
+        "cv_both": {
+          "bias2": 3.051796802910307e-09,
+          "bias_share_of_raw_mse": 0.013175189806424986,
+          "mse_noise_subtracted": 2.1658954706936404e-07,
+          "mse_raw": 2.3163209393932784e-07,
+          "ratio_vs_baseline_noise_subtracted": 0.9761432129590064,
+          "variance_ddof1": 2.1353775026645373e-07
+        },
+        "cv_both_nosplit": {
+          "bias2": 2.9708625468164223e-09,
+          "bias_share_of_raw_mse": 0.012598668958747023,
+          "mse_noise_subtracted": 2.207651052355237e-07,
+          "mse_raw": 2.358076521054875e-07,
+          "ratio_vs_baseline_noise_subtracted": 0.9949619547651701,
+          "variance_ddof1": 2.1779424268870727e-07
+        },
+        "cv_deg4": {
+          "bias2": 3.6835809094497002e-09,
+          "bias_share_of_raw_mse": 0.015820102023525174,
+          "mse_noise_subtracted": 2.1779924542518425e-07,
+          "mse_raw": 2.3284179229514805e-07,
+          "ratio_vs_baseline_noise_subtracted": 0.9815951789275368,
+          "variance_ddof1": 2.1411566451573455e-07
+        },
+        "cv_deg6": {
+          "bias2": 3.394021282716682e-09,
+          "bias_share_of_raw_mse": 0.014445971665671735,
+          "mse_noise_subtracted": 2.199033163274538e-07,
+          "mse_raw": 2.349458631974176e-07,
+          "ratio_vs_baseline_noise_subtracted": 0.9910779751133434,
+          "variance_ddof1": 2.165092950447371e-07
+        },
+        "net_seed": 303,
+        "truth_noise_final": 1.5042546869963802e-08
+      }
+    ],
+    "quadrature_check_vs_g0a": {
+      "101": {
+        "deg4_rms_over_iid": 0.10563768150218901,
+        "deg6_rms_over_iid": 0.403117681637035
+      },
+      "202": {
+        "deg4_rms_over_iid": 0.10366813191207049,
+        "deg6_rms_over_iid": 0.3957472060802533
+      },
+      "303": {
+        "deg4_rms_over_iid": 0.11643565005740839,
+        "deg6_rms_over_iid": 0.42173035362918826
+      }
+    },
+    "r2_summary": {
+      "101": {
+        "both": 0.002264136895845988,
+        "deg4": 0.0017982253108251762,
+        "deg6": 0.0010458714763085827
+      },
+      "202": {
+        "both": 0.002901735840745462,
+        "deg4": 0.00232169303074004,
+        "deg6": 0.0013297808582571145
+      },
+      "303": {
+        "both": 0.0029325002394320543,
+        "deg4": 0.0023099206982107497,
+        "deg6": 0.0013151600486719503
+      }
+    },
+    "variant_summary": {
+      "cv_both": {
+        "aggregate_ratio_geomean": 0.9916816361208105,
+        "bootstrap_ci_95_ratio": [
+          0.9763873088920644,
+          1.0063321399360412
+        ],
+        "reduction_vs_baseline": 0.008318363879189494
+      },
+      "cv_both_nosplit": {
+        "aggregate_ratio_geomean": 0.9959604725400198,
+        "bootstrap_ci_95_ratio": [
+          0.9841101531358456,
+          1.0066891326219136
+        ],
+        "reduction_vs_baseline": 0.004039527459980152
+      },
+      "cv_deg4": {
+        "aggregate_ratio_geomean": 0.9958195544760329,
+        "bootstrap_ci_95_ratio": [
+          0.9897697977861731,
+          1.0021277655735235
+        ],
+        "reduction_vs_baseline": 0.0041804455239671245
+      },
+      "cv_deg6": {
+        "aggregate_ratio_geomean": 0.9941740752838658,
+        "bootstrap_ci_95_ratio": [
+          0.9827480907867822,
+          1.0045178383715379
+        ],
+        "reduction_vs_baseline": 0.00582592471613419
+      }
+    }
+  },
+  "predeclaration": "M191_HARMONIC_PREDECLARATION.md (G0-b)",
+  "verdict": "KILL at G0-b: cv_both panel ratio 0.99168 (reduction +0.83%, CI [0.97639, 1.00633]) vs kill bar 10% / promote bar 15%"
+}

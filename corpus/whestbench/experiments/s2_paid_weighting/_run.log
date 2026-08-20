@@ -1,0 +1,14 @@
+== S2 paid-information rotation weighting ==
+cached m181 truths loaded (read-only)
+P2 archive frame means loaded (read-only)
+net 101: 16 reduced forwards in 15.8s, checkpointed
+net 202: 16 reduced forwards in 20.7s, checkpointed
+net 303: 16 reduced forwards in 15.1s, checkpointed
+bitwise full-budget repeat net101/r0 vs archive: OK
+reduced-forward vs archive prefix: max abs diff 4.319e-07, max rel diff 3.730e-05
+split-average vs closed-form s^2/P: max rel dev 0.1887
+
+G0-CORRELATION pooled within-net rho = +0.1216 (CI95 [-0.153, +0.375]) gate |rho|>=0.4 -> KILL
+
+VERDICT: KILL: G0-CORRELATION pooled |rho| = 0.1216 < 0.4; the paid-sample half-disagreement proxy dies where the P2/P2b truth-free proxies died
+results -> C:\Users\strid\Documents\Codex\2026-08-02\https-chatgpt-com-share-6a5556ed-2e1c\publish\recursive-estimator-folding\corpus\whestbench\experiments\s2_paid_weighting\s2_results.json

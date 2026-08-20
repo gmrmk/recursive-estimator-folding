@@ -1,0 +1,1463 @@
+{
+ "meta": {
+  "generated_by": "C:\\Users\\strid\\AppData\\Local\\Temp\\claude\\C--Users-strid\\7c1d8a18-611c-4493-9d65-0b4a9ad5fd33\\scratchpad\\old_mi\\build_mi_graph.py",
+  "ledger": "C:\\Users\\strid\\.claude\\skills\\recursive-estimator-folding\\corpus\\whestbench\\headroom\\fold_ledger.json",
+  "n_records": 277,
+  "seed": 20260819,
+  "n_permutations": 200,
+  "mi_units": "bits (log base 2), plug-in estimator",
+  "outcome_entropy_bits": 1.3751160774323963,
+  "door_profile_axes": [
+   "carrier",
+   "precision",
+   "convention",
+   "mechanism_family"
+  ],
+  "door_profile_note": "killtype is excluded from the door profile because it is undefined for wins; including it would make every (kill, win) pair differ on it and the one-axis test would be vacuous. It is annotated on each edge.",
+  "axis_distributions": {
+   "carrier": {
+    "none": 164,
+    "kerdock_mub": 45,
+    "zonal_harmonic": 36,
+    "haar_random_spherical": 32
+   },
+   "precision": {
+    "unstated": 234,
+    "f32": 17,
+    "mixed": 16,
+    "f64": 10
+   },
+   "convention": {
+    "raw_mse_variance": 98,
+    "flop_cost_wall": 81,
+    "protocol": 50,
+    "unstated": 26,
+    "memory": 12,
+    "adjusted_score": 6,
+    "residual_walltime": 4
+   },
+   "killtype": {
+    "executed_measurement": 157,
+    "none": 82,
+    "preexecution_static": 26,
+    "protocol_procedural": 7,
+    "one_shot_consumed": 4,
+    "harness_instrument": 1
+   },
+   "mechanism_family": {
+    "transport": 73,
+    "design_frame": 49,
+    "compiler_schedule": 45,
+    "sampler": 42,
+    "diagnostic_falsifier": 25,
+    "unclassified": 11,
+    "low_rank_factorization": 7,
+    "analytic_identity": 6,
+    "infrastructure": 6,
+    "learned_closure": 6,
+    "control_variate": 5,
+    "selection": 2
+   },
+   "outcome": {
+    "kill": 186,
+    "pass": 59,
+    "inconclusive": 19,
+    "protocol_kill": 9,
+    "win": 4
+   }
+  },
+  "doctrine_validation": {
+   "convention": {
+    "n_checked": 14,
+    "n_agree": 14,
+    "agreement": 1.0,
+    "disagreements": []
+   },
+   "carrier": {
+    "n_checked": 51,
+    "n_agree": 45,
+    "agreement": 0.8823529411764706,
+    "disagreements": [
+     {
+      "idx": 38,
+      "id": "jspace_gram_aligned_control",
+      "doctrine": [
+       "zonal_harmonic"
+      ],
+      "coded": "kerdock_mub",
+      "matched_families": [
+       "kerdock_mub"
+      ]
+     },
+     {
+      "idx": 39,
+      "id": "jspace_inverse_complement_control",
+      "doctrine": [
+       "zonal_harmonic"
+      ],
+      "coded": "none",
+      "matched_families": []
+     },
+     {
+      "idx": 43,
+      "id": "amplitude_coded_cumulant_probes",
+      "doctrine": [
+       "haar_random_spherical"
+      ],
+      "coded": "none",
+      "matched_families": []
+     },
+     {
+      "idx": 73,
+      "id": "m76_validator_fallback_v3",
+      "doctrine": [
+       "kerdock_mub"
+      ],
+      "coded": "none",
+      "matched_families": []
+     },
+     {
+      "idx": 74,
+      "id": "m77_m71_descriptive_launcher",
+      "doctrine": [
+       "kerdock_mub"
+      ],
+      "coded": "none",
+      "matched_families": []
+     },
+     {
+      "idx": 106,
+      "id": "m108_heat_difference_scaled_harmonic_band",
+      "doctrine": [
+       "zonal_harmonic"
+      ],
+      "coded": "haar_random_spherical",
+      "matched_families": [
+       "haar_random_spherical",
+       "zonal_harmonic"
+      ]
+     }
+    ]
+   },
+   "precision": {
+    "n_checked": 19,
+    "n_agree": 16,
+    "agreement": 0.8421052631578947,
+    "disagreements": [
+     {
+      "idx": 52,
+      "id": "ple_flash_sidecar",
+      "doctrine": [
+       "f64"
+      ],
+      "coded": "mixed",
+      "matched_families": [
+       "f32",
+       "float64"
+      ]
+     },
+     {
+      "idx": 102,
+      "id": "m104_nested_hermite_final_preexec",
+      "doctrine": [
+       "f64"
+      ],
+      "coded": "unstated",
+      "matched_families": []
+     },
+     {
+      "idx": 110,
+      "id": "m111_coherent_gate_interferometer",
+      "doctrine": [
+       "f64"
+      ],
+      "coded": "mixed",
+      "matched_families": [
+       "float32",
+       "float64"
+      ]
+     }
+    ]
+   }
+  },
+  "lived_base_rate": 0.2441860465116279,
+  "n_decided": 258
+ },
+ "mi_table": [
+  {
+   "target": "lived_vs_died",
+   "axis": "killtype",
+   "kind": "single",
+   "n_records": 258,
+   "n_levels": 6,
+   "mi_bits": 0.8019325020834523,
+   "null_mean_bits": 0.015091879800076726,
+   "null_sd_bits": 0.00881993483885512,
+   "null_max_bits": 0.05478927597342089,
+   "mi_minus_null_mean_bits": 0.7868406222833756,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 1.5318202403746037,
+   "target_entropy_bits": 0.8019325020834525,
+   "confound": "CONSTRUCTION ARTIFACT: killtype and outcome are both parsed from the same status string, and killtype is 'none' by definition for every non-kill. This MI is inflated by definition and is not a finding."
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "precision+killtype",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 15,
+   "mi_bits": 0.8019325020834525,
+   "null_mean_bits": 0.04614202890109821,
+   "null_sd_bits": 0.01423861163765768,
+   "null_max_bits": 0.08911844270795312,
+   "mi_minus_null_mean_bits": 0.7557904731823543,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.369189353424093,
+   "target_entropy_bits": 0.8019325020834525,
+   "confound": "contains killtype; see the killtype row"
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "carrier+killtype",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 17,
+   "mi_bits": 0.8019325020834523,
+   "null_mean_bits": 0.050143314519857846,
+   "null_sd_bits": 0.015198373734649034,
+   "null_max_bits": 0.1018189484508869,
+   "mi_minus_null_mean_bits": 0.7517891875635945,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 3.0940253743454806,
+   "target_entropy_bits": 0.8019325020834525,
+   "confound": "contains killtype; see the killtype row"
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "convention+killtype",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 25,
+   "mi_bits": 0.8019325020834523,
+   "null_mean_bits": 0.07658577071168217,
+   "null_sd_bits": 0.018313715272939395,
+   "null_max_bits": 0.15214249138771616,
+   "mi_minus_null_mean_bits": 0.7253467313717702,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 3.617894041646944,
+   "target_entropy_bits": 0.8019325020834525,
+   "confound": "contains killtype; see the killtype row"
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "killtype+mechanism_family",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 37,
+   "mi_bits": 0.8019325020834523,
+   "null_mean_bits": 0.11514259358331352,
+   "null_sd_bits": 0.021770457864971726,
+   "null_max_bits": 0.18824176608980525,
+   "mi_minus_null_mean_bits": 0.6867899085001388,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 4.265303397738384,
+   "target_entropy_bits": 0.8019325020834525,
+   "confound": "contains killtype; see the killtype row"
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "convention+mechanism_family",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 47,
+   "mi_bits": 0.19090204894128018,
+   "null_mean_bits": 0.15094253977267993,
+   "null_sd_bits": 0.02660210324665866,
+   "null_max_bits": 0.23796609688081438,
+   "mi_minus_null_mean_bits": 0.03995950916860025,
+   "p_value": 0.0845771144278607,
+   "n_permutations": 200,
+   "axis_entropy_bits": 4.908776388428798,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "carrier+convention",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 22,
+   "mi_bits": 0.08699400287634095,
+   "null_mean_bits": 0.06742392116227071,
+   "null_sd_bits": 0.0153041387305021,
+   "null_max_bits": 0.11824581671736989,
+   "mi_minus_null_mean_bits": 0.019570081714070237,
+   "p_value": 0.0945273631840796,
+   "n_permutations": 200,
+   "axis_entropy_bits": 3.75393133760456,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "carrier",
+   "kind": "single",
+   "n_records": 258,
+   "n_levels": 4,
+   "mi_bits": 0.02728551308413371,
+   "null_mean_bits": 0.008162962453413542,
+   "null_sd_bits": 0.008126651814030736,
+   "null_max_bits": 0.08266424598558511,
+   "mi_minus_null_mean_bits": 0.01912255063072017,
+   "p_value": 0.01990049751243781,
+   "n_permutations": 200,
+   "axis_entropy_bits": 1.6316092192464176,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "mechanism_family",
+   "kind": "single",
+   "n_records": 258,
+   "n_levels": 12,
+   "mi_bits": 0.050833498919594454,
+   "null_mean_bits": 0.0334587692278854,
+   "null_sd_bits": 0.012307311496120838,
+   "null_max_bits": 0.07874704617852822,
+   "mi_minus_null_mean_bits": 0.017374729691709057,
+   "p_value": 0.11442786069651742,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.921411724768594,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "carrier+mechanism_family",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 37,
+   "mi_bits": 0.12941423987780162,
+   "null_mean_bits": 0.114139624795963,
+   "null_sd_bits": 0.020779072591485665,
+   "null_max_bits": 0.18174984651433043,
+   "mi_minus_null_mean_bits": 0.015274615081838624,
+   "p_value": 0.22388059701492538,
+   "n_permutations": 200,
+   "axis_entropy_bits": 4.264512474458232,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "convention",
+   "kind": "single",
+   "n_records": 258,
+   "n_levels": 7,
+   "mi_bits": 0.03201257322059458,
+   "null_mean_bits": 0.017398518020554823,
+   "null_sd_bits": 0.009326592437279567,
+   "null_max_bits": 0.04707612898488606,
+   "mi_minus_null_mean_bits": 0.014614055200039756,
+   "p_value": 0.08955223880597014,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.2226093117433194,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "carrier+precision",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 13,
+   "mi_bits": 0.042394513768175206,
+   "null_mean_bits": 0.037831400476989165,
+   "null_sd_bits": 0.012156955551870297,
+   "null_max_bits": 0.07056837093433604,
+   "mi_minus_null_mean_bits": 0.004563113291186041,
+   "p_value": 0.3283582089552239,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.42976680362686,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "precision",
+   "kind": "single",
+   "n_records": 258,
+   "n_levels": 4,
+   "mi_bits": 0.006694448980900304,
+   "null_mean_bits": 0.008972469347120215,
+   "null_sd_bits": 0.007478095467689262,
+   "null_max_bits": 0.04150822251784673,
+   "mi_minus_null_mean_bits": -0.0022780203662199107,
+   "p_value": 0.4975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 0.8616269967082211,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "precision+convention",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 19,
+   "mi_bits": 0.04660530369737326,
+   "null_mean_bits": 0.05752535139903356,
+   "null_sd_bits": 0.015307494670579765,
+   "null_max_bits": 0.11764685886686023,
+   "mi_minus_null_mean_bits": -0.010920047701660301,
+   "p_value": 0.7562189054726368,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.971537847342179,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "lived_vs_died",
+   "axis": "precision+mechanism_family",
+   "kind": "pair",
+   "n_records": 258,
+   "n_levels": 26,
+   "mi_bits": 0.06734691866448271,
+   "null_mean_bits": 0.0786609278299823,
+   "null_sd_bits": 0.01821655001011907,
+   "null_max_bits": 0.13113092162408937,
+   "mi_minus_null_mean_bits": -0.011314009165499586,
+   "p_value": 0.6716417910447762,
+   "n_permutations": 200,
+   "axis_entropy_bits": 3.6323385212850234,
+   "target_entropy_bits": 0.8019325020834525
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "killtype",
+   "kind": "single",
+   "n_records": 277,
+   "n_levels": 6,
+   "mi_bits": 0.9751434240676905,
+   "null_mean_bits": 0.04425752835995764,
+   "null_sd_bits": 0.014274587738050494,
+   "null_max_bits": 0.09606838501766381,
+   "mi_minus_null_mean_bits": 0.9308858957077328,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 1.5562055628696219,
+   "target_entropy_bits": 1.3751160774323963,
+   "confound": "CONSTRUCTION ARTIFACT: killtype and outcome are both parsed from the same status string, and killtype is 'none' by definition for every non-kill. This MI is inflated by definition and is not a finding."
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "carrier+killtype",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 17,
+   "mi_bits": 1.043755678636747,
+   "null_mean_bits": 0.1412174897651439,
+   "null_sd_bits": 0.0228608950917188,
+   "null_max_bits": 0.20547748054689186,
+   "mi_minus_null_mean_bits": 0.9025381888716031,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 3.1147392635486084,
+   "target_entropy_bits": 1.3751160774323963,
+   "confound": "contains killtype; see the killtype row"
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "convention+killtype",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 26,
+   "mi_bits": 1.092916909584562,
+   "null_mean_bits": 0.19604637449231477,
+   "null_sd_bits": 0.025501277090916975,
+   "null_max_bits": 0.27390200655393077,
+   "mi_minus_null_mean_bits": 0.8968705350922471,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 3.657950069216908,
+   "target_entropy_bits": 1.3751160774323963,
+   "confound": "contains killtype; see the killtype row"
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "precision+killtype",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 15,
+   "mi_bits": 0.9982449045104356,
+   "null_mean_bits": 0.1145743080703303,
+   "null_sd_bits": 0.021042873231606245,
+   "null_max_bits": 0.17242830494484562,
+   "mi_minus_null_mean_bits": 0.8836705964401053,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.394903470748774,
+   "target_entropy_bits": 1.3751160774323963,
+   "confound": "contains killtype; see the killtype row"
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "killtype+mechanism_family",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 38,
+   "mi_bits": 1.0742291339101109,
+   "null_mean_bits": 0.2780526019218572,
+   "null_sd_bits": 0.03182026974984515,
+   "null_max_bits": 0.3525764452864312,
+   "mi_minus_null_mean_bits": 0.7961765319882537,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 4.3242804162300015,
+   "target_entropy_bits": 1.3751160774323963,
+   "confound": "contains killtype; see the killtype row"
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "convention+mechanism_family",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 49,
+   "mi_bits": 0.45996068581884575,
+   "null_mean_bits": 0.3579332451459536,
+   "null_sd_bits": 0.034365831107654336,
+   "null_max_bits": 0.4529252348531238,
+   "mi_minus_null_mean_bits": 0.10202744067289216,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 4.931987403166024,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "carrier+convention",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 22,
+   "mi_bits": 0.2841130417615192,
+   "null_mean_bits": 0.1864730763854558,
+   "null_sd_bits": 0.024133654824632856,
+   "null_max_bits": 0.272170038683557,
+   "mi_minus_null_mean_bits": 0.0976399653760634,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 3.7421546679654543,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "convention",
+   "kind": "single",
+   "n_records": 277,
+   "n_levels": 7,
+   "mi_bits": 0.1527072447332043,
+   "null_mean_bits": 0.061282557032859175,
+   "null_sd_bits": 0.016009304087897656,
+   "null_max_bits": 0.10920451841624185,
+   "mi_minus_null_mean_bits": 0.09142468770034512,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.2195075735209198,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "precision+convention",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 19,
+   "mi_bits": 0.21714936947731905,
+   "null_mean_bits": 0.1496198067548879,
+   "null_sd_bits": 0.022889947707063544,
+   "null_max_bits": 0.23029869137428408,
+   "mi_minus_null_mean_bits": 0.06752956272243116,
+   "p_value": 0.009950248756218905,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.98102546714194,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "carrier",
+   "kind": "single",
+   "n_records": 277,
+   "n_levels": 4,
+   "mi_bits": 0.08536813829587347,
+   "null_mean_bits": 0.03515160090482633,
+   "null_sd_bits": 0.012464108963190949,
+   "null_max_bits": 0.07528149430086324,
+   "mi_minus_null_mean_bits": 0.050216537391047145,
+   "p_value": 0.004975124378109453,
+   "n_permutations": 200,
+   "axis_entropy_bits": 1.615947154698559,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "carrier+mechanism_family",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 37,
+   "mi_bits": 0.3100846708997022,
+   "null_mean_bits": 0.2775011951341278,
+   "null_sd_bits": 0.030099917659636332,
+   "null_max_bits": 0.36414853775199324,
+   "mi_minus_null_mean_bits": 0.03258347576557441,
+   "p_value": 0.15920398009950248,
+   "n_permutations": 200,
+   "axis_entropy_bits": 4.251284299591112,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "carrier+precision",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 13,
+   "mi_bits": 0.12627665127862378,
+   "null_mean_bits": 0.09973167430699988,
+   "null_sd_bits": 0.021558811914488187,
+   "null_max_bits": 0.15985173496115104,
+   "mi_minus_null_mean_bits": 0.026544976971623904,
+   "p_value": 0.11442786069651742,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.416058468642548,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "mechanism_family",
+   "kind": "single",
+   "n_records": 277,
+   "n_levels": 12,
+   "mi_bits": 0.1352354735562198,
+   "null_mean_bits": 0.10965352496873747,
+   "null_sd_bits": 0.01866739127574922,
+   "null_max_bits": 0.18606369013144577,
+   "mi_minus_null_mean_bits": 0.02558194858748232,
+   "p_value": 0.08955223880597014,
+   "n_permutations": 200,
+   "axis_entropy_bits": 2.9349360334043184,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "precision+mechanism_family",
+   "kind": "pair",
+   "n_records": 277,
+   "n_levels": 27,
+   "mi_bits": 0.21301600241981727,
+   "null_mean_bits": 0.20536273294824564,
+   "null_sd_bits": 0.02698976840377842,
+   "null_max_bits": 0.2922614682805159,
+   "mi_minus_null_mean_bits": 0.007653269471571633,
+   "p_value": 0.3333333333333333,
+   "n_permutations": 200,
+   "axis_entropy_bits": 3.6603333106114415,
+   "target_entropy_bits": 1.3751160774323963
+  },
+  {
+   "target": "outcome_5class",
+   "axis": "precision",
+   "kind": "single",
+   "n_records": 277,
+   "n_levels": 4,
+   "mi_bits": 0.02667062094508983,
+   "null_mean_bits": 0.03121539975144938,
+   "null_sd_bits": 0.009863613150193939,
+   "null_max_bits": 0.05884880882948814,
+   "mi_minus_null_mean_bits": -0.004544778806359551,
+   "p_value": 0.6417910447761194,
+   "n_permutations": 200,
+   "axis_entropy_bits": 0.8633035608771809,
+   "target_entropy_bits": 1.3751160774323963
+  }
+ ],
+ "concentrations": [
+  {
+   "axis": "killtype",
+   "value": "none",
+   "n": 63,
+   "n_lived": 63,
+   "lived_rate": 1.0,
+   "lift_vs_base": 4.095238095238096,
+   "lived_idx": [
+    0,
+    13,
+    14,
+    15,
+    22,
+    23,
+    29,
+    30,
+    37,
+    44,
+    50,
+    52,
+    53,
+    58,
+    59,
+    72,
+    73,
+    120,
+    121,
+    122,
+    124,
+    125,
+    126,
+    127,
+    129,
+    165,
+    167,
+    170,
+    171,
+    172,
+    176,
+    177,
+    178,
+    180,
+    181,
+    182,
+    183,
+    184,
+    190,
+    196,
+    197,
+    200,
+    201,
+    206,
+    207,
+    213,
+    215,
+    222,
+    223,
+    226,
+    229,
+    230,
+    234,
+    237,
+    238,
+    239,
+    242,
+    243,
+    252,
+    254,
+    267,
+    268,
+    276
+   ]
+  },
+  {
+   "axis": "killtype",
+   "value": "executed_measurement",
+   "n": 157,
+   "n_lived": 0,
+   "lived_rate": 0.0,
+   "lift_vs_base": 0.0,
+   "lived_idx": []
+  },
+  {
+   "axis": "killtype",
+   "value": "preexecution_static",
+   "n": 26,
+   "n_lived": 0,
+   "lived_rate": 0.0,
+   "lift_vs_base": 0.0,
+   "lived_idx": []
+  },
+  {
+   "axis": "carrier",
+   "value": "zonal_harmonic",
+   "n": 33,
+   "n_lived": 2,
+   "lived_rate": 0.06060606060606061,
+   "lift_vs_base": 0.24819624819624822,
+   "lived_idx": [
+    23,
+    121
+   ]
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "compiler_schedule",
+   "n": 42,
+   "n_lived": 15,
+   "lived_rate": 0.35714285714285715,
+   "lift_vs_base": 1.4625850340136055,
+   "lived_idx": [
+    14,
+    15,
+    50,
+    53,
+    58,
+    59,
+    72,
+    73,
+    167,
+    170,
+    172,
+    176,
+    178,
+    215,
+    268
+   ]
+  },
+  {
+   "axis": "convention",
+   "value": "protocol",
+   "n": 46,
+   "n_lived": 15,
+   "lived_rate": 0.32608695652173914,
+   "lift_vs_base": 1.3354037267080745,
+   "lived_idx": [
+    22,
+    23,
+    30,
+    37,
+    52,
+    165,
+    170,
+    196,
+    230,
+    239,
+    242,
+    243,
+    252,
+    254,
+    276
+   ]
+  },
+  {
+   "axis": "carrier",
+   "value": "kerdock_mub",
+   "n": 42,
+   "n_lived": 14,
+   "lived_rate": 0.3333333333333333,
+   "lift_vs_base": 1.3650793650793651,
+   "lived_idx": [
+    72,
+    180,
+    183,
+    184,
+    190,
+    196,
+    200,
+    201,
+    206,
+    207,
+    226,
+    229,
+    242,
+    276
+   ]
+  },
+  {
+   "axis": "convention",
+   "value": "raw_mse_variance",
+   "n": 93,
+   "n_lived": 19,
+   "lived_rate": 0.20430107526881722,
+   "lift_vs_base": 0.8366615463389658,
+   "lived_idx": [
+    0,
+    13,
+    14,
+    44,
+    126,
+    127,
+    172,
+    177,
+    200,
+    201,
+    207,
+    222,
+    223,
+    226,
+    229,
+    234,
+    237,
+    238,
+    267
+   ]
+  },
+  {
+   "axis": "precision",
+   "value": "unstated",
+   "n": 218,
+   "n_lived": 50,
+   "lived_rate": 0.22935779816513763,
+   "lift_vs_base": 0.9392747924858017,
+   "lived_idx": [
+    0,
+    13,
+    14,
+    22,
+    23,
+    29,
+    30,
+    37,
+    44,
+    72,
+    73,
+    120,
+    121,
+    122,
+    124,
+    165,
+    167,
+    170,
+    171,
+    172,
+    176,
+    177,
+    178,
+    180,
+    181,
+    182,
+    183,
+    184,
+    190,
+    196,
+    197,
+    200,
+    201,
+    206,
+    207,
+    213,
+    222,
+    223,
+    226,
+    229,
+    230,
+    234,
+    237,
+    238,
+    239,
+    242,
+    243,
+    267,
+    268,
+    276
+   ]
+  },
+  {
+   "axis": "convention",
+   "value": "flop_cost_wall",
+   "n": 73,
+   "n_lived": 15,
+   "lived_rate": 0.2054794520547945,
+   "lift_vs_base": 0.8414872798434442,
+   "lived_idx": [
+    15,
+    73,
+    125,
+    129,
+    167,
+    171,
+    176,
+    178,
+    180,
+    182,
+    197,
+    206,
+    213,
+    215,
+    268
+   ]
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "sampler",
+   "n": 42,
+   "n_lived": 13,
+   "lived_rate": 0.30952380952380953,
+   "lift_vs_base": 1.2675736961451247,
+   "lived_idx": [
+    0,
+    127,
+    129,
+    182,
+    184,
+    190,
+    201,
+    229,
+    230,
+    238,
+    239,
+    267,
+    276
+   ]
+  },
+  {
+   "axis": "convention",
+   "value": "adjusted_score",
+   "n": 6,
+   "n_lived": 4,
+   "lived_rate": 0.6666666666666666,
+   "lift_vs_base": 2.7301587301587302,
+   "lived_idx": [
+    53,
+    59,
+    183,
+    190
+   ]
+  },
+  {
+   "axis": "precision",
+   "value": "f32",
+   "n": 15,
+   "n_lived": 6,
+   "lived_rate": 0.4,
+   "lift_vs_base": 1.6380952380952383,
+   "lived_idx": [
+    50,
+    53,
+    58,
+    59,
+    127,
+    215
+   ]
+  },
+  {
+   "axis": "carrier",
+   "value": "none",
+   "n": 151,
+   "n_lived": 39,
+   "lived_rate": 0.2582781456953642,
+   "lift_vs_base": 1.0577105014191106,
+   "lived_idx": [
+    22,
+    29,
+    30,
+    37,
+    44,
+    52,
+    58,
+    59,
+    73,
+    120,
+    122,
+    124,
+    125,
+    126,
+    127,
+    129,
+    165,
+    167,
+    170,
+    171,
+    172,
+    176,
+    177,
+    181,
+    182,
+    213,
+    215,
+    222,
+    223,
+    230,
+    234,
+    237,
+    238,
+    239,
+    243,
+    252,
+    254,
+    267,
+    268
+   ]
+  },
+  {
+   "axis": "convention",
+   "value": "memory",
+   "n": 12,
+   "n_lived": 5,
+   "lived_rate": 0.4166666666666667,
+   "lift_vs_base": 1.7063492063492065,
+   "lived_idx": [
+    29,
+    50,
+    58,
+    72,
+    184
+   ]
+  },
+  {
+   "axis": "killtype",
+   "value": "protocol_procedural",
+   "n": 7,
+   "n_lived": 0,
+   "lived_rate": 0.0,
+   "lift_vs_base": 0.0,
+   "lived_idx": []
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "diagnostic_falsifier",
+   "n": 23,
+   "n_lived": 4,
+   "lived_rate": 0.17391304347826086,
+   "lift_vs_base": 0.7122153209109731,
+   "lived_idx": [
+    242,
+    243,
+    252,
+    254
+   ]
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "selection",
+   "n": 2,
+   "n_lived": 2,
+   "lived_rate": 1.0,
+   "lift_vs_base": 4.095238095238096,
+   "lived_idx": [
+    124,
+    180
+   ]
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "design_frame",
+   "n": 43,
+   "n_lived": 9,
+   "lived_rate": 0.20930232558139536,
+   "lift_vs_base": 0.8571428571428572,
+   "lived_idx": [
+    13,
+    23,
+    181,
+    183,
+    200,
+    206,
+    207,
+    226,
+    237
+   ]
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "low_rank_factorization",
+   "n": 6,
+   "n_lived": 0,
+   "lived_rate": 0.0,
+   "lift_vs_base": 0.0,
+   "lived_idx": []
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "unclassified",
+   "n": 10,
+   "n_lived": 1,
+   "lived_rate": 0.1,
+   "lift_vs_base": 0.40952380952380957,
+   "lived_idx": [
+    197
+   ]
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "control_variate",
+   "n": 5,
+   "n_lived": 0,
+   "lived_rate": 0.0,
+   "lift_vs_base": 0.0,
+   "lived_idx": []
+  },
+  {
+   "axis": "convention",
+   "value": "unstated",
+   "n": 25,
+   "n_lived": 5,
+   "lived_rate": 0.2,
+   "lift_vs_base": 0.8190476190476191,
+   "lived_idx": [
+    120,
+    121,
+    122,
+    124,
+    181
+   ]
+  },
+  {
+   "axis": "killtype",
+   "value": "one_shot_consumed",
+   "n": 4,
+   "n_lived": 0,
+   "lived_rate": 0.0,
+   "lift_vs_base": 0.0,
+   "lived_idx": []
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "transport",
+   "n": 69,
+   "n_lived": 16,
+   "lived_rate": 0.2318840579710145,
+   "lift_vs_base": 0.9496204278812975,
+   "lived_idx": [
+    22,
+    29,
+    30,
+    44,
+    52,
+    120,
+    121,
+    122,
+    125,
+    126,
+    165,
+    171,
+    177,
+    213,
+    222,
+    234
+   ]
+  },
+  {
+   "axis": "precision",
+   "value": "f64",
+   "n": 9,
+   "n_lived": 3,
+   "lived_rate": 0.3333333333333333,
+   "lift_vs_base": 1.3650793650793651,
+   "lived_idx": [
+    125,
+    126,
+    254
+   ]
+  },
+  {
+   "axis": "convention",
+   "value": "residual_walltime",
+   "n": 3,
+   "n_lived": 0,
+   "lived_rate": 0.0,
+   "lift_vs_base": 0.0,
+   "lived_idx": []
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "infrastructure",
+   "n": 6,
+   "n_lived": 1,
+   "lived_rate": 0.16666666666666666,
+   "lift_vs_base": 0.6825396825396826,
+   "lived_idx": [
+    196
+   ]
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "learned_closure",
+   "n": 6,
+   "n_lived": 1,
+   "lived_rate": 0.16666666666666666,
+   "lift_vs_base": 0.6825396825396826,
+   "lived_idx": [
+    223
+   ]
+  },
+  {
+   "axis": "killtype",
+   "value": "harness_instrument",
+   "n": 1,
+   "n_lived": 0,
+   "lived_rate": 0.0,
+   "lift_vs_base": 0.0,
+   "lived_idx": []
+  },
+  {
+   "axis": "carrier",
+   "value": "haar_random_spherical",
+   "n": 32,
+   "n_lived": 8,
+   "lived_rate": 0.25,
+   "lift_vs_base": 1.023809523809524,
+   "lived_idx": [
+    0,
+    13,
+    14,
+    15,
+    50,
+    53,
+    178,
+    197
+   ]
+  },
+  {
+   "axis": "precision",
+   "value": "mixed",
+   "n": 16,
+   "n_lived": 4,
+   "lived_rate": 0.25,
+   "lift_vs_base": 1.023809523809524,
+   "lived_idx": [
+    15,
+    52,
+    129,
+    252
+   ]
+  },
+  {
+   "axis": "mechanism_family",
+   "value": "analytic_identity",
+   "n": 4,
+   "n_lived": 1,
+   "lived_rate": 0.25,
+   "lift_vs_base": 1.023809523809524,
+   "lived_idx": [
+    37
+   ]
+  }
+ ],
+ "robustness": {
+  "claim": "carrier is the only single axis clearing the permutation null on lived_vs_died. These subsets test whether that survives removing the cell and the lineage that could be manufacturing it.",
+  "carrier_mi_subsets": [
+   {
+    "subset": "all decided records",
+    "n_records": 258,
+    "mi_bits": 0.02728551308413371,
+    "null_mean_bits": 0.008179197651977574,
+    "null_sd_bits": 0.006370250013576547,
+    "null_max_bits": 0.033579427713397544,
+    "mi_minus_null_mean_bits": 0.019106315432156136,
+    "p_value": 0.01990049751243781,
+    "n_permutations": 200
+   },
+   {
+    "subset": "zonal_harmonic records removed",
+    "n_records": 225,
+    "mi_bits": 0.003170039245080726,
+    "null_mean_bits": 0.006444566180856775,
+    "null_sd_bits": 0.006239173192011882,
+    "null_max_bits": 0.044575932603301685,
+    "mi_minus_null_mean_bits": -0.0032745269357760494,
+    "p_value": 0.6567164179104478,
+    "n_permutations": 200
+   },
+   {
+    "subset": "transport mechanism family removed",
+    "n_records": 189,
+    "mi_bits": 0.03130261867930929,
+    "null_mean_bits": 0.013819841345965587,
+    "null_sd_bits": 0.011324039106532811,
+    "null_max_bits": 0.07156373910142877,
+    "mi_minus_null_mean_bits": 0.017482777333343698,
+    "p_value": 0.07462686567164178,
+    "n_permutations": 200
+   }
+  ],
+  "zonal_within_family": [
+   {
+    "mechanism_family": "compiler_schedule",
+    "n": 42,
+    "by_carrier": {
+     "haar_random_spherical": {
+      "n": 8,
+      "lived": 5
+     },
+     "kerdock_mub": {
+      "n": 4,
+      "lived": 1
+     },
+     "none": {
+      "n": 27,
+      "lived": 9
+     },
+     "zonal_harmonic": {
+      "n": 3,
+      "lived": 0
+     }
+    }
+   },
+   {
+    "mechanism_family": "design_frame",
+    "n": 43,
+    "by_carrier": {
+     "haar_random_spherical": {
+      "n": 9,
+      "lived": 1
+     },
+     "kerdock_mub": {
+      "n": 19,
+      "lived": 5
+     },
+     "none": {
+      "n": 10,
+      "lived": 2
+     },
+     "zonal_harmonic": {
+      "n": 5,
+      "lived": 1
+     }
+    }
+   },
+   {
+    "mechanism_family": "diagnostic_falsifier",
+    "n": 23,
+    "by_carrier": {
+     "haar_random_spherical": {
+      "n": 5,
+      "lived": 0
+     },
+     "kerdock_mub": {
+      "n": 5,
+      "lived": 1
+     },
+     "none": {
+      "n": 11,
+      "lived": 3
+     },
+     "zonal_harmonic": {
+      "n": 2,
+      "lived": 0
+     }
+    }
+   },
+   {
+    "mechanism_family": "sampler",
+    "n": 42,
+    "by_carrier": {
+     "haar_random_spherical": {
+      "n": 4,
+      "lived": 1
+     },
+     "kerdock_mub": {
+      "n": 11,
+      "lived": 5
+     },
+     "none": {
+      "n": 22,
+      "lived": 7
+     },
+     "zonal_harmonic": {
+      "n": 5,
+      "lived": 0
+     }
+    }
+   },
+   {
+    "mechanism_family": "transport",
+    "n": 69,
+    "by_carrier": {
+     "haar_random_spherical": {
+      "n": 1,
+      "lived": 0
+     },
+     "none": {
+      "n": 57,
+      "lived": 15
+     },
+     "zonal_harmonic": {
+      "n": 11,
+      "lived": 1
+     }
+    }
+   }
+  ]
+ }
+}

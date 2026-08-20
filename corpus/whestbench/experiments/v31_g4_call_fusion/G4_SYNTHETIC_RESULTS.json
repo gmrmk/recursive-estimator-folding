@@ -1,0 +1,83 @@
+{
+  "schema": "v31-g4-synthetic-results-v2",
+  "recorded_utc": "2026-08-11T17:14:13Z",
+  "status": "COMPONENT_SYNTHETIC_PASS_ONLY",
+  "manifest": {
+    "path": "PREEXECUTION_MANIFEST.json",
+    "schema": "v31-g4-preexecution-manifest-v7",
+    "sha256": "F1F04CCD5858BA3A1BC93851CCF64324B4DDA5F1E93A98BBB00CB2FB8722182C",
+    "hash_bindings": "PASS: 9 source files and 6 fixtures"
+  },
+  "commands": [
+    "../../work/whest-v014/Scripts/python.exe -B -m unittest corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_integration_static corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_static corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_grouped_kernel corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_flopscope_synthetic corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_setup_synthetic corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_production_flopscope_synthetic",
+    "../../work/whest-v014/Scripts/python.exe -B -m unittest corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_production_flopscope_synthetic corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_setup_synthetic corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_flopscope_synthetic corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_grouped_kernel corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_static corpus.whestbench.experiments.v31_g4_call_fusion.test_g4_integration_static"
+  ],
+  "result": {
+    "tests_run": 25,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "reported_wall_seconds_forward_order": 4.528,
+    "reported_wall_seconds_reverse_order": 4.496
+  },
+  "post_manifest_setup_probes": {
+    "production_width_256": {
+      "status": "PASS",
+      "activation_shape": [64512, 256],
+      "dispatch_plan": [[4, 4096], [4, 4096], [4, 4096], [3, 4096], [1, 3072]],
+      "grouped_workspace_bytes": 63438848,
+      "note": "all five bound groups passed exact row coverage, sharing, shape, stride, nonoverlap, and in-place list-alias checks; inherited phase-transform SymmetryLossWarning was emitted; no predict call ran"
+    },
+    "validator_width_4": {
+      "status": "PASS",
+      "activation_shape": [64512, 4],
+      "dispatch_plan": [[4, 4096], [4, 4096], [4, 4096], [3, 4096], [1, 3072]],
+      "grouped_workspace_bytes": 1048688,
+      "note": "all five bound groups passed exact row coverage, sharing, shape, stride, nonoverlap, and in-place list-alias checks; no predict call ran"
+    }
+  },
+  "earned": [
+    "complete candidate-source surface is present; untouched parent members match their frozen hashes and the inherited GUARDS wrapper executable AST is parent-equivalent after stripping corrected documentation strings",
+    "the parent kernel remains a byte-exact prefix and cost_model.py remains byte-exact",
+    "all 65536 positive production-width pairs preserve the selected analytical bill and frozen call law",
+    "the public row_blocked_bill_identity helper now reports the grouped child while the parent helper remains available under an explicit parent name",
+    "production partition is 15x4096 plus 3072, grouped as 4,4,4,3,1",
+    "declared grouped workspace is exactly 63438848 bytes",
+    "deterministic NumPy fixtures are bitwise equal at physical row stride 256 for alias, nonalias, even, odd-tail, direct, n<k, n=k, n>k, finite extremes, zero matrices, and the production-size remainder",
+    "k=0 and n=0 replay the parent ValueError before grouped-core execution",
+    "an isolated pinned FlopScope 0.10.0 fixture is bitwise equal and charges the same analytical bill for five reduced-row hand-built cases",
+    "predeclared production-row pinned-FlopScope fixtures are word-exact and bill-exact at (m,k,n)=(64512,256,256) and (64512,256,253), charging 7427768320 and 7345191168 respectively while changing primary calls 16 to 5",
+    "the complete six-module suite is order-independent after isolating the FlopScope and setup subprocesses",
+    "both production-width and validator-width setup paths allocate and bind the declared activation with executable exact sharing/stride/nonoverlap assertions and without an MLP forward"
+  ],
+  "quarantined_history": [
+    "manifest v1 was superseded after receipt-semantics repair",
+    "manifest v2 exposed shared-module test contamination and its run is non-creditable",
+    "manifest v3 omitted the public receipt helper, recursive package surface, manifest self-verification, and replayable setup fixture",
+    "manifest v4 did not bind the mandatory Python no-bytecode replay flag",
+    "manifest v5 retained false inherited-wrapper provenance and lacked executable bound-view stride/nonoverlap assertions",
+    "manifest v6 exposed an order-dependent import path in the new production-row fixture; its forward PASS and reverse ERROR are non-creditable",
+    "only the v7 post-seal runs recorded here earn synthetic component credit"
+  ],
+  "unearned": [
+    "generated-network or full-wrapper parity",
+    "zero-width full-estimator M186 branch, guard report, output, and bill replay",
+    "numerical parity at every dynamic active-width transition on an estimator path",
+    "M186 or M187 guard-path behavior",
+    "complete dynamic FLOP bill including setup",
+    "whole-wrapper peak RSS",
+    "wall or residual-time reduction",
+    "Phase-2 legality or score-law applicability",
+    "adjusted-score improvement",
+    "candidate, package, promotion, selection, or submission status"
+  ],
+  "authority_used": {
+    "source_construction": true,
+    "deterministic_hand_matrix_synthetic_tests": true,
+    "generated_network_forward": false,
+    "truth_or_scorer": false,
+    "heldout_or_private_data": false,
+    "hosted_run": false,
+    "submission": false
+  }
+}

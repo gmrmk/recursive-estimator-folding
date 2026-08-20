@@ -1,0 +1,30 @@
+{
+  "candidate_id": "M150",
+  "date": "2026-08-07",
+  "mechanism": "direct all-output adjoint contraction of M148 canonical C_211 without dense source emission",
+  "scope": "generated source algebra and static feasibility only",
+  "status": "FROZEN_NO_EXECUTION_STATIC_KILL",
+  "bias_class": "exact algebra conditional on an exact certified response dual; no approximate dual is permitted",
+  "inputs_frozen": {
+    "canonical_blocks": [1, 2, 4],
+    "nodes_per_block": 49,
+    "ordered_singleton_factor": 0.5,
+    "distinct_label_exclusion": true,
+    "covariance_star": "V_ij=sum omega*a_i*a_j+1[i=j]sum omega*v_i",
+    "source_slots": ["aaaa", "aaab", "aabb"],
+    "M149_provider": "abstract; unfinished, no source hash bound"
+  },
+  "pre_execution_gates": {
+    "generated_small_width_exhaustive_parity": "max absolute error <= 3e-11 for B=1,2,4",
+    "response_atlas_requirement": "prove exact restricted all-output action on every bilinear form Phi; full generic dual and empirical low-rank fits fail",
+    "native_target_trace": "strictly below M148 K128 endpoint headroom after all state/coefficient/call/allocation/wall costs",
+    "ownership": "no second M121/M125b carrier; no C_211 duplication"
+  },
+  "static_falsifier": {
+    "full_response_dual_entries": 16777216,
+    "one_layer_all_output_exact_affine_pullback_billed": 34292629504,
+    "thirty_layer_all_output_exact_affine_pullback_billed": 1028778885120,
+    "conclusion": "existing exact response adjoints cannot satisfy the target trace gate"
+  },
+  "prohibited": ["response outcomes", "truth/scorer/contest data", "post-hoc rank selection", "unproved response compression", "submission or champion mutation"]
+}

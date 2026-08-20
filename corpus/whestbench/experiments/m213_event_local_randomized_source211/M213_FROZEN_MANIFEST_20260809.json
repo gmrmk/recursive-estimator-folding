@@ -1,0 +1,20 @@
+{
+  "mutation": "m213_event_local_randomized_source211",
+  "status": "PREDECLARED_BEFORE_IMPLEMENTATION",
+  "generated_only": true,
+  "response_free": true,
+  "widths": [2, 3, 4, 5, 6, 7],
+  "state_seeds": [213700002, 213700003, 213700004, 213700005, 213700006, 213700007],
+  "outer_seeds": [213710002, 213710003, 213710004, 213710005, 213710006, 213710007],
+  "confidence": {"blocks": 12, "draws_per_block": 64, "level": 0.99},
+  "distinct_event": {"outer_draws_per_event": 1, "conditional_m178_calls": 1},
+  "collision_provider": "on_demand_only; all-owner cache is audit-only",
+  "coefficient_semantics": "connected_minus_tree",
+  "m178_local_radius_limit": "2e-7*(1+abs(midpoint))",
+  "m178_worst_case_inclusive_charged_flops": 4048,
+  "m198_invoked": false,
+  "four_distinct_wedge": false,
+  "variance_efficacy_authorized": false,
+  "m198_invocation_order": "future next-affine-W Source211 contraction, then next pre-ReLU context",
+  "forbidden_inputs": ["challenge truth", "scorer", "weights", "leaderboard", "responses"]
+}

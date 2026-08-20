@@ -1,0 +1,537 @@
+{
+  "artifact_sha256": {
+    "PREDECLARATION.md": "2254038c82f0c03f32d999b8e53e1d3a21df383608d54278bfd390bb2ee45bfb",
+    "VERDICT.md": "b75d6b85573415526be762bb8b65c470cf9244601121b8d3f8e7c8b0d93d522b",
+    "step1_jacobian_cd.py": "35e352a764a4317f6e73b32425e5f1855cc7934f4270f9eb40bf042c9f8ab289",
+    "step1_results.json": "711e1d354ad3717e86105492e0d42b0303defbe62238b4666064f2e270aecd11",
+    "step2_psi_swap.py": "6c7afaf77dbe2c7912f4d2c105172c0f535a2b54e13621341761c12b9caaf7b8",
+    "step2_results.json": "cde475ceba8ad3a2511ba76aa6d49d9e5766dbbfc4d27c9c514268faf743b784",
+    "step3_crosscheck.json": "df0faf6c4346aba208a042372b6c5fd285e781f8757905d99d361af1676beff8",
+    "step3_crosscheck.py": "1024c1e1ee3e4db3aabfbf3b2abf0ecc0f8139127f54b4421c620c6b7d98ea5f"
+  },
+  "decisive_numbers": {
+    "cached_reference_reproduction_rel_diff": 0.0,
+    "exact_psi_ratio": 1.0064508507414671,
+    "exact_psi_ratio_ci95": [
+      1.0001717201220055,
+      1.0133491606824023
+    ],
+    "exact_psi_wins_vs_generic": 9,
+    "exact_psi_wins_vs_surrogate_noladder": 0,
+    "explicit_matrix_crosscheck_max_rel_diff": 2.2283794924492745e-15,
+    "frozen_surrogate_noladder_ratio": 0.9114717897200765,
+    "paired_ratio_difference_ci95": [
+      0.07792181553318175,
+      0.11131877160947787
+    ],
+    "paired_ratio_difference_point": 0.09497906102139064,
+    "paired_sign_test_two_sided_p": 4.656612873077393e-10,
+    "step1_gauss_legendre_vs_frozen_observable": 3.2687270594713815e-14,
+    "step1_max_rel_err_alpha_block": 6.535666962912099e-10,
+    "step1_max_rel_err_ell_block": 3.6009255606963945e-10
+  },
+  "deployment": {
+    "ceiling_flops": 80000000000,
+    "cost_mutation_attempted": false,
+    "judge_projected_total_flops": 89924567040,
+    "status": "closed, untouched",
+    "target_geometry_flops_4Ksq_p_at_K3072_p512": 19327352832
+  },
+  "deviations": [
+    "Frozen implementation imported read-only from work/scorefloor_generation/ecn_jacobian_maxent_compressor/experiment.py (outside the publish repo); never copied or edited. Declared in PREDECLARATION.md section 0 before any code.",
+    "No other deviation: no added arm, no retuned gate, no data-selected constant, no scale-down."
+  ],
+  "firewall": {
+    "competition_or_truth_or_scorer_read": false,
+    "git_commands": false,
+    "m245_M243_M244_touched": false,
+    "network_or_submission": false,
+    "synthetic_frozen_generator_only": true
+  },
+  "gate_result": "KILL_CONFIRMED",
+  "graveyard_item": "gm_ecn_psi",
+  "ledger_record": {
+    "file": "corpus/whestbench/headroom/fold_ledger.json",
+    "id": "ecn_exact_jspace_psi_streaming",
+    "index": 35,
+    "parent_id": "ecn_jacobian_maxent_compressor",
+    "parent_index": 34,
+    "parent_status": "killed",
+    "status_after_this_run": "measured_and_killed",
+    "status_before": "proposed"
+  },
+  "mining_search_key": "ecn_exact_jspace_psi_streaming",
+  "observed": {
+    "step1": "PASS",
+    "step2": "FAIL both gates; exact-psi ratio 1.0064508507414671, worse than generic and worse than the surrogate on 32/32 units"
+  },
+  "predicted_on_record": {
+    "expected_gain_for_score": "ZERO",
+    "step1": "PASS, max relative error below 1e-8",
+    "step2": "FAIL both gates; exact-psi ratio in [0.85, 1.05], above 0.8942 and far above 0.80"
+  },
+  "schema": "gm-ecn-psi-verdict-v1",
+  "step1_jacobian_central_difference": {
+    "alpha_range": [
+      -2.3225055662652805,
+      2.085003063365958
+    ],
+    "ell_range": [
+      -1.036951168065721,
+      0.7798434029980418
+    ],
+    "environment": {
+      "numpy": "2.4.6",
+      "python": "3.14.4"
+    },
+    "gate_thresholds": {
+      "derivative_rel": 1e-06,
+      "observable_rel": 1e-10
+    },
+    "gates": {
+      "G1A_alpha_block_cd_h1e-5": true,
+      "G1B_ell_block_cd_h1e-5": true,
+      "G1C_gl_cd_alpha_block": true,
+      "G1C_gl_cd_ell_block": true,
+      "G1C_gl_observable_matches_frozen": true,
+      "G1D_step_halving_alpha": true,
+      "G1D_step_halving_ell": true
+    },
+    "max_rel_err": {
+      "G1A_alpha_block_h1e-5": 6.535666962912099e-10,
+      "G1B_ell_block_h1e-5": 3.6009255606963945e-10,
+      "G1C_gl_cd_alpha_block": 1.401756002358895e-10,
+      "G1C_gl_cd_ell_block": 6.582785484237782e-11,
+      "G1C_gl_vs_frozen_observable": 3.2687270594713815e-14,
+      "G1D_alpha_block_h5e-6": 3.4236629155771126e-10,
+      "G1D_ell_block_h5e-6": 5.142192866221394e-10,
+      "identity_hprime_equals_Phi": 6.664295034754594e-10
+    },
+    "n_derivative_entries": 18432,
+    "n_theta_points": 9216,
+    "schema": "gm-ecn-psi-step1-jacobian-cd-v1",
+    "sigma_range": [
+      0.3545339502983291,
+      2.1811306802278816
+    ],
+    "step1_pass": true
+  },
+  "step2_exact_psi_swap": {
+    "aggregate_ratio_vs_generic": {
+      "generic_q3": 1.0,
+      "jacobian_exact_psi": 1.0064508507414671,
+      "jacobian_maxent": 0.9114717897200765
+    },
+    "aggregate_rms": {
+      "generic_q3": 0.014398754762932663,
+      "jacobian_exact_psi": 0.014491638980771332,
+      "jacobian_maxent": 0.01312405877351071
+    },
+    "arms": [
+      "generic_q3",
+      "jacobian_maxent",
+      "jacobian_exact_psi"
+    ],
+    "bootstrap": {
+      "draws": 10000,
+      "exact_psi_ratio_ci95": [
+        1.0001717201220055,
+        1.0133491606824023
+      ],
+      "paired_ratio_difference_ci95": [
+        0.07792181553318175,
+        0.11131877160947787
+      ],
+      "paired_ratio_difference_point": 0.09497906102139064,
+      "seed": 20260810,
+      "surrogate_noladder_ratio_ci95": [
+        0.8943761219240363,
+        0.9292714261331897
+      ]
+    },
+    "environment": {
+      "numpy": "2.4.6",
+      "python": "3.14.4"
+    },
+    "equivariance_exact_psi": {
+      "component_permutation_residual": 1.6653345369377348e-16,
+      "coordinate_gauge_residual": 2.220446049250313e-16
+    },
+    "gates": {
+      "G2_MATERIALITY_ratio_lt_0_8942": false,
+      "G2_PRIMARY_ratio_le_0_80": false,
+      "G2_PRIMARY_wins_ge_24_of_32": false,
+      "G2_REPRO": true,
+      "G2_STRUCT_all_finite": true,
+      "G2_STRUCT_assignment_noncollapse": true,
+      "G2_STRUCT_balanced_bin_masses": true,
+      "G2_STRUCT_component_permutation": true,
+      "G2_STRUCT_coordinate_gauge": true,
+      "G2_STRUCT_covariance_moment_exact": true,
+      "G2_STRUCT_mean_moment_exact": true,
+      "G2_STRUCT_medoids_unambiguous": true,
+      "G2_STRUCT_psd": true,
+      "G2_STRUCT_transport_marginals": true
+    },
+    "maxima_exact_psi": {
+      "bin_mass_residual": 1.1102230246251565e-16,
+      "covariance_residual": 6.439293542825908e-15,
+      "mean_residual": 1.0734468869344482e-14,
+      "negative_eigenvalue_magnitude": 0.0,
+      "repair_magnitude": 0.0,
+      "transport_marginal_residual": 1.7486012637846216e-15
+    },
+    "minimum_hard_assignment_rank_effective_exact_psi": 2.673193818477041,
+    "paired_sign_test_exact_vs_surrogate": {
+      "exact_better_on_units": 0,
+      "n_units": 32,
+      "two_sided_p": 4.656612873077393e-10
+    },
+    "per_unit_rms": [
+      {
+        "exact_psi_regularizer": 0.00045789615607080825,
+        "generic_q3": 0.017859076676464088,
+        "jacobian_exact_psi": 0.017625696432922857,
+        "jacobian_maxent": 0.014761652429353915,
+        "seed": 2026080600
+      },
+      {
+        "exact_psi_regularizer": 0.0004764397480933525,
+        "generic_q3": 0.01491281921367652,
+        "jacobian_exact_psi": 0.014788452830030727,
+        "jacobian_maxent": 0.013590418018548038,
+        "seed": 2026080601
+      },
+      {
+        "exact_psi_regularizer": 0.0005216928548866535,
+        "generic_q3": 0.012482694452036635,
+        "jacobian_exact_psi": 0.012800400924407875,
+        "jacobian_maxent": 0.011819662646204966,
+        "seed": 2026080602
+      },
+      {
+        "exact_psi_regularizer": 0.0004086919054370686,
+        "generic_q3": 0.015348867126067915,
+        "jacobian_exact_psi": 0.015489593285577906,
+        "jacobian_maxent": 0.01367300602583162,
+        "seed": 2026080603
+      },
+      {
+        "exact_psi_regularizer": 0.00045655712719770334,
+        "generic_q3": 0.012222584641727045,
+        "jacobian_exact_psi": 0.012333008060675981,
+        "jacobian_maxent": 0.011421347906253633,
+        "seed": 2026080604
+      },
+      {
+        "exact_psi_regularizer": 0.0005331856036964,
+        "generic_q3": 0.013054674279082369,
+        "jacobian_exact_psi": 0.013085050687311906,
+        "jacobian_maxent": 0.011131464782478805,
+        "seed": 2026080605
+      },
+      {
+        "exact_psi_regularizer": 0.00037265173473840493,
+        "generic_q3": 0.013328512349968303,
+        "jacobian_exact_psi": 0.01341500810466987,
+        "jacobian_maxent": 0.011640090937492223,
+        "seed": 2026080606
+      },
+      {
+        "exact_psi_regularizer": 0.00031538542134944633,
+        "generic_q3": 0.011875303968898972,
+        "jacobian_exact_psi": 0.013008861302691088,
+        "jacobian_maxent": 0.011661868903942151,
+        "seed": 2026080607
+      },
+      {
+        "exact_psi_regularizer": 0.0004382113611159904,
+        "generic_q3": 0.0157236793028652,
+        "jacobian_exact_psi": 0.015863601624046635,
+        "jacobian_maxent": 0.013491160879924526,
+        "seed": 2026080608
+      },
+      {
+        "exact_psi_regularizer": 0.00047855496198924717,
+        "generic_q3": 0.010540982437704646,
+        "jacobian_exact_psi": 0.010651699505104749,
+        "jacobian_maxent": 0.009294616499028128,
+        "seed": 2026080609
+      },
+      {
+        "exact_psi_regularizer": 0.000495490597485695,
+        "generic_q3": 0.01302603153404394,
+        "jacobian_exact_psi": 0.013047262827514054,
+        "jacobian_maxent": 0.011111733683473507,
+        "seed": 2026080610
+      },
+      {
+        "exact_psi_regularizer": 0.0004432452631652747,
+        "generic_q3": 0.01104892160618038,
+        "jacobian_exact_psi": 0.011189256936334607,
+        "jacobian_maxent": 0.01096380320977611,
+        "seed": 2026080611
+      },
+      {
+        "exact_psi_regularizer": 0.00039872178508248144,
+        "generic_q3": 0.013588609412830178,
+        "jacobian_exact_psi": 0.01351763726175867,
+        "jacobian_maxent": 0.01216053557391718,
+        "seed": 2026080612
+      },
+      {
+        "exact_psi_regularizer": 0.000506139473844684,
+        "generic_q3": 0.010974934426633791,
+        "jacobian_exact_psi": 0.011027043838100036,
+        "jacobian_maxent": 0.009786245169930046,
+        "seed": 2026080613
+      },
+      {
+        "exact_psi_regularizer": 0.0004587320740835643,
+        "generic_q3": 0.01395118526234913,
+        "jacobian_exact_psi": 0.013967263140486423,
+        "jacobian_maxent": 0.013316106701797378,
+        "seed": 2026080614
+      },
+      {
+        "exact_psi_regularizer": 0.0005788148487807311,
+        "generic_q3": 0.011796036618938476,
+        "jacobian_exact_psi": 0.012396328422219488,
+        "jacobian_maxent": 0.010880671831142762,
+        "seed": 2026080615
+      },
+      {
+        "exact_psi_regularizer": 0.0004566402898078618,
+        "generic_q3": 0.013084421651447641,
+        "jacobian_exact_psi": 0.01300330605403462,
+        "jacobian_maxent": 0.01267480302581157,
+        "seed": 2026080616
+      },
+      {
+        "exact_psi_regularizer": 0.0005015691909515318,
+        "generic_q3": 0.017549667027639788,
+        "jacobian_exact_psi": 0.017579464052777848,
+        "jacobian_maxent": 0.017391798919584672,
+        "seed": 2026080617
+      },
+      {
+        "exact_psi_regularizer": 0.0003394637108455976,
+        "generic_q3": 0.012192727407163638,
+        "jacobian_exact_psi": 0.012423786822508954,
+        "jacobian_maxent": 0.011260261272746742,
+        "seed": 2026080618
+      },
+      {
+        "exact_psi_regularizer": 0.00032843740987830876,
+        "generic_q3": 0.018664463363769472,
+        "jacobian_exact_psi": 0.018975102514783137,
+        "jacobian_maxent": 0.016453641066897198,
+        "seed": 2026080619
+      },
+      {
+        "exact_psi_regularizer": 0.0004155122302053318,
+        "generic_q3": 0.01754708401086046,
+        "jacobian_exact_psi": 0.01778167245613511,
+        "jacobian_maxent": 0.016613963067076624,
+        "seed": 2026080620
+      },
+      {
+        "exact_psi_regularizer": 0.0004054612119832605,
+        "generic_q3": 0.011958568537418784,
+        "jacobian_exact_psi": 0.012090485693166992,
+        "jacobian_maxent": 0.011027628025989297,
+        "seed": 2026080621
+      },
+      {
+        "exact_psi_regularizer": 0.00046076185799606733,
+        "generic_q3": 0.014792344745074393,
+        "jacobian_exact_psi": 0.01469458058456472,
+        "jacobian_maxent": 0.013694852908734552,
+        "seed": 2026080622
+      },
+      {
+        "exact_psi_regularizer": 0.0004428231111052417,
+        "generic_q3": 0.015276943537003925,
+        "jacobian_exact_psi": 0.015188955181330371,
+        "jacobian_maxent": 0.014782513259469391,
+        "seed": 2026080623
+      },
+      {
+        "exact_psi_regularizer": 0.0004881595287481203,
+        "generic_q3": 0.015558976812456484,
+        "jacobian_exact_psi": 0.015694302071470264,
+        "jacobian_maxent": 0.014830355277440983,
+        "seed": 2026080624
+      },
+      {
+        "exact_psi_regularizer": 0.0004970772532046808,
+        "generic_q3": 0.01595593757690144,
+        "jacobian_exact_psi": 0.01602773819455977,
+        "jacobian_maxent": 0.013668478173873686,
+        "seed": 2026080625
+      },
+      {
+        "exact_psi_regularizer": 0.00044657845272017476,
+        "generic_q3": 0.014570154754175816,
+        "jacobian_exact_psi": 0.013925065979868465,
+        "jacobian_maxent": 0.012945847872356028,
+        "seed": 2026080626
+      },
+      {
+        "exact_psi_regularizer": 0.0005827033677010813,
+        "generic_q3": 0.016921977430125964,
+        "jacobian_exact_psi": 0.016764272237361412,
+        "jacobian_maxent": 0.014972961414407031,
+        "seed": 2026080627
+      },
+      {
+        "exact_psi_regularizer": 0.00042982908204975014,
+        "generic_q3": 0.018698910631536118,
+        "jacobian_exact_psi": 0.01885518059613293,
+        "jacobian_maxent": 0.015916800523943616,
+        "seed": 2026080628
+      },
+      {
+        "exact_psi_regularizer": 0.0004036887718414865,
+        "generic_q3": 0.01152562819503989,
+        "jacobian_exact_psi": 0.011704451822747939,
+        "jacobian_maxent": 0.010912202002098642,
+        "seed": 2026080629
+      },
+      {
+        "exact_psi_regularizer": 0.0004661261934417819,
+        "generic_q3": 0.013451071432060913,
+        "jacobian_exact_psi": 0.013397955908818612,
+        "jacobian_maxent": 0.01244663152898375,
+        "seed": 2026080630
+      },
+      {
+        "exact_psi_regularizer": 0.0005233821761465122,
+        "generic_q3": 0.015365388576779403,
+        "jacobian_exact_psi": 0.015788360612068543,
+        "jacobian_maxent": 0.014660519415654235,
+        "seed": 2026080631
+      }
+    ],
+    "reproduction_of_frozen_cache": {
+      "generic_rel_diff": 0.0,
+      "generic_rms_cached": 0.014398754762932663,
+      "generic_rms_recomputed": 0.014398754762932663,
+      "noladder_ratio_cached": 0.9114717897200765,
+      "noladder_ratio_recomputed": 0.9114717897200765,
+      "noladder_ratio_rel_diff": 0.0,
+      "noladder_rms_cached": 0.01312405877351071,
+      "noladder_rms_recomputed": 0.01312405877351071,
+      "noladder_wins_cached": 32,
+      "noladder_wins_recomputed": 32
+    },
+    "schema": "gm-ecn-psi-step2-exact-psi-swap-v1",
+    "seeds": [
+      2026080600,
+      2026080601,
+      2026080602,
+      2026080603,
+      2026080604,
+      2026080605,
+      2026080606,
+      2026080607,
+      2026080608,
+      2026080609,
+      2026080610,
+      2026080611,
+      2026080612,
+      2026080613,
+      2026080614,
+      2026080615,
+      2026080616,
+      2026080617,
+      2026080618,
+      2026080619,
+      2026080620,
+      2026080621,
+      2026080622,
+      2026080623,
+      2026080624,
+      2026080625,
+      2026080626,
+      2026080627,
+      2026080628,
+      2026080629,
+      2026080630,
+      2026080631
+    ],
+    "sinkhorn_iterations_exact_psi": {
+      "max": 40,
+      "min": 20
+    },
+    "unit_ratio_summaries": {
+      "generic_q3": {
+        "mean_unit_ratio": 1.0,
+        "median_unit_ratio": 1.0
+      },
+      "jacobian_exact_psi": {
+        "mean_unit_ratio": 1.0081874218094649,
+        "median_unit_ratio": 1.007423348745637
+      },
+      "jacobian_maxent": {
+        "mean_unit_ratio": 0.9142011005653449,
+        "median_unit_ratio": 0.9222767480562513
+      }
+    },
+    "verdict": "KILL_CONFIRMED",
+    "wins": {
+      "exact_psi_vs_generic": 9,
+      "exact_psi_vs_surrogate_noladder": 0,
+      "surrogate_noladder_vs_generic": 32
+    }
+  },
+  "step3_crosscheck": {
+    "environment": {
+      "numpy": "2.4.6",
+      "python": "3.14.4"
+    },
+    "explicit_matrix_vs_vectorised_distance": {
+      "gate_le_1e-12": true,
+      "max_abs_diff": 1.7763568394002505e-15,
+      "max_rel_diff_offdiag": 2.2283794924492745e-15
+    },
+    "judge_bootstrap_independent_agreement": {
+      "judge_reported_noladder_ci95": [
+        0.8942,
+        0.9291
+      ],
+      "my_bootstrap_noladder_ci95": [
+        0.8943761219240363,
+        0.9292714261331897
+      ]
+    },
+    "ridge_diagnostics": {
+      "regularizer_max": 0.0005827033677010813,
+      "regularizer_min": 0.0003153854213494464,
+      "ridge_share_of_total_cost_max": 0.01668448517479922,
+      "ridge_share_of_total_cost_min": 0.010319699915758863
+    },
+    "schema": "gm-ecn-psi-step3-crosscheck-v1",
+    "step2_headline_recheck": {
+      "exact_psi_ratio": 1.0064508507414671,
+      "exact_psi_wins_vs_generic": 9,
+      "exact_psi_wins_vs_surrogate": 0,
+      "surrogate_ratio": 0.9114717897200765
+    }
+  },
+  "two_signal_verification": {
+    "signal_1_cached_reference_bit_exact": true,
+    "signal_2_independent_explicit_matrix_recomputation": true,
+    "signal_3_bit_repeat_identical_sha256": "cde475ceba8ad3a2511ba76aa6d49d9e5766dbbfc4d27c9c514268faf743b784",
+    "signal_4_judge_bootstrap_agreement": {
+      "judge_reported_noladder_ci95": [
+        0.8942,
+        0.9291
+      ],
+      "my_bootstrap_noladder_ci95": [
+        0.8943761219240363,
+        0.9292714261331897
+      ]
+    }
+  }
+}

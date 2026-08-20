@@ -1,0 +1,72 @@
+{
+  "candidate": "M157 isolated self-hosted Formal-q0 proposal descendant of frozen M145",
+  "date": "2026-08-07",
+  "status": "STRUCTURAL_PASS_NEW_PROPOSAL_LAW_NOT_DEPLOYED",
+  "execution_authorized": false,
+  "outcome_opened": false,
+  "efficacy_run_count": 0,
+  "submission_authorized": false,
+  "champion_mutation_authorized": false,
+  "formal_l1_champion_touched": false,
+  "firewall": "One generated weights-only MLP only. No truth, labels, reference, MSE, score, leaderboard, or submission was opened, and the champion was not changed.",
+  "bound_m145_inputs": {
+    "m145_integrated_estimator.py": "83e38cab70d4a63f273458bd808f38f01d7805d0fb600c7785c707feb5a24367",
+    "m145_flopscope_sidecar.py": "6384b87dbf14b5a37108611a3b97b05edbabd43d432f3fb69c1872c33f5beeeb",
+    "M145_INTEGRATED_STRUCTURAL_TRACE_20260807.json": "b39ef320a21fc4116c727aed59828f5d26b359a90d421f12ecb0d2efc2c9cf60"
+  },
+  "frozen_geometry": {
+    "width": 256,
+    "depth": 32,
+    "pilot_frames": 4,
+    "pilot_lines": 1024,
+    "pilot_paths": 2048,
+    "main_frames": 122,
+    "total_frames": 126
+  },
+  "mechanism": {
+    "name": "self_hosted_formal_q0_pilot_proposal",
+    "separate_dense_pilot_removed": true,
+    "dense_pilot_dispatches_removed": 32,
+    "proposal_source": "even terminal Formal kink response on q0",
+    "proposal_is_pilot_only": true,
+    "q1_frozen_before_main_transport": true,
+    "main_frames_transformed": 122,
+    "q0_state_reused_after_q1_freeze": true,
+    "exact_existing_mixture_weights": "frame_and_path_coefficients(_full_mixture_weights(anchors, v, lambda))",
+    "new_proposal_law": true,
+    "original_full_mlp_unbiasedness_claim": false,
+    "conditional_importance_argument_scope": "Preserves the existing q0/q1 centered-frame identity conditional on the M145 frame-law/density assumptions; does not cure Formal approximation bias."
+  },
+  "locked_structural_result": {
+    "first_billed_flops": 176831647081,
+    "m145_locked_reference_billed_flops": 184270895262,
+    "observed_billed_delta_vs_m145": 7439248181,
+    "m145_dense_pilot_shape_bill": 7431323648,
+    "first_dispatch_calls": 669,
+    "m145_locked_reference_dispatch_calls": 701,
+    "first_flopscope_matmul_calls": 1046,
+    "m145_locked_reference_flopscope_matmul_calls": 1078,
+    "proposal_kink_count": 109,
+    "proposal_signature_shape": [1024, 109],
+    "first_prediction_finite": true,
+    "repeat_prediction_bitwise_equal": true,
+    "restored_after_first": true,
+    "restored_after_second": true,
+    "weight_envelope_pass": true
+  },
+  "static_memory_bytes": {
+    "target_retained_q0_plan": 7831552,
+    "target_retained_q0_plan_mib": 7.46875,
+    "material_additional_x1_copy_vs_later_m145_formal_tail": 2097152,
+    "generic_activation_upper_bound_before_small_fold_matrices": 10485760,
+    "fresh_process_memory_trace_required": true
+  },
+  "bound_m157_artifacts": {
+    "m157_selfhosted_formal_pilot.py": "47d9c46afce023d79f1d7429f00d1faceae50151e5f6f6e6644fef827aa9c752",
+    "run_m157_selfhosted_formal_structural.py": "7db996402b617f0541b289ed4ea1029cc843eeabd863747102656af9e91bc86a",
+    "test_m157_selfhosted_formal_pilot.py": "3d8f33df0de4d498f4a04fefcfaad55d65c9cbc54b122678725253a50b01b397",
+    "M157_SELF_HOSTED_FORMAL_STRUCTURAL_TRACE_20260807.json": "e114c4bee5656677a4db913755037defdee143b2b1a11c87fb7d6a68c2d8d444",
+    "M157_SELF_HOSTED_FORMAL_PILOT_AUDIT_20260807.md": "ab1871a39501c632318ab78cdcb613a6bceadb54cd98b2dbb6f043e3daefe4b1"
+  },
+  "next_gate": "Clean-worker RSS/residual trace, independent conditional-frame/weight proof audit, adversarial regime structural cases, and hostile pre-execution review before any deployment or outcome authorization."
+}

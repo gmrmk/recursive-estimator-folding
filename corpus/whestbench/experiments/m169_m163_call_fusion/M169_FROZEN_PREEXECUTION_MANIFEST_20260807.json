@@ -1,0 +1,75 @@
+{
+  "candidate": "M169 frozen M163 two-axis batched call fusion",
+  "date": "2026-08-07",
+  "status_before_execution": "PREDECLARED_RESOURCE_AND_EXACTNESS_GATES_ONLY",
+  "scope": "generated width-256 float64 matrices and frozen M163 compiler algebra only; no response, source efficacy, network, truth, scorer, leaderboard, submission, or champion action",
+  "one_changed_mechanism": "schedule the already-independent 31 M163 edge-times-weight products as one batch and the existing 31x4 post-Z dense products as one independent batch, while explicitly billing input staging, RHS stacking, and transpose copies",
+  "inherits_unchanged": {
+    "m163_source_sha256": "9215b06b749cd0a572605f3494d2b698e6cc8c8a29beca1e687ef004631db809",
+    "m163_test_sha256": "f9e4b7be85f66a4f30bc06a1a2548c7a93fdae41c86f95333359ea101cd97e54",
+    "coefficient": "A=V o (1-R^2); c_ijk=-2 A_ij A_ik",
+    "five_products": [
+      "Z=A@W",
+      "P=(W o Z^2)^T@W",
+      "Q=(W^2 o Z)^T@Z",
+      "R=(W^2)^T@Z^2",
+      "S=(W o Z)^T@(W o Z)"
+    ],
+    "dtype": "float64",
+    "width": 256,
+    "layers": 31,
+    "m164_inclusive_bill": 10444656904,
+    "m164_matmul_calls": 155
+  },
+  "staging_legality_contract": {
+    "required": "caller owns all 31 labelled W_l and V_l arrays before compiler invocation; M169 accepts them only as explicit immutable inputs and does not infer any V_l",
+    "proved_within_frozen_scope": "the M163/M164 compiler is a pure per-layer function of (W_l,V_l), and output layer l neither reads nor writes a different input layer",
+    "not_claimed": "that an external sequential covariance/provider pipeline can materialize all layers early; such a caller must reject this schedule rather than reorder a state transition",
+    "batch_layout": "edge and W have shape (31,256,256); post-Z lhs/rhs have shape (31,4,256,256)",
+    "cross_terms": "none: NumPy/FlopScope matmul batch axes evaluate 31x4 independent 256x256 products; no 1024x1024 block product is used"
+  },
+  "runtime_lock": {
+    "flopscope": "0.10.0+np2.4.6",
+    "numpy": "2.4.6",
+    "python": "3.14.4",
+    "fresh_processes": 5,
+    "seeds": [169700001, 169700002, 169700003, 169700004, 169700005]
+  },
+  "predeclared_prediction": {
+    "total_matmul_calls": 2,
+    "post_z_matmul_calls": 1,
+    "matmul_call_reduction_from_m164": 153,
+    "dense_matmul_bill": 10381557760,
+    "input_stack_bill": 8126464,
+    "rhs_stack_bill": 16252928,
+    "transpose_copy_bill": 8126464,
+    "reshape_bill": 0,
+    "total_bill": 10477162760,
+    "compiler_slot": 14019121200,
+    "inherited_k128_endpoint_subtotal": 85980878800,
+    "combined_cap": 100000000000,
+    "nominal_p99_residual_prediction_ms": 5.0,
+    "maximum_residual_ms_per_process_for_hostile_5x": 7.08391688,
+    "persistent_allocation_report_required": true,
+    "rss_mib_max": 512.0
+  },
+  "exactness_gate": {
+    "reference": "frozen M164 sidecar, hence frozen M163 coefficient/compiler semantics",
+    "small_shape": {"width": 7, "layers": 3, "seed": 169001, "required": "bitwise equality"},
+    "target_shape": {"width": 256, "layers": 31, "seed": 169002, "required": "bitwise equality"},
+    "locked_max_abs_tolerance": 0.0
+  },
+  "kill_gates": [
+    "any missing all-layer-owned-input precondition or evidence of reordered sequential covariance/source semantics",
+    "any nonfinite output or any bitwise mismatch against the M164/M163 reference",
+    "matmul calls not exactly 2, post-Z batch not exactly one call, any block cross-term product, or any unbilled stack/copy/reshape",
+    "total bill not exactly 10477162760 or total bill above the 14019121200 compiler slot",
+    "any fresh process with RSS above 512 MiB, residual above 7.08391688 ms, or inherited hostile-5x effective total above 100000000000",
+    "any p99 residual above 7.08391688 ms"
+  ],
+  "forbidden": [
+    "adaptive retries, coefficient/eta/q0/K/provider-order/seed retuning",
+    "source efficacy, network response, target truth, scorer, leaderboard, submission, champion access",
+    "unbilled raw NumPy packing or block-matrix arithmetic with cross terms"
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "matmul_f32_2d": {
+    "4x4@4x4": {
+      "charged": 112,
+      "2mkn_minus_mn": 112,
+      "mn_2k_minus_1": 112
+    },
+    "8x4@4x4": {
+      "charged": 224,
+      "2mkn_minus_mn": 224,
+      "mn_2k_minus_1": 224
+    },
+    "4x8@8x4": {
+      "charged": 240,
+      "2mkn_minus_mn": 240,
+      "mn_2k_minus_1": 240
+    },
+    "4x4@4x8": {
+      "charged": 224,
+      "2mkn_minus_mn": 224,
+      "mn_2k_minus_1": 224
+    },
+    "16x16@16x16": {
+      "charged": 7936,
+      "2mkn_minus_mn": 7936,
+      "mn_2k_minus_1": 7936
+    },
+    "32x8@8x16": {
+      "charged": 7680,
+      "2mkn_minus_mn": 7680,
+      "mn_2k_minus_1": 7680
+    },
+    "64x64@64x64": {
+      "charged": 520192,
+      "2mkn_minus_mn": 520192,
+      "mn_2k_minus_1": 520192
+    },
+    "128x256@256x256": {
+      "charged": 16744448,
+      "2mkn_minus_mn": 16744448,
+      "mn_2k_minus_1": 16744448
+    }
+  },
+  "matmul_f32_batched": {
+    "b3:4x4@4x4": {
+      "charged": 336,
+      "batch_x_2mkn_minus_mn": 336
+    },
+    "b7:8x8@8x8": {
+      "charged": 6720,
+      "batch_x_2mkn_minus_mn": 6720
+    },
+    "b2:5x16@16x16": {
+      "charged": 4960,
+      "batch_x_2mkn_minus_mn": 4960
+    },
+    "7x3:8x8@8x8": {
+      "charged": 20160,
+      "batch_x_2mkn_minus_mn": 20160
+    },
+    "bcast4:32x16@16x16": {
+      "charged": 63488,
+      "batch_x_2mkn_minus_mn": 63488
+    }
+  },
+  "matmul_dtype": {
+    "matmul16_float32": 7936,
+    "matmul16_float64": 15872
+  },
+  "elementwise": {
+    "add_(4, 4)_f32": {
+      "charged": 16,
+      "elements": 16
+    },
+    "add_out_(4, 4)_f32": {
+      "charged": 16,
+      "elements": 16
+    },
+    "subtract_(4, 4)_f32": {
+      "charged": 16,
+      "elements": 16
+    },
+    "subtract_out_(4, 4)_f32": {
+      "charged": 16,
+      "elements": 16
+    },
+    "multiply_(4, 4)_f32": {
+      "charged": 16,
+      "elements": 16
+    },
+    "multiply_out_(4, 4)_f32": {
+      "charged": 16,
+      "elements": 16
+    },
+    "add_(16, 16)_f32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "add_out_(16, 16)_f32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "subtract_(16, 16)_f32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "subtract_out_(16, 16)_f32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "multiply_(16, 16)_f32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "multiply_out_(16, 16)_f32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "add_(7, 3, 8, 8)_f32": {
+      "charged": 1344,
+      "elements": 1344
+    },
+    "add_out_(7, 3, 8, 8)_f32": {
+      "charged": 1344,
+      "elements": 1344
+    },
+    "subtract_(7, 3, 8, 8)_f32": {
+      "charged": 1344,
+      "elements": 1344
+    },
+    "subtract_out_(7, 3, 8, 8)_f32": {
+      "charged": 1344,
+      "elements": 1344
+    },
+    "multiply_(7, 3, 8, 8)_f32": {
+      "charged": 1344,
+      "elements": 1344
+    },
+    "multiply_out_(7, 3, 8, 8)_f32": {
+      "charged": 1344,
+      "elements": 1344
+    },
+    "add_(64, 64)_f32": {
+      "charged": 4096,
+      "elements": 4096
+    },
+    "add_out_(64, 64)_f32": {
+      "charged": 4096,
+      "elements": 4096
+    },
+    "subtract_(64, 64)_f32": {
+      "charged": 4096,
+      "elements": 4096
+    },
+    "subtract_out_(64, 64)_f32": {
+      "charged": 4096,
+      "elements": 4096
+    },
+    "multiply_(64, 64)_f32": {
+      "charged": 4096,
+      "elements": 4096
+    },
+    "multiply_out_(64, 64)_f32": {
+      "charged": 4096,
+      "elements": 4096
+    },
+    "add_16x16_float32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "add_16x16_float64": {
+      "charged": 512,
+      "elements": 256
+    }
+  },
+  "data_movement": {
+    "copyto_(16, 16)_f32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "empty_(16, 16)_f32": {
+      "charged": 0,
+      "elements": 256
+    },
+    "zeros_(16, 16)_f32": {
+      "charged": 0,
+      "elements": 256
+    },
+    "ndarray_copy_(16, 16)_f32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "copyto_(7, 3, 8, 8)_f32": {
+      "charged": 1344,
+      "elements": 1344
+    },
+    "empty_(7, 3, 8, 8)_f32": {
+      "charged": 0,
+      "elements": 1344
+    },
+    "zeros_(7, 3, 8, 8)_f32": {
+      "charged": 0,
+      "elements": 1344
+    },
+    "ndarray_copy_(7, 3, 8, 8)_f32": {
+      "charged": 1344,
+      "elements": 1344
+    },
+    "copyto_16x16_float32": {
+      "charged": 256,
+      "elements": 256
+    },
+    "copyto_16x16_float64": {
+      "charged": 512,
+      "elements": 256
+    },
+    "slice_view_16x16_to_8x8": {
+      "charged": 0,
+      "elements": 64
+    },
+    "add_into_slice_8x8": {
+      "charged": 64,
+      "elements": 64
+    },
+    "swapaxes_3x16x16": {
+      "charged": 0,
+      "elements": 768
+    },
+    "concatenate_2x_8x8": {
+      "charged": 128,
+      "elements": 128
+    },
+    "stack_2x_8x8": {
+      "charged": 128,
+      "elements": 128
+    }
+  },
+  "alias_discount": {
+    "A@A": 112,
+    "A@B": 112,
+    "note": "A@A is discounted; Strassen must be priced with DISTINCT operands"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "mutation": "m226_preallocated_fused_rho08",
+  "generation": 10,
+  "status": "PREDECLARED_BEFORE_CODE_AND_TESTS",
+  "parent": "m224_gauge_invariant_rho08_chart",
+  "parent_code_sha256": "6ABA2D0AB618FF5D678977CC07FC89962C09092B537AAFFC282E069C10DFDA7B",
+  "one_changed_mechanism": "execution topology only: persistent slab allocation, direct input binding, reduction fusion, and explicit-out buffer reuse",
+  "frozen_math": {
+    "estimator_algebra_change": false,
+    "abs_rho_max": 0.08,
+    "abs_alpha_and_t_max": 0.8,
+    "conditional_to_marginal_sigma_ratio_min": 0.8,
+    "conditional_to_marginal_sigma_ratio_max": 1.2,
+    "abs_standardized_repeated_center_max": 9.0,
+    "phi_erf_taylor_terms": 16,
+    "plackett_composite_simpson_panels": 32,
+    "phi2_abs_radius": 2.5e-12,
+    "event_radius": "1e-8*(1+abs(midpoint))",
+    "required_event_radius": "2e-7*(1+abs(midpoint))"
+  },
+  "frozen_issuers": {
+    "event_count": 3968,
+    "context_seeds": "221730001..221730031",
+    "outer_seeds": [221720001, 221720002, 221720003, 221720004, 221720005]
+  },
+  "setup_ledger": {
+    "persistent_float64_units_per_event": 268,
+    "persistent_bool_units_per_event": 2,
+    "persistent_empty_calls": 2,
+    "persistent_bytes_per_event": 2146,
+    "target_persistent_bytes": 8515328,
+    "runtime_empty_calls": 0,
+    "runtime_user_allocation_bytes": 0,
+    "direct_bound_runtime_columns": 20,
+    "runtime_copy_calls": 0,
+    "runtime_reshape_calls": 0
+  },
+  "runtime_ledger": {
+    "target_events": 3968,
+    "calls": 171,
+    "bill_per_event": 5467,
+    "target_bill": 21693056,
+    "operation_calls": {
+      "abs": 7,
+      "add": 37,
+      "divide": 14,
+      "exp": 3,
+      "greater": 1,
+      "greater_equal": 2,
+      "isfinite": 1,
+      "less_equal": 6,
+      "logical_and": 9,
+      "matmul": 1,
+      "maximum": 6,
+      "multiply": 76,
+      "sqrt": 2,
+      "subtract": 6
+    },
+    "forbidden_runtime_operations": ["empty", "copyto", "sum", "max", "reshape"]
+  },
+  "gates": {
+    "m216_best_wall_s": 1.6133916999970097,
+    "strict_speedup_min": 100.0,
+    "raw_wall_strict_max_s": 0.016133916999970098,
+    "lambda_flops_per_second": 100000000000.0,
+    "hostile_wall_factor": 5.0,
+    "component_ceiling": 6824272176,
+    "residual_wall_max_s_at_predicted_bill": 0.01360515824,
+    "peak_rss_bytes_max": 536870912,
+    "fallback_rows_required": 0,
+    "parity_requires_within_m224_radius": true,
+    "all_five_fresh_processes_must_pass": true
+  },
+  "variance_gate_authorized": false,
+  "forbidden_inputs": ["challenge weights", "truth", "scorer", "leaderboard", "responses", "MSE"]
+}

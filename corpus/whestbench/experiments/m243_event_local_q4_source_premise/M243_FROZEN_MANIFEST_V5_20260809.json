@@ -1,0 +1,63 @@
+{
+  "candidate": "M243",
+  "status": "PRELAUNCH_HARNESS_REPAIR_ONLY",
+  "precedence_after": "M243_FROZEN_MANIFEST_V4_20260809.json",
+  "scientific_mechanism_changed": false,
+  "g0a_launches_consumed": 0,
+  "rejected_unexecuted_runner_sha256": "11b75549c7c5bd4f41c588aa38bc62c348c1136ebfc565d6ba87e09bb6c7f3d0",
+  "reference_sha256": "b03e9b2ddda22d8ea147c0720ca8644c91bff2d22c8f82bd057b91a55bdc2c25",
+  "topology": {
+    "python_processes": 1,
+    "pids": 1,
+    "subprocesses": 0,
+    "scientific_imports": "delayed_until_after_verified_intent_and_live_watchdog",
+    "module_import_side_effects": false
+  },
+  "transport": {
+    "intent": "M243_G0A_LAUNCH_INTENT_20260809.json",
+    "result_temp": ".M243_G0A_RESULT_20260809.json.tmp",
+    "result": "M243_G0A_RESULT_20260809.json",
+    "postpublication_receipt": "M243_G0A_POSTPUBLICATION_RECEIPT_20260809.json",
+    "second_intent_or_partial_receipt": "permanent_failure"
+  },
+  "resource_interval": {
+    "starts": "after_verified_write_ahead_intent_before_any_scientific_import",
+    "ends": "after_RESULT_durable_publication_and_synchronous_sample",
+    "wall_seconds": 2700,
+    "peak_rss_bytes": 2147483648,
+    "intent_and_postpublication_receipt_are_control_plane": true
+  },
+  "binding_verdict": {
+    "result_scope": "PROVISIONAL_PENDING_POSTPUBLICATION_RECEIPT",
+    "requires_matching_postpublication_receipt": true,
+    "result_alone_authorizes_g0b": false,
+    "receipt_authorizes_only_Codex_sampled_manifest": true,
+    "fable_trigger": "committed_M243-G0B-FOUR-SHARD-TRIGGER-V1_with_matching_RESULT_receipt_and_sampled_manifest_hashes"
+  },
+  "required_repairs": [
+    "typed_win64_memory_api",
+    "watchdog_join_and_sample_caught",
+    "canonical_nonfinite_fail_payload",
+    "separate_80_and_100_digit_interval_containment",
+    "all_12_parent_hashes_plus_transitive_and_reference",
+    "nonzero_exit_on_binding_fail"
+  ],
+  "static_before_launch": {
+    "new_runner_reference_hash_receipt_required": true,
+    "independent_read_only_pass_judgments_required": 2,
+    "import_compile_or_execution_during_static_review": false
+  },
+  "forbidden_credit": [
+    "total_support",
+    "provider",
+    "native_cost",
+    "source_variance",
+    "response",
+    "truth",
+    "score",
+    "challenge_weights",
+    "leaderboard",
+    "integration",
+    "submission"
+  ]
+}

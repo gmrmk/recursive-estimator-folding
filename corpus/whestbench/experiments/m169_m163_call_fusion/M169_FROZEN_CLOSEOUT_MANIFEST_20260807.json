@@ -1,0 +1,42 @@
+{
+  "candidate": "M169 frozen M163 two-axis batched call fusion",
+  "date": "2026-08-07",
+  "disposition": "RESOURCE_SURVIVOR_CONDITIONAL_ALL_LAYER_STAGING_INTERFACE_NO_SOURCE_EFFICACY_RUN",
+  "freeze_contract": {
+    "m163_source_sha256": "9215b06b749cd0a572605f3494d2b698e6cc8c8a29beca1e687ef004631db809",
+    "m163_test_sha256": "f9e4b7be85f66a4f30bc06a1a2548c7a93fdae41c86f95333359ea101cd97e54",
+    "m164_sidecar_sha256": "1a5141e680b2aeff76b8686fd7278cedbe19df4de77fada2750a7d683e04208",
+    "m164_runner_sha256": "3333c25cdcde5eba5d2e1d2860ea6dc83dc2074f4acd1cdb6ec4cb384e61081b",
+    "coefficients_and_float64_semantics": "unchanged M163 A=V o (1-R^2), c_ijk=-2A_ijA_ik, and five-product source expression",
+    "caller_precondition": "all 31 labelled W/V input states are already owned; no sequential provider transition may be moved"
+  },
+  "closeout_gates": {
+    "small_and_target_bitwise_parity": true,
+    "exact_compiler_bill": 10477162760,
+    "exact_matmul_calls": 2,
+    "all_five_hostile_5x_projections_below_100b": true,
+    "residual_p99_ms_linear": 5.322182988747954,
+    "residual_limit_ms": 7.08391688,
+    "peak_rss_mib": 404.23828125,
+    "rss_limit_mib": 512.0,
+    "persistent_allocations": {"arrays": 21, "mib": 327.0664367675781},
+    "source_efficacy_opened": false
+  },
+  "artifact_sha256": {
+    "aggregate_m169_results.py": "fda957d65df6225f1f66ffab4bcfabff05662ac6e82d69e7df48b81f91c4c95f",
+    "m169_fused_compiler.py": "3c236d809e3aa0374bc0989ea8d287e18c923b61ebc38cc2c85b7e9ec529a8b4",
+    "run_m169_native_trace.py": "2f1581e07e6dbb81aaecbdeb2449e6cdc191ef415b82118a43c602f90b8c787e",
+    "run_m169_parity.py": "837a1ffc9cf1793d195ff7348926d1d5dfb2ac301272209b095fbc79643c9f01",
+    "test_m169_call_fusion.py": "56355fe041100e1822d77cdcd28f45d899c5638957b940287e36a7f4174e4299",
+    "M169_FROZEN_PREEXECUTION_MANIFEST_20260807.json": "0b3d82fa4ae14289b994f01edd4ff797aac6db96073da5c851e21008b809aea0",
+    "M169_NATIVE_RESULTS_20260807.json": "eedfb5ea48a081b1ef834be0e6a2c7c87342f1e774dd8470f014dd5ef0247a2a",
+    "M169_NATIVE_AUDIT_REPORT_20260807.md": "9ea19556acee488b7facd896671e6ea0053ef46d02e97a9c2014c69c053bc860",
+    "M169_PARITY_SMALL_20260807.json": "3b23868f1cd27a812c6f426cef546127499d04a5fa1b2e588cde2b431610f42f",
+    "M169_PARITY_TARGET_20260807.json": "e1c855ed483d8e1925d178b39c86d3517114b66f69e3d54967ced44878fb3fac",
+    "M169_NATIVE_TRACE_169700001.json": "55270a3d8ac2c8f3ab4bd06e24cd754d00ab603c391d6ed94af5547675359647",
+    "M169_NATIVE_TRACE_169700002.json": "a7a405962ee03cfb2e74bd1e1c898d34d25ab6556717ed3142f6cf3971ca5d1a",
+    "M169_NATIVE_TRACE_169700003.json": "23b92524697fbb49236619a95f961810a51dbe58366b41e1ab56c78f09977290",
+    "M169_NATIVE_TRACE_169700004.json": "557e1f3d93a4d5afc8ee992ff654b86184fcb3a63e7317f1252225377c114619",
+    "M169_NATIVE_TRACE_169700005.json": "f5afbe401d73562cdd9e447d6091138b80672c2e3023ed0a067ea9c16e9674e0"
+  }
+}

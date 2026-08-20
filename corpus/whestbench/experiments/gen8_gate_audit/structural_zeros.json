@@ -1,0 +1,2090 @@
+[
+ {
+  "dir": "m184_trichotomy_upward",
+  "artifact": "m184_g0_results.json",
+  "zero_stat_keys": [
+   "aggregate.geomean_reduction",
+   "aggregate.min_reduction",
+   "nets.[0].bills.loop_reduction",
+   "nets.[0].bills.total_reduction",
+   "nets.[0].increment_accounting.dead_column_increment_neurons",
+   "nets.[0].per_layer.[0].certain_dead_all256",
+   "nets.[0].per_layer.[0].certain_dead_frac_of_width",
+   "nets.[0].per_layer.[0].certain_dead_in_active",
+   "nets.[0].per_layer.[0].on_frac_of_active",
+   "nets.[0].per_layer.[0].on_frac_of_width",
+   "nets.[0].per_layer.[1].certain_dead_all256",
+   "nets.[0].per_layer.[1].certain_dead_frac_of_width",
+   "nets.[0].per_layer.[1].certain_dead_in_active",
+   "nets.[0].per_layer.[1].on_frac_of_active",
+   "nets.[0].per_layer.[1].on_frac_of_width",
+   "nets.[0].per_layer.[2].certain_dead_all256",
+   "nets.[0].per_layer.[2].certain_dead_frac_of_width",
+   "nets.[0].per_layer.[2].certain_dead_in_active",
+   "nets.[0].per_layer.[2].on_frac_of_active",
+   "nets.[0].per_layer.[2].on_frac_of_width",
+   "nets.[0].per_layer.[3].certain_dead_all256",
+   "nets.[0].per_layer.[3].certain_dead_frac_of_width",
+   "nets.[0].per_layer.[3].certain_dead_in_active",
+   "nets.[0].per_layer.[3].on_frac_of_active",
+   "nets.[0].per_layer.[3].on_frac_of_width"
+  ],
+  "n_zero_stats": 205,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_m184_g0.py"
+  ]
+ },
+ {
+  "dir": "m192_cross_output_gls",
+  "artifact": "m194_g0_results.json",
+  "zero_stat_keys": [
+   "per_net.101.pair_rows.[0].diagnostics.[2].sum_error",
+   "per_net.101.pair_rows.[0].oracle_diagnostics.[1].sum_error",
+   "per_net.101.pair_rows.[0].oracle_diagnostics.[4].sum_error",
+   "per_net.101.pair_rows.[1].diagnostics.[1].sum_error",
+   "per_net.101.pair_rows.[1].diagnostics.[2].sum_error",
+   "per_net.101.pair_rows.[1].diagnostics.[3].sum_error",
+   "per_net.101.pair_rows.[1].diagnostics.[5].sum_error",
+   "per_net.101.pair_rows.[1].oracle_diagnostics.[1].sum_error",
+   "per_net.101.pair_rows.[1].oracle_diagnostics.[4].sum_error",
+   "per_net.101.pair_rows.[1].oracle_diagnostics.[5].sum_error",
+   "per_net.101.pair_rows.[1].oracle_diagnostics.[7].sum_error",
+   "per_net.101.pair_rows.[2].diagnostics.[0].sum_error",
+   "per_net.101.pair_rows.[2].diagnostics.[1].sum_error",
+   "per_net.101.pair_rows.[2].diagnostics.[6].sum_error",
+   "per_net.101.pair_rows.[2].oracle_diagnostics.[0].sum_error",
+   "per_net.101.pair_rows.[2].oracle_diagnostics.[3].sum_error",
+   "per_net.101.pair_rows.[2].oracle_diagnostics.[4].sum_error",
+   "per_net.101.pair_rows.[2].oracle_diagnostics.[5].sum_error",
+   "per_net.101.pair_rows.[2].oracle_diagnostics.[6].sum_error",
+   "per_net.101.pair_rows.[3].diagnostics.[5].sum_error",
+   "per_net.101.pair_rows.[3].diagnostics.[7].sum_error",
+   "per_net.101.pair_rows.[3].oracle_diagnostics.[1].sum_error",
+   "per_net.101.pair_rows.[3].oracle_diagnostics.[2].sum_error",
+   "per_net.101.pair_rows.[3].oracle_diagnostics.[4].sum_error",
+   "per_net.101.pair_rows.[3].oracle_diagnostics.[5].sum_error"
+  ],
+  "n_zero_stats": 180,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_m192_g0.py",
+   "run_m193_g0.py",
+   "run_m194_g0.py",
+   "run_m194_pilot_scaling.py",
+   "run_m195_g0.py",
+   "test_m192_m195_math.py"
+  ]
+ },
+ {
+  "dir": "m197_crossed_three_rotation",
+  "artifact": "m197_g0_results.json",
+  "zero_stat_keys": [
+   "per_net.101.triple_rows.[0].diagnostics.[1].combined_sum_error",
+   "per_net.101.triple_rows.[0].diagnostics.[1].groups.[0].sum_error",
+   "per_net.101.triple_rows.[0].diagnostics.[2].combined_sum_error",
+   "per_net.101.triple_rows.[0].diagnostics.[3].combined_sum_error",
+   "per_net.101.triple_rows.[0].diagnostics.[5].combined_sum_error",
+   "per_net.101.triple_rows.[0].diagnostics.[7].combined_sum_error",
+   "per_net.101.triple_rows.[1].diagnostics.[1].combined_sum_error",
+   "per_net.101.triple_rows.[1].diagnostics.[2].combined_sum_error",
+   "per_net.101.triple_rows.[1].diagnostics.[2].groups.[2].sum_error",
+   "per_net.101.triple_rows.[1].diagnostics.[4].combined_sum_error",
+   "per_net.101.triple_rows.[1].diagnostics.[5].combined_sum_error",
+   "per_net.101.triple_rows.[1].diagnostics.[6].combined_sum_error",
+   "per_net.101.triple_rows.[2].diagnostics.[0].combined_sum_error",
+   "per_net.101.triple_rows.[2].diagnostics.[1].combined_sum_error",
+   "per_net.101.triple_rows.[2].diagnostics.[4].combined_sum_error",
+   "per_net.101.triple_rows.[2].diagnostics.[6].combined_sum_error",
+   "per_net.101.triple_rows.[2].diagnostics.[7].combined_sum_error",
+   "per_net.101.triple_rows.[3].diagnostics.[0].combined_sum_error",
+   "per_net.101.triple_rows.[3].diagnostics.[0].groups.[1].sum_error",
+   "per_net.101.triple_rows.[3].diagnostics.[2].combined_sum_error",
+   "per_net.101.triple_rows.[3].diagnostics.[3].combined_sum_error",
+   "per_net.101.triple_rows.[3].diagnostics.[4].combined_sum_error",
+   "per_net.101.triple_rows.[3].diagnostics.[6].combined_sum_error",
+   "per_net.101.triple_rows.[3].diagnostics.[7].combined_sum_error",
+   "per_net.101.triple_rows.[4].diagnostics.[0].combined_sum_error"
+  ],
+  "n_zero_stats": 95,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_m197_g0.py"
+  ]
+ },
+ {
+  "dir": "gm_m179_m199",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "ARM_B_identity_trace_depth32.mined_clause_a_result.unexpected_ledger_operations_any_cell",
+   "ARM_B_identity_trace_depth32.mined_clause_a_result.legacy_named_ledger_operations_any_cell",
+   "ARM_B_identity_trace_depth32.mined_clause_a_result.non_float64_buffers_any_cell",
+   "ARM_B_identity_trace_depth32.cells.[0].ledger_audit.unexpected_operations",
+   "ARM_B_identity_trace_depth32.cells.[0].ledger_audit.legacy_named_operations",
+   "ARM_B_identity_trace_depth32.cells.[0].ledger_audit.non_float64_buffers",
+   "ARM_B_identity_trace_depth32.cells.[1].ledger_audit.unexpected_operations",
+   "ARM_B_identity_trace_depth32.cells.[1].ledger_audit.legacy_named_operations",
+   "ARM_B_identity_trace_depth32.cells.[1].ledger_audit.non_float64_buffers",
+   "ARM_B_identity_trace_depth32.cells.[2].ledger_audit.unexpected_operations",
+   "ARM_B_identity_trace_depth32.cells.[2].ledger_audit.legacy_named_operations",
+   "ARM_B_identity_trace_depth32.cells.[2].ledger_audit.non_float64_buffers",
+   "ARM_B_identity_trace_depth32.cells.[3].ledger_audit.unexpected_operations",
+   "ARM_B_identity_trace_depth32.cells.[3].ledger_audit.legacy_named_operations",
+   "ARM_B_identity_trace_depth32.cells.[3].ledger_audit.non_float64_buffers",
+   "ARM_B_identity_trace_depth32.cells.[4].ledger_audit.unexpected_operations",
+   "ARM_B_identity_trace_depth32.cells.[4].ledger_audit.legacy_named_operations",
+   "ARM_B_identity_trace_depth32.cells.[4].ledger_audit.non_float64_buffers",
+   "ARM_B_identity_trace_depth32.cells.[5].ledger_audit.unexpected_operations",
+   "ARM_B_identity_trace_depth32.cells.[5].ledger_audit.legacy_named_operations",
+   "ARM_B_identity_trace_depth32.cells.[5].ledger_audit.non_float64_buffers",
+   "ARM_B_identity_trace_depth32.cells.[6].ledger_audit.unexpected_operations",
+   "ARM_B_identity_trace_depth32.cells.[6].ledger_audit.legacy_named_operations",
+   "ARM_B_identity_trace_depth32.cells.[6].ledger_audit.non_float64_buffers",
+   "ARM_B_identity_trace_depth32.cells.[7].ledger_audit.unexpected_operations"
+  ],
+  "n_zero_stats": 33,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "assemble_results.py",
+   "diag_spd_depth.py",
+   "run_depth32_identity_trace.py",
+   "step0_metering_gate.py"
+  ]
+ },
+ {
+  "dir": "m137_terminal_law_resummation",
+  "artifact": "M137_RESULTS_20260807.json",
+  "zero_stat_keys": [
+   "per_network.[0].edgeworth_nonnegative_fraction",
+   "per_network.[1].edgeworth_nonnegative_fraction",
+   "per_network.[2].edgeworth_nonnegative_fraction",
+   "per_network.[3].mean_abs_excess_kurtosis_bank_drift",
+   "per_network.[3].mean_abs_skew_bank_drift",
+   "per_network.[3].mean_abs_skewness",
+   "per_network.[3].mse.two_gaussian_mixture_or_gaussian",
+   "per_network.[4].mean_abs_excess_kurtosis_bank_drift",
+   "per_network.[4].mean_abs_skew_bank_drift",
+   "per_network.[4].mean_abs_skewness",
+   "per_network.[4].mse.two_gaussian_mixture_or_gaussian",
+   "per_network.[5].mean_abs_excess_kurtosis_bank_drift",
+   "per_network.[5].mean_abs_skew_bank_drift",
+   "per_network.[5].mean_abs_skewness",
+   "per_network.[5].mse.two_gaussian_mixture_or_gaussian",
+   "per_network.[6].edgeworth_nonnegative_fraction",
+   "per_network.[7].edgeworth_nonnegative_fraction",
+   "per_network.[8].edgeworth_nonnegative_fraction",
+   "per_network.[9].edgeworth_nonnegative_fraction",
+   "per_network.[10].edgeworth_nonnegative_fraction",
+   "per_network.[11].edgeworth_nonnegative_fraction"
+  ],
+  "n_zero_stats": 21,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m137_terminal_law_resummation.py",
+   "run_m137_generated.py",
+   "test_m137_terminal_law_resummation.py"
+  ]
+ },
+ {
+  "dir": "gm_flatworm_response_ladder",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "aggregate.controller_half.ratio_delta_vs_scalar_fusion",
+   "states.[0].symmetry_commissural.permutation_relative_error",
+   "states.[3].symmetry_commissural.permutation_relative_error",
+   "states.[5].symmetry_commissural.permutation_relative_error",
+   "states.[6].symmetry_commissural.permutation_relative_error",
+   "states.[8].symmetry_commissural.permutation_relative_error",
+   "states.[10].symmetry_commissural.permutation_relative_error",
+   "states.[11].symmetry_commissural.permutation_relative_error",
+   "states.[12].symmetry_commissural.permutation_relative_error",
+   "states.[13].symmetry_commissural.permutation_relative_error",
+   "states.[13].symmetry_commissural.permutation_evidence_absolute_error",
+   "states.[14].symmetry_commissural.permutation_relative_error",
+   "states.[18].symmetry_commissural.permutation_relative_error",
+   "states.[18].symmetry_commissural.positive_gauge_evidence_absolute_error",
+   "states.[19].symmetry_commissural.permutation_relative_error",
+   "states.[20].symmetry_commissural.permutation_relative_error",
+   "states.[23].symmetry_commissural.permutation_relative_error",
+   "states.[23].symmetry_commissural.permutation_evidence_absolute_error"
+  ],
+  "n_zero_stats": 18,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "ladder_controller.py",
+   "run_ladder_gate.py"
+  ]
+ },
+ {
+  "dir": "gm_flatworm_response_ladder",
+  "artifact": "results_run1.json",
+  "zero_stat_keys": [
+   "aggregate.controller_half.ratio_delta_vs_scalar_fusion",
+   "states.[0].symmetry_commissural.permutation_relative_error",
+   "states.[3].symmetry_commissural.permutation_relative_error",
+   "states.[5].symmetry_commissural.permutation_relative_error",
+   "states.[6].symmetry_commissural.permutation_relative_error",
+   "states.[8].symmetry_commissural.permutation_relative_error",
+   "states.[10].symmetry_commissural.permutation_relative_error",
+   "states.[11].symmetry_commissural.permutation_relative_error",
+   "states.[12].symmetry_commissural.permutation_relative_error",
+   "states.[13].symmetry_commissural.permutation_relative_error",
+   "states.[13].symmetry_commissural.permutation_evidence_absolute_error",
+   "states.[14].symmetry_commissural.permutation_relative_error",
+   "states.[18].symmetry_commissural.permutation_relative_error",
+   "states.[18].symmetry_commissural.positive_gauge_evidence_absolute_error",
+   "states.[19].symmetry_commissural.permutation_relative_error",
+   "states.[20].symmetry_commissural.permutation_relative_error",
+   "states.[23].symmetry_commissural.permutation_relative_error",
+   "states.[23].symmetry_commissural.permutation_evidence_absolute_error"
+  ],
+  "n_zero_stats": 18,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "ladder_controller.py",
+   "run_ladder_gate.py"
+  ]
+ },
+ {
+  "dir": "pb1_premise_battery",
+  "artifact": "m191_g0a_results.json",
+  "zero_stat_keys": [
+   "rot0.deg1.design_rms",
+   "rot0.deg1.ratio",
+   "rot0.deg3.design_rms",
+   "rot0.deg3.ratio",
+   "rot0.deg5.design_rms",
+   "rot0.deg5.ratio",
+   "rot1.deg1.design_rms",
+   "rot1.deg1.ratio",
+   "rot1.deg3.design_rms",
+   "rot1.deg3.ratio",
+   "rot1.deg5.design_rms",
+   "rot1.deg5.ratio",
+   "rot2.deg1.design_rms",
+   "rot2.deg1.ratio",
+   "rot2.deg3.design_rms",
+   "rot2.deg3.ratio",
+   "rot2.deg5.design_rms",
+   "rot2.deg5.ratio"
+  ],
+  "n_zero_stats": 18,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "premise_battery.py",
+   "run_m191_g0a.py",
+   "run_m191_g0b.py",
+   "run_p2_rotation_selection.py",
+   "run_p2b_weights_proxy.py"
+  ]
+ },
+ {
+  "dir": "gm_p2b_proxy",
+  "artifact": "step1_results.json",
+  "zero_stat_keys": [
+   "statistics.borderline_frac_overall.per_net.101.spearman_pearson_on_ranks",
+   "statistics.borderline_frac_overall.per_net.202.spearman_pearson_on_ranks",
+   "statistics.borderline_frac_overall.per_net.303.spearman_pearson_on_ranks",
+   "statistics.borderline_frac_overall.pooled_within_net_ranked_rho",
+   "statistics.fold_on_total.per_net.101.spearman_pearson_on_ranks",
+   "statistics.fold_on_total.per_net.202.spearman_pearson_on_ranks",
+   "statistics.fold_on_total.per_net.303.spearman_pearson_on_ranks",
+   "statistics.fold_on_total.pooled_within_net_ranked_rho",
+   "statistics.fold_kink_total.per_net.101.spearman_pearson_on_ranks",
+   "statistics.fold_kink_total.per_net.202.spearman_pearson_on_ranks",
+   "statistics.fold_kink_total.per_net.303.spearman_pearson_on_ranks",
+   "statistics.fold_kink_total.pooled_within_net_ranked_rho",
+   "permutation_null_S5.borderline_frac_overall.frac_null_draws_reaching_gate",
+   "permutation_null_S5.fold_on_total.frac_null_draws_reaching_gate",
+   "permutation_null_S5.fold_kink_total.frac_null_draws_reaching_gate"
+  ],
+  "n_zero_stats": 15,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "s3_archive_anchor.py",
+   "step0_invariance_gate.py",
+   "step1_deep_diag_proxy.py"
+  ]
+ },
+ {
+  "dir": "m192_cross_output_gls",
+  "artifact": "m195_g0_results.json",
+  "zero_stat_keys": [
+   "per_net.101.pair_rows.[0].diagnostics.[5].first.sum_error",
+   "per_net.101.pair_rows.[1].diagnostics.[3].first.sum_error",
+   "per_net.101.pair_rows.[3].diagnostics.[4].first.sum_error",
+   "per_net.101.pair_rows.[4].diagnostics.[1].first.sum_error",
+   "per_net.101.pair_rows.[5].diagnostics.[3].first.sum_error",
+   "per_net.101.pair_rows.[5].diagnostics.[6].second.sum_error",
+   "per_net.202.pair_rows.[6].diagnostics.[6].first.sum_error",
+   "per_net.202.pair_rows.[6].diagnostics.[6].second.sum_error",
+   "per_net.303.pair_rows.[1].diagnostics.[2].second.sum_error",
+   "per_net.303.pair_rows.[3].diagnostics.[2].first.sum_error",
+   "per_net.303.pair_rows.[5].diagnostics.[2].first.sum_error",
+   "per_net.303.pair_rows.[6].diagnostics.[7].second.sum_error"
+  ],
+  "n_zero_stats": 12,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_m192_g0.py",
+   "run_m193_g0.py",
+   "run_m194_g0.py",
+   "run_m194_pilot_scaling.py",
+   "run_m195_g0.py",
+   "test_m192_m195_math.py"
+  ]
+ },
+ {
+  "dir": "terra_m160_hostile_deploy",
+  "artifact": "M160_HOSTILE_AUDIT_20260807.json",
+  "zero_stat_keys": [
+   "adversarial_early_pruning.first_predict.transport.bad_weight_count",
+   "adversarial_early_pruning.second_predict.transport.bad_weight_count",
+   "targets.[0].first_predict.transport.bad_weight_count",
+   "targets.[0].second_predict.transport.bad_weight_count",
+   "targets.[1].first_predict.transport.bad_weight_count",
+   "targets.[1].second_predict.transport.bad_weight_count",
+   "targets.[2].first_predict.transport.bad_weight_count",
+   "targets.[2].second_predict.transport.bad_weight_count",
+   "targets.[3].first_predict.transport.bad_weight_count",
+   "targets.[3].second_predict.transport.bad_weight_count",
+   "targets.[4].first_predict.transport.bad_weight_count",
+   "targets.[4].second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 12,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m160_cp311_worker.py",
+   "run_m160_hostile_audit.py",
+   "test_m160_hostile_audit.py"
+  ]
+ },
+ {
+  "dir": "m224_gauge_invariant_rho08_chart",
+  "artifact": "M224_RESULTS_20260809.json",
+  "zero_stat_keys": [
+   "numerical_gate.original_census.fallback_count",
+   "numerical_gate.fresh_census.fallback_count",
+   "numerical_gate.m221_native_cells.fallback_count",
+   "numerical_gate.invariance.baseline_fallback_count",
+   "numerical_gate.invariance.gauge_fallback_count",
+   "numerical_gate.invariance.permutation_fallback_count",
+   "numerical_gate.invariance.chart_membership_mismatch_count",
+   "numerical_gate.high_precision.fallback_count",
+   "forbidden_inputs_used"
+  ],
+  "n_zero_stats": 9,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m224_gauge_invariant_rho08_chart.py",
+   "test_m224_gauge_invariant_rho08_chart.py"
+  ]
+ },
+ {
+  "dir": "gm_latent_cubature",
+  "artifact": "invariance_results.json",
+  "zero_stat_keys": [
+   "revived.positive_scale.adaptive_rank_cells.[1].captured_fraction_delta",
+   "revived.positive_scale.adaptive_rank_cells.[2].captured_fraction_delta",
+   "revived.positive_scale.adaptive_rank_cells.[3].captured_fraction_delta",
+   "revived.positive_scale.adaptive_rank_cells.[4].captured_fraction_delta",
+   "original_killed_run.positive_scale.adaptive_rank_cells.[1].captured_fraction_delta",
+   "original_killed_run.positive_scale.adaptive_rank_cells.[2].captured_fraction_delta",
+   "original_killed_run.positive_scale.adaptive_rank_cells.[3].captured_fraction_delta",
+   "original_killed_run.positive_scale.adaptive_rank_cells.[4].captured_fraction_delta"
+  ],
+  "n_zero_stats": 8,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "frozen_paths.py",
+   "make_verdict.py",
+   "repaired_reducer.py",
+   "run_bank.py",
+   "run_case.py",
+   "run_invariance.py",
+   "step0_arithmetic.py",
+   "step0_crosscheck.py"
+  ]
+ },
+ {
+  "dir": "s15_stratification",
+  "artifact": "s15_results.json",
+  "zero_stat_keys": [
+   "pooled.C1_firing_rate.baseB_n_nets_ge_20pct",
+   "pooled.C2_h1_norm.baseB_n_nets_ge_20pct",
+   "pooled.C3_top1.baseB_n_nets_ge_20pct",
+   "pooled.C3_top2.baseB_n_nets_ge_20pct",
+   "pooled.C3_top4.baseB_n_nets_ge_20pct",
+   "pooled.C3_top8.baseB_n_nets_ge_20pct",
+   "pooled.C4_control_linear.baseB_n_nets_ge_20pct",
+   "pooled.union_C1_C2_C3top8.baseB_n_nets_ge_20pct"
+  ],
+  "n_zero_stats": 8,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "run_s15.py"
+  ]
+ },
+ {
+  "dir": "gm_a4_constraint",
+  "artifact": "verify_results.json",
+  "zero_stat_keys": [
+   "signal_2a_import_closure_bytecode.per_module_hits.base_estimator.hits",
+   "signal_2a_import_closure_bytecode.per_module_hits.cost_model.hits",
+   "signal_2a_import_closure_bytecode.per_module_hits.estimator.hits",
+   "signal_2a_import_closure_bytecode.per_module_hits.fold3_estimator.hits",
+   "signal_2a_import_closure_bytecode.per_module_hits.fold_estimator.hits",
+   "signal_2a_import_closure_bytecode.per_module_hits.row_blocked_winograd.hits",
+   "signal_2a_import_closure_bytecode.hits_union"
+  ],
+  "n_zero_stats": 7,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_step0.py",
+   "verify_two_signal.py"
+  ]
+ },
+ {
+  "dir": "m243_event_local_q4_source_premise",
+  "artifact": "M243_G0A_POSTPUBLICATION_RECEIPT_20260809.json",
+  "zero_stat_keys": [
+   "process_topology.subprocess_count",
+   "result_publication_exceptions",
+   "watchdog.interrupt_absorbed_count",
+   "watchdog.interrupt_delivery_count",
+   "watchdog.interrupt_raised_count",
+   "watchdog.interrupt_unexpected_count"
+  ],
+  "n_zero_stats": 6,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m243_event_local_q4_source_premise.py",
+   "m243_g0a_reference.py",
+   "run_m243_g0a.py",
+   "test_m243_event_local_q4_source_premise.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_DEPLOYABLE_CANDIDATE_STRUCTURAL_TRACE_20260807.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_DEPLOYABLE_CANDIDATE_TAIL_1.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_DEPLOYABLE_CANDIDATE_TAIL_2.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_DEPLOYABLE_CANDIDATE_TAIL_3.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_DEPLOYABLE_CANDIDATE_TAIL_4.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_INTEGRATED_PREEXECUTION_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "efficacy_run_count",
+   "locked_structural_evidence.candidate.restore_defect_first",
+   "locked_structural_evidence.candidate.restore_defect_second",
+   "locked_structural_evidence.candidate.repeat_prediction_max_abs",
+   "locked_structural_evidence.matched_comparator.restore_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_INTEGRATED_STRUCTURAL_TRACE_20260807.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m221_batched_certified_distinct_atom",
+  "artifact": "M221_RESULTS_20260809.json",
+  "zero_stat_keys": [
+   "numerical_gate.fallback_count",
+   "numerical_gate.high_precision_max_oracle_gap",
+   "numerical_gate.invariance.baseline_fallback_count",
+   "numerical_gate.invariance.permutation_fallback_count",
+   "forbidden_inputs_used"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m221_batched_certified_distinct_atom.py",
+   "m221_flopscope_sidecar.py",
+   "run_m221_native_trace.py",
+   "test_m221_batched_certified_distinct_atom.py",
+   "test_m221_flopscope_sidecar.py"
+  ]
+ },
+ {
+  "dir": "terra_m153_pilot_reuse",
+  "artifact": "M153_DEPLOYABLE_FRESH_0.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m153_deployable_prefix_reuse.py",
+   "m153_pilot_prefix_reuse.py",
+   "run_m153_cp311_bridge.py",
+   "run_m153_deployable_structural_trace.py",
+   "run_m153_pilot_prefix_reuse_structural.py",
+   "test_m153_pilot_prefix_reuse.py"
+  ]
+ },
+ {
+  "dir": "terra_m153_pilot_reuse",
+  "artifact": "M153_DEPLOYABLE_FRESH_1.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m153_deployable_prefix_reuse.py",
+   "m153_pilot_prefix_reuse.py",
+   "run_m153_cp311_bridge.py",
+   "run_m153_deployable_structural_trace.py",
+   "run_m153_pilot_prefix_reuse_structural.py",
+   "test_m153_pilot_prefix_reuse.py"
+  ]
+ },
+ {
+  "dir": "terra_m153_pilot_reuse",
+  "artifact": "M153_DEPLOYABLE_FRESH_2.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m153_deployable_prefix_reuse.py",
+   "m153_pilot_prefix_reuse.py",
+   "run_m153_cp311_bridge.py",
+   "run_m153_deployable_structural_trace.py",
+   "run_m153_pilot_prefix_reuse_structural.py",
+   "test_m153_pilot_prefix_reuse.py"
+  ]
+ },
+ {
+  "dir": "terra_m153_pilot_reuse",
+  "artifact": "M153_DEPLOYABLE_FRESH_3.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m153_deployable_prefix_reuse.py",
+   "m153_pilot_prefix_reuse.py",
+   "run_m153_cp311_bridge.py",
+   "run_m153_deployable_structural_trace.py",
+   "run_m153_pilot_prefix_reuse_structural.py",
+   "test_m153_pilot_prefix_reuse.py"
+  ]
+ },
+ {
+  "dir": "terra_m153_pilot_reuse",
+  "artifact": "M153_DEPLOYABLE_FRESH_4.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect",
+   "repeat_prediction_max_abs",
+   "second_predict.transport.bad_weight_count",
+   "second_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 5,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m153_deployable_prefix_reuse.py",
+   "m153_pilot_prefix_reuse.py",
+   "run_m153_cp311_bridge.py",
+   "run_m153_deployable_structural_trace.py",
+   "run_m153_pilot_prefix_reuse_structural.py",
+   "test_m153_pilot_prefix_reuse.py"
+  ]
+ },
+ {
+  "dir": "a_series_granular_adversarial",
+  "artifact": "a4_results.json",
+  "zero_stat_keys": [
+   "rows.[0].truth_mean_sq",
+   "rows.[4].truth_mean_sq",
+   "rows.[5].truth_mean_sq",
+   "rows.[6].truth_mean_sq"
+  ],
+  "n_zero_stats": 4,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "a1_hosted_ledger.py",
+   "a1b_tail_diagnostics.py",
+   "run_a3_reaudit.py",
+   "run_a4_hostile.py",
+   "run_m185_g0.py"
+  ]
+ },
+ {
+  "dir": "gm_s17_reuse",
+  "artifact": "step0_results.json",
+  "zero_stat_keys": [
+   "per_net.101.rel_err_ratio_costfloor",
+   "per_net.202.rel_err_ratio_costfloor",
+   "per_net.303.rel_err_ratio_costfloor",
+   "checks.worst_rel_err_ratio"
+  ],
+  "n_zero_stats": 4,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "addendum_checks.py",
+   "analyze_gm_s17_reuse.py",
+   "run_gm_s17_reuse.py",
+   "step0_reproduce_s17.py"
+  ]
+ },
+ {
+  "dir": "n9_kerdock_composition",
+  "artifact": "n9_g0_results.json",
+  "zero_stat_keys": [
+   "gates.g0b.mean_billed_reduction",
+   "gates.g0b.net_rows.[0].billed_reduction",
+   "gates.g0b.net_rows.[1].billed_reduction",
+   "gates.g0b.net_rows.[2].billed_reduction"
+  ],
+  "n_zero_stats": 4,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "run_n9_g0.py"
+  ]
+ },
+ {
+  "dir": "s18_cell_membership_probe",
+  "artifact": "s18_results.json",
+  "zero_stat_keys": [
+   "census.101.n_exact_zero_preactivations",
+   "census.202.n_exact_zero_preactivations",
+   "census.303.n_exact_zero_preactivations",
+   "gate_evaluation.signal_sets_ge_1e-4_on_2plus_nets"
+  ],
+  "n_zero_stats": 4,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_s18.py"
+  ]
+ },
+ {
+  "dir": "s5_kink_concentration",
+  "artifact": "s5_results.json",
+  "zero_stat_keys": [
+   "gate_evaluation.combo_status.d1__frame.n_nets_ratio_ge_3_and_monotone",
+   "gate_evaluation.combo_status.d1__global.n_nets_ratio_ge_3_and_monotone",
+   "gate_evaluation.combo_status.dmin__frame.n_nets_ratio_ge_3_and_monotone",
+   "gate_evaluation.combo_status.dmin__global.n_nets_ratio_ge_3_and_monotone"
+  ],
+  "n_zero_stats": 4,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "run_s5.py"
+  ]
+ },
+ {
+  "dir": "gm_ecn_psi_opus5",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "decisive_numbers.cached_reference_reproduction_rel_diff",
+   "step2_exact_psi_swap.paired_sign_test_exact_vs_surrogate.exact_better_on_units",
+   "step2_exact_psi_swap.reproduction_of_frozen_cache.noladder_ratio_rel_diff"
+  ],
+  "n_zero_stats": 3,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "build_results.py",
+   "step1_jacobian_cd.py",
+   "step2_psi_swap.py",
+   "step3_crosscheck.py"
+  ]
+ },
+ {
+  "dir": "gm_p2b_proxy",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "step1.pooled_within_net_ranked_rho.borderline_frac_overall",
+   "step1.pooled_within_net_ranked_rho.fold_on_total",
+   "step1.permutation_null.frac_null_draws_reaching_gate"
+  ],
+  "n_zero_stats": 3,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "s3_archive_anchor.py",
+   "step0_invariance_gate.py",
+   "step1_deep_diag_proxy.py"
+  ]
+ },
+ {
+  "dir": "m146_pilot_adaptive_hh",
+  "artifact": "M146_FROZEN_PREMISE_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "formal_champion_untouched.failures",
+   "fading_fields.unseen_state",
+   "predeclared_gates.failures_allowed"
+  ],
+  "n_zero_stats": 3,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m146_pilot_adaptive_hh.py",
+   "test_m146_pilot_adaptive_hh.py",
+   "trace_m146_flopscope.py"
+  ]
+ },
+ {
+  "dir": "m183_f32_hotpath",
+  "artifact": "m183_falsifier_results.json",
+  "zero_stat_keys": [
+   "f64_lane_billed",
+   "f64_share",
+   "top_f64_ops"
+  ],
+  "n_zero_stats": 3,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_m183_falsifier.py"
+  ]
+ },
+ {
+  "dir": "m226_preallocated_fused_rho08",
+  "artifact": "M226_STATIC_VALIDATION_20260809.json",
+  "zero_stat_keys": [
+   "probes.[0].fallback_count",
+   "probes.[1].fallback_count",
+   "forbidden_runtime_operations_observed"
+  ],
+  "n_zero_stats": 3,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m226_preallocated_fused_rho08.py",
+   "run_m226_native_trace.py",
+   "test_m226_preallocated_fused_rho08.py"
+  ]
+ },
+ {
+  "dir": "m243_event_local_q4_source_premise",
+  "artifact": "M243_G0A_RESULT_20260809.json",
+  "zero_stat_keys": [
+   "completed_event_count",
+   "process_topology.subprocess_count",
+   "work.completed_event_count"
+  ],
+  "n_zero_stats": 3,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m243_event_local_q4_source_premise.py",
+   "m243_g0a_reference.py",
+   "run_m243_g0a.py",
+   "test_m243_event_local_q4_source_premise.py"
+  ]
+ },
+ {
+  "dir": "m244_terminal_observable_projection",
+  "artifact": "M244_E7_FIXTURE_AUTHORITY_20260809.json",
+  "zero_stat_keys": [
+   "ill_conditioned_fixtures.[0].diagnostics.max_abs_terminal_alpha_error",
+   "ill_conditioned_fixtures.[1].diagnostics.max_abs_terminal_alpha_error",
+   "ill_conditioned_fixtures.[2].diagnostics.max_abs_terminal_alpha_error"
+  ],
+  "n_zero_stats": 3,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "run_m244_e7_fixture_materializer.py"
+  ]
+ },
+ {
+  "dir": "fullcov_gaussian_mm",
+  "artifact": "premise_results.json",
+  "zero_stat_keys": [
+   "official_subprocess_indices_0_4.full_covariance.failures",
+   "official_subprocess_indices_0_4.diagonal_baseline.failures"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "estimator.py",
+   "estimator_diagonal.py",
+   "fullcov.py",
+   "test_estimator.py",
+   "test_fullcov.py"
+  ]
+ },
+ {
+  "dir": "gm_ecn_psi_opus5",
+  "artifact": "step2_results.json",
+  "zero_stat_keys": [
+   "paired_sign_test_exact_vs_surrogate.exact_better_on_units",
+   "reproduction_of_frozen_cache.noladder_ratio_rel_diff"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "build_results.py",
+   "step1_jacobian_cd.py",
+   "step2_psi_swap.py",
+   "step3_crosscheck.py"
+  ]
+ },
+ {
+  "dir": "gm_m116_streams",
+  "artifact": "probe_cheap_results.json",
+  "zero_stat_keys": [
+   "differing_words_frozen_vs_fused",
+   "max_abs_frozen_vs_fused"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "analyze.py",
+   "fused_l3.py",
+   "probe_cheap.py",
+   "run_arm.py",
+   "step0_baseline.py"
+  ]
+ },
+ {
+  "dir": "gm_residual_k1\\raw_arm_A",
+  "artifact": "adversarial_early_pruning.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "gm_residual_k1\\raw_arm_A",
+  "artifact": "target_1.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "gm_residual_k1\\raw_arm_A",
+  "artifact": "target_2.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "gm_residual_k1\\raw_arm_A",
+  "artifact": "target_3.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "gm_residual_k1\\raw_arm_A",
+  "artifact": "target_4.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "gm_residual_k1\\raw_arm_A",
+  "artifact": "target_5.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "gm_u4_suitesize",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "verification.n_resolving",
+   "verdict.resolving_statements_found"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "scan_u4.py",
+   "sentinel_check.py",
+   "verify.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_DEPLOYABLE_COMPARATOR_STRUCTURAL_TRACE_20260807.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_DEPLOYABLE_DESCENDANT_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "efficacy_run_count",
+   "trace_summary.candidate_failures"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_MATCHED_COMPARATOR_STRUCTURAL_TRACE_20260807.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "first_restore_max_abs_defect"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_STRUCTURAL_TRACE_20260807.json",
+  "zero_stat_keys": [
+   "weight_zero_count",
+   "weight_nonfinite_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m154_analytic_endpoint_partition",
+  "artifact": "M154_FROZEN_SOURCE_ONLY_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "implemented_supported_stratum.special_function_calls",
+   "verification.runtime_static_scan.forbidden_runtime_identifiers"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m154_analytic_endpoint_partition.py",
+   "test_m154_analytic_endpoint_partition.py"
+  ]
+ },
+ {
+  "dir": "m169_m163_call_fusion",
+  "artifact": "M169_NATIVE_RESULTS_20260807.json",
+  "zero_stat_keys": [
+   "exactness.small.mismatch_elements",
+   "exactness.target.mismatch_elements"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "aggregate_m169_results.py",
+   "m169_fused_compiler.py",
+   "run_m169_native_trace.py",
+   "run_m169_parity.py",
+   "test_m169_call_fusion.py"
+  ]
+ },
+ {
+  "dir": "m172_selective_22_owner_fusion",
+  "artifact": "M172_FROZEN_STATIC_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "development.execution_count",
+   "confirmation.execution_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m172_selective_22_owner_fusion.py",
+   "run_m172_static.py",
+   "test_m172_selective_22_owner_fusion.py"
+  ]
+ },
+ {
+  "dir": "m226_preallocated_fused_rho08",
+  "artifact": "M226_RESULTS_20260809.json",
+  "zero_stat_keys": [
+   "static_gate.forbidden_runtime_operations_seen",
+   "forbidden_inputs_used"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m226_preallocated_fused_rho08.py",
+   "run_m226_native_trace.py",
+   "test_m226_preallocated_fused_rho08.py"
+  ]
+ },
+ {
+  "dir": "m228_caller_bound_rho08",
+  "artifact": "M228_RESULTS_20260809.json",
+  "zero_stat_keys": [
+   "native_gate.fallback_count_each",
+   "native_gate.chart_mismatch_count_each"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m228_caller_bound_rho08.py",
+   "run_m228_native_trace.py",
+   "test_m228_caller_bound_rho08.py"
+  ]
+ },
+ {
+  "dir": "m233_retained_sigma_producer",
+  "artifact": "M233_RESULTS_20260809.json",
+  "zero_stat_keys": [
+   "first_binding_trace.fallback_count",
+   "first_binding_trace.chart_mismatch_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m233_retained_sigma_producer.py",
+   "run_m233_native_trace.py",
+   "test_m233_retained_sigma_producer.py"
+  ]
+ },
+ {
+  "dir": "m243_event_local_q4_source_premise",
+  "artifact": "M243_G0A_LAUNCH_INTENT_20260809.json",
+  "zero_stat_keys": [
+   "process_topology.subprocess_count",
+   "stdlib_source_preflight.forbidden_top_level_imports"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m243_event_local_q4_source_premise.py",
+   "m243_g0a_reference.py",
+   "run_m243_g0a.py",
+   "test_m243_event_local_q4_source_premise.py"
+  ]
+ },
+ {
+  "dir": "terra_m153_pilot_reuse",
+  "artifact": "M153_PILOT_PREFIX_REUSE_STRUCTURAL_TRACE_20260807.json",
+  "zero_stat_keys": [
+   "baseline.transport.bad_weight_count",
+   "prefix_reuse.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m153_deployable_prefix_reuse.py",
+   "m153_pilot_prefix_reuse.py",
+   "run_m153_cp311_bridge.py",
+   "run_m153_deployable_structural_trace.py",
+   "run_m153_pilot_prefix_reuse_structural.py",
+   "test_m153_pilot_prefix_reuse.py"
+  ]
+ },
+ {
+  "dir": "terra_m157_selfhosted_formal_pilot",
+  "artifact": "M157_SELF_HOSTED_FORMAL_STRUCTURAL_TRACE_20260807.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m157_selfhosted_formal_pilot.py",
+   "run_m157_selfhosted_formal_structural.py",
+   "test_m157_selfhosted_formal_pilot.py"
+  ]
+ },
+ {
+  "dir": "terra_m160_hostile_deploy\\raw_workers",
+  "artifact": "adversarial_early_pruning.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "terra_m160_hostile_deploy\\raw_workers",
+  "artifact": "target_1.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "terra_m160_hostile_deploy\\raw_workers",
+  "artifact": "target_2.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "terra_m160_hostile_deploy\\raw_workers",
+  "artifact": "target_3.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "terra_m160_hostile_deploy\\raw_workers",
+  "artifact": "target_4.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "terra_m160_hostile_deploy\\raw_workers",
+  "artifact": "target_5.json",
+  "zero_stat_keys": [
+   "first_predict.transport.bad_weight_count",
+   "second_predict.transport.bad_weight_count"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": []
+ },
+ {
+  "dir": "wc1_winner_ablation",
+  "artifact": "wc1_results.json",
+  "zero_stat_keys": [
+   "arms.A_tangent.component_billed_frac_of_B",
+   "marginal_value_map.[3].component_billed_frac_of_B"
+  ],
+  "n_zero_stats": 2,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "wc1_ablation.py"
+  ]
+ },
+ {
+  "dir": "gm_a4_constraint",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "gates.G0B_co_occurrence.B1_evidence_count_budget_summary_dict_in_frozen_v3"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_step0.py",
+   "verify_two_signal.py"
+  ]
+ },
+ {
+  "dir": "gm_rankone_bill",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "verification.transcription_fidelity_worst_abs_diff"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "f32_shadow.py",
+   "gate.py",
+   "step0_bill.py",
+   "step1_identities.py",
+   "step2_scale.py",
+   "step3_attack.py",
+   "step4_attribute.py",
+   "step5_repeat.py"
+  ]
+ },
+ {
+  "dir": "gm_rankone_bill",
+  "artifact": "step2_scale.json",
+  "zero_stat_keys": [
+   "I5_m203_two_rectangle.[1].f64_packed_vs_expanded_rel"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "f32_shadow.py",
+   "gate.py",
+   "step0_bill.py",
+   "step1_identities.py",
+   "step2_scale.py",
+   "step3_attack.py",
+   "step4_attribute.py",
+   "step5_repeat.py"
+  ]
+ },
+ {
+  "dir": "gm_residual_k1",
+  "artifact": "arm_A_results.json",
+  "zero_stat_keys": [
+   "k5_pass_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "build_results.py",
+   "diag_threadpool.py",
+   "gm_k1_driver.py",
+   "pin_launch.py",
+   "step0_arithmetic_gate.py",
+   "topology_probe.py"
+  ]
+ },
+ {
+  "dir": "gm_residual_k1",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "arm_a_1_physical_core_pin.k5_pass_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "build_results.py",
+   "diag_threadpool.py",
+   "gm_k1_driver.py",
+   "pin_launch.py",
+   "step0_arithmetic_gate.py",
+   "topology_probe.py"
+  ]
+ },
+ {
+  "dir": "gm_s1s4_vd",
+  "artifact": "results.json",
+  "zero_stat_keys": [
+   "gates.G5_floor_correlation_bound.bootstrap_and_null.permutation_p_two_sided"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "make_results.py",
+   "ndtr_numpy.py",
+   "run_s1_gm.py",
+   "run_s4_gm.py",
+   "step0_moment.py",
+   "step1_shape_and_bounds.py"
+  ]
+ },
+ {
+  "dir": "gm_s1s4_vd",
+  "artifact": "step1_results.json",
+  "zero_stat_keys": [
+   "G5_quantified_lower_bound.bootstrap_and_null_raw_arm.permutation_p_two_sided"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "make_results.py",
+   "ndtr_numpy.py",
+   "run_s1_gm.py",
+   "run_s4_gm.py",
+   "step0_moment.py",
+   "step1_shape_and_bounds.py"
+  ]
+ },
+ {
+  "dir": "gm_u4_suitesize",
+  "artifact": "sentinel_results.json",
+  "zero_stat_keys": [
+   "n_missed"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "scan_u4.py",
+   "sentinel_check.py",
+   "verify.py"
+  ]
+ },
+ {
+  "dir": "gm_u9_s4_d2",
+  "artifact": "gm_u9_s4_d2_results.json",
+  "zero_stat_keys": [
+   "arms.old_control.s4_gate.details.r6@1.55e-07.gain"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_gm_u9_s4_d2.py"
+  ]
+ },
+ {
+  "dir": "gm_u9_s4_d2",
+  "artifact": "gm_u9_s4_d2_results_run1.json",
+  "zero_stat_keys": [
+   "arms.old_control.s4_gate.details.r6@1.55e-07.gain"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_gm_u9_s4_d2.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_CROSS_REFERENCE_RISK_PREEXECUTION_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "efficacy_run_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m145_defensive_acg",
+  "artifact": "M145_CROSS_REFERENCE_RISK_PROTOCOL_20260807.json",
+  "zero_stat_keys": [
+   "efficacy_run_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "audit_m145_deployable_imports.py",
+   "m145_defensive_acg.py",
+   "m145_deployable_core.py",
+   "m145_deployable_estimator.py",
+   "m145_deployable_sidecar.py",
+   "m145_direct_f32_reference.py",
+   "m145_flopscope_sidecar.py",
+   "m145_formal_l1_crosswalk.py",
+   "m145_integrated_estimator.py",
+   "run_m145_cp311_bridge.py",
+   "run_m145_crosswalk.py",
+   "run_m145_deployable_structural_trace.py",
+   "run_m145_formal_parity.py",
+   "run_m145_integrated_structural_trace.py",
+   "run_m145_structural_trace.py",
+   "test_m145_defensive_acg.py",
+   "test_m145_deployable_static.py",
+   "test_m145_integrated.py"
+  ]
+ },
+ {
+  "dir": "m155_b1_compiler_audit",
+  "artifact": "M155_FROZEN_DISPOSITION_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "efficacy_run_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m155_khatri_obstruction.py",
+   "test_m155_khatri_obstruction.py"
+  ]
+ },
+ {
+  "dir": "m156_extended_domain_star_control",
+  "artifact": "M156_FROZEN_RESPONSE_FREE_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "native_trace.failures"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m156_extended_domain_star_control.py",
+   "m156_flopscope_sidecar.py",
+   "run_m156_cp311_bridge.py",
+   "run_m156_native_trace.py",
+   "test_m156_extended_domain_star_control.py"
+  ]
+ },
+ {
+  "dir": "m158_generic_orthant_falsifier",
+  "artifact": "M158_FROZEN_SOURCE_ONLY_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "verification.runtime_static_scan.forbidden_runtime_identifiers"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m158_generic_orthant_falsifier.py",
+   "test_m158_generic_orthant_falsifier.py"
+  ]
+ },
+ {
+  "dir": "m166_oriented_collision_null",
+  "artifact": "M166_FROZEN_STATIC_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "static_results.collision_max_abs"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m166_oriented_collision_null.py",
+   "run_m166_static.py",
+   "test_m166_oriented_collision_null.py"
+  ]
+ },
+ {
+  "dir": "m166_oriented_collision_null",
+  "artifact": "M166_STATIC_TRACE_20260807.json",
+  "zero_stat_keys": [
+   "control.collision_max_abs"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m166_oriented_collision_null.py",
+   "run_m166_static.py",
+   "test_m166_oriented_collision_null.py"
+  ]
+ },
+ {
+  "dir": "m169_m163_call_fusion",
+  "artifact": "M169_PARITY_SMALL_20260807.json",
+  "zero_stat_keys": [
+   "mismatch_elements"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "aggregate_m169_results.py",
+   "m169_fused_compiler.py",
+   "run_m169_native_trace.py",
+   "run_m169_parity.py",
+   "test_m169_call_fusion.py"
+  ]
+ },
+ {
+  "dir": "m169_m163_call_fusion",
+  "artifact": "M169_PARITY_TARGET_20260807.json",
+  "zero_stat_keys": [
+   "mismatch_elements"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "aggregate_m169_results.py",
+   "m169_fused_compiler.py",
+   "run_m169_native_trace.py",
+   "run_m169_parity.py",
+   "test_m169_call_fusion.py"
+  ]
+ },
+ {
+  "dir": "m198_source211_delay_one_adapter",
+  "artifact": "M198_G1_RESULTS_20260809.json",
+  "zero_stat_keys": [
+   "test_failures"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "generate_m198_independent_oracle.py",
+   "m198_source211_delay_one_adapter.py",
+   "test_m198_source211_delay_one_adapter.py"
+  ]
+ },
+ {
+  "dir": "m213_event_local_randomized_source211",
+  "artifact": "M213_RESULTS_20260809.json",
+  "zero_stat_keys": [
+   "cells.[0].max_m178_radius_ratio"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m213_event_local_randomized_source211.py",
+   "test_m213_event_local_randomized_source211.py"
+  ]
+ },
+ {
+  "dir": "m216_antithetic_distinct_provider",
+  "artifact": "M216_RESULTS_20260809.json",
+  "zero_stat_keys": [
+   "invariance.max_singleton_swap_absolute"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m216_antithetic_distinct_provider.py",
+   "run_m216_gates.py",
+   "test_m216_antithetic_distinct_provider.py"
+  ]
+ },
+ {
+  "dir": "m223_m179_fused_physical_owner_packet",
+  "artifact": "M223_FROZEN_MANIFEST_20260809.json",
+  "zero_stat_keys": [
+   "additional_owner_special_function_calls"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m223_m179_fused_physical_owner_packet.py",
+   "test_m223_m179_fused_physical_owner_packet.py"
+  ]
+ },
+ {
+  "dir": "m226_preallocated_fused_rho08",
+  "artifact": "M226_FROZEN_MANIFEST_20260809.json",
+  "zero_stat_keys": [
+   "setup_ledger.runtime_user_allocation_bytes"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m226_preallocated_fused_rho08.py",
+   "run_m226_native_trace.py",
+   "test_m226_preallocated_fused_rho08.py"
+  ]
+ },
+ {
+  "dir": "m228_caller_bound_rho08",
+  "artifact": "M228_STATIC_LEDGER_20260809.json",
+  "zero_stat_keys": [
+   "runtime.source_attributed_allocation_bytes"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m228_caller_bound_rho08.py",
+   "run_m228_native_trace.py",
+   "test_m228_caller_bound_rho08.py"
+  ]
+ },
+ {
+  "dir": "m236_layer_batched_m212_m235",
+  "artifact": "M236_NATIVE_ONE_PROCESS_RESULT_20260809.json",
+  "zero_stat_keys": [
+   "artifact_search.pre_disposition_matches"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m236_layer_batched_m212_m235.py",
+   "m236_official_setup_estimator.py",
+   "run_m236_native_process.py",
+   "test_m236_block8_contract.py",
+   "test_m236_native_contract.py"
+  ]
+ },
+ {
+  "dir": "m245_canonical_unordered_replica_galerkin_spectrum",
+  "artifact": "M245_FIXTURE_MATERIALIZATION_POSTPUBLICATION_RECEIPT_20260810.json",
+  "zero_stat_keys": [
+   "topology.W.child_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "aggregate_m245_spectrum.py",
+   "launch_m245_scientific_invocation.py",
+   "m245_primary_core.py",
+   "m245_replica_core.py",
+   "m245_scientific_worker.py",
+   "materialize_m245_fixtures.py",
+   "run_m245_scientific_shard.py",
+   "supervise_m245_fixture_materialization.py",
+   "test_m245_aggregation.py",
+   "test_m245_fixture_materialization_transport.py",
+   "test_m245_primary_core.py",
+   "test_m245_replica_core.py",
+   "test_m245_scientific_transport.py"
+  ]
+ },
+ {
+  "dir": "m245_canonical_unordered_replica_galerkin_spectrum",
+  "artifact": "M245_FIXTURE_MATERIALIZATION_TERMINAL_METER_WITNESS_20260810.json",
+  "zero_stat_keys": [
+   "identities.W.child_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "aggregate_m245_spectrum.py",
+   "launch_m245_scientific_invocation.py",
+   "m245_primary_core.py",
+   "m245_replica_core.py",
+   "m245_scientific_worker.py",
+   "materialize_m245_fixtures.py",
+   "run_m245_scientific_shard.py",
+   "supervise_m245_fixture_materialization.py",
+   "test_m245_aggregation.py",
+   "test_m245_fixture_materialization_transport.py",
+   "test_m245_primary_core.py",
+   "test_m245_replica_core.py",
+   "test_m245_scientific_transport.py"
+  ]
+ },
+ {
+  "dir": "m245_canonical_unordered_replica_galerkin_spectrum",
+  "artifact": "M245_FROZEN_MANIFEST_V1_20260810.json",
+  "zero_stat_keys": [
+   "scientific_shard_resources.scientific_worker_children_per_invocation"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "aggregate_m245_spectrum.py",
+   "launch_m245_scientific_invocation.py",
+   "m245_primary_core.py",
+   "m245_replica_core.py",
+   "m245_scientific_worker.py",
+   "materialize_m245_fixtures.py",
+   "run_m245_scientific_shard.py",
+   "supervise_m245_fixture_materialization.py",
+   "test_m245_aggregation.py",
+   "test_m245_fixture_materialization_transport.py",
+   "test_m245_primary_core.py",
+   "test_m245_replica_core.py",
+   "test_m245_scientific_transport.py"
+  ]
+ },
+ {
+  "dir": "s12_finite_width_kernel",
+  "artifact": "s12_results.json",
+  "zero_stat_keys": [
+   "checks.pure_exponential_mc_mean_vs_exp_s2.censor_frac"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_s12.py"
+  ]
+ },
+ {
+  "dir": "s3_coupled_rotations",
+  "artifact": "s3_results.json",
+  "zero_stat_keys": [
+   "arms.indep.cov_decomposition_abs_gap"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_s3_g0b.py"
+  ]
+ },
+ {
+  "dir": "s4_portfolio",
+  "artifact": "s4_results.json",
+  "zero_stat_keys": [
+   "gates.details.r6@1.55e-07.gain"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_s4.py"
+  ]
+ },
+ {
+  "dir": "s8_layer_profile",
+  "artifact": "s8_results.json",
+  "zero_stat_keys": [
+   "gates.n_pass"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_s8.py"
+  ]
+ },
+ {
+  "dir": "t3_fold3_deterministic_cap",
+  "artifact": "t3_gate_results.json",
+  "zero_stat_keys": [
+   "gates.g2.design_cold_units"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "capped_fold3.py",
+   "run_t3_gates.py"
+  ]
+ },
+ {
+  "dir": "t3_fold3_deterministic_cap",
+  "artifact": "t3_gate_results_FROZEN_20260808.json",
+  "zero_stat_keys": [
+   "gates.g2.design_cold_units"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "capped_fold3.py",
+   "run_t3_gates.py"
+  ]
+ },
+ {
+  "dir": "terra_m153_pilot_reuse",
+  "artifact": "M153_PILOT_STATE_REUSE_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "efficacy_run_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": true,
+  "py_files": [
+   "m153_deployable_prefix_reuse.py",
+   "m153_pilot_prefix_reuse.py",
+   "run_m153_cp311_bridge.py",
+   "run_m153_deployable_structural_trace.py",
+   "run_m153_pilot_prefix_reuse_structural.py",
+   "test_m153_pilot_prefix_reuse.py"
+  ]
+ },
+ {
+  "dir": "terra_m157_selfhosted_formal_pilot",
+  "artifact": "M157_SELF_HOSTED_FORMAL_PILOT_MANIFEST_20260807.json",
+  "zero_stat_keys": [
+   "efficacy_run_count"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "m157_selfhosted_formal_pilot.py",
+   "run_m157_selfhosted_formal_structural.py",
+   "test_m157_selfhosted_formal_pilot.py"
+  ]
+ },
+ {
+  "dir": "v31_guards",
+  "artifact": "v31_results.json",
+  "zero_stat_keys": [
+   "gates.g3.pycache_in_source_before_packaging"
+  ],
+  "n_zero_stats": 1,
+  "has_positive_control_hint": false,
+  "py_files": [
+   "run_v31_gates.py",
+   "test_v31_gate_predicates.py"
+  ]
+ }
+]

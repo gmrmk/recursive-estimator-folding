@@ -1,0 +1,120 @@
+{
+  "mutation": "m221_batched_certified_distinct_atom",
+  "status": "KILLED",
+  "estimator_algebra_changed": false,
+  "generated_only": true,
+  "numerical_gate": {
+    "pass": false,
+    "event_probe_count": 2730,
+    "fallback_count": 0,
+    "max_parent_midpoint_error": 2.0261570199409107e-15,
+    "max_radius_ratio": 1e-8,
+    "high_precision_probe_count": 17,
+    "high_precision_max_midpoint_error": 1.7416623698807143e-15,
+    "high_precision_max_oracle_gap": 0.0,
+    "high_precision_min_radius_margin": 1.0000468084642186e-8,
+    "high_precision_gate_pass": true,
+    "inherited_worst_pass": true,
+    "invariance": {
+      "pass": false,
+      "probe_count": 90,
+      "baseline_fallback_count": 0,
+      "permutation_fallback_count": 0,
+      "gauge_fallback_count": 81,
+      "gauged_sigma_min": 0.7501602937357109,
+      "gauged_sigma_max": 1.6302056710878285,
+      "max_gauge_scaled_error_on_joint_chart": 1.8659063985293372e-16,
+      "max_permutation_scaled_error": 4.156643241599688e-17
+    }
+  },
+  "static_native": {
+    "event_count": 3968,
+    "predicted_bill": 21760512,
+    "observed_bill_all_runs": 21760512,
+    "predicted_allocation_bytes": 11911936,
+    "observed_allocation_bytes_all_runs": 11911936,
+    "staged_columns": 18,
+    "staged_bytes": 571392,
+    "workspace_buffers": 40,
+    "workspace_bytes": 11340544,
+    "charged_calls": {
+      "empty": 58,
+      "copyto": 23,
+      "multiply": 76,
+      "add": 37,
+      "divide": 9,
+      "sqrt": 2,
+      "subtract": 6,
+      "exp": 3,
+      "sum": 2,
+      "maximum": 3,
+      "abs": 7,
+      "max": 3,
+      "less_equal": 6,
+      "logical_and": 8,
+      "greater_equal": 2,
+      "isfinite": 1
+    }
+  },
+  "native_gate": {
+    "pass": false,
+    "seeds": [221720001, 221720002, 221720003, 221720004, 221720005],
+    "wall_s": [
+      0.02156909997574985,
+      0.019904899992980063,
+      0.018120499997166917,
+      0.018651599995791912,
+      0.018212299997685477
+    ],
+    "raw_speedup_vs_m216": [
+      74.80106735148647,
+      81.05500156072176,
+      89.03682018979931,
+      86.50151731545904,
+      88.58802568605002
+    ],
+    "residual_wall_s": [
+      0.0014120997511781752,
+      0.001411300152540207,
+      0.0011486997827887535,
+      0.0011934000940527767,
+      0.001280700060306117
+    ],
+    "hostile_component": [
+      727810387.5890876,
+      727410588.2701035,
+      596110403.3943768,
+      618460559.0263884,
+      662110542.1530585
+    ],
+    "rss_bytes": [58703872, 58658816, 58920960, 58683392, 58642432],
+    "fallback_count_each": [68, 68, 68, 68, 68],
+    "chart_mismatch_count_each": [0, 0, 0, 0, 0],
+    "fallback_cause": "abs(pair_rho) > 0.04 only",
+    "max_abs_pair_rho": 0.07885550264503906,
+    "value_parity_max_abs_max": 5.30825383648903e-16,
+    "value_parity_enclosure_ratio_max": 5.2300677309336504e-8,
+    "wall_summary_s": {
+      "min": 0.018120499997166917,
+      "median": 0.018651599995791912,
+      "max": 0.02156909997574985
+    },
+    "speedup_summary": {
+      "min": 74.80106735148647,
+      "median": 86.50151731545904,
+      "max": 89.03682018979931
+    },
+    "hostile_component_summary": {
+      "min": 596110403.3943768,
+      "median": 662110542.1530585,
+      "max": 727810387.5890876
+    },
+    "raw_wall_strict_max_s": 0.016133916999970098,
+    "strict_speedup_min": 100.0,
+    "component_ceiling": 6824272176,
+    "fastest_wall_over_limit_ratio": 1.1231308551544241
+  },
+  "variance_gate_run": false,
+  "forbidden_inputs_used": [],
+  "disposition": "Kill M221. Preserve the exact batched recurrence and its affine cost ledger as salvage; mutate the scale/rho chart and call/allocation structure in a new predeclared child before any variance work."
+}

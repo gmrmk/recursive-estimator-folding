@@ -1,0 +1,20 @@
+{
+  "signal_A_closed_form": {
+    "strategy": "winograd_batched_owned",
+    "total": 7427768320,
+    "direct": 8439201792,
+    "r_vs_direct": 0.88015057621222
+  },
+  "signal_B_metered_frozen_kernel": {
+    "BLOCK_ROWS": 4096,
+    "metered_flops": 7427768320,
+    "r_vs_direct": 0.88015057621222,
+    "matches_closed_form": true
+  },
+  "frozen_kernel_rel_frobenius_vs_f64": 5.355172651766537e-07,
+  "metered_classical_matmul": {
+    "metered_flops": 8439201792,
+    "closed_form_direct": 8439201792,
+    "match": true
+  }
+}

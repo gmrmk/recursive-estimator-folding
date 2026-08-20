@@ -1,0 +1,18 @@
+{
+  "protocol_id": "M133-FACTORED-HIDDEN-EDGE-GENERATED-v1",
+  "created_utc": "2026-08-07",
+  "scope": "generated-only algebra and static cost audit",
+  "contest_data_accessed": false,
+  "submission_capability": false,
+  "disposition": "repair_component_no_promotion",
+  "artifacts_sha256": {
+    "m133_ht_hidden_edge.py": "c296c95ede532c1451e0444b9d56b51e96287ef251b11de9cacee0df7d1ea6b1",
+    "test_m133_ht_hidden_edge.py": "de245651f539239be79462b6b5e5c1e4a198cd1a2a68d2424258e6db2a26e107",
+    "run_m133_generated.py": "5cfb2a0bb9878eaace345a21bb2a2317a486c96508c8a3bf16397f356f3fdeee",
+    "M133_RESULTS_20260807.json": "7f35e18750430b097ef527cfa3ff3a06e3ee68296317bfb73368f1ccc8a7bf18",
+    "M133_FACTORED_HIDDEN_EDGE_AUDIT_20260807.md": "0e634a01d1c46244ac011dace3e4f41bf1698d32ecd734e346a68ab590a12bbf"
+  },
+  "test_command": "python -m unittest -v test_m133_ht_hidden_edge.py",
+  "test_result": "13 tests passed",
+  "promotion_gate": "closed: no kappa in {2,3,4} passes both protected cost and frozen variance gates"
+}

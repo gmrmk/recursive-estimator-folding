@@ -1,0 +1,25 @@
+{
+  "mutation": "M213",
+  "generated_only": true,
+  "response_free": true,
+  "m178_calls_per_distinct_event": 1,
+  "m178_worst_case_inclusive_per_call": 4048,
+  "m178_local_numerical_gate_pass": true,
+  "max_m178_radius_ratio": 1.1259529437230464e-07,
+  "identity_gate_pass": false,
+  "confidence_gate_pass": true,
+  "collision_owner_gate_pass": false,
+  "local_provider_gate_pass": false,
+  "whole_source_provider_gate_pass": false,
+  "source_variance_executed": false,
+  "collision_owner_stop_reason": "[3,1]/[2,2] Tallis recurrence crosses a ReLU boundary and lacks a truncated-indicator moment",
+  "whole_source_stop_reason": "collision owners are unavailable; M213 also does not contract through the next affine W or bind the next pre-ReLU context for M198",
+  "cells": [
+    {"width": 2, "identity": "VACUOUS_NO_THREE_DISTINCT_LABELS", "max_m178_radius_ratio": 0.0},
+    {"width": 3, "gh64": 2.928861043967473e-06, "gh96": 3.6391366935598935e-06, "difference": -7.102756495924206e-07, "max_m178_radius_ratio": 2.3510022798190656e-08},
+    {"width": 4, "gh64": -1.1436511992780441e-05, "gh96": -1.0242060918907615e-05, "difference": -1.194451073872826e-06, "max_m178_radius_ratio": 2.693336134309896e-08},
+    {"width": 5, "gh64": -1.178967657373815e-06, "gh96": -4.5405610407809186e-07, "difference": -7.249115532957233e-07, "max_m178_radius_ratio": 9.443223401906447e-08},
+    {"width": 6, "gh64": 4.691979882026695e-06, "gh96": 1.8373348573453994e-06, "difference": 2.8546450246812953e-06, "max_m178_radius_ratio": 9.885863558224317e-08},
+    {"width": 7, "gh64": 8.004663880646849e-07, "gh96": -2.1983055407713014e-06, "difference": 2.998771928835986e-06, "max_m178_radius_ratio": 1.1259529437230464e-07}
+  ]
+}

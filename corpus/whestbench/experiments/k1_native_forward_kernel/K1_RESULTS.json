@@ -1,0 +1,59 @@
+{
+ "cpu_cores": 16,
+ "correctness_fused_vs_naive_maxabs": 0.0,
+ "throughput_rows": {
+  "naive_N2style": {
+   "16384": {
+    "us_per_sample": 24.807,
+    "gflops": 169.1
+   },
+   "65536": {
+    "us_per_sample": 23.92,
+    "gflops": 175.3
+   },
+   "131072": {
+    "us_per_sample": 23.285,
+    "gflops": 180.1
+   },
+   "262144": {
+    "us_per_sample": 22.91,
+    "gflops": 183.1
+   }
+  },
+  "fused_prealloc": {
+   "16384": {
+    "us_per_sample": 17.534,
+    "gflops": 239.2
+   },
+   "65536": {
+    "us_per_sample": 18.628,
+    "gflops": 225.2
+   },
+   "131072": {
+    "us_per_sample": 18.313,
+    "gflops": 229.0
+   },
+   "262144": {
+    "us_per_sample": 17.984,
+    "gflops": 233.2
+   }
+  }
+ },
+ "best_fused_us_per_sample": 17.534,
+ "best_fused_gflops": 239.2,
+ "S_vs_N2_baseline": 1.36,
+ "floor_budget_samples": 15512,
+ "implied_raw_mse_at_floor": 1.282818382352941e-06,
+ "implied_adjusted_at_floor": 1.282818382352941e-07,
+ "board_ref": {
+  "top12_cutoff": 4.09e-08,
+  "joewanza": 7.39e-09,
+  "skibidi": 9.2e-09
+ },
+ "S_needed_for_ranks_at_v0.0199": {
+  "top12_4.09e-8": 4.3,
+  "skibidi_9.2e-9": 18.9,
+  "joewanza_7.39e-9": 23.5
+ },
+ "note": "numpy-fused ceiling on 16 cores; compiled fused kernel (bundled per Rules 5.2) is the deployment artifact, un-benchmarkable here (no toolchain). adjusted_at_floor uses this laptop's us/sample; grading throughput measurable only by a graded submission."
+}

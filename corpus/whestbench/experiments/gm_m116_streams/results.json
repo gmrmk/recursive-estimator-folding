@@ -1,0 +1,204 @@
+{
+ "candidate": "m116b_inplace_streamed_l3_b2048 (gm_m116_streams revival)",
+ "step0": {
+  "step": 0,
+  "relu_bill": 528482304,
+  "l3_full_trace": 189738221568,
+  "baseline_pre_l3_champion_L1": 238217068544,
+  "baseline_pre_l3_direct": 270582939648,
+  "baseline_pre_l3_L2": 211171803136,
+  "delta_vs_champion_L1": 48478846976,
+  "delta_vs_direct": 80844718080,
+  "delta_vs_L2": 21433581568,
+  "delta_vs_champion_L1_B": 48.478846976,
+  "relevance_floor": 1000000000,
+  "verdict": "STEP0_CLEAR",
+  "residual_excess_charge_of_killed_run_flopeq": 44051311320,
+  "net_gain_if_residual_unrepaired_flopeq": 4427535656
+ },
+ "arms": {
+  "REF_group1_512calls": {
+   "tags": [
+    "ref_a",
+    "ref_b",
+    "ref_hp",
+    "ref_hp2"
+   ],
+   "dispatches_per_layer": 16,
+   "matmul_calls": 512,
+   "residual_s": [
+    1.1148433006892446,
+    0.9874880023417063,
+    0.7741152997186873,
+    0.857333101099357
+   ],
+   "residual_mean_s": 0.9334449259622488,
+   "residual_ci95_s": [
+    0.6956716497543906,
+    1.171218202170107
+   ],
+   "workspace_mib": 64.66796875,
+   "peak_mib": [
+    188.8515625,
+    188.76171875,
+    188.8515625,
+    188.75
+   ],
+   "predict_wall_s": [
+    48.30624330000137,
+    40.45911060000071,
+    31.24693260001368,
+    35.09745960001601
+   ],
+   "billed_flops": [
+    189738221568
+   ]
+  },
+  "FUSED_group4_160calls": {
+   "tags": [
+    "fused_a",
+    "fused_b",
+    "fused_hp",
+    "fused_hp2"
+   ],
+   "dispatches_per_layer": 5,
+   "dispatch_plan_per_layer": [
+    [
+     4,
+     4096
+    ],
+    [
+     4,
+     4096
+    ],
+    [
+     4,
+     4096
+    ],
+    [
+     3,
+     4096
+    ],
+    [
+     1,
+     3072
+    ]
+   ],
+   "matmul_calls": 160,
+   "residual_s": [
+    0.46661230103927664,
+    0.4353316011838615,
+    0.4030299997248221,
+    0.3718152022920549
+   ],
+   "residual_mean_s": 0.4191972760600038,
+   "residual_ci95_s": [
+    0.35414798865887986,
+    0.4842465634611277
+   ],
+   "workspace_mib": 251.04296875,
+   "peak_mib": [
+    365.91796875,
+    366.03515625,
+    366.125,
+    365.91015625
+   ],
+   "predict_wall_s": [
+    42.05383650001022,
+    37.49776970001403,
+    36.802760400023544,
+    33.59856270000455
+   ],
+   "billed_flops": [
+    189738221568
+   ]
+  }
+ },
+ "parity": {
+  "shape": [
+   64512,
+   256
+  ],
+  "float32_words": 16515072,
+  "differing_float32_words": 0,
+  "bitwise_equal": true,
+  "max_abs_difference": 0.0,
+  "sha256_ref_a": "ed59595dac93a6e20e362266306530c48045798126c6cec0a027b382ab5b1e70",
+  "sha256_fused_a": "ed59595dac93a6e20e362266306530c48045798126c6cec0a027b382ab5b1e70",
+  "all_run_sha256": [
+   "ed59595dac93a6e20e362266306530c48045798126c6cec0a027b382ab5b1e70"
+  ],
+  "distinct_sha256_across_8_runs": 1
+ },
+ "dispatch_reduction_factor": 3.2,
+ "residual_reduction_factor_measured": 2.22674377738236,
+ "control_reproduction": {
+  "ledger_m116c_residual_s": 0.3284645767,
+  "measured_same_schedule_mean_s": 0.9334449259622488,
+  "measured_same_schedule_min_s": 0.7741152997186873,
+  "host_slowdown_factor_mean": 2.8418435112252665,
+  "host_slowdown_factor_min": 2.3567695107217546,
+  "control_reproduces_within_10pct": false
+ },
+ "labelled_projections_not_gates": {
+  "ledger_two_point_slope_s_per_call": 0.0005508760478637743,
+  "ledger_two_point_intercept_s": 0.046416040193747565,
+  "ledger_law_projection_for_160_calls_s": 0.13455620785195144,
+  "host_normalized_fused_residual_mean_s": 0.14750892313534394,
+  "host_normalized_fused_residual_min_s": 0.1577647710565415
+ },
+ "gates": {
+  "STEP0_relevance": {
+   "quantity": "pre_L3_baseline_minus_189738221568",
+   "value": 48478846976,
+   "floor": 1000000000,
+   "result": "CLEAR"
+  },
+  "G1_residual_le_0.170s_ABSOLUTE": {
+   "raw_measured_mean_s": 0.4191972760600038,
+   "raw_measured_ci95_s": [
+    0.35414798865887986,
+    0.4842465634611277
+   ],
+   "gate_s": 0.17,
+   "raw_result": "FAIL",
+   "control_valid": false,
+   "result": "NOT_MEASURABLE_ON_THIS_HOST"
+  },
+  "G2_bitwise_parity": {
+   "differing_float32_words": 0,
+   "of_total": 16515072,
+   "result": "PASS"
+  },
+  "G3_peak_le_464_MiB": {
+   "measured_mib": 366.125,
+   "gate_mib": 464.0,
+   "result": "PASS"
+  },
+  "INV_bill_exact": {
+   "expected": 189738221568,
+   "observed": [
+    189738221568
+   ],
+   "result": "PASS"
+  },
+  "INV_finite": {
+   "result": "PASS"
+  },
+  "INV_wall_lt_20s": {
+   "measured_s": [
+    48.30624330000137,
+    40.45911060000071,
+    31.24693260001368,
+    35.09745960001601,
+    42.05383650001022,
+    37.49776970001403,
+    36.802760400023544,
+    33.59856270000455
+   ],
+   "result": "NOT_MEASURABLE_ON_THIS_HOST",
+   "note": "control arm also fails; host is ~2.4-3.4x slower than the campaign host"
+  }
+ },
+ "verdict": "INCONCLUSIVE"
+}

@@ -1,0 +1,26 @@
+{
+  "contract": {
+    "generated_only": true,
+    "not_a_contest_measurement": true,
+    "exact_factor_model": "C=diag(d)+UU^T",
+    "factor_rank": 2,
+    "complete_repeated_k3_k4": true,
+    "complete_m121_output_functional": true,
+    "second_order_k3_squared": false,
+    "common_factor_samples": 3,
+    "repetitions": 512
+  },
+  "reference": "30x30 Gauss-Hermite common-factor quadrature; deterministic approximation only",
+  "conditional": {
+    "variance": 0.01987207157922983,
+    "mse_vs_quadrature": 0.019841476687105807,
+    "squared_bias_vs_quadrature": 8.217747679159865e-06
+  },
+  "m131_iid_equal_rows": {
+    "variance": 0.27830555636901594,
+    "mse_vs_quadrature": 0.2778565348472724,
+    "squared_bias_vs_quadrature": 9.45440180396218e-05
+  },
+  "variance_ratio_conditional_over_iid": 0.07140379027460268,
+  "disposition": "premise_pass_only; generic deployment killed by typed-law, L2, and allocation gates"
+}

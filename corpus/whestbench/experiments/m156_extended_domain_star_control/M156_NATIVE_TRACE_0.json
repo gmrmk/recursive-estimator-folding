@@ -1,0 +1,68 @@
+{
+  "billed_flops": 10426269184,
+  "combined_actual_bill": 96407147984,
+  "combined_actual_effective_compute": 97002798340.26292,
+  "combined_static_protected_bill": 98957826000,
+  "effective_compute": 11021919540.262922,
+  "expected_matmul_calls": 155,
+  "failure": null,
+  "firewall": "generated matrices only; no truth, scorer, contest row, response, submission, or champion mutation",
+  "flopscope_summary": {
+    "flop_budget": 1000000000000000,
+    "flops_remaining": 999989573730816,
+    "flops_used": 10426269184,
+    "flopscope_backend_time_s": 0.09111959976144135,
+    "flopscope_overhead_time_s": 0.060160796623677015,
+    "operations": {
+      "add": {
+        "calls": 93,
+        "flop_cost": 12189696,
+        "flopscope_backend_time_s": 0.010618598433211446,
+        "flopscope_overhead_time_s": 0.007701401133090258
+      },
+      "copyto": {
+        "calls": 31,
+        "flop_cost": 15872,
+        "flopscope_backend_time_s": 0.0002560995053499937,
+        "flopscope_overhead_time_s": 0.0016641004476696253
+      },
+      "diagonal": {
+        "calls": 31,
+        "flop_cost": 0,
+        "flopscope_backend_time_s": 0.00022329972125589848,
+        "flopscope_overhead_time_s": 0.0008378014899790287
+      },
+      "matmul": {
+        "calls": 155,
+        "flop_cost": 10381557760,
+        "flopscope_backend_time_s": 0.06746789952740073,
+        "flopscope_overhead_time_s": 0.027015599189326167
+      },
+      "multiply": {
+        "calls": 248,
+        "flop_cost": 32505856,
+        "flopscope_backend_time_s": 0.01255370257422328,
+        "flopscope_overhead_time_s": 0.022891894448548555
+      }
+    },
+    "residual_wall_time_s": 0.005956503562629223,
+    "wall_time_s": 0.1572368999477476
+  },
+  "inherited_endpoint_subtotal": 85980878800,
+  "layers": 31,
+  "measured_matmul_calls": 155,
+  "output_finite": true,
+  "output_sha256": "d0d65f22a7df1826310a802f94021b7554a27996051ea4bfcf185c62945813ca",
+  "remaining_to_100b_actual_bill": 3592852016,
+  "remaining_to_100b_actual_effective": 2997201659.737076,
+  "residual_s": 0.005956503562629223,
+  "runtime": {
+    "flopscope": "0.10.0+np2.4.6",
+    "numpy": "2.4.6"
+  },
+  "seed": 156700001,
+  "static_protected_compiler": 12976947200,
+  "status": "M156_NATIVE_COMPILER_TRACE_ONLY_NO_EFFICACY",
+  "wall_s": 0.1572292000055313,
+  "width": 256
+}

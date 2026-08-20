@@ -1,0 +1,4818 @@
+{
+ "audit": "whestbench orchestrator narrative-layer self-audit",
+ "artifact": "claims_conversation.json",
+ "stage": "extraction (grading deferred to the disk-comparison pass)",
+ "generated_utc": "2026-08-19",
+ "source_transcript": "C:\\Users\\strid\\.claude\\projects\\C--Users-strid\\7c1d8a18-611c-4493-9d65-0b4a9ad5fd33.jsonl",
+ "source_scope": {
+  "role": "assistant",
+  "content_type": "text (user-facing prose only; tool calls and agent/tool_result outputs excluded)",
+  "date_filter": "2026-08-19",
+  "assistant_text_blocks_in_scope": 108,
+  "characters_in_scope": 133293,
+  "sidechain_blocks": 0,
+  "note": "The transcript is the live session being audited and was still growing during extraction; blocks 106-107 were appended mid-extraction and are included."
+ },
+ "grading_vocabulary": {
+  "EXTRACTED": "verbatim on disk",
+  "INFERRED": "derivable from disk with the derivation shown",
+  "AMBIGUOUS": "cannot settle",
+  "CONFABULATED": "absent from disk or contradicts disk; requires the true value beside it"
+ },
+ "method": "Every load-bearing factual claim in the orchestrator's 2026-08-19 user-facing text was read by hand and recorded with a verbatim fragment. Each verbatim fragment is mechanically verified to occur in at least one referenced block before this file is written; unverified fragments fail the build.",
+ "pre_registered_suspect_string_counts": {
+  "50.3": 5,
+  "61.6": 2,
+  "F7": 11,
+  "Lens A": 4,
+  "due today": 3,
+  "0.019": 2,
+  "0.03": 2,
+  "honour window": 3,
+  "m-band": 5,
+  "[1.86": 3,
+  "0.35 s": 4,
+  "200B": 2,
+  "#58": 6,
+  "#64": 1,
+  "#66": 5,
+  "1.832e-7": 3,
+  "9.10e-8": 2,
+  "5.39e-8": 1,
+  "oracle": 6
+ },
+ "self_conceded_confabulations": [
+  {
+   "item": "50.3% oracle",
+   "orchestrator_statement": "exists nowhere in the corpus",
+   "stated_true_value": "61.6%",
+   "blocks": [
+    105,
+    107
+   ]
+  },
+  {
+   "item": "'F7' label",
+   "orchestrator_statement": "my vocabulary presented as a corpus label",
+   "blocks": [
+    105,
+    107
+   ]
+  },
+  {
+   "item": "'Lens A' label",
+   "orchestrator_statement": "my vocabulary presented as a corpus label",
+   "blocks": [
+    105,
+    107
+   ]
+  },
+  {
+   "item": "designation due today",
+   "orchestrator_statement": "phantom - Phase 2 had not opened",
+   "blocks": [
+    105,
+    107
+   ]
+  }
+ ],
+ "claims_total": 222,
+ "claims_flagged_suspect": 37,
+ "claims_with_internal_conflict": 48,
+ "verbatim_verification": {
+  "verified": 222,
+  "unverified": 0
+ },
+ "claims": [
+  {
+   "id": "CC001",
+   "category": "number",
+   "subject": "F7 rotation-selection oracle",
+   "claim": "A perfect oracle choosing among 8 rotation draws gains 50.3% MSE reduction.",
+   "verbatim": "a perfect oracle choosing among 8 draws gains 50.3%",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    37,
+    42,
+    81
+   ],
+   "timestamps": [
+    "2026-08-19T04:49:27.716Z",
+    "2026-08-19T05:28:15.838Z",
+    "2026-08-19T16:07:01.629Z"
+   ],
+   "occurrences_in_transcript": 3,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect. Orchestrator itself concedes in B105 that 50.3% 'exists nowhere in the corpus'.",
+   "internal_conflict": "Same object is called 61.6% in B032 (05h earlier) and 50.3% in B037/B042/B081.",
+   "disk_check_hint": "grep corpus for '50.3' and '61.6' near 'oracle'/'rotation'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC002",
+   "category": "number",
+   "subject": "F7 rotation-selection oracle",
+   "claim": "The 61.6% oracle is the largest unharvested number in the field.",
+   "verbatim": "The 61.6% oracle is the largest unharvested number in the field",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    32
+   ],
+   "timestamps": [
+    "2026-08-19T04:24:18.967Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect; B105 asserts 61.6% is 'the committed value'.",
+   "internal_conflict": "Contradicts the 50.3% figure used for the same object in B037/B042/B081.",
+   "disk_check_hint": "grep corpus for '61.6'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC003",
+   "category": "number",
+   "subject": "F7 proxy harvest",
+   "claim": "The corrected weights-only proxy harvests roughly half of the oracle: 25.7% MSE reduction.",
+   "verbatim": "harvests roughly half of that: 25.7% MSE reduction",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    37,
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T04:49:27.716Z",
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": true,
+   "suspect_reason": "Derived from the suspect oracle figure; 25.7 is ~half of 50.3 but ~42% of 61.6.",
+   "internal_conflict": "If the true oracle is 61.6%, 'roughly half' arithmetic breaks.",
+   "disk_check_hint": "grep corpus for '25.7'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC004",
+   "category": "label",
+   "subject": "F7",
+   "claim": "'F7' is used as a corpus record/door label for the rotation-selection lane.",
+   "verbatim": "The F7 reopening is being tested at zero cost",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    32,
+    34,
+    37,
+    41,
+    42,
+    44,
+    51,
+    81
+   ],
+   "timestamps": [
+    "2026-08-19T04:24:18.967Z",
+    "2026-08-19T04:28:54.802Z",
+    "2026-08-19T04:49:27.716Z",
+    "2026-08-19T05:04:14.905Z",
+    "2026-08-19T05:28:15.838Z",
+    "2026-08-19T05:38:39.594Z",
+    "2026-08-19T06:13:13.588Z",
+    "2026-08-19T16:07:01.629Z"
+   ],
+   "occurrences_in_transcript": 8,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect. B105/B107 concede 'F7' is orchestrator vocabulary presented as a corpus label.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus/ledger for a record literally named 'F7'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC005",
+   "category": "label",
+   "subject": "Lens A",
+   "claim": "'Lens A' is cited as an authority that proved a statistical property.",
+   "verbatim": "Lens A proved the log-ratio-of-means statistic is *left-skewed*",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    81
+   ],
+   "timestamps": [
+    "2026-08-19T16:07:01.629Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect. B105/B107 concede 'Lens A' is orchestrator vocabulary presented as corpus fact.",
+   "internal_conflict": "Lens A originated as the orchestrator's own dispatch label in B046, then was cited as a corpus source in B081.",
+   "disk_check_hint": "grep corpus for 'Lens A'; check whether any on-disk artifact carries that label",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC006",
+   "category": "label",
+   "subject": "Lens A/B/C/D",
+   "claim": "The four ultrareview lenses are named Lens A, B, C, D with specific assigned scopes.",
+   "verbatim": "**Lens A** attacks the 129 cell before I'm allowed to seal it",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    46
+   ],
+   "timestamps": [
+    "2026-08-19T05:42:45.940Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Origin point of the 'Lens A' label later presented as corpus fact.",
+   "internal_conflict": "",
+   "disk_check_hint": "check workflow wf_b708199c-ca4 artifacts for lens naming",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC007",
+   "category": "timing",
+   "subject": "Phase 2 rules email",
+   "claim": "The organizers' rules email is due today (2026-08-19).",
+   "verbatim": "the organizers' rules email due today",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    16
+   ],
+   "timestamps": [
+    "2026-08-19T02:08:00.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect. B080 later establishes Phase 2 had not opened and the deadline was phantom.",
+   "internal_conflict": "B006 (01:10) says the rules email is 'tomorrow'; B016 (02:08) and B044 (05:38) say 'due today'.",
+   "disk_check_hint": "check contest page/forum evidence on disk for any organizer-stated 19 Aug email commitment",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC008",
+   "category": "timing",
+   "subject": "Phase 2 rules email",
+   "claim": "The rules email, due today, turns the designation tree from contingency into decision.",
+   "verbatim": "the rules email, due today, turns the designation tree from contingency into decision",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    44
+   ],
+   "timestamps": [
+    "2026-08-19T05:38:39.594Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect; repetition of the phantom deadline as decision pressure.",
+   "internal_conflict": "",
+   "disk_check_hint": "same as above",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC009",
+   "category": "timing",
+   "subject": "Phase 2 rules email",
+   "claim": "The Phase-2 rules email arrives tomorrow (i.e. 2026-08-20) and gets stamped into the fork table.",
+   "verbatim": "the Phase-2 rules email tomorrow gets stamped into the fork table",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    6
+   ],
+   "timestamps": [
+    "2026-08-19T01:10:34.624Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Same phantom deadline, opposite day, stated 58 minutes before the 'due today' version.",
+   "internal_conflict": "Direct conflict with B016/B044 'due today'.",
+   "disk_check_hint": "check corpus for organizer statements about email timing",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC010",
+   "category": "attribution",
+   "subject": "phantom deadline (self-correction)",
+   "claim": "The 'designation due today' deadline the orchestrator relayed as pressure was phantom; Phase 2 had not opened.",
+   "verbatim": "the \"designation due today\" deadline I relayed as pressure turned out to be phantom",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    105
+   ],
+   "timestamps": [
+    "2026-08-19T23:40:11.966Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "this is the orchestrator's own concession; treat as the corrected value",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC011",
+   "category": "number",
+   "subject": "129 cell se_log calibration window",
+   "claim": "The achieved se_log came in at 0.0705 against a pre-registered honour window of [0.019, 0.03].",
+   "verbatim": "the achieved se_log came in at 0.0705 against [0.019, 0.03]",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65,
+    84
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z",
+    "2026-08-19T17:08:03.202Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect: window bounds and achieved value must match the sealed predeclaration on disk.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep cell predeclaration for se_log window bounds and achieved se_log",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC012",
+   "category": "label",
+   "subject": "honour window",
+   "claim": "The [0.019, 0.03] band is referred to as the cell's 'honour window'.",
+   "verbatim": "the honour window [0.019, 0.03] was *unearnable from a five-network pilot",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    84
+   ],
+   "timestamps": [
+    "2026-08-19T17:08:03.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect term; verify 'honour window' is the sealed artifact's own vocabulary, not orchestrator coinage.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for 'honour window' / 'honor window'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC013",
+   "category": "number",
+   "subject": "residual multiplier m band",
+   "claim": "The residual multiplier m carries an honest union band of [1.86, 2.64] from two disagreeing verify runs.",
+   "verbatim": "an honest union band of [1.86, 2.64] from two disagreeing verify runs",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    40,
+    41,
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:00:02.057Z",
+    "2026-08-19T05:04:14.905Z",
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 3,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect. The only measured band reported earlier (B015) was 1.86-2.03; the 2.64 upper bound appears without a reported source.",
+   "internal_conflict": "B015 states 'measured residual ratio came in at 1.86-2.03'; B040/41/42 state the union is [1.86, 2.64].",
+   "disk_check_hint": "grep corpus for '2.64' and '2.03' near m/residual",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC014",
+   "category": "number",
+   "subject": "measured residual ratio (first verify)",
+   "claim": "The measured residual ratio came in at 1.86-2.03, the m=2 point estimate, a fourth signal on the curve.",
+   "verbatim": "the measured residual ratio came in at **1.86–2.03",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    15
+   ],
+   "timestamps": [
+    "2026-08-19T02:06:46.720Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Source of the lower bound of the later m-band; the upper bound diverges from the later claim.",
+   "internal_conflict": "See conflict with [1.86, 2.64].",
+   "disk_check_hint": "grep corpus for '2.03'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC015",
+   "category": "number",
+   "subject": "H4 slope model prediction",
+   "claim": "The H4 slope model filed a prediction of 0.35 seconds per net, m ~ 2.2, before the measurement.",
+   "verbatim": "**0.35 seconds per net, m ≈ 2.2** — filed before the fact",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect. Verify the filed prediction exists on disk with this value.",
+   "internal_conflict": "The Public100 measurement it was to be judged against was cancelled (B054), so it was never adjudicated despite B040/B041 saying it 'awaits judgment'.",
+   "disk_check_hint": "grep corpus for '0.35' near slope/residual/prediction",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC016",
+   "category": "number",
+   "subject": "H4 slope model validation",
+   "claim": "The slope model was validated to 1.7% against five paired measured deltas.",
+   "verbatim": "from a model validated to 1.7% against five paired measured deltas",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Companion figure to the suspect 0.35 s prediction.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for '1.7%' near slope model",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC017",
+   "category": "number",
+   "subject": "C falsifier",
+   "claim": "The C falsifier trips at 200B, corresponding to m >= 3.9.",
+   "verbatim": "The C falsifier trips at 200B (m ≥ 3.9)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    41,
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:04:14.905Z",
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect; check the pre-registration on disk.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for '200B' / '200e9' near falsifier",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC018",
+   "category": "number",
+   "subject": "public leaderboard rank (reported)",
+   "claim": "Rank #58 at the last observed read (Aug 17); an earlier sweep had it at #64.",
+   "verbatim": "rank #58 at the last observed read (Aug 17; an earlier sweep had it at #64 as the field moved)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    78
+   ],
+   "timestamps": [
+    "2026-08-19T13:00:03.119Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect. Chronologically inverted: B038 (04:58 on Aug 19) reports rank 64 as the standing value, so #64 cannot be the 'earlier' sweep relative to an Aug 17 #58.",
+   "internal_conflict": "B038 says 'our Phase-1 filing at rank 64'; B080 live read says #66; B006 says '~7th declared'.",
+   "disk_check_hint": "grep corpus for '#58' / 'rank 58' with a dated source",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC019",
+   "category": "number",
+   "subject": "public leaderboard rank (claimed range)",
+   "claim": "Submitting the current champion would land roughly rank #58-64 of the public board.",
+   "verbatim": "roughly **rank #58–64 of the public board**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    78
+   ],
+   "timestamps": [
+    "2026-08-19T13:00:03.119Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Built on the suspect #58 figure.",
+   "internal_conflict": "",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC020",
+   "category": "number",
+   "subject": "public leaderboard rank (live read)",
+   "claim": "The live board shows rank #66 with 1.83e-7.",
+   "verbatim": "you're at #66 with 1.83e-7",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    80
+   ],
+   "timestamps": [
+    "2026-08-19T13:07:57.762Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "Supersedes the #58 claim; B107 confirms #66 by first-person read.",
+   "disk_check_hint": "confirmed twice (B080 agent read, B107 first-person read)",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC021",
+   "category": "number",
+   "subject": "graded submission score",
+   "claim": "The graded/hosted score of submission #326094 is 1.832e-7.",
+   "verbatim": "hosted 1.832e-7, submission #326094",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    78,
+    93
+   ],
+   "timestamps": [
+    "2026-08-19T13:00:03.119Z",
+    "2026-08-19T19:03:38.526Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B080/B107 render the same score as 1.83e-7.",
+   "disk_check_hint": "grep corpus for '1.832e-7' and '326094'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC022",
+   "category": "number",
+   "subject": "declared front (Puffi)",
+   "claim": "Puffi sits at 9.10e-8, the declared front; we are 2.0x behind.",
+   "verbatim": "Puffi sits at 9.10e-8 — you're 2.0× behind",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    78
+   ],
+   "timestamps": [
+    "2026-08-19T13:00:03.119Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Pre-registered suspect: three different renderings of Puffi's score appear across the day.",
+   "internal_conflict": "9.10e-8 (B006, B078) vs 9.1e-8 (B028, B042, B080) vs 9.09e-8 (B107 first-person read).",
+   "disk_check_hint": "grep corpus for '9.10e-8' / '9.09e-8'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC023",
+   "category": "number",
+   "subject": "declared front (early statement)",
+   "claim": "The declared front is 9.10e-8, with the 1.845e-8 anomaly above it.",
+   "verbatim": "The declared front is 9.10e-8, with the 1.845e-8 anomaly above it",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    6
+   ],
+   "timestamps": [
+    "2026-08-19T01:10:34.624Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Same suspect figure, stated at 01:10 before any live board read that day.",
+   "internal_conflict": "",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC024",
+   "category": "number",
+   "subject": "live front (J2W)",
+   "claim": "The real bar is J2W at 5.39e-8, with three others between 6.2 and 7.2e-8.",
+   "verbatim": "it's J2W at 5.39e-8, with three others between 6.2 and 7.2e-8",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    80
+   ],
+   "timestamps": [
+    "2026-08-19T13:07:57.762Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "Corroborated by B107 first-person read (J2W 5.39e-8).",
+   "disk_check_hint": "grep corpus for '5.39e-8'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC025",
+   "category": "number",
+   "subject": "ednacob anomaly",
+   "claim": "ednacob's anomalous score is 1.845e-8 (elsewhere 1.84e-8 / 1.8e-8), sitting on top of the board.",
+   "verbatim": "ednacob's anomalous 1.845e-8",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    78
+   ],
+   "timestamps": [
+    "2026-08-19T13:00:03.119Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Three renderings across the day for the same entry.",
+   "internal_conflict": "1.845e-8 (B078) vs 1.84e-8 (B080, B107) vs 1.85e-8 (B042) vs 1.8e-8 (B028).",
+   "disk_check_hint": "grep corpus for '1.845e-8'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC026",
+   "category": "number",
+   "subject": "campaign standing (early)",
+   "claim": "We sit ~7th declared at 2.12e-7.",
+   "verbatim": "we sit ~7th declared at 2.12e-7",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    6
+   ],
+   "timestamps": [
+    "2026-08-19T01:10:34.624Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Rank claim irreconcilable with the same day's #58/#64/#66 reads; no source given.",
+   "internal_conflict": "Direct conflict with B078 (#58-64) and B080/B107 (#66).",
+   "disk_check_hint": "grep corpus for '7th' / 'seventh' near rank",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC027",
+   "category": "number",
+   "subject": "live gap to front",
+   "claim": "The honest gap to the live front is now 3.4x.",
+   "verbatim": "The honest gap to the live front is now 3.4×",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    80
+   ],
+   "timestamps": [
+    "2026-08-19T13:07:57.762Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check 1.83e-7 / 5.39e-8 = 3.40",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC028",
+   "category": "number",
+   "subject": "local-to-hosted conversion anchor",
+   "claim": "The local-to-hosted map's single paired anchor is 13% adverse (local 1.619e-7 graded as 1.832e-7).",
+   "verbatim": "single paired anchor is 13% adverse (local 1.619e-7 graded as 1.832e-7)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    78
+   ],
+   "timestamps": [
+    "2026-08-19T13:00:03.119Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check 1.832/1.619 = 1.1316",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC029",
+   "category": "number",
+   "subject": "kerdock_v3 local score",
+   "claim": "kerdock_v3 measures 1.619e-7 locally; row_blocked measures 2.122e-7 (elsewhere 2.12e-7).",
+   "verbatim": "measured locally at **1.619e-7**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    34
+   ],
+   "timestamps": [
+    "2026-08-19T04:28:54.802Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B034 says 2.122e-7 for row_blocked; B042 says 2.12e-7; B006 says the campaign sits at 2.12e-7.",
+   "disk_check_hint": "grep corpus for '1.619e-7' and '2.122e-7'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC030",
+   "category": "number",
+   "subject": "v3.1 inherited score",
+   "claim": "v3.1 provably inherits the campaign-best 1.6190837992e-7.",
+   "verbatim": "v3.1 provably inherits the campaign-best 1.6190837992e-7",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    61
+   ],
+   "timestamps": [
+    "2026-08-19T09:24:00.992Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for '1.6190837992'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC031",
+   "category": "number",
+   "subject": "v3.1 guard overhead",
+   "claim": "v3.1's guard overhead changes the score by 1.4e-7 relative, invisible past the seventh significant figure.",
+   "verbatim": "changes the score by 1.4×10⁻⁷ *relative*",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    78
+   ],
+   "timestamps": [
+    "2026-08-19T13:00:03.119Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for guard overhead relative figure",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC032",
+   "category": "number",
+   "subject": "contribution prize value",
+   "claim": "The contribution prize is worth $20K.",
+   "verbatim": "the **$20K contribution prize**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    80
+   ],
+   "timestamps": [
+    "2026-08-19T13:07:57.762Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus/contest page for prize amount",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC033",
+   "category": "number",
+   "subject": "participants and phase state",
+   "claim": "756 participants; Phase 2 UPCOMING; our entry has 5 entries, last submission Aug 8, final-layer MSE 2.82e-7, 3.8x versus sampling.",
+   "verbatim": "756 participants, Phase 2 UPCOMING",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    107
+   ],
+   "timestamps": [
+    "2026-08-19T23:43:24.987Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "First-person read; supersedes earlier agent-relayed board facts.",
+   "disk_check_hint": "grep corpus for '756' and '2.82e-7'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC034",
+   "category": "timing",
+   "subject": "Phase 2 open date",
+   "claim": "The official page says Phase 2 is expected Aug 20, 23:59 UTC (tentative), and the close date has moved to October 16.",
+   "verbatim": "expected Aug 20, 23:59 UTC — tentative",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    80
+   ],
+   "timestamps": [
+    "2026-08-19T13:07:57.762Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for 'Aug 20' / 'October 16' contest dates",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC035",
+   "category": "timing",
+   "subject": "private re-run window",
+   "claim": "The private re-run happens Sep 20-30 on unseen nets and two slots are locked for it.",
+   "verbatim": "The private re-run (Sep 20–30, on nets nobody has seen)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    78
+   ],
+   "timestamps": [
+    "2026-08-19T13:00:03.119Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Date range stated without a cited source; B080 later says the close date moved to October 16, which sits oddly with a Sep 20-30 re-run.",
+   "internal_conflict": "B080: close date moved to October 16.",
+   "disk_check_hint": "grep corpus for 'Sep 20' / 'September' re-run dates",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC036",
+   "category": "timing",
+   "subject": "runway",
+   "claim": "The October 16 close hands eight weeks of runway.",
+   "verbatim": "the October 16 close just handed you eight weeks of runway",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    80
+   ],
+   "timestamps": [
+    "2026-08-19T13:07:57.762Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "Aug 19 to Oct 16 is ~8.3 weeks - arithmetically consistent.",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC037",
+   "category": "number",
+   "subject": "fold module sizes",
+   "claim": "depth6_winograd.py is 30.8K and phased_wht.py is 15.4K at first report; depth6_winograd.py later grows to 40.0K and fold3_estimator.py from 14.6K to 16.7K.",
+   "verbatim": "`depth6_winograd.py` 30.8K (crowned route realization), `phased_wht.py` 15.4K",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    0
+   ],
+   "timestamps": [
+    "2026-08-19T00:46:58.258Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check file sizes in lineage dir / git history",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC038",
+   "category": "number",
+   "subject": "fold route selection at (256,256)",
+   "claim": "At (256,256) the depth route selects realized_l5_altbasis: 21.14M FLOPs (19.59M hoisted) vs fallback 29.59M, ratio 0.7145.",
+   "verbatim": "21.14M FLOPs (19.59M with hoisted weight tree) vs fallback 29.59M → **ratio 0.7145**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    2
+   ],
+   "timestamps": [
+    "2026-08-19T01:02:24.016Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep fold artifacts for 0.7145",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC039",
+   "category": "number",
+   "subject": "fold validation sweep",
+   "claim": "The implementer's own multi-net validation swept 67 nets and landed full.json at 8.8K.",
+   "verbatim": "`full.json` landed 8.8K, 67 nets swept",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    2
+   ],
+   "timestamps": [
+    "2026-08-19T01:02:24.016Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC040",
+   "category": "number",
+   "subject": "frozen production argv budget",
+   "claim": "The frozen production argv budget is 2.72e11 FLOPs; the validation run used a custom 1e13 budget.",
+   "verbatim": "Budget line reads 1e13 FLOPs — custom fat-budget validation run, **not** the frozen production argv (2.72e11)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    1
+   ],
+   "timestamps": [
+    "2026-08-19T00:49:16.442Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for '2.72e11'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC041",
+   "category": "number",
+   "subject": "fold selfcheck count",
+   "claim": "The fold implementation carries fourteen selfcheck claims, all green.",
+   "verbatim": "fourteen selfcheck claims all green",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    10,
+    17
+   ],
+   "timestamps": [
+    "2026-08-19T01:36:09.634Z",
+    "2026-08-19T02:12:20.806Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "count selfcheck claims in fold artifact",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC042",
+   "category": "number",
+   "subject": "permutation proof",
+   "claim": "An exhaustive 5,040-permutation proof shows the right operand lane needs a gather.",
+   "verbatim": "an exhaustive 5,040-permutation proof",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    10
+   ],
+   "timestamps": [
+    "2026-08-19T01:36:09.634Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep fold selfchecks for 5040",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC043",
+   "category": "number",
+   "subject": "custody file count",
+   "claim": "The incumbent's seven files are untouched by hash and mtime.",
+   "verbatim": "the incumbent's seven files untouched by hash and mtime",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    10
+   ],
+   "timestamps": [
+    "2026-08-19T01:36:09.634Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check custody manifest for seven files",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC044",
+   "category": "number",
+   "subject": "f32 depth error",
+   "claim": "f32 error grows with Winograd depth: Frobenius 2.05e-5 at depth 6 vs the fallback's 5.4e-7.",
+   "verbatim": "Frobenius 2.05e-5 at depth 6 vs the fallback's 5.4e-7",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    10
+   ],
+   "timestamps": [
+    "2026-08-19T01:36:09.634Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep fold report for 2.05e-5",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC045",
+   "category": "number",
+   "subject": "depth-4 cap realized bill",
+   "claim": "The depth-4 cap makes the realized bill ~334M/call (0.708 ratio) instead of the pure floor's 0.643.",
+   "verbatim": "the realized bill lands ~334M/call (0.708 ratio) instead of the pure floor's 0.643",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    10
+   ],
+   "timestamps": [
+    "2026-08-19T01:36:09.634Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep fold report for 0.708 and 0.643",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC046",
+   "category": "number",
+   "subject": "break-even m*",
+   "claim": "Break-even m* = 5.085 from the recursion engine, matching the orchestrator's pre-registered 5.087.",
+   "verbatim": "break-even **m\\* = 5.085** (mine: 5.087)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    13
+   ],
+   "timestamps": [
+    "2026-08-19T01:42:50.412Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Attribution claim: 'mine: 5.087' asserts a pre-registration that must exist on disk before the engine ran.",
+   "internal_conflict": "B003 states the pre-registered value as 'm* ~ 5.087' with ratio 0.739 at m=2.",
+   "disk_check_hint": "grep corpus for '5.087' and '5.085' with timestamps",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC047",
+   "category": "number",
+   "subject": "score ratios at m",
+   "claim": "Score ratios are 0.654 / 0.739 / 0.823 at m = 1/2/3, with the falsifier at m = 3.9.",
+   "verbatim": "score ratios 0.654 / 0.739 / 0.823 at m = 1/2/3",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    13
+   ],
+   "timestamps": [
+    "2026-08-19T01:42:50.412Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for 0.654/0.739/0.823",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC048",
+   "category": "number",
+   "subject": "m-curve law",
+   "claim": "The m-curve prediction on record is C = 126.7B + 18.8*m, with the thesis dying at m >= 3.9.",
+   "verbatim": "m-curve prediction on record (C = 126.7B + 18.8·m, thesis dies m ≥ 3.9)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    0
+   ],
+   "timestamps": [
+    "2026-08-19T00:46:58.258Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for '126.7' and '18.8'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC049",
+   "category": "number",
+   "subject": "naive depth-6 overhead",
+   "claim": "Residual overhead grows geometrically at ~5.46x per recursion depth, so naive depth-6 lands at ~885x.",
+   "verbatim": "~5.46× per recursion depth, so a *naive* depth-6 transcription lands at ~885×",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    13
+   ],
+   "timestamps": [
+    "2026-08-19T01:42:50.412Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep recursion engine output for 5.46 and 885",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC050",
+   "category": "attribution",
+   "subject": "headroom-recursion halt tier",
+   "claim": "The TRM ladder halted at the Haiku tier without escalating.",
+   "verbatim": "it *halted at the Haiku tier*",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    13
+   ],
+   "timestamps": [
+    "2026-08-19T01:42:50.412Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check headroom-recursion run log for halt tier",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC051",
+   "category": "number",
+   "subject": "parity margin at depth-4",
+   "claim": "At the shipped depth-4 the parity margin is 8x under the law: projected |MSE ratio - 1| ~ 5.5e-5 vs the 5e-4 tolerance.",
+   "verbatim": "projected |MSE ratio −1| ≈ 5.5e-5 vs the 5e-4 tolerance",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    15
+   ],
+   "timestamps": [
+    "2026-08-19T02:06:46.720Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep verifier report for 5.5e-5",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC052",
+   "category": "number",
+   "subject": "gate memory failure",
+   "claim": "Process peak 761 MiB against the 512 MiB clause; the floor route builds 192 MiB pools on top of the fallback's 91.4 MiB workspace.",
+   "verbatim": "process peak 761 MiB against the 512 clause",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    15
+   ],
+   "timestamps": [
+    "2026-08-19T02:06:46.720Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep verifier report for 761",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC053",
+   "category": "number",
+   "subject": "effective-C ratio measured",
+   "claim": "Measured effective-C ratio: 0.82.",
+   "verbatim": "Measured effective-C ratio: 0.82",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    15
+   ],
+   "timestamps": [
+    "2026-08-19T02:06:46.720Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep verifier report for effective-C ratio",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC054",
+   "category": "number",
+   "subject": "fold projected score (first)",
+   "claim": "If the measured numbers hold, the fold lands in the ~1.55-1.60e-7 range, a ~25% score cut.",
+   "verbatim": "the fold lands in the ~1.55–1.60e-7 range, a ~25% score cut",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    16
+   ],
+   "timestamps": [
+    "2026-08-19T02:08:00.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Projection presented repeatedly with shifting bounds and never realized; final measurement gave 1.780e-7 (worse than incumbent).",
+   "internal_conflict": "B006 says ~1.5-1.6e-7; B016 says 1.55-1.60e-7; B042 says 1.48-1.58e-7 (25-30% cut); B054 reports the actual 1.780e-7.",
+   "disk_check_hint": "compare projections to the measured 0.8388 ratio outcome",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC055",
+   "category": "number",
+   "subject": "fold projected score (second)",
+   "claim": "Realized C in the 155-165B range lands the score at roughly 1.48-1.58e-7, a 25-30% cut.",
+   "verbatim": "Realized C in the 155–165B range lands the score at roughly **1.48–1.58e-7, a 25–30% cut**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Third distinct projection band for the same object within three hours.",
+   "internal_conflict": "See conflict above.",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC056",
+   "category": "number",
+   "subject": "fold measured outcome",
+   "claim": "At its measured paired ratio of 0.8388 the folded estimator scores 1.780e-7, 9.9% behind the unfolded kerdock_v3.",
+   "verbatim": "at its measured paired ratio of 0.8388, the folded estimator scores 1.780e-7 — 9.9% behind",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    54
+   ],
+   "timestamps": [
+    "2026-08-19T08:43:41.317Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "This is the outcome that falsifies the earlier 1.48-1.60e-7 projections.",
+   "disk_check_hint": "grep fold artifacts for 0.8388 and 1.780e-7",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC057",
+   "category": "number",
+   "subject": "fold false prior ratio",
+   "claim": "The designation policy had priced the fold at a false 0.739 ratio and was on track to crown it.",
+   "verbatim": "the designation policy had priced the fold at a false 0.739 ratio",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    93
+   ],
+   "timestamps": [
+    "2026-08-19T19:03:38.526Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep designation policy for 0.739",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC058",
+   "category": "number",
+   "subject": "D5 hoist repricing",
+   "claim": "The D5 hoist was re-priced to its true 7,438,002 FLOPs.",
+   "verbatim": "the D5 hoist was re-priced to its true 7,438,002 FLOPs",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep round-4 report for 7438002",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC059",
+   "category": "number",
+   "subject": "route selector defect scale",
+   "claim": "18,290 of 262,144 swept shapes select a route costlier than a plain product.",
+   "verbatim": "18,290 of 262,144 swept shapes select a route costlier than a plain product",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep round-4 report for 18290 / 262144",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC060",
+   "category": "number",
+   "subject": "round-4 metering",
+   "claim": "Both cost-model defects were fixed with 42 metered shapes at zero delta; all 35 traced operator products take depth routes the defect never touched.",
+   "verbatim": "42 metered shapes at zero delta",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    54
+   ],
+   "timestamps": [
+    "2026-08-19T08:43:41.317Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep round-4 verifier report for 42 metered shapes",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC061",
+   "category": "number",
+   "subject": "predict wall time",
+   "claim": "Predict wall time is 17.7 s single-threaded against the 20 s clause: 8.5% margin, not the 18% quoted from multithreaded runs.",
+   "verbatim": "predict wall time is 17.7 s single-threaded against the 20 s clause (8.5% margin, not the 18% quoted",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep verifier report for 17.7",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC062",
+   "category": "number",
+   "subject": "candidate memory peak",
+   "claim": "The candidate peaks at 616 MiB, which the 1 GiB ruling discharges.",
+   "verbatim": "candidate peaks at 616 MiB",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep gate report for 616 MiB",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC063",
+   "category": "attribution",
+   "subject": "1 GiB ceiling premise refuted",
+   "claim": "The gate author-verifier traced the 1 GiB figure to Codex's own lane, which disclaims contest force, and showed the contest advertises 64 GB with no memory ceiling.",
+   "verbatim": "the contest advertises 64 GB with no memory ceiling at all",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "Contradicts B023/B042 where the orchestrator asserted 'the competition's real 1 GiB ceiling' as fact.",
+   "disk_check_hint": "grep corpus for '1 GiB' provenance and '64 GB'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC064",
+   "category": "number",
+   "subject": "asserted 1 GiB ceiling (pre-refutation)",
+   "claim": "Process peak is bounded by the competition's real 1 GiB ceiling.",
+   "verbatim": "process peak bounded by the competition's real 1 GiB ceiling",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    23
+   ],
+   "timestamps": [
+    "2026-08-19T03:46:00.553Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Stated as established contest fact; the gate verifier later refuted its provenance (B051).",
+   "internal_conflict": "B051 refutes; B061 states the only mechanical limit is 65,536 MiB.",
+   "disk_check_hint": "grep corpus for 1 GiB ceiling source",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC065",
+   "category": "number",
+   "subject": "memory hard limit",
+   "claim": "The only mechanical memory limit is 65,536 MiB, double-sourced, read first-hand from the frozen venv's source lines.",
+   "verbatim": "the only mechanical limit is 65,536 MiB, double-sourced",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    61
+   ],
+   "timestamps": [
+    "2026-08-19T09:24:00.992Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep frozen venv source for 65536",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC066",
+   "category": "number",
+   "subject": "suite ladder floor",
+   "claim": "The certified suite floor is 144,867,083,088, with eighteen verified wins, two exactness kills, and three closure proofs.",
+   "verbatim": "**144,867,083,088 stands as the certified suite floor.**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    19
+   ],
+   "timestamps": [
+    "2026-08-19T02:33:17.337Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B018 states the same total as 'final 144,867,083,088' with 'eighteen verified wins'.",
+   "disk_check_hint": "grep corpus for 144867083088",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC067",
+   "category": "attribution",
+   "subject": "ladder tier adjudications",
+   "claim": "Tiers 21-24 were infrastructure failures correctly not counted; tiers 25 and 26 ran genuine proof-carrying DRYs; with tier 20 that makes three consecutive real adjudications.",
+   "verbatim": "Tiers 21–24 were infrastructure failures (correctly not counted",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    18
+   ],
+   "timestamps": [
+    "2026-08-19T02:32:01.614Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check ladder journal for tier dispositions",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC068",
+   "category": "number",
+   "subject": "terminal-route fold regression",
+   "claim": "Codex's terminal-route fold would regress 8.05B.",
+   "verbatim": "his route would *regress* 8.05B",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    21
+   ],
+   "timestamps": [
+    "2026-08-19T03:16:35.753Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep adjudication for 8.05B",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC069",
+   "category": "number",
+   "subject": "dual-witness certificate checks",
+   "claim": "The dual-witness certificate is machine-verified with exact rational LP duality, 38/38 deterministic checks, duality gap exactly zero.",
+   "verbatim": "38/38 deterministic checks, duality gap exactly zero",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    21
+   ],
+   "timestamps": [
+    "2026-08-19T03:16:35.753Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep certificate output for 38/38",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC070",
+   "category": "number",
+   "subject": "certificate break-even margin",
+   "claim": "The dual-witness certificate stores a 1408/1407 break-even margin.",
+   "verbatim": "the 1408/1407 break-even margin was already stored in the dual-witness certificate",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    58
+   ],
+   "timestamps": [
+    "2026-08-19T09:19:58.130Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep certificate for 1408/1407",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC071",
+   "category": "number",
+   "subject": "R6 identity",
+   "claim": "R6(k) = (4095+k)/4221 is identified as the degree-6 design defect.",
+   "verbatim": "R₆(k) = (4095+k)/4221",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    58
+   ],
+   "timestamps": [
+    "2026-08-19T09:19:58.130Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep manuscript/certificate for 4221",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC072",
+   "category": "attribution",
+   "subject": "carrier discovery",
+   "claim": "The deployed carrier is not running the Kerdock design; its source builds Haar-random orthonormal frames, 42.7x worse than the Kerdock defect.",
+   "verbatim": "its source builds Haar-random orthonormal frames, sitting at full iid degree-4 strength, 42.7× worse",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    21
+   ],
+   "timestamps": [
+    "2026-08-19T03:16:35.753Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "read carrier source; grep for 42.7",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC073",
+   "category": "number",
+   "subject": "A4 Haar value",
+   "claim": "Our deployed carrier's degree-4 defect is A4 = 3.136e-5, exactly 42.7x the Kerdock value.",
+   "verbatim": "Haar-random frames, A₄ = 3.136e-5",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    25
+   ],
+   "timestamps": [
+    "2026-08-19T04:09:38.830Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for 3.136e-5",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC074",
+   "category": "number",
+   "subject": "A4 reconciliation ratio",
+   "claim": "Puffi claims 19%, ely2sh measured 0.9%, our old Kerdock number was 0.45%; the ratio between camps is ~42x.",
+   "verbatim": "Puffi claims the completion is worth 19%; ely2sh measured 0.9%; our old Kerdock-based number was 0.45%",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    25
+   ],
+   "timestamps": [
+    "2026-08-19T04:09:38.830Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Three competitor/corpus numbers used to build the headline law; each needs a disk source.",
+   "internal_conflict": "The 0.45% is later shown (B087/B092) to be a degree-4 energy share, a different object from a completion gain.",
+   "disk_check_hint": "grep corpus for 19% / 0.9% / 0.45% with their objects named",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC075",
+   "category": "number",
+   "subject": "H1 pre-registered band (original)",
+   "claim": "Predicted band for the 129 swap on our carrier: MSE ratio 0.78-0.86; falsifier above 0.95.",
+   "verbatim": "MSE ratio 0.78–0.86; falsifier above 0.95",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    26
+   ],
+   "timestamps": [
+    "2026-08-19T04:11:05.233Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep pre-registration file f1ef7d0 for 0.78-0.86",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC076",
+   "category": "number",
+   "subject": "H1 amended band",
+   "claim": "The pre-registered band was widened from 0.78-0.86 to 0.78-0.93.",
+   "verbatim": "widened honestly from 0.78–0.86 to 0.78–0.93",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    32
+   ],
+   "timestamps": [
+    "2026-08-19T04:24:18.967Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep amendment for 0.78-0.93",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC077",
+   "category": "number",
+   "subject": "three unreconciled suppression ratios",
+   "claim": "The field holds three unreconciled quantifications of Kerdock-vs-iid degree-4 suppression: m191 ~9.1x, m81 ~21x, and the A4 law's 42.7x.",
+   "verbatim": "m191 measured ~9.1×, m81 records ~21×, and my A₄ law used 42.7×",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    31,
+    32
+   ],
+   "timestamps": [
+    "2026-08-19T04:23:20.403Z",
+    "2026-08-19T04:24:18.967Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ledger for m191, m81 suppression figures",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC078",
+   "category": "number",
+   "subject": "128/3 ratio",
+   "claim": "The Haar-to-Kerdock degree-4 defect ratio equals exactly 128/3 to seven digits, numerically identical to the certificate's R4(1).",
+   "verbatim": "the Haar-to-Kerdock degree-4 defect ratio equals **exactly 128/3** to seven digits",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    40
+   ],
+   "timestamps": [
+    "2026-08-19T05:00:02.057Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B107 confirms by first-person script run: 'ratio exact = 128/3 ... IDENTICAL: True'.",
+   "disk_check_hint": "run theorem script; grep for 128/3",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC079",
+   "category": "attribution",
+   "subject": "A4(129) = 0 theorem",
+   "claim": "The closed form proves A4(129) = 0 identically, converting the completion's premise from observation to derived mathematics.",
+   "verbatim": "**proves A₄(129) = 0 identically**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    44
+   ],
+   "timestamps": [
+    "2026-08-19T05:38:39.594Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B107 confirms first-hand: 'A4_mub(129) = 0.000000000e+00'.",
+   "disk_check_hint": "run theorem script",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC080",
+   "category": "number",
+   "subject": "deployed variance degree-4 share",
+   "claim": "The degree-4 term re-derives to ~16.2% of deployed variance; the probe set is an exact antipodal 3-design first failing at degree 4.",
+   "verbatim": "the degree-4 term re-derives to **~16.2% of deployed variance**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    35
+   ],
+   "timestamps": [
+    "2026-08-19T04:47:36.186Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep H3 report for 16.2%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC081",
+   "category": "number",
+   "subject": "dyadic tax law",
+   "claim": "The Kerdock advantage is a dyadic trade: -1/128 per frame at degree 4 against +1/4096 per frame at degree 6, ratio exactly 32.",
+   "verbatim": "a −1/128-per-frame gain at degree 4 against a +1/4096-per-frame tax at degree 6, ratio exactly 32",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    54
+   ],
+   "timestamps": [
+    "2026-08-19T08:43:41.317Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ultramath slate for 1/128 and 1/4096",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC082",
+   "category": "number",
+   "subject": "carrier optimality margin",
+   "claim": "Mutual unbiasedness is the unique degree-4 minimizer and globally optimal on the weighted objective with a 28x margin; the Delsarte floor shows degree-6 exactness is 88.7x out of budget; the 129-completion sits 0.389% above the absolute degree-4 floor.",
+   "verbatim": "globally optimal on the weighted objective with a 28× margin",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    54
+   ],
+   "timestamps": [
+    "2026-08-19T08:43:41.317Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ultramath slate for 28x, 88.7x, 0.389%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC083",
+   "category": "number",
+   "subject": "129 cell gated metric",
+   "claim": "The gated metric landed at -4.71 against a -1.98 threshold: a decisive mechanical PASS.",
+   "verbatim": "the gated metric landed at −4.71 against a −1.98 threshold",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep 129 judge output for -4.71 / -1.98",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC084",
+   "category": "number",
+   "subject": "129 arm B result",
+   "claim": "The 129-MUB arm beat the Haar incumbent at a score ratio of 0.682 and a raw MSE ratio of 0.666, below the amended band's optimistic edge of 0.78.",
+   "verbatim": "a score ratio of 0.682 and a raw MSE ratio of 0.666",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep 129 judge output for 0.682 / 0.666",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC085",
+   "category": "number",
+   "subject": "129 effect size",
+   "claim": "The effect is 4.7 standard errors deep while the instrument was 3.7x noisier than declared.",
+   "verbatim": "4.7 standard errors deep, but the instrument that measured it was 3.7× noisier than declared",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B077 restates it as 'a 4.7 sigma effect'.",
+   "disk_check_hint": "grep 129 judge output for 4.71 SE and 3.7x",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC086",
+   "category": "number",
+   "subject": "three-arm decomposition precision",
+   "claim": "The three-arm decomposition is arithmetic to 6e-17.",
+   "verbatim": "arithmetic to 6×10⁻¹⁷",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep judge output",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC087",
+   "category": "attribution",
+   "subject": "H2 reversal",
+   "claim": "The design-quality leg carries all of the gain while the completion leg is a small net loss once the score law charges three extra frames.",
+   "verbatim": "the completion leg (126→129) is a small net *loss* once the score law charges for its three extra frames",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep 129 judge output for the arm decomposition",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC088",
+   "category": "number",
+   "subject": "defect-to-MSE under-prediction",
+   "claim": "The defect-to-MSE conversion under-predicted the measured gain by ~2.8 SE (elsewhere ~3 SE).",
+   "verbatim": "under-predicted the measured gain by ~2.8 SE",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "The same anomaly is quoted as ~2.8 SE in B065 and ~3 standard errors in B080/B081.",
+   "internal_conflict": "B080: 'by ~3 standard errors'; B081: 'by ~3 SE'.",
+   "disk_check_hint": "grep 129 judge output for the SE figure",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC089",
+   "category": "number",
+   "subject": "implied carrier-swap score",
+   "claim": "The implied carrier-swap score is 1.447e-7, beating kerdock_v3's 1.619e-7 only at the point estimate.",
+   "verbatim": "The implied carrier-swap score (1.447e-7)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep judge output for 1.447e-7",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC090",
+   "category": "number",
+   "subject": "129 break-even r",
+   "claim": "The pre-stated arithmetic is that the swap beats kerdock_v3 only below r = 0.745.",
+   "verbatim": "the swap beats kerdock_v3 only below r = 0.745",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    54
+   ],
+   "timestamps": [
+    "2026-08-19T08:43:41.317Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep predeclaration for 0.745",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC091",
+   "category": "number",
+   "subject": "129 arm timings",
+   "claim": "Arm A's report landed at 04:11, arm B at 04:23, arm C at 04:34, about eleven minutes per arm.",
+   "verbatim": "arm A's report landed at 04:11, arm B at 04:23, arm C at 04:34",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    62
+   ],
+   "timestamps": [
+    "2026-08-19T09:44:52.327Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check arm report mtimes",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC092",
+   "category": "number",
+   "subject": "129 cell custody",
+   "claim": "The sealed 129 cell re-hashed all 24 frozen inputs with zero drift after its 34-minute run.",
+   "verbatim": "re-hashed all 24 frozen inputs with zero drift *after* its 34-minute run",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    104
+   ],
+   "timestamps": [
+    "2026-08-19T23:25:27.192Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check cell hash manifest",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC093",
+   "category": "number",
+   "subject": "129 mechanical checks",
+   "claim": "The 129 cell has 23 mechanical checks green.",
+   "verbatim": "23 mechanical checks green",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep cell spec for check count",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC094",
+   "category": "number",
+   "subject": "ledger record count (276)",
+   "claim": "The kill field holds 276 records, all reclassified by measurement axes.",
+   "verbatim": "reclassifying all 276 records",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    28
+   ],
+   "timestamps": [
+    "2026-08-19T04:13:13.245Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "Later blocks state 277 after the 129 cell sealed; B071 notes the manuscript contradicted itself on 276 vs 277.",
+   "disk_check_hint": "count ledger records",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC095",
+   "category": "number",
+   "subject": "ledger record count (277)",
+   "claim": "The ledger stands at 277 candidates and parses at that count.",
+   "verbatim": "the ledger parses at its full 277 candidates",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    104
+   ],
+   "timestamps": [
+    "2026-08-19T23:25:27.192Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "parse ledger",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC096",
+   "category": "number",
+   "subject": "design axes entropy share",
+   "claim": "All four design axes together carry about 2% of the survival entropy; precision is negative after null correction.",
+   "verbatim": "All four design axes together carry about 2% of the survival entropy",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    61
+   ],
+   "timestamps": [
+    "2026-08-19T09:24:00.992Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep MI_SOLVE output for entropy share",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC097",
+   "category": "number",
+   "subject": "zonal-harmonic graveyard",
+   "claim": "The carrier axis is entirely the zonal-harmonic graveyard: 2 of 33 lived.",
+   "verbatim": "2 of 33 lived",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    61
+   ],
+   "timestamps": [
+    "2026-08-19T09:24:00.992Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep MI output",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC098",
+   "category": "attribution",
+   "subject": "idx 71/72 pair",
+   "claim": "Records 71 and 72 are identical on every measured axis and had opposite fates, separated by buffer ownership alone.",
+   "verbatim": "records 71 and 72 are identical on every axis the instrument measures and had opposite fates",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    61
+   ],
+   "timestamps": [
+    "2026-08-19T09:24:00.992Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "read ledger records 71 and 72",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC099",
+   "category": "number",
+   "subject": "ownership axis coverage",
+   "claim": "Only 8 of 276 records state buffer ownership in their mechanism text against a bar of 77, making the axis unmeasurable from the ledger as written.",
+   "verbatim": "only 8 of 276 records state buffer ownership in their mechanism text against a bar of 77",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    67
+   ],
+   "timestamps": [
+    "2026-08-19T10:15:31.816Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ledger for ownership mentions",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC100",
+   "category": "number",
+   "subject": "v3.1 inheritance re-derivation",
+   "claim": "The inheritance arithmetic was re-derived two independent ways agreeing to 5.5e-23.",
+   "verbatim": "two independent ways (agreeing to 5.5e-23)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    67
+   ],
+   "timestamps": [
+    "2026-08-19T10:15:31.816Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep annex for 5.5e-23",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC101",
+   "category": "attribution",
+   "subject": "guard-fire scoping correction",
+   "claim": "The 'guards never fired' claim needed scoping: they did fire on two constructed hostile nets; 'never' is true only of the 100 public nets.",
+   "verbatim": "they *did* fire on the two constructed hostile nets",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    67
+   ],
+   "timestamps": [
+    "2026-08-19T10:15:31.816Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B061 stated 'the guards never fired on any of the 100 public nets' - the annex corrected the orchestrator's paraphrase.",
+   "disk_check_hint": "grep annex for guard-fire canary",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC102",
+   "category": "attribution",
+   "subject": "ledger id correction",
+   "claim": "The ledger id was wrong: v31_guards_m186_m187, not v31_guards.",
+   "verbatim": "the ledger id was wrong (`v31_guards_m186_m187`, not `v31_guards`)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    67
+   ],
+   "timestamps": [
+    "2026-08-19T10:15:31.816Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "An agent correcting an orchestrator-supplied identifier - a label-drift instance.",
+   "disk_check_hint": "grep ledger for v31_guards_m186_m187",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC103",
+   "category": "number",
+   "subject": "hostile-residual k re-pricing",
+   "claim": "The hostile-residual k=5 projection re-prices to the measured k=1, reopening the M157 family.",
+   "verbatim": "the hostile-residual k=5 projection re-prices to the measured k=1",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    61
+   ],
+   "timestamps": [
+    "2026-08-19T09:24:00.992Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ledger for M157",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC104",
+   "category": "number",
+   "subject": "dropped door refutation",
+   "claim": "A candidate door (the dtype-unpinned 80B-gate kill, idx 115) was dropped because every rank-r PSD truncation leaves a diagonal residual of at least (n-r)/(4n).",
+   "verbatim": "the dtype-unpinned 80B-gate kill, idx 115",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    56
+   ],
+   "timestamps": [
+    "2026-08-19T08:57:51.937Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ledger idx 115",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC105",
+   "category": "attribution",
+   "subject": "self-citation withdrawal",
+   "claim": "'butterbaugh', listed in the competitor sweep as an independent corroboration of our 340x law, is our own leaderboard handle - our Phase-1 filing at rank 64.",
+   "verbatim": "is our own leaderboard handle* — our Phase-1 filing at rank 64",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    38
+   ],
+   "timestamps": [
+    "2026-08-19T04:58:59.866Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "This states rank 64 as the standing rank at 04:58 on Aug 19, which conflicts with B078's later claim that #58 was the Aug 17 read and #64 the earlier sweep.",
+   "disk_check_hint": "grep competitor sweep for butterbaugh",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC106",
+   "category": "number",
+   "subject": "manuscript corrections count",
+   "claim": "Assembling the manuscript found seven corrections to our own summaries.",
+   "verbatim": "**seven corrections to our own summaries**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    38
+   ],
+   "timestamps": [
+    "2026-08-19T04:58:59.866Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep manuscript audit log",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC107",
+   "category": "number",
+   "subject": "manuscript v1.3 audit",
+   "claim": "All 51 quoted figures were re-derived from the raw per-network arrays at absolute difference 0.0, with a verifier script confirming 44 literals against source.",
+   "verbatim": "all 51 quoted figures re-derived from the raw per-network arrays at absolute difference 0.0",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    71
+   ],
+   "timestamps": [
+    "2026-08-19T10:37:17.796Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep audit report for 51 figures / 44 literals",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC108",
+   "category": "number",
+   "subject": "smoke-flip unit error",
+   "claim": "The circulating '4.5 SE' smoke-flip figure was a unit mix; the log-unit gap is 5.15.",
+   "verbatim": "the circulating \"4.5 SE\" smoke-flip figure was a unit mix (log-unit gap is 5.15)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    71
+   ],
+   "timestamps": [
+    "2026-08-19T10:37:17.796Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "An orchestrator-circulated number corrected by an agent - a numeric-drift instance.",
+   "disk_check_hint": "grep manuscript for 4.5 SE / 5.15",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC109",
+   "category": "number",
+   "subject": "scorecard ulp correction",
+   "claim": "One scorecard row claiming exact zero was actually 1 ulp off, now printed as 4.3e-19.",
+   "verbatim": "one scorecard row claiming exact zero was actually 1 ulp off — now printed as 4.3e-19",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    71
+   ],
+   "timestamps": [
+    "2026-08-19T10:37:17.796Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep manuscript for 4.3e-19",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC110",
+   "category": "number",
+   "subject": "disclosure verifier",
+   "claim": "The disclosure verifier ran at 74/74 with hedge greps at zero.",
+   "verbatim": "the disclosure verifier at 74/74, hedge greps at zero",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    100
+   ],
+   "timestamps": [
+    "2026-08-19T19:53:41.086Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B058 also cites 74/74.",
+   "disk_check_hint": "run disclosure verifier",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC111",
+   "category": "number",
+   "subject": "append-only integrity",
+   "claim": "Append-only integrity was mechanically confirmed: 752 insertions, exactly one deletion, and that deletion is the title's version line.",
+   "verbatim": "752 insertions, exactly one deletion",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    58
+   ],
+   "timestamps": [
+    "2026-08-19T09:19:58.130Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git diff the manuscript",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC112",
+   "category": "attribution",
+   "subject": "E6/E4 condition retired",
+   "claim": "The E6/E4 < 19.71 condition the orchestrator quoted into the channel had been retired by the slate in favour of an unconditional carrier-optimality theorem.",
+   "verbatim": "the E6/E4 < 19.71 condition I'd quoted into the channel had been retired",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    58
+   ],
+   "timestamps": [
+    "2026-08-19T09:19:58.130Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Self-reported instance of the orchestrator propagating a superseded number into the channel.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep channel for 19.71",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC113",
+   "category": "number",
+   "subject": "static gate reproduction",
+   "claim": "The static arithmetic reproduced two independent recorded measurements to within 0.2 percentage points without running anything.",
+   "verbatim": "reproduced two independent recorded measurements to within 0.2 percentage points",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    72
+   ],
+   "timestamps": [
+    "2026-08-19T11:31:51.506Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Announced as DOOR OPEN in B072 and then withdrawn in B073 when the verifier rejected the report.",
+   "internal_conflict": "B073: 'The verifier REJECTED the gate report - G-A confirmed but G-B withdrawn.'",
+   "disk_check_hint": "grep gate report for the 0.2pp claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC114",
+   "category": "attribution",
+   "subject": "G-B collapse",
+   "claim": "G-B collapsed on three grounds: a tautological Route A, a scaling premise contradicted by idx 69 (dispatch delta at most 3, not 84-168), and an ignored measured law (idx 250: 1.46 ms per dispatch) under which the residual penalty exceeds the FLOP saving by 2-5x.",
+   "verbatim": "idx 250: 1.46 milliseconds per dispatch",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    74
+   ],
+   "timestamps": [
+    "2026-08-19T11:34:16.742Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "read ledger idx 69 and idx 250",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC115",
+   "category": "number",
+   "subject": "predeclared observable baseline error",
+   "claim": "The predeclared observable was stated against the wrong baseline: +508.8 dispatches against the frozen incumbent, not +227.2.",
+   "verbatim": "+508.8 dispatches against the frozen incumbent, not +227.2",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    74
+   ],
+   "timestamps": [
+    "2026-08-19T11:34:16.742Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep gate artifacts for 508.8 / 227.2",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC116",
+   "category": "attribution",
+   "subject": "t-table corpus bug",
+   "claim": "A corpus tooling bug was exposed: a t-table off-by-one made every recorded interval one degree of freedom too wide.",
+   "verbatim": "the t-table off-by-one making every recorded interval one degree of freedom too wide",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    74
+   ],
+   "timestamps": [
+    "2026-08-19T11:34:16.742Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus helper for the t-table",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC117",
+   "category": "attribution",
+   "subject": "two-signals-one-code-path",
+   "claim": "The verifier caught itself making five wrong corrections because its recompute had copied the artifact's own CI95 helper: two signals that share a code path are one signal.",
+   "verbatim": "\"two signals that share a code path are one signal.\"",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    74
+   ],
+   "timestamps": [
+    "2026-08-19T11:34:16.742Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC118",
+   "category": "number",
+   "subject": "door settlement figure",
+   "claim": "The mean m71-owned increment across all five recorded nets is 8,269,535,869 FLOPs, below the 12.42B boundary.",
+   "verbatim": "at 8,269,535,869 FLOPs, well below the 12.42B boundary",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    77
+   ],
+   "timestamps": [
+    "2026-08-19T12:57:15.106Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep settlement report for 8269535869",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC119",
+   "category": "number",
+   "subject": "door closure margins",
+   "claim": "The gate fires at mean 1.17x under the conservative campaign law and 3.11x under the host law, weakest seed 1.04x - a closure, not a rout (not the 1.80-4.76x the earlier pass over-filed).",
+   "verbatim": "mean 1.17× at the conservative campaign law, 3.11× at the host law, weakest seed 1.04×",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    77
+   ],
+   "timestamps": [
+    "2026-08-19T12:57:15.106Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "Explicitly corrects an earlier over-filed range (1.80-4.76x).",
+   "disk_check_hint": "grep settlement report for 1.17 / 3.11",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC120",
+   "category": "number",
+   "subject": "door verification tallies",
+   "claim": "The verifier re-derived 140/140 tape charges, 280/280 row identities, and all five dispatch deltas to the unit.",
+   "verbatim": "140/140 tape charges, 280/280 row identities",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    77
+   ],
+   "timestamps": [
+    "2026-08-19T12:57:15.106Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep verifier output",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC121",
+   "category": "number",
+   "subject": "rotation-draw variance",
+   "claim": "S1 found that rotation-draw variance is 99.79% of suite variance; m207b found only 13% of draws land well-conditioned.",
+   "verbatim": "rotation-draw variance is 99.79% of suite variance",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    81
+   ],
+   "timestamps": [
+    "2026-08-19T16:07:01.629Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Two ledger attributions (S1, m207b) with precise figures, cited in the same paragraph as the confabulated 50.3% oracle.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ledger for S1 and m207b with these figures",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC122",
+   "category": "number",
+   "subject": "finite-n variance law",
+   "claim": "Var(s^2) = (1/n)[mu4 - ((n-3)/(n-1))mu2^2]; at n=5 the pilot's variance estimate carries +/-35.4% relative SD under pure normality.",
+   "verbatim": "at n=5 the pilot's variance estimate carries ±35.4% relative SD",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    84
+   ],
+   "timestamps": [
+    "2026-08-19T17:08:03.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ladder output for 35.4%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC123",
+   "category": "number",
+   "subject": "se_log shortfall re-read",
+   "claim": "The observed 3.7x se_log shortfall is a 1.31 sigma event needing no heavy tails; the honour window was unearnable from a five-network pilot.",
+   "verbatim": "a **1.31σ event needing no heavy tails at all**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    84
+   ],
+   "timestamps": [
+    "2026-08-19T17:08:03.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ladder output for 1.31",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC124",
+   "category": "number",
+   "subject": "deg-6 cell refutation",
+   "claim": "The deg-6 cell needs 500K-8M samples for a 10-20% instrument while its production scale delivers 39% relative SD, fifteen-fold short.",
+   "verbatim": "needs 500K–8M samples for a 10–20% instrument, and its production scale delivers 39% relative SD",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    84
+   ],
+   "timestamps": [
+    "2026-08-19T17:08:03.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ladder output for 39% and fifteen-fold",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC125",
+   "category": "number",
+   "subject": "cross-degree coupling bound",
+   "claim": "Schur's lemma makes order-2 coupling exactly zero and an exact 15-partition computation bounds order 4 at 5e-7.",
+   "verbatim": "bounds order 4 at 5×10⁻⁷",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    84
+   ],
+   "timestamps": [
+    "2026-08-19T17:08:03.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ladder verifier output",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC126",
+   "category": "number",
+   "subject": "arm A underperformance",
+   "claim": "Arm A (Haar) underperforms the theory by 28.5%, and that miss is 99.4% of the entire gap; arm B is within 4% and arm C within 0.15%.",
+   "verbatim": "underperforming the theory by 28.5%",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    86
+   ],
+   "timestamps": [
+    "2026-08-19T17:12:05.034Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep moment-attack synthesis for 28.5% / 99.4%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC127",
+   "category": "number",
+   "subject": "detection lever",
+   "claim": "Arm A's Haar pilot and arms B/C's flat Hadamard probes differ by an l1/l2 detection lever of ~16.",
+   "verbatim": "detection lever of ~16",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    86
+   ],
+   "timestamps": [
+    "2026-08-19T17:12:05.034Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Mechanism II premise; measured at 0.999x one block later (B087), so the ~16 lever was a projection presented as structure.",
+   "internal_conflict": "B087: 'the lever measured directly at 0.999x'.",
+   "disk_check_hint": "grep moment synthesis for the detection lever figure",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC128",
+   "category": "number",
+   "subject": "B-prime candidate value",
+   "claim": "Removing arm B's frame-0 all-plus Walsh row is worth a candidate +4-5% on the completion family - the one new accuracy lever for the October 16 runway.",
+   "verbatim": "worth a candidate +4–5% on the completion family",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    86,
+    93
+   ],
+   "timestamps": [
+    "2026-08-19T17:12:05.034Z",
+    "2026-08-19T19:03:38.526Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": true,
+   "suspect_reason": "Presented as the single live score lever, then proven non-existent by the symmetry gate (B098).",
+   "internal_conflict": "B098: 'the +4-5% candidate was the rotation lottery wearing a costume.'",
+   "disk_check_hint": "grep moment synthesis for the +4-5% estimate",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC129",
+   "category": "attribution",
+   "subject": "mechanism II death",
+   "claim": "Mechanism II died four ways: the within-family control reproduced 86% of the effect, the pre-registered rule did not fire, the l1/l2 lever measured 0.999x, and the archived FLOP bills gave a direction-free second signal.",
+   "verbatim": "the lever measured directly at 0.999×",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    87,
+    89
+   ],
+   "timestamps": [
+    "2026-08-19T18:10:03.385Z",
+    "2026-08-19T18:11:24.329Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep S7 report for 0.999 and 86%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC130",
+   "category": "number",
+   "subject": "degree-4 share discrepancy",
+   "claim": "The He-kernel's degree-4 energy share entered the forecast at 0.45% when the data implies ~1.26%.",
+   "verbatim": "entering the forecast at 0.45% when the data implies ~1.26%",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    89
+   ],
+   "timestamps": [
+    "2026-08-19T18:11:24.329Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep trace output for 0.45% and 1.26%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC131",
+   "category": "attribution",
+   "subject": "single-producer finding",
+   "claim": "Every committed instance of the degree-4 share traces to a single producer: the infinite-width mean-field arccos kernel from Aug 8; r0 merely re-derived the same kernel.",
+   "verbatim": "a *single* producer: the infinite-width mean-field arccos kernel from Aug 8",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    92
+   ],
+   "timestamps": [
+    "2026-08-19T18:53:52.024Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for the arccos kernel producer",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC132",
+   "category": "number",
+   "subject": "kink-tail vs mean-field fit",
+   "claim": "The kink-tail profile matches to 3-17% across degrees 8 through 48 while the mean-field shape misses by +65% to +620%.",
+   "verbatim": "matches to 3–17% across degrees 8 through 48 — while the mean-field shape misses by +65% to +620%",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    92
+   ],
+   "timestamps": [
+    "2026-08-19T18:53:52.024Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep trace output for the fit ranges",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC133",
+   "category": "number",
+   "subject": "anomaly closure",
+   "claim": "Replacing the degree-4:degree-6 ratio with the exact kink-tail value (3.347 vs mean-field 1.410) gives a share of 1.061%, closing 96.1% of the A-to-B gap and 77.3% of the A-to-C gap.",
+   "verbatim": "closing **96.1% of the A→B gap and 77.3% of the A→C gap**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    92,
+    100
+   ],
+   "timestamps": [
+    "2026-08-19T18:53:52.024Z",
+    "2026-08-19T19:53:41.086Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep trace output for 3.347 / 1.410 / 1.061%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC134",
+   "category": "number",
+   "subject": "residual structural short",
+   "claim": "A C-to-B structural short of at least 3.84% non-quadrature term remains untouched by any share vector.",
+   "verbatim": "a ≥3.84% non-quadrature term",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    92
+   ],
+   "timestamps": [
+    "2026-08-19T18:53:52.024Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep trace output for 3.84%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC135",
+   "category": "attribution",
+   "subject": "re-indexing check",
+   "claim": "Re-indexing r0's Kerdock 0.45% onto the Haar side under the exact defect ratios gives 16.2%, nowhere near the implied 1.26%, so there was no carrier-indexing error.",
+   "verbatim": "gives 16.2% (matching the slate's independent \"~16%, 1/36 after the swap\"",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    92
+   ],
+   "timestamps": [
+    "2026-08-19T18:53:52.024Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep trace output for 16.2%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC136",
+   "category": "number",
+   "subject": "lambda lawfulness move",
+   "claim": "The fitted moment_tangent_lambda can be replaced by the theorem-fixed value 1, dropping the declared fitted surface from six scalars to five at a FLOP saving.",
+   "verbatim": "dropping the declared fitted surface from six scalars to five at a FLOP *saving*",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    84
+   ],
+   "timestamps": [
+    "2026-08-19T17:08:03.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep disclosure for the fitted-scalar count",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC137",
+   "category": "attribution",
+   "subject": "B-prime symmetry theorem",
+   "claim": "The re-phase family is a rotation composed with row sign flips; the carrier enters at exactly one line (z @ (R.T @ W0)); B' and B induce the same joint distribution of everything.",
+   "verbatim": "the carrier enters the deployed estimator at exactly one line (`z @ (R.T @ W0)`)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    98
+   ],
+   "timestamps": [
+    "2026-08-19T19:50:17.821Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "read the estimator source for that line",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC138",
+   "category": "number",
+   "subject": "B-prime verification and floor",
+   "claim": "Verified mechanically on three nets with integer-identical 28-layer trajectories; independently, the rotation lottery would demand 651-902 nets for a 2-sigma decision.",
+   "verbatim": "would demand 651–902 nets for a 2σ decision",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    98
+   ],
+   "timestamps": [
+    "2026-08-19T19:50:17.821Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep symmetry gate output for 651-902",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC139",
+   "category": "number",
+   "subject": "B-prime cost",
+   "claim": "Total cost of settling the B' lever: 44 seconds of synthetic smoke instead of an hour of scored runs.",
+   "verbatim": "Total cost: 44 seconds of synthetic smoke",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    98
+   ],
+   "timestamps": [
+    "2026-08-19T19:50:17.821Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC140",
+   "category": "number",
+   "subject": "smoke sign-flip anomaly",
+   "claim": "The seed-424242 draw was both 1%-tight and sign-flipped, joint probability ~1e-4.",
+   "verbatim": "the seed-424242 draw that was both 1%-tight and sign-flipped, joint probability ~10⁻⁴",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    95,
+    102
+   ],
+   "timestamps": [
+    "2026-08-19T19:06:13.962Z",
+    "2026-08-19T23:23:00.526Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for seed 424242",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC141",
+   "category": "number",
+   "subject": "evidence graph size",
+   "claim": "The merged evidence graph holds 710 nodes.",
+   "verbatim": "merged graph 710 nodes",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    0
+   ],
+   "timestamps": [
+    "2026-08-19T00:46:58.258Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B017 and B026 restate 710.",
+   "disk_check_hint": "count nodes in the merged graph artifact",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC142",
+   "category": "number",
+   "subject": "commit count",
+   "claim": "All 41 commits are safe on the remote; local and remote heads match exactly.",
+   "verbatim": "**Safe on the remote (all 41 commits)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    17
+   ],
+   "timestamps": [
+    "2026-08-19T02:12:20.806Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git log count at that time",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC143",
+   "category": "number",
+   "subject": "sealed cell count",
+   "claim": "Eight sealed cells with their verdicts are on the remote.",
+   "verbatim": "all eight sealed cells with their verdicts",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    17
+   ],
+   "timestamps": [
+    "2026-08-19T02:12:20.806Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B000 says '8 sealed cells'.",
+   "disk_check_hint": "count cells/ directory",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC144",
+   "category": "number",
+   "subject": "designation policy size",
+   "claim": "The designation policy is written at 386 lines with every number re-derived.",
+   "verbatim": "The **designation policy** is written, 386 lines",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "wc -l the policy file",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC145",
+   "category": "number",
+   "subject": "kill-context index",
+   "claim": "The full kill-context index maps 276 records by carrier, precision and convention; only three of 276 kills were ever measured on the full adjusted score.",
+   "verbatim": "only *three* of 276 kills were ever measured on the full adjusted score",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    34
+   ],
+   "timestamps": [
+    "2026-08-19T04:28:54.802Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep index for the adjusted-score count",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC146",
+   "category": "attribution",
+   "subject": "record 68",
+   "claim": "Record 68 stated in plain text weeks ago that the formal geometry is '126 independent Haar frames - not a Kerdock MUB'.",
+   "verbatim": "record 68 stated in plain text weeks ago",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    34
+   ],
+   "timestamps": [
+    "2026-08-19T04:28:54.802Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "read ledger record 68",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC147",
+   "category": "attribution",
+   "subject": "record 266",
+   "claim": "Ledger record 266 exists with the content the documents quote.",
+   "verbatim": "Ledger record 266 exists with the content the documents quote",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    107
+   ],
+   "timestamps": [
+    "2026-08-19T23:43:24.987Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "read ledger record 266",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC148",
+   "category": "attribution",
+   "subject": "kerdock entrypoint hash",
+   "claim": "The kerdock entrypoint hashes to 076d0a5d81891ddc under first-person sha256, matching the claim.",
+   "verbatim": "hashes to `076d0a5d81891ddc` under my own sha256",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    107
+   ],
+   "timestamps": [
+    "2026-08-19T23:43:24.987Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "re-hash the entrypoint",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC149",
+   "category": "number",
+   "subject": "dataset size",
+   "claim": "The dataset is 7.9 GB of HuggingFace arrow shards at exactly the path the specs cite.",
+   "verbatim": "the dataset is 7.9 GB of HuggingFace arrow shards",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    107
+   ],
+   "timestamps": [
+    "2026-08-19T23:43:24.987Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "du the dataset path",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC150",
+   "category": "number",
+   "subject": "F15 fallback",
+   "claim": "F15 passed seven of eight gates and died solely on the incumbent's self-declared 512 MiB clause.",
+   "verbatim": "a fully integrated route that passed seven of eight gates and died *solely* on the incumbent's self-declared 512 MiB clause",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    32
+   ],
+   "timestamps": [
+    "2026-08-19T04:24:18.967Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "'F15' is an F-series label of the same family as the conceded-confabulated 'F7'.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ledger for a record literally named 'F15'",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC151",
+   "category": "label",
+   "subject": "H1-H5 hypothesis labels",
+   "claim": "The hypothesis program is labelled H1 (A4 reconciliation), H2 (decomposition arm), H3 (kernel-fixed degree-4 control), H4 (slope cost model), H5 (mutation engine re-run).",
+   "verbatim": "**H1 — the A₄ reconciliation (pre-register NOW).**",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    25
+   ],
+   "timestamps": [
+    "2026-08-19T04:09:38.830Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "Session-coined labels; check whether they were written to disk before being cited as corpus facts.",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for H1..H5 with these definitions",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC152",
+   "category": "number",
+   "subject": "splice atlas",
+   "claim": "The splice atlas holds 25 pairs certified non-reopening, re-adjudicated against seven new state facts.",
+   "verbatim": "The splice atlas's 25 pairs were certified non-reopening",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    25
+   ],
+   "timestamps": [
+    "2026-08-19T04:09:38.830Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for the splice atlas pair count",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC153",
+   "category": "number",
+   "subject": "suite ladder transfer question",
+   "claim": "The measurement would adjudicate how much of the suite ladder's 5.17% transfers to the Haar host, the question raised about tiers 12-15.",
+   "verbatim": "how much of the suite ladder's 5.17% transfers to the Haar host",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep ladder artifacts for 5.17%",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC154",
+   "category": "number",
+   "subject": "parity law tolerances",
+   "claim": "The parity law demands per-net MSE ratio within 5e-4 and aggregate within 1e-4.",
+   "verbatim": "per-net MSE ratio within 5e-4 and aggregate within 1e-4",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    42
+   ],
+   "timestamps": [
+    "2026-08-19T05:28:15.838Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep gate for tolerances",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC155",
+   "category": "number",
+   "subject": "ReLU mismatch margin",
+   "claim": "The candidate passes the ReLU-mismatch clause at 64x margin.",
+   "verbatim": "ReLU mismatch at 64× margin",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    22
+   ],
+   "timestamps": [
+    "2026-08-19T03:43:58.920Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B042 restates 'the ReLU-mismatch ceiling it passes at 64x margin'.",
+   "disk_check_hint": "grep fix report for 64x",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC156",
+   "category": "number",
+   "subject": "dead retention",
+   "claim": "31.5 MiB was retained for a dead flag.",
+   "verbatim": "the 31.5 MiB retained for a dead flag",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    23
+   ],
+   "timestamps": [
+    "2026-08-19T03:46:00.553Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep round-3 report for 31.5 MiB",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC157",
+   "category": "number",
+   "subject": "workspace figures",
+   "claim": "The incumbent's workspace is 91.4 MiB and the fold route's pools are 192 MiB, declared as measured.",
+   "verbatim": "192 MiB workspace as measured",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    23
+   ],
+   "timestamps": [
+    "2026-08-19T03:46:00.553Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep gate for 91.4 / 192 MiB",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC158",
+   "category": "attribution",
+   "subject": "external pyc writer",
+   "claim": "The round-3 fixer caught an external process writing .pyc files into custody trees mid-run.",
+   "verbatim": "an **external process writing .pyc files into custody trees** mid-run",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep round-3 report for the bytecode finding",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC159",
+   "category": "number",
+   "subject": "forum topic ids",
+   "claim": "The forum's highest topic was 18187 (a community Substack post) at 04:04, and 18188 (another Phase-1 retrospective) at 05:04.",
+   "verbatim": "highest topic still 18187 (a community Substack post)",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    24
+   ],
+   "timestamps": [
+    "2026-08-19T04:04:02.665Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "B041/B042 cite 18188 an hour later.",
+   "disk_check_hint": "grep corpus for forum topic ids",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC160",
+   "category": "attribution",
+   "subject": "Mohanty timing statement",
+   "claim": "Mohanty said the announcement was coming 'mostly on 19th', and the details were promised via participant email.",
+   "verbatim": "Mohanty's \"mostly on 19th\" makes today the day",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    41
+   ],
+   "timestamps": [
+    "2026-08-19T05:04:14.905Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": true,
+   "suspect_reason": "This is the sole cited basis for the phantom 'due today' deadline; the quoted attribution needs a disk source.",
+   "internal_conflict": "B080 later establishes Phase 2 had not opened at all.",
+   "disk_check_hint": "grep corpus for 'mostly on 19th' and its source",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC161",
+   "category": "number",
+   "subject": "public depth-scaling source",
+   "claim": "Part (d) forces the derivation through the public 18184 depth-scaling data; the 18184 law says dispatch-count dominates.",
+   "verbatim": "the public 18184 depth-scaling data",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    3
+   ],
+   "timestamps": [
+    "2026-08-19T01:05:31.847Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "grep corpus for topic 18184",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC162",
+   "category": "number",
+   "subject": "closing wave scope",
+   "claim": "The closing wave runs seven agents in four phases, including a thirty-two-net untouched-split final gate and a ~3,000-word filing-ready short form.",
+   "verbatim": "seven agents, four phases",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    102
+   ],
+   "timestamps": [
+    "2026-08-19T23:23:00.526Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check wf_e39c7e97-ae1 artifacts",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC163",
+   "category": "number",
+   "subject": "integrity sweep",
+   "claim": "Local and remote are identical at d4ce506, fifteen core documents from today are on disk, and the frozen incumbent's bytes hash to exactly their recorded value.",
+   "verbatim": "local and remote identical at d4ce506",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    104
+   ],
+   "timestamps": [
+    "2026-08-19T23:25:27.192Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git rev-parse; hash the incumbent",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC164",
+   "category": "number",
+   "subject": "push cadence",
+   "claim": "About twenty pushes happened today and local matched remote at every one.",
+   "verbatim": "about twenty of them today",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    104
+   ],
+   "timestamps": [
+    "2026-08-19T23:25:27.192Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git reflog count for 2026-08-19",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC165",
+   "category": "attribution",
+   "subject": "confabulation concession",
+   "claim": "Three confabulation instances are conceded: the 50.3% figure that exists nowhere on disk, the F7/Lens A vocabulary presented as corpus fact, and the phantom deadline.",
+   "verbatim": "the 50.3% figure that exists nowhere on disk, the \"F7\"/\"Lens A\" vocabulary I presented as corpus fact, the phantom deadline",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    107
+   ],
+   "timestamps": [
+    "2026-08-19T23:43:24.987Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "The orchestrator states the true count is unknown.",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC166",
+   "category": "attribution",
+   "subject": "integrity-sweep category error",
+   "claim": "The integrity sweep verified the repository, not the narrative - a category error.",
+   "verbatim": "my integrity sweep just now verified the *repository*, not my *narrative*",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    105
+   ],
+   "timestamps": [
+    "2026-08-19T23:40:11.966Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC167",
+   "category": "attribution",
+   "subject": "commit 170db05",
+   "claim": "goal update pushed at 170db05.",
+   "verbatim": "170db05",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    6
+   ],
+   "timestamps": [
+    "2026-08-19T01:10:34.624Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 170db05; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC168",
+   "category": "attribution",
+   "subject": "commit 1853982",
+   "claim": "fold implementation committed and pushed pre-loss-window at 1853982.",
+   "verbatim": "1853982",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    9,
+    10
+   ],
+   "timestamps": [
+    "2026-08-19T01:34:38.980Z",
+    "2026-08-19T01:36:09.634Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 1853982; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC169",
+   "category": "attribution",
+   "subject": "commit efb8228",
+   "claim": "recursion m* derivation pushed at efb8228.",
+   "verbatim": "efb8228",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    13,
+    14
+   ],
+   "timestamps": [
+    "2026-08-19T01:42:50.412Z",
+    "2026-08-19T01:50:16.156Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t efb8228; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC170",
+   "category": "attribution",
+   "subject": "commit 056b2ab",
+   "claim": "fix-round ruling pushed at 056b2ab.",
+   "verbatim": "056b2ab",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    16
+   ],
+   "timestamps": [
+    "2026-08-19T02:08:00.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 056b2ab; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC171",
+   "category": "attribution",
+   "subject": "commit 832de0f",
+   "claim": "tier-25 completion-ladder draft committed and pushed at 832de0f.",
+   "verbatim": "832de0f",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    17
+   ],
+   "timestamps": [
+    "2026-08-19T02:12:20.806Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 832de0f; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC172",
+   "category": "attribution",
+   "subject": "commit dd32ac7",
+   "claim": "suite ladder story pushed at dd32ac7.",
+   "verbatim": "dd32ac7",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    19
+   ],
+   "timestamps": [
+    "2026-08-19T02:33:17.337Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t dd32ac7; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC173",
+   "category": "attribution",
+   "subject": "commit 91d672b",
+   "claim": "three lanes banked and pushed at 91d672b.",
+   "verbatim": "91d672b",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    21
+   ],
+   "timestamps": [
+    "2026-08-19T03:16:35.753Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 91d672b; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC174",
+   "category": "attribution",
+   "subject": "commit 9a27269",
+   "claim": "round-three ruling pushed at 9a27269.",
+   "verbatim": "9a27269",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    23,
+    24
+   ],
+   "timestamps": [
+    "2026-08-19T03:46:00.553Z",
+    "2026-08-19T04:04:02.665Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 9a27269; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC175",
+   "category": "attribution",
+   "subject": "commit 41f96f5",
+   "claim": "context-indexed kills doctrine pushed at 41f96f5.",
+   "verbatim": "41f96f5",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    28,
+    30
+   ],
+   "timestamps": [
+    "2026-08-19T04:13:13.245Z",
+    "2026-08-19T04:14:48.429Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 41f96f5; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC176",
+   "category": "attribution",
+   "subject": "commit f1ef7d0",
+   "claim": "H1 pre-registration pushed at f1ef7d0.",
+   "verbatim": "f1ef7d0",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    26
+   ],
+   "timestamps": [
+    "2026-08-19T04:11:05.233Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t f1ef7d0; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC177",
+   "category": "attribution",
+   "subject": "commit 0486668",
+   "claim": "regime-audit consequences pushed at 0486668.",
+   "verbatim": "0486668",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    32
+   ],
+   "timestamps": [
+    "2026-08-19T04:24:18.967Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 0486668; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC178",
+   "category": "attribution",
+   "subject": "commit 0527936",
+   "claim": "kill-context index pushed at 0527936.",
+   "verbatim": "0527936",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    34
+   ],
+   "timestamps": [
+    "2026-08-19T04:28:54.802Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 0527936; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC179",
+   "category": "attribution",
+   "subject": "commit 502d9fb",
+   "claim": "F7 recompute banked and pushed at 502d9fb.",
+   "verbatim": "502d9fb",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    37
+   ],
+   "timestamps": [
+    "2026-08-19T04:49:27.716Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 502d9fb; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC180",
+   "category": "attribution",
+   "subject": "commit 23215bb",
+   "claim": "manuscript/129/policy/slope banked and pushed at 23215bb.",
+   "verbatim": "23215bb",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    40,
+    41
+   ],
+   "timestamps": [
+    "2026-08-19T05:00:02.057Z",
+    "2026-08-19T05:04:14.905Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 23215bb; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC181",
+   "category": "attribution",
+   "subject": "commit 89d44cb",
+   "claim": "A4 closed-form theorem pushed at 89d44cb.",
+   "verbatim": "89d44cb",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    44
+   ],
+   "timestamps": [
+    "2026-08-19T05:38:39.594Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 89d44cb; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC182",
+   "category": "attribution",
+   "subject": "commit 21d64c2",
+   "claim": "1 GiB ceiling ruling pushed at 21d64c2.",
+   "verbatim": "21d64c2",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 21d64c2; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC183",
+   "category": "attribution",
+   "subject": "commit e2f29ea",
+   "claim": "fold halt rulings pushed at e2f29ea.",
+   "verbatim": "e2f29ea",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    54,
+    56
+   ],
+   "timestamps": [
+    "2026-08-19T08:43:41.317Z",
+    "2026-08-19T08:57:51.937Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t e2f29ea; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC184",
+   "category": "attribution",
+   "subject": "commit e776252",
+   "claim": "manuscript v1.2 pushed at e776252.",
+   "verbatim": "e776252",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    58
+   ],
+   "timestamps": [
+    "2026-08-19T09:19:58.130Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t e776252; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC185",
+   "category": "attribution",
+   "subject": "commit 7239ee2",
+   "claim": "mi-solve deliverables committed at 7239ee2.",
+   "verbatim": "7239ee2",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    61
+   ],
+   "timestamps": [
+    "2026-08-19T09:24:00.992Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 7239ee2; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC186",
+   "category": "attribution",
+   "subject": "commit 5da4cdc",
+   "claim": "129 cell judged and pushed by the judge at 5da4cdc.",
+   "verbatim": "5da4cdc",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    65
+   ],
+   "timestamps": [
+    "2026-08-19T09:57:24.473Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 5da4cdc; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC187",
+   "category": "attribution",
+   "subject": "commit d77b855",
+   "claim": "Wave 0 self-pushed at d77b855.",
+   "verbatim": "d77b855",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    67
+   ],
+   "timestamps": [
+    "2026-08-19T10:15:31.816Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t d77b855; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC188",
+   "category": "attribution",
+   "subject": "commit 5ba559d",
+   "claim": "manuscript v1.3 pushed at 5ba559d.",
+   "verbatim": "5ba559d",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    70,
+    71
+   ],
+   "timestamps": [
+    "2026-08-19T10:36:34.511Z",
+    "2026-08-19T10:37:17.796Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 5ba559d; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC189",
+   "category": "attribution",
+   "subject": "commit a0cdc48",
+   "claim": "static-gate journal and memory pushed at a0cdc48.",
+   "verbatim": "a0cdc48",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    74
+   ],
+   "timestamps": [
+    "2026-08-19T11:34:16.742Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t a0cdc48; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC190",
+   "category": "attribution",
+   "subject": "commit ac2e230",
+   "claim": "settlement-state push at ac2e230.",
+   "verbatim": "ac2e230",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    76
+   ],
+   "timestamps": [
+    "2026-08-19T12:25:04.795Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t ac2e230; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC191",
+   "category": "attribution",
+   "subject": "commit 86bdbe7",
+   "claim": "door closure harvested and pushed at 86bdbe7.",
+   "verbatim": "86bdbe7",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    77
+   ],
+   "timestamps": [
+    "2026-08-19T12:57:15.106Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 86bdbe7; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC192",
+   "category": "attribution",
+   "subject": "commit 41a7ecf",
+   "claim": "live board intel pushed at 41a7ecf.",
+   "verbatim": "41a7ecf",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    80
+   ],
+   "timestamps": [
+    "2026-08-19T13:07:57.762Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 41a7ecf; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC193",
+   "category": "attribution",
+   "subject": "commit 79aae74",
+   "claim": "central-moment ladder pushed at 79aae74.",
+   "verbatim": "79aae74",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    84,
+    86
+   ],
+   "timestamps": [
+    "2026-08-19T17:08:03.202Z",
+    "2026-08-19T17:12:05.034Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 79aae74; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC194",
+   "category": "attribution",
+   "subject": "commit b48efaa",
+   "claim": "moment attack pushed at b48efaa.",
+   "verbatim": "b48efaa",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    86
+   ],
+   "timestamps": [
+    "2026-08-19T17:12:05.034Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t b48efaa; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC195",
+   "category": "attribution",
+   "subject": "commit 286f5b4",
+   "claim": "S7 harvest pushed at 286f5b4.",
+   "verbatim": "286f5b4",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    89
+   ],
+   "timestamps": [
+    "2026-08-19T18:11:24.329Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 286f5b4; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC196",
+   "category": "attribution",
+   "subject": "commit 337e7ef",
+   "claim": "state pushed through at 337e7ef.",
+   "verbatim": "337e7ef",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    89
+   ],
+   "timestamps": [
+    "2026-08-19T18:11:24.329Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 337e7ef; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC197",
+   "category": "attribution",
+   "subject": "commit f4780c6",
+   "claim": "trace verifier APPROVED and pushed at f4780c6.",
+   "verbatim": "f4780c6",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    91,
+    92,
+    95,
+    96
+   ],
+   "timestamps": [
+    "2026-08-19T18:52:58.806Z",
+    "2026-08-19T18:53:52.024Z",
+    "2026-08-19T19:06:13.962Z",
+    "2026-08-19T19:34:25.794Z"
+   ],
+   "occurrences_in_transcript": 4,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t f4780c6; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC198",
+   "category": "attribution",
+   "subject": "commit 494d918",
+   "claim": "B-prime symmetry theorem pushed at 494d918.",
+   "verbatim": "494d918",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    98
+   ],
+   "timestamps": [
+    "2026-08-19T19:50:17.821Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t 494d918; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC199",
+   "category": "attribution",
+   "subject": "commit e744b36",
+   "claim": "manuscript v1.4 pushed at e744b36.",
+   "verbatim": "e744b36",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    100
+   ],
+   "timestamps": [
+    "2026-08-19T19:53:41.086Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t e744b36; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC200",
+   "category": "attribution",
+   "subject": "commit d4ce506",
+   "claim": "local and remote identical at d4ce506.",
+   "verbatim": "d4ce506",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    104
+   ],
+   "timestamps": [
+    "2026-08-19T23:25:27.192Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "git cat-file -t d4ce506; confirm the commit exists and its content matches the claim",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC201",
+   "category": "attribution",
+   "subject": "workflow wf_93f40977-136",
+   "claim": "The fold fix round ran as workflow wf_93f40977-136.",
+   "verbatim": "wf_93f40977-136",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    16
+   ],
+   "timestamps": [
+    "2026-08-19T02:08:00.202Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_93f40977-136",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC202",
+   "category": "attribution",
+   "subject": "workflow wf_76a87350-49b",
+   "claim": "The relaunched three lanes ran as workflow wf_76a87350-49b.",
+   "verbatim": "wf_76a87350-49b",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    19
+   ],
+   "timestamps": [
+    "2026-08-19T02:33:17.337Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_76a87350-49b",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC203",
+   "category": "attribution",
+   "subject": "workflow wf_d6440c2b-55a",
+   "claim": "The fold round three ran as workflow wf_d6440c2b-55a.",
+   "verbatim": "wf_d6440c2b-55a",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    23
+   ],
+   "timestamps": [
+    "2026-08-19T03:46:00.553Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_d6440c2b-55a",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC204",
+   "category": "attribution",
+   "subject": "workflow wf_752d0515-d1f",
+   "claim": "The hypothesis ladder ran as workflow wf_752d0515-d1f.",
+   "verbatim": "wf_752d0515-d1f",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    26
+   ],
+   "timestamps": [
+    "2026-08-19T04:11:05.233Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_752d0515-d1f",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC205",
+   "category": "attribution",
+   "subject": "workflow wf_bf88e6a3-710",
+   "claim": "The three fronts ran as workflow wf_bf88e6a3-710.",
+   "verbatim": "wf_bf88e6a3-710",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    30
+   ],
+   "timestamps": [
+    "2026-08-19T04:14:48.429Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_bf88e6a3-710",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC206",
+   "category": "attribution",
+   "subject": "workflow wf_b708199c-ca4",
+   "claim": "The four-lens ultrareview ran as workflow wf_b708199c-ca4.",
+   "verbatim": "wf_b708199c-ca4",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    46,
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T05:42:45.940Z",
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_b708199c-ca4",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC207",
+   "category": "attribution",
+   "subject": "workflow wf_01a886a8-2ad",
+   "claim": "The five-lane ultramath deliberation ran as workflow wf_01a886a8-2ad.",
+   "verbatim": "wf_01a886a8-2ad",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_01a886a8-2ad",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC208",
+   "category": "attribution",
+   "subject": "workflow wf_27e7a983-7fa",
+   "claim": "The fold round four ran as workflow wf_27e7a983-7fa.",
+   "verbatim": "wf_27e7a983-7fa",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_27e7a983-7fa",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC209",
+   "category": "attribution",
+   "subject": "workflow wf_77a537c1-bec",
+   "claim": "The mutual-information solve ran as workflow wf_77a537c1-bec.",
+   "verbatim": "wf_77a537c1-bec",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    51,
+    56
+   ],
+   "timestamps": [
+    "2026-08-19T06:13:13.588Z",
+    "2026-08-19T08:57:51.937Z"
+   ],
+   "occurrences_in_transcript": 2,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_77a537c1-bec",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC210",
+   "category": "attribution",
+   "subject": "workflow wf_c3b3826d-8b8",
+   "claim": "The 129 cell execution chain ran as workflow wf_c3b3826d-8b8.",
+   "verbatim": "wf_c3b3826d-8b8",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    56
+   ],
+   "timestamps": [
+    "2026-08-19T08:57:51.937Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_c3b3826d-8b8",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC211",
+   "category": "attribution",
+   "subject": "workflow wf_577452e1-65f",
+   "claim": "The manuscript integration ran as workflow wf_577452e1-65f.",
+   "verbatim": "wf_577452e1-65f",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    56
+   ],
+   "timestamps": [
+    "2026-08-19T08:57:51.937Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_577452e1-65f",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC212",
+   "category": "attribution",
+   "subject": "workflow wf_5cf3564d-ad0",
+   "claim": "The Wave 0 ran as workflow wf_5cf3564d-ad0.",
+   "verbatim": "wf_5cf3564d-ad0",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    61
+   ],
+   "timestamps": [
+    "2026-08-19T09:24:00.992Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_5cf3564d-ad0",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC213",
+   "category": "attribution",
+   "subject": "workflow wf_f2d62778-741",
+   "claim": "The settlement workflow ran as workflow wf_f2d62778-741.",
+   "verbatim": "wf_f2d62778-741",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    74
+   ],
+   "timestamps": [
+    "2026-08-19T11:34:16.742Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_f2d62778-741",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC214",
+   "category": "attribution",
+   "subject": "workflow wf_dc84f163-475",
+   "claim": "The final settling check ran as workflow wf_dc84f163-475.",
+   "verbatim": "wf_dc84f163-475",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    76
+   ],
+   "timestamps": [
+    "2026-08-19T12:25:04.795Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_dc84f163-475",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC215",
+   "category": "attribution",
+   "subject": "workflow wf_8bf10a8c-1df",
+   "claim": "The excess-gain moment attack ran as workflow wf_8bf10a8c-1df.",
+   "verbatim": "wf_8bf10a8c-1df",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    82
+   ],
+   "timestamps": [
+    "2026-08-19T16:09:25.661Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_8bf10a8c-1df",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC216",
+   "category": "attribution",
+   "subject": "workflow wf_ec75ed3c-749",
+   "claim": "The central-moment ladder ran as workflow wf_ec75ed3c-749.",
+   "verbatim": "wf_ec75ed3c-749",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    82
+   ],
+   "timestamps": [
+    "2026-08-19T16:09:25.661Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_ec75ed3c-749",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC217",
+   "category": "attribution",
+   "subject": "workflow wf_dc4b1981-fd3",
+   "claim": "The S7 rescue-counter probe ran as workflow wf_dc4b1981-fd3.",
+   "verbatim": "wf_dc4b1981-fd3",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    86
+   ],
+   "timestamps": [
+    "2026-08-19T17:12:05.034Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_dc4b1981-fd3",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC218",
+   "category": "attribution",
+   "subject": "workflow wf_ee4fced5-2f8",
+   "claim": "The degree-4 share trace ran as workflow wf_ee4fced5-2f8.",
+   "verbatim": "wf_ee4fced5-2f8",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    89
+   ],
+   "timestamps": [
+    "2026-08-19T18:11:24.329Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_ee4fced5-2f8",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC219",
+   "category": "attribution",
+   "subject": "workflow wf_391c816b-11e",
+   "claim": "The B-prime cell ran as workflow wf_391c816b-11e.",
+   "verbatim": "wf_391c816b-11e",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    96
+   ],
+   "timestamps": [
+    "2026-08-19T19:34:25.794Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_391c816b-11e",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC220",
+   "category": "attribution",
+   "subject": "workflow wf_497339da-8da",
+   "claim": "The v1.4 integration ran as workflow wf_497339da-8da.",
+   "verbatim": "wf_497339da-8da",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    96
+   ],
+   "timestamps": [
+    "2026-08-19T19:34:25.794Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_497339da-8da",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC221",
+   "category": "attribution",
+   "subject": "workflow wf_01e117d5-b01",
+   "claim": "The P2 manuscript write ran as workflow wf_01e117d5-b01.",
+   "verbatim": "wf_01e117d5-b01",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    68
+   ],
+   "timestamps": [
+    "2026-08-19T10:24:43.096Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_01e117d5-b01",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  },
+  {
+   "id": "CC222",
+   "category": "attribution",
+   "subject": "workflow wf_e39c7e97-ae1",
+   "claim": "The closing wave ran as workflow wf_e39c7e97-ae1.",
+   "verbatim": "wf_e39c7e97-ae1",
+   "verbatim_verified_in_transcript": true,
+   "blocks": [
+    102
+   ],
+   "timestamps": [
+    "2026-08-19T23:23:00.526Z"
+   ],
+   "occurrences_in_transcript": 1,
+   "suspect": false,
+   "suspect_reason": "",
+   "internal_conflict": "",
+   "disk_check_hint": "check the workflow transcript directory for wf_e39c7e97-ae1",
+   "grade": "UNGRADED",
+   "true_value_if_confabulated": null
+  }
+ ]
+}

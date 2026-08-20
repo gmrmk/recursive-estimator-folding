@@ -1,0 +1,71 @@
+{
+  "artifact": "..\\t4_kerdock_descriptive_rescore\\kerdock_v3_official100.json",
+  "B": 272000000000.0,
+  "n_mlps": 100,
+  "law1_effective_compute": {
+    "formula": "eff = flops_used + residual_wall_time_s * 1e11",
+    "max_abs_err_flops": 0.0,
+    "max_rel_err": 0.0
+  },
+  "law2_residual_definition": {
+    "formula": "residual = wall - backend - overhead",
+    "max_abs_err_s": 0.0
+  },
+  "law3_adjusted": {
+    "formula": "adj_i = mse_i * max(0.1, eff_i / B)",
+    "max_abs_err": 0.0,
+    "max_rel_err": 0.0,
+    "n_at_floor": 0
+  },
+  "law5_aggregation": {
+    "reported_score": 1.6190837992231567e-07,
+    "mean_of_per_mlp_products": 1.6190837992231575e-07,
+    "rel_err": 4.904584854915576e-16,
+    "naive_meanMSE_times_meanMULT": 1.6362742362187728e-07,
+    "naive_rel_err_vs_reported": 0.010617385587987638,
+    "reported_mean_mse": 2.493887556909158e-07,
+    "reported_mean_multiplier": 0.6561138779836238,
+    "reported_mean_effective_compute": 178462974811.54562,
+    "recomputed_mean_effective_compute": 178462974811.54562
+  },
+  "decomposition": {
+    "mlp0_flops": 146793971211,
+    "mlp0_matmul": 145138203747,
+    "mlp0_matmul_share": 0.9887204668533695,
+    "mlp0_residual_s": 0.09083610008019605,
+    "mlp0_residual_charge": 9083610008.019606,
+    "mlp0_eff": 155877581219.0196,
+    "mlp0_residual_share_of_own_eff": 0.05827399897395417,
+    "mean_flops": 170493882412.46,
+    "mean_matmul": 168693183619.78,
+    "mean_matmul_share_of_flops": 0.9894383378030907,
+    "mean_matmul_share_per_mlp": 0.9894124098368264,
+    "mean_movement_flops": 1046911199.84,
+    "mean_residual_s": 0.0796909239908564,
+    "max_residual_s": 0.13650190016051056,
+    "mean_residual_charge": 7969092399.085639,
+    "mean_eff": 178462974811.54562,
+    "mean_residual_charge_share_of_mean_eff": 0.04465403766524058,
+    "mean_matmul_share_of_mean_eff": 0.9452559209993984,
+    "mean_matmul_calls": 744.21,
+    "flops_spread_min": 146711727914,
+    "flops_spread_max": 201157296318
+  },
+  "residual_framing_reconciliation": {
+    "framing_A_9.08e9_is_5.83pct": {
+      "source": "MLP #0 of this artifact",
+      "residual_charge": 9083610008.019606,
+      "denominator_used": 155877581219.0196,
+      "pct": 5.827399897395416,
+      "pct_if_denominator_were_champion_C_1.7683e11": 5.136916817293222
+    },
+    "framing_B_0.080s_is_4.5pct": {
+      "source": "100-MLP mean of this artifact",
+      "mean_residual_s": 0.0796909239908564,
+      "residual_charge": 7969092399.085639,
+      "denominator_used": 178462974811.54562,
+      "pct": 4.465403766524059
+    },
+    "verdict": "Both are arithmetically correct but they are different objects: 5.83% is MLP #0's residual share of MLP #0's OWN effective compute; 4.5% is the 100-MLP mean residual charge as a share of the 100-MLP mean effective compute. Neither is 'residual as a share of C=1.7683e11' -- the champion C is a mean over a different graded set. The correct integrated statement is the per-MLP one, because the score is a mean of per-MLP products."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "candidate": "m208_physical_rankone_cumulant_control",
+  "disposition": "KILLED_MISSING_ALL_FOUR_DISTINCT_OWNER_SECTOR",
+  "predeclared_tolerance": 5e-10,
+  "max_abs_source_errors": {
+    "width_3": 2.2737367544323206e-13,
+    "width_4": 0.46397759729814697,
+    "width_5": 9.743906420317643,
+    "width_6": 7.057779005577702,
+    "width_7": 226.34059621461108
+  },
+  "localization": "p-only full rank-one fourth-tensor source equals current [4]+[3,1]+[2,2]+[2,1,1] owner source plus the omitted [1,1,1,1] wedge",
+  "wedge_reconstruction_max_abs": 3.0730973321624333e-13,
+  "width_three_pass_reason": "four distinct hidden labels do not exist at width three",
+  "preserved": [
+    "physical owner multiplicities",
+    "p-only full rank-one fourth-tensor compiler",
+    "exact all-four-distinct wedge localization",
+    "static 16.2688M response-free arithmetic envelope"
+  ],
+  "forbidden_claims": [
+    "current Source211 control parity",
+    "unbiased current-owner estimator",
+    "native cost credit",
+    "variance or MSE improvement",
+    "champion replacement"
+  ]
+}

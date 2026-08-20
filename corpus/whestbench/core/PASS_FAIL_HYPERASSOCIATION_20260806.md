@@ -179,14 +179,40 @@ repeated-index k3/k4 matrices preserve next-layer contraction energy and sign.
    residual covariance makes the combined adjusted score favorable.
 3. Treat compression by the exact law `r_cost*r_MSE<1`; fewer paths and lower
    numeric precision alone do not create a score gain under this biller.
-4. For exact sampler compression, change the failed allocation graph: use
-   preallocated `out=` or a new Winograd reconstruction and require L1 residual
-   below about.00987s before any estimator-level screen.
-5. For analytic compression, keep the <=12D signed cumulant algebra frozen;
-   derive a weights-only Price/Hermite k3/k4 response before testing
-   nonconstant-amplitude probes. Orthogonality without a right-hand side is not
-   a formation algorithm.
-6. No official row is authorized for either compression descendant until its
-   fresh synthetic/static gate passes. Do not combine failed implementations
-   merely because they share vocabulary; every hybrid must expose a new
-   observable and pass an interaction test.
+4. Exact sampler compression is now promoted through fixed8192-row streaming:
+   the production child scores.940048x its parent with100/100 paired wins,
+   zero failures, and max C222.405B. Freeze its source/package and do not tune
+   from public0..99 again.
+5. For analytic compression, use the certified64D/58D physical quotient and
+   retain the Q2 Price trace operator, but do not claim either supplies the
+   right-hand side. The isolated Q2 conditional response is only.28234
+   combined; the next predeclared rung changes only Hermite order2->4.
+6. The exact descendant has exhausted its authorized public0..99 promotion
+   gate. Analytic descendants still require a fresh synthetic/static gate
+   before any score. Do not combine failed implementations merely because they
+   share vocabulary; every hybrid must expose a new observable and pass an
+   interaction test.
+
+## Compression recursion update
+
+The exact-compute chain has now crossed its synthetic engineering boundary.
+Fixed8192-row Winograd streaming repairs the integrated branch's sole liveness
+failure: peak working set is474.301MiB, effective-compute ratio is.931714, and
+prediction/depth parity remains far inside the frozen gates. This creates a
+real promotion path, but only through an immutable production port and paired
+permitted-development score. The 144-call fragmentation risk remains explicit.
+
+The analytic chain exposed a complementary no-go. Canonicalizing the latent
+factor removes the equivalent-rotation defect essentially exactly and repairs
+49/201 convergence, yet isolated combined fidelity remains.66364. The grid
+presentation was a removable numerical problem; the unchanged Gaussian-copula
+state is an information problem. Future descendants must add a signed
+higher-order observable or change the prior, not spend more nodes on the grid.
+
+The clean-room PLE sidecar is a storage/locality survivor rather than a third
+estimator. Exact layer symmetry compresses the shared Phi/phi atlas31.9x to a
+66,632-byte package. Its useful hyperconnection is with the Price--Hermite
+operator: a1 through a4 are reconstructed from the same two primitives. Its
+limiting connection is the score calculus:41 proxy operations beat the known
+float64-promoted path but not an ideal28-operation native-f32 path. Therefore
+flash packaging should be fused only into an already-required moment pass.

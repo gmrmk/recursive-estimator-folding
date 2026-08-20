@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-07",
+  "scope": "generated-array, response-free, exact-algebra static audit only",
+  "prediction": "A lawful <=5-family exact M166 compiler would have to defeat the 2+3+2 symbolic product-rank decomposition.",
+  "kill_condition": "Nonzero exact minors on an SPD tied-score orientation cell establish ranks 2, 3, and 2 for the projection, aaab, and symmetric-aabb blocks.",
+  "generated_widths": [2, 3, 4, 5, 6, 7],
+  "generated_parity_max_abs": {
+    "2": 0.0,
+    "3": 0.0,
+    "4": 1.3877787807814457e-17,
+    "5": 8.881784197001252e-16,
+    "6": 2.255140518769849e-16,
+    "7": 1.0547118733938987e-15
+  },
+  "rank_certificate": {
+    "admissible_covariance": "C=N/100, strictly diagonally dominant SPD, score tiers 2025,2025,900,900,225,225 divided by 10000",
+    "projection_rank": 2,
+    "projection_minor_numerator": -114,
+    "aaab_ordered_rank": 3,
+    "aaab_left_minor_numerator": -1297824,
+    "aaab_right_minor_numerator": 686,
+    "aabb_symmetric_pair_rank": 2,
+    "aabb_feature_minor_numerator": 1505876,
+    "terminal_product_lower_bound": 5,
+    "dense_product_lower_bound": 7
+  },
+  "cost": {
+    "f64_one_square_product_family": 2595389440,
+    "six_f64_dense_product_bill_before_pointwise_copy": 15572336640,
+    "seven_f64_dense_product_bill": 18167726080,
+    "f64_pointwise_copy_allowance": 325058560,
+    "seven_f64_total": 18492784640,
+    "compiler_cap": 14019121200,
+    "six_product_margin_before_pointwise_copy": -1553215440,
+    "seven_product_margin": -4473663440
+  },
+  "ownership": "M167 physical [4], [3,1], and [2,2] owners remain unchanged; no retirement or residual relabelling is authorized.",
+  "nonmerged_salvage": "Score sorting makes A/B opposite strict triangles, so the two initial maps have one dense off-diagonal action's nonzero scalar count. This is an untested structured-kernel descendant, not product-rank reduction; require exact native accounting before a factorial test with independently validated L2 Strassen or cross-layer batching.",
+  "disposition": "KILLED_STATIC_NO_LEQ5_DENSE_PRODUCT_FAMILY_COMPILER_IN_AUDITED_M166_NORMAL_FORM"
+}

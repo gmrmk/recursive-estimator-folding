@@ -1,0 +1,122 @@
+{
+  "candidate": "M161 response-free M156 complete-domain covariance-star variance premise",
+  "date": "2026-08-07",
+  "scope": "six frozen generated Gaussian backgrounds; certified distinct [2,1,1] coefficients and complete pre-transport source-slot proxy only",
+  "status": "SOURCE_PROXY_KILLED",
+  "execution": {
+    "initial_run": "completed",
+    "deterministic_replay": "identical aggregate and per-cell receipt",
+    "truth_scorer_contest_model_leaderboard_submission_champion_accessed": false
+  },
+  "provider": {
+    "module": "M147 conditional_collision211_endpoint_dot",
+    "coarse_order": 48,
+    "fine_order": 64,
+    "value_certificate": 2e-08,
+    "tangent_certificate": 2e-07,
+    "all_cells_certified": true,
+    "maximum_observed_value_disagreement": 8.3522246063783e-10,
+    "maximum_observed_tangent_disagreement": 0.0
+  },
+  "proposal": {
+    "name": "fixed target-mass two-stratum uniform q0",
+    "collision_mass": 0.011688232421875,
+    "distinct_mass": 0.988311767578125,
+    "adaptive": false
+  },
+  "primary_gate": {
+    "source_residual_to_raw_upper90_lt": 0.25,
+    "source_and_collision_p99_ratio_lte": 1.25,
+    "source_width_slope_lte": 0.0
+  },
+  "aggregate": {
+    "source_residual_to_raw_ratio": 320109058.3401769,
+    "source_residual_to_raw_upper90": 739677398.3938209,
+    "source_max_p99_ratio": 653641.552890886,
+    "source_max_collision_p99_ratio": 3753309476035.04,
+    "source_width_ratio_slope": -4867099865.076317,
+    "coefficient_residual_to_raw_ratio_diagnostic_only": 14777849.25294399,
+    "coefficient_residual_to_raw_upper90_diagnostic_only": 41842732.78662766
+  },
+  "gate": {
+    "source_upper90_ratio_lt_0_25": false,
+    "source_p99_ratio_lte_1_25": false,
+    "collision_p99_ratio_lte_1_25": false,
+    "source_width_slope_nonpositive": true
+  },
+  "cells": [
+    {
+      "name": "isotropic_w4",
+      "width": 4,
+      "max_abs_offdiagonal_correlation": 0.16827887378915599,
+      "minimum_covariance_eigenvalue": 0.5818815999077175,
+      "source_residual_to_raw": 21220337020.1358,
+      "source_residual_to_raw_p99": 653641.552890886,
+      "collision_residual_second_fraction": 0.9999999272983254,
+      "collision_to_raw_p99": 3753309476035.04,
+      "coefficient_residual_to_raw_diagnostic_only": 326336577.21782243,
+      "source_conservation_max_abs": 1.1100095723224485e-15
+    },
+    {
+      "name": "factor_w4",
+      "width": 4,
+      "max_abs_offdiagonal_correlation": 0.42431770652420553,
+      "minimum_covariance_eigenvalue": 0.417406481062519,
+      "source_residual_to_raw": 16989230.527864378,
+      "source_residual_to_raw_p99": 91314.17382530654,
+      "collision_residual_second_fraction": 0.9999782375222941,
+      "collision_to_raw_p99": 7207350717.063396,
+      "coefficient_residual_to_raw_diagnostic_only": 5499043.354514509,
+      "source_conservation_max_abs": 2.9416573343876706e-15
+    },
+    {
+      "name": "isotropic_w5",
+      "width": 5,
+      "max_abs_offdiagonal_correlation": 0.15403228090261561,
+      "minimum_covariance_eigenvalue": 0.625126330420441,
+      "source_residual_to_raw": 416726160.29713225,
+      "source_residual_to_raw_p99": 16818.75451767441,
+      "collision_residual_second_fraction": 0.9999982084066603,
+      "collision_to_raw_p99": 69170894455.11299,
+      "coefficient_residual_to_raw_diagnostic_only": 287046393.92229587,
+      "source_conservation_max_abs": 3.0404552573554122e-15
+    },
+    {
+      "name": "factor_w5",
+      "width": 5,
+      "max_abs_offdiagonal_correlation": 0.3114657354612999,
+      "minimum_covariance_eigenvalue": 0.3604550749704941,
+      "source_residual_to_raw": 2043322179.9750571,
+      "source_residual_to_raw_p99": 22493.71328403525,
+      "collision_residual_second_fraction": 0.9999978331520115,
+      "collision_to_raw_p99": 1154520969679.9153,
+      "coefficient_residual_to_raw_diagnostic_only": 53940133.65583807,
+      "source_conservation_max_abs": 1.4225599864747807e-14
+    },
+    {
+      "name": "isotropic_w6",
+      "width": 6,
+      "max_abs_offdiagonal_correlation": 0.13429188456845487,
+      "minimum_covariance_eigenvalue": 0.5572931724616683,
+      "source_residual_to_raw": 1706502637.524324,
+      "source_residual_to_raw_p99": 37404.03965820104,
+      "collision_residual_second_fraction": 0.9999996042899859,
+      "collision_to_raw_p99": 294548943651.6098,
+      "coefficient_residual_to_raw_diagnostic_only": 130627149.89836115,
+      "source_conservation_max_abs": 2.291569711765362e-15
+    },
+    {
+      "name": "factor_w6",
+      "width": 6,
+      "max_abs_offdiagonal_correlation": 0.28676174304874735,
+      "minimum_covariance_eigenvalue": 0.3484988357857649,
+      "source_residual_to_raw": 62424152.83407562,
+      "source_residual_to_raw_p99": 77835.34378266011,
+      "collision_residual_second_fraction": 0.9999937437540364,
+      "collision_to_raw_p99": 27848494609.128017,
+      "coefficient_residual_to_raw_diagnostic_only": 5127791.788688496,
+      "source_conservation_max_abs": 1.637009755181551e-15
+    }
+  ],
+  "interpretation": "The exact domain lift and five-product compiler are algebraically correct, but the artificial collision rows have zero target and nonzero -c residual. They consume 99.9978% to 99.99999% of the residual source second moment and catastrophically violate both variance and tail gates. This kills the frozen M156 complete-domain star control under this q0; it does not reject the M156 conservation identity or a future control that changes the collision mechanism."
+}

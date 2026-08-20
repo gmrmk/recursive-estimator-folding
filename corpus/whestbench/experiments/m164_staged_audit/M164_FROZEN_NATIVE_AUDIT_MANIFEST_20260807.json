@@ -1,0 +1,38 @@
+{
+  "candidate": "M164 staged native audit of frozen M163 exterior collision-null control",
+  "date": "2026-08-07",
+  "scope": "generated target-shaped resource/invariance audit first; source-only development variance only after every resource gate passes",
+  "inherits_exactly": {
+    "m163_source_hash": "9215b06b749cd0a572605f3494d2b698e6cc8c8a29beca1e687ef004631db809",
+    "m163_test_hash": "f9e4b7be85f66a4f30bc06a1a2548c7a93fdae41c86f95333359ea101cd97e54",
+    "q0_collision_mass": 0.011688232421875,
+    "q0_adaptive": false,
+    "target_width": 256,
+    "layers": 31,
+    "dtype": "float64"
+  },
+  "resource_phase": {
+    "fresh_processes": 5,
+    "seeds": [164700001, 164700002, 164700003, 164700004, 164700005],
+    "expected_matmul_calls": 155,
+    "compiler_slot": 14019121200,
+    "inherited_k128_endpoint_subtotal": 85980878800,
+    "combined_cap": 100000000000,
+    "hostile_local_residual_factor": 5.0,
+    "rss_mib_max": 512.0,
+    "finite_required": true,
+    "invariance_tolerance": 2e-08
+  },
+  "phase_gate": "all five fresh resource processes must have finite output, exactly 155 matmuls, bill <= compiler slot, 5x combined effective <= 100B, RSS <= 512 MiB; a generated target-shaped permutation/gauge audit must also pass before the presealed development source screen opens",
+  "development": {
+    "protocol": "../m163_exterior_collision_null/M163_FRESH_VARIANCE_PROTOCOL_20260807.md",
+    "confirmation": "closed",
+    "m161_cells": "diagnostic-only and prohibited as development/confirmation evidence",
+    "m159": "apply robust source variance/p99 envelopes only when the provider exports valid L2/Linf error bounds; do not call paired-order disagreement a certificate"
+  },
+  "forbidden": [
+    "parameter, eta, q0, K, provider-order, seed, or cell changes",
+    "truth, scorer, contest/public/private model, leaderboard, submission, champion access",
+    "opening confirmation before a development pass"
+  ]
+}

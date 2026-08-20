@@ -1,0 +1,62 @@
+==============================================================================
+STEP 0 -- deterministic support bound (no Monte Carlo)
+observed 80-net spread OBS = 15.531671197493653
+pool: n=48 mean=1 vF=0.3641995628656461 max/min=11.07319421676679
+  vD_7.57e-04    x empirical48  bound=   12.1805  DEAD (P=0 exactly)
+  vD_0.0814      x empirical48  bound=   29.9849  alive
+  vD_0.1220      x empirical48  bound=   37.6964  alive
+  vD_7.57e-04    x gpd_ext      bound=   12.2097  DEAD (P=0 exactly)
+  vD_0.0814      x gpd_ext      bound=   30.0568  alive
+  vD_0.1220      x gpd_ext      bound=   37.7868  alive
+  vD_7.57e-04    x lognorm_ext  bound=       inf  alive
+  vD_0.0814      x lognorm_ext  bound=       inf  alive
+  vD_0.1220      x lognorm_ext  bound=       inf  alive
+  gpd_ext(k=12) MLE: xi=-0.959999999999728 sigma=1.731771851533431 u=1.0625546644860107
+  lognorm_ext MLE: mu_log=-0.15360284816328176 sd_log=0.5469056843205202
+STEP-0 verdict: decisive cells ['vD_7.57e-04|gpd_ext', 'vD_7.57e-04|lognorm_ext'] -> not all dead; MC required
+==============================================================================
+control reproduction vs committed s1_results.json m185_spread_validation: PASS (P5=9.141085 P50=11.183938 P95=11.937162 P=0.000000)
+control reproduction vs committed s1b_results.json s17_low.spread80: PASS
+control reproduction vs committed s1b_results.json s17_high.spread80: PASS
+------------------------------------------------------------------------------
+vD_7.57e-04|empirical48      P(sim>=OBS)=0 EXACT (step-0 bound 12.1805 < 15.5317)
+vD_7.57e-04|gpd_ext          P(sim>=OBS)=0 EXACT (step-0 bound 12.2097 < 15.5317)
+vD_7.57e-04|lognorm_ext      P5=   8.593 P50=  13.934 P95=   26.040  P(sim>=OBS)=0.3767 (SE 0.0048) brackets=True bitrepeat=True
+vD_0.0814|empirical48        P5=  11.643 P50=  18.188 P95=   25.508  P(sim>=OBS)=0.7196 (SE 0.0045) brackets=True bitrepeat=True
+vD_0.0814|gpd_ext            P5=  11.747 P50=  17.496 P95=   24.607  P(sim>=OBS)=0.6855 (SE 0.0046) brackets=True bitrepeat=True
+vD_0.0814|lognorm_ext        P5=  11.105 P50=  19.035 P95=   37.903  P(sim>=OBS)=0.7151 (SE 0.0045) brackets=True bitrepeat=True
+vD_0.1220|empirical48        P5=  13.193 P50=  21.216 P95=   31.214  P(sim>=OBS)=0.8621 (SE 0.0034) brackets=True bitrepeat=True
+vD_0.1220|gpd_ext            P5=  13.442 P50=  20.538 P95=   30.081  P(sim>=OBS)=0.8563 (SE 0.0035) brackets=True bitrepeat=True
+vD_0.1220|lognorm_ext        P5=  12.594 P50=  21.908 P95=   43.989  P(sim>=OBS)=0.8335 (SE 0.0037) brackets=True bitrepeat=True
+------------------------------------------------------------------------------
+GATE A (decisive cells vD<=0.01 x heavy-F, interval [0.2,0.9]): REVIVED_PASS
+   vD_7.57e-04|gpd_ext          P=0.0000 inside=False
+   vD_7.57e-04|lognorm_ext      P=0.3767 inside=True
+verify vD_7.57e-04|gpd_ext         : step-0 exact zero, no MC to cross-check
+verify vD_7.57e-04|lognorm_ext     : MC=0.3767 quad=0.3725 (|d|=0.0042) Philox200k=0.3723 (|d|=0.0044, 3SE=0.0149)
+verify vD_7.57e-04|empirical48     : step-0 exact zero, no MC to cross-check
+------------------------------------------------------------------------------
+GATE B -- tail-index (xi) sweep at k=12
+  MLE xi=-0.96000 sigma=1.73177  nll=7.14701; 95% profile CI for xi = [-0.9900, 0.1731]
+  xi=-0.40 sigma=1.0339 LR=  1.654 inCI=True  | 7.57e-04:P=0.000 0.0814:P=0.649 0.1220:P=0.811
+  xi=-0.30 sigma=0.9500 LR=  1.976 inCI=True  | 7.57e-04:P=0.010 0.0814:P=0.666 0.1220:P=0.816
+  xi=-0.20 sigma=0.8767 LR=  2.322 inCI=True  | 7.57e-04:P=0.079 0.0814:P=0.687 0.1220:P=0.824
+  xi=-0.10 sigma=0.8133 LR=  2.695 inCI=True  | 7.57e-04:P=0.195 0.0814:P=0.720 0.1220:P=0.838
+  xi=+0.00 sigma=0.7592 LR=  3.093 inCI=True  | 7.57e-04:P=0.325 0.0814:P=0.758 0.1220:P=0.858
+  xi=+0.10 sigma=0.7131 LR=  3.515 inCI=True  | 7.57e-04:P=0.449 0.0814:P=0.796 0.1220:P=0.879
+  xi=+0.20 sigma=0.6740 LR=  3.956 inCI=False | 7.57e-04:P=0.559 0.0814:P=0.832 0.1220:P=0.900
+  xi=+0.30 sigma=0.6408 LR=  4.414 inCI=False | 7.57e-04:P=0.657 0.0814:P=0.867 0.1220:P=0.920
+  xi=+0.40 sigma=0.6124 LR=  4.883 inCI=False | 7.57e-04:P=0.731 0.0814:P=0.895 0.1220:P=0.935
+  xi=+0.50 sigma=0.5881 LR=  5.361 inCI=False | 7.57e-04:P=0.792 0.0814:P=0.917 0.1220:P=0.948
+  xi=+0.60 sigma=0.5670 LR=  5.843 inCI=False | 7.57e-04:P=0.841 0.0814:P=0.935 0.1220:P=0.958
+  xi=+0.80 sigma=0.5324 LR=  6.812 inCI=False | 7.57e-04:P=0.902 0.0814:P=0.958 0.1220:P=0.974
+  xi=+1.00 sigma=0.5054 LR=  7.774 inCI=False | 7.57e-04:P=0.943 0.0814:P=0.975 0.1220:P=0.983
+  xi* (smallest xi with P in [0.2,0.9] at vD_7.57e-04) = 0.0
+  GATE B: RESCUES (xi* inside 95% profile CI)
+  annex k=6: xi_mle=-0.9600 | 7.57e-04:P=0.000 0.0814:P=0.596 0.1220:P=0.778
+  annex k=16: xi_mle=+0.0943 | 7.57e-04:P=0.285 0.0814:P=0.713 0.1220:P=0.828
+  vF(empirical48) = 0.36420 (committed empirical-48 vF = 0.36420)
+  vF(gpd_ext) = 0.36708 (committed empirical-48 vF = 0.36420)
+  vF(lognorm_ext) = 0.34862 (committed empirical-48 vF = 0.36420)
+==============================================================================
+FINAL: GATE A = PASS; GATE B = RESCUES; gate_result = REVIVED_PASS

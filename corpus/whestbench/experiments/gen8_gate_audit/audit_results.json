@@ -1,0 +1,1806 @@
+{
+ "audit": "gen8_gate_audit - verification of the proposed WIDTH-TRANSFER GATE",
+ "date": "2026-08-10",
+ "governed_by": "commits 9e7ecda + ad04e4a on origin/claude/repos-agentic-frontier-e8ixlk",
+ "scope": "read-only over the repo; writes confined to corpus/whestbench/experiments/gen8_gate_audit/",
+ "pinned_inputs": {
+  "fold_ledger.json": {
+   "sha256": "60c9c72a4aa64caebfe208ef63ca62906e0dc7dace48de81eed9846fac8189be",
+   "n_candidates": 263
+  },
+  "GEN6_FAILURE_SALVAGE_ATLAS_20260809.json": {
+   "sha256": "7c849fe78d27086b14582d7b3148ddd8e7e2fef617c9798e07f66638b001dac8",
+   "n_records": 223
+  },
+  "flopscope": "0.10.0+np2.4.6",
+  "python": "work/whest-v014/Scripts/python.exe"
+ },
+ "deviations": [
+  "The fold ledger grew from 261 candidates (task statement) to 263 during the audit; a parallel session is appending gen8_* records. All Task-2 counts are pinned to sha256 60c9c72a4aa64caebfe208ef63ca62906e0dc7dace48de81eed9846fac8189be at 263 candidates. The two new records are both status 'killed' and do not change any promotion-eligible count.",
+  "The graveyard's six-corpse table names corpses in prose, not by ledger id. The id mapping was made by matching the quoted numbers (0.997502, 8.8716, 0.04738, 2.475%, 3.01e-15) against the ledger text and is recorded per corpse.",
+  "Width auto-extraction has one confirmed false positive: gm_u3_grid's '48' is the size of the empirical rotation pool (build_pool_spec('empirical48')), not a network width. gm_u3_grid has no width parameter. It is left in the machine output and corrected in prose.",
+  "Task 3 was scoped as instructed to corpus/whestbench/experiments/**/*.py (522 files). m245_*/m243_*/m244_* were scanned but excluded from the finding set per the no-touch instruction; their hits are OS-portability getattrs (st_file_attributes, O_BINARY, orig_argv), not measurement defects."
+ ],
+ "task1_six_corpses": {
+  "tally": {
+   "CONFIRMED_width_caused": 1,
+   "NOT_width_caused": 5,
+   "INDETERMINATE": 0
+  },
+  "shared_baseline_cross_check": {
+   "baseline_mse_sum_per_corpse": {
+    "gate_aligned_scalar_split": 0.0068680758149980555,
+    "rb_conditional_marginals": 0.0068680758149980555,
+    "full_covariance_2n_sigma_mixture": 0.0068680758149980555
+   },
+   "all_identical": true,
+   "reading": "the three corpses are scored against a bit-identical comparator on a bit-identical eight-case bank, which is why their ratios agree to 7 significant figures"
+  },
+  "corpses": {
+   "gate_aligned_scalar_split": {
+    "ledger_id": "latent_gate_aligned_split",
+    "ledger_status": "killed",
+    "ledger_kill_condition": "n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken permutation/positive-gauge covariance, or conservative target arithmetic at least 80B.",
+    "ledger_result": "The operator passed seven structural tests, cost 68.640B conservatively, and improved all 8/8 n64 cases, but aggregate ratio 0.997502 missed the <=0.8 materiality gate by about 80x in effect size. Kill the generic-compressor leaf; preserve the boundary direction and exact conditional moments as stable-sign components.",
+    "graveyard_screen_cell": "8/8 n64 wins",
+    "graveyard_production_cell": "ratio 0.997502 vs gate <=0.8",
+    "artifact": "work\\scorefloor_generation\\latent_gate_split\\fresh_n64_results.json",
+    "artifact_sha256": "68846a84cd84de015d2b5e5207f46de7edd9b14c6b8090cc3cbdb2cccbb63e6d",
+    "n_cases": 8,
+    "MEASURED_case_widths": [
+     64
+    ],
+    "MEASURED_case_depths": [
+     16,
+     32
+    ],
+    "screen_statistic_source": "aggregate.wins in this same file",
+    "kill_statistic_source": "aggregate.ratio in this same file",
+    "wins": 8,
+    "ratio": 0.9975024218012577,
+    "width_256_appears_only_as": {
+     "width": 256,
+     "depth": 32
+    },
+    "screen_width": [
+     64
+    ],
+    "production_width": [
+     64
+    ],
+    "width_was_varied": false,
+    "verdict": "NOT width-caused: screen statistic and kill statistic are two columns of the SAME run at the SAME width; width was never varied. 256 appears only in the projected cost model."
+   },
+   "rb_conditional_marginals": {
+    "ledger_id": "latent_gate_rb_marginals",
+    "ledger_status": "killed",
+    "ledger_kill_condition": "n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken PSD/permutation/positive-gauge covariance, or conservative target arithmetic at least 80B.",
+    "ledger_result": "The exact-marginal implementation passed six numerical, PSD, symmetry, and cost tests and improved 8/8 cases, but ratio 0.997502361 was only 6.08e-8 better than its parent and missed the <=0.8 materiality gate. The scalar statistic explains only about 1.0303e-4 of each coordinate variance, so the largest marginal correction is 1.12e-7. Kill this marginal-only link; preserve the exact conditional integrals and move the missing state to cross-neuron conditional dependence.",
+    "graveyard_screen_cell": "8/8 stable n64 wins",
+    "graveyard_production_cell": "ratio 0.997502361",
+    "artifact": "work\\scorefloor_generation\\latent_gate_rb_marginals\\fresh_n64_results.json",
+    "artifact_sha256": "4631dd77376a72108565fa19c7ba5f57c2459107e5cdc782253beebadb77195a",
+    "n_cases": 8,
+    "MEASURED_case_widths": [
+     64
+    ],
+    "MEASURED_case_depths": [
+     16,
+     32
+    ],
+    "screen_statistic_source": "aggregate.wins in this same file",
+    "kill_statistic_source": "aggregate.ratio in this same file",
+    "wins": 8,
+    "ratio": 0.9975023609978109,
+    "width_256_appears_only_as": {
+     "width": 256,
+     "depth": 32
+    },
+    "screen_width": [
+     64
+    ],
+    "production_width": [
+     64
+    ],
+    "width_was_varied": false,
+    "verdict": "NOT width-caused: screen statistic and kill statistic are two columns of the SAME run at the SAME width; width was never varied. 256 appears only in the projected cost model."
+   },
+   "q3_response_gram_recursion": {
+    "ledger_id": "latent_gate_response_gram",
+    "ledger_status": "killed",
+    "ledger_kill_condition": "Aggregate ratio above 0.8, fewer than 6/8 wins, broken permutation/positive-gauge covariance, or conservative target arithmetic at least 80B.",
+    "ledger_result": "The recursive implementation passes PSD, n64 symmetry, 71.494B cost, and 8/8 wins versus fullcov, but ratio 0.997502340 misses materiality and differs from the marginal-only child by only 2.14e-8 relatively. Generic q3 reduction retains correction norms to 8.22e-16; the source itself is median 9.64e-13 and maximum 4.63e-7 relative to covariance. Kill the one-scalar recursive source; preserve the response-Gram operator and expand conditioning directions.",
+    "graveyard_screen_cell": "8/8 wins vs fullcov",
+    "graveyard_production_cell": "ratio 0.997502340",
+    "artifact": "work\\scorefloor_generation\\latent_gate_response_gram\\fresh_n64_results.json",
+    "artifact_sha256": "f58a78ccd312fd992dfa31d4cf2b5a017eb1a80acc1d701dda29f596d453ac28",
+    "n_cases": 8,
+    "MEASURED_case_widths": [
+     64
+    ],
+    "MEASURED_case_depths": [
+     16,
+     32
+    ],
+    "screen_statistic_source": "aggregate.wins in this same file",
+    "kill_statistic_source": "aggregate.ratio in this same file",
+    "wins": null,
+    "ratio": 0.9975023396798792,
+    "width_256_appears_only_as": "not present (cost model reported in REPORT.md only)",
+    "screen_width": [
+     64
+    ],
+    "production_width": [
+     64
+    ],
+    "width_was_varied": false,
+    "verdict": "NOT width-caused: screen statistic and kill statistic are two columns of the SAME run at the SAME width; width was never varied. 256 appears only in the projected cost model."
+   },
+   "full_covariance_2n_sigma_mixture": {
+    "ledger_id": "latent_full_sigma",
+    "ledger_status": "killed",
+    "ledger_kill_condition": "n=64 aggregate ratio above 0.8, fewer than 6/8 wins, broken scale/permutation invariance, or conservative target arithmetic at least 80B.",
+    "ledger_result": "The covariance-exact 2n rule passed covariance, relative-tolerance symmetry, and 48.381B conservative cost, but scored n64 ratio 8.8716 with 1/8 wins. Kill this one-frame sigma implementation; preserve the proof that eliminating rank collapse and matching second moments is insufficient because ReLU gate/angular structure is aliased.",
+    "graveyard_screen_cell": "covariance matched to 3.01e-15",
+    "graveyard_production_cell": "n64 ratio 8.8716, 1/8 wins",
+    "artifact": "work\\scorefloor_generation\\latent_full_sigma\\fresh_n64_results.json",
+    "artifact_sha256": "a07455ae94a0be47cd351a430e457be76de6c4cd6fc0bd31858e0f9bd72f8dc1",
+    "n_cases": 8,
+    "MEASURED_case_widths": [
+     64
+    ],
+    "MEASURED_case_depths": [
+     16,
+     32
+    ],
+    "screen_statistic_source": "aggregate.wins in this same file",
+    "kill_statistic_source": "aggregate.ratio in this same file",
+    "wins": 1,
+    "ratio": 8.871600739504565,
+    "width_256_appears_only_as": {
+     "width": 256,
+     "depth": 32
+    },
+    "screen_width": [
+     64
+    ],
+    "production_width": [
+     64
+    ],
+    "width_was_varied": false,
+    "verdict": "NOT width-caused: screen statistic and kill statistic are two columns of the SAME run at the SAME width; width was never varied. 256 appears only in the projected cost model."
+   },
+   "radial_susceptibility_compressor": {
+    "ledger_id": "randomized_radial_susceptibility_compressor",
+    "ledger_status": "killed",
+    "ledger_kill_condition": "One-step error reduction below 20%, wins below 75%, broken moment conservation/symmetry/PSD, or conservative target cost at least 80B.",
+    "ledger_result": "The top susceptibility pullback passes exact moments, PSD, symmetry, spectral, and 71.953B cost guards but reaches RMS ratio 0.975251 and 11/24 wins. It wins 8/8 layer-zero states yet worsens mid/late groups; covariance contributes 99.35% of generic observable-error energy. Kill single mean/gate geometry; preserve the invariant pullback and add active-covariance geometry.",
+    "graveyard_screen_cell": "layer-0 8/8 wins",
+    "graveyard_production_cell": "2.475% aggregate, 11/24 wins",
+    "artifact": "work\\scorefloor_generation\\randomized_radial_susceptibility_compressor\\one_step_results.json",
+    "artifact_sha256": "31c90e55b53d0882e89e3d06b0c7a44817515180ce86b36244fbd0274cf1a3bc",
+    "n_states": 24,
+    "MEASURED_state_widths": [
+     64
+    ],
+    "wins_by_layer": {
+     "depth16_layer0": "4/4",
+     "depth16_layer14": "1/4",
+     "depth16_layer8": "0/4",
+     "depth32_layer0": "4/4",
+     "depth32_layer16": "2/4",
+     "depth32_layer30": "0/4"
+    },
+    "aggregate_wins": 11,
+    "aggregate_ratio": 0.9752510229590308,
+    "width_was_varied": false,
+    "verdict": "NOT width-caused: all 24 states are at width 64. The 8/8-vs-11/24 split is entirely a DEPTH/layer split (layer 0 wins 8/8; layers 8/14/16/30 win 3/16). The report states this: 'The result is sharply depth dependent.'"
+   },
+   "weight_identified_latent_q3r2": {
+    "ledger_id": "weight_identified_latent_factor",
+    "ledger_status": "killed",
+    "ledger_kill_condition": "Collapses to the killed scalar scale mixture, is not identified equivariantly, mixture growth/recompression exceeds budget, or exact small-n premise shows no material gain over fullcov.",
+    "ledger_result": "q=3,r=2 passed the original small-width premise but failed the adversarial width law: 0/8 wins at n=64 with ratios 2.928 and 1.596. Top-two trace capture collapses from 88.4% at n=4 to 3.02% at n=256. Kill this fixed-r tensor-quadrature implementation; preserve forward weight-defined components, analytic diagonal rectification, recompression, and symmetry.",
+    "graveyard_screen_cell": "small-width ratio 0.04738, 6/7 wins",
+    "graveyard_production_cell": "n64 loses 8/8",
+    "artifact": "work\\scorefloor_generation\\latent_factor_closure\\premise_results.json",
+    "artifact_sha256": "c6955d5fbaa8eac6ea2799cc72e5bbe6c0fce74dcc87148a5670c6fa10e6dac8",
+    "MEASURED_screen_widths": [
+     4,
+     8,
+     16
+    ],
+    "MEASURED_kill_widths": [
+     32,
+     64
+    ],
+    "kill_groups": [
+     {
+      "width": 32,
+      "depth": 16,
+      "cases": 6,
+      "wins": 5,
+      "aggregate_ratio": 0.5606485990826299
+     },
+     {
+      "width": 32,
+      "depth": 32,
+      "cases": 6,
+      "wins": 4,
+      "aggregate_ratio": 0.9169292725592122
+     },
+     {
+      "width": 64,
+      "depth": 16,
+      "cases": 4,
+      "wins": 0,
+      "aggregate_ratio": 2.92806697507322
+     },
+     {
+      "width": 64,
+      "depth": 32,
+      "cases": 4,
+      "wins": 0,
+      "aggregate_ratio": 1.5958661885581993
+     }
+    ],
+    "kill_artifact": "work\\scorefloor_generation\\latent_factor_closure\\adversarial_width_sweep.json",
+    "kill_artifact_sha256": "387e22551286f12f7f1eaf438323f7203f59c029904ebdd11ad31a58cffa438c",
+    "trace_capture_width_law": {
+     "4": 0.8838,
+     "8": 0.6168,
+     "16": 0.373,
+     "32": 0.2146,
+     "64": 0.1144,
+     "128": 0.0586,
+     "256": 0.0302
+    },
+    "trace_capture_source": "LATENT_FACTOR_ADVERSARIAL_AUDIT.md, 16 fresh first-layer matrices per width",
+    "width_was_varied": true,
+    "verdict": "CONFIRMED width-caused: screen at widths 4/8/16 (ratio 0.04738, 6/7 wins), reversal measured at 32 (0.5606/0.9169) and 64 (2.9281/1.5959, 0/8 wins), with an independently measured width law for the mechanism (top-2 trace share 88.4% -> 3.02%). This is the one corpse the proposed gate describes."
+   }
+  }
+ },
+ "task2_width_exposure": {
+  "ledger_snapshot": {
+   "path": "corpus\\whestbench\\headroom\\fold_ledger.json",
+   "sha256": "60c9c72a4aa64caebfe208ef63ca62906e0dc7dace48de81eed9846fac8189be",
+   "bytes": 546363,
+   "n_candidates": 263,
+   "note": "the ledger grew from 261 to 263 candidates during this audit; a parallel session is appending gen8_* records. All Task-2 counts below are pinned to this snapshot."
+  },
+  "production_shape": {
+   "width": 256,
+   "depth": 32,
+   "source": "fold_ledger invariants.objective"
+  },
+  "n_promotion_eligible_records": 60,
+  "n_with_no_width_parameter": 35,
+  "n_exposed_measured_below_256": 9,
+  "n_would_fail_two_width_clause": 14,
+  "rows": [
+   {
+    "id": "h4_random32256",
+    "status": "promoted",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "latent_randomized_radial",
+    "status": "screened",
+    "widths_named_in_record_text": [
+     64,
+     128
+    ],
+    "widths_measured_in_artifacts": [
+     4,
+     8,
+     64,
+     128,
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     64,
+     128,
+     256
+    ],
+    "matched_report_files": [
+     "LATENT_RANDOMIZED_RADIAL_DEVELOPMENT100_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_GATE.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_JUDGE.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_N128_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_PRODUCTION_PORT_SPEC.md",
+     "LATENT_RANDOMIZED_RADIAL_REPORT.md",
+     "RANDOMIZED_RADIAL_DUAL_OBSERVABLE_REPORT.md",
+     "RANDOMIZED_RADIAL_INVERSE_RESIDUAL_REPORT.md",
+     "RANDOMIZED_RADIAL_SUSCEPTIBILITY_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\latent_randomized_radial",
+     "scorefloor_generation\\latent_randomized_radial_fp32_port",
+     "scorefloor_generation\\latent_randomized_radial_n128"
+    ],
+    "best_measured_width_set": [
+     4,
+     8,
+     64,
+     128,
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "latent_randomized_radial_n128",
+    "status": "screened",
+    "widths_named_in_record_text": [
+     128
+    ],
+    "widths_measured_in_artifacts": [
+     64,
+     128,
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     64,
+     128,
+     256
+    ],
+    "matched_report_files": [
+     "LATENT_RANDOMIZED_RADIAL_DEVELOPMENT100_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_GATE.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_JUDGE.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_N128_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_PRODUCTION_PORT_SPEC.md",
+     "LATENT_RANDOMIZED_RADIAL_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\latent_randomized_radial",
+     "scorefloor_generation\\latent_randomized_radial_n128"
+    ],
+    "best_measured_width_set": [
+     64,
+     128,
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "latent_randomized_radial_flopscope",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     64,
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     64,
+     128,
+     256
+    ],
+    "matched_report_files": [
+     "LATENT_RANDOMIZED_RADIAL_DEVELOPMENT100_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_GATE.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_JUDGE.md",
+     "LATENT_RANDOMIZED_RADIAL_FP32_PORT_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_N128_REPORT.md",
+     "LATENT_RANDOMIZED_RADIAL_PRODUCTION_PORT_SPEC.md",
+     "LATENT_RANDOMIZED_RADIAL_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\latent_randomized_radial"
+    ],
+    "best_measured_width_set": [
+     64,
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "conditional_corr_spectrum",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     16
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     256
+    ],
+    "matched_report_files": [
+     "CONDITIONAL_CORR_SPECTRUM_REPORT.md",
+     "CONDITIONAL_RESIDUAL_CUMULANT_SPECTRUM_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [
+     256
+    ],
+    "artifact_dirs": [
+     "scorefloor_generation\\conditional_corr_spectrum",
+     "scorefloor_generation\\conditional_corr_spectrum_response_gram"
+    ],
+    "best_measured_width_set": [
+     16
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "conditional_response_gram",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     16,
+     64,
+     256
+    ],
+    "matched_report_files": [
+     "CONDITIONAL_RESPONSE_GRAM_REPORT.md",
+     "LATENT_GATE_RESPONSE_GRAM_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [
+     16,
+     64,
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "conditional_residual_cumulant_spectrum",
+    "status": "screened",
+    "widths_named_in_record_text": [
+     256
+    ],
+    "widths_measured_in_artifacts": [
+     8,
+     16
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     256
+    ],
+    "matched_report_files": [
+     "CONDITIONAL_RESIDUAL_CUMULANT_SPECTRUM_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [
+     256
+    ],
+    "artifact_dirs": [
+     "scorefloor_generation\\conditional_residual_cumulant_spectrum"
+    ],
+    "best_measured_width_set": [
+     8,
+     16
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "conditional_residual_covariance_algebra",
+    "status": "screened",
+    "widths_named_in_record_text": [
+     16
+    ],
+    "widths_measured_in_artifacts": [
+     8,
+     16
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     8,
+     16,
+     256
+    ],
+    "matched_report_files": [
+     "CONDITIONAL_RESIDUAL_COVARIANCE_ALGEBRA_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [
+     256
+    ],
+    "artifact_dirs": [
+     "scorefloor_generation\\conditional_residual_covariance_algebra"
+    ],
+    "best_measured_width_set": [
+     8,
+     16
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "jspace_workspace_distillation",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     16,
+     256
+    ],
+    "matched_report_files": [
+     "JSPACE_WORKSPACE_ADAPTER_GATE.md",
+     "JSPACE_WORKSPACE_ADAPTER_JUDGE.md",
+     "JSPACE_WORKSPACE_ADAPTER_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [
+     16,
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "cumulant_polynomial_quotient",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     8,
+     16
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     256
+    ],
+    "matched_report_files": [
+     "CUMULANT_POLYNOMIAL_QUOTIENT_GATE.md",
+     "CUMULANT_POLYNOMIAL_QUOTIENT_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\cumulant_polynomial_quotient"
+    ],
+    "best_measured_width_set": [
+     8,
+     16
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "row_blocked_winograd",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     256
+    ],
+    "matched_report_files": [
+     "ROW_BLOCKED_WINOGRAD_GATE.md",
+     "ROW_BLOCKED_WINOGRAD_GATE_A_DECISION.md",
+     "ROW_BLOCKED_WINOGRAD_PACKAGING_FAILURE.md",
+     "ROW_BLOCKED_WINOGRAD_PRODUCTION_GATE.md",
+     "ROW_BLOCKED_WINOGRAD_PRODUCTION_REPORT.md",
+     "ROW_BLOCKED_WINOGRAD_REPORT.md",
+     "ROW_BLOCKED_WINOGRAD_RUN_LAUNCH_FAILURE.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\row_blocked_winograd"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "ple_flash_sidecar",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     256
+    ],
+    "matched_report_files": [
+     "PLE_FLASH_SIDECAR_FACTORIZED_GATE.md",
+     "PLE_FLASH_SIDECAR_GATE.md",
+     "PLE_FLASH_SIDECAR_REPORT.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\ple_flash_sidecar"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "row_blocked_winograd_production",
+    "status": "promoted",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [
+     256
+    ],
+    "matched_report_files": [
+     "ROW_BLOCKED_WINOGRAD_GATE.md",
+     "ROW_BLOCKED_WINOGRAD_GATE_A_DECISION.md",
+     "ROW_BLOCKED_WINOGRAD_PACKAGING_FAILURE.md",
+     "ROW_BLOCKED_WINOGRAD_PRODUCTION_GATE.md",
+     "ROW_BLOCKED_WINOGRAD_PRODUCTION_REPORT.md",
+     "ROW_BLOCKED_WINOGRAD_REPORT.md",
+     "ROW_BLOCKED_WINOGRAD_RUN_LAUNCH_FAILURE.md"
+    ],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\row_blocked_winograd"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "two_axis_fused_winograd",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "two_axis_fused_winograd_production",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m71_kerdock126_one_buffer_owned_l1",
+    "status": "screened_survivor",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m76_validator_fallback_v3",
+    "status": "package_validated",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m80_kerdock_tangent_factorial",
+    "status": "screened/uncertain",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [
+     256
+    ],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\m80_kerdock_tangent_factorial"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "m82_kerdock_vs_haar_variance",
+    "status": "screened/unresolved",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "scorefloor_generation\\m82_kerdock_vs_haar_variance"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "m86_boundary_laplace_coarea",
+    "status": "phase_a_pass_phase_b_unresolved",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     4,
+     16
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [
+     256
+    ],
+    "artifact_dirs": [
+     "scorefloor_generation\\m86_boundary_laplace_coarea"
+    ],
+    "best_measured_width_set": [
+     4,
+     16
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m126_repeated_output_source_contraction",
+    "status": "repair_blocked_independent_component_pass",
+    "widths_named_in_record_text": [
+     64
+    ],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m126_repeated_output_source_contraction",
+     "scorefloor_generation\\m126_repeated_output_source_contraction"
+    ],
+    "best_measured_width_set": [
+     64
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m147_endpoint_safe_pair_bridge",
+    "status": "pair_component_pass_generic_nested_endpoint_open",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m154_rankone_analytic_endpoint_partition",
+    "status": "rankone_pass_generic_provider_killed",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m156_extended_domain_star_control",
+    "status": "compiler_resource_pass_source_variance_open",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m156_extended_domain_star_control",
+     "scorefloor_generation\\m156_extended_domain_star_control"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "m165_rank_face_subtraction",
+    "status": "rankone_survivor_generic_provider_open",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m165_rank_face_subtraction",
+     "scorefloor_generation\\m165_rank_face_subtraction"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m167_collision_owner_unification",
+    "status": "owner_algebra_pass_relabelling_rejected",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m167_collision_owner_unification",
+     "scorefloor_generation\\m167_collision_owner_unification"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m168_transverse_rank2_anchor",
+    "status": "rank2_face_survivor_generic_provider_killed",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m169_m163_two_axis_call_fusion",
+    "status": "resource_survivor_conditional_staging_interface",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m172_selective_22_owner_fusion",
+    "status": "static_owner_algebra_pass_development_blocked_m174_unlawful_caller_abi",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m172_selective_22_owner_fusion",
+     "scorefloor_generation\\m172_selective_22_owner_fusion"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "m173_parameter_scaled_boundary_layer",
+    "status": "screened_hostile_transverse_rank2_layer_certificate_only",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m173_parameter_scaled_boundary_layer",
+     "scorefloor_generation\\m173_parameter_scaled_boundary_layer"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m178_certified_phi2_owent_provider",
+    "status": "component_pass_certified_bounded_cost_phi2_owent_provider",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m178_certified_phi2_owent"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m179_exact_background_archive_producer",
+    "status": "component_pass_exact_metered_labelled_background_archive_producer",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "t1_l2_promotion_verification",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "dpm_victory_postmortem_redteamed",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "dac_prize_report_extension_v2",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\dac_prize_report_extension"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "t3_fold3_deterministic_cap",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\t3_fold3_deterministic_cap"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "t4_kerdock_v3_descriptive_rescore",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "t5_submission_dossier_runbook",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "c1_local_vs_hosted_calibration",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "a3_kill_heterogeneity_reaudit",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "a4_hostile_inputs_battery",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m191_harmonic_spectrum_g0a",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "wc1_winner_ablation_map",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\wc1_winner_ablation"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "v31_guards_m186_m187",
+    "status": "validated",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [
+     256
+    ],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\v31_guards"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "m192_cross_output_frame_gls_oracle",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m198_source211_delay_one_adapter",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [
+     4
+    ],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m198_source211_delay_one_adapter"
+    ],
+    "best_measured_width_set": [
+     4
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m200_streaming_overlap_fixture",
+    "status": "component_pass_streaming_semantics",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     4,
+     7
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m200_streaming_overlap_fixture"
+    ],
+    "best_measured_width_set": [
+     4,
+     7
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "m207_zero_variance_rank_one_guard",
+    "status": "component_pass_boundary_guard",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\m207_zero_variance_rank_one_guard"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "s1_suite_risk_bootstrap",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\s1_suite_risk"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "s4_designation_portfolio_bootstrap",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "s7_wavepacket_speckle_correlation",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "s8_tdse_layer_defect_profile",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "s12_finite_width_kernel_capstone",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\s12_finite_width_kernel"
+    ],
+    "best_measured_width_set": [
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "s16_residual_norm_decomposition_confirm",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "s17_information_complexity_lower_bound",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "recursion_convergence_certificate",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "gm_c1_bound",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\gm_c1_bound"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "gm_u3_grid",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [
+     48
+    ],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\gm_u3_grid"
+    ],
+    "best_measured_width_set": [
+     48
+    ],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   },
+   {
+    "id": "gm_rankone_bill",
+    "status": "screened",
+    "widths_named_in_record_text": [
+     16,
+     64,
+     128,
+     256
+    ],
+    "widths_measured_in_artifacts": [
+     4,
+     8,
+     16,
+     32,
+     48,
+     64,
+     128,
+     256
+    ],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\gm_rankone_bill"
+    ],
+    "best_measured_width_set": [
+     4,
+     8,
+     16,
+     32,
+     48,
+     64,
+     128,
+     256
+    ],
+    "measured_at_256": true,
+    "measured_at_2plus_widths": true,
+    "gate_clause1_two_widths": true,
+    "gate_clause2_reaches_256": true
+   },
+   {
+    "id": "gm_u9_s4_d2",
+    "status": "screened",
+    "widths_named_in_record_text": [],
+    "widths_measured_in_artifacts": [],
+    "widths_in_harness_source": [],
+    "widths_in_matched_reports": [],
+    "matched_report_files": [],
+    "widths_modelled_only_in_artifacts": [],
+    "artifact_dirs": [
+     "experiments\\gm_u9_s4_d2"
+    ],
+    "best_measured_width_set": [],
+    "measured_at_256": false,
+    "measured_at_2plus_widths": false,
+    "gate_clause1_two_widths": false,
+    "gate_clause2_reaches_256": false
+   }
+  ]
+ },
+ "task3_m183_defect_class": {
+  "installed_api_ground_truth": {
+   "flopscope.OpRecord fields": [
+    "op_name",
+    "subscripts",
+    "shapes",
+    "flop_cost",
+    "cumulative",
+    "namespace",
+    "flopscope_context_start_offset_s",
+    "flopscope_backend_duration_s",
+    "flopscope_overhead_duration_s",
+    "resolved_dtype"
+   ],
+   "live_probe": "hasattr(op,'dtypes') == False, hasattr(op,'name') == False"
+  },
+  "files_scanned": 522,
+  "static_pattern_counts": {
+   "a_getattr_falsy_default": 62,
+   "b_reducer_over_comprehension": 991,
+   "c_attr_not_in_installed_api_raw": 176,
+   "token_in_source_detectors": 55,
+   "dead_name_reads_with_falsy_default": 2,
+   "cross_artifact_get_with_unknown_key": 0
+  },
+  "empirical_filter": "109 artifacts carry a zero-valued measured statistic; each was traced back to its producing detector",
+  "hits": [
+   {
+    "rank": 1,
+    "site": "corpus/whestbench/experiments/m183_f32_hotpath/run_m183_falsifier.py:58",
+    "code": "dts = getattr(op, \"dtypes\", None) or ()",
+    "subpattern": "(a) getattr with falsy default + (b) any() over the empty result + (c) name absent from installed API",
+    "installed_api_truth": "flopscope 0.10.0 OpRecord exposes resolved_dtype; it has no 'dtypes'. hasattr(op,'dtypes') is False on a live record.",
+    "can_return_null_regardless_of_ground_truth": true,
+    "empirical_check": "100%-float64 fixture (2 chained 256x256 matmuls, 1.34e8 billed): suspect detector returns f64_share 0.0; corrected resolved_dtype detector returns 1.0",
+    "cited_in_fold_ledger": [
+     "m183_f32_hotpath_falsifier (result: 'f64-lane billed = 0.0000e0 of 1.5803e11 total (0.00%)')",
+     "gen8_m183_detector_void (today's retraction)"
+    ],
+    "cited_in_phase1_writeup": [
+     "line 129 table row: 'M183 | float32 hot-path recast (the \"free 2x\") | 0.00% f64-lane billing - already clean | killed'",
+     "line 422: 'the fidelity family formally retired the dtype-repricing escape (M183 measured the f64 SHARE at 0.00%, which is invariant to how f64 is priced)'"
+    ],
+    "verdict": "STRUCTURALLY VOID - confirmed"
+   },
+   {
+    "rank": "1b",
+    "site": "corpus/whestbench/experiments/m183_f32_hotpath/run_m183_falsifier.py:62",
+    "code": "getattr(op, 'name', '?')",
+    "subpattern": "(c) name absent from installed API (OpRecord field is op_name)",
+    "installed_api_truth": "hasattr(op,'name') is False on a live OpRecord",
+    "can_return_null_regardless_of_ground_truth": true,
+    "empirical_check": "same fixture; the branch containing this read is unreachable because hit 1 makes the guard always False, so the defect is masked by the larger one",
+    "cited_in_fold_ledger": [],
+    "cited_in_phase1_writeup": [],
+    "verdict": "DEAD NAME - confirmed, currently unreachable"
+   },
+   {
+    "rank": 2,
+    "site": "corpus/whestbench/experiments/gm_a4_constraint/verify_two_signal.py:64-72 (scan_code)",
+    "code": "NEEDLES = {\"budget_summary_dict\",\"_tally\",\"get_data\",\"summary_dict\"}; scan co_names/co_consts",
+    "subpattern": "(b) reducer over a possibly-empty needle set feeding any_residual_source_reachable=False",
+    "can_return_null_regardless_of_ground_truth": false,
+    "empirical_check": "positive fixture = t3_fold3_deterministic_cap/capped_fold3.py (the file this script's own attack section names as a _tally definer): scan_code returns ['_tally'] -> the detector FIRES",
+    "note": "2 of the 4 needles occur in that fixture only inside a comment, which bytecode cannot see; that is the intended behaviour of a bytecode scan and not a defect",
+    "cited_in_fold_ledger": [
+     "a4_hostile_inputs_battery (screened) is the audited parent; gm_a4_constraint's own step-0 kill"
+    ],
+    "cited_in_phase1_writeup": [],
+    "verdict": "SHAPE MATCH, NOT VOID - published [] is a genuine negative"
+   },
+   {
+    "rank": 3,
+    "site": "corpus/whestbench/experiments/gm_m179_m199/run_depth32_identity_trace.py:134-138",
+    "code": "legacy_named = sorted(op for op in ops if any(tag in op for tag in (\"legacy\",\"rebuild\",\"build_extended_background\",\"full_archive\")))",
+    "subpattern": "(b) any() over a tag list; empty result is the clean bill",
+    "can_return_null_regardless_of_ground_truth": false,
+    "empirical_check": "real 21-operation histogram + one injected op 'm200.legacy_rebuild.full_archive' -> detector FIRES; and the same run carries an independent monkeypatch LegacyCallCounter",
+    "cited_in_fold_ledger": [
+     "gm_m179_m199 (KILL_CONFIRMED) - the record that licenses the whole width-gate proposal"
+    ],
+    "cited_in_phase1_writeup": [],
+    "verdict": "SHAPE MATCH, NOT VOID - instrument is positive-capable and double-covered"
+   },
+   {
+    "rank": 4,
+    "site": "corpus/whestbench/experiments/v31_guards/run_v31_gates.py:202",
+    "code": "json.dumps(getattr(est, \"last_guard_report\", None))",
+    "subpattern": "(a) getattr with None default on an estimator resolved dynamically from an arm directory",
+    "can_return_null_regardless_of_ground_truth": false,
+    "empirical_check": "read from the committed v31_results.json: gate G2 is an explicit positive control - m186_empty_regime_fired=true on net f_negshift and m187_finite_output_fired=true with 164 nonfinite entries replaced on net b_gain_1e3",
+    "cited_in_fold_ledger": [
+     "v31_guards_m186_m187 (status 'validated' - the only validated record in the ledger)"
+    ],
+    "cited_in_phase1_writeup": [],
+    "verdict": "SHAPE MATCH, NOT VOID - G1's zeros are backed by G2's firing control. This is the correct pattern."
+   },
+   {
+    "rank": 5,
+    "site": "corpus/whestbench/experiments/m184_trichotomy_upward/run_m184_g0.py (certain-on / certain-dead detector)",
+    "code": "per-layer certain-on counts feeding 'projected billed reduction 0.00%'",
+    "subpattern": "reported statistic is exactly 0.00% on all three nets - the M183 signature",
+    "can_return_null_regardless_of_ground_truth": false,
+    "empirical_check": "the same detector reports max per-layer certain-on = 39 and max certain-dead = 37 inside the same artifact, so it demonstrably fires; the 0.00% reduction is a measured negative (the counts never reach composition break-even)",
+    "cited_in_fold_ledger": [
+     "m184_trichotomy_upward_g0"
+    ],
+    "cited_in_phase1_writeup": [
+     "line 130: 'M184 | mid-layer exact on-composition + sparsity | 0.00% billed reduction'"
+    ],
+    "verdict": "SHAPE MATCH, NOT VOID"
+   },
+   {
+    "rank": 6,
+    "site": "corpus/whestbench/experiments/m177_bivariate_relu_primitive/m177_bivariate_relu_primitive.py:167-168",
+    "code": "hasattr(fnp,\"owens_t\") or hasattr(getattr(flops,\"stats\",None),\"owens_t\"); hasattr(getattr(flops,\"stats\",None),\"multivariate_normal_cdf\")",
+    "subpattern": "(a)+(c) capability probe by literal name; a rename would report the primitive absent",
+    "can_return_null_regardless_of_ground_truth": false,
+    "empirical_check": "full enumeration of the installed surface: flopscope.stats = [cauchy, expon, laplace, logistic, lognorm, norm, truncnorm, uniform]; norm = [cdf, name, pdf, ppf]; no member of flopscope.stats or flopscope.numpy matches owen/multivar/bivar under any spelling",
+    "cited_in_fold_ledger": [
+     "m177_bivariate_relu_value_jacobian_primitive (formal_runtime_no_go_phi2_owent_certificate_absent)"
+    ],
+    "cited_in_phase1_writeup": [],
+    "verdict": "SHAPE MATCH, NOT VOID - the no-go conclusion is confirmed by enumeration, but the instrument would not have detected a rename"
+   },
+   {
+    "rank": 7,
+    "site": "corpus/whestbench/experiments/t3_fold3_deterministic_cap/run_t3_gates.py:204,265",
+    "code": "report = getattr(capped, \"last_cap_report\", None)",
+    "subpattern": "(a) getattr with None default on the capped estimator",
+    "can_return_null_regardless_of_ground_truth": false,
+    "empirical_check": "static read: `report is None` is folded into the failure branch (`g1['pass'] = False`) and into `completed` for G2, so an absent attribute FAILS the gate rather than silently passing it",
+    "cited_in_fold_ledger": [
+     "t3_fold3_deterministic_cap (screened)"
+    ],
+    "cited_in_phase1_writeup": [],
+    "verdict": "SHAPE MATCH, FAIL-CLOSED - safe"
+   },
+   {
+    "rank": 8,
+    "site": "corpus/whestbench/experiments/terra_m153_pilot_reuse/run_m153_pilot_prefix_reuse_structural.py:97",
+    "code": "list(getattr(estimator, \"pilot_reuse_trace\", []))",
+    "subpattern": "(a) getattr with empty-list default feeding removed_formal_dispatches and removed_shape_bill",
+    "can_return_null_regardless_of_ground_truth": false,
+    "empirical_check": "committed trace has pilot_reuse_trace = ['formal:first:pilot','formal:layer2:pilot','formal:layer3:pilot'], removed_formal_dispatches n=3, removed_shape_bill=589,840,384; and the blocking assertion only_three_formal_dispatches_removed is computed from matmul dispatch-call deltas, independent of this attribute",
+    "cited_in_fold_ledger": [
+     "m153_exact_formal_prefix_reuse"
+    ],
+    "cited_in_phase1_writeup": [],
+    "verdict": "SHAPE MATCH, NOT VOID - independent blocking assertion"
+   }
+  ],
+  "confirmed_structurally_void": 1,
+  "shape_matched_but_positive_capable": 7,
+  "cleared_with_reason": {
+   "gm_m116_streams/probe_cheap.py op.*": "op is a local GroupedInplaceL3, not a flopscope OpRecord; differing_words=0 is a bitwise equality with a max_abs cross-check",
+   "gm_s17_reuse/step0_results.json rel_err_ratio_costfloor=0": "bitwise reproduction check; the underlying ratios are 1.63/2.37/1.37, non-zero",
+   "pb1_premise_battery m191 odd-degree design_rms=0": "antipodal design cancels odd moments exactly; even degrees are non-zero (2.18e-6 / 0.107 / 0.348)",
+   "gm_flatworm_response_ladder permutation_relative_error=0 on 14/24 states": "max over states is 6.90e-14, non-zero; the instrument fires",
+   "gm_latent_cubature/step0_arithmetic.py": "hard-indexes ops['take']['flop_cost'] (loud KeyError on absence) and reads weights from flopscope._weights - exemplary",
+   "m217_balanced_three_color/run_m217_native_trace.py": "uses -1 as the absent-key sentinel, not 0: int(matmul.get('calls', -1)) - this is the recommended antidote idiom",
+   "u2_fold3cap_bound/calib_summary_cost.py": "constructs OpRecord with the correct installed field names including resolved_dtype - the right name was already known in this corpus",
+   "wc1_winner_ablation/wc1_ablation.py 'A_frames' in arms": "keys match ARMS exactly; derived_isolated_ratios is populated"
+  },
+  "empirical_verification": {
+   "m183_f64_detector": {
+    "hit": "M183 run_m183_falsifier.py:58 getattr(op,'dtypes',None) or ()",
+    "fixture": "100% float64 program, 2 chained 256x256 matmuls inside BudgetContext",
+    "n_ops": 5,
+    "resolved_dtypes_present_in_fixture": [
+     "float64"
+    ],
+    "oprecord_has_dtypes_attr": false,
+    "oprecord_has_name_attr": false,
+    "total_billed": 133955584.0,
+    "SUSPECT_f64_billed": 0.0,
+    "SUSPECT_f64_share": 0.0,
+    "SUSPECT_top_ops": {},
+    "CORRECTED_f64_billed": 133955584.0,
+    "CORRECTED_f64_share": 1.0,
+    "detector_fires_on_positive_fixture": false,
+    "verdict": "STRUCTURALLY VOID: returns 0.00% on a program that is 100% float64 by construction"
+   },
+   "gm_a4_bytecode_needle_scan": {
+    "hit": "gm_a4_constraint/verify_two_signal.py:64 scan_code needle scan",
+    "fixture": "corpus\\whestbench\\experiments\\t3_fold3_deterministic_cap\\capped_fold3.py",
+    "needles": [
+     "_tally",
+     "budget_summary_dict",
+     "get_data",
+     "summary_dict"
+    ],
+    "needles_present_in_fixture_text": [
+     "_tally",
+     "budget_summary_dict",
+     "summary_dict"
+    ],
+    "detector_hits_on_positive_fixture": [
+     "_tally"
+    ],
+    "detector_fires_on_positive_fixture": true,
+    "verdict": "fires -- published [] is a genuine negative"
+   },
+   "gm_m179_legacy_tag_scan": {
+    "hit": "gm_m179_m199/run_depth32_identity_trace.py:134 legacy tag scan",
+    "fixture": "real observed operation histogram + one injected legacy op",
+    "n_real_operations_observed": 21,
+    "scan_on_real_ops": [],
+    "scan_on_positive_fixture": [
+     "m200.legacy_rebuild.full_archive"
+    ],
+    "detector_fires_on_positive_fixture": true,
+    "independent_positive_capable_instrument": "LegacyCallCounter (monkeypatch counter)",
+    "verdict": "fires -- published [] is a genuine negative"
+   },
+   "m184_certain_on_detector": {
+    "hit": "m184_trichotomy_upward/run_m184_g0.py certain-on detector",
+    "reported_statistic": {
+     "geomean_reduction": 0.0,
+     "min_reduction": 0.0,
+     "per_net_reduction": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "max_certain_on_count_observed": 39,
+    "max_certain_dead_count_observed": 37,
+    "n_layer_cells": 84,
+    "detector_fires_somewhere": true,
+    "verdict": "NOT the M183 class -- the same detector produces nonzero certain-on (39) and certain-dead (37) counts at other layers, so its 0.00% reduction is a measured negative, not a structural one"
+   }
+  }
+ }
+}

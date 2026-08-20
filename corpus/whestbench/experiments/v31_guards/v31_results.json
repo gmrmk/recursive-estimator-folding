@@ -1,0 +1,249 @@
+{
+  "candidate": "Kerdock v3.1 GUARDS (frozen v3 + M186 empty-regime + M187 finite-output)",
+  "date": "2026-08-08",
+  "firewall": "synthetic nets only; frozen v3 invoked read-only in an isolated subprocess; package sources are sha256-verified byte-identical copies; no dataset/truth/scorer/submission; no git; writes confined to v31_guards",
+  "gates": {
+    "g0_byte_identity": {
+      "files": [
+        {
+          "frozen": "base_estimator.py",
+          "identical": true,
+          "package": "base_estimator.py",
+          "sha256": "b64376e09279e520465d63c4c0b2933a8edb0ec8eae9d6086c16c1830e7ece4e"
+        },
+        {
+          "frozen": "cost_model.py",
+          "identical": true,
+          "package": "cost_model.py",
+          "sha256": "2a42e0d9ca3a80ecb4ff2be302ccfaaacfa34bf6fe920b1eea27feb7ae798d68"
+        },
+        {
+          "frozen": "fold3_estimator.py",
+          "identical": true,
+          "package": "fold3_estimator.py",
+          "sha256": "68449e3efe3b82a860b884a2bd05c9260e1efbd138a343257cdc51ad38a63f6f"
+        },
+        {
+          "frozen": "fold_estimator.py",
+          "identical": true,
+          "package": "fold_estimator.py",
+          "sha256": "0c6187e19cf567d7f7b5658902dc00a123f6219c815e2ea6711589e0a4e9159d"
+        },
+        {
+          "frozen": "row_blocked_winograd.py",
+          "identical": true,
+          "package": "row_blocked_winograd.py",
+          "sha256": "a3bf5c8014198e33037d6aeafc3f4138a98908754bb82bfcf5acdd92b1d9fcca"
+        },
+        {
+          "frozen": "estimator.py",
+          "identical": true,
+          "package": "kerdock_v3_estimator.py",
+          "sha256": "076d0a5d81891ddcbb4509dc6e2bff5459d935b5556490a85d98dac60759aacf"
+        },
+        {
+          "frozen": "kerdock_phases.npz",
+          "identical": true,
+          "package": "kerdock_phases.npz",
+          "sha256": "a5e747f95423f5a45972d1a0735f223044a8a998407eb0c6db51aefdf47f4906"
+        },
+        {
+          "frozen": "sobol_owen_u32.npz",
+          "identical": true,
+          "package": "sobol_owen_u32.npz",
+          "sha256": "050339ec9966bd046b4fcf53c85240f89d2cd1f7d60c30421922203045eed0ca"
+        }
+      ],
+      "new_estimator_sha256": "5e7d52156b330bf63ac4ff0e0f38d864b32677f82bc8ed4d1382787a27d3e0c9",
+      "pass": true
+    },
+    "g1": {
+      "a4_anchor_crosscheck": {
+        "billed": 179197201680,
+        "billed_matches_a4": true,
+        "bitwise_equal_to_a4_det_run1": true,
+        "mlp_seed": 901101
+      },
+      "nets": [
+        {
+          "billed_delta_flops": 24575,
+          "billed_delta_fraction": 1.3645286922569101e-07,
+          "bitwise_equal": true,
+          "guards_quiet": true,
+          "mlp_seed": 1001000,
+          "net_seed": 101,
+          "pass": true,
+          "v31_billed": 180098839202,
+          "v31_guard_report": {
+            "m186_empty_regime_fired": false,
+            "m187_entries_clamped": 0,
+            "m187_entries_nonfinite": 0,
+            "m187_entries_replaced_analytic": 0,
+            "m187_finite_output_fired": false
+          },
+          "v31_wall_s": 3.12,
+          "v3_billed": 180098814627,
+          "v3_wall_s": 3.15,
+          "within_plus_0.1pct": true
+        },
+        {
+          "billed_delta_flops": 24575,
+          "billed_delta_fraction": 1.453495380714741e-07,
+          "bitwise_equal": true,
+          "guards_quiet": true,
+          "mlp_seed": 1102000,
+          "net_seed": 202,
+          "pass": true,
+          "v31_billed": 169075209306,
+          "v31_guard_report": {
+            "m186_empty_regime_fired": false,
+            "m187_entries_clamped": 0,
+            "m187_entries_nonfinite": 0,
+            "m187_entries_replaced_analytic": 0,
+            "m187_finite_output_fired": false
+          },
+          "v31_wall_s": 3.06,
+          "v3_billed": 169075184731,
+          "v3_wall_s": 3.06,
+          "within_plus_0.1pct": true
+        },
+        {
+          "billed_delta_flops": 24575,
+          "billed_delta_fraction": 1.5093423887257947e-07,
+          "bitwise_equal": true,
+          "guards_quiet": true,
+          "mlp_seed": 1203000,
+          "net_seed": 303,
+          "pass": true,
+          "v31_billed": 162819277407,
+          "v31_guard_report": {
+            "m186_empty_regime_fired": false,
+            "m187_entries_clamped": 0,
+            "m187_entries_nonfinite": 0,
+            "m187_entries_replaced_analytic": 0,
+            "m187_finite_output_fired": false
+          },
+          "v31_wall_s": 3.13,
+          "v3_billed": 162819252832,
+          "v3_wall_s": 3.24,
+          "within_plus_0.1pct": true
+        }
+      ],
+      "pass": true
+    },
+    "g2": {
+      "nets": [
+        {
+          "expected_guard": "m186",
+          "expected_guard_fired": true,
+          "mlp_seed": 555006,
+          "net": "f_negshift",
+          "pass": true,
+          "v31_billed": 5293173363,
+          "v31_completes": true,
+          "v31_exception": null,
+          "v31_guard_report": {
+            "m186_empty_regime_fired": true,
+            "m187_entries_clamped": 0,
+            "m187_entries_nonfinite": 0,
+            "m187_entries_replaced_analytic": 0,
+            "m187_finite_output_fired": false
+          },
+          "v31_prediction_finite_all": true,
+          "v31_wall_s": 0.62,
+          "v31_within_budget": true,
+          "v3_billed": 5159851464,
+          "v3_billed_matches_a4": true,
+          "v3_reproduces_a4_failure": true
+        },
+        {
+          "expected_guard": "m187",
+          "expected_guard_fired": true,
+          "mlp_seed": 555002,
+          "net": "b_gain_1e3",
+          "pass": true,
+          "v31_billed": 154856155520,
+          "v31_completes": true,
+          "v31_exception": null,
+          "v31_guard_report": {
+            "m186_empty_regime_fired": false,
+            "m187_entries_clamped": 0,
+            "m187_entries_nonfinite": 164,
+            "m187_entries_replaced_analytic": 164,
+            "m187_finite_output_fired": true
+          },
+          "v31_prediction_finite_all": true,
+          "v31_wall_s": 2.81,
+          "v31_within_budget": true,
+          "v3_billed": 154722710745,
+          "v3_billed_matches_a4": true,
+          "v3_reproduces_a4_failure": true
+        }
+      ],
+      "pass": true
+    },
+    "g3": {
+      "package": {
+        "rc": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\n  \"ok\": true,\n  \"artifact_path\": \"C:\\\\Users\\\\strid\\\\Documents\\\\Codex\\\\2026-08-02\\\\https-chatgpt-com-share-6a5556ed-2e1c\\\\publish\\\\recursive-estimator-folding\\\\corpus\\\\whestbench\\\\experiments\\\\v31_guards\\\\submission_kerdock_v31_guards_20260808.tar.gz\",\n  \"whestbench_version\": \"0.14.0\"\n}\n",
+        "tar_exists": true
+      },
+      "pass": true,
+      "pycache_in_source_before_packaging": [],
+      "tar_members": {
+        "members": [
+          "base_estimator.py",
+          "cost_model.py",
+          "estimator.py",
+          "fold3_estimator.py",
+          "fold_estimator.py",
+          "kerdock_phases.npz",
+          "kerdock_v3_estimator.py",
+          "row_blocked_winograd.py",
+          "sobol_owen_u32.npz",
+          "manifest.json"
+        ],
+        "missing": [],
+        "ok": true,
+        "rc": 0,
+        "unexpected": []
+      },
+      "tar_sha256": "8382e269c9b32e0935492734ddf8182560120f7e9331621aa18839d5d1f4ea06",
+      "tar_size_bytes": 33347024,
+      "validate_contract": {
+        "json": {
+          "class_name": "Estimator",
+          "module_name": "_whestbench_submission_a7315119e3a6",
+          "ok": true,
+          "output_shape": [
+            2,
+            4
+          ],
+          "whestbench_version": "0.14.0"
+        },
+        "ok": true,
+        "rc": 0,
+        "stdout_tail": null
+      },
+      "validate_package": {
+        "json": {
+          "artifact": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\v31_guards\\submission_kerdock_v31_guards_20260808.tar.gz",
+          "issues": [],
+          "ok": true,
+          "whestbench_version": "0.14.0"
+        },
+        "ok": true,
+        "rc": 0,
+        "stdout_tail": null
+      }
+    }
+  },
+  "governing_evidence": "a_series_granular_adversarial/a4_results.json + A3_A4_NOTES.md",
+  "invocation": {
+    "predict": "BudgetContext(int(2.72e11), quiet=True)",
+    "rotation_seed_formula_g1": "900000 + net_seed*1000 + 0 (canonical n8c/n9/wc1/pb1 formula)",
+    "setup": "SetupContext(width=256, depth=32, flop_budget=int(2.72e11), api_version='2.0', seed=0, submission_dir=<arm dir>)"
+  },
+  "verdict": "PASS: G1 (bitwise + billing), G2 (both guards fire, finite), G3 (package validated, all members present) -- v3.1 GUARDS candidate holds"
+}

@@ -1,0 +1,22 @@
+{
+  "candidate": "M202 signed-facet Feynman-Kac/SMC hedge",
+  "status": "KILLED_UNNORMALIZED_SIGNED_FACET_SMC_WITHOUT_OWNED_GENERATOR_AND_ESS_CERTIFICATE",
+  "minimal_witness": "d=2, width=2, depth=2, f_epsilon=[x1]_+-(1-epsilon)[x2]_+",
+  "signed_mass": "2 epsilon",
+  "absolute_mass": "2 (2-epsilon)",
+  "sign_ratio": "epsilon/(2-epsilon) -> 0",
+  "raw_gate_overcount_factor": 2,
+  "target_first_layer_candidate_facet_cells": "256*2^255 = 2^263",
+  "preserved": [
+    "M86 exact signed coarea identity",
+    "owned output-jump collapse",
+    "small exactly enumerable facet oracle"
+  ],
+  "reopening_condition": "An analytically normalized owned-output-facet generator with a network-specific noncollapsing ESS and inclusive cost certificate.",
+  "not_claimed": [
+    "refutation of the coarea identity",
+    "universal impossibility of every future owned-facet generator",
+    "variance, MSE, score, rank, or winning-entry result"
+  ],
+  "firewall": "Exact rational two-dimensional witness only; no contest model, truth, scorer, leaderboard, submission, or private artifact accessed."
+}

@@ -1,0 +1,359 @@
+{
+  "arm_a_1_physical_core_pin": {
+    "affinity_mask": "0x3",
+    "gates": {
+      "adversarial_early_pruning_structural_invariants": true,
+      "all_target_structural_invariants": true,
+      "billed_flops_reproduce_20260807": true,
+      "five_fresh_target_processes_completed": true,
+      "historical_512MiB_peak_rss": true,
+      "historical_predict_under_20s": false,
+      "historical_setup_under_4s": false,
+      "independent_recompute_matches_worker_field": true,
+      "k1_258_4B_effective_compute": false,
+      "legacy_k5_258_4B_effective_compute": false,
+      "prediction_sha256_reproduce_20260807": true,
+      "replay_bitwise_equal_all": true,
+      "second_predict_k1_all_pass": true
+    },
+    "k1_pass_count": 3,
+    "k5_pass_count": 0,
+    "max_target_C_k1": 282529771690.8219,
+    "max_target_C_k5": 673374723723.5828,
+    "max_target_residual_s": 0.9845263003371656,
+    "per_worker": [
+      {
+        "C_k1": 279564203588.71655,
+        "C_k5": 673374723723.5828,
+        "billed_flops": 181111573555,
+        "break_even_k": 0.7850316077745352,
+        "k1_margin_to_gate": -21164203588.716553,
+        "passes_k1": false,
+        "peak_rss_mib": 379.171875,
+        "residual_s": 0.9845263003371656,
+        "second_predict_C_k1": 246046183513.43634,
+        "second_predict_passes_k1": true,
+        "second_predict_residual_s": 0.6493460995843634,
+        "setup_s": 285.3019649000198,
+        "worker": 1
+      },
+      {
+        "C_k1": 282529771690.8219,
+        "C_k5": 639161931050.1094,
+        "billed_flops": 193371731851,
+        "break_even_k": 0.7293595537298425,
+        "k1_margin_to_gate": -24129771690.8219,
+        "passes_k1": false,
+        "peak_rss_mib": 386.1171875,
+        "residual_s": 0.8915803983982187,
+        "second_predict_C_k1": 241814031744.9408,
+        "second_predict_passes_k1": true,
+        "second_predict_residual_s": 0.484422998939408,
+        "setup_s": 227.09489290000056,
+        "worker": 2
+      },
+      {
+        "C_k1": 210659528437.53036,
+        "C_k5": 347491928499.65186,
+        "billed_flops": 176451428422,
+        "break_even_k": 2.3955896860917627,
+        "k1_margin_to_gate": 47740471562.469635,
+        "passes_k1": true,
+        "peak_rss_mib": 367.96484375,
+        "residual_s": 0.3420810001553036,
+        "second_predict_C_k1": 255157168411.5275,
+        "second_predict_passes_k1": true,
+        "second_predict_residual_s": 0.787057399895275,
+        "setup_s": 249.7854803999944,
+        "worker": 3
+      },
+      {
+        "C_k1": 188959993809.3878,
+        "C_k5": 274394393342.93896,
+        "billed_flops": 167601393926,
+        "break_even_k": 4.251149727497866,
+        "k1_margin_to_gate": 69440006190.61221,
+        "passes_k1": true,
+        "peak_rss_mib": 369.96875,
+        "residual_s": 0.21358599883387797,
+        "second_predict_C_k1": 185967883764.80878,
+        "second_predict_passes_k1": true,
+        "second_predict_residual_s": 0.18366489838808775,
+        "setup_s": 214.96303800001624,
+        "worker": 4
+      },
+      {
+        "C_k1": 185485033851.24503,
+        "C_k5": 266190353976.2251,
+        "billed_flops": 165308703820,
+        "break_even_k": 4.6138864717140855,
+        "k1_margin_to_gate": 72914966148.75497,
+        "passes_k1": true,
+        "peak_rss_mib": 367.46875,
+        "residual_s": 0.20176330031245016,
+        "second_predict_C_k1": 206903343636.32144,
+        "second_predict_passes_k1": true,
+        "second_predict_residual_s": 0.4159463981632143,
+        "setup_s": 172.86759510001866,
+        "worker": 5
+      }
+    ],
+    "verdict": "KILLED_K1_OVER_GATE"
+  },
+  "confound_diagnostic": {
+    "claim": "ARM A's residual inflation is dominated by BLAS thread-pool oversubscription introduced by the whole-process pin, not by the grader's participant-only 1-physical-core pin.",
+    "os_cpu_count_seen_by_openblas_under_pin": 16,
+    "pin_cost_actually_inflicted_by_arm_a_x": 142.35727502648936,
+    "raw_diagnostic_files": {
+      "diag_threadpool_mask0x0_pool1.json": {
+        "effective_mask": "0xffff",
+        "openblas_num_threads_env": "1",
+        "os_cpu_count": 16,
+        "requested_mask": "0x0",
+        "sgemm_1024_x10_s": 0.33975509999436326,
+        "sgemm_gflops": 63.20681126009964,
+        "threadpool_info": [
+          {
+            "unavailable": "ModuleNotFoundError: No module named 'threadpoolctl'"
+          }
+        ]
+      },
+      "diag_threadpool_mask0x0_pooldefault.json": {
+        "effective_mask": "0xffff",
+        "openblas_num_threads_env": null,
+        "os_cpu_count": 16,
+        "requested_mask": "0x0",
+        "sgemm_1024_x10_s": 0.08787180000217631,
+        "sgemm_gflops": 244.38826198471105,
+        "threadpool_info": [
+          {
+            "unavailable": "ModuleNotFoundError: No module named 'threadpoolctl'"
+          }
+        ]
+      },
+      "diag_threadpool_mask0x3_pool1.json": {
+        "effective_mask": "0x3",
+        "openblas_num_threads_env": "1",
+        "os_cpu_count": 16,
+        "requested_mask": "0x3",
+        "sgemm_1024_x10_s": 0.2889228999847546,
+        "sgemm_gflops": 74.3272218336904,
+        "threadpool_info": [
+          {
+            "unavailable": "ModuleNotFoundError: No module named 'threadpoolctl'"
+          }
+        ]
+      },
+      "diag_threadpool_mask0x3_pool2.json": {
+        "effective_mask": "0x3",
+        "openblas_num_threads_env": "2",
+        "os_cpu_count": 16,
+        "requested_mask": "0x3",
+        "sgemm_1024_x10_s": 0.3239148000138812,
+        "sgemm_gflops": 66.29779336751426,
+        "threadpool_info": [
+          {
+            "unavailable": "ModuleNotFoundError: No module named 'threadpoolctl'"
+          }
+        ]
+      },
+      "diag_threadpool_mask0x3_pooldefault.json": {
+        "effective_mask": "0x3",
+        "openblas_num_threads_env": null,
+        "os_cpu_count": 16,
+        "requested_mask": "0x3",
+        "sgemm_1024_x10_s": 12.509189999982482,
+        "sgemm_gflops": 1.7167247823424276,
+        "threadpool_info": [
+          {
+            "unavailable": "ModuleNotFoundError: No module named 'threadpoolctl'"
+          }
+        ]
+      }
+    },
+    "replicate_run_1_console_gflops": {
+      "note": "first diagnostic pass; filenames collided, values verbatim from console",
+      "pinned_0x3_default_pool": 1.4278340722496523,
+      "pinned_0x3_pool_1": 69.15984235364357,
+      "pinned_0x3_pool_2": 78.24888940393427,
+      "unpinned_default_pool": 195.7818064714739,
+      "unpinned_pool_1": 71.91347037685813
+    },
+    "sgemm_1024_f32_gflops_pinned_0x3_default_pool": 1.7167247823424276,
+    "sgemm_1024_f32_gflops_pinned_0x3_openblas_num_threads_1": 74.3272218336904,
+    "sgemm_1024_f32_gflops_pinned_0x3_openblas_num_threads_2": 66.29779336751426,
+    "sgemm_1024_f32_gflops_unpinned_default_pool": 244.38826198471105,
+    "sgemm_1024_f32_gflops_unpinned_openblas_num_threads_1": 63.20681126009964,
+    "throughput_recovery_from_sizing_pool_to_affinity_x": 43.29594504500179,
+    "true_cost_of_one_physical_core_x": 3.288004797643827,
+    "worker_level_timing_inflation_vs_20260807": [
+      {
+        "backend_inflation_x": 8.708847888749158,
+        "backend_s_20260807": 2.7095446954481304,
+        "backend_s_arm_a": 23.597012600424932,
+        "overhead_inflation_x": 5.2937047074954,
+        "overhead_s_20260807": 0.7798821104224771,
+        "overhead_s_arm_a": 4.128465599234914,
+        "residual_inflation_x": 6.33190880163807,
+        "residual_s_20260807": 0.155486494069919,
+        "residual_s_arm_a": 0.9845263003371656,
+        "setup_inflation_x": 191.55558235447793,
+        "setup_s_20260807": 1.489395200042054,
+        "setup_s_arm_a": 285.3019649000198,
+        "worker": 1
+      },
+      {
+        "backend_inflation_x": 9.883715832036772,
+        "backend_s_20260807": 3.0307843941263855,
+        "backend_s_arm_a": 29.955411699716933,
+        "overhead_inflation_x": 5.784494443155762,
+        "overhead_s_20260807": 0.8276862998027354,
+        "overhead_s_arm_a": 4.787746801885078,
+        "residual_inflation_x": 5.250684276197194,
+        "residual_s_20260807": 0.16980270599015057,
+        "residual_s_arm_a": 0.8915803983982187,
+        "setup_inflation_x": 148.2129804529138,
+        "setup_s_20260807": 1.532219999935478,
+        "setup_s_arm_a": 227.09489290000056,
+        "worker": 2
+      },
+      {
+        "backend_inflation_x": 5.684433585634009,
+        "backend_s_20260807": 2.3444660929962993,
+        "backend_s_arm_a": 13.32696179940831,
+        "overhead_inflation_x": 2.33546003862901,
+        "overhead_s_20260807": 0.6967362205032259,
+        "overhead_s_arm_a": 1.6271996004506946,
+        "residual_inflation_x": 2.56792724110382,
+        "residual_s_20260807": 0.13321288651786745,
+        "residual_s_arm_a": 0.3420810001553036,
+        "setup_inflation_x": 157.8228683242262,
+        "setup_s_20260807": 1.5826951002236456,
+        "setup_s_arm_a": 249.7854803999944,
+        "worker": 3
+      },
+      {
+        "backend_inflation_x": 3.559619090898728,
+        "backend_s_20260807": 2.6201366952154785,
+        "backend_s_arm_a": 9.32668860105332,
+        "overhead_inflation_x": 1.5678020021008852,
+        "overhead_s_20260807": 0.7247491064481437,
+        "overhead_s_arm_a": 1.1362631001102272,
+        "residual_inflation_x": 1.5276110996447356,
+        "residual_s_20260807": 0.13981699850410223,
+        "residual_s_arm_a": 0.21358599883387797,
+        "setup_inflation_x": 141.36654190182313,
+        "setup_s_20260807": 1.5206075999885798,
+        "setup_s_arm_a": 214.96303800001624,
+        "worker": 4
+      },
+      {
+        "backend_inflation_x": 3.660261869625599,
+        "backend_s_20260807": 2.5957705865148455,
+        "backend_s_arm_a": 9.501200100115966,
+        "overhead_inflation_x": 1.4820138958775366,
+        "overhead_s_20260807": 0.7207634169608355,
+        "overhead_s_arm_a": 1.0681813995761331,
+        "residual_inflation_x": 1.4043611688204873,
+        "residual_s_20260807": 0.14366909652017057,
+        "residual_s_arm_a": 0.20176330031245016,
+        "setup_inflation_x": 116.43317076250302,
+        "setup_s_20260807": 1.4846936999820173,
+        "setup_s_arm_a": 172.86759510001866,
+        "worker": 5
+      }
+    ]
+  },
+  "disposition": "No revival gate opens. The original M157/M160 kill stands unchanged. The k=1 re-derivation on the FROZEN 2026-08-07 measurements is exact and passes 5/5, but the fresh pinned re-measurement that the mined falsifier demanded could not discriminate the mechanism because the local pin also throttled the FlopScope backend, which the grader gives 7 cores.",
+  "gate": 258400000000.0,
+  "gate_result": "INCONCLUSIVE",
+  "id": "gm_residual_k1",
+  "lambda": 100000000000.0,
+  "ledger_ids_addressed": [
+    "m157_selfhosted_formal_pilot",
+    "m160_hostile_selfhosted_pilot_audit",
+    "m145_defensive_acg_transport",
+    "m153_exact_formal_prefix_reuse"
+  ],
+  "mining_search_key": "m157_selfhosted_formal_pilot",
+  "step0_cached_arithmetic_k1": {
+    "independent_recompute_matches_cached_fields": true,
+    "k1_pass_count": 5,
+    "k5_pass_count": 3,
+    "max_C_k1": 210352002450.01505,
+    "max_C_k5": 278273084846.0753,
+    "per_worker": [
+      {
+        "C_k1": 196660222961.9919,
+        "C_k5": 258854820589.95947,
+        "billed_flops": 181111573555,
+        "break_even_k": 4.970748546831664,
+        "k1_margin_pct": 23.89310256888858,
+        "k1_margin_to_gate": 61739777038.00809,
+        "passes_k1": true,
+        "passes_k5": false,
+        "residual_s": 0.155486494069919,
+        "worker": 1
+      },
+      {
+        "C_k1": 210352002450.01505,
+        "C_k5": 278273084846.0753,
+        "billed_flops": 193371731851,
+        "break_even_k": 3.829636740463487,
+        "k1_margin_pct": 18.594426296433806,
+        "k1_margin_to_gate": 48047997549.984955,
+        "passes_k1": true,
+        "passes_k5": false,
+        "residual_s": 0.16980270599015057,
+        "worker": 2
+      },
+      {
+        "C_k1": 189772717073.78674,
+        "C_k5": 243057871680.93372,
+        "billed_flops": 176451428422,
+        "break_even_k": 6.151700013422386,
+        "k1_margin_pct": 26.55854602407634,
+        "k1_margin_to_gate": 68627282926.21326,
+        "passes_k1": true,
+        "passes_k5": true,
+        "residual_s": 0.13321288651786745,
+        "worker": 3
+      },
+      {
+        "C_k1": 181583093776.41022,
+        "C_k5": 237509893178.05112,
+        "billed_flops": 167601393926,
+        "break_even_k": 6.4941035099774345,
+        "k1_margin_pct": 29.727904885290165,
+        "k1_margin_to_gate": 76816906223.58978,
+        "passes_k1": true,
+        "passes_k5": true,
+        "residual_s": 0.13981699850410223,
+        "worker": 4
+      },
+      {
+        "C_k1": 179675613472.01706,
+        "C_k5": 237143252080.08527,
+        "billed_flops": 165308703820,
+        "break_even_k": 6.479562998221427,
+        "k1_margin_pct": 30.466093857578535,
+        "k1_margin_to_gate": 78724386527.98294,
+        "passes_k1": true,
+        "passes_k5": true,
+        "residual_s": 0.14366909652017057,
+        "worker": 5
+      }
+    ],
+    "reproduces_ledger_k5_verdict": true,
+    "verdict": "PASS_PROCEED_TO_ARM_A"
+  },
+  "two_signal_verification": {
+    "note": "The arithmetic half of the estimator reproduced BITWISE against 2026-08-07 for all five seeds; only the wall-clock residual moved.",
+    "signal_1_independent_recompute": true,
+    "signal_2_billed_flops_bitwise_reproduce_20260807": true,
+    "signal_2b_prediction_sha256_reproduce_20260807": true,
+    "signal_3_replay_bitwise_equal_within_worker": true,
+    "signal_4_second_predict_independent_residual_draw_all_pass_k1": true
+  },
+  "verdict": "PREDECLARED_ARM_A_GATE_FAILED_BUT_INSTRUMENT_PROVEN_CONFOUNDED"
+}

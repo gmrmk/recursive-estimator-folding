@@ -1,0 +1,16 @@
+{
+  "candidate": "M212 backend-packed matmul with explicit symmetry scratch",
+  "date": "2026-08-09",
+  "firewall": "generated-only response-free resource audit",
+  "parents": ["M210", "M211"],
+  "changed_boundary": "backend owns supported matmul packing; caller owns transpose scratch",
+  "width": 256,
+  "layers": 31,
+  "depth": 3,
+  "dtype": "float64",
+  "seeds": [212700001, 212700002, 212700003, 212700004, 212700005],
+  "predicted_inclusive_bill": 1249253376,
+  "hostile_wall_multiplier": 5.0,
+  "component_headroom": 1986871472,
+  "credit": "isolated meter-lawful resource component only"
+}

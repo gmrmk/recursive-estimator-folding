@@ -1,0 +1,59 @@
+{
+  "candidate": "M167 complete-domain physical collision-owner unification",
+  "status": "OWNER_ALGEBRA_PASS__M163_IJJ_RELABEL_REJECTED__NO_EFFICACY",
+  "firewall": "Generated-array source algebra/static work only. No network response, target truth, scorer, contest artifact, leaderboard, submission, or champion was read or changed.",
+  "exact_mapping": {
+    "iii_to_4": "T[i,i,i] = K4[i]/6",
+    "iik_iji_to_31": "T[i,i,j] = T[i,j,i] = K31[i,j]/3, i != j",
+    "ijj_to_22": "T[i,j,j] = K22[i,j]/2 and T[j,i,i] = K22[i,j]/2, i != j"
+  },
+  "exhaustive_width_2_to_6_independent_tensor_source_max_abs": {
+    "2": 3.552713678800501e-15,
+    "3": 3.552713678800501e-15,
+    "4": 7.105427357601002e-14,
+    "5": 1.4210854715202004e-14,
+    "6": 2.1316282072803006e-14
+  },
+  "complete_domain_conservation_max_abs": {
+    "m156_width_3": 1.3642420526593924e-12,
+    "m156_width_4": 4.760636329592671e-13,
+    "m156_width_5": 3.61666252501891e-12,
+    "m156_width_6": 2.97966096240998e-11,
+    "m163_width_3": 1.1368683772161603e-13,
+    "m163_width_4": 1.3500311979441904e-13,
+    "m163_width_5": 1.1723955140041653e-13,
+    "m163_width_6": 6.821210263296962e-13
+  },
+  "symmetry_and_ownership": {
+    "permutation_covariance": "PASS on generated widths 2..6",
+    "positive_gauge_covariance": "PASS on generated widths 2..6",
+    "one_owner_retirement": "PASS; retaining the old source after table injection gives a detected double count",
+    "complete_residual_api": "M156 residual_table re-zeroes collisions and is therefore incompatible with this owner repair. M167 complete_residual_table preserves all physical collision entries."
+  },
+  "m163_ijj_absorption_test": {
+    "necessary_identity": "K22[i,j] = -4 A[i,j]^2",
+    "generated_exact_M122_max_abs_mismatch_by_width": {
+      "2": 0.7511218366685426,
+      "3": 0.3010902604185111,
+      "4": 0.4058606628670701,
+      "5": 0.512818350121987,
+      "6": 0.23964545307815213
+    },
+    "verdict": "REJECTED: support coincidence does not establish coefficient equality. M163 ijj remains a legitimate complete-domain control only when subtracted from the physical K22 target inside the [2,2] owner."
+  },
+  "static_ledger": {
+    "target_width": 256,
+    "physical_4_units": 256,
+    "physical_31_units": 65280,
+    "physical_22_unordered_units": 32640,
+    "complete_iii_triples": 256,
+    "complete_iik_iji_triples": 130560,
+    "complete_ijj_triples": 65280,
+    "m156_dense_products_per_layer_unchanged": 5,
+    "m163_dense_products_per_layer_unchanged": 5,
+    "m167_added_dense_products_per_layer": 0,
+    "m167_added_deployment_calls_claimed": 0,
+    "unresolved": "Forming and transporting generic physical K22 is still the known Khatri--Rao-class obstruction. M167 supplies no source-formation, residual-variance, native-wall, or cost credit."
+  },
+  "tests": "7 generated-only tests passed under C:\\Users\\strid\\anaconda3\\envs\\timesfm-forecasting\\python.exe"
+}

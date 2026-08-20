@@ -1,0 +1,79 @@
+{
+  "check": "C3 exact Gegenbauer design defect",
+  "d": 256,
+  "normalisation": "P_l(1) = 1",
+  "degrees": {
+    "degree_2": {
+      "m_126": {
+        "exact": "0",
+        "float": 0.0,
+        "is_exactly_zero": true,
+        "is_negative": false
+      },
+      "m_128": {
+        "exact": "0",
+        "float": 0.0,
+        "is_exactly_zero": true,
+        "is_negative": false
+      },
+      "m_129": {
+        "exact": "0",
+        "float": 0.0,
+        "is_exactly_zero": true,
+        "is_negative": false
+      }
+    },
+    "degree_4": {
+      "m_126": {
+        "exact": "65/88424448",
+        "float": 7.350908201315546e-07,
+        "is_exactly_zero": false,
+        "is_negative": false
+      },
+      "m_128": {
+        "exact": "65/269484032",
+        "float": 2.4120167535566633e-07,
+        "is_exactly_zero": false,
+        "is_negative": false
+      },
+      "m_129": {
+        "exact": "0",
+        "float": 0.0,
+        "is_exactly_zero": true,
+        "is_negative": false
+      }
+    },
+    "degree_6": {
+      "m_126": {
+        "exact": "1114679/34898182144",
+        "float": 3.194089008420301e-05,
+        "is_exactly_zero": false,
+        "is_negative": false
+      },
+      "m_128": {
+        "exact": "70258051/2233483657216",
+        "float": 3.145671147984825e-05,
+        "is_exactly_zero": false,
+        "is_negative": false
+      },
+      "m_129": {
+        "exact": "183007/5861804032",
+        "float": 3.122025216144244e-05,
+        "is_exactly_zero": false,
+        "is_negative": false
+      }
+    }
+  },
+  "routes_agree_exactly": true,
+  "route_disagreements": [],
+  "expected_degree4_zero_at_129": true,
+  "expected_degree4_nonzero_at_126": true,
+  "original_run_reported": {
+    "A4_m126": 7.350908201315546e-07,
+    "A4_m129": 0.0,
+    "A6_m126": 3.194089008420301e-05,
+    "A6_m129": 3.122025216144244e-05,
+    "A2_all": 0.0
+  },
+  "matches_original_A4_m126": true
+}

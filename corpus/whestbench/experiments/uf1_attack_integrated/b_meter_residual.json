@@ -1,0 +1,240 @@
+{
+  "flopscope": "0.10.0+np2.4.6",
+  "numpy": "2.4.6",
+  "lambda": 100000000000.0,
+  "repeats": 3,
+  "shapes": {
+    "32256x256@256x256": {
+      "d0_direct": {
+        "flops": 4219600896,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 3.0800001695752144e-05,
+        "residual_s_min": 2.2799998987466097e-05,
+        "residual_s_all": [
+          2.2799998987466097e-05,
+          3.100000321865082e-05,
+          3.0800001695752144e-05
+        ],
+        "overhead_s_median": 0.00048749999768915586,
+        "backend_s_median": 0.01643820000026608,
+        "wall_s_median": 0.01822349999929429,
+        "eff_median": 4222680896.169575,
+        "eff_min_resid": 4221880895.8987465,
+        "rel_fro": 2.8486177880745365e-07,
+        "matmul_calls": 1,
+        "internal_nodes": 0
+      },
+      "champ_d1_rowblocked": {
+        "flops": 3713941504,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.0021911999792791903,
+        "residual_s_min": 0.002148599989595823,
+        "residual_s_all": [
+          0.0024329000007128343,
+          0.002148599989595823,
+          0.0021911999792791903
+        ],
+        "overhead_s_median": 0.012407000009261537,
+        "backend_s_median": 0.060482900007627904,
+        "wall_s_median": 0.07465599999704864,
+        "eff_median": 3933061501.927919,
+        "eff_min_resid": 3928801502.9595823,
+        "rel_fro": 5.274247279390651e-07,
+        "matmul_calls": 8,
+        "internal_nodes": 0
+      },
+      "sw_d1": {
+        "flops": 3707699200,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.0005731000128434971,
+        "residual_s_min": 0.0004420000077516306,
+        "residual_s_all": [
+          0.000648300010652747,
+          0.0005731000128434971,
+          0.0004420000077516306
+        ],
+        "overhead_s_median": 0.004017199982627062,
+        "backend_s_median": 0.05513020000580582,
+        "wall_s_median": 0.05972050000127638,
+        "eff_median": 3765009201.28435,
+        "eff_min_resid": 3751899200.775163,
+        "rel_fro": 5.354787405399907e-07,
+        "matmul_calls": 7,
+        "internal_nodes": 1
+      },
+      "sw_d2": {
+        "flops": 3274293248,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.0026151000311074313,
+        "residual_s_min": 0.00238430001627421,
+        "residual_s_all": [
+          0.00238430001627421,
+          0.0026151000311074313,
+          0.003022100001544459
+        ],
+        "overhead_s_median": 0.018179299968323903,
+        "backend_s_median": 0.11410559997239034,
+        "wall_s_median": 0.1380514000011317,
+        "eff_median": 3535803251.110743,
+        "eff_min_resid": 3512723249.627421,
+        "rel_fro": 1.0131603600421425e-06,
+        "matmul_calls": 49,
+        "internal_nodes": 8
+      },
+      "sw_d3": {
+        "flops": 2920452096,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.013458800043736119,
+        "residual_s_min": 0.01321569996434846,
+        "residual_s_all": [
+          0.013458800043736119,
+          0.01321569996434846,
+          0.014057600008527515
+        ],
+        "overhead_s_median": 0.08860349998576567,
+        "backend_s_median": 0.20682120000492432,
+        "wall_s_median": 0.3094822999992175,
+        "eff_median": 4266332100.373612,
+        "eff_min_resid": 4242022092.434846,
+        "rel_fro": 1.9475778521734e-06,
+        "matmul_calls": 343,
+        "internal_nodes": 57
+      },
+      "sw_d4": {
+        "flops": 2655271936,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.07990509997398476,
+        "residual_s_min": 0.07898179982294096,
+        "residual_s_all": [
+          0.07990509997398476,
+          0.11535260000528069,
+          0.07898179982294096
+        ],
+        "overhead_s_median": 0.51588270006323,
+        "backend_s_median": 0.4092594999601715,
+        "wall_s_median": 1.0050472999973863,
+        "eff_median": 10645781933.398476,
+        "eff_min_resid": 10553451918.294096,
+        "rel_fro": 3.88562754053969e-06,
+        "matmul_calls": 2401,
+        "internal_nodes": 400
+      }
+    },
+    "64512x256@256x256": {
+      "d0_direct": {
+        "flops": 8439201792,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 3.119999746559188e-05,
+        "residual_s_min": 3.020000076503493e-05,
+        "residual_s_all": [
+          3.119999746559188e-05,
+          3.170000127283856e-05,
+          3.020000076503493e-05
+        ],
+        "overhead_s_median": 0.00047819999963394366,
+        "backend_s_median": 0.03269169999839505,
+        "wall_s_median": 0.033201599999301834,
+        "eff_median": 8442321791.746559,
+        "eff_min_resid": 8442221792.076504,
+        "rel_fro": 2.8492656829317434e-07,
+        "matmul_calls": 1,
+        "internal_nodes": 0
+      },
+      "champ_d1_rowblocked": {
+        "flops": 7427768320,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.0036165000456094276,
+        "residual_s_min": 0.0035681999506778084,
+        "residual_s_all": [
+          0.0036165000456094276,
+          0.0035681999506778084,
+          0.004747199960547732
+        ],
+        "overhead_s_median": 0.020791799935977906,
+        "backend_s_median": 0.09903279997888603,
+        "wall_s_median": 0.12320850000105565,
+        "eff_median": 7789418324.560943,
+        "eff_min_resid": 7784588315.0677805,
+        "rel_fro": 5.3057561090682e-07,
+        "matmul_calls": 16,
+        "internal_nodes": 0
+      },
+      "sw_d1": {
+        "flops": 7415332864,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.0006007000047247857,
+        "residual_s_min": 0.0005750999953306746,
+        "residual_s_all": [
+          0.0006640999963565264,
+          0.0005750999953306746,
+          0.0006007000047247857
+        ],
+        "overhead_s_median": 0.00448780000442639,
+        "backend_s_median": 0.11219819998950697,
+        "wall_s_median": 0.11728669999865815,
+        "eff_median": 7475402864.472479,
+        "eff_min_resid": 7472842863.533068,
+        "rel_fro": 5.377161764115387e-07,
+        "matmul_calls": 7,
+        "internal_nodes": 1
+      },
+      "sw_d2": {
+        "flops": 6548406272,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.004631800009519793,
+        "residual_s_min": 0.003915399989637081,
+        "residual_s_all": [
+          0.003915399989637081,
+          0.005855700004758546,
+          0.004631800009519793
+        ],
+        "overhead_s_median": 0.031473400009417674,
+        "backend_s_median": 0.2790673000017705,
+        "wall_s_median": 0.3106432999993558,
+        "eff_median": 7011586272.95198,
+        "eff_min_resid": 6939946270.963708,
+        "rel_fro": 1.0203187925447584e-06,
+        "matmul_calls": 49,
+        "internal_nodes": 8
+      },
+      "sw_d3": {
+        "flops": 5840523264,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.013589700018201256,
+        "residual_s_min": 0.013328599990927614,
+        "residual_s_all": [
+          0.014945300019462593,
+          0.013589700018201256,
+          0.013328599990927614
+        ],
+        "overhead_s_median": 0.09029520007970859,
+        "backend_s_median": 0.4063145999025437,
+        "wall_s_median": 0.5101995000004536,
+        "eff_median": 7199493265.820126,
+        "eff_min_resid": 7173383263.092762,
+        "rel_fro": 1.9520696515499e-06,
+        "matmul_calls": 343,
+        "internal_nodes": 57
+      },
+      "sw_d4": {
+        "flops": 5309811712,
+        "flops_bitwise_stable": true,
+        "residual_s_median": 0.10643959993103635,
+        "residual_s_min": 0.10049269990122411,
+        "residual_s_all": [
+          0.1344344000062847,
+          0.10643959993103635,
+          0.10049269990122411
+        ],
+        "overhead_s_median": 0.6775752000903594,
+        "backend_s_median": 0.9256326000104309,
+        "wall_s_median": 1.7037005000020145,
+        "eff_median": 15953771705.103636,
+        "eff_min_resid": 15359081702.122412,
+        "rel_fro": 3.913006743194501e-06,
+        "matmul_calls": 2401,
+        "internal_nodes": 400
+      }
+    }
+  }
+}

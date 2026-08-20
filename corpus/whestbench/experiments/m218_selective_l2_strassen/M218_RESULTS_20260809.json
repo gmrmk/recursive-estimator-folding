@@ -1,0 +1,243 @@
+{
+  "aggregate": {
+    "audit_peak_rss_mib": 423.6875,
+    "combined_m212_m218_bill": 5871433728,
+    "hostile_after_terminal_floor_sensitivity": 341574647.13529205,
+    "hostile_five_x_max": 6348480312.864708,
+    "hostile_five_x_remaining": 475791863.13529205,
+    "hostile_regression_vs_m215": 245771763.54108238,
+    "incremental_bill": 4622180352,
+    "one_x_worst_effective": 4967440344.172941,
+    "one_x_worst_recovery_vs_m215": 610308200.8917837,
+    "persistent_mib": 333.61328125,
+    "raw_after_terminal_floor_sensitivity": 2067874608,
+    "raw_remaining_for_provider_m198_terminal_and_unknowns": 2202091824,
+    "recovery_vs_m215_bill": 824328192,
+    "residual_max_ms": 3.4525999217294157,
+    "residual_mean_ms": 3.2001600658986717,
+    "resource_peak_rss_mib": 391.859375
+  },
+  "algebra": {
+    "integer_bit_exact": true,
+    "permutation_gauge_zero": "pass",
+    "small_widths": [
+      4,
+      8,
+      12
+    ],
+    "target_max_abs_error_vs_m215": 3.642919299551295e-17,
+    "target_min_frozen_threshold": 2.0170375459143196e-09
+  },
+  "allowance_assessment": {
+    "credit_granted": false,
+    "reason": "The 2.202B raw remainder and 610M observed one-times recovery make an integrated trace worth running, but the frozen five-times remainder is only 475.8M and 341.6M after the terminal floor; M198/provider native cost and integrated wall are unmetered. M218 also loses 245.8M hostile headroom versus M215.",
+    "verdict": "CONDITIONALLY_CREDIBLE_INTEGRATION_EXPERIMENT_NOT_CREDITABLE_FIT"
+  },
+  "candidate": "M218 selective exact L2 Strassen for M215 A/E",
+  "changed_mechanism": "only A/E conventional matmul becomes factorized classic L2 Strassen",
+  "disposition": {
+    "not_promoted_over_m215": "hostile five-times effective headroom regresses; integrated one-times trace must choose",
+    "preserved_component": "exact factorized L2 A/E circuit with 824.328M billed recovery",
+    "still_blocked": [
+      "layer-bound physical distinct provider",
+      "native M198 conversion and source lifecycle",
+      "terminal implementation beyond its floor",
+      "full integrated allocation/copy/wall trace",
+      "variance, MSE, score, submission, and winner evidence"
+    ]
+  },
+  "firewall": "generated-only response-free algebra and resource audit",
+  "gates": {
+    "aabb_symmetric_to_1e_15": true,
+    "combined_m212_m218_bill": true,
+    "constant_exact_bill": true,
+    "every_hostile_five_x_projection_fits": true,
+    "every_operation_prediction": true,
+    "finite_no_failures": true,
+    "five_frozen_isolated_processes": true,
+    "flopscope_0_10_0": true,
+    "incremental_memory_exact": true,
+    "numerical_drift_gate": true,
+    "persistent_memory_exact": true,
+    "resource_rss_below_512_mib": true
+  },
+  "records": [
+    {
+      "aabb_max_asymmetry": 8.673617379884035e-19,
+      "audit_peak_rss_mib": 423.1953125,
+      "bill": 4622180352,
+      "combined_m212_m218_bill": 5871433728,
+      "failure": null,
+      "finite": true,
+      "hostile": 6348480312.864708,
+      "hostile_remaining": 475791863.13529205,
+      "incremental_mib": 231.53125,
+      "max_error": 1.9081958235744878e-17,
+      "numerical_pass": true,
+      "numerical_threshold": 2.025109128712235e-09,
+      "persistent_mib": 333.61328125,
+      "prediction_match": {
+        "add": true,
+        "copyto": true,
+        "hostile_five_x_fits": true,
+        "inclusive_bill": true,
+        "matmul": true,
+        "multiply": true,
+        "reshape": true,
+        "subtract": true,
+        "sum": true
+      },
+      "raw_remaining": 2202091824,
+      "residual_s": 0.0034525999217294157,
+      "resource_peak_rss_mib": 391.76171875,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 218700001
+    },
+    {
+      "aabb_max_asymmetry": 4.336808689942018e-19,
+      "audit_peak_rss_mib": 423.6328125,
+      "bill": 4622180352,
+      "combined_m212_m218_bill": 5871433728,
+      "failure": null,
+      "finite": true,
+      "hostile": 6316480447.550716,
+      "hostile_remaining": 507791728.4492836,
+      "incremental_mib": 231.53125,
+      "max_error": 3.382710778154774e-17,
+      "numerical_pass": true,
+      "numerical_threshold": 2.0170375459143196e-09,
+      "persistent_mib": 333.61328125,
+      "prediction_match": {
+        "add": true,
+        "copyto": true,
+        "hostile_five_x_fits": true,
+        "inclusive_bill": true,
+        "matmul": true,
+        "multiply": true,
+        "reshape": true,
+        "subtract": true,
+        "sum": true
+      },
+      "raw_remaining": 2202091824,
+      "residual_s": 0.003388600191101432,
+      "resource_peak_rss_mib": 391.70703125,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 218700002
+    },
+    {
+      "aabb_max_asymmetry": 8.673617379884035e-19,
+      "audit_peak_rss_mib": 423.6875,
+      "bill": 4622180352,
+      "combined_m212_m218_bill": 5871433728,
+      "failure": null,
+      "finite": true,
+      "hostile": 6092630372.860881,
+      "hostile_remaining": 731641803.1391191,
+      "incremental_mib": 231.53125,
+      "max_error": 2.6020852139652106e-17,
+      "numerical_pass": true,
+      "numerical_threshold": 2.0192990640399664e-09,
+      "persistent_mib": 333.61328125,
+      "prediction_match": {
+        "add": true,
+        "copyto": true,
+        "hostile_five_x_fits": true,
+        "inclusive_bill": true,
+        "matmul": true,
+        "multiply": true,
+        "reshape": true,
+        "subtract": true,
+        "sum": true
+      },
+      "raw_remaining": 2202091824,
+      "residual_s": 0.0029409000417217612,
+      "resource_peak_rss_mib": 391.859375,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 218700003
+    },
+    {
+      "aabb_max_asymmetry": 8.673617379884035e-19,
+      "audit_peak_rss_mib": 423.19140625,
+      "bill": 4622180352,
+      "combined_m212_m218_bill": 5871433728,
+      "failure": null,
+      "finite": true,
+      "hostile": 6170130424.563253,
+      "hostile_remaining": 654141751.4367466,
+      "incremental_mib": 231.53125,
+      "max_error": 2.6020852139652106e-17,
+      "numerical_pass": true,
+      "numerical_threshold": 2.026421330802795e-09,
+      "persistent_mib": 333.61328125,
+      "prediction_match": {
+        "add": true,
+        "copyto": true,
+        "hostile_five_x_fits": true,
+        "inclusive_bill": true,
+        "matmul": true,
+        "multiply": true,
+        "reshape": true,
+        "subtract": true,
+        "sum": true
+      },
+      "raw_remaining": 2202091824,
+      "residual_s": 0.0030959001451265067,
+      "resource_peak_rss_mib": 391.6953125,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 218700004
+    },
+    {
+      "aabb_max_asymmetry": 4.336808689942018e-19,
+      "audit_peak_rss_mib": 423.4765625,
+      "bill": 4622180352,
+      "combined_m212_m218_bill": 5871433728,
+      "failure": null,
+      "finite": true,
+      "hostile": 6183580366.907122,
+      "hostile_remaining": 640691809.0928783,
+      "incremental_mib": 231.53125,
+      "max_error": 3.642919299551295e-17,
+      "numerical_pass": true,
+      "numerical_threshold": 2.025758987752877e-09,
+      "persistent_mib": 333.61328125,
+      "prediction_match": {
+        "add": true,
+        "copyto": true,
+        "hostile_five_x_fits": true,
+        "inclusive_bill": true,
+        "matmul": true,
+        "multiply": true,
+        "reshape": true,
+        "subtract": true,
+        "sum": true
+      },
+      "raw_remaining": 2202091824,
+      "residual_s": 0.0031228000298142433,
+      "resource_peak_rss_mib": 391.69921875,
+      "runtime": {
+        "flopscope": "0.10.0+np2.4.6",
+        "numpy": "2.4.6"
+      },
+      "seed": 218700005
+    }
+  ],
+  "status": "SCREENED_EXACT_BILLED_COST_SURVIVOR_HOSTILE_FIVE_X_HEADROOM_REGRESSION_INTEGRATED_SELECTION_BLOCKED",
+  "unchanged": [
+    "M215 collision equations and strict-distinct ownership",
+    "legacy physical collision routing",
+    "M215 D symmetric recursion",
+    "M215 receipt and binding contract"
+  ]
+}

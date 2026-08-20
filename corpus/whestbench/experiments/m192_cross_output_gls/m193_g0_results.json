@@ -1,0 +1,4520 @@
+{
+  "candidate": "m193_truth_free_analytic_anchor_frame_attenuation",
+  "protocol": "M193_ANCHOR_PREDECLARATION.md",
+  "parent": "m192_cross_output_frame_covariance_gls",
+  "alpha_frozen_from_parent": 0.25,
+  "fold_rule": "count_positive_final_column mod 8",
+  "firewall": "cached synthetic P2 frames; truth read only for final scoring; no forward/submission",
+  "per_net": {
+    "101": {
+      "fold_sizes": [
+        30,
+        27,
+        32,
+        27,
+        33,
+        34,
+        35,
+        38
+      ],
+      "anchor_mse": 0.0006093712848079458,
+      "base_mse_per_rotation": [
+        7.680698450623311e-08,
+        2.065224416771715e-07,
+        1.2307587370029643e-07,
+        1.937578741257553e-07,
+        2.0068445382149906e-07,
+        5.499807371669876e-07,
+        1.8241114547596327e-07,
+        3.4424692331004893e-07,
+        1.6712101629864567e-07,
+        8.686944501701514e-08,
+        1.585443717101312e-07,
+        2.560796609922417e-07,
+        1.6484344116542667e-07,
+        1.8931521772077926e-07,
+        1.9457066514616925e-07,
+        1.0068647105403174e-07
+      ],
+      "m193_mse_per_rotation": [
+        0.0003009333261631311,
+        0.00030378276878807644,
+        0.0003201584294736011,
+        0.00029929178757691306,
+        0.0003030460628603643,
+        0.0002952874483750293,
+        0.00032224178514177323,
+        0.00030958029822091444,
+        0.00030802421569409166,
+        0.0003172634271191123,
+        0.00031328736128191035,
+        0.00030587453407216326,
+        0.0002880544865101006,
+        0.0002949401146050767,
+        0.00029738223264138706,
+        0.0003101945301536346
+      ],
+      "ratio_of_rotation_means": 1530.0632832419826,
+      "reduction": -1529.0632832419826,
+      "base_rotation_mean_bias2": 8.94921759286583e-09,
+      "m193_rotation_mean_bias2": 0.0003036017507149423,
+      "max_p2_baseline_crosscheck": 0.0,
+      "rotation_diagnostics": [
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.491802376783441,
+            "max_abs_weight": 0.14092647379346931,
+            "tau": 0.0006823555936574383,
+            "rank": 126,
+            "condition": 363.69752324391743,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.306786559743144,
+            "max_abs_weight": 0.13981631796369073,
+            "tau": 0.0006696116544637845,
+            "rank": 126,
+            "condition": 364.9706276197201,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.254913870710687,
+            "max_abs_weight": 0.14628860385717093,
+            "tau": 0.0005883558542112089,
+            "rank": 126,
+            "condition": 362.13972064066337,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.452218372656725,
+            "max_abs_weight": 0.1500924037047259,
+            "tau": 0.0006301497892198599,
+            "rank": 126,
+            "condition": 363.1028675750273,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.268803273884364,
+            "max_abs_weight": 0.13069117805870967,
+            "tau": 0.0006499120182708424,
+            "rank": 126,
+            "condition": 363.4936817329778,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.458179002535516,
+            "max_abs_weight": 0.13071648296553703,
+            "tau": 0.0006403863305516096,
+            "rank": 126,
+            "condition": 363.1187536994482,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.443327318893345,
+            "max_abs_weight": 0.14866770495869144,
+            "tau": 0.0006517570026070305,
+            "rank": 126,
+            "condition": 363.27765184754537,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.409684025244313,
+            "max_abs_weight": 0.14328171468810796,
+            "tau": 0.000696967015037715,
+            "rank": 126,
+            "condition": 363.85397192752157,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.460799652536096,
+            "max_abs_weight": 0.12224360941007012,
+            "tau": 0.0006717037222277318,
+            "rank": 126,
+            "condition": 362.3478937204422,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.376468067079311,
+            "max_abs_weight": 0.11770581822772523,
+            "tau": 0.0006587793633355264,
+            "rank": 126,
+            "condition": 363.6301992055164,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.454461668923081,
+            "max_abs_weight": 0.11992636544313288,
+            "tau": 0.0005794502819700562,
+            "rank": 126,
+            "condition": 360.5195199119536,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.47667348353317,
+            "max_abs_weight": 0.11999308559129573,
+            "tau": 0.0006192958314476014,
+            "rank": 126,
+            "condition": 361.8687311644103,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.315161769819476,
+            "max_abs_weight": 0.12052190772079852,
+            "tau": 0.0006399100794007201,
+            "rank": 126,
+            "condition": 362.07780144312096,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.356302050239013,
+            "max_abs_weight": 0.12330960731010976,
+            "tau": 0.0006300132107149665,
+            "rank": 126,
+            "condition": 361.85035273428156,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.454322705741882,
+            "max_abs_weight": 0.11656089271692134,
+            "tau": 0.0006415615537186729,
+            "rank": 126,
+            "condition": 362.0255953875079,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.446157207252317,
+            "max_abs_weight": 0.11190861396730231,
+            "tau": 0.0006862189030369298,
+            "rank": 126,
+            "condition": 362.41799928591246,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.184234181388479,
+            "max_abs_weight": 0.11961774104891457,
+            "tau": 0.0006785160925239371,
+            "rank": 126,
+            "condition": 362.0327400360031,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.11015547143418,
+            "max_abs_weight": 0.1110835480766843,
+            "tau": 0.0006656911228277699,
+            "rank": 126,
+            "condition": 363.54582656988504,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.064482018444172,
+            "max_abs_weight": 0.0945631561182567,
+            "tau": 0.0005859820098977745,
+            "rank": 126,
+            "condition": 360.27413051892944,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.158782229946345,
+            "max_abs_weight": 0.1273131578795059,
+            "tau": 0.000625149978532134,
+            "rank": 126,
+            "condition": 361.3092050618707,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 3.9899210567046213,
+            "max_abs_weight": 0.10242580691740008,
+            "tau": 0.0006478100835276493,
+            "rank": 126,
+            "condition": 361.74060699709446,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.0673137716898236,
+            "max_abs_weight": 0.10828372493731919,
+            "tau": 0.000637050973218533,
+            "rank": 126,
+            "condition": 361.2725749432452,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.152137680358733,
+            "max_abs_weight": 0.11959736288406235,
+            "tau": 0.0006483112059833441,
+            "rank": 126,
+            "condition": 361.580874195734,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.079393466050492,
+            "max_abs_weight": 0.10858797565615273,
+            "tau": 0.0006931935230814003,
+            "rank": 126,
+            "condition": 362.19265132033945,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.238353406082323,
+            "max_abs_weight": 0.1166436643128967,
+            "tau": 0.0006784667945523606,
+            "rank": 126,
+            "condition": 362.4437797520739,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.27689838768901,
+            "max_abs_weight": 0.12029677703334545,
+            "tau": 0.0006646391770897392,
+            "rank": 126,
+            "condition": 363.71072436945923,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.11783271835358,
+            "max_abs_weight": 0.11479492579186534,
+            "tau": 0.0005842947635929765,
+            "rank": 126,
+            "condition": 360.793449818327,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.261758143506857,
+            "max_abs_weight": 0.12076849706563593,
+            "tau": 0.0006261170386958153,
+            "rank": 126,
+            "condition": 361.9892447925651,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 3.921984336137385,
+            "max_abs_weight": 0.10438391964803938,
+            "tau": 0.0006456762926523661,
+            "rank": 126,
+            "condition": 362.3742787668737,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.145688251886481,
+            "max_abs_weight": 0.12661418164093216,
+            "tau": 0.0006361255690469866,
+            "rank": 126,
+            "condition": 361.7908818574691,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.135133212857821,
+            "max_abs_weight": 0.11645633988414678,
+            "tau": 0.0006475169576572415,
+            "rank": 126,
+            "condition": 362.0489491570061,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.183412624169647,
+            "max_abs_weight": 0.11272666444186881,
+            "tau": 0.0006920832914649218,
+            "rank": 126,
+            "condition": 362.67545843926604,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.359696752560957,
+            "max_abs_weight": 0.09577400789722179,
+            "tau": 0.0006761405420318645,
+            "rank": 126,
+            "condition": 362.7606416256002,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.306833936499272,
+            "max_abs_weight": 0.10745273488176207,
+            "tau": 0.0006626930958648317,
+            "rank": 126,
+            "condition": 364.1761261590759,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.185964961157722,
+            "max_abs_weight": 0.10720694181778581,
+            "tau": 0.0005829311160360085,
+            "rank": 126,
+            "condition": 361.1339743607591,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.339545323080538,
+            "max_abs_weight": 0.10197841015713194,
+            "tau": 0.0006247767076850408,
+            "rank": 126,
+            "condition": 362.0508563234334,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.162300380199805,
+            "max_abs_weight": 0.095858312269582,
+            "tau": 0.0006448573232286811,
+            "rank": 126,
+            "condition": 362.53753593630955,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.3137182688555455,
+            "max_abs_weight": 0.09888498401303082,
+            "tau": 0.0006347951061901025,
+            "rank": 126,
+            "condition": 361.9894779296396,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.309784922953317,
+            "max_abs_weight": 0.0979970830964289,
+            "tau": 0.000646400605932851,
+            "rank": 126,
+            "condition": 362.3048913680087,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.219623718672415,
+            "max_abs_weight": 0.10075985044130273,
+            "tau": 0.0006905815440020397,
+            "rank": 126,
+            "condition": 362.8378843959078,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.552597878626029,
+            "max_abs_weight": 0.1011294823446489,
+            "tau": 0.000705179988255507,
+            "rank": 126,
+            "condition": 364.2799737238789,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.454010786354117,
+            "max_abs_weight": 0.09395889491939717,
+            "tau": 0.0006938542910147517,
+            "rank": 126,
+            "condition": 365.473224397786,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.370969150597959,
+            "max_abs_weight": 0.09371449213579709,
+            "tau": 0.0006087994214921046,
+            "rank": 126,
+            "condition": 362.6332070108439,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.408480309657236,
+            "max_abs_weight": 0.10325956416761105,
+            "tau": 0.0006505293734023251,
+            "rank": 126,
+            "condition": 363.6040897450247,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.2861976069692975,
+            "max_abs_weight": 0.10518958911586529,
+            "tau": 0.0006742087547142681,
+            "rank": 126,
+            "condition": 364.10431299195034,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.361138042605793,
+            "max_abs_weight": 0.09841461630313598,
+            "tau": 0.000662143808175592,
+            "rank": 126,
+            "condition": 363.66827953133276,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.417819205549376,
+            "max_abs_weight": 0.10770485738475216,
+            "tau": 0.0006752320955519341,
+            "rank": 126,
+            "condition": 363.8361386627792,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.4027698217355855,
+            "max_abs_weight": 0.10256106245342157,
+            "tau": 0.0007211336461305637,
+            "rank": 126,
+            "condition": 364.3491713685543,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.251213996956905,
+            "max_abs_weight": 0.1096768718540507,
+            "tau": 0.000671746384089645,
+            "rank": 126,
+            "condition": 363.19151437750315,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.0201580499397735,
+            "max_abs_weight": 0.10854858982411072,
+            "tau": 0.0006588626538843902,
+            "rank": 126,
+            "condition": 364.48192920928165,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.05427146122474,
+            "max_abs_weight": 0.10030238887672792,
+            "tau": 0.0005791498358589056,
+            "rank": 126,
+            "condition": 361.53815254557895,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.287004814586975,
+            "max_abs_weight": 0.11470535914057235,
+            "tau": 0.00061906001918239,
+            "rank": 126,
+            "condition": 362.5850388498888,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.035496543130284,
+            "max_abs_weight": 0.1059739949514502,
+            "tau": 0.0006407477844191363,
+            "rank": 126,
+            "condition": 362.92173172165894,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.129152708467965,
+            "max_abs_weight": 0.10744226296562816,
+            "tau": 0.0006305650687740672,
+            "rank": 126,
+            "condition": 362.48225854337346,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.196649240621797,
+            "max_abs_weight": 0.1074812550301532,
+            "tau": 0.0006414638360152376,
+            "rank": 126,
+            "condition": 362.5292436757963,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.135460818840499,
+            "max_abs_weight": 0.10126250114200132,
+            "tau": 0.0006858217652143593,
+            "rank": 126,
+            "condition": 363.089682774791,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 3.9704584582165277,
+            "max_abs_weight": 0.13076084583492795,
+            "tau": 0.0006949262447425796,
+            "rank": 126,
+            "condition": 364.22807755149523,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 3.9656152265758084,
+            "max_abs_weight": 0.13039352947885005,
+            "tau": 0.0006835841374136662,
+            "rank": 126,
+            "condition": 365.4370306244239,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 3.867550380004884,
+            "max_abs_weight": 0.12706696912828488,
+            "tau": 0.0006007037727466341,
+            "rank": 126,
+            "condition": 362.68753756705013,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.043917442144632,
+            "max_abs_weight": 0.13990499246808816,
+            "tau": 0.0006419761240079423,
+            "rank": 126,
+            "condition": 363.6785659436419,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 3.809118963028065,
+            "max_abs_weight": 0.12981165092129618,
+            "tau": 0.0006647454700629556,
+            "rank": 126,
+            "condition": 364.0110917407907,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.02254720619592,
+            "max_abs_weight": 0.12338293695216496,
+            "tau": 0.0006526422235893185,
+            "rank": 126,
+            "condition": 363.60910798574156,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 3.967608290345501,
+            "max_abs_weight": 0.122059615750442,
+            "tau": 0.0006650040974356762,
+            "rank": 126,
+            "condition": 363.91040223415706,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 3.9116226045489273,
+            "max_abs_weight": 0.1271111267231486,
+            "tau": 0.0007105833674339319,
+            "rank": 126,
+            "condition": 364.22437328103956,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.1907103481933605,
+            "max_abs_weight": 0.12896354357471762,
+            "tau": 0.0006811690154329316,
+            "rank": 126,
+            "condition": 362.3240594338765,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.1261789096699015,
+            "max_abs_weight": 0.1286857190648045,
+            "tau": 0.0006687993161396175,
+            "rank": 126,
+            "condition": 363.6470134170022,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.011631562698893,
+            "max_abs_weight": 0.1296089042010651,
+            "tau": 0.0005857507850482952,
+            "rank": 126,
+            "condition": 360.38397165478733,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.216156804875173,
+            "max_abs_weight": 0.13058800619796265,
+            "tau": 0.0006298101770786368,
+            "rank": 126,
+            "condition": 361.54853353107836,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.055795967186859,
+            "max_abs_weight": 0.12305487859958304,
+            "tau": 0.0006510671390746223,
+            "rank": 126,
+            "condition": 362.03529906809047,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.103569737003269,
+            "max_abs_weight": 0.12953876042252388,
+            "tau": 0.0006386194735213092,
+            "rank": 126,
+            "condition": 361.66041485075266,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.233028622821585,
+            "max_abs_weight": 0.12012276846378236,
+            "tau": 0.0006507193559417271,
+            "rank": 126,
+            "condition": 361.7285386987292,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.104317137064763,
+            "max_abs_weight": 0.1298240667009286,
+            "tau": 0.0006954808172810584,
+            "rank": 126,
+            "condition": 362.5395625654722,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 3.914853394718919,
+            "max_abs_weight": 0.12076383433042209,
+            "tau": 0.000684968309364973,
+            "rank": 126,
+            "condition": 361.5248689209227,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 3.7825665665594745,
+            "max_abs_weight": 0.12124914115683054,
+            "tau": 0.0006727873230431404,
+            "rank": 126,
+            "condition": 362.9718114931916,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 3.8649362279972586,
+            "max_abs_weight": 0.11207517235263664,
+            "tau": 0.0005910885193599699,
+            "rank": 126,
+            "condition": 359.45231902363787,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 3.9967760400920933,
+            "max_abs_weight": 0.11901615031926037,
+            "tau": 0.0006327064084650873,
+            "rank": 126,
+            "condition": 360.77383812508,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 3.770427576903963,
+            "max_abs_weight": 0.09708538019753529,
+            "tau": 0.0006543981733760761,
+            "rank": 126,
+            "condition": 361.192943071009,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 3.9154822929876496,
+            "max_abs_weight": 0.104142318946367,
+            "tau": 0.0006431660291412226,
+            "rank": 126,
+            "condition": 360.630926534141,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 3.8599141396532017,
+            "max_abs_weight": 0.11438060463364194,
+            "tau": 0.0006543761345730388,
+            "rank": 126,
+            "condition": 360.8615230555643,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 3.9205697054850357,
+            "max_abs_weight": 0.11227342433099244,
+            "tau": 0.0007002054118932025,
+            "rank": 126,
+            "condition": 361.60610594550496,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 3.974074886014259,
+            "max_abs_weight": 0.13792210099932403,
+            "tau": 0.0006833166729158165,
+            "rank": 126,
+            "condition": 361.716354062934,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 3.865028485186227,
+            "max_abs_weight": 0.13635341098097795,
+            "tau": 0.0006715015935417665,
+            "rank": 126,
+            "condition": 363.12490524516477,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 3.8276619951219923,
+            "max_abs_weight": 0.12151209395801583,
+            "tau": 0.0005909951242143448,
+            "rank": 126,
+            "condition": 359.8109102981423,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 3.932156364453858,
+            "max_abs_weight": 0.1297219487011205,
+            "tau": 0.0006312475069566953,
+            "rank": 126,
+            "condition": 360.9077416592311,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 3.869199848391738,
+            "max_abs_weight": 0.12777224378688892,
+            "tau": 0.000652507300057263,
+            "rank": 126,
+            "condition": 361.40483232215115,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 3.9412684342056754,
+            "max_abs_weight": 0.1302979455146129,
+            "tau": 0.0006425778478976211,
+            "rank": 126,
+            "condition": 360.90364636471617,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 3.923854034717438,
+            "max_abs_weight": 0.13127778767111384,
+            "tau": 0.0006536864724242382,
+            "rank": 126,
+            "condition": 361.1339377453625,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 3.9032919689708803,
+            "max_abs_weight": 0.13067747255278245,
+            "tau": 0.0006981727904746886,
+            "rank": 126,
+            "condition": 361.7607698288061,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.305021392381874,
+            "max_abs_weight": 0.13335881875430894,
+            "tau": 0.0006973307413715312,
+            "rank": 126,
+            "condition": 363.4363283571824,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.2510908676718495,
+            "max_abs_weight": 0.12765266856424448,
+            "tau": 0.0006845987907048647,
+            "rank": 126,
+            "condition": 364.8446400516442,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.141293398080279,
+            "max_abs_weight": 0.1317618654012121,
+            "tau": 0.0006014993329650881,
+            "rank": 126,
+            "condition": 361.80551508754945,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.325651269766631,
+            "max_abs_weight": 0.14001828720590262,
+            "tau": 0.0006429310403188892,
+            "rank": 126,
+            "condition": 362.915800033556,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.198335937820789,
+            "max_abs_weight": 0.12722091685866913,
+            "tau": 0.0006654550158755328,
+            "rank": 126,
+            "condition": 363.38350842832176,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.317220069461626,
+            "max_abs_weight": 0.1155413283251379,
+            "tau": 0.0006540887054003409,
+            "rank": 126,
+            "condition": 362.95919079309874,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.317199897074655,
+            "max_abs_weight": 0.13189294989087466,
+            "tau": 0.000666839823455474,
+            "rank": 126,
+            "condition": 363.03341502022914,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.196030188036157,
+            "max_abs_weight": 0.12354886443837174,
+            "tau": 0.0007129062058981425,
+            "rank": 126,
+            "condition": 363.6042397632342,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.8551835644293675,
+            "max_abs_weight": 0.11528234090299679,
+            "tau": 0.0006798767788783786,
+            "rank": 126,
+            "condition": 363.72014840026975,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.880768434560876,
+            "max_abs_weight": 0.11603496350977091,
+            "tau": 0.0006655127611263525,
+            "rank": 126,
+            "condition": 365.0018240803256,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.760316751646345,
+            "max_abs_weight": 0.11855852672597483,
+            "tau": 0.0005863258291354522,
+            "rank": 126,
+            "condition": 361.9822971160101,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.869635005552981,
+            "max_abs_weight": 0.11725394731567451,
+            "tau": 0.0006253158530973992,
+            "rank": 126,
+            "condition": 363.15043022274585,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.628812644509651,
+            "max_abs_weight": 0.12676111942236035,
+            "tau": 0.0006483108759861063,
+            "rank": 126,
+            "condition": 363.5265255234195,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.7319486116534275,
+            "max_abs_weight": 0.1244635485741451,
+            "tau": 0.0006353623633064207,
+            "rank": 126,
+            "condition": 363.3111177857723,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.798978815086805,
+            "max_abs_weight": 0.11011233102257471,
+            "tau": 0.0006494341875003515,
+            "rank": 126,
+            "condition": 363.28982700266295,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.766525727156724,
+            "max_abs_weight": 0.12921216124314083,
+            "tau": 0.0006934841122976296,
+            "rank": 126,
+            "condition": 363.6290369812171,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.348467916335888,
+            "max_abs_weight": 0.1260931825271989,
+            "tau": 0.0006862007388237946,
+            "rank": 126,
+            "condition": 363.19900963903933,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.355151639867757,
+            "max_abs_weight": 0.13706639273154222,
+            "tau": 0.0006754225738337391,
+            "rank": 126,
+            "condition": 364.6186499874088,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.1989301785882125,
+            "max_abs_weight": 0.13116583673130752,
+            "tau": 0.00059318036971931,
+            "rank": 126,
+            "condition": 361.5280912252192,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.372158207486602,
+            "max_abs_weight": 0.13912096365842522,
+            "tau": 0.0006347861877074038,
+            "rank": 126,
+            "condition": 362.64738840345046,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.216877110176536,
+            "max_abs_weight": 0.11712896335718194,
+            "tau": 0.0006555178872006814,
+            "rank": 126,
+            "condition": 363.07137545880346,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.379032193795366,
+            "max_abs_weight": 0.136615711028869,
+            "tau": 0.000646343799418784,
+            "rank": 126,
+            "condition": 362.64817642675797,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.32489701269102,
+            "max_abs_weight": 0.12935287611473734,
+            "tau": 0.0006567765190660703,
+            "rank": 126,
+            "condition": 362.74643980661466,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.290434524433426,
+            "max_abs_weight": 0.12828306089261982,
+            "tau": 0.0007030033520547807,
+            "rank": 126,
+            "condition": 363.3505176554788,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.537763237912914,
+            "max_abs_weight": 0.15862443308592084,
+            "tau": 0.0006812948388707501,
+            "rank": 126,
+            "condition": 364.64603528293844,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.511356091705754,
+            "max_abs_weight": 0.13689684504672628,
+            "tau": 0.0006693837355373736,
+            "rank": 126,
+            "condition": 365.86399717103956,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.374001348224702,
+            "max_abs_weight": 0.1359602571013686,
+            "tau": 0.0005891650598059703,
+            "rank": 126,
+            "condition": 363.33802649119144,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.548154109837085,
+            "max_abs_weight": 0.16054073501581784,
+            "tau": 0.0006291158921039188,
+            "rank": 126,
+            "condition": 364.2703178284385,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.267619232107654,
+            "max_abs_weight": 0.13925784577187883,
+            "tau": 0.0006502556266615557,
+            "rank": 126,
+            "condition": 364.6921015122861,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.4537704352491545,
+            "max_abs_weight": 0.16786760746408727,
+            "tau": 0.0006396476320102279,
+            "rank": 126,
+            "condition": 364.2214134354101,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.503897195444451,
+            "max_abs_weight": 0.15342252302692275,
+            "tau": 0.0006519472453375015,
+            "rank": 126,
+            "condition": 364.34289348950824,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.494419152154271,
+            "max_abs_weight": 0.15099456641254477,
+            "tau": 0.0006954414250596365,
+            "rank": 126,
+            "condition": 364.787868287596,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 30,
+            "train": 226,
+            "l1_weight": 4.270121211439467,
+            "max_abs_weight": 0.11601865888925153,
+            "tau": 0.0006787104240439411,
+            "rank": 126,
+            "condition": 362.229291606073,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.199373844092301,
+            "max_abs_weight": 0.12550556916249964,
+            "tau": 0.0006658490544137204,
+            "rank": 126,
+            "condition": 363.7336823291576,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 4.039294788923246,
+            "max_abs_weight": 0.11826983661740173,
+            "tau": 0.0005862516005577196,
+            "rank": 126,
+            "condition": 360.4334592554357,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 4.282643341271455,
+            "max_abs_weight": 0.12732661445299925,
+            "tau": 0.0006274250635904436,
+            "rank": 126,
+            "condition": 361.6700546783401,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 4.03015562459274,
+            "max_abs_weight": 0.11598675974131396,
+            "tau": 0.0006472855074960331,
+            "rank": 126,
+            "condition": 361.9119745065996,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 34,
+            "train": 222,
+            "l1_weight": 4.2658464551734046,
+            "max_abs_weight": 0.12297184681055566,
+            "tau": 0.000637903208205634,
+            "rank": 126,
+            "condition": 361.4818563961561,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 4.222470806984258,
+            "max_abs_weight": 0.12802856127551587,
+            "tau": 0.0006482221207038984,
+            "rank": 126,
+            "condition": 361.7606780754258,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 38,
+            "train": 218,
+            "l1_weight": 4.179986025724521,
+            "max_abs_weight": 0.1271364976140418,
+            "tau": 0.0006931743770741603,
+            "rank": 126,
+            "condition": 362.33743237069774,
+            "fallback": null
+          }
+        ]
+      ]
+    },
+    "202": {
+      "fold_sizes": [
+        31,
+        33,
+        29,
+        32,
+        31,
+        26,
+        37,
+        37
+      ],
+      "anchor_mse": 0.0018828232571871473,
+      "base_mse_per_rotation": [
+        5.517973382001626e-07,
+        6.109199900437241e-07,
+        5.241720164594267e-07,
+        1.6791974682069637e-06,
+        1.5391043167852438e-06,
+        2.7254768054303366e-07,
+        2.611031313178088e-07,
+        3.222862235671802e-07,
+        5.422458292158157e-07,
+        1.0143982440826412e-06,
+        1.5164526471181722e-07,
+        5.930519287738115e-07,
+        6.060711478904462e-07,
+        2.45287896843589e-07,
+        1.77433658623677e-07,
+        3.040759577904059e-07
+      ],
+      "m193_mse_per_rotation": [
+        0.0006871167456965301,
+        0.0006387043067432043,
+        0.0005909348672418352,
+        0.0006371483453721322,
+        0.0006909085500517486,
+        0.0006212621939058166,
+        0.0005739168767666355,
+        0.000710467272787761,
+        0.0006772482141055665,
+        0.0006399462188315044,
+        0.0006863961694372695,
+        0.0005934854269046025,
+        0.0006887463266221652,
+        0.0006763176746204131,
+        0.0006718384384954471,
+        0.0006322356350003749
+      ],
+      "ratio_of_rotation_means": 1108.7065903761509,
+      "reduction": -1107.7065903761509,
+      "base_rotation_mean_bias2": 5.376039812636523e-08,
+      "m193_rotation_mean_bias2": 0.0006405084837669753,
+      "max_p2_baseline_crosscheck": 0.0,
+      "rotation_diagnostics": [
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.910096876572215,
+            "max_abs_weight": 0.1610844513579925,
+            "tau": 0.0019226179991558869,
+            "rank": 126,
+            "condition": 367.4131960077877,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.078151209906321,
+            "max_abs_weight": 0.15722097590210138,
+            "tau": 0.00200806716886765,
+            "rank": 126,
+            "condition": 368.185060431501,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.9039292061394715,
+            "max_abs_weight": 0.15120010607483272,
+            "tau": 0.0019578888969092848,
+            "rank": 126,
+            "condition": 367.34529324994384,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 5.97936405578593,
+            "max_abs_weight": 0.14914961457552142,
+            "tau": 0.0021282164281673085,
+            "rank": 126,
+            "condition": 367.87049262392463,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.007822806095507,
+            "max_abs_weight": 0.15419589666849637,
+            "tau": 0.001997851880743683,
+            "rank": 126,
+            "condition": 368.4197303471905,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.906725188152063,
+            "max_abs_weight": 0.1542210751783601,
+            "tau": 0.0018715111931318319,
+            "rank": 126,
+            "condition": 367.0441989078038,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.879349457537532,
+            "max_abs_weight": 0.15271397505426057,
+            "tau": 0.001955359840434405,
+            "rank": 126,
+            "condition": 367.8418582654937,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.004432047334645,
+            "max_abs_weight": 0.1722421929787111,
+            "tau": 0.0020572206251020433,
+            "rank": 126,
+            "condition": 368.51988435457616,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.033522917384851,
+            "max_abs_weight": 0.1603724564892893,
+            "tau": 0.0018849916637568695,
+            "rank": 126,
+            "condition": 367.2319538364184,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.147993839417487,
+            "max_abs_weight": 0.16959943991662194,
+            "tau": 0.0019723863643233406,
+            "rank": 126,
+            "condition": 368.04814314272875,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.997632642391287,
+            "max_abs_weight": 0.16016350705260854,
+            "tau": 0.0019219201812119618,
+            "rank": 126,
+            "condition": 367.19866287100075,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.021307348311212,
+            "max_abs_weight": 0.15912255735215128,
+            "tau": 0.002087574748997905,
+            "rank": 126,
+            "condition": 367.6075703589915,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.054234811300744,
+            "max_abs_weight": 0.16088828027959698,
+            "tau": 0.0019595412756588356,
+            "rank": 126,
+            "condition": 368.16457392221156,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.994264285208717,
+            "max_abs_weight": 0.16159675253465042,
+            "tau": 0.0018344554264088414,
+            "rank": 126,
+            "condition": 366.8000545358003,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.938688375556554,
+            "max_abs_weight": 0.1611659313151433,
+            "tau": 0.0019191037512629207,
+            "rank": 126,
+            "condition": 367.6841623852275,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.123250615762181,
+            "max_abs_weight": 0.16952639003880685,
+            "tau": 0.0020147285230037136,
+            "rank": 126,
+            "condition": 368.3107065377685,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.220351904608929,
+            "max_abs_weight": 0.13430263191801048,
+            "tau": 0.0018810324966543363,
+            "rank": 126,
+            "condition": 366.6851067325819,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.324725134664639,
+            "max_abs_weight": 0.14327790523256656,
+            "tau": 0.001968596236041374,
+            "rank": 126,
+            "condition": 367.5331173443263,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 6.131451142901368,
+            "max_abs_weight": 0.13239379040002594,
+            "tau": 0.0019184377790667406,
+            "rank": 126,
+            "condition": 366.64148777517073,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.198164428074538,
+            "max_abs_weight": 0.13382168067794,
+            "tau": 0.0020820480006249805,
+            "rank": 126,
+            "condition": 367.122213579413,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.203631482520942,
+            "max_abs_weight": 0.13522295914307028,
+            "tau": 0.001956550201091991,
+            "rank": 126,
+            "condition": 367.659216122222,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.204164498503397,
+            "max_abs_weight": 0.13770867850382018,
+            "tau": 0.0018321322420473594,
+            "rank": 126,
+            "condition": 366.1983816867867,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.04681109171472,
+            "max_abs_weight": 0.13639639571431236,
+            "tau": 0.0019159694903709988,
+            "rank": 126,
+            "condition": 367.0687619356373,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.186996629941095,
+            "max_abs_weight": 0.13243808013191327,
+            "tau": 0.002012759177389463,
+            "rank": 126,
+            "condition": 367.91136218448565,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.851602580336719,
+            "max_abs_weight": 0.1728094016474358,
+            "tau": 0.0018388483349338247,
+            "rank": 126,
+            "condition": 366.6691286255905,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.005649391525906,
+            "max_abs_weight": 0.16599254075068415,
+            "tau": 0.0019248850162547583,
+            "rank": 126,
+            "condition": 367.4733082821877,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.8589521516931695,
+            "max_abs_weight": 0.16917891770929683,
+            "tau": 0.0018775681651972598,
+            "rank": 126,
+            "condition": 366.66262145965555,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 5.844919865015761,
+            "max_abs_weight": 0.1683787035969264,
+            "tau": 0.0020368439043690657,
+            "rank": 126,
+            "condition": 367.11054264769865,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.019120733588326,
+            "max_abs_weight": 0.1650324945493456,
+            "tau": 0.0019150387260225236,
+            "rank": 126,
+            "condition": 367.6740111577644,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.872092897220701,
+            "max_abs_weight": 0.15847240879856664,
+            "tau": 0.001788988860126842,
+            "rank": 126,
+            "condition": 366.27205694540953,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.753223027524869,
+            "max_abs_weight": 0.16574743525273403,
+            "tau": 0.0018718990244806638,
+            "rank": 126,
+            "condition": 366.99387509473576,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.8790935210031225,
+            "max_abs_weight": 0.16878563365878974,
+            "tau": 0.001966862907712343,
+            "rank": 126,
+            "condition": 367.7720311972543,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.9753065791634885,
+            "max_abs_weight": 0.18603304782975424,
+            "tau": 0.001853359176463317,
+            "rank": 126,
+            "condition": 366.2022267393175,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.030525191195463,
+            "max_abs_weight": 0.19789789851181724,
+            "tau": 0.0019417069834514052,
+            "rank": 126,
+            "condition": 366.9975127021095,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.867545804709316,
+            "max_abs_weight": 0.1924743655080837,
+            "tau": 0.0018931249577383877,
+            "rank": 126,
+            "condition": 366.05798641396126,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 5.98516310466384,
+            "max_abs_weight": 0.192512610251435,
+            "tau": 0.0020510981039794174,
+            "rank": 126,
+            "condition": 366.64810767427036,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.02093730611909,
+            "max_abs_weight": 0.19613099789601413,
+            "tau": 0.0019273991931519012,
+            "rank": 126,
+            "condition": 367.2664547831628,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.8770018850094585,
+            "max_abs_weight": 0.1917992387490742,
+            "tau": 0.0018051571708963716,
+            "rank": 126,
+            "condition": 365.7726111690983,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.932580266733774,
+            "max_abs_weight": 0.17421061862506698,
+            "tau": 0.0018854737786507775,
+            "rank": 126,
+            "condition": 366.55307899600814,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.976926376308703,
+            "max_abs_weight": 0.1948132707170105,
+            "tau": 0.0019802682420076868,
+            "rank": 126,
+            "condition": 367.3832397298934,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.054979256009544,
+            "max_abs_weight": 0.15520704835010127,
+            "tau": 0.0019093481168132938,
+            "rank": 126,
+            "condition": 367.02512437210993,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.1295643409705844,
+            "max_abs_weight": 0.16552666759948123,
+            "tau": 0.001993036288032074,
+            "rank": 126,
+            "condition": 367.8641274219935,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.988283821155307,
+            "max_abs_weight": 0.14998771525189417,
+            "tau": 0.0019470744386996335,
+            "rank": 126,
+            "condition": 367.01235774012423,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.097822624307534,
+            "max_abs_weight": 0.1484116485531472,
+            "tau": 0.002112521445152003,
+            "rank": 126,
+            "condition": 367.49951950655657,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.063601033168398,
+            "max_abs_weight": 0.1486091605245233,
+            "tau": 0.0019838951400050903,
+            "rank": 126,
+            "condition": 368.00436593544697,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.039935066060311,
+            "max_abs_weight": 0.15076276136222003,
+            "tau": 0.0018557540525644268,
+            "rank": 126,
+            "condition": 366.6409642979328,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.984181538198695,
+            "max_abs_weight": 0.14841675835196594,
+            "tau": 0.001944386259661564,
+            "rank": 126,
+            "condition": 367.42759068931537,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.073173831173947,
+            "max_abs_weight": 0.154728939686357,
+            "tau": 0.0020396186296442876,
+            "rank": 126,
+            "condition": 368.2382592676983,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.2296903797115375,
+            "max_abs_weight": 0.1641138375624823,
+            "tau": 0.0019037440857675304,
+            "rank": 126,
+            "condition": 367.92714079297104,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.320700101007015,
+            "max_abs_weight": 0.1747580018686117,
+            "tau": 0.0019895164719691263,
+            "rank": 126,
+            "condition": 368.69796341244773,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 6.125687161436228,
+            "max_abs_weight": 0.1668259614894906,
+            "tau": 0.0019418071800325106,
+            "rank": 126,
+            "condition": 367.8323232639246,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.184266868150578,
+            "max_abs_weight": 0.1649033590826187,
+            "tau": 0.002107266526273924,
+            "rank": 126,
+            "condition": 368.27512129722317,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.262795708553188,
+            "max_abs_weight": 0.16878095721921174,
+            "tau": 0.0019747570068995197,
+            "rank": 126,
+            "condition": 368.9614968285253,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.1692876752433765,
+            "max_abs_weight": 0.17094669163249387,
+            "tau": 0.001849672405794806,
+            "rank": 126,
+            "condition": 367.4944753368948,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.128574923483322,
+            "max_abs_weight": 0.1605135678466405,
+            "tau": 0.001939463280001444,
+            "rank": 126,
+            "condition": 368.343562452216,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.2192361160156295,
+            "max_abs_weight": 0.17453324245816398,
+            "tau": 0.0020341246631155815,
+            "rank": 126,
+            "condition": 368.90914676328856,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.773041151579598,
+            "max_abs_weight": 0.15634832217350708,
+            "tau": 0.0018866135639741893,
+            "rank": 126,
+            "condition": 367.0511063321979,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 5.928276711802108,
+            "max_abs_weight": 0.17165514347132713,
+            "tau": 0.0019714054939895093,
+            "rank": 126,
+            "condition": 367.8627695435781,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.727494692868347,
+            "max_abs_weight": 0.15634043100765904,
+            "tau": 0.0019250146659834187,
+            "rank": 126,
+            "condition": 366.98847342546844,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 5.756367253745906,
+            "max_abs_weight": 0.16629542075692763,
+            "tau": 0.0020864143003540662,
+            "rank": 126,
+            "condition": 367.4927999329554,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.805074147755672,
+            "max_abs_weight": 0.16819152277073907,
+            "tau": 0.001957303352878064,
+            "rank": 126,
+            "condition": 367.89380793649343,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.760291162948447,
+            "max_abs_weight": 0.17191885062571738,
+            "tau": 0.0018340825845877243,
+            "rank": 126,
+            "condition": 366.59541230383917,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.611282553197155,
+            "max_abs_weight": 0.16508324300755206,
+            "tau": 0.0019192922335512696,
+            "rank": 126,
+            "condition": 367.4265540893185,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.785222361012941,
+            "max_abs_weight": 0.17912286774204403,
+            "tau": 0.0020170534462862094,
+            "rank": 126,
+            "condition": 368.16539882121134,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.10980235136511,
+            "max_abs_weight": 0.13786327508127294,
+            "tau": 0.0018885542812332216,
+            "rank": 126,
+            "condition": 366.8054072617874,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.334830106567312,
+            "max_abs_weight": 0.14113094246048977,
+            "tau": 0.0019748063226992757,
+            "rank": 126,
+            "condition": 367.5341571523332,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 6.090320315730797,
+            "max_abs_weight": 0.13794304011797962,
+            "tau": 0.0019282270217048654,
+            "rank": 126,
+            "condition": 366.69390100820146,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.129553096250671,
+            "max_abs_weight": 0.13676234116453775,
+            "tau": 0.002094799738568951,
+            "rank": 126,
+            "condition": 367.2286377548309,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.255295603050556,
+            "max_abs_weight": 0.13953178194326413,
+            "tau": 0.001964784418993949,
+            "rank": 126,
+            "condition": 367.780896598779,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.1734244246563925,
+            "max_abs_weight": 0.1476723202655647,
+            "tau": 0.0018396691402651404,
+            "rank": 126,
+            "condition": 366.3466394355558,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.0420501880777175,
+            "max_abs_weight": 0.13942823544099012,
+            "tau": 0.0019240833410477502,
+            "rank": 126,
+            "condition": 367.22719995314907,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.149781351843621,
+            "max_abs_weight": 0.1405782213564523,
+            "tau": 0.002020109223276402,
+            "rank": 126,
+            "condition": 367.93963049770315,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.122149918490442,
+            "max_abs_weight": 0.16643833728664098,
+            "tau": 0.0019445832744742022,
+            "rank": 126,
+            "condition": 368.0018426071663,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.406479546649756,
+            "max_abs_weight": 0.1576931389367647,
+            "tau": 0.0020304516973325805,
+            "rank": 126,
+            "condition": 368.72188019646404,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 6.236978201025495,
+            "max_abs_weight": 0.16245063448519897,
+            "tau": 0.001983576907326257,
+            "rank": 126,
+            "condition": 368.0069887177637,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.257659278735468,
+            "max_abs_weight": 0.156368105076339,
+            "tau": 0.0021515139745305746,
+            "rank": 126,
+            "condition": 368.43983771360035,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.310919814377897,
+            "max_abs_weight": 0.1590497254557085,
+            "tau": 0.002018730732431856,
+            "rank": 126,
+            "condition": 368.89358515701605,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.19803152211442,
+            "max_abs_weight": 0.16325586852150953,
+            "tau": 0.0018921703213825689,
+            "rank": 126,
+            "condition": 367.6183811501748,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.189717101216175,
+            "max_abs_weight": 0.15807432472430788,
+            "tau": 0.00197926614772611,
+            "rank": 126,
+            "condition": 368.33452362213774,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.182865728677284,
+            "max_abs_weight": 0.16939944681836075,
+            "tau": 0.0020789086411956456,
+            "rank": 126,
+            "condition": 369.17951411250147,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.1317272875139075,
+            "max_abs_weight": 0.17304254299325864,
+            "tau": 0.0018892692072477308,
+            "rank": 126,
+            "condition": 366.94649373824853,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.301617769041763,
+            "max_abs_weight": 0.17173076394829084,
+            "tau": 0.0019751963125189524,
+            "rank": 126,
+            "condition": 367.83815491118736,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 6.15511058702963,
+            "max_abs_weight": 0.16601733665650656,
+            "tau": 0.0019300835976986581,
+            "rank": 126,
+            "condition": 366.9244585646898,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.111392303083983,
+            "max_abs_weight": 0.1755730244868177,
+            "tau": 0.0020910539465289566,
+            "rank": 126,
+            "condition": 367.45362275754024,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.13295895067769,
+            "max_abs_weight": 0.1699524324030623,
+            "tau": 0.0019604258461617084,
+            "rank": 126,
+            "condition": 367.9050379226806,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.1200517351651005,
+            "max_abs_weight": 0.16966022346416668,
+            "tau": 0.0018380859794889395,
+            "rank": 126,
+            "condition": 366.57794796487474,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.029747811454391,
+            "max_abs_weight": 0.1671518075411959,
+            "tau": 0.0019231041184117645,
+            "rank": 126,
+            "condition": 367.3696060470119,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.129888302302757,
+            "max_abs_weight": 0.16451860083554898,
+            "tau": 0.002019831934962093,
+            "rank": 126,
+            "condition": 368.1178882404341,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.282814100437671,
+            "max_abs_weight": 0.145362738843707,
+            "tau": 0.001936121210692034,
+            "rank": 126,
+            "condition": 367.0920463186484,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.4731811759606295,
+            "max_abs_weight": 0.1440576288730072,
+            "tau": 0.0020206124355628885,
+            "rank": 126,
+            "condition": 367.8150865118361,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 6.325672945302594,
+            "max_abs_weight": 0.14805890414918593,
+            "tau": 0.001972605738372054,
+            "rank": 126,
+            "condition": 366.98228365542525,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.241219523502366,
+            "max_abs_weight": 0.15139398730251008,
+            "tau": 0.002142475935877603,
+            "rank": 126,
+            "condition": 367.4513221409352,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.367639036687598,
+            "max_abs_weight": 0.16038806242542888,
+            "tau": 0.0020071477401774882,
+            "rank": 126,
+            "condition": 368.00340745138976,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.3178172724559944,
+            "max_abs_weight": 0.16112944840155935,
+            "tau": 0.0018832848270974023,
+            "rank": 126,
+            "condition": 366.5999545995437,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.187733281905509,
+            "max_abs_weight": 0.13832450690349574,
+            "tau": 0.0019669057426524653,
+            "rank": 126,
+            "condition": 367.43529205653783,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.4078298697695155,
+            "max_abs_weight": 0.1451853354324473,
+            "tau": 0.002067219532448871,
+            "rank": 126,
+            "condition": 368.1405094563573,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.876225381916254,
+            "max_abs_weight": 0.18124085662919429,
+            "tau": 0.0018735054097633777,
+            "rank": 126,
+            "condition": 365.9958736216771,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 5.9600830243910075,
+            "max_abs_weight": 0.2024946892371303,
+            "tau": 0.0019537391143096875,
+            "rank": 126,
+            "condition": 366.92441411594615,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.768164461122209,
+            "max_abs_weight": 0.18111778341215087,
+            "tau": 0.0019069580703671497,
+            "rank": 126,
+            "condition": 365.98779913074924,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 5.825004043500155,
+            "max_abs_weight": 0.1924242069789819,
+            "tau": 0.002069693812890165,
+            "rank": 126,
+            "condition": 366.56578613771774,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.923955901946057,
+            "max_abs_weight": 0.1845987043686134,
+            "tau": 0.001943080555948763,
+            "rank": 126,
+            "condition": 367.11336296365283,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.851732911113272,
+            "max_abs_weight": 0.18611396849807563,
+            "tau": 0.0018198906663929731,
+            "rank": 126,
+            "condition": 365.5645431269407,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.782929607443252,
+            "max_abs_weight": 0.1767532800801725,
+            "tau": 0.0019033971755176426,
+            "rank": 126,
+            "condition": 366.4826471322485,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.8501009167012805,
+            "max_abs_weight": 0.18149698288464414,
+            "tau": 0.0019984327169486464,
+            "rank": 126,
+            "condition": 367.35129477789303,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.753568671129217,
+            "max_abs_weight": 0.15993074270955224,
+            "tau": 0.0018805374594054697,
+            "rank": 126,
+            "condition": 366.36885071419556,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 5.9004592469447035,
+            "max_abs_weight": 0.1744844215391779,
+            "tau": 0.001964417864046647,
+            "rank": 126,
+            "condition": 367.1500884455579,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.810880796460295,
+            "max_abs_weight": 0.1577991854558225,
+            "tau": 0.0019202180056748892,
+            "rank": 126,
+            "condition": 366.3534789674605,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 5.762594755928204,
+            "max_abs_weight": 0.16469414975955907,
+            "tau": 0.002081128614301312,
+            "rank": 126,
+            "condition": 366.85842969405167,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.861178603688609,
+            "max_abs_weight": 0.17158123273146564,
+            "tau": 0.001954053409633437,
+            "rank": 126,
+            "condition": 367.3547765387027,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.818474758756516,
+            "max_abs_weight": 0.16263146734800324,
+            "tau": 0.0018295132445695834,
+            "rank": 126,
+            "condition": 365.8477849077546,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.648464638107295,
+            "max_abs_weight": 0.16931480215984385,
+            "tau": 0.0019140531157514759,
+            "rank": 126,
+            "condition": 366.7713793031767,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.798222398330431,
+            "max_abs_weight": 0.1735839385788437,
+            "tau": 0.0020088058528340644,
+            "rank": 126,
+            "condition": 367.5401201567318,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.205805591404567,
+            "max_abs_weight": 0.14634891001772216,
+            "tau": 0.00191106630359098,
+            "rank": 126,
+            "condition": 366.5388521121135,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 6.287133227103331,
+            "max_abs_weight": 0.15585819731082237,
+            "tau": 0.001996386804872043,
+            "rank": 126,
+            "condition": 367.2365908484871,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 6.135513263846617,
+            "max_abs_weight": 0.15043629145807608,
+            "tau": 0.0019533044330911566,
+            "rank": 126,
+            "condition": 366.5285880560456,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 6.204971680334625,
+            "max_abs_weight": 0.16227569417049598,
+            "tau": 0.002116200489057127,
+            "rank": 126,
+            "condition": 366.8769219243183,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 6.274688318747205,
+            "max_abs_weight": 0.16431938020905107,
+            "tau": 0.001984534955096441,
+            "rank": 126,
+            "condition": 367.4985283768958,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.231918273268229,
+            "max_abs_weight": 0.16094366277350589,
+            "tau": 0.0018607184461007999,
+            "rank": 126,
+            "condition": 366.06201746309836,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.099985977729943,
+            "max_abs_weight": 0.15221907009022492,
+            "tau": 0.0019455772813545204,
+            "rank": 126,
+            "condition": 366.8718272884328,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 6.236694229638507,
+            "max_abs_weight": 0.15413623472689342,
+            "tau": 0.002043452279487414,
+            "rank": 126,
+            "condition": 367.68990750658696,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.710284873167173,
+            "max_abs_weight": 0.14295219678705948,
+            "tau": 0.0019003555679383945,
+            "rank": 126,
+            "condition": 367.46564364326036,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 33,
+            "train": 223,
+            "l1_weight": 5.910898798409694,
+            "max_abs_weight": 0.14867766000596871,
+            "tau": 0.00198227247897538,
+            "rank": 126,
+            "condition": 368.2381130802223,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.756766092012045,
+            "max_abs_weight": 0.14816070715153407,
+            "tau": 0.001941108631636269,
+            "rank": 126,
+            "condition": 367.50328627432606,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 32,
+            "train": 224,
+            "l1_weight": 5.756654369622225,
+            "max_abs_weight": 0.14824803482551838,
+            "tau": 0.0021017213424268186,
+            "rank": 126,
+            "condition": 367.9009216015819,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 31,
+            "train": 225,
+            "l1_weight": 5.832750925848162,
+            "max_abs_weight": 0.1484858463208892,
+            "tau": 0.0019707945421995176,
+            "rank": 126,
+            "condition": 368.40020975959595,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.723924347408564,
+            "max_abs_weight": 0.14402738906905532,
+            "tau": 0.00184493316870919,
+            "rank": 126,
+            "condition": 367.05395485169686,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.679430514562222,
+            "max_abs_weight": 0.14858337146799583,
+            "tau": 0.0019340132704897925,
+            "rank": 126,
+            "condition": 367.8198219758849,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 37,
+            "train": 219,
+            "l1_weight": 5.842362875651941,
+            "max_abs_weight": 0.14750277692120928,
+            "tau": 0.0020292815096766056,
+            "rank": 126,
+            "condition": 368.540379353526,
+            "fallback": null
+          }
+        ]
+      ]
+    },
+    "303": {
+      "fold_sizes": [
+        29,
+        36,
+        46,
+        29,
+        28,
+        35,
+        26,
+        27
+      ],
+      "anchor_mse": 0.0006852373874628564,
+      "base_mse_per_rotation": [
+        1.7878374991255374e-07,
+        3.2737636886870727e-07,
+        1.1820908405209825e-07,
+        1.2711963179240141e-07,
+        5.547171230492042e-07,
+        1.6392653652807728e-07,
+        3.476479485917475e-07,
+        1.1821553769804282e-07,
+        1.7897609245021595e-07,
+        2.954673043926797e-07,
+        2.51745637662953e-07,
+        1.9972893141993682e-07,
+        3.198286400952888e-07,
+        1.2312875243051645e-07,
+        2.618730959119415e-07,
+        2.2405366451076553e-07
+      ],
+      "m193_mse_per_rotation": [
+        0.00015880957812683234,
+        0.0001845860669721908,
+        0.00015398509992747828,
+        0.00016024810483660846,
+        0.0001717452124661981,
+        0.00014122486817741788,
+        0.00017045367712088938,
+        0.0001686970144972377,
+        0.00015994108051497466,
+        0.00016806483094514285,
+        0.00018389646211638527,
+        0.00016501999653573335,
+        0.00018943621397263737,
+        0.00016230080017723864,
+        0.00015384617872033849,
+        0.000153425407275708
+      ],
+      "ratio_of_rotation_means": 697.921789299384,
+      "reduction": -696.921789299384,
+      "base_rotation_mean_bias2": 3.272622369605708e-08,
+      "m193_rotation_mean_bias2": 0.0001603251413414867,
+      "max_p2_baseline_crosscheck": 0.0,
+      "rotation_diagnostics": [
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.843173062007506,
+            "max_abs_weight": 0.16633097647962874,
+            "tau": 0.0006837297613438232,
+            "rank": 126,
+            "condition": 356.6536988026306,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.954321255586547,
+            "max_abs_weight": 0.17245151946786735,
+            "tau": 0.0007432029701687316,
+            "rank": 126,
+            "condition": 357.60134651238377,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.748366258272524,
+            "max_abs_weight": 0.17342277426279298,
+            "tau": 0.000771024428245029,
+            "rank": 126,
+            "condition": 359.1127314298159,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.944276904511538,
+            "max_abs_weight": 0.17773167847417548,
+            "tau": 0.0006812649276990221,
+            "rank": 126,
+            "condition": 356.4498114774019,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 6.06877827517791,
+            "max_abs_weight": 0.1813844085129524,
+            "tau": 0.0007550378151953258,
+            "rank": 126,
+            "condition": 357.8559744111285,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.999659080967239,
+            "max_abs_weight": 0.1795420050398382,
+            "tau": 0.000762584711766379,
+            "rank": 126,
+            "condition": 358.21703472077496,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.914967161162087,
+            "max_abs_weight": 0.17889744560192775,
+            "tau": 0.0007417880313984823,
+            "rank": 126,
+            "condition": 357.50290398936755,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.922197339302763,
+            "max_abs_weight": 0.18251900199820434,
+            "tau": 0.0007487392376963356,
+            "rank": 126,
+            "condition": 356.96622015940295,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.84890401984306,
+            "max_abs_weight": 0.13208978126197365,
+            "tau": 0.0006884062826284858,
+            "rank": 126,
+            "condition": 358.8215018669949,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.86929144726471,
+            "max_abs_weight": 0.14372148627488157,
+            "tau": 0.0007476567625686482,
+            "rank": 126,
+            "condition": 359.8540168484509,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.6998775542109,
+            "max_abs_weight": 0.13848552687951593,
+            "tau": 0.0007749209424495992,
+            "rank": 126,
+            "condition": 361.2435327890577,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.912878072338649,
+            "max_abs_weight": 0.12531776477610193,
+            "tau": 0.0006852438646231785,
+            "rank": 126,
+            "condition": 358.9239804321419,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 6.0752898692253305,
+            "max_abs_weight": 0.14892880497770247,
+            "tau": 0.0007599315006693717,
+            "rank": 126,
+            "condition": 360.29310997786837,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.859921551243098,
+            "max_abs_weight": 0.14258410625090143,
+            "tau": 0.0007673152705857192,
+            "rank": 126,
+            "condition": 360.2964148454291,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.857961951500531,
+            "max_abs_weight": 0.13874439308450415,
+            "tau": 0.0007469687040690007,
+            "rank": 126,
+            "condition": 359.72732826497895,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.833576078048433,
+            "max_abs_weight": 0.14009064098462878,
+            "tau": 0.0007526765753878299,
+            "rank": 126,
+            "condition": 359.4677211683621,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.540654426339618,
+            "max_abs_weight": 0.15337211782878538,
+            "tau": 0.0006795100177664811,
+            "rank": 126,
+            "condition": 357.0276823997118,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.726361714595811,
+            "max_abs_weight": 0.1701905817361972,
+            "tau": 0.0007387551909115462,
+            "rank": 126,
+            "condition": 357.9438252074286,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.673561223759927,
+            "max_abs_weight": 0.1645310101548056,
+            "tau": 0.0007656393021227861,
+            "rank": 126,
+            "condition": 359.7051757226981,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.77945078824177,
+            "max_abs_weight": 0.15350187845555138,
+            "tau": 0.0006779228811741448,
+            "rank": 126,
+            "condition": 356.79182850920205,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.781247007361173,
+            "max_abs_weight": 0.17255215026100468,
+            "tau": 0.0007508258812243401,
+            "rank": 126,
+            "condition": 358.26057263819285,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.740867398834702,
+            "max_abs_weight": 0.16613713195457733,
+            "tau": 0.0007580165671090212,
+            "rank": 126,
+            "condition": 358.43777946074636,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.657866826557419,
+            "max_abs_weight": 0.15755107295383122,
+            "tau": 0.0007365274704468019,
+            "rank": 126,
+            "condition": 358.1385594813855,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.753092755618663,
+            "max_abs_weight": 0.1623080520032682,
+            "tau": 0.0007440944564280943,
+            "rank": 126,
+            "condition": 357.4818097202358,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.5967807486825984,
+            "max_abs_weight": 0.16985150333832777,
+            "tau": 0.0006764249894450715,
+            "rank": 126,
+            "condition": 356.69991832803015,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.788063029819544,
+            "max_abs_weight": 0.16848823667363327,
+            "tau": 0.0007358944109338982,
+            "rank": 126,
+            "condition": 357.52696827709957,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.686838777295712,
+            "max_abs_weight": 0.15971792494372394,
+            "tau": 0.0007634301970204695,
+            "rank": 126,
+            "condition": 359.16222280794636,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.755573883554391,
+            "max_abs_weight": 0.17684812334011235,
+            "tau": 0.0006757000031890304,
+            "rank": 126,
+            "condition": 356.46190801272024,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.9648935361479065,
+            "max_abs_weight": 0.17570850782455358,
+            "tau": 0.0007479578974645119,
+            "rank": 126,
+            "condition": 357.9232804713767,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.78400702108642,
+            "max_abs_weight": 0.17507305204235862,
+            "tau": 0.000753253890565968,
+            "rank": 126,
+            "condition": 358.1157190195373,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.751381956853311,
+            "max_abs_weight": 0.1828950701789339,
+            "tau": 0.0007337846337775113,
+            "rank": 126,
+            "condition": 357.55150613236196,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.778543094096721,
+            "max_abs_weight": 0.1765897593778432,
+            "tau": 0.0007399800314575924,
+            "rank": 126,
+            "condition": 357.00689519780894,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.619722905580035,
+            "max_abs_weight": 0.15180699305569606,
+            "tau": 0.0006724723190644774,
+            "rank": 126,
+            "condition": 358.2069140146751,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.697753339699524,
+            "max_abs_weight": 0.16449689685561864,
+            "tau": 0.0007303543776609839,
+            "rank": 126,
+            "condition": 358.99465026574245,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.626503405566633,
+            "max_abs_weight": 0.16530631565378417,
+            "tau": 0.0007550537638291346,
+            "rank": 126,
+            "condition": 360.5702227767936,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.702085903796835,
+            "max_abs_weight": 0.17786609193620304,
+            "tau": 0.0006679672089677296,
+            "rank": 126,
+            "condition": 358.01286899378533,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.868276416814171,
+            "max_abs_weight": 0.18493346486829013,
+            "tau": 0.000742385138854625,
+            "rank": 126,
+            "condition": 359.4383296125941,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.650138024485717,
+            "max_abs_weight": 0.15889235450163905,
+            "tau": 0.0007471557468429574,
+            "rank": 126,
+            "condition": 359.3555004591144,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.736748333561787,
+            "max_abs_weight": 0.16858428604499912,
+            "tau": 0.0007269046876434134,
+            "rank": 126,
+            "condition": 359.13659832767803,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.702161139905767,
+            "max_abs_weight": 0.1698816862197899,
+            "tau": 0.0007340143611121047,
+            "rank": 126,
+            "condition": 358.50945756504484,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.643726149081087,
+            "max_abs_weight": 0.1396208643269401,
+            "tau": 0.0006811729929375437,
+            "rank": 126,
+            "condition": 357.434795056631,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.75519656227241,
+            "max_abs_weight": 0.14197749914284835,
+            "tau": 0.0007403001278173248,
+            "rank": 126,
+            "condition": 358.5784641264983,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.691295731667441,
+            "max_abs_weight": 0.13552281753097645,
+            "tau": 0.000767965085668849,
+            "rank": 126,
+            "condition": 360.1264785270793,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.794572182280199,
+            "max_abs_weight": 0.14476080826274057,
+            "tau": 0.0006782803753181216,
+            "rank": 126,
+            "condition": 357.3657516701246,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.9050589077178275,
+            "max_abs_weight": 0.14214691920234332,
+            "tau": 0.0007513509551995769,
+            "rank": 126,
+            "condition": 358.8878967867928,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.785672922760699,
+            "max_abs_weight": 0.14293192434355242,
+            "tau": 0.000759842634352637,
+            "rank": 126,
+            "condition": 358.95118952512894,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.833504987944744,
+            "max_abs_weight": 0.14887106050878077,
+            "tau": 0.0007377868140541876,
+            "rank": 126,
+            "condition": 358.399355804561,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.810828891283686,
+            "max_abs_weight": 0.13704042443782746,
+            "tau": 0.0007445863936204807,
+            "rank": 126,
+            "condition": 358.1326964907436,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.636001724724326,
+            "max_abs_weight": 0.15391186987055896,
+            "tau": 0.000691597874482264,
+            "rank": 126,
+            "condition": 357.5144996239119,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.645945296100715,
+            "max_abs_weight": 0.15724675429441146,
+            "tau": 0.0007506136391943042,
+            "rank": 126,
+            "condition": 358.44776918689956,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.541642792273899,
+            "max_abs_weight": 0.15581369677930262,
+            "tau": 0.0007796423749221298,
+            "rank": 126,
+            "condition": 360.0579079676297,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.683366570113294,
+            "max_abs_weight": 0.16234048140717294,
+            "tau": 0.0006882096915212897,
+            "rank": 126,
+            "condition": 357.36773864687063,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.891891353799246,
+            "max_abs_weight": 0.1572244414745251,
+            "tau": 0.0007625554342919131,
+            "rank": 126,
+            "condition": 358.91012690447013,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.64324762614022,
+            "max_abs_weight": 0.14723878003582638,
+            "tau": 0.0007712164567671098,
+            "rank": 126,
+            "condition": 359.1135738881537,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.659553941734427,
+            "max_abs_weight": 0.1545250898961741,
+            "tau": 0.0007495862883919031,
+            "rank": 126,
+            "condition": 358.5200850661489,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.717371828076979,
+            "max_abs_weight": 0.15660681528121315,
+            "tau": 0.0007548526880999171,
+            "rank": 126,
+            "condition": 358.0228728703895,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.5373556223004226,
+            "max_abs_weight": 0.14335777860008303,
+            "tau": 0.0006814591899664029,
+            "rank": 126,
+            "condition": 355.2168596683608,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.700080113413316,
+            "max_abs_weight": 0.13775535948844705,
+            "tau": 0.0007413092106280612,
+            "rank": 126,
+            "condition": 356.38012667067494,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.58412894516607,
+            "max_abs_weight": 0.14987313172277497,
+            "tau": 0.0007691259128488696,
+            "rank": 126,
+            "condition": 357.97089301199514,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.613436857174118,
+            "max_abs_weight": 0.13330182271788746,
+            "tau": 0.00067959656869737,
+            "rank": 126,
+            "condition": 355.1799484949462,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.822299721134686,
+            "max_abs_weight": 0.13981314646303178,
+            "tau": 0.0007541458153350093,
+            "rank": 126,
+            "condition": 356.63345278759584,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.667982307818684,
+            "max_abs_weight": 0.14490266173784508,
+            "tau": 0.0007612470563990923,
+            "rank": 126,
+            "condition": 357.18875982960344,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.602975330158924,
+            "max_abs_weight": 0.14609936996499612,
+            "tau": 0.0007401091736461914,
+            "rank": 126,
+            "condition": 356.25472276729096,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.688865980456155,
+            "max_abs_weight": 0.13937119471686502,
+            "tau": 0.0007455510657734817,
+            "rank": 126,
+            "condition": 355.74642397387487,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.663726857502409,
+            "max_abs_weight": 0.16189415679662958,
+            "tau": 0.0006756681877881889,
+            "rank": 126,
+            "condition": 356.6216083726472,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.727267551801845,
+            "max_abs_weight": 0.1561594631422987,
+            "tau": 0.000734852950921222,
+            "rank": 126,
+            "condition": 357.5974162517297,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.64937201335797,
+            "max_abs_weight": 0.1486652243825232,
+            "tau": 0.0007629626599433325,
+            "rank": 126,
+            "condition": 359.25386177498575,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.8097244364158005,
+            "max_abs_weight": 0.15879700376890102,
+            "tau": 0.0006744470661166957,
+            "rank": 126,
+            "condition": 356.29351215576776,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.93527194204705,
+            "max_abs_weight": 0.16897899648693712,
+            "tau": 0.0007459551973502436,
+            "rank": 126,
+            "condition": 357.85031581870777,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.800239119024813,
+            "max_abs_weight": 0.15883177684487093,
+            "tau": 0.0007543613746944294,
+            "rank": 126,
+            "condition": 358.0155070255326,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.728727298735045,
+            "max_abs_weight": 0.16243684131052652,
+            "tau": 0.0007325856798462339,
+            "rank": 126,
+            "condition": 357.4085073561584,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.686117534464172,
+            "max_abs_weight": 0.15868779591964272,
+            "tau": 0.0007398818666035313,
+            "rank": 126,
+            "condition": 357.05007695789,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.766659798487411,
+            "max_abs_weight": 0.16258306445590942,
+            "tau": 0.00069319926908241,
+            "rank": 126,
+            "condition": 356.4150736649803,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.863056072805917,
+            "max_abs_weight": 0.16548879285294243,
+            "tau": 0.000754064130894405,
+            "rank": 126,
+            "condition": 357.5899552955599,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.811193427636831,
+            "max_abs_weight": 0.16409069896444484,
+            "tau": 0.0007828850600016977,
+            "rank": 126,
+            "condition": 359.2078973849901,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.770210982682865,
+            "max_abs_weight": 0.16754255017451333,
+            "tau": 0.0006925924176501098,
+            "rank": 126,
+            "condition": 356.2822661827734,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.936438450369639,
+            "max_abs_weight": 0.16658983547070233,
+            "tau": 0.0007677027341596907,
+            "rank": 126,
+            "condition": 357.80450300790653,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.923691889903331,
+            "max_abs_weight": 0.156525139921425,
+            "tau": 0.0007747077142598048,
+            "rank": 126,
+            "condition": 357.99352062544733,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.95378716149056,
+            "max_abs_weight": 0.16392969212941594,
+            "tau": 0.0007532357632982864,
+            "rank": 126,
+            "condition": 357.43074695799595,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.962979727667416,
+            "max_abs_weight": 0.16288246571162962,
+            "tau": 0.0007590390349970263,
+            "rank": 126,
+            "condition": 356.83814448068614,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.810276027590494,
+            "max_abs_weight": 0.15603094656636796,
+            "tau": 0.0006867853601426624,
+            "rank": 126,
+            "condition": 356.4766420765115,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.980494339429922,
+            "max_abs_weight": 0.1593320999553699,
+            "tau": 0.0007467203323878888,
+            "rank": 126,
+            "condition": 357.5705347104853,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.853579445944538,
+            "max_abs_weight": 0.14134809008524588,
+            "tau": 0.0007765123234076256,
+            "rank": 126,
+            "condition": 358.9442503905768,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.890072206693562,
+            "max_abs_weight": 0.15980886653316176,
+            "tau": 0.0006865690988847627,
+            "rank": 126,
+            "condition": 356.1260700669258,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 6.0534576973054195,
+            "max_abs_weight": 0.1624993290522428,
+            "tau": 0.0007608569552271625,
+            "rank": 126,
+            "condition": 357.6675829315925,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.951089099471416,
+            "max_abs_weight": 0.14693057169487853,
+            "tau": 0.0007680278768189609,
+            "rank": 126,
+            "condition": 357.9285259964727,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.000294460834004,
+            "max_abs_weight": 0.1570813169231738,
+            "tau": 0.0007473483806573681,
+            "rank": 126,
+            "condition": 357.3603635794667,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.997164628964347,
+            "max_abs_weight": 0.14737031898697972,
+            "tau": 0.0007534291858650311,
+            "rank": 126,
+            "condition": 356.7418434493463,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.669402307463123,
+            "max_abs_weight": 0.1786441428535479,
+            "tau": 0.0006876091926318786,
+            "rank": 126,
+            "condition": 355.8868213792847,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.79575510236458,
+            "max_abs_weight": 0.18109023726754522,
+            "tau": 0.000747747624801837,
+            "rank": 126,
+            "condition": 357.10808955964234,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.601206320621743,
+            "max_abs_weight": 0.18022592892480452,
+            "tau": 0.0007752434611119487,
+            "rank": 126,
+            "condition": 358.8552132201124,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.9323631936382615,
+            "max_abs_weight": 0.18448307897480032,
+            "tau": 0.0006874931703666541,
+            "rank": 126,
+            "condition": 355.6807662117181,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.9553611227443755,
+            "max_abs_weight": 0.1919534010003278,
+            "tau": 0.000761928391143577,
+            "rank": 126,
+            "condition": 357.29320977600827,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.765033917724408,
+            "max_abs_weight": 0.18163265705887152,
+            "tau": 0.0007672577980459553,
+            "rank": 126,
+            "condition": 357.6605240523137,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.817423241311376,
+            "max_abs_weight": 0.1798595782195019,
+            "tau": 0.0007471992732291715,
+            "rank": 126,
+            "condition": 356.99975419588,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.7968505936850105,
+            "max_abs_weight": 0.1811801465186483,
+            "tau": 0.0007532124449511768,
+            "rank": 126,
+            "condition": 356.54818369943115,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.677233579904124,
+            "max_abs_weight": 0.1797176142816588,
+            "tau": 0.0006856915092741568,
+            "rank": 126,
+            "condition": 356.8274088811894,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.7733209346144205,
+            "max_abs_weight": 0.16433726464782317,
+            "tau": 0.0007464427977909416,
+            "rank": 126,
+            "condition": 357.74324279058357,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.652292785074717,
+            "max_abs_weight": 0.15994836335873655,
+            "tau": 0.0007739445134527088,
+            "rank": 126,
+            "condition": 359.6985486215041,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.744412606217692,
+            "max_abs_weight": 0.1650498342126087,
+            "tau": 0.000684057588357051,
+            "rank": 126,
+            "condition": 356.88430005064697,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.976937990411515,
+            "max_abs_weight": 0.18634302064399116,
+            "tau": 0.0007580018775684444,
+            "rank": 126,
+            "condition": 358.4766623944284,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.7333075937662645,
+            "max_abs_weight": 0.1716279046420648,
+            "tau": 0.0007656555019919469,
+            "rank": 126,
+            "condition": 358.2818390278629,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.730364578483071,
+            "max_abs_weight": 0.17149422562331407,
+            "tau": 0.0007448896891361393,
+            "rank": 126,
+            "condition": 358.01809624904075,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.797211750751867,
+            "max_abs_weight": 0.1697906045612291,
+            "tau": 0.0007511197701401854,
+            "rank": 126,
+            "condition": 357.45271322025985,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.858677663591672,
+            "max_abs_weight": 0.14532742836988383,
+            "tau": 0.0006835157913806468,
+            "rank": 126,
+            "condition": 355.7777764054316,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.956801510801249,
+            "max_abs_weight": 0.15457595171159952,
+            "tau": 0.0007425597196990635,
+            "rank": 126,
+            "condition": 356.6466698947306,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.921070262139079,
+            "max_abs_weight": 0.14510338882426957,
+            "tau": 0.0007691608597495313,
+            "rank": 126,
+            "condition": 358.3158222218992,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.950349074116597,
+            "max_abs_weight": 0.15589149919688056,
+            "tau": 0.0006804429343423732,
+            "rank": 126,
+            "condition": 355.2853819008414,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 6.050861811591912,
+            "max_abs_weight": 0.14860785409808444,
+            "tau": 0.0007555233978785018,
+            "rank": 126,
+            "condition": 356.9753545027463,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.942086028746482,
+            "max_abs_weight": 0.1351598454404975,
+            "tau": 0.0007628715443727162,
+            "rank": 126,
+            "condition": 357.206912953685,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 6.03093755473727,
+            "max_abs_weight": 0.1481066890701142,
+            "tau": 0.0007413071840299831,
+            "rank": 126,
+            "condition": 356.67025376744306,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 6.073641494725679,
+            "max_abs_weight": 0.14865252529663284,
+            "tau": 0.0007478700012909244,
+            "rank": 126,
+            "condition": 356.07190895240245,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.545379868418838,
+            "max_abs_weight": 0.14906206810812261,
+            "tau": 0.0006907048710519389,
+            "rank": 126,
+            "condition": 357.6208788692854,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.658054012858897,
+            "max_abs_weight": 0.14146019284537056,
+            "tau": 0.0007511741887705009,
+            "rank": 126,
+            "condition": 358.4439758178592,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.50587501793359,
+            "max_abs_weight": 0.13755592473453226,
+            "tau": 0.0007794725789303862,
+            "rank": 126,
+            "condition": 360.15988531980423,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.8148222649588215,
+            "max_abs_weight": 0.14825131362200208,
+            "tau": 0.0006881687096209263,
+            "rank": 126,
+            "condition": 357.5924160615409,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 5.81757430254161,
+            "max_abs_weight": 0.144478382377553,
+            "tau": 0.0007633547693065871,
+            "rank": 126,
+            "condition": 359.1534330495077,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.620897287954281,
+            "max_abs_weight": 0.1390165463623188,
+            "tau": 0.0007720725289794766,
+            "rank": 126,
+            "condition": 358.97051835474224,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.615869176162531,
+            "max_abs_weight": 0.148396778592183,
+            "tau": 0.0007494976728543749,
+            "rank": 126,
+            "condition": 358.7055217701744,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.642229593927699,
+            "max_abs_weight": 0.1494517866375161,
+            "tau": 0.0007556167904514298,
+            "rank": 126,
+            "condition": 358.2565544188397,
+            "fallback": null
+          }
+        ],
+        [
+          {
+            "fold": 0,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.789658991209749,
+            "max_abs_weight": 0.15237324183670162,
+            "tau": 0.0006819731694692041,
+            "rank": 126,
+            "condition": 357.8789714249289,
+            "fallback": null
+          },
+          {
+            "fold": 1,
+            "held": 36,
+            "train": 220,
+            "l1_weight": 5.893770759132007,
+            "max_abs_weight": 0.1637643226912585,
+            "tau": 0.000738602113744267,
+            "rank": 126,
+            "condition": 358.9558406117034,
+            "fallback": null
+          },
+          {
+            "fold": 2,
+            "held": 46,
+            "train": 210,
+            "l1_weight": 5.710860910074374,
+            "max_abs_weight": 0.16764286321311322,
+            "tau": 0.0007668710677744359,
+            "rank": 126,
+            "condition": 360.52727915235477,
+            "fallback": null
+          },
+          {
+            "fold": 3,
+            "held": 29,
+            "train": 227,
+            "l1_weight": 5.830984425061475,
+            "max_abs_weight": 0.1752705806923591,
+            "tau": 0.0006773804607227712,
+            "rank": 126,
+            "condition": 357.86878087767036,
+            "fallback": null
+          },
+          {
+            "fold": 4,
+            "held": 28,
+            "train": 228,
+            "l1_weight": 6.0491386467662736,
+            "max_abs_weight": 0.1661118809485972,
+            "tau": 0.0007524050724119845,
+            "rank": 126,
+            "condition": 359.39275391943704,
+            "fallback": null
+          },
+          {
+            "fold": 5,
+            "held": 35,
+            "train": 221,
+            "l1_weight": 5.821907287082365,
+            "max_abs_weight": 0.16213349004736077,
+            "tau": 0.000758372993328086,
+            "rank": 126,
+            "condition": 359.46603828379307,
+            "fallback": null
+          },
+          {
+            "fold": 6,
+            "held": 26,
+            "train": 230,
+            "l1_weight": 5.864639110442731,
+            "max_abs_weight": 0.1687100411445194,
+            "tau": 0.0007386351190319395,
+            "rank": 126,
+            "condition": 358.9138744801209,
+            "fallback": null
+          },
+          {
+            "fold": 7,
+            "held": 27,
+            "train": 229,
+            "l1_weight": 5.85105966951171,
+            "max_abs_weight": 0.16215538094872814,
+            "tau": 0.0007443045005815108,
+            "rank": 126,
+            "condition": 358.492687604132,
+            "fallback": null
+          }
+        ]
+      ]
+    }
+  },
+  "panel_ratio_geomean": 1057.8991300247076,
+  "panel_reduction": -1056.8991300247076,
+  "bootstrap_95_ratio": [
+    901.6818960720321,
+    1268.8800893455211
+  ],
+  "weight_diagnostics": {
+    "l1_median": 5.756510811684066,
+    "l1_max": 6.4731811759606295,
+    "max_abs_weight_median": 0.14867268248233007,
+    "max_abs_weight_max": 0.2024946892371303,
+    "rank_median": 126.0,
+    "condition_median": 362.661817433012,
+    "condition_max": 369.17951411250147
+  },
+  "gate": {
+    "kill_below_reduction": 0.1,
+    "survive_at_reduction": 0.2,
+    "any_net_worse": true,
+    "bootstrap_upper_below": 0.9
+  },
+  "verdict": "KILLED"
+}

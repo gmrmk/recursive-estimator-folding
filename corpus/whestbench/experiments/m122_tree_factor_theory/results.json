@@ -1,0 +1,55 @@
+{
+  "all_144_path_pair_matvec_post_b_treewidth": {
+    "count": 144,
+    "max": 2,
+    "min": 1
+  },
+  "decision": "REPAIR_ONLY: exact k3 Gram and exact k4 projected core are validated; k4 mode-Gram factor construction is not yet a target-valid fixed-cost rank-4 HOSVD because full Gram has a generic Khatri-Rao n^4 obstruction and an implicit Krylov implementation has not been fused, fixed, or costed.",
+  "firewall": "generated algebra only; no contest weights, scorer, labels, submissions, or outcome grid",
+  "schema": 1,
+  "small_width_max_abs_defects": {
+    "crossed_middle_explicit_gram": 1.7763568394002505e-15,
+    "crossed_middle_implicit_matvec": 3.552713678800501e-15,
+    "tree3_mode1_gram_formula": 1.2434497875801753e-14,
+    "tree4_path_core": 6.821210263296962e-13
+  },
+  "target_n256_ledger": {
+    "crossed_middle_direct_f32_bill": 8589869056,
+    "crossed_middle_direct_float64_x2_contingency": 21474672640,
+    "crossed_middle_kr_factor_bytes_each_float64": 134217728,
+    "crossed_middle_kr_shape": [
+      [
+        256,
+        65536
+      ],
+      [
+        65536,
+        256
+      ]
+    ],
+    "crossed_middle_kr_two_factors_mib": 256.0,
+    "direct_mode1_gram_f32_bill": 2199023190016,
+    "direct_mode1_gram_float64_x2_contingency": 5497557975040,
+    "direct_mode1_gram_shape": [
+      [
+        256,
+        16777216
+      ],
+      [
+        16777216,
+        256
+      ]
+    ],
+    "float64_tensor4_bytes": 34359738368,
+    "float64_tensor4_gib": 32.0,
+    "k3_closed_form_dense_nxn_matmul_upper_count": 5,
+    "k3_closed_form_float64_x2_contingency_upper": 418611200,
+    "n3": 16777216,
+    "n4": 4294967296,
+    "n5": 1099511627776,
+    "rank4_symmetric_tree_core_entries": 35,
+    "rank4_tree_core_f32_bill_exact_shape": 164828160,
+    "rank4_tree_core_float64_x2_contingency": 412070400,
+    "rank4_tree_core_q_matvecs": 1260
+  }
+}

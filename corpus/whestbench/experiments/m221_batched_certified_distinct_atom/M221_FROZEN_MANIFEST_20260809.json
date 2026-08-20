@@ -1,0 +1,50 @@
+{
+  "mutation": "m221_batched_certified_distinct_atom",
+  "status": "PREDECLARED_BEFORE_IMPLEMENTATION",
+  "parent": "m216_antithetic_distinct_provider",
+  "algebra_change": false,
+  "generated_only": true,
+  "response_free": true,
+  "strict_domain": "pairwise-distinct [2,1,1] only",
+  "forbidden_strata": ["[4]", "[3,1]", "[2,2]", "[1,1,1,1]"],
+  "chart": {
+    "abs_rho_max": 0.04,
+    "abs_alpha_and_t_max": 0.8,
+    "conditional_sigma_min": 0.8,
+    "conditional_sigma_max": 1.2,
+    "repeated_centered_abs_max": 9.0,
+    "phi_erf_taylor_terms": 16,
+    "plackett_composite_simpson_panels": 32,
+    "phi_abs_radius": 1e-14,
+    "phi2_abs_radius": 2.5e-12,
+    "event_radius": "1e-8*(1+abs(midpoint))",
+    "required_event_radius": "2e-7*(1+abs(midpoint))"
+  },
+  "numerical": {
+    "widths": [3,4,5,6,7],
+    "state_seeds": [221700003,221700004,221700005,221700006,221700007],
+    "outer_probes": [0.0,0.00390625,-0.00390625,0.25,-0.25,1.0,-1.0,2.5,-2.5,5.0,-5.0,8.0,-8.0],
+    "inherited_worst": {"width": 6, "seed": 216700006, "labels": [1,1,0,2], "outer_g": [8.0,-8.0]},
+    "mp_dps": [80,100],
+    "mp_self_tolerance": "1e-12*(1+abs(reference))",
+    "singleton_swap_abs_tolerance": 2e-12,
+    "gauge_permutation_scaled_tolerance": 5e-8
+  },
+  "native": {
+    "event_count": 3968,
+    "blocks": 31,
+    "events_per_block": 128,
+    "seeds": [221720001,221720002,221720003,221720004,221720005],
+    "m216_best_wall_s": 1.6133916999970097,
+    "strict_speedup_min": 100.0,
+    "raw_wall_strict_max_s": 0.016133916999970098,
+    "lambda_flops_per_second": 100000000000.0,
+    "hostile_wall_factor": 5.0,
+    "component_ceiling": 6824272176,
+    "peak_rss_bytes_max": 536870912,
+    "include_allocations_staging_copies_guards_kernel": true,
+    "fallback_rows_required": 0
+  },
+  "variance_gate_authorized_initially": false,
+  "forbidden_inputs": ["challenge weights", "truth", "scorer", "leaderboard", "responses", "MSE"]
+}

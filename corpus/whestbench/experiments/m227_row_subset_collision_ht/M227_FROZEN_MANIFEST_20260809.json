@@ -1,0 +1,117 @@
+{
+  "candidate": "M227 exact-integrated row HT collision subtraction",
+  "date": "2026-08-09",
+  "status": "PREDECLARED_NO_IMPLEMENTATION_NO_TEST_NO_RESULT",
+  "firewall": "generated-only response-free algebra, resource, and source-efficiency ladder",
+  "parents": ["M151", "M205", "M212", "M215"],
+  "one_changed_mechanism": "replace exact M215 t/A/E/D row totals by one shared k=32 SRSWOR HT row sketch while retaining exact live p/B/rho",
+  "classification": {
+    "unbiasedness": "exact under the frozen SRSWOR law conditional on fixed state",
+    "rao_blackwell": "partial conditional RB only for an expressly matched row-anchor sampler of the t/A/E/D part; no generic collision-HH dominance claim",
+    "exact_endpoint": "M215 full row sum",
+    "prohibited": [
+      "sketched p, B, or rho",
+      "nonlinear transform before Source211 assembly",
+      "adaptive k or clipping",
+      "correlated M151 residual stream",
+      "collision-triple sampler",
+      "fourth Bhat product",
+      "response dual or second carrier",
+      "challenge weights, truth, scorer, leaderboard, submission, champion"
+    ]
+  },
+  "dimensions": {
+    "width": 256,
+    "layers": 31,
+    "subset_rows": 32,
+    "sampling_fraction": 0.125,
+    "scale_n_over_k": 8,
+    "dtype": "float64"
+  },
+  "randomness": {
+    "law": "uniform without replacement per layer",
+    "priority_domain": "M227_ROW_PRIORITY_V1",
+    "residual_domain": "inherited M151/M133 unchanged",
+    "pathwise_covariance": "hidden rows and attached priority receipt co-permute",
+    "tie_policy": "fail closed; no row-index tie break",
+    "independent_from_residual": true
+  },
+  "predicted_target_operations": {
+    "random_calls": 1,
+    "argsort_calls": 1,
+    "gather_calls": 1,
+    "matmul_calls": 2,
+    "matmul_product_equivalents": 3,
+    "multiply_calls": 16,
+    "add_calls": 9,
+    "sum_calls": 1,
+    "copy_calls": 1,
+    "reshape_calls": 0,
+    "random_bill": 15872,
+    "argsort_bill": 507904,
+    "gather_bill": 2031616,
+    "matmul_bill": 767950848,
+    "multiply_bill": 57901056,
+    "add_bill": 36569088,
+    "sum_bill": 492032,
+    "copy_bill": 15872,
+    "inclusive_bill": 865484288
+  },
+  "cost_envelope": {
+    "m151_retired_compiler_bill": 3727757440,
+    "m212_bill": 1249253376,
+    "m227_bill": 865484288,
+    "m212_m227_bill": 2114737664,
+    "raw_remainder": 1613019776,
+    "combined_hostile_wall_cap_ms": 3.226039552,
+    "m212_frozen_max_wall_ms": 1.2018998677376658,
+    "m227_wall_left_ms": 2.024139684262334,
+    "conditional_full_branch_bill": 88095616464,
+    "m151_full_branch_bill": 89708636240,
+    "conditional_raw_savings": 1613019776,
+    "retirement_credit": "denied unless integrated ABI trace proves the complete old 3.727757440B B1 compiler is absent",
+    "hostile_wall_multiplier": 5.0
+  },
+  "memory_mib": {
+    "selected_rows": 1.9375,
+    "selected_powers": 3.875,
+    "A_E": 31.0,
+    "rank_receipt": 0.060546875,
+    "persistent_incremental": 36.873046875,
+    "transient_priorities": 0.060546875,
+    "incremental_peak_nominal": 36.93359375,
+    "m212_m227_persistent_nominal": 138.955078125,
+    "integrated_peak_cap": 512.0,
+    "streamed_layer_batch_repair_credit": false
+  },
+  "algebra_gate": {
+    "widths": [3, 4, 5, 6, 7, 8, 9],
+    "seeds": [227003, 227004, 227005, 227006, 227007, 227008, 227009],
+    "subset_sizes": ["1", "min(3,n-1)"],
+    "source_tolerance": 2e-10,
+    "oracle": "generated small-width M205/M215 cubic source only"
+  },
+  "native_gate": {
+    "seeds": [227700001, 227700002, 227700003, 227700004, 227700005],
+    "exact_bill": 865484288,
+    "combined_m212_m227_effective_cap": 3727757440,
+    "peak_rss_cap_mib": 512.0,
+    "bill_and_calls_must_be_identical": true
+  },
+  "source_efficiency": {
+    "baseline": "M151 exact strict control plus unchanged independent K=128 residual",
+    "break_even_VS_over_VR": 0.0001430459029156082,
+    "one_percent_win_VS_over_VR": 0.00006349044388645213,
+    "bootstrap_resamples": 20000,
+    "promotion_upper90_cost_ratio_lt": 0.99,
+    "every_cell_point_ratio_lt": 1.0,
+    "p99_error_ratio_lte": 1.25,
+    "g0_bootstrap_seed": 2270001,
+    "g1_bootstrap_seed": 22730001,
+    "g1_target_cells": [22732001, 22732002, 22732003, 22732004, 22732101, 22732102, 22732103, 22732104],
+    "g1_events_per_cell": 16384,
+    "holdout_cells": [22732201, 22732202, 22732203, 22732204, 22732205, 22732206, 22732207, 22732208, 22732301, 22732302, 22732303, 22732304, 22732305, 22732306, 22732307, 22732308],
+    "pre_transport_only": true
+  },
+  "credit": "predeclared conditional unbiased row-sketch candidate only; no implementation, test, trace, variance result, MSE, score, submission, or winner credit"
+}

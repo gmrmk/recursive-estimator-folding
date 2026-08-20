@@ -1,0 +1,39 @@
+{
+  "mutation": "m230_m223_live_sigma_gather",
+  "status": "SEAM_PROTOTYPE_INTEGRATION_BLOCKED",
+  "one_changed_mechanism": "inclusive gather from a retained live M223/M179 marginal-sigma vector",
+  "m224_code_sha256": "6ABA2D0AB618FF5D678977CC07FC89962C09092B537AAFFC282E069C10DFDA7B",
+  "m223_source_sha256": "AA1F58A8AE886B01F811DE209335D9CB5621A0CA0C718F851AFB474461D580A5",
+  "artifact_hashes_sha256": {
+    "m230_m223_live_sigma_gather.py": "8D7AEA3AC6132115B0991C775044EB7B7EE67B3C99B76A2E0AA2148226F90890",
+    "test_m230_m223_live_sigma_gather.py": "E7F104ACCE115CDF325CF7A4C57CE85E7B367E0A63FBDF8292CEAE8E05AB1732",
+    "M230_PREDECLARATION_20260809.md": "2A86AD503330E4A44B87C4EC6006798AF13DC5E6F71BB6F1C9E528F6E85DB7A5",
+    "M230_STATIC_LEDGER_20260809.json": "E24719365E017BA7AD46152FAD1401BF5E4E25F0E56C8DF771CF9A4445B17DB0"
+  },
+  "red_green": {"red_missing_module_reproduced": true, "green_tests": "4/4 passed"},
+  "live_provider_audit": {
+    "context_type": "M223 LayerPrecontext",
+    "generated_layer": 7,
+    "generated_epoch": 19,
+    "exposed_fields": ["C", "a", "epoch", "layer", "provenance"],
+    "required_field": "marginal_sigma_vector",
+    "status": "SEAM_PROTOTYPE_INTEGRATION_BLOCKED",
+    "reason": "M223_RETAINED_MARGINAL_SIGMA_VECTOR_ABSENT"
+  },
+  "proof_gates": {
+    "exact_value_semantics_against_m224": "NOT_RUN_PROVIDER_ABSENT",
+    "layer_epoch_object_binding": "NOT_RUN_PROVIDER_ABSENT",
+    "copy_rejection": "PRECHECK_REFUSES_PROVIDER_ABSENT",
+    "wrong_epoch_rejection": "PRECHECK_REFUSES_PROVIDER_ABSENT",
+    "conditional_sigma_substitution_rejection": "PRECHECK_REFUSES_PROVIDER_ABSENT"
+  },
+  "inclusive_execution": {
+    "label_packing_charged": "NOT_RUN_PROVIDER_ABSENT",
+    "gather_charged": "NOT_RUN_PROVIDER_ABSENT",
+    "six_fresh_processes_run": false,
+    "reuse_credit_authorized": false,
+    "integrated_cost_credit": 0,
+    "wall_speed_claim": "NONE"
+  },
+  "variance_gate_run": false
+}

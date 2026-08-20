@@ -1,0 +1,113 @@
+{
+  "beta": [
+    -0.017756290935267205,
+    -0.0649173044997013,
+    -0.09780079475397133,
+    0.045942865622642104,
+    0.11732683105974485,
+    -0.0760469839102137
+  ],
+  "bootstrap": {
+    "indices_payload_sha256": "60BFF8CF76A7CEF92731C8B25B7DCF1D8568F9AE73F296EE70E64D61ED758E5C",
+    "joint_r2_lower": 0.9193896186765471,
+    "lower_order_index_zero_based": 40,
+    "maximum": 0.9759189493689339,
+    "median": 0.9419112542193129,
+    "minimum": 0.9059310777847791,
+    "replicates": 4096
+  },
+  "execution_boundary": {
+    "challenge_or_generated_networks": 0,
+    "hand_networks": 1,
+    "provider_predictions": 0,
+    "scientific_scope": "truth-free deterministic d=2 synthetic covariance only",
+    "truth_or_scorer_reads": 0,
+    "worker_processes": 0
+  },
+  "fit_diagnostics": {
+    "gram_trace": 0.7489343897191693,
+    "relative_residual": 9.547007396361018e-17,
+    "ridge_lambda": 1.1903991535809346e-07
+  },
+  "fit_split": {
+    "jvp_evaluations": 512,
+    "rotation_count": 128,
+    "rotation_payload_sha256": "BDDA3E2AAF5ABFCBABE05AAA9CCFC3928CF4406006BADE0CF140C2EE368C52C3",
+    "seed": 3606118401,
+    "y_payload_sha256": "2E1B3752EBD5261A20B02BE25459321CA08FB368F7E8EDBFD50E7430FCA02768",
+    "z_payload_sha256": "93C58C0E99D9405209272700E5F6939095254837777C2BAC64AA1E20FDB16E19"
+  },
+  "held_split": {
+    "jvp_evaluations": 512,
+    "rotation_count": 128,
+    "rotation_payload_sha256": "757DA553306CB1A644BDFD9A0A4F39FBA5800557375F80896017B73090D78D71",
+    "seed": 3606118402,
+    "y_payload_sha256": "210243C57C55B110F3D1AFC17C04318184298BBA2016F222AE25D9B1A0F7E039",
+    "z_payload_sha256": "872EE1ABD86977FE85746BD9E8E1FEDE5E5FCFA199EF37DCB000AAC0EE3DCA31"
+  },
+  "held_statistics": {
+    "R2_D_given_F": 0.33005233901223785,
+    "R2_F_given_D": 0.9388937394051985,
+    "R2_joint": 0.9416211929936065,
+    "V00": 0.0011313200334309313,
+    "V01": 9.858249791745672e-05,
+    "V10": 0.0010808240146141382,
+    "V11": 6.604511389413106e-05
+  },
+  "kill_reasons": [],
+  "permutation": {
+    "indices_payload_sha256": "716CE92671E981918A6D1F2D4EC1C371795721D8B8D0566BD5F882F8D34487F8",
+    "null_maximum": 0.04635281958404602,
+    "null_median": -0.01519148424463268,
+    "null_minimum": -0.1669197739139081,
+    "p_denominator": 1025,
+    "p_numerator": 1,
+    "replicates": 1024
+  },
+  "preexecution_manifest_sha256": "BCE377D1349BF6412A54DAF823D2B90A06F76DFE1CDD60EC2BFE501229EC8169",
+  "realized_payloads": {
+    "beta": {
+      "dtype": "<f8",
+      "sha256_c_order_payload": "C39B8683E71E069064BEBBC38792534645EB2913E284F3D00FE1B7E334A9A988",
+      "shape": [6]
+    },
+    "bootstrap_joint_r2": {
+      "dtype": "<f8",
+      "sha256_c_order_payload": "CD5144FB70A0518D267D0FF7281FAA527342B4604337EF00B79A11D27A11475D",
+      "shape": [4096]
+    },
+    "held_arm_00": {
+      "dtype": "<f8",
+      "sha256_c_order_payload": "210243C57C55B110F3D1AFC17C04318184298BBA2016F222AE25D9B1A0F7E039",
+      "shape": [128, 2]
+    },
+    "held_arm_01": {
+      "dtype": "<f8",
+      "sha256_c_order_payload": "E9230365E0B8E25A414100ED0406CC25031ED73B52FEF59BF161F9B43BD4A795",
+      "shape": [128, 2]
+    },
+    "held_arm_10": {
+      "dtype": "<f8",
+      "sha256_c_order_payload": "FE108B00FD09852EB7282C77D3F33C848ACB4455A795948CC865A993918902E3",
+      "shape": [128, 2]
+    },
+    "held_arm_11": {
+      "dtype": "<f8",
+      "sha256_c_order_payload": "8C8313E1F0433EBBDD1DBC4DC5B0733969C3F9D2D9CC8F0F763428ACF1303C17",
+      "shape": [128, 2]
+    },
+    "permutation_null_joint_r2": {
+      "dtype": "<f8",
+      "sha256_c_order_payload": "9CF54C7C12DF7F3F33265EA84B2DDD6FA862824863002DEDFE2545606B365FFA",
+      "shape": [1024]
+    }
+  },
+  "runtime": {
+    "numpy_version": "2.3.5",
+    "python_executable_sha256": "3C6A206B7D93CCA823934A83732220DCFFD413FD1036D9FB82EEBB64599CF7F3",
+    "python_version": "3.12.13"
+  },
+  "schema_version": "dgfl1-f05-result-v1",
+  "status": "PASS_F05_SYNTHETIC_COVARIANCE_ONLY",
+  "variance_convention": "sample trace variance sum_i ||A_i-mean(A)||^2/(n-1)"
+}

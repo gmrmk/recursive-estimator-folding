@@ -1,0 +1,58 @@
+{
+  "step": "STEP 0 metering / arithmetic gate",
+  "metered": {
+    "matmul_flops_per_layer_METERED_live": 134217216,
+    "matmul_flops_per_layer_frozen_2026_08_07": 134217216,
+    "matmul_reproduces_frozen": true,
+    "pairs_per_layer": 32640,
+    "per_pair_flops": 4090,
+    "pair_flops_per_layer": 133497600,
+    "diag_flops_per_layer": 172032,
+    "per_layer_flops": 267886848,
+    "frozen_per_layer_flops": 267886848,
+    "per_layer_reproduces_frozen": true,
+    "frozen_module_inclusive_ledger_31": {
+      "pairs_per_layer": 32640,
+      "per_pair_flops": 4090,
+      "pair_flops_per_layer": 133497600,
+      "diag_flops_per_layer": 172032,
+      "matmul_flops_per_layer_METERED": 134217216,
+      "per_layer_flops": 267886848,
+      "total_producer_flops": 8304492288,
+      "fraction_of_budget_B": 0.030531221647058824
+    }
+  },
+  "bills": {
+    "B31_31_layer_inclusive": 8304492288,
+    "B31_frozen_total_producer_flops": 8304492288,
+    "B31_reproduces_frozen": true,
+    "marginal_layer_32_flops": 267886848,
+    "B32_32_layer_inclusive": 8572379136,
+    "B32_billions": 8.572379136
+  },
+  "ledger_identities": {
+    "legacy_row + strict_headroom == cond_repl_headroom": true,
+    "100 - cond_repl_total == cond_repl_headroom": true,
+    "strict_partial - legacy_row == cond_repl_total": true,
+    "m151_subtotal + m179_31 == strict_partial": true,
+    "metered_B31 == ledger m179_standalone_total": true
+  },
+  "GATE_0": {
+    "quantity": "B32 (32-layer inclusive metered bill), FLOPs",
+    "value": 8572379136,
+    "value_billions": 8.572379136,
+    "threshold_billions": 9.723621632,
+    "margin_billions": 1.151242496,
+    "verdict": "PASS"
+  },
+  "GATE_0X_convention_crosscheck": {
+    "T_A_post_replacement_total_convA_billions": 90.544265216,
+    "T_A_headroom_billions": 9.455734784,
+    "T_A_matches_mined_expected_90_544": true,
+    "T_B_post_replacement_total_convB_1p25_billions": 92.68736,
+    "T_B_headroom_billions": 7.31264,
+    "strict_no_replacement_convB_billions": 100.0892516,
+    "strict_no_replacement_convB_matches_ledger_100_0892516": true,
+    "verdict": "PASS"
+  }
+}

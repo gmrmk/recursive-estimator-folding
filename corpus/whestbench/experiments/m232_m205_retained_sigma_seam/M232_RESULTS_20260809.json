@@ -1,0 +1,48 @@
+{
+  "mutation": "m232_m205_retained_sigma_seam",
+  "status": "SEAM_PROTOTYPE_INTEGRATION_BLOCKED",
+  "one_changed_mechanism": "retain M205 diagonal sqrt output as a layer epoch object-bound marginal sigma vector",
+  "m224_code_sha256": "6ABA2D0AB618FF5D678977CC07FC89962C09092B537AAFFC282E069C10DFDA7B",
+  "parent_hashes_sha256": {
+    "m205_rankone_complete_physical_owner.py": "E6118419CA1D648E8BCB36454B689708A669D2CC83045BCAA6FCF398E3BBC294",
+    "m212_flopscope_sidecar.py": "197569262FF487FCB5AF175CA5351F2ABB5B70885760CECC958FBCD8397F1C78"
+  },
+  "artifact_hashes_sha256": {
+    "m232_m205_retained_sigma_seam.py": "EBDF09D5146230DB9878B052BE80212895C9A56F413031F46F46AEC22D8558B0",
+    "test_m232_m205_retained_sigma_seam.py": "159E09A6B438F64D274818991D08E04B509459BB206441F726187E14EB47C9C9",
+    "M232_PREDECLARATION_20260809.md": "FCD12A67CFD94F606A4CFA3317C14FC6B8711F154399684A0C276400A9D830B5",
+    "M232_STATIC_LEDGER_20260809.json": "E2F97D38A77D93EC7A2771C674614C5B2F0584B02211DBF78BF53E6C39591B2C"
+  },
+  "red_green": {"red_missing_module_reproduced": true, "green_tests": "5/5 passed"},
+  "constructive_static_identity": {
+    "zero_diagonals_preserved": true,
+    "m205_factor_equals_sigma_over_sqrt_active_count": true,
+    "m224_marginals_exact": true,
+    "m224_value_parity": true,
+    "gauge_exact": true,
+    "permutation_exact": true,
+    "copy_wrong_epoch_conditional_rejection": true
+  },
+  "current_parent_seam": {
+    "status": "SEAM_PROTOTYPE_INTEGRATION_BLOCKED",
+    "reason": "CURRENT_M205_M212_RETAINED_MARGINAL_SIGMA_ABSENT",
+    "m205_rank_one_b1_state_fields": ["omega", "conditional_mean", "conditional_variance", "factor", "diagonal_residual"],
+    "m212_layer_input_fields": ["layer", "weight", "factor", "producer_epoch"],
+    "live_marginal_sigma_field_exposed": false
+  },
+  "inclusive_execution": {
+    "m205_sqrt_billed": "NOT_RUN_CURRENT_PARENT_ABI_ABSENT",
+    "factor_divide_copy_billed": "NOT_RUN_CURRENT_PARENT_ABI_ABSENT",
+    "label_packing_and_gathers_billed": "NOT_RUN_CURRENT_PARENT_ABI_ABSENT",
+    "six_fresh_processes_run": false,
+    "integrated_cost_credit": 0,
+    "wall_speed_claim": "NONE"
+  },
+  "next_child_proposal": {
+    "id": "M233",
+    "one_mechanism": "new live retained-sigma producer wrapper from stacked covariance diagonals",
+    "required_full_charge": ["sqrt", "factor divide or copy", "label packing", "two gathers", "unchanged M228 kernel"],
+    "not_implemented_under_m232": true
+  },
+  "variance_gate_run": false
+}

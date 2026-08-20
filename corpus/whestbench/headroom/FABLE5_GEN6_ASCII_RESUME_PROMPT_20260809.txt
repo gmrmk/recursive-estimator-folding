@@ -1,0 +1,330 @@
+===============================================================================
+FABLE 5 CLEAN RESUME PROMPT - WHESTBENCH RECURSIVE ESTIMATOR FOLDING - 2026-08-09
+===============================================================================
+
+ROLE
+----
+You are resuming an evidence-bound mathematical campaign for the ARC
+White-Box Estimation Challenge (WHestBench). Your job is to improve the fixed
+network mean estimator honestly under the published rules. Do not edit the
+given network, train on private truth, inspect hidden scorer data, scrape
+leaderboard internals, copy a competitor, or claim a win without an official
+evaluation. Every pass, failure, and uncertainty is reusable evidence.
+
+GOAL
+----
+Find a legal estimator with lower adjusted MSE than the current entry. The
+current deployable answer is guarded Kerdock v3.1. The current research answer
+is an exact high-order control plus an exactly sampled residual and one
+coalesced forward response. That research chain is NOT yet deployable and is
+NOT known to win.
+
+REPOSITORY
+----------
+Private GitHub repository:
+  https://github.com/gmrmk/recursive-estimator-folding
+
+Working branch:
+  agent/compression-survivor-corpus
+
+Windows checkout example:
+  git clone https://github.com/gmrmk/recursive-estimator-folding.git
+  cd recursive-estimator-folding
+  git fetch origin
+  git switch agent/compression-survivor-corpus
+  git pull --ff-only
+
+Use long-path-safe Git commands:
+  git -c core.longpaths=true status --short
+
+READ THESE FIRST, IN ORDER
+--------------------------
+1. corpus/whestbench/headroom/GEN6_DEFINITIVE_ATTACK_20260809.md
+2. corpus/whestbench/headroom/GEN6_WHAT_IF_ORACLE_20260809.md
+3. corpus/whestbench/headroom/GEN6_FAILURE_SALVAGE_ATLAS_20260809.md
+4. corpus/whestbench/headroom/GEN6_UNRESOLVED_CROSS_AUDIT_20260809.md
+5. corpus/whestbench/headroom/GEN6_M192_EXACT_CONTROL_CROSS_AUDIT_20260809.md
+6. corpus/whestbench/headroom/GEN6_NATIVE_TRACE_CONTRACT_20260809.md
+7. corpus/whestbench/headroom/fold_ledger.json
+8. corpus/whestbench/graph/DETERMINISTIC_INSIGHTS.md
+9. corpus/whestbench/graph/GRAPH_REPORT.md
+10. sources/RELU_MECHANISM_AUDIT_20260809.md
+
+FIREWALL
+--------
+Allowed before a declared outcome gate:
+  - exact symbolic algebra;
+  - generated weights and generated Gaussian inputs;
+  - local response-free component tests;
+  - static and pinned FlopScope cost traces;
+  - public rules and primary research;
+  - the append-only failure ledger and published local artifacts.
+
+Not allowed as deployment information:
+  - contest truth, private evaluation rows, hidden scorer state;
+  - leaderboard source scraping or competitor weights/code;
+  - tuning after seeing a frozen outcome;
+  - fabricated conditional moments or free preprocessing;
+  - an API-only dependency unavailable in the sandbox;
+  - model replacement, retraining, distillation, or edited weights.
+
+CURRENT IMPLEMENTED BASELINE
+----------------------------
+The only shippable estimator remains Kerdock v3.1 with fail-closed guards.
+Its healthy path is design8/v3 and its hostile behavior is safer. It has no
+new official score in this generation. Do not call it the winner.
+
+CURRENT EXACT-CONTROL CHAIN
+---------------------------
+
+  M178  exact bounded-cost bivariate Gaussian ReLU value/Jacobian      PASS
+    |
+  M179  exact Gaussian-closure covariance and local Jacobian archive   PASS
+    |
+  M167/M172 physical collision-owner transfer                          ALGEBRA PASS
+    |
+  M205 rank-one complete physical-owner control                        COMPONENT PASS
+    |
+  physical layer-bound K4/K31/K22/C211 provider                        MISSING
+    |
+  M198  Source211 to delay-one TangentState adapter                     PASS SEMANTIC
+    |
+  M125b one forward tangent carrier                                    PASS COMPONENT
+    |
+  M200  one-pass H-source plus H+1 terminal stream                      PASS SEMANTIC
+    |
+  M148/M151 exact deterministic-control plus sampled-residual identity PASS IDENTITY
+    |
+  normalized target trace, source variance, whole-estimator MSE         UNOPENED
+
+COST STATE
+----------
+M151 frozen endpoint subtotal, already including M125b:
+  89.708636240 B protected units
+
+Standalone M179 archive:
+   8.304492288 B
+
+Strict no-replacement partial:
+  98.013128528 B
+
+Strict remaining headroom before every missing term:
+   1.986871472 B
+
+The older 10.291363760 B value is only M151 in isolation. It is not the
+composed headroom. A conditional background-replacement sensitivity leaves
+9.723621632 B, but no artifact currently licenses that credit.
+
+LATEST LADDER
+-------------
+M198:
+  - 11 semantic tests pass.
+  - Independent 100-dps rank-one oracle error: 9.23e-15.
+  - Same-process receipts are integrity conventions, not security.
+  - No physical provider, target cost, variance, or MSE credit.
+
+M199:
+  - BLOCKED_OVERLAP.
+  - Rejects double-counting M125b and rejects imaginary M179 replacement.
+
+M200:
+  - 48/48 generated cells pass.
+  - Strict parity max: 3.552713678800501e-15, gate 2e-12.
+  - Per-layer impulse error: 0.
+  - Counts: H background/source/conversion/injection, H-1 transports,
+    one terminal response, zero archive rebuilds.
+  - Structural max live set: 5.
+  - This is semantic/liveness evidence only, not a native cost trace.
+
+M201:
+  - KILLS generic contraction-then-collapse of the repeated-label axis.
+  - Width-3 exact repeated-label map determinant: 116640.
+  - Fubini inside each fixed repeated label survives; global collapse does not.
+
+M202:
+  - KILLS the current signed-facet Feynman-Kac/SMC branch.
+  - Minimal witness has rho=epsilon/(2-epsilon), so signed ESS can collapse.
+  - Raw gate labels double-count owned output facets.
+  - Preserve only the exact signed coarea identity.
+
+M203:
+  - KILLS standard exact terminal fusion under current cost rules.
+  - Best two-rectangle Winograd depth-5 bill: 10.543779520 B.
+  - It misses isolated M151 headroom by 0.252415760 B and strict composed
+    headroom by 8.556908048 B before omitted work.
+
+M204:
+  - Exact structured algebra child; replacement premise KILLED.
+  - Use rank-one two-active-node Rademacher factor
+
+      u_i = sqrt(V_ii)/sqrt(n)
+      d_i = V_ii-u_i^2
+      V_control = u u^T + diag(d)
+
+  - The connected distinct-label coefficient is
+
+      dtilde_ijk = -2 u_i^2 u_j u_k.
+
+  - On the M156 complete-domain add/subtract lift, its aaaa/aaab/aabb source
+    compiles with one square output contraction instead of M155's masked
+    32896-column Khatri action.
+  - Seven exact tests pass: Schur factorization, Rademacher identity, source
+    parity, permutation, positive gauge, conservation, and cost bookkeeping.
+  - One protected f64 product costs 2.595389440 B.
+  - M206 proves it is NOT arithmetic-identical to M151's booked strict source:
+    the lift has nonzero collisions while M151 C211 zeroes repeated labels.
+  - Without reuse, B plus u^T W costs 2.084422144 B raw, already
+    0.097550672 B over strict headroom before omitted work.
+  - Preserve the algebra only; do not run its collision-tail variance.
+
+M205:
+  - Distinct physical-owner child; BLOCKED_PROVIDER_AND_NATIVE_COST.
+  - Keeps M204's fixed loading but assigns physical owners:
+      K4   for [4]
+      K31  directed for [3,1]
+      K22  symmetric for [2,2]
+      C211 for distinct labels.
+  - Six exact tests pass, including source(T)=source(c)+source(T-c).
+  - It avoids silently zeroing physical collisions, but there is no live
+    layer-bound K4/K31/K22 provider and no strict composed cost proof.
+
+M206:
+  - Exact post-hoc audit kills M204's same-call M151 replacement claim.
+  - W=I and a 45-degree rotation can share B while requiring different
+    collision statistics. One B cannot supply the strict correction.
+  - Three response-free tests pass; no efficacy data were used.
+
+M207:
+  - Boundary-only component pass.
+  - Repairs M204's all-zero-covariance ValueError with u=d=0 and zero control.
+  - Seven tests pass. It repairs no cost, provider, variance, or score edge.
+
+MAJOR CLOSED ESCAPES
+--------------------
+- More point placement: Kerdock is already near the average-case sampling
+  floor; a free 7-design gains only about 1.315x at about 87x point cost.
+- Gradient/Stein controls: exact ReLU singular-mass degeneracy.
+- Fixed low-rank/JSpace/attention routing: gate subspaces tumble and routing
+  cannot identify an unknown mean.
+- Approximate analytic anchors: M193 cross-term contamination.
+- Independent/crossed frame pilots: M194/M195/M197 lose on SNR and design.
+- Sampled cumulant quotient regression: loses by 700-2168x equal paths.
+- Generic masked Source211 Khatri action: 266.806 B.
+- Complete-domain M156 control as previously chosen: compiler passes, but
+  M161 source variance is 3.201e8 with collision p99 ratio 3.753e12.
+- Generic repeated-label contraction collapse: M201 exact rank obstruction.
+- Standard packed terminal contractions: M203 cost no-go.
+- Signed-facet SMC: M202 sign/ownership/no-normalizer no-go.
+- Alternate activations, initialization, or distillation: changes the fixed
+  target and supplies no exact estimator information.
+
+M192 ORACLE WARNING
+-------------------
+M192 truth-oracle frame GLS reaches about 0.126 of uniform MSE. This is a map
+of missing information, not a deployable estimator. From one frame matrix,
+P C P is observable but P C u is not. M193-M197 exhaust the tested lawful
+anchor/pilot/crossed topologies. Reopen only if a new statistic S_j proves
+either S_j=mu_j exactly or E[P X_j (mu_j-S_j) | W]=0.
+
+GRAPH / HYPERCONNECTIONS
+------------------------
+The deterministic graph mixes:
+  - hand-audited causal edges, which are evidence;
+  - one descriptive navigation node per ledger record, which is coverage only.
+
+Rebuild sequence:
+  python scripts/build_failure_salvage_atlas.py
+  python scripts/build_failure_salvage_atlas.py --check
+  python corpus/whestbench/graph/build_evidence_graph.py
+  cd corpus/whestbench/graph
+  graphify cluster-only . --graph graph.json
+
+Then inspect and promote graphify-out graph.json, graph.html, GRAPH_REPORT.md,
+and .graphify_labels.json. Never treat clustering as a mathematical proof.
+
+SOURCE MATERIAL ALREADY AUDITED
+-------------------------------
+- DPReLU and weight initialization, DOI 10.1007/s44196-023-00186-w
+- ReLU Function and Derived Function Review, DOI 10.1051/shsconf/202214402006
+- SignReLU/CNN paper, DOI 10.1016/j.procs.2018.04.239
+- Improving Weight Initialization of ReLU and Output Layers
+- ReLU for Inference Acceleration, OpenReview 9ydLP7como
+- Weight precision versus neuron count, ICML 2024
+
+Local texts/PDFs and the mechanism audit are under sources/. None supplies a
+new exact mean observable. Preserve only their diagnostics and accounting
+boundaries.
+
+TEST COMMANDS
+-------------
+Run from each experiment directory when its tests import a sibling module.
+
+  python -m unittest -v test_m198_source211_delay_one_adapter.py
+  python -m unittest -v test_m199_cost_reconciliation.py
+  python -m unittest -v test_m200_streaming_overlap.py
+  python -m unittest -v test_m201_repeated_label_rank_no_go.py
+  python -m unittest -v test_m202_signed_facet_smc_no_go.py
+  python -m unittest -v test_m203_terminal_contraction_circuit_no_go.py
+  python -m unittest -v test_m204_lowrank_b1_lifted_control.py
+  python -m unittest -v test_m205_rankone_complete_physical_owner.py
+  python -m unittest -v test_m206_m204_native_replacement_audit.py
+  python -m unittest -v test_m207_zero_variance_rank_one_guard.py
+
+Repository-level gates:
+
+  python scripts/build_failure_salvage_atlas.py --check
+  python -m unittest -v tests/test_failure_salvage_atlas.py
+  python -m unittest -v tests/test_evidence_graph_coverage.py
+  python -m unittest -v tests/test_fold_ledger.py
+
+WIP LIMIT 1
+-----------
+Do not open a variance or MSE run yet. M206 has killed the M204 native-reuse
+premise. WIP is the distinct M205 physical-owner provider/caller replacement:
+
+[ ] Bind M205 to the live M179 V object and layer receipt.
+[ ] Emit exact physical K4, directed K31, symmetric K22, and distinct C211.
+[ ] Prove the old strict M151 caller and residual path are removed if a new
+    complete-owner caller replaces them; do not claim same-call reuse.
+[ ] Stream it through M198/M125b without rebuilding M179 or retaining an archive.
+[ ] Include M172 ownership, terminal W32, copies, allocations, call count, and
+    residual wall price.
+[ ] Normalize all accounting conventions; do not mix raw and 1.25-protected.
+[ ] PASS only if all uncredited work is <=1.986871472 B and total <=100 B.
+[ ] FAIL CLOSED otherwise; preserve the rank-one identity.
+
+Only after the physical-provider and cost premises pass:
+
+[ ] Freeze the exact M205 proposal and 24 generated cells.
+[ ] Run source variance before whole-estimator MSE.
+[ ] Require upper-90 V_H/V_Delta <0.25.
+[ ] Require residual/source p99 <=1.25.
+[ ] Require nonpositive width slope and no nonfinite/fallback/refusal.
+[ ] No rank, proposal, or regularization retuning after the frozen result.
+[ ] Only then run whole-estimator generated MSE.
+[ ] Promote at >=20 percent adjusted improvement with every network nonworse.
+[ ] Kill below 10 percent or on any hostile-budget failure.
+
+EVIDENCE RULE FOR EVERY NEW MUTATION
+------------------------------------
+1. Give it one new ID and one changed causal mechanism.
+2. Write prediction, kill condition, firewall, and units before execution.
+3. Use generated response-free algebra first.
+4. Compare against the strongest prior mechanism, not a straw baseline.
+5. Record the exact failure edge and reusable tissue.
+6. Append fold_ledger.json; regenerate atlas and graph.
+7. Never overwrite a failed result or retune it into a pass.
+8. Do not call any component a winner until official private evaluation.
+
+CURRENT HONEST CONCLUSION
+-------------------------
+The broad generic and fringe branches have not produced a validated winning
+entry. M204's apparent free reuse is exactly dead. The narrow surviving tissue
+is M205's physical-owner rank-one control, whose first unresolved fact is an
+actual layer-bound collision provider plus complete native caller replacement.
+Solve that before variance. Until then, ship v3.1; describe M204 as preserved
+algebra, M205 as provider/cost-blocked, and M207 as a boundary guard only.
+
+===============================================================================
+END FABLE 5 RESUME PROMPT
+===============================================================================

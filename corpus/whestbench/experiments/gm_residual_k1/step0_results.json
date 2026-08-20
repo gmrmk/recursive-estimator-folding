@@ -1,0 +1,119 @@
+{
+  "arm": "STEP0_CACHED_ARITHMETIC_ONLY",
+  "gate": 258400000000.0,
+  "k1_pass_count": 5,
+  "k5_pass_count": 3,
+  "lambda": 100000000000.0,
+  "max_C_k1": 210352002450.01505,
+  "max_C_k5": 278273084846.0753,
+  "recompute_all_match": true,
+  "rows": [
+    {
+      "C_k1": 196660222961.9919,
+      "C_k5": 258854820589.95947,
+      "billed_flops": 181111573555,
+      "break_even_k": 4.970748546831664,
+      "cached_effective_compute_field": 196660222961.9919,
+      "cached_hostile_5x_field": 258854820589.95947,
+      "k1_margin_pct": 23.89310256888858,
+      "k1_margin_to_gate": 61739777038.00809,
+      "passes_k1": true,
+      "passes_k5": false,
+      "recompute_matches_field_k1": true,
+      "recompute_matches_field_k5": true,
+      "residual_ceiling_s_at_k1": 0.77288426445,
+      "residual_s": 0.155486494069919,
+      "seeds": {
+        "generated_mlp": 160320001,
+        "setup": 160310001
+      },
+      "worker": 1
+    },
+    {
+      "C_k1": 210352002450.01505,
+      "C_k5": 278273084846.0753,
+      "billed_flops": 193371731851,
+      "break_even_k": 3.829636740463487,
+      "cached_effective_compute_field": 210352002450.01505,
+      "cached_hostile_5x_field": 278273084846.0753,
+      "k1_margin_pct": 18.594426296433806,
+      "k1_margin_to_gate": 48047997549.984955,
+      "passes_k1": true,
+      "passes_k5": false,
+      "recompute_matches_field_k1": true,
+      "recompute_matches_field_k5": true,
+      "residual_ceiling_s_at_k1": 0.65028268149,
+      "residual_s": 0.16980270599015057,
+      "seeds": {
+        "generated_mlp": 160320002,
+        "setup": 160310002
+      },
+      "worker": 2
+    },
+    {
+      "C_k1": 189772717073.78674,
+      "C_k5": 243057871680.93372,
+      "billed_flops": 176451428422,
+      "break_even_k": 6.151700013422386,
+      "cached_effective_compute_field": 189772717073.78674,
+      "cached_hostile_5x_field": 243057871680.93372,
+      "k1_margin_pct": 26.55854602407634,
+      "k1_margin_to_gate": 68627282926.21326,
+      "passes_k1": true,
+      "passes_k5": true,
+      "recompute_matches_field_k1": true,
+      "recompute_matches_field_k5": true,
+      "residual_ceiling_s_at_k1": 0.81948571578,
+      "residual_s": 0.13321288651786745,
+      "seeds": {
+        "generated_mlp": 160320003,
+        "setup": 160310003
+      },
+      "worker": 3
+    },
+    {
+      "C_k1": 181583093776.41022,
+      "C_k5": 237509893178.05112,
+      "billed_flops": 167601393926,
+      "break_even_k": 6.4941035099774345,
+      "cached_effective_compute_field": 181583093776.41022,
+      "cached_hostile_5x_field": 237509893178.05112,
+      "k1_margin_pct": 29.727904885290165,
+      "k1_margin_to_gate": 76816906223.58978,
+      "passes_k1": true,
+      "passes_k5": true,
+      "recompute_matches_field_k1": true,
+      "recompute_matches_field_k5": true,
+      "residual_ceiling_s_at_k1": 0.90798606074,
+      "residual_s": 0.13981699850410223,
+      "seeds": {
+        "generated_mlp": 160320004,
+        "setup": 160310004
+      },
+      "worker": 4
+    },
+    {
+      "C_k1": 179675613472.01706,
+      "C_k5": 237143252080.08527,
+      "billed_flops": 165308703820,
+      "break_even_k": 6.479562998221427,
+      "cached_effective_compute_field": 179675613472.01706,
+      "cached_hostile_5x_field": 237143252080.08527,
+      "k1_margin_pct": 30.466093857578535,
+      "k1_margin_to_gate": 78724386527.98294,
+      "passes_k1": true,
+      "passes_k5": true,
+      "recompute_matches_field_k1": true,
+      "recompute_matches_field_k5": true,
+      "residual_ceiling_s_at_k1": 0.9309129618,
+      "residual_s": 0.14366909652017057,
+      "seeds": {
+        "generated_mlp": 160320005,
+        "setup": 160310005
+      },
+      "worker": 5
+    }
+  ],
+  "source": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\work\\scorefloor_generation\\terra_m160_hostile_deploy\\M160_HOSTILE_AUDIT_20260807.json",
+  "step0_verdict": "PASS_PROCEED_TO_ARM_A"
+}

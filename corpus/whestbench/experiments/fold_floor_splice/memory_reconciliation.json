@@ -1,0 +1,124 @@
+{
+ "what": "Reconciliation of the ROW_BLOCKED_WINOGRAD_PRODUCTION_GATE memory clause across the two measurement methods, before and after the fix round.",
+ "method_A": {
+  "definition": "Isolated single-thread process, one estimator, one setup and one predict on fresh synthetic width-256 depth-32 He weights at n_base=32256 (all 64512 antipodal paths); process-wide PeakWorkingSetSize / PeakPagefileUsage via K32GetProcessMemoryInfo.",
+  "provenance": "This is the method that passed the clause for the incumbent. ROW_BLOCKED_WINOGRAD_REPORT.md, section \"Frozen full-entry result\" (\"in independent one-thread processes\") and \"Memory accounting\"; the counter is the one uf1_attack_memory/memprobe.py documents as \"the same peak working set quantity the corpus quotes for the 512-MiB envelope\".",
+  "incumbent_receipt_MiB": {
+   "ROW_BLOCKED_WINOGRAD_REPORT.md": 474.301,
+   "GATE_A_DECISION.md": 474.859375,
+   "PRODUCTION_REPORT.md": 474.8594
+  },
+  "instrument": "peak_probe.py"
+ },
+ "method_B": {
+  "definition": "Peak of the whole verify_fold_floor.py process, which holds the direct-product arbiter, the incumbent package and five fork routes at once.",
+  "provenance": "What the hostile verifier read (reported 761 MiB shipped / 588 MiB for the USE_FLOOR=False fork).",
+  "instrument": "peak_of.py",
+  "note": "Counters must be read from inside the live process. A post-mortem GetProcessMemoryInfo on a handle to the exited child reports a few MiB; the first version of peak_of.py did that and credited a 1037 MiB run with 4.48 MiB."
+ },
+ "method_A_after_fix": {
+  "floor_off": {
+   "peak_working_set_mib": 496.1992,
+   "peak_commit_mib": 498.3164,
+   "analytical_flops": 173789369357,
+   "residual_s_median": 0.14895550000000002,
+   "effective_C_median": 188684919399.2744,
+   "operator_workspace_mib_end_of_predict": 91.4375,
+   "reps": 2
+  },
+  "floor_on": {
+   "peak_working_set_mib": 615.7539,
+   "peak_commit_mib": 618.3828,
+   "analytical_flops": 123346661469,
+   "residual_s_median": 0.3518195,
+   "effective_C_median": 158528601505.27286,
+   "operator_workspace_mib_end_of_predict": 107.372,
+   "reps": 2,
+   "operator_workspace_mib_high_water": 191.9745
+  },
+  "incumbent": {
+   "peak_working_set_mib": 479.5117,
+   "peak_commit_mib": 483.0859,
+   "analytical_flops": 174907480524,
+   "residual_s_median": 0.157704,
+   "effective_C_median": 190677875524.4361,
+   "operator_workspace_mib_end_of_predict": 91.4375,
+   "reps": 2
+  }
+ },
+ "method_A_before_fix": {
+  "incumbent": {
+   "peak_working_set_mib": 480.7734,
+   "peak_commit_mib": 484.0898,
+   "operator_workspace_mib": 91.4375
+  },
+  "floor_off": {
+   "peak_working_set_mib": 498.3984,
+   "peak_commit_mib": 501.2734,
+   "operator_workspace_mib": 91.4375
+  },
+  "floor_on": {
+   "peak_working_set_mib": 664.957,
+   "peak_commit_mib": 759.5742,
+   "operator_workspace_mib_high_water": 283.412,
+   "operator_workspace_breakdown": {
+    "pools": 191.9745,
+    "unconditional_frozen_fallback": 91.4375
+   }
+  }
+ },
+ "method_B_before_fix": {
+  "method": "B: whole-harness process peak (target run in-process)",
+  "script": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold_floor_splice_before\\verify_fold_floor.py",
+  "args": [
+   "--full"
+  ],
+  "status": "ok",
+  "wall_s": 553.411,
+  "dont_write_bytecode": false,
+  "wrapper_baseline": {
+   "working_set_mib": 16.5078,
+   "peak_working_set_mib": 16.5078,
+   "commit_mib": 9.9297,
+   "peak_commit_mib": 9.9297
+  },
+  "final": {
+   "working_set_mib": 510.5391,
+   "peak_working_set_mib": 1037.2148,
+   "commit_mib": 921.832,
+   "peak_commit_mib": 1553.5781
+  },
+  "peak_working_set_mib": 1037.2148,
+  "peak_commit_mib": 1553.5781
+ },
+ "method_B_after_fix": {
+  "method": "B: whole-harness process peak (target run in-process)",
+  "script": "C:\\Users\\strid\\Documents\\Codex\\2026-08-02\\https-chatgpt-com-share-6a5556ed-2e1c\\publish\\recursive-estimator-folding\\corpus\\whestbench\\experiments\\fold_floor_splice\\verify_fold_floor.py",
+  "args": [
+   "--full"
+  ],
+  "status": "ok",
+  "wall_s": 545.495,
+  "dont_write_bytecode": true,
+  "wrapper_baseline": {
+   "working_set_mib": 16.5234,
+   "peak_working_set_mib": 16.5234,
+   "commit_mib": 10.0352,
+   "peak_commit_mib": 10.0352
+  },
+  "final": {
+   "working_set_mib": 522.5781,
+   "peak_working_set_mib": 987.7344,
+   "commit_mib": 934.3555,
+   "peak_commit_mib": 1400.4258
+  },
+  "peak_working_set_mib": 987.7344,
+  "peak_commit_mib": 1400.4258
+ },
+ "targets": {
+  "gate_clause_process_peak_MiB": 512,
+  "gate_clause_operator_workspace_MiB": 91.4375,
+  "candidate_declared_workspace_MiB": 192.0,
+  "fix_round_target_process_peak_MiB": "incumbent-equivalent (method A, floor_off) + declared operator delta = 496.20 + (192.0 - 91.4375) = 596.76"
+ }
+}

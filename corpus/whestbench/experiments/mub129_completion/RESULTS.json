@@ -1,0 +1,145 @@
+{
+  "experiment": "M-MUB129",
+  "predeclaration_commit": "be3eb44",
+  "k1_bar_v129_over_v126": 0.9767441860465116,
+  "cost_ratio": "43/42",
+  "structural": {
+    "n_frames_in_archive": 128,
+    "pairs_tested": 8128,
+    "distinct_walsh_magnitudes": [
+      16.0
+    ],
+    "non_unbiased_pairs": [],
+    "all_pairwise_unbiased": true
+  },
+  "degree4_moment": {
+    "126": {
+      "m": 126,
+      "n_points": 64512,
+      "sum_ip4_actual": "381/128",
+      "sum_ip4_required": "126/43",
+      "exact_match": false,
+      "dgs_antipodal_4design_floor": 65792,
+      "clears_dgs_floor": false
+    },
+    "128": {
+      "m": 128,
+      "n_points": 65536,
+      "sum_ip4_actual": "383/128",
+      "sum_ip4_required": "128/43",
+      "exact_match": false,
+      "dgs_antipodal_4design_floor": 65792,
+      "clears_dgs_floor": false
+    },
+    "129": {
+      "m": 129,
+      "n_points": 66048,
+      "sum_ip4_actual": "3",
+      "sum_ip4_required": "3",
+      "exact_match": true,
+      "dgs_antipodal_4design_floor": 65792,
+      "clears_dgs_floor": true
+    }
+  },
+  "k2_failures": [],
+  "per_net": [
+    {
+      "net": 0,
+      "V126": 3.18341627918187e-07,
+      "V129": 3.091046993250647e-07,
+      "ratio": 0.9709842264314356,
+      "score_ratio": 0.9941028984893268,
+      "mean_level": 0.5470223173554782
+    },
+    {
+      "net": 1,
+      "V126": 6.147343631830575e-07,
+      "V129": 5.278079728350258e-07,
+      "ratio": 0.8585951989117183,
+      "score_ratio": 0.8790379417429496,
+      "mean_level": 1.2422268636249096
+    },
+    {
+      "net": 2,
+      "V126": 2.0972113336836813e-07,
+      "V129": 1.928695446285251e-07,
+      "ratio": 0.9196476365105095,
+      "score_ratio": 0.9415440088083787,
+      "mean_level": 0.6133426237300765
+    }
+  ],
+  "geomean_variance_ratio": 0.9152520209935693,
+  "geomean_score_ratio": 0.9370437357791304,
+  "variance_removed_pct": 8.474797900643072,
+  "k1_fires": false,
+  "verdict": "K1 FAILED on re-analysis (was: SURVIVES_K1). Candidate remains KILLED by prior art S11/M81; the theorem stands.",
+  "wall_seconds": 96.84050846099854,
+  "second_signal_gegenbauer_design_defect": {
+    "degree_2": {
+      "m_126": 0.0,
+      "m_128": 0.0,
+      "m_129": 0.0
+    },
+    "degree_4": {
+      "m_126": 7.350908201315546e-07,
+      "m_128": 2.4120167535566633e-07,
+      "m_129": 0.0
+    },
+    "degree_6": {
+      "m_126": 3.194089008420301e-05,
+      "m_128": 3.145671147984825e-05,
+      "m_129": 3.122025216144244e-05
+    }
+  },
+  "second_signal_note": "Exact rational Gegenbauer arithmetic on the angle set. Independent of the variance run: no networks, no randomness, no shared code path. Confirms degree-4 annihilation at m=129 exactly and degree-6 essentially unchanged.",
+  "derived_E4_over_E6": 2.9523001880761166,
+  "derived_E4_over_E6_note": "Derived under a two-degree truncation (degrees >=8 assumed negligible). Solves ratio = A6(129)E6 / (A4(126)E4 + A6(126)E6) for E4/E6. [D], not [O].",
+  "CORRECTION_20260812_0324": {
+    "raised_by": "codex-sol, AGENT_CHANNEL.md entry 175",
+    "correction_1_aggregation": "The geomean is NOT the contest estimand. The official aggregate is a network-mean MSE, so the score-faithful statistic is sum(V129)/sum(V126).",
+    "mse_faithful_arithmetic_ratio": 0.9011067622930458,
+    "geomean_ratio_superseded": 0.9152520209935693,
+    "correction_2_cost": "129/126 is not a measured GUARDS bill. 64512/4096=15.75 and 66048/4096=16.125, so the BLOCK_ROWS=4096 count goes 16->17. But row_blocked_winograd.py:26-46 sizes the workspace min(block_rows,max_m), fixing the block count without establishing that a partial block bills as full. Tails: 15*4096+3072 and 16*4096+512.",
+    "cost_ratio_bracket": [
+      1.0238095238095237,
+      1.0625
+    ],
+    "score_ratio_bracket": [
+      0.9225616852047849,
+      0.9574259349363611
+    ],
+    "gain_pct_bracket": [
+      4.257406506363893,
+      7.743831479521512
+    ],
+    "headline_status": "The 6.3% point estimate is WITHDRAWN. Replaced by the bracket above. Both endpoints are wins.",
+    "still_open": "Composition with pruning, folding, tangent, guards, FlopScope and residual is UNMEASURED and unclaimed. The raw dense runner omits all of them."
+  },
+  "CORRECTION_20260812_adversarial_audit": {
+    "source": "independent adversarial audit, 2026-08-12",
+    "derived_E4_over_E6_WITHDRAWN": 2.9523001880761166,
+    "why": "The two-degree truncation assumed degrees >=8 negligible. They are not: an independent derivation via the iterated arc-cosine kernel K(c)=(mean_chi^2/D)*kappa^32(c) puts 86% of predicted variance (2.141e-07 of 2.498e-07) at degrees >=8. Corrected E4/E6 = 1.410.",
+    "corrected_E4_over_E6": 1.41,
+    "predicted_degree4_variance_share_pct": 0.4497,
+    "four_independent_estimates_of_the_degree4_share_pct": {
+      "kernel_derivation": 0.4497,
+      "m191_cv_deg4": 0.42,
+      "r0_harmonic_spectrum_inadmissible": 0.45,
+      "s11_matched_control_upper_bound": 0.176
+    },
+    "power": "Between-net log-ratio sd 0.035. n=3 x 16 rotations gives 5% power against a 0.45% effect, i.e. the type-I rate. ~500 networks needed for 80%.",
+    "published_run_CI_on_score_ratio": [
+      0.804,
+      1.092
+    ],
+    "published_run_p_vs_1": 0.209,
+    "same_3_nets_64_rotations_score_ratio": 0.98638,
+    "sixteen_fresh_nets_score_ratio": 1.00087,
+    "sixteen_fresh_nets_CI": [
+      0.9825,
+      1.0196
+    ],
+    "net1_outlier_sigma": -3.73,
+    "verdict": "K1 should be read as FAILED, not survived. The point estimate was an n=3 sampling artifact driven by one -3.7 sigma network. Structural and design-theoretic claims are untouched: A_4(129)=0 exactly, m=129 unique, the Walsh ladder, the DGS closure, and the asset certificate all reproduced to the last digit."
+  }
+}

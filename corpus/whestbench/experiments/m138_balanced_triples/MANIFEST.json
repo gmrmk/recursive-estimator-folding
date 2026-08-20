@@ -1,0 +1,32 @@
+{
+  "protocol_id": "M138-BALANCED-FACTORED-211-GENERATED-v1",
+  "created_utc": "2026-08-07",
+  "scope": "generated-only sampling/algebra/cost audit",
+  "contest_data_accessed": false,
+  "submission_capability": false,
+  "disposition": "killed_implementation_preserved_balancing_operator",
+  "mechanism": "randomized systematic mixture and centre incidence plus conditional randomized OA/Latin neighbour coupling; M133 q, 5% uniform rescue, and five-product HH contraction unchanged",
+  "tests": {
+    "command": "python -m unittest -v test_m138_balanced_triples.py",
+    "result": "6 passed"
+  },
+  "premise_gate": {
+    "status": "failed_closed",
+    "fixed_kappa": 2,
+    "triple_samples_per_layer": 512,
+    "final_output_mse_ratio_by_width": {
+      "12": 0.6869369519183449,
+      "16": 1.0869372961477701,
+      "24": 0.9281487238587566,
+      "32": 1.002476245670114
+    },
+    "full_development_and_confirmation_opened": false
+  },
+  "artifacts_sha256": {
+    "m138_balanced_triples.py": "ba80ab62d86bb0f135854573ce11d5416eb8911e7e01fce79cba436a8232f142",
+    "test_m138_balanced_triples.py": "f4f903299e3e8f144508af383efd55fe2a0ded9611baa94de9f7f1e791e560d4",
+    "run_m138_generated.py": "202ef0da61a74e409238630c1602e3314f8af9122d158a0719f34931f036279d",
+    "M138_BALANCED_TRIPLE_PREMISE_AUDIT_20260807.md": "2c33fcb769a4ef1e9daaa655f48342f4f7928748e8653f8a7b473d787b15deab",
+    "M138_PREMISE_OUTPUT_RESULTS_20260807.json": "e4383a27fd05394ff211f82833c09b1558569221a3c3dce37ca2a47c72c6b857"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "M243_G0A_RUNNER_STATIC_VALIDATION_V1",
+  "overall": "PASS",
+  "authority_sha256": {
+    "M243_PRELAUNCH_ERRATUM4_20260809.md": "b5960d598870208056fa4c4f5e8213ce13816905e16d7e54c47cdeb281a1d9db",
+    "M243_FROZEN_MANIFEST_V5_20260809.json": "b472f009fc8f88ff725886043a72ff5eb1c379b8314ca13f8127de2f16c01859",
+    "M243_SHA256SUMS_V3_20260809.txt": "02f310f54776618e5dd96959ec4f13c121a3fc89b7d8204a5da90d4521611a40"
+  },
+  "authority_head": "899a92b6a42110ebfaa24c2799539b0c526ad5b8",
+  "runner_sha256": "e825142d83f2772a7b439bf12a22838a44c1e768eda6f107c33864a9ffd6265e",
+  "reference_sha256": "b03e9b2ddda22d8ea147c0720ca8644c91bff2d22c8f82bd057b91a55bdc2c25",
+  "import_compile_or_execution_during_static_review": false,
+  "g0a_launches_consumed": 0,
+  "independent_read_only_judgments": [
+    {
+      "reviewer": "m243_launch_authority_final",
+      "verdict": "PASS",
+      "runner_sha256": "e825142d83f2772a7b439bf12a22838a44c1e768eda6f107c33864a9ffd6265e"
+    },
+    {
+      "reviewer": "weighted_hermite_godnode",
+      "verdict": "PASS",
+      "runner_sha256": "e825142d83f2772a7b439bf12a22838a44c1e768eda6f107c33864a9ffd6265e"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "dps_pair": [
+    16,
+    22
+  ],
+  "results": [
+    {
+      "test": "T0a_frozen_input_hashes",
+      "pass": true,
+      "detail": "{'M243_PREDECLARATION_20260809.md': 'a53e3cbf58b9bdc290e6abbf3323a1b7e5162a370774dcd918ddb2193340a9c3', 'M243_FROZEN_MANIFEST_20260809.json': '2f788fdc8d91abb8cd43b9ce82140c12cc5707b49b9f815c56abae105b906895'}"
+    },
+    {
+      "test": "T0b_hash_hard_fail",
+      "pass": true,
+      "detail": "OracleHardFail raised"
+    },
+    {
+      "test": "T0c_shared_module_hashes",
+      "pass": true,
+      "detail": "['m122_nonzero_bridge.py', 'm133_ht_hidden_edge.py', 'm151_b1_forward_control.py', 'm178_certified_phi2_owent.py']"
+    },
+    {
+      "test": "T1a_phi2_rho0",
+      "pass": true,
+      "detail": "0.0"
+    },
+    {
+      "test": "T1b_pospart_rho0",
+      "pass": true,
+      "detail": "2.465190328815662e-32"
+    },
+    {
+      "test": "T2a_delta_two_signals",
+      "pass": true,
+      "detail": "quad=7.127850257291e-03 series=7.127850257290e-03"
+    },
+    {
+      "test": "T2b_bias_contract_ANTI",
+      "pass": true,
+      "detail": "resid=-1.034e-25"
+    },
+    {
+      "test": "T2b_bias_contract_Q2_actual",
+      "pass": true,
+      "detail": "resid=-5.458e-19"
+    },
+    {
+      "test": "T2b_bias_contract_Q4_actual",
+      "pass": true,
+      "detail": "resid=-7.167e-19"
+    },
+    {
+      "test": "T2b_bias_contract_Q2_ideal",
+      "pass": true,
+      "detail": "resid=1.034e-25"
+    },
+    {
+      "test": "T2b_bias_contract_Q4_ideal",
+      "pass": true,
+      "detail": "resid=-1.034e-25"
+    },
+    {
+      "test": "T2c_variances_finite",
+      "pass": true,
+      "detail": "{'RAW1': 0.006158282720061275, 'ANTI': 0.003147481302709644, 'Q2_actual': 2.2661039195062423e-05, 'Q4_actual': 1.7722155511099387e-07}"
+    },
+    {
+      "test": "T2d_gh2_reported",
+      "pass": true,
+      "detail": "gh2_bias=9.111e-03"
+    },
+    {
+      "test": "T3_R_closed_vs_direct",
+      "pass": true,
+      "detail": "['2.9038665130e-01/2.9038665130e-01', '4.0768686599e-01/4.0768686599e-01', '6.9196062968e-01/6.9196062968e-01', '8.5984075313e-01/8.5984075313e-01', '4.9246746484e-01/4.9246746484e-01']"
+    },
+    {
+      "test": "T4_beta_m178_vs_direct",
+      "pass": true,
+      "detail": "['3.8662400937e-02/3.8662400937e-02', '3.4705145997e-03/3.4705145997e-03', '-2.0397362337e-02/-2.0397362337e-02', '-9.5869695098e-04/-9.5869695098e-04', '1.6229840962e-04/1.6229840962e-04']"
+    },
+    {
+      "test": "T4g_gate_checker",
+      "pass": true,
+      "detail": "{'gate1_R': True, 'gate2_beta': True, 'gate3_expectation': True, 'all': True}"
+    },
+    {
+      "test": "T5_tree_vs_frozen_tensor",
+      "pass": true,
+      "detail": "local=-1.307606974551e-02 frozen=-1.307606974551e-02"
+    },
+    {
+      "test": "T6a_collision_refusal",
+      "pass": true,
+      "detail": "{'stratum': 'collision', 'reason': 'non-pairwise-distinct (0,1,1)'}"
+    },
+    {
+      "test": "T6b_stratum_refusal",
+      "pass": true,
+      "detail": "TypedRefusal(stratum='[2,2]', reason='M243 emits no numeric value on this stratum')"
+    },
+    {
+      "test": "T6c_jk_swap_symmetry",
+      "pass": true,
+      "detail": "delta_swap=7.127850257291e-03"
+    },
+    {
+      "test": "T6d_gauge_degree",
+      "pass": true,
+      "detail": "scaled=1.4831630815e-02 want=1.4831630815e-02"
+    },
+    {
+      "test": "T7a_manifest_format_ok",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "T7b_manifest_hard_fail",
+      "pass": true,
+      "detail": "OracleHardFail raised"
+    },
+    {
+      "test": "T8a_regen_deterministic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "T8b_qe_positive",
+      "pass": true,
+      "detail": "min q_e = 9.000e-03"
+    },
+    {
+      "test": "T8c_qe_collision_hard_fail",
+      "pass": true,
+      "detail": "OracleHardFail raised"
+    },
+    {
+      "test": "T8d_feature_weight",
+      "pass": true,
+      "detail": "||F/(2q)||^2 = 2.447875e+01"
+    },
+    {
+      "test": "T9a_shard_map",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "test": "T9b_checkpoint_resume",
+      "pass": true,
+      "detail": "calls=6 lines=6"
+    },
+    {
+      "test": "T9c_wall_cap",
+      "pass": true,
+      "detail": "WALL"
+    },
+    {
+      "test": "T9d_rss_probe",
+      "pass": true,
+      "detail": "rss=1069.1 MiB"
+    },
+    {
+      "test": "T10_aggregator",
+      "pass": true,
+      "detail": "{'upper90_nq4_nanti': 0.2291463236935628, 'upper90_nq4_vdelta': 0.2102828386066567}"
+    }
+  ],
+  "fixture_record_excerpt": {
+    "delta_reference": 0.007127850257290698,
+    "delta_gh_cross_check": 0.0071278502572895775,
+    "beta_actual_m178": [
+      0.03866240093700313,
+      0.0034705145997051953,
+      -0.020397362336831048,
+      -0.0009586969509817568,
+      0.0001622984096233089
+    ],
+    "beta_ideal": [
+      0.03866240093700316,
+      0.00347051459970522,
+      -0.02039736233683105,
+      -0.0009586969509817573,
+      0.00016229840962330897
+    ],
+    "R_actual": [
+      0.2903866512982716,
+      0.40768686599036585,
+      0.6919606296848249,
+      0.8598407531344607,
+      0.49246746483984793
+    ],
+    "R_ideal": [
+      0.29038665129827157,
+      0.4076868659903658,
+      0.6919606296848247,
+      0.8598407531344605,
+      0.49246746483984777
+    ],
+    "arm_vars": {
+      "ANTI": 0.003147481302709644,
+      "Q2_actual": 2.2661039195062423e-05,
+      "Q4_actual": 1.7722155511099387e-07,
+      "Q2_ideal": 2.2661039195062728e-05,
+      "Q4_ideal": 1.7722155511098336e-07,
+      "RAW1": 0.006158282720061275,
+      "RAW2": 0.0030791413600306373,
+      "GH2": null
+    }
+  }
+}
